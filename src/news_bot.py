@@ -14,13 +14,15 @@ import feedparser
 
 STATE_PATH = "state.json"
 SAKHALIN_TZ = timezone(timedelta(hours=11))
+
 POSTS_PER_RUN = 2
-MAX_CANDIDATES_FOR_LLM = 30
-MAX_ENTRIES_PER_SOURCE = 14
+MAX_CANDIDATES_FOR_LLM = 34
+MAX_ENTRIES_PER_SOURCE = 16
 REQUEST_TIMEOUT = 35
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 DEFAULT_MODEL = "openrouter/free"
+
 
 CATEGORY_ORDER = {
     "📍 Сахалин": 100,
@@ -44,6 +46,24 @@ HASHTAG_MAP = {
     "💻 IT / технологии": ["#IT", "#Технологии"],
 }
 
+MONTHS_RU = (
+    "января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря"
+)
+
+VAGUE_LINES = [
+    "подробности будут уточняться",
+    "по мере появления новых сообщений",
+    "причины и сила толчков уточняются",
+    "сейсмическая активность зафиксирована",
+    "новость отобрана",
+    "автоматическим фильтром",
+    "предварительная категория",
+    "система отметила",
+    "источник сообщения",
+    "детали уточняются",
+    "сообщение опубликовано",
+]
+
 
 def google_news_rss(query: str, lang: str = "en", country: str = "US") -> str:
     q = urllib.parse.quote_plus(query)
@@ -56,7 +76,8 @@ SOURCES = [
         "type": "sakhalin",
         "url": google_news_rss(
             "Сахалин OR Южно-Сахалинск OR Холмск OR Корсаков OR Анива OR Невельск OR Оха "
-            "ДТП OR пожар OR циклон OR шторм OR отключение OR происшествие OR землетрясение OR цунами",
+            "ДТП OR пожар OR циклон OR шторм OR отключение OR происшествие OR землетрясение OR цунами "
+            "ограбление OR розыск OR авария",
             "ru",
             "RU",
         ),
@@ -64,7 +85,7 @@ SOURCES = [
     },
     {"name": "Interfax", "type": "ru_general", "url": "https://www.interfax.ru/rss.asp", "weight": 78},
     {"name": "Reuters", "type": "world_authority", "url": google_news_rss("site:reuters.com Russia Ukraine sanctions NATO China G7 oil gas"), "weight": 96},
-    {"name": "AP News", "type": "world_authority", "url": google_news_rss("site:apnews.com Russia Ukraine sanctions NATO China G7 oil gas"), "weight": 94},
+    {"name": "AP News", "type": "world_authority", "url": google_news_rss("site:apnews.com Russia Ukraine sanctions NATO China G7 oil gas Iran Israel"), "weight": 94},
     {"name": "BBC World", "type": "world_authority", "url": "https://feeds.bbci.co.uk/news/world/rss.xml", "weight": 86},
     {"name": "The Guardian World", "type": "world_authority", "url": "https://www.theguardian.com/world/rss", "weight": 82},
     {"name": "BBC Technology", "type": "world_it", "url": "https://feeds.bbci.co.uk/news/technology/rss.xml", "weight": 80},
@@ -75,7 +96,7 @@ SOURCES = [
 SAKHALIN_GEO = [
     "сахалин", "южно-сахалинск", "сахалинская область", "холмск", "корсаков",
     "анива", "невельск", "оха", "долинск", "поронайск", "углегорск",
-    "тымовское", "курил", "курильск", "южно-курильск",
+    "тымовское", "курил", "курильск", "южно-курильск", "северо-курильск",
 ]
 
 SAKHALIN_IMPORTANT = [
@@ -140,17 +161,6 @@ LOW_RU = [
     "выставка", "фестиваль", "конкурс", "рейтинг",
 ]
 
-VAGUE_LINES = [
-    "подробности будут уточняться",
-    "по мере появления новых сообщений",
-    "новость отобрана",
-    "автоматическим фильтром",
-    "предварительная категория",
-    "система отметила",
-    "источник сообщения",
-    "детали уточняются",
-]
-
 
 def log(message: str) -> None:
     now = datetime.now(SAKHALIN_TZ).strftime("%Y-%m-%d %H:%M:%S")
@@ -182,7 +192,7 @@ def too_similar(a: str, b: str) -> bool:
     wa, wb = set(na.split()), set(nb.split())
     if len(wa) < 4 or len(wb) < 4:
         return False
-    return len(wa & wb) / max(1, min(len(wa), len(wb))) > 0.75
+    return len(wa & wb) / max(1, min(len(wa), len(wb))) > 0.72
 
 
 def normalize_image_url(url: str, base_url: str = "") -> Optional[str]:
@@ -236,7 +246,6 @@ def extract_image_url(entry: Any, summary_raw: str, link: str) -> Optional[str]:
     m = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', summary_raw or "", flags=re.I)
     if m:
         return normalize_image_url(m.group(1), link)
-
     return None
 
 
@@ -428,7 +437,7 @@ def collect_candidates(state: Dict[str, Any]) -> List[Dict[str, Any]]:
                 "score_hint": int(score),
                 "reason_hint": reason,
                 "title": title,
-                "summary": summary[:650],
+                "summary": summary[:900],
                 "url": link,
                 "image_url": image_url,
                 "title_hash": hsh,
@@ -436,6 +445,13 @@ def collect_candidates(state: Dict[str, Any]) -> List[Dict[str, Any]]:
 
     candidates.sort(key=lambda x: (CATEGORY_ORDER.get(x["category_hint"], 0), x["score_hint"]), reverse=True)
     return candidates[:MAX_CANDIDATES_FOR_LLM]
+
+
+def is_local(cand: Dict[str, Any]) -> bool:
+    return cand.get("category_hint") in ("📍 Сахалин", "🚨 ЧП / происшествия") and (
+        cand.get("source_type") == "sakhalin"
+        or bool(hits(f"{cand.get('title','')} {cand.get('summary','')}", SAKHALIN_GEO))
+    )
 
 
 def build_llm_prompt(candidates: List[Dict[str, Any]]) -> str:
@@ -454,19 +470,30 @@ def build_llm_prompt(candidates: List[Dict[str, Any]]) -> str:
 
     return (
         "Ты главный редактор автоматического Telegram-канала SkySakhNews.\n"
-        "Нужно выбрать ровно 2 лучшие новости для публикации.\n\n"
-        "Приоритет: Сахалин и локальные опасные события; затем мир о России; затем политика/экономика РФ; затем геополитика и крупный IT.\n\n"
+        "Нужно выбрать ровно 2 новости для публикации.\n\n"
+        "Баланс выпуска:\n"
+        "- если есть местная сахалинская новость, выбери 1 местную новость;\n"
+        "- вторую новость выбери из другого направления: Мир о России, Россия/политика, Россия/экономика, Геополитика или IT;\n"
+        "- две сахалинские новости выбирай только если нет сильной новости из других направлений.\n\n"
+        "Главные направления канала:\n"
+        "1) 📍 Сахалин: ЧП, ДТП, пожары, землетрясения, погода, отключения, важные локальные решения.\n"
+        "2) 🌍 Мир о России: США, ЕС, НАТО, G7, Китай, санкции, нефть/газ, активы РФ, Украина.\n"
+        "3) 🇷🇺 Россия / политика и экономика: федеральные решения, Кремль, МИД, Госдума, ЦБ, рубль, инфляция, бюджет, рынки.\n"
+        "4) 🧭 Геополитика: США-Китай, Иран, Израиль, Тайвань, G7/G20, войны, дипломатия, энергетика.\n"
+        "5) 💻 IT / технологии: ИИ, OpenAI, Google, Microsoft, NVIDIA, чипы, кибератаки, утечки, крупные платформы.\n\n"
         "Строгие правила текста:\n"
+        "- покажи суть новости, а не общие фразы;\n"
+        "- обязательно сохраняй конкретику: цифры, даты, места, имена, должности, суммы, проценты, количество погибших/пострадавших;\n"
+        "- если новость про землетрясение — обязательно укажи магнитуду/баллы, район, дату и ощущалось ли, если это есть в title/summary;\n"
+        "- если магнитуды/баллов нет в title/summary, напиши: «магнитуда в RSS-описании не указана»;\n"
         "- не повторяй заголовок внутри brief;\n"
         "- не пиши одинаковые строки;\n"
-        "- запрещены фразы: «подробности будут уточняться», «по мере появления новых сообщений», «новость отобрана», «система отметила»;\n"
-        "- если данных мало, пиши 2–3 честные содержательные строки, а не 4 пустые;\n"
-        "- brief: только факты из title/summary/source, без выдумок;\n"
-        "- why_important: 1 короткое осмысленное предложение;\n"
+        "- запрещены фразы: «подробности будут уточняться», «по мере появления новых сообщений», «новость отобрана», «система отметила», «сейсмическая активность зафиксирована»;\n"
+        "- brief: 2–5 содержательных строк, только факты из title/summary/source, без выдумок;\n"
         "- русский язык, без кликбейта.\n\n"
         "Верни строго JSON-массив без markdown:\n"
         "[{\"id\":1,\"category\":\"📍 Сахалин\",\"title_ru\":\"...\",\"brief\":[\"строка 1\",\"строка 2\",\"строка 3\"],"
-        "\"why_important\":\"...\",\"hashtags\":[\"#Сахалин\",\"#ЧП\"],\"selection_reason\":\"...\"}]\n\n"
+        "\"hashtags\":[\"#Сахалин\",\"#ЧП\"],\"selection_reason\":\"...\"}]\n\n"
         f"Кандидаты:\n{json.dumps(compact, ensure_ascii=False)}"
     )
 
@@ -483,7 +510,7 @@ def call_openrouter(candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             {"role": "system", "content": "Ты строгий редактор новостного Telegram-канала. Возвращай только валидный JSON."},
             {"role": "user", "content": build_llm_prompt(candidates)},
         ],
-        "temperature": 0.18,
+        "temperature": 0.15,
         "max_tokens": 1700,
     }
     headers = {
@@ -517,85 +544,182 @@ def parse_json_array(text: str) -> List[Dict[str, Any]]:
     return parsed
 
 
-def fallback_brief(cand: Dict[str, Any], category: str) -> List[str]:
-    source = clean_inline(cand.get("source") or cand.get("source_group") or "источник")
-    title = clean_inline(cand.get("title", ""))
-    text = f"{title} {cand.get('summary','')}".lower()
+def split_sentence_facts(text: str) -> List[str]:
+    text = clean_inline(text)
+    if not text:
+        return []
+    parts = re.split(r"(?<=[.!?])\s+|[;]\s+", text)
+    return [p.strip(" —-•") for p in parts if len(p.strip()) > 20]
+
+
+def extract_numbers(text: str) -> List[str]:
+    patterns = [
+        rf"\b\d{{1,2}}\s+(?:{MONTHS_RU})\b",
+        r"\b\d+[,.]?\d*\s*(?:балл\w*|магнитуд\w*|%|процент\w*|млн|млрд|руб\.?|доллар\w*|человек|погиб\w*|пострадал\w*)",
+        r"\bмагнитуд[а-я]*\s*(?:до|около|примерно|составила|составило)?\s*\d+[,.]?\d*",
+        r"\b\d+\s+землетрясен\w*",
+    ]
+    found: List[str] = []
+    for p in patterns:
+        found.extend(re.findall(p, text, flags=re.I))
+    clean = []
+    for x in found:
+        if isinstance(x, tuple):
+            x = " ".join(x)
+        x = clean_inline(x)
+        if x and x.lower() not in [v.lower() for v in clean]:
+            clean.append(x)
+    return clean[:5]
+
+
+def earthquake_brief(cand: Dict[str, Any]) -> Optional[List[str]]:
+    raw = clean_inline(f"{cand.get('title','')}. {cand.get('summary','')}")
+    low = raw.lower()
+    if "землетр" not in low and "магнитуд" not in low:
+        return None
+
     lines: List[str] = []
+    date = re.search(rf"\b\d{{1,2}}\s+(?:{MONTHS_RU})\b", raw, flags=re.I)
+    count = re.search(r"\b(\d+)\s+землетрясен\w*", raw, flags=re.I)
+    mags = re.findall(r"(?:магнитуд[а-я]*\s*(?:до|около|примерно|составила|составило)?\s*|M\s*)(\d+[,.]?\d*)", raw, flags=re.I)
+    points = re.findall(r"(\d+[,.]?\d*)\s*балл\w*", raw, flags=re.I)
+    places = [p for p in SAKHALIN_GEO if p in low]
 
-    if category == "📍 Сахалин":
-        lines.append(f"Сообщение опубликовано местным источником {source}.")
-        if any(k in text for k in ["дтп", "авари"]):
-            lines.append("Событие относится к дорожной обстановке и оперативной сводке региона.")
-        elif any(k in text for k in ["ограб", "краж", "разыск", "задерж"]):
-            lines.append("Событие относится к криминальной сводке Южно-Сахалинска и области.")
-        elif any(k in text for k in ["пожар", "возгоран"]):
-            lines.append("Событие связано с пожарной безопасностью и работой экстренных служб.")
-        elif any(k in text for k in ["землетр", "цунами"]):
-            lines.append("Событие связано с сейсмической обстановкой в островном регионе.")
-        else:
-            lines.append("Событие относится к локальной сахалинской повестке.")
-        lines.append("Для жителей важны место, время происшествия и возможные ограничения.")
-    elif category == "🚨 ЧП / происшествия":
-        lines.extend([
-            f"Источник сообщения: {source}.",
-            "Событие попало в оперативную повестку из-за признаков происшествия.",
-            "Важны возможные последствия для безопасности и работы служб.",
-        ])
-    elif category == "🌍 Мир о России":
-        lines.extend([
-            f"Источник сообщения: {source}.",
-            "Новость показывает, как международные игроки оценивают российскую повестку.",
-            "Контекст может влиять на санкции, рынки, дипломатию или безопасность.",
-        ])
-    elif category.startswith("🇷🇺 Россия"):
-        lines.extend([
-            f"Источник сообщения: {source}.",
-            "Новость относится к федеральной российской повестке.",
-            "Тема может затрагивать решения власти, экономику или внешнюю политику.",
-        ])
-    elif category == "💻 IT / технологии":
-        lines.extend([
-            f"Источник сообщения: {source}.",
-            "Новость относится к крупной технологической повестке.",
-            "Тема может затрагивать ИИ, платформы, кибербезопасность или рынок технологий.",
-        ])
+    main = "В островном регионе"
+    if count:
+        main += f" сообщается о {count.group(1)} землетрясениях"
     else:
-        lines.extend([
-            f"Источник сообщения: {source}.",
-            "Событие относится к международной повестке.",
-            "Тема может повлиять на политический или экономический контекст.",
-        ])
+        main += " сообщается о землетрясении"
+    if date:
+        main += f" {date.group(0)}"
+    main += "."
+    lines.append(main)
 
-    return lines
+    if mags:
+        lines.append(f"Магнитуда по исходному сообщению: {', '.join(dict.fromkeys(mags[:3]))}.")
+    elif points:
+        lines.append(f"Оценка толчков по исходному сообщению: {', '.join(dict.fromkeys(points[:3]))} балла.")
+    else:
+        lines.append("Магнитуда/баллы в RSS-описании не указаны; точное значение нужно смотреть в источнике.")
+
+    if places:
+        pretty = ", ".join(dict.fromkeys(places[:4]))
+        lines.append(f"Упомянутые районы/локации: {pretty}.")
+    if "ощути" in low:
+        lines.append("По сообщению источника, толчки ощущались жителями.")
+
+    return lines[:4]
+
+
+def fallback_brief(cand: Dict[str, Any], category: str) -> List[str]:
+    eq = earthquake_brief(cand)
+    if eq:
+        return eq
+
+    title = clean_inline(cand.get("title", ""))
+    summary = clean_inline(cand.get("summary", ""))
+    text = f"{title}. {summary}"
+    facts = split_sentence_facts(summary)
+    nums = extract_numbers(text)
+
+    result: List[str] = []
+    for fact in facts:
+        if not too_similar(fact, title):
+            result.append(fact)
+        if len(result) >= 3:
+            break
+
+    if nums:
+        result.append("Ключевые данные: " + "; ".join(nums) + ".")
+
+    if not result:
+        result.append(title)
+
+    return result[:4]
 
 
 def fallback_select(candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    local = [c for c in candidates if is_local(c)]
+    other = [c for c in candidates if not is_local(c)]
+
+    chosen: List[Dict[str, Any]] = []
+    if local:
+        chosen.append(local[0])
+    if other and len(chosen) < POSTS_PER_RUN:
+        chosen.append(other[0])
+    for c in candidates:
+        if len(chosen) >= POSTS_PER_RUN:
+            break
+        if c not in chosen:
+            chosen.append(c)
+
     result = []
-    for c in candidates[:POSTS_PER_RUN]:
+    for c in chosen[:POSTS_PER_RUN]:
         category = c["category_hint"]
         result.append({
             "id": c["id"],
             "category": category,
             "title_ru": c["title"],
             "brief": fallback_brief(c, category),
-            "why_important": why_fallback(category),
             "hashtags": HASHTAG_MAP.get(category, ["#Новости"]),
             "selection_reason": "fallback без LLM",
         })
     return result
 
 
-def why_fallback(category: str) -> str:
-    if category == "📍 Сахалин":
-        return "Локальные происшествия и ограничения напрямую влияют на безопасность и повседневную жизнь жителей региона."
-    if category == "🚨 ЧП / происшествия":
-        return "Такие события требуют внимания из-за возможных последствий для людей и инфраструктуры."
-    if category == "🌍 Мир о России":
-        return "Международная реакция на российскую повестку влияет на санкции, рынки и дипломатические решения."
-    if category == "💻 IT / технологии":
-        return "Крупные технологические изменения быстро отражаются на бизнесе, безопасности и повседневных сервисах."
-    return "Новость относится к одной из ключевых тем канала и может иметь дальнейшее развитие."
+def enforce_balance(selected: List[Dict[str, Any]], candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    by_id = {c["id"]: c for c in candidates}
+    local_candidates = [c for c in candidates if is_local(c)]
+    other_candidates = [c for c in candidates if not is_local(c)]
+
+    cleaned = []
+    used_ids = set()
+    for item in selected:
+        try:
+            cid = int(item.get("id"))
+        except Exception:
+            continue
+        if cid in by_id and cid not in used_ids:
+            cleaned.append(item)
+            used_ids.add(cid)
+        if len(cleaned) >= POSTS_PER_RUN:
+            break
+
+    if local_candidates and other_candidates:
+        has_local = any(is_local(by_id.get(int(i.get("id")), {})) for i in cleaned if str(i.get("id", "")).isdigit())
+        has_other = any((not is_local(by_id.get(int(i.get("id")), {}))) for i in cleaned if str(i.get("id", "")).isdigit())
+
+        if not has_local:
+            c = local_candidates[0]
+            cleaned = [{
+                "id": c["id"], "category": c["category_hint"], "title_ru": c["title"],
+                "brief": fallback_brief(c, c["category_hint"]),
+                "hashtags": HASHTAG_MAP.get(c["category_hint"], ["#Новости"]),
+                "selection_reason": "добавлено для баланса: локальная новость",
+            }] + cleaned[:1]
+
+        if not has_other:
+            c = other_candidates[0]
+            item = {
+                "id": c["id"], "category": c["category_hint"], "title_ru": c["title"],
+                "brief": fallback_brief(c, c["category_hint"]),
+                "hashtags": HASHTAG_MAP.get(c["category_hint"], ["#Новости"]),
+                "selection_reason": "добавлено для баланса: другое направление",
+            }
+            if cleaned:
+                cleaned = cleaned[:1] + [item]
+            else:
+                cleaned = [item]
+
+    if len(cleaned) < POSTS_PER_RUN:
+        fallback = fallback_select(candidates)
+        for item in fallback:
+            if item.get("id") not in {x.get("id") for x in cleaned}:
+                cleaned.append(item)
+            if len(cleaned) >= POSTS_PER_RUN:
+                break
+
+    return cleaned[:POSTS_PER_RUN]
 
 
 def prepare_brief_lines(value: Any, item: Dict[str, Any], cand: Dict[str, Any], category: str) -> List[str]:
@@ -603,8 +727,11 @@ def prepare_brief_lines(value: Any, item: Dict[str, Any], cand: Dict[str, Any], 
         raw_lines = [clean_inline(x) for x in value if clean_inline(x)]
     else:
         text = clean_inline(value)
-        parts = re.split(r"[;\n]+|(?<=[.!?])\s+", text)
-        raw_lines = [clean_inline(x) for x in parts if clean_inline(x)]
+        raw_lines = split_sentence_facts(text)
+
+    eq = earthquake_brief(cand)
+    if eq:
+        raw_lines = eq + raw_lines
 
     title = clean_inline(item.get("title_ru") or cand.get("title") or "")
     result: List[str] = []
@@ -629,7 +756,7 @@ def prepare_brief_lines(value: Any, item: Dict[str, Any], cand: Dict[str, Any], 
     if len(result) < 2:
         for line in fallback_brief(cand, category):
             low = line.lower()
-            if low not in seen and not too_similar(line, title):
+            if low not in seen and not too_similar(line, title) and not any(v in low for v in VAGUE_LINES):
                 result.append(line)
                 seen.add(low)
             if len(result) >= 4:
@@ -663,14 +790,10 @@ def make_hashtags(category: str, model_tags: Any) -> str:
     return " ".join(clean_tags)
 
 
-def build_pretty_caption(item: Dict[str, Any], cand: Dict[str, Any], max_len: int = 980) -> str:
+def build_pretty_caption(item: Dict[str, Any], cand: Dict[str, Any], max_len: int = 1020) -> str:
     category = clean_inline(item.get("category") or cand["category_hint"])
     title = clean_inline(item.get("title_ru") or cand["title"])
     brief = prepare_brief_lines(item.get("brief") or cand.get("summary") or "", item, cand, category)
-    why = clean_inline(item.get("why_important") or why_fallback(category))
-    if any(v in why.lower() for v in VAGUE_LINES) or too_similar(why, title):
-        why = why_fallback(category)
-
     hashtags = make_hashtags(category, item.get("hashtags"))
     source = clean_inline(cand.get("source") or cand.get("source_group") or "Источник")
     url = cand["url"]
@@ -680,33 +803,22 @@ def build_pretty_caption(item: Dict[str, Any], cand: Dict[str, Any], max_len: in
         return (
             f"{escape_html(category)}\n\n"
             f"<b>{escape_html(title)}</b>\n\n"
-            f"<b>Что известно:</b>\n{bullets}\n\n"
-            f"<b>Значение:</b>\n{escape_html(why)}\n\n"
+            f"<b>Суть:</b>\n{bullets}\n\n"
             f"<a href=\"{escape_html(url)}\">Источник: {escape_html(source)}</a>\n"
             f"{escape_html(hashtags)}"
         )
 
     caption = render(brief)
-    while len(caption) > max_len and len(brief) > 3:
+
+    while len(caption) > max_len and len(brief) > 2:
         brief = brief[:-1]
         caption = render(brief)
 
     if len(caption) > max_len:
         short = []
         for line in brief:
-            short.append(line[:142].rstrip() + "…" if len(line) > 145 else line)
+            short.append(line[:150].rstrip() + "…" if len(line) > 153 else line)
         caption = render(short)
-
-    if len(caption) > max_len:
-        caption = (
-            f"{escape_html(category)}\n\n"
-            f"<b>{escape_html(title[:220])}</b>\n\n"
-            f"<b>Что известно:</b>\n"
-            f"• {escape_html(brief[0][:180])}\n"
-            f"• {escape_html(brief[1][:180])}\n\n"
-            f"<a href=\"{escape_html(url)}\">Источник: {escape_html(source)}</a>\n"
-            f"{escape_html(hashtags)}"
-        )
 
     return caption[:max_len]
 
@@ -762,7 +874,8 @@ def main() -> None:
 
     try:
         selected = call_openrouter(candidates)
-        log(f"OpenRouter выбрал новостей: {len(selected)}")
+        selected = enforce_balance(selected, candidates)
+        log(f"OpenRouter выбрал новостей после балансировки: {len(selected)}")
     except Exception as exc:
         log(f"OpenRouter недоступен, fallback: {exc}")
         selected = fallback_select(candidates)
@@ -775,14 +888,16 @@ def main() -> None:
             cid = int(item.get("id"))
         except Exception:
             continue
+
         cand = by_id.get(cid)
         if not cand:
             continue
         if cand["url"] in state.get("published_urls", []):
             continue
 
-        log(f"Публикация: {cand['source']} | {cand['title'][:80]}")
+        log(f"Публикация: {cand['category_hint']} | {cand['source']} | {cand['title'][:90]}")
         result = publish_item(item, cand)
+
         if result.get("ok"):
             state.setdefault("published_urls", []).append(cand["url"])
             state.setdefault("published_title_hashes", []).append(cand["title_hash"])
