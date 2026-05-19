@@ -35,15 +35,15 @@ CATEGORY_ORDER = {
     "💻 IT / технологии": 66,
 }
 
-HASHTAG_MAP = {
-    "📍 Сахалин": ["#Сахалин", "#ЮжноСахалинск"],
-    "🚨 ЧП / происшествия": ["#ЧП", "#Происшествия"],
-    "🌍 Мир о России": ["#Россия", "#МирОРоссии", "#Геополитика"],
-    "🇷🇺 Россия / политика": ["#Россия", "#Политика"],
-    "🇷🇺 Россия / экономика": ["#Россия", "#Экономика"],
-    "🇷🇺 Россия / внешняя политика": ["#Россия", "#ВнешняяПолитика"],
-    "🧭 Геополитика": ["#Геополитика", "#Мир"],
-    "💻 IT / технологии": ["#IT", "#Технологии"],
+FOOTER_MAP = {
+    "📍 Сахалин": "ЧП | САХАЛИН",
+    "🚨 ЧП / происшествия": "ЧП | ПРОИСШЕСТВИЯ",
+    "🌍 Мир о России": "МИР О РОССИИ",
+    "🇷🇺 Россия / политика": "РОССИЯ | ПОЛИТИКА",
+    "🇷🇺 Россия / экономика": "РОССИЯ | ЭКОНОМИКА",
+    "🇷🇺 Россия / внешняя политика": "РОССИЯ | ВНЕШНЯЯ ПОЛИТИКА",
+    "🧭 Геополитика": "МИР | ГЕОПОЛИТИКА",
+    "💻 IT / технологии": "IT | ТЕХНОЛОГИИ",
 }
 
 MONTHS_RU = (
@@ -195,7 +195,7 @@ def too_similar(a: str, b: str) -> bool:
     return len(wa & wb) / max(1, min(len(wa), len(wb))) > 0.72
 
 
-def normalize_image_url(url: str, base_url: str = "") -> Optional[str]:
+def normalize_url(url: str, base_url: str = "") -> Optional[str]:
     if not url:
         return None
     url = html.unescape(str(url).strip())
@@ -206,6 +206,33 @@ def normalize_image_url(url: str, base_url: str = "") -> Optional[str]:
     if not url.startswith(("http://", "https://")):
         return None
     return url
+
+
+def is_google_news_url(url: str) -> bool:
+    host = urllib.parse.urlparse(url or "").netloc.lower()
+    return "news.google." in host or host in {"google.com", "www.google.com"}
+
+
+def extract_direct_article_url(entry: Any, fallback: str) -> str:
+    candidates: List[str] = []
+    raw_fields = [str(entry.get("summary", "") or ""), str(entry.get("description", "") or ""), str(entry.get("content", "") or "")]
+    for raw in raw_fields:
+        for href in re.findall(r'href=["\']([^"\']+)["\']', raw, flags=re.I):
+            href = normalize_url(href, fallback)
+            if href:
+                candidates.append(href)
+    links = entry.get("links")
+    if isinstance(links, list):
+        for link in links:
+            if isinstance(link, dict) and link.get("href"):
+                href = normalize_url(str(link.get("href")), fallback)
+                if href:
+                    candidates.append(href)
+    fallback_norm = normalize_url(fallback) or fallback
+    for url in candidates:
+        if not is_google_news_url(url) and not url.lower().startswith("https://news.google.com"):
+            return url
+    return fallback_norm
 
 
 def extract_source_name(entry: Any, fallback: str) -> str:
@@ -226,10 +253,9 @@ def extract_image_url(entry: Any, summary_raw: str, link: str) -> Optional[str]:
         if isinstance(media, list):
             for m in media:
                 if isinstance(m, dict) and m.get("url"):
-                    img = normalize_image_url(str(m["url"]), link)
+                    img = normalize_url(str(m["url"]), link)
                     if img:
                         return img
-
     links = entry.get("links")
     if isinstance(links, list):
         for item in links:
@@ -239,37 +265,12 @@ def extract_image_url(entry: Any, summary_raw: str, link: str) -> Optional[str]:
             typ = str(item.get("type", ""))
             rel = str(item.get("rel", ""))
             if href and ("image" in typ or rel in ("enclosure", "thumbnail")):
-                img = normalize_image_url(href, link)
+                img = normalize_url(href, link)
                 if img:
                     return img
-
     m = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', summary_raw or "", flags=re.I)
     if m:
-        return normalize_image_url(m.group(1), link)
-    return None
-
-
-def fetch_og_image(url: str) -> Optional[str]:
-    if not url or "news.google.com" in url:
-        return None
-    try:
-        headers = {"User-Agent": "Mozilla/5.0 SkySakhNewsBot/1.0"}
-        r = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
-        if r.status_code >= 400:
-            return None
-        text = r.text[:500000]
-        patterns = [
-            r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']',
-            r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']',
-            r'<meta[^>]+name=["\']twitter:image["\'][^>]+content=["\']([^"\']+)["\']',
-            r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+name=["\']twitter:image["\']',
-        ]
-        for p in patterns:
-            m = re.search(p, text, flags=re.I)
-            if m:
-                return normalize_image_url(m.group(1), url)
-    except Exception:
-        return None
+        return normalize_url(m.group(1), link)
     return None
 
 
@@ -326,7 +327,6 @@ def local_classify(source: Dict[str, Any], title: str, summary: str, link: str) 
     score = int(source["weight"])
     text = f"{title} {summary}".lower()
     p = path_of(link)
-
     sg = hits(text, SAKHALIN_GEO)
     si = hits(text, SAKHALIN_IMPORTANT)
     if stype == "sakhalin" or sg:
@@ -336,7 +336,6 @@ def local_classify(source: Dict[str, Any], title: str, summary: str, link: str) 
             score += 18
             reasons.append("важное локальное событие: " + ", ".join(si[:3]))
         return "📍 Сахалин", score, "; ".join(reasons)
-
     if stype in ("it_ru", "world_it"):
         big = hits(text, IT_BIG)
         noise = hits(text, IT_NOISE)
@@ -348,7 +347,6 @@ def local_classify(source: Dict[str, Any], title: str, summary: str, link: str) 
             score -= 25
             reasons.append("антишум: " + ", ".join(noise[:3]))
         return "💻 IT / технологии", score, "; ".join(reasons)
-
     if stype == "world_authority" or "/world/" in p:
         wr = hits(text, WORLD_RU)
         geo = hits(text, GEO)
@@ -359,7 +357,6 @@ def local_classify(source: Dict[str, Any], title: str, summary: str, link: str) 
             score += 8
             return "🧭 Геополитика", score, "геополитика: " + ", ".join(geo[:3])
         return None, 0, "мировая новость без нужной связи"
-
     if "/russia/" in p:
         inc = hits(text, INCIDENT)
         low = hits(text, LOW_RU)
@@ -381,7 +378,6 @@ def local_classify(source: Dict[str, Any], title: str, summary: str, link: str) 
             score += 10
             return "🇷🇺 Россия / внешняя политика", score, "внешняя повестка РФ: " + ", ".join(wr[:3])
         return None, 0, "russia без сильного признака"
-
     if "/business/" in p:
         eco = hits(text, RU_ECO)
         geo = hits(text, GEO)
@@ -392,7 +388,6 @@ def local_classify(source: Dict[str, Any], title: str, summary: str, link: str) 
             score += 8
             return "🇷🇺 Россия / экономика", score, "внешнеэкономический контекст: " + ", ".join(geo[:3])
         return None, 0, "business без высокой значимости"
-
     return None, 0, "не подходит"
 
 
@@ -400,7 +395,6 @@ def collect_candidates(state: Dict[str, Any]) -> List[Dict[str, Any]]:
     published_urls = set(state.get("published_urls", []))
     published_hashes = set(state.get("published_title_hashes", []))
     candidates: List[Dict[str, Any]] = []
-
     for source in SOURCES:
         log(f"Источник: {source['name']}")
         try:
@@ -408,26 +402,22 @@ def collect_candidates(state: Dict[str, Any]) -> List[Dict[str, Any]]:
         except Exception as exc:
             log(f"Ошибка источника {source['name']}: {exc}")
             continue
-
         for entry in feed.entries[:MAX_ENTRIES_PER_SOURCE]:
             title = clean_inline(entry.get("title", ""))
             summary_raw = str(entry.get("summary", "") or "")
             summary = clean_inline(summary_raw)
-            link = clean_inline(entry.get("link", ""))
+            original_link = clean_inline(entry.get("link", ""))
+            link = extract_direct_article_url(entry, original_link)
             if not title or not link:
                 continue
-
             hsh = title_hash(title)
             if link in published_urls or hsh in published_hashes:
                 continue
-
             category, score, reason = local_classify(source, title, summary, link)
             if not category or score < 70:
                 continue
-
             source_name = extract_source_name(entry, source["name"])
             image_url = extract_image_url(entry, summary_raw, link)
-
             candidates.append({
                 "id": len(candidates) + 1,
                 "source": source_name,
@@ -437,12 +427,12 @@ def collect_candidates(state: Dict[str, Any]) -> List[Dict[str, Any]]:
                 "score_hint": int(score),
                 "reason_hint": reason,
                 "title": title,
-                "summary": summary[:900],
+                "summary": summary[:1000],
                 "url": link,
+                "original_url": original_link,
                 "image_url": image_url,
                 "title_hash": hsh,
             })
-
     candidates.sort(key=lambda x: (CATEGORY_ORDER.get(x["category_hint"], 0), x["score_hint"]), reverse=True)
     return candidates[:MAX_CANDIDATES_FOR_LLM]
 
@@ -467,33 +457,23 @@ def build_llm_prompt(candidates: List[Dict[str, Any]]) -> str:
             "summary": c["summary"],
             "url": c["url"],
         })
-
     return (
-        "Ты главный редактор автоматического Telegram-канала SkySakhNews.\n"
-        "Нужно выбрать ровно 2 новости для публикации.\n\n"
+        "Ты редактор Telegram-канала SkySakhNews. Нужно выбрать ровно 2 новости.\n\n"
         "Баланс выпуска:\n"
-        "- если есть местная сахалинская новость, выбери 1 местную новость;\n"
-        "- вторую новость выбери из другого направления: Мир о России, Россия/политика, Россия/экономика, Геополитика или IT;\n"
-        "- две сахалинские новости выбирай только если нет сильной новости из других направлений.\n\n"
-        "Главные направления канала:\n"
-        "1) 📍 Сахалин: ЧП, ДТП, пожары, землетрясения, погода, отключения, важные локальные решения.\n"
-        "2) 🌍 Мир о России: США, ЕС, НАТО, G7, Китай, санкции, нефть/газ, активы РФ, Украина.\n"
-        "3) 🇷🇺 Россия / политика и экономика: федеральные решения, Кремль, МИД, Госдума, ЦБ, рубль, инфляция, бюджет, рынки.\n"
-        "4) 🧭 Геополитика: США-Китай, Иран, Израиль, Тайвань, G7/G20, войны, дипломатия, энергетика.\n"
-        "5) 💻 IT / технологии: ИИ, OpenAI, Google, Microsoft, NVIDIA, чипы, кибератаки, утечки, крупные платформы.\n\n"
-        "Строгие правила текста:\n"
-        "- покажи суть новости, а не общие фразы;\n"
-        "- обязательно сохраняй конкретику: цифры, даты, места, имена, должности, суммы, проценты, количество погибших/пострадавших;\n"
-        "- если новость про землетрясение — обязательно укажи магнитуду/баллы, район, дату и ощущалось ли, если это есть в title/summary;\n"
-        "- если магнитуды/баллов нет в title/summary, напиши: «магнитуда в RSS-описании не указана»;\n"
-        "- не повторяй заголовок внутри brief;\n"
-        "- не пиши одинаковые строки;\n"
-        "- запрещены фразы: «подробности будут уточняться», «по мере появления новых сообщений», «новость отобрана», «система отметила», «сейсмическая активность зафиксирована»;\n"
-        "- brief: 2–5 содержательных строк, только факты из title/summary/source, без выдумок;\n"
-        "- русский язык, без кликбейта.\n\n"
+        "- если есть местная сахалинская новость, выбери 1 местную;\n"
+        "- вторую выбери из другого направления: Мир о России, Россия/политика, Россия/экономика, Геополитика или IT;\n"
+        "- две сахалинские подряд бери только если нет сильной второй новости.\n\n"
+        "Формат текста как у новостного Telegram-канала, без служебных заголовков:\n"
+        "- title_ru: короткий русский заголовок, переведи английский заголовок на русский;\n"
+        "- body: 2-4 абзаца обычным текстом, без маркеров, без «Суть», без «Что известно», без «Почему важно»;\n"
+        "- body должен раскрывать факт новости: что произошло, где, когда, кто участники, цифры, последствия;\n"
+        "- обязательно сохраняй конкретику из title/summary: даты, места, имена, суммы, проценты, погибших/пострадавших;\n"
+        "- если новость про землетрясение — укажи магнитуду/баллы, район, дату и ощущалось ли, если это есть в title/summary;\n"
+        "- если цифр нет в title/summary, не выдумывай;\n"
+        "- запрещены пустые фразы: «подробности уточняются», «система отметила», «событие относится», «важно для жителей»;\n"
+        "- tone: сухой, новостной, как АСТВ/РИА/Mash, без канцелярита и без кликбейта.\n\n"
         "Верни строго JSON-массив без markdown:\n"
-        "[{\"id\":1,\"category\":\"📍 Сахалин\",\"title_ru\":\"...\",\"brief\":[\"строка 1\",\"строка 2\",\"строка 3\"],"
-        "\"hashtags\":[\"#Сахалин\",\"#ЧП\"],\"selection_reason\":\"...\"}]\n\n"
+        "[{\"id\":1,\"category\":\"📍 Сахалин\",\"title_ru\":\"...\",\"body\":[\"абзац 1\",\"абзац 2\",\"абзац 3\"],\"footer\":\"ЧП | САХАЛИН\"}]\n\n"
         f"Кандидаты:\n{json.dumps(compact, ensure_ascii=False)}"
     )
 
@@ -503,15 +483,14 @@ def call_openrouter(candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     if not api_key:
         raise RuntimeError("OPENROUTER_API_KEY is missing")
     model = os.environ.get("OPENROUTER_MODEL", "").strip() or DEFAULT_MODEL
-
     payload = {
         "model": model,
         "messages": [
             {"role": "system", "content": "Ты строгий редактор новостного Telegram-канала. Возвращай только валидный JSON."},
             {"role": "user", "content": build_llm_prompt(candidates)},
         ],
-        "temperature": 0.15,
-        "max_tokens": 1700,
+        "temperature": 0.14,
+        "max_tokens": 1900,
     }
     headers = {
         "Authorization": f"Bearer {api_key}",
@@ -572,76 +551,65 @@ def extract_numbers(text: str) -> List[str]:
     return clean[:5]
 
 
-def earthquake_brief(cand: Dict[str, Any]) -> Optional[List[str]]:
+def earthquake_body(cand: Dict[str, Any]) -> Optional[List[str]]:
     raw = clean_inline(f"{cand.get('title','')}. {cand.get('summary','')}")
     low = raw.lower()
     if "землетр" not in low and "магнитуд" not in low:
         return None
-
-    lines: List[str] = []
     date = re.search(rf"\b\d{{1,2}}\s+(?:{MONTHS_RU})\b", raw, flags=re.I)
     count = re.search(r"\b(\d+)\s+землетрясен\w*", raw, flags=re.I)
     mags = re.findall(r"(?:магнитуд[а-я]*\s*(?:до|около|примерно|составила|составило)?\s*|M\s*)(\d+[,.]?\d*)", raw, flags=re.I)
     points = re.findall(r"(\d+[,.]?\d*)\s*балл\w*", raw, flags=re.I)
     places = [p for p in SAKHALIN_GEO if p in low]
-
-    main = "В островном регионе"
+    first = "В островном регионе"
     if count:
-        main += f" сообщается о {count.group(1)} землетрясениях"
+        first += f" сообщили о {count.group(1)} землетрясениях"
     else:
-        main += " сообщается о землетрясении"
+        first += " сообщили о землетрясении"
     if date:
-        main += f" {date.group(0)}"
-    main += "."
-    lines.append(main)
-
-    if mags:
-        lines.append(f"Магнитуда по исходному сообщению: {', '.join(dict.fromkeys(mags[:3]))}.")
-    elif points:
-        lines.append(f"Оценка толчков по исходному сообщению: {', '.join(dict.fromkeys(points[:3]))} балла.")
-    else:
-        lines.append("Магнитуда/баллы в RSS-описании не указаны; точное значение нужно смотреть в источнике.")
-
+        first += f" {date.group(0)}"
     if places:
-        pretty = ", ".join(dict.fromkeys(places[:4]))
-        lines.append(f"Упомянутые районы/локации: {pretty}.")
-    if "ощути" in low:
-        lines.append("По сообщению источника, толчки ощущались жителями.")
+        first += f". В сообщении упоминаются {', '.join(dict.fromkeys(places[:4]))}"
+    first += "."
+    second_parts = []
+    if mags:
+        second_parts.append(f"магнитуда — {', '.join(dict.fromkeys(mags[:3]))}")
+    if points:
+        second_parts.append(f"ощущалось до {', '.join(dict.fromkeys(points[:3]))} балла")
+    if second_parts:
+        second = "По данным исходного сообщения, " + "; ".join(second_parts) + "."
+    else:
+        second = "Магнитуда и балльность в RSS-описании не указаны; точное значение нужно смотреть в первоисточнике."
+    result = [first, second]
+    if "ощути" in low and not points:
+        result.append("Источник отдельно отмечает, что толчки ощущались жителями.")
+    return result[:3]
 
-    return lines[:4]
 
-
-def fallback_brief(cand: Dict[str, Any], category: str) -> List[str]:
-    eq = earthquake_brief(cand)
+def fallback_body(cand: Dict[str, Any], category: str) -> List[str]:
+    eq = earthquake_body(cand)
     if eq:
         return eq
-
     title = clean_inline(cand.get("title", ""))
     summary = clean_inline(cand.get("summary", ""))
-    text = f"{title}. {summary}"
     facts = split_sentence_facts(summary)
-    nums = extract_numbers(text)
-
+    nums = extract_numbers(f"{title}. {summary}")
     result: List[str] = []
     for fact in facts:
         if not too_similar(fact, title):
             result.append(fact)
         if len(result) >= 3:
             break
-
-    if nums:
-        result.append("Ключевые данные: " + "; ".join(nums) + ".")
-
+    if nums and not any(any(num in line for num in nums) for line in result):
+        result.append("Ключевые данные сообщения: " + "; ".join(nums) + ".")
     if not result:
         result.append(title)
-
     return result[:4]
 
 
 def fallback_select(candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     local = [c for c in candidates if is_local(c)]
     other = [c for c in candidates if not is_local(c)]
-
     chosen: List[Dict[str, Any]] = []
     if local:
         chosen.append(local[0])
@@ -652,7 +620,6 @@ def fallback_select(candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             break
         if c not in chosen:
             chosen.append(c)
-
     result = []
     for c in chosen[:POSTS_PER_RUN]:
         category = c["category_hint"]
@@ -660,8 +627,8 @@ def fallback_select(candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             "id": c["id"],
             "category": category,
             "title_ru": c["title"],
-            "brief": fallback_brief(c, category),
-            "hashtags": HASHTAG_MAP.get(category, ["#Новости"]),
+            "body": fallback_body(c, category),
+            "footer": FOOTER_MAP.get(category, "НОВОСТИ"),
             "selection_reason": "fallback без LLM",
         })
     return result
@@ -671,7 +638,6 @@ def enforce_balance(selected: List[Dict[str, Any]], candidates: List[Dict[str, A
     by_id = {c["id"]: c for c in candidates}
     local_candidates = [c for c in candidates if is_local(c)]
     other_candidates = [c for c in candidates if not is_local(c)]
-
     cleaned = []
     used_ids = set()
     for item in selected:
@@ -684,33 +650,17 @@ def enforce_balance(selected: List[Dict[str, Any]], candidates: List[Dict[str, A
             used_ids.add(cid)
         if len(cleaned) >= POSTS_PER_RUN:
             break
-
     if local_candidates and other_candidates:
-        has_local = any(is_local(by_id.get(int(i.get("id")), {})) for i in cleaned if str(i.get("id", "")).isdigit())
-        has_other = any((not is_local(by_id.get(int(i.get("id")), {}))) for i in cleaned if str(i.get("id", "")).isdigit())
-
+        ids = [int(i.get("id")) for i in cleaned if str(i.get("id", "")).isdigit()]
+        has_local = any(is_local(by_id[i]) for i in ids if i in by_id)
+        has_other = any((not is_local(by_id[i])) for i in ids if i in by_id)
         if not has_local:
             c = local_candidates[0]
-            cleaned = [{
-                "id": c["id"], "category": c["category_hint"], "title_ru": c["title"],
-                "brief": fallback_brief(c, c["category_hint"]),
-                "hashtags": HASHTAG_MAP.get(c["category_hint"], ["#Новости"]),
-                "selection_reason": "добавлено для баланса: локальная новость",
-            }] + cleaned[:1]
-
+            cleaned = [{"id": c["id"], "category": c["category_hint"], "title_ru": c["title"], "body": fallback_body(c, c["category_hint"]), "footer": FOOTER_MAP.get(c["category_hint"], "НОВОСТИ")}] + cleaned[:1]
         if not has_other:
             c = other_candidates[0]
-            item = {
-                "id": c["id"], "category": c["category_hint"], "title_ru": c["title"],
-                "brief": fallback_brief(c, c["category_hint"]),
-                "hashtags": HASHTAG_MAP.get(c["category_hint"], ["#Новости"]),
-                "selection_reason": "добавлено для баланса: другое направление",
-            }
-            if cleaned:
-                cleaned = cleaned[:1] + [item]
-            else:
-                cleaned = [item]
-
+            item = {"id": c["id"], "category": c["category_hint"], "title_ru": c["title"], "body": fallback_body(c, c["category_hint"]), "footer": FOOTER_MAP.get(c["category_hint"], "НОВОСТИ")}
+            cleaned = cleaned[:1] + [item] if cleaned else [item]
     if len(cleaned) < POSTS_PER_RUN:
         fallback = fallback_select(candidates)
         for item in fallback:
@@ -718,25 +668,21 @@ def enforce_balance(selected: List[Dict[str, Any]], candidates: List[Dict[str, A
                 cleaned.append(item)
             if len(cleaned) >= POSTS_PER_RUN:
                 break
-
     return cleaned[:POSTS_PER_RUN]
 
 
-def prepare_brief_lines(value: Any, item: Dict[str, Any], cand: Dict[str, Any], category: str) -> List[str]:
+def prepare_body_lines(value: Any, item: Dict[str, Any], cand: Dict[str, Any], category: str) -> List[str]:
+    raw_lines: List[str] = []
     if isinstance(value, list):
         raw_lines = [clean_inline(x) for x in value if clean_inline(x)]
-    else:
-        text = clean_inline(value)
-        raw_lines = split_sentence_facts(text)
-
-    eq = earthquake_brief(cand)
+    elif value:
+        raw_lines = split_sentence_facts(clean_inline(value))
+    eq = earthquake_body(cand)
     if eq:
         raw_lines = eq + raw_lines
-
     title = clean_inline(item.get("title_ru") or cand.get("title") or "")
     result: List[str] = []
     seen = set()
-
     for line in raw_lines:
         line = line.strip("—-• ")
         low = line.lower()
@@ -750,115 +696,62 @@ def prepare_brief_lines(value: Any, item: Dict[str, Any], cand: Dict[str, Any], 
             continue
         seen.add(low)
         result.append(line)
-        if len(result) >= 5:
+        if len(result) >= 4:
             break
-
     if len(result) < 2:
-        for line in fallback_brief(cand, category):
+        for line in fallback_body(cand, category):
             low = line.lower()
             if low not in seen and not too_similar(line, title) and not any(v in low for v in VAGUE_LINES):
                 result.append(line)
                 seen.add(low)
-            if len(result) >= 4:
+            if len(result) >= 3:
                 break
-
-    return result[:5]
-
-
-def make_hashtags(category: str, model_tags: Any) -> str:
-    tags = []
-    if isinstance(model_tags, list):
-        tags.extend(str(t).strip() for t in model_tags if str(t).strip())
-    tags.extend(HASHTAG_MAP.get(category, ["#Новости"]))
-
-    clean_tags = []
-    seen = set()
-    for tag in tags:
-        tag = tag.replace(" ", "")
-        if not tag.startswith("#"):
-            tag = "#" + tag
-        tag = re.sub(r"[^#A-Za-zА-Яа-яЁё0-9_]", "", tag)
-        if len(tag) < 2:
-            continue
-        low = tag.lower()
-        if low in seen:
-            continue
-        seen.add(low)
-        clean_tags.append(tag)
-        if len(clean_tags) >= 4:
-            break
-    return " ".join(clean_tags)
+    return result[:4]
 
 
-def build_pretty_caption(item: Dict[str, Any], cand: Dict[str, Any], max_len: int = 1020) -> str:
+def build_news_post(item: Dict[str, Any], cand: Dict[str, Any], max_len: int = 3000) -> str:
     category = clean_inline(item.get("category") or cand["category_hint"])
     title = clean_inline(item.get("title_ru") or cand["title"])
-    brief = prepare_brief_lines(item.get("brief") or cand.get("summary") or "", item, cand, category)
-    hashtags = make_hashtags(category, item.get("hashtags"))
-    source = clean_inline(cand.get("source") or cand.get("source_group") or "Источник")
+    body = prepare_body_lines(item.get("body") or item.get("brief") or cand.get("summary") or "", item, cand, category)
+    footer = clean_inline(item.get("footer") or FOOTER_MAP.get(category, "НОВОСТИ"))
     url = cand["url"]
-
-    def render(lines: List[str]) -> str:
-        bullets = "\n".join(f"• {escape_html(x)}" for x in lines)
-        return (
-            f"{escape_html(category)}\n\n"
-            f"<b>{escape_html(title)}</b>\n\n"
-            f"<b>Суть:</b>\n{bullets}\n\n"
-            f"<a href=\"{escape_html(url)}\">Источник: {escape_html(source)}</a>\n"
-            f"{escape_html(hashtags)}"
-        )
-
-    caption = render(brief)
-
-    while len(caption) > max_len and len(brief) > 2:
-        brief = brief[:-1]
-        caption = render(brief)
-
-    if len(caption) > max_len:
-        short = []
-        for line in brief:
-            short.append(line[:150].rstrip() + "…" if len(line) > 153 else line)
-        caption = render(short)
-
-    return caption[:max_len]
+    paragraphs = "\n\n".join(escape_html(x) for x in body if x)
+    text = f"{escape_html(category)}\n\n<b>{escape_html(title)}</b>\n\n{paragraphs}\n\n{escape_html(footer)}\n{escape_html(url)}"
+    if len(text) <= max_len:
+        return text
+    body = body[:2]
+    paragraphs = "\n\n".join(escape_html(x[:450]) for x in body if x)
+    return f"{escape_html(category)}\n\n<b>{escape_html(title[:240])}</b>\n\n{paragraphs}\n\n{escape_html(footer)}\n{escape_html(url)}"[:max_len]
 
 
-def send_telegram_message(text: str) -> Dict[str, Any]:
+def send_telegram_post(text: str, preview_url: str) -> Dict[str, Any]:
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
     chat_id = os.environ.get("TELEGRAM_CHANNEL_ID", "").strip()
     if not token or not chat_id:
         raise RuntimeError("TELEGRAM_BOT_TOKEN or TELEGRAM_CHANNEL_ID is missing")
     url = f"https://api.telegram.org/bot{token}/sendMessage"
-    payload = {"chat_id": chat_id, "text": text, "parse_mode": "HTML", "disable_web_page_preview": False}
-    response = requests.post(url, data=payload, timeout=45)
+    payload = {
+        "chat_id": chat_id,
+        "text": text,
+        "parse_mode": "HTML",
+        "disable_web_page_preview": False,
+        "link_preview_options": json.dumps({
+            "is_disabled": False,
+            "url": preview_url,
+            "prefer_large_media": True,
+            "show_above_text": False,
+        }, ensure_ascii=False),
+    }
+    response = requests.post(url, data=payload, timeout=60)
     if response.status_code >= 400:
         raise RuntimeError(f"Telegram sendMessage HTTP {response.status_code}: {response.text[:1000]}")
     return response.json()
 
 
-def send_telegram_photo(photo_url: str, caption: str) -> Dict[str, Any]:
-    token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-    chat_id = os.environ.get("TELEGRAM_CHANNEL_ID", "").strip()
-    if not token or not chat_id:
-        raise RuntimeError("TELEGRAM_BOT_TOKEN or TELEGRAM_CHANNEL_ID is missing")
-    url = f"https://api.telegram.org/bot{token}/sendPhoto"
-    payload = {"chat_id": chat_id, "photo": photo_url, "caption": caption, "parse_mode": "HTML"}
-    response = requests.post(url, data=payload, timeout=60)
-    if response.status_code >= 400:
-        raise RuntimeError(f"Telegram sendPhoto HTTP {response.status_code}: {response.text[:1000]}")
-    return response.json()
-
-
 def publish_item(item: Dict[str, Any], cand: Dict[str, Any]) -> Dict[str, Any]:
-    caption = build_pretty_caption(item, cand)
-    image_url = cand.get("image_url") or fetch_og_image(cand.get("url", ""))
-    if image_url:
-        try:
-            log(f"Публикуем с картинкой: {image_url[:90]}")
-            return send_telegram_photo(image_url, caption)
-        except Exception as exc:
-            log(f"Картинка не отправилась, fallback на текст: {exc}")
-    return send_telegram_message(caption)
+    post = build_news_post(item, cand)
+    log(f"Публикуем текст с preview: {cand['url'][:90]}")
+    return send_telegram_post(post, cand["url"])
 
 
 def main() -> None:
@@ -866,12 +759,10 @@ def main() -> None:
     log("Сбор кандидатов")
     candidates = collect_candidates(state)
     log(f"Кандидатов после локального фильтра: {len(candidates)}")
-
     if not candidates:
         log("Нет кандидатов для публикации")
         save_state(state)
         return
-
     try:
         selected = call_openrouter(candidates)
         selected = enforce_balance(selected, candidates)
@@ -879,25 +770,20 @@ def main() -> None:
     except Exception as exc:
         log(f"OpenRouter недоступен, fallback: {exc}")
         selected = fallback_select(candidates)
-
     by_id = {c["id"]: c for c in candidates}
     published_count = 0
-
     for item in selected[:POSTS_PER_RUN]:
         try:
             cid = int(item.get("id"))
         except Exception:
             continue
-
         cand = by_id.get(cid)
         if not cand:
             continue
         if cand["url"] in state.get("published_urls", []):
             continue
-
         log(f"Публикация: {cand['category_hint']} | {cand['source']} | {cand['title'][:90]}")
         result = publish_item(item, cand)
-
         if result.get("ok"):
             state.setdefault("published_urls", []).append(cand["url"])
             state.setdefault("published_title_hashes", []).append(cand["title_hash"])
@@ -907,11 +793,9 @@ def main() -> None:
                 "category": item.get("category") or cand["category_hint"],
                 "title": item.get("title_ru") or cand["title"],
                 "url": cand["url"],
-                "with_image": bool(cand.get("image_url")),
             })
             published_count += 1
-            time.sleep(15)
-
+            time.sleep(12)
     log(f"Опубликовано: {published_count}")
     save_state(state)
 
