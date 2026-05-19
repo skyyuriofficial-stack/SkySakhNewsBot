@@ -37,7 +37,8 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
         run: |
-          python src/news_bot.py
+          python -m py_compile src/news_bot_v3.py
+          python src/news_bot_v3.py
 
       - name: Commit updated state
         run: |
