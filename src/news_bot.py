@@ -13,7 +13,6 @@ import feedparser
 
 STATE_PATH = "state.json"
 SAKHALIN_TZ = timezone(timedelta(hours=11))
-
 POSTS_PER_RUN = 2
 MAX_CANDIDATES = 36
 MAX_ENTRIES_PER_SOURCE = 16
@@ -44,7 +43,6 @@ FOOTER_MAP = {
 }
 
 MONTHS_RU = "января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря"
-
 VAGUE_PHRASES = [
     "подробности уточняются", "подробности будут уточняться", "по мере появления",
     "система отметила", "событие относится", "важно для жителей", "источник сообщения",
@@ -86,59 +84,50 @@ SAKHALIN_GEO = [
     "невельск", "оха", "долинск", "поронайск", "углегорск", "тымовское",
     "курил", "курильск", "южно-курильск", "северо-курильск",
 ]
-
 SAKHALIN_IMPORTANT = [
     "дтп", "пожар", "погиб", "погибли", "пострадал", "пострадали", "шторм", "циклон",
     "ураган", "землетрясение", "цунами", "отключение", "авария", "эвакуация", "мчс",
     "мвд", "перекрытие", "дорог", "света", "воды", "тепла", "ограб", "краж",
     "разыскивают", "суд", "задерж",
 ]
-
 INCIDENT = [
     "дтп", "авария", "пожар", "погиб", "погибли", "ранен", "ранены", "пострадал",
     "пострадали", "эвакуация", "взрыв", "обрушение", "землетрясение", "цунами", "шторм",
     "циклон", "ураган", "ограб", "краж", "разыскивают", "killed", "dead", "explosion",
     "earthquake", "evacuation",
 ]
-
 RU_POL = [
     "кремль", "песков", "путин", "лавров", "мишустин", "госдума", "мид", "минобороны",
     "правительство", "президент", "совбез", "законопроект", "kremlin", "putin", "lavrov", "moscow",
 ]
-
 RU_ECO = [
     "цб", "центробанк", "ставка", "ключевая ставка", "инфляция", "рубль", "бюджет",
     "минфин", "банк", "нефть", "газ", "экономика", "санкц", "экспорт", "импорт",
     "oil", "gas", "ruble", "rouble", "central bank", "inflation", "budget", "economy", "sanction",
 ]
-
 WORLD_RU = [
     "russia", "russian", "moscow", "kremlin", "россия", "рф", "российск", "москва", "кремль",
     "ukraine", "украина", "украин", "nato", "нато", "sanctions against russia", "санкции против россии",
     "санкции против рф", "russian assets", "russian oil", "russian gas", "российская нефть",
     "российский газ", "замороженные активы",
 ]
-
 GEO = [
     "usa", "u.s.", "сша", "china", "китай", "iran", "иран", "israel", "израиль",
     "taiwan", "тайвань", "g7", "g20", "оон", "un ", "nato", "нато", "war", "война",
     "conflict", "конфликт", "sanction", "санкц", "election", "выборы", "oil", "нефть",
     "gas", "газ", "eu ", "ес ", "japan", "korea", "france", "germany", "britain",
 ]
-
 IT_BIG = [
     "openai", "anthropic", "google", "microsoft", "apple", "meta", "nvidia", "ai",
     "artificial intelligence", "искусственный интеллект", "ии", "нейросет", "llm", "chip", "chips",
     "semiconductor", "чип", "процессор", "cyberattack", "кибератака", "data breach", "утечка",
     "telegram", "android", "ios", "robot", "робот", "cloud", "model", "модель",
 ]
-
 IT_NOISE = [
     "геймдев", "шрифт", "собеседование", "личный опыт", "как мы сделали", "1с", "r-keeper",
     "ресторан", "игру", "игра", "менеджмент", "команда", "frontend", "backend", "c++",
     "javascript", "python",
 ]
-
 LOW_RU = ["аэропорт", "самокат", "регламент", "спорт", "турнир", "матч", "выставка", "фестиваль", "конкурс", "рейтинг"]
 
 
@@ -238,6 +227,59 @@ def extract_source_name(entry: Any, fallback: str) -> str:
     return fallback.replace(" / Google News", "")
 
 
+def extract_image_url(entry: Any, summary_raw: str, link: str) -> Optional[str]:
+    for key in ("media_thumbnail", "media_content"):
+        media = entry.get(key)
+        if isinstance(media, list):
+            for m in media:
+                if isinstance(m, dict) and m.get("url"):
+                    img = normalize_url(str(m["url"]), link)
+                    if img:
+                        return img
+    links = entry.get("links")
+    if isinstance(links, list):
+        for item in links:
+            if not isinstance(item, dict):
+                continue
+            href = str(item.get("href", ""))
+            typ = str(item.get("type", ""))
+            rel = str(item.get("rel", ""))
+            if href and ("image" in typ or rel in ("enclosure", "thumbnail")):
+                img = normalize_url(href, link)
+                if img:
+                    return img
+    m = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', summary_raw or "", flags=re.I)
+    if m:
+        return normalize_url(m.group(1), link)
+    return None
+
+
+def fetch_og_image(url: str) -> Optional[str]:
+    if not url or is_google_news_url(url):
+        return None
+    try:
+        headers = {"User-Agent": "Mozilla/5.0 SkySakhNewsBot/1.0"}
+        r = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
+        if r.status_code >= 400:
+            return None
+        page = r.text[:600000]
+        patterns = [
+            r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']',
+            r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']',
+            r'<meta[^>]+name=["\']twitter:image["\'][^>]+content=["\']([^"\']+)["\']',
+            r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+name=["\']twitter:image["\']',
+        ]
+        for pattern in patterns:
+            m = re.search(pattern, page, flags=re.I)
+            if m:
+                img = normalize_url(m.group(1), url)
+                if img:
+                    return img
+    except Exception as exc:
+        log(f"OG image не извлечён: {exc}")
+    return None
+
+
 def term_matches(text: str, term: str) -> bool:
     text = (text or "").lower()
     term = (term or "").lower().strip()
@@ -293,13 +335,11 @@ def local_classify(source: Dict[str, Any], title: str, summary: str, link: str) 
     p = path_of(link)
     sg = hits(text, SAKHALIN_GEO)
     si = hits(text, SAKHALIN_IMPORTANT)
-
     if stype == "sakhalin" or sg:
         score += 18
         if si:
             score += 18
         return "📍 Сахалин", score, "локальная сахалинская повестка"
-
     if stype in ("it_ru", "world_it"):
         big = hits(text, IT_BIG)
         noise = hits(text, IT_NOISE)
@@ -309,7 +349,6 @@ def local_classify(source: Dict[str, Any], title: str, summary: str, link: str) 
         if noise:
             score -= 25
         return "💻 IT / технологии", score, "крупная технологическая повестка"
-
     if stype == "world_authority" or "/world/" in p:
         wr = hits(text, WORLD_RU)
         geo = hits(text, GEO)
@@ -320,7 +359,6 @@ def local_classify(source: Dict[str, Any], title: str, summary: str, link: str) 
             score += 8
             return "🧭 Геополитика", score, "геополитика"
         return None, 0, "мировая новость без нужной связи"
-
     if "/russia/" in p:
         inc = hits(text, INCIDENT)
         low = hits(text, LOW_RU)
@@ -342,7 +380,6 @@ def local_classify(source: Dict[str, Any], title: str, summary: str, link: str) 
             score += 10
             return "🇷🇺 Россия / внешняя политика", score, "внешняя повестка РФ"
         return None, 0, "russia без сильного признака"
-
     if "/business/" in p:
         eco = hits(text, RU_ECO)
         geo = hits(text, GEO)
@@ -350,7 +387,6 @@ def local_classify(source: Dict[str, Any], title: str, summary: str, link: str) 
             score += 10
             return "🇷🇺 Россия / экономика", score, "экономика"
         return None, 0, "business без высокой значимости"
-
     return None, 0, "не подходит"
 
 
@@ -358,7 +394,6 @@ def collect_candidates(state: Dict[str, Any]) -> List[Dict[str, Any]]:
     published_urls = set(state.get("published_urls", []))
     published_hashes = set(state.get("published_title_hashes", []))
     candidates: List[Dict[str, Any]] = []
-
     for source in SOURCES:
         log(f"Источник: {source['name']}")
         try:
@@ -366,7 +401,6 @@ def collect_candidates(state: Dict[str, Any]) -> List[Dict[str, Any]]:
         except Exception as exc:
             log(f"Ошибка источника {source['name']}: {exc}")
             continue
-
         for entry in feed.entries[:MAX_ENTRIES_PER_SOURCE]:
             title = clean_inline(entry.get("title", ""))
             summary_raw = str(entry.get("summary", "") or "")
@@ -381,6 +415,7 @@ def collect_candidates(state: Dict[str, Any]) -> List[Dict[str, Any]]:
             category, score, reason = local_classify(source, title, summary, link)
             if not category or score < 70:
                 continue
+            image_url = extract_image_url(entry, summary_raw, link)
             candidates.append({
                 "id": len(candidates) + 1,
                 "source": extract_source_name(entry, source["name"]),
@@ -393,34 +428,24 @@ def collect_candidates(state: Dict[str, Any]) -> List[Dict[str, Any]]:
                 "summary": summary[:1100],
                 "url": link,
                 "original_url": original_link,
+                "image_url": image_url,
                 "title_hash": hsh,
             })
-
     candidates.sort(key=lambda x: (CATEGORY_ORDER.get(x["category_hint"], 0), x["score_hint"]), reverse=True)
     return candidates[:MAX_CANDIDATES]
 
 
 def is_local(cand: Dict[str, Any]) -> bool:
     return cand.get("category_hint") in ("📍 Сахалин", "🚨 ЧП / происшествия") and (
-        cand.get("source_type") == "sakhalin"
-        or bool(hits(f"{cand.get('title','')} {cand.get('summary','')}", SAKHALIN_GEO))
+        cand.get("source_type") == "sakhalin" or bool(hits(f"{cand.get('title','')} {cand.get('summary','')}", SAKHALIN_GEO))
     )
 
 
 def build_llm_prompt(candidates: List[Dict[str, Any]]) -> str:
-    compact = [{
-        "id": c["id"],
-        "source": c["source"],
-        "category_hint": c["category_hint"],
-        "score_hint": c["score_hint"],
-        "title": c["title"],
-        "summary": c["summary"],
-        "url": c["url"],
-    } for c in candidates]
-
+    compact = [{"id": c["id"], "source": c["source"], "category_hint": c["category_hint"], "score_hint": c["score_hint"], "title": c["title"], "summary": c["summary"], "url": c["url"]} for c in candidates]
     return (
-        "Ты редактор Telegram-канала SkySakhNews. Выбери ровно 2 новости.\n\n"
-        "Баланс: если есть Сахалин/ЧП — одна новость локальная; вторая — другое направление: Мир о России, Россия, геополитика или IT.\n\n"
+        "Ты редактор Telegram-канала SkySakhNews. Выбери ровно 2 новости.\n"
+        "Баланс: если есть Сахалин/ЧП — одна новость локальная; вторая — другое направление: Мир о России, Россия, геополитика или IT.\n"
         "Пиши как обычный Telegram-новостник: заголовок + 2-4 абзаца. Никаких служебных блоков, маркеров, слов 'Суть', 'Источник:', 'Что известно'.\n"
         "Заголовок обязательно на русском. Английские заголовки переводи.\n"
         "Абзацы должны раскрывать суть: что произошло, где, когда, кто участники, цифры, последствия.\n"
@@ -439,21 +464,8 @@ def call_openrouter(candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     if not api_key:
         raise RuntimeError("OPENROUTER_API_KEY is missing")
     model = os.environ.get("OPENROUTER_MODEL", "").strip() or DEFAULT_MODEL
-    payload = {
-        "model": model,
-        "messages": [
-            {"role": "system", "content": "Ты строгий редактор новостного Telegram-канала. Возвращай только валидный JSON."},
-            {"role": "user", "content": build_llm_prompt(candidates)},
-        ],
-        "temperature": 0.12,
-        "max_tokens": 1900,
-    }
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json",
-        "HTTP-Referer": "https://t.me/SkySakhNews",
-        "X-OpenRouter-Title": "SkySakhNews",
-    }
+    payload = {"model": model, "messages": [{"role": "system", "content": "Ты строгий редактор новостного Telegram-канала. Возвращай только валидный JSON."}, {"role": "user", "content": build_llm_prompt(candidates)}], "temperature": 0.12, "max_tokens": 1900}
+    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json", "HTTP-Referer": "https://t.me/SkySakhNews", "X-OpenRouter-Title": "SkySakhNews"}
     r = requests.post(OPENROUTER_URL, headers=headers, json=payload, timeout=90)
     if r.status_code >= 400:
         raise RuntimeError(f"OpenRouter HTTP {r.status_code}: {r.text[:1000]}")
@@ -492,7 +504,6 @@ def earthquake_body(cand: Dict[str, Any]) -> Optional[List[str]]:
     mags = re.findall(r"(?:магнитуд[а-я]*\s*(?:до|около|примерно|составила|составило)?\s*|M\s*)(\d+[,.]?\d*)", raw, flags=re.I)
     points = re.findall(r"(\d+[,.]?\d*)\s*балл\w*", raw, flags=re.I)
     places = [p for p in SAKHALIN_GEO if p in low]
-
     first = "В островном регионе"
     first += f" сообщили о {count.group(1)} землетрясениях" if count else " сообщили о землетрясении"
     if date:
@@ -500,7 +511,6 @@ def earthquake_body(cand: Dict[str, Any]) -> Optional[List[str]]:
     if places:
         first += f". В сообщении упоминаются {', '.join(dict.fromkeys(places[:4]))}"
     first += "."
-
     details = []
     if mags:
         details.append(f"магнитуда — {', '.join(dict.fromkeys(mags[:3]))}")
@@ -519,9 +529,7 @@ def fallback_body(cand: Dict[str, Any]) -> List[str]:
     lines = []
     for sentence in split_sentences(summary):
         low = sentence.lower()
-        if any(v in low for v in VAGUE_PHRASES):
-            continue
-        if too_similar(sentence, title):
+        if any(v in low for v in VAGUE_PHRASES) or too_similar(sentence, title):
             continue
         lines.append(sentence)
         if len(lines) >= 3:
@@ -529,66 +537,6 @@ def fallback_body(cand: Dict[str, Any]) -> List[str]:
     if not lines:
         lines = [title]
     return lines[:3]
-
-
-def fallback_select(candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    local = [c for c in candidates if is_local(c)]
-    other = [c for c in candidates if not is_local(c)]
-    chosen: List[Dict[str, Any]] = []
-    if local:
-        chosen.append(local[0])
-    if other and len(chosen) < POSTS_PER_RUN:
-        chosen.append(other[0])
-    for c in candidates:
-        if len(chosen) >= POSTS_PER_RUN:
-            break
-        if c not in chosen:
-            chosen.append(c)
-    return [{
-        "id": c["id"],
-        "category": c["category_hint"],
-        "title_ru": russianize_title(c.get("title", ""), c["category_hint"]),
-        "body": fallback_body(c),
-        "footer": FOOTER_MAP.get(c["category_hint"], "НОВОСТИ"),
-    } for c in chosen[:POSTS_PER_RUN]]
-
-
-def enforce_balance(selected: List[Dict[str, Any]], candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    by_id = {c["id"]: c for c in candidates}
-    cleaned = []
-    used = set()
-    for item in selected:
-        try:
-            cid = int(item.get("id"))
-        except Exception:
-            continue
-        if cid in by_id and cid not in used:
-            cleaned.append(item)
-            used.add(cid)
-        if len(cleaned) >= POSTS_PER_RUN:
-            break
-
-    local = [c for c in candidates if is_local(c)]
-    other = [c for c in candidates if not is_local(c)]
-    if local and other:
-        ids = [int(x.get("id")) for x in cleaned if str(x.get("id", "")).isdigit()]
-        has_local = any(i in by_id and is_local(by_id[i]) for i in ids)
-        has_other = any(i in by_id and not is_local(by_id[i]) for i in ids)
-        if not has_local:
-            c = local[0]
-            cleaned = [{"id": c["id"], "category": c["category_hint"], "title_ru": russianize_title(c["title"], c["category_hint"]), "body": fallback_body(c), "footer": FOOTER_MAP.get(c["category_hint"], "НОВОСТИ")}] + cleaned[:1]
-        if not has_other:
-            c = other[0]
-            item = {"id": c["id"], "category": c["category_hint"], "title_ru": russianize_title(c["title"], c["category_hint"]), "body": fallback_body(c), "footer": FOOTER_MAP.get(c["category_hint"], "НОВОСТИ")}
-            cleaned = cleaned[:1] + [item] if cleaned else [item]
-
-    if len(cleaned) < POSTS_PER_RUN:
-        for item in fallback_select(candidates):
-            if item.get("id") not in {x.get("id") for x in cleaned}:
-                cleaned.append(item)
-            if len(cleaned) >= POSTS_PER_RUN:
-                break
-    return cleaned[:POSTS_PER_RUN]
 
 
 def russianize_title(title: str, category: str) -> str:
@@ -611,17 +559,67 @@ def russianize_title(title: str, category: str) -> str:
     return "Международные СМИ сообщили о новом событии"
 
 
+def fallback_select(candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    local = [c for c in candidates if is_local(c)]
+    other = [c for c in candidates if not is_local(c)]
+    chosen: List[Dict[str, Any]] = []
+    if local:
+        chosen.append(local[0])
+    if other and len(chosen) < POSTS_PER_RUN:
+        chosen.append(other[0])
+    for c in candidates:
+        if len(chosen) >= POSTS_PER_RUN:
+            break
+        if c not in chosen:
+            chosen.append(c)
+    return [{"id": c["id"], "category": c["category_hint"], "title_ru": russianize_title(c.get("title", ""), c["category_hint"]), "body": fallback_body(c), "footer": FOOTER_MAP.get(c["category_hint"], "НОВОСТИ")} for c in chosen[:POSTS_PER_RUN]]
+
+
+def enforce_balance(selected: List[Dict[str, Any]], candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    by_id = {c["id"]: c for c in candidates}
+    cleaned = []
+    used = set()
+    for item in selected:
+        try:
+            cid = int(item.get("id"))
+        except Exception:
+            continue
+        if cid in by_id and cid not in used:
+            cleaned.append(item)
+            used.add(cid)
+        if len(cleaned) >= POSTS_PER_RUN:
+            break
+    local = [c for c in candidates if is_local(c)]
+    other = [c for c in candidates if not is_local(c)]
+    if local and other:
+        ids = [int(x.get("id")) for x in cleaned if str(x.get("id", "")).isdigit()]
+        has_local = any(i in by_id and is_local(by_id[i]) for i in ids)
+        has_other = any(i in by_id and not is_local(by_id[i]) for i in ids)
+        if not has_local:
+            c = local[0]
+            cleaned = [{"id": c["id"], "category": c["category_hint"], "title_ru": russianize_title(c["title"], c["category_hint"]), "body": fallback_body(c), "footer": FOOTER_MAP.get(c["category_hint"], "НОВОСТИ")}] + cleaned[:1]
+        if not has_other:
+            c = other[0]
+            item = {"id": c["id"], "category": c["category_hint"], "title_ru": russianize_title(c["title"], c["category_hint"]), "body": fallback_body(c), "footer": FOOTER_MAP.get(c["category_hint"], "НОВОСТИ")}
+            cleaned = cleaned[:1] + [item] if cleaned else [item]
+    if len(cleaned) < POSTS_PER_RUN:
+        for item in fallback_select(candidates):
+            if item.get("id") not in {x.get("id") for x in cleaned}:
+                cleaned.append(item)
+            if len(cleaned) >= POSTS_PER_RUN:
+                break
+    return cleaned[:POSTS_PER_RUN]
+
+
 def prepare_body(value: Any, item: Dict[str, Any], cand: Dict[str, Any]) -> List[str]:
     raw = []
     if isinstance(value, list):
         raw = [clean_inline(x) for x in value if clean_inline(x)]
     elif value:
         raw = split_sentences(clean_inline(value))
-
     eq = earthquake_body(cand)
     if eq:
         raw = eq + raw
-
     title = clean_inline(item.get("title_ru") or cand.get("title") or "")
     result = []
     seen = set()
@@ -629,9 +627,7 @@ def prepare_body(value: Any, item: Dict[str, Any], cand: Dict[str, Any]) -> List
         low = line.lower()
         if not line or low in seen:
             continue
-        if any(v in low for v in VAGUE_PHRASES):
-            continue
-        if too_similar(line, title):
+        if any(v in low for v in VAGUE_PHRASES) or too_similar(line, title):
             continue
         seen.add(low)
         result.append(line)
@@ -656,42 +652,26 @@ def build_news_post(item: Dict[str, Any], cand: Dict[str, Any], max_len: int = 3
     source = clean_inline(cand.get("source") or cand.get("source_group") or "Источник")
     url = cand["url"]
     url_attr = escape_attr(url)
-
     paragraphs = "\n\n".join(escape_html(x) for x in body if x)
     footer_line = f"{escape_html(footer)} · <a href=\"{url_attr}\">{escape_html(source)}</a>"
     hidden_preview_link = f"<a href=\"{url_attr}\">&#8205;</a>"
     text = f"{escape_html(category)}\n\n<b>{escape_html(title)}</b>\n\n{paragraphs}\n\n{footer_line}\n{hidden_preview_link}"
-
     if len(text) <= max_len:
         return text, url
-
-    paragraphs = "\n\n".join(escape_html(x[:420]) for x in body[:2] if x)
-    text = f"{escape_html(category)}\n\n<b>{escape_html(title[:240])}</b>\n\n{paragraphs}\n\n{footer_line}\n{hidden_preview_link}"
+    paragraphs = "\n\n".join(escape_html(x[:360]) for x in body[:2] if x)
+    text = f"{escape_html(category)}\n\n<b>{escape_html(title[:220])}</b>\n\n{paragraphs}\n\n{footer_line}\n{hidden_preview_link}"
     return text[:max_len], url
 
 
-def send_telegram_post(text: str, preview_url: str) -> Dict[str, Any]:
+def send_telegram_message(text: str, preview_url: str) -> Dict[str, Any]:
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
     chat_id = os.environ.get("TELEGRAM_CHANNEL_ID", "").strip()
     if not token or not chat_id:
         raise RuntimeError("TELEGRAM_BOT_TOKEN or TELEGRAM_CHANNEL_ID is missing")
-
     url = f"https://api.telegram.org/bot{token}/sendMessage"
-    payload = {
-        "chat_id": chat_id,
-        "text": text,
-        "parse_mode": "HTML",
-        "disable_web_page_preview": False,
-        "link_preview_options": json.dumps({
-            "is_disabled": False,
-            "url": preview_url,
-            "prefer_large_media": True,
-            "show_above_text": False,
-        }, ensure_ascii=False),
-    }
+    payload = {"chat_id": chat_id, "text": text, "parse_mode": "HTML", "disable_web_page_preview": False, "link_preview_options": json.dumps({"is_disabled": False, "url": preview_url, "prefer_large_media": True, "show_above_text": False}, ensure_ascii=False)}
     r = requests.post(url, data=payload, timeout=60)
     if r.status_code >= 400:
-        # fallback for older Telegram behavior
         payload.pop("link_preview_options", None)
         r = requests.post(url, data=payload, timeout=60)
     if r.status_code >= 400:
@@ -699,10 +679,31 @@ def send_telegram_post(text: str, preview_url: str) -> Dict[str, Any]:
     return r.json()
 
 
+def send_telegram_photo(photo_url: str, caption: str) -> Dict[str, Any]:
+    token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    chat_id = os.environ.get("TELEGRAM_CHANNEL_ID", "").strip()
+    if not token or not chat_id:
+        raise RuntimeError("TELEGRAM_BOT_TOKEN or TELEGRAM_CHANNEL_ID is missing")
+    url = f"https://api.telegram.org/bot{token}/sendPhoto"
+    payload = {"chat_id": chat_id, "photo": photo_url, "caption": caption, "parse_mode": "HTML"}
+    r = requests.post(url, data=payload, timeout=75)
+    if r.status_code >= 400:
+        raise RuntimeError(f"Telegram sendPhoto HTTP {r.status_code}: {r.text[:1000]}")
+    return r.json()
+
+
 def publish_item(item: Dict[str, Any], cand: Dict[str, Any]) -> Dict[str, Any]:
-    post, preview_url = build_news_post(item, cand)
-    log(f"Публикуем новостной пост с preview: {preview_url[:90]}")
-    return send_telegram_post(post, preview_url)
+    image_url = cand.get("image_url") or fetch_og_image(cand.get("url", ""))
+    if image_url:
+        caption, preview_url = build_news_post(item, cand, max_len=980)
+        try:
+            log(f"Публикуем новостную карточку с картинкой: {image_url[:90]}")
+            return send_telegram_photo(image_url, caption)
+        except Exception as exc:
+            log(f"Картинка не отправилась, отправляем текст с preview: {exc}")
+    post, preview_url = build_news_post(item, cand, max_len=3000)
+    log(f"Публикуем текст с preview: {preview_url[:90]}")
+    return send_telegram_message(post, preview_url)
 
 
 def main() -> None:
@@ -714,14 +715,12 @@ def main() -> None:
         log("Нет кандидатов для публикации")
         save_state(state)
         return
-
     try:
         selected = enforce_balance(call_openrouter(candidates), candidates)
         log(f"OpenRouter выбрал новостей после балансировки: {len(selected)}")
     except Exception as exc:
         log(f"OpenRouter недоступен, fallback: {exc}")
         selected = fallback_select(candidates)
-
     by_id = {c["id"]: c for c in candidates}
     published_count = 0
     for item in selected[:POSTS_PER_RUN]:
@@ -737,13 +736,7 @@ def main() -> None:
         if result.get("ok"):
             state.setdefault("published_urls", []).append(cand["url"])
             state.setdefault("published_title_hashes", []).append(cand["title_hash"])
-            state.setdefault("last_posts", []).append({
-                "time_sakhalin": datetime.now(SAKHALIN_TZ).isoformat(timespec="seconds"),
-                "source": cand["source"],
-                "category": item.get("category") or cand["category_hint"],
-                "title": item.get("title_ru") or cand["title"],
-                "url": cand["url"],
-            })
+            state.setdefault("last_posts", []).append({"time_sakhalin": datetime.now(SAKHALIN_TZ).isoformat(timespec="seconds"), "source": cand["source"], "category": item.get("category") or cand["category_hint"], "title": item.get("title_ru") or cand["title"], "url": cand["url"], "with_image": bool(cand.get("image_url"))})
             published_count += 1
             time.sleep(12)
     log(f"Опубликовано: {published_count}")
