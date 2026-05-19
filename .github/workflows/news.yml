@@ -38,8 +38,8 @@ jobs:
           OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
           IMAGE_REQUIRED: "0"
         run: |
-          python -m py_compile src/news_bot_v10.py
-          python src/news_bot_v10.py
+          python -m py_compile src/news_bot_v11.py
+          python src/news_bot_v11.py
 
       - name: Commit updated state
         run: |
