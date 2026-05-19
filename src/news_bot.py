@@ -17,9 +17,33 @@ SAKHALIN_TZ = timezone(timedelta(hours=11))
 POSTS_PER_RUN = 2
 MAX_CANDIDATES_FOR_LLM = 28
 MAX_ENTRIES_PER_SOURCE = 12
+REQUEST_TIMEOUT = 35
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 DEFAULT_MODEL = "openrouter/free"
+
+
+CATEGORY_ORDER = {
+    "📍 Сахалин": 100,
+    "🚨 ЧП / происшествия": 94,
+    "🌍 Мир о России": 90,
+    "🇷🇺 Россия / политика": 82,
+    "🇷🇺 Россия / экономика": 80,
+    "🇷🇺 Россия / внешняя политика": 78,
+    "🧭 Геополитика": 72,
+    "💻 IT / технологии": 66,
+}
+
+HASHTAG_MAP = {
+    "📍 Сахалин": ["#Сахалин", "#ЮжноСахалинск"],
+    "🚨 ЧП / происшествия": ["#ЧП", "#Происшествия"],
+    "🌍 Мир о России": ["#Россия", "#МирОРоссии", "#Геополитика"],
+    "🇷🇺 Россия / политика": ["#Россия", "#Политика"],
+    "🇷🇺 Россия / экономика": ["#Россия", "#Экономика"],
+    "🇷🇺 Россия / внешняя политика": ["#Россия", "#ВнешняяПолитика"],
+    "🧭 Геополитика": ["#Геополитика", "#Мир"],
+    "💻 IT / технологии": ["#IT", "#Технологии"],
+}
 
 
 def google_news_rss(query: str, lang: str = "en", country: str = "US") -> str:
@@ -28,9 +52,8 @@ def google_news_rss(query: str, lang: str = "en", country: str = "US") -> str:
 
 
 SOURCES = [
-    # Сахалин — отдельный приоритетный поток
     {
-        "name": "Sakhalin Local / Google News",
+        "name": "Sakhalin Google News",
         "type": "sakhalin",
         "url": google_news_rss(
             "Сахалин OR Южно-Сахалинск OR Холмск OR Корсаков OR Анива OR Невельск OR Оха "
@@ -40,24 +63,20 @@ SOURCES = [
         ),
         "weight": 98,
     },
-
-    # Россия
     {
         "name": "Interfax",
         "type": "ru_general",
         "url": "https://www.interfax.ru/rss.asp",
         "weight": 78,
     },
-
-    # Авторитетные мировые СМИ через Google News
     {
-        "name": "Reuters / Google News",
+        "name": "Reuters",
         "type": "world_authority",
         "url": google_news_rss("site:reuters.com Russia Ukraine sanctions NATO China G7 oil gas"),
         "weight": 96,
     },
     {
-        "name": "AP News / Google News",
+        "name": "AP News",
         "type": "world_authority",
         "url": google_news_rss("site:apnews.com Russia Ukraine sanctions NATO China G7 oil gas"),
         "weight": 94,
@@ -74,8 +93,6 @@ SOURCES = [
         "url": "https://www.theguardian.com/world/rss",
         "weight": 82,
     },
-
-    # IT
     {
         "name": "BBC Technology",
         "type": "world_it",
@@ -95,7 +112,6 @@ SOURCES = [
         "weight": 48,
     },
 ]
-
 
 SAKHALIN_GEO = [
     "сахалин", "южно-сахалинск", "сахалинская область", "холмск", "корсаков",
@@ -165,44 +181,112 @@ LOW_RU = [
     "выставка", "фестиваль", "конкурс", "рейтинг",
 ]
 
-CATEGORY_ORDER = {
-    "📍 Сахалин": 100,
-    "🚨 ЧП / происшествия": 94,
-    "🌍 Мир о России": 90,
-    "🇷🇺 Россия / политика": 82,
-    "🇷🇺 Россия / экономика": 80,
-    "🇷🇺 Россия / внешняя политика": 78,
-    "🧭 Геополитика": 72,
-    "💻 IT / технологии": 66,
-}
-
 
 def log(message: str) -> None:
     now = datetime.now(SAKHALIN_TZ).strftime("%Y-%m-%d %H:%M:%S")
     print(f"[{now} SAKH] {message}", flush=True)
 
 
-def clean_text(value: Any) -> str:
+def clean_inline(value: Any) -> str:
     text = html.unescape(str(value or ""))
     text = re.sub(r"<[^>]+>", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
     return text
 
 
+def escape_html(value: Any) -> str:
+    return html.escape(str(value or ""), quote=False)
+
+
+def normalize_image_url(url: str, base_url: str = "") -> Optional[str]:
+    if not url:
+        return None
+    url = html.unescape(str(url).strip())
+    if url.startswith("//"):
+        url = "https:" + url
+    if base_url and url.startswith("/"):
+        url = urllib.parse.urljoin(base_url, url)
+    if not url.startswith(("http://", "https://")):
+        return None
+    return url
+
+
+def extract_source_name(entry: Any, fallback: str) -> str:
+    source = entry.get("source")
+    if isinstance(source, dict) and source.get("title"):
+        return clean_inline(source.get("title"))
+    try:
+        if getattr(source, "title", None):
+            return clean_inline(source.title)
+    except Exception:
+        pass
+    return fallback.replace(" / Google News", "")
+
+
+def extract_image_url(entry: Any, summary_raw: str, link: str) -> Optional[str]:
+    for key in ("media_thumbnail", "media_content"):
+        media = entry.get(key)
+        if isinstance(media, list):
+            for m in media:
+                if isinstance(m, dict) and m.get("url"):
+                    img = normalize_image_url(str(m["url"]), link)
+                    if img:
+                        return img
+
+    links = entry.get("links")
+    if isinstance(links, list):
+        for item in links:
+            if not isinstance(item, dict):
+                continue
+            href = str(item.get("href", ""))
+            typ = str(item.get("type", ""))
+            rel = str(item.get("rel", ""))
+            if href and ("image" in typ or rel in ("enclosure", "thumbnail")):
+                img = normalize_image_url(href, link)
+                if img:
+                    return img
+
+    m = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', summary_raw or "", flags=re.I)
+    if m:
+        return normalize_image_url(m.group(1), link)
+
+    return None
+
+
+def fetch_og_image(url: str) -> Optional[str]:
+    if not url or "news.google.com" in url:
+        return None
+    try:
+        headers = {"User-Agent": "Mozilla/5.0 SkySakhNewsBot/1.0"}
+        r = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
+        if r.status_code >= 400:
+            return None
+        text = r.text[:500000]
+        patterns = [
+            r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']',
+            r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']',
+            r'<meta[^>]+name=["\']twitter:image["\'][^>]+content=["\']([^"\']+)["\']',
+            r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+name=["\']twitter:image["\']',
+        ]
+        for p in patterns:
+            m = re.search(p, text, flags=re.I)
+            if m:
+                return normalize_image_url(m.group(1), url)
+    except Exception:
+        return None
+    return None
+
+
 def term_matches(text: str, term: str) -> bool:
     text = (text or "").lower()
     term = (term or "").lower().strip()
-
     if not term:
         return False
-
     if " " in term or "-" in term:
         return term in text
-
     if len(term) <= 3:
         pattern = r"(?<![0-9a-zа-яё_])" + re.escape(term) + r"(?![0-9a-zа-яё_])"
         return re.search(pattern, text, flags=re.IGNORECASE) is not None
-
     return term in text
 
 
@@ -225,10 +309,8 @@ def title_hash(title: str) -> str:
 def load_state() -> Dict[str, Any]:
     if not os.path.exists(STATE_PATH):
         return {"published_urls": [], "published_title_hashes": [], "last_posts": []}
-
     with open(STATE_PATH, "r", encoding="utf-8") as f:
         data = json.load(f)
-
     data.setdefault("published_urls", [])
     data.setdefault("published_title_hashes", [])
     data.setdefault("last_posts", [])
@@ -236,12 +318,10 @@ def load_state() -> Dict[str, Any]:
 
 
 def save_state(state: Dict[str, Any]) -> None:
-    # Держим историю ограниченной, чтобы файл не раздувался.
-    state["published_urls"] = state.get("published_urls", [])[-700:]
-    state["published_title_hashes"] = state.get("published_title_hashes", [])[-700:]
-    state["last_posts"] = state.get("last_posts", [])[-50:]
+    state["published_urls"] = state.get("published_urls", [])[-900:]
+    state["published_title_hashes"] = state.get("published_title_hashes", [])[-900:]
+    state["last_posts"] = state.get("last_posts", [])[-80:]
     state["last_run_sakhalin"] = datetime.now(SAKHALIN_TZ).isoformat(timespec="seconds")
-
     with open(STATE_PATH, "w", encoding="utf-8") as f:
         json.dump(state, f, ensure_ascii=False, indent=2)
 
@@ -291,7 +371,6 @@ def local_classify(source: Dict[str, Any], title: str, summary: str, link: str) 
         pol = hits(text, RU_POL)
         eco = hits(text, RU_ECO)
         wr = hits(text, WORLD_RU)
-
         if inc and not pol:
             score += 18
             return "🚨 ЧП / происшествия", score, "происшествие: " + ", ".join(inc[:3])
@@ -336,10 +415,10 @@ def collect_candidates(state: Dict[str, Any]) -> List[Dict[str, Any]]:
             continue
 
         for entry in feed.entries[:MAX_ENTRIES_PER_SOURCE]:
-            title = clean_text(entry.get("title", ""))
-            summary = clean_text(entry.get("summary", ""))
-            link = clean_text(entry.get("link", ""))
-
+            title = clean_inline(entry.get("title", ""))
+            summary_raw = str(entry.get("summary", "") or "")
+            summary = clean_inline(summary_raw)
+            link = clean_inline(entry.get("link", ""))
             if not title or not link:
                 continue
 
@@ -351,24 +430,25 @@ def collect_candidates(state: Dict[str, Any]) -> List[Dict[str, Any]]:
             if not category or score < 70:
                 continue
 
+            source_name = extract_source_name(entry, source["name"])
+            image_url = extract_image_url(entry, summary_raw, link)
+
             candidates.append({
                 "id": len(candidates) + 1,
-                "source": source["name"],
+                "source": source_name,
+                "source_group": source["name"],
                 "source_type": source["type"],
                 "category_hint": category,
                 "score_hint": int(score),
                 "reason_hint": reason,
                 "title": title,
-                "summary": summary[:600],
+                "summary": summary[:650],
                 "url": link,
+                "image_url": image_url,
                 "title_hash": hsh,
             })
 
-    candidates.sort(
-        key=lambda x: (CATEGORY_ORDER.get(x["category_hint"], 0), x["score_hint"]),
-        reverse=True,
-    )
-
+    candidates.sort(key=lambda x: (CATEGORY_ORDER.get(x["category_hint"], 0), x["score_hint"]), reverse=True)
     return candidates[:MAX_CANDIDATES_FOR_LLM]
 
 
@@ -388,36 +468,36 @@ def build_llm_prompt(candidates: List[Dict[str, Any]]) -> str:
 
     return (
         "Ты главный редактор автоматического Telegram-канала SkySakhNews.\n\n"
-        "Канал публикует 2 новости за слот. Рубрики:\n"
+        "Нужно выбрать ровно 2 лучшие новости для публикации.\n\n"
+        "Приоритеты:\n"
         "1) 📍 Сахалин — ДТП, ЧП, пожары, погода, циклоны, отключения, важные локальные события.\n"
         "2) 🚨 ЧП / происшествия — реальные опасные события, жертвы, аварии, эвакуации.\n"
         "3) 🌍 Мир о России — как мир, США, ЕС, НАТО, G7, Китай и другие действуют/говорят о РФ, Украине, санкциях, нефти, газе, активах РФ.\n"
-        "4) 🇷🇺 Россия / политика — федеральная политика РФ, Кремль, МИД, Госдума, Минобороны, решения власти.\n"
-        "5) 🇷🇺 Россия / экономика — ЦБ, рубль, инфляция, бюджет, банки, нефть, газ, санкции, рынки.\n"
-        "6) 🧭 Геополитика — крупные мировые конфликты, США-Китай, Иран, Израиль, Тайвань, G7/G20, энергетика.\n"
-        "7) 💻 IT / технологии — только крупные события ИИ, OpenAI, Google, Microsoft, NVIDIA, чипы, кибератаки, утечки, Telegram/Android/iOS.\n\n"
-        "Главный приоритет: Сахалин и локальные опасные события. Затем Мир о России. Затем политика/экономика РФ. Затем геополитика. Затем IT.\n\n"
-        "Правила:\n"
-        "- Выбери ровно 2 новости из списка.\n"
-        "- Не выдумывай факты. Используй только title/summary/source.\n"
-        "- Английские новости переведи на русский.\n"
-        "- Пост должен быть на русском.\n"
-        "- В каждом посте должно быть 4–6 содержательных строк в блоке «Кратко».\n"
-        "- Не используй кликбейт и эмоциональную пропаганду.\n"
-        "- Если новость слабая, не выбирай её.\n"
-        "- Верни строго JSON-массив, без markdown.\n\n"
-        "Формат JSON:\n"
+        "4) 🇷🇺 Россия / политика.\n"
+        "5) 🇷🇺 Россия / экономика.\n"
+        "6) 🧭 Геополитика.\n"
+        "7) 💻 IT / технологии — только крупные события ИИ, чипов, кибератак, крупных платформ.\n\n"
+        "Стиль поста:\n"
+        "- русский язык;\n"
+        "- деловой, живой, не канцелярский;\n"
+        "- без кликбейта;\n"
+        "- не выдумывать факты сверх title/summary/source;\n"
+        "- brief должен быть 4–5 строк, каждая строка отдельная мысль;\n"
+        "- why_important: 1 короткое предложение;\n"
+        "- hashtags: 2–4 русских хэштега без пробелов.\n\n"
+        "Верни строго JSON-массив без markdown:\n"
         "[\n"
         "  {\n"
         "    \"id\": 1,\n"
-        "    \"category\": \"🌍 Мир о России\",\n"
-        "    \"title_ru\": \"...\",\n"
-        "    \"post\": \"🌍 Мир о России\\n\\nЗаголовок\\n\\nКратко:\\n— строка 1\\n— строка 2\\n— строка 3\\n— строка 4\\n\\nПочему важно:\\n1–2 строки.\\n\\nИсточник:\\nURL\",\n"
+        "    \"category\": \"📍 Сахалин\",\n"
+        "    \"title_ru\": \"Короткий ясный заголовок\",\n"
+        "    \"brief\": [\"строка 1\", \"строка 2\", \"строка 3\", \"строка 4\"],\n"
+        "    \"why_important\": \"Почему это важно одним предложением.\",\n"
+        "    \"hashtags\": [\"#Сахалин\", \"#ЧП\"],\n"
         "    \"selection_reason\": \"коротко почему выбрана\"\n"
         "  }\n"
         "]\n\n"
-        "Кандидаты:\n"
-        f"{json.dumps(compact, ensure_ascii=False)}"
+        f"Кандидаты:\n{json.dumps(compact, ensure_ascii=False)}"
     )
 
 
@@ -425,136 +505,201 @@ def call_openrouter(candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     api_key = os.environ.get("OPENROUTER_API_KEY", "").strip()
     if not api_key:
         raise RuntimeError("OPENROUTER_API_KEY is missing")
-
     model = os.environ.get("OPENROUTER_MODEL", "").strip() or DEFAULT_MODEL
 
     payload = {
         "model": model,
         "messages": [
-            {
-                "role": "system",
-                "content": "Ты строгий редактор новостного Telegram-канала. Возвращай только валидный JSON."
-            },
-            {
-                "role": "user",
-                "content": build_llm_prompt(candidates)
-            }
+            {"role": "system", "content": "Ты строгий редактор новостного Telegram-канала. Возвращай только валидный JSON."},
+            {"role": "user", "content": build_llm_prompt(candidates)},
         ],
-        "temperature": 0.2,
-        "max_tokens": 2200,
+        "temperature": 0.25,
+        "max_tokens": 1800,
     }
-
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
         "HTTP-Referer": "https://t.me/SkySakhNews",
         "X-OpenRouter-Title": "SkySakhNews",
     }
-
     response = requests.post(OPENROUTER_URL, headers=headers, json=payload, timeout=90)
     if response.status_code >= 400:
         raise RuntimeError(f"OpenRouter HTTP {response.status_code}: {response.text[:1000]}")
-
     data = response.json()
-    content = data["choices"][0]["message"]["content"]
-
-    return parse_json_array(content)
+    return parse_json_array(data["choices"][0]["message"]["content"])
 
 
 def parse_json_array(text: str) -> List[Dict[str, Any]]:
     text = text.strip()
-
     try:
         parsed = json.loads(text)
         if isinstance(parsed, list):
             return parsed
     except Exception:
         pass
-
     start = text.find("[")
     end = text.rfind("]")
-
     if start == -1 or end == -1 or end <= start:
         raise RuntimeError(f"Model did not return JSON array: {text[:1000]}")
-
     parsed = json.loads(text[start:end + 1])
     if not isinstance(parsed, list):
         raise RuntimeError("Parsed JSON is not a list")
-
     return parsed
 
 
 def fallback_select(candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    chosen = candidates[:POSTS_PER_RUN]
     result = []
-
-    for c in chosen:
+    for c in candidates[:POSTS_PER_RUN]:
         category = c["category_hint"]
-        title = c["title"]
-        url = c["url"]
-        source = c["source"]
-
-        post = (
-            f"{category}\n\n"
-            f"{title}\n\n"
-            "Кратко:\n"
-            f"— Новость отобрана автоматическим фильтром по теме канала.\n"
-            f"— Источник сообщения: {source}.\n"
-            f"— Предварительная категория: {category}.\n"
-            f"— Система отметила событие как значимое по редакционным признакам.\n\n"
-            "Почему важно:\n"
-            "Событие относится к приоритетной повестке канала: Сахалин, Россия, мир о России, геополитика или крупные технологии.\n\n"
-            f"Источник:\n{url}"
-        )
-
         result.append({
             "id": c["id"],
             "category": category,
-            "title_ru": title,
-            "post": post,
+            "title_ru": c["title"],
+            "brief": [
+                "Новость отобрана автоматическим фильтром по теме канала.",
+                f"Источник сообщения: {c['source']}.",
+                f"Предварительная категория: {category}.",
+                "Система отметила событие как значимое по редакционным признакам.",
+            ],
+            "why_important": "Событие относится к приоритетной повестке канала.",
+            "hashtags": HASHTAG_MAP.get(category, ["#Новости"]),
             "selection_reason": "fallback без LLM",
         })
-
     return result
 
 
-def send_telegram(text: str) -> Dict[str, Any]:
+def prepare_brief_lines(value: Any) -> List[str]:
+    if isinstance(value, list):
+        lines = [clean_inline(x) for x in value if clean_inline(x)]
+    else:
+        text = clean_inline(value)
+        parts = re.split(r"[;\n]+|(?<=[.!?])\s+", text)
+        lines = [clean_inline(x) for x in parts if clean_inline(x)]
+
+    result = []
+    seen = set()
+    for line in lines:
+        line = line.strip("—-• ")
+        if not line or line.lower() in seen:
+            continue
+        seen.add(line.lower())
+        result.append(line)
+        if len(result) >= 5:
+            break
+    while len(result) < 4:
+        result.append("Подробности будут уточняться по мере появления новых сообщений от источников.")
+    return result[:5]
+
+
+def make_hashtags(category: str, model_tags: Any) -> str:
+    tags = []
+    if isinstance(model_tags, list):
+        tags.extend(str(t).strip() for t in model_tags if str(t).strip())
+    tags.extend(HASHTAG_MAP.get(category, ["#Новости"]))
+
+    clean_tags = []
+    seen = set()
+    for tag in tags:
+        tag = tag.replace(" ", "")
+        if not tag.startswith("#"):
+            tag = "#" + tag
+        tag = re.sub(r"[^#A-Za-zА-Яа-яЁё0-9_]", "", tag)
+        if len(tag) < 2:
+            continue
+        low = tag.lower()
+        if low in seen:
+            continue
+        seen.add(low)
+        clean_tags.append(tag)
+        if len(clean_tags) >= 4:
+            break
+    return " ".join(clean_tags)
+
+
+def build_pretty_caption(item: Dict[str, Any], cand: Dict[str, Any], max_len: int = 980) -> str:
+    category = clean_inline(item.get("category") or cand["category_hint"])
+    title = clean_inline(item.get("title_ru") or cand["title"])
+    brief = prepare_brief_lines(item.get("brief") or cand.get("summary") or "")
+    why = clean_inline(item.get("why_important") or "Событие относится к приоритетной повестке канала.")
+    hashtags = make_hashtags(category, item.get("hashtags"))
+    source = clean_inline(cand.get("source") or cand.get("source_group") or "Источник")
+    url = cand["url"]
+
+    def render(lines: List[str]) -> str:
+        bullets = "\n".join(f"• {escape_html(x)}" for x in lines)
+        return (
+            f"{escape_html(category)}\n\n"
+            f"<b>{escape_html(title)}</b>\n\n"
+            f"<b>Кратко:</b>\n{bullets}\n\n"
+            f"<b>Почему важно:</b>\n{escape_html(why)}\n\n"
+            f"<a href=\"{escape_html(url)}\">Источник: {escape_html(source)}</a>\n"
+            f"{escape_html(hashtags)}"
+        )
+
+    caption = render(brief)
+    while len(caption) > max_len and len(brief) > 4:
+        brief = brief[:-1]
+        caption = render(brief)
+    if len(caption) > max_len:
+        short = []
+        for line in brief:
+            short.append(line[:142].rstrip() + "…" if len(line) > 145 else line)
+        caption = render(short)
+    if len(caption) > max_len:
+        caption = (
+            f"{escape_html(category)}\n\n"
+            f"<b>{escape_html(title[:220])}</b>\n\n"
+            f"<b>Кратко:</b>\n"
+            f"• {escape_html(brief[0][:180])}\n"
+            f"• {escape_html(brief[1][:180])}\n"
+            f"• {escape_html(brief[2][:180])}\n"
+            f"• {escape_html(brief[3][:180])}\n\n"
+            f"<a href=\"{escape_html(url)}\">Источник: {escape_html(source)}</a>\n"
+            f"{escape_html(hashtags)}"
+        )
+    return caption[:max_len]
+
+
+def send_telegram_message(text: str) -> Dict[str, Any]:
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
     chat_id = os.environ.get("TELEGRAM_CHANNEL_ID", "").strip()
-
     if not token or not chat_id:
         raise RuntimeError("TELEGRAM_BOT_TOKEN or TELEGRAM_CHANNEL_ID is missing")
-
     url = f"https://api.telegram.org/bot{token}/sendMessage"
-    payload = {
-        "chat_id": chat_id,
-        "text": text,
-        "disable_web_page_preview": False,
-    }
-
+    payload = {"chat_id": chat_id, "text": text, "parse_mode": "HTML", "disable_web_page_preview": False}
     response = requests.post(url, data=payload, timeout=45)
     if response.status_code >= 400:
-        raise RuntimeError(f"Telegram HTTP {response.status_code}: {response.text[:1000]}")
-
+        raise RuntimeError(f"Telegram sendMessage HTTP {response.status_code}: {response.text[:1000]}")
     return response.json()
 
 
-def normalize_post(post: str, candidate_url: str) -> str:
-    post = clean_text(post).replace("\\n", "\n")
-    # После clean_text переносы могут схлопнуться; если модель дала нормальный текст, оставляем как есть.
-    # Если URL не попал в пост, добавляем.
-    if candidate_url and candidate_url not in post:
-        post = post.rstrip() + f"\n\nИсточник:\n{candidate_url}"
+def send_telegram_photo(photo_url: str, caption: str) -> Dict[str, Any]:
+    token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    chat_id = os.environ.get("TELEGRAM_CHANNEL_ID", "").strip()
+    if not token or not chat_id:
+        raise RuntimeError("TELEGRAM_BOT_TOKEN or TELEGRAM_CHANNEL_ID is missing")
+    url = f"https://api.telegram.org/bot{token}/sendPhoto"
+    payload = {"chat_id": chat_id, "photo": photo_url, "caption": caption, "parse_mode": "HTML"}
+    response = requests.post(url, data=payload, timeout=60)
+    if response.status_code >= 400:
+        raise RuntimeError(f"Telegram sendPhoto HTTP {response.status_code}: {response.text[:1000]}")
+    return response.json()
 
-    if len(post) > 3900:
-        post = post[:3800].rstrip() + f"\n\nИсточник:\n{candidate_url}"
 
-    return post
+def publish_item(item: Dict[str, Any], cand: Dict[str, Any]) -> Dict[str, Any]:
+    caption = build_pretty_caption(item, cand)
+    image_url = cand.get("image_url") or fetch_og_image(cand.get("url", ""))
+    if image_url:
+        try:
+            log(f"Публикуем с картинкой: {image_url[:90]}")
+            return send_telegram_photo(image_url, caption)
+        except Exception as exc:
+            log(f"Картинка не отправилась, fallback на текст: {exc}")
+    return send_telegram_message(caption)
 
 
 def main() -> None:
     state = load_state()
-
     log("Сбор кандидатов")
     candidates = collect_candidates(state)
     log(f"Кандидатов после локального фильтра: {len(candidates)}")
@@ -579,22 +724,14 @@ def main() -> None:
             cid = int(item.get("id"))
         except Exception:
             continue
-
         cand = by_id.get(cid)
         if not cand:
             continue
-
         if cand["url"] in state.get("published_urls", []):
             continue
 
-        post = normalize_post(str(item.get("post", "")), cand["url"])
-
-        if not post or len(post) < 120:
-            continue
-
         log(f"Публикация: {cand['source']} | {cand['title'][:80]}")
-        result = send_telegram(post)
-
+        result = publish_item(item, cand)
         if result.get("ok"):
             state.setdefault("published_urls", []).append(cand["url"])
             state.setdefault("published_title_hashes", []).append(cand["title_hash"])
@@ -604,6 +741,7 @@ def main() -> None:
                 "category": item.get("category") or cand["category_hint"],
                 "title": item.get("title_ru") or cand["title"],
                 "url": cand["url"],
+                "with_image": bool(cand.get("image_url")),
             })
             published_count += 1
             time.sleep(15)
