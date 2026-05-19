@@ -36,9 +36,10 @@ jobs:
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
+          IMAGE_REQUIRED: "1"
         run: |
-          python -m py_compile src/news_bot_v5.py
-          python src/news_bot_v5.py
+          python -m py_compile src/news_bot_v6.py
+          python src/news_bot_v6.py
 
       - name: Commit updated state
         run: |
