@@ -2,7 +2,7 @@
 # Keeps previous editorial rules and adds visual fallback:
 # real article image -> Pexels thematic image -> Wikimedia thematic image -> text without preview.
 # Also keeps v11 publication priority: main hard news -> IT/games -> Sakhalin.
-# v12.1: strict 'World about Russia' gate. China/Europe-only stories no longer become 'Мир о России'.
+# v12.2: stricter world/Russia gate and broader Wikimedia fallback queries.
 
 import hashlib
 import os
@@ -24,15 +24,15 @@ WIKIMEDIA_IMAGE = "wikimedia"
 NO_IMAGE = "none"
 
 VISUAL_QUERIES = {
-    "🌍 Мир о России": ["Russia diplomacy summit", "Kremlin international meeting", "Russia China diplomacy", "sanctions diplomacy economy"],
-    "🇷🇺 РФ / война и безопасность": ["emergency services industrial area night", "security incident city night", "industrial emergency vehicles", "border security emergency"],
-    "🇷🇺 РФ / экономика": ["oil gas refinery economy", "industrial plant economy", "currency finance economy", "pipeline industry economy"],
-    "🇷🇺 РФ / законы и политика": ["parliament government law", "government building politics", "court law government", "parliament voting"],
-    "📍 Сахалин": ["Sakhalin island landscape", "Yuzhno-Sakhalinsk city", "Sakhalin Russia city", "Sakhalin road winter"],
-    "🧭 Геополитика": ["global diplomacy summit", "international flags diplomacy", "world leaders meeting", "UN diplomacy"],
-    "🌐 Мировые IT": ["artificial intelligence server data center", "semiconductor chip technology", "cybersecurity data center", "AI servers technology"],
-    "💻 IT / технологии": ["artificial intelligence server data center", "semiconductor chip technology", "cybersecurity data center", "AI servers technology"],
-    "🎮 Игры / индустрия": ["video game controller", "gaming console controller", "video game development studio", "esports gaming computer"],
+    "🌍 Мир о России": ["Russia diplomacy", "Kremlin", "Russia China", "sanctions economy", "diplomacy", "flags"],
+    "🇷🇺 РФ / война и безопасность": ["emergency services", "industrial area", "security", "firefighters", "night city"],
+    "🇷🇺 РФ / экономика": ["oil refinery", "gas pipeline", "industry", "finance", "currency"],
+    "🇷🇺 РФ / законы и политика": ["parliament", "government building", "court", "law", "politics"],
+    "📍 Сахалин": ["Sakhalin", "Yuzhno-Sakhalinsk", "Sakhalin island", "Russia landscape"],
+    "🧭 Геополитика": ["diplomacy", "flags", "summit", "United Nations", "parliament"],
+    "🌐 Мировые IT": ["data center", "server room", "semiconductor", "computer", "artificial intelligence"],
+    "💻 IT / технологии": ["data center", "server room", "semiconductor", "computer", "artificial intelligence"],
+    "🎮 Игры / индустрия": ["video game controller", "game controller", "gaming", "computer games", "esports"],
 }
 
 BAD_URL_TOKENS = ["logo", "icon", "sprite", "avatar", "placeholder", "button", "banner", "advert", "ads", "share", "social", "og-image", "preview-card", "facebook", "twitter", "telegram", "symbol", "emblem"]
@@ -76,7 +76,6 @@ def has_explicit_russia(text: str) -> bool:
 
 def strong_geopolitics_without_russia(text: str) -> bool:
     hits = word_hit(text, GEOPOLITICS_STRONG)
-    # China/EU alone is not enough for the main feed. Need at least two strong markers.
     return len(set(hits)) >= 2
 
 
@@ -84,7 +83,7 @@ _original_classify = b.classify
 
 
 def classify_v12(source_type, title, rss_text, page_desc, url):
-    text = f"{title} {rss_text} {page_desc}".lower()
+    text = f"{title} {rss_text} {page_desc} {url}".lower()
 
     if source_type == "world":
         if has_explicit_russia(text):
@@ -148,31 +147,31 @@ def visual_queries(item: Dict) -> List[str]:
     queries: List[str] = []
 
     if any(x in text for x in ["азс", "заправ", "промзон", "industrial"]):
-        queries.append("industrial emergency services night")
+        queries.extend(["emergency services", "industrial area"])
     if any(x in text for x in ["нефть", "газ", "спг", "oil", "gas", "lng"]):
-        queries.append("oil gas industry refinery")
+        queries.extend(["oil refinery", "gas pipeline", "industry"])
     if any(x in text for x in ["цб", "рубль", "ставк", "банк", "inflation", "central bank"]):
-        queries.append("finance currency economy")
+        queries.extend(["finance", "currency", "central bank"])
     if any(x in text for x in ["openai", "chatgpt", "nvidia", "google", "microsoft", "ии", "нейросет"]):
-        queries.append("artificial intelligence technology servers")
+        queries.extend(["data center", "server room", "semiconductor"])
     if any(x in text for x in ["gta", "rockstar", "xbox", "playstation", "steam", "nintendo"]):
-        queries.append("gaming console controller")
+        queries.extend(["game controller", "gaming", "video game"])
     if any(x in text for x in ["землетряс", "earthquake"]):
-        queries.append("earthquake seismograph")
+        queries.append("seismograph")
     if any(x in text for x in ["пожар", "fire"]):
-        queries.append("fire emergency services")
+        queries.extend(["firefighters", "fire engine"])
     if any(x in text for x in ["дтп", "авария", "crash"]):
-        queries.append("traffic accident emergency road")
+        queries.extend(["traffic accident", "road accident"])
 
     queries.extend(VISUAL_QUERIES.get(category, []))
     if not queries:
-        queries.append("news editorial illustration")
+        queries.append("news")
 
     out: List[str] = []
     for query in queries:
         if query not in out:
             out.append(query)
-    return out[:5]
+    return out[:8]
 
 
 def pexels_image(query: str, seed: str) -> Optional[str]:
@@ -209,7 +208,7 @@ def wikimedia_image(query: str) -> Optional[str]:
             "https://commons.wikimedia.org/w/api.php",
             params={
                 "action": "query", "format": "json", "generator": "search",
-                "gsrnamespace": "6", "gsrsearch": query, "gsrlimit": "10",
+                "gsrnamespace": "6", "gsrsearch": query, "gsrlimit": "20",
                 "prop": "imageinfo", "iiprop": "url|mime|size",
             },
             headers={"User-Agent": "SkySakhNewsBot/1.0"},
@@ -233,7 +232,7 @@ def wikimedia_image(query: str) -> Optional[str]:
             height = int(info.get("height") or 0)
             if mime not in ("image/jpeg", "image/png", "image/webp"):
                 continue
-            if width < 700 or height < 350 or image_url_bad(url):
+            if width < 500 or height < 250 or image_url_bad(url):
                 continue
             ranked.append((width * height, url))
         if ranked:
