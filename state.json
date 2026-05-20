@@ -38,7 +38,9 @@
     "https://www.bbc.com/news/articles/cqlpz4w6v13o?at_medium=RSS&at_campaign=rss",
     "https://www.bbc.com/news/articles/cewpyv79pw1o?at_medium=RSS&at_campaign=rss",
     "https://www.interfax.ru/russia/1090560",
-    "https://www.interfax.ru/russia/1090552"
+    "https://www.interfax.ru/russia/1090552",
+    "https://github.com/uiuc-kang-lab/cve-bench",
+    "https://www.theguardian.com/technology/2026/may/18/altman-trial-victory-musk-openai"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -79,7 +81,9 @@
     "d099ea9aae84c7752679b95fd651d4b36899213d",
     "56bf857149f83c95b525854078768657040c8dfc",
     "21ca48aa1221702463ccc6c9f351757142baf7ea",
-    "0a483be30e36fd3eb8675c6e1114e7605a4c7ef4"
+    "0a483be30e36fd3eb8675c6e1114e7605a4c7ef4",
+    "69d386d1f2113a80bd5ccad3dc905c6efd257d92",
+    "2a05413926f54ae429e5411f4ef9529d35a6a2d2"
   ],
   "last_run_sakhalin": "2026-05-20T12:21:08+11:00",
   "last_posts": [
@@ -475,6 +479,32 @@
       "image_url": null,
       "publish_method": "sendMessage/no-preview/no-image",
       "score": 145
+    },
+    {
+      "time_sakhalin": "2026-05-20T14:30:58+11:00",
+      "source": "Habr",
+      "category": "🌐 Мировые IT",
+      "title": "GitHub представил CVE‑Bench — бенчмарк для оценки способности ИИ‑агентов эксплуатировать уязвимости веб‑приложений",
+      "url": "https://github.com/uiuc-kang-lab/cve-bench",
+      "published_at": "2026-05-19T21:15:33+00:00",
+      "with_image": true,
+      "image_mode": "source",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/b9f/f35/720/b9ff35720491e974e792471d742e1328.webp",
+      "publish_method": "sendPhoto/source",
+      "score": 158
+    },
+    {
+      "time_sakhalin": "2026-05-20T14:35:59+11:00",
+      "source": "Guardian Technology",
+      "category": "🌐 Мировые IT",
+      "title": "Судебный победа Сэма Альтмана над Илоном Маском открывает путь к триллионной оценке OpenAI",
+      "url": "https://www.theguardian.com/technology/2026/may/18/altman-trial-victory-musk-openai",
+      "published_at": "2026-05-18T23:36:31+00:00",
+      "with_image": true,
+      "image_mode": "thematic_url",
+      "image_url": "https://loremflickr.com/1280/720/technology%2Cserver%2Ccomputer?lock=615570",
+      "publish_method": "sendPhoto/thematic_url",
+      "score": 143
     }
   ]
 }
