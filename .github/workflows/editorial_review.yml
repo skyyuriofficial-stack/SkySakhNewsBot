@@ -1,0 +1,51 @@
+name: SkySakhNews Editorial Review
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "10 2,5,8,11,20,23 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skysakhnews-editorial-queue
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Review editorial queue
+        env:
+          EDITORIAL_REVIEW_APPROVE_LIMIT: "2"
+          EDITORIAL_REVIEW_PENDING_MAX_HOURS: "20"
+        run: |
+          python -m py_compile src/editorial_review.py
+          python src/editorial_review.py
+
+      - name: Commit reviewed queue
+        run: |
+          set -e
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+          git add editorial_queue.json
+          if git diff --cached --quiet; then
+            echo "No review changes"
+          else
+            git commit -m "Review editorial queue"
+            git pull --rebase origin main || true
+            git push origin main
+          fi
