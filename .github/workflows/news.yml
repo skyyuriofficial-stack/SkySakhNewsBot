@@ -11,6 +11,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: skysakhnews-publisher
+  cancel-in-progress: false
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -19,6 +23,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -43,12 +49,69 @@ jobs:
 
       - name: Commit updated state
         run: |
+          set -e
           git config user.name "skysakhnews-bot"
           git config user.email "actions@github.com"
+
+          if git diff --quiet -- state.json; then
+            echo "No state changes"
+            exit 0
+          fi
+
+          cp state.json /tmp/state.generated.json
+          git fetch origin main
+          git reset --hard origin/main
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          def load(path):
+              p = Path(path)
+              if not p.exists():
+                  return {}
+              try:
+                  return json.loads(p.read_text(encoding='utf-8'))
+              except Exception:
+                  return {}
+
+          base = load('state.json')
+          generated = load('/tmp/state.generated.json')
+
+          for key, limit in [('published_urls', 2000), ('published_title_hashes', 2000)]:
+              merged = []
+              seen = set()
+              for source in (base.get(key, []), generated.get(key, [])):
+                  for value in source or []:
+                      if value and value not in seen:
+                          seen.add(value)
+                          merged.append(value)
+              base[key] = merged[-limit:]
+
+          posts = []
+          seen_posts = set()
+          for source in (base.get('last_posts', []), generated.get('last_posts', [])):
+              for post in source or []:
+                  marker = (post.get('url'), post.get('title'), post.get('time_sakhalin'))
+                  if marker not in seen_posts:
+                      seen_posts.add(marker)
+                      posts.append(post)
+          base['last_posts'] = posts[-200:]
+
+          for key, value in generated.items():
+              if key not in base:
+                  base[key] = value
+
+          Path('state.json').write_text(
+              json.dumps(base, ensure_ascii=False, indent=2) + '\n',
+              encoding='utf-8'
+          )
+          PY
+
           git add state.json
           if git diff --cached --quiet; then
-            echo "No state changes"
+            echo "No state changes after merge"
           else
             git commit -m "Update news state"
-            git push
+            git push origin main
           fi
