@@ -1,6 +1,7 @@
-# v12: thematic image fallback over v11.
+# v12: thematic image fallback over v10.
 # Keeps previous editorial rules and adds visual fallback:
 # real article image -> Pexels thematic image -> Wikimedia thematic image -> text without preview.
+# Also keeps v11 publication priority: main hard news -> IT/games -> Sakhalin.
 
 import hashlib
 import os
@@ -10,9 +11,9 @@ from typing import Dict, List, Optional, Tuple
 
 import requests
 
-import news_bot_v11 as v11
+import news_bot_v10 as v10
 
-b = v11.b
+b = v10.b
 b.IMAGE_REQUIRED = False
 
 SOURCE_IMAGE = "source"
@@ -33,6 +34,33 @@ VISUAL_QUERIES = {
 }
 
 BAD_URL_TOKENS = ["logo", "icon", "sprite", "avatar", "placeholder", "button", "banner", "advert", "ads", "share", "social", "og-image", "preview-card", "facebook", "twitter", "telegram", "symbol", "emblem"]
+
+
+def select_order_v12(items):
+    main = [x for x in items if x["category_hint"] in (
+        "🌍 Мир о России",
+        "🇷🇺 РФ / война и безопасность",
+        "🇷🇺 РФ / экономика",
+        "🇷🇺 РФ / законы и политика",
+    )]
+    tech_game = [x for x in items if x["category_hint"] in (
+        "🌐 Мировые IT",
+        "🎮 Игры / индустрия",
+    )]
+    local = [x for x in items if x["category_hint"] == "📍 Сахалин"]
+
+    ordered = []
+    if main:
+        ordered.append(main[0])
+    if tech_game:
+        ordered.append(tech_game[0])
+    if local:
+        ordered.append(local[0])
+
+    for item in main + tech_game + local + items:
+        if item not in ordered:
+            ordered.append(item)
+    return ordered
 
 
 def safe_seed(item: Dict) -> str:
@@ -269,6 +297,7 @@ def main_v12() -> None:
     b.save_state(state)
 
 
+b.select_order = select_order_v12
 b.fetch_image_bytes = fetch_image_bytes_v12
 b.main = main_v12
 
