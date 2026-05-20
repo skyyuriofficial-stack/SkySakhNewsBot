@@ -1,12 +1,7 @@
-name: SkySakhNews Auto Publisher
+name: SkySakhNews Direct Publisher Manual Only
 
 on:
   workflow_dispatch:
-  schedule:
-    # GitHub cron uses UTC. Sakhalin = UTC+11.
-    # 07:00, 10:00, 13:00, 16:00, 19:00, 22:00 Sakhalin
-    # = 20:00, 23:00, 02:00, 05:00, 08:00, 11:00 UTC.
-    - cron: "0 2,5,8,11,20,23 * * *"
 
 permissions:
   contents: write
@@ -36,7 +31,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run news bot
+      - name: Run direct publisher manually
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
@@ -44,6 +39,7 @@ jobs:
           OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
           IMAGE_REQUIRED: "0"
         run: |
+          echo "Direct publisher is manual-only. Normal mode is editorial queue."
           python -m py_compile src/news_bot_v11.py
           python src/news_bot_v11.py
 
@@ -52,66 +48,11 @@ jobs:
           set -e
           git config user.name "skysakhnews-bot"
           git config user.email "actions@github.com"
-
-          if git diff --quiet -- state.json; then
-            echo "No state changes"
-            exit 0
-          fi
-
-          cp state.json /tmp/state.generated.json
-          git fetch origin main
-          git reset --hard origin/main
-
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          def load(path):
-              p = Path(path)
-              if not p.exists():
-                  return {}
-              try:
-                  return json.loads(p.read_text(encoding='utf-8'))
-              except Exception:
-                  return {}
-
-          base = load('state.json')
-          generated = load('/tmp/state.generated.json')
-
-          for key, limit in [('published_urls', 2000), ('published_title_hashes', 2000)]:
-              merged = []
-              seen = set()
-              for source in (base.get(key, []), generated.get(key, [])):
-                  for value in source or []:
-                      if value and value not in seen:
-                          seen.add(value)
-                          merged.append(value)
-              base[key] = merged[-limit:]
-
-          posts = []
-          seen_posts = set()
-          for source in (base.get('last_posts', []), generated.get('last_posts', [])):
-              for post in source or []:
-                  marker = (post.get('url'), post.get('title'), post.get('time_sakhalin'))
-                  if marker not in seen_posts:
-                      seen_posts.add(marker)
-                      posts.append(post)
-          base['last_posts'] = posts[-200:]
-
-          for key, value in generated.items():
-              if key not in base:
-                  base[key] = value
-
-          Path('state.json').write_text(
-              json.dumps(base, ensure_ascii=False, indent=2) + '\n',
-              encoding='utf-8'
-          )
-          PY
-
           git add state.json
           if git diff --cached --quiet; then
-            echo "No state changes after merge"
+            echo "No state changes"
           else
             git commit -m "Update news state"
+            git pull --rebase origin main || true
             git push origin main
           fi
