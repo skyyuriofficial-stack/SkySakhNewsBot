@@ -1,7 +1,7 @@
 # v14: final overlay over v12.
 # Keeps v12 rules, adds stricter category gate and a final image fallback chain:
 # source/Pexels/Wikimedia-search -> Wikimedia category file -> deterministic thematic URL.
-# v14.1: reject decorative Habr/source illustrations for cyber/CVE news and use clean tech fallback.
+# v14.2: thematic fallback images are used silently without caption labels.
 
 import re
 import urllib.parse
@@ -130,9 +130,10 @@ _original_resolve_image = v12.resolve_image
 def resolve_image_v14(item: Dict) -> Tuple[Optional[Tuple[bytes, str, str]], str, Optional[str]]:
     img, mode, url = _original_resolve_image(item)
     if img and not should_replace_source_image(item, mode, url):
+        item["image_note"] = ""
         return img, mode, url
     if img and should_replace_source_image(item, mode, url):
-        b.log("source image rejected by v14.1 editorial gate: " + str(url)[:100])
+        b.log("source image rejected by v14.2 editorial gate: " + str(url)[:100])
         item.pop("image_file", None)
         item["image_mode"] = "source_rejected"
         item["image_note"] = ""
@@ -146,7 +147,7 @@ def resolve_image_v14(item: Dict) -> Tuple[Optional[Tuple[bytes, str, str]], str
             "image_url": url,
             "image_file": img,
             "image_mode": "category_file",
-            "image_note": "🖼 Тематическая иллюстрация",
+            "image_note": "",
         })
         return img, "category_file", url
 
@@ -159,10 +160,11 @@ def resolve_image_v14(item: Dict) -> Tuple[Optional[Tuple[bytes, str, str]], str
             "image_url": url,
             "image_file": img,
             "image_mode": "thematic_url",
-            "image_note": "🖼 Тематическая иллюстрация",
+            "image_note": "",
         })
         return img, "thematic_url", url
 
+    item["image_note"] = ""
     return None, v12.NO_IMAGE, None
 
 
