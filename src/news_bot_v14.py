@@ -1,6 +1,7 @@
 # v14: final overlay over v12.
 # Keeps v12 rules, adds stricter category gate and a final image fallback chain:
 # source/Pexels/Wikimedia-search -> Wikimedia category file -> deterministic thematic URL.
+# v14.1: reject decorative Habr/source illustrations for cyber/CVE news and use clean tech fallback.
 
 import re
 import urllib.parse
@@ -14,6 +15,11 @@ FOREIGN_MARKERS = [
     "usa", "united states", "сша", "америк", "trump", "трамп", "senate", "сенат",
     "iran", "иран", "israel", "израил", "gaza", "газа", "hormuz", "ормуз",
     "china", "китай", "eu", "евросоюз", "европа", "nato", "нато", "taiwan", "тайван",
+]
+
+CYBER_TERMS = [
+    "cve", "уязвим", "эксплуат", "exploit", "vulnerability", "vulnerabilities",
+    "кибер", "взлом", "hack", "hacker", "malware", "security benchmark", "cve-bench",
 ]
 
 CATEGORY_FILES = {
@@ -58,6 +64,10 @@ def classify_v14(source_type, title, rss_text, page_desc, url):
     return v12.classify_v12(source_type, title, rss_text, page_desc, url)
 
 
+def item_text(item: Dict) -> str:
+    return f"{item.get('title','')} {item.get('summary','')} {item.get('category_hint','')} {item.get('source','')} {item.get('url','')} {item.get('image_url','')}".lower()
+
+
 def category_fallback_url(item: Dict) -> str:
     category = item.get("category_hint") or ""
     filename = CATEGORY_FILES.get(category, "United Nations Security Council Chamber.jpg")
@@ -66,11 +76,13 @@ def category_fallback_url(item: Dict) -> str:
 
 def thematic_tags(item: Dict) -> str:
     category = item.get("category_hint") or ""
-    text = f"{item.get('title','')} {item.get('summary','')} {category}".lower()
+    text = item_text(item)
 
     if "🎮" in category:
         return "gaming,controller,console"
     if "IT" in category or "технолог" in category or contains_any(text, ["openai", "chatgpt", "nvidia", "google", "microsoft", "ии", "нейросет", "chip", "server"]):
+        if contains_any(text, CYBER_TERMS):
+            return "cybersecurity,server,technology"
         return "technology,server,computer"
     if "Сахалин" in category:
         return "island,landscape,russia"
@@ -93,13 +105,37 @@ def thematic_fallback_url(item: Dict) -> str:
     return f"https://loremflickr.com/1280/720/{urllib.parse.quote(tags)}?lock={seed}"
 
 
+def should_replace_source_image(item: Dict, mode: str, url: Optional[str]) -> bool:
+    text = item_text(item)
+    source = (item.get("source") or "").lower()
+    image_url = (url or item.get("image_url") or "").lower()
+
+    # Habr often uses metaphorical drawings as article covers. For CVE/cybersecurity
+    # news these can look like memes/icons, not news visuals. Prefer clean tech fallback.
+    if mode == "source" and ("habr" in source or "habrastorage" in image_url or "habr.com" in text):
+        if contains_any(text, CYBER_TERMS):
+            return True
+
+    # Generic decorative-source guard for IT security items.
+    if mode == "source" and "IT" in (item.get("category_hint") or "") and contains_any(text, CYBER_TERMS):
+        if contains_any(image_url, ["habr", "preview", "cover", "trap", "cartoon", "draw", "illustration"]):
+            return True
+
+    return False
+
+
 _original_resolve_image = v12.resolve_image
 
 
 def resolve_image_v14(item: Dict) -> Tuple[Optional[Tuple[bytes, str, str]], str, Optional[str]]:
     img, mode, url = _original_resolve_image(item)
-    if img:
+    if img and not should_replace_source_image(item, mode, url):
         return img, mode, url
+    if img and should_replace_source_image(item, mode, url):
+        b.log("source image rejected by v14.1 editorial gate: " + str(url)[:100])
+        item.pop("image_file", None)
+        item["image_mode"] = "source_rejected"
+        item["image_note"] = ""
 
     # 1) Stable category image from Wikimedia Commons.
     url = category_fallback_url(item)
