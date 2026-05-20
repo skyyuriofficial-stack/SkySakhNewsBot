@@ -1,0 +1,112 @@
+name: SkySakhNews Editorial Collect
+
+on:
+  workflow_dispatch:
+  schedule:
+    # GitHub cron uses UTC. Sakhalin = UTC+11.
+    # Collect drafts 5 minutes after normal news slots.
+    - cron: "5 2,5,8,11,20,23 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skysakhnews-editorial-queue
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Collect editorial drafts
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
+          IMAGE_REQUIRED: "0"
+          EDITORIAL_COLLECT_LIMIT: "8"
+        run: |
+          python -m py_compile src/editorial_queue.py
+          python src/editorial_queue.py collect
+
+      - name: Commit updated queue
+        run: |
+          set -e
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+
+          if git diff --quiet -- editorial_queue.json; then
+            echo "No queue changes"
+            exit 0
+          fi
+
+          cp editorial_queue.json /tmp/editorial_queue.generated.json
+          git fetch origin main
+          git reset --hard origin/main
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          def load(path, default):
+              p = Path(path)
+              if not p.exists():
+                  return default
+              try:
+                  return json.loads(p.read_text(encoding='utf-8'))
+              except Exception:
+                  return default
+
+          base = load('editorial_queue.json', {"version": 1, "items": []})
+          generated = load('/tmp/editorial_queue.generated.json', {"version": 1, "items": []})
+          base.setdefault('version', 1)
+          base.setdefault('items', [])
+
+          by_id = {}
+          order = []
+          for source in (base.get('items', []), generated.get('items', [])):
+              for item in source or []:
+                  item_id = item.get('id') or item.get('url')
+                  if not item_id:
+                      continue
+                  if item_id not in by_id:
+                      order.append(item_id)
+                      by_id[item_id] = item
+                  else:
+                      old = by_id[item_id]
+                      # Preserve human/editor decisions over regenerated pending drafts.
+                      if old.get('status') in {'approved', 'rejected', 'published', 'hold'}:
+                          continue
+                      by_id[item_id] = item
+          merged = [by_id[x] for x in order if x in by_id]
+          base['items'] = merged[-120:]
+          base['updated_at'] = generated.get('updated_at') or base.get('updated_at')
+          base['updated_at_sakhalin'] = generated.get('updated_at_sakhalin') or base.get('updated_at_sakhalin')
+          Path('editorial_queue.json').write_text(json.dumps(base, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+
+          git add editorial_queue.json
+          if git diff --cached --quiet; then
+            echo "No queue changes after merge"
+          else
+            git commit -m "Update editorial queue"
+            git push origin main
+          fi
