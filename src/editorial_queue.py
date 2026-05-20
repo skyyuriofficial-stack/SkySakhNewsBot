@@ -1,25 +1,31 @@
 # Editorial queue for SkySakhNews.
 # Modes:
-#   collect  -> collect candidates into editorial_queue.json, do not publish
-#   publish  -> publish only items approved in editorial_queue.json
+#   collect      -> collect raw/editorial candidates into editorial_queue.json, do not publish
+#   publish      -> publish only items approved in editorial_queue.json
 #   reject-stale -> reject old pending items
+#
+# Important design rule:
+# collect mode must NOT depend on OpenRouter generation. The queue is for human/ChatGPT
+# editorial review, so candidates must be saved even when the free OpenRouter quota is exhausted.
 
 import json
 import os
 import sys
 import hashlib
+import re
+import html
 import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, Optional
 
 import news_bot_v14 as v14
 
 b = v14.b
 
 QUEUE_FILE = Path("editorial_queue.json")
-QUEUE_LIMIT = 120
-COLLECT_LIMIT = int(os.getenv("EDITORIAL_COLLECT_LIMIT", "8"))
+QUEUE_LIMIT = 160
+COLLECT_LIMIT = int(os.getenv("EDITORIAL_COLLECT_LIMIT", "12"))
 PUBLISH_LIMIT = int(os.getenv("EDITORIAL_PUBLISH_LIMIT", "2"))
 PENDING_TTL_HOURS = int(os.getenv("EDITORIAL_PENDING_TTL_HOURS", "18"))
 
@@ -58,7 +64,6 @@ def load_queue() -> Dict:
 def save_queue(q: Dict) -> None:
     q["updated_at"] = now_utc()
     q["updated_at_sakhalin"] = now_sakh()
-    # Keep important recent rows; old rejected/published rows are trimmed first.
     items = q.get("items", []) or []
     priority = {"pending": 0, "approved": 1, "hold": 2, "rejected": 3, "published": 4, "skipped": 5}
     items.sort(key=lambda x: (priority.get(x.get("status"), 9), x.get("created_at", "")), reverse=False)
@@ -66,11 +71,59 @@ def save_queue(q: Dict) -> None:
     save_json(QUEUE_FILE, q)
 
 
+def clean(value) -> str:
+    text = html.unescape(str(value or ""))
+    text = re.sub(r"<(script|style|noscript)[^>]*>.*?</\1>", " ", text, flags=re.I | re.S)
+    text = re.sub(r"<[^>]+>", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def esc(value) -> str:
+    return html.escape(str(value or ""), quote=False)
+
+
+def attr(value) -> str:
+    return html.escape(str(value or ""), quote=True)
+
+
 def draft_id(url: str) -> str:
     return hashlib.sha1((url or "").encode("utf-8")).hexdigest()[:16]
 
 
-def compact_item(item: Dict, row: Dict, post_text: str, image_file, image_mode: str, image_url: Optional[str]) -> Dict:
+def short_sentences(text: str, limit: int = 4):
+    text = clean(text)
+    if not text:
+        return []
+    parts = re.split(r"(?<=[.!?。！？])\s+|(?<=\.)\s+", text)
+    out = []
+    for part in parts:
+        part = clean(part)
+        if len(part) < 35:
+            continue
+        out.append(part[:420])
+        if len(out) >= limit:
+            break
+    if not out and text:
+        out = [text[:420]]
+    return out
+
+
+def raw_post_text(item: Dict) -> str:
+    category = clean(item.get("category_hint") or "НОВОСТИ")
+    title = clean(item.get("title") or "")
+    source = clean(item.get("source") or "Источник")
+    url = attr(item.get("url") or "")
+    footer = clean(getattr(b, "FOOTER", {}).get(category, category.upper())) if hasattr(b, "FOOTER") else category.upper()
+
+    body = short_sentences(item.get("summary") or "", limit=3)
+    body_text = "\n\n".join(esc(x) for x in body)
+    if body_text:
+        return f"{esc(category)}\n\n<b>{esc(title)}</b>\n\n{body_text}\n\n{esc(footer)} · <a href=\"{url}\">{esc(source)}</a>"
+    return f"{esc(category)}\n\n<b>{esc(title)}</b>\n\n{esc(footer)} · <a href=\"{url}\">{esc(source)}</a>"
+
+
+def compact_item(item: Dict, post_text: str, image_file, image_mode: str, image_url: Optional[str]) -> Dict:
+    title = clean(item.get("title"))
     return {
         "id": draft_id(item["url"]),
         "status": "pending",
@@ -78,15 +131,16 @@ def compact_item(item: Dict, row: Dict, post_text: str, image_file, image_mode: 
         "created_at_sakhalin": now_sakh(),
         "source": item.get("source"),
         "source_type": item.get("source_type"),
-        "category": row.get("category") or item.get("category_hint"),
+        "category": item.get("category_hint"),
         "category_hint": item.get("category_hint"),
         "score": item.get("score"),
-        "title_original": item.get("title"),
-        "title_ru": row.get("title_ru"),
-        "body": row.get("body") or [],
-        "footer": row.get("footer"),
+        "title_original": title,
+        "title_ru": title,
+        "body": short_sentences(item.get("summary") or "", limit=3),
+        "footer": None,
         "source_text": item.get("summary"),
         "post_text": post_text,
+        "edited_post_text": None,
         "url": item.get("url"),
         "published_at": item.get("published_at"),
         "title_hash": item.get("title_hash"),
@@ -94,10 +148,13 @@ def compact_item(item: Dict, row: Dict, post_text: str, image_file, image_mode: 
         "image_mode": image_mode,
         "with_image": bool(image_file),
         "image_decision": "use" if image_file else "none",
-        "editor_notes": [],
+        "editor_notes": [
+            "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        ],
         "review": {
             "required": True,
-            "instruction": "Approve only if this is one concrete, fresh, valuable news item with correct category, factual text, and relevant image. Otherwise set status=rejected or image_decision=drop."
+            "reviewer": "ChatGPT/editor",
+            "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
         },
     }
 
@@ -139,6 +196,14 @@ def reject_stale(queue: Dict) -> int:
     return count
 
 
+def source_image_only(item: Dict):
+    image_file = item.get("image_file")
+    image_url = item.get("image_url")
+    if image_file and image_url:
+        return image_file, "source", image_url
+    return None, "none", None
+
+
 def collect_to_queue() -> None:
     state = b.load_state()
     queue = load_queue()
@@ -160,16 +225,14 @@ def collect_to_queue() -> None:
         if item.get("url") in keys or draft_id(item.get("url")) in keys:
             continue
         try:
-            row = b.generate_row(item)
-            image_file, image_mode, image_url = v14.resolve_image_v14(item)
-            # Store a long text version. If photo is later used, publish mode will trim caption to Telegram limits.
-            post_text = b.make_post(row, item, 2600)
-            draft = compact_item(item, row, post_text, image_file, image_mode, image_url)
+            image_file, image_mode, image_url = source_image_only(item)
+            post_text = raw_post_text(item)
+            draft = compact_item(item, post_text, image_file, image_mode, image_url)
             queue.setdefault("items", []).append(draft)
             keys.add(draft["url"])
             keys.add(draft["id"])
             added += 1
-            b.log(f"queued: {draft['category']} | {draft['source']} | {draft.get('title_ru') or draft.get('title_original')}")
+            b.log(f"queued raw: {draft['category']} | {draft['source']} | {draft.get('title_ru') or draft.get('title_original')}")
         except Exception as exc:
             b.log("queue candidate skipped: " + str(exc))
             continue
