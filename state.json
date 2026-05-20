@@ -33,7 +33,9 @@
     "https://www.interfax.ru/world/1090528",
     "https://www.interfax.ru/russia/1090526",
     "https://www.theguardian.com/world/2026/may/19/vladimir-putin-beijing-china-state-visit-xi-jinping-russia",
-    "https://www.interfax.ru/world/1090532"
+    "https://www.interfax.ru/world/1090532",
+    "https://www.interfax.ru/russia/1090543",
+    "https://www.bbc.com/news/articles/cqlpz4w6v13o?at_medium=RSS&at_campaign=rss"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -69,9 +71,11 @@
     "9a2338e26140259af5f8c1066c8e6fbf32a56990",
     "5f971a7a5482fa0cbcafb46064586e9b9e1d5d3f",
     "893797192c7c04d761ba63f27f5e562056a353ce",
-    "e2de13ed34af38e017015cd2fdd771476b15cac1"
+    "e2de13ed34af38e017015cd2fdd771476b15cac1",
+    "2b0f3f78b86d784b518de5a3aef9454d0b48c76a",
+    "d099ea9aae84c7752679b95fd651d4b36899213d"
   ],
-  "last_run_sakhalin": "2026-05-20T11:52:11+11:00",
+  "last_run_sakhalin": "2026-05-20T12:04:44+11:00",
   "last_posts": [
     {
       "time_sakhalin": "2026-05-19T17:49:35+11:00",
@@ -400,6 +404,32 @@
       "image_url": null,
       "publish_method": "sendMessage/no-preview/no-image",
       "score": 132
+    },
+    {
+      "time_sakhalin": "2026-05-20T12:03:03+11:00",
+      "source": "Interfax",
+      "category": "🇷🇺 РФ / война и безопасность",
+      "title": "В Северной Осетии введён режим «Ковер» в аэропорту Моздок",
+      "url": "https://www.interfax.ru/russia/1090543",
+      "published_at": "2026-05-20T00:50:00+00:00",
+      "with_image": false,
+      "image_mode": "none",
+      "image_url": null,
+      "publish_method": "sendMessage/no-preview/no-image",
+      "score": 145
+    },
+    {
+      "time_sakhalin": "2026-05-20T12:04:32+11:00",
+      "source": "BBC Technology",
+      "category": "🌐 Мировые IT",
+      "title": "Элон Маск проиграл суд над OpenAI",
+      "url": "https://www.bbc.com/news/articles/cqlpz4w6v13o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-05-19T08:45:23+00:00",
+      "with_image": true,
+      "image_mode": "source",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/b634/live/37c3c920-536b-11f1-b682-cf91850925ea.jpg",
+      "publish_method": "sendPhoto/source",
+      "score": 158
     }
   ]
 }
