@@ -1,11 +1,12 @@
 # v14: final overlay over v12.
-# v14.4:
-# - two-layer editorial gate: topic classification first, visual plan second;
-# - do not call v12 fallback resolver before our own duplicate-control logic;
-# - prevent repeated fallback images by URL and by image-content hash;
-# - also avoid repeating recent fallback images from state.json;
+# v14.5:
+# - skip mixed digest/roundup articles instead of compressing several unrelated events into one post;
 # - classify Russia/diplomacy/summit/APEC items as politics/economy, not war/security;
-# - choose topic-specific visuals for power outages, drones, diplomacy, economy, IT and games;
+# - do not call v12 fallback resolver before our own visual planner;
+# - prevent repeated fallback images by URL and by image-content hash;
+# - avoid repeating recent fallback images from state.json;
+# - use source image -> curated category image -> Pexels if key exists -> text-only;
+# - removed unsafe random/loremflickr and broad Wikimedia search fallback because they produced cats/motherboards for war posts;
 # - fallback images are used silently without caption labels.
 
 import hashlib
@@ -51,6 +52,19 @@ POWER_TERMS = ["электроэнерг", "электрич", "энергосн
 CYBER_TERMS = [
     "cve", "уязвим", "эксплуат", "exploit", "vulnerability", "vulnerabilities",
     "кибер", "взлом", "hack", "hacker", "malware", "security benchmark", "cve-bench",
+]
+
+ROUNDUP_TERMS = [
+    "что случилось этой ночью",
+    "что случилось ночью",
+    "краткая сводка событий",
+    "главные события ночи",
+    "главное за ночь",
+    "события к утру",
+    "утренняя сводка",
+    "вечерняя сводка",
+    "главные новости к утру",
+    "главные новости дня",
 ]
 
 CATEGORY_FILES = {
@@ -121,8 +135,31 @@ def contains_any(text, terms):
     return False
 
 
+def is_roundup_story(text: str) -> bool:
+    text = (text or "").lower()
+    if contains_any(text, ROUNDUP_TERMS):
+        return True
+    # Interfax digest pages usually include many short unrelated bullet points.
+    # If a text has multiple unrelated agenda markers at once, skip it as a mixed digest.
+    mixed_markers = 0
+    for marker_group in (
+        ["путин", "си цзиньпин", "китай", "пекин"],
+        ["трамп", "сенат", "иран", "сша"],
+        ["букер", "арсенал", "футбол"],
+        ["g7", "искусственного интеллекта", "торговли"],
+    ):
+        if contains_any(text, marker_group):
+            mixed_markers += 1
+    return mixed_markers >= 3
+
+
 def classify_v14(source_type, title, rss_text, page_desc, url):
     text = f"{title} {rss_text} {page_desc} {url}".lower()
+
+    if is_roundup_story(text):
+        b.log("skip mixed roundup/digest: " + str(title)[:120])
+        return None, 0
+
     explicit_russia = v12.has_explicit_russia(text)
     has_war = contains_any(text, WAR_TERMS)
     has_diplomacy = contains_any(text, DIPLOMACY_TERMS)
@@ -214,63 +251,14 @@ def visual_search_queries(item: Dict) -> List[str]:
     if contains_any(text, ECONOMY_TERMS):
         queries.extend(["oil gas industry", "finance economy", "industrial plant"])
 
-    queries.extend(thematic_tag_sets(item))
-
+    # Pexels handles natural-language tags better than raw Wikimedia search.
+    # Keep queries concise and avoid broad 'security/night' queries that produced irrelevant images.
     out = []
     for q in queries:
         q = q.replace(",", " ").strip()
         if q and q not in out:
             out.append(q)
-    return out[:10]
-
-
-def thematic_tag_sets(item: Dict) -> List[str]:
-    category = item.get("category_hint") or ""
-    text = item_text(item)
-    sets: List[str] = []
-
-    if contains_any(text, POWER_TERMS):
-        sets.extend(["power,line,electricity", "substation,electricity", "power,outage,city"])
-    if contains_any(text, ["дрон", "бпла", "беспилот", "пво", "drone"]):
-        sets.extend(["drone,sky,security", "air,defense,sky", "emergency,night,city"])
-    if contains_any(text, ["саммит", "атэс", "апек", "визит", "китай", "пекин", "си цзиньпин"]):
-        sets.extend(["summit,diplomacy,flags", "china,diplomacy,flags", "government,meeting,flags"])
-    if "🎮" in category:
-        sets.extend(["gaming,controller,console", "esports,gaming,computer"])
-    if "IT" in category or "технолог" in category or contains_any(text, ["openai", "chatgpt", "nvidia", "google", "microsoft", "ии", "нейросет", "chip", "server"]):
-        if contains_any(text, CYBER_TERMS):
-            sets.extend(["cybersecurity,server,technology", "data,security,server", "code,security,computer"])
-        else:
-            sets.extend(["technology,server,computer", "data,center,server", "semiconductor,chip,technology"])
-    if "Сахалин" in category:
-        sets.extend(["island,landscape,russia", "city,winter,russia"])
-    if "эконом" in category or contains_any(text, ECONOMY_TERMS):
-        sets.extend(["industry,economy,oil", "gas,pipeline,industry", "finance,currency,economy"])
-    if "война" in category or "безопасность" in category or contains_any(text, WAR_TERMS):
-        sets.extend(["emergency,security,night", "emergency,services,city", "security,industrial,night"])
-    if "полит" in category or "законы" in category:
-        sets.extend(["government,parliament,law", "diplomacy,flags,summit"])
-    if "Геополитика" in category or contains_any(text, FOREIGN_MARKERS):
-        sets.extend(["diplomacy,flags,summit", "world,leaders,meeting"])
-    if "Мир о России" in category:
-        sets.extend(["russia,diplomacy,flags", "kremlin,moscow,russia"])
-
-    if not sets:
-        sets.append("news,city,world")
-
-    out = []
-    for s in sets:
-        if s not in out:
-            out.append(s)
     return out[:8]
-
-
-def thematic_fallback_urls(item: Dict) -> List[str]:
-    base_seed = int(v12.safe_seed(item)[:8], 16) % 1000000
-    urls = []
-    for i, tags in enumerate(thematic_tag_sets(item)):
-        urls.append(f"https://loremflickr.com/1280/720/{urllib.parse.quote(tags)}?lock={base_seed + i * 997}")
-    return urls
 
 
 def should_replace_source_image(item: Dict, mode: str, url: Optional[str]) -> bool:
@@ -313,36 +301,24 @@ def try_image_urls(item: Dict, urls: List[str], mode: str):
     return None, v12.NO_IMAGE, None
 
 
-def try_search_fallback(item: Dict):
+def try_pexels_fallback(item: Dict):
     seed = v12.safe_seed(item)
-    urls: List[Tuple[str, str]] = []
+    urls: List[str] = []
 
-    for idx, query in enumerate(visual_search_queries(item)):
+    for query in visual_search_queries(item):
         try:
             pexels_url = v12.pexels_image(query, hashlib.sha1((seed + query).encode("utf-8")).hexdigest())
             if pexels_url:
-                urls.append((pexels_url, "pexels"))
+                urls.append(pexels_url)
         except Exception as exc:
             b.log("Pexels search wrapper failed: " + str(exc))
 
-        try:
-            wiki_url = v12.wikimedia_image(query)
-            if wiki_url:
-                urls.append((wiki_url, "wikimedia"))
-        except Exception as exc:
-            b.log("Wikimedia search wrapper failed: " + str(exc))
-
-    for url, mode in urls:
-        img, got_mode, got_url = try_image_urls(item, [url], mode)
-        if img:
-            return img, got_mode, got_url
-    return None, v12.NO_IMAGE, None
+    return try_image_urls(item, urls, "pexels")
 
 
 def resolve_image_v14(item: Dict) -> Tuple[Optional[Tuple[bytes, str, str]], str, Optional[str]]:
     # Source image was attached during collection. Use it only if it is editorially acceptable
-    # and not a duplicate. Do not call v12.resolve_image first, because v12 can already choose
-    # a generic fallback before this deeper visual planner has a chance to work.
+    # and not a duplicate. Do not call v12.resolve_image first: broad random fallbacks are forbidden here.
     img = item.get("image_file")
     url = item.get("image_url")
     mode = item.get("image_mode") or "source"
@@ -354,21 +330,20 @@ def resolve_image_v14(item: Dict) -> Tuple[Optional[Tuple[bytes, str, str]], str
 
     if img:
         reason = "duplicate" if image_is_duplicate(url, img) else "editorial gate"
-        b.log(f"source image rejected by v14.4 {reason}: " + str(url)[:100])
+        b.log(f"source image rejected by v14.5 {reason}: " + str(url)[:100])
 
     item.pop("image_file", None)
     item["image_mode"] = "source_rejected" if img else "no_source_image"
     item["image_note"] = ""
 
-    img, mode, url = try_search_fallback(item)
-    if img:
-        return img, mode, url
-
+    # First try curated topic/category files. They are predictable and safer than random image search.
     img, mode, url = try_image_urls(item, category_fallback_urls(item), "category_file")
     if img:
         return img, mode, url
 
-    img, mode, url = try_image_urls(item, thematic_fallback_urls(item), "thematic_url")
+    # Pexels is allowed only when the owner explicitly provides PEXELS_API_KEY.
+    # Without a key this returns nothing.
+    img, mode, url = try_pexels_fallback(item)
     if img:
         return img, mode, url
 
@@ -379,7 +354,7 @@ def resolve_image_v14(item: Dict) -> Tuple[Optional[Tuple[bytes, str, str]], str
 def preload_recent_image_urls(state: Dict) -> None:
     USED_IMAGE_URLS.clear()
     USED_IMAGE_HASHES.clear()
-    for post in (state.get("last_posts") or [])[-30:]:
+    for post in (state.get("last_posts") or [])[-50:]:
         url = post.get("image_url")
         mode = post.get("image_mode") or ""
         if url and mode in {"pexels", "wikimedia", "category_file", "thematic_url"}:
@@ -392,7 +367,7 @@ def main_v14() -> None:
 
     b.log("Сбор кандидатов")
     items = b.collect(state)
-    b.log(f"Кандидатов после фильтра v14.4: {len(items)}")
+    b.log(f"Кандидатов после фильтра v14.5: {len(items)}")
     if not items:
         b.save_state(state)
         return
