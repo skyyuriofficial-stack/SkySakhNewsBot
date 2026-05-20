@@ -7,6 +7,7 @@
 # Important design rule:
 # collect mode must NOT depend on OpenRouter generation. The queue is for human/ChatGPT
 # editorial review, so candidates must be saved even when the free OpenRouter quota is exhausted.
+# Publish mode may add a safe curated fallback image for approved posts unless image_decision=drop.
 
 import json
 import os
@@ -256,13 +257,41 @@ def item_for_publish(draft: Dict, image_file=None) -> Dict:
     }
 
 
+def resolve_safe_fallback_image(draft: Dict):
+    item = item_for_publish(draft, image_file=None)
+    try:
+        image_file, image_mode, image_url = v14.resolve_image_v14(item)
+    except Exception as exc:
+        b.log("approved fallback image failed: " + str(exc))
+        return None, "none", None
+    if image_file and image_url:
+        draft["image_url"] = image_url
+        draft["image_mode"] = image_mode
+        draft["with_image"] = True
+        draft["image_decision"] = "use"
+        draft.setdefault("editor_notes", []).append("Перед публикацией добавлена безопасная fallback-картинка.")
+        return image_file, image_mode, image_url
+    return None, "none", None
+
+
 def fetch_queue_image(draft: Dict):
     if draft.get("image_decision") == "drop":
         return None
     url = draft.get("image_url")
-    if not url:
+    if url:
+        img = b.fetch_image_bytes(url)
+        if img:
+            return img
+        b.log("approved image URL failed, trying fallback: " + str(url)[:120])
+    image_file, _mode, _url = resolve_safe_fallback_image(draft)
+    return image_file
+
+
+def extract_message_id(result: Dict):
+    try:
+        return result.get("result", {}).get("message_id")
+    except Exception:
         return None
-    return b.fetch_image_bytes(url)
 
 
 def publish_approved() -> None:
@@ -304,6 +333,9 @@ def publish_approved() -> None:
             draft["status"] = "published"
             draft["published_at_sakhalin"] = now_sakh()
             draft["publish_method"] = method
+            message_id = extract_message_id(result)
+            if message_id:
+                draft["telegram_message_id"] = message_id
             state.setdefault("published_urls", []).append(draft.get("url"))
             if draft.get("title_hash"):
                 state.setdefault("published_title_hashes", []).append(draft.get("title_hash"))
@@ -318,6 +350,7 @@ def publish_approved() -> None:
                 "image_mode": draft.get("image_mode") if image_file else "none",
                 "image_url": draft.get("image_url") if image_file else None,
                 "publish_method": method,
+                "telegram_message_id": message_id,
                 "score": draft.get("score"),
             })
             published += 1
