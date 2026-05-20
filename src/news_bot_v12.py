@@ -2,9 +2,11 @@
 # Keeps previous editorial rules and adds visual fallback:
 # real article image -> Pexels thematic image -> Wikimedia thematic image -> text without preview.
 # Also keeps v11 publication priority: main hard news -> IT/games -> Sakhalin.
+# v12.1: strict 'World about Russia' gate. China/Europe-only stories no longer become 'Мир о России'.
 
 import hashlib
 import os
+import re
 import time
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple
@@ -34,6 +36,67 @@ VISUAL_QUERIES = {
 }
 
 BAD_URL_TOKENS = ["logo", "icon", "sprite", "avatar", "placeholder", "button", "banner", "advert", "ads", "share", "social", "og-image", "preview-card", "facebook", "twitter", "telegram", "symbol", "emblem"]
+
+RUSSIA_EXPLICIT = [
+    "russia", "russian", "moscow", "kremlin", "putin", "lavrov", "россия", "россии",
+    "россий", "рф", "москва", "кремль", "путин", "лавров",
+]
+
+WAR_ECON_BONUS = [
+    "ukraine", "украин", "nato", "нато", "sanction", "санкц", "oil", "нефть",
+    "gas", "газ", "lng", "спг", "drone", "дрон", "missile", "ракет", "war", "войн",
+]
+
+GEOPOLITICS_STRONG = [
+    "iran", "иран", "israel", "израил", "taiwan", "тайван", "nato", "нато",
+    "g7", "g20", "war", "войн", "conflict", "конфликт", "sanction", "санкц",
+    "tariff", "тариф", "trade war", "торгов", "china", "китай", "eu", "евросоюз", "европа",
+]
+
+
+def word_hit(text: str, terms: List[str]) -> List[str]:
+    raw = " " + (text or "").lower() + " "
+    hits = []
+    for term in terms:
+        t = term.lower().strip()
+        if not t:
+            continue
+        if re.fullmatch(r"[a-z0-9]+", t):
+            if re.search(rf"(?<![a-z0-9]){re.escape(t)}(?![a-z0-9])", raw):
+                hits.append(term)
+        else:
+            if t in raw:
+                hits.append(term)
+    return hits
+
+
+def has_explicit_russia(text: str) -> bool:
+    return bool(word_hit(text, RUSSIA_EXPLICIT))
+
+
+def strong_geopolitics_without_russia(text: str) -> bool:
+    hits = word_hit(text, GEOPOLITICS_STRONG)
+    # China/EU alone is not enough for the main feed. Need at least two strong markers.
+    return len(set(hits)) >= 2
+
+
+_original_classify = b.classify
+
+
+def classify_v12(source_type, title, rss_text, page_desc, url):
+    text = f"{title} {rss_text} {page_desc}".lower()
+
+    if source_type == "world":
+        if has_explicit_russia(text):
+            bonus = 0
+            if word_hit(text, WAR_ECON_BONUS):
+                bonus += 20
+            return "🌍 Мир о России", 170 + bonus
+        if strong_geopolitics_without_russia(text):
+            return "🧭 Геополитика", 88
+        return None, 0
+
+    return _original_classify(source_type, title, rss_text, page_desc, url)
 
 
 def select_order_v12(items):
@@ -297,6 +360,7 @@ def main_v12() -> None:
     b.save_state(state)
 
 
+b.classify = classify_v12
 b.select_order = select_order_v12
 b.fetch_image_bytes = fetch_image_bytes_v12
 b.main = main_v12
