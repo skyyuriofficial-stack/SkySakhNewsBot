@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updated_at": "2026-05-21T05:01:55+00:00",
-  "updated_at_sakhalin": "2026-05-21T16:01:55+11:00",
-  "reviewed_at": "2026-05-21T05:01:39+00:00",
-  "reviewed_at_sakhalin": "2026-05-21T16:01:39+11:00",
+  "updated_at": "2026-05-21T05:19:44+00:00",
+  "updated_at_sakhalin": "2026-05-21T16:19:44+11:00",
+  "reviewed_at": "2026-05-21T05:19:44+00:00",
+  "reviewed_at_sakhalin": "2026-05-21T16:19:44+11:00",
   "items": [
     {
       "id": "973beef597dbabca",
@@ -2122,6 +2122,206 @@
       "reviewed_by": "auto-editor"
     },
     {
+      "id": "8285c1d5453be50c",
+      "status": "rejected",
+      "created_at": "2026-05-21T05:19:44+00:00",
+      "created_at_sakhalin": "2026-05-21T16:19:44+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 158,
+      "title_original": "Миллион алых нод: о выборе баз данных для хранения больших объёмов",
+      "title_ru": "Миллион алых нод: о выборе баз данных для хранения больших объёмов",
+      "body": [
+        "Привет, меня зовут Алексей Рыбак, я основатель R&D-центра Devhands.io , где мы занимаемся обучением и консалтингом в области разработки.",
+        "Но вообще я сам программист и CTO со стажем, на Хабре есть...",
+        "Беседа Алексея Рыбака с Константином Осиповым (Picodata) о выборе баз данных для хранения больших объёмов."
+      ],
+      "footer": null,
+      "source_text": "Привет, меня зовут Алексей Рыбак, я основатель R&D-центра Devhands.io , где мы занимаемся обучением и консалтингом в области разработки. Но вообще я сам программист и CTO со стажем, на Хабре есть... Беседа Алексея Рыбака с Константином Осиповым (Picodata) о выборе баз данных для хранения больших объёмов. Обсудили MySQL, PostgreSQL, миллионы нод MySQL в одной экстремистской организации, Cassandra, ScyllaDB, автошардирование, особенности и стоимость хранения, LSM, TTL, ScyllaDB в Discord, Cassandra в Netflix и Apple, а также нишу Picodata. TL;DR: касательно СУБД для хранения очень большого количества данных Константин выделяет две ключевые размерности. Горизонтальное масштабирование — насколько СУБД умеет самостоятельно масштабироваться: добавлять и удалять узлы без ручного вмешательства, выдерживать кластер в 100+ нод без деградации. Storage — насколько движок хранилища подходит для данной нагрузки. Здесь важны: тип структуры и место на диске. Читать далее Привет, меня зовут Алексей Рыбак, я основатель R&D-центра Devhands.io , где мы занимаемся обучением и консалтингом в области разработки. Но вообще я сам программист и CTO со стажем, на Хабре есть несколько моих статей про хайлоад и управление разработкой (и ещё больше – в моем телеграм-канале ). Недавно я поговорил с Константином Осиповым (Picodata) о выборе баз данных для хранения больших объёмов. Обсудили MySQL, PostgreSQL, миллионы нод MySQL в одной экстремистской организации, Cassandra, ScyllaDB, автошардирование, особенности и стоимость хранения, LSM, TTL, ScyllaDB в Discord, Cassandra в Netflix и Apple, а также нишу Picodata. TL;DR: касательно СУБД для хранения очень большого количества данных Константин выделяет две ключевые размерности. Горизонтальное масштабирование — насколько СУБД умеет самостоятельно масшта",
+      "post_text": "🌐 Мировые IT\n\n<b>Миллион алых нод: о выборе баз данных для хранения больших объёмов</b>\n\nПривет, меня зовут Алексей Рыбак, я основатель R&amp;D-центра Devhands.io , где мы занимаемся обучением и консалтингом в области разработки.\n\nНо вообще я сам программист и CTO со стажем, на Хабре есть...\n\nБеседа Алексея Рыбака с Константином Осиповым (Picodata) о выборе баз данных для хранения больших объёмов.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1037578/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1037578#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1037578/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1037578#habracut",
+      "published_at": "2026-05-21T05:09:59+00:00",
+      "title_hash": "49aad4c1916db811de02f148a6f28ea135271942",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/03a/097/7e5/03a0977e584955a2c7ce2d7085e5f567.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T05:19:44+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "1176d0fc02ed4468",
+      "status": "rejected",
+      "created_at": "2026-05-21T05:19:44+00:00",
+      "created_at_sakhalin": "2026-05-21T16:19:44+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 158,
+      "title_original": "Билеты, баги и БДСМ: хроники тревел-стартапа",
+      "title_ru": "Билеты, баги и БДСМ: хроники тревел-стартапа",
+      "body": [
+        "Если вы никогда не задумывались, на чём вообще держится индустрия путешествий, присаживайтесь.",
+        "Рассказ будет недолгим — минут на сорок.",
+        "Если вы хоть раз покупали авиабилеты онлайн, то наверняка..."
+      ],
+      "footer": null,
+      "source_text": "Если вы никогда не задумывались, на чём вообще держится индустрия путешествий, присаживайтесь. Рассказ будет недолгим — минут на сорок. Если вы хоть раз покупали авиабилеты онлайн, то наверняка... Если вы никогда не задумывались, на чём вообще держится индустрия путешествий, присаживайтесь. Рассказ будет недолгим — минут на сорок. Если вы хоть раз покупали авиабилеты онлайн, то наверняка заметили странную особенность даже самых «успешных» сервисов: они умеют ровно две вещи — найти билет и продать билет. Всё. Как только ваши планы внезапно меняются, магия испаряется, и начинается древний ритуал: вы берёте телефон, звоните в поддержку и слушаете саундтрек, который не выбирали. Бездушный автоответчик шепчет, что все операторы заняты, просит остаться на линии, а в трубке тихонько умирает ваше свободное время. Когда‑то, лет этак шестьдесят назад, авиакомпании внезапно осознали, что продавать билеты через кассу в аэропорту — это, конечно, лампово, но хотелось бы чего‑то более… системного. Так родилась первая GDS — глобальная дистрибутивная система. По сути, это вселенский пылесос, который засасывает данные из PSS авиакомпаний: расписания, тарифы, доступность мест, правила, статусы бронирований. Всё то, что покоится в глубинах корпоративных недр. GDS собирает это добро, перемалывает и раздаёт турагентствам, сайтам и прочим желающим продавать билеты, не вступая в прямой контакт с динозаврами. А PSS — Passenger Service Systems — это как раз те самые динозавры. Древние, массивные, неприкасаемые. В них живут бронирования, билеты, тарифные правила и вся логика, объясняющая, почему перелёт с пересадкой в Чикаго стоит как подержанная «Тесла». PSS — это священные реликвии, написанные в эпоху телетайпов и перфолент, и с тех пор тронутые примерно столько же раз, сколько египетские пирам",
+      "post_text": "🌐 Мировые IT\n\n<b>Билеты, баги и БДСМ: хроники тревел-стартапа</b>\n\nЕсли вы никогда не задумывались, на чём вообще держится индустрия путешествий, присаживайтесь.\n\nРассказ будет недолгим — минут на сорок.\n\nЕсли вы хоть раз покупали авиабилеты онлайн, то наверняка...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1037566/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1037566#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1037566/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1037566#habracut",
+      "published_at": "2026-05-21T05:09:57+00:00",
+      "title_hash": "dfb722e2d7dc7f88850b677dafe457892968ef34",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/485/27f/8c9/48527f8c99e941ad2f6870df9730d7eb.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T05:19:44+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "6f920f0d7006c2f8",
+      "status": "rejected",
+      "created_at": "2026-05-21T05:19:44+00:00",
+      "created_at_sakhalin": "2026-05-21T16:19:44+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 158,
+      "title_original": "От vSphere к VCD: как мы построили хранилище образов и нативный CSI для Kubernetes",
+      "title_ru": "От vSphere к VCD: как мы построили хранилище образов и нативный CSI для Kubernetes",
+      "body": [
+        "В прошлой статье мы писали о том, что продолжаем работу с провайдерами виртуализации, работаем над механизмами загрузки образов ( почитать можно тут ).",
+        "Мы реализовали хранилище образов, чтобы пользователи могли структурировать их и более оперативно создавать виртуальные машины.",
+        "И сегодня расскажем, с чем столкнулись и что получилось."
+      ],
+      "footer": null,
+      "source_text": "Привет, Хабр! На связи команда dBrain.cloud . В прошлой статье мы писали о том, что продолжаем работу с провайдерами виртуализации, работаем над механизмами загрузки образов ( почитать можно тут ). Мы... Мы реализовали хранилище образов, чтобы пользователи могли структурировать их и более оперативно создавать виртуальные машины. И сегодня расскажем, с чем столкнулись и что получилось. Читать далее Привет, Хабр! На связи команда dBrain.cloud . В прошлой статье мы писали о том, что продолжаем работу с провайдерами виртуализации, работаем над механизмами загрузки образов ( почитать можно тут ). Мы реализовали хранилище образов, чтобы пользователи могли структурировать их и более оперативно создавать виртуальные машины. И сегодня расскажем, с чем столкнулись и что получилось. По сути, мы повторили архитектуру vSphere: в нашей консоли для провайдера ESXi реализовали системный репозиторий, аналогичный Content Library, где образы разделены по библиотекам. Пользователь видит наименование библиотеки, описание, дату создания и расположение в хранилище. Мы отображаем только те форматы образов, которые используются для создания виртуальных машин: ISO, OVA, OVF, а также готовые шаблоны. Мы добавили возможность загружать файлы как по ссылке, так и с локального диска, поддерживая форматы, необходимые для создания виртуальных машин. Сам процесс интеграции и загрузки файлов реализован через механизм тикетов: мы получаем тикет на загрузку с ограниченным временем жизни, создаем элемент библиотеки, открываем сессию, загружаем файл и завершаем сессию. Это не просто прямолинейная загрузка. Здесь мы столкнулись с типичной проблемой: часть функциональности vSphere недостаточно подробно документирована, а единого SDK для нескольких версий vSphere нет.",
+      "post_text": "🌐 Мировые IT\n\n<b>От vSphere к VCD: как мы построили хранилище образов и нативный CSI для Kubernetes</b>\n\nВ прошлой статье мы писали о том, что продолжаем работу с провайдерами виртуализации, работаем над механизмами загрузки образов ( почитать можно тут ).\n\nМы реализовали хранилище образов, чтобы пользователи могли структурировать их и более оперативно создавать виртуальные машины.\n\nИ сегодня расскажем, с чем столкнулись и что получилось.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/dbraincloud/articles/1037458/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1037458#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/dbraincloud/articles/1037458/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1037458#habracut",
+      "published_at": "2026-05-21T05:05:49+00:00",
+      "title_hash": "1d4b6ac8bba8a4ac2152905c1e64fc19804d5519",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/5ca/f81/9f6/5caf819f699fc29c30efc115d13dfe60.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T05:19:44+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "5c7ebafcb19d2313",
+      "status": "rejected",
+      "created_at": "2026-05-21T05:19:44+00:00",
+      "created_at_sakhalin": "2026-05-21T16:19:44+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 158,
+      "title_original": "What’s new in Flutter 3.44",
+      "title_ru": "What’s new in Flutter 3.44",
+      "body": [
+        "Empowering developers at Google I/O 2026 В этом году на конференции Google I/O 2026 команды Flutter и Dart отмечают важную тему: «Везде, каждый день, создано всеми, для всех».",
+        "Dart 3.12 воплощает эту идею в жизнь.",
+        "Мы делаем язык более доступным и продуктивным."
+      ],
+      "footer": null,
+      "source_text": "Empowering developers at Google I/O 2026 В этом году на конференции Google I/O 2026 команды Flutter и Dart отмечают важную тему: «Везде, каждый день, создано всеми, для всех». Dart 3.12 воплощает эту идею в жизнь. Мы делаем язык более доступным и продуктивным. Лаконичные новые примитивы, такие как приватные именованные параметры, наряду с экспериментальной поддержкой основных конструкторов, делают повседневное программирование более чистым. Но мы не остановились на синтаксическом уровне. Новые функции, такие как Agentic Hot Reload и добавление Genkit в экосистему Dart, гарантируют, что вы сможете создавать высокопроизводительные, готовые к использованию ИИ и агентные приложения, которые будут доступны пользователям в любой точке мира. Это справедливо как для индивидуального программирования, так и для парного программирования с ИИ-агентом. Так что вперед flutter upgrade , следуйте инструкциям, чтобы изучить новые возможности Dart 3.12. Но помните, что более мощный Dart — это только половина дела. Когда вы будете готовы увидеть, как эти функции преобразуются в красивый пользовательский интерфейс, ознакомьтесь с публикацией в блоге «Что нового во Flutter» или на Хабре . Читать далее Flutter is Google's UI framework for crafting high-quality native interfaces on iOS, Android, web, and desktop. Flutter works with existing code, is used by developers and organizations around the world, and is free and open source. Learn more at https://flutter.dev Flutter 3.44: Scaling to more users on more devices! What’s new in Flutter 3.44 Khanh Nguyen 23 min read · 11 hours ago -- Flutter 3.44 is here, and it’s a big one! This release celebrates a milestone in the Flutter timeline: Hybrid Composition++ for Android, Swift Package Manager as the new iOS/macOS default, and improved Vulkan s",
+      "post_text": "🌐 Мировые IT\n\n<b>What’s new in Flutter 3.44</b>\n\nEmpowering developers at Google I/O 2026 В этом году на конференции Google I/O 2026 команды Flutter и Dart отмечают важную тему: «Везде, каждый день, создано всеми, для всех».\n\nDart 3.12 воплощает эту идею в жизнь.\n\nМы делаем язык более доступным и продуктивным.\n\nМИРОВЫЕ IT · <a href=\"https://blog.flutter.dev/whats-new-in-flutter-3-44-b0cc1ad3c527?gi=ec680f8a64f7\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://blog.flutter.dev/whats-new-in-flutter-3-44-b0cc1ad3c527?gi=ec680f8a64f7",
+      "published_at": "2026-05-20T18:01:01.962000+00:00",
+      "title_hash": "7150fc384169a16dc59fb65c7d1edf3c7779d61f",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/06e/54b/4fa/06e54b4fab67638f5ef8d3f625ef2341.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T05:19:44+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "80cb25e5a292be69",
+      "status": "rejected",
+      "created_at": "2026-05-21T05:19:44+00:00",
+      "created_at_sakhalin": "2026-05-21T16:19:44+11:00",
+      "source": "IGN",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 127,
+      "title_original": "The Expanse: Osiris Reborn Is Recasting its Protagonist After Negative Fan Feedback",
+      "title_ru": "The Expanse: Osiris Reborn Is Recasting its Protagonist After Negative Fan Feedback",
+      "body": [
+        "The Expanse: Osiris Reborn will be recasting its male protagonist and his twin brother, according to developer Owlcat Games.",
+        "The Expanse: Osiris Reborn will be recasting its male protagonist and his twin brother, according to developer Owlcat Games.",
+        "The Expanse: Osiris Reborn will be recasting its male protagonist and his twin brother, according to developer Owlcat Games."
+      ],
+      "footer": null,
+      "source_text": "The Expanse: Osiris Reborn will be recasting its male protagonist and his twin brother, according to developer Owlcat Games. The Expanse: Osiris Reborn will be recasting its male protagonist and his twin brother, according to developer Owlcat Games. The Expanse: Osiris Reborn will be recasting its male protagonist and his twin brother, according to developer Owlcat Games. The developer confirmed that it heard vocal fan feedback regarding the performances of the game's male protagonist character and his twin brother, prompting them to actually take action. \"While the voice actor for the male protagonist and J put in a lot of good work, they felt less expressive than we wanted,\" said the developer in a blog post . \"Because of this, we are changing the voices of the male protagonist and J.\" It was noted in a press release that the team is already in the process of searching for a new actor, but it's unclear how intensive this process will be on the production of the game. The Expanse: Osiris Reborn recently held a beta, which got a mixed response from fans. However, it did provide Owlcat Games with a lot of actionable feedback. Thankfully, the full game isn't due out until 2027 , so there's plenty of time to address player concerns. Owlcat noted it is also addressing concerns with gameplay, tone, and other quality-of-life elements to improve the game. Fans are hoping that The Expanse: Osiris Reborn will be another high-quality sci-fi RPG that can go toe to toe with Exodus next year . While it's pretty rare for a game to replace an actor after a game has already been put into the hands of players, this isn't the first time it has happened. Bungie famously cast Peter Dinklage as the Ghost in Destiny, and he was present in the game for about a year. However, fans complained t",
+      "post_text": "🎮 Игры / индустрия\n\n<b>The Expanse: Osiris Reborn Is Recasting its Protagonist After Negative Fan Feedback</b>\n\nThe Expanse: Osiris Reborn will be recasting its male protagonist and his twin brother, according to developer Owlcat Games.\n\nThe Expanse: Osiris Reborn will be recasting its male protagonist and his twin brother, according to developer Owlcat Games.\n\nThe Expanse: Osiris Reborn will be recasting its male protagonist and his twin brother, according to developer Owlcat Games.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/the-expanse-osiris-reborn-is-recasting-its-protagonist-after-negative-fan-feedback\">IGN</a>",
+      "edited_post_text": null,
+      "url": "https://www.ign.com/articles/the-expanse-osiris-reborn-is-recasting-its-protagonist-after-negative-fan-feedback",
+      "published_at": "2026-05-21T01:22:44.166000+00:00",
+      "title_hash": "797709be171b688c81833eb045a905adc4949706",
+      "image_url": "https://assets-prd.ignimgs.com/2025/08/24/expanse-1756045941542.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: игровая тема не имеет достаточной индустриальной значимости."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T05:19:44+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
       "id": "ec44a45aa73888ea",
       "status": "published",
       "created_at": "2026-05-21T00:17:03+00:00",
@@ -2292,15 +2492,20 @@
     }
   ],
   "auto_review": {
-    "reviewed_pending": 3,
-    "approved": 1,
+    "reviewed_pending": 5,
+    "approved": 0,
     "approve_limit": 2,
-    "reviewed_at": "2026-05-21T05:01:39+00:00",
-    "reviewed_at_sakhalin": "2026-05-21T16:01:39+11:00"
+    "reviewed_at": "2026-05-21T05:19:44+00:00",
+    "reviewed_at_sakhalin": "2026-05-21T16:19:44+11:00"
   },
   "final_guard": {
     "changed": 0,
-    "checked_at": "2026-05-21T05:01:40+00:00",
-    "checked_at_sakhalin": "2026-05-21T16:01:40+11:00"
+    "checked_at": "2026-05-21T05:19:44+00:00",
+    "checked_at_sakhalin": "2026-05-21T16:19:44+11:00"
+  },
+  "priority_guard": {
+    "changed": 0,
+    "checked_at": "2026-05-21T05:19:44+00:00",
+    "checked_at_sakhalin": "2026-05-21T16:19:44+11:00"
   }
 }
