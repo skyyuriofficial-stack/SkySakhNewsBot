@@ -1,11 +1,26 @@
 # Safe publisher for SkySakhNews editorial queue.
-# Publishes ONLY approved posts that have a source image or a resolved thematic fallback image.
-# If no image can be resolved, the post is moved to hold and is not published.
+# Publishes ONLY approved posts with an image.
+# Image chain:
+#   source image -> curated/external fallback -> locally generated thematic illustration.
+# Therefore a valid approved post is never sent as text-only.
 
 import time
 from datetime import datetime
 
 import editorial_queue as q
+from thematic_image import generate_thematic_image
+
+
+def generated_image_for(draft):
+    data, content_type, filename = generate_thematic_image(draft)
+    draft["image_mode"] = "generated_thematic"
+    draft["image_url"] = None
+    draft["with_image"] = True
+    draft["image_decision"] = "use"
+    draft.setdefault("editor_notes", []).append(
+        "Safe publisher: source/fallback-картинка не найдена, создана локальная тематическая иллюстрация."
+    )
+    return data, content_type, filename
 
 
 def publish_safe() -> None:
@@ -35,12 +50,8 @@ def publish_safe() -> None:
 
         image_file = q.fetch_queue_image(draft)
         if not image_file:
-            draft["status"] = "hold"
-            draft.setdefault("editor_notes", []).append(
-                "Safe publisher: публикация остановлена — не удалось получить source/fallback-картинку."
-            )
-            q.b.log("safe publisher hold no-image: " + str(draft.get("title_ru") or draft.get("title_original"))[:120])
-            continue
+            q.b.log("safe publisher generated image: " + str(draft.get("title_ru") or draft.get("title_original"))[:120])
+            image_file = generated_image_for(draft)
 
         try:
             item = q.item_for_publish(draft, image_file=image_file)
