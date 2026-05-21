@@ -720,5 +720,54 @@
       "telegram_message_id": 76,
       "score": 145
     }
-  ]
+  ],
+  "last_cycle_report": {
+    "reported_at": "2026-05-21T07:24:10+00:00",
+    "reported_at_sakhalin": "2026-05-21T18:24:10+11:00",
+    "queue_updated_at": "2026-05-21T07:23:57+00:00",
+    "queue_updated_at_sakhalin": "2026-05-21T18:23:57+11:00",
+    "total_queue_items": 93,
+    "status_counts": {
+      "hold": 34,
+      "rejected": 55,
+      "published": 4,
+      "pending": 0,
+      "approved": 0,
+      "skipped": 0,
+      "unknown": 0
+    },
+    "hold_by_category": {
+      "🌐 Мировые IT": 27,
+      "🎮 Игры / индустрия": 3,
+      "🌍 Мир о России": 1,
+      "🇷🇺 РФ / экономика": 1,
+      "🧭 Геополитика": 1,
+      "🇷🇺 РФ / война и безопасность": 1
+    },
+    "approved_by_category": {},
+    "published_by_category": {
+      "🌐 Мировые IT": 2,
+      "🇷🇺 РФ / война и безопасность": 2
+    },
+    "auto_review": {
+      "reviewed_pending": 9,
+      "approved": 0,
+      "approve_limit": 2,
+      "reviewed_at": "2026-05-21T07:23:57+00:00",
+      "reviewed_at_sakhalin": "2026-05-21T18:23:57+11:00"
+    },
+    "priority_guard": {
+      "changed": 0,
+      "checked_at": "2026-05-21T07:23:57+00:00",
+      "checked_at_sakhalin": "2026-05-21T18:23:57+11:00"
+    },
+    "final_guard": {
+      "changed": 0,
+      "checked_at": "2026-05-21T07:23:57+00:00",
+      "checked_at_sakhalin": "2026-05-21T18:23:57+11:00"
+    },
+    "recent_published_20m_count": 0,
+    "recent_published_20m": [],
+    "decision": "no_approved_to_publish"
+  }
 }
