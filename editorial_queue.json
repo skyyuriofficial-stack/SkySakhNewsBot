@@ -4434,14 +4434,14 @@
     "checked_at_sakhalin": "2026-05-21T20:33:31+11:00"
   },
   "cycle_report": {
-    "reported_at": "2026-05-21T09:12:23+00:00",
-    "reported_at_sakhalin": "2026-05-21T20:12:23+11:00",
-    "queue_updated_at": "2026-05-21T09:12:10+00:00",
-    "queue_updated_at_sakhalin": "2026-05-21T20:12:10+11:00",
-    "total_queue_items": 113,
+    "reported_at": "2026-05-21T09:33:48+00:00",
+    "reported_at_sakhalin": "2026-05-21T20:33:48+11:00",
+    "queue_updated_at": "2026-05-21T09:33:31+00:00",
+    "queue_updated_at_sakhalin": "2026-05-21T20:33:31+11:00",
+    "total_queue_items": 119,
     "status_counts": {
-      "hold": 39,
-      "rejected": 68,
+      "hold": 40,
+      "rejected": 73,
       "published": 6,
       "pending": 0,
       "approved": 0,
@@ -4449,7 +4449,7 @@
       "unknown": 0
     },
     "hold_by_category": {
-      "🌐 Мировые IT": 32,
+      "🌐 Мировые IT": 33,
       "🎮 Игры / индустрия": 3,
       "🌍 Мир о России": 1,
       "🇷🇺 РФ / экономика": 1,
@@ -4464,45 +4464,24 @@
       "🇷🇺 РФ / экономика": 1
     },
     "auto_review": {
-      "reviewed_pending": 10,
+      "reviewed_pending": 6,
       "approved": 0,
       "approve_limit": 2,
-      "reviewed_at": "2026-05-21T09:12:10+00:00",
-      "reviewed_at_sakhalin": "2026-05-21T20:12:10+11:00"
+      "reviewed_at": "2026-05-21T09:33:31+00:00",
+      "reviewed_at_sakhalin": "2026-05-21T20:33:31+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-21T09:12:10+00:00",
-      "checked_at_sakhalin": "2026-05-21T20:12:10+11:00"
+      "checked_at": "2026-05-21T09:33:31+00:00",
+      "checked_at_sakhalin": "2026-05-21T20:33:31+11:00"
     },
     "final_guard": {
       "changed": 0,
-      "checked_at": "2026-05-21T09:12:10+00:00",
-      "checked_at_sakhalin": "2026-05-21T20:12:10+11:00"
+      "checked_at": "2026-05-21T09:33:31+00:00",
+      "checked_at_sakhalin": "2026-05-21T20:33:31+11:00"
     },
-    "recent_published_20m_count": 2,
-    "recent_published_20m": [
-      {
-        "time_sakhalin": "2026-05-21T20:05:56+11:00",
-        "source": "Interfax",
-        "category": "🧭 Геополитика",
-        "title": "МИД РФ проинформировал Кубу об аспектах своей поддержки",
-        "with_image": true,
-        "image_mode": "generated_thematic",
-        "publish_method": "sendPhoto/safe/generated_thematic",
-        "telegram_message_id": 77
-      },
-      {
-        "time_sakhalin": "2026-05-21T20:06:10+11:00",
-        "source": "Interfax",
-        "category": "🇷🇺 РФ / экономика",
-        "title": "Россельхозбанк в январе-апреле профинансировал зерновую отрасль на 71,3 млрд рублей",
-        "with_image": true,
-        "image_mode": "category_file",
-        "publish_method": "sendPhoto/safe/category_file",
-        "telegram_message_id": 78
-      }
-    ],
-    "decision": "published"
+    "recent_published_20m_count": 0,
+    "recent_published_20m": [],
+    "decision": "no_approved_to_publish"
   }
 }
