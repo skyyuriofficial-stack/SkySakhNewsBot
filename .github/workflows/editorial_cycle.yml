@@ -49,7 +49,7 @@ jobs:
         run: |
           python -m py_compile src/editorial_guard.py
           python src/editorial_guard.py
-      - name: Publish approved drafts
+      - name: Publish approved image posts only
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
@@ -57,7 +57,9 @@ jobs:
           OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
           IMAGE_REQUIRED: "0"
           EDITORIAL_PUBLISH_LIMIT: "2"
-        run: python src/editorial_queue.py publish
+        run: |
+          python -m py_compile src/editorial_publish_safe.py
+          python src/editorial_publish_safe.py
       - name: Commit queue and state
         run: |
           git config user.name "skysakhnews-bot"
