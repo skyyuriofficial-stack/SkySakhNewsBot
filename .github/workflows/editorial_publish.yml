@@ -2,6 +2,9 @@ name: SkySakhNews Publish Approved
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "editorial_queue.json"
   schedule:
     # Sakhalin 07:25, 10:25, 13:25, 16:25, 19:25, 22:25
     - cron: "25 2,5,8,11,20,23 * * *"
