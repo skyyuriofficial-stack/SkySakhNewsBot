@@ -1,0 +1,44 @@
+name: SkySakhNews Cycle Report
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - SkySakhNews Editorial Cycle
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skysakhnews-cycle-report
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Build cycle report
+        run: |
+          python -m py_compile src/editorial_cycle_report.py
+          python src/editorial_cycle_report.py
+      - name: Commit cycle report
+        run: |
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+          git add editorial_queue.json state.json cycle_report.json
+          if git diff --cached --quiet; then
+            echo "No report changes"
+          else
+            git commit -m "Update editorial cycle report"
+            git pull --rebase origin main || true
+            git push origin main
+          fi
