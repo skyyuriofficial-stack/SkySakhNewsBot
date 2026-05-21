@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updated_at": "2026-05-21T09:12:10+00:00",
-  "updated_at_sakhalin": "2026-05-21T20:12:10+11:00",
-  "reviewed_at": "2026-05-21T09:12:10+00:00",
-  "reviewed_at_sakhalin": "2026-05-21T20:12:10+11:00",
+  "updated_at": "2026-05-21T09:33:31+00:00",
+  "updated_at_sakhalin": "2026-05-21T20:33:31+11:00",
+  "reviewed_at": "2026-05-21T09:33:31+00:00",
+  "reviewed_at_sakhalin": "2026-05-21T20:33:31+11:00",
   "items": [
     {
       "id": "973beef597dbabca",
@@ -1447,6 +1447,45 @@
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
       },
       "reviewed_at": "2026-05-21T09:12:10+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "9c432113bd974992",
+      "status": "hold",
+      "created_at": "2026-05-21T09:33:31+00:00",
+      "created_at_sakhalin": "2026-05-21T20:33:31+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 143,
+      "title_original": "Meta lays off thousands of employees to offset AI investments",
+      "title_ru": "Meta lays off thousands of employees to offset AI investments",
+      "body": [
+        "“We’re grateful for your contributions” Meta has reportedly notified thousands of employees that they've been laid off as the company attempts to compensate for its hefty AI investments.",
+        "In an email from Meta management shared by Business Insider, impacted staffers were told that the planned headcount reduction was part of the company's \"continued effort to run the company more efficiently […]"
+      ],
+      "footer": null,
+      "source_text": "“We’re grateful for your contributions” Meta has reportedly notified thousands of employees that they've been laid off as the company attempts to compensate for its hefty AI investments. In an email from Meta management shared by Business Insider, impacted staffers were told that the planned headcount reduction was part of the company's \"continued effort to run the company more efficiently […]",
+      "post_text": "🌐 Мировые IT\n\n<b>Meta lays off thousands of employees to offset AI investments</b>\n\n“We’re grateful for your contributions” Meta has reportedly notified thousands of employees that they've been laid off as the company attempts to compensate for its hefty AI investments.\n\nIn an email from Meta management shared by Business Insider, impacted staffers were told that the planned headcount reduction was part of the company's \"continued effort to run the company more efficiently […]\n\nМИРОВЫЕ IT · <a href=\"https://www.theverge.com/tech/935163/meta-layoffs-ai-investment-offset-memo\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/tech/935163/meta-layoffs-ai-investment-offset-memo",
+      "published_at": "2026-05-21T09:20:46+00:00",
+      "title_hash": "4398ded4156242bad500c6a62de23236417c5485",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: ниже текущих приоритетов канала или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T09:33:31+00:00",
       "reviewed_by": "auto-editor"
     },
     {
@@ -3922,6 +3961,206 @@
       "reviewed_by": "auto-editor"
     },
     {
+      "id": "8a9338e34546ea11",
+      "status": "rejected",
+      "created_at": "2026-05-21T09:33:31+00:00",
+      "created_at_sakhalin": "2026-05-21T20:33:31+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 158,
+      "title_original": "Кибербезопасность и продуктовая экспертиза | Станислав Грибанов",
+      "title_ru": "Кибербезопасность и продуктовая экспертиза | Станислав Грибанов",
+      "body": [
+        "Мои мысли по поводу кибербезопасности , B2B продуктов и развития ИТ отрасли в целом.",
+        "На связи Станислав Грибанов, я руководитель продукта NDR компании «Гарда», автор блога «Кибербезопасность и продуктовая экспертиза для бизнеса» .",
+        "Сегодня хочу поговорить о пользе NetFlow и сетевой телеметрии для защиты сетей от хакерских атак."
+      ],
+      "footer": null,
+      "source_text": "Мои мысли по поводу кибербезопасности , B2B продуктов и развития ИТ отрасли в целом. Привет, Хабр! На связи Станислав Грибанов, я руководитель продукта NDR компании «Гарда», автор блога «Кибербезопасность и продуктовая экспертиза для бизнеса» . Сегодня хочу поговорить о пользе NetFlow и сетевой телеметрии для защиты сетей от хакерских атак. Тема эта не новая, но вокруг неё до сих пор существует множество противоречий. Сетевая телеметрия часто воспринимается как артефакт из мира сетевых инженеров, а не как серьёзный инструмент информационной безопасности. Как правило, это связано с ошибочным восприятием NGIPS-систем, как аналога NTA. В этом случае основной считается функциональность сигнатурного детектирования атак, которая требует для работы только сырой трафик. При этом методы поведенческого анализа, машинного обучения и других несигнатурных техник в таких системах являются комплиментарными и не формируют ядро детектирующей логики. Из-за подобного ошибочного восприятия на российском рынке сформировалось массовое заблуждение: для поиска угроз в сетевом трафике нужен только анализ сырого сетевого трафика, а телеметрия для этого не подходит. Под катом я расскажу, как можно детектировать угрозы на основе метаданных сетевого трафика без анализа payload, в частности, сетевой телеметрии. Читать далее",
+      "post_text": "🌐 Мировые IT\n\n<b>Кибербезопасность и продуктовая экспертиза | Станислав Грибанов</b>\n\nМои мысли по поводу кибербезопасности , B2B продуктов и развития ИТ отрасли в целом.\n\nНа связи Станислав Грибанов, я руководитель продукта NDR компании «Гарда», автор блога «Кибербезопасность и продуктовая экспертиза для бизнеса» .\n\nСегодня хочу поговорить о пользе NetFlow и сетевой телеметрии для защиты сетей от хакерских атак.\n\nМИРОВЫЕ IT · <a href=\"https://t.me/CyberSecProducts\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://t.me/CyberSecProducts",
+      "published_at": "2026-05-21T09:30:48+00:00",
+      "title_hash": "b2172d346c45fc6420f0ff9aaa83a8d1d79dbb21",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/2dd/6e6/db8/2dd6e6db84d8b7031276fe74eaefabe8.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T09:33:31+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "d0d43df0117ca688",
+      "status": "rejected",
+      "created_at": "2026-05-21T09:33:31+00:00",
+      "created_at_sakhalin": "2026-05-21T20:33:31+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 158,
+      "title_original": "Когда файл — это тайник: как скрывают данные в изображениях, DNS-запросах и эмодзи",
+      "title_ru": "Когда файл — это тайник: как скрывают данные в изображениях, DNS-запросах и эмодзи",
+      "body": [
+        "Ранее мы подробно рассмотрели семь методов встраивания информации в видеопоток .",
+        "Однако не видео единым жива стеганография.",
+        "В этот раз поговорим о том, какие в принципе существуют типы..."
+      ],
+      "footer": null,
+      "source_text": "Ранее мы подробно рассмотрели семь методов встраивания информации в видеопоток . Однако не видео единым жива стеганография. В этот раз поговорим о том, какие в принципе существуют типы... В одной из прошлых публикаций речь шла о типах современных стегоконтейнеров и алгоритмах встраивания в них данных. Однако стеганография существовала за тысячи лет до появления первого компьютера. Еще античные авторы описывают разнообразные примеры такой защиты информации, причем стегоконтейнеры тогда умудрялись клепать едва ли не из воздуха. В блог Бастиона снова заглянула кандидат исторических наук, старший научный сотрудник Московского музея криптографии Анастасия Ашаева. Она рассказала о том, какой путь прошла стеганография с древнейших времен до современности, какие стегоконтейнеры использовались в разные исторические эпохи. Отдельное внимание эксперт уделила конкретным кейсам применения стегоконтейнеров. Передаем ей слово. Читать далее",
+      "post_text": "🌐 Мировые IT\n\n<b>Когда файл — это тайник: как скрывают данные в изображениях, DNS-запросах и эмодзи</b>\n\nРанее мы подробно рассмотрели семь методов встраивания информации в видеопоток .\n\nОднако не видео единым жива стеганография.\n\nВ этот раз поговорим о том, какие в принципе существуют типы...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/bastion/articles/952442/\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/bastion/articles/952442/",
+      "published_at": "2026-05-21T09:18:44+00:00",
+      "title_hash": "5b10e648f37f4cea7fdaba70135fb336ce9fd86b",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/f22/287/173/f2228717367d5699db2d3eee7a28026c.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T09:33:31+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "ebc77a84f964a51e",
+      "status": "rejected",
+      "created_at": "2026-05-21T09:33:31+00:00",
+      "created_at_sakhalin": "2026-05-21T20:33:31+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 143,
+      "title_original": "Как интегрировать ТСД с любой конфигурацией «1С: Предприятия»?",
+      "title_ru": "Как интегрировать ТСД с любой конфигурацией «1С: Предприятия»?",
+      "body": [
+        "«Склад 15» интегрирован с большинством конфигураций «1С: Предприятия».",
+        "Это значит, что между ними уже настроены механизмы обмена, которые позволяют корректно загружать данные с терминала в учетную...",
+        "«Склад 15» интегрирован с большинством конфигураций «1С: Предприятия»."
+      ],
+      "footer": null,
+      "source_text": "«Склад 15» интегрирован с большинством конфигураций «1С: Предприятия». Это значит, что между ними уже настроены механизмы обмена, которые позволяют корректно загружать данные с терминала в учетную... «Склад 15» интегрирован с большинством конфигураций «1С: Предприятия». Это значит, что между ними уже настроены механизмы обмена, которые позволяют корректно загружать данные с терминала в учетную систему и наоборот. Но если вашей конфигурации нет в списке интегрированных, или вы используете нетиповую конфигурацию, можно интегрировать её самостоятельно. Читать далее «Склад 15» интегрирован с большинством конфигураций «1С: Предприятия». Это значит, что между ними уже настроены механизмы обмена, которые позволяют корректно загружать данные с терминала в учетную систему и наоборот. Но если вашей конфигурации нет в списке интегрированных, или вы используете нетиповую конфигурацию, можно интегрировать её самостоятельно. Написать СКД для номенклатуры, справочников и регистров, которые будут использоваться мобильной программой. Для большинства нужных справочников и регистров в « Склад 15 » уже есть свои метаданные, нужно только написать СКД, который выдаст информацию в заранее определенном жестком формате. Это делается один раз и для онлайн, и для оффлайн сценариев интеграции, т. е. в любом сценарии интеграции используются одни и те же СКД. Настроить в специальной обработке правила обмена документами между 1С и мобильной программой. Это называется «настройкой бизнес-процессов». Бизнес-процесс в интеграции со «Склад 15» определяет всё: от отбора нужных документов, до их выгрузки/ загрузки, правил заполнения и постобработки. Это тоже делается один раз и для онлайн-режима работы, и для офлайн, т. е. для любых способов обмена используются одни и те же общие правила, даже если конкретн",
+      "post_text": "🌐 Мировые IT\n\n<b>Как интегрировать ТСД с любой конфигурацией «1С: Предприятия»?</b>\n\n«Склад 15» интегрирован с большинством конфигураций «1С: Предприятия».\n\nЭто значит, что между ними уже настроены механизмы обмена, которые позволяют корректно загружать данные с терминала в учетную...\n\n«Склад 15» интегрирован с большинством конфигураций «1С: Предприятия».\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/cleverence/articles/1037680/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1037680#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/cleverence/articles/1037680/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1037680#habracut",
+      "published_at": "2026-05-21T09:28:18+00:00",
+      "title_hash": "af874df07a8be25f7fc9e20f85159f9c27e66551",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T09:33:31+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "0fbada29b3a4dcdf",
+      "status": "rejected",
+      "created_at": "2026-05-21T09:33:31+00:00",
+      "created_at_sakhalin": "2026-05-21T20:33:31+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 127,
+      "title_original": "Как я написал плагин для WooCommerce под Yandex YCP или как купить в 1 клик из Алисы",
+      "title_ru": "Как я написал плагин для WooCommerce под Yandex YCP или как купить в 1 клик из Алисы",
+      "body": [
+        "Разбираю архитектуру интеграции магазина на WordPress + WooCommerce с YCP — протоколом Яндекса для покупок через Алису AI, Поиск и Ритм В конце мая 2026 Яндекс открыл Yandex Commerce Protocol для всех...",
+        "В конце мая Яндекс открыл Yandex Commerce Protocol для всех — теперь онлайн-магазины могут подключать продажи через Алису AI, Поиск и Яндекс Ритм.",
+        "Из коробки готовые решения есть для Яндекс KIT, Яндекс Маркета и 1С-Битрикс."
+      ],
+      "footer": null,
+      "source_text": "Разбираю архитектуру интеграции магазина на WordPress + WooCommerce с YCP — протоколом Яндекса для покупок через Алису AI, Поиск и Ритм В конце мая 2026 Яндекс открыл Yandex Commerce Protocol для всех... В конце мая Яндекс открыл Yandex Commerce Protocol для всех — теперь онлайн-магазины могут подключать продажи через Алису AI, Поиск и Яндекс Ритм. Из коробки готовые решения есть для Яндекс KIT, Яндекс Маркета и 1С-Битрикс. Для WooCommerce — нет. У меня магазин на WP, и я написал плагин сам. Open-source, GPL-2.0, все 10 эндпоинтов протокола закрыты. Разбираю архитектуру: как боролся с письмами “новый заказ на 0 ₽”, зачем идемпотентность по session_id, как сделать совместимость с HPOS-хранилищем заказов, и пара других граблей, в которые наступил. Читать далее В конце мая 2026 Яндекс открыл Yandex Commerce Protocol для всех — теперь любой онлайн-магазин может подключить продажи через Алису AI, Поиск и рекомендательную ленту Ритм. Из коробки готовые решения есть для Яндекс KIT, Яндекс Маркета и 1С-Битрикс. Для всего остального — API. У меня магазин на WooCommerce, и решения «нажать кнопку и заработало» для меня не было. Я мог либо ждать, пока Яндекс или кто-то ещё сделает интеграцию для WordPress (с непредсказуемым ETA), либо разобраться с API и написать плагин сам. Выбрал второе. На разработку ушло около двух недель работы по вечерам, плюс ещё неделя на отладку с тестовым кабинетом Яндекса. По итогу получился open-source плагин на GPL-2.0, в котором закрыты все 10 эндпоинтов спецификации YCP v1: github.com/perfinn/YCP-Yandex-Commerce-Woocommerce . Официальный сайт релиза В статье разберу не «как поставить» (это в README), а как технически устроена интеграция : какие эндпоинты протокол требует реализовать, как маппить заказы из Яндекса в WC, где можно наступить на грабли (",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Как я написал плагин для WooCommerce под Yandex YCP или как купить в 1 клик из Алисы</b>\n\nРазбираю архитектуру интеграции магазина на WordPress + WooCommerce с YCP — протоколом Яндекса для покупок через Алису AI, Поиск и Ритм В конце мая 2026 Яндекс открыл Yandex Commerce Protocol для всех...\n\nВ конце мая Яндекс открыл Yandex Commerce Protocol для всех — теперь онлайн-магазины могут подключать продажи через Алису AI, Поиск и Яндекс Ритм.\n\nИз коробки готовые решения есть для Яндекс KIT, Яндекс Маркета и 1С-Битрикс.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://habr.com/ru/articles/1037654/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1037654#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1037654/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1037654#habracut",
+      "published_at": "2026-05-21T08:48:14+00:00",
+      "title_hash": "478ae54318721e8ec972a2908a6ec4115d713f40",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/894/5ee/9e5/8945ee9e5cc5cb73a996f0a91fd5154a.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T09:33:31+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "79dc213697ec3940",
+      "status": "rejected",
+      "created_at": "2026-05-21T09:33:31+00:00",
+      "created_at_sakhalin": "2026-05-21T20:33:31+11:00",
+      "source": "IGN",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 127,
+      "title_original": "Netflix's The Boroughs Episode 1 Kicks Off a Wild Mystery From the Producers of Stranger Things",
+      "title_ru": "Netflix's The Boroughs Episode 1 Kicks Off a Wild Mystery From the Producers of Stranger Things",
+      "body": [
+        "The Boroughs Episode 1 review: Alfred Molina moves into a mysterious retirement community.",
+        "The Boroughs Episode 1 review: Alfred Molina moves into a mysterious retirement community.",
+        "The marketing for Netflix’s The Boroughs is understandably pushing the involvement of Stranger Things creators, the Duffer Brothers, rather heavily despite the fact that while they are executive producers on the series, they are not its creators or writers."
+      ],
+      "footer": null,
+      "source_text": "The Boroughs Episode 1 review: Alfred Molina moves into a mysterious retirement community. The Boroughs Episode 1 review: Alfred Molina moves into a mysterious retirement community. The marketing for Netflix’s The Boroughs is understandably pushing the involvement of Stranger Things creators, the Duffer Brothers, rather heavily despite the fact that while they are executive producers on the series, they are not its creators or writers. Still, you can see at a glance how Netflix would hope that the show’s premise, especially with the Duffers involved, can evoke a twist on the Stranger Things formula. After all, that recently-concluded series was about a group of average kids in the 1980s encountering an otherworldly threat, and this show is about a group of average senior citizens encountering an otherworldly threat… and some of them are played by actors who became famous in the 1980s! Alfred Molina plays Sam Cooper, a recent widower who is the newest arrival in the Boroughs, a desert retirement community. In the tradition of The ‘Burbs, Don’t Worry Darling, and a million other projects set in a too-good-to-be-true neighborhood, despite the upbeat attitude of those who run the Boroughs and many of its residents, something very strange and very dangerous is occurring here… something involving a lot of tentacles . As The Boroughs makes clear from its very first scene, the threat here involves actual creatures of some sort, even as their origin and purpose remain secret. Sam arrives unaware of all of this, of course, though he’s unhappy to be moving there at all. Soon, however, he’ll be drawn into the mysterious ongoing scenario, and – one presumes, based on other stories of this type – some sort of conspiracy involving locals who might be helping to cover",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Netflix's The Boroughs Episode 1 Kicks Off a Wild Mystery From the Producers of Stranger Things</b>\n\nThe Boroughs Episode 1 review: Alfred Molina moves into a mysterious retirement community.\n\nThe Boroughs Episode 1 review: Alfred Molina moves into a mysterious retirement community.\n\nThe marketing for Netflix’s The Boroughs is understandably pushing the involvement of Stranger Things creators, the Duffer Brothers, rather heavily despite the fact that while they are executive producers on the series, they are not its creators or writers.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/the-boroughs-episode-1-review-netflix-alfred-molina-geena-davis\">IGN</a>",
+      "edited_post_text": null,
+      "url": "https://www.ign.com/articles/the-boroughs-episode-1-review-netflix-alfred-molina-geena-davis",
+      "published_at": "2026-05-21T07:00:00+00:00",
+      "title_hash": "06b3ceb30c475bdbec2a60023faac2597d59ecac",
+      "image_url": "https://assets-prd.ignimgs.com/2026/05/20/the-boroughs-review-thumb-1779239484297.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: игровая тема не имеет достаточной индустриальной значимости."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T09:33:31+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
       "id": "ec44a45aa73888ea",
       "status": "published",
       "created_at": "2026-05-21T00:17:03+00:00",
@@ -4178,21 +4417,21 @@
     }
   ],
   "auto_review": {
-    "reviewed_pending": 10,
+    "reviewed_pending": 6,
     "approved": 0,
     "approve_limit": 2,
-    "reviewed_at": "2026-05-21T09:12:10+00:00",
-    "reviewed_at_sakhalin": "2026-05-21T20:12:10+11:00"
+    "reviewed_at": "2026-05-21T09:33:31+00:00",
+    "reviewed_at_sakhalin": "2026-05-21T20:33:31+11:00"
   },
   "final_guard": {
     "changed": 0,
-    "checked_at": "2026-05-21T09:12:10+00:00",
-    "checked_at_sakhalin": "2026-05-21T20:12:10+11:00"
+    "checked_at": "2026-05-21T09:33:31+00:00",
+    "checked_at_sakhalin": "2026-05-21T20:33:31+11:00"
   },
   "priority_guard": {
     "changed": 0,
-    "checked_at": "2026-05-21T09:12:10+00:00",
-    "checked_at_sakhalin": "2026-05-21T20:12:10+11:00"
+    "checked_at": "2026-05-21T09:33:31+00:00",
+    "checked_at_sakhalin": "2026-05-21T20:33:31+11:00"
   },
   "cycle_report": {
     "reported_at": "2026-05-21T09:12:23+00:00",
