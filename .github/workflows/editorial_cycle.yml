@@ -2,6 +2,12 @@ name: SkySakhNews Editorial Cycle
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "src/editorial_*.py"
+      - "src/thematic_image.py"
+      - "requirements.txt"
+      - ".github/workflows/editorial_cycle.yml"
   schedule:
     - cron: "5 2,5,8,11,20,23 * * *"
 
