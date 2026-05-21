@@ -1,0 +1,38 @@
+name: SkySakhNews System Smoke Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      live_send_delete:
+        description: "Send one test image post to Telegram and delete it after 3 seconds"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+permissions:
+  contents: read
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run smoke test
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          SMOKE_SEND: ${{ inputs.live_send_delete == 'true' && '1' || '0' }}
+        run: |
+          python -m py_compile src/system_smoke_test.py
+          python src/system_smoke_test.py
