@@ -1,24 +1,37 @@
-# Safe publisher for SkySakhNews editorial queue.
-# Publishes ONLY approved posts with an image.
-# Image chain:
-#   source image -> curated/external fallback -> locally generated thematic illustration.
-# Therefore a valid approved post is never sent as text-only.
-
 import time
 from datetime import datetime
 
 import editorial_queue as q
 from thematic_image import generate_thematic_image
 
+SOURCE_MODES = {"source", "source_image", "rss_source", "page_source"}
+
+
+def source_image_for(draft):
+    if draft.get("image_decision") == "drop":
+        return None
+    mode = (draft.get("image_mode") or "").strip()
+    url = draft.get("image_url")
+    if not url or mode not in SOURCE_MODES:
+        return None
+    image = q.b.fetch_image_bytes(url)
+    if not image:
+        q.b.log("source image failed, using generated semantic image: " + str(url)[:120])
+        return None
+    draft["image_mode"] = "source"
+    draft["with_image"] = True
+    draft["image_decision"] = "use"
+    return image
+
 
 def generated_image_for(draft):
     data, content_type, filename = generate_thematic_image(draft)
-    draft["image_mode"] = "generated_thematic"
+    draft["image_mode"] = "generated_semantic"
     draft["image_url"] = None
     draft["with_image"] = True
     draft["image_decision"] = "use"
     draft.setdefault("editor_notes", []).append(
-        "Safe publisher: source/fallback-картинка не найдена, создана локальная тематическая иллюстрация."
+        "Safe publisher: source-картинка отсутствует или непригодна; создана локальная семантическая иллюстрация по тексту новости."
     )
     return data, content_type, filename
 
@@ -48,9 +61,9 @@ def publish_safe() -> None:
             draft.setdefault("editor_notes", []).append("Safe publisher: нет текста для публикации.")
             continue
 
-        image_file = q.fetch_queue_image(draft)
+        image_file = source_image_for(draft)
         if not image_file:
-            q.b.log("safe publisher generated image: " + str(draft.get("title_ru") or draft.get("title_original"))[:120])
+            q.b.log("safe publisher generated semantic image: " + str(draft.get("title_ru") or draft.get("title_original"))[:120])
             image_file = generated_image_for(draft)
 
         try:
