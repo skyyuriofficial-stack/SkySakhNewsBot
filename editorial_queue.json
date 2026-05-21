@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updated_at": "2026-05-21T00:17:03+00:00",
-  "updated_at_sakhalin": "2026-05-21T11:17:03+11:00",
-  "reviewed_at": "2026-05-21T00:00:00+00:00",
-  "reviewed_at_sakhalin": "2026-05-21T11:00:00+11:00",
+  "updated_at": "2026-05-21T01:10:04+00:00",
+  "updated_at_sakhalin": "2026-05-21T12:10:04+11:00",
+  "reviewed_at": "2026-05-21T01:09:38+00:00",
+  "reviewed_at_sakhalin": "2026-05-21T12:09:38+11:00",
   "items": [
     {
       "id": "6c606036c670493a",
@@ -110,6 +110,448 @@
       ]
     },
     {
+      "id": "ac30845af5157802",
+      "status": "hold",
+      "reviewed_at": "2026-05-21T00:00:00+00:00",
+      "reviewed_by": "ChatGPT/editor",
+      "source": "Eurogamer",
+      "category": "🎮 Игры / индустрия",
+      "title_original": "Here's our next batch of Xbox Game Pass titles for May",
+      "url": "https://www.eurogamer.net/xbox-game-pass-may",
+      "title_hash": "06c4bc2dd19b7491472b7bce2e669323c13bc4a0",
+      "image_url": "https://assetsio.gnwcdn.com/xbox-game-pass-header-may-2026.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "В резерве: нормальная игровая новость, но ниже приоритета IT/мир о России."
+      ]
+    },
+    {
+      "id": "6e946a51f3d435f5",
+      "status": "hold",
+      "reviewed_at": "2026-05-21T00:00:00+00:00",
+      "reviewed_by": "ChatGPT/editor",
+      "source": "Interfax",
+      "category": "🧭 Геополитика",
+      "title_original": "ЦАХАЛ находится в состоянии наивысшей готовности из-за угрозы войны с Ираном",
+      "url": "https://www.interfax.ru/world/1090822",
+      "title_hash": "e004d778188ff34d3662ac767a3025db4aad890c",
+      "editor_notes": [
+        "В резерве: тема сильная, но категория должна быть геополитика, а не РФ/война. Требуется отдельная чистка текста перед публикацией."
+      ]
+    },
+    {
+      "id": "69fc663316115737",
+      "status": "hold",
+      "reviewed_at": "2026-05-21T00:00:00+00:00",
+      "reviewed_by": "ChatGPT/editor",
+      "source": "Interfax",
+      "category": "🇷🇺 РФ / война и безопасность",
+      "title_original": "Три человека ранены в ДНР при атаке БПЛА",
+      "url": "https://www.interfax.ru/russia/1090813",
+      "title_hash": "fb0e8be59e07fa7d4d2ddf36f7a8cb3a7b97603c",
+      "editor_notes": [
+        "В резерве: тема релевантная, но текст требует очистки и сейчас ниже приоритета двух одобренных материалов."
+      ]
+    },
+    {
+      "id": "fba8c5517fdfff38",
+      "status": "hold",
+      "created_at": "2026-05-21T00:17:03+00:00",
+      "created_at_sakhalin": "2026-05-21T11:17:03+11:00",
+      "source": "PC Gamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 162,
+      "title_original": "All the estimates online about how many people played the original Doom may be wildly wrong",
+      "title_ru": "All the estimates online about how many people played the original Doom may be wildly wrong",
+      "body": [
+        "Re-examining an old quote from Valve Re-examining an old quote from Valve's Gabe Newell reveals a big gap in what we know about Doom's popularity."
+      ],
+      "footer": null,
+      "source_text": "Re-examining an old quote from Valve Re-examining an old quote from Valve's Gabe Newell reveals a big gap in what we know about Doom's popularity.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>All the estimates online about how many people played the original Doom may be wildly wrong</b>\n\nRe-examining an old quote from Valve Re-examining an old quote from Valve's Gabe Newell reveals a big gap in what we know about Doom's popularity.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/gaming-industry/in-the-early-1990s-doom-was-famously-installed-on-more-pcs-than-windows-itself-but-how-many-was-that-actually/\">PC Gamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.pcgamer.com/gaming-industry/in-the-early-1990s-doom-was-famously-installed-on-more-pcs-than-windows-itself-but-how-many-was-that-actually/",
+      "published_at": "2026-05-20T22:14:59+00:00",
+      "title_hash": "ff1888a0c32e609d32a65e804abe90095ecb2512",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/RbW3P5x9tYeU8KVDphTEDY-1280-80.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: материал не прошёл в лимит публикаций или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "2fc87cd89bb0a86f",
+      "status": "hold",
+      "created_at": "2026-05-21T00:17:03+00:00",
+      "created_at_sakhalin": "2026-05-21T11:17:03+11:00",
+      "source": "PC Gamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 162,
+      "title_original": "Nearly a decade after its last update, Darksiders Warmastered Edition gets a photo mode and motion controls in a surprise new patch",
+      "title_ru": "Nearly a decade after its last update, Darksiders Warmastered Edition gets a photo mode and motion controls in a surprise new patch",
+      "body": [
+        "Darksiders launched for the PS5 and Xbox Series X/S this week, and that Darksiders launched for the PS5 and Xbox Series X/S this week, and that's good news for us too."
+      ],
+      "footer": null,
+      "source_text": "Darksiders launched for the PS5 and Xbox Series X/S this week, and that Darksiders launched for the PS5 and Xbox Series X/S this week, and that's good news for us too.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Nearly a decade after its last update, Darksiders Warmastered Edition gets a photo mode and motion controls in a surprise new patch</b>\n\nDarksiders launched for the PS5 and Xbox Series X/S this week, and that Darksiders launched for the PS5 and Xbox Series X/S this week, and that's good news for us too.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/games/action/nearly-a-decade-after-its-last-update-darksiders-warmastered-edition-gets-a-photo-mode-and-motion-controls-in-a-surprise-new-patch/\">PC Gamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.pcgamer.com/games/action/nearly-a-decade-after-its-last-update-darksiders-warmastered-edition-gets-a-photo-mode-and-motion-controls-in-a-surprise-new-patch/",
+      "published_at": "2026-05-20T21:59:33+00:00",
+      "title_hash": "e5c1ed14df1a82fd4c79f187e8b526044d425923",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/hGAMNsKwVSEoKhX7ZWjcxR-1280-80.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: материал не прошёл в лимит публикаций или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "484567e66e8c3022",
+      "status": "hold",
+      "created_at": "2026-05-21T00:17:03+00:00",
+      "created_at_sakhalin": "2026-05-21T11:17:03+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 158,
+      "title_original": "VibeMuvik — фильмы, сериалы и рецензии зрителей",
+      "title_ru": "VibeMuvik — фильмы, сериалы и рецензии зрителей",
+      "body": [
+        "Фильмы и сериалы по жанрам (драма, мелодрама, фантастика), рецензии зрителей, батлы и подборки под настроение.",
+        "Начиналось как «сделаю себе сайтик про кино на пару выходных».",
+        "Закончилось каталогом на десятки тысяч карточек, лентой, профилями, рейтингами, совместным просмотром и кучей фоновых задач."
+      ],
+      "footer": null,
+      "source_text": "Фильмы и сериалы по жанрам (драма, мелодрама, фантастика), рецензии зрителей, батлы и подборки под настроение. Начиналось как «сделаю себе сайтик про кино на пару выходных». Закончилось каталогом на десятки тысяч карточек, лентой, профилями, рейтингами, совместным просмотром и кучей фоновых задач. И всё это тащит один человек — я сам себе фронт, бэк, девопс, дизайнер и поддержка. Делюсь сжато: стек и грабли, без воды. Стек выбирал не по хайпу, а по принципу «доеду и не утону в обслуживании»: FastAPI (быстро, асинхронно, автодоки), Next.js на React (SSR из коробки — критично для SEO), PostgreSQL (SQLite кончился на первых же конкурентных записях), Redis для кэша и рейт-лимитов. Nginx + systemd на обычном VPS. Никакого Kubernetes — для одного это способ обслуживать инфраструктуру вместо разработки. Грабли, на которых посидел: • Фоновое состояние в памяти + несколько воркеров = рассинхрон. Пользователи попадают в разные процессы, состояние не шарится. Лечение: либо общее хранилище, либо такие фичи в один воркер. • Права на файлы после сборки. Собрал под одним пользователем, сервис под другим — EACCES и белый экран. Теперь chown в чек-листе деплоя. • node_modules не переезжает Windows → Linux. Только чистая установка на целевой ОС. • dev и prod базы — разные миры. Один запуск скрипта «не туда» — и долго гадаешь, почему данные не меняются (а они меняются, в локальном SQLite, который никому не нужен). • Не запускай два тяжёлых процесса разом. Фоновая генерация + пересборка фронта = OOM-killer молча прибил процесс. Полчаса искал причину. • Кэш сборки трогать нельзя — «почистил на всякий» и сломал инкрементальную регенерацию страниц на сутки. Но самое тяжёлое — не код. Некому передать, если выгорел. Некому сделать ревью и сказать «ты идиот». Легко месяцами катиться не туда. Кач",
+      "post_text": "🌐 Мировые IT\n\n<b>VibeMuvik — фильмы, сериалы и рецензии зрителей</b>\n\nФильмы и сериалы по жанрам (драма, мелодрама, фантастика), рецензии зрителей, батлы и подборки под настроение.\n\nНачиналось как «сделаю себе сайтик про кино на пару выходных».\n\nЗакончилось каталогом на десятки тысяч карточек, лентой, профилями, рейтингами, совместным просмотром и кучей фоновых задач.\n\nМИРОВЫЕ IT · <a href=\"https://vibemuvik.ru/\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://vibemuvik.ru/",
+      "published_at": "2026-05-20T22:43:21+00:00",
+      "title_hash": "824032a272925c11a9c754b8bf1c930b13048abf",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/6c4/e10/bbe/6c4e10bbe5f8d9e50e60479006ab5a8e.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: материал не прошёл в лимит публикаций или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "a4639b1911b494bb",
+      "status": "hold",
+      "created_at": "2026-05-21T01:09:38+00:00",
+      "created_at_sakhalin": "2026-05-21T12:09:38+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 158,
+      "title_original": "RAG для тех, кто разочаровался: почему retrieval ломается и как это починить",
+      "title_ru": "RAG для тех, кто разочаровался: почему retrieval ломается и как это починить",
+      "body": [
+        "Вы собрали RAG-пайплайн: загрузили документы, нарезали на чанки, сгенерировали эмбеддинги, подключили векторную базу.",
+        "Задаёте вопрос — модель отвечает уверенно и подробно.",
+        "Вы собрали RAG-пайплайн: загрузили документы, нарезали на чанки, сгенерировали эмбеддинги, подключили векторную базу."
+      ],
+      "footer": null,
+      "source_text": "Вы собрали RAG-пайплайн: загрузили документы, нарезали на чанки, сгенерировали эмбеддинги, подключили векторную базу. Задаёте вопрос — модель отвечает уверенно и подробно. Показываете заказчику, тот в... Вы собрали RAG-пайплайн: загрузили документы, нарезали на чанки, сгенерировали эмбеддинги, подключили векторную базу. Задаёте вопрос — модель отвечает уверенно и подробно. Показываете заказчику, тот в восторге. Потом начинается тестирование на реальных вопросах, и оказывается, что на половину из них система отвечает мимо: то находит не тот документ, то находит правильный, но не тот кусок, то вообще ничего релевантного не достаёт и модель уверенно галлюцинирует. Каждый раз проблема не в модели (GPT-4 и Claude отвечают хорошо, если им дать правильный контекст), а в retrieval — в том, как мы ищем релевантные куски документов. Модель отвечает ровно настолько хорошо, насколько хорош контекст, который ей подсунули. Рассмотрим три основные причины. Разобрать RAG Вы собрали RAG-пайплайн: загрузили документы, нарезали на чанки, сгенерировали эмбеддинги, подключили векторную базу. Задаёте вопрос — модель отвечает уверенно и подробно. Показываете заказчику, тот в восторге. Потом начинается тестирование на реальных вопросах, и оказывается, что на половину из них система отвечает мимо: то находит не тот документ, то находит правильный, но не тот кусок, то вообще ничего релевантного не достаёт и модель уверенно галлюцинирует. Каждый раз проблема не в модели (GPT-4 и Claude отвечают хорошо, если им дать правильный контекст), а в retrieval — в том, как мы ищем релевантные куски документов. Модель отвечает ровно настолько хорошо, насколько хорош контекст, который ей подсунули. Стандартный подход — нарезать документ на куски по 500-1000 символов с перекрытием. Представьте договор на 30 с",
+      "post_text": "🌐 Мировые IT\n\n<b>RAG для тех, кто разочаровался: почему retrieval ломается и как это починить</b>\n\nВы собрали RAG-пайплайн: загрузили документы, нарезали на чанки, сгенерировали эмбеддинги, подключили векторную базу.\n\nЗадаёте вопрос — модель отвечает уверенно и подробно.\n\nВы собрали RAG-пайплайн: загрузили документы, нарезали на чанки, сгенерировали эмбеддинги, подключили векторную базу.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/otus/articles/1034386/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1034386#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/otus/articles/1034386/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1034386#habracut",
+      "published_at": "2026-05-20T20:25:11+00:00",
+      "title_hash": "fc85a04efba60f547652c76ec8d01dafc51c6f33",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/9a3/e46/bf5/9a3e46bf5baac9328de86dbb717e3150.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: материал не прошёл в лимит публикаций или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "8b954452ca11ff36",
+      "status": "hold",
+      "created_at": "2026-05-21T01:09:38+00:00",
+      "created_at_sakhalin": "2026-05-21T12:09:38+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 158,
+      "title_original": "Три уровня субъективной реальности: почему непонимание в командах заложено биологически",
+      "title_ru": "Три уровня субъективной реальности: почему непонимание в командах заложено биологически",
+      "body": [
+        "Когда два инженера расходятся во мнениях после одного и того же код-ревью, первый импульс — проверить коммуникацию.",
+        "Поговорить, уточнить, переформулировать.",
+        "Когда два инженера расходятся во мнениях после одного и того же код-ревью, первый импульс — проверить коммуникацию."
+      ],
+      "footer": null,
+      "source_text": "Когда два инженера расходятся во мнениях после одного и того же код-ревью, первый импульс — проверить коммуникацию. Поговорить, уточнить, переформулировать. Иногда это помогает. Но есть случаи, когда... Когда два инженера расходятся во мнениях после одного и того же код-ревью, первый импульс — проверить коммуникацию. Поговорить, уточнить, переформулировать. Иногда это помогает. Но есть случаи, когда проблема глубже: люди буквально воспринимают разные версии одной реальности. Не из-за невнимательности — из-за биологии. Немецкий биолог Якоб фон Икскюль описал этот механизм сто лет назад для животных. Для людей он работает так же — только сложнее. Десять инженеров на архитектурном ревью. Один экран, один набор данных, сорок минут обсуждения. Потом каждый пишет саммари для команды. Саммари получаются разные. Не в деталях — в ключевых выводах. Это не проблема протокола совещания. Заскакивай Когда два инженера расходятся во мнениях после одного и того же код-ревью, первый импульс — проверить коммуникацию. Поговорить, уточнить, переформулировать. Иногда это помогает. Но есть случаи, когда проблема глубже: люди буквально воспринимают разные версии одной реальности. Не из-за невнимательности — из-за биологии. Немецкий биолог Якоб фон Икскюль описал этот механизм сто лет назад для животных. Для людей он работает так же — только сложнее. Десять инженеров на архитектурном ревью. Один экран, один набор данных, сорок минут обсуждения. Потом каждый пишет саммари для команды. Саммари получаются разные. Не в деталях — в ключевых выводах. В начале XX века Якоб фон Икскюль предложил концепцию, которую биологи долго игнорировали: каждый организм воспринимает реальность через свой уникальный сенсорный мир — умвельт (нем. Umwelt — окружающий мир).",
+      "post_text": "🌐 Мировые IT\n\n<b>Три уровня субъективной реальности: почему непонимание в командах заложено биологически</b>\n\nКогда два инженера расходятся во мнениях после одного и того же код-ревью, первый импульс — проверить коммуникацию.\n\nПоговорить, уточнить, переформулировать.\n\nКогда два инженера расходятся во мнениях после одного и того же код-ревью, первый импульс — проверить коммуникацию.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1037536/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1037536#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1037536/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1037536#habracut",
+      "published_at": "2026-05-20T20:22:30+00:00",
+      "title_hash": "5ce22f69075cd431c69d0211d542c62e5eb2b136",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/cfd/14b/151/cfd14b1519b07b4eb97ab15a7244dabd.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: материал не прошёл в лимит публикаций или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "3691e2314f111fa2",
+      "status": "hold",
+      "created_at": "2026-05-21T01:09:38+00:00",
+      "created_at_sakhalin": "2026-05-21T12:09:38+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 158,
+      "title_original": "Четыре реакции — четыре тела. Можно ли измерить тип личности по сердцебиению?",
+      "title_ru": "Четыре реакции — четыре тела. Можно ли измерить тип личности по сердцебиению?",
+      "body": [
+        "Стивен Порджес в 1988 году работал с данными кардиомониторинга новорождённых в интенсивной терапии.",
+        "Он смотрел не на патологию — он смотрел на норму.",
+        "Стивен Порджес в 1988 году работал с данными кардиомониторинга новорождённых в интенсивной терапии."
+      ],
+      "footer": null,
+      "source_text": "Стивен Порджес в 1988 году работал с данными кардиомониторинга новорождённых в интенсивной терапии. Он смотрел не на патологию — он смотрел на норму. На здоровых детей. И заметил странную вещь:... Стивен Порджес в 1988 году работал с данными кардиомониторинга новорождённых в интенсивной терапии. Он смотрел не на патологию — он смотрел на норму. На здоровых детей. И заметил странную вещь: вариабельность сердечного ритма у разных детей в одинаковых условиях покоя вела себя по-разному. Не случайным образом — паттерно. Будто у каждого сердца был собственный почерк, заложенный ещё до того, как ребёнок научился говорить, читать или заполнять психологические тесты. Порджес назвал это «вагальным тонусом» и потратил следующие двадцать лет, пытаясь объяснить, что это значит. Он объяснил. Но объяснение поставило под вопрос большую часть того, что мы думали про типологию личности. Заскакивай Стивен Порджес в 1988 году работал с данными кардиомониторинга новорождённых в интенсивной терапии. Он смотрел не на патологию — он смотрел на норму. На здоровых детей. И заметил странную вещь: вариабельность сердечного ритма у разных детей в одинаковых условиях покоя вела себя по-разному. Не случайным образом — паттерно. Будто у каждого сердца был собственный почерк, заложенный ещё до того, как ребёнок научился говорить, читать или заполнять психологические тесты. Порджес назвал это «вагальным тонусом» и потратил следующие двадцать лет, пытаясь объяснить, что это значит. Он объяснил. Но объяснение поставило под вопрос большую часть того, что мы думали про типологию личности. Учебник по нейрофизиологии описывает вегетативную нервную систему просто: газ и тормоз. Симпатический отдел — ускорение, мобилизация, адреналин. Парасимпатический — торможение, восстановление, покой. Это не метафора — это ",
+      "post_text": "🌐 Мировые IT\n\n<b>Четыре реакции — четыре тела. Можно ли измерить тип личности по сердцебиению?</b>\n\nСтивен Порджес в 1988 году работал с данными кардиомониторинга новорождённых в интенсивной терапии.\n\nОн смотрел не на патологию — он смотрел на норму.\n\nСтивен Порджес в 1988 году работал с данными кардиомониторинга новорождённых в интенсивной терапии.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1037528/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1037528#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1037528/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1037528#habracut",
+      "published_at": "2026-05-20T19:55:28+00:00",
+      "title_hash": "f80bfd342086e947156ffa3091cc1918b98b904f",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/241/d4c/20a/241d4c20a2126134585b7c28805880ed.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: материал не прошёл в лимит публикаций или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "71c7ce9dd2cce7ac",
+      "status": "hold",
+      "created_at": "2026-05-21T01:09:38+00:00",
+      "created_at_sakhalin": "2026-05-21T12:09:38+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 158,
+      "title_original": "Тонкие контроллеры и модели. Использование паттернов проектирования в Rails-приложении",
+      "title_ru": "Тонкие контроллеры и модели. Использование паттернов проектирования в Rails-приложении",
+      "body": [
+        "Вечный спор в среде MVC-фреймворков - что лучше?",
+        "Толстые модели и тонкие контроллеры или наоборот?",
+        "Классический подход Rails — “Fat Model, Skinny Controller”."
+      ],
+      "footer": null,
+      "source_text": "Вечный спор в среде MVC-фреймворков - что лучше? Толстые модели и тонкие контроллеры или наоборот? Классический подход Rails — “Fat Model, Skinny Controller”. Но что происходит, когда ваша модель User... Вечный спор в среде MVC-фреймворков - что лучше? Толстые модели и тонкие контроллеры или наоборот? Классический подход Rails — “Fat Model, Skinny Controller”. Но что происходит, когда ваша модель User разрастается до 800 строк кода, содержит 15 валидаций, 10 коллбеков и 30 методов бизнес-логики? Тестировать это становится кошмаром, а понять что и когда вызывается — квестом для детектива. Сегодня мы рассмотрим альтернативный вариант — тонкие контроллеры и… тонкие модели ! Разобраться Вечный спор в среде MVC-фреймворков - что лучше? Толстые модели и тонкие контроллеры или наоборот? Классический подход Rails — “Fat Model, Skinny Controller”. Но что происходит, когда ваша модель User разрастается до 800 строк кода, содержит 15 валидаций, 10 коллбеков и 30 методов бизнес-логики? Тестировать это становится кошмаром, а понять что и когда вызывается — квестом для детектива. Сегодня мы рассмотрим альтернативный вариант — тонкие контроллеры и… тонкие модели ! В основе нашего эксперимента будет стоять первое правило SOLID — Single Responsibility Principle (у класса должна быть только одна причина для изменения).",
+      "post_text": "🌐 Мировые IT\n\n<b>Тонкие контроллеры и модели. Использование паттернов проектирования в Rails-приложении</b>\n\nВечный спор в среде MVC-фреймворков - что лучше?\n\nТолстые модели и тонкие контроллеры или наоборот?\n\nКлассический подход Rails — “Fat Model, Skinny Controller”.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1023874/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1023874#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1023874/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1023874#habracut",
+      "published_at": "2026-05-20T19:08:48+00:00",
+      "title_hash": "5f0e8376537bcaa23e0cec09d34ae2107cddf7ca",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/6ed/72b/4e4/6ed72b4e4f5ca0ffb405a4a5252cd002.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: материал не прошёл в лимит публикаций или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "bb1bbc5cf9b0aefd",
+      "status": "hold",
+      "created_at": "2026-05-21T01:09:38+00:00",
+      "created_at_sakhalin": "2026-05-21T12:09:38+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 158,
+      "title_original": "Тезис о расширенном разуме",
+      "title_ru": "Тезис о расширенном разуме",
+      "body": [
+        "Дэвид Чалмерс(David Chalmers) Австралийский философ и преподаватель (профессор), специализирующийся в области философии сознания.",
+        "Основной научный интерес Чалмерса — трудная проблема...",
+        "В философии сознания тезис о расширенном разуме утверждает, что разум не ограничивается мозгом или даже телом, а выходит за их пределы в физический мир."
+      ],
+      "footer": null,
+      "source_text": "Дэвид Чалмерс(David Chalmers) Австралийский философ и преподаватель (профессор), специализирующийся в области философии сознания. Основной научный интерес Чалмерса — трудная проблема... В философии сознания тезис о расширенном разуме утверждает, что разум не ограничивается мозгом или даже телом, а выходит за их пределы в физический мир. Согласно этому тезису, некоторые объекты внешнего окружения могут становиться частью когнитивного процесса, функционируя тем самым как продолжение самого разума. В качестве примеров таких объектов можно привести письменные вычисления, дневник или персональный компьютер; как правило, речь идет об объектах, хранящих информацию. Гипотеза рассматривает разум как охватывающий все уровни познания, включая физический. Осознать далее Австралийский философ и преподаватель (профессор), специализирующийся в области философии сознания. Основной научный интерес Чалмерса — трудная проблема сознания. Также он возглавляет центр, занимающийся вопросами сознания, и преподаёт философию в Австралийском национальном университете и Нью‑Йоркском университете.С 2013 года — член Американской академии искусств и наук. Британский философ . Является профессором когнитивной философии в Сассекском университете. Кларк — один из основателей совместного исследовательского проекта CONTACT, цель которого — изучить роль среды в формировании природы сознательного опыта. Статьи и книги Кларка посвящены философии сознания, а сам он считается ведущим специалистом по проблеме расширенного разума. Он также является автором множества трудов по коннекционизму, робототехнике, а также по вопросу о роли и природе ментальных репрезентаций. В философии сознания тезис о расширенном разуме(Extended mind thesis) утверждает, что разум не ограничивается мозгом или даже телом, а выходит за и",
+      "post_text": "🌐 Мировые IT\n\n<b>Тезис о расширенном разуме</b>\n\nДэвид Чалмерс(David Chalmers) Австралийский философ и преподаватель (профессор), специализирующийся в области философии сознания.\n\nОсновной научный интерес Чалмерса — трудная проблема...\n\nВ философии сознания тезис о расширенном разуме утверждает, что разум не ограничивается мозгом или даже телом, а выходит за их пределы в физический мир.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1033078/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1033078#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1033078/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1033078#habracut",
+      "published_at": "2026-05-20T18:47:25+00:00",
+      "title_hash": "d7bd2b7a7a874fa4631eff9a8b823f6b2523b4c1",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/491/ea3/447/491ea34472caf96ded6a67d4d1733a22.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: материал не прошёл в лимит публикаций или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "f1c420d44d4af710",
+      "status": "hold",
+      "created_at": "2026-05-21T01:09:38+00:00",
+      "created_at_sakhalin": "2026-05-21T12:09:38+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 147,
+      "title_original": "Xbox hires game industry analyst Matthew Ball to lead strategy",
+      "title_ru": "Xbox hires game industry analyst Matthew Ball to lead strategy",
+      "body": [
+        "The second major Xbox leadership changes this month.",
+        "Microsoft has recruited game industry analyst Matthew Ball as Xbox chief strategy officer.",
+        "Ball publishes an annual state of video gaming report, which is a popular read across the game industry, and he's \"widely respected across gaming, media, and technology,\" according to Xbox CEO Asha Sharma."
+      ],
+      "footer": null,
+      "source_text": "The second major Xbox leadership changes this month. Microsoft has recruited game industry analyst Matthew Ball as Xbox chief strategy officer. Ball publishes an annual state of video gaming report, which is a popular read across the game industry, and he's \"widely respected across gaming, media, and technology,\" according to Xbox CEO Asha Sharma. Sharma announced Ball is joining Microsoft in a memo […]",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Xbox hires game industry analyst Matthew Ball to lead strategy</b>\n\nThe second major Xbox leadership changes this month.\n\nMicrosoft has recruited game industry analyst Matthew Ball as Xbox chief strategy officer.\n\nBall publishes an annual state of video gaming report, which is a popular read across the game industry, and he's \"widely respected across gaming, media, and technology,\" according to Xbox CEO Asha Sharma.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/report/934687/xbox-matthew-ball-strategy-officer-hire\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/report/934687/xbox-matthew-ball-strategy-officer-hire",
+      "published_at": "2026-05-20T16:03:21+00:00",
+      "title_hash": "0a676d9cc02bbde85da2d3683c66cf3ec8b967ec",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: материал не прошёл в лимит публикаций или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "25f2b5c39a4ef5d3",
+      "status": "hold",
+      "created_at": "2026-05-21T01:09:38+00:00",
+      "created_at_sakhalin": "2026-05-21T12:09:38+11:00",
+      "source": "GameSpot",
+      "source_type": "gaming",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 147,
+      "title_original": "A Forza Horizon 6 Sound Effect Might Just Trigger Some Awful Memories For You",
+      "title_ru": "A Forza Horizon 6 Sound Effect Might Just Trigger Some Awful Memories For You",
+      "body": [
+        "Following a nearly five-year hiatus between titles, Forza Horizon 6 debuted this week.",
+        "And while fans are diving into its open-world take on Japan, some have already discovered a sound effect in Forza Horizon 6 that may trigger anyone who has ever had to work in an office setting.",
+        "As noted by a player on social media , one of the car horn sounds in Forza Horizon 6 is the Microsoft Teams calling noise--a joke made possible by the fact that the Forza games are published by Microsoft."
+      ],
+      "footer": null,
+      "source_text": "Following a nearly five-year hiatus between titles, Forza Horizon 6 debuted this week. And while fans are diving into its open-world take on Japan, some have already discovered a sound effect in Forza Horizon 6 that may trigger anyone who has ever had to work in an office setting. As noted by a player on social media , one of the car horn sounds in Forza Horizon 6 is the Microsoft Teams calling noise--a joke made possible by the fact that the Forza games are published by Microsoft. The sound effect was also in Forza Horizon 5 , but it still inspires negative reactions from players who would rather forget about anything work-related when playing the game. PTSD Triggered pic.twitter.com/k02039PVbX — Iphoniez (@Iphoniez) May 20, 2026 i loved using it in FH5 just because it was still during the pandemic. i terrorized so many people with it, watching them physically react in the middle of races so i could pass them. shit was INCREDIBLE — Sir Pootington 💙💛🇻🇪 (🦋) (@SirPootington) May 20, 2026 I would have a breakdown if I heard that outside of work hours — ReplayTJ (@Replay_TJ) May 20, 2026 Lmao instant trigger — J (@calcran4401) May 20, 2026 At the very least, Forza Horizon 6 has fixed one of the most annoying aspects of its predecessors. Players no longer have to painstakingly explore every section of a road to get credit towards exploring 100% of the map. Now, players can get the Trophy or Achievement simply by revealing the entire map. Continue Reading at GameSpot",
+      "post_text": "🎮 Игры / индустрия\n\n<b>A Forza Horizon 6 Sound Effect Might Just Trigger Some Awful Memories For You</b>\n\nFollowing a nearly five-year hiatus between titles, Forza Horizon 6 debuted this week.\n\nAnd while fans are diving into its open-world take on Japan, some have already discovered a sound effect in Forza Horizon 6 that may trigger anyone who has ever had to work in an office setting.\n\nAs noted by a player on social media , one of the car horn sounds in Forza Horizon 6 is the Microsoft Teams calling noise--a joke made possible by the fact that the Forza games are published by Microsoft.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.gamespot.com/games/forza-horizon-6/\">GameSpot</a>",
+      "edited_post_text": null,
+      "url": "https://www.gamespot.com/games/forza-horizon-6/",
+      "published_at": "2026-05-20T22:13:00+00:00",
+      "title_hash": "6b7cd84f9e3a61d4c3d0d750f0af937279fdb4ad",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: материал не прошёл в лимит публикаций или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
       "id": "f0fbc348e425650b",
       "status": "rejected",
       "reviewed_at": "2026-05-21T00:00:00+00:00",
@@ -196,24 +638,6 @@
       ]
     },
     {
-      "id": "ac30845af5157802",
-      "status": "hold",
-      "reviewed_at": "2026-05-21T00:00:00+00:00",
-      "reviewed_by": "ChatGPT/editor",
-      "source": "Eurogamer",
-      "category": "🎮 Игры / индустрия",
-      "title_original": "Here's our next batch of Xbox Game Pass titles for May",
-      "url": "https://www.eurogamer.net/xbox-game-pass-may",
-      "title_hash": "06c4bc2dd19b7491472b7bce2e669323c13bc4a0",
-      "image_url": "https://assetsio.gnwcdn.com/xbox-game-pass-header-may-2026.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "В резерве: нормальная игровая новость, но ниже приоритета IT/мир о России."
-      ]
-    },
-    {
       "id": "583be8334b55c59b",
       "status": "rejected",
       "reviewed_at": "2026-05-21T00:00:00+00:00",
@@ -242,20 +666,6 @@
       ]
     },
     {
-      "id": "6e946a51f3d435f5",
-      "status": "hold",
-      "reviewed_at": "2026-05-21T00:00:00+00:00",
-      "reviewed_by": "ChatGPT/editor",
-      "source": "Interfax",
-      "category": "🧭 Геополитика",
-      "title_original": "ЦАХАЛ находится в состоянии наивысшей готовности из-за угрозы войны с Ираном",
-      "url": "https://www.interfax.ru/world/1090822",
-      "title_hash": "e004d778188ff34d3662ac767a3025db4aad890c",
-      "editor_notes": [
-        "В резерве: тема сильная, но категория должна быть геополитика, а не РФ/война. Требуется отдельная чистка текста перед публикацией."
-      ]
-    },
-    {
       "id": "583635bfd587f061",
       "status": "rejected",
       "reviewed_at": "2026-05-21T00:00:00+00:00",
@@ -270,64 +680,13 @@
       ]
     },
     {
-      "id": "69fc663316115737",
-      "status": "hold",
-      "reviewed_at": "2026-05-21T00:00:00+00:00",
-      "reviewed_by": "ChatGPT/editor",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "title_original": "Три человека ранены в ДНР при атаке БПЛА",
-      "url": "https://www.interfax.ru/russia/1090813",
-      "title_hash": "fb0e8be59e07fa7d4d2ddf36f7a8cb3a7b97603c",
-      "editor_notes": [
-        "В резерве: тема релевантная, но текст требует очистки и сейчас ниже приоритета двух одобренных материалов."
-      ]
-    },
-    {
-      "id": "ec44a45aa73888ea",
-      "status": "pending",
-      "created_at": "2026-05-21T00:17:03+00:00",
-      "created_at_sakhalin": "2026-05-21T11:17:03+11:00",
-      "source": "GameSpot",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 162,
-      "title_original": "Download The Latest Official NVIDIA Drivers",
-      "title_ru": "Download The Latest Official NVIDIA Drivers",
-      "body": [
-        "Download the latest official NVIDIA drivers to enhance your PC gaming experience and run apps faster.",
-        "Owners of Nvidia graphics cards will want to make certain that their hardware is up to date, as the company has issued a new security alert.",
-        "According to Nvidia, hackers have discovered a new vulnerability across Windows and Linux drivers, allowing them to gain access to PCs and wreak some major havoc."
-      ],
-      "footer": null,
-      "source_text": "Download the latest official NVIDIA drivers to enhance your PC gaming experience and run apps faster. Owners of Nvidia graphics cards will want to make certain that their hardware is up to date, as the company has issued a new security alert. According to Nvidia, hackers have discovered a new vulnerability across Windows and Linux drivers, allowing them to gain access to PCs and wreak some major havoc. Forget about having a non-operational PC; the exploit could allow bad actors to get away with crucial data stored on your PC or inject some malicious code that would give them unfettered access. Nvidia users can grab the new security software update for GPU display drivers post-haste and upgrade to driver version 596.49. You can grab the download directly from Nvidia or through the Nvidia app on Windows. All Nvidia drivers before Version 596.36--or Version 482.53 for GTX 10-series users and below--are potentially at risk. As spotted by Digital Foundry , Linux users will want to update their drivers to version 590.48.01 to beef up their PC security. Nvidia drivers In related news, Nvidia recently introduced a beta version of what it's calling Auto Shader Compilation . PC gamers who have spent an annoying amount of time waiting for a game to finish compiling shaders will be interested in this update, as it's designed to determine when your PC is idle and then use that time to compile shaders for your games in the background. Potentially, this could save users a lot of time and get them into their newly installed games faster, but the feature is only rolling out to RTX 50-series cards currently. Continue Reading at GameSpot Menu Menu icon Menu Menu icon Close Close icon Close Close icon Close Close icon Caret down icon Accordion is closed, click to open. Caret down icon Acco",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Download The Latest Official NVIDIA Drivers</b>\n\nDownload the latest official NVIDIA drivers to enhance your PC gaming experience and run apps faster.\n\nOwners of Nvidia graphics cards will want to make certain that their hardware is up to date, as the company has issued a new security alert.\n\nAccording to Nvidia, hackers have discovered a new vulnerability across Windows and Linux drivers, allowing them to gain access to PCs and wreak some major havoc.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.nvidia.com/en-us/drivers/\">GameSpot</a>",
-      "edited_post_text": null,
-      "url": "https://www.nvidia.com/en-us/drivers/",
-      "published_at": "2026-05-20T16:22:00+00:00",
-      "title_hash": "c94650fc917bd97002db11299799153950ac4d80",
-      "image_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/drivers/cut-graphics/nvidia-geforce-drivers-meta-image-1200x627.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
       "id": "918ec96f0eb198ac",
-      "status": "pending",
+      "status": "rejected",
       "created_at": "2026-05-21T00:17:03+00:00",
       "created_at_sakhalin": "2026-05-21T11:17:03+11:00",
       "source": "IGN",
       "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
+      "category": "🌐 Мировые IT",
       "category_hint": "🎮 Игры / индустрия",
       "score": 162,
       "title_original": "Walmart Still Has the Lowest Price on an Nvidia GeForce RTX 5070 12GB Graphics Card in 2026 (But Amazon Includes a Free Upcoming Game)",
@@ -347,126 +706,22 @@
       "image_url": "https://assets-prd.ignimgs.com/2026/04/15/pnygeforcertx5070-1776286664571.jpg",
       "image_mode": "source",
       "with_image": true,
-      "image_decision": "use",
+      "image_decision": "drop",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: товарная скидка/партнерский материал, не новость."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "fba8c5517fdfff38",
-      "status": "pending",
-      "created_at": "2026-05-21T00:17:03+00:00",
-      "created_at_sakhalin": "2026-05-21T11:17:03+11:00",
-      "source": "PC Gamer",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 162,
-      "title_original": "All the estimates online about how many people played the original Doom may be wildly wrong",
-      "title_ru": "All the estimates online about how many people played the original Doom may be wildly wrong",
-      "body": [
-        "Re-examining an old quote from Valve Re-examining an old quote from Valve's Gabe Newell reveals a big gap in what we know about Doom's popularity."
-      ],
-      "footer": null,
-      "source_text": "Re-examining an old quote from Valve Re-examining an old quote from Valve's Gabe Newell reveals a big gap in what we know about Doom's popularity.",
-      "post_text": "🎮 Игры / индустрия\n\n<b>All the estimates online about how many people played the original Doom may be wildly wrong</b>\n\nRe-examining an old quote from Valve Re-examining an old quote from Valve's Gabe Newell reveals a big gap in what we know about Doom's popularity.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/gaming-industry/in-the-early-1990s-doom-was-famously-installed-on-more-pcs-than-windows-itself-but-how-many-was-that-actually/\">PC Gamer</a>",
-      "edited_post_text": null,
-      "url": "https://www.pcgamer.com/gaming-industry/in-the-early-1990s-doom-was-famously-installed-on-more-pcs-than-windows-itself-but-how-many-was-that-actually/",
-      "published_at": "2026-05-20T22:14:59+00:00",
-      "title_hash": "ff1888a0c32e609d32a65e804abe90095ecb2512",
-      "image_url": "https://cdn.mos.cms.futurecdn.net/RbW3P5x9tYeU8KVDphTEDY-1280-80.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "2fc87cd89bb0a86f",
-      "status": "pending",
-      "created_at": "2026-05-21T00:17:03+00:00",
-      "created_at_sakhalin": "2026-05-21T11:17:03+11:00",
-      "source": "PC Gamer",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 162,
-      "title_original": "Nearly a decade after its last update, Darksiders Warmastered Edition gets a photo mode and motion controls in a surprise new patch",
-      "title_ru": "Nearly a decade after its last update, Darksiders Warmastered Edition gets a photo mode and motion controls in a surprise new patch",
-      "body": [
-        "Darksiders launched for the PS5 and Xbox Series X/S this week, and that Darksiders launched for the PS5 and Xbox Series X/S this week, and that's good news for us too."
-      ],
-      "footer": null,
-      "source_text": "Darksiders launched for the PS5 and Xbox Series X/S this week, and that Darksiders launched for the PS5 and Xbox Series X/S this week, and that's good news for us too.",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Nearly a decade after its last update, Darksiders Warmastered Edition gets a photo mode and motion controls in a surprise new patch</b>\n\nDarksiders launched for the PS5 and Xbox Series X/S this week, and that Darksiders launched for the PS5 and Xbox Series X/S this week, and that's good news for us too.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/games/action/nearly-a-decade-after-its-last-update-darksiders-warmastered-edition-gets-a-photo-mode-and-motion-controls-in-a-surprise-new-patch/\">PC Gamer</a>",
-      "edited_post_text": null,
-      "url": "https://www.pcgamer.com/games/action/nearly-a-decade-after-its-last-update-darksiders-warmastered-edition-gets-a-photo-mode-and-motion-controls-in-a-surprise-new-patch/",
-      "published_at": "2026-05-20T21:59:33+00:00",
-      "title_hash": "e5c1ed14df1a82fd4c79f187e8b526044d425923",
-      "image_url": "https://cdn.mos.cms.futurecdn.net/hGAMNsKwVSEoKhX7ZWjcxR-1280-80.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "7fedac7e7cb308f2",
-      "status": "pending",
-      "created_at": "2026-05-21T00:17:03+00:00",
-      "created_at_sakhalin": "2026-05-21T11:17:03+11:00",
-      "source": "Eurogamer",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 162,
-      "title_original": "As Steam early access sensation Far Far West sells over 1 million copies in three weeks, publisher Fireshine Games rejects generative AI",
-      "title_ru": "As Steam early access sensation Far Far West sells over 1 million copies in three weeks, publisher Fireshine Games rejects generative AI",
-      "body": [
-        "Co-op shooter Far Far West's spectacular early access launch on Steam has made publisher Fireshine Games state generative AI isn't welcome.",
-        "Many indie games are finding success as larger publishers and studios try to navigate a difficult market, but Titanium Court stands out as a particularly special and unique one.",
-        "After a relatively quiet launch a month ago, it's now sold over 25k copies."
-      ],
-      "footer": null,
-      "source_text": "Co-op shooter Far Far West's spectacular early access launch on Steam has made publisher Fireshine Games state generative AI isn't welcome. Many indie games are finding success as larger publishers and studios try to navigate a difficult market, but Titanium Court stands out as a particularly special and unique one. After a relatively quiet launch a month ago, it's now sold over 25k copies. Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Latest News Sign in for free to manage your site experience. As Steam early access sensation Far Far West sells over 1 million copies in three weeks, publisher Fireshine Games rejects generative AI Ubisoft confirms new Assassin's Creed, Far Cry, and Ghost Recon games are coming before April 2029 Quantic Dream's multiplayer game Spellcasters Chronicles is being shut down and the studio reorganised, but Star Wars Eclipse is unaffected \"Honestly? We botched it\" - Kickstarter apologises for its criticised adult content rules, and for betraying its \"f*ck the establishment spirit\" Surreal narrative match-3 game Titanium Court has sold over 25,000 copies, giving designer AP Thomson enough time to peacefully work on his next game \"We overlooked the potential offense and harm\" - the studio behind popular multiplayer game Party Animals has now cancelled its AI video competition entirely \"Whoa what a wild reaction\" - Final Fantasy creator Hironobu Sakaguchi reacts to backlash after praising an AI-generated FF6 remake trailer PlayStation just announced a new State of Play, and it'll be over an hour long Months of work later, one Pokémon Pokopia player's recreation of the original Kanto region is almost complete Returnal director and Housemarque veteran Harry Krueger launc",
-      "post_text": "🎮 Игры / индустрия\n\n<b>As Steam early access sensation Far Far West sells over 1 million copies in three weeks, publisher Fireshine Games rejects generative AI</b>\n\nCo-op shooter Far Far West's spectacular early access launch on Steam has made publisher Fireshine Games state generative AI isn't welcome.\n\nMany indie games are finding success as larger publishers and studios try to navigate a difficult market, but Titanium Court stands out as a particularly special and unique one.\n\nAfter a relatively quiet launch a month ago, it's now sold over 25k copies.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.eurogamer.net/far-far-west-sells-one-million-copies\">Eurogamer</a>",
-      "edited_post_text": null,
-      "url": "https://www.eurogamer.net/far-far-west-sells-one-million-copies",
-      "published_at": "2026-05-19T15:01:48.918283+00:00",
-      "title_hash": "2c029bbc4eb0712c347afad3af933eee005d0548",
-      "image_url": "https://assetsio.gnwcdn.com/Dead-End-screenshot_Titanium-Court.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor"
     },
     {
       "id": "0c0695f6b1246995",
-      "status": "pending",
+      "status": "rejected",
       "created_at": "2026-05-21T00:17:03+00:00",
       "created_at_sakhalin": "2026-05-21T11:17:03+11:00",
       "source": "Habr",
@@ -493,17 +748,20 @@
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor"
     },
     {
       "id": "59e3fcfe823c97e1",
-      "status": "pending",
+      "status": "rejected",
       "created_at": "2026-05-21T00:17:03+00:00",
       "created_at_sakhalin": "2026-05-21T11:17:03+11:00",
       "source": "Habr",
@@ -530,50 +788,227 @@
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor"
     },
     {
-      "id": "484567e66e8c3022",
-      "status": "pending",
-      "created_at": "2026-05-21T00:17:03+00:00",
-      "created_at_sakhalin": "2026-05-21T11:17:03+11:00",
+      "id": "fc090c53efb900cd",
+      "status": "rejected",
+      "created_at": "2026-05-21T01:09:38+00:00",
+      "created_at_sakhalin": "2026-05-21T12:09:38+11:00",
       "source": "Habr",
       "source_type": "it",
       "category": "🌐 Мировые IT",
       "category_hint": "🌐 Мировые IT",
       "score": 158,
-      "title_original": "VibeMuvik — фильмы, сериалы и рецензии зрителей",
-      "title_ru": "VibeMuvik — фильмы, сериалы и рецензии зрителей",
+      "title_original": "Реакционная лженаука. Как СССР осудил кибернетику — и чем это аукнулось для ИИ",
+      "title_ru": "Реакционная лженаука. Как СССР осудил кибернетику — и чем это аукнулось для ИИ",
       "body": [
-        "Фильмы и сериалы по жанрам (драма, мелодрама, фантастика), рецензии зрителей, батлы и подборки под настроение.",
-        "Начиналось как «сделаю себе сайтик про кино на пару выходных».",
-        "Закончилось каталогом на десятки тысяч карточек, лентой, профилями, рейтингами, совместным просмотром и кучей фоновых задач."
+        "Алексей Андреевич Ляпунов был математиком - специалистом по математической логике.",
+        "В 1954 году, когда кибернетика официально называлась реакционной буржуазной лженаукой, он открыл в Московском...",
+        "Алексей Андреевич Ляпунов был математиком - специалистом по математической логике."
       ],
       "footer": null,
-      "source_text": "Фильмы и сериалы по жанрам (драма, мелодрама, фантастика), рецензии зрителей, батлы и подборки под настроение. Начиналось как «сделаю себе сайтик про кино на пару выходных». Закончилось каталогом на десятки тысяч карточек, лентой, профилями, рейтингами, совместным просмотром и кучей фоновых задач. И всё это тащит один человек — я сам себе фронт, бэк, девопс, дизайнер и поддержка. Делюсь сжато: стек и грабли, без воды. Стек выбирал не по хайпу, а по принципу «доеду и не утону в обслуживании»: FastAPI (быстро, асинхронно, автодоки), Next.js на React (SSR из коробки — критично для SEO), PostgreSQL (SQLite кончился на первых же конкурентных записях), Redis для кэша и рейт-лимитов. Nginx + systemd на обычном VPS. Никакого Kubernetes — для одного это способ обслуживать инфраструктуру вместо разработки. Грабли, на которых посидел: • Фоновое состояние в памяти + несколько воркеров = рассинхрон. Пользователи попадают в разные процессы, состояние не шарится. Лечение: либо общее хранилище, либо такие фичи в один воркер. • Права на файлы после сборки. Собрал под одним пользователем, сервис под другим — EACCES и белый экран. Теперь chown в чек-листе деплоя. • node_modules не переезжает Windows → Linux. Только чистая установка на целевой ОС. • dev и prod базы — разные миры. Один запуск скрипта «не туда» — и долго гадаешь, почему данные не меняются (а они меняются, в локальном SQLite, который никому не нужен). • Не запускай два тяжёлых процесса разом. Фоновая генерация + пересборка фронта = OOM-killer молча прибил процесс. Полчаса искал причину. • Кэш сборки трогать нельзя — «почистил на всякий» и сломал инкрементальную регенерацию страниц на сутки. Но самое тяжёлое — не код. Некому передать, если выгорел. Некому сделать ревью и сказать «ты идиот». Легко месяцами катиться не туда. Кач",
-      "post_text": "🌐 Мировые IT\n\n<b>VibeMuvik — фильмы, сериалы и рецензии зрителей</b>\n\nФильмы и сериалы по жанрам (драма, мелодрама, фантастика), рецензии зрителей, батлы и подборки под настроение.\n\nНачиналось как «сделаю себе сайтик про кино на пару выходных».\n\nЗакончилось каталогом на десятки тысяч карточек, лентой, профилями, рейтингами, совместным просмотром и кучей фоновых задач.\n\nМИРОВЫЕ IT · <a href=\"https://vibemuvik.ru/\">Habr</a>",
+      "source_text": "Алексей Андреевич Ляпунов был математиком - специалистом по математической логике. В 1954 году, когда кибернетика официально называлась реакционной буржуазной лженаукой, он открыл в Московском... Алексей Андреевич Ляпунов был математиком - специалистом по математической логике. В 1954 году, когда кибернетика официально называлась реакционной буржуазной лженаукой, он открыл в Московском университете семинар по кибернетике. Это было примерно как читать запрещенную литературу в читальном зале публичной библиотеки. Только публичной библиотекой был МГУ. Он не был диссидентом. Он просто считал, что обратная связь существует независимо от того, что о ней думают, скажем так, философы нужной закалки. Читать далее Алексей Андреевич Ляпунов был математиком - специалистом по математической логике. В 1954 году, когда кибернетика официально называлась реакционной буржуазной лженаукой, он открыл в Московском университете семинар по кибернетике. Это было примерно как читать запрещенную литературу в читальном зале публичной библиотеки. Только публичной библиотекой был МГУ. Он не был диссидентом. Он просто считал, что обратная связь существует независимо от того, что о ней думают, скажем так, философы нужной закалки. В 1948 году американский математик Норберт Винер издал \"Кибернетику\". Подзаголовок - \"Управление и коммуникация в животном и машине\". Книга была о том, что биологические организмы, вычислительные машины и общество управляют собой через одни и те же механизмы - обратная связь, коррекция ошибок, передача информации. Что мозг и термостат работают по похожим принципам, просто с разной сложностью. В том же 1948-м Клод Шеннон опубликовал \"Математическую теорию коммуникации\". Оказалось, что информация измерима (в битах) и законы ее передачи одинаковы для любого канала - нервная сис",
+      "post_text": "🌐 Мировые IT\n\n<b>Реакционная лженаука. Как СССР осудил кибернетику — и чем это аукнулось для ИИ</b>\n\nАлексей Андреевич Ляпунов был математиком - специалистом по математической логике.\n\nВ 1954 году, когда кибернетика официально называлась реакционной буржуазной лженаукой, он открыл в Московском...\n\nАлексей Андреевич Ляпунов был математиком - специалистом по математической логике.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1037552/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1037552#habracut\">Habr</a>",
       "edited_post_text": null,
-      "url": "https://vibemuvik.ru/",
-      "published_at": "2026-05-20T22:43:21+00:00",
-      "title_hash": "824032a272925c11a9c754b8bf1c930b13048abf",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/6c4/e10/bbe/6c4e10bbe5f8d9e50e60479006ab5a8e.png",
+      "url": "https://habr.com/ru/articles/1037552/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1037552#habracut",
+      "published_at": "2026-05-20T22:39:00+00:00",
+      "title_hash": "fc1af63713d659858b93c11fc2e40746f2f972d9",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/adf/13d/0ae/adf13d0aecb409d1b83ef6d001bce305.jpeg",
       "image_mode": "source",
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "d7f70cfbfd7bbdb6",
+      "status": "rejected",
+      "created_at": "2026-05-21T01:09:38+00:00",
+      "created_at_sakhalin": "2026-05-21T12:09:38+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 158,
+      "title_original": "What’s new in Flutter 3.44",
+      "title_ru": "What’s new in Flutter 3.44",
+      "body": [
+        "Empowering developers at Google I/O 2026 В этом году на конференции Google I/O 2026 команды Flutter и Dart отмечают важную тему: «Везде, каждый день, создано всеми, для всех».",
+        "Dart 3.12 воплощает эту идею в жизнь.",
+        "Мы делаем язык более доступным и продуктивным."
+      ],
+      "footer": null,
+      "source_text": "Empowering developers at Google I/O 2026 В этом году на конференции Google I/O 2026 команды Flutter и Dart отмечают важную тему: «Везде, каждый день, создано всеми, для всех». Dart 3.12 воплощает эту идею в жизнь. Мы делаем язык более доступным и продуктивным. Лаконичные новые примитивы, такие как приватные именованные параметры, наряду с экспериментальной поддержкой основных конструкторов, делают повседневное программирование более чистым. Но мы не остановились на синтаксическом уровне. Новые функции, такие как Agentic Hot Reload и добавление Genkit в экосистему Dart, гарантируют, что вы сможете создавать высокопроизводительные, готовые к использованию ИИ и агентные приложения, которые будут доступны пользователям в любой точке мира. Это справедливо как для индивидуального программирования, так и для парного программирования с ИИ-агентом. Так что вперед flutter upgrade , следуйте инструкциям, чтобы изучить новые возможности Dart 3.12. Но помните, что более мощный Dart — это только половина дела. Когда вы будете готовы увидеть, как эти функции преобразуются в красивый пользовательский интерфейс, ознакомьтесь с публикацией в блоге «Что нового во Flutter» или на Хабре . Читать далее Flutter is Google's UI framework for crafting high-quality native interfaces on iOS, Android, web, and desktop. Flutter works with existing code, is used by developers and organizations around the world, and is free and open source. Learn more at https://flutter.dev Flutter 3.44: Scaling to more users on more devices! What’s new in Flutter 3.44 Khanh Nguyen 23 min read · 7 hours ago -- Flutter 3.44 is here, and it’s a big one! This release celebrates a milestone in the Flutter timeline: Hybrid Composition++ for Android, Swift Package Manager as the new iOS/macOS default, and improved Vulkan su",
+      "post_text": "🌐 Мировые IT\n\n<b>What’s new in Flutter 3.44</b>\n\nEmpowering developers at Google I/O 2026 В этом году на конференции Google I/O 2026 команды Flutter и Dart отмечают важную тему: «Везде, каждый день, создано всеми, для всех».\n\nDart 3.12 воплощает эту идею в жизнь.\n\nМы делаем язык более доступным и продуктивным.\n\nМИРОВЫЕ IT · <a href=\"https://blog.flutter.dev/whats-new-in-flutter-3-44-b0cc1ad3c527?gi=d0ee0100a2b7\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://blog.flutter.dev/whats-new-in-flutter-3-44-b0cc1ad3c527?gi=d0ee0100a2b7",
+      "published_at": "2026-05-20T18:01:01.962000+00:00",
+      "title_hash": "7150fc384169a16dc59fb65c7d1edf3c7779d61f",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/06e/54b/4fa/06e54b4fab67638f5ef8d3f625ef2341.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "45ed7306acb477f6",
+      "status": "rejected",
+      "created_at": "2026-05-21T01:09:38+00:00",
+      "created_at_sakhalin": "2026-05-21T12:09:38+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 158,
+      "title_original": "Личный опыт: найм разработчиков в 2026 году",
+      "title_ru": "Личный опыт: найм разработчиков в 2026 году",
+      "body": [
+        "Знакомый фаундер четыре месяца не мог закрыть позицию senior-инженера.",
+        "В итоге поднял оффер примерно на 20% выше рынка, кандидат согласился, команда выдохнула.",
+        "Через три месяца инженер ушел в другую..."
+      ],
+      "footer": null,
+      "source_text": "Знакомый фаундер четыре месяца не мог закрыть позицию senior-инженера. В итоге поднял оффер примерно на 20% выше рынка, кандидат согласился, команда выдохнула. Через три месяца инженер ушел в другую... В этой статье — о том, почему стартапу недостаточно просто поднять оффер, как меняется роль senior-инженера, почему собеседования должны быть похожи на реальную работу и почему найм инженеров все больше становится не HR-процессом, а частью инженерной системы компании. Читать далее",
+      "post_text": "🌐 Мировые IT\n\n<b>Личный опыт: найм разработчиков в 2026 году</b>\n\nЗнакомый фаундер четыре месяца не мог закрыть позицию senior-инженера.\n\nВ итоге поднял оффер примерно на 20% выше рынка, кандидат согласился, команда выдохнула.\n\nЧерез три месяца инженер ушел в другую...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1037126/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1037126#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1037126/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1037126#habracut",
+      "published_at": "2026-05-20T19:18:44+00:00",
+      "title_hash": "1917aeaa8186ea4c74b6e7b6c4386c3327c14d22",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/916/651/bb4/916651bb4e01024447908aa7f0861bba.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "ec44a45aa73888ea",
+      "status": "published",
+      "created_at": "2026-05-21T00:17:03+00:00",
+      "created_at_sakhalin": "2026-05-21T11:17:03+11:00",
+      "source": "GameSpot",
+      "source_type": "gaming",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 162,
+      "title_original": "Download The Latest Official NVIDIA Drivers",
+      "title_ru": "Download The Latest Official NVIDIA Drivers",
+      "body": [
+        "Download the latest official NVIDIA drivers to enhance your PC gaming experience and run apps faster.",
+        "Owners of Nvidia graphics cards will want to make certain that their hardware is up to date, as the company has issued a new security alert."
+      ],
+      "footer": null,
+      "source_text": "Download the latest official NVIDIA drivers to enhance your PC gaming experience and run apps faster. Owners of Nvidia graphics cards will want to make certain that their hardware is up to date, as the company has issued a new security alert. According to Nvidia, hackers have discovered a new vulnerability across Windows and Linux drivers, allowing them to gain access to PCs and wreak some major havoc. Forget about having a non-operational PC; the exploit could allow bad actors to get away with crucial data stored on your PC or inject some malicious code that would give them unfettered access. Nvidia users can grab the new security software update for GPU display drivers post-haste and upgrade to driver version 596.49. You can grab the download directly from Nvidia or through the Nvidia app on Windows. All Nvidia drivers before Version 596.36--or Version 482.53 for GTX 10-series users and below--are potentially at risk. As spotted by Digital Foundry , Linux users will want to update their drivers to version 590.48.01 to beef up their PC security. Nvidia drivers In related news, Nvidia recently introduced a beta version of what it's calling Auto Shader Compilation . PC gamers who have spent an annoying amount of time waiting for a game to finish compiling shaders will be interested in this update, as it's designed to determine when your PC is idle and then use that time to compile shaders for your games in the background. Potentially, this could save users a lot of time and get them into their newly installed games faster, but the feature is only rolling out to RTX 50-series cards currently. Continue Reading at GameSpot Menu Menu icon Menu Menu icon Close Close icon Close Close icon Close Close icon Caret down icon Accordion is closed, click to open. Caret down icon Acco",
+      "post_text": "🌐 Мировые IT\n\n<b>Download The Latest Official NVIDIA Drivers</b>\n\nDownload the latest official NVIDIA drivers to enhance your PC gaming experience and run apps faster.\n\nOwners of Nvidia graphics cards will want to make certain that their hardware is up to date, as the company has issued a new security alert.\n\nМИРОВЫЕ IT · <a href=\"https://www.nvidia.com/en-us/drivers/\">GameSpot</a>",
+      "edited_post_text": "🌐 Мировые IT\n\n<b>Download The Latest Official NVIDIA Drivers</b>\n\nDownload the latest official NVIDIA drivers to enhance your PC gaming experience and run apps faster.\n\nOwners of Nvidia graphics cards will want to make certain that their hardware is up to date, as the company has issued a new security alert.\n\nМИРОВЫЕ IT · <a href=\"https://www.nvidia.com/en-us/drivers/\">GameSpot</a>",
+      "url": "https://www.nvidia.com/en-us/drivers/",
+      "published_at": "2026-05-20T16:22:00+00:00",
+      "title_hash": "c94650fc917bd97002db11299799153950ac4d80",
+      "image_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/drivers/cut-graphics/nvidia-geforce-drivers-meta-image-1200x627.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Одобрено автоматическим редактором: материал соответствует приоритетам канала, текст очищен."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor",
+      "published_at_sakhalin": "2026-05-21T12:09:39+11:00",
+      "publish_method": "sendPhoto/approved/source",
+      "telegram_message_id": 73
+    },
+    {
+      "id": "7fedac7e7cb308f2",
+      "status": "published",
+      "created_at": "2026-05-21T00:17:03+00:00",
+      "created_at_sakhalin": "2026-05-21T11:17:03+11:00",
+      "source": "Eurogamer",
+      "source_type": "gaming",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 162,
+      "title_original": "As Steam early access sensation Far Far West sells over 1 million copies in three weeks, publisher Fireshine Games rejects generative AI",
+      "title_ru": "As Steam early access sensation Far Far West sells over 1 million copies in three weeks, publisher Fireshine Games rejects generative AI",
+      "body": [
+        "Co-op shooter Far Far West's spectacular early access launch on Steam has made publisher Fireshine Games state generative AI isn't welcome.",
+        "Many indie games are finding success as larger publishers and studios try to navigate a difficult market, but Titanium Court stands out as a particularly special and unique one."
+      ],
+      "footer": null,
+      "source_text": "Co-op shooter Far Far West's spectacular early access launch on Steam has made publisher Fireshine Games state generative AI isn't welcome. Many indie games are finding success as larger publishers and studios try to navigate a difficult market, but Titanium Court stands out as a particularly special and unique one. After a relatively quiet launch a month ago, it's now sold over 25k copies. Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Latest News Sign in for free to manage your site experience. As Steam early access sensation Far Far West sells over 1 million copies in three weeks, publisher Fireshine Games rejects generative AI Ubisoft confirms new Assassin's Creed, Far Cry, and Ghost Recon games are coming before April 2029 Quantic Dream's multiplayer game Spellcasters Chronicles is being shut down and the studio reorganised, but Star Wars Eclipse is unaffected \"Honestly? We botched it\" - Kickstarter apologises for its criticised adult content rules, and for betraying its \"f*ck the establishment spirit\" Surreal narrative match-3 game Titanium Court has sold over 25,000 copies, giving designer AP Thomson enough time to peacefully work on his next game \"We overlooked the potential offense and harm\" - the studio behind popular multiplayer game Party Animals has now cancelled its AI video competition entirely \"Whoa what a wild reaction\" - Final Fantasy creator Hironobu Sakaguchi reacts to backlash after praising an AI-generated FF6 remake trailer PlayStation just announced a new State of Play, and it'll be over an hour long Months of work later, one Pokémon Pokopia player's recreation of the original Kanto region is almost complete Returnal director and Housemarque veteran Harry Krueger launc",
+      "post_text": "🌐 Мировые IT\n\n<b>As Steam early access sensation Far Far West sells over 1 million copies in three weeks, publisher Fireshine Games rejects generative AI</b>\n\nCo-op shooter Far Far West's spectacular early access launch on Steam has made publisher Fireshine Games state generative AI isn't welcome.\n\nMany indie games are finding success as larger publishers and studios try to navigate a difficult market, but Titanium Court stands out as a particularly special and unique one.\n\nМИРОВЫЕ IT · <a href=\"https://www.eurogamer.net/far-far-west-sells-one-million-copies\">Eurogamer</a>",
+      "edited_post_text": "🌐 Мировые IT\n\n<b>As Steam early access sensation Far Far West sells over 1 million copies in three weeks, publisher Fireshine Games rejects generative AI</b>\n\nCo-op shooter Far Far West's spectacular early access launch on Steam has made publisher Fireshine Games state generative AI isn't welcome.\n\nMany indie games are finding success as larger publishers and studios try to navigate a difficult market, but Titanium Court stands out as a particularly special and unique one.\n\nМИРОВЫЕ IT · <a href=\"https://www.eurogamer.net/far-far-west-sells-one-million-copies\">Eurogamer</a>",
+      "url": "https://www.eurogamer.net/far-far-west-sells-one-million-copies",
+      "published_at": "2026-05-19T15:01:48.918283+00:00",
+      "title_hash": "2c029bbc4eb0712c347afad3af933eee005d0548",
+      "image_url": "https://assetsio.gnwcdn.com/Dead-End-screenshot_Titanium-Court.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Одобрено автоматическим редактором: материал соответствует приоритетам канала, текст очищен."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-21T01:09:38+00:00",
+      "reviewed_by": "auto-editor",
+      "published_at_sakhalin": "2026-05-21T12:09:52+11:00",
+      "publish_method": "sendPhoto/approved/source",
+      "telegram_message_id": 74
     }
-  ]
+  ],
+  "auto_review": {
+    "reviewed_pending": 18,
+    "approved": 2,
+    "approve_limit": 2,
+    "reviewed_at": "2026-05-21T01:09:38+00:00",
+    "reviewed_at_sakhalin": "2026-05-21T12:09:38+11:00"
+  }
 }
