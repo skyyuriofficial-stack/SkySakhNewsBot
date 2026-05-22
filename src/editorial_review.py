@@ -1,10 +1,11 @@
 # Autonomous editorial review for SkySakhNews.
-# Conservative production rules:
+# Production rules:
 # - publish only Russian-language posts;
+# - classify by semantic text, not by stale category_hint;
+# - separate incidents from war/security;
 # - games are lowest priority;
-# - discount/download/tutorial/service pages are rejected;
-# - weak operational alerts such as airspace restrictions are rejected unless there are casualties, damage or major disruption;
-# - law/politics/diplomacy must not be classified as security without real impact.
+# - ads, deals, downloads, tutorials and weak statements are rejected;
+# - routine alerts without real consequences are rejected or held.
 
 import html
 import json
@@ -23,6 +24,7 @@ SAKH_TZ = timezone(timedelta(hours=11))
 FOOTERS = {
     "🌍 Мир о России": "МИР О РОССИИ",
     "🇷🇺 РФ / война и безопасность": "РФ | ВОЙНА И БЕЗОПАСНОСТЬ",
+    "🇷🇺 РФ / происшествия": "РФ | ПРОИСШЕСТВИЯ",
     "🇷🇺 РФ / экономика": "РФ | ЭКОНОМИКА",
     "🇷🇺 РФ / законы и политика": "РФ | ЗАКОНЫ И ПОЛИТИКА",
     "🧭 Геополитика": "ГЕОПОЛИТИКА",
@@ -36,6 +38,7 @@ CATEGORY_WEIGHT = {
     "🌍 Мир о России": 1000,
     "🇷🇺 РФ / война и безопасность": 900,
     "🧭 Геополитика": 820,
+    "🇷🇺 РФ / происшествия": 780,
     "🇷🇺 РФ / экономика": 760,
     "🇷🇺 РФ / законы и политика": 700,
     "🌐 Мировые IT": 520,
@@ -47,17 +50,20 @@ DEAL_TERMS = ["deal", "sale", "discount", "coupon", "promo", "free shipping", "a
 DOWNLOAD_TERMS = ["download", "drivers", "official nvidia drivers", "nvidia.com/en-us/drivers", "скачать драйвер", "драйвер"]
 TUTORIAL_TERMS = ["как ", "руководство", "гайд", "туториал", "личный опыт", "что должен уметь", "разбираемся", "стек и грабли", "читать далее"]
 LOW_VALUE_GAME_TERMS = ["sound effect", "photo mode", "motion controls", "copies", "early access sensation", "sells over", "far far west"]
-WEAK_DECLARATION_TERMS = ["готовы к сотрудничеству", "ни с кем не борются", "допустил теоретическую возможность", "теоретическую возможность"]
+WEAK_DECLARATION_TERMS = ["готовы к сотрудничеству", "ни с кем не борются", "допустил теоретическую возможность", "теоретическую возможность", "не рассматривается", "не планируется", "не стоит на повестке", "не обсуждается"]
 
 WEAK_ALERT_TERMS = ["план ковер", "режим ковер", "угроза бпла", "опасность бпла", "закрыто воздушное пространство", "закрывали воздушное пространство", "введен режим", "введён режим", "угроза атаки", "работает пво", "объявлена тревога", "ограничения на прием и выпуск", "ограничения на приём и выпуск"]
 HARD_IMPACT_TERMS = ["погиб", "погибли", "есть погибшие", "ранен", "ранены", "пострадал", "пострадали", "жертвы", "удар", "обстрел", "атака", "попадание", "прилет", "прилёт", "разрушен", "разрушения", "поврежден", "повреждены", "повреждена", "сгорел", "пожар", "эвакуация", "без электроснабжения", "без электричества", "отключение света", "массовое отключение", "поврежден объект", "повреждено предприятие", "поврежден дом", "ущерб"]
 LAW_POLITICS_TERMS = ["госдума", "комитет", "законопроект", "закон", "совет федерации", "володин", "сенаторы", "депутаты", "правительство", "министерство", "кремль", "песков", "подписали заявление", "переговоры", "саммит", "визит", "диалог", "заседание", "мид", "лавров"]
 
 RUSSIA_TERMS = ["russia", "russian", "putin", "kremlin", "moscow", "россия", "россий", "путин", "кремль", "москва", "рф"]
-SECURITY_TERMS = ["бпла", "дрон", "атака", "ранен", "погиб", "обстрел", "удар", "attack", "drone", "missile", "iran", "иран", "израил", "цахал"]
-ECON_TERMS = ["эконом", "банк", "вклад", "газ", "нефть", "спг", "экспорт", "импорт", "pipeline", "gas", "oil", "trade", "санкц", "цб", "ставк"]
+SECURITY_TERMS = ["бпла", "дрон", "атака", "ранен", "погиб", "обстрел", "удар", "attack", "drone", "missile", "iran", "иран", "израил", "цахал", "всу", "пво", "минобороны", "фсб", "диверс", "теракт", "заэс", "аэс"]
+INCIDENT_TERMS = ["пожар", "возгорание", "дтп", "авария", "аварии", "обрушение", "утонул", "утонули", "краж", "мошеннич", "убийств", "нападение", "чп", "мчс", "полиция"]
+MILITARY_TERMS = ["бпла", "дрон", "всу", "пво", "обстрел", "удар", "ракета", "ракетный", "минобороны", "фсб", "теракт", "диверс", "заэс", "аэс", "военн", "спецоперац"]
+ECON_TERMS = ["эконом", "банк", "вклад", "кредит", "газ", "нефть", "спг", "экспорт", "импорт", "pipeline", "gas", "oil", "trade", "санкц", "цб", "ставк", "зерн", "сельхоз"]
 IT_MAJOR_TERMS = ["google", "gemini", "openai", "chatgpt", "anthropic", "nvidia", "microsoft", "apple", "smart glasses", "ai", "ии", "нейросет", "cve", "уязвим", "cyber"]
 GAMING_MAJOR_TERMS = ["rockstar", "gta", "the witcher", "cd projekt", "playstation", "xbox game pass", "game pass", "steam", "nintendo", "major studio", "layoff", "acquisition", "lawsuit"]
+GEOPOLITICS_TERMS = ["иран", "израил", "сша", "нато", "ес", "китай", "тайван", "газа", "оон", "куба"]
 
 
 def now_utc() -> str:
@@ -82,8 +88,9 @@ def save_json(path: Path, data) -> None:
 def clean(value) -> str:
     text = html.unescape(str(value or ""))
     text = re.sub(r"<[^>]+>", " ", text)
-    text = text.replace("INTERFAX.RU -", " ").replace("Москва.", " ")
-    return re.sub(r"\s+", " ", text).strip()
+    text = re.sub(r"\bINTERFAX\.RU\s*-\s*", "", text)
+    text = re.sub(r"\bМосква\.\s*\d+\s+[а-яА-Я]+\.\s*", "", text)
+    return re.sub(r"\s+", " ", text).strip(" -—")
 
 
 def esc(value) -> str:
@@ -97,6 +104,10 @@ def attr(value) -> str:
 def norm_text(*parts: str) -> str:
     text = " ".join(str(p or "") for p in parts).lower().replace("ё", "е")
     return re.sub(r"\s+", " ", text).strip()
+
+
+def semantic_blob(item: Dict) -> str:
+    return norm_text(*(str(item.get(k) or "") for k in ("title_original", "title_ru", "source_text", "body", "url", "source")))
 
 
 def blob(item: Dict) -> str:
@@ -117,7 +128,7 @@ def cyrillic_ratio(text: str) -> float:
 
 
 def is_russian_post(title: str, body: List[str]) -> bool:
-    return cyrillic_ratio(f"{title} " + " ".join(body or [])) >= 0.45
+    return cyrillic_ratio(f"{title} " + " ".join(body or [])) >= 0.55
 
 
 def age_hours(raw: Optional[str]) -> Optional[float]:
@@ -132,19 +143,36 @@ def age_hours(raw: Optional[str]) -> Optional[float]:
         return None
 
 
+def strip_duplicate_halves(text: str) -> str:
+    words = clean(text).split()
+    if len(words) < 14:
+        return clean(text)
+    for n in range(min(40, len(words) // 2), 6, -1):
+        if " ".join(words[:n]).lower() == " ".join(words[n:2*n]).lower():
+            return clean(" ".join(words[:n] + words[2*n:]))
+    return clean(text)
+
+
 def sentence_split(text: str) -> List[str]:
     text = clean(text)
     parts = re.split(r"(?<=[.!?])\s+", text)
     out, seen = [], set()
     for s in parts:
-        s = clean(s)
-        if len(s) < 35:
+        s = strip_duplicate_halves(s)
+        if len(s) < 45:
             continue
-        key = re.sub(r"\W+", "", s.lower())[:110]
+        low = s.lower()
+        if any(x in low for x in ["читать далее", "continue reading", "sign in", "support us", "подпис", "реклама"]):
+            continue
+        if len(s) > 250 and not re.search(r"[.!?…]$", s):
+            continue
+        key = re.sub(r"\W+", "", s.lower())[:130]
         if key in seen:
             continue
         seen.add(key)
         out.append(s[:360])
+        if len(out) >= 2:
+            break
     return out
 
 
@@ -157,12 +185,15 @@ def should_force_law_politics(text: str) -> bool:
 
 
 def category_fix(item: Dict) -> str:
-    text = blob(item)
+    text = semantic_blob(item)
     source_type = item.get("source_type") or ""
-    category = item.get("category") or item.get("category_hint") or ""
     if source_type == "world" and has_any(text, RUSSIA_TERMS):
         return "🌍 Мир о России"
-    if "interfax.ru/world" in text or (source_type == "world" and has_any(text, SECURITY_TERMS)):
+    if has_any(text, INCIDENT_TERMS) and not has_any(text, MILITARY_TERMS):
+        return "🇷🇺 РФ / происшествия"
+    if source_type == "world" and has_any(text, SECURITY_TERMS):
+        return "🧭 Геополитика"
+    if "interfax.ru/world" in text:
         return "🧭 Геополитика"
     if source_type == "gaming":
         return "🎮 Игры / индустрия"
@@ -170,11 +201,15 @@ def category_fix(item: Dict) -> str:
         return "🌐 Мировые IT"
     if should_force_law_politics(text):
         return "🇷🇺 РФ / законы и политика"
-    if has_any(text, ECON_TERMS) and not has_any(text, ["бпла", "атака", "удар", "ранен", "погиб"]):
+    if has_any(text, SECURITY_TERMS):
+        return "🇷🇺 РФ / война и безопасность"
+    if has_any(text, ECON_TERMS):
         return "🇷🇺 РФ / экономика"
+    if has_any(text, GEOPOLITICS_TERMS):
+        return "🧭 Геополитика"
     if has_any(text, ["путин", "си цзиньпин", "китай", "переговор", "саммит", "визит"]):
         return "🇷🇺 РФ / законы и политика"
-    return category
+    return item.get("category") or item.get("category_hint") or "🧭 Геополитика"
 
 
 def make_post(category: str, title: str, body: List[str], url: str, source: str) -> str:
@@ -183,9 +218,9 @@ def make_post(category: str, title: str, body: List[str], url: str, source: str)
 
 
 def special_rewrite(item: Dict, category: str) -> Optional[Tuple[str, List[str]]]:
-    text = blob(item)
+    text = semantic_blob(item)
     if "google" in text and "smart glasses" in text:
-        return "Google готовит новые умные очки с Gemini", ["Google показала новые умные очки — первую попытку вернуться в этот формат после неудачи Google Glass.", "Модель должна выйти осенью и получить камеру, динамики и интеграцию с ИИ Gemini.", "Компания делает ставку на формат hands free: очки смогут помогать пользователю без постоянного обращения к смартфону."]
+        return "Google готовит новые умные очки с Gemini", ["Google показала новые умные очки — первую попытку вернуться в этот формат после неудачи Google Glass.", "Модель должна выйти осенью и получить камеру, динамики и интеграцию с ИИ Gemini."]
     if "putin enjoys xi" in text or "pipeline deal" in text:
         return "BBC: Путин вернулся из Китая без сделки по газопроводу", ["BBC пишет, что Россия и Китай демонстрируют близость на мировой сцене, но переговоры не привели к ожидаемой сделке по трубопроводу.", "В материале отмечается, что отношения Москвы и Пекина остаются важными, но имеют пределы и дисбаланс интересов."]
     if "austrian ex-intelligence" in text and "russia spying" in text:
@@ -203,16 +238,10 @@ def special_rewrite(item: Dict, category: str) -> Optional[Tuple[str, List[str]]
 
 def generic_rewrite(item: Dict, category: str) -> Tuple[str, List[str]]:
     title = clean(item.get("title_ru") or item.get("title_original") or "")
-    body = []
-    for s in sentence_split(item.get("source_text") or ""):
-        low = s.lower()
-        if any(x in low for x in ["читать далее", "continue reading", "sign in", "support us"]):
-            continue
-        s = re.sub(r"(.{35,160})\s+\1", r"\1", s)
-        body.append(s)
-        if len(body) >= 2:
-            break
-    return title, body
+    body = sentence_split(item.get("source_text") or "")
+    if not body:
+        body = [strip_duplicate_halves(clean(x)) for x in (item.get("body") or []) if clean(x)][:2]
+    return title, body[:2]
 
 
 def published_sets() -> Tuple[set, set]:
@@ -221,7 +250,8 @@ def published_sets() -> Tuple[set, set]:
 
 
 def reject_reason(item: Dict, category: str, urls: set, hashes: set) -> Optional[str]:
-    text = blob(item)
+    text = semantic_blob(item)
+    all_text = blob(item)
     if item.get("url") in urls or item.get("title_hash") in hashes:
         return "Отклонено автоматически: уже опубликовано ранее."
     published_age = age_hours(item.get("published_at") or item.get("created_at"))
@@ -230,20 +260,20 @@ def reject_reason(item: Dict, category: str, urls: set, hashes: set) -> Optional
         return "Отклонено автоматически: материал устарел для новостной ленты."
     if pending_age is not None and pending_age > PENDING_MAX_HOURS:
         return "Отклонено автоматически: черновик слишком долго висел без публикации."
-    if has_any(text, DOWNLOAD_TERMS):
+    if has_any(all_text, DOWNLOAD_TERMS):
         return "Отклонено автоматически: страница загрузки/драйверов, не новость."
-    if has_any(text, DEAL_TERMS):
+    if has_any(all_text, DEAL_TERMS):
         return "Отклонено автоматически: скидка/товарный материал, не новость."
-    if has_any(text, TUTORIAL_TERMS):
+    if has_any(all_text, TUTORIAL_TERMS):
         return "Отклонено автоматически: обучающая/колоночная статья, не новость."
     if has_any(text, WEAK_DECLARATION_TERMS):
-        return "Отклонено автоматически: слабая декларативная новость без достаточной фактуры."
+        return "Отклонено автоматически: слабая декларативная/отрицательная новость без события."
     if category == "🇷🇺 РФ / война и безопасность":
         if is_weak_alert_without_consequences(text):
             return "Отклонено автоматически: слабая тревожная новость без жертв, ущерба или серьёзных последствий."
         if should_force_law_politics(text):
             return "Отклонено автоматически: материал относится к законам/политике, а не к военной безопасности."
-        if not has_any(text, HARD_IMPACT_TERMS + ["с-400", "минобороны", "фсб"]):
+        if not has_any(text, HARD_IMPACT_TERMS + ["с-400", "минобороны", "фсб", "заэс", "аэс"]):
             return "Отклонено автоматически: для военного потока недостаточно фактуры о последствиях или значимом событии."
     if category == "🎮 Игры / индустрия":
         if has_any(text, LOW_VALUE_GAME_TERMS):
@@ -256,9 +286,9 @@ def reject_reason(item: Dict, category: str, urls: set, hashes: set) -> Optional
 
 
 def score_item(item: Dict, category: str) -> int:
-    text = blob(item)
+    text = semantic_blob(item)
     score = CATEGORY_WEIGHT.get(category, 0)
-    if has_any(text, ["putin", "путин", "xi", "си", "pipeline", "gas", "oil", "санкц", "бпла", "iran", "иран", "google", "openai"]):
+    if has_any(text, ["putin", "путин", "xi", "си", "pipeline", "gas", "oil", "санкц", "бпла", "iran", "иран", "google", "openai", "погиб", "пожар"]):
         score += 80
     if category == "🎮 Игры / индустрия":
         score -= 250
@@ -280,7 +310,7 @@ def review_queue() -> None:
     for score, item, category, reason in decisions:
         reviewed += 1
         item["reviewed_at"] = now_utc()
-        item["reviewed_by"] = "auto-editor"
+        item["reviewed_by"] = "auto-editor-v3"
         item["category"] = category
         if reason:
             item["status"] = "rejected"
@@ -300,20 +330,20 @@ def review_queue() -> None:
             continue
         item["status"] = "approved"
         item["title_ru"] = title
-        item["body"] = body
-        item["post_text"] = make_post(category, title, body, item.get("url") or "", item.get("source") or "Источник")
+        item["body"] = body[:2]
+        item["post_text"] = make_post(category, title, body[:2], item.get("url") or "", item.get("source") or "Источник")
         item["edited_post_text"] = item["post_text"]
         item["image_decision"] = "use" if item.get("image_url") else "none"
         item["with_image"] = bool(item.get("image_url"))
-        item.setdefault("editor_notes", []).append("Одобрено автоматическим редактором: соответствует приоритетам, текст русифицирован и очищен.")
+        item.setdefault("editor_notes", []).append("Одобрено автоматическим редактором v3: категория и текст проверены семантически.")
         approved += 1
     queue["updated_at"] = now_utc()
     queue["updated_at_sakhalin"] = now_sakh()
     queue["reviewed_at"] = now_utc()
     queue["reviewed_at_sakhalin"] = now_sakh()
-    queue["auto_review"] = {"reviewed_pending": reviewed, "approved": approved, "approve_limit": APPROVE_LIMIT, "reviewed_at": queue["reviewed_at"], "reviewed_at_sakhalin": queue["reviewed_at_sakhalin"]}
+    queue["auto_review"] = {"version": 3, "reviewed_pending": reviewed, "approved": approved, "approve_limit": APPROVE_LIMIT, "reviewed_at": queue["reviewed_at"], "reviewed_at_sakhalin": queue["reviewed_at_sakhalin"]}
     save_json(QUEUE_FILE, queue)
-    print(f"auto-review: reviewed={reviewed}, approved={approved}")
+    print(f"auto-review-v3: reviewed={reviewed}, approved={approved}")
 
 
 if __name__ == "__main__":
