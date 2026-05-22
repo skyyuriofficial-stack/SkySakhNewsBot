@@ -3,11 +3,14 @@ from datetime import datetime
 
 import editorial_queue as q
 from image_pipeline import (
+    ImageDecision,
     candidate_to_file,
     decision_to_dict,
     remember_image_in_state,
     resolve_article_image,
     bytes_fingerprint,
+    external_thematic_search,
+    generated_candidate,
 )
 
 
@@ -31,8 +34,45 @@ def article_for_image(draft: dict) -> dict:
         "edited_post_text": draft.get("edited_post_text") or "",
         "image_url": draft.get("image_url"),
         "image_mode": draft.get("image_mode"),
+        "source": draft.get("source") or item.get("source"),
+        "url": draft.get("url") or item.get("url"),
     })
     return item
+
+
+def is_forbidden_source_text_card(article: dict, candidate) -> bool:
+    """Reject source images that are known social/title cards, not editorial photos.
+
+    Interfax often exposes OpenGraph cards containing its logo, section, date and the full headline.
+    Telegram then shows a duplicated headline inside the image. User policy: no text/headline images.
+    """
+    if not candidate or candidate.source != "source":
+        return False
+    haystack = " ".join([
+        str(article.get("source") or ""),
+        str(article.get("url") or ""),
+        str(candidate.url or ""),
+        str(candidate.filename or ""),
+        str(candidate.reason or ""),
+    ]).lower()
+    if "interfax" in haystack or "интерфакс" in haystack:
+        return True
+    # Generic social-preview patterns. These are usually title cards with text, not photos.
+    bad_markers = ["ogimage", "og_image", "og-image", "social-card", "share-card", "preview-card", "twitter-card"]
+    return any(marker in haystack for marker in bad_markers)
+
+
+def resolve_without_source(article: dict, state: dict):
+    attempts = []
+    searched, a = external_thematic_search(article, state, logger=log)
+    attempts.extend(a)
+    if searched:
+        return ImageDecision(searched, "search", "source text-card rejected; external thematic image accepted", attempts)
+    generated, a = generated_candidate(article, state, logger=log)
+    attempts.extend(a)
+    if generated:
+        return ImageDecision(generated, "generated", "source text-card rejected; generated semantic image accepted", attempts)
+    return ImageDecision(None, "none", "source text-card rejected; no valid replacement image found", attempts)
 
 
 def resolve_image_file(draft: dict, state: dict):
@@ -41,6 +81,13 @@ def resolve_image_file(draft: dict, state: dict):
 
     article = article_for_image(draft)
     decision = resolve_article_image(article, state, logger=log)
+
+    if decision.selected and is_forbidden_source_text_card(article, decision.selected):
+        log("image source rejected as text/title card: " + str(decision.selected.url)[:160])
+        replacement = resolve_without_source(article, state)
+        replacement.attempts = decision.attempts + replacement.attempts
+        decision = replacement
+
     draft["image_pipeline"] = decision_to_dict(decision)
 
     if not decision.selected:
