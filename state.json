@@ -852,51 +852,65 @@
     }
   ],
   "last_cycle_report": {
-    "reported_at": "2026-05-22T06:31:21+00:00",
-    "reported_at_sakhalin": "2026-05-22T17:31:21+11:00",
-    "queue_updated_at": "2026-05-22T06:29:44+00:00",
-    "queue_updated_at_sakhalin": "2026-05-22T17:29:44+11:00",
-    "total_queue_items": 120,
+    "reported_at": "2026-05-22T06:40:45+00:00",
+    "reported_at_sakhalin": "2026-05-22T17:40:45+11:00",
+    "queue_updated_at": "2026-05-22T06:40:31+00:00",
+    "queue_updated_at_sakhalin": "2026-05-22T17:40:31+11:00",
+    "total_queue_items": 130,
     "status_counts": {
-      "rejected": 109,
-      "published": 11,
+      "hold": 4,
+      "rejected": 114,
+      "published": 12,
       "pending": 0,
       "approved": 0,
-      "hold": 0,
       "skipped": 0,
       "unknown": 0
     },
-    "hold_by_category": {},
+    "hold_by_category": {
+      "🎮 Игры / индустрия": 3,
+      "🌐 Мировые IT": 1
+    },
     "approved_by_category": {},
     "published_by_category": {
+      "🇷🇺 РФ / война и безопасность": 4,
       "🌐 Мировые IT": 3,
-      "🇷🇺 РФ / война и безопасность": 3,
       "🇷🇺 РФ / экономика": 2,
       "🇷🇺 РФ / происшествия": 2,
       "🧭 Геополитика": 1
     },
     "auto_review": {
       "version": 3,
-      "reviewed_pending": 0,
-      "approved": 0,
+      "reviewed_pending": 10,
+      "approved": 1,
       "approve_limit": 2,
-      "reviewed_at": "2026-05-22T06:13:18+00:00",
-      "reviewed_at_sakhalin": "2026-05-22T17:13:18+11:00"
+      "reviewed_at": "2026-05-22T06:40:15+00:00",
+      "reviewed_at_sakhalin": "2026-05-22T17:40:15+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-22T06:13:18+00:00",
-      "checked_at_sakhalin": "2026-05-22T17:13:18+11:00"
+      "checked_at": "2026-05-22T06:40:15+00:00",
+      "checked_at_sakhalin": "2026-05-22T17:40:15+11:00"
     },
     "final_guard": {
       "changed": 0,
       "polished": 0,
-      "checked_at": "2026-05-22T06:13:35+00:00",
-      "checked_at_sakhalin": "2026-05-22T17:13:35+11:00"
+      "checked_at": "2026-05-22T06:40:15+00:00",
+      "checked_at_sakhalin": "2026-05-22T17:40:15+11:00"
     },
-    "recent_published_20m_count": 0,
-    "recent_published_20m": [],
-    "decision": "no_approved_to_publish"
+    "recent_published_20m_count": 1,
+    "recent_published_20m": [
+      {
+        "time_sakhalin": "2026-05-22T17:40:19+11:00",
+        "source": "Interfax",
+        "category": "🇷🇺 РФ / война и безопасность",
+        "title": "В ЛНР 35 человек пострадали из-за удара ВСУ по учебному корпусу вуза и общежитию",
+        "with_image": true,
+        "image_mode": "pipeline_search",
+        "publish_method": "sendPhoto/safe/pipeline_search",
+        "telegram_message_id": 85
+      }
+    ],
+    "decision": "published"
   },
   "recent_image_urls": [
     "https://www.interfax.ru/aspimg/1091101.jpg",
