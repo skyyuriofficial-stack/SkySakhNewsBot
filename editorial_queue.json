@@ -5817,14 +5817,14 @@
     "checked_at_sakhalin": "2026-05-22T15:38:08+11:00"
   },
   "cycle_report": {
-    "reported_at": "2026-05-22T04:04:39+00:00",
-    "reported_at_sakhalin": "2026-05-22T15:04:39+11:00",
-    "queue_updated_at": "2026-05-22T04:04:25+00:00",
-    "queue_updated_at_sakhalin": "2026-05-22T15:04:25+11:00",
-    "total_queue_items": 145,
+    "reported_at": "2026-05-22T04:38:20+00:00",
+    "reported_at_sakhalin": "2026-05-22T15:38:20+11:00",
+    "queue_updated_at": "2026-05-22T04:38:09+00:00",
+    "queue_updated_at_sakhalin": "2026-05-22T15:38:09+11:00",
+    "total_queue_items": 150,
     "status_counts": {
-      "hold": 10,
-      "rejected": 127,
+      "hold": 11,
+      "rejected": 131,
       "published": 8,
       "pending": 0,
       "approved": 0,
@@ -5832,7 +5832,7 @@
       "unknown": 0
     },
     "hold_by_category": {
-      "🌐 Мировые IT": 5,
+      "🌐 Мировые IT": 6,
       "🎮 Игры / индустрия": 5
     },
     "approved_by_category": {},
@@ -5846,34 +5846,23 @@
       "reviewed_pending": 5,
       "approved": 0,
       "approve_limit": 2,
-      "reviewed_at": "2026-05-22T04:04:24+00:00",
-      "reviewed_at_sakhalin": "2026-05-22T15:04:24+11:00"
+      "reviewed_at": "2026-05-22T04:38:08+00:00",
+      "reviewed_at_sakhalin": "2026-05-22T15:38:08+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-22T04:04:25+00:00",
-      "checked_at_sakhalin": "2026-05-22T15:04:25+11:00"
+      "checked_at": "2026-05-22T04:38:08+00:00",
+      "checked_at_sakhalin": "2026-05-22T15:38:08+11:00"
     },
     "final_guard": {
       "changed": 0,
       "polished": 0,
-      "checked_at": "2026-05-22T04:04:25+00:00",
-      "checked_at_sakhalin": "2026-05-22T15:04:25+11:00"
+      "checked_at": "2026-05-22T04:38:08+00:00",
+      "checked_at_sakhalin": "2026-05-22T15:38:08+11:00"
     },
-    "recent_published_20m_count": 1,
-    "recent_published_20m": [
-      {
-        "time_sakhalin": "2026-05-22T14:52:02+11:00",
-        "source": "Interfax",
-        "category": "🇷🇺 РФ / война и безопасность",
-        "title": "Два человека погибли в результате пожара в Красноярском крае",
-        "with_image": true,
-        "image_mode": "generated_semantic",
-        "publish_method": "sendPhoto/safe/generated_semantic",
-        "telegram_message_id": 80
-      }
-    ],
-    "decision": "published"
+    "recent_published_20m_count": 0,
+    "recent_published_20m": [],
+    "decision": "no_approved_to_publish"
   },
   "minimum_release": {
     "version": 2,
