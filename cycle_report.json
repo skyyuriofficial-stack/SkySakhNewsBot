@@ -1,8 +1,8 @@
 {
-  "reported_at": "2026-05-22T05:48:04+00:00",
-  "reported_at_sakhalin": "2026-05-22T16:48:04+11:00",
-  "queue_updated_at": "2026-05-22T05:47:51+00:00",
-  "queue_updated_at_sakhalin": "2026-05-22T16:47:51+11:00",
+  "reported_at": "2026-05-22T06:13:31+00:00",
+  "reported_at_sakhalin": "2026-05-22T17:13:31+11:00",
+  "queue_updated_at": "2026-05-22T06:13:18+00:00",
+  "queue_updated_at_sakhalin": "2026-05-22T17:13:18+11:00",
   "total_queue_items": 160,
   "status_counts": {
     "hold": 11,
@@ -27,35 +27,24 @@
   },
   "auto_review": {
     "version": 3,
-    "reviewed_pending": 1,
+    "reviewed_pending": 0,
     "approved": 0,
     "approve_limit": 2,
-    "reviewed_at": "2026-05-22T05:47:50+00:00",
-    "reviewed_at_sakhalin": "2026-05-22T16:47:50+11:00"
+    "reviewed_at": "2026-05-22T06:13:18+00:00",
+    "reviewed_at_sakhalin": "2026-05-22T17:13:18+11:00"
   },
   "priority_guard": {
     "changed": 0,
-    "checked_at": "2026-05-22T05:47:50+00:00",
-    "checked_at_sakhalin": "2026-05-22T16:47:50+11:00"
+    "checked_at": "2026-05-22T06:13:18+00:00",
+    "checked_at_sakhalin": "2026-05-22T17:13:18+11:00"
   },
   "final_guard": {
     "changed": 0,
     "polished": 0,
-    "checked_at": "2026-05-22T05:47:50+00:00",
-    "checked_at_sakhalin": "2026-05-22T16:47:50+11:00"
+    "checked_at": "2026-05-22T06:13:18+00:00",
+    "checked_at_sakhalin": "2026-05-22T17:13:18+11:00"
   },
-  "recent_published_20m_count": 1,
-  "recent_published_20m": [
-    {
-      "time_sakhalin": "2026-05-22T16:33:25+11:00",
-      "source": "Interfax",
-      "category": "🌐 Мировые IT",
-      "title": "Пашинян заверил, что Армения никогда не будет вовлечена в антироссийскую кампанию",
-      "with_image": true,
-      "image_mode": "pipeline_source",
-      "publish_method": "sendPhoto/safe/pipeline_source",
-      "telegram_message_id": 83
-    }
-  ],
-  "decision": "published"
+  "recent_published_20m_count": 0,
+  "recent_published_20m": [],
+  "decision": "no_approved_to_publish"
 }
