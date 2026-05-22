@@ -72,7 +72,9 @@ state_files:
       published: Уже опубликовано.
   state_json:
     path: state.json
-    role: История опубликованных URL, хэшей заголовков, last_posts, last_cycle_report.
+    role: >
+      История опубликованных URL, хэшей заголовков, last_posts, last_cycle_report,
+      recent_image_urls, recent_image_fingerprints, recent_generated_prompts.
   cycle_report_json:
     path: cycle_report.json
     role: Машиночитаемый итог последнего цикла.
@@ -101,7 +103,12 @@ modules:
     file: src/editorial_publish_safe.py
     role: >
       Безопасный publisher. Публикует только approved. Всегда через sendPhoto.
-      Использует source image или локальную generated semantic image.
+      Вызывает строгий image_pipeline: source → external thematic search 3 attempts → generated semantic.
+  image_pipeline:
+    file: src/image_pipeline.py
+    role: >
+      Единая система изображений: извлечение source image из новости, внешний тематический поиск,
+      локальная генерация, валидация размеров/логотипов/релевантности/антиповтора.
   thematic_image:
     file: src/thematic_image.py
     role: >
@@ -142,11 +149,11 @@ editorial_policy:
     examples:
       - пожар
       - ДТП
-      - авария
+      - авария ЖКХ
       - бытовое ЧП
       - криминал
     rule: >
-      Если есть пожар/ДТП/бытовое ЧП/криминал и нет БПЛА/обстрела/войны/диверсии,
+      Если есть пожар/ДТП/водопроводная авария/бытовое ЧП/криминал и нет БПЛА/обстрела/войны/диверсии,
       категория должна быть РФ / происшествия, не РФ / война и безопасность.
   economy_stream:
     name: РФ / экономика
@@ -186,23 +193,63 @@ editorial_policy:
 image_policy:
   required: true
   publication_method: Telegram sendPhoto only
-  order:
-    - source image when the original source provides a usable image
-    - generated semantic image when no usable source image exists
+  strict_order:
+    - source_image
+    - external_thematic_image_3_attempts
+    - generated_semantic_image
+  source_image:
+    extraction_order:
+      - existing_image_url_from_collector
+      - article_og_image
+      - article_twitter_image
+      - schema_image
+      - first_article_image
+    validation:
+      - min_width_320
+      - min_height_180
+      - not_logo_icon_avatar_sprite_placeholder
+      - not_recent_duplicate_url
+      - not_recent_duplicate_fingerprint
+  external_thematic_image:
+    enabled: true
+    attempts: 3
+    provider: Wikimedia Commons API without secrets
+    strategy:
+      - story_specific_query
+      - category_plus_consequence_query
+      - broad_thematic_query
+    validation:
+      - min_width_320
+      - min_height_180
+      - not_logo_icon_avatar_sprite_placeholder
+      - semantic_relevance_score_gte_0_42
+      - not_recent_duplicate_url
+      - not_recent_duplicate_fingerprint
+  generated_semantic_image:
+    enabled: true
+    only_if_previous_failed: true
+    validation:
+      - min_width_320
+      - min_height_180
+      - semantic_relevance_score_gte_0_42
+      - not_recent_duplicate_fingerprint
   forbidden:
-    - random category fallback photos
-    - category_file oil platform for non-energy economy
-    - thematic image that contradicts title/body
+    - random_category_fallback_photos
+    - category_file_oil_platform_for_non_energy_economy
+    - road_image_for_water_pipeline_news
+    - security_radar_image_for_non_military_incident
+    - duplicated_fallback_images_in_recent_posts
   generated_semantic_rules:
+    incidents:
+      fire_terms: fire/emergency visual
+      road_terms: road accident visual
+      water_terms: water pipe / utility repair visual
+      crime_terms: police/legal incident visual
     economy:
       agriculture_terms: fields/grain/agrofinance visual
       bank_terms: bank/credit visual
       energy_terms: oil/gas/energy visual
       industry_terms: factory/industry visual
-    incidents:
-      fire_terms: neutral fire/emergency visual
-      road_terms: road accident visual
-      crime_terms: police/legal incident visual
     security: radar/air-defense/security visual
     geopolitics: diplomacy/flags/summit visual
     it: servers/network/chip visual
@@ -216,6 +263,7 @@ quality_gates:
     - text must not contain broken unfinished long paragraph
     - category must match semantic text
     - image must exist
+    - image must pass image_pipeline validation
     - post must be sent via safe publisher
   report_decisions:
     published: At least one post was published recently.
