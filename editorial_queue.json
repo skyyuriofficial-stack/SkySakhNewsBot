@@ -5411,15 +5411,15 @@
     "checked_at_sakhalin": "2026-05-22T14:51:44+11:00"
   },
   "cycle_report": {
-    "reported_at": "2026-05-22T01:23:51+00:00",
-    "reported_at_sakhalin": "2026-05-22T12:23:51+11:00",
-    "queue_updated_at": "2026-05-22T01:23:40+00:00",
-    "queue_updated_at_sakhalin": "2026-05-22T12:23:40+11:00",
-    "total_queue_items": 130,
+    "reported_at": "2026-05-22T03:51:55+00:00",
+    "reported_at_sakhalin": "2026-05-22T14:51:55+11:00",
+    "queue_updated_at": "2026-05-22T03:51:44+00:00",
+    "queue_updated_at_sakhalin": "2026-05-22T14:51:44+11:00",
+    "total_queue_items": 140,
     "status_counts": {
-      "hold": 10,
-      "rejected": 114,
-      "published": 6,
+      "hold": 11,
+      "rejected": 122,
+      "published": 7,
       "pending": 0,
       "approved": 0,
       "skipped": 0,
@@ -5427,35 +5427,46 @@
     },
     "hold_by_category": {
       "🌐 Мировые IT": 6,
-      "🎮 Игры / индустрия": 4
+      "🎮 Игры / индустрия": 5
     },
     "approved_by_category": {},
     "published_by_category": {
       "🌐 Мировые IT": 2,
       "🇷🇺 РФ / война и безопасность": 2,
-      "🧭 Геополитика": 1,
-      "🇷🇺 РФ / экономика": 1
+      "🇷🇺 РФ / экономика": 2,
+      "🧭 Геополитика": 1
     },
     "auto_review": {
-      "reviewed_pending": 18,
+      "reviewed_pending": 10,
       "approved": 0,
       "approve_limit": 2,
-      "reviewed_at": "2026-05-22T01:23:40+00:00",
-      "reviewed_at_sakhalin": "2026-05-22T12:23:40+11:00"
+      "reviewed_at": "2026-05-22T03:51:43+00:00",
+      "reviewed_at_sakhalin": "2026-05-22T14:51:43+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-22T01:23:40+00:00",
-      "checked_at_sakhalin": "2026-05-22T12:23:40+11:00"
+      "checked_at": "2026-05-22T03:51:44+00:00",
+      "checked_at_sakhalin": "2026-05-22T14:51:44+11:00"
     },
     "final_guard": {
       "changed": 0,
-      "checked_at": "2026-05-22T01:23:40+00:00",
-      "checked_at_sakhalin": "2026-05-22T12:23:40+11:00"
+      "checked_at": "2026-05-22T03:51:44+00:00",
+      "checked_at_sakhalin": "2026-05-22T14:51:44+11:00"
     },
-    "recent_published_20m_count": 0,
-    "recent_published_20m": [],
-    "decision": "no_approved_to_publish"
+    "recent_published_20m_count": 1,
+    "recent_published_20m": [
+      {
+        "time_sakhalin": "2026-05-22T14:33:13+11:00",
+        "source": "Interfax",
+        "category": "🇷🇺 РФ / экономика",
+        "title": "Посол РФ на Кубе сообщил, что эвакуация россиян с острова пока не рассматривается",
+        "with_image": true,
+        "image_mode": "generated_semantic",
+        "publish_method": "sendPhoto/safe/generated_semantic",
+        "telegram_message_id": 79
+      }
+    ],
+    "decision": "published"
   },
   "minimum_release": {
     "checked_at": "2026-05-22T03:33:10+00:00",
