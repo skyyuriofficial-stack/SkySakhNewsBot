@@ -60,7 +60,8 @@
     "https://www.interfax.ru/russia/1091071",
     "https://www.interfax.ru/russia/1091088",
     "https://www.interfax.ru/russia/1091098",
-    "https://www.interfax.ru/russia/1091097"
+    "https://www.interfax.ru/russia/1091097",
+    "https://www.interfax.ru/world/1091101"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -123,9 +124,10 @@
     "53ab7950528b69e09422122a6661a50e7dd4fd4b",
     "7502bd521e61d7af344cdb482450651627684c63",
     "5719ed852844d67cf27711e76060f8efd05a7161",
-    "6ddc08d6005fe3fcac2eb715c433294243aefab3"
+    "6ddc08d6005fe3fcac2eb715c433294243aefab3",
+    "42c109d7abdef211cccfe353a6ea41dd820ea9ca"
   ],
-  "last_run_sakhalin": "2026-05-22T16:07:06+11:00",
+  "last_run_sakhalin": "2026-05-22T16:33:37+11:00",
   "last_posts": [
     {
       "time_sakhalin": "2026-05-19T17:49:35+11:00",
@@ -815,6 +817,21 @@
       "publish_method": "sendPhoto/safe/generated_semantic",
       "telegram_message_id": 82,
       "score": 145
+    },
+    {
+      "time_sakhalin": "2026-05-22T16:33:25+11:00",
+      "source": "Interfax",
+      "category": "🌐 Мировые IT",
+      "title": "Пашинян заверил, что Армения никогда не будет вовлечена в антироссийскую кампанию",
+      "url": "https://www.interfax.ru/world/1091101",
+      "published_at": "2026-05-22T05:03:00+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_source",
+      "image_url": "https://www.interfax.ru/aspimg/1091101.jpg",
+      "image_fingerprint": "fabf6114cb8678432f88d025156234e61dac924b",
+      "publish_method": "sendPhoto/safe/pipeline_source",
+      "telegram_message_id": 83,
+      "score": 145
     }
   ],
   "last_cycle_report": {
@@ -887,5 +904,12 @@
       }
     ],
     "decision": "published"
-  }
+  },
+  "recent_image_urls": [
+    "https://www.interfax.ru/aspimg/1091101.jpg"
+  ],
+  "recent_image_fingerprints": [
+    "fabf6114cb8678432f88d025156234e61dac924b"
+  ],
+  "recent_generated_prompts": []
 }
