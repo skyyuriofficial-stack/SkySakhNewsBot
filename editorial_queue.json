@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updated_at": "2026-05-22T04:04:46+00:00",
-  "updated_at_sakhalin": "2026-05-22T15:04:46+11:00",
-  "reviewed_at": "2026-05-22T04:04:24+00:00",
-  "reviewed_at_sakhalin": "2026-05-22T15:04:24+11:00",
+  "updated_at": "2026-05-22T04:38:09+00:00",
+  "updated_at_sakhalin": "2026-05-22T15:38:09+11:00",
+  "reviewed_at": "2026-05-22T04:38:08+00:00",
+  "reviewed_at_sakhalin": "2026-05-22T15:38:08+11:00",
   "items": [
     {
       "id": "f22abc43729d8d96",
@@ -403,6 +403,46 @@
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
       },
       "reviewed_at": "2026-05-22T03:51:43+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "ff80ed8d5a0bc4ee",
+      "status": "hold",
+      "created_at": "2026-05-22T04:38:08+00:00",
+      "created_at_sakhalin": "2026-05-22T15:38:08+11:00",
+      "source": "Interfax",
+      "source_type": "ru",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🇷🇺 РФ / война и безопасность",
+      "score": 145,
+      "title_original": "Минобороны РФ сообщило об уничтожении за ночь 217 беспилотников ВСУ",
+      "title_ru": "Минобороны РФ сообщило об уничтожении за ночь 217 беспилотников ВСУ",
+      "body": [
+        "Минобороны России заявило, что в течение прошедшей ночи уничтожены 217 украинских беспилотников над 16 областями, а также Московским регионом и Минобороны России заявило, что в течение прошедшей ночи уничтожены 217 украинских беспилотников над 16 областями, а также Московским регионом и Санкт-Петербургом.",
+        "INTERFAX.RU - Минобороны России заявило, что в течение прошедшей ночи уничтожены 217 украинских беспилотников над 16 областями, а также Московским регионом и Санкт-Петербургом.",
+        "По информации Минобороны РФ, БПЛА сбиты над Белгородской, Брянской, Воронежской, Владимирской, Калужской, Курской, Ленинградской, Липецкой, Нижегородской, Новгородской, Орловской, Рязанской, Смоленской, Тверской, Тульской, Ярославской областями, Московским регионом и Санкт-Петербургом."
+      ],
+      "footer": null,
+      "source_text": "Минобороны России заявило, что в течение прошедшей ночи уничтожены 217 украинских беспилотников над 16 областями, а также Московским регионом и Минобороны России заявило, что в течение прошедшей ночи уничтожены 217 украинских беспилотников над 16 областями, а также Московским регионом и Санкт-Петербургом. Москва. 22 мая. INTERFAX.RU - Минобороны России заявило, что в течение прошедшей ночи уничтожены 217 украинских беспилотников над 16 областями, а также Московским регионом и Санкт-Петербургом. По информации Минобороны РФ, БПЛА сбиты над Белгородской, Брянской, Воронежской, Владимирской, Калужской, Курской, Ленинградской, Липецкой, Нижегородской, Новгородской, Орловской, Рязанской, Смоленской, Тверской, Тульской, Ярославской областями, Московским регионом и Санкт-Петербургом.",
+      "post_text": "🇷🇺 РФ / война и безопасность\n\n<b>Минобороны РФ сообщило об уничтожении за ночь 217 беспилотников ВСУ</b>\n\nМинобороны России заявило, что в течение прошедшей ночи уничтожены 217 украинских беспилотников над 16 областями, а также Московским регионом и Минобороны России заявило, что в течение прошедшей ночи уничтожены 217 украинских беспилотников над 16 областями, а также Московским регионом и Санкт-Петербургом.\n\nINTERFAX.RU - Минобороны России заявило, что в течение прошедшей ночи уничтожены 217 украинских беспилотников над 16 областями, а также Московским регионом и Санкт-Петербургом.\n\nПо информации Минобороны РФ, БПЛА сбиты над Белгородской, Брянской, Воронежской, Владимирской, Калужской, Курской, Ленинградской, Липецкой, Нижегородской, Новгородской, Орловской, Рязанской, Смоленской, Тверской, Тульской, Ярославской областями, Московским регионом и Санкт-Петербургом.\n\nРФ | ВОЙНА И БЕЗОПАСНОСТЬ · <a href=\"https://www.interfax.ru/russia/1091094\">Interfax</a>",
+      "edited_post_text": null,
+      "url": "https://www.interfax.ru/russia/1091094",
+      "published_at": "2026-05-22T04:25:00+00:00",
+      "title_hash": "65ea89938698f636030ec5aa2c4ebf09a32e1a1c",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: ниже текущих приоритетов канала или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-22T04:38:08+00:00",
       "reviewed_by": "auto-editor"
     },
     {
@@ -5253,6 +5293,166 @@
       "reviewed_by": "auto-editor"
     },
     {
+      "id": "010a34697d278bd8",
+      "status": "rejected",
+      "created_at": "2026-05-22T04:38:08+00:00",
+      "created_at_sakhalin": "2026-05-22T15:38:08+11:00",
+      "source": "Interfax",
+      "source_type": "ru",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🇷🇺 РФ / экономика",
+      "score": 132,
+      "title_original": "Рынок акций РФ открылся в утреннюю сессию снижением индекса IMOEX2 на 0,6%",
+      "title_ru": "Рынок акций РФ открылся в утреннюю сессию снижением индекса IMOEX2 на 0,6%",
+      "body": [
+        "Российский рынок акций на старте торгов утренней сессии на МосБирже в пятницу демонстрирует умеренно негативную динамику, отыгрывая как 2%-е снижение цен на Лидируют в откате бумаги нефтегазовых и металлургических компаний Лидируют в откате бумаги нефтегазовых и металлургических компаний Москва.",
+        "INTERFAX.RU - Российский рынок акций на старте торгов утренней сессии на МосБирже в пятницу демонстрирует умеренно негативную динамику, отыгрывая как 2%-е снижение цен на нефть, произошедшее накануне, так и нестабильность мировых цен на металлы.",
+        "К 07:01 МСК индекс МосБиржи составил 2649,01 пункта (-0,57%); цены большинства \"голубых фишек\" на Московской бирже демонстрируют негативную динамику в пределах 1,2%."
+      ],
+      "footer": null,
+      "source_text": "Российский рынок акций на старте торгов утренней сессии на МосБирже в пятницу демонстрирует умеренно негативную динамику, отыгрывая как 2%-е снижение цен на Лидируют в откате бумаги нефтегазовых и металлургических компаний Лидируют в откате бумаги нефтегазовых и металлургических компаний Москва. 22 мая. INTERFAX.RU - Российский рынок акций на старте торгов утренней сессии на МосБирже в пятницу демонстрирует умеренно негативную динамику, отыгрывая как 2%-е снижение цен на нефть, произошедшее накануне, так и нестабильность мировых цен на металлы. К 07:01 МСК индекс МосБиржи составил 2649,01 пункта (-0,57%); цены большинства \"голубых фишек\" на Московской бирже демонстрируют негативную динамику в пределах 1,2%. Подешевели акции АФК \"Система\" (-1,2%), \"Роснефти\" (-1,1%), \"НЛМК\" (-1%), \"Северстали\" (-1%), \"Татнефти\" (-1%), \"Русала\" (-1%), \"Газпрома\" (-0,9%), \"НОВАТЭКа\" (-0,8%), \"Норникеля\" (-0,8%), \"ЛУКОЙЛа\" (-0,7%), \"АЛРОСА\" (-0,6%), \"ММК\" (-0,6%), МКПАО \"Яндекс\" (-0,6%), \"Аэрофлота\" (-0,5%), \"ФосАгро\" (-0,5%), \"Т-Технологии\" (-0,5%), МКПАО \"Хэдхантер\" (-0,4%), \"Московской биржи\" (-0,3%), Сбербанка (-0,3%), \"Сургутнефтегаза\" (-0,3%), ВТБ (-0,3%), \"Интер РАО\" (-0,3%), МКПАО \"ВК\" (-0,3%), \"МТС\" (-0,2%), \"Полюса\" (-0,1%), \"префы\" \"Сургутнефтегаза\" (-0,6%) и Сбербанка (-0,2%).",
+      "post_text": "🇷🇺 РФ / экономика\n\n<b>Рынок акций РФ открылся в утреннюю сессию снижением индекса IMOEX2 на 0,6%</b>\n\nРоссийский рынок акций на старте торгов утренней сессии на МосБирже в пятницу демонстрирует умеренно негативную динамику, отыгрывая как 2%-е снижение цен на Лидируют в откате бумаги нефтегазовых и металлургических компаний Лидируют в откате бумаги нефтегазовых и металлургических компаний Москва.\n\nINTERFAX.RU - Российский рынок акций на старте торгов утренней сессии на МосБирже в пятницу демонстрирует умеренно негативную динамику, отыгрывая как 2%-е снижение цен на нефть, произошедшее накануне, так и нестабильность мировых цен на металлы.\n\nК 07:01 МСК индекс МосБиржи составил 2649,01 пункта (-0,57%); цены большинства \"голубых фишек\" на Московской бирже демонстрируют негативную динамику в пределах 1,2%.\n\nРФ | ЭКОНОМИКА · <a href=\"https://www.interfax.ru/business/1091095\">Interfax</a>",
+      "edited_post_text": null,
+      "url": "https://www.interfax.ru/business/1091095",
+      "published_at": "2026-05-22T04:23:00+00:00",
+      "title_hash": "5c25805ffc0fb81e880517282b9a95d3e7a969b6",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-22T04:38:08+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "8af2fe6e047176e6",
+      "status": "rejected",
+      "created_at": "2026-05-22T04:38:08+00:00",
+      "created_at_sakhalin": "2026-05-22T15:38:08+11:00",
+      "source": "GameSpot",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 147,
+      "title_original": "30% Off Anime DVDs, Blu-Rays, and 4K, Movies & TV",
+      "title_ru": "30% Off Anime DVDs, Blu-Rays, and 4K, Movies & TV",
+      "body": [
+        "Explore our list of 30% Off Anime DVDs, Blu-Rays, and 4K, Movies & TV at Barnes & Noble®.",
+        "Get your order fast and stress free with free curbside pickup.",
+        "Hundreds of Blu-rays are discounted at Barnes & Noble right now, including dozens of popular anime films."
+      ],
+      "footer": null,
+      "source_text": "Explore our list of 30% Off Anime DVDs, Blu-Rays, and 4K, Movies & TV at Barnes & Noble®. Get your order fast and stress free with free curbside pickup. Hundreds of Blu-rays are discounted at Barnes & Noble right now, including dozens of popular anime films. Studio Ghibli is heavily featured in the event, with steelbooks for just about every major film seeing a steep price cut. You'll also find iconic names like Ghost in the Shell and Akira available for cheap, making this sale a great way to grow your Blu-ray collection without breaking your budget. The sale runs from now until May 31. See at Barnes & Noble Studio Ghibli films are undoubtedly the highlight of the event. A bunch of steelbooks are now listed for just $18.89 (was $27), and with their vibrant artwork and additional goodies, they're an easy recommendation for any fan. Some products are bundled with an exclusive booklet and special features--giving you a chance to dive deeper into your favorites. For example, Howl's Moving Castle includes feature-length storyboards, an interview with author Diana Wynne Jones, original trailers, and several other featurettes. You'll find a long list of discounted Studio Ghibli steelbooks below (note that all of these are offered on Blu-ray, except for The Boy and the Heron , which is available in 4K). Beyond Ghibli, other notable deals include Ghost in the Shell on 4K Blu-ray for $11.49 (was $23) and the Akira Steelbook (4K Blu-ray) for $24.49 (was $35). The former gets you the iconic film in 4K, Blu-ray, and digital formats, as well as support for Dolby Vision and Atmos--making it the most premium way to experience the classic in 2026. The latter comes in a vivid red steelbook that'll stand out in any collection, and its cyberpunk story about Neo-Tokyo is one that shouldn't ",
+      "post_text": "🎮 Игры / индустрия\n\n<b>30% Off Anime DVDs, Blu-Rays, and 4K, Movies &amp; TV</b>\n\nExplore our list of 30% Off Anime DVDs, Blu-Rays, and 4K, Movies &amp; TV at Barnes &amp; Noble®.\n\nGet your order fast and stress free with free curbside pickup.\n\nHundreds of Blu-rays are discounted at Barnes &amp; Noble right now, including dozens of popular anime films.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.barnesandnoble.com/b/30-off-anime-dvds-blu-rays-and-4k/movies-tv/_/N-30anZ8qh?irclickid=0X1z-w1nExyZTKkyVN3o%3AQCRUkuRiOWsg13HRg0&amp;sharedid=&amp;irpid=1804712&amp;irgwc=1&amp;afsrc=1\">GameSpot</a>",
+      "edited_post_text": null,
+      "url": "https://www.barnesandnoble.com/b/30-off-anime-dvds-blu-rays-and-4k/movies-tv/_/N-30anZ8qh?irclickid=0X1z-w1nExyZTKkyVN3o%3AQCRUkuRiOWsg13HRg0&sharedid=&irpid=1804712&irgwc=1&afsrc=1",
+      "published_at": "2026-05-21T20:42:45+00:00",
+      "title_hash": "2718885edd6845d2812863d4c45b6f45e2449cf2",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-22T04:38:08+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "f3a0d55daed6bd2d",
+      "status": "rejected",
+      "created_at": "2026-05-22T04:38:08+00:00",
+      "created_at_sakhalin": "2026-05-22T15:38:08+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 127,
+      "title_original": "Тупик на игровом поле: почему образовательные и научные настольные игры в 2026 году сжимаются",
+      "title_ru": "Тупик на игровом поле: почему образовательные и научные настольные игры в 2026 году сжимаются",
+      "body": [
+        "Ещё пять-шесть лет назад полки детских магазинов и каталоги краудфандинговых платформ пестрели проектами с маркировками STEM, «логика», «программирование без экрана» и «научно-обоснованно».",
+        "Ещё пять-шесть лет назад полки детских магазинов и каталоги краудфандинговых платформ пестрели проектами с маркировками STEM, «логика», «программирование без экрана» и «научно-обоснованно».",
+        "Аналитики предрекали категории устойчивый рост, а издатели один за другим запускали отдельные импринты для «умных» настолок."
+      ],
+      "footer": null,
+      "source_text": "Ещё пять-шесть лет назад полки детских магазинов и каталоги краудфандинговых платформ пестрели проектами с маркировками STEM, «логика», «программирование без экрана» и «научно-обоснованно». Аналитики... Ещё пять-шесть лет назад полки детских магазинов и каталоги краудфандинговых платформ пестрели проектами с маркировками STEM, «логика», «программирование без экрана» и «научно-обоснованно». Аналитики предрекали категории устойчивый рост, а издатели один за другим запускали отдельные импринты для «умных» настолок. К 2026 году картина радикально изменилась: сегмент не просто перестал расти — он последовательно сокращается. Новинок от крупных игроков почти нет, краудфандинг-кампании проваливаются, а в России направление фактически вернулось в состояние маргинальной ниши или ушло в бюрократические отчёты. Разберём, почему так произошло на глобальном и локальном рынках. Читать далее Ещё пять-шесть лет назад полки детских магазинов и каталоги краудфандинговых платформ пестрели проектами с маркировками STEM, «логика», «программирование без экрана» и «научно-обоснованно». Аналитики предрекали категории устойчивый рост, а издатели один за другим запускали отдельные импринты для «умных» настолок. К 2026 году картина радикально изменилась: сегмент не просто перестал расти — он последовательно сокращается. Новинок от крупных игроков почти нет, краудфандинг-кампании проваливаются, а в России направление фактически вернулось в состояние маргинальной ниши или ушло в бюрократические отчёты. Разберём, почему так произошло на глобальном и локальном рынках. Чтобы понять судьбу образовательных настолок, нужно смотреть на индустрию в целом. Пандемийный бум 2020–2021 годов создал иллюзию бесконечного спроса. Уже к 2023 году рынок столкнулся с жёсткой коррекцией. Ravensburger, в портфеле котор",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Тупик на игровом поле: почему образовательные и научные настольные игры в 2026 году сжимаются</b>\n\nЕщё пять-шесть лет назад полки детских магазинов и каталоги краудфандинговых платформ пестрели проектами с маркировками STEM, «логика», «программирование без экрана» и «научно-обоснованно».\n\nЕщё пять-шесть лет назад полки детских магазинов и каталоги краудфандинговых платформ пестрели проектами с маркировками STEM, «логика», «программирование без экрана» и «научно-обоснованно».\n\nАналитики предрекали категории устойчивый рост, а издатели один за другим запускали отдельные импринты для «умных» настолок.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://habr.com/ru/articles/1037960/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1037960#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1037960/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1037960#habracut",
+      "published_at": "2026-05-22T04:28:39+00:00",
+      "title_hash": "a8f7e2da33974978501de57067911d81daef1ebf",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/97b/9ce/1d7/97b9ce1d7bd502290e0b98622f2168e1.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-22T04:38:08+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
+      "id": "5e317c2f3bc89b99",
+      "status": "rejected",
+      "created_at": "2026-05-22T04:38:08+00:00",
+      "created_at_sakhalin": "2026-05-22T15:38:08+11:00",
+      "source": "GameSpot",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 127,
+      "title_original": "Top ASUS Deals | ASUS Store US",
+      "title_ru": "Top ASUS Deals | ASUS Store US",
+      "body": [
+        "Save big with limited time deals and amazing savings on ASUS laptops, desktops & more from the Official ASUS Store!",
+        "What's a Memorial Day without a good sale?",
+        "Asus is early out of the gate, kicking off its summer-is-here sale with discounts across a wide range of laptops, monitors, and other PC components."
+      ],
+      "footer": null,
+      "source_text": "Save big with limited time deals and amazing savings on ASUS laptops, desktops & more from the Official ASUS Store! What's a Memorial Day without a good sale? Asus is early out of the gate, kicking off its summer-is-here sale with discounts across a wide range of laptops, monitors, and other PC components. It's a surprisingly good time of year to upgrade your PC setup or pick up a new gaming laptop ahead of major releases coming later this summer (like the Assassin's Creed Black Flag Remaster). The sale goes until May 23, so it's only going to be around for a few more days. See all deals at Asus Laptops & Tablets ROG Zephyrus G16 gaming laptop I love when one of these sales includes a cross-section of a manufacturer's product lines. This isn't just an Asus ROG sale, it's not just an Asus productivity sale either. And you don't have to plan on emptying your savings if there's something you want to check out. At the higher-end end of things, there's the ROG Zephyrus G16, and ROG Flow Z13. The Zephyrus G16 is the kind of gaming laptop that blends portability with power, pairing Inte's Core Ultra 9 processor with an RTX 5070 Ti GPU giving you a surprising amount of raw power in a relatively svelte (4 pound) frame. That means it's also a solid amount of horsepower for productivity, creative work, and multitasking with a 100+ tabs open at a time. The design is also one that I appreciate, it's a gaming laptop that looks cool without screaming this is a gaming laptop at the top of its lungs. There is a time and place for that, but it's not always what I want when I'm working from a cafe or carrying something into a conference room. What you won't get on a purely productivity minded laptop that might look like the Zephyrus G16 though is the 16-inch ROG Nebula OLED display. It's ",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Top ASUS Deals | ASUS Store US</b>\n\nSave big with limited time deals and amazing savings on ASUS laptops, desktops &amp; more from the Official ASUS Store!\n\nWhat's a Memorial Day without a good sale?\n\nAsus is early out of the gate, kicking off its summer-is-here sale with discounts across a wide range of laptops, monitors, and other PC components.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.asus.com/us/deals/all-deals/?aw_affid=78888&amp;awc=31828_1779424663_ce88e32d2036c08e76a4ff3eabbbb9f0\">GameSpot</a>",
+      "edited_post_text": null,
+      "url": "https://www.asus.com/us/deals/all-deals/?aw_affid=78888&awc=31828_1779424663_ce88e32d2036c08e76a4ff3eabbbb9f0",
+      "published_at": "2026-05-21T23:03:00+00:00",
+      "title_hash": "f11b24f690100caa2c33960ab0d2ae36c2fad358",
+      "image_url": "https://dlcdnimgs.asus.com/images/mda2022/consumer/blue/en-us.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-22T04:38:08+00:00",
+      "reviewed_by": "auto-editor"
+    },
+    {
       "id": "ec44a45aa73888ea",
       "status": "published",
       "created_at": "2026-05-21T00:17:03+00:00",
@@ -5602,19 +5802,19 @@
     "reviewed_pending": 5,
     "approved": 0,
     "approve_limit": 2,
-    "reviewed_at": "2026-05-22T04:04:24+00:00",
-    "reviewed_at_sakhalin": "2026-05-22T15:04:24+11:00"
+    "reviewed_at": "2026-05-22T04:38:08+00:00",
+    "reviewed_at_sakhalin": "2026-05-22T15:38:08+11:00"
   },
   "final_guard": {
     "changed": 0,
     "polished": 0,
-    "checked_at": "2026-05-22T04:04:45+00:00",
-    "checked_at_sakhalin": "2026-05-22T15:04:45+11:00"
+    "checked_at": "2026-05-22T04:38:08+00:00",
+    "checked_at_sakhalin": "2026-05-22T15:38:08+11:00"
   },
   "priority_guard": {
     "changed": 0,
-    "checked_at": "2026-05-22T04:04:25+00:00",
-    "checked_at_sakhalin": "2026-05-22T15:04:25+11:00"
+    "checked_at": "2026-05-22T04:38:08+00:00",
+    "checked_at_sakhalin": "2026-05-22T15:38:08+11:00"
   },
   "cycle_report": {
     "reported_at": "2026-05-22T04:04:39+00:00",
