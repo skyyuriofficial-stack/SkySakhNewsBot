@@ -1,21 +1,17 @@
 # Minimum release policy for SkySakhNews.
-# Runs after strict review/priority guard and before final guard/publish.
-# Purpose: prevent long silent periods when the strict editor approved 0 items.
-# It promotes exactly one reserve item only if it is still newsworthy and safe.
+# Conservative fallback: publish at most one reserve item only when strict review produced 0 approved items.
+# This file must never promote weak denial/consular notes, ads, tutorials, deals or wrongly categorized material.
 
 import html
 import json
 import re
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List
 
 QUEUE_FILE = Path("editorial_queue.json")
-STATE_FILE = Path("state.json")
 SAKH_TZ = timezone(timedelta(hours=11))
-
-APPROVE_LIMIT = 1
-MAX_AGE_HOURS = 36
+MAX_AGE_HOURS = 30
 
 FOOTERS = {
     "🌍 Мир о России": "МИР О РОССИИ",
@@ -28,31 +24,33 @@ FOOTERS = {
     "📍 Сахалин": "САХАЛИН",
 }
 
-TRUSTED_SOURCES = [
-    "interfax", "bbc", "guardian", "reuters", "ap news", "associated press",
-    "the verge", "ars technica", "eurogamer", "pc gamer",
-]
+TRUSTED_SOURCES = ["interfax", "bbc", "guardian", "reuters", "ap news", "associated press", "the verge", "ars technica"]
 
 HARD_REJECT_TERMS = [
-    "скид", "распродаж", "coupon", "discount", "deal", "sale", "amazon", "walmart", "woot",
-    "download", "drivers", "драйвер", "power bank", "free shipping", "promocode", "промокод",
-    "обучающая/колоночная", "товарная", "товарный", "партнерский", "партнёрский",
-    "туториал", "гайд", "личный опыт", "как я", "как сделать", "как управлять",
-    "финальный стоп: approved-пост не русифицирован", "низкой значимости",
+    "скид", "распродаж", "coupon", "discount", "deal", "sale", "amazon", "walmart", "woot", "download", "drivers",
+    "драйвер", "power bank", "free shipping", "promocode", "промокод", "товарная", "товарный", "партнерский",
+    "партнерский", "туториал", "гайд", "личный опыт", "как я", "как сделать", "как управлять", "обучающая/колоночная",
+    "финальный стоп", "низкой значимости", "игровая тема не имеет", "материал устарел",
+]
+
+WEAK_DENIAL_TERMS = [
+    "не рассматривается", "не планируется", "не обсуждается", "не стоит на повестке", "пока не рассматривается",
+    "пока не планируется", "не ожидается", "не стал комментировать", "отказался комментировать",
+    "готовы к сотрудничеству", "заявил о готовности", "выразил готовность", "призвал к", "рассчитывает на",
 ]
 
 STRONG_TERMS = [
-    "заэс", "аэс", "миниров", "ранен", "ранены", "погиб", "поврежден", "повреждена", "повреждены",
-    "пожар", "разруш", "ущерб", "атака", "удар", "обстрел", "отключ", "электроэнерг",
-    "санкц", "ставк", "цб", "инфляц", "нефть", "газ", "спг", "китай", "сша", "иран", "израил",
-    "openai", "google", "microsoft", "apple", "anthropic", "nvidia", "уязвим", "cve",
+    "заэс", "аэс", "миниров", "ранен", "ранены", "погиб", "погибли", "поврежден", "повреждена", "повреждены",
+    "пожар", "разруш", "ущерб", "атака", "удар", "обстрел", "отключ", "электроэнерг", "санкц", "ставк", "цб",
+    "инфляц", "нефть", "газ", "спг", "китай", "сша", "иран", "израил", "openai", "google", "microsoft", "apple",
+    "anthropic", "nvidia", "уязвим", "cve",
 ]
 
 WAR_TERMS = ["заэс", "аэс", "бпла", "дрон", "атака", "удар", "обстрел", "миниров", "пво", "всу", "ранен", "погиб", "поврежден"]
-ECON_TERMS = ["эконом", "банк", "кредит", "ставк", "цб", "инфляц", "нефть", "газ", "спг", "рубл", "экспорт", "импорт", "зерн"]
+ECON_TERMS = ["банк", "кредит", "ставк", "цб", "инфляц", "нефть", "газ", "спг", "рубл", "экспорт", "импорт", "зерн"]
 POLITICS_TERMS = ["госдума", "закон", "сенат", "правительство", "переговор", "визит", "саммит", "мид", "путин", "си цзиньпин"]
 IT_TERMS = ["openai", "google", "microsoft", "apple", "anthropic", "nvidia", "уязвим", "cve", "ии", "нейросет"]
-GEOPOLITICS_TERMS = ["иран", "израил", "сша", "нато", "ес", "китай", "тайван", "газа", "оон"]
+GEOPOLITICS_TERMS = ["иран", "израил", "сша", "нато", "ес", "китай", "тайван", "газа", "оон", "куба"]
 
 
 def now_utc() -> str:
@@ -64,10 +62,8 @@ def now_sakh() -> str:
 
 
 def load_json(path: Path, default):
-    if not path.exists():
-        return default
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
+        return json.loads(path.read_text(encoding="utf-8")) if path.exists() else default
     except Exception:
         return default
 
@@ -83,8 +79,9 @@ def norm(value: str) -> str:
 def clean(value: str) -> str:
     text = html.unescape(str(value or ""))
     text = re.sub(r"<[^>]+>", " ", text)
-    text = text.replace("INTERFAX.RU -", " ").replace("Москва.", " ")
-    return re.sub(r"\s+", " ", text).strip()
+    text = re.sub(r"\bINTERFAX\.RU\s*-\s*", "", text)
+    text = re.sub(r"\bМосква\.\s*\d+\s+[а-яА-Я]+\.\s*", "", text)
+    return re.sub(r"\s+", " ", text).strip(" -—")
 
 
 def esc(value: str) -> str:
@@ -95,8 +92,8 @@ def attr(value: str) -> str:
     return html.escape(str(value or ""), quote=True)
 
 
-def blob(item: Dict) -> str:
-    keys = ["title_original", "title_ru", "source_text", "post_text", "edited_post_text", "url", "source", "category", "category_hint"]
+def text_blob(item: Dict) -> str:
+    keys = ["title_original", "title_ru", "source_text", "body", "url", "source"]
     return norm(" ".join(str(item.get(k) or "") for k in keys))
 
 
@@ -113,8 +110,7 @@ def cyrillic_ratio(text: str) -> float:
     letters = re.findall(r"[A-Za-zА-Яа-яЁё]", text or "")
     if not letters:
         return 0.0
-    cyr = re.findall(r"[А-Яа-яЁё]", text or "")
-    return len(cyr) / max(1, len(letters))
+    return len(re.findall(r"[А-Яа-яЁё]", text or "")) / max(1, len(letters))
 
 
 def age_hours(item: Dict) -> float:
@@ -130,18 +126,29 @@ def age_hours(item: Dict) -> float:
         return 9999.0
 
 
+def remove_repeated_halves(sentence: str) -> str:
+    s = clean(sentence)
+    words = s.split()
+    if len(words) < 10:
+        return s
+    for n in range(min(28, len(words) // 2), 5, -1):
+        first = " ".join(words[:n]).lower()
+        second = " ".join(words[n:2*n]).lower()
+        if first == second:
+            return clean(" ".join(words[:n] + words[2*n:]))
+    return s
+
+
 def split_sentences(text: str) -> List[str]:
     text = clean(text)
-    text = re.sub(r"\bМосква\.\s*\d+\s+[а-яА-Я]+\.\s*", "", text)
     parts = re.split(r"(?<=[.!?])\s+", text)
-    out = []
-    seen = set()
+    out, seen = [], set()
     for part in parts:
-        part = clean(part)
-        if len(part) < 45:
+        part = remove_repeated_halves(part)
+        if len(part) < 55:
             continue
         low = norm(part)
-        if any(x in low for x in ["читать далее", "subscribe", "sign in", "реклама", "подпис"]):
+        if any(x in low for x in ["читать далее", "subscribe", "sign in", "реклама", "подпис", "известия"]):
             continue
         key = re.sub(r"\W+", "", low)[:120]
         if key in seen:
@@ -154,7 +161,7 @@ def split_sentences(text: str) -> List[str]:
 
 
 def infer_category(item: Dict) -> str:
-    text = blob(item)
+    text = text_blob(item)  # intentionally excludes existing category/category_hint
     if has_any(text, WAR_TERMS):
         return "🇷🇺 РФ / война и безопасность"
     if has_any(text, ECON_TERMS):
@@ -165,7 +172,7 @@ def infer_category(item: Dict) -> str:
         return "🧭 Геополитика"
     if has_any(text, POLITICS_TERMS):
         return "🇷🇺 РФ / законы и политика"
-    return item.get("category") or item.get("category_hint") or "🧭 Геополитика"
+    return "🧭 Геополитика"
 
 
 def make_post(category: str, title: str, body: List[str], url: str, source: str) -> str:
@@ -174,42 +181,45 @@ def make_post(category: str, title: str, body: List[str], url: str, source: str)
 
 
 def safe_candidate(item: Dict) -> bool:
-    text = blob(item)
+    text = text_blob(item)
     notes = notes_blob(item)
     source = norm(item.get("source"))
-    if item.get("status") not in {"hold", "rejected"}:
+    status = item.get("status")
+    if status == "rejected" and not has_any(notes, ["в резерве", "ниже текущих приоритетов"]):
+        return False
+    if status not in {"hold", "rejected"}:
         return False
     if age_hours(item) > MAX_AGE_HOURS:
         return False
     if has_any(text + " " + notes, HARD_REJECT_TERMS):
         return False
+    if has_any(text, WEAK_DENIAL_TERMS):
+        return False
     if not any(src in source for src in TRUSTED_SOURCES):
         return False
     if not has_any(text, STRONG_TERMS):
         return False
-    if cyrillic_ratio(text) < 0.35:
-        # Do not auto-release mostly English drafts without a real translator.
+    if cyrillic_ratio(text) < 0.45:
         return False
     return True
 
 
 def rank_item(item: Dict) -> int:
-    text = blob(item)
+    text = text_blob(item)
     category = infer_category(item)
-    score = 0
-    score += {
+    score = {
         "🌍 Мир о России": 900,
         "🇷🇺 РФ / война и безопасность": 850,
         "🧭 Геополитика": 800,
         "🇷🇺 РФ / экономика": 720,
         "🇷🇺 РФ / законы и политика": 650,
         "🌐 Мировые IT": 520,
-        "🎮 Игры / индустрия": 120,
+        "🎮 Игры / индустрия": 100,
     }.get(category, 300)
     for term in STRONG_TERMS:
         if norm(term) in text:
             score += 15
-    score -= int(age_hours(item) * 4)
+    score -= int(age_hours(item) * 5)
     return score
 
 
@@ -218,13 +228,12 @@ def promote(item: Dict) -> None:
     title = clean(item.get("title_ru") or item.get("title_original") or "")
     body = split_sentences(item.get("source_text") or "")
     if not body:
-        body = [clean(x) for x in (item.get("body") or []) if clean(x)][:2]
+        body = [remove_repeated_halves(clean(x)) for x in (item.get("body") or []) if clean(x)][:2]
     if not body:
         raise RuntimeError("reserve item has no usable body")
     post_text = make_post(category, title, body[:2], item.get("url") or "", item.get("source") or "Источник")
-    if cyrillic_ratio(post_text) < 0.45:
+    if cyrillic_ratio(post_text) < 0.55:
         raise RuntimeError("reserve item post text is not Russian enough")
-
     item["status"] = "approved"
     item["category"] = category
     item["title_ru"] = title
@@ -232,25 +241,20 @@ def promote(item: Dict) -> None:
     item["post_text"] = post_text
     item["edited_post_text"] = post_text
     item["reviewed_at"] = now_utc()
-    item["reviewed_by"] = "minimum-release-policy"
+    item["reviewed_by"] = "minimum-release-policy-v2"
     item["minimum_release"] = True
-    item.setdefault("editor_notes", []).append(
-        "Minimum release policy: строгий редактор не нашёл approved, поэтому выбран один безопасный резервный материал, чтобы лента не молчала."
-    )
+    item.setdefault("editor_notes", []).append("Minimum release v2: выбран один безопасный резервный материал; слабые отрицательные/консульские заметки и рекламные материалы запрещены.")
 
 
 def main() -> None:
     queue = load_json(QUEUE_FILE, {"version": 1, "items": []})
     items = queue.get("items", []) or []
-    approved_now = [x for x in items if x.get("status") == "approved"]
-    if approved_now:
-        print(f"minimum-release: skipped, approved already exists={len(approved_now)}")
+    if any(x.get("status") == "approved" for x in items):
+        print("minimum-release: skipped, approved already exists")
         return
-
     candidates = [x for x in items if safe_candidate(x)]
     candidates.sort(key=rank_item, reverse=True)
-    promoted = 0
-    errors = []
+    promoted, errors = 0, []
     for item in candidates:
         try:
             promote(item)
@@ -258,19 +262,11 @@ def main() -> None:
             break
         except Exception as exc:
             errors.append(f"{item.get('title_ru') or item.get('title_original')}: {exc}")
-            continue
-
     queue["updated_at"] = now_utc()
     queue["updated_at_sakhalin"] = now_sakh()
-    queue["minimum_release"] = {
-        "checked_at": now_utc(),
-        "checked_at_sakhalin": now_sakh(),
-        "candidates": len(candidates),
-        "promoted": promoted,
-        "errors": errors[-5:],
-    }
+    queue["minimum_release"] = {"version": 2, "checked_at": now_utc(), "checked_at_sakhalin": now_sakh(), "candidates": len(candidates), "promoted": promoted, "errors": errors[-5:]}
     save_json(QUEUE_FILE, queue)
-    print(f"minimum-release: candidates={len(candidates)}, promoted={promoted}")
+    print(f"minimum-release-v2: candidates={len(candidates)}, promoted={promoted}")
 
 
 if __name__ == "__main__":
