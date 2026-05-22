@@ -6214,15 +6214,15 @@
     "checked_at_sakhalin": "2026-05-22T16:33:21+11:00"
   },
   "cycle_report": {
-    "reported_at": "2026-05-22T05:07:04+00:00",
-    "reported_at_sakhalin": "2026-05-22T16:07:04+11:00",
-    "queue_updated_at": "2026-05-22T05:06:51+00:00",
-    "queue_updated_at_sakhalin": "2026-05-22T16:06:51+11:00",
-    "total_queue_items": 155,
+    "reported_at": "2026-05-22T05:33:50+00:00",
+    "reported_at_sakhalin": "2026-05-22T16:33:50+11:00",
+    "queue_updated_at": "2026-05-22T05:33:37+00:00",
+    "queue_updated_at_sakhalin": "2026-05-22T16:33:37+11:00",
+    "total_queue_items": 159,
     "status_counts": {
       "hold": 11,
-      "rejected": 134,
-      "published": 10,
+      "rejected": 137,
+      "published": 11,
       "pending": 0,
       "approved": 0,
       "skipped": 0,
@@ -6234,52 +6234,42 @@
     },
     "approved_by_category": {},
     "published_by_category": {
+      "🌐 Мировые IT": 3,
       "🇷🇺 РФ / война и безопасность": 3,
-      "🌐 Мировые IT": 2,
       "🇷🇺 РФ / экономика": 2,
       "🇷🇺 РФ / происшествия": 2,
       "🧭 Геополитика": 1
     },
     "auto_review": {
       "version": 3,
-      "reviewed_pending": 5,
-      "approved": 2,
+      "reviewed_pending": 4,
+      "approved": 1,
       "approve_limit": 2,
-      "reviewed_at": "2026-05-22T05:06:22+00:00",
-      "reviewed_at_sakhalin": "2026-05-22T16:06:22+11:00"
+      "reviewed_at": "2026-05-22T05:33:21+00:00",
+      "reviewed_at_sakhalin": "2026-05-22T16:33:21+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-22T05:06:22+00:00",
-      "checked_at_sakhalin": "2026-05-22T16:06:22+11:00"
+      "checked_at": "2026-05-22T05:33:21+00:00",
+      "checked_at_sakhalin": "2026-05-22T16:33:21+11:00"
     },
     "final_guard": {
       "changed": 0,
       "polished": 1,
-      "checked_at": "2026-05-22T05:06:22+00:00",
-      "checked_at_sakhalin": "2026-05-22T16:06:22+11:00"
+      "checked_at": "2026-05-22T05:33:21+00:00",
+      "checked_at_sakhalin": "2026-05-22T16:33:21+11:00"
     },
-    "recent_published_20m_count": 2,
+    "recent_published_20m_count": 1,
     "recent_published_20m": [
       {
-        "time_sakhalin": "2026-05-22T16:06:24+11:00",
+        "time_sakhalin": "2026-05-22T16:33:25+11:00",
         "source": "Interfax",
-        "category": "🇷🇺 РФ / происшествия",
-        "title": "Один человек погиб, пятеро пострадали в ДТП с микроавтобусом в Челябинской области",
+        "category": "🌐 Мировые IT",
+        "title": "Пашинян заверил, что Армения никогда не будет вовлечена в антироссийскую кампанию",
         "with_image": true,
-        "image_mode": "generated_semantic",
-        "publish_method": "sendPhoto/safe/generated_semantic",
-        "telegram_message_id": 81
-      },
-      {
-        "time_sakhalin": "2026-05-22T16:06:39+11:00",
-        "source": "Interfax",
-        "category": "🇷🇺 РФ / происшествия",
-        "title": "Около 90 тыс. человек остались без воды из-за аварии на водопроводе в Хакасии",
-        "with_image": true,
-        "image_mode": "generated_semantic",
-        "publish_method": "sendPhoto/safe/generated_semantic",
-        "telegram_message_id": 82
+        "image_mode": "pipeline_source",
+        "publish_method": "sendPhoto/safe/pipeline_source",
+        "telegram_message_id": 83
       }
     ],
     "decision": "published"
