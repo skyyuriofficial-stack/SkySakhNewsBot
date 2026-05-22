@@ -2,38 +2,69 @@ import time
 from datetime import datetime
 
 import editorial_queue as q
-from thematic_image import generate_thematic_image
+from image_pipeline import (
+    candidate_to_file,
+    decision_to_dict,
+    remember_image_in_state,
+    resolve_article_image,
+    bytes_fingerprint,
+)
 
-SOURCE_MODES = {"source", "source_image", "rss_source", "page_source"}
+
+def log(message: str) -> None:
+    try:
+        q.b.log(message)
+    except Exception:
+        print(message)
 
 
-def source_image_for(draft):
+def article_for_image(draft: dict) -> dict:
+    item = q.item_for_publish(draft, image_file=None)
+    item.update({
+        "category": draft.get("category") or draft.get("category_hint"),
+        "category_hint": draft.get("category") or draft.get("category_hint"),
+        "title_ru": draft.get("title_ru") or draft.get("title_original"),
+        "title_original": draft.get("title_original") or draft.get("title_ru"),
+        "body": draft.get("body") or [],
+        "source_text": draft.get("source_text") or "",
+        "post_text": draft.get("post_text") or "",
+        "edited_post_text": draft.get("edited_post_text") or "",
+        "image_url": draft.get("image_url"),
+        "image_mode": draft.get("image_mode"),
+    })
+    return item
+
+
+def resolve_image_file(draft: dict, state: dict):
     if draft.get("image_decision") == "drop":
-        return None
-    mode = (draft.get("image_mode") or "").strip()
-    url = draft.get("image_url")
-    if not url or mode not in SOURCE_MODES:
-        return None
-    image = q.b.fetch_image_bytes(url)
-    if not image:
-        q.b.log("source image failed, using generated semantic image: " + str(url)[:120])
-        return None
-    draft["image_mode"] = "source"
+        return None, None
+
+    article = article_for_image(draft)
+    decision = resolve_article_image(article, state, logger=log)
+    draft["image_pipeline"] = decision_to_dict(decision)
+
+    if not decision.selected:
+        draft["status"] = "hold"
+        draft.setdefault("editor_notes", []).append("Safe publisher: нет валидного изображения после source/search/generate; публикация остановлена.")
+        return None, decision
+
+    candidate = decision.selected
+    image_file = candidate_to_file(candidate)
+    if not image_file:
+        draft["status"] = "hold"
+        draft.setdefault("editor_notes", []).append("Safe publisher: image pipeline вернул кандидата без данных; публикация остановлена.")
+        return None, decision
+
+    draft["image_mode"] = f"pipeline_{decision.strategy}"
+    draft["image_url"] = candidate.url
     draft["with_image"] = True
     draft["image_decision"] = "use"
-    return image
-
-
-def generated_image_for(draft):
-    data, content_type, filename = generate_thematic_image(draft)
-    draft["image_mode"] = "generated_semantic"
-    draft["image_url"] = None
-    draft["with_image"] = True
-    draft["image_decision"] = "use"
+    draft["image_fingerprint"] = bytes_fingerprint(candidate.data)
     draft.setdefault("editor_notes", []).append(
-        "Safe publisher: source-картинка отсутствует или непригодна; создана локальная семантическая иллюстрация по тексту новости."
+        f"Image pipeline: {decision.strategy}; {decision.reason}; score={candidate.relevance_score:.2f}."
     )
-    return data, content_type, filename
+    remember_image_in_state(state, candidate)
+    return image_file, decision
 
 
 def publish_safe() -> None:
@@ -61,15 +92,15 @@ def publish_safe() -> None:
             draft.setdefault("editor_notes", []).append("Safe publisher: нет текста для публикации.")
             continue
 
-        image_file = source_image_for(draft)
+        image_file, decision = resolve_image_file(draft, state)
         if not image_file:
-            q.b.log("safe publisher generated semantic image: " + str(draft.get("title_ru") or draft.get("title_original"))[:120])
-            image_file = generated_image_for(draft)
+            log("safe publisher hold: no valid image for " + str(draft.get("title_ru") or draft.get("title_original"))[:120])
+            continue
 
         try:
             item = q.item_for_publish(draft, image_file=image_file)
             caption = text[:980]
-            q.b.log(
+            log(
                 f"safe publish image-card [{draft.get('image_mode')}]: "
                 f"{draft.get('category')} | {draft.get('source')} | {str(draft.get('title_ru') or '')[:90]}"
             )
@@ -77,7 +108,7 @@ def publish_safe() -> None:
             method = f"sendPhoto/safe/{draft.get('image_mode') or 'image'}"
         except Exception as exc:
             draft.setdefault("editor_notes", []).append("Safe publisher error: " + str(exc))
-            q.b.log("safe publisher failed: " + str(exc))
+            log("safe publisher failed: " + str(exc))
             continue
 
         if result and result.get("ok"):
@@ -101,6 +132,7 @@ def publish_safe() -> None:
                 "with_image": True,
                 "image_mode": draft.get("image_mode"),
                 "image_url": draft.get("image_url"),
+                "image_fingerprint": draft.get("image_fingerprint"),
                 "publish_method": method,
                 "telegram_message_id": message_id,
                 "score": draft.get("score"),
@@ -110,7 +142,7 @@ def publish_safe() -> None:
 
     q.b.save_state(state)
     q.save_queue(queue)
-    q.b.log(f"Safe publisher: published={published}")
+    log(f"Safe publisher: published={published}")
 
 
 if __name__ == "__main__":
