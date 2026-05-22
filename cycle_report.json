@@ -1,13 +1,13 @@
 {
-  "reported_at": "2026-05-22T04:38:20+00:00",
-  "reported_at_sakhalin": "2026-05-22T15:38:20+11:00",
-  "queue_updated_at": "2026-05-22T04:38:09+00:00",
-  "queue_updated_at_sakhalin": "2026-05-22T15:38:09+11:00",
-  "total_queue_items": 150,
+  "reported_at": "2026-05-22T05:07:04+00:00",
+  "reported_at_sakhalin": "2026-05-22T16:07:04+11:00",
+  "queue_updated_at": "2026-05-22T05:06:51+00:00",
+  "queue_updated_at_sakhalin": "2026-05-22T16:06:51+11:00",
+  "total_queue_items": 155,
   "status_counts": {
     "hold": 11,
-    "rejected": 131,
-    "published": 8,
+    "rejected": 134,
+    "published": 10,
     "pending": 0,
     "approved": 0,
     "skipped": 0,
@@ -22,27 +22,50 @@
     "🇷🇺 РФ / война и безопасность": 3,
     "🌐 Мировые IT": 2,
     "🇷🇺 РФ / экономика": 2,
+    "🇷🇺 РФ / происшествия": 2,
     "🧭 Геополитика": 1
   },
   "auto_review": {
+    "version": 3,
     "reviewed_pending": 5,
-    "approved": 0,
+    "approved": 2,
     "approve_limit": 2,
-    "reviewed_at": "2026-05-22T04:38:08+00:00",
-    "reviewed_at_sakhalin": "2026-05-22T15:38:08+11:00"
+    "reviewed_at": "2026-05-22T05:06:22+00:00",
+    "reviewed_at_sakhalin": "2026-05-22T16:06:22+11:00"
   },
   "priority_guard": {
     "changed": 0,
-    "checked_at": "2026-05-22T04:38:08+00:00",
-    "checked_at_sakhalin": "2026-05-22T15:38:08+11:00"
+    "checked_at": "2026-05-22T05:06:22+00:00",
+    "checked_at_sakhalin": "2026-05-22T16:06:22+11:00"
   },
   "final_guard": {
     "changed": 0,
-    "polished": 0,
-    "checked_at": "2026-05-22T04:38:08+00:00",
-    "checked_at_sakhalin": "2026-05-22T15:38:08+11:00"
+    "polished": 1,
+    "checked_at": "2026-05-22T05:06:22+00:00",
+    "checked_at_sakhalin": "2026-05-22T16:06:22+11:00"
   },
-  "recent_published_20m_count": 0,
-  "recent_published_20m": [],
-  "decision": "no_approved_to_publish"
+  "recent_published_20m_count": 2,
+  "recent_published_20m": [
+    {
+      "time_sakhalin": "2026-05-22T16:06:24+11:00",
+      "source": "Interfax",
+      "category": "🇷🇺 РФ / происшествия",
+      "title": "Один человек погиб, пятеро пострадали в ДТП с микроавтобусом в Челябинской области",
+      "with_image": true,
+      "image_mode": "generated_semantic",
+      "publish_method": "sendPhoto/safe/generated_semantic",
+      "telegram_message_id": 81
+    },
+    {
+      "time_sakhalin": "2026-05-22T16:06:39+11:00",
+      "source": "Interfax",
+      "category": "🇷🇺 РФ / происшествия",
+      "title": "Около 90 тыс. человек остались без воды из-за аварии на водопроводе в Хакасии",
+      "with_image": true,
+      "image_mode": "generated_semantic",
+      "publish_method": "sendPhoto/safe/generated_semantic",
+      "telegram_message_id": 82
+    }
+  ],
+  "decision": "published"
 }
