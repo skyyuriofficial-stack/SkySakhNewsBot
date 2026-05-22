@@ -36,8 +36,17 @@ MILITARY_TERMS = [
 ]
 ECON_TERMS = ['банк', 'кредит', 'ставк', 'цб', 'инфляц', 'нефть', 'газ', 'спг', 'рубл', 'экспорт', 'импорт', 'зерн']
 POLITICS_TERMS = ['госдума', 'закон', 'сенат', 'правительство', 'переговор', 'визит', 'саммит', 'мид', 'путин', 'си цзиньпин']
-GEOPOLITICS_TERMS = ['иран', 'израил', 'сша', 'нато', 'ес', 'китай', 'тайван', 'газа', 'оон', 'куба']
-IT_TERMS = ['openai', 'google', 'microsoft', 'apple', 'anthropic', 'nvidia', 'уязвим', 'cve', 'ии', 'нейросет']
+GEOPOLITICS_TERMS = [
+    'иран', 'израил', 'сша', 'нато', 'ес', 'китай', 'тайван', 'газа', 'оон', 'куба',
+    'армения', 'армян', 'пашинян', 'ереван', 'антирассий', 'антироссий', 'россия и армения',
+    'азербайджан', 'грузия', 'молдавия', 'молдова', 'постсоветск'
+]
+# Do not use generic Cyrillic "ии": it appears inside "России" and breaks geopolitics into IT.
+IT_TERMS = [
+    'openai', 'chatgpt', 'google ai', 'gemini', 'microsoft ai', 'anthropic', 'claude', 'nvidia',
+    'apple intelligence', 'искусственный интеллект', 'нейросет', 'llm', 'gpt', 'cve', 'уязвим',
+    'кибер', 'cyber', 'data center', 'server', 'software', 'чип', 'процессор'
+]
 
 
 def now_utc():
@@ -120,12 +129,12 @@ def infer_category(item):
         return '🇷🇺 РФ / происшествия'
     if has_any(text, MILITARY_TERMS):
         return '🇷🇺 РФ / война и безопасность'
+    if has_any(text, GEOPOLITICS_TERMS):
+        return '🧭 Геополитика'
     if has_any(text, ECON_TERMS):
         return '🇷🇺 РФ / экономика'
     if has_any(text, IT_TERMS):
         return '🌐 Мировые IT'
-    if has_any(text, GEOPOLITICS_TERMS):
-        return '🧭 Геополитика'
     if has_any(text, POLITICS_TERMS):
         return '🇷🇺 РФ / законы и политика'
     return item.get('category') or item.get('category_hint') or '🧭 Геополитика'
@@ -154,7 +163,6 @@ def sentence_split(text):
         low = norm(part)
         if any(x in low for x in ['читать далее', 'continue reading', 'sign in', 'support us', 'подпис', 'реклама']):
             continue
-        # Do not publish broken fragments caused by source clipping.
         if len(part) > 250 and not re.search(r'[.!?]$', part):
             continue
         key = re.sub(r'\W+', '', low)[:140]
@@ -176,7 +184,6 @@ def text_has_broken_tail(text):
     pars = [p.strip() for p in re.split(r'\n\s*\n', text or '') if p.strip()]
     if not pars:
         return True
-    # Check body paragraphs only, not footer/link line.
     body = [p for p in pars if ' · <a href=' not in p and not p.startswith('<b>') and not p.startswith('🇷🇺') and not p.startswith('🌐') and not p.startswith('🧭')]
     for p in body:
         if len(p) > 120 and not re.search(r'[.!?…]$', re.sub(r'<[^>]+>', '', p).strip()):
