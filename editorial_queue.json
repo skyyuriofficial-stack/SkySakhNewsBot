@@ -5524,55 +5524,66 @@
     "checked_at_sakhalin": "2026-05-23T20:58:06+11:00"
   },
   "cycle_report": {
-    "reported_at": "2026-05-23T05:43:31+00:00",
-    "reported_at_sakhalin": "2026-05-23T16:43:31+11:00",
-    "queue_updated_at": "2026-05-23T05:43:16+00:00",
-    "queue_updated_at_sakhalin": "2026-05-23T16:43:16+11:00",
+    "reported_at": "2026-05-23T09:58:32+00:00",
+    "reported_at_sakhalin": "2026-05-23T20:58:32+11:00",
+    "queue_updated_at": "2026-05-23T09:58:22+00:00",
+    "queue_updated_at_sakhalin": "2026-05-23T20:58:22+11:00",
     "total_queue_items": 130,
     "status_counts": {
-      "hold": 13,
-      "rejected": 103,
-      "published": 14,
+      "hold": 7,
+      "rejected": 108,
+      "published": 15,
       "pending": 0,
       "approved": 0,
       "skipped": 0,
       "unknown": 0
     },
     "hold_by_category": {
-      "🌐 Мировые IT": 8,
-      "🎮 Игры / индустрия": 4,
-      "🌍 Мир о России": 1
+      "🌐 Мировые IT": 5,
+      "🌍 Мир о России": 1,
+      "🎮 Игры / индустрия": 1
     },
     "approved_by_category": {},
     "published_by_category": {
       "🇷🇺 РФ / война и безопасность": 6,
       "🌐 Мировые IT": 3,
+      "🇷🇺 РФ / происшествия": 3,
       "🇷🇺 РФ / экономика": 2,
-      "🇷🇺 РФ / происшествия": 2,
       "🧭 Геополитика": 1
     },
     "auto_review": {
       "version": 3,
       "reviewed_pending": 18,
-      "approved": 0,
+      "approved": 1,
       "approve_limit": 2,
-      "reviewed_at": "2026-05-23T05:43:16+00:00",
-      "reviewed_at_sakhalin": "2026-05-23T16:43:16+11:00"
+      "reviewed_at": "2026-05-23T09:58:06+00:00",
+      "reviewed_at_sakhalin": "2026-05-23T20:58:06+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-23T05:43:16+00:00",
-      "checked_at_sakhalin": "2026-05-23T16:43:16+11:00"
+      "checked_at": "2026-05-23T09:58:06+00:00",
+      "checked_at_sakhalin": "2026-05-23T20:58:06+11:00"
     },
     "final_guard": {
       "changed": 0,
-      "polished": 0,
-      "checked_at": "2026-05-23T05:43:16+00:00",
-      "checked_at_sakhalin": "2026-05-23T16:43:16+11:00"
+      "polished": 1,
+      "checked_at": "2026-05-23T09:58:06+00:00",
+      "checked_at_sakhalin": "2026-05-23T20:58:06+11:00"
     },
-    "recent_published_20m_count": 0,
-    "recent_published_20m": [],
-    "decision": "no_approved_to_publish"
+    "recent_published_20m_count": 1,
+    "recent_published_20m": [
+      {
+        "time_sakhalin": "2026-05-23T20:58:10+11:00",
+        "source": "Interfax",
+        "category": "🇷🇺 РФ / происшествия",
+        "title": "Путин выразил Си Цзиньпину соболезнования в связи с жертвами взрыва на шахте",
+        "with_image": true,
+        "image_mode": "pipeline_search",
+        "publish_method": "sendPhoto/safe/pipeline_search",
+        "telegram_message_id": 88
+      }
+    ],
+    "decision": "published"
   },
   "minimum_release": {
     "version": 2,
