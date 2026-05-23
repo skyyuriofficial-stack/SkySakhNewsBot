@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updated_at": "2026-05-23T12:10:36+00:00",
-  "updated_at_sakhalin": "2026-05-23T23:10:36+11:00",
-  "reviewed_at": "2026-05-23T12:06:11+00:00",
-  "reviewed_at_sakhalin": "2026-05-23T23:06:11+11:00",
+  "updated_at": "2026-05-23T20:58:48+00:00",
+  "updated_at_sakhalin": "2026-05-24T07:58:48+11:00",
+  "reviewed_at": "2026-05-23T20:58:47+00:00",
+  "reviewed_at_sakhalin": "2026-05-24T07:58:47+11:00",
   "items": [
     {
       "id": "4c142a79eda8e52a",
@@ -243,6 +243,246 @@
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
       },
       "reviewed_at": "2026-05-23T12:06:11+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
+      "id": "e030040444a36b6d",
+      "status": "hold",
+      "created_at": "2026-05-23T20:58:47+00:00",
+      "created_at_sakhalin": "2026-05-24T07:58:47+11:00",
+      "source": "BBC World",
+      "source_type": "world",
+      "category": "🌍 Мир о России",
+      "category_hint": "🌍 Мир о России",
+      "score": 205,
+      "title_original": "Russia's Putin vows retaliation after accusing Ukraine of hitting student dormitory",
+      "title_ru": "Russia's Putin vows retaliation after accusing Ukraine of hitting student dormitory",
+      "body": [
+        "Ukraine says it struck Russia's elite Rubicon drone military unit in a Moscow-occupied region.",
+        "Ukraine says it struck Russia's elite Rubicon drone military unit in a Moscow-occupied region.",
+        "Eighteen people were killed and 42 others injured in the overnight strike in the town of Starobilsk, in the Luhansk region, Russia's emergencies ministry said."
+      ],
+      "footer": null,
+      "source_text": "Ukraine says it struck Russia's elite Rubicon drone military unit in a Moscow-occupied region. Ukraine says it struck Russia's elite Rubicon drone military unit in a Moscow-occupied region. Eighteen people were killed and 42 others injured in the overnight strike in the town of Starobilsk, in the Luhansk region, Russia's emergencies ministry said. Another three people are believed to be trapped under the rubble. Ukraine's military said it had hit the headquarters of Russia's elite Rubicon drone military unit in Starobilsk. It did not say whether it was the same building as the one identified by Russia. But Putin said there were \"no military facilities, intelligence service facilities or related services in the vicinity\". \"Therefore, there is absolutely no basis for claiming that the munitions struck the building as a result of our air defence or electronic warfare systems,\" he said at a reception in his Kremlin residence in Moscow on Friday.",
+      "post_text": "🌍 Мир о России\n\n<b>Russia's Putin vows retaliation after accusing Ukraine of hitting student dormitory</b>\n\nUkraine says it struck Russia's elite Rubicon drone military unit in a Moscow-occupied region.\n\nUkraine says it struck Russia's elite Rubicon drone military unit in a Moscow-occupied region.\n\nEighteen people were killed and 42 others injured in the overnight strike in the town of Starobilsk, in the Luhansk region, Russia's emergencies ministry said.\n\nМИР О РОССИИ · <a href=\"https://www.bbc.com/news/articles/c5y74lwx395o?at_medium=RSS&amp;at_campaign=rss\">BBC World</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/c5y74lwx395o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-05-23T14:06:12+00:00",
+      "title_hash": "ea0846dc0f1182b9e7ac99c68f08f9327826dab3",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/db1a/live/dadb5390-5608-11f1-b682-cf91850925ea.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: нет безопасного русскоязычного текста для публикации."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-23T20:58:47+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
+      "id": "eefd59339fc1ba4b",
+      "status": "hold",
+      "created_at": "2026-05-23T20:58:47+00:00",
+      "created_at_sakhalin": "2026-05-24T07:58:47+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 162,
+      "title_original": "Вредоносная атака на Laravel-Lang",
+      "title_ru": "Вредоносная атака на Laravel-Lang",
+      "body": [
+        "Сегодня мы завершили расследование инцидента, затронувшего несколько composer-пакетов Laravel-Lang.",
+        "Инцидент был связан с несанкционированным изменением релизных тегов репозиториев.",
+        "В четыре проекта Laravel-Lang был внедрён вредоносный код, предположительно, ворующий креды с устройств, на которых он запускался."
+      ],
+      "footer": null,
+      "source_text": "Сегодня мы завершили расследование инцидента, затронувшего несколько composer-пакетов Laravel-Lang. Инцидент был связан с несанкционированным изменением релизных тегов репозиториев. Часть тегов... В четыре проекта Laravel-Lang был внедрён вредоносный код, предположительно, ворующий креды с устройств, на которых он запускался. Под удар попали популярные проекты - Lang, Actions, Attributes и HTTP Statuses. Инцидент касается не только Laravel... Узнать подробности Сегодня мы завершили расследование инцидента, затронувшего несколько composer-пакетов Laravel-Lang. Инцидент был связан с несанкционированным изменением релизных тегов репозиториев. Часть тегов указывала на коммиты с вредоносным кодом, который мог выполняться при установке или обновлении зависимостей через Composer. https://www.aikido.dev/blog/supply-chain-attack-targets-laravel-lang-packages-with-credential-stealer https://www.stepsecurity.io/blog/laravel-lang-supply-chain-attack",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Вредоносная атака на Laravel-Lang</b>\n\nСегодня мы завершили расследование инцидента, затронувшего несколько composer-пакетов Laravel-Lang.\n\nИнцидент был связан с несанкционированным изменением релизных тегов репозиториев.\n\nВ четыре проекта Laravel-Lang был внедрён вредоносный код, предположительно, ворующий креды с устройств, на которых он запускался.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://habr.com/ru/articles/1038542/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1038542#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1038542/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1038542#habracut",
+      "published_at": "2026-05-23T19:04:13+00:00",
+      "title_hash": "1efca3cac61368b95602b58c2c87e4bad072e24a",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/f9e/598/b83/f9e598b83d538694dfe91703ed8e26e5.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: ниже текущих приоритетов канала или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-23T20:58:47+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
+      "id": "05718b2bcdaa16b8",
+      "status": "hold",
+      "created_at": "2026-05-23T20:58:47+00:00",
+      "created_at_sakhalin": "2026-05-24T07:58:47+11:00",
+      "source": "Interfax",
+      "source_type": "ru",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🇷🇺 РФ / война и безопасность",
+      "score": 145,
+      "title_original": "Число жертв в Старобельске увеличилось до 21, поисковые работы завершены",
+      "title_ru": "Число жертв в Старобельске увеличилось до 21, поисковые работы завершены",
+      "body": [
+        "Спасатели завершили поисковые работы на месте обрушения общежития в Старобельске в результате атаки ВСУ, извлечены тела 21 погибшего, сообщила пресс-служба МЧС Спасатели завершили поисковые работы на месте обрушения общежития в Старобельске в результате атаки ВСУ, извлечены тела 21 погибшего, сообщила пресс-служба МЧС РФ в субботу.\"Поисковые работы в Старобельске на месте обрушения общежития колледжа Луганского педаг",
+        "INTERFAX.RU - Спасатели завершили поисковые работы на месте обрушения общежития в Старобельске в результате атаки ВСУ, извлечены тела 21 погибшего, сообщила пресс-служба МЧС РФ в субботу.",
+        "\"Поисковые работы в Старобельске на месте обрушения общежития колледжа Луганского педагогического университета завершены."
+      ],
+      "footer": null,
+      "source_text": "Спасатели завершили поисковые работы на месте обрушения общежития в Старобельске в результате атаки ВСУ, извлечены тела 21 погибшего, сообщила пресс-служба МЧС Спасатели завершили поисковые работы на месте обрушения общежития в Старобельске в результате атаки ВСУ, извлечены тела 21 погибшего, сообщила пресс-служба МЧС РФ в субботу.\"Поисковые работы в Старобельске на месте обрушения общежития колледжа Луганского педагогического университета завершены. Москва. 23 мая. INTERFAX.RU - Спасатели завершили поисковые работы на месте обрушения общежития в Старобельске в результате атаки ВСУ, извлечены тела 21 погибшего, сообщила пресс-служба МЧС РФ в субботу. \"Поисковые работы в Старобельске на месте обрушения общежития колледжа Луганского педагогического университета завершены. Все тела погибших извлечены из-под завалов. Всего пострадали 63 человека, из которых 21 погибли\", - говорится в сообщении. В ночь на 22 мая в Старобельске были атакованы учебный корпус и общежитие колледжа Луганского государственного педагогического университета. По официальным данным, в момент атаки в здании пятиэтажного общежития, которое в результате удара обрушилось до второго этажа, находились 86 подростков в возрасте от 14 до 18 лет. Следственным комитетом России возбуждено уголовное дело о теракте.",
+      "post_text": "🇷🇺 РФ / война и безопасность\n\n<b>Число жертв в Старобельске увеличилось до 21, поисковые работы завершены</b>\n\nСпасатели завершили поисковые работы на месте обрушения общежития в Старобельске в результате атаки ВСУ, извлечены тела 21 погибшего, сообщила пресс-служба МЧС Спасатели завершили поисковые работы на месте обрушения общежития в Старобельске в результате атаки ВСУ, извлечены тела 21 погибшего, сообщила пресс-служба МЧС РФ в субботу.\"Поисковые работы в Старобельске на месте обрушения общежития колледжа Луганского педаг\n\nINTERFAX.RU - Спасатели завершили поисковые работы на месте обрушения общежития в Старобельске в результате атаки ВСУ, извлечены тела 21 погибшего, сообщила пресс-служба МЧС РФ в субботу.\n\n\"Поисковые работы в Старобельске на месте обрушения общежития колледжа Луганского педагогического университета завершены.\n\nРФ | ВОЙНА И БЕЗОПАСНОСТЬ · <a href=\"https://www.interfax.ru/russia/1091446\">Interfax</a>",
+      "edited_post_text": null,
+      "url": "https://www.interfax.ru/russia/1091446",
+      "published_at": "2026-05-23T20:32:00+00:00",
+      "title_hash": "18e1609eb129489d4ec7661501290d7f36ce2266",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: ниже текущих приоритетов канала или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-23T20:58:47+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
+      "id": "2eb3ccd94323d1fe",
+      "status": "hold",
+      "created_at": "2026-05-23T20:58:47+00:00",
+      "created_at_sakhalin": "2026-05-24T07:58:47+11:00",
+      "source": "Interfax",
+      "source_type": "ru",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🇷🇺 РФ / война и безопасность",
+      "score": 145,
+      "title_original": "Балет на музыку Курехина исполнят в Центре современного искусства в Петербурге",
+      "title_ru": "Балет на музыку Курехина исполнят в Центре современного искусства в Петербурге",
+      "body": [
+        "Сентиментальный балет на музыку Сергея Курехина представят 31 мая в петербургском Центре современного искусства имени музыканта (ЦСИ), сообщила художественный \"Сентиментальный балет\" на музыку Сергея Курехина представят 31 мая в петербургском Центре современного искусства имени музыканта (ЦСИ), сообщила художественный руководитель учреждения Анастасия Курехина в субботу.\"У нас есть свой балет, артисты готовят премьер",
+        "INTERFAX.RU - \"Сентиментальный балет\" на музыку Сергея Курехина представят 31 мая в петербургском Центре современного искусства имени музыканта (ЦСИ), сообщила художественный руководитель учреждения Анастасия Курехина в субботу.",
+        "\"У нас есть свой балет, артисты готовят премьеру, которая пройдет 31 мая\", - сказала Курехина журналистам перед открытием 25-й фестиваля СКИФ."
+      ],
+      "footer": null,
+      "source_text": "Сентиментальный балет на музыку Сергея Курехина представят 31 мая в петербургском Центре современного искусства имени музыканта (ЦСИ), сообщила художественный \"Сентиментальный балет\" на музыку Сергея Курехина представят 31 мая в петербургском Центре современного искусства имени музыканта (ЦСИ), сообщила художественный руководитель учреждения Анастасия Курехина в субботу.\"У нас есть свой балет, артисты готовят премьеру, которая пройдет 31 мая\", - сказала Курехина журналистам перед открытием 25-й фестиваля СКИФ. Москва. 23 мая. INTERFAX.RU - \"Сентиментальный балет\" на музыку Сергея Курехина представят 31 мая в петербургском Центре современного искусства имени музыканта (ЦСИ), сообщила художественный руководитель учреждения Анастасия Курехина в субботу. \"У нас есть свой балет, артисты готовят премьеру, которая пройдет 31 мая\", - сказала Курехина журналистам перед открытием 25-й фестиваля СКИФ. Собственная балетная труппа Центра \"Танц-механика\" выйдет на сцену впервые, отметила она. Спектакль состоит из двух актов, каждый из них через движения покажет состояния - от внутреннего напряжения до иллюзии любви и ее разрушения. исполнят музыканты ЦСИ. Музыку исполнит ансамбль ЦСИ.",
+      "post_text": "🇷🇺 РФ / война и безопасность\n\n<b>Балет на музыку Курехина исполнят в Центре современного искусства в Петербурге</b>\n\nСентиментальный балет на музыку Сергея Курехина представят 31 мая в петербургском Центре современного искусства имени музыканта (ЦСИ), сообщила художественный \"Сентиментальный балет\" на музыку Сергея Курехина представят 31 мая в петербургском Центре современного искусства имени музыканта (ЦСИ), сообщила художественный руководитель учреждения Анастасия Курехина в субботу.\"У нас есть свой балет, артисты готовят премьер\n\nINTERFAX.RU - \"Сентиментальный балет\" на музыку Сергея Курехина представят 31 мая в петербургском Центре современного искусства имени музыканта (ЦСИ), сообщила художественный руководитель учреждения Анастасия Курехина в субботу.\n\n\"У нас есть свой балет, артисты готовят премьеру, которая пройдет 31 мая\", - сказала Курехина журналистам перед открытием 25-й фестиваля СКИФ.\n\nРФ | ВОЙНА И БЕЗОПАСНОСТЬ · <a href=\"https://www.interfax.ru/culture/1091436\">Interfax</a>",
+      "edited_post_text": null,
+      "url": "https://www.interfax.ru/culture/1091436",
+      "published_at": "2026-05-23T18:44:00+00:00",
+      "title_hash": "5520cfe7d5b8b15674b11a5785cae8c86d8d68bc",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: ниже текущих приоритетов канала или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-23T20:58:47+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
+      "id": "358798debb4d8733",
+      "status": "hold",
+      "created_at": "2026-05-23T20:58:47+00:00",
+      "created_at_sakhalin": "2026-05-24T07:58:47+11:00",
+      "source": "Interfax",
+      "source_type": "ru",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🇷🇺 РФ / война и безопасность",
+      "score": 145,
+      "title_original": "Военные РФ уничтожили 11 дронов за шесть часов",
+      "title_ru": "Военные РФ уничтожили 11 дронов за шесть часов",
+      "body": [
+        "Дежурными средствами ПВО с 14.00 до 20:00 мск субботы перехвачены и уничтожены 11 украинских беспилотников, сообщило Минобороны России Дежурными средствами ПВО с 14.",
+        "INTERFAX.RU - Дежурными средствами ПВО с 14.00 до 20:00 мск субботы перехвачены и уничтожены 11 украинских беспилотников, сообщило Минобороны России.",
+        "По его данным, дроны сбиты над Белгородской, Брянской, Курской, Ленинградской областями и Краснодарским краем."
+      ],
+      "footer": null,
+      "source_text": "Дежурными средствами ПВО с 14.00 до 20:00 мск субботы перехвачены и уничтожены 11 украинских беспилотников, сообщило Минобороны России Дежурными средствами ПВО с 14. Москва. 23 мая. INTERFAX.RU - Дежурными средствами ПВО с 14.00 до 20:00 мск субботы перехвачены и уничтожены 11 украинских беспилотников, сообщило Минобороны России. По его данным, дроны сбиты над Белгородской, Брянской, Курской, Ленинградской областями и Краснодарским краем. Утром в субботу в Минобороны сообщали, что российские военные за сутки уничтожили 800 украинских беспилотников самолетного типа. Средствами противовоздушной обороны за это время сбиты восемь управляемых авиационных бомб.",
+      "post_text": "🇷🇺 РФ / война и безопасность\n\n<b>Военные РФ уничтожили 11 дронов за шесть часов</b>\n\nДежурными средствами ПВО с 14.00 до 20:00 мск субботы перехвачены и уничтожены 11 украинских беспилотников, сообщило Минобороны России Дежурными средствами ПВО с 14.\n\nINTERFAX.RU - Дежурными средствами ПВО с 14.00 до 20:00 мск субботы перехвачены и уничтожены 11 украинских беспилотников, сообщило Минобороны России.\n\nПо его данным, дроны сбиты над Белгородской, Брянской, Курской, Ленинградской областями и Краснодарским краем.\n\nРФ | ВОЙНА И БЕЗОПАСНОСТЬ · <a href=\"https://www.interfax.ru/russia/1091433\">Interfax</a>",
+      "edited_post_text": null,
+      "url": "https://www.interfax.ru/russia/1091433",
+      "published_at": "2026-05-23T17:52:00+00:00",
+      "title_hash": "e5b5411956cfe6ed3eaf3e6c1008a0a395acc309",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: ниже текущих приоритетов канала или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-23T20:58:47+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
+      "id": "ecf4e48f3190c4bb",
+      "status": "hold",
+      "created_at": "2026-05-23T20:58:47+00:00",
+      "created_at_sakhalin": "2026-05-24T07:58:47+11:00",
+      "source": "IGN",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 162,
+      "title_original": "Destiny Players are Review Bombing Marathon, But Bungie Fans Have Already Launched a Countercampaign",
+      "title_ru": "Destiny Players are Review Bombing Marathon, But Bungie Fans Have Already Launched a Countercampaign",
+      "body": [
+        "Destiny players have taken to the Marathon Steam page to voice their frustrations with negative reviews, but Bungie fans have already started fighting back with their own countercampaign.",
+        "Destiny players have taken to the Marathon Steam page to voice their frustrations with negative reviews, but Bungie fans have already started fighting back with their own countercampaign.",
+        "Destiny players have taken to the Marathon Steam page to voice their frustrations with negative reviews, but Bungie fans have already started fighting back with their own countercampaign."
+      ],
+      "footer": null,
+      "source_text": "Destiny players have taken to the Marathon Steam page to voice their frustrations with negative reviews, but Bungie fans have already started fighting back with their own countercampaign. Destiny players have taken to the Marathon Steam page to voice their frustrations with negative reviews, but Bungie fans have already started fighting back with their own countercampaign. Destiny players have taken to the Marathon Steam page to voice their frustrations with negative reviews, but Bungie fans have already started fighting back with their own countercampaign. What appears to be the makings of a small review-bombing campaign follows yesterday's news that developer Bungie would launch the final Destiny 2 content update this June . With no Destiny 3 in sight , many suspected the Destiny universe would come to an abrupt end after 12 years so the studio could shift its resources to its recently launched extraction-shooter revival, Marathon. Disappointment crept into the Marathon Steam page today, leading to an influx of negative reviews from users explicitly mentioning Destiny in some fashion. Most of these same reviews come from players with Marathon playtimes that range from less than one hour to around 50 hours, with some going as far as to blame Bungie's new shooter for the \"death\" of Destiny 2. \"You killed my favorite game for this...\" one popular review from an unhappy fan said . \"My only regret was supporting this trash in the hope that Destiny would continue. RIP D2.\"",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Destiny Players are Review Bombing Marathon, But Bungie Fans Have Already Launched a Countercampaign</b>\n\nDestiny players have taken to the Marathon Steam page to voice their frustrations with negative reviews, but Bungie fans have already started fighting back with their own countercampaign.\n\nDestiny players have taken to the Marathon Steam page to voice their frustrations with negative reviews, but Bungie fans have already started fighting back with their own countercampaign.\n\nDestiny players have taken to the Marathon Steam page to voice their frustrations with negative reviews, but Bungie fans have already started fighting back with their own countercampaign.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/destiny-players-review-bomb-marathon-only-to-be-met-with-countercampaign-from-bungie-fans\">IGN</a>",
+      "edited_post_text": null,
+      "url": "https://www.ign.com/articles/destiny-players-review-bomb-marathon-only-to-be-met-with-countercampaign-from-bungie-fans",
+      "published_at": "2026-05-22T21:21:53.297000+00:00",
+      "title_hash": "b27d84e4b6a3a3b8b7d5c102c970c3ba43346a1c",
+      "image_url": "https://assets-prd.ignimgs.com/2026/05/22/destiny-2-1779484251167.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: ниже текущих приоритетов канала или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-23T20:58:47+00:00",
       "reviewed_by": "auto-editor-v3"
     },
     {
@@ -4085,6 +4325,166 @@
       "reviewed_by": "auto-editor-v3"
     },
     {
+      "id": "c285e6e1cbdd7340",
+      "status": "rejected",
+      "created_at": "2026-05-23T20:58:47+00:00",
+      "created_at_sakhalin": "2026-05-24T07:58:47+11:00",
+      "source": "IGN",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 162,
+      "title_original": "Take-Two Boss Strauss Zelnick Acknowledges 'Economic Challenges' People Are Facing Amid the Rising Cost of Console Gaming, but Insists Fans Will Still Come Out for GTA 6",
+      "title_ru": "Take-Two Boss Strauss Zelnick Acknowledges 'Economic Challenges' People Are Facing Amid the Rising Cost of Console Gaming, but Insists Fans Will Still Come Out for GTA 6",
+      "body": [
+        "Take-Two boss Strauss Zelnick acknowledges \"economic challenges\" people are facing amid the rising cost of console gaming, but insists fans will still come out for GTA 6.",
+        "Take-Two boss Strauss Zelnick acknowledges \"economic challenges\" people are facing amid the rising cost of console gaming, but insists fans will still come out for GTA 6.",
+        "The cost of console gaming has become significantly more expensive in recent months."
+      ],
+      "footer": null,
+      "source_text": "Take-Two boss Strauss Zelnick acknowledges \"economic challenges\" people are facing amid the rising cost of console gaming, but insists fans will still come out for GTA 6. Take-Two boss Strauss Zelnick acknowledges \"economic challenges\" people are facing amid the rising cost of console gaming, but insists fans will still come out for GTA 6. The cost of console gaming has become significantly more expensive in recent months. Sony hiked the price of PS5 hardware in April , which means a new PS5 now starts at $600, and a PS5 Pro now costs $900. More recently, Sony raised the price of PlayStation Plus , which is required for online gaming. Microsoft, too, has increased the price of the Xbox Series X and S, although it has cut the price of Xbox Game Pass . GTA 6 is probably the most anticipated video game of all time, and it is expected to break sales records. But it is also coming out on PS5 and Xbox Series X and S only — there is no PC version at launch. This means that you need a modern console to play it, and there will be many who will be looking to buy one for the first time just to play GTA 6 this November. But could the high cost of a PlayStation or Xbox in 2026 put potential new console gamers off? Could the rising cost of entry limit the potential success of even GTA 6? I put that to Strauss Zelnick, boss of Rockstar parent company Take-Two, ahead of the company’s latest financial results. He dismissed the idea, pointing to a ‘if you build it, they will come’ attitude among consumers, even during economically tough times. But, within that bullishness, Zelnick did express an awareness that consumers are feeling the money pressure. “In real dollars, the cost of frontline video games has declined materially in the last 30 years,” Zelnick said. “Frontline prices have no",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Take-Two Boss Strauss Zelnick Acknowledges 'Economic Challenges' People Are Facing Amid the Rising Cost of Console Gaming, but Insists Fans Will Still Come Out for GTA 6</b>\n\nTake-Two boss Strauss Zelnick acknowledges \"economic challenges\" people are facing amid the rising cost of console gaming, but insists fans will still come out for GTA 6.\n\nTake-Two boss Strauss Zelnick acknowledges \"economic challenges\" people are facing amid the rising cost of console gaming, but insists fans will still come out for GTA 6.\n\nThe cost of console gaming has become significantly more expensive in recent months.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/take-two-boss-believes-in-the-pull-of-gta-6-even-amid-rising-cost-of-console-gaming\">IGN</a>",
+      "edited_post_text": null,
+      "url": "https://www.ign.com/articles/take-two-boss-believes-in-the-pull-of-gta-6-even-amid-rising-cost-of-console-gaming",
+      "published_at": "2026-05-23T11:15:10.874000+00:00",
+      "title_hash": "50d9bbdbe1c56164f249909716c2e7a5dde59fe2",
+      "image_url": "https://assets-prd.ignimgs.com/2024/09/25/ps5-pro-handsonpreview-blogroll-1727223976585.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-23T20:58:47+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
+      "id": "04868287c383adde",
+      "status": "rejected",
+      "created_at": "2026-05-23T20:58:47+00:00",
+      "created_at_sakhalin": "2026-05-24T07:58:47+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 158,
+      "title_original": "Не пики, а бассейны: почему эволюция — это блуждание по графу жизни",
+      "title_ru": "Не пики, а бассейны: почему эволюция — это блуждание по графу жизни",
+      "body": [
+        "Не пики, а бассейны: почему эволюция — это блуждание по графу жизни Каждый, кто хоть раз открывал школьный учебник биологии или читал научно-популярные статьи об искусственном интеллекте, сталкивался...",
+        "Каждый, кто хоть раз открывал школьный учебник биологии или читал научно-популярные статьи об искусственном интеллекте, сталкивался с классической и завораживающей метафорой: ландшафт приспособленности (fitness landscape) .",
+        "Нам рисуют трёхмерную топографическую карту."
+      ],
+      "footer": null,
+      "source_text": "Не пики, а бассейны: почему эволюция — это блуждание по графу жизни Каждый, кто хоть раз открывал школьный учебник биологии или читал научно-популярные статьи об искусственном интеллекте, сталкивался... Каждый, кто хоть раз открывал школьный учебник биологии или читал научно-популярные статьи об искусственном интеллекте, сталкивался с классической и завораживающей метафорой: ландшафт приспособленности (fitness landscape) . Нам рисуют трёхмерную топографическую карту. На ней есть низины (плохие, нежизнеспособные комбинации генов), пологие склоны и величественные вершины — так называемые пики приспособленности . Популяция организмов или агентов генетического алгоритма изображается в виде кучки альпинистов. Ведомые безжалостным гидом по имени Естественный Отбор, они шаг за шагом карабкаются вверх по градиенту. Кто залез на самый высокий пик — тот венец творения, альфа-самец и триумфатор эволюции. Эта картинка интуитивна, красива и… плохо работает на больших масштабах. Более того, если бы реальное пространство возможностей было устроено так, как на этих двухмерных графиках, эволюция на Земле завершилась бы, едва начавшись, намертво застряв на первой же кочке — в локальном максимуме. Читать далее Каждый, кто хоть раз открывал школьный учебник биологии или читал научно-популярные статьи об искусственном интеллекте, сталкивался с классической и завораживающей метафорой: ландшафт приспособленности (fitness landscape) . Нам рисуют трёхмерную топографическую карту. На ней есть низины (плохие, нежизнеспособные комбинации генов), пологие склоны и величественные вершины — так называемые пики приспособленности . Популяция организмов или агентов генетического алгоритма изображается в виде кучки альпинистов. Ведомые безжалостным гидом по имени Естественный Отбор, они шаг за шагом караб",
+      "post_text": "🌐 Мировые IT\n\n<b>Не пики, а бассейны: почему эволюция — это блуждание по графу жизни</b>\n\nНе пики, а бассейны: почему эволюция — это блуждание по графу жизни Каждый, кто хоть раз открывал школьный учебник биологии или читал научно-популярные статьи об искусственном интеллекте, сталкивался...\n\nКаждый, кто хоть раз открывал школьный учебник биологии или читал научно-популярные статьи об искусственном интеллекте, сталкивался с классической и завораживающей метафорой: ландшафт приспособленности (fitness landscape) .\n\nНам рисуют трёхмерную топографическую карту.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1038576/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1038576#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1038576/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1038576#habracut",
+      "published_at": "2026-05-23T20:17:52+00:00",
+      "title_hash": "166e55eb62a2c145e39e6220b6655539ed833323",
+      "image_url": "https://habrastorage.org/webt/qq/ey/pn/qqeypn-py71suynxbusbakjdfjw.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-23T20:58:47+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
+      "id": "17d9327884443c38",
+      "status": "rejected",
+      "created_at": "2026-05-23T20:58:47+00:00",
+      "created_at_sakhalin": "2026-05-24T07:58:47+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 158,
+      "title_original": "Как Gemini 3.5 Flash сломали ради красивых графиков (и почему она обходит 3.1 Pro только на бумаге)",
+      "title_ru": "Как Gemini 3.5 Flash сломали ради красивых графиков (и почему она обходит 3.1 Pro только на бумаге)",
+      "body": [
+        "На презентациях нам показывают графики, где новая, более дешевая gemini 3.5 flash рвет флагманскую gemini 3.1 pro.",
+        "Цифры выглядят солидно: 76.2% против 70.3% на агентском terminal bench.",
+        "Буквально на днях Google выкатила gemini 3.5 flash."
+      ],
+      "footer": null,
+      "source_text": "На презентациях нам показывают графики, где новая, более дешевая gemini 3.5 flash рвет флагманскую gemini 3.1 pro. Цифры выглядят солидно: 76.2% против 70.3% на агентском terminal bench. Но когда я... Буквально на днях Google выкатила gemini 3.5 flash. Маркетологи бьют в фанфары: легковесная модель обходит тяжелую gemini 3.1 pro на бенчмарках terminal bench 2.1 и MCP atlas! Но стоит открыть чат, и наступает разочарование. Модель общается сухим, бюрократическим, абсолютно безжизненным языком, уступая в человечности даже старой 3.0 flash. В этой статье мы разберем физику RLHF-лоботомии, покажем, как оптимизация под агентов убивает энтропию генерации, и почему современные бенчмарки стали главным врагом развития ИИ. Читать далее На презентациях нам показывают графики, где новая, более дешевая gemini 3.5 flash рвет флагманскую gemini 3.1 pro. Цифры выглядят солидно: 76.2% против 70.3% на агентском terminal bench. Но когда я пошел ее тестить, я задался вопросом: \"Почему она такая деревянная?\" . Модель генерирует текст так, словно это не нейросеть, а скрипт. Исчезла вариативность, исчез контекстный тон, исчезла та самая искра, которая была даже в прошлой 3.0 flash. Почему модель, которая умнее по метрикам, оказывается глупее и скучнее в жизни? Ответ кроется в архитектурном компромиссе и законе Гудхарта. Если вы внимательно почитаете релизы Google, вы заметите одно слово, которое повторяется сотни раз: Agentic . gemini 3.5 flash создавали не для того, чтобы с ней болтать. Ее создавали как движок для antigravity 2.0 и платформы agent OS.",
+      "post_text": "🌐 Мировые IT\n\n<b>Как Gemini 3.5 Flash сломали ради красивых графиков (и почему она обходит 3.1 Pro только на бумаге)</b>\n\nНа презентациях нам показывают графики, где новая, более дешевая gemini 3.5 flash рвет флагманскую gemini 3.1 pro.\n\nЦифры выглядят солидно: 76.2% против 70.3% на агентском terminal bench.\n\nБуквально на днях Google выкатила gemini 3.5 flash.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1038570/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1038570#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1038570/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1038570#habracut",
+      "published_at": "2026-05-23T19:40:39+00:00",
+      "title_hash": "06aa719bdc7a8b1ed8814f77668d6bc1884c0b22",
+      "image_url": "https://habrastorage.org/webt/qq/ey/pn/qqeypn-py71suynxbusbakjdfjw.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-23T20:58:47+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
+      "id": "d5d4f68c2d50a299",
+      "status": "rejected",
+      "created_at": "2026-05-23T20:58:47+00:00",
+      "created_at_sakhalin": "2026-05-24T07:58:47+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 158,
+      "title_original": "meta-attention is all you need",
+      "title_ru": "meta-attention is all you need",
+      "body": [
+        "Введение В этой статье я расскажу о интересной находке во время моих экспериментов с языковыми моделями, которую я решил назвать \"мета-трансформерами\".",
+        "Или я нашел реально что-то интересное, или выдал...",
+        "В этой статье я расскажу о интересной находке во время моих экспериментов с языковыми моделями, которую я решил назвать \"мета-трансформерами\"."
+      ],
+      "footer": null,
+      "source_text": "Введение В этой статье я расскажу о интересной находке во время моих экспериментов с языковыми моделями, которую я решил назвать \"мета-трансформерами\". Или я нашел реально что-то интересное, или выдал... В этой статье я расскажу о интересной находке во время моих экспериментов с языковыми моделями, которую я решил назвать \"мета-трансформерами\". Или я нашел реально что-то интересное, или выдал желаемое из действительное, а обьективную оценку может дать только (технически подкованный) внешний наблюдатель, поэтому этот текст и был опубликован. Особенно тут кстати будут спецы по архитектуре трансформеров. Все подробности в статье. Читать далее В этой статье я расскажу о интересной находке во время моих экспериментов с языковыми моделями, которую я решил назвать \"мета-трансформерами\". Или я нашел реально что-то интересное, или выдал желаемое из действительное, а обьективную оценку может дать только (технически подкованный) внешний наблюдатель, поэтому этот текст и был опубликован. Особенно тут кстати будут спецы по архитектуре трансформеров. Веса моделей, исходники проекта + вся документация будут приложены в конце статьи (в главе исходники ), на Hugging-Face и Codeberg (аналог Github) соответственно. Изначально проект был с русскими доками и комментариями, но я перевел на английский комментарии и доки для global-community через Codex, на Codeberg будет оригинальная версия на RU и переведенная ENG. Статья будет находится на Codeberg (в рус. и енг. версии) в главной директории как файл meta-attention-is-all-you-need.md , на англ. и рус. соответственно. Схему с превью статьи вы можете найти в самом начале главы Архитектурные схемы .",
+      "post_text": "🌐 Мировые IT\n\n<b>meta-attention is all you need</b>\n\nВведение В этой статье я расскажу о интересной находке во время моих экспериментов с языковыми моделями, которую я решил назвать \"мета-трансформерами\".\n\nИли я нашел реально что-то интересное, или выдал...\n\nВ этой статье я расскажу о интересной находке во время моих экспериментов с языковыми моделями, которую я решил назвать \"мета-трансформерами\".\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1036666/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1036666#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1036666/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1036666#habracut",
+      "published_at": "2026-05-23T18:20:03+00:00",
+      "title_hash": "2b483514a0cdd8772af5547d4cfc8f7ba0756467",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/028/908/d49/028908d49454d0f20b3f6512b3bdc148.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-23T20:58:47+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
       "id": "ec44a45aa73888ea",
       "status": "published",
       "created_at": "2026-05-21T00:17:03+00:00",
@@ -5413,22 +5813,22 @@
   ],
   "auto_review": {
     "version": 3,
-    "reviewed_pending": 8,
+    "reviewed_pending": 10,
     "approved": 0,
     "approve_limit": 2,
-    "reviewed_at": "2026-05-23T12:06:11+00:00",
-    "reviewed_at_sakhalin": "2026-05-23T23:06:11+11:00"
+    "reviewed_at": "2026-05-23T20:58:47+00:00",
+    "reviewed_at_sakhalin": "2026-05-24T07:58:47+11:00"
   },
   "final_guard": {
     "changed": 0,
     "polished": 0,
-    "checked_at": "2026-05-23T12:04:04+00:00",
-    "checked_at_sakhalin": "2026-05-23T23:04:04+11:00"
+    "checked_at": "2026-05-23T20:58:47+00:00",
+    "checked_at_sakhalin": "2026-05-24T07:58:47+11:00"
   },
   "priority_guard": {
     "changed": 0,
-    "checked_at": "2026-05-23T12:03:15+00:00",
-    "checked_at_sakhalin": "2026-05-23T23:03:15+11:00"
+    "checked_at": "2026-05-23T20:58:47+00:00",
+    "checked_at_sakhalin": "2026-05-24T07:58:47+11:00"
   },
   "cycle_report": {
     "reported_at": "2026-05-23T12:03:58+00:00",
