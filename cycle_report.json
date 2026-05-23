@@ -1,26 +1,28 @@
 {
-  "reported_at": "2026-05-23T09:58:32+00:00",
-  "reported_at_sakhalin": "2026-05-23T20:58:32+11:00",
-  "queue_updated_at": "2026-05-23T09:58:22+00:00",
-  "queue_updated_at_sakhalin": "2026-05-23T20:58:22+11:00",
+  "reported_at": "2026-05-23T12:03:58+00:00",
+  "reported_at_sakhalin": "2026-05-23T23:03:58+11:00",
+  "queue_updated_at": "2026-05-23T12:03:46+00:00",
+  "queue_updated_at_sakhalin": "2026-05-23T23:03:46+11:00",
   "total_queue_items": 130,
   "status_counts": {
-    "hold": 7,
-    "rejected": 108,
-    "published": 15,
+    "approved": 1,
+    "hold": 6,
+    "rejected": 106,
+    "published": 17,
     "pending": 0,
-    "approved": 0,
     "skipped": 0,
     "unknown": 0
   },
   "hold_by_category": {
-    "🌐 Мировые IT": 5,
-    "🌍 Мир о России": 1,
-    "🎮 Игры / индустрия": 1
+    "🌐 Мировые IT": 3,
+    "🎮 Игры / индустрия": 2,
+    "🌍 Мир о России": 1
   },
-  "approved_by_category": {},
+  "approved_by_category": {
+    "🇷🇺 РФ / война и безопасность": 1
+  },
   "published_by_category": {
-    "🇷🇺 РФ / война и безопасность": 6,
+    "🇷🇺 РФ / война и безопасность": 8,
     "🌐 Мировые IT": 3,
     "🇷🇺 РФ / происшествия": 3,
     "🇷🇺 РФ / экономика": 2,
@@ -29,33 +31,33 @@
   "auto_review": {
     "version": 3,
     "reviewed_pending": 18,
-    "approved": 1,
+    "approved": 2,
     "approve_limit": 2,
-    "reviewed_at": "2026-05-23T09:58:06+00:00",
-    "reviewed_at_sakhalin": "2026-05-23T20:58:06+11:00"
+    "reviewed_at": "2026-05-23T12:03:15+00:00",
+    "reviewed_at_sakhalin": "2026-05-23T23:03:15+11:00"
   },
   "priority_guard": {
     "changed": 0,
-    "checked_at": "2026-05-23T09:58:06+00:00",
-    "checked_at_sakhalin": "2026-05-23T20:58:06+11:00"
+    "checked_at": "2026-05-23T12:03:15+00:00",
+    "checked_at_sakhalin": "2026-05-23T23:03:15+11:00"
   },
   "final_guard": {
     "changed": 0,
     "polished": 1,
-    "checked_at": "2026-05-23T09:58:06+00:00",
-    "checked_at_sakhalin": "2026-05-23T20:58:06+11:00"
+    "checked_at": "2026-05-23T12:03:15+00:00",
+    "checked_at_sakhalin": "2026-05-23T23:03:15+11:00"
   },
   "recent_published_20m_count": 1,
   "recent_published_20m": [
     {
-      "time_sakhalin": "2026-05-23T20:58:10+11:00",
+      "time_sakhalin": "2026-05-23T23:03:34+11:00",
       "source": "Interfax",
-      "category": "🇷🇺 РФ / происшествия",
-      "title": "Путин выразил Си Цзиньпину соболезнования в связи с жертвами взрыва на шахте",
+      "category": "🇷🇺 РФ / война и безопасность",
+      "title": "Два человека пострадали в результате атаки дрона ВСУ в Брянской области",
       "with_image": true,
       "image_mode": "pipeline_search",
       "publish_method": "sendPhoto/safe/pipeline_search",
-      "telegram_message_id": 88
+      "telegram_message_id": 90
     }
   ],
   "decision": "published"
