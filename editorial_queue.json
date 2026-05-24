@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updated_at": "2026-05-23T21:11:13+00:00",
-  "updated_at_sakhalin": "2026-05-24T08:11:13+11:00",
-  "reviewed_at": "2026-05-23T21:06:25+00:00",
-  "reviewed_at_sakhalin": "2026-05-24T08:06:25+11:00",
+  "updated_at": "2026-05-24T00:02:16+00:00",
+  "updated_at_sakhalin": "2026-05-24T11:02:16+11:00",
+  "reviewed_at": "2026-05-24T00:01:59+00:00",
+  "reviewed_at_sakhalin": "2026-05-24T11:01:59+11:00",
   "items": [
     {
       "id": "310612a208bdd5fd",
@@ -43,6 +43,206 @@
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
       },
       "reviewed_at": "2026-05-23T21:06:25+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
+      "id": "e030040444a36b6d",
+      "status": "hold",
+      "created_at": "2026-05-24T00:01:59+00:00",
+      "created_at_sakhalin": "2026-05-24T11:01:59+11:00",
+      "source": "BBC World",
+      "source_type": "world",
+      "category": "🌍 Мир о России",
+      "category_hint": "🌍 Мир о России",
+      "score": 205,
+      "title_original": "Russia's Putin vows retaliation after accusing Ukraine of hitting student dormitory",
+      "title_ru": "Russia's Putin vows retaliation after accusing Ukraine of hitting student dormitory",
+      "body": [
+        "Ukraine says it struck Russia's elite Rubicon drone military unit in a Moscow-occupied region.",
+        "Ukraine says it struck Russia's elite Rubicon drone military unit in a Moscow-occupied region.",
+        "Eighteen people were killed and 42 others injured in the overnight strike in the town of Starobilsk, in the Luhansk region, Russia's emergencies ministry said."
+      ],
+      "footer": null,
+      "source_text": "Ukraine says it struck Russia's elite Rubicon drone military unit in a Moscow-occupied region. Ukraine says it struck Russia's elite Rubicon drone military unit in a Moscow-occupied region. Eighteen people were killed and 42 others injured in the overnight strike in the town of Starobilsk, in the Luhansk region, Russia's emergencies ministry said. Another three people are believed to be trapped under the rubble. Ukraine's military said it had hit the headquarters of Russia's elite Rubicon drone military unit in Starobilsk. It did not say whether it was the same building as the one identified by Russia. But Putin said there were \"no military facilities, intelligence service facilities or related services in the vicinity\". \"Therefore, there is absolutely no basis for claiming that the munitions struck the building as a result of our air defence or electronic warfare systems,\" he said at a reception in his Kremlin residence in Moscow on Friday.",
+      "post_text": "🌍 Мир о России\n\n<b>Russia's Putin vows retaliation after accusing Ukraine of hitting student dormitory</b>\n\nUkraine says it struck Russia's elite Rubicon drone military unit in a Moscow-occupied region.\n\nUkraine says it struck Russia's elite Rubicon drone military unit in a Moscow-occupied region.\n\nEighteen people were killed and 42 others injured in the overnight strike in the town of Starobilsk, in the Luhansk region, Russia's emergencies ministry said.\n\nМИР О РОССИИ · <a href=\"https://www.bbc.com/news/articles/c5y74lwx395o?at_medium=RSS&amp;at_campaign=rss\">BBC World</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/c5y74lwx395o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-05-23T14:06:12+00:00",
+      "title_hash": "ea0846dc0f1182b9e7ac99c68f08f9327826dab3",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/db1a/live/dadb5390-5608-11f1-b682-cf91850925ea.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: нет безопасного русскоязычного текста для публикации."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-24T00:01:59+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
+      "id": "eefd59339fc1ba4b",
+      "status": "hold",
+      "created_at": "2026-05-24T00:01:59+00:00",
+      "created_at_sakhalin": "2026-05-24T11:01:59+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 162,
+      "title_original": "Вредоносная атака на Laravel-Lang",
+      "title_ru": "Вредоносная атака на Laravel-Lang",
+      "body": [
+        "Сегодня мы завершили расследование инцидента, затронувшего несколько composer-пакетов Laravel-Lang.",
+        "Инцидент был связан с несанкционированным изменением релизных тегов репозиториев.",
+        "В четыре проекта Laravel-Lang был внедрён вредоносный код, предположительно, ворующий креды с устройств, на которых он запускался."
+      ],
+      "footer": null,
+      "source_text": "Сегодня мы завершили расследование инцидента, затронувшего несколько composer-пакетов Laravel-Lang. Инцидент был связан с несанкционированным изменением релизных тегов репозиториев. Часть тегов... В четыре проекта Laravel-Lang был внедрён вредоносный код, предположительно, ворующий креды с устройств, на которых он запускался. Под удар попали популярные проекты - Lang, Actions, Attributes и HTTP Statuses. Инцидент касается не только Laravel... Узнать подробности Сегодня мы завершили расследование инцидента, затронувшего несколько composer-пакетов Laravel-Lang. Инцидент был связан с несанкционированным изменением релизных тегов репозиториев. Часть тегов указывала на коммиты с вредоносным кодом, который мог выполняться при установке или обновлении зависимостей через Composer. https://www.aikido.dev/blog/supply-chain-attack-targets-laravel-lang-packages-with-credential-stealer https://www.stepsecurity.io/blog/laravel-lang-supply-chain-attack",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Вредоносная атака на Laravel-Lang</b>\n\nСегодня мы завершили расследование инцидента, затронувшего несколько composer-пакетов Laravel-Lang.\n\nИнцидент был связан с несанкционированным изменением релизных тегов репозиториев.\n\nВ четыре проекта Laravel-Lang был внедрён вредоносный код, предположительно, ворующий креды с устройств, на которых он запускался.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://habr.com/ru/articles/1038542/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1038542#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1038542/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1038542#habracut",
+      "published_at": "2026-05-23T19:04:13+00:00",
+      "title_hash": "1efca3cac61368b95602b58c2c87e4bad072e24a",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/f9e/598/b83/f9e598b83d538694dfe91703ed8e26e5.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: ниже текущих приоритетов канала или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-24T00:01:59+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
+      "id": "4c142a79eda8e52a",
+      "status": "hold",
+      "created_at": "2026-05-24T00:01:59+00:00",
+      "created_at_sakhalin": "2026-05-24T11:01:59+11:00",
+      "source": "GameSpot",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 147,
+      "title_original": "Destiny 2 Is Ending Just As Its Story Started To Get Good",
+      "title_ru": "Destiny 2 Is Ending Just As Its Story Started To Get Good",
+      "body": [
+        "While Destiny 2 had a momentous finale for its Light and Darkness Saga in The Final Shape , which offered a clean opportunity to end its story there, the game’s development team at Bungie were narratively on a roll.",
+        "The expansions that followed that quasi-climactic release, The Edge of Fate and Renegades, were meant to kickstart a second Fate Saga for the game.",
+        "However, mechanical choices, particularly around attempts to more easily onboard new and returning players, not only failed to do so, they soured the experience for a lot of player Guardians who never left."
+      ],
+      "footer": null,
+      "source_text": "While Destiny 2 had a momentous finale for its Light and Darkness Saga in The Final Shape , which offered a clean opportunity to end its story there, the game’s development team at Bungie were narratively on a roll. The expansions that followed that quasi-climactic release, The Edge of Fate and Renegades, were meant to kickstart a second Fate Saga for the game. However, mechanical choices, particularly around attempts to more easily onboard new and returning players, not only failed to do so, they soured the experience for a lot of player Guardians who never left. Aside from its issues, though, Destiny 2’s story has never been better, and it will be a real shame, if this truly is the end of the franchise , that we'll never see that narrative play out. For those who don’t know, the fate of Destiny was changed at the 11th hour before the original game’s release. Joseph Staten, who helped write the original Halo trilogy, was the initial lead writer for the first Destiny game. However, mere months before that title’s launch, much of Staten’s narrative was scrapped as it was deemed too dense and linear for the flexible and open design of the game. Staten left to join Xbox, and Destiny launched to reviews that heavily critiqued the game’s story, or lack thereof. As one developer at Bungie put it , Destiny was “a game written without writers.” Concepts like the Light and Darkness were in place, but no one on the team actually knew what they were. The Speaker in the original Destiny Narratively, Destiny managed to scrape along by fleshing out said concepts as best it could. The studio focused more on developing its characters, such as Oryx, The Taken King, and Uldren Sov, the Awoken prince who would be reborn as the Guardian Crow. From their character development, the story of ",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Destiny 2 Is Ending Just As Its Story Started To Get Good</b>\n\nWhile Destiny 2 had a momentous finale for its Light and Darkness Saga in The Final Shape , which offered a clean opportunity to end its story there, the game’s development team at Bungie were narratively on a roll.\n\nThe expansions that followed that quasi-climactic release, The Edge of Fate and Renegades, were meant to kickstart a second Fate Saga for the game.\n\nHowever, mechanical choices, particularly around attempts to more easily onboard new and returning players, not only failed to do so, they soured the experience for a lot of player Guardians who never left.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.gamespot.com/articles/report-claims-significant-layoffs-are-incoming-for-bungie-as-destiny-2-ends/\">GameSpot</a>",
+      "edited_post_text": null,
+      "url": "https://www.gamespot.com/articles/report-claims-significant-layoffs-are-incoming-for-bungie-as-destiny-2-ends/",
+      "published_at": "2026-05-22T20:17:44+00:00",
+      "title_hash": "91e73d6864aba62bcbabf10fab5262e847efe89f",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: ниже текущих приоритетов канала или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-24T00:01:59+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
+      "id": "65518546ec7371e4",
+      "status": "hold",
+      "created_at": "2026-05-24T00:01:59+00:00",
+      "created_at_sakhalin": "2026-05-24T11:01:59+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 143,
+      "title_original": "Google’s new anything-to-anything AI model is wild",
+      "title_ru": "Google’s new anything-to-anything AI model is wild",
+      "body": [
+        "Oh, the places you won’t really go.",
+        "Last year I deepfaked my kid's stuffed animal to make it look like his plush deer was on vacation.",
+        "It was an experiment to see if I could re-create the events depicted in a Gemini ad Google was running, and I never showed the videos of Buddy the deer on his adventures to my four-year-old."
+      ],
+      "footer": null,
+      "source_text": "Oh, the places you won’t really go. Last year I deepfaked my kid's stuffed animal to make it look like his plush deer was on vacation. It was an experiment to see if I could re-create the events depicted in a Gemini ad Google was running, and I never showed the videos of Buddy the deer on his adventures to my four-year-old. […] AI Close AI Posts from this topic will be added to your daily email digest and your homepage feed. Google Close Google Posts from this topic will be added to your daily email digest and your homepage feed. Omni sent my kid’s stuffie rafting and deepfaked me in front of the Eiffel Tower. But it’s not quite the singularity. Allison Johnson Close Allison Johnson Posts from this author will be added to your daily email digest and your homepage feed.",
+      "post_text": "🌐 Мировые IT\n\n<b>Google’s new anything-to-anything AI model is wild</b>\n\nOh, the places you won’t really go.\n\nLast year I deepfaked my kid's stuffed animal to make it look like his plush deer was on vacation.\n\nIt was an experiment to see if I could re-create the events depicted in a Gemini ad Google was running, and I never showed the videos of Buddy the deer on his adventures to my four-year-old.\n\nМИРОВЫЕ IT · <a href=\"https://www.theverge.com/tech/936507/gemini-omni-hands-on-deepfake-ai-video\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/tech/936507/gemini-omni-hands-on-deepfake-ai-video",
+      "published_at": "2026-05-23T11:00:00+00:00",
+      "title_hash": "6cbfb209f1044531f3870d1f5a5486de94e9d5b9",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: ниже текущих приоритетов канала или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-24T00:01:59+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
+      "id": "1d62850b49298229",
+      "status": "hold",
+      "created_at": "2026-05-24T00:01:59+00:00",
+      "created_at_sakhalin": "2026-05-24T11:01:59+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 143,
+      "title_original": "Google’s AI search is so broken it can ‘disregard’ what you’re looking for",
+      "title_ru": "Google’s AI search is so broken it can ‘disregard’ what you’re looking for",
+      "body": [
+        "“If you need anything else or have a new question later, just let me know!” Google's AI Overviews are running into an interesting problem right now.",
+        "Earlier on Friday, if you searched for the term \"disregard,\" the AI Overview section would include a response like what you'd see from a more traditional AI chatbot instead of the typical AI summary, as spotted on X.",
+        "As you can see in the […] AI Close AI Posts from this topic will be added to your daily email digest and your homepage feed."
+      ],
+      "footer": null,
+      "source_text": "“If you need anything else or have a new question later, just let me know!” Google's AI Overviews are running into an interesting problem right now. Earlier on Friday, if you searched for the term \"disregard,\" the AI Overview section would include a response like what you'd see from a more traditional AI chatbot instead of the typical AI summary, as spotted on X. As you can see in the […] AI Close AI Posts from this topic will be added to your daily email digest and your homepage feed. News Close News Posts from this topic will be added to your daily email digest and your homepage feed. Jay Peters Close Jay Peters Senior Reporter Posts from this author will be added to your daily email digest and your homepage feed. Share Gift Image: Google Jay Peters Close Jay Peters Posts from this author will be added to your daily email digest and your homepage feed.",
+      "post_text": "🌐 Мировые IT\n\n<b>Google’s AI search is so broken it can ‘disregard’ what you’re looking for</b>\n\n“If you need anything else or have a new question later, just let me know!” Google's AI Overviews are running into an interesting problem right now.\n\nEarlier on Friday, if you searched for the term \"disregard,\" the AI Overview section would include a response like what you'd see from a more traditional AI chatbot instead of the typical AI summary, as spotted on X.\n\nAs you can see in the […] AI Close AI Posts from this topic will be added to your daily email digest and your homepage feed.\n\nМИРОВЫЕ IT · <a href=\"https://www.theverge.com/tech/936176/google-ai-overviews-search-disregard\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/tech/936176/google-ai-overviews-search-disregard",
+      "published_at": "2026-05-22T16:01:17+00:00",
+      "title_hash": "83514d0d97bb043bbf79401f86f0d5681b1f83e0",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: ниже текущих приоритетов канала или требует ручной оценки."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-24T00:01:59+00:00",
       "reviewed_by": "auto-editor-v3"
     },
     {
@@ -4044,6 +4244,166 @@
       "reviewed_by": "auto-editor-v3"
     },
     {
+      "id": "07a6a339d386be21",
+      "status": "rejected",
+      "created_at": "2026-05-24T00:01:59+00:00",
+      "created_at_sakhalin": "2026-05-24T11:01:59+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 162,
+      "title_original": "Whitepaper Сбера «AI-Disrupt PDLC»: разбор для тех, кто пишет код",
+      "title_ru": "Whitepaper Сбера «AI-Disrupt PDLC»: разбор для тех, кто пишет код",
+      "body": [
+        "На ЦИПР-2026 в Нижнем Новгороде, 19 мая, Сбер выкатил whitepaper с амбициозным названием — «AI-Disrupt PDLC.",
+        "Стратегия AI-трансформации бизнеса: от кода к намерению».",
+        "На ЦИПР-2026 в Нижнем Новгороде, 19 мая, Сбер выкатил whitepaper с амбициозным названием — «AI-Disrupt PDLC."
+      ],
+      "footer": null,
+      "source_text": "На ЦИПР-2026 в Нижнем Новгороде, 19 мая, Сбер выкатил whitepaper с амбициозным названием — «AI-Disrupt PDLC. Стратегия AI-трансформации бизнеса: от кода к намерению». Автор — Кирилл Меньшов, СВП и... На ЦИПР-2026 в Нижнем Новгороде, 19 мая, Сбер выкатил whitepaper с амбициозным названием — «AI-Disrupt PDLC. Стратегия AI-трансформации бизнеса: от кода к намерению». Автор — Кирилл Меньшов, СВП и глава блока «Технологии». В тот же день там же подписали меморандум о партнёрстве с red_mad_robot. То есть это был не «выложили на сайт», а вполне заготовленный релиз с витриной. Открытых версий две. Короткая — PDF на 28 страниц, обзорная. Длинная — .docx на 337 тысяч знаков, в пять раз толще, и местами это совсем другой документ: там лежит почти всё интересное. Я прочитал обе целиком, плюс лендинг (на нём, кстати, есть пара формулировок, которых нет в PDF), плюс смежные публикации Сбера, Яндекса, Т-Технологий и red_mad_robot к этому же релизу. Ниже — пересказ того, что в документе важно для инженера. Без пересказа цитатами и без рекламы. Где это пересказ — там пересказ. Где это моё мнение — написано «от себя». Читать далее Открытых версий две. Короткая — PDF на 28 страниц, обзорная. Длинная — .docx на 337 тысяч знаков, в пять раз толще, и местами это совсем другой документ: там лежит почти всё интересное. Я прочитал обе целиком, плюс лендинг (на нём, кстати, есть пара формулировок, которых нет в PDF), плюс смежные публикации Сбера, Яндекса, Т-Технологий и red_mad_robot к этому же релизу. Ниже — пересказ того, что в документе важно для инженера. Без пересказа цитатами и без рекламы. Где это пересказ — там пересказ. Где это моё мнение — написано «от себя». По жанру это vendor-whitepaper, в большом смысле — отраслевой манифест. Сбер прямо в первых строчках пишет: «не дожидаемся появ",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Whitepaper Сбера «AI-Disrupt PDLC»: разбор для тех, кто пишет код</b>\n\nНа ЦИПР-2026 в Нижнем Новгороде, 19 мая, Сбер выкатил whitepaper с амбициозным названием — «AI-Disrupt PDLC.\n\nСтратегия AI-трансформации бизнеса: от кода к намерению».\n\nНа ЦИПР-2026 в Нижнем Новгороде, 19 мая, Сбер выкатил whitepaper с амбициозным названием — «AI-Disrupt PDLC.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://habr.com/ru/companies/oleg-bunin/articles/1038588/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1038588#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/oleg-bunin/articles/1038588/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1038588#habracut",
+      "published_at": "2026-05-23T22:51:05+00:00",
+      "title_hash": "d60447cc380bdfe3ee5bba98553fb77a85dcd67c",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/e14/1e7/426/e141e74262bd5ed90be835da6b4826fc.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-24T00:01:59+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
+      "id": "3b6ae675819ab40c",
+      "status": "rejected",
+      "created_at": "2026-05-24T00:01:59+00:00",
+      "created_at_sakhalin": "2026-05-24T11:01:59+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🇷🇺 РФ / происшествия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 162,
+      "title_original": "GitHub - rustdesk/rustdesk: An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.",
+      "title_ru": "GitHub - rustdesk/rustdesk: An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.",
+      "body": [
+        "An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.",
+        "- rustdesk/rustdesk Берем официальный RustDesk (AGPLv3), не делаем форк, патчим его на лету в GitHub Actions при каждой сборке клиента.",
+        "Поверх - российская инфраструктура: серверы в РФ, оплата по счёту юр.лицам, корпоративный SSO через Active Directory и Яндекс ID, защита от мошенничества на Android."
+      ],
+      "footer": null,
+      "source_text": "An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer. - rustdesk/rustdesk Берем официальный RustDesk (AGPLv3), не делаем форк, патчим его на лету в GitHub Actions при каждой сборке клиента. Поверх - российская инфраструктура: серверы в РФ, оплата по счёту юр.лицам, корпоративный SSO через Active Directory и Яндекс ID, защита от мошенничества на Android. К концу мая - стабильный релиз. Меня зовут Артур Валиев. Я делаю не «решение для импортозамещения с сертификацией ФСТЭК» ради закупок. Просто работающий продукт, который я бы сам хотел использовать десять лет назад, когда сидел на саппорте у клиентов. Читать далее Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events & webinars Ebooks & reports Business insights GitHub Skills SUPPORT & SERVICES Documentation Customer support Community forum Trust cen",
+      "post_text": "🎮 Игры / индустрия\n\n<b>GitHub - rustdesk/rustdesk: An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.</b>\n\nAn open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.\n\n- rustdesk/rustdesk Берем официальный RustDesk (AGPLv3), не делаем форк, патчим его на лету в GitHub Actions при каждой сборке клиента.\n\nПоверх - российская инфраструктура: серверы в РФ, оплата по счёту юр.лицам, корпоративный SSO через Active Directory и Яндекс ID, защита от мошенничества на Android.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://github.com/rustdesk/rustdesk\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://github.com/rustdesk/rustdesk",
+      "published_at": "2026-05-23T21:04:56+00:00",
+      "title_hash": "65a2759f71e4895aea6b9c984ca57cd43fde2131",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/dc3/2f4/51d/dc32f451ddfb0a03a93a639f970fe604.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-24T00:01:59+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
+      "id": "31fb44a70e32ebae",
+      "status": "rejected",
+      "created_at": "2026-05-24T00:01:59+00:00",
+      "created_at_sakhalin": "2026-05-24T11:01:59+11:00",
+      "source": "GameSpot",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 147,
+      "title_original": "Promotions | Secretlab US",
+      "title_ru": "Promotions | Secretlab US",
+      "body": [
+        "Save on award-winning ergonomic chairs, desks, and accessories.",
+        "See all Secretlab products on sale.",
+        "Secretlab is responsible for many of our favorite gaming chairs--though their hefty prices can turn away frugal shoppers."
+      ],
+      "footer": null,
+      "source_text": "Save on award-winning ergonomic chairs, desks, and accessories. See all Secretlab products on sale. Secretlab is responsible for many of our favorite gaming chairs--though their hefty prices can turn away frugal shoppers. But from now until June 2, the company is running a Memorial Day Sale that saves you $100 on select Titan Evo models. Beyond chairs, the popular Magnus Pro desks are discounted by up to $129--bringing the two premium products down to some of their best prices of the year. A few other accessories are also available with a price cut during the event, so be sure to check out all the savings before they disappear on June 2. Be sure to check out the official store page for all the deals, but here's a look at some of our favorites. See all deals at Secretlab Secret Lab Gaming Chair Deals Several of Secretlab's gaming chairs are on sale, including its Titan Evo model. Secretlab calls this its \"most technologically advanced ergonomic chair.\" Pricing varies based on the specific design you choose, but most of them benefit from four-way lumbar support, a magnetic memory foam head pillow for added comfort, armrests that swivel in multiple directions, and the availability of various sizes to fit all body types. You'll find models built with either leatherette or fabric, and several add-ons (like memory foam armrests and recliner extensions) are discounted for Memorial Day. All told, there are around 70 different versions of the Titan Evo on sale right now, running the gamut from simple solid color designs to flashy collaborations with games like Final Fantasy XIV , Cyberpunk 2077 , or Genshin Impact , and popular franchises like Star Wars , One Piece , or Mobile Suit Gundam , just to name a few. Check out some of our favorite models in the list below: Secretlab Ti",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Promotions | Secretlab US</b>\n\nSave on award-winning ergonomic chairs, desks, and accessories.\n\nSee all Secretlab products on sale.\n\nSecretlab is responsible for many of our favorite gaming chairs--though their hefty prices can turn away frugal shoppers.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://secretlab.co/collections/promotions?rfsn=6854460.440a8a&amp;subid=225336X1707200Xeb6745d44b246f5b4af60df291e9aeb6\">GameSpot</a>",
+      "edited_post_text": null,
+      "url": "https://secretlab.co/collections/promotions?rfsn=6854460.440a8a&subid=225336X1707200Xeb6745d44b246f5b4af60df291e9aeb6",
+      "published_at": "2026-05-22T23:43:00+00:00",
+      "title_hash": "c164fcfe3db771723088448c351dca1638123f55",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-24T00:01:59+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
+      "id": "a2236f2fe44f0f2a",
+      "status": "rejected",
+      "created_at": "2026-05-24T00:01:59+00:00",
+      "created_at_sakhalin": "2026-05-24T11:01:59+11:00",
+      "source": "GameSpot",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 147,
+      "title_original": "Xbox Series X Consoles - Package Microsoft Xbox Series X 1TB Console with Xbox Wireless Controller 4K Gaming 120FPS Carbon Black + 2 more items - Best Buy",
+      "title_ru": "Xbox Series X Consoles - Package Microsoft Xbox Series X 1TB Console with Xbox Wireless Controller 4K Gaming 120FPS Carbon Black + 2 more items - Best Buy",
+      "body": [
+        "Shop a wide selection of Xbox Series X Consoles at Best Buy: Package - Microsoft - Xbox Series X 1TB Console with Xbox Wireless Controller - 4K Gaming - 120FPS - Carbon Black + 2 more items We're living in a strange time where current-gen video game consoles have only gotten more expensive, not cheaper.",
+        "Fortunately, the Xbox Series X Forza Horizon 6 Bundle from Best Buy is a good deal at $648.",
+        "You get a powerful Xbox to enjoy one of this year's hottest racing games and a colorful controller to play it with."
+      ],
+      "footer": null,
+      "source_text": "Shop a wide selection of Xbox Series X Consoles at Best Buy: Package - Microsoft - Xbox Series X 1TB Console with Xbox Wireless Controller - 4K Gaming - 120FPS - Carbon Black + 2 more items We're living in a strange time where current-gen video game consoles have only gotten more expensive, not cheaper. Fortunately, the Xbox Series X Forza Horizon 6 Bundle from Best Buy is a good deal at $648. You get a powerful Xbox to enjoy one of this year's hottest racing games and a colorful controller to play it with. Overall, you'll save over $160 on this bundle, making it one of the best console deals on the market. Xbox Series X Forza Horizon 6 Bundle $648 (Save $162) An Xbox Series X console in 2026 currently retails for $650, following last year's price hikes. With market conditions having become even more turbulent this year, the console could become even more expensive in time--look at Sony and Nintendo, who have increased their gaming hardware prices recently--and you're essentially getting a physical edition of Forza Horizon 6 and the official themed Xbox One wireless controller for free. Xbox Series X Forza Horizon 6 Bundle $648 (Save $162) Forza Horizon 6 has received positive reviews ahead of its release, so if you're a fan of car culture and you've dreamed of taking million-dollar vehicles out for a spin on the metropolitan streets of Japan, then this might just be the game for you. As for the controller, its design might not appeal to everyone, but there's no denying that it's an attention-grabber. At the very least, you're getting two controllers with the Xbox Series X--it ships with a wireless controller that features a carbon black color scheme--so that opens up more options for co-op games on the system. Forza Horizon 6 Limited-Edition Xbox Wireless Controller $9",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Xbox Series X Consoles - Package Microsoft Xbox Series X 1TB Console with Xbox Wireless Controller 4K Gaming 120FPS Carbon Black + 2 more items - Best Buy</b>\n\nShop a wide selection of Xbox Series X Consoles at Best Buy: Package - Microsoft - Xbox Series X 1TB Console with Xbox Wireless Controller - 4K Gaming - 120FPS - Carbon Black + 2 more items We're living in a strange time where current-gen video game consoles have only gotten more expensive, not cheaper.\n\nFortunately, the Xbox Series X Forza Horizon 6 Bundle from Best Buy is a good deal at $648.\n\nYou get a powerful Xbox to enjoy one of this year's hottest racing games and a colorful controller to play it with.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.bestbuy.com/site/combo/xbox-series-x-consoles/1e29288a-fcc6-4fb7-971c-d3fdc032bde6?irclickid=Tba1jB1AzxyZUX0yIrW-W01GUkuRpQXQgWod2k0&amp;irgwc=1&amp;afsrc=1&amp;ref=198&amp;loc=Fandom%20-%20Gamespot&amp;acampID=&amp;mpid=1804712&amp;affgroup=%22Content%22\">GameSpot</a>",
+      "edited_post_text": null,
+      "url": "https://www.bestbuy.com/site/combo/xbox-series-x-consoles/1e29288a-fcc6-4fb7-971c-d3fdc032bde6?irclickid=Tba1jB1AzxyZUX0yIrW-W01GUkuRpQXQgWod2k0&irgwc=1&afsrc=1&ref=198&loc=Fandom%20-%20Gamespot&acampID=&mpid=1804712&affgroup=%22Content%22",
+      "published_at": "2026-05-22T22:02:40+00:00",
+      "title_hash": "9fb3a48815f80bebf00e8ef163b21a06324857e5",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-24T00:01:59+00:00",
+      "reviewed_by": "auto-editor-v3"
+    },
+    {
       "id": "ec44a45aa73888ea",
       "status": "published",
       "created_at": "2026-05-21T00:17:03+00:00",
@@ -5516,26 +5876,102 @@
       "published_at_sakhalin": "2026-05-24T07:59:17+11:00",
       "publish_method": "sendPhoto/safe/pipeline_search",
       "telegram_message_id": 92
+    },
+    {
+      "id": "b405954a4a6af136",
+      "status": "published",
+      "created_at": "2026-05-24T00:01:59+00:00",
+      "created_at_sakhalin": "2026-05-24T11:01:59+11:00",
+      "source": "Interfax",
+      "source_type": "ru",
+      "category": "🧭 Геополитика",
+      "category_hint": "🇷🇺 РФ / война и безопасность",
+      "score": 145,
+      "title_original": "Óñèê çàùèòèë òèòóë ÷åìïèîíà ìèðà",
+      "title_ru": "Óñèê çàùèòèë òèòóë ÷åìïèîíà ìèðà",
+      "body": [
+        "Óêðàèíñêèé áîêñåð Àëåêñàíäð Óñèê îäåðæàë ïîáåäó íàä íèäåðëàíäöåì Ðèêî Âåðõóâåíîì â áîþ çà òèòóëû ÷åìïèîíà ìèðà ïî âåðñèÿì WBC, IBF è WBA â ñóïåðòÿæåëîì âåñå.Ïîåäèíîê ïðîøåë 24 ìàÿ â Åãèïòå íà ôîíå ïèðàìèä Ãèçû è çàâåðøèëñÿ ïîáåäîé Óñèêà òåõíè÷åñêèì íîêàóòîì â 11-ì ðàóíäå.Íà ñ÷åòó 39-ëåòíåãî Óñèêà íà ïðîôåññèîíàëüíîì ðèíãå òåïåðü 25 ïîáåä (16  íîêàóòîì), óêð",
+        "Украинский боксер Александр Усик одержал победу над нидерландцем Рико Верхувеном в бою за титулы чемпиона мира по версиям WBC, IBF и WBA в супертяжелом весе."
+      ],
+      "footer": null,
+      "source_text": "Óêðàèíñêèé áîêñåð Àëåêñàíäð Óñèê îäåðæàë ïîáåäó íàä íèäåðëàíäöåì Ðèêî Âåðõóâåíîì â áîþ çà òèòóëû ÷åìïèîíà ìèðà ïî âåðñèÿì WBC, IBF è WBA â ñóïåðòÿæåëîì âåñå.Ïîåäèíîê ïðîøåë 24 ìàÿ â Åãèïòå íà ôîíå ïèðàìèä Ãèçû è çàâåðøèëñÿ ïîáåäîé Óñèêà òåõíè÷åñêèì íîêàóòîì â 11-ì ðàóíäå.Íà ñ÷åòó 39-ëåòíåãî Óñèêà íà ïðîôåññèîíàëüíîì ðèíãå òåïåðü 25 ïîáåä (16  íîêàóòîì), óêðàèíåö óäåðæèâàåò ñòàòóñ íåïîáåæäåííîãî áîêñåðà.37-ëåòíèé Âåðõóâåí ïðîâåë âòîðîé áîé â êà÷åñòâå áîêñåðà-ïðîôåññèîíàëà, â ïåðâîì ïîåäèíêå îí äîáèëñÿ ïîáåäû. Украинский боксер Александр Усик одержал победу над нидерландцем Рико Верхувеном в бою за титулы чемпиона мира по версиям WBC, IBF и WBA в супертяжелом весе.",
+      "post_text": "🧭 Геополитика\n\n<b>Óñèê çàùèòèë òèòóë ÷åìïèîíà ìèðà</b>\n\nÓêðàèíñêèé áîêñåð Àëåêñàíäð Óñèê îäåðæàë ïîáåäó íàä íèäåðëàíäöåì Ðèêî Âåðõóâåíîì â áîþ çà òèòóëû ÷åìïèîíà ìèðà ïî âåðñèÿì WBC, IBF è WBA â ñóïåðòÿæåëîì âåñå.Ïîåäèíîê ïðîøåë 24 ìàÿ â Åãèïòå íà ôîíå ïèðàìèä Ãèçû è çàâåðøèëñÿ ïîáåäîé Óñèêà òåõíè÷åñêèì íîêàóòîì â 11-ì ðàóíäå.Íà ñ÷åòó 39-ëåòíåãî Óñèêà íà ïðîôåññèîíàëüíîì ðèíãå òåïåðü 25 ïîáåä (16  íîêàóòîì), óêðàèíåö óäåðæèâàåò ñòàòóñ íåïîáåæäåííîãî áîêñåðà.37-ëåòíèé Âåðõóâåí ïðîâåë âòîðîé áîé â êà÷åñòâå áîêñåðà-ïðîôåññèîíàëà, â ïåðâîì ïîåäèíêå îí äîáèëñÿ ïîáåäû.\n\nУкраинский боксер Александр Усик одержал победу над нидерландцем Рико Верхувеном в бою за титулы чемпиона мира по версиям WBC, IBF и WBA в супертяжелом весе.\n\nГЕОПОЛИТИКА · <a href=\"https://www.sport-interfax.ru/1091457\">Interfax</a>",
+      "edited_post_text": "🧭 Геополитика\n\n<b>Óñèê çàùèòèë òèòóë ÷åìïèîíà ìèðà</b>\n\nÓêðàèíñêèé áîêñåð Àëåêñàíäð Óñèê îäåðæàë ïîáåäó íàä íèäåðëàíäöåì Ðèêî Âåðõóâåíîì â áîþ çà òèòóëû ÷åìïèîíà ìèðà ïî âåðñèÿì WBC, IBF è WBA â ñóïåðòÿæåëîì âåñå.Ïîåäèíîê ïðîøåë 24 ìàÿ â Åãèïòå íà ôîíå ïèðàìèä Ãèçû è çàâåðøèëñÿ ïîáåäîé Óñèêà òåõíè÷åñêèì íîêàóòîì â 11-ì ðàóíäå.Íà ñ÷åòó 39-ëåòíåãî Óñèêà íà ïðîôåññèîíàëüíîì ðèíãå òåïåðü 25 ïîáåä (16  íîêàóòîì), óêðàèíåö óäåðæèâàåò ñòàòóñ íåïîáåæäåííîãî áîêñåðà.37-ëåòíèé Âåðõóâåí ïðîâåë âòîðîé áîé â êà÷åñòâå áîêñåðà-ïðîôåññèîíàëà, â ïåðâîì ïîåäèíêå îí äîáèëñÿ ïîáåäû.\n\nУкраинский боксер Александр Усик одержал победу над нидерландцем Рико Верхувеном в бою за титулы чемпиона мира по версиям WBC, IBF и WBA в супертяжелом весе.\n\nГЕОПОЛИТИКА · <a href=\"https://www.sport-interfax.ru/1091457\">Interfax</a>",
+      "url": "https://www.sport-interfax.ru/1091457",
+      "published_at": "2026-05-23T23:32:00+00:00",
+      "title_hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Glasnost_%26_Goodwill_-_1990_Peace_Climb_-_flags.jpg",
+      "image_mode": "pipeline_search",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Одобрено автоматическим редактором v3: категория и текст проверены семантически.",
+        "Final guard: категория и текст очищены перед публикацией; убраны повторы/битые фразы.",
+        "Image pipeline: search; source text-card rejected; external thematic image accepted; score=0.80."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-24T00:01:59+00:00",
+      "reviewed_by": "auto-editor-v3",
+      "image_pipeline": {
+        "strategy": "search",
+        "reason": "source text-card rejected; external thematic image accepted",
+        "selected": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Glasnost_%26_Goodwill_-_1990_Peace_Climb_-_flags.jpg",
+          "source": "external_search",
+          "width": 2486,
+          "height": 2574,
+          "mime_type": "image/jpeg",
+          "query_used": "diplomacy summit flags",
+          "relevance_score": 0.8,
+          "image_kind": "photo",
+          "filename": "Glasnost__26_Goodwill_-_1990_Peace_Climb_-_flags.jpg",
+          "reason": "File:Glasnost & Goodwill - 1990 Peace Climb - flags.jpg 2017-10-09 03:27:44 Glasnost & Goodwill - 1990 Peace Climb - flags 1.2 GFDL|License migration redundant|Earth Day 20 International Peace Climb|Photographs of flags of the United States in Washington (state)|Self-published work|United States photographs taken on 2017-10-07|Photographs of the national flag of the People's Republic of China in the United States|Photographs of flags of the Soviet Union in the United States|Glasnost & Goodwill  U.S, Chinese, and Soviet flags brought to the summit of Mount Everest on the Earth Day 20 International Peace Climb (1990). On exhibit as part of  Glasnost &amp; Goodwill: Citizen Diplomacy in the Northwest , an exhibit at the Washington State History Museum, Tacoma, Washington, U.S. October 7, 2017; topic=diplomacy; hits=['summit', 'diplomacy', 'flags', 'china']; bad_hits=[]"
+        },
+        "attempts": [
+          {
+            "stage": "source",
+            "url": "https://www.sport-interfax.ru/aspimg/1091457.png",
+            "ok": true,
+            "reason": "accepted: 700x350; score=0.55; topic=diplomacy; hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "diplomacy summit flags",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Glasnost_%26_Goodwill_-_1990_Peace_Climb_-_flags.jpg",
+            "ok": true,
+            "reason": "accepted: 2486x2574; score=0.80; topic=diplomacy; hits=['summit', 'diplomacy', 'flags', 'china']; bad_hits=[]"
+          }
+        ]
+      },
+      "image_fingerprint": "2e28c1814756da785103e7e69d7d1110cb62803d",
+      "published_at_sakhalin": "2026-05-24T11:02:04+11:00",
+      "publish_method": "sendPhoto/safe/pipeline_search",
+      "telegram_message_id": 93
     }
   ],
   "auto_review": {
     "version": 3,
-    "reviewed_pending": 8,
-    "approved": 0,
+    "reviewed_pending": 10,
+    "approved": 1,
     "approve_limit": 2,
-    "reviewed_at": "2026-05-23T21:06:25+00:00",
-    "reviewed_at_sakhalin": "2026-05-24T08:06:25+11:00"
+    "reviewed_at": "2026-05-24T00:01:59+00:00",
+    "reviewed_at_sakhalin": "2026-05-24T11:01:59+11:00"
   },
   "final_guard": {
     "changed": 0,
-    "polished": 0,
-    "checked_at": "2026-05-23T20:59:05+00:00",
-    "checked_at_sakhalin": "2026-05-24T07:59:05+11:00"
+    "polished": 1,
+    "checked_at": "2026-05-24T00:01:59+00:00",
+    "checked_at_sakhalin": "2026-05-24T11:01:59+11:00"
   },
   "priority_guard": {
     "changed": 0,
-    "checked_at": "2026-05-23T20:58:47+00:00",
-    "checked_at_sakhalin": "2026-05-24T07:58:47+11:00"
+    "checked_at": "2026-05-24T00:01:59+00:00",
+    "checked_at_sakhalin": "2026-05-24T11:01:59+11:00"
   },
   "cycle_report": {
     "reported_at": "2026-05-23T20:58:58+00:00",
