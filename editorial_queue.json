@@ -5974,55 +5974,66 @@
     "checked_at_sakhalin": "2026-05-24T11:01:59+11:00"
   },
   "cycle_report": {
-    "reported_at": "2026-05-23T20:58:58+00:00",
-    "reported_at_sakhalin": "2026-05-24T07:58:58+11:00",
-    "queue_updated_at": "2026-05-23T20:58:48+00:00",
-    "queue_updated_at_sakhalin": "2026-05-24T07:58:48+11:00",
+    "reported_at": "2026-05-24T00:02:28+00:00",
+    "reported_at_sakhalin": "2026-05-24T11:02:28+11:00",
+    "queue_updated_at": "2026-05-24T00:02:16+00:00",
+    "queue_updated_at_sakhalin": "2026-05-24T11:02:16+11:00",
     "total_queue_items": 130,
     "status_counts": {
-      "hold": 12,
-      "rejected": 100,
-      "published": 18,
+      "hold": 6,
+      "rejected": 104,
+      "published": 20,
       "pending": 0,
       "approved": 0,
       "skipped": 0,
       "unknown": 0
     },
     "hold_by_category": {
-      "🌐 Мировые IT": 8,
-      "🎮 Игры / индустрия": 3,
-      "🌍 Мир о России": 1
+      "🌐 Мировые IT": 4,
+      "🌍 Мир о России": 1,
+      "🎮 Игры / индустрия": 1
     },
     "approved_by_category": {},
     "published_by_category": {
-      "🇷🇺 РФ / война и безопасность": 9,
+      "🇷🇺 РФ / война и безопасность": 10,
       "🌐 Мировые IT": 3,
       "🇷🇺 РФ / происшествия": 3,
-      "🇷🇺 РФ / экономика": 2,
-      "🧭 Геополитика": 1
+      "🧭 Геополитика": 2,
+      "🇷🇺 РФ / экономика": 2
     },
     "auto_review": {
       "version": 3,
       "reviewed_pending": 10,
-      "approved": 0,
+      "approved": 1,
       "approve_limit": 2,
-      "reviewed_at": "2026-05-23T20:58:47+00:00",
-      "reviewed_at_sakhalin": "2026-05-24T07:58:47+11:00"
+      "reviewed_at": "2026-05-24T00:01:59+00:00",
+      "reviewed_at_sakhalin": "2026-05-24T11:01:59+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-23T20:58:47+00:00",
-      "checked_at_sakhalin": "2026-05-24T07:58:47+11:00"
+      "checked_at": "2026-05-24T00:01:59+00:00",
+      "checked_at_sakhalin": "2026-05-24T11:01:59+11:00"
     },
     "final_guard": {
       "changed": 0,
-      "polished": 0,
-      "checked_at": "2026-05-23T20:58:47+00:00",
-      "checked_at_sakhalin": "2026-05-24T07:58:47+11:00"
+      "polished": 1,
+      "checked_at": "2026-05-24T00:01:59+00:00",
+      "checked_at_sakhalin": "2026-05-24T11:01:59+11:00"
     },
-    "recent_published_20m_count": 0,
-    "recent_published_20m": [],
-    "decision": "no_approved_to_publish"
+    "recent_published_20m_count": 1,
+    "recent_published_20m": [
+      {
+        "time_sakhalin": "2026-05-24T11:02:04+11:00",
+        "source": "Interfax",
+        "category": "🧭 Геополитика",
+        "title": "Óñèê çàùèòèë òèòóë ÷åìïèîíà ìèðà",
+        "with_image": true,
+        "image_mode": "pipeline_search",
+        "publish_method": "sendPhoto/safe/pipeline_search",
+        "telegram_message_id": 93
+      }
+    ],
+    "decision": "published"
   },
   "minimum_release": {
     "version": 2,
