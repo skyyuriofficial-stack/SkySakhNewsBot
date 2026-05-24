@@ -988,14 +988,14 @@
     }
   ],
   "last_cycle_report": {
-    "reported_at": "2026-05-24T00:02:28+00:00",
-    "reported_at_sakhalin": "2026-05-24T11:02:28+11:00",
-    "queue_updated_at": "2026-05-24T00:02:16+00:00",
-    "queue_updated_at_sakhalin": "2026-05-24T11:02:16+11:00",
+    "reported_at": "2026-05-24T06:06:31+00:00",
+    "reported_at_sakhalin": "2026-05-24T17:06:31+11:00",
+    "queue_updated_at": "2026-05-24T06:06:20+00:00",
+    "queue_updated_at_sakhalin": "2026-05-24T17:06:20+11:00",
     "total_queue_items": 130,
     "status_counts": {
-      "hold": 6,
-      "rejected": 104,
+      "hold": 11,
+      "rejected": 99,
       "published": 20,
       "pending": 0,
       "approved": 0,
@@ -1003,9 +1003,8 @@
       "unknown": 0
     },
     "hold_by_category": {
-      "🌐 Мировые IT": 4,
-      "🌍 Мир о России": 1,
-      "🎮 Игры / индустрия": 1
+      "🌐 Мировые IT": 8,
+      "🌍 Мир о России": 3
     },
     "approved_by_category": {},
     "published_by_category": {
@@ -1018,36 +1017,25 @@
     "auto_review": {
       "version": 3,
       "reviewed_pending": 10,
-      "approved": 1,
+      "approved": 0,
       "approve_limit": 2,
-      "reviewed_at": "2026-05-24T00:01:59+00:00",
-      "reviewed_at_sakhalin": "2026-05-24T11:01:59+11:00"
+      "reviewed_at": "2026-05-24T06:06:20+00:00",
+      "reviewed_at_sakhalin": "2026-05-24T17:06:20+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-24T00:01:59+00:00",
-      "checked_at_sakhalin": "2026-05-24T11:01:59+11:00"
+      "checked_at": "2026-05-24T06:06:20+00:00",
+      "checked_at_sakhalin": "2026-05-24T17:06:20+11:00"
     },
     "final_guard": {
       "changed": 0,
-      "polished": 1,
-      "checked_at": "2026-05-24T00:01:59+00:00",
-      "checked_at_sakhalin": "2026-05-24T11:01:59+11:00"
+      "polished": 0,
+      "checked_at": "2026-05-24T06:06:20+00:00",
+      "checked_at_sakhalin": "2026-05-24T17:06:20+11:00"
     },
-    "recent_published_20m_count": 1,
-    "recent_published_20m": [
-      {
-        "time_sakhalin": "2026-05-24T11:02:04+11:00",
-        "source": "Interfax",
-        "category": "🧭 Геополитика",
-        "title": "Óñèê çàùèòèë òèòóë ÷åìïèîíà ìèðà",
-        "with_image": true,
-        "image_mode": "pipeline_search",
-        "publish_method": "sendPhoto/safe/pipeline_search",
-        "telegram_message_id": 93
-      }
-    ],
-    "decision": "published"
+    "recent_published_20m_count": 0,
+    "recent_published_20m": [],
+    "decision": "no_approved_to_publish"
   },
   "recent_image_urls": [
     "https://www.interfax.ru/aspimg/1091101.jpg",
