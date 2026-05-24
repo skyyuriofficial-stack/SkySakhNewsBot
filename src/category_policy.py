@@ -1,5 +1,5 @@
 # Shared semantic category policy for SkySakhNews.
-# Centralizes category override to avoid drift between editorial_review, final_guard and publisher.
+# Centralizes category override and stream priorities to avoid drift between modules.
 
 import re
 from typing import Dict
@@ -13,6 +13,21 @@ CATEGORY_INCIDENTS = "🇷🇺 РФ / происшествия"
 CATEGORY_GEOPOLITICS = "🧭 Геополитика"
 CATEGORY_WORLD_RUSSIA = "🌍 Мир о России"
 CATEGORY_POLITICS = "🇷🇺 РФ / законы и политика"
+
+# Current editorial priority map requested by channel owner.
+# Only these four were changed: Мир о России=1000, Сахалин=950, Мировые IT=650, Игры=600.
+# Other streams remain as previously used.
+STREAM_PRIORITY = {
+    CATEGORY_WORLD_RUSSIA: 1000,
+    CATEGORY_SAKHALIN: 950,
+    CATEGORY_WAR: 900,
+    CATEGORY_GEOPOLITICS: 820,
+    CATEGORY_INCIDENTS: 780,
+    CATEGORY_ECONOMY: 760,
+    CATEGORY_POLITICS: 700,
+    CATEGORY_IT: 650,
+    CATEGORY_GAMES: 600,
+}
 
 SAKHALIN_WORDS = {
     "сахалин", "южно-сахалинск", "корсаков", "холмск", "курил", "курильск",
@@ -77,7 +92,9 @@ RU_ECON_WORDS = {
 RU_INCIDENT_WORDS = {
     "дтп", "авария", "пожар", "столкновение", "взрыв", "пострадал", "пострадали",
     "погиб", "погибли", "происшествие", "чп", "убийство", "грабеж", "мошенники",
-    "без воды", "без света", "водопровод", "мчс", "криминал"
+    "без воды", "без света", "водопровод", "мчс", "криминал",
+    "лавина", "сход лавины", "спасатели", "пропал", "пропали", "пропавшие",
+    "поисково-спасательные", "горы", "снег", "оползень", "наводнение", "паводок"
 }
 
 RU_POLITICS_WORDS = {
@@ -157,3 +174,7 @@ def resolve_final_category_from_item(item: Dict) -> str:
         source_name=item.get("source") or "",
         source_url=item.get("url") or "",
     )
+
+
+def stream_priority(category: str) -> int:
+    return STREAM_PRIORITY.get(category, 0)
