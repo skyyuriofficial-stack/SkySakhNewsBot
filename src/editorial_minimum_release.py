@@ -1,6 +1,6 @@
 # Minimum release policy for SkySakhNews.
 # Conservative fallback: publish at most one reserve item only when strict review produced 0 approved items.
-# This file must never promote weak denial/consular notes, ads, tutorials, deals or wrongly categorized material.
+# Uses the same owner-defined stream priorities as editorial_review.
 
 import html
 import json
@@ -9,6 +9,8 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Dict, List
 
+from category_policy import resolve_final_category_from_item, stream_priority
+
 QUEUE_FILE = Path("editorial_queue.json")
 SAKH_TZ = timezone(timedelta(hours=11))
 MAX_AGE_HOURS = 30
@@ -16,6 +18,7 @@ MAX_AGE_HOURS = 30
 FOOTERS = {
     "🌍 Мир о России": "МИР О РОССИИ",
     "🇷🇺 РФ / война и безопасность": "РФ | ВОЙНА И БЕЗОПАСНОСТЬ",
+    "🇷🇺 РФ / происшествия": "РФ | ПРОИСШЕСТВИЯ",
     "🇷🇺 РФ / экономика": "РФ | ЭКОНОМИКА",
     "🇷🇺 РФ / законы и политика": "РФ | ЗАКОНЫ И ПОЛИТИКА",
     "🧭 Геополитика": "ГЕОПОЛИТИКА",
@@ -25,32 +28,23 @@ FOOTERS = {
 }
 
 TRUSTED_SOURCES = ["interfax", "bbc", "guardian", "reuters", "ap news", "associated press", "the verge", "ars technica"]
-
 HARD_REJECT_TERMS = [
     "скид", "распродаж", "coupon", "discount", "deal", "sale", "amazon", "walmart", "woot", "download", "drivers",
     "драйвер", "power bank", "free shipping", "promocode", "промокод", "товарная", "товарный", "партнерский",
-    "партнерский", "туториал", "гайд", "личный опыт", "как я", "как сделать", "как управлять", "обучающая/колоночная",
-    "финальный стоп", "низкой значимости", "игровая тема не имеет", "материал устарел",
+    "туториал", "гайд", "личный опыт", "как я", "как сделать", "как управлять", "обучающая/колоночная",
+    "финальный стоп", "низкой значимости", "материал устарел",
 ]
-
 WEAK_DENIAL_TERMS = [
     "не рассматривается", "не планируется", "не обсуждается", "не стоит на повестке", "пока не рассматривается",
     "пока не планируется", "не ожидается", "не стал комментировать", "отказался комментировать",
     "готовы к сотрудничеству", "заявил о готовности", "выразил готовность", "призвал к", "рассчитывает на",
 ]
-
 STRONG_TERMS = [
     "заэс", "аэс", "миниров", "ранен", "ранены", "погиб", "погибли", "поврежден", "повреждена", "повреждены",
     "пожар", "разруш", "ущерб", "атака", "удар", "обстрел", "отключ", "электроэнерг", "санкц", "ставк", "цб",
     "инфляц", "нефть", "газ", "спг", "китай", "сша", "иран", "израил", "openai", "google", "microsoft", "apple",
-    "anthropic", "nvidia", "уязвим", "cve",
+    "anthropic", "nvidia", "уязвим", "cve", "лавина", "спасатели", "без воды", "gta", "rockstar", "witcher"
 ]
-
-WAR_TERMS = ["заэс", "аэс", "бпла", "дрон", "атака", "удар", "обстрел", "миниров", "пво", "всу", "ранен", "погиб", "поврежден"]
-ECON_TERMS = ["банк", "кредит", "ставк", "цб", "инфляц", "нефть", "газ", "спг", "рубл", "экспорт", "импорт", "зерн"]
-POLITICS_TERMS = ["госдума", "закон", "сенат", "правительство", "переговор", "визит", "саммит", "мид", "путин", "си цзиньпин"]
-IT_TERMS = ["openai", "google", "microsoft", "apple", "anthropic", "nvidia", "уязвим", "cve", "ии", "нейросет"]
-GEOPOLITICS_TERMS = ["иран", "израил", "сша", "нато", "ес", "китай", "тайван", "газа", "оон", "куба"]
 
 
 def now_utc() -> str:
@@ -132,9 +126,7 @@ def remove_repeated_halves(sentence: str) -> str:
     if len(words) < 10:
         return s
     for n in range(min(28, len(words) // 2), 5, -1):
-        first = " ".join(words[:n]).lower()
-        second = " ".join(words[n:2*n]).lower()
-        if first == second:
+        if " ".join(words[:n]).lower() == " ".join(words[n:2*n]).lower():
             return clean(" ".join(words[:n] + words[2*n:]))
     return s
 
@@ -161,18 +153,7 @@ def split_sentences(text: str) -> List[str]:
 
 
 def infer_category(item: Dict) -> str:
-    text = text_blob(item)  # intentionally excludes existing category/category_hint
-    if has_any(text, WAR_TERMS):
-        return "🇷🇺 РФ / война и безопасность"
-    if has_any(text, ECON_TERMS):
-        return "🇷🇺 РФ / экономика"
-    if has_any(text, IT_TERMS):
-        return "🌐 Мировые IT"
-    if has_any(text, GEOPOLITICS_TERMS):
-        return "🧭 Геополитика"
-    if has_any(text, POLITICS_TERMS):
-        return "🇷🇺 РФ / законы и политика"
-    return "🧭 Геополитика"
+    return resolve_final_category_from_item(item)
 
 
 def make_post(category: str, title: str, body: List[str], url: str, source: str) -> str:
@@ -207,15 +188,7 @@ def safe_candidate(item: Dict) -> bool:
 def rank_item(item: Dict) -> int:
     text = text_blob(item)
     category = infer_category(item)
-    score = {
-        "🌍 Мир о России": 900,
-        "🇷🇺 РФ / война и безопасность": 850,
-        "🧭 Геополитика": 800,
-        "🇷🇺 РФ / экономика": 720,
-        "🇷🇺 РФ / законы и политика": 650,
-        "🌐 Мировые IT": 520,
-        "🎮 Игры / индустрия": 100,
-    }.get(category, 300)
+    score = stream_priority(category)
     for term in STRONG_TERMS:
         if norm(term) in text:
             score += 15
@@ -236,14 +209,16 @@ def promote(item: Dict) -> None:
         raise RuntimeError("reserve item post text is not Russian enough")
     item["status"] = "approved"
     item["category"] = category
+    item["stream_priority"] = stream_priority(category)
+    item["score"] = rank_item(item)
     item["title_ru"] = title
     item["body"] = body[:2]
     item["post_text"] = post_text
     item["edited_post_text"] = post_text
     item["reviewed_at"] = now_utc()
-    item["reviewed_by"] = "minimum-release-policy-v2"
+    item["reviewed_by"] = "minimum-release-policy-v3-owner-priority"
     item["minimum_release"] = True
-    item.setdefault("editor_notes", []).append("Minimum release v2: выбран один безопасный резервный материал; слабые отрицательные/консульские заметки и рекламные материалы запрещены.")
+    item.setdefault("editor_notes", []).append("Minimum release v3: выбран один безопасный резервный материал по owner priority map.")
 
 
 def main() -> None:
@@ -264,9 +239,27 @@ def main() -> None:
             errors.append(f"{item.get('title_ru') or item.get('title_original')}: {exc}")
     queue["updated_at"] = now_utc()
     queue["updated_at_sakhalin"] = now_sakh()
-    queue["minimum_release"] = {"version": 2, "checked_at": now_utc(), "checked_at_sakhalin": now_sakh(), "candidates": len(candidates), "promoted": promoted, "errors": errors[-5:]}
+    queue["minimum_release"] = {
+        "version": 3,
+        "priority_map": {
+            "🌍 Мир о России": 1000,
+            "📍 Сахалин": 950,
+            "🇷🇺 РФ / война и безопасность": 900,
+            "🧭 Геополитика": 820,
+            "🇷🇺 РФ / происшествия": 780,
+            "🇷🇺 РФ / экономика": 760,
+            "🇷🇺 РФ / законы и политика": 700,
+            "🌐 Мировые IT": 650,
+            "🎮 Игры / индустрия": 600,
+        },
+        "checked_at": now_utc(),
+        "checked_at_sakhalin": now_sakh(),
+        "candidates": len(candidates),
+        "promoted": promoted,
+        "errors": errors[-5:]
+    }
     save_json(QUEUE_FILE, queue)
-    print(f"minimum-release-v2: candidates={len(candidates)}, promoted={promoted}")
+    print(f"minimum-release-v3-owner-priority: candidates={len(candidates)}, promoted={promoted}")
 
 
 if __name__ == "__main__":
