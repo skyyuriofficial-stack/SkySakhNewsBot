@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updated_at": "2026-05-24T12:08:55+00:00",
-  "updated_at_sakhalin": "2026-05-24T23:08:55+11:00",
-  "reviewed_at": "2026-05-24T12:03:13+00:00",
-  "reviewed_at_sakhalin": "2026-05-24T23:03:13+11:00",
+  "updated_at": "2026-05-24T12:09:12+00:00",
+  "updated_at_sakhalin": "2026-05-24T23:09:12+11:00",
+  "reviewed_at": "2026-05-24T12:09:12+00:00",
+  "reviewed_at_sakhalin": "2026-05-24T23:09:12+11:00",
   "items": [
     {
       "id": "64205ed3e4fd20b8",
@@ -5488,12 +5488,12 @@
     },
     {
       "id": "46383a00cea54081",
-      "status": "pending",
+      "status": "hold",
       "created_at": "2026-05-24T12:08:55+00:00",
       "created_at_sakhalin": "2026-05-24T23:08:55+11:00",
       "source": "Interfax",
       "source_type": "ru",
-      "category": "🇷🇺 РФ / война и безопасность",
+      "category": "🌐 Мировые IT",
       "category_hint": "🇷🇺 РФ / война и безопасность",
       "score": 145,
       "title_original": "Один пострадавший при ударе по общежитию в ЛНР находится в крайне тяжелом состоянии",
@@ -5515,17 +5515,20 @@
       "with_image": false,
       "image_decision": "none",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: ниже текущих приоритетов канала или требует ручной оценки."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-24T12:09:12+00:00",
+      "reviewed_by": "auto-editor-v3"
     },
     {
       "id": "e2de32667bf975f8",
-      "status": "pending",
+      "status": "rejected",
       "created_at": "2026-05-24T12:08:55+00:00",
       "created_at_sakhalin": "2026-05-24T23:08:55+11:00",
       "source": "Habr",
@@ -5552,17 +5555,20 @@
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-24T12:09:12+00:00",
+      "reviewed_by": "auto-editor-v3"
     },
     {
       "id": "a9eacc83d0e6307e",
-      "status": "pending",
+      "status": "rejected",
       "created_at": "2026-05-24T12:08:55+00:00",
       "created_at_sakhalin": "2026-05-24T23:08:55+11:00",
       "source": "Habr",
@@ -5589,17 +5595,20 @@
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-24T12:09:12+00:00",
+      "reviewed_by": "auto-editor-v3"
     },
     {
       "id": "cfb200f3024b8492",
-      "status": "pending",
+      "status": "rejected",
       "created_at": "2026-05-24T12:08:55+00:00",
       "created_at_sakhalin": "2026-05-24T23:08:55+11:00",
       "source": "Habr",
@@ -5626,17 +5635,20 @@
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-24T12:09:12+00:00",
+      "reviewed_by": "auto-editor-v3"
     },
     {
       "id": "8b2bdadfca44465d",
-      "status": "pending",
+      "status": "rejected",
       "created_at": "2026-05-24T12:08:55+00:00",
       "created_at_sakhalin": "2026-05-24T23:08:55+11:00",
       "source": "IGN",
@@ -5661,19 +5673,22 @@
       "image_url": null,
       "image_mode": "none",
       "with_image": false,
-      "image_decision": "none",
+      "image_decision": "drop",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-24T12:09:12+00:00",
+      "reviewed_by": "auto-editor-v3"
     },
     {
       "id": "65518546ec7371e4",
-      "status": "pending",
+      "status": "hold",
       "created_at": "2026-05-24T12:08:55+00:00",
       "created_at_sakhalin": "2026-05-24T23:08:55+11:00",
       "source": "The Verge",
@@ -5700,17 +5715,20 @@
       "with_image": false,
       "image_decision": "none",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: ниже текущих приоритетов канала или требует ручной оценки."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-24T12:09:12+00:00",
+      "reviewed_by": "auto-editor-v3"
     },
     {
       "id": "5fa0848e0d525a3e",
-      "status": "pending",
+      "status": "rejected",
       "created_at": "2026-05-24T12:08:55+00:00",
       "created_at_sakhalin": "2026-05-24T23:08:55+11:00",
       "source": "IGN",
@@ -5735,19 +5753,22 @@
       "image_url": "https://assets-prd.ignimgs.com/2026/04/06/macbookair-1775498926608.jpg",
       "image_mode": "source",
       "with_image": true,
-      "image_decision": "use",
+      "image_decision": "drop",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-24T12:09:12+00:00",
+      "reviewed_by": "auto-editor-v3"
     },
     {
       "id": "b407fb7f94f5c967",
-      "status": "pending",
+      "status": "rejected",
       "created_at": "2026-05-24T12:08:55+00:00",
       "created_at_sakhalin": "2026-05-24T23:08:55+11:00",
       "source": "IGN",
@@ -5774,22 +5795,25 @@
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: игровая тема не имеет достаточной индустриальной значимости."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-24T12:09:12+00:00",
+      "reviewed_by": "auto-editor-v3"
     }
   ],
   "auto_review": {
     "version": 3,
-    "reviewed_pending": 10,
-    "approved": 2,
+    "reviewed_pending": 8,
+    "approved": 0,
     "approve_limit": 2,
-    "reviewed_at": "2026-05-24T12:03:13+00:00",
-    "reviewed_at_sakhalin": "2026-05-24T23:03:13+11:00"
+    "reviewed_at": "2026-05-24T12:09:12+00:00",
+    "reviewed_at_sakhalin": "2026-05-24T23:09:12+11:00"
   },
   "final_guard": {
     "changed": 0,
