@@ -3,18 +3,16 @@
 #   1) source image from RSS/article metadata;
 #   2) external thematic image search, up to 3 semantic queries;
 #   3) local generated semantic image.
-# The module is intentionally deterministic and conservative: better generate a clean
-# semantic illustration than publish an irrelevant category photo.
+# Conservative rule: an uncertain image is rejected and replaced with generated semantic art.
 
 import hashlib
 import html
 import io
-import json
 import os
 import re
 from dataclasses import dataclass, asdict
 from typing import Dict, Iterable, List, Optional, Tuple
-from urllib.parse import quote, urljoin, urlparse
+from urllib.parse import urljoin, urlparse
 
 import requests
 from PIL import Image, ImageStat
@@ -24,6 +22,7 @@ from thematic_image import generate_thematic_image
 MIN_WIDTH = int(os.getenv("IMAGE_MIN_WIDTH", "320"))
 MIN_HEIGHT = int(os.getenv("IMAGE_MIN_HEIGHT", "180"))
 RECENT_IMAGE_LIMIT = int(os.getenv("RECENT_IMAGE_LIMIT", "40"))
+RELEVANCE_MIN_SCORE = float(os.getenv("IMAGE_RELEVANCE_MIN_SCORE", "0.58"))
 USER_AGENT = "SkySakhNewsBot/1.0 (+https://github.com/skyyuriofficial-stack/SkySakhNewsBot)"
 
 BAD_URL_TOKENS = [
@@ -45,39 +44,60 @@ FIRE_TERMS = ["пожар", "возгоран", "сгорел", "сгорела"
 ROAD_TERMS = ["дтп", "авар", "столкнов", "микроавтобус", "газель", "трасс", "дорог", "водител", "автомоб"]
 WATER_TERMS = ["водопровод", "водоснаб", "без воды", "вода", "коллектор", "труба", "коммуналь", "жкх", "авария на вод"]
 CRIME_TERMS = ["краж", "мошеннич", "убийств", "напад", "задержан", "полици", "суд", "следств"]
+AVALANCHE_TERMS = ["лавина", "сход лавины", "спасатели", "пропал", "пропали", "пропавшие", "горы", "снег", "чечн", "итум-калин", "поисково-спас"]
+FLOOD_TERMS = ["наводнение", "паводок", "затоп", "подтоп", "река", "дамба"]
 AGRI_TERMS = ["сельхоз", "зерн", "зерно", "пшениц", "аграр", "урож", "посев", "фермер", "россельхозбанк"]
 BANK_TERMS = ["банк", "кредит", "вклад", "ставк", "финанс", "ипотек", "заем", "заём", "рубл"]
 ENERGY_TERMS = ["нефть", "газ", "спг", "уголь", "энергоресурс", "трубопровод", "месторожд", "энергетик"]
 INDUSTRY_TERMS = ["завод", "производств", "промышлен", "предприят", "индустр", "металл"]
 WAR_TERMS = ["бпла", "дрон", "пво", "всу", "обстрел", "удар", "ракета", "заэс", "аэс", "диверс", "теракт"]
-IT_TERMS = ["openai", "google", "microsoft", "apple", "anthropic", "nvidia", "уязвим", "cve", "ии", "нейросет", "кибер"]
+IT_TERMS = ["openai", "google ai", "microsoft ai", "apple intelligence", "anthropic", "nvidia", "уязвим", "cve", "нейросет", "искусственный интеллект", "кибер", "server", "software", "chip", "data center"]
 GAMES_TERMS = ["game", "xbox", "playstation", "nintendo", "steam", "witcher", "gta", "игр", "студия"]
 POLITICS_TERMS = ["госдума", "закон", "сенат", "правительство", "переговор", "визит", "саммит", "мид", "путин", "си цзиньпин"]
-GEOPOLITICS_TERMS = ["иран", "израил", "сша", "нато", "ес", "китай", "тайван", "газа", "оон", "куба"]
+GEOPOLITICS_TERMS = ["иран", "израил", "сша", "нато", "ес", "китай", "тайван", "газа", "оон", "куба", "армения", "пашинян", "ереван"]
 
 ALLOWED_IMAGE_TOKENS = {
-    "incident_fire": ["fire", "firefighter", "emergency", "smoke", "burning", "rescue", "пожар", "мчс"],
-    "incident_road": ["road", "accident", "crash", "car", "vehicle", "ambulance", "police", "traffic", "дтп", "авария"],
-    "incident_water": ["water", "pipe", "pipeline", "plumbing", "repair", "utility", "municipal", "works", "вод", "труб"],
-    "incident_crime": ["police", "law", "court", "crime", "handcuffs", "investigation", "полиция", "суд"],
-    "security": ["drone", "military", "radar", "air", "defense", "emergency", "security", "missile", "fire", "бпла", "пво"],
+    "incident_fire": ["fire", "firefighter", "emergency", "smoke", "burning", "rescue", "пожар", "мчс", "дым"],
+    "incident_road": ["road", "accident", "crash", "car", "vehicle", "ambulance", "police", "traffic", "дтп", "авария", "дорог"],
+    "incident_water": ["water", "pipe", "pipeline", "plumbing", "repair", "utility", "municipal", "works", "вод", "труб", "водопровод"],
+    "incident_crime": ["police", "law", "court", "crime", "handcuffs", "investigation", "полиция", "суд", "следств"],
+    "incident_avalanche": ["avalanche", "snow", "mountain", "mountains", "rescue", "rescuer", "search", "emergency", "winter", "лавина", "горы", "снег", "спасатели"],
+    "incident_flood": ["flood", "water", "river", "rescue", "dam", "emergency", "наводнение", "паводок", "вода", "река"],
+    "security": ["drone", "military", "radar", "air", "defense", "emergency", "security", "missile", "fire", "бпла", "пво", "army"],
     "agriculture": ["grain", "wheat", "field", "farm", "agriculture", "harvest", "crop", "зерно", "сельск"],
     "bank": ["bank", "finance", "credit", "money", "ruble", "loan", "банк", "финанс"],
     "energy": ["oil", "gas", "pipeline", "energy", "power", "industrial", "нефть", "газ"],
     "industry": ["factory", "industrial", "plant", "manufacturing", "завод"],
     "economy": ["economy", "finance", "industry", "market", "business", "эконом"],
-    "it": ["server", "data", "chip", "computer", "cyber", "software", "technology", "network", "код", "сервер"],
-    "games": ["game", "gaming", "controller", "console", "playstation", "xbox", "steam"],
-    "diplomacy": ["summit", "diplomacy", "flags", "united nations", "meeting", "government", "china", "russia"],
+    "it": ["server", "data", "chip", "computer", "cyber", "software", "technology", "network", "код", "сервер", "semiconductor"],
+    "games": ["game", "gaming", "controller", "console", "playstation", "xbox", "steam", "videogame"],
+    "diplomacy": ["summit", "diplomacy", "flags", "united nations", "meeting", "government", "china", "russia", "minister", "president"],
     "sakhalin": ["sakhalin", "yuzhno", "island", "russia", "city"],
 }
 
+GLOBAL_FORBIDDEN_IMAGE_TOKENS = [
+    "logo", "icon", "avatar", "sprite", "placeholder", "banner", "advert", "coupon", "sale", "download", "driver",
+    "poster", "infographic", "diagram", "map only", "screenshot", "title card", "social card"
+]
+
 FORBIDDEN_BY_TOPIC = {
-    "incident_water": ["road", "car", "vehicle", "drone", "military", "game", "oil platform"],
-    "incident_road": ["pipeline", "water pipe", "drone", "server", "grain"],
-    "agriculture": ["oil platform", "gas platform", "offshore", "server", "car crash"],
-    "bank": ["oil platform", "firefighter", "car crash", "drone"],
-    "energy": ["grain field", "game controller", "car crash"],
+    "incident_water": ["road", "car", "vehicle", "drone", "military", "game", "oil platform", "chip", "server", "computer"],
+    "incident_road": ["pipeline", "water pipe", "drone", "server", "grain", "chip", "semiconductor", "mountain", "avalanche"],
+    "incident_fire": ["chip", "server", "game controller", "grain field", "avalanche", "snow mountain"],
+    "incident_crime": ["chip", "server", "grain", "pipeline", "avalanche"],
+    "incident_avalanche": ["chip", "semiconductor", "server", "circuit", "processor", "computer", "road accident", "car crash", "pipeline", "bank", "game", "controller"],
+    "incident_flood": ["chip", "server", "car crash", "game", "controller", "drone", "military"],
+    "security": ["game controller", "grain field", "bank finance", "semiconductor", "processor"],
+    "agriculture": ["oil platform", "gas platform", "offshore", "server", "car crash", "chip", "semiconductor"],
+    "bank": ["oil platform", "firefighter", "car crash", "drone", "avalanche"],
+    "energy": ["grain field", "game controller", "car crash", "avalanche"],
+    "it": ["avalanche", "firefighter", "car crash", "grain field", "pipeline repair"],
+    "games": ["avalanche", "firefighter", "bank finance", "pipeline repair"],
+}
+
+STRICT_TOPICS = {
+    "incident_fire", "incident_road", "incident_water", "incident_crime", "incident_avalanche", "incident_flood",
+    "agriculture", "bank", "energy", "it", "games", "security"
 }
 
 @dataclass
@@ -121,6 +141,10 @@ def topic_key(article: Dict) -> str:
     text = article_text(article)
     category = article.get("category") or article.get("category_hint") or ""
     if category == CATEGORY_INCIDENT:
+        if has_any(text, AVALANCHE_TERMS):
+            return "incident_avalanche"
+        if has_any(text, FLOOD_TERMS):
+            return "incident_flood"
         if has_any(text, FIRE_TERMS):
             return "incident_fire"
         if has_any(text, WATER_TERMS):
@@ -173,7 +197,6 @@ def load_image_meta(data: bytes) -> Tuple[Optional[int], Optional[int], str, flo
         img = Image.open(io.BytesIO(data))
         width, height = img.size
         mime = Image.MIME.get(img.format, "image/jpeg")
-        # Low variance usually means blank/logo/flat placeholder.
         stat = ImageStat.Stat(img.convert("L").resize((64, 64)))
         variance = float(stat.var[0])
         return width, height, mime, variance
@@ -182,7 +205,6 @@ def load_image_meta(data: bytes) -> Tuple[Optional[int], Optional[int], str, flo
 
 
 def bytes_fingerprint(data: bytes) -> str:
-    # Content hash is enough for exact-repeat prevention. Perceptual hash can be added later.
     return hashlib.sha1(data or b"").hexdigest()
 
 
@@ -215,25 +237,25 @@ def remember_image_in_state(state: Dict, candidate: ImageCandidate) -> None:
     state["recent_generated_prompts"] = prompts[-RECENT_IMAGE_LIMIT:]
 
 
-def relevance_score(article: Dict, candidate: ImageCandidate, topic: Optional[str] = None) -> Tuple[float, str]:
+def relevance_score(article: Dict, candidate: ImageCandidate, topic: Optional[str] = None) -> Tuple[float, str, List[str], List[str]]:
     topic = topic or topic_key(article)
     text = norm(" ".join([candidate.url or "", candidate.query_used or "", candidate.filename or "", candidate.reason or ""]))
     allowed = ALLOWED_IMAGE_TOKENS.get(topic, [])
-    forbidden = FORBIDDEN_BY_TOPIC.get(topic, [])
-    score = 0.0
-    if candidate.source == "source":
-        score += 0.55
-    elif candidate.source == "external_search":
-        score += 0.35
-    elif candidate.source == "generated":
-        score += 0.80
+    forbidden = list(GLOBAL_FORBIDDEN_IMAGE_TOKENS) + FORBIDDEN_BY_TOPIC.get(topic, [])
     hits = [tok for tok in allowed if norm(tok) and norm(tok) in text]
-    score += min(0.45, len(hits) * 0.12)
     bad_hits = [tok for tok in forbidden if norm(tok) and norm(tok) in text]
-    score -= min(0.60, len(bad_hits) * 0.25)
+
+    if candidate.source == "generated":
+        score = 0.86
+    elif candidate.source == "source":
+        score = 0.34
+    else:
+        score = 0.30
+    score += min(0.50, len(hits) * 0.14)
+    score -= min(0.90, len(bad_hits) * 0.30)
     if topic.startswith("incident") and candidate.source == "generated":
         score += 0.10
-    return score, f"topic={topic}; hits={hits[:4]}; bad_hits={bad_hits[:4]}"
+    return score, f"topic={topic}; hits={hits[:5]}; bad_hits={bad_hits[:5]}", hits, bad_hits
 
 
 def validate_candidate(article: Dict, candidate: ImageCandidate, state: Dict, require_relevance: bool = True) -> Tuple[bool, str]:
@@ -255,11 +277,18 @@ def validate_candidate(article: Dict, candidate: ImageCandidate, state: Dict, re
         return False, "recent image URL duplicate"
     if fp in recent_fps:
         return False, "recent image content duplicate"
-    score, reason = relevance_score(article, candidate)
+
+    topic = topic_key(article)
+    score, reason, hits, bad_hits = relevance_score(article, candidate, topic)
     candidate.relevance_score = score
     candidate.reason = (candidate.reason + "; " + reason).strip("; ")
-    if require_relevance and score < 0.42:
-        return False, f"low relevance: {score:.2f}; {reason}"
+    if bad_hits:
+        return False, f"forbidden topic-image tokens: {bad_hits[:5]}; {reason}"
+    if require_relevance:
+        if candidate.source != "generated" and topic in STRICT_TOPICS and not hits:
+            return False, f"no positive topic match for strict topic; score={score:.2f}; {reason}"
+        if score < RELEVANCE_MIN_SCORE:
+            return False, f"low relevance: {score:.2f}; {reason}"
     return True, f"accepted: {width}x{height}; score={score:.2f}; {reason}"
 
 
@@ -328,7 +357,7 @@ def extract_source_image(article: Dict, state: Dict, logger=None) -> Tuple[Optio
     for url in extract_source_candidates(article):
         data = fetch_image(url)
         candidate = ImageCandidate(url=url, source="source", data=data, filename=filename_from_url(url), image_kind="photo", reason="source candidate")
-        ok, reason = validate_candidate(article, candidate, state, require_relevance=False)
+        ok, reason = validate_candidate(article, candidate, state, require_relevance=True)
         attempts.append({"stage": "source", "url": url, "ok": ok, "reason": reason})
         if logger:
             logger(f"image source check: ok={ok} reason={reason} url={url[:120]}")
@@ -342,6 +371,10 @@ def build_image_queries(article: Dict) -> List[str]:
     topic = topic_key(article)
     title = re.sub(r"[^А-Яа-яA-Za-z0-9\s-]+", " ", str(article.get("title_ru") or article.get("title_original") or ""))
     title = re.sub(r"\s+", " ", title).strip()
+    if topic == "incident_avalanche":
+        return ["avalanche mountain rescue snow", "mountain search rescue snow", "winter avalanche rescue operation"]
+    if topic == "incident_flood":
+        return ["flood rescue emergency", "river flood emergency response", "water flood rescue operation"]
     if topic == "incident_road":
         return ["road accident emergency response", "car crash highway ambulance", "traffic accident rescue"]
     if topic == "incident_water":
@@ -363,7 +396,6 @@ def build_image_queries(article: Dict) -> List[str]:
     if topic == "it":
         return ["data center servers cybersecurity", "computer chip technology", "server room network"]
     if topic == "games":
-        # If title contains recognizable game words, use them but keep query generic enough.
         return [f"{title[:60]} official game art".strip(), "video game industry studio", "gaming console controller"]
     if topic == "sakhalin":
         return ["Sakhalin island city", "Yuzhno-Sakhalinsk city", "Sakhalin Russia landscape"]
@@ -373,7 +405,6 @@ def build_image_queries(article: Dict) -> List[str]:
 
 
 def wikimedia_search(query: str, limit: int = 8) -> List[Tuple[str, str]]:
-    # Returns (image_url, metadata_text). Uses Commons API, no secret required.
     api = "https://commons.wikimedia.org/w/api.php"
     params = {
         "action": "query",
@@ -455,22 +486,18 @@ def generated_candidate(article: Dict, state: Dict, logger=None) -> Tuple[Option
 
 def resolve_article_image(article: Dict, state: Dict, logger=None) -> ImageDecision:
     all_attempts: List[Dict] = []
-
     source, attempts = extract_source_image(article, state, logger=logger)
     all_attempts.extend(attempts)
     if source:
         return ImageDecision(source, "source", "source image accepted", all_attempts)
-
     searched, attempts = external_thematic_search(article, state, logger=logger)
     all_attempts.extend(attempts)
     if searched:
         return ImageDecision(searched, "search", "external thematic image accepted", all_attempts)
-
     generated, attempts = generated_candidate(article, state, logger=logger)
     all_attempts.extend(attempts)
     if generated:
         return ImageDecision(generated, "generated", "generated semantic image accepted", all_attempts)
-
     return ImageDecision(None, "none", "no valid image found", all_attempts)
 
 
