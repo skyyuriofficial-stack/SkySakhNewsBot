@@ -6899,22 +6899,22 @@
     "checked_at_sakhalin": "2026-05-25T10:17:02+11:00"
   },
   "cycle_report": {
-    "reported_at": "2026-05-24T23:14:08+00:00",
-    "reported_at_sakhalin": "2026-05-25T10:14:08+11:00",
-    "queue_updated_at": "2026-05-24T23:13:56+00:00",
-    "queue_updated_at_sakhalin": "2026-05-25T10:13:56+11:00",
-    "total_queue_items": 130,
+    "reported_at": "2026-05-24T23:17:13+00:00",
+    "reported_at_sakhalin": "2026-05-25T10:17:13+11:00",
+    "queue_updated_at": "2026-05-24T23:17:02+00:00",
+    "queue_updated_at_sakhalin": "2026-05-25T10:17:02+11:00",
+    "total_queue_items": 140,
     "status_counts": {
-      "hold": 5,
-      "rejected": 100,
-      "published": 25,
+      "hold": 4,
+      "rejected": 110,
+      "published": 26,
       "pending": 0,
       "approved": 0,
       "skipped": 0,
       "unknown": 0
     },
     "hold_by_category": {
-      "🌐 Мировые IT": 3,
+      "🌐 Мировые IT": 2,
       "🌍 Мир о России": 1,
       "🎮 Игры / индустрия": 1
     },
@@ -6922,30 +6922,42 @@
     "published_by_category": {
       "🇷🇺 РФ / война и безопасность": 12,
       "🇷🇺 РФ / происшествия": 5,
+      "🧭 Геополитика": 4,
       "🌐 Мировые IT": 3,
-      "🧭 Геополитика": 3,
       "🇷🇺 РФ / экономика": 2
     },
     "auto_review": {
-      "version": 3,
-      "reviewed_pending": 18,
-      "approved": 1,
+      "version": 5,
+      "priority_map": {
+        "🌍 Мир о России": 1000,
+        "📍 Сахалин": 950,
+        "🇷🇺 РФ / война и безопасность": 900,
+        "🧭 Геополитика": 820,
+        "🇷🇺 РФ / происшествия": 780,
+        "🇷🇺 РФ / экономика": 760,
+        "🇷🇺 РФ / законы и политика": 700,
+        "🌐 Мировые IT": 650,
+        "🎮 Игры / индустрия": 600
+      },
+      "reviewed_pending": 10,
+      "approved": 0,
       "approve_limit": 2,
-      "reviewed_at": "2026-05-24T23:13:38+00:00",
-      "reviewed_at_sakhalin": "2026-05-25T10:13:38+11:00"
+      "min_auto_score": 650,
+      "reviewed_at": "2026-05-24T23:17:02+00:00",
+      "reviewed_at_sakhalin": "2026-05-25T10:17:02+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-24T23:13:38+00:00",
-      "checked_at_sakhalin": "2026-05-25T10:13:38+11:00"
+      "checked_at": "2026-05-24T23:17:02+00:00",
+      "checked_at_sakhalin": "2026-05-25T10:17:02+11:00"
     },
     "final_guard": {
       "changed": 0,
       "polished": 0,
-      "checked_at": "2026-05-24T23:13:38+00:00",
-      "checked_at_sakhalin": "2026-05-25T10:13:38+11:00"
+      "checked_at": "2026-05-24T23:17:02+00:00",
+      "checked_at_sakhalin": "2026-05-25T10:17:02+11:00"
     },
-    "recent_published_20m_count": 1,
+    "recent_published_20m_count": 2,
     "recent_published_20m": [
       {
         "time_sakhalin": "2026-05-25T10:13:44+11:00",
@@ -6956,6 +6968,16 @@
         "image_mode": "pipeline_search",
         "publish_method": "sendPhoto/safe/pipeline_search",
         "telegram_message_id": 100
+      },
+      {
+        "time_sakhalin": "2026-05-25T10:14:16+11:00",
+        "source": "Interfax",
+        "category": "🧭 Геополитика",
+        "title": "Роскомнадзор опроверг блокировку Deepseek",
+        "with_image": true,
+        "image_mode": "pipeline_search",
+        "publish_method": "sendPhoto/safe/pipeline_search",
+        "telegram_message_id": 101
       }
     ],
     "decision": "published"
