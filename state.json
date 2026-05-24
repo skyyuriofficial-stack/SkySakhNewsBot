@@ -77,7 +77,9 @@
     "https://www.interfax.ru/russia/1091540",
     "https://www.interfax.ru/russia/1091544",
     "https://www.interfax.ru/russia/1091532",
-    "https://www.interfax.ru/world/1091546"
+    "https://www.interfax.ru/world/1091546",
+    "https://www.interfax.ru/world/1091545",
+    "https://www.interfax.ru/world/1091542"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -157,9 +159,11 @@
     "94f4cd0f072168a4e56bd584d230bc8515302e1e",
     "6e091adafd49a11d38d98eee0ea68d030fd0243b",
     "576ffbef5d54d7c96e798dd91707262bc8c67964",
-    "70736d269a78438052f5ac6bf787316aeec01817"
+    "70736d269a78438052f5ac6bf787316aeec01817",
+    "4c3482c5c9ce2305865a24acb99c59465e9842bc",
+    "ac7343c91504915f46965e4c75abd132bb075897"
   ],
-  "last_run_sakhalin": "2026-05-25T10:49:59+11:00",
+  "last_run_sakhalin": "2026-05-25T10:57:38+11:00",
   "last_posts": [
     {
       "time_sakhalin": "2026-05-19T17:49:35+11:00",
@@ -1104,6 +1108,36 @@
       "publish_method": "sendPhoto/safe/pipeline_search",
       "telegram_message_id": 102,
       "score": 900
+    },
+    {
+      "time_sakhalin": "2026-05-25T10:57:08+11:00",
+      "source": "Interfax",
+      "category": "🇷🇺 РФ / война и безопасность",
+      "title": "Трамп призвал ряд исламских стран присоединиться к Соглашениям Авраама",
+      "url": "https://www.interfax.ru/world/1091545",
+      "published_at": "2026-05-24T23:03:00+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_generated",
+      "image_url": null,
+      "image_fingerprint": "1a3f276d2cf6888785e9dbf686dfbb5a1a537f24",
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 103,
+      "score": 900
+    },
+    {
+      "time_sakhalin": "2026-05-25T10:57:26+11:00",
+      "source": "Interfax",
+      "category": "🧭 Геополитика",
+      "title": "Fox News сообщил, что рамочное соглашение США с Ираном готово на 95%",
+      "url": "https://www.interfax.ru/world/1091542",
+      "published_at": "2026-05-24T20:55:00+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_search",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Mandela_Washington_Fellowship_Summit_for_Young_African_Leaders_-_53090017213.jpg",
+      "image_fingerprint": "3a1a11f60ab8f55302e08a48fd7a00f8bb7a5799",
+      "publish_method": "sendPhoto/safe/pipeline_search",
+      "telegram_message_id": 104,
+      "score": 900
     }
   ],
   "last_cycle_report": {
@@ -1200,7 +1234,8 @@
     "https://upload.wikimedia.org/wikipedia/commons/f/f1/HP_1820-0250.jpg",
     "https://upload.wikimedia.org/wikipedia/commons/c/cd/Sketch_map_of_the_Brynderwyn_accident_%2812211245726%29.jpg",
     "https://upload.wikimedia.org/wikipedia/commons/e/e6/Integrated_circuit_in_a_removed_package.jpg",
-    "https://upload.wikimedia.org/wikipedia/commons/5/5e/Mandela_Washington_Fellowship_Summit_for_Young_African_Leaders_-_53088955912.jpg"
+    "https://upload.wikimedia.org/wikipedia/commons/5/5e/Mandela_Washington_Fellowship_Summit_for_Young_African_Leaders_-_53088955912.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/f/f5/Mandela_Washington_Fellowship_Summit_for_Young_African_Leaders_-_53090017213.jpg"
   ],
   "recent_image_fingerprints": [
     "fabf6114cb8678432f88d025156234e61dac924b",
@@ -1222,7 +1257,11 @@
     "b91098184a0d7ea765a266ee3905514e4e293b07",
     "29719460c6f501c8db7722f06c4a54bf4bee6280",
     "9c57da8cfcf381db663a89aabd2a0d7f7b8ff33b",
-    "e1a709e5ca548e3c4cb0bb068f87bdcfd948db06"
+    "e1a709e5ca548e3c4cb0bb068f87bdcfd948db06",
+    "1a3f276d2cf6888785e9dbf686dfbb5a1a537f24",
+    "3a1a11f60ab8f55302e08a48fd7a00f8bb7a5799"
   ],
-  "recent_generated_prompts": []
+  "recent_generated_prompts": [
+    "generated:security:Трамп призвал ряд исламских стран присоединиться к Соглашениям Авраама"
+  ]
 }
