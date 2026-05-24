@@ -1,51 +1,62 @@
 {
-  "reported_at": "2026-05-24T21:02:09+00:00",
-  "reported_at_sakhalin": "2026-05-25T08:02:09+11:00",
-  "queue_updated_at": "2026-05-24T21:01:58+00:00",
-  "queue_updated_at_sakhalin": "2026-05-25T08:01:58+11:00",
+  "reported_at": "2026-05-24T23:14:08+00:00",
+  "reported_at_sakhalin": "2026-05-25T10:14:08+11:00",
+  "queue_updated_at": "2026-05-24T23:13:56+00:00",
+  "queue_updated_at_sakhalin": "2026-05-25T10:13:56+11:00",
   "total_queue_items": 130,
   "status_counts": {
-    "hold": 7,
+    "hold": 5,
     "rejected": 100,
-    "published": 23,
+    "published": 25,
     "pending": 0,
     "approved": 0,
     "skipped": 0,
     "unknown": 0
   },
   "hold_by_category": {
-    "🌐 Мировые IT": 5,
+    "🌐 Мировые IT": 3,
     "🌍 Мир о России": 1,
     "🎮 Игры / индустрия": 1
   },
   "approved_by_category": {},
   "published_by_category": {
     "🇷🇺 РФ / война и безопасность": 12,
-    "🇷🇺 РФ / происшествия": 4,
+    "🇷🇺 РФ / происшествия": 5,
     "🌐 Мировые IT": 3,
-    "🧭 Геополитика": 2,
+    "🧭 Геополитика": 3,
     "🇷🇺 РФ / экономика": 2
   },
   "auto_review": {
     "version": 3,
-    "reviewed_pending": 10,
-    "approved": 0,
+    "reviewed_pending": 18,
+    "approved": 1,
     "approve_limit": 2,
-    "reviewed_at": "2026-05-24T21:01:58+00:00",
-    "reviewed_at_sakhalin": "2026-05-25T08:01:58+11:00"
+    "reviewed_at": "2026-05-24T23:13:38+00:00",
+    "reviewed_at_sakhalin": "2026-05-25T10:13:38+11:00"
   },
   "priority_guard": {
     "changed": 0,
-    "checked_at": "2026-05-24T21:01:58+00:00",
-    "checked_at_sakhalin": "2026-05-25T08:01:58+11:00"
+    "checked_at": "2026-05-24T23:13:38+00:00",
+    "checked_at_sakhalin": "2026-05-25T10:13:38+11:00"
   },
   "final_guard": {
     "changed": 0,
     "polished": 0,
-    "checked_at": "2026-05-24T21:01:58+00:00",
-    "checked_at_sakhalin": "2026-05-25T08:01:58+11:00"
+    "checked_at": "2026-05-24T23:13:38+00:00",
+    "checked_at_sakhalin": "2026-05-25T10:13:38+11:00"
   },
-  "recent_published_20m_count": 0,
-  "recent_published_20m": [],
-  "decision": "no_approved_to_publish"
+  "recent_published_20m_count": 1,
+  "recent_published_20m": [
+    {
+      "time_sakhalin": "2026-05-25T10:13:44+11:00",
+      "source": "Interfax",
+      "category": "🇷🇺 РФ / происшествия",
+      "title": "Три человека погибли и восемь пострадали в результате ДТП под Тюменью",
+      "with_image": true,
+      "image_mode": "pipeline_search",
+      "publish_method": "sendPhoto/safe/pipeline_search",
+      "telegram_message_id": 100
+    }
+  ],
+  "decision": "published"
 }
