@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updated_at": "2026-05-24T00:08:19+00:00",
-  "updated_at_sakhalin": "2026-05-24T11:08:19+11:00",
-  "reviewed_at": "2026-05-24T00:01:59+00:00",
-  "reviewed_at_sakhalin": "2026-05-24T11:01:59+11:00",
+  "updated_at": "2026-05-24T00:08:55+00:00",
+  "updated_at_sakhalin": "2026-05-24T11:08:55+11:00",
+  "reviewed_at": "2026-05-24T00:08:55+00:00",
+  "reviewed_at_sakhalin": "2026-05-24T11:08:55+11:00",
   "items": [
     {
       "id": "c0d9f07f19f8ab68",
@@ -5235,7 +5235,7 @@
     },
     {
       "id": "17456fd88822d4b1",
-      "status": "pending",
+      "status": "rejected",
       "created_at": "2026-05-24T00:08:19+00:00",
       "created_at_sakhalin": "2026-05-24T11:08:19+11:00",
       "source": "GameSpot",
@@ -5260,19 +5260,22 @@
       "image_url": null,
       "image_mode": "none",
       "with_image": false,
-      "image_decision": "none",
+      "image_decision": "drop",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-24T00:08:55+00:00",
+      "reviewed_by": "auto-editor-v3"
     },
     {
       "id": "18aa5cb50a03d0b4",
-      "status": "pending",
+      "status": "rejected",
       "created_at": "2026-05-24T00:08:19+00:00",
       "created_at_sakhalin": "2026-05-24T11:08:19+11:00",
       "source": "GameSpot",
@@ -5297,19 +5300,22 @@
       "image_url": null,
       "image_mode": "none",
       "with_image": false,
-      "image_decision": "none",
+      "image_decision": "drop",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-24T00:08:55+00:00",
+      "reviewed_by": "auto-editor-v3"
     },
     {
       "id": "0bb6500449d622c8",
-      "status": "pending",
+      "status": "hold",
       "created_at": "2026-05-24T00:08:19+00:00",
       "created_at_sakhalin": "2026-05-24T11:08:19+11:00",
       "source": "The Verge",
@@ -5336,17 +5342,20 @@
       "with_image": false,
       "image_decision": "none",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: ниже текущих приоритетов канала или требует ручной оценки."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-24T00:08:55+00:00",
+      "reviewed_by": "auto-editor-v3"
     },
     {
       "id": "77921dcc2c0603e9",
-      "status": "pending",
+      "status": "hold",
       "created_at": "2026-05-24T00:08:19+00:00",
       "created_at_sakhalin": "2026-05-24T11:08:19+11:00",
       "source": "Ars Technica",
@@ -5373,22 +5382,25 @@
       "with_image": false,
       "image_decision": "none",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: ниже текущих приоритетов канала или требует ручной оценки."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-24T00:08:55+00:00",
+      "reviewed_by": "auto-editor-v3"
     },
     {
       "id": "9158e9cdafdd1cde",
-      "status": "pending",
+      "status": "hold",
       "created_at": "2026-05-24T00:08:19+00:00",
       "created_at_sakhalin": "2026-05-24T11:08:19+11:00",
       "source": "BBC Technology",
       "source_type": "it",
-      "category": "🎮 Игры / индустрия",
+      "category": "🌐 Мировые IT",
       "category_hint": "🎮 Игры / индустрия",
       "score": 127,
       "title_original": "Destiny 2 maker Bungie announces final update for popular live-service game",
@@ -5410,22 +5422,25 @@
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: ниже текущих приоритетов канала или требует ручной оценки."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-24T00:08:55+00:00",
+      "reviewed_by": "auto-editor-v3"
     },
     {
       "id": "2f36b1887ecaca8f",
-      "status": "pending",
+      "status": "rejected",
       "created_at": "2026-05-24T00:08:19+00:00",
       "created_at_sakhalin": "2026-05-24T11:08:19+11:00",
       "source": "Habr",
       "source_type": "it",
-      "category": "🎮 Игры / индустрия",
+      "category": "🌐 Мировые IT",
       "category_hint": "🎮 Игры / индустрия",
       "score": 127,
       "title_original": "Как перестать путаться в IP-адресах серверов",
@@ -5447,22 +5462,25 @@
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-24T00:08:55+00:00",
+      "reviewed_by": "auto-editor-v3"
     },
     {
       "id": "65fda0eab812283f",
-      "status": "pending",
+      "status": "rejected",
       "created_at": "2026-05-24T00:08:19+00:00",
       "created_at_sakhalin": "2026-05-24T11:08:19+11:00",
       "source": "Habr",
       "source_type": "it",
-      "category": "🎮 Игры / индустрия",
+      "category": "🌐 Мировые IT",
       "category_hint": "🎮 Игры / индустрия",
       "score": 127,
       "title_original": "Vortex: фреймворк для тех, кого задолбала итальянская кухня в репозитории",
@@ -5484,17 +5502,20 @@
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-24T00:08:55+00:00",
+      "reviewed_by": "auto-editor-v3"
     },
     {
       "id": "bbfb223ad1e216a2",
-      "status": "pending",
+      "status": "rejected",
       "created_at": "2026-05-24T00:08:19+00:00",
       "created_at_sakhalin": "2026-05-24T11:08:19+11:00",
       "source": "GameSpot",
@@ -5519,24 +5540,27 @@
       "image_url": "https://wdltd.imgix.net/assets/images/shout/1300x67_Shout-on-GRUV_V4-2x.png?q=100",
       "image_mode": "source",
       "with_image": true,
-      "image_decision": "use",
+      "image_decision": "drop",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-24T00:08:55+00:00",
+      "reviewed_by": "auto-editor-v3"
     }
   ],
   "auto_review": {
     "version": 3,
-    "reviewed_pending": 10,
-    "approved": 1,
+    "reviewed_pending": 8,
+    "approved": 0,
     "approve_limit": 2,
-    "reviewed_at": "2026-05-24T00:01:59+00:00",
-    "reviewed_at_sakhalin": "2026-05-24T11:01:59+11:00"
+    "reviewed_at": "2026-05-24T00:08:55+00:00",
+    "reviewed_at_sakhalin": "2026-05-24T11:08:55+11:00"
   },
   "final_guard": {
     "changed": 0,
