@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-05-24T06:06:20+00:00",
-  "updated_at_sakhalin": "2026-05-24T17:06:20+11:00",
+  "updated_at": "2026-05-24T06:07:05+00:00",
+  "updated_at_sakhalin": "2026-05-24T17:07:05+11:00",
   "reviewed_at": "2026-05-24T06:06:20+00:00",
   "reviewed_at_sakhalin": "2026-05-24T17:06:20+11:00",
   "items": [
@@ -276,46 +276,6 @@
       "editor_notes": [
         "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
         "В резерве: нет безопасного русскоязычного текста для публикации."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T06:06:20+00:00",
-      "reviewed_by": "auto-editor-v3"
-    },
-    {
-      "id": "a8396385d944f933",
-      "status": "hold",
-      "created_at": "2026-05-24T06:06:20+00:00",
-      "created_at_sakhalin": "2026-05-24T17:06:20+11:00",
-      "source": "Interfax",
-      "source_type": "ru",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🇷🇺 РФ / война и безопасность",
-      "score": 145,
-      "title_original": "Мирный житель погиб в Белгородской области в результате атаки дрона",
-      "title_ru": "Мирный житель погиб в Белгородской области в результате атаки дрона",
-      "body": [
-        "Мужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона Мужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона.\"Мирный житель погиб в результате атаки ВСУ.",
-        "INTERFAX.RU - Мужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона.",
-        "\"Мирный житель погиб в результате атаки ВСУ."
-      ],
-      "footer": null,
-      "source_text": "Мужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона Мужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона.\"Мирный житель погиб в результате атаки ВСУ. Москва. 24 мая. INTERFAX.RU - Мужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона. \"Мирный житель погиб в результате атаки ВСУ. В городе Грайворон при детонации FPV-дрона от полученных травм погиб мужчина\", - говорится в сообщении оперштаба, опубликованном в мессенджере Max.",
-      "post_text": "🇷🇺 РФ / война и безопасность\n\n<b>Мирный житель погиб в Белгородской области в результате атаки дрона</b>\n\nМужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона Мужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона.\"Мирный житель погиб в результате атаки ВСУ.\n\nINTERFAX.RU - Мужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона.\n\n\"Мирный житель погиб в результате атаки ВСУ.\n\nРФ | ВОЙНА И БЕЗОПАСНОСТЬ · <a href=\"https://www.interfax.ru/russia/1091472\">Interfax</a>",
-      "edited_post_text": null,
-      "url": "https://www.interfax.ru/russia/1091472",
-      "published_at": "2026-05-24T05:43:00+00:00",
-      "title_hash": "04eae1cebd1cc312951c0f93f21e098211ed0f06",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "В резерве: ниже текущих приоритетов канала или требует ручной оценки."
       ],
       "review": {
         "required": true,
@@ -5952,6 +5912,154 @@
       "published_at_sakhalin": "2026-05-24T11:02:04+11:00",
       "publish_method": "sendPhoto/safe/pipeline_search",
       "telegram_message_id": 93
+    },
+    {
+      "id": "a8396385d944f933",
+      "status": "published",
+      "created_at": "2026-05-24T06:06:20+00:00",
+      "created_at_sakhalin": "2026-05-24T17:06:20+11:00",
+      "source": "Interfax",
+      "source_type": "ru",
+      "category": "🇷🇺 РФ / война и безопасность",
+      "category_hint": "🇷🇺 РФ / война и безопасность",
+      "score": 145,
+      "title_original": "Мирный житель погиб в Белгородской области в результате атаки дрона",
+      "title_ru": "Мирный житель погиб в Белгородской области в результате атаки дрона",
+      "body": [
+        "Мужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона Мужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона.\"Мирный житель погиб в результате атаки ВСУ.",
+        "Мужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона."
+      ],
+      "footer": null,
+      "source_text": "Мужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона Мужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона.\"Мирный житель погиб в результате атаки ВСУ. Москва. 24 мая. INTERFAX.RU - Мужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона. \"Мирный житель погиб в результате атаки ВСУ. В городе Грайворон при детонации FPV-дрона от полученных травм погиб мужчина\", - говорится в сообщении оперштаба, опубликованном в мессенджере Max.",
+      "post_text": "🇷🇺 РФ / война и безопасность\n\n<b>Мирный житель погиб в Белгородской области в результате атаки дрона</b>\n\nМужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона Мужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона.\"Мирный житель погиб в результате атаки ВСУ.\n\nМужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона.\n\nРФ | ВОЙНА И БЕЗОПАСНОСТЬ · <a href=\"https://www.interfax.ru/russia/1091472\">Interfax</a>",
+      "edited_post_text": "🇷🇺 РФ / война и безопасность\n\n<b>Мирный житель погиб в Белгородской области в результате атаки дрона</b>\n\nМужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона Мужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона.\"Мирный житель погиб в результате атаки ВСУ.\n\nМужчина погиб при детонации дрона ВСУ в городе Грайворон Белгородской области, сообщили утром в воскресенье в оперштабе региона.\n\nРФ | ВОЙНА И БЕЗОПАСНОСТЬ · <a href=\"https://www.interfax.ru/russia/1091472\">Interfax</a>",
+      "url": "https://www.interfax.ru/russia/1091472",
+      "published_at": "2026-05-24T05:43:00+00:00",
+      "title_hash": "04eae1cebd1cc312951c0f93f21e098211ed0f06",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Emergency_response_teams_gather_to_watch_drone_footage_%287136602%29.jpg",
+      "image_mode": "pipeline_search",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: ниже текущих приоритетов канала или требует ручной оценки.",
+        "Minimum release v2: выбран один безопасный резервный материал; слабые отрицательные/консульские заметки и рекламные материалы запрещены.",
+        "Image pipeline: search; source text-card rejected; external thematic image accepted; score=0.59."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-24T06:06:38+00:00",
+      "reviewed_by": "minimum-release-policy-v2",
+      "minimum_release": true,
+      "image_pipeline": {
+        "strategy": "search",
+        "reason": "source text-card rejected; external thematic image accepted",
+        "selected": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Emergency_response_teams_gather_to_watch_drone_footage_%287136602%29.jpg",
+          "source": "external_search",
+          "width": 6000,
+          "height": 4000,
+          "mime_type": "image/jpeg",
+          "query_used": "drone emergency response",
+          "relevance_score": 0.59,
+          "image_kind": "photo",
+          "filename": "Emergency_response_teams_gather_to_watch_drone_footage__287136602_29.jpg",
+          "reason": "File:Emergency response teams gather to watch drone footage (7136602).jpg 2024-12-30 10:55:44 Emergency response teams gather to watch drone footage (7136602) 1.2 PD US Army|Files created by the United States Army with known IDs|Netherlands photographs taken on 2022-03-30|DVIDS files uploaded by OptimusPrimeBot|Milimedia files, Netherlands (review needed)  Members of U.S. Army Garrison Benelux’s emergency response team gathered with Belgian emergency responders to conduct an installation protection exercise at Zutendaal Army Depot, Belgium March 30. The partnership aimed to gauge response time and coordination efforts between the emergency departments while the groups role-played the discovery of a vehicle-borne improvised explosive device (VBIED) at the depot, parked near a 100,000-liter ; topic=security; hits=['drone', 'emergency']; bad_hits=[]"
+        },
+        "attempts": [
+          {
+            "stage": "external_search",
+            "query": "air defense radar drone",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Indonesian_air_force_air_defense_weapon_systems_on_display.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "external_search",
+            "query": "air defense radar drone",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/The_Avenger_and_SGT_York-_an_examination_of_two_air_defense_systems_nondevelopmental_item_acquisition_programs_%28IA_theavengerndsgty1094531561%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "air defense radar drone",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Tiered_defense_and_high_energy_laser_weapon_system.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "external_search",
+            "query": "air defense radar drone",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/US_Department_of_Defense_Dictionary_of_Military_and_Associated_Terms.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "air defense radar drone",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/US_Navy_040229-N-1938O-009_The_second_of_two_RIM-7_NATO_Sea_Sparrow_missiles_is_launched_from_USS_Kitty_Hawk_%28CV_63%29_on_it%27s_way_to_intercept_a_remote-controlled_drone%2C_during_an_exercise_to_test_the_ship%27s_defense.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "external_search",
+            "query": "air defense radar drone",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/U_S_Army_tests_new_anti-drone_tech_in_Project_Flytrap_%289090353%29.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Advanced_Capabilities_for_Emergency_Response_Operations_%28ACERO%29_%28ACD24-0180-005%29.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Advanced_Capabilities_for_Emergency_Response_Operations_%28ACERO%29_%28ACD24-0180-006%29.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Advanced_Capabilities_for_Emergency_Response_Operations_%28ACERO%29_%28ACD24-0180-029%29.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Emergency_response_drone_team_discusses_flight_path_%287136594%29.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Emergency_response_team_member_checks_drone_before_deploying_%287136593%29.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Emergency_response_teams_gather_to_watch_drone_footage_%287136602%29.jpg",
+            "ok": true,
+            "reason": "accepted: 6000x4000; score=0.59; topic=security; hits=['drone', 'emergency']; bad_hits=[]"
+          }
+        ]
+      },
+      "image_fingerprint": "0d931b1467de65c877f525af89c08f5c45dbaed1",
+      "published_at_sakhalin": "2026-05-24T17:06:53+11:00",
+      "publish_method": "sendPhoto/safe/pipeline_search",
+      "telegram_message_id": 95
     }
   ],
   "auto_review": {
@@ -5965,8 +6073,8 @@
   "final_guard": {
     "changed": 0,
     "polished": 0,
-    "checked_at": "2026-05-24T06:06:20+00:00",
-    "checked_at_sakhalin": "2026-05-24T17:06:20+11:00"
+    "checked_at": "2026-05-24T06:06:39+00:00",
+    "checked_at_sakhalin": "2026-05-24T17:06:39+11:00"
   },
   "priority_guard": {
     "changed": 0,
@@ -6025,9 +6133,9 @@
   },
   "minimum_release": {
     "version": 2,
-    "checked_at": "2026-05-23T20:59:05+00:00",
-    "checked_at_sakhalin": "2026-05-24T07:59:05+11:00",
-    "candidates": 2,
+    "checked_at": "2026-05-24T06:06:38+00:00",
+    "checked_at_sakhalin": "2026-05-24T17:06:38+11:00",
+    "candidates": 3,
     "promoted": 1,
     "errors": []
   }
