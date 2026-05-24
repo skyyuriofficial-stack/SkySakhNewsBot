@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-05-24T23:49:39+00:00",
-  "updated_at_sakhalin": "2026-05-25T10:49:39+11:00",
+  "updated_at": "2026-05-24T23:49:59+00:00",
+  "updated_at_sakhalin": "2026-05-25T10:49:59+11:00",
   "reviewed_at": "2026-05-24T23:49:23+00:00",
   "reviewed_at_sakhalin": "2026-05-25T10:49:23+11:00",
   "items": [
@@ -7342,9 +7342,9 @@
   },
   "final_guard": {
     "changed": 0,
-    "polished": 1,
-    "checked_at": "2026-05-24T23:49:23+00:00",
-    "checked_at_sakhalin": "2026-05-25T10:49:23+11:00"
+    "polished": 0,
+    "checked_at": "2026-05-24T23:49:58+00:00",
+    "checked_at_sakhalin": "2026-05-25T10:49:58+11:00"
   },
   "priority_guard": {
     "changed": 0,
@@ -7426,9 +7426,20 @@
     "decision": "published"
   },
   "minimum_release": {
-    "version": 2,
-    "checked_at": "2026-05-24T23:17:17+00:00",
-    "checked_at_sakhalin": "2026-05-25T10:17:17+11:00",
+    "version": 3,
+    "priority_map": {
+      "🌍 Мир о России": 1000,
+      "📍 Сахалин": 950,
+      "🇷🇺 РФ / война и безопасность": 900,
+      "🧭 Геополитика": 820,
+      "🇷🇺 РФ / происшествия": 780,
+      "🇷🇺 РФ / экономика": 760,
+      "🇷🇺 РФ / законы и политика": 700,
+      "🌐 Мировые IT": 650,
+      "🎮 Игры / индустрия": 600
+    },
+    "checked_at": "2026-05-24T23:49:58+00:00",
+    "checked_at_sakhalin": "2026-05-25T10:49:58+11:00",
     "candidates": 0,
     "promoted": 0,
     "errors": []
