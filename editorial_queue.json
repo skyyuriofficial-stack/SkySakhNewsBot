@@ -7352,30 +7352,30 @@
     "checked_at_sakhalin": "2026-05-25T10:49:23+11:00"
   },
   "cycle_report": {
-    "reported_at": "2026-05-24T23:17:13+00:00",
-    "reported_at_sakhalin": "2026-05-25T10:17:13+11:00",
-    "queue_updated_at": "2026-05-24T23:17:02+00:00",
-    "queue_updated_at_sakhalin": "2026-05-25T10:17:02+11:00",
-    "total_queue_items": 140,
+    "reported_at": "2026-05-24T23:49:51+00:00",
+    "reported_at_sakhalin": "2026-05-25T10:49:51+11:00",
+    "queue_updated_at": "2026-05-24T23:49:39+00:00",
+    "queue_updated_at_sakhalin": "2026-05-25T10:49:39+11:00",
+    "total_queue_items": 150,
     "status_counts": {
-      "hold": 4,
-      "rejected": 110,
-      "published": 26,
+      "hold": 8,
+      "rejected": 115,
+      "published": 27,
       "pending": 0,
       "approved": 0,
       "skipped": 0,
       "unknown": 0
     },
     "hold_by_category": {
-      "🌐 Мировые IT": 2,
+      "🌐 Мировые IT": 6,
       "🌍 Мир о России": 1,
       "🎮 Игры / индустрия": 1
     },
     "approved_by_category": {},
     "published_by_category": {
       "🇷🇺 РФ / война и безопасность": 12,
+      "🧭 Геополитика": 5,
       "🇷🇺 РФ / происшествия": 5,
-      "🧭 Геополитика": 4,
       "🌐 Мировые IT": 3,
       "🇷🇺 РФ / экономика": 2
     },
@@ -7393,44 +7393,34 @@
         "🎮 Игры / индустрия": 600
       },
       "reviewed_pending": 10,
-      "approved": 0,
+      "approved": 1,
       "approve_limit": 2,
       "min_auto_score": 650,
-      "reviewed_at": "2026-05-24T23:17:02+00:00",
-      "reviewed_at_sakhalin": "2026-05-25T10:17:02+11:00"
+      "reviewed_at": "2026-05-24T23:49:23+00:00",
+      "reviewed_at_sakhalin": "2026-05-25T10:49:23+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-24T23:17:02+00:00",
-      "checked_at_sakhalin": "2026-05-25T10:17:02+11:00"
+      "checked_at": "2026-05-24T23:49:23+00:00",
+      "checked_at_sakhalin": "2026-05-25T10:49:23+11:00"
     },
     "final_guard": {
       "changed": 0,
-      "polished": 0,
-      "checked_at": "2026-05-24T23:17:02+00:00",
-      "checked_at_sakhalin": "2026-05-25T10:17:02+11:00"
+      "polished": 1,
+      "checked_at": "2026-05-24T23:49:23+00:00",
+      "checked_at_sakhalin": "2026-05-25T10:49:23+11:00"
     },
-    "recent_published_20m_count": 2,
+    "recent_published_20m_count": 1,
     "recent_published_20m": [
       {
-        "time_sakhalin": "2026-05-25T10:13:44+11:00",
-        "source": "Interfax",
-        "category": "🇷🇺 РФ / происшествия",
-        "title": "Три человека погибли и восемь пострадали в результате ДТП под Тюменью",
-        "with_image": true,
-        "image_mode": "pipeline_search",
-        "publish_method": "sendPhoto/safe/pipeline_search",
-        "telegram_message_id": 100
-      },
-      {
-        "time_sakhalin": "2026-05-25T10:14:16+11:00",
+        "time_sakhalin": "2026-05-25T10:49:27+11:00",
         "source": "Interfax",
         "category": "🧭 Геополитика",
-        "title": "Роскомнадзор опроверг блокировку Deepseek",
+        "title": "США и Иран достигли принципиального согласия по Ормузскому проливу",
         "with_image": true,
         "image_mode": "pipeline_search",
         "publish_method": "sendPhoto/safe/pipeline_search",
-        "telegram_message_id": 101
+        "telegram_message_id": 102
       }
     ],
     "decision": "published"
