@@ -1,3 +1,4 @@
+import re
 import time
 from datetime import datetime
 
@@ -21,6 +22,15 @@ def log(message: str) -> None:
         print(message)
 
 
+def norm(value: str) -> str:
+    return re.sub(r"\s+", " ", str(value or "").lower().replace("ё", "е")).strip()
+
+
+def has_any(text: str, terms) -> bool:
+    text = norm(text)
+    return any(norm(t) in text for t in terms)
+
+
 def article_for_image(draft: dict) -> dict:
     item = q.item_for_publish(draft, image_file=None)
     item.update({
@@ -40,12 +50,30 @@ def article_for_image(draft: dict) -> dict:
     return item
 
 
-def is_forbidden_source_text_card(article: dict, candidate) -> bool:
-    """Reject source images that are known social/title cards, not editorial photos.
+def candidate_words(candidate) -> str:
+    return norm(" ".join([
+        str(getattr(candidate, "url", "") or ""),
+        str(getattr(candidate, "filename", "") or ""),
+        str(getattr(candidate, "query_used", "") or ""),
+        str(getattr(candidate, "reason", "") or ""),
+        str(getattr(candidate, "image_kind", "") or ""),
+    ]))
 
-    Interfax often exposes OpenGraph cards containing its logo, section, date and the full headline.
-    Telegram then shows a duplicated headline inside the image. User policy: no text/headline images.
-    """
+
+def article_words(article: dict) -> str:
+    return norm(" ".join([
+        str(article.get("category") or ""),
+        str(article.get("category_hint") or ""),
+        str(article.get("title_ru") or ""),
+        str(article.get("title_original") or ""),
+        str(article.get("source_text") or ""),
+        " ".join(str(x) for x in (article.get("body") or [])),
+        str(article.get("post_text") or ""),
+        str(article.get("edited_post_text") or ""),
+    ]))
+
+
+def is_forbidden_source_text_card(article: dict, candidate) -> bool:
     if not candidate or candidate.source != "source":
         return False
     haystack = " ".join([
@@ -57,9 +85,64 @@ def is_forbidden_source_text_card(article: dict, candidate) -> bool:
     ]).lower()
     if "interfax" in haystack or "интерфакс" in haystack:
         return True
-    # Generic social-preview patterns. These are usually title cards with text, not photos.
     bad_markers = ["ogimage", "og_image", "og-image", "social-card", "share-card", "preview-card", "twitter-card"]
     return any(marker in haystack for marker in bad_markers)
+
+
+def story_image_mismatch(article: dict, candidate) -> str | None:
+    if not candidate or getattr(candidate, "source", "") == "generated":
+        return None
+    a = article_words(article)
+    c = candidate_words(candidate)
+
+    banned_visual = [
+        "postage", "stamp", "stamps", "postal", "philately", "souvenir sheet", "commemorative",
+        "postcard", "марка", "почтов", "poster", "flyer", "infographic", "title card", "text card",
+        "social card", "og-image", "ogimage", "logo", "icon", "avatar", "placeholder", "banner"
+    ]
+    if has_any(c, banned_visual):
+        return "banned visual type, not a normal news photo"
+
+    rules = [
+        {
+            "name": "us_iran_diplomacy",
+            "article": ["трамп", "trump", "иран", "iran", "тегеран", "tehran", "авраам", "abraham"],
+            "must": ["trump", "iran", "tehran", "usa", "united states", "washington", "israel", "abraham", "accord", "agreement", "talks", "diplomacy", "middle east", "saudi", "qatar", "uae", "bahrain", "arab", "islamic"],
+            "deny": ["uzbekistan", "o'zbekiston", "ukraine", "irena", "renewable", "spacecraft", "chip", "server"],
+        },
+        {
+            "name": "spaceflight",
+            "article": ["шэньчжоу", "shenzhou", "тяньгун", "tiangong", "тайконавт", "taikonaut", "астронавт", "orbit", "орбит", "spacecraft", "space station", "cmsa"],
+            "must": ["space", "spacecraft", "station", "orbit", "rocket", "astronaut", "taikonaut", "shenzhou", "tiangong", "cmsa", "космос", "орбит", "станц", "тайконавт", "шэньчжоу", "тяньгун"],
+            "deny": ["summit", "conference", "chip", "server", "game", "bank"],
+        },
+        {
+            "name": "snow_rescue",
+            "article": ["лавина", "сход лавины", "спасатели", "пропали", "пропавшие", "горы", "снег", "поисково-спас"],
+            "must": ["avalanche", "snow", "mountain", "rescue", "search", "winter", "лавина", "горы", "снег", "спасатели"],
+            "deny": ["chip", "server", "processor", "circuit", "pipeline", "game"],
+        },
+        {
+            "name": "water_repair",
+            "article": ["водопровод", "водоснаб", "без воды", "коллектор", "труба", "коммуналь", "жкх"],
+            "must": ["water", "pipe", "pipeline", "plumbing", "repair", "utility", "municipal", "вод", "труб", "водопровод"],
+            "deny": ["road", "car", "vehicle", "chip", "server", "game"],
+        },
+    ]
+    for rule in rules:
+        if has_any(a, rule["article"]):
+            if has_any(c, rule["deny"]):
+                return f"image conflicts with story topic: {rule['name']}"
+            if not has_any(c, rule["must"]):
+                return f"no positive story-level image match: {rule['name']}"
+    return None
+
+
+def resolve_generated_only(article: dict, state: dict, prefix: str):
+    generated, attempts = generated_candidate(article, state, logger=log)
+    if generated:
+        return ImageDecision(generated, "generated", prefix + "; generated semantic image accepted", attempts)
+    return ImageDecision(None, "none", prefix + "; generated replacement failed", attempts)
 
 
 def resolve_without_source(article: dict, state: dict):
@@ -85,6 +168,13 @@ def resolve_image_file(draft: dict, state: dict):
     if decision.selected and is_forbidden_source_text_card(article, decision.selected):
         log("image source rejected as text/title card: " + str(decision.selected.url)[:160])
         replacement = resolve_without_source(article, state)
+        replacement.attempts = decision.attempts + replacement.attempts
+        decision = replacement
+
+    mismatch = story_image_mismatch(article, decision.selected)
+    if mismatch:
+        log("image rejected by final story guard: " + mismatch)
+        replacement = resolve_generated_only(article, state, "final story guard rejected image: " + mismatch)
         replacement.attempts = decision.attempts + replacement.attempts
         decision = replacement
 
