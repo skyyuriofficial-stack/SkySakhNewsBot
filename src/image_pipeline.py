@@ -1,9 +1,9 @@
 # SkySakhNews image pipeline.
 # Strict order:
 #   1) source image from RSS/article metadata;
-#   2) external thematic image search, up to 3 semantic queries;
+#   2) external thematic image search, up to 3 story-level semantic queries;
 #   3) local generated semantic image.
-# Conservative rule: an uncertain image is rejected and replaced with generated semantic art.
+# Conservative rule: an uncertain or generic external image is rejected and replaced with generated semantic art.
 
 import hashlib
 import html
@@ -22,7 +22,7 @@ from thematic_image import generate_thematic_image
 MIN_WIDTH = int(os.getenv("IMAGE_MIN_WIDTH", "320"))
 MIN_HEIGHT = int(os.getenv("IMAGE_MIN_HEIGHT", "180"))
 RECENT_IMAGE_LIMIT = int(os.getenv("RECENT_IMAGE_LIMIT", "40"))
-RELEVANCE_MIN_SCORE = float(os.getenv("IMAGE_RELEVANCE_MIN_SCORE", "0.58"))
+RELEVANCE_MIN_SCORE = float(os.getenv("IMAGE_RELEVANCE_MIN_SCORE", "0.74"))
 USER_AGENT = "SkySakhNewsBot/1.0 (+https://github.com/skyyuriofficial-stack/SkySakhNewsBot)"
 
 BAD_URL_TOKENS = [
@@ -52,9 +52,11 @@ ENERGY_TERMS = ["нефть", "газ", "спг", "уголь", "энергор�
 INDUSTRY_TERMS = ["завод", "производств", "промышлен", "предприят", "индустр", "металл"]
 WAR_TERMS = ["бпла", "дрон", "пво", "всу", "обстрел", "удар", "ракета", "заэс", "аэс", "диверс", "теракт"]
 IT_TERMS = ["openai", "google ai", "microsoft ai", "apple intelligence", "anthropic", "nvidia", "уязвим", "cve", "нейросет", "искусственный интеллект", "кибер", "server", "software", "chip", "data center"]
+SPACE_TERMS = ["космос", "космич", "космонав", "тайконавт", "астронавт", "орбит", "станц", "шэньчжоу", "шэньчжоу-23", "тяньгун", "cmsa", "пилотируем", "space", "spacecraft", "station", "orbit", "taikonaut", "astronaut", "shenzhou", "tiangong"]
 GAMES_TERMS = ["game", "xbox", "playstation", "nintendo", "steam", "witcher", "gta", "игр", "студия"]
 POLITICS_TERMS = ["госдума", "закон", "сенат", "правительство", "переговор", "визит", "саммит", "мид", "путин", "си цзиньпин"]
-GEOPOLITICS_TERMS = ["иран", "израил", "сша", "нато", "ес", "китай", "тайван", "газа", "оон", "куба", "армения", "пашинян", "ереван"]
+MIDDLE_EAST_TERMS = ["трамп", "иран", "тегеран", "сша", "вашингтон", "израил", "саудов", "оаэ", "катар", "бахрейн", "араб", "исламск", "авраам", "axios", "fox news", "middle east", "iran", "tehran", "trump", "abraham", "israel"]
+GEOPOLITICS_TERMS = ["иран", "израил", "сша", "нато", "ес", "китай", "тайван", "газа", "оон", "куба", "армения", "пашинян", "ереван", "трамп", "авраам"]
 
 ALLOWED_IMAGE_TOKENS = {
     "incident_fire": ["fire", "firefighter", "emergency", "smoke", "burning", "rescue", "пожар", "мчс", "дым"],
@@ -70,14 +72,18 @@ ALLOWED_IMAGE_TOKENS = {
     "industry": ["factory", "industrial", "plant", "manufacturing", "завод"],
     "economy": ["economy", "finance", "industry", "market", "business", "эконом"],
     "it": ["server", "data", "chip", "computer", "cyber", "software", "technology", "network", "код", "сервер", "semiconductor"],
+    "space": ["space", "spacecraft", "space station", "station", "orbit", "orbital", "astronaut", "taikonaut", "rocket", "shenzhou", "tiangong", "космос", "орбит", "тайконавт", "тяньгун", "шэньчжоу"],
     "games": ["game", "gaming", "controller", "console", "playstation", "xbox", "steam", "videogame"],
-    "diplomacy": ["summit", "diplomacy", "flags", "united nations", "meeting", "government", "china", "russia", "minister", "president"],
+    "diplomacy_middle_east": ["trump", "iran", "tehran", "usa", "united states", "washington", "israel", "abraham", "diplomacy", "talks", "agreement", "middle east", "iranian", "saudi", "qatar", "bahrain"],
+    "diplomacy": ["summit", "diplomacy", "flags", "united nations", "meeting", "government", "minister", "president", "talks", "agreement"],
     "sakhalin": ["sakhalin", "yuzhno", "island", "russia", "city"],
 }
 
 GLOBAL_FORBIDDEN_IMAGE_TOKENS = [
     "logo", "icon", "avatar", "sprite", "placeholder", "banner", "advert", "coupon", "sale", "download", "driver",
-    "poster", "infographic", "diagram", "map only", "screenshot", "title card", "social card"
+    "poster", "infographic", "diagram", "map only", "screenshot", "title card", "social card", "text card",
+    "stamp", "postage", "postal", "postmark", "commemorative", "souvenir sheet", "philatelic", "philately",
+    "марка", "почтов", "почта", "плакат", "открытка", "постер", "инфографика"
 ]
 
 FORBIDDEN_BY_TOPIC = {
@@ -87,23 +93,32 @@ FORBIDDEN_BY_TOPIC = {
     "incident_crime": ["chip", "server", "grain", "pipeline", "avalanche"],
     "incident_avalanche": ["chip", "semiconductor", "server", "circuit", "processor", "computer", "road accident", "car crash", "pipeline", "bank", "game", "controller"],
     "incident_flood": ["chip", "server", "car crash", "game", "controller", "drone", "military"],
-    "security": ["game controller", "grain field", "bank finance", "semiconductor", "processor"],
+    "security": ["game controller", "grain field", "bank finance", "semiconductor", "processor", "stamp", "postage"],
     "agriculture": ["oil platform", "gas platform", "offshore", "server", "car crash", "chip", "semiconductor"],
     "bank": ["oil platform", "firefighter", "car crash", "drone", "avalanche"],
     "energy": ["grain field", "game controller", "car crash", "avalanche"],
-    "it": ["avalanche", "firefighter", "car crash", "grain field", "pipeline repair"],
+    "it": ["avalanche", "firefighter", "car crash", "grain field", "pipeline repair", "diplomacy summit"],
+    "space": ["stamp", "postage", "postal", "summit", "diplomacy", "armenia", "uzbekistan", "conference", "government leaders", "car crash"],
     "games": ["avalanche", "firefighter", "bank finance", "pipeline repair"],
+    "diplomacy_middle_east": ["uzbekistan", "armenia", "ukraine", "irena", "renewable energy", "stamp", "postage", "postal", "china summit", "central asia", "shanghai cooperation"],
+    "diplomacy": ["stamp", "postage", "postal", "spacecraft", "chip", "server", "car crash", "avalanche"],
 }
 
 STRICT_TOPICS = {
     "incident_fire", "incident_road", "incident_water", "incident_crime", "incident_avalanche", "incident_flood",
-    "agriculture", "bank", "energy", "it", "games", "security"
+    "agriculture", "bank", "energy", "it", "space", "games", "security", "diplomacy", "diplomacy_middle_east"
+}
+
+# For story-level topics, external/source images must match specific entities, not only generic scene words.
+ENTITY_REQUIRED_TOPICS = {
+    "diplomacy_middle_east": ["trump", "iran", "tehran", "usa", "united states", "washington", "israel", "abraham", "middle east", "saudi", "qatar", "bahrain"],
+    "space": ["space", "spacecraft", "space station", "orbit", "orbital", "astronaut", "taikonaut", "shenzhou", "tiangong", "rocket"],
 }
 
 @dataclass
 class ImageCandidate:
     url: Optional[str]
-    source: str  # source / external_search / generated
+    source: str
     width: Optional[int] = None
     height: Optional[int] = None
     mime_type: Optional[str] = None
@@ -118,7 +133,7 @@ class ImageCandidate:
 @dataclass
 class ImageDecision:
     selected: Optional[ImageCandidate]
-    strategy: str  # source / search / generated / none
+    strategy: str
     reason: str
     attempts: List[Dict]
 
@@ -154,6 +169,8 @@ def topic_key(article: Dict) -> str:
         if has_any(text, CRIME_TERMS):
             return "incident_crime"
         return "incident_fire" if has_any(text, ["погиб", "пострадал", "мчс"]) else "incident_road"
+    if has_any(text, SPACE_TERMS):
+        return "space"
     if category == CATEGORY_SECURITY or has_any(text, WAR_TERMS):
         return "security"
     if category == CATEGORY_ECONOMY:
@@ -172,6 +189,8 @@ def topic_key(article: Dict) -> str:
         return "games"
     if category == CATEGORY_SAKHALIN:
         return "sakhalin"
+    if has_any(text, MIDDLE_EAST_TERMS):
+        return "diplomacy_middle_east"
     if category in {CATEGORY_POLITICS, CATEGORY_GEOPOLITICS, CATEGORY_WORLD_RUSSIA} or has_any(text, POLITICS_TERMS + GEOPOLITICS_TERMS):
         return "diplomacy"
     return "diplomacy"
@@ -237,25 +256,32 @@ def remember_image_in_state(state: Dict, candidate: ImageCandidate) -> None:
     state["recent_generated_prompts"] = prompts[-RECENT_IMAGE_LIMIT:]
 
 
-def relevance_score(article: Dict, candidate: ImageCandidate, topic: Optional[str] = None) -> Tuple[float, str, List[str], List[str]]:
+def image_text(candidate: ImageCandidate) -> str:
+    return norm(" ".join([candidate.url or "", candidate.query_used or "", candidate.filename or "", candidate.reason or ""]))
+
+
+def relevance_score(article: Dict, candidate: ImageCandidate, topic: Optional[str] = None) -> Tuple[float, str, List[str], List[str], List[str]]:
     topic = topic or topic_key(article)
-    text = norm(" ".join([candidate.url or "", candidate.query_used or "", candidate.filename or "", candidate.reason or ""]))
+    text = image_text(candidate)
     allowed = ALLOWED_IMAGE_TOKENS.get(topic, [])
     forbidden = list(GLOBAL_FORBIDDEN_IMAGE_TOKENS) + FORBIDDEN_BY_TOPIC.get(topic, [])
+    required_entities = ENTITY_REQUIRED_TOPICS.get(topic, [])
     hits = [tok for tok in allowed if norm(tok) and norm(tok) in text]
     bad_hits = [tok for tok in forbidden if norm(tok) and norm(tok) in text]
+    entity_hits = [tok for tok in required_entities if norm(tok) and norm(tok) in text]
 
     if candidate.source == "generated":
-        score = 0.86
+        score = 0.90
     elif candidate.source == "source":
-        score = 0.34
+        score = 0.22
     else:
-        score = 0.30
-    score += min(0.50, len(hits) * 0.14)
-    score -= min(0.90, len(bad_hits) * 0.30)
+        score = 0.18
+    score += min(0.55, len(hits) * 0.13)
+    score += min(0.35, len(entity_hits) * 0.18)
+    score -= min(0.95, len(bad_hits) * 0.35)
     if topic.startswith("incident") and candidate.source == "generated":
         score += 0.10
-    return score, f"topic={topic}; hits={hits[:5]}; bad_hits={bad_hits[:5]}", hits, bad_hits
+    return score, f"topic={topic}; hits={hits[:6]}; entity_hits={entity_hits[:5]}; bad_hits={bad_hits[:6]}", hits, bad_hits, entity_hits
 
 
 def validate_candidate(article: Dict, candidate: ImageCandidate, state: Dict, require_relevance: bool = True) -> Tuple[bool, str]:
@@ -279,14 +305,16 @@ def validate_candidate(article: Dict, candidate: ImageCandidate, state: Dict, re
         return False, "recent image content duplicate"
 
     topic = topic_key(article)
-    score, reason, hits, bad_hits = relevance_score(article, candidate, topic)
+    score, reason, hits, bad_hits, entity_hits = relevance_score(article, candidate, topic)
     candidate.relevance_score = score
     candidate.reason = (candidate.reason + "; " + reason).strip("; ")
     if bad_hits:
-        return False, f"forbidden topic-image tokens: {bad_hits[:5]}; {reason}"
+        return False, f"forbidden topic-image tokens: {bad_hits[:6]}; {reason}"
     if require_relevance:
         if candidate.source != "generated" and topic in STRICT_TOPICS and not hits:
             return False, f"no positive topic match for strict topic; score={score:.2f}; {reason}"
+        if candidate.source != "generated" and topic in ENTITY_REQUIRED_TOPICS and not entity_hits:
+            return False, f"no story-entity match for topic; score={score:.2f}; {reason}"
         if score < RELEVANCE_MIN_SCORE:
             return False, f"low relevance: {score:.2f}; {reason}"
     return True, f"accepted: {width}x{height}; score={score:.2f}; {reason}"
@@ -371,6 +399,10 @@ def build_image_queries(article: Dict) -> List[str]:
     topic = topic_key(article)
     title = re.sub(r"[^А-Яа-яA-Za-z0-9\s-]+", " ", str(article.get("title_ru") or article.get("title_original") or ""))
     title = re.sub(r"\s+", " ", title).strip()
+    if topic == "diplomacy_middle_east":
+        return ["Trump Iran diplomacy talks agreement", "US Iran nuclear talks diplomacy", "Middle East diplomacy Iran United States"]
+    if topic == "space":
+        return ["Shenzhou Tiangong space station", "Chinese spacecraft space station taikonauts", "spacecraft docking orbital station"]
     if topic == "incident_avalanche":
         return ["avalanche mountain rescue snow", "mountain search rescue snow", "winter avalanche rescue operation"]
     if topic == "incident_flood":
