@@ -31,6 +31,10 @@ def has_any(text: str, terms) -> bool:
     return any(norm(t) in text for t in terms)
 
 
+def plain_text(value: str) -> str:
+    return re.sub(r"<[^>]+>", " ", str(value or ""))
+
+
 def article_for_image(draft: dict) -> dict:
     item = q.item_for_publish(draft, image_file=None)
     item.update({
@@ -259,21 +263,29 @@ def publish_safe() -> None:
             state.setdefault("published_urls", []).append(draft.get("url"))
             if draft.get("title_hash"):
                 state.setdefault("published_title_hashes", []).append(draft.get("title_hash"))
-            state.setdefault("last_posts", []).append({
+            post_record = {
                 "time_sakhalin": datetime.now(q.b.TZ).isoformat(timespec="seconds"),
                 "source": draft.get("source"),
                 "category": draft.get("category"),
                 "title": draft.get("title_ru") or draft.get("title_original"),
+                "body": draft.get("body") or [],
+                "caption": caption,
+                "caption_plain": plain_text(caption),
                 "url": draft.get("url"),
                 "published_at": draft.get("published_at"),
                 "with_image": True,
                 "image_mode": draft.get("image_mode"),
                 "image_url": draft.get("image_url"),
                 "image_fingerprint": draft.get("image_fingerprint"),
+                "image_pipeline": draft.get("image_pipeline"),
                 "publish_method": method,
                 "telegram_message_id": message_id,
                 "score": draft.get("score"),
-            })
+                "stream_priority": draft.get("stream_priority"),
+                "rewrite_mode": draft.get("rewrite_mode"),
+                "audit_status": "pending",
+            }
+            state.setdefault("last_posts", []).append(post_record)
             published += 1
             time.sleep(12)
 
