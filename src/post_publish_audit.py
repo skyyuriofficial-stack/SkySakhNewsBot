@@ -1,6 +1,7 @@
 # Post-publication audit for SkySakhNews.
 # Reads full published post payloads from state.json after publishing and builds an audit report.
 # The audit is intentionally conservative: it reports defects first; deletion is disabled by default.
+# Audit reports are sent only to a private admin chat configured by TELEGRAM_AUDIT_CHAT_ID/ADMIN_CHAT_ID.
 
 import difflib
 import html
@@ -9,7 +10,7 @@ import os
 import re
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List
 
 import requests
 
@@ -23,6 +24,11 @@ SEND_AUDIT_TO_TELEGRAM = os.getenv("SEND_AUDIT_TO_TELEGRAM", "1") == "1"
 AUDIT_RECENT_LIMIT = int(os.getenv("POST_AUDIT_RECENT_LIMIT", "8"))
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 TELEGRAM_CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID", "").strip()
+TELEGRAM_AUDIT_CHAT_ID = (
+    os.getenv("TELEGRAM_AUDIT_CHAT_ID", "").strip()
+    or os.getenv("ADMIN_CHAT_ID", "").strip()
+    or os.getenv("AUDIT_CHAT_ID", "").strip()
+)
 
 PURE_BPLA_TERMS = [
     "уничтожен", "уничтожены", "сбит", "сбиты", "сбито", "перехвачен", "перехвачены",
@@ -93,6 +99,13 @@ def norm(value: str) -> str:
     value = html.unescape(str(value or ""))
     value = re.sub(r"<[^>]+>", " ", value)
     return re.sub(r"\s+", " ", value.lower().replace("ё", "е")).strip()
+
+
+def clean_preview(value: str, limit: int = 700) -> str:
+    text = html.unescape(str(value or ""))
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text[:limit]
 
 
 def has_any(text: str, terms: List[str]) -> bool:
@@ -188,16 +201,19 @@ def audit_post(post: Dict) -> Dict:
     issues.extend(propaganda_issues(post))
     status = "pass" if not issues else "fail"
     severity = "ok" if not issues else ("critical" if any(x in issues for x in ["weak_bpla_without_impact", "banned_visual_type"] or x.startswith("image_conflicts") for x in issues) else "warning")
+    caption_plain = post.get("caption_plain") or post.get("caption") or ""
     return {
         "telegram_message_id": post.get("telegram_message_id"),
         "title": post.get("title"),
         "category": post.get("category"),
         "time_sakhalin": post.get("time_sakhalin"),
         "image_mode": post.get("image_mode"),
+        "image_url": post.get("image_url"),
         "url": post.get("url"),
         "status": status,
         "severity": severity,
         "issues": issues,
+        "content_preview": clean_preview(caption_plain, 900),
     }
 
 
@@ -221,8 +237,10 @@ def delete_bad_post(message_id: int) -> Dict:
 
 
 def send_audit_report(report: Dict) -> Dict:
-    if not SEND_AUDIT_TO_TELEGRAM or not TELEGRAM_CHANNEL_ID:
-        return {"ok": False, "description": "audit telegram report disabled or no chat id"}
+    if not SEND_AUDIT_TO_TELEGRAM:
+        return {"ok": False, "description": "audit telegram report disabled"}
+    if not TELEGRAM_AUDIT_CHAT_ID:
+        return {"ok": False, "description": "TELEGRAM_AUDIT_CHAT_ID/ADMIN_CHAT_ID missing; not sending report to public channel"}
     failed = [x for x in report.get("items", []) if x.get("status") == "fail"]
     passed = [x for x in report.get("items", []) if x.get("status") == "pass"]
     lines = [
@@ -230,20 +248,25 @@ def send_audit_report(report: Dict) -> Dict:
         f"Проверено: {len(report.get('items', []))}; OK: {len(passed)}; FAIL: {len(failed)}",
         f"Время: {report.get('checked_at_sakhalin')}",
     ]
-    if failed:
+    shown = report.get("items", [])[:6]
+    if shown:
         lines.append("")
-        for item in failed[:5]:
-            lines.append(f"❌ <b>{html.escape(str(item.get('title') or '')[:120])}</b>")
-            lines.append(f"ID: <code>{item.get('telegram_message_id')}</code>; issues: <code>{html.escape(', '.join(item.get('issues') or []))}</code>")
+        for item in shown:
+            mark = "✅" if item.get("status") == "pass" else "❌"
+            title = html.escape(str(item.get("title") or "")[:120])
+            issues = ", ".join(item.get("issues") or ["ok"])
+            preview = html.escape(str(item.get("content_preview") or "")[:420])
+            lines.append(f"{mark} <b>{title}</b>")
+            lines.append(f"ID: <code>{item.get('telegram_message_id')}</code>; issues: <code>{html.escape(issues)}</code>; image: <code>{html.escape(str(item.get('image_mode') or ''))}</code>")
+            lines.append(f"<blockquote>{preview}</blockquote>")
     else:
-        lines.append("\n✅ Критических дефектов не найдено.")
-    return tg_request("sendMessage", {"chat_id": TELEGRAM_CHANNEL_ID, "text": "\n".join(lines)[:3900], "parse_mode": "HTML", "disable_web_page_preview": True})
+        lines.append("\nПостов для аудита нет.")
+    return tg_request("sendMessage", {"chat_id": TELEGRAM_AUDIT_CHAT_ID, "text": "\n".join(lines)[:3900], "parse_mode": "HTML", "disable_web_page_preview": True})
 
 
 def main() -> None:
     state = load_json(STATE_FILE, {})
     posts = list(state.get("last_posts", []) or [])[-AUDIT_RECENT_LIMIT:]
-    # Audit only records that have full payload and were not already audited as pass/fail.
     targets = [p for p in posts if p.get("telegram_message_id") and p.get("audit_status") in {None, "pending"}]
     items = []
     deleted = []
@@ -261,11 +284,12 @@ def main() -> None:
         items.append(result)
 
     report = {
-        "version": 1,
+        "version": 2,
         "checked_at": now_utc(),
         "checked_at_sakhalin": now_sakh(),
         "checked_count": len(items),
         "failed_count": len([x for x in items if x.get("status") == "fail"]),
+        "audit_chat_configured": bool(TELEGRAM_AUDIT_CHAT_ID),
         "delete_bad_posts": DELETE_BAD_POSTS,
         "deleted": deleted,
         "items": items,
@@ -274,7 +298,9 @@ def main() -> None:
     save_json(STATE_FILE, state)
     save_json(AUDIT_FILE, report)
     send_result = send_audit_report(report) if items else {"ok": False, "description": "nothing to audit"}
-    print(f"post-publish-audit: checked={len(items)}, failed={report['failed_count']}, delete_bad_posts={DELETE_BAD_POSTS}, report_sent={send_result.get('ok')}")
+    print(f"post-publish-audit-v2: checked={len(items)}, failed={report['failed_count']}, audit_chat_configured={bool(TELEGRAM_AUDIT_CHAT_ID)}, delete_bad_posts={DELETE_BAD_POSTS}, report_sent={send_result.get('ok')}")
+    if not send_result.get("ok"):
+        print("audit-report-send-note: " + str(send_result.get("description")))
     if items:
         for item in items:
             print(json.dumps(item, ensure_ascii=False))
