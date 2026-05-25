@@ -1179,29 +1179,30 @@
     }
   ],
   "last_cycle_report": {
-    "reported_at": "2026-05-25T00:06:44+00:00",
-    "reported_at_sakhalin": "2026-05-25T11:06:44+11:00",
-    "queue_updated_at": "2026-05-25T00:06:33+00:00",
-    "queue_updated_at_sakhalin": "2026-05-25T11:06:33+11:00",
-    "total_queue_items": 155,
+    "reported_at": "2026-05-25T00:27:08+00:00",
+    "reported_at_sakhalin": "2026-05-25T11:27:08+11:00",
+    "queue_updated_at": "2026-05-25T00:26:57+00:00",
+    "queue_updated_at_sakhalin": "2026-05-25T11:26:57+11:00",
+    "total_queue_items": 127,
     "status_counts": {
-      "hold": 8,
-      "rejected": 116,
-      "published": 31,
+      "approved": 1,
+      "hold": 5,
+      "rejected": 88,
+      "published": 33,
       "pending": 0,
-      "approved": 0,
       "skipped": 0,
       "unknown": 0
     },
     "hold_by_category": {
-      "🌐 Мировые IT": 6,
-      "🌍 Мир о России": 1,
-      "🎮 Игры / индустрия": 1
+      "🌐 Мировые IT": 4,
+      "🌍 Мир о России": 1
     },
-    "approved_by_category": {},
+    "approved_by_category": {
+      "🌍 Мир о России": 1
+    },
     "published_by_category": {
       "🇷🇺 РФ / война и безопасность": 13,
-      "🧭 Геополитика": 8,
+      "🧭 Геополитика": 10,
       "🇷🇺 РФ / происшествия": 5,
       "🌐 Мировые IT": 3,
       "🇷🇺 РФ / экономика": 2
@@ -1219,75 +1220,45 @@
         "🌐 Мировые IT": 650,
         "🎮 Игры / индустрия": 600
       },
-      "reviewed_pending": 0,
-      "approved": 0,
+      "reviewed_pending": 7,
+      "approved": 2,
       "approve_limit": 2,
       "min_auto_score": 650,
-      "reviewed_at": "2026-05-25T00:06:32+00:00",
-      "reviewed_at_sakhalin": "2026-05-25T11:06:32+11:00"
+      "reviewed_at": "2026-05-25T00:26:11+00:00",
+      "reviewed_at_sakhalin": "2026-05-25T11:26:11+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-25T00:06:32+00:00",
-      "checked_at_sakhalin": "2026-05-25T11:06:32+11:00"
+      "checked_at": "2026-05-25T00:26:11+00:00",
+      "checked_at_sakhalin": "2026-05-25T11:26:11+11:00"
     },
     "final_guard": {
       "changed": 0,
-      "polished": 0,
-      "checked_at": "2026-05-25T00:06:32+00:00",
-      "checked_at_sakhalin": "2026-05-25T11:06:32+11:00"
+      "polished": 2,
+      "checked_at": "2026-05-25T00:26:12+00:00",
+      "checked_at_sakhalin": "2026-05-25T11:26:12+11:00"
     },
-    "recent_published_20m_count": 5,
+    "recent_published_20m_count": 2,
     "recent_published_20m": [
       {
-        "time_sakhalin": "2026-05-25T10:49:27+11:00",
+        "time_sakhalin": "2026-05-25T11:26:22+11:00",
         "source": "Interfax",
         "category": "🧭 Геополитика",
-        "title": "США и Иран достигли принципиального согласия по Ормузскому проливу",
+        "title": "Аэропорты Нижнего Новгорода и Ярославля приостановили работу",
         "with_image": true,
         "image_mode": "pipeline_search",
         "publish_method": "sendPhoto/safe/pipeline_search",
-        "telegram_message_id": 102
+        "telegram_message_id": 107
       },
       {
-        "time_sakhalin": "2026-05-25T10:57:08+11:00",
-        "source": "Interfax",
-        "category": "🇷🇺 РФ / война и безопасность",
-        "title": "Трамп призвал ряд исламских стран присоединиться к Соглашениям Авраама",
-        "with_image": true,
-        "image_mode": "pipeline_generated",
-        "publish_method": "sendPhoto/safe/pipeline_generated",
-        "telegram_message_id": 103
-      },
-      {
-        "time_sakhalin": "2026-05-25T10:57:26+11:00",
+        "time_sakhalin": "2026-05-25T11:26:45+11:00",
         "source": "Interfax",
         "category": "🧭 Геополитика",
-        "title": "Fox News сообщил, что рамочное соглашение США с Ираном готово на 95%",
+        "title": "Аэропорт Калуги приостановил работу",
         "with_image": true,
         "image_mode": "pipeline_search",
         "publish_method": "sendPhoto/safe/pipeline_search",
-        "telegram_message_id": 104
-      },
-      {
-        "time_sakhalin": "2026-05-25T10:58:14+11:00",
-        "source": "Interfax",
-        "category": "🧭 Геополитика",
-        "title": "Китайский пилотируемый корабль \"Шэньчжоу-23\" пристыковался к станции \"Тяньгун\"",
-        "with_image": true,
-        "image_mode": "pipeline_search",
-        "publish_method": "sendPhoto/safe/pipeline_search",
-        "telegram_message_id": 105
-      },
-      {
-        "time_sakhalin": "2026-05-25T11:04:53+11:00",
-        "source": "Interfax",
-        "category": "🧭 Геополитика",
-        "title": "Трамп заявил, что сможет заключить выгодное соглашение с Ираном",
-        "with_image": true,
-        "image_mode": "pipeline_search",
-        "publish_method": "sendPhoto/safe/pipeline_search",
-        "telegram_message_id": 106
+        "telegram_message_id": 108
       }
     ],
     "decision": "published"
