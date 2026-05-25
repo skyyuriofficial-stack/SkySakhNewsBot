@@ -14,9 +14,6 @@ CATEGORY_GEOPOLITICS = "🧭 Геополитика"
 CATEGORY_WORLD_RUSSIA = "🌍 Мир о России"
 CATEGORY_POLITICS = "🇷🇺 РФ / законы и политика"
 
-# Current editorial priority map requested by channel owner.
-# Only these four were changed: Мир о России=1000, Сахалин=950, Мировые IT=650, Игры=600.
-# Other streams remain as previously used.
 STREAM_PRIORITY = {
     CATEGORY_WORLD_RUSSIA: 1000,
     CATEGORY_SAKHALIN: 950,
@@ -43,7 +40,14 @@ GAME_WORDS = {
     "gta", "call of duty", "dota", "cs2", "game pass"
 }
 
-# Important: no generic Cyrillic "ии" marker. It appears inside "России" and causes false IT positives.
+# Space/spaceflight goes to the broader tech stream until a separate science stream is introduced.
+SPACE_WORDS = {
+    "космос", "космич", "космонав", "тайконавт", "астронавт", "орбит", "орбитальн",
+    "корабль шэньчжоу", "шэньчжоу", "shenzhou", "тяньгун", "tiangong", "cmsa",
+    "пилотируем", "космический корабль", "ракета", "запущенный на орбиту", "пристыковался",
+    "spacecraft", "space station", "spaceflight", "orbit", "astronaut", "taikonaut"
+}
+
 IT_WORDS = {
     "openai", "chatgpt", "gpt", "anthropic", "claude", "gemini", "google ai", "microsoft ai",
     "windows", "linux", "android", "ios", "apple intelligence", "meta ai", "aws", "azure", "github",
@@ -64,11 +68,13 @@ POLITICS_BLOCK_IT = {
 }
 
 GEO_WORDS = {
-    "армения", "ереван", "азербайджан", "иран", "израиль", "китай", "сша", "евросоюз",
-    "ес", "нато", "оон", "g7", "g20", "саммит", "переговоры", "визит", "санкции",
-    "посол", "премьер", "президент", "лидер", "дипломатия", "международный", "внешняя политика",
-    "геополитика", "резолюция", "антироссийская кампания", "антироссийские действия",
-    "постсоветское", "грузия", "молдавия", "молдова", "куба", "тайван", "газа"
+    "армения", "ереван", "азербайджан", "иран", "тегеран", "израил", "иерусалим",
+    "саудов", "оаэ", "катар", "бахрейн", "араб", "исламск", "соглашени", "авраам",
+    "трамп", "axios", "fox news", "китай", "сша", "вашингтон", "евросоюз", "ес", "нато",
+    "оон", "g7", "g20", "саммит", "переговоры", "визит", "санкции", "посол", "премьер",
+    "президент", "лидер", "дипломатия", "международный", "внешняя политика", "геополитика",
+    "резолюция", "антироссийская кампания", "антироссийские действия", "постсоветское", "грузия",
+    "молдавия", "молдова", "куба", "тайван", "газа", "ближн"
 }
 
 WORLD_ABOUT_RUSSIA_WORDS = {
@@ -109,10 +115,6 @@ def norm_text(*parts: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-def has_any(text: str, words) -> bool:
-    return any(w in text for w in words)
-
-
 def count_hits(text: str, words) -> int:
     return sum(1 for w in words if w in text)
 
@@ -130,33 +132,25 @@ def resolve_final_category(current_category: str = "", title: str = "", summary:
 
     if count_hits(text, SAKHALIN_WORDS) >= 1:
         return CATEGORY_SAKHALIN
-
     if count_hits(text, GAME_WORDS) >= 2:
         return CATEGORY_GAMES
-
-    # Geopolitics must be evaluated before IT to prevent false IT categories for Russia/Armenia/etc.
+    if count_hits(text, SPACE_WORDS) >= 2:
+        return CATEGORY_IT
+    # Geopolitics before war/IT: negotiations, Abraham accords, Iran/Israel/US must not become war/security.
     if count_hits(text, GEO_WORDS) >= 2:
         return CATEGORY_GEOPOLITICS
-
     if is_it(text):
         return CATEGORY_IT
-
     if count_hits(text, RU_WAR_WORDS) >= 2:
         return CATEGORY_WAR
-
-    # Incidents before economy: "авария на водопроводе" contains infrastructure words, but it is incident.
     if count_hits(text, RU_INCIDENT_WORDS) >= 2:
         return CATEGORY_INCIDENTS
-
     if count_hits(text, RU_ECON_WORDS) >= 2:
         return CATEGORY_ECONOMY
-
     if count_hits(text, RU_POLITICS_WORDS) >= 2:
         return CATEGORY_POLITICS
-
     if count_hits(text, WORLD_ABOUT_RUSSIA_WORDS) >= 1:
         return CATEGORY_WORLD_RUSSIA
-
     return current_category or CATEGORY_GEOPOLITICS
 
 
