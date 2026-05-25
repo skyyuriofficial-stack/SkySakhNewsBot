@@ -43,6 +43,7 @@ jobs:
           python -m py_compile src/category_policy.py
           python -m py_compile src/image_pipeline.py
           python -m py_compile src/post_publish_audit.py
+          python -m py_compile src/editorial_scope_guard.py
           python src/category_policy_smoke_test.py
           python src/image_pipeline_smoke_test.py
       - name: Collect drafts
@@ -63,6 +64,10 @@ jobs:
         run: |
           python -m py_compile src/editorial_review.py
           python src/editorial_review.py
+      - name: Scope guard
+        run: |
+          python -m py_compile src/editorial_scope_guard.py
+          python src/editorial_scope_guard.py
       - name: Priority guard
         run: |
           python -m py_compile src/editorial_priority_guard.py
@@ -86,6 +91,8 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          TELEGRAM_AUDIT_CHAT_ID: ${{ secrets.TELEGRAM_AUDIT_CHAT_ID }}
+          ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
           POST_AUDIT_RECENT_LIMIT: "10"
           SEND_AUDIT_TO_TELEGRAM: "1"
           DELETE_BAD_POSTS: "0"
