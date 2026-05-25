@@ -1161,15 +1161,15 @@
     }
   ],
   "last_cycle_report": {
-    "reported_at": "2026-05-24T23:57:49+00:00",
-    "reported_at_sakhalin": "2026-05-25T10:57:49+11:00",
-    "queue_updated_at": "2026-05-24T23:57:38+00:00",
-    "queue_updated_at_sakhalin": "2026-05-25T10:57:38+11:00",
-    "total_queue_items": 153,
+    "reported_at": "2026-05-25T00:05:19+00:00",
+    "reported_at_sakhalin": "2026-05-25T11:05:19+11:00",
+    "queue_updated_at": "2026-05-25T00:05:05+00:00",
+    "queue_updated_at_sakhalin": "2026-05-25T11:05:05+11:00",
+    "total_queue_items": 155,
     "status_counts": {
-      "hold": 9,
-      "rejected": 115,
-      "published": 29,
+      "hold": 8,
+      "rejected": 116,
+      "published": 31,
       "pending": 0,
       "approved": 0,
       "skipped": 0,
@@ -1178,13 +1178,12 @@
     "hold_by_category": {
       "🌐 Мировые IT": 6,
       "🌍 Мир о России": 1,
-      "🎮 Игры / индустрия": 1,
-      "🧭 Геополитика": 1
+      "🎮 Игры / индустрия": 1
     },
     "approved_by_category": {},
     "published_by_category": {
       "🇷🇺 РФ / война и безопасность": 13,
-      "🧭 Геополитика": 6,
+      "🧭 Геополитика": 8,
       "🇷🇺 РФ / происшествия": 5,
       "🌐 Мировые IT": 3,
       "🇷🇺 РФ / экономика": 2
@@ -1202,25 +1201,25 @@
         "🌐 Мировые IT": 650,
         "🎮 Игры / индустрия": 600
       },
-      "reviewed_pending": 3,
-      "approved": 2,
+      "reviewed_pending": 2,
+      "approved": 1,
       "approve_limit": 2,
       "min_auto_score": 650,
-      "reviewed_at": "2026-05-24T23:56:53+00:00",
-      "reviewed_at_sakhalin": "2026-05-25T10:56:53+11:00"
+      "reviewed_at": "2026-05-25T00:04:41+00:00",
+      "reviewed_at_sakhalin": "2026-05-25T11:04:41+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-24T23:56:53+00:00",
-      "checked_at_sakhalin": "2026-05-25T10:56:53+11:00"
+      "checked_at": "2026-05-25T00:04:41+00:00",
+      "checked_at_sakhalin": "2026-05-25T11:04:41+11:00"
     },
     "final_guard": {
       "changed": 0,
       "polished": 1,
-      "checked_at": "2026-05-24T23:56:53+00:00",
-      "checked_at_sakhalin": "2026-05-25T10:56:53+11:00"
+      "checked_at": "2026-05-25T00:04:41+00:00",
+      "checked_at_sakhalin": "2026-05-25T11:04:41+11:00"
     },
-    "recent_published_20m_count": 3,
+    "recent_published_20m_count": 5,
     "recent_published_20m": [
       {
         "time_sakhalin": "2026-05-25T10:49:27+11:00",
@@ -1251,6 +1250,26 @@
         "image_mode": "pipeline_search",
         "publish_method": "sendPhoto/safe/pipeline_search",
         "telegram_message_id": 104
+      },
+      {
+        "time_sakhalin": "2026-05-25T10:58:14+11:00",
+        "source": "Interfax",
+        "category": "🧭 Геополитика",
+        "title": "Китайский пилотируемый корабль \"Шэньчжоу-23\" пристыковался к станции \"Тяньгун\"",
+        "with_image": true,
+        "image_mode": "pipeline_search",
+        "publish_method": "sendPhoto/safe/pipeline_search",
+        "telegram_message_id": 105
+      },
+      {
+        "time_sakhalin": "2026-05-25T11:04:53+11:00",
+        "source": "Interfax",
+        "category": "🧭 Геополитика",
+        "title": "Трамп заявил, что сможет заключить выгодное соглашение с Ираном",
+        "with_image": true,
+        "image_mode": "pipeline_search",
+        "publish_method": "sendPhoto/safe/pipeline_search",
+        "telegram_message_id": 106
       }
     ],
     "decision": "published"
