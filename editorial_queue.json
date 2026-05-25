@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updated_at": "2026-05-25T11:42:26+00:00",
-  "updated_at_sakhalin": "2026-05-25T22:42:26+11:00",
-  "reviewed_at": "2026-05-25T11:41:46+00:00",
-  "reviewed_at_sakhalin": "2026-05-25T22:41:46+11:00",
+  "updated_at": "2026-05-25T11:57:40+00:00",
+  "updated_at_sakhalin": "2026-05-25T22:57:40+11:00",
+  "reviewed_at": "2026-05-25T11:57:10+00:00",
+  "reviewed_at_sakhalin": "2026-05-25T22:57:10+11:00",
   "items": [
     {
       "id": "be655b4872fd82cc",
@@ -3941,6 +3941,375 @@
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
       },
       "reviewed_at": "2026-05-25T11:41:46+00:00",
+      "reviewed_by": "auto-editor-v6-openrouter-rewrite",
+      "stream_priority": 650
+    },
+    {
+      "id": "c08d8b445cf2625d",
+      "status": "rejected",
+      "created_at": "2026-05-25T11:57:09+00:00",
+      "created_at_sakhalin": "2026-05-25T22:57:09+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 650,
+      "title_original": "Лицензии GNU GPL: как пройти проверку Минцифры и заказчика для госзакупок и КИИ",
+      "title_ru": "Лицензии GNU GPL: как пройти проверку Минцифры и заказчика для госзакупок и КИИ",
+      "body": [
+        "Open source – это не юридическая тонкость, а архитектурное ограничение.",
+        "Сейчас даже среди юристов часто встречаются мнения, что опенсорс лицензии это чистая формальность, на которую не стоит...",
+        "Использование компонентов под GNU GPL может стоить вам Реестра Минцифры с НДС 0, госконтракта и грантов – даже если всё было заранее согласовано с заказчиком."
+      ],
+      "footer": null,
+      "source_text": "Open source – это не юридическая тонкость, а архитектурное ограничение. Сейчас даже среди юристов часто встречаются мнения, что опенсорс лицензии это чистая формальность, на которую не стоит... Использование компонентов под GNU GPL может стоить вам Реестра Минцифры с НДС 0, госконтракта и грантов – даже если всё было заранее согласовано с заказчиком. Разбираем, какие лицензии «заражают» ваш код, и что с этим делать на уровне управления процессом разработки. Читать Open source – это не юридическая тонкость, а архитектурное ограничение. Сейчас даже среди юристов часто встречаются мнения, что опенсорс лицензии это чистая формальность, на которую не стоит обращать внимание. В случае с GNU GPL и подобными лицензиями чем дольше вы игнорируете вопрос соблюдения их условий, тем вероятнее он выльется в невозможность: Все это приведет к срыву контракта с крупным заказчиком, даже если вы обо всем заранее договорились. Постановление Двадцать первого арбитражного апелляционного суда от 06.06.2023 N 21АП-2261/2021 по делу N А84-2787/2020:",
+      "post_text": "🌐 Мировые IT\n\n<b>Лицензии GNU GPL: как пройти проверку Минцифры и заказчика для госзакупок и КИИ</b>\n\nOpen source – это не юридическая тонкость, а архитектурное ограничение.\n\nСейчас даже среди юристов часто встречаются мнения, что опенсорс лицензии это чистая формальность, на которую не стоит...\n\nИспользование компонентов под GNU GPL может стоить вам Реестра Минцифры с НДС 0, госконтракта и грантов – даже если всё было заранее согласовано с заказчиком.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1039040/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039040#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1039040/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039040#habracut",
+      "published_at": "2026-05-25T11:28:29+00:00",
+      "title_hash": "2d7aaa60cfb9fcbbce8f7a135d3206d87c9a463b",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/b7c/dec/5e5/b7cdec5e5fc2189ce91a0c99f56a4b8b.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-25T11:57:10+00:00",
+      "reviewed_by": "auto-editor-v6-openrouter-rewrite",
+      "stream_priority": 650
+    },
+    {
+      "id": "a37124852ff5682d",
+      "status": "rejected",
+      "created_at": "2026-05-25T11:57:09+00:00",
+      "created_at_sakhalin": "2026-05-25T22:57:09+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "MTProxy jumper — делаем автоматическое переключение прокси-серверов Telegram",
+      "title_ru": "MTProxy jumper — делаем автоматическое переключение прокси-серверов Telegram",
+      "body": [
+        "В свете последних новостей вокруг Telegram провела некоторые эксперименты с протоколом MTProxy.",
+        "Основная идея: сделать ПО, выглядящее для Telegram-клиента как MTProxy-сервер, и осуществляющее...",
+        "В свете последних новостей вокруг Telegram провела некоторые эксперименты с протоколом MTProxy."
+      ],
+      "footer": null,
+      "source_text": "В свете последних новостей вокруг Telegram провела некоторые эксперименты с протоколом MTProxy. Основная идея: сделать ПО, выглядящее для Telegram-клиента как MTProxy-сервер, и осуществляющее... В свете последних новостей вокруг Telegram провела некоторые эксперименты с протоколом MTProxy. Основная идея: сделать ПО, выглядящее для Telegram-клиента как MTProxy-сервер, и осуществляющее дальнейший обмен данными со сторонними MTProxy-серверами. В идеале, эти сторониие серверы должны обнаруживаться автоматически, и переключение между ними тоже должно происходить автоматически. Читать далее В свете последних новостей вокруг Telegram провела некоторые эксперименты с протоколом MTProxy. Основная идея: сделать ПО, выглядящее для Telegram-клиента как MTProxy-сервер, и осуществляющее дальнейший обмен данными со сторонними MTProxy-серверами. В идеале, эти сторониие серверы должны обнаруживаться автоматически, и переключение между ними тоже должно происходить автоматически. Код пишется на Python. Как экспериментальный вариант для быстрой реализации сойдёт, а если ПО окажется востребованным, то можно будет переписать на Си.",
+      "post_text": "🌐 Мировые IT\n\n<b>MTProxy jumper — делаем автоматическое переключение прокси-серверов Telegram</b>\n\nВ свете последних новостей вокруг Telegram провела некоторые эксперименты с протоколом MTProxy.\n\nОсновная идея: сделать ПО, выглядящее для Telegram-клиента как MTProxy-сервер, и осуществляющее...\n\nВ свете последних новостей вокруг Telegram провела некоторые эксперименты с протоколом MTProxy.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1039034/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039034#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1039034/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039034#habracut",
+      "published_at": "2026-05-25T11:18:39+00:00",
+      "title_hash": "40f702c0136ad8e3fe7df1e6a9adc0c083e04277",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/6d5/d41/c76/6d5d41c76a0280cef0f562f064d1b732.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-25T11:57:10+00:00",
+      "reviewed_by": "auto-editor-v6-openrouter-rewrite",
+      "stream_priority": 650
+    },
+    {
+      "id": "580d600fd761ded1",
+      "status": "rejected",
+      "created_at": "2026-05-25T11:57:09+00:00",
+      "created_at_sakhalin": "2026-05-25T22:57:09+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Ты уже используешь агента. Просто не заметил",
+      "title_ru": "Ты уже используешь агента. Просто не заметил",
+      "body": [
+        "\"Эксперты\" говорят, что ближайшие несколько лет у каждого появится персональный ИИ-агент.",
+        "Он будет писать код, помогать выбрать кофемашину, считать калории на ужин.",
+        "\"Эксперты\" говорят, что ближайшие несколько лет у каждого появится персональный ИИ-агент."
+      ],
+      "footer": null,
+      "source_text": "\"Эксперты\" говорят, что ближайшие несколько лет у каждого появится персональный ИИ-агент. Он будет писать код, помогать выбрать кофемашину, считать калории на ужин. Звучит как что-то из будущего... но... \"Эксперты\" говорят, что ближайшие несколько лет у каждого появится персональный ИИ-агент. Он будет писать код, помогать выбрать кофемашину, считать калории на ужин. Звучит как что-то из будущего... но оно уже наступило. Просто мы этого не заметили. Читать далее \"Эксперты\" говорят, что ближайшие несколько лет у каждого появится персональный ИИ-агент. Он будет писать код, помогать выбрать кофемашину, считать калории на ужин. Звучит как что-то из будущего... но оно уже наступило. Просто мы этого не заметили. Долгое время меня интересовал вопрос: как ИИ-компании собираются убедить обычных людей пользоваться агентами? Настройка, инструкции, автоматизация — это всё требует усилий и вовлеченности. Даже большинство моих знакомых программистов используют ИИ в лучшем случае в чате. Просто спрашивают — и получают ответ. Никаких агентов, никакого Claude Code или Codex. А в быту — и мысли у людей не возникает обратиться к ИИ. В общем: google-ом, копи-пастом и парой рук можно привычно решить все задачи. Они не заставляют нас изучать агентов. Они просто медленно, шаг за шагом, превращают привычный чат в агента — и дают нам время адаптироваться. Если ты пользуешься ChatGPT или Claude хотя бы в браузере — ты уже используешь персонального агента.",
+      "post_text": "🌐 Мировые IT\n\n<b>Ты уже используешь агента. Просто не заметил</b>\n\n\"Эксперты\" говорят, что ближайшие несколько лет у каждого появится персональный ИИ-агент.\n\nОн будет писать код, помогать выбрать кофемашину, считать калории на ужин.\n\n\"Эксперты\" говорят, что ближайшие несколько лет у каждого появится персональный ИИ-агент.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1038780/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1038780#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1038780/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1038780#habracut",
+      "published_at": "2026-05-25T11:11:45+00:00",
+      "title_hash": "5d615446d53144fd3b3350618fdc16be7d6c82a3",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/211/0df/cf2/2110dfcf218aa8efa74452d61cac9d44.jpeg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-25T11:57:10+00:00",
+      "reviewed_by": "auto-editor-v6-openrouter-rewrite",
+      "stream_priority": 650
+    },
+    {
+      "id": "e21ae049f2c933c9",
+      "status": "rejected",
+      "created_at": "2026-05-25T11:57:09+00:00",
+      "created_at_sakhalin": "2026-05-25T22:57:09+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Как отлаживать мини‑приложения в MAX и почему без DevTools это боль",
+      "title_ru": "Как отлаживать мини‑приложения в MAX и почему без DevTools это боль",
+      "body": [
+        "MAX позиционируется как серьёзная платформа с госинтеграциями, но при этом разработчикам не дают базовых инструментов отладки.",
+        "Работать в таких условиях можно, но это постоянные костыли и лишние часы....",
+        "MAX позиционируется как серьёзная платформа с госинтеграциями, но при этом разработчикам не дают базовых инструментов отладки."
+      ],
+      "footer": null,
+      "source_text": "MAX позиционируется как серьёзная платформа с госинтеграциями, но при этом разработчикам не дают базовых инструментов отладки. Работать в таких условиях можно, но это постоянные костыли и лишние часы.... MAX позиционируется как серьёзная платформа с госинтеграциями, но при этом разработчикам не дают базовых инструментов отладки. Работать в таких условиях можно, но это постоянные костыли и лишние часы. Я обращаюсь к команде MAX: если вы хотите, чтобы под вашу платформу делали качественные решения, нужно давать разработчикам нормальные инструменты. Иначе мы вместо экосистемы получим ещё один обязательный, но неудобный продукт. В России сейчас активно продвигают мессенджер MAX как официальную альтернативу Telegram. Для пользователей это значит еще один клиент на рабочем столе, а для разработчиков — ещё одна платформа для ботов и мини‑приложений. На бумаге это звучит норм: единая платформа, интеграция с госсервисами, мини‑аппы для бизнеса (привет, WeChat). На практике возникает базовый вопрос: как это вообще разрабатывать и отлаживать, если в десктопном клиенте нет нормальных DevTools? В этой статье я попробую рассказать, как выглядит попоболь отладка мини‑приложений в MAX сегодня, чем она отличается от привычного процесса в Telegram (да да, опять сравнение с вездесущей телегой), и почему отсутствие инструментов разработки — не мелкая придирка, а системная проблема. Читать далее MAX позиционируется как серьёзная платформа с госинтеграциями, но при этом разработчикам не дают базовых инструментов отладки. Работать в таких условиях можно, но это постоянные костыли и лишние часы. Я обращаюсь к команде MAX: если вы хотите, чтобы под вашу платформу делали качественные решения, нужно давать разработчикам нормальные инструменты. Иначе мы вместо экосистемы получим ещё один обязатель",
+      "post_text": "🌐 Мировые IT\n\n<b>Как отлаживать мини‑приложения в MAX и почему без DevTools это боль</b>\n\nMAX позиционируется как серьёзная платформа с госинтеграциями, но при этом разработчикам не дают базовых инструментов отладки.\n\nРаботать в таких условиях можно, но это постоянные костыли и лишние часы....\n\nMAX позиционируется как серьёзная платформа с госинтеграциями, но при этом разработчикам не дают базовых инструментов отладки.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1039030/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039030#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1039030/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039030#habracut",
+      "published_at": "2026-05-25T11:09:01+00:00",
+      "title_hash": "6f5248c6222346aa33e1c231bfd93d7286387094",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/b6c/17e/7cb/b6c17e7cbe9804d60eec398886262348.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-25T11:57:10+00:00",
+      "reviewed_by": "auto-editor-v6-openrouter-rewrite",
+      "stream_priority": 650
+    },
+    {
+      "id": "e8b2bdd164ae7c39",
+      "status": "rejected",
+      "created_at": "2026-05-25T11:57:09+00:00",
+      "created_at_sakhalin": "2026-05-25T22:57:09+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🇷🇺 РФ / экономика",
+      "category_hint": "🌐 Мировые IT",
+      "score": 840,
+      "title_original": "Cбор биометрических данных. Как защищается наша биометрия на практике",
+      "title_ru": "Cбор биометрических данных. Как защищается наша биометрия на практике",
+      "body": [
+        "Введение Помните, как в фильмах про агентов 007 прикладывали палец к сенсору или сканировали сетчатку глаза, чтобы попасть в секретную лабораторию?",
+        "Когда-то это казалось чем-то фантастически дорогим,...",
+        "Помните, как в фильмах про агентов 007 прикладывали палец к сенсору или сканировали сетчатку глаза, чтобы попасть в секретную лабораторию?"
+      ],
+      "footer": null,
+      "source_text": "Введение Помните, как в фильмах про агентов 007 прикладывали палец к сенсору или сканировали сетчатку глаза, чтобы попасть в секретную лабораторию? Когда-то это казалось чем-то фантастически дорогим,... Помните, как в фильмах про агентов 007 прикладывали палец к сенсору или сканировали сетчатку глаза, чтобы попасть в секретную лабораторию? Когда-то это казалось чем-то фантастически дорогим, сложным и абсолютно надежным. Сейчас технологии, связанные с биометрией, как-то резко и незаметно вошли в нашу жизнь. Но очень многие отказываются пользоваться ими. Я написала эту статью, потому что заметила: многие боятся биометрии, но при этом не понимают, как она на самом деле устроена и защищена. Сама я долго оттягивала момент сдачи, пока не обнаружила, что один из банков уже каким-то образом получил мои данные. Плюс был \"забавный\" случай в магазине, когда терминал \"узнал меня в лицо\" и списал деньги не с той карты. В общем, я решила разобраться профессионально. Страх сдавать биометрию подогревается не только новостями об утечках, но и распространенными в обществе фобиями: слухами о тотальной слежке, «Большом брате», полной утрате конфиденциальности и свободы, а также технологией дипфейков («подмены лиц»). Эти опасения в какой-то степени оправданы: любая система, способная уникально идентифицировать человека, потенциально может быть использована для его негласного контроля, ограничения анонимности или манипуляции (как раз создание поддельного видео с вашим лицом). Именно поэтому законодатели и организации обязаны применять строгие технические и организационные меры, обеспечивать прозрачность каждого запроса и право безусловного удаления - чтобы минимизировать риски. При этом сохранив баланс между удобством и приватностью. Читать далее",
+      "post_text": "🌐 Мировые IT\n\n<b>Cбор биометрических данных. Как защищается наша биометрия на практике</b>\n\nВведение Помните, как в фильмах про агентов 007 прикладывали палец к сенсору или сканировали сетчатку глаза, чтобы попасть в секретную лабораторию?\n\nКогда-то это казалось чем-то фантастически дорогим,...\n\nПомните, как в фильмах про агентов 007 прикладывали палец к сенсору или сканировали сетчатку глаза, чтобы попасть в секретную лабораторию?\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1039028/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039028#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1039028/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039028#habracut",
+      "published_at": "2026-05-25T11:07:06+00:00",
+      "title_hash": "90593869d0b768b477a3c9b21c5092501b63765a",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/5ea/2b0/5a8/5ea2b05a84731bdf9f1443722f829e5f.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-25T11:57:10+00:00",
+      "reviewed_by": "auto-editor-v6-openrouter-rewrite",
+      "stream_priority": 760
+    },
+    {
+      "id": "61c45568a7c923e5",
+      "status": "rejected",
+      "created_at": "2026-05-25T11:57:09+00:00",
+      "created_at_sakhalin": "2026-05-25T22:57:09+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🧭 Геополитика",
+      "category_hint": "🌐 Мировые IT",
+      "score": 900,
+      "title_original": "Goldman Sachs gets into biotech investing with new venture fund",
+      "title_ru": "Goldman Sachs gets into biotech investing with new venture fund",
+      "body": [
+        "The $650 million fund exceeded Goldman’s target and comes amid cautious optimism that biotech could rebound from a lengthy downturn.",
+        "Американский банк собрал в свой фонд 650 миллионов долларов , чтобы скупить доли в биотех-стартапах.",
+        "Финансисты получили прямой доступ к лабораториям, которые занимаются генной инженерией."
+      ],
+      "footer": null,
+      "source_text": "The $650 million fund exceeded Goldman’s target and comes amid cautious optimism that biotech could rebound from a lengthy downturn. Американский банк собрал в свой фонд 650 миллионов долларов , чтобы скупить доли в биотех-стартапах. Финансисты получили прямой доступ к лабораториям, которые занимаются генной инженерией. Их цель — первыми узнать, когда люди смогут жить до 120 лет. Это нужно для спасения пенсионной системы. Американская пенсионная математика завязана на актуарных таблицах. Сейчас модели рассчитаны на дожитие до 80—87 лет. Если возраст вырастет, то фондам придётся платить дольше и появится риск долгожительства. По той же логике инвестируют в климатические исследования. В 2020 году ураган «Лора» остановил 84% добычи нефти в Мексиканском заливе. Цены на нефть тогда взлетели сразу. Тот, кто знал путь урагана заранее, купил нужные контракты первым. Схема одна: кто быстрее превращает научные данные в модели риска и продукты — тот зарабатывает. Разбираемся, какие лаборатории открывают финансовые гиганты и зачем им квантовые исследователи в штате. Читать далее The $650 million fund will focus on early- and mid-stage companies with multiple assets in their portfolios. Goldman’s foray into the biotech world shows continuing investor appetite in the venture capital arena, even while the public biotech market remains tepid. The last year featured a number of new VC fund launches, including from Dimension , Cure Ventures , Yosemite , Foundery and Bioluminescence Ventures . “The current environment provides an attractive opportunity for investing,” Amit Sinha, the head of Goldman’s Life Sciences Investing, said in the company’s statement. Technological advances are allowing new ways to attack diseases, creating a “golden era” for life sciences, he said. Goldman establi",
+      "post_text": "🌐 Мировые IT\n\n<b>Goldman Sachs gets into biotech investing with new venture fund</b>\n\nThe $650 million fund exceeded Goldman’s target and comes amid cautious optimism that biotech could rebound from a lengthy downturn.\n\nАмериканский банк собрал в свой фонд 650 миллионов долларов , чтобы скупить доли в биотех-стартапах.\n\nФинансисты получили прямой доступ к лабораториям, которые занимаются генной инженерией.\n\nМИРОВЫЕ IT · <a href=\"https://www.biopharmadive.com/news/goldman-sachs-biotech-venture-fund-startups/703524/\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://www.biopharmadive.com/news/goldman-sachs-biotech-venture-fund-startups/703524/",
+      "published_at": "2026-05-25T11:00:01+00:00",
+      "title_hash": "1b2a46afa269228ad44cce5560901e3afbabfd37",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/94a/355/ab1/94a355ab1b246e562c62002c232281e1.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-25T11:57:10+00:00",
+      "reviewed_by": "auto-editor-v6-openrouter-rewrite",
+      "stream_priority": 820
+    },
+    {
+      "id": "862b8e8bf6efdabe",
+      "status": "rejected",
+      "created_at": "2026-05-25T11:57:09+00:00",
+      "created_at_sakhalin": "2026-05-25T22:57:09+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Специализированная ИСУП или модуль в универсальной платформе: вот в чем вопрос",
+      "title_ru": "Специализированная ИСУП или модуль в универсальной платформе: вот в чем вопрос",
+      "body": [
+        "Меня зовут Никита, я работаю в Directum Projects: консультирую заказчиков, помогаю с выбором систем при цифровизации проектной работы.",
+        "Часто я сталкиваюсь с такой ситуацией:...",
+        "Меня зовут Никита, я работаю в Directum Projects: консультирую заказчиков, помогаю с выбором систем при цифровизации проектной работы."
+      ],
+      "footer": null,
+      "source_text": "Привет, Хабр! Меня зовут Никита, я работаю в Directum Projects: консультирую заказчиков, помогаю с выбором систем при цифровизации проектной работы. Часто я сталкиваюсь с такой ситуацией:... Привет, Хабр! Меня зовут Никита, я работаю в Directum Projects: консультирую заказчиков, помогаю с выбором систем при цифровизации проектной работы. Часто я сталкиваюсь с такой ситуацией: компании не могут определиться, какой класс ИСУП им выбрать — специализированную платформу или экосистему. В статье расскажу о том, чем отличаются такие решения и как найти систему, которая по максимуму закроет ваши задачи и не сломается при масштабировании. Читать далее",
+      "post_text": "🌐 Мировые IT\n\n<b>Специализированная ИСУП или модуль в универсальной платформе: вот в чем вопрос</b>\n\nМеня зовут Никита, я работаю в Directum Projects: консультирую заказчиков, помогаю с выбором систем при цифровизации проектной работы.\n\nЧасто я сталкиваюсь с такой ситуацией:...\n\nМеня зовут Никита, я работаю в Directum Projects: консультирую заказчиков, помогаю с выбором систем при цифровизации проектной работы.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/directum/articles/1039010/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039010#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/directum/articles/1039010/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039010#habracut",
+      "published_at": "2026-05-25T10:43:22+00:00",
+      "title_hash": "60a0313e78763f468079ab8573a8f5e61ce6c51e",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/277/668/026/27766802670595f63da3c7978e153c14.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-25T11:57:10+00:00",
+      "reviewed_by": "auto-editor-v6-openrouter-rewrite",
+      "stream_priority": 650
+    },
+    {
+      "id": "fa34168872cebbcc",
+      "status": "rejected",
+      "created_at": "2026-05-25T11:57:09+00:00",
+      "created_at_sakhalin": "2026-05-25T22:57:09+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 730,
+      "title_original": "Как использовать подписку ChatGPT и Claude в Cursor без оплаты за API токены",
+      "title_ru": "Как использовать подписку ChatGPT и Claude в Cursor без оплаты за API токены",
+      "body": [
+        "В Cursor можно подключить любую LLM по API, которая совместима с OpenAI форматом запросов.",
+        "Но если у вас есть подписка Claude или ChatGPT, вы не сможете напрямую их использовать в Cursor.",
+        "Покупая подписку ChatGPT за 20$, вы получаете возможность использовать токены на сумму ~1000$."
+      ],
+      "footer": null,
+      "source_text": "В Cursor можно подключить любую LLM по API, которая совместима с OpenAI форматом запросов. Но если у вас есть подписка Claude или ChatGPT, вы не сможете напрямую их использовать в Cursor. Там формат... Покупая подписку ChatGPT за 20$, вы получаете возможность использовать токены на сумму ~1000$. Покупая подписку к Claude за 100$, вы получаете токенов на сумму ~2000$. Но подключить эти подписки напрямую в Cursor нельзя. Формат запросов в API и подписке отличаются. Вам нужен обходной путь — проксирование запросов. Читать далее На GitHub уже есть решения, которые конвертирует формат OpenAI в требуемый формат провайдера и обратно. Но чтобы добавить это в Cursor, недостаточно просто запустить процесс на localhost и добавить его в Cursor, потому что Cursor сначала отправляет запросы на свой бэкенд, а оттуда в OpenAI совместимый API. Если вы добавите туда localhost, то их бэкенд просто не достучится до вас. Поэтому нужно поднимать туннель, который будет прокидывать трафик на ваш localhost. Для этого очень хорошо подходит Cloudflare. С помощью команды cloudflared tunnel вы можете поднять туннель и добавить адрес туннеля в Cursor. Эти решения поддерживают не всё, что требуется для разработки. В некоторых решениях хорошо проксируется только чат, но любое использование инструментов, например изменение файлов или режим планирования, не поддерживаются. Другие поддерживают только некоторые инструменты, но не все. Где-то поддерживается только Claude и не работает ChatGPT. Репозиторий проекта: https://github.com/orchidfiles/ungate Вы можете установить расширение из панели расширений в Cursor, введя в поиске @id:orchidfiles.ungate . Установка из терминала: cursor --install-extension orchidfiles.ungate",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Как использовать подписку ChatGPT и Claude в Cursor без оплаты за API токены</b>\n\nВ Cursor можно подключить любую LLM по API, которая совместима с OpenAI форматом запросов.\n\nНо если у вас есть подписка Claude или ChatGPT, вы не сможете напрямую их использовать в Cursor.\n\nПокупая подписку ChatGPT за 20$, вы получаете возможность использовать токены на сумму ~1000$.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://habr.com/ru/articles/1038998/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1038998#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1038998/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1038998#habracut",
+      "published_at": "2026-05-25T10:45:23+00:00",
+      "title_hash": "172b18782c0920d877ed563c84d86757f7856865",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/721/667/eee/721667eee3a3c98a788a4fbc91ed326c.webp",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-25T11:57:10+00:00",
+      "reviewed_by": "auto-editor-v6-openrouter-rewrite",
+      "stream_priority": 650
+    },
+    {
+      "id": "d923f366f667bdc8",
+      "status": "rejected",
+      "created_at": "2026-05-25T11:57:09+00:00",
+      "created_at_sakhalin": "2026-05-25T22:57:09+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Как запустить учет активов без цифровой свалки: первые 90 дней",
+      "title_ru": "Как запустить учет активов без цифровой свалки: первые 90 дней",
+      "body": [
+        "Представьте обычный понедельник: ИТ-менеджер открывает новую ITAM-систему (IT Asset Management), а вокруг уже десятки источников данных — выгрузка из 1С, Excel от закупок, список из Active Directory,...",
+        "ИТ-менеджер открывает новую ITAM-систему, а вокруг — выгрузка из 1С, Excel от закупок, таблица склада и файл «ноутбуки_финал_точно_последний.xlsx».",
+        "Рассказываем, как за 90 дней пройти путь от цифровой свалки до учёта, которому можно доверять."
+      ],
+      "footer": null,
+      "source_text": "Представьте обычный понедельник: ИТ-менеджер открывает новую ITAM-систему (IT Asset Management), а вокруг уже десятки источников данных — выгрузка из 1С, Excel от закупок, список из Active Directory,... ИТ-менеджер открывает новую ITAM-систему, а вокруг — выгрузка из 1С, Excel от закупок, таблица склада и файл «ноутбуки_финал_точно_последний.xlsx». Рассказываем, как за 90 дней пройти путь от цифровой свалки до учёта, которому можно доверять. Внутри — два чеклиста, RACI-таблица и пошаговый маршрут. Читать далее Представьте обычный понедельник: ИТ-менеджер открывает новую ITAM-систему (IT Asset Management), а вокруг уже десятки источников данных — выгрузка из 1С, Excel от закупок, список из Active Directory, таблица склада и файл «ноутбуки_финал_точно_последний.xlsx». Хочется сначала все почистить, описать идеальную модель и только потом загружать активы, но именно здесь ITAM-проекты часто зависают. Данные не становятся идеальными сами, а без правил система быстро превращается в цифровую свалку. Поэтому первые 90 дней нужны не для идеального учета всего парка, а для управляемого старта: выбрать одну боль, один периметр и пройти путь от разрозненных данных до решения, которому можно доверять. Всем привет! Меня зовут Евгений Котухов. В этой статье я расскажу, как пройти первые 90 дней после старта ITAM, не утонуть в таблицах и быстро показать руководству результат. Эта рамка не дает превратить запуск в бесконечный проект. На каждом этапе есть результат для бизнеса.",
+      "post_text": "🌐 Мировые IT\n\n<b>Как запустить учет активов без цифровой свалки: первые 90 дней</b>\n\nПредставьте обычный понедельник: ИТ-менеджер открывает новую ITAM-систему (IT Asset Management), а вокруг уже десятки источников данных — выгрузка из 1С, Excel от закупок, список из Active Directory,...\n\nИТ-менеджер открывает новую ITAM-систему, а вокруг — выгрузка из 1С, Excel от закупок, таблица склада и файл «ноутбуки_финал_точно_последний.xlsx».\n\nРассказываем, как за 90 дней пройти путь от цифровой свалки до учёта, которому можно доверять.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/simpleone/articles/1039022/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039022#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/simpleone/articles/1039022/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039022#habracut",
+      "published_at": "2026-05-25T11:00:54+00:00",
+      "title_hash": "f9c097a5233e5ef7c5c8c9f5613566a27d43849f",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/a03/d28/932/a03d28932c67779c1c12701c5e13e660.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-25T11:57:10+00:00",
       "reviewed_by": "auto-editor-v6-openrouter-rewrite",
       "stream_priority": 650
     },
@@ -8496,6 +8865,152 @@
       "published_at_sakhalin": "2026-05-25T22:41:58+11:00",
       "publish_method": "sendPhoto/safe/pipeline_generated",
       "telegram_message_id": 118
+    },
+    {
+      "id": "796a506d2e5a35e0",
+      "status": "published",
+      "created_at": "2026-05-25T11:57:09+00:00",
+      "created_at_sakhalin": "2026-05-25T22:57:09+11:00",
+      "source": "Interfax",
+      "source_type": "ru",
+      "category": "🧭 Геополитика",
+      "category_hint": "🇷🇺 РФ / экономика",
+      "score": 900,
+      "title_original": "Глава ЦБ Греции не исключил осторожного ужесточения политики ЕЦБ",
+      "title_ru": "Глава ЦБ Греции не исключил осторожного ужесточения политики ЕЦБ",
+      "body": [
+        "Европейскому центробанку будет необходимо с осторожностью скорректировать денежно-кредитную политику в сторону ужесточения, если инфляция будет существенно превышать целевой уровень 2%, заявил в парламенте Греции член совета управляющих ЕЦБ и глава греческого Центробанка Яннис Стурнарас.",
+        "Блокировка Ормузского пролива из-за продолжающейся войны в Иране привела к резкому скачку цен на энергоресурсы, что может иметь вторичные последствия в виде ускорения темпа роста заработков, а также цен на товары и услуги, сказал он."
+      ],
+      "footer": null,
+      "source_text": "Европейскому центробанку будет необходимо с осторожностью скорректировать денежно-кредитную политику в сторону ужесточения, если инфляция будет существенно Европейскому центробанку будет необходимо с осторожностью скорректировать денежно-кредитную политику в сторону ужесточения, если инфляция будет существенно превышать целевой уровень 2%, заявил в парламенте Греции член совета управляющих ЕЦБ и глава греческого Центробанка Яннис Стурнарас. Москва. 25 мая. INTERFAX.RU - Европейскому центробанку будет необходимо с осторожностью скорректировать денежно-кредитную политику в сторону ужесточения, если инфляция будет существенно превышать целевой уровень 2%, заявил в парламенте Греции член совета управляющих ЕЦБ и глава греческого Центробанка Яннис Стурнарас. Блокировка Ормузского пролива из-за продолжающейся войны в Иране привела к резкому скачку цен на энергоресурсы, что может иметь вторичные последствия в виде ускорения темпа роста заработков, а также цен на товары и услуги, сказал он. При этом Стурнарас отметил, что реакция регулятора на \"значительное, но временное\" превышение инфляцией целевого уровня должна быть сбалансированной. \"Необходимо осторожно скорректировать ДКП, чтобы ограничить интенсивность эффектов второй волны, не нанося при этом непропорционального ущерба экономической активности\", - заявил глава ЦБ Греции, добавив, что чрезмерно ограничительная политика может стать препятствием для инвестиций и роста экономики.",
+      "post_text": "🧭 Геополитика\n\n<b>Глава ЦБ Греции не исключил осторожного ужесточения политики ЕЦБ</b>\n\nЕвропейскому центробанку будет необходимо с осторожностью скорректировать денежно-кредитную политику в сторону ужесточения, если инфляция будет существенно превышать целевой уровень 2%, заявил в парламенте Греции член совета управляющих ЕЦБ и глава греческого Центробанка Яннис Стурнарас.\n\nБлокировка Ормузского пролива из-за продолжающейся войны в Иране привела к резкому скачку цен на энергоресурсы, что может иметь вторичные последствия в виде ускорения темпа роста заработков, а также цен на товары и услуги, сказал он.\n\nГЕОПОЛИТИКА · <a href=\"https://www.interfax.ru/business/1091642\">Interfax</a>",
+      "edited_post_text": "🧭 Геополитика\n\n<b>Глава ЦБ Греции не исключил осторожного ужесточения политики ЕЦБ</b>\n\nЕвропейскому центробанку будет необходимо с осторожностью скорректировать денежно-кредитную политику в сторону ужесточения, если инфляция будет существенно превышать целевой уровень 2%, заявил в парламенте Греции член совета управляющих ЕЦБ и глава греческого Центробанка Яннис Стурнарас.\n\nБлокировка Ормузского пролива из-за продолжающейся войны в Иране привела к резкому скачку цен на энергоресурсы, что может иметь вторичные последствия в виде ускорения темпа роста заработков, а также цен на товары и услуги, сказал он.\n\nГЕОПОЛИТИКА · <a href=\"https://www.interfax.ru/business/1091642\">Interfax</a>",
+      "url": "https://www.interfax.ru/business/1091642",
+      "published_at": "2026-05-25T11:47:00+00:00",
+      "title_hash": "66edbe6a287e36885878075b222b57d04056401f",
+      "image_url": null,
+      "image_mode": "pipeline_generated",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Одобрено автоматическим редактором v6: clean Russian post via generic.",
+        "Image pipeline: generated; generated semantic image accepted; score=1.03."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-25T11:57:10+00:00",
+      "reviewed_by": "auto-editor-v6-openrouter-rewrite",
+      "stream_priority": 820,
+      "rewrite_mode": "generic",
+      "image_pipeline": {
+        "strategy": "generated",
+        "reason": "generated semantic image accepted",
+        "selected": {
+          "url": null,
+          "source": "generated",
+          "width": 1200,
+          "height": 675,
+          "mime_type": "image/jpeg",
+          "query_used": "generated:diplomacy_middle_east:Глава ЦБ Греции не исключил осторожного ужесточения политики ЕЦБ",
+          "relevance_score": 1.03,
+          "image_kind": "generated",
+          "filename": "thematic.jpg",
+          "reason": "local semantic generation; topic=diplomacy_middle_east; hits=['diplomacy']; entity_hits=[]; bad_hits=[]"
+        },
+        "attempts": [
+          {
+            "stage": "external_search",
+            "query": "US Iran nuclear talks diplomacy",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/REGIONAL_IMPLICATIONS_OF_A_NUCLEAR_DEAL_WITH_IRAN_%28IA_gov.gpo.fdsys.CHRG-113shrg94340%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "US Iran nuclear talks diplomacy",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/THE_IRAN_NUCLEAR_DEAL_AND_ITS_IMPACT_ON_TERRORISM_FINANCING_%28IA_gov.gpo.fdsys.CHRG-114hhrg97157%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "US Iran nuclear talks diplomacy",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/THE_KOREAN_PENINSULA-_SIX-PARTY_TALKS_AND_THE_NUCLEAR_ISSUE_%28IA_gov.gpo.fdsys.CHRG-109hhrg99827%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "US Iran nuclear talks diplomacy",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/THE_NORTH_KOREA_NUCLEAR_CALCULUS-_BEYOND_THE_SIX-POWER_TALKS_%28IA_gov.gpo.fdsys.CHRG-108shrg94028%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "Middle East diplomacy Iran United States",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/AND_JUSTICE_FOR_ALL-_A_NARRATIVE_APPROACH_TO_THE_CONFLICT_BETWEEN_THE_UNITED_STATES_OF_AMERICA_AND_THE_ISLAMIC_REPUBLIC_OF_IRAN_%28IA_andjusticeforall1094564100%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "Middle East diplomacy Iran United States",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/EAST_ASIA_IN_TRANSITION-_OPPORTUNITIES_AND_CHALLENGES_FOR_THE_UNITED_STATES_%28IA_gov.gpo.fdsys.CHRG-109hhrg26436%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "Middle East diplomacy Iran United States",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/ENDING_AN_ENEMY-_UNITED_STATES%E2%80%93IRAN_RELATIONS_%28IA_endinganenemyuni1094563482%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "Middle East diplomacy Iran United States",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/IMPACTS_OF_THE_JOINT_COMPREHENSIVE_PLAN_OF_ACTION_%28JCPOA%29_ON_THE_UNITED_STATES_INTERESTS_AND_THE_MILITARY_BALANCE_IN_THE_MIDDLE_EAST_%28IA_gov.gpo.fdsys.CHRG-114shrg21483%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "Middle East diplomacy Iran United States",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Iran%27s_strategy_of_influence_in_the_Middle_East_%28IA_iransstrategyofi109455029%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "Middle East diplomacy Iran United States",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/The_Soviet_Union_and_Iran_strategic_implications_for_the_United_States_Navy._%28IA_sovietunionirans00chap%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "Middle East diplomacy Iran United States",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/UNITED_STATES_POLICY_IN_IRAQ-_PUBLIC_DIPLOMACY_AND_PRIVATE_POLICY_%28IA_gov.gpo.fdsys.CHRG-105shrg50913%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "generated",
+            "ok": true,
+            "reason": "accepted: 1200x675; score=1.03; topic=diplomacy_middle_east; hits=['diplomacy']; entity_hits=[]; bad_hits=[]"
+          }
+        ]
+      },
+      "image_fingerprint": "d4b0455697dfd8f1972bed8e5da12db944cb5029",
+      "published_at_sakhalin": "2026-05-25T22:57:28+11:00",
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 119
     }
   ],
   "auto_review": {
@@ -8512,24 +9027,24 @@
       "🎮 Игры / индустрия": 600
     },
     "reviewed_pending": 10,
-    "approved": 2,
+    "approved": 1,
     "approve_limit": 2,
     "min_auto_score": 650,
     "openrouter_enabled": false,
-    "reviewed_at": "2026-05-25T11:41:46+00:00",
-    "reviewed_at_sakhalin": "2026-05-25T22:41:46+11:00"
+    "reviewed_at": "2026-05-25T11:57:10+00:00",
+    "reviewed_at_sakhalin": "2026-05-25T22:57:10+11:00"
   },
   "final_guard": {
     "version": 2,
-    "changed": 1,
+    "changed": 0,
     "polished": 0,
-    "checked_at": "2026-05-25T11:42:25+00:00",
-    "checked_at_sakhalin": "2026-05-25T22:42:25+11:00"
+    "checked_at": "2026-05-25T11:57:10+00:00",
+    "checked_at_sakhalin": "2026-05-25T22:57:10+11:00"
   },
   "priority_guard": {
     "changed": 0,
-    "checked_at": "2026-05-25T11:41:46+00:00",
-    "checked_at_sakhalin": "2026-05-25T22:41:46+11:00"
+    "checked_at": "2026-05-25T11:57:10+00:00",
+    "checked_at_sakhalin": "2026-05-25T22:57:10+11:00"
   },
   "cycle_report": {
     "reported_at": "2026-05-25T11:42:23+00:00",
