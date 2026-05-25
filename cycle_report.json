@@ -1,13 +1,13 @@
 {
-  "reported_at": "2026-05-25T05:05:00+00:00",
-  "reported_at_sakhalin": "2026-05-25T16:05:00+11:00",
-  "queue_updated_at": "2026-05-25T05:04:49+00:00",
-  "queue_updated_at_sakhalin": "2026-05-25T16:04:49+11:00",
-  "total_queue_items": 138,
+  "reported_at": "2026-05-25T05:31:54+00:00",
+  "reported_at_sakhalin": "2026-05-25T16:31:54+11:00",
+  "queue_updated_at": "2026-05-25T05:31:43+00:00",
+  "queue_updated_at_sakhalin": "2026-05-25T16:31:43+11:00",
+  "total_queue_items": 143,
   "status_counts": {
-    "hold": 10,
-    "rejected": 91,
-    "published": 37,
+    "hold": 12,
+    "rejected": 93,
+    "published": 38,
     "pending": 0,
     "approved": 0,
     "skipped": 0,
@@ -15,13 +15,13 @@
   },
   "hold_by_category": {
     "🌐 Мировые IT": 5,
-    "🌍 Мир о России": 3,
-    "🇷🇺 РФ / война и безопасность": 1,
+    "🌍 Мир о России": 4,
+    "🇷🇺 РФ / война и безопасность": 2,
     "🧭 Геополитика": 1
   },
   "approved_by_category": {},
   "published_by_category": {
-    "🇷🇺 РФ / война и безопасность": 15,
+    "🇷🇺 РФ / война и безопасность": 16,
     "🧭 Геополитика": 11,
     "🇷🇺 РФ / происшествия": 5,
     "🌐 Мировые IT": 3,
@@ -41,47 +41,27 @@
       "🌐 Мировые IT": 650,
       "🎮 Игры / индустрия": 600
     },
-    "reviewed_pending": 10,
+    "reviewed_pending": 5,
     "approved": 2,
     "approve_limit": 2,
     "min_auto_score": 650,
     "openrouter_enabled": false,
-    "reviewed_at": "2026-05-25T05:03:44+00:00",
-    "reviewed_at_sakhalin": "2026-05-25T16:03:44+11:00"
+    "reviewed_at": "2026-05-25T05:31:42+00:00",
+    "reviewed_at_sakhalin": "2026-05-25T16:31:42+11:00"
   },
   "priority_guard": {
-    "changed": 0,
-    "checked_at": "2026-05-25T05:03:44+00:00",
-    "checked_at_sakhalin": "2026-05-25T16:03:44+11:00"
+    "changed": 1,
+    "checked_at": "2026-05-25T05:31:42+00:00",
+    "checked_at_sakhalin": "2026-05-25T16:31:42+11:00"
   },
   "final_guard": {
-    "changed": 0,
-    "polished": 2,
-    "checked_at": "2026-05-25T05:03:44+00:00",
-    "checked_at_sakhalin": "2026-05-25T16:03:44+11:00"
+    "version": 2,
+    "changed": 1,
+    "polished": 0,
+    "checked_at": "2026-05-25T05:31:42+00:00",
+    "checked_at_sakhalin": "2026-05-25T16:31:42+11:00"
   },
-  "recent_published_20m_count": 2,
-  "recent_published_20m": [
-    {
-      "time_sakhalin": "2026-05-25T16:04:06+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "title": "Мужчина погиб при атаке БПЛА на Белгородскую область",
-      "with_image": true,
-      "image_mode": "pipeline_generated",
-      "publish_method": "sendPhoto/safe/pipeline_generated",
-      "telegram_message_id": 111
-    },
-    {
-      "time_sakhalin": "2026-05-25T16:04:37+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "title": "Над Тульской областью за ночь уничтожены пять БПЛА",
-      "with_image": true,
-      "image_mode": "pipeline_generated",
-      "publish_method": "sendPhoto/safe/pipeline_generated",
-      "telegram_message_id": 112
-    }
-  ],
-  "decision": "published"
+  "recent_published_20m_count": 0,
+  "recent_published_20m": [],
+  "decision": "no_approved_to_publish"
 }
