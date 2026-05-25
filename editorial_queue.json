@@ -7302,15 +7302,15 @@
     "checked_at_sakhalin": "2026-05-25T12:23:58+11:00"
   },
   "cycle_report": {
-    "reported_at": "2026-05-25T01:10:29+00:00",
-    "reported_at_sakhalin": "2026-05-25T12:10:29+11:00",
-    "queue_updated_at": "2026-05-25T01:10:16+00:00",
-    "queue_updated_at_sakhalin": "2026-05-25T12:10:16+11:00",
-    "total_queue_items": 127,
+    "reported_at": "2026-05-25T01:24:32+00:00",
+    "reported_at_sakhalin": "2026-05-25T12:24:32+11:00",
+    "queue_updated_at": "2026-05-25T01:24:21+00:00",
+    "queue_updated_at_sakhalin": "2026-05-25T12:24:21+11:00",
+    "total_queue_items": 128,
     "status_counts": {
       "hold": 5,
       "rejected": 88,
-      "published": 34,
+      "published": 35,
       "pending": 0,
       "approved": 0,
       "skipped": 0,
@@ -7323,7 +7323,7 @@
     "approved_by_category": {},
     "published_by_category": {
       "🇷🇺 РФ / война и безопасность": 13,
-      "🧭 Геополитика": 10,
+      "🧭 Геополитика": 11,
       "🇷🇺 РФ / происшествия": 5,
       "🌐 Мировые IT": 3,
       "🇷🇺 РФ / экономика": 2,
@@ -7342,28 +7342,39 @@
         "🌐 Мировые IT": 650,
         "🎮 Игры / индустрия": 600
       },
-      "reviewed_pending": 0,
-      "approved": 0,
+      "reviewed_pending": 1,
+      "approved": 1,
       "approve_limit": 2,
       "min_auto_score": 650,
       "openrouter_enabled": false,
-      "reviewed_at": "2026-05-25T01:10:15+00:00",
-      "reviewed_at_sakhalin": "2026-05-25T12:10:15+11:00"
+      "reviewed_at": "2026-05-25T01:23:58+00:00",
+      "reviewed_at_sakhalin": "2026-05-25T12:23:58+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-25T01:10:15+00:00",
-      "checked_at_sakhalin": "2026-05-25T12:10:15+11:00"
+      "checked_at": "2026-05-25T01:23:58+00:00",
+      "checked_at_sakhalin": "2026-05-25T12:23:58+11:00"
     },
     "final_guard": {
       "changed": 0,
       "polished": 0,
-      "checked_at": "2026-05-25T01:10:16+00:00",
-      "checked_at_sakhalin": "2026-05-25T12:10:16+11:00"
+      "checked_at": "2026-05-25T01:23:58+00:00",
+      "checked_at_sakhalin": "2026-05-25T12:23:58+11:00"
     },
-    "recent_published_20m_count": 0,
-    "recent_published_20m": [],
-    "decision": "no_approved_to_publish"
+    "recent_published_20m_count": 1,
+    "recent_published_20m": [
+      {
+        "time_sakhalin": "2026-05-25T12:24:09+11:00",
+        "source": "Interfax",
+        "category": "🧭 Геополитика",
+        "title": "Сделка между США и Ираном не состоится без разморозки части иранских активов",
+        "with_image": true,
+        "image_mode": "pipeline_generated",
+        "publish_method": "sendPhoto/safe/pipeline_generated",
+        "telegram_message_id": 110
+      }
+    ],
+    "decision": "published"
   },
   "minimum_release": {
     "version": 3,
