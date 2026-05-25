@@ -9047,15 +9047,15 @@
     "checked_at_sakhalin": "2026-05-25T22:57:10+11:00"
   },
   "cycle_report": {
-    "reported_at": "2026-05-25T11:42:23+00:00",
-    "reported_at_sakhalin": "2026-05-25T22:42:23+11:00",
-    "queue_updated_at": "2026-05-25T11:42:10+00:00",
-    "queue_updated_at_sakhalin": "2026-05-25T22:42:10+11:00",
-    "total_queue_items": 139,
+    "reported_at": "2026-05-25T11:57:56+00:00",
+    "reported_at_sakhalin": "2026-05-25T22:57:56+11:00",
+    "queue_updated_at": "2026-05-25T11:57:40+00:00",
+    "queue_updated_at_sakhalin": "2026-05-25T22:57:40+11:00",
+    "total_queue_items": 149,
     "status_counts": {
-      "hold": 11,
-      "rejected": 86,
-      "published": 42,
+      "hold": 10,
+      "rejected": 96,
+      "published": 43,
       "pending": 0,
       "approved": 0,
       "skipped": 0,
@@ -9064,13 +9064,13 @@
     "hold_by_category": {
       "🌐 Мировые IT": 3,
       "🧭 Геополитика": 3,
-      "🇷🇺 РФ / война и безопасность": 3,
-      "🌍 Мир о России": 2
+      "🌍 Мир о России": 2,
+      "🇷🇺 РФ / война и безопасность": 2
     },
     "approved_by_category": {},
     "published_by_category": {
       "🇷🇺 РФ / война и безопасность": 16,
-      "🧭 Геополитика": 15,
+      "🧭 Геополитика": 16,
       "🇷🇺 РФ / происшествия": 5,
       "🌐 Мировые IT": 3,
       "🇷🇺 РФ / экономика": 2,
@@ -9090,26 +9090,26 @@
         "🎮 Игры / индустрия": 600
       },
       "reviewed_pending": 10,
-      "approved": 2,
+      "approved": 1,
       "approve_limit": 2,
       "min_auto_score": 650,
       "openrouter_enabled": false,
-      "reviewed_at": "2026-05-25T11:41:46+00:00",
-      "reviewed_at_sakhalin": "2026-05-25T22:41:46+11:00"
+      "reviewed_at": "2026-05-25T11:57:10+00:00",
+      "reviewed_at_sakhalin": "2026-05-25T22:57:10+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-25T11:41:46+00:00",
-      "checked_at_sakhalin": "2026-05-25T22:41:46+11:00"
+      "checked_at": "2026-05-25T11:57:10+00:00",
+      "checked_at_sakhalin": "2026-05-25T22:57:10+11:00"
     },
     "final_guard": {
       "version": 2,
-      "changed": 1,
-      "polished": 1,
-      "checked_at": "2026-05-25T11:41:47+00:00",
-      "checked_at_sakhalin": "2026-05-25T22:41:47+11:00"
+      "changed": 0,
+      "polished": 0,
+      "checked_at": "2026-05-25T11:57:10+00:00",
+      "checked_at_sakhalin": "2026-05-25T22:57:10+11:00"
     },
-    "recent_published_20m_count": 1,
+    "recent_published_20m_count": 2,
     "recent_published_20m": [
       {
         "time_sakhalin": "2026-05-25T22:41:58+11:00",
@@ -9120,6 +9120,16 @@
         "image_mode": "pipeline_generated",
         "publish_method": "sendPhoto/safe/pipeline_generated",
         "telegram_message_id": 118
+      },
+      {
+        "time_sakhalin": "2026-05-25T22:57:28+11:00",
+        "source": "Interfax",
+        "category": "🧭 Геополитика",
+        "title": "Глава ЦБ Греции не исключил осторожного ужесточения политики ЕЦБ",
+        "with_image": true,
+        "image_mode": "pipeline_generated",
+        "publish_method": "sendPhoto/safe/pipeline_generated",
+        "telegram_message_id": 119
       }
     ],
     "decision": "published"
