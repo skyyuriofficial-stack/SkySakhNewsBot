@@ -87,7 +87,8 @@
     "https://www.interfax.ru/russia/1091548",
     "https://www.interfax.ru/world/1091550",
     "https://www.interfax.ru/russia/1091566",
-    "https://www.interfax.ru/russia/1091557"
+    "https://www.interfax.ru/russia/1091557",
+    "https://www.interfax.ru/russia/1091562"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -177,17 +178,11 @@
     "d92752f69e831ca6898104f8c7006ff953d96b6e",
     "a6351e03341d8b2ee0fe263dec44a3b1d2e871b4",
     "4c0ba907eca51d388ee6b950dbad431e8f682388",
-    "1f503ae7b6f92732ec59ea8a08ce36f41b146327"
+    "1f503ae7b6f92732ec59ea8a08ce36f41b146327",
+    "61d4ff35a809ab9772402f6bee170c332fe0c8fc"
   ],
-  "last_run_sakhalin": "2026-05-25T16:04:49+11:00",
+  "last_run_sakhalin": "2026-05-25T16:05:43+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-19T19:03:06+11:00",
-      "source": "Сахалин-Курилы",
-      "category": "📍 Сахалин",
-      "title": "СК начал проверку после ДТП с подростком на питбайке и автомобилем ДПС в Александровске-Сахалинском - Сахалин-Курилы",
-      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOdFpQeHRJd1ZJaUJkQlFvWUdqQ29MTzRtZzdUeGlyYnhkRXlQRzAyQmY4QndhNTVDMFhfcFZNRGk1cng1UFk3RUdTZTNKN1A1NlEtOERTYTdSb3FobExlRTNtY2tVR1NiM193SlVoZ1FEbEg0UElqZmpGYl84SHJVR0p3aDhJbm1sVVNjX1lZV1RtYTVwbzFlTkFyZlFWSnlXRzF2bnhKeUM5MTlPb01XTmpMY2tjdkw5ai1ETTBRc3FMVFNFa285TW11aDFycEVuRXZfTEZQUQ?oc=5"
-    },
     {
       "time_sakhalin": "2026-05-19T19:03:19+11:00",
       "source": "Reuters",
@@ -1212,6 +1207,21 @@
       "publish_method": "sendPhoto/safe/pipeline_generated",
       "telegram_message_id": 112,
       "score": 1030
+    },
+    {
+      "time_sakhalin": "2026-05-25T16:05:31+11:00",
+      "source": "Interfax",
+      "category": "🇷🇺 РФ / война и безопасность",
+      "title": "Мужчина пострадал при ракетных обстрелах Белгорода и Белгородского округа",
+      "url": "https://www.interfax.ru/russia/1091562",
+      "published_at": "2026-05-25T03:58:00+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_generated",
+      "image_url": null,
+      "image_fingerprint": "83aabe5a50b5e5cd629a33ee089cb7d63be6bc90",
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 113,
+      "score": 925
     }
   ],
   "last_cycle_report": {
@@ -1358,13 +1368,15 @@
     "e7da90064b0f9481210724c24416ef63dfca5e65",
     "47ca599630b00250b4103fc766bebf651b500097",
     "12edae5ac8e9d431efa178a7dad84a211497ba31",
-    "6ff669380771c1261bd07fa5399c8fce38d61ef1"
+    "6ff669380771c1261bd07fa5399c8fce38d61ef1",
+    "83aabe5a50b5e5cd629a33ee089cb7d63be6bc90"
   ],
   "recent_generated_prompts": [
     "generated:security:Трамп призвал ряд исламских стран присоединиться к Соглашениям Авраама",
     "generated:diplomacy:Ограничения введены в аэропорту Иваново",
     "generated:diplomacy_middle_east:Сделка между США и Ираном не состоится без разморозки части иранских активов",
     "generated:security:Мужчина погиб при атаке БПЛА на Белгородскую область",
-    "generated:security:Над Тульской областью за ночь уничтожены пять БПЛА"
+    "generated:security:Над Тульской областью за ночь уничтожены пять БПЛА",
+    "generated:security:Мужчина пострадал при ракетных обстрелах Белгорода и Белгородского округа"
   ]
 }
