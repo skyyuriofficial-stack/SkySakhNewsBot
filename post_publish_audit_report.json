@@ -1,123 +1,25 @@
 {
-  "version": 1,
-  "checked_at": "2026-05-25T06:57:25+00:00",
-  "checked_at_sakhalin": "2026-05-25T17:57:25+11:00",
-  "checked_count": 10,
-  "failed_count": 1,
+  "version": 2,
+  "checked_at": "2026-05-25T11:42:11+00:00",
+  "checked_at_sakhalin": "2026-05-25T22:42:11+11:00",
+  "checked_count": 1,
+  "failed_count": 0,
+  "audit_chat_configured": false,
   "delete_bad_posts": false,
   "deleted": [],
   "items": [
     {
-      "telegram_message_id": 107,
-      "title": "Аэропорты Нижнего Новгорода и Ярославля приостановили работу",
+      "telegram_message_id": 118,
+      "title": "Новый замминистра обороны РФ Виталий Шулика будет руководить аппаратом Минобороны",
       "category": "🧭 Геополитика",
-      "time_sakhalin": "2026-05-25T11:26:22+11:00",
-      "image_mode": "pipeline_search",
-      "url": "https://www.interfax.ru/russia/1091543",
-      "status": "pass",
-      "severity": "ok",
-      "issues": []
-    },
-    {
-      "telegram_message_id": 108,
-      "title": "Аэропорт Калуги приостановил работу",
-      "category": "🧭 Геополитика",
-      "time_sakhalin": "2026-05-25T11:26:45+11:00",
-      "image_mode": "pipeline_search",
-      "url": "https://www.interfax.ru/russia/1091537",
-      "status": "pass",
-      "severity": "ok",
-      "issues": []
-    },
-    {
-      "telegram_message_id": 109,
-      "title": "Ограничения введены в аэропорту Иваново",
-      "category": "🌍 Мир о России",
-      "time_sakhalin": "2026-05-25T11:27:34+11:00",
+      "time_sakhalin": "2026-05-25T22:41:58+11:00",
       "image_mode": "pipeline_generated",
-      "url": "https://www.interfax.ru/russia/1091548",
+      "image_url": null,
+      "url": "https://www.interfax.ru/russia/1091637",
       "status": "pass",
       "severity": "ok",
-      "issues": []
-    },
-    {
-      "telegram_message_id": 110,
-      "title": "Сделка между США и Ираном не состоится без разморозки части иранских активов",
-      "category": "🧭 Геополитика",
-      "time_sakhalin": "2026-05-25T12:24:09+11:00",
-      "image_mode": "pipeline_generated",
-      "url": "https://www.interfax.ru/world/1091550",
-      "status": "pass",
-      "severity": "ok",
-      "issues": []
-    },
-    {
-      "telegram_message_id": 111,
-      "title": "Мужчина погиб при атаке БПЛА на Белгородскую область",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "time_sakhalin": "2026-05-25T16:04:06+11:00",
-      "image_mode": "pipeline_generated",
-      "url": "https://www.interfax.ru/russia/1091566",
-      "status": "pass",
-      "severity": "ok",
-      "issues": []
-    },
-    {
-      "telegram_message_id": 112,
-      "title": "Над Тульской областью за ночь уничтожены пять БПЛА",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "time_sakhalin": "2026-05-25T16:04:37+11:00",
-      "image_mode": "pipeline_generated",
-      "url": "https://www.interfax.ru/russia/1091557",
-      "status": "fail",
-      "severity": "critical",
-      "issues": [
-        "weak_bpla_without_impact"
-      ]
-    },
-    {
-      "telegram_message_id": 113,
-      "title": "Мужчина пострадал при ракетных обстрелах Белгорода и Белгородского округа",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "time_sakhalin": "2026-05-25T16:05:31+11:00",
-      "image_mode": "pipeline_generated",
-      "url": "https://www.interfax.ru/russia/1091562",
-      "status": "pass",
-      "severity": "ok",
-      "issues": []
-    },
-    {
-      "telegram_message_id": 114,
-      "title": "Девять муниципальных округов Херсонской области полностью обесточены после атаки БПЛА",
-      "category": "🧭 Геополитика",
-      "time_sakhalin": "2026-05-25T16:44:38+11:00",
-      "image_mode": "pipeline_generated",
-      "url": "https://www.interfax.ru/russia/1091560",
-      "status": "pass",
-      "severity": "ok",
-      "issues": []
-    },
-    {
-      "telegram_message_id": 115,
-      "title": "Кабмин вернул госпакет Новороссийского морского торгового порта в план приватизации",
-      "category": "🧭 Геополитика",
-      "time_sakhalin": "2026-05-25T17:40:29+11:00",
-      "image_mode": "pipeline_generated",
-      "url": "https://www.interfax.ru/business/1091578",
-      "status": "pass",
-      "severity": "ok",
-      "issues": []
-    },
-    {
-      "telegram_message_id": 116,
-      "title": "CBS сообщил об ограниченном доступе верховного лидера Ирана к внешнему миру",
-      "category": "🧭 Геополитика",
-      "time_sakhalin": "2026-05-25T17:57:12+11:00",
-      "image_mode": "pipeline_generated",
-      "url": "https://www.interfax.ru/world/1091583",
-      "status": "pass",
-      "severity": "ok",
-      "issues": []
+      "issues": [],
+      "content_preview": "🧭 Геополитика Новый замминистра обороны РФ Виталий Шулика будет руководить аппаратом Минобороны Генерал-полковник Виталий Шулика будет руководить аппаратом министерства обороны России, следует из сообщения, опубликованного в понедельникна сайте военного ведомства. Согласно сообщению, Шулика назначен заместителем министра обороны РФ. ГЕОПОЛИТИКА · Interfax"
     }
   ]
 }
