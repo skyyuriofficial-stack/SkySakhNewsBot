@@ -84,7 +84,8 @@
     "https://www.interfax.ru/world/1091536",
     "https://www.interfax.ru/russia/1091543",
     "https://www.interfax.ru/russia/1091537",
-    "https://www.interfax.ru/russia/1091548"
+    "https://www.interfax.ru/russia/1091548",
+    "https://www.interfax.ru/world/1091550"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -171,18 +172,11 @@
     "13fe03cd899d1b5d0308e7433175c2bbfeb52e91",
     "c32eb4609b872ddc317b227b86c8c134c8951083",
     "df27f25ea9113b02dea3cb63b397955c30057e68",
-    "d92752f69e831ca6898104f8c7006ff953d96b6e"
+    "d92752f69e831ca6898104f8c7006ff953d96b6e",
+    "a6351e03341d8b2ee0fe263dec44a3b1d2e871b4"
   ],
-  "last_run_sakhalin": "2026-05-25T12:10:36+11:00",
+  "last_run_sakhalin": "2026-05-25T12:24:21+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-19T18:16:51+11:00",
-      "source": "Сахалин-Курилы",
-      "category": "📍 Сахалин",
-      "title": "Жители Сахалина и Курил ощутили три землетрясения 17 мая - Сахалин-Курилы",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNMmU0SURHVnBSNVlBMjhJeUpXaTZ2UkttaDl1SjJQTC1ReW1lZUdlMzB4QklFNDRDb05vZGpBNEhxYTFlMXk1SVg0cUdxeE1XcnV5NWJZWWFoWXl6QThURGk2VktST2V6WV9yMXdpeWdwMVpIVUI5aXEtLUtrMEkxbVBZbkdoSUw5UEwzWGpJRU9BYWpDbkJCZmgxRHN0U2EzbnN6MENSbDJvX3lQR0RKcGc5WGJNQjA1ZGRTVFoxd3E?oc=5",
-      "with_image": false
-    },
     {
       "time_sakhalin": "2026-05-19T18:35:47+11:00",
       "source": "АСТВ",
@@ -1185,6 +1179,21 @@
       "publish_method": "sendPhoto/safe/pipeline_generated",
       "telegram_message_id": 109,
       "score": 1000
+    },
+    {
+      "time_sakhalin": "2026-05-25T12:24:09+11:00",
+      "source": "Interfax",
+      "category": "🧭 Геополитика",
+      "title": "Сделка между США и Ираном не состоится без разморозки части иранских активов",
+      "url": "https://www.interfax.ru/world/1091550",
+      "published_at": "2026-05-25T01:13:00+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_generated",
+      "image_url": null,
+      "image_fingerprint": "47ca599630b00250b4103fc766bebf651b500097",
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 110,
+      "score": 900
     }
   ],
   "last_cycle_report": {
@@ -1305,10 +1314,12 @@
     "b1633c685eb8f09940f5bfba8787509d3942a4d9",
     "09af0bace59b42350ae2ebfb5e4c800c97157662",
     "dfc17bf113e5d0abceb87cb9b3804e5a6eb34ee4",
-    "e7da90064b0f9481210724c24416ef63dfca5e65"
+    "e7da90064b0f9481210724c24416ef63dfca5e65",
+    "47ca599630b00250b4103fc766bebf651b500097"
   ],
   "recent_generated_prompts": [
     "generated:security:Трамп призвал ряд исламских стран присоединиться к Соглашениям Авраама",
-    "generated:diplomacy:Ограничения введены в аэропорту Иваново"
+    "generated:diplomacy:Ограничения введены в аэропорту Иваново",
+    "generated:diplomacy_middle_east:Сделка между США и Ираном не состоится без разморозки части иранских активов"
   ]
 }
