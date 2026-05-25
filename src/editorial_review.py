@@ -4,6 +4,7 @@
 # - classify by shared category_policy, not by stale category_hint;
 # - separate incidents from war/security;
 # - use owner-defined stream priorities;
+# - if OpenRouter is configured, rewrite/translate high-priority non-Russian news to clean Russian;
 # - ads, deals, downloads, tutorials and weak statements are rejected;
 # - routine alerts without real consequences are rejected or held.
 
@@ -15,6 +16,8 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
+import requests
+
 from category_policy import resolve_final_category_from_item, stream_priority
 
 QUEUE_FILE = Path("editorial_queue.json")
@@ -22,6 +25,9 @@ STATE_FILE = Path("state.json")
 APPROVE_LIMIT = int(os.getenv("EDITORIAL_REVIEW_APPROVE_LIMIT", "2"))
 PENDING_MAX_HOURS = int(os.getenv("EDITORIAL_REVIEW_PENDING_MAX_HOURS", "20"))
 MIN_AUTO_SCORE = int(os.getenv("EDITORIAL_REVIEW_MIN_AUTO_SCORE", "650"))
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "").strip()
+OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "openai/gpt-4o-mini").strip()
+OPENROUTER_TIMEOUT = int(os.getenv("OPENROUTER_TIMEOUT", "45"))
 SAKH_TZ = timezone(timedelta(hours=11))
 
 FOOTERS = {
@@ -65,8 +71,9 @@ HARD_IMPACT_TERMS = [
 LAW_POLITICS_TERMS = ["госдума", "комитет", "законопроект", "закон", "совет федерации", "володин", "сенаторы", "депутаты", "правительство", "министерство", "кремль", "песков", "подписали заявление", "заседание", "мид", "лавров"]
 RUSSIA_TERMS = ["russia", "russian", "putin", "kremlin", "moscow", "россия", "россий", "путин", "кремль", "москва", "рф"]
 GAMING_MAJOR_TERMS = ["rockstar", "gta", "the witcher", "cd projekt", "playstation", "xbox game pass", "game pass", "steam", "nintendo", "major studio", "layoff", "acquisition", "lawsuit", "суд", "сделка", "массовые увольнения"]
-STRONG_BONUS_TERMS = ["putin", "путин", "xi", "си", "pipeline", "gas", "oil", "санкц", "бпла", "iran", "иран", "google", "openai", "погиб", "пожар", "лавина", "без воды", "cve", "уязвим", "gta", "rockstar"]
+STRONG_BONUS_TERMS = ["putin", "путин", "xi", "си", "pipeline", "gas", "oil", "санкц", "бпла", "iran", "иран", "google", "openai", "погиб", "пожар", "лавина", "без воды", "cve", "уязвим", "gta", "rockstar", "starship", "spacex"]
 PROPAGANDA_PHRASES = ["беззащитным детям", "каратели", "нацисты", "террористический режим", "прицельно ударили по спящим"]
+BAD_AI_OUTPUT_TERMS = ["я не могу", "as an ai", "i cannot", "не могу помочь", "извините", "sorry"]
 
 
 def now_utc() -> str:
@@ -165,11 +172,11 @@ def sentence_split(text: str) -> List[str]:
         low = norm_text(s)
         if len(s) < 45:
             continue
-        if any(x in low for x in ["читать далее", "continue reading", "sign in", "support us", "подпис", "реклама"]):
+        if any(x in low for x in ["читать далее", "continue reading", "sign in", "support us", "подпис", "реклама", "prefer the guardian", "sections forum", "subscribe search", "text settings", "story text size"]):
             continue
         if has_any(low, PROPAGANDA_PHRASES):
             continue
-        if len(s) > 250 and not re.search(r"[.!?…]$", s):
+        if len(s) > 260 and not re.search(r"[.!?…]$", s):
             continue
         key = re.sub(r"\W+", "", low)[:130]
         if key in seen:
@@ -179,6 +186,90 @@ def sentence_split(text: str) -> List[str]:
         if len(out) >= 2:
             break
     return out
+
+
+def extract_json_object(raw: str) -> Optional[Dict]:
+    if not raw:
+        return None
+    raw = raw.strip()
+    raw = re.sub(r"^```(?:json)?\s*", "", raw, flags=re.I).strip()
+    raw = re.sub(r"\s*```$", "", raw).strip()
+    try:
+        obj = json.loads(raw)
+        return obj if isinstance(obj, dict) else None
+    except Exception:
+        pass
+    m = re.search(r"\{.*\}", raw, flags=re.S)
+    if not m:
+        return None
+    try:
+        obj = json.loads(m.group(0))
+        return obj if isinstance(obj, dict) else None
+    except Exception:
+        return None
+
+
+def openrouter_rewrite(item: Dict, category: str) -> Optional[Tuple[str, List[str]]]:
+    if not OPENROUTER_API_KEY:
+        return None
+    title = clean(item.get("title_original") or item.get("title_ru") or "")[:240]
+    source_text = clean(item.get("source_text") or "")[:2500]
+    if not title or not source_text:
+        return None
+    prompt = {
+        "role": "user",
+        "content": (
+            "Ты редактор короткого Telegram-новостного канала. На основе исходного материала сделай русский новостной пост.\n"
+            "Требования: только факты из текста; без пропагандистских оценок; без рекламы; без дублей; без английского; "
+            "заголовок до 95 символов; body — ровно 2 коротких абзаца по 1-2 предложения. "
+            "Верни строго JSON: {\"title\": \"...\", \"body\": [\"...\", \"...\"]}.\n\n"
+            f"Категория: {category}\n"
+            f"Источник: {item.get('source') or 'Источник'}\n"
+            f"Оригинальный заголовок: {title}\n"
+            f"Исходный текст: {source_text}"
+        )
+    }
+    payload = {
+        "model": OPENROUTER_MODEL,
+        "messages": [
+            {"role": "system", "content": "You are a precise Russian news editor. Output JSON only."},
+            prompt,
+        ],
+        "temperature": 0.15,
+        "max_tokens": 650,
+    }
+    try:
+        resp = requests.post(
+            "https://openrouter.ai/api/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+                "Content-Type": "application/json",
+                "HTTP-Referer": "https://github.com/skyyuriofficial-stack/SkySakhNewsBot",
+                "X-Title": "SkySakhNewsBot",
+            },
+            json=payload,
+            timeout=OPENROUTER_TIMEOUT,
+        )
+        if resp.status_code >= 400:
+            return None
+        data = resp.json()
+        content = (((data.get("choices") or [{}])[0].get("message") or {}).get("content") or "").strip()
+        obj = extract_json_object(content)
+        if not obj:
+            return None
+        out_title = clean(obj.get("title") or "")[:120]
+        body_raw = obj.get("body") or []
+        if isinstance(body_raw, str):
+            body_raw = [body_raw]
+        body = [clean(x) for x in body_raw if clean(x)][:2]
+        if len(body) < 2:
+            return None
+        full = out_title + " " + " ".join(body)
+        if cyrillic_ratio(full) < 0.70 or has_any(full, BAD_AI_OUTPUT_TERMS + PROPAGANDA_PHRASES):
+            return None
+        return out_title, body
+    except Exception:
+        return None
 
 
 def is_weak_alert_without_consequences(text: str) -> bool:
@@ -223,6 +314,19 @@ def generic_rewrite(item: Dict, category: str) -> Tuple[str, List[str]]:
     if not body:
         body = [strip_duplicate_halves(clean(x)) for x in (item.get("body") or []) if clean(x) and not has_any(clean(x), PROPAGANDA_PHRASES)][:2]
     return title, body[:2]
+
+
+def build_clean_russian_post(item: Dict, category: str) -> Optional[Tuple[str, List[str], str]]:
+    special = special_rewrite(item, category)
+    if special and is_russian_post(special[0], special[1]):
+        return special[0], special[1], "special"
+    title, body = generic_rewrite(item, category)
+    if title and body and is_russian_post(title, body):
+        return title, body[:2], "generic"
+    ai = openrouter_rewrite(item, category)
+    if ai and is_russian_post(ai[0], ai[1]):
+        return ai[0], ai[1], "openrouter"
+    return None
 
 
 def published_sets() -> Tuple[set, set]:
@@ -289,7 +393,7 @@ def review_queue() -> None:
     for score, item, category, reason in decisions:
         reviewed += 1
         item["reviewed_at"] = now_utc()
-        item["reviewed_by"] = "auto-editor-v5-owner-priority"
+        item["reviewed_by"] = "auto-editor-v6-openrouter-rewrite"
         item["category"] = category
         item["stream_priority"] = stream_priority(category)
         item["score"] = score
@@ -303,12 +407,15 @@ def review_queue() -> None:
             item["status"] = "hold"
             item.setdefault("editor_notes", []).append(f"В резерве: score={score}, порог={MIN_AUTO_SCORE}, приоритет потока={stream_priority(category)}.")
             continue
-        special = special_rewrite(item, category)
-        title, body = special if special else generic_rewrite(item, category)
-        if not title or not body or not is_russian_post(title, body):
+        built = build_clean_russian_post(item, category)
+        if not built:
             item["status"] = "hold"
-            item.setdefault("editor_notes", []).append("В резерве: нет безопасного русскоязычного текста для публикации.")
+            if OPENROUTER_API_KEY:
+                item.setdefault("editor_notes", []).append("В резерве: не удалось получить безопасный русский текст даже через OpenRouter.")
+            else:
+                item.setdefault("editor_notes", []).append("В резерве: нет безопасного русскоязычного текста; OPENROUTER_API_KEY не задан.")
             continue
+        title, body, rewrite_mode = built
         item["status"] = "approved"
         item["title_ru"] = title
         item["body"] = body[:2]
@@ -316,14 +423,15 @@ def review_queue() -> None:
         item["edited_post_text"] = item["post_text"]
         item["image_decision"] = "use" if item.get("image_url") else "none"
         item["with_image"] = bool(item.get("image_url"))
-        item.setdefault("editor_notes", []).append("Одобрено автоматическим редактором v5: owner priority map + shared category_policy.")
+        item["rewrite_mode"] = rewrite_mode
+        item.setdefault("editor_notes", []).append(f"Одобрено автоматическим редактором v6: clean Russian post via {rewrite_mode}.")
         approved += 1
     queue["updated_at"] = now_utc()
     queue["updated_at_sakhalin"] = now_sakh()
     queue["reviewed_at"] = now_utc()
     queue["reviewed_at_sakhalin"] = now_sakh()
     queue["auto_review"] = {
-        "version": 5,
+        "version": 6,
         "priority_map": {
             "🌍 Мир о России": 1000,
             "📍 Сахалин": 950,
@@ -339,11 +447,12 @@ def review_queue() -> None:
         "approved": approved,
         "approve_limit": APPROVE_LIMIT,
         "min_auto_score": MIN_AUTO_SCORE,
+        "openrouter_enabled": bool(OPENROUTER_API_KEY),
         "reviewed_at": queue["reviewed_at"],
         "reviewed_at_sakhalin": queue["reviewed_at_sakhalin"],
     }
     save_json(QUEUE_FILE, queue)
-    print(f"auto-review-v5-owner-priority: reviewed={reviewed}, approved={approved}")
+    print(f"auto-review-v6-openrouter-rewrite: reviewed={reviewed}, approved={approved}, openrouter={bool(OPENROUTER_API_KEY)}")
 
 
 if __name__ == "__main__":
