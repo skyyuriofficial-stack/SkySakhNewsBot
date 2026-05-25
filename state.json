@@ -1215,27 +1215,29 @@
     }
   ],
   "last_cycle_report": {
-    "reported_at": "2026-05-25T01:24:32+00:00",
-    "reported_at_sakhalin": "2026-05-25T12:24:32+11:00",
-    "queue_updated_at": "2026-05-25T01:24:21+00:00",
-    "queue_updated_at_sakhalin": "2026-05-25T12:24:21+11:00",
-    "total_queue_items": 128,
+    "reported_at": "2026-05-25T05:05:00+00:00",
+    "reported_at_sakhalin": "2026-05-25T16:05:00+11:00",
+    "queue_updated_at": "2026-05-25T05:04:49+00:00",
+    "queue_updated_at_sakhalin": "2026-05-25T16:04:49+11:00",
+    "total_queue_items": 138,
     "status_counts": {
-      "hold": 5,
-      "rejected": 88,
-      "published": 35,
+      "hold": 10,
+      "rejected": 91,
+      "published": 37,
       "pending": 0,
       "approved": 0,
       "skipped": 0,
       "unknown": 0
     },
     "hold_by_category": {
-      "🌐 Мировые IT": 4,
-      "🌍 Мир о России": 1
+      "🌐 Мировые IT": 5,
+      "🌍 Мир о России": 3,
+      "🇷🇺 РФ / война и безопасность": 1,
+      "🧭 Геополитика": 1
     },
     "approved_by_category": {},
     "published_by_category": {
-      "🇷🇺 РФ / война и безопасность": 13,
+      "🇷🇺 РФ / война и безопасность": 15,
       "🧭 Геополитика": 11,
       "🇷🇺 РФ / происшествия": 5,
       "🌐 Мировые IT": 3,
@@ -1255,36 +1257,46 @@
         "🌐 Мировые IT": 650,
         "🎮 Игры / индустрия": 600
       },
-      "reviewed_pending": 1,
-      "approved": 1,
+      "reviewed_pending": 10,
+      "approved": 2,
       "approve_limit": 2,
       "min_auto_score": 650,
       "openrouter_enabled": false,
-      "reviewed_at": "2026-05-25T01:23:58+00:00",
-      "reviewed_at_sakhalin": "2026-05-25T12:23:58+11:00"
+      "reviewed_at": "2026-05-25T05:03:44+00:00",
+      "reviewed_at_sakhalin": "2026-05-25T16:03:44+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-25T01:23:58+00:00",
-      "checked_at_sakhalin": "2026-05-25T12:23:58+11:00"
+      "checked_at": "2026-05-25T05:03:44+00:00",
+      "checked_at_sakhalin": "2026-05-25T16:03:44+11:00"
     },
     "final_guard": {
       "changed": 0,
-      "polished": 0,
-      "checked_at": "2026-05-25T01:23:58+00:00",
-      "checked_at_sakhalin": "2026-05-25T12:23:58+11:00"
+      "polished": 2,
+      "checked_at": "2026-05-25T05:03:44+00:00",
+      "checked_at_sakhalin": "2026-05-25T16:03:44+11:00"
     },
-    "recent_published_20m_count": 1,
+    "recent_published_20m_count": 2,
     "recent_published_20m": [
       {
-        "time_sakhalin": "2026-05-25T12:24:09+11:00",
+        "time_sakhalin": "2026-05-25T16:04:06+11:00",
         "source": "Interfax",
-        "category": "🧭 Геополитика",
-        "title": "Сделка между США и Ираном не состоится без разморозки части иранских активов",
+        "category": "🇷🇺 РФ / война и безопасность",
+        "title": "Мужчина погиб при атаке БПЛА на Белгородскую область",
         "with_image": true,
         "image_mode": "pipeline_generated",
         "publish_method": "sendPhoto/safe/pipeline_generated",
-        "telegram_message_id": 110
+        "telegram_message_id": 111
+      },
+      {
+        "time_sakhalin": "2026-05-25T16:04:37+11:00",
+        "source": "Interfax",
+        "category": "🇷🇺 РФ / война и безопасность",
+        "title": "Над Тульской областью за ночь уничтожены пять БПЛА",
+        "with_image": true,
+        "image_mode": "pipeline_generated",
+        "publish_method": "sendPhoto/safe/pipeline_generated",
+        "telegram_message_id": 112
       }
     ],
     "decision": "published"
