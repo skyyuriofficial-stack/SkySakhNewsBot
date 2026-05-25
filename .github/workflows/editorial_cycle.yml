@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - "src/editorial_*.py"
+      - "src/post_publish_audit.py"
       - "src/category_policy.py"
       - "src/category_policy_smoke_test.py"
       - "src/image_pipeline.py"
@@ -41,6 +42,7 @@ jobs:
         run: |
           python -m py_compile src/category_policy.py
           python -m py_compile src/image_pipeline.py
+          python -m py_compile src/post_publish_audit.py
           python src/category_policy_smoke_test.py
           python src/image_pipeline_smoke_test.py
       - name: Collect drafts
@@ -80,11 +82,21 @@ jobs:
         run: |
           python -m py_compile src/editorial_publish_safe.py
           python src/editorial_publish_safe.py
-      - name: Commit queue and state
+      - name: Post-publish audit
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          POST_AUDIT_RECENT_LIMIT: "10"
+          SEND_AUDIT_TO_TELEGRAM: "1"
+          DELETE_BAD_POSTS: "0"
+        run: |
+          python -m py_compile src/post_publish_audit.py
+          python src/post_publish_audit.py
+      - name: Commit queue, state and audit report
         run: |
           git config user.name "skysakhnews-bot"
           git config user.email "actions@github.com"
-          git add editorial_queue.json state.json
+          git add editorial_queue.json state.json post_publish_audit_report.json
           if git diff --cached --quiet; then
             echo "No state changes"
           else
