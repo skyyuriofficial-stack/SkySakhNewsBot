@@ -7155,17 +7155,17 @@
     "checked_at_sakhalin": "2026-05-25T11:36:12+11:00"
   },
   "cycle_report": {
-    "reported_at": "2026-05-25T00:27:08+00:00",
-    "reported_at_sakhalin": "2026-05-25T11:27:08+11:00",
-    "queue_updated_at": "2026-05-25T00:26:57+00:00",
-    "queue_updated_at_sakhalin": "2026-05-25T11:26:57+11:00",
+    "reported_at": "2026-05-25T00:36:24+00:00",
+    "reported_at_sakhalin": "2026-05-25T11:36:24+11:00",
+    "queue_updated_at": "2026-05-25T00:36:12+00:00",
+    "queue_updated_at_sakhalin": "2026-05-25T11:36:12+11:00",
     "total_queue_items": 127,
     "status_counts": {
-      "approved": 1,
       "hold": 5,
       "rejected": 88,
-      "published": 33,
+      "published": 34,
       "pending": 0,
+      "approved": 0,
       "skipped": 0,
       "unknown": 0
     },
@@ -7173,15 +7173,14 @@
       "🌐 Мировые IT": 4,
       "🌍 Мир о России": 1
     },
-    "approved_by_category": {
-      "🌍 Мир о России": 1
-    },
+    "approved_by_category": {},
     "published_by_category": {
       "🇷🇺 РФ / война и безопасность": 13,
       "🧭 Геополитика": 10,
       "🇷🇺 РФ / происшествия": 5,
       "🌐 Мировые IT": 3,
-      "🇷🇺 РФ / экономика": 2
+      "🇷🇺 РФ / экономика": 2,
+      "🌍 Мир о России": 1
     },
     "auto_review": {
       "version": 5,
@@ -7196,25 +7195,25 @@
         "🌐 Мировые IT": 650,
         "🎮 Игры / индустрия": 600
       },
-      "reviewed_pending": 7,
-      "approved": 2,
+      "reviewed_pending": 0,
+      "approved": 0,
       "approve_limit": 2,
       "min_auto_score": 650,
-      "reviewed_at": "2026-05-25T00:26:11+00:00",
-      "reviewed_at_sakhalin": "2026-05-25T11:26:11+11:00"
+      "reviewed_at": "2026-05-25T00:36:12+00:00",
+      "reviewed_at_sakhalin": "2026-05-25T11:36:12+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-25T00:26:11+00:00",
-      "checked_at_sakhalin": "2026-05-25T11:26:11+11:00"
+      "checked_at": "2026-05-25T00:36:12+00:00",
+      "checked_at_sakhalin": "2026-05-25T11:36:12+11:00"
     },
     "final_guard": {
       "changed": 0,
-      "polished": 2,
-      "checked_at": "2026-05-25T00:26:12+00:00",
-      "checked_at_sakhalin": "2026-05-25T11:26:12+11:00"
+      "polished": 0,
+      "checked_at": "2026-05-25T00:36:12+00:00",
+      "checked_at_sakhalin": "2026-05-25T11:36:12+11:00"
     },
-    "recent_published_20m_count": 2,
+    "recent_published_20m_count": 3,
     "recent_published_20m": [
       {
         "time_sakhalin": "2026-05-25T11:26:22+11:00",
@@ -7235,6 +7234,16 @@
         "image_mode": "pipeline_search",
         "publish_method": "sendPhoto/safe/pipeline_search",
         "telegram_message_id": 108
+      },
+      {
+        "time_sakhalin": "2026-05-25T11:27:34+11:00",
+        "source": "Interfax",
+        "category": "🌍 Мир о России",
+        "title": "Ограничения введены в аэропорту Иваново",
+        "with_image": true,
+        "image_mode": "pipeline_generated",
+        "publish_method": "sendPhoto/safe/pipeline_generated",
+        "telegram_message_id": 109
       }
     ],
     "decision": "published"
