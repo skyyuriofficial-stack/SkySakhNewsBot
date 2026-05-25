@@ -8,6 +8,7 @@ on:
       - "src/category_policy.py"
       - "src/category_policy_smoke_test.py"
       - "src/image_pipeline.py"
+      - "src/image_pipeline_smoke_test.py"
       - "src/thematic_image.py"
       - "requirements.txt"
       - ".github/workflows/editorial_cycle.yml"
@@ -36,10 +37,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Category policy smoke test
+      - name: Policy smoke tests
         run: |
           python -m py_compile src/category_policy.py
+          python -m py_compile src/image_pipeline.py
           python src/category_policy_smoke_test.py
+          python src/image_pipeline_smoke_test.py
       - name: Collect drafts
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
