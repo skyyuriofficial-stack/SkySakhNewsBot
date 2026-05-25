@@ -1,8 +1,8 @@
 {
-  "reported_at": "2026-05-25T00:45:14+00:00",
-  "reported_at_sakhalin": "2026-05-25T11:45:14+11:00",
-  "queue_updated_at": "2026-05-25T00:45:03+00:00",
-  "queue_updated_at_sakhalin": "2026-05-25T11:45:03+11:00",
+  "reported_at": "2026-05-25T01:10:29+00:00",
+  "reported_at_sakhalin": "2026-05-25T12:10:29+11:00",
+  "queue_updated_at": "2026-05-25T01:10:16+00:00",
+  "queue_updated_at_sakhalin": "2026-05-25T12:10:16+11:00",
   "total_queue_items": 127,
   "status_counts": {
     "hold": 5,
@@ -27,7 +27,7 @@
     "🌍 Мир о России": 1
   },
   "auto_review": {
-    "version": 5,
+    "version": 6,
     "priority_map": {
       "🌍 Мир о России": 1000,
       "📍 Сахалин": 950,
@@ -43,52 +43,22 @@
     "approved": 0,
     "approve_limit": 2,
     "min_auto_score": 650,
-    "reviewed_at": "2026-05-25T00:45:02+00:00",
-    "reviewed_at_sakhalin": "2026-05-25T11:45:02+11:00"
+    "openrouter_enabled": false,
+    "reviewed_at": "2026-05-25T01:10:15+00:00",
+    "reviewed_at_sakhalin": "2026-05-25T12:10:15+11:00"
   },
   "priority_guard": {
     "changed": 0,
-    "checked_at": "2026-05-25T00:45:02+00:00",
-    "checked_at_sakhalin": "2026-05-25T11:45:02+11:00"
+    "checked_at": "2026-05-25T01:10:15+00:00",
+    "checked_at_sakhalin": "2026-05-25T12:10:15+11:00"
   },
   "final_guard": {
     "changed": 0,
     "polished": 0,
-    "checked_at": "2026-05-25T00:45:02+00:00",
-    "checked_at_sakhalin": "2026-05-25T11:45:02+11:00"
+    "checked_at": "2026-05-25T01:10:16+00:00",
+    "checked_at_sakhalin": "2026-05-25T12:10:16+11:00"
   },
-  "recent_published_20m_count": 3,
-  "recent_published_20m": [
-    {
-      "time_sakhalin": "2026-05-25T11:26:22+11:00",
-      "source": "Interfax",
-      "category": "🧭 Геополитика",
-      "title": "Аэропорты Нижнего Новгорода и Ярославля приостановили работу",
-      "with_image": true,
-      "image_mode": "pipeline_search",
-      "publish_method": "sendPhoto/safe/pipeline_search",
-      "telegram_message_id": 107
-    },
-    {
-      "time_sakhalin": "2026-05-25T11:26:45+11:00",
-      "source": "Interfax",
-      "category": "🧭 Геополитика",
-      "title": "Аэропорт Калуги приостановил работу",
-      "with_image": true,
-      "image_mode": "pipeline_search",
-      "publish_method": "sendPhoto/safe/pipeline_search",
-      "telegram_message_id": 108
-    },
-    {
-      "time_sakhalin": "2026-05-25T11:27:34+11:00",
-      "source": "Interfax",
-      "category": "🌍 Мир о России",
-      "title": "Ограничения введены в аэропорту Иваново",
-      "with_image": true,
-      "image_mode": "pipeline_generated",
-      "publish_method": "sendPhoto/safe/pipeline_generated",
-      "telegram_message_id": 109
-    }
-  ],
-  "decision": "published"
+  "recent_published_20m_count": 0,
+  "recent_published_20m": [],
+  "decision": "no_approved_to_publish"
 }
