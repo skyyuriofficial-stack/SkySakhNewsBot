@@ -90,7 +90,8 @@
     "https://www.interfax.ru/russia/1091557",
     "https://www.interfax.ru/russia/1091562",
     "https://www.interfax.ru/russia/1091560",
-    "https://www.interfax.ru/business/1091578"
+    "https://www.interfax.ru/business/1091578",
+    "https://www.interfax.ru/world/1091583"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -183,17 +184,11 @@
     "1f503ae7b6f92732ec59ea8a08ce36f41b146327",
     "61d4ff35a809ab9772402f6bee170c332fe0c8fc",
     "f985510e6f0b356b997d90cdac67a66d00125235",
-    "7b647dd85cf15baa5806e4ca7d5db7a0f8902ccf"
+    "7b647dd85cf15baa5806e4ca7d5db7a0f8902ccf",
+    "bdbffcb53d84d8cc5e3628c74a6a88e891831731"
   ],
-  "last_run_sakhalin": "2026-05-25T17:49:42+11:00",
+  "last_run_sakhalin": "2026-05-25T17:57:24+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-19T19:13:27+11:00",
-      "source": "Reuters",
-      "category": "🌍 Мир о России",
-      "title": "США призвали G7 и ЕС ввести тарифы на Китай и Индию за покупку российской нефти",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQS3RTeXA2c3RGVkdMMUFmVnZzMHI4c3hGeEQ4YzdvM3p6M0tIOHAybm1pRjl6dUhhYldTYmdWUWpVUXMwc1hLOWllSHRhcUpoMG11LUZnanlUWlNPUkYxcHVWcVc1OHJBVzBFdUc0bkZzbjIyeEswR25UQXlZZmtCbEVoOGJ2QzVHVGdtOHJIMlZtZHE3Ul9CdGJGQVV6MDNVR0tnVTV1YXpvVDd3OFZoRkgxQjJqVWF2eUVyaA?oc=5"
-    },
     {
       "time_sakhalin": "2026-05-19T19:24:56+11:00",
       "source": "SakhalinMedia",
@@ -1121,7 +1116,12 @@
       "image_fingerprint": "09af0bace59b42350ae2ebfb5e4c800c97157662",
       "publish_method": "sendPhoto/safe/pipeline_search",
       "telegram_message_id": 107,
-      "score": 1000
+      "score": 1000,
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-25T06:57:25+00:00",
+      "audited_at_sakhalin": "2026-05-25T17:57:25+11:00"
     },
     {
       "time_sakhalin": "2026-05-25T11:26:45+11:00",
@@ -1136,7 +1136,12 @@
       "image_fingerprint": "dfc17bf113e5d0abceb87cb9b3804e5a6eb34ee4",
       "publish_method": "sendPhoto/safe/pipeline_search",
       "telegram_message_id": 108,
-      "score": 1000
+      "score": 1000,
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-25T06:57:25+00:00",
+      "audited_at_sakhalin": "2026-05-25T17:57:25+11:00"
     },
     {
       "time_sakhalin": "2026-05-25T11:27:34+11:00",
@@ -1151,7 +1156,12 @@
       "image_fingerprint": "e7da90064b0f9481210724c24416ef63dfca5e65",
       "publish_method": "sendPhoto/safe/pipeline_generated",
       "telegram_message_id": 109,
-      "score": 1000
+      "score": 1000,
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-25T06:57:25+00:00",
+      "audited_at_sakhalin": "2026-05-25T17:57:25+11:00"
     },
     {
       "time_sakhalin": "2026-05-25T12:24:09+11:00",
@@ -1166,7 +1176,12 @@
       "image_fingerprint": "47ca599630b00250b4103fc766bebf651b500097",
       "publish_method": "sendPhoto/safe/pipeline_generated",
       "telegram_message_id": 110,
-      "score": 900
+      "score": 900,
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-25T06:57:25+00:00",
+      "audited_at_sakhalin": "2026-05-25T17:57:25+11:00"
     },
     {
       "time_sakhalin": "2026-05-25T16:04:06+11:00",
@@ -1181,7 +1196,12 @@
       "image_fingerprint": "12edae5ac8e9d431efa178a7dad84a211497ba31",
       "publish_method": "sendPhoto/safe/pipeline_generated",
       "telegram_message_id": 111,
-      "score": 1030
+      "score": 1030,
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-25T06:57:25+00:00",
+      "audited_at_sakhalin": "2026-05-25T17:57:25+11:00"
     },
     {
       "time_sakhalin": "2026-05-25T16:04:37+11:00",
@@ -1196,7 +1216,14 @@
       "image_fingerprint": "6ff669380771c1261bd07fa5399c8fce38d61ef1",
       "publish_method": "sendPhoto/safe/pipeline_generated",
       "telegram_message_id": 112,
-      "score": 1030
+      "score": 1030,
+      "audit_status": "fail",
+      "audit_severity": "critical",
+      "audit_issues": [
+        "weak_bpla_without_impact"
+      ],
+      "audited_at": "2026-05-25T06:57:25+00:00",
+      "audited_at_sakhalin": "2026-05-25T17:57:25+11:00"
     },
     {
       "time_sakhalin": "2026-05-25T16:05:31+11:00",
@@ -1211,7 +1238,12 @@
       "image_fingerprint": "83aabe5a50b5e5cd629a33ee089cb7d63be6bc90",
       "publish_method": "sendPhoto/safe/pipeline_generated",
       "telegram_message_id": 113,
-      "score": 925
+      "score": 925,
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-25T06:57:25+00:00",
+      "audited_at_sakhalin": "2026-05-25T17:57:25+11:00"
     },
     {
       "time_sakhalin": "2026-05-25T16:44:38+11:00",
@@ -1335,7 +1367,11 @@
       "score": 826,
       "stream_priority": 820,
       "rewrite_mode": null,
-      "audit_status": "pending"
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-25T06:57:25+00:00",
+      "audited_at_sakhalin": "2026-05-25T17:57:25+11:00"
     },
     {
       "time_sakhalin": "2026-05-25T17:40:29+11:00",
@@ -1459,7 +1495,139 @@
       "score": 788,
       "stream_priority": 760,
       "rewrite_mode": null,
-      "audit_status": "pending"
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-25T06:57:25+00:00",
+      "audited_at_sakhalin": "2026-05-25T17:57:25+11:00"
+    },
+    {
+      "time_sakhalin": "2026-05-25T17:57:12+11:00",
+      "source": "Interfax",
+      "category": "🧭 Геополитика",
+      "title": "CBS сообщил об ограниченном доступе верховного лидера Ирана к внешнему миру",
+      "body": [
+        "Данные американской разведки указывает на то, что верховный лидер Ирана Моджтаба Хаменеи фактически скрывается в неизвестном месте с ограниченным доступом к внешнему миру, и связаться с ним можно только через лабиринт курьеров, сообщает телеканал CBS News со ссылкой на информированных американских чиновников.",
+        "По их данным, у иранских чиновников, уполномоченных сотрудничать с администрацией президента США Дональда Трампа, возникают трудности с коммуникацией внутри собственной правительственной системы."
+      ],
+      "caption": "🧭 Геополитика\n\n<b>CBS сообщил об ограниченном доступе верховного лидера Ирана к внешнему миру</b>\n\nДанные американской разведки указывает на то, что верховный лидер Ирана Моджтаба Хаменеи фактически скрывается в неизвестном месте с ограниченным доступом к внешнему миру, и связаться с ним можно только через лабиринт курьеров, сообщает телеканал CBS News со ссылкой на информированных американских чиновников.\n\nПо их данным, у иранских чиновников, уполномоченных сотрудничать с администрацией президента США Дональда Трампа, возникают трудности с коммуникацией внутри собственной правительственной системы.\n\nГЕОПОЛИТИКА · <a href=\"https://www.interfax.ru/world/1091583\">Interfax</a>",
+      "caption_plain": "🧭 Геополитика\n\n CBS сообщил об ограниченном доступе верховного лидера Ирана к внешнему миру \n\nДанные американской разведки указывает на то, что верховный лидер Ирана Моджтаба Хаменеи фактически скрывается в неизвестном месте с ограниченным доступом к внешнему миру, и связаться с ним можно только через лабиринт курьеров, сообщает телеканал CBS News со ссылкой на информированных американских чиновников.\n\nПо их данным, у иранских чиновников, уполномоченных сотрудничать с администрацией президента США Дональда Трампа, возникают трудности с коммуникацией внутри собственной правительственной системы.\n\nГЕОПОЛИТИКА ·  Interfax ",
+      "url": "https://www.interfax.ru/world/1091583",
+      "published_at": "2026-05-25T06:39:00+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_generated",
+      "image_url": null,
+      "image_fingerprint": "73e407a2936702a669b79c7a1a778635ccbb32f0",
+      "image_pipeline": {
+        "strategy": "generated",
+        "reason": "generated semantic image accepted",
+        "selected": {
+          "url": null,
+          "source": "generated",
+          "width": 1200,
+          "height": 675,
+          "mime_type": "image/jpeg",
+          "query_used": "generated:diplomacy_middle_east:CBS сообщил об ограниченном доступе верховного лидера Ирана к внешнему миру",
+          "relevance_score": 1.03,
+          "image_kind": "generated",
+          "filename": "thematic.jpg",
+          "reason": "local semantic generation; topic=diplomacy_middle_east; hits=['diplomacy']; entity_hits=[]; bad_hits=[]"
+        },
+        "attempts": [
+          {
+            "stage": "external_search",
+            "query": "US Iran nuclear talks diplomacy",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/REGIONAL_IMPLICATIONS_OF_A_NUCLEAR_DEAL_WITH_IRAN_%28IA_gov.gpo.fdsys.CHRG-113shrg94340%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "US Iran nuclear talks diplomacy",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/THE_IRAN_NUCLEAR_DEAL_AND_ITS_IMPACT_ON_TERRORISM_FINANCING_%28IA_gov.gpo.fdsys.CHRG-114hhrg97157%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "US Iran nuclear talks diplomacy",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/THE_KOREAN_PENINSULA-_SIX-PARTY_TALKS_AND_THE_NUCLEAR_ISSUE_%28IA_gov.gpo.fdsys.CHRG-109hhrg99827%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "US Iran nuclear talks diplomacy",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/THE_NORTH_KOREA_NUCLEAR_CALCULUS-_BEYOND_THE_SIX-POWER_TALKS_%28IA_gov.gpo.fdsys.CHRG-108shrg94028%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "Middle East diplomacy Iran United States",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/AND_JUSTICE_FOR_ALL-_A_NARRATIVE_APPROACH_TO_THE_CONFLICT_BETWEEN_THE_UNITED_STATES_OF_AMERICA_AND_THE_ISLAMIC_REPUBLIC_OF_IRAN_%28IA_andjusticeforall1094564100%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "Middle East diplomacy Iran United States",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/EAST_ASIA_IN_TRANSITION-_OPPORTUNITIES_AND_CHALLENGES_FOR_THE_UNITED_STATES_%28IA_gov.gpo.fdsys.CHRG-109hhrg26436%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "Middle East diplomacy Iran United States",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/ENDING_AN_ENEMY-_UNITED_STATES%E2%80%93IRAN_RELATIONS_%28IA_endinganenemyuni1094563482%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "Middle East diplomacy Iran United States",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/IMPACTS_OF_THE_JOINT_COMPREHENSIVE_PLAN_OF_ACTION_%28JCPOA%29_ON_THE_UNITED_STATES_INTERESTS_AND_THE_MILITARY_BALANCE_IN_THE_MIDDLE_EAST_%28IA_gov.gpo.fdsys.CHRG-114shrg21483%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "Middle East diplomacy Iran United States",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Iran%27s_strategy_of_influence_in_the_Middle_East_%28IA_iransstrategyofi109455029%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "Middle East diplomacy Iran United States",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/The_Soviet_Union_and_Iran_strategic_implications_for_the_United_States_Navy._%28IA_sovietunionirans00chap%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "Middle East diplomacy Iran United States",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/UNITED_STATES_POLICY_IN_IRAQ-_PUBLIC_DIPLOMACY_AND_PRIVATE_POLICY_%28IA_gov.gpo.fdsys.CHRG-105shrg50913%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "generated",
+            "ok": true,
+            "reason": "accepted: 1200x675; score=1.03; topic=diplomacy_middle_east; hits=['diplomacy']; entity_hits=[]; bad_hits=[]"
+          }
+        ]
+      },
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 116,
+      "score": 900,
+      "stream_priority": 820,
+      "rewrite_mode": "generic",
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-25T06:57:25+00:00",
+      "audited_at_sakhalin": "2026-05-25T17:57:25+11:00"
     }
   ],
   "last_cycle_report": {
@@ -1589,7 +1757,8 @@
     "6ff669380771c1261bd07fa5399c8fce38d61ef1",
     "83aabe5a50b5e5cd629a33ee089cb7d63be6bc90",
     "eec19731853484f4eeb73853cdcd4ec9c05baa20",
-    "0b7d2b2d4ecaff43c236fbfb87b19df1a14b81b8"
+    "0b7d2b2d4ecaff43c236fbfb87b19df1a14b81b8",
+    "73e407a2936702a669b79c7a1a778635ccbb32f0"
   ],
   "recent_generated_prompts": [
     "generated:security:Трамп призвал ряд исламских стран присоединиться к Соглашениям Авраама",
@@ -1599,6 +1768,130 @@
     "generated:security:Над Тульской областью за ночь уничтожены пять БПЛА",
     "generated:security:Мужчина пострадал при ракетных обстрелах Белгорода и Белгородского округа",
     "generated:security:Девять муниципальных округов Херсонской области полностью обесточены после атаки БПЛА",
-    "generated:security:Кабмин вернул госпакет Новороссийского морского торгового порта в план приватизации"
-  ]
+    "generated:security:Кабмин вернул госпакет Новороссийского морского торгового порта в план приватизации",
+    "generated:diplomacy_middle_east:CBS сообщил об ограниченном доступе верховного лидера Ирана к внешнему миру"
+  ],
+  "last_post_publish_audit": {
+    "version": 1,
+    "checked_at": "2026-05-25T06:57:25+00:00",
+    "checked_at_sakhalin": "2026-05-25T17:57:25+11:00",
+    "checked_count": 10,
+    "failed_count": 1,
+    "delete_bad_posts": false,
+    "deleted": [],
+    "items": [
+      {
+        "telegram_message_id": 107,
+        "title": "Аэропорты Нижнего Новгорода и Ярославля приостановили работу",
+        "category": "🧭 Геополитика",
+        "time_sakhalin": "2026-05-25T11:26:22+11:00",
+        "image_mode": "pipeline_search",
+        "url": "https://www.interfax.ru/russia/1091543",
+        "status": "pass",
+        "severity": "ok",
+        "issues": []
+      },
+      {
+        "telegram_message_id": 108,
+        "title": "Аэропорт Калуги приостановил работу",
+        "category": "🧭 Геополитика",
+        "time_sakhalin": "2026-05-25T11:26:45+11:00",
+        "image_mode": "pipeline_search",
+        "url": "https://www.interfax.ru/russia/1091537",
+        "status": "pass",
+        "severity": "ok",
+        "issues": []
+      },
+      {
+        "telegram_message_id": 109,
+        "title": "Ограничения введены в аэропорту Иваново",
+        "category": "🌍 Мир о России",
+        "time_sakhalin": "2026-05-25T11:27:34+11:00",
+        "image_mode": "pipeline_generated",
+        "url": "https://www.interfax.ru/russia/1091548",
+        "status": "pass",
+        "severity": "ok",
+        "issues": []
+      },
+      {
+        "telegram_message_id": 110,
+        "title": "Сделка между США и Ираном не состоится без разморозки части иранских активов",
+        "category": "🧭 Геополитика",
+        "time_sakhalin": "2026-05-25T12:24:09+11:00",
+        "image_mode": "pipeline_generated",
+        "url": "https://www.interfax.ru/world/1091550",
+        "status": "pass",
+        "severity": "ok",
+        "issues": []
+      },
+      {
+        "telegram_message_id": 111,
+        "title": "Мужчина погиб при атаке БПЛА на Белгородскую область",
+        "category": "🇷🇺 РФ / война и безопасность",
+        "time_sakhalin": "2026-05-25T16:04:06+11:00",
+        "image_mode": "pipeline_generated",
+        "url": "https://www.interfax.ru/russia/1091566",
+        "status": "pass",
+        "severity": "ok",
+        "issues": []
+      },
+      {
+        "telegram_message_id": 112,
+        "title": "Над Тульской областью за ночь уничтожены пять БПЛА",
+        "category": "🇷🇺 РФ / война и безопасность",
+        "time_sakhalin": "2026-05-25T16:04:37+11:00",
+        "image_mode": "pipeline_generated",
+        "url": "https://www.interfax.ru/russia/1091557",
+        "status": "fail",
+        "severity": "critical",
+        "issues": [
+          "weak_bpla_without_impact"
+        ]
+      },
+      {
+        "telegram_message_id": 113,
+        "title": "Мужчина пострадал при ракетных обстрелах Белгорода и Белгородского округа",
+        "category": "🇷🇺 РФ / война и безопасность",
+        "time_sakhalin": "2026-05-25T16:05:31+11:00",
+        "image_mode": "pipeline_generated",
+        "url": "https://www.interfax.ru/russia/1091562",
+        "status": "pass",
+        "severity": "ok",
+        "issues": []
+      },
+      {
+        "telegram_message_id": 114,
+        "title": "Девять муниципальных округов Херсонской области полностью обесточены после атаки БПЛА",
+        "category": "🧭 Геополитика",
+        "time_sakhalin": "2026-05-25T16:44:38+11:00",
+        "image_mode": "pipeline_generated",
+        "url": "https://www.interfax.ru/russia/1091560",
+        "status": "pass",
+        "severity": "ok",
+        "issues": []
+      },
+      {
+        "telegram_message_id": 115,
+        "title": "Кабмин вернул госпакет Новороссийского морского торгового порта в план приватизации",
+        "category": "🧭 Геополитика",
+        "time_sakhalin": "2026-05-25T17:40:29+11:00",
+        "image_mode": "pipeline_generated",
+        "url": "https://www.interfax.ru/business/1091578",
+        "status": "pass",
+        "severity": "ok",
+        "issues": []
+      },
+      {
+        "telegram_message_id": 116,
+        "title": "CBS сообщил об ограниченном доступе верховного лидера Ирана к внешнему миру",
+        "category": "🧭 Геополитика",
+        "time_sakhalin": "2026-05-25T17:57:12+11:00",
+        "image_mode": "pipeline_generated",
+        "url": "https://www.interfax.ru/world/1091583",
+        "status": "pass",
+        "severity": "ok",
+        "issues": []
+      }
+    ]
+  }
 }
