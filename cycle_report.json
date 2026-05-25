@@ -1,28 +1,26 @@
 {
-  "reported_at": "2026-05-25T06:40:13+00:00",
-  "reported_at_sakhalin": "2026-05-25T17:40:13+11:00",
-  "queue_updated_at": "2026-05-25T06:39:59+00:00",
-  "queue_updated_at_sakhalin": "2026-05-25T17:39:59+11:00",
-  "total_queue_items": 155,
+  "reported_at": "2026-05-25T06:57:37+00:00",
+  "reported_at_sakhalin": "2026-05-25T17:57:37+11:00",
+  "queue_updated_at": "2026-05-25T06:57:24+00:00",
+  "queue_updated_at_sakhalin": "2026-05-25T17:57:24+11:00",
+  "total_queue_items": 129,
   "status_counts": {
-    "hold": 12,
-    "rejected": 104,
-    "published": 39,
+    "hold": 5,
+    "rejected": 83,
+    "published": 41,
     "pending": 0,
     "approved": 0,
     "skipped": 0,
     "unknown": 0
   },
   "hold_by_category": {
-    "🌐 Мировые IT": 6,
-    "🌍 Мир о России": 4,
-    "🇷🇺 РФ / война и безопасность": 1,
-    "🇷🇺 РФ / экономика": 1
+    "🌐 Мировые IT": 3,
+    "🌍 Мир о России": 2
   },
   "approved_by_category": {},
   "published_by_category": {
     "🇷🇺 РФ / война и безопасность": 16,
-    "🧭 Геополитика": 12,
+    "🧭 Геополитика": 14,
     "🇷🇺 РФ / происшествия": 5,
     "🌐 Мировые IT": 3,
     "🇷🇺 РФ / экономика": 2,
@@ -41,27 +39,48 @@
       "🌐 Мировые IT": 650,
       "🎮 Игры / индустрия": 600
     },
-    "reviewed_pending": 10,
+    "reviewed_pending": 12,
     "approved": 2,
     "approve_limit": 2,
     "min_auto_score": 650,
     "openrouter_enabled": false,
-    "reviewed_at": "2026-05-25T06:39:58+00:00",
-    "reviewed_at_sakhalin": "2026-05-25T17:39:58+11:00"
+    "reviewed_at": "2026-05-25T06:57:00+00:00",
+    "reviewed_at_sakhalin": "2026-05-25T17:57:00+11:00"
   },
   "priority_guard": {
     "changed": 0,
-    "checked_at": "2026-05-25T06:39:58+00:00",
-    "checked_at_sakhalin": "2026-05-25T17:39:58+11:00"
+    "checked_at": "2026-05-25T06:57:00+00:00",
+    "checked_at_sakhalin": "2026-05-25T17:57:00+11:00"
   },
   "final_guard": {
     "version": 2,
-    "changed": 2,
+    "changed": 1,
     "polished": 0,
-    "checked_at": "2026-05-25T06:39:59+00:00",
-    "checked_at_sakhalin": "2026-05-25T17:39:59+11:00"
+    "checked_at": "2026-05-25T06:57:00+00:00",
+    "checked_at_sakhalin": "2026-05-25T17:57:00+11:00"
   },
-  "recent_published_20m_count": 0,
-  "recent_published_20m": [],
-  "decision": "no_approved_to_publish"
+  "recent_published_20m_count": 2,
+  "recent_published_20m": [
+    {
+      "time_sakhalin": "2026-05-25T17:40:29+11:00",
+      "source": "Interfax",
+      "category": "🧭 Геополитика",
+      "title": "Кабмин вернул госпакет Новороссийского морского торгового порта в план приватизации",
+      "with_image": true,
+      "image_mode": "pipeline_generated",
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 115
+    },
+    {
+      "time_sakhalin": "2026-05-25T17:57:12+11:00",
+      "source": "Interfax",
+      "category": "🧭 Геополитика",
+      "title": "CBS сообщил об ограниченном доступе верховного лидера Ирана к внешнему миру",
+      "with_image": true,
+      "image_mode": "pipeline_generated",
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 116
+    }
+  ],
+  "decision": "published"
 }
