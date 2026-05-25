@@ -1875,14 +1875,14 @@
     }
   ],
   "last_cycle_report": {
-    "reported_at": "2026-05-25T11:57:56+00:00",
-    "reported_at_sakhalin": "2026-05-25T22:57:56+11:00",
-    "queue_updated_at": "2026-05-25T11:57:40+00:00",
-    "queue_updated_at_sakhalin": "2026-05-25T22:57:40+11:00",
-    "total_queue_items": 149,
+    "reported_at": "2026-05-25T21:14:42+00:00",
+    "reported_at_sakhalin": "2026-05-26T08:14:42+11:00",
+    "queue_updated_at": "2026-05-25T21:14:31+00:00",
+    "queue_updated_at_sakhalin": "2026-05-26T08:14:31+11:00",
+    "total_queue_items": 130,
     "status_counts": {
-      "hold": 10,
-      "rejected": 96,
+      "hold": 3,
+      "rejected": 84,
       "published": 43,
       "pending": 0,
       "approved": 0,
@@ -1890,10 +1890,9 @@
       "unknown": 0
     },
     "hold_by_category": {
-      "🌐 Мировые IT": 3,
-      "🧭 Геополитика": 3,
-      "🌍 Мир о России": 2,
-      "🇷🇺 РФ / война и безопасность": 2
+      "🌐 Мировые IT": 1,
+      "🌍 Мир о России": 1,
+      "🇷🇺 РФ / экономика": 1
     },
     "approved_by_category": {},
     "published_by_category": {
@@ -1917,50 +1916,29 @@
         "🌐 Мировые IT": 650,
         "🎮 Игры / индустрия": 600
       },
-      "reviewed_pending": 10,
-      "approved": 1,
+      "reviewed_pending": 11,
+      "approved": 2,
       "approve_limit": 2,
       "min_auto_score": 650,
       "openrouter_enabled": false,
-      "reviewed_at": "2026-05-25T11:57:10+00:00",
-      "reviewed_at_sakhalin": "2026-05-25T22:57:10+11:00"
+      "reviewed_at": "2026-05-25T21:14:30+00:00",
+      "reviewed_at_sakhalin": "2026-05-26T08:14:30+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-25T11:57:10+00:00",
-      "checked_at_sakhalin": "2026-05-25T22:57:10+11:00"
+      "checked_at": "2026-05-25T21:14:30+00:00",
+      "checked_at_sakhalin": "2026-05-26T08:14:30+11:00"
     },
     "final_guard": {
       "version": 2,
-      "changed": 0,
+      "changed": 2,
       "polished": 0,
-      "checked_at": "2026-05-25T11:57:10+00:00",
-      "checked_at_sakhalin": "2026-05-25T22:57:10+11:00"
+      "checked_at": "2026-05-25T21:14:31+00:00",
+      "checked_at_sakhalin": "2026-05-26T08:14:31+11:00"
     },
-    "recent_published_20m_count": 2,
-    "recent_published_20m": [
-      {
-        "time_sakhalin": "2026-05-25T22:41:58+11:00",
-        "source": "Interfax",
-        "category": "🧭 Геополитика",
-        "title": "Новый замминистра обороны РФ Виталий Шулика будет руководить аппаратом Минобороны",
-        "with_image": true,
-        "image_mode": "pipeline_generated",
-        "publish_method": "sendPhoto/safe/pipeline_generated",
-        "telegram_message_id": 118
-      },
-      {
-        "time_sakhalin": "2026-05-25T22:57:28+11:00",
-        "source": "Interfax",
-        "category": "🧭 Геополитика",
-        "title": "Глава ЦБ Греции не исключил осторожного ужесточения политики ЕЦБ",
-        "with_image": true,
-        "image_mode": "pipeline_generated",
-        "publish_method": "sendPhoto/safe/pipeline_generated",
-        "telegram_message_id": 119
-      }
-    ],
-    "decision": "published"
+    "recent_published_20m_count": 0,
+    "recent_published_20m": [],
+    "decision": "no_approved_to_publish"
   },
   "recent_image_urls": [
     "https://www.interfax.ru/aspimg/1091101.jpg",
