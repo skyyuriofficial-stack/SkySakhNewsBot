@@ -1,6 +1,6 @@
 # Deterministic semantic image generator for SkySakhNews.
-# Last fallback when a real source image is unavailable.
-# Generates neutral editorial illustrations locally with Pillow.
+# Last fallback when source/search images are unavailable or rejected.
+# Generates neutral editorial illustrations locally with Pillow. No text is drawn on images.
 
 import hashlib
 import io
@@ -31,8 +31,13 @@ BANK_TERMS = ["банк", "кредит", "ставк", "вклад", "ипот�
 ENERGY_TERMS = ["нефть", "газ", "спг", "уголь", "энергоресурс", "трубопровод", "месторожд", "экспорт"]
 INDUSTRY_TERMS = ["завод", "производств", "промышлен", "предприят", "индустр", "металл", "станок"]
 FIRE_TERMS = ["пожар", "возгоран", "сгорел", "сгорела", "огонь", "мчс", "пожарн"]
-ROAD_TERMS = ["дтп", "авар", "столкнов", "водител", "дорог", "трасс"]
+ROAD_TERMS = ["дтп", "авар", "столкнов", "водител", "дорог", "трасс", "микроавтобус", "газель"]
+WATER_TERMS = ["водопровод", "водоснаб", "без воды", "труба", "коллектор", "коммуналь", "жкх"]
 CRIME_TERMS = ["краж", "мошеннич", "убийств", "напад", "задержан", "полици"]
+AVALANCHE_TERMS = ["лавина", "сход лавины", "спасатели", "пропал", "пропали", "горы", "снег", "поисково-спас"]
+FLOOD_TERMS = ["наводнение", "паводок", "затоп", "подтоп", "река", "дамба"]
+SPACE_TERMS = ["космос", "космич", "тайконавт", "астронавт", "орбит", "шэньчжоу", "тяньгун", "cmsa", "space", "spacecraft", "station", "orbit", "shenzhou", "tiangong"]
+MIDDLE_EAST_TERMS = ["трамп", "иран", "тегеран", "сша", "вашингтон", "израил", "саудов", "оаэ", "катар", "бахрейн", "авраам", "iran", "trump", "tehran", "abraham", "israel", "middle east"]
 
 
 def _seed(item: Dict) -> int:
@@ -93,21 +98,15 @@ def _draw_economy(d, rng, accent):
         x = 160 + i * 90
         h = rng.randint(70, 240)
         d.rounded_rectangle((x, base_y - h, x + 48, base_y), radius=8, fill=(*accent, 95), outline=(*accent, 150), width=2)
-    pts = []
-    for i in range(9):
-        x = 184 + i * 90
-        y = base_y - rng.randint(120, 300)
-        pts.append((x, y))
+    pts = [(184 + i * 90, base_y - rng.randint(120, 300)) for i in range(9)]
     d.line(pts, fill=(*accent, 220), width=6, joint='curve')
     for x, y in pts:
         d.ellipse((x - 10, y - 10, x + 10, y + 10), fill=(*accent, 230))
 
 
 def _draw_agriculture(d, rng, accent):
-    sky = (170, 205, 215, 80)
-    earth = (164, 126, 54, 150)
-    d.rectangle((0, 0, W, 300), fill=sky)
-    d.rectangle((0, 300, W, H), fill=earth)
+    d.rectangle((0, 0, W, 300), fill=(170, 205, 215, 80))
+    d.rectangle((0, 300, W, H), fill=(164, 126, 54, 150))
     vanishing = (W // 2, 305)
     for x in range(-200, W + 220, 95):
         d.line((vanishing[0], vanishing[1], x, H), fill=(*accent, 90), width=3)
@@ -124,9 +123,6 @@ def _draw_agriculture(d, rng, accent):
             d.ellipse((head_x - 16, yy - 5, head_x + 2, yy + 8), fill=(238, 196, 88, 210))
             d.ellipse((head_x - 2, yy - 5, head_x + 16, yy + 8), fill=(238, 196, 88, 210))
     d.rounded_rectangle((735, 160, 1030, 350), radius=26, fill=(245, 242, 220, 210), outline=(*accent, 210), width=5)
-    for y in [220, 270, 315]:
-        d.rounded_rectangle((785, y, 980, y + 18), radius=9, fill=(*accent, 135))
-    d.ellipse((770, 185, 835, 250), outline=(*accent, 190), width=6)
 
 
 def _draw_bank_credit(d, rng, accent):
@@ -135,9 +131,6 @@ def _draw_bank_credit(d, rng, accent):
         d.rounded_rectangle((x - 34, 270, x + 34, 470), radius=12, fill=(*accent, 90), outline=(*accent, 175), width=3)
     d.polygon([(235, 235), (600, 120), (965, 235)], fill=(*accent, 110), outline=(*accent, 190))
     d.rounded_rectangle((260, 485, 940, 525), radius=18, fill=(*accent, 150))
-    for i in range(4):
-        x = 275 + i * 155
-        d.arc((x, 150, x + 105, 255), 205, 330, fill=(*accent, 170), width=4)
 
 
 def _draw_energy(d, rng, accent):
@@ -158,8 +151,6 @@ def _draw_industry(d, rng, accent):
         d.rectangle((x, 430 - h, x + 110, 430), fill=(*accent, 68), outline=(*accent, 145), width=3)
         d.rectangle((x + 70, 430 - h - 80, x + 95, 430 - h), fill=(*accent, 95))
     d.line((120, 460, 1080, 460), fill=(*accent, 160), width=6)
-    for x in range(160, 1000, 80):
-        d.rectangle((x, 490, x + 42, y := 535), outline=(*accent, 150), width=3)
 
 
 def _draw_security(d, rng, accent):
@@ -170,22 +161,37 @@ def _draw_security(d, rng, accent):
         rad = math.radians(a)
         d.line((cx, cy, cx + math.cos(rad) * 270, cy + math.sin(rad) * 270), fill=(*accent, 85), width=3)
     d.polygon([(790, 170), (1030, 505), (560, 505)], outline=(*accent, 190), fill=(*accent, 42))
-    d.rounded_rectangle((655, 400, 935, 440), radius=16, fill=(*accent, 130))
 
 
 def _draw_incident(d, rng, accent, text):
-    # Generic incidents: fire/road/crime. No gore, no bodies, no sensational imagery.
-    if _has(text, FIRE_TERMS):
+    if _has(text, AVALANCHE_TERMS):
+        d.rectangle((0, 0, W, H), fill=(32, 46, 58, 110))
+        d.polygon([(0, 560), (255, 220), (455, 560)], fill=(218, 228, 232, 210), outline=(*accent, 95))
+        d.polygon([(320, 560), (630, 130), (980, 560)], fill=(235, 242, 245, 220), outline=(*accent, 105))
+        d.polygon([(760, 560), (1020, 260), (1220, 560)], fill=(210, 225, 232, 200), outline=(*accent, 95))
+        for _ in range(70):
+            x, y = rng.randint(80, 1120), rng.randint(170, 580)
+            d.ellipse((x, y, x + 5, y + 5), fill=(255, 255, 255, rng.randint(90, 170)))
+        d.rounded_rectangle((210, 470, 990, 505), radius=16, fill=(*accent, 140))
+        for x in [300, 450, 620, 780, 930]:
+            d.line((x, 505, x + rng.randint(-35, 35), 560), fill=(*accent, 115), width=5)
+    elif _has(text, WATER_TERMS):
+        d.rectangle((0, 400, W, H), fill=(18, 70, 88, 150))
+        for y in [280, 360, 445]:
+            d.rounded_rectangle((160, y, 1040, y + 46), radius=23, fill=(*accent, 105), outline=(*accent, 170), width=4)
+        for x in [300, 520, 740, 960]:
+            d.ellipse((x - 42, 315, x + 42, 399), outline=(170, 220, 230, 160), width=8)
+        for _ in range(28):
+            x = rng.randint(190, 1010)
+            y = rng.randint(455, 620)
+            d.arc((x, y, x + 70, y + 30), 0, 180, fill=(180, 230, 240, 110), width=3)
+    elif _has(text, FIRE_TERMS):
         d.rectangle((0, 410, W, H), fill=(38, 32, 28, 155))
         for i, x in enumerate([210, 360, 510, 700, 870]):
             h = rng.randint(120, 260)
             d.polygon([(x, 440), (x + 45, 440 - h), (x + 95, 440)], fill=(240, 104 + i * 7, 42, 140))
             d.polygon([(x + 25, 440), (x + 55, 440 - h + 35), (x + 85, 440)], fill=(250, 185, 72, 120))
         d.rounded_rectangle((210, 310, 990, 370), radius=20, fill=(*accent, 130))
-        for x in range(260, 960, 120):
-            d.line((x, 260, x + rng.randint(-25, 25), 445), fill=(180, 180, 170, 105), width=6)
-        d.ellipse((760, 130, 1050, 325), outline=(*accent, 135), width=6)
-        d.line((800, 290, 1010, 155), fill=(*accent, 115), width=6)
     elif _has(text, ROAD_TERMS):
         d.polygon([(0, H), (470, 210), (730, 210), (W, H)], fill=(60, 65, 68, 135))
         d.line((595, 220, 560, H), fill=(*accent, 180), width=6)
@@ -195,15 +201,12 @@ def _draw_incident(d, rng, accent, text):
             d.ellipse((x, 430, x + 58, 488), fill=(20, 24, 26, 200), outline=(*accent, 160), width=4)
     elif _has(text, CRIME_TERMS):
         d.rounded_rectangle((270, 145, 930, 510), radius=42, fill=(22, 32, 44, 105), outline=(*accent, 170), width=5)
-        for i, y in enumerate([230, 305, 380]):
+        for y in [230, 305, 380]:
             d.line((350, y, 850, y), fill=(*accent, 145), width=6)
             d.ellipse((310, y - 16, 342, y + 16), fill=(*accent, 165))
-        d.arc((460, 145, 740, 425), 210, 330, fill=(*accent, 140), width=5)
     else:
         d.rounded_rectangle((240, 170, 960, 500), radius=36, fill=(*accent, 58), outline=(*accent, 160), width=5)
         d.polygon([(600, 235), (720, 455), (480, 455)], fill=(*accent, 140))
-        d.line((600, 305, 600, 390), fill=(255, 245, 210, 175), width=9)
-        d.ellipse((592, 410, 608, 426), fill=(255, 245, 210, 180))
 
 
 def _draw_diplomacy(d, rng, accent):
@@ -215,12 +218,43 @@ def _draw_diplomacy(d, rng, accent):
     d.arc((465, 230, 735, 460), 20, 160, fill=(*accent, 130), width=4)
 
 
+def _draw_middle_east_diplomacy(d, rng, accent):
+    d.rounded_rectangle((210, 210, 990, 505), radius=36, fill=(235, 220, 190, 38), outline=(*accent, 155), width=5)
+    # Two negotiation blocks across a table, deliberately symbolic, no text/flags.
+    d.rounded_rectangle((305, 305, 505, 430), radius=24, fill=(*accent, 90), outline=(*accent, 165), width=4)
+    d.rounded_rectangle((695, 305, 895, 430), radius=24, fill=(*accent, 80), outline=(*accent, 165), width=4)
+    d.rounded_rectangle((450, 450, 750, 485), radius=18, fill=(*accent, 135))
+    for x in [370, 430, 760, 830]:
+        d.ellipse((x - 28, 250, x + 28, 306), fill=(*accent, 130), outline=(*accent, 190), width=3)
+    d.arc((385, 120, 815, 540), 210, 330, fill=(*accent, 110), width=5)
+    d.arc((320, 155, 880, 580), 200, 340, fill=(*accent, 60), width=3)
+
+
 def _draw_it(d, rng, accent):
     for y in [185, 290, 395]:
         d.rounded_rectangle((230, y, 970, y + 72), radius=18, outline=(*accent, 150), fill=(*accent, 42), width=3)
         for x in range(265, 910, 70):
             d.ellipse((x, y + 26, x + 18, y + 44), fill=(*accent, 150))
     _draw_network(d, rng, accent)
+
+
+def _draw_space(d, rng, accent):
+    d.rectangle((0, 0, W, H), fill=(4, 15, 34, 180))
+    for _ in range(120):
+        x, y = rng.randint(20, W - 20), rng.randint(20, H - 20)
+        a = rng.randint(90, 220)
+        d.ellipse((x, y, x + 2, y + 2), fill=(230, 240, 255, a))
+    # planet limb
+    d.ellipse((-260, 430, 1460, 1240), outline=(90, 180, 210, 130), width=16)
+    d.arc((-220, 455, 1420, 1215), 190, 350, fill=(70, 150, 190, 95), width=10)
+    # orbital station / spacecraft silhouette
+    cx, cy = 610, 310
+    d.rounded_rectangle((cx - 90, cy - 28, cx + 90, cy + 28), radius=14, fill=(*accent, 150), outline=(210, 235, 240, 140), width=3)
+    d.rectangle((cx - 205, cy - 16, cx - 95, cy + 16), fill=(*accent, 100), outline=(210, 235, 240, 100))
+    d.rectangle((cx + 95, cy - 16, cx + 205, cy + 16), fill=(*accent, 100), outline=(210, 235, 240, 100))
+    d.line((cx, cy - 85, cx, cy + 85), fill=(210, 235, 240, 120), width=5)
+    d.ellipse((cx - 24, cy - 24, cx + 24, cy + 24), fill=(220, 245, 255, 120))
+    d.arc((cx - 260, cy - 150, cx + 260, cy + 150), 195, 345, fill=(*accent, 100), width=4)
 
 
 def _draw_games(d, rng, accent):
@@ -266,7 +300,9 @@ def generate_thematic_image(item: Dict) -> Tuple[bytes, str, str]:
         w = rng.randint(100, 330)
         d.rounded_rectangle((x, y, x + w, y + rng.randint(18, 52)), radius=20, fill=(*accent, rng.randint(8, 24)))
 
-    if category == '🇷🇺 РФ / экономика':
+    if _has(text, SPACE_TERMS):
+        _draw_space(d, rng, accent)
+    elif category == '🇷🇺 РФ / экономика':
         if _has(text, AGRI_TERMS):
             _draw_agriculture(d, rng, accent)
         elif _has(text, ENERGY_TERMS):
@@ -282,7 +318,10 @@ def generate_thematic_image(item: Dict) -> Tuple[bytes, str, str]:
     elif category == '🇷🇺 РФ / война и безопасность':
         _draw_security(d, rng, accent)
     elif category in ('🌍 Мир о России', '🇷🇺 РФ / законы и политика', '🧭 Геополитика'):
-        _draw_diplomacy(d, rng, accent)
+        if _has(text, MIDDLE_EAST_TERMS):
+            _draw_middle_east_diplomacy(d, rng, accent)
+        else:
+            _draw_diplomacy(d, rng, accent)
     elif category in ('🌐 Мировые IT', '💻 IT / технологии'):
         _draw_it(d, rng, accent)
     elif category == '🎮 Игры / индустрия':
