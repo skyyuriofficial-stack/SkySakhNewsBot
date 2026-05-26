@@ -1,12 +1,11 @@
 # Autonomous editorial review for SkySakhNews.
-# Production rules:
-# - publish only Russian-language posts;
-# - classify by shared category_policy, not by stale category_hint;
-# - separate incidents from war/security;
-# - use owner-defined stream priorities;
-# - if OpenRouter is configured, rewrite/translate high-priority non-Russian news to clean Russian;
-# - ads, deals, downloads, tutorials and weak statements are rejected;
-# - routine alerts without real consequences are rejected or held.
+# Owner requirements implemented here:
+# - publish only concrete fresh news, not ads/deals/downloads/tutorials;
+# - keep correct stream/category;
+# - prioritize Russia/Sakhalin/high-impact/security/major tech/games;
+# - reject routine airport/BPLA alerts without real consequences;
+# - produce clean Russian Telegram text without duplicated paragraphs or broken tails;
+# - use OpenRouter only as optional fallback, never as hard dependency.
 
 import html
 import json
@@ -19,29 +18,17 @@ from typing import Dict, List, Optional, Tuple
 import requests
 
 from category_policy import resolve_final_category_from_item, stream_priority
+from editorial_text import build_post_text, is_post_usable, cyrillic_ratio
 
 QUEUE_FILE = Path("editorial_queue.json")
 STATE_FILE = Path("state.json")
-APPROVE_LIMIT = int(os.getenv("EDITORIAL_REVIEW_APPROVE_LIMIT", "2"))
+APPROVE_LIMIT = int(os.getenv("EDITORIAL_REVIEW_APPROVE_LIMIT", "3"))
 PENDING_MAX_HOURS = int(os.getenv("EDITORIAL_REVIEW_PENDING_MAX_HOURS", "20"))
-MIN_AUTO_SCORE = int(os.getenv("EDITORIAL_REVIEW_MIN_AUTO_SCORE", "650"))
+MIN_AUTO_SCORE = int(os.getenv("EDITORIAL_REVIEW_MIN_AUTO_SCORE", "600"))
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "").strip()
 OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "openai/gpt-4o-mini").strip()
 OPENROUTER_TIMEOUT = int(os.getenv("OPENROUTER_TIMEOUT", "45"))
 SAKH_TZ = timezone(timedelta(hours=11))
-
-FOOTERS = {
-    "🌍 Мир о России": "МИР О РОССИИ",
-    "🇷🇺 РФ / война и безопасность": "РФ | ВОЙНА И БЕЗОПАСНОСТЬ",
-    "🇷🇺 РФ / происшествия": "РФ | ПРОИСШЕСТВИЯ",
-    "🇷🇺 РФ / экономика": "РФ | ЭКОНОМИКА",
-    "🇷🇺 РФ / законы и политика": "РФ | ЗАКОНЫ И ПОЛИТИКА",
-    "🧭 Геополитика": "ГЕОПОЛИТИКА",
-    "🌐 Мировые IT": "МИРОВЫЕ IT",
-    "💻 IT / технологии": "IT / ТЕХНОЛОГИИ",
-    "🎮 Игры / индустрия": "ИГРОВАЯ ИНДУСТРИЯ",
-    "📍 Сахалин": "САХАЛИН",
-}
 
 DEAL_TERMS = [
     "deal", "sale", "discount", "coupon", "promo", "free shipping", "amazon", "walmart", "woot",
@@ -66,12 +53,12 @@ HARD_IMPACT_TERMS = [
     "удар", "обстрел", "атака", "попадание", "прилет", "прилёт", "разрушен", "разрушения",
     "поврежден", "повреждены", "повреждена", "сгорел", "пожар", "эвакуация", "без электроснабжения",
     "без электричества", "отключение света", "массовое отключение", "поврежден объект", "повреждено предприятие",
-    "поврежден дом", "ущерб", "без воды", "лавина", "спасатели", "пропали"
+    "поврежден дом", "ущерб", "без воды", "лавина", "спасатели", "пропали", "массовые задержки", "десятки рейсов"
 ]
 LAW_POLITICS_TERMS = ["госдума", "комитет", "законопроект", "закон", "совет федерации", "володин", "сенаторы", "депутаты", "правительство", "министерство", "кремль", "песков", "подписали заявление", "заседание", "мид", "лавров"]
 RUSSIA_TERMS = ["russia", "russian", "putin", "kremlin", "moscow", "россия", "россий", "путин", "кремль", "москва", "рф"]
 GAMING_MAJOR_TERMS = ["rockstar", "gta", "the witcher", "cd projekt", "playstation", "xbox game pass", "game pass", "steam", "nintendo", "major studio", "layoff", "acquisition", "lawsuit", "суд", "сделка", "массовые увольнения"]
-STRONG_BONUS_TERMS = ["putin", "путин", "xi", "си", "pipeline", "gas", "oil", "санкц", "бпла", "iran", "иран", "google", "openai", "погиб", "пожар", "лавина", "без воды", "cve", "уязвим", "gta", "rockstar", "starship", "spacex"]
+STRONG_BONUS_TERMS = ["putin", "путин", "xi", "си", "pipeline", "gas", "oil", "санкц", "бпла", "iran", "иран", "google", "openai", "погиб", "пожар", "лавина", "без воды", "cve", "уязвим", "gta", "rockstar", "starship", "spacex", "сахалин"]
 PROPAGANDA_PHRASES = ["беззащитным детям", "каратели", "нацисты", "террористический режим", "прицельно ударили по спящим"]
 BAD_AI_OUTPUT_TERMS = ["я не могу", "as an ai", "i cannot", "не могу помочь", "извините", "sorry"]
 
@@ -103,14 +90,6 @@ def clean(value) -> str:
     return re.sub(r"\s+", " ", text).strip(" -—")
 
 
-def esc(value) -> str:
-    return html.escape(str(value or ""), quote=False)
-
-
-def attr(value) -> str:
-    return html.escape(str(value or ""), quote=True)
-
-
 def norm_text(*parts: str) -> str:
     text = " ".join(str(p or "") for p in parts).lower().replace("ё", "е")
     return re.sub(r"\s+", " ", text).strip()
@@ -129,18 +108,6 @@ def has_any(text: str, terms: List[str]) -> bool:
     return any(term.lower().replace("ё", "е") in text for term in terms)
 
 
-def cyrillic_ratio(text: str) -> float:
-    letters = re.findall(r"[A-Za-zА-Яа-яЁё]", text or "")
-    if not letters:
-        return 0.0
-    cyr = re.findall(r"[А-Яа-яЁё]", text or "")
-    return len(cyr) / max(1, len(letters))
-
-
-def is_russian_post(title: str, body: List[str]) -> bool:
-    return cyrillic_ratio(f"{title} " + " ".join(body or [])) >= 0.55
-
-
 def age_hours(raw: Optional[str]) -> Optional[float]:
     if not raw:
         return None
@@ -151,41 +118,6 @@ def age_hours(raw: Optional[str]) -> Optional[float]:
         return (datetime.now(timezone.utc) - dt.astimezone(timezone.utc)).total_seconds() / 3600
     except Exception:
         return None
-
-
-def strip_duplicate_halves(text: str) -> str:
-    words = clean(text).split()
-    if len(words) < 14:
-        return clean(text)
-    for n in range(min(40, len(words) // 2), 6, -1):
-        if " ".join(words[:n]).lower() == " ".join(words[n:2*n]).lower():
-            return clean(" ".join(words[:n] + words[2*n:]))
-    return clean(text)
-
-
-def sentence_split(text: str) -> List[str]:
-    text = clean(text)
-    parts = re.split(r"(?<=[.!?])\s+", text)
-    out, seen = [], set()
-    for s in parts:
-        s = strip_duplicate_halves(s)
-        low = norm_text(s)
-        if len(s) < 45:
-            continue
-        if any(x in low for x in ["читать далее", "continue reading", "sign in", "support us", "подпис", "реклама", "prefer the guardian", "sections forum", "subscribe search", "text settings", "story text size"]):
-            continue
-        if has_any(low, PROPAGANDA_PHRASES):
-            continue
-        if len(s) > 260 and not re.search(r"[.!?…]$", s):
-            continue
-        key = re.sub(r"\W+", "", low)[:130]
-        if key in seen:
-            continue
-        seen.add(key)
-        out.append(s[:360])
-        if len(out) >= 2:
-            break
-    return out
 
 
 def extract_json_object(raw: str) -> Optional[Dict]:
@@ -216,27 +148,18 @@ def openrouter_rewrite(item: Dict, category: str) -> Optional[Tuple[str, List[st
     source_text = clean(item.get("source_text") or "")[:2500]
     if not title or not source_text:
         return None
-    prompt = {
-        "role": "user",
-        "content": (
-            "Ты редактор короткого Telegram-новостного канала. На основе исходного материала сделай русский новостной пост.\n"
-            "Требования: только факты из текста; без пропагандистских оценок; без рекламы; без дублей; без английского; "
-            "заголовок до 95 символов; body — ровно 2 коротких абзаца по 1-2 предложения. "
-            "Верни строго JSON: {\"title\": \"...\", \"body\": [\"...\", \"...\"]}.\n\n"
-            f"Категория: {category}\n"
-            f"Источник: {item.get('source') or 'Источник'}\n"
-            f"Оригинальный заголовок: {title}\n"
-            f"Исходный текст: {source_text}"
-        )
-    }
     payload = {
         "model": OPENROUTER_MODEL,
         "messages": [
             {"role": "system", "content": "You are a precise Russian news editor. Output JSON only."},
-            prompt,
+            {"role": "user", "content": (
+                "Сделай короткий русский Telegram-новостной пост. Только факты из источника; без рекламы; без дублей; без оценочной пропаганды. "
+                "Заголовок до 95 символов. Body: 1-2 коротких абзаца. Верни JSON {\"title\":\"...\",\"body\":[\"...\"]}.\n\n"
+                f"Категория: {category}\nИсточник: {item.get('source') or 'Источник'}\nЗаголовок: {title}\nТекст: {source_text}"
+            )},
         ],
-        "temperature": 0.15,
-        "max_tokens": 650,
+        "temperature": 0.12,
+        "max_tokens": 520,
     }
     try:
         resp = requests.post(
@@ -262,10 +185,8 @@ def openrouter_rewrite(item: Dict, category: str) -> Optional[Tuple[str, List[st
         if isinstance(body_raw, str):
             body_raw = [body_raw]
         body = [clean(x) for x in body_raw if clean(x)][:2]
-        if len(body) < 2:
-            return None
         full = out_title + " " + " ".join(body)
-        if cyrillic_ratio(full) < 0.70 or has_any(full, BAD_AI_OUTPUT_TERMS + PROPAGANDA_PHRASES):
+        if not body or cyrillic_ratio(full) < 0.70 or has_any(full, BAD_AI_OUTPUT_TERMS + PROPAGANDA_PHRASES):
             return None
         return out_title, body
     except Exception:
@@ -284,11 +205,6 @@ def category_fix(item: Dict) -> str:
     return resolve_final_category_from_item(item)
 
 
-def make_post(category: str, title: str, body: List[str], url: str, source: str) -> str:
-    footer = FOOTERS.get(category, category)
-    return f"{esc(category)}\n\n<b>{esc(title)}</b>\n\n" + "\n\n".join(esc(x) for x in body if x) + f"\n\n{esc(footer)} · <a href=\"{attr(url)}\">{esc(source)}</a>"
-
-
 def special_rewrite(item: Dict, category: str) -> Optional[Tuple[str, List[str]]]:
     text = semantic_blob(item)
     if "google" in text and "smart glasses" in text:
@@ -298,33 +214,24 @@ def special_rewrite(item: Dict, category: str) -> Optional[Tuple[str, List[str]]
     if "austrian ex-intelligence" in text and "russia spying" in text:
         return "В Австрии экс-сотрудника разведки осудили по делу о шпионаже в пользу России", ["Суд в Вене признал бывшего сотрудника австрийской разведки виновным по делу о передаче информации российской стороне.", "Этот процесс снова поднял вопрос о российской разведывательной активности в Австрии."]
     if "game pass" in text and "xbox" in text and not has_any(text, DEAL_TERMS):
-        return "Microsoft раскрыла новую подборку игр для Xbox Game Pass", ["Microsoft объявила очередную подборку игр, которые появятся в Xbox Game Pass в мае и начале следующего месяца.", "Для игровой индустрии это сервисная новость: Game Pass остаётся одним из ключевых инструментов удержания аудитории Xbox и PC."]
+        return "Microsoft раскрыла новую подборку игр для Xbox Game Pass", ["Microsoft объявила очередную подборку игр, которые появятся в Xbox Game Pass.", "Для игровой индустрии это сервисная новость: Game Pass остаётся одним из ключевых инструментов удержания аудитории Xbox и PC."]
     if "the witcher" in text and ("writer" in text or "lead writer" in text):
-        return "К спин-оффу The Witcher привлекли сценаристку Destiny 2", ["К проблемному спин-оффу The Witcher присоединилась Кван Пернг, известная по работе над Destiny 2: The Final Shape.", "Она стала новым ведущим сценаристом проекта. Для CD Projekt это может быть попыткой усилить сюжетную часть игры после сложного периода разработки."]
-    if "три человека ранены" in text and "бпла" in text:
-        return "Три человека ранены в ДНР при атаке БПЛА", ["В ДНР три мирных жителя получили ранения в результате атаки БПЛА, сообщил глава региона Денис Пушилин.", "По данным источника, пострадавшим оказывается медицинская помощь."]
-    if "долгосрочных вклад" in text:
-        return "Правительство РФ рассмотрит меры по долгосрочным вкладам", ["Правительство РФ рассмотрит изменения в закон о страховании вкладов, направленные на повышение привлекательности долгосрочных депозитов.", "Цель — привлечь в банковский сектор ресурсы для долгосрочных инвестиций в экономику."]
+        return "К спин-оффу The Witcher привлекли сценаристку Destiny 2", ["К спин-оффу The Witcher присоединилась Кван Пернг, известная по работе над Destiny 2: The Final Shape.", "Она стала новым ведущим сценаристом проекта, что может усилить сюжетную часть игры."]
     return None
-
-
-def generic_rewrite(item: Dict, category: str) -> Tuple[str, List[str]]:
-    title = clean(item.get("title_ru") or item.get("title_original") or "")
-    body = sentence_split(item.get("source_text") or "")
-    if not body:
-        body = [strip_duplicate_halves(clean(x)) for x in (item.get("body") or []) if clean(x) and not has_any(clean(x), PROPAGANDA_PHRASES)][:2]
-    return title, body[:2]
 
 
 def build_clean_russian_post(item: Dict, category: str) -> Optional[Tuple[str, List[str], str]]:
     special = special_rewrite(item, category)
-    if special and is_russian_post(special[0], special[1]):
-        return special[0], special[1], "special"
-    title, body = generic_rewrite(item, category)
-    if title and body and is_russian_post(title, body):
-        return title, body[:2], "generic"
+    if special and is_post_usable(special[0], special[1]):
+        title, body = special
+        return title, body[:2], "special"
+
+    title, body, _post = build_post_text(item, category)
+    if is_post_usable(title, body):
+        return title, body[:2], "local"
+
     ai = openrouter_rewrite(item, category)
-    if ai and is_russian_post(ai[0], ai[1]):
+    if ai and is_post_usable(ai[0], ai[1]):
         return ai[0], ai[1], "openrouter"
     return None
 
@@ -341,7 +248,7 @@ def reject_reason(item: Dict, category: str, urls: set, hashes: set) -> Optional
         return "Отклонено автоматически: уже опубликовано ранее."
     published_age = age_hours(item.get("published_at") or item.get("created_at"))
     pending_age = age_hours(item.get("created_at"))
-    if published_age is not None and published_age > 36:
+    if published_age is not None and published_age > 48:
         return "Отклонено автоматически: материал устарел для новостной ленты."
     if pending_age is not None and pending_age > PENDING_MAX_HOURS:
         return "Отклонено автоматически: черновик слишком долго висел без публикации."
@@ -358,7 +265,7 @@ def reject_reason(item: Dict, category: str, urls: set, hashes: set) -> Optional
             return "Отклонено автоматически: слабая тревожная новость без жертв, ущерба или серьёзных последствий."
         if should_force_law_politics(text):
             return "Отклонено автоматически: материал относится к законам/политике, а не к военной безопасности."
-        if not has_any(text, HARD_IMPACT_TERMS + ["с-400", "минобороны", "фсб", "заэс", "аэс"]):
+        if not has_any(text, HARD_IMPACT_TERMS + ["с-400", "минобороны", "фсб", "заэс", "аэс", "склады боеприпасов", "аэродромов", "военных аэродромов"]):
             return "Отклонено автоматически: для военного потока недостаточно фактуры о последствиях или значимом событии."
     if category == "🎮 Игры / индустрия":
         if has_any(text, LOW_VALUE_GAME_TERMS):
@@ -393,7 +300,7 @@ def review_queue() -> None:
     for score, item, category, reason in decisions:
         reviewed += 1
         item["reviewed_at"] = now_utc()
-        item["reviewed_by"] = "auto-editor-v6-openrouter-rewrite"
+        item["reviewed_by"] = "auto-editor-v7-local-cleaner"
         item["category"] = category
         item["stream_priority"] = stream_priority(category)
         item["score"] = score
@@ -410,28 +317,32 @@ def review_queue() -> None:
         built = build_clean_russian_post(item, category)
         if not built:
             item["status"] = "hold"
-            if OPENROUTER_API_KEY:
-                item.setdefault("editor_notes", []).append("В резерве: не удалось получить безопасный русский текст даже через OpenRouter.")
-            else:
-                item.setdefault("editor_notes", []).append("В резерве: нет безопасного русскоязычного текста; OPENROUTER_API_KEY не задан.")
+            item.setdefault("editor_notes", []).append("В резерве: не удалось собрать чистый русский текст локально или через OpenRouter.")
             continue
         title, body, rewrite_mode = built
+        title2, body2, post_text = build_post_text({**item, "title_ru": title, "body": body}, category)
+        # Preserve special/OpenRouter text if provided; otherwise use robust local builder output.
+        if rewrite_mode in {"special", "openrouter"}:
+            from editorial_text import make_post
+            post_text = make_post(category, title, body[:2], item.get("url") or "", item.get("source") or "Источник")
+        else:
+            title, body = title2, body2
         item["status"] = "approved"
         item["title_ru"] = title
         item["body"] = body[:2]
-        item["post_text"] = make_post(category, title, body[:2], item.get("url") or "", item.get("source") or "Источник")
-        item["edited_post_text"] = item["post_text"]
+        item["post_text"] = post_text
+        item["edited_post_text"] = post_text
         item["image_decision"] = "use" if item.get("image_url") else "none"
         item["with_image"] = bool(item.get("image_url"))
         item["rewrite_mode"] = rewrite_mode
-        item.setdefault("editor_notes", []).append(f"Одобрено автоматическим редактором v6: clean Russian post via {rewrite_mode}.")
+        item.setdefault("editor_notes", []).append(f"Одобрено автоматическим редактором v7: clean Russian post via {rewrite_mode}.")
         approved += 1
     queue["updated_at"] = now_utc()
     queue["updated_at_sakhalin"] = now_sakh()
     queue["reviewed_at"] = now_utc()
     queue["reviewed_at_sakhalin"] = now_sakh()
     queue["auto_review"] = {
-        "version": 6,
+        "version": 7,
         "priority_map": {
             "🌍 Мир о России": 1000,
             "📍 Сахалин": 950,
@@ -452,7 +363,7 @@ def review_queue() -> None:
         "reviewed_at_sakhalin": queue["reviewed_at_sakhalin"],
     }
     save_json(QUEUE_FILE, queue)
-    print(f"auto-review-v6-openrouter-rewrite: reviewed={reviewed}, approved={approved}, openrouter={bool(OPENROUTER_API_KEY)}")
+    print(f"auto-review-v7-local-cleaner: reviewed={reviewed}, approved={approved}, openrouter={bool(OPENROUTER_API_KEY)}")
 
 
 if __name__ == "__main__":
