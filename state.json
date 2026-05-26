@@ -104,7 +104,8 @@
     "https://www.interfax.ru/russia/1091777",
     "https://www.interfax.ru/russia/1091797",
     "https://www.interfax.ru/russia/1091789",
-    "https://www.interfax.ru/russia/1091790"
+    "https://www.interfax.ru/russia/1091790",
+    "https://www.interfax.ru/russia/1092013"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -211,21 +212,11 @@
     "269b9637282edad822c938049a787164f30e1e1e",
     "d1bf67914b43657aa6c4f06a0d7318f2786d70a7",
     "f7f6558d61f6965ea556afd53b536d469608968f",
-    "2aeb0edc371d039926b01604df6abbaf4d38a0c7"
+    "2aeb0edc371d039926b01604df6abbaf4d38a0c7",
+    "1aafcf3b290124b28452859d26292208c9566be4"
   ],
-  "last_run_sakhalin": "2026-05-26T18:11:37+11:00",
+  "last_run_sakhalin": "2026-05-27T08:50:53+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-20T09:07:56+11:00",
-      "source": "Eurogamer",
-      "category": "🎮 Игры / индустрия",
-      "title": "Sony повышает цену PlayStation Plus для новых подписчиков",
-      "url": "https://www.eurogamer.net/playstation-plus-new-customer-price-increase",
-      "published_at": "2026-05-18T16:31:41.496388+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload-real-image",
-      "score": 162
-    },
     {
       "time_sakhalin": "2026-05-20T10:21:35+11:00",
       "source": "Guardian World",
@@ -3170,7 +3161,139 @@
       "score": 875,
       "stream_priority": 820,
       "rewrite_mode": null,
-      "audit_status": "pending"
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-26T21:50:53+00:00",
+      "audited_at_sakhalin": "2026-05-27T08:50:53+11:00"
+    },
+    {
+      "time_sakhalin": "2026-05-27T08:50:41+11:00",
+      "source": "Interfax",
+      "category": "🧭 Геополитика",
+      "title": "Госдума внесла проект обращения к ООН по теракту в Старобельске",
+      "body": [
+        "Комитет Госдумы по международным делам внес на рассмотрение Государственной думы проект обращения к ООН, международным парламентским организациям и парламентам стран мира в связи с террористической атакой на педагогический колледж в городе Старобельске, сообщил председатель комитета Леонид Слуцкий.",
+        "\"Комитет по международным делам подготовил и внес проект обращения к ООН и парламентам стран мира с призывом осудить атаку на педагогический колледж в Старобельске\" - сказал Слуцкий журналистам во вторник."
+      ],
+      "caption": "🧭 Геополитика\n\n<b>Госдума внесла проект обращения к ООН по теракту в Старобельске</b>\n\nКомитет Госдумы по международным делам внес на рассмотрение Государственной думы проект обращения к ООН, международным парламентским организациям и парламентам стран мира в связи с террористической атакой на педагогический колледж в городе Старобельске, сообщил председатель комитета Леонид Слуцкий.\n\n\"Комитет по международным делам подготовил и внес проект обращения к ООН и парламентам стран мира с призывом осудить атаку на педагогический колледж в Старобельске\" - сказал Слуцкий журналистам во вторник.\n\nГЕОПОЛИТИКА · <a href=\"https://www.interfax.ru/russia/1092013\">Interfax</a>",
+      "caption_plain": "🧭 Геополитика\n\n Госдума внесла проект обращения к ООН по теракту в Старобельске \n\nКомитет Госдумы по международным делам внес на рассмотрение Государственной думы проект обращения к ООН, международным парламентским организациям и парламентам стран мира в связи с террористической атакой на педагогический колледж в городе Старобельске, сообщил председатель комитета Леонид Слуцкий.\n\n\"Комитет по международным делам подготовил и внес проект обращения к ООН и парламентам стран мира с призывом осудить атаку на педагогический колледж в Старобельске\" - сказал Слуцкий журналистам во вторник.\n\nГЕОПОЛИТИКА ·  Interfax ",
+      "url": "https://www.interfax.ru/russia/1092013",
+      "published_at": "2026-05-26T19:15:00+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_generated",
+      "image_url": null,
+      "image_fingerprint": "f60ddc72f9749a64827517f077d3374835843389",
+      "image_pipeline": {
+        "strategy": "generated",
+        "reason": "generated semantic image accepted",
+        "selected": {
+          "url": null,
+          "source": "generated",
+          "width": 1200,
+          "height": 675,
+          "mime_type": "image/jpeg",
+          "query_used": "generated:security:Госдума внесла проект обращения к ООН по теракту в Старобельске",
+          "relevance_score": 1.03,
+          "image_kind": "generated",
+          "filename": "thematic.jpg",
+          "reason": "local semantic generation; topic=security; hits=['security']; entity_hits=[]; bad_hits=[]"
+        },
+        "attempts": [
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Emergency_response_drone_team_discusses_flight_path_%287136594%29.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Emergency_response_team_member_checks_drone_before_deploying_%287136593%29.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Emergency_response_teams_gather_to_watch_drone_footage_%287136602%29.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Eyes_in_the_sky-_A_look_at_drones_for_emergency_response_in_Vanuatu.webm",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/2022-MILITARY-AND-SECURITY-DEVELOPMENTS-INVOLVING-THE-PEOPLES-REPUBLIC-OF-CHINA.PDF",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/2023-MILITARY-AND-SECURITY-DEVELOPMENTS-INVOLVING-THE-PEOPLES-REPUBLIC-OF-CHINA.PDF",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Australian_and_U.S._Military_Police_Radar_Speed_Detection_Training_%28Image_3_of_8%29.webp",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Australian_and_U.S._Military_Police_Radar_Speed_Detection_Training_%28Image_6_of_8%29.webp",
+            "ok": false,
+            "reason": "low relevance: 0.73; topic=security; hits=['military', 'radar', 'air', 'security', 'army']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Australian_and_U_S_Military_Police_Radar_Speed_Detection_Training_%289191330%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Australian_and_U_S_Military_Police_Radar_Speed_Detection_Training_%289191365%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Radar_gun.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "generated",
+            "ok": true,
+            "reason": "accepted: 1200x675; score=1.03; topic=security; hits=['security']; entity_hits=[]; bad_hits=[]"
+          }
+        ]
+      },
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 136,
+      "score": 900,
+      "stream_priority": 820,
+      "rewrite_mode": "local",
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-26T21:50:53+00:00",
+      "audited_at_sakhalin": "2026-05-27T08:50:53+11:00"
     }
   ],
   "last_cycle_report": {
@@ -3291,7 +3414,6 @@
     "https://upload.wikimedia.org/wikipedia/commons/9/90/Rear_view_of_Tiangong_Space_Station.jpg"
   ],
   "recent_image_fingerprints": [
-    "c6100fa4d318a902ff65605bc9bd32e02638e32d",
     "026c388070ea78026cd26d7bf3e7e45b3e053d99",
     "61b9c4343efadbec9846525123a74690a210fb83",
     "3874ffbfd9deee273a789695bb1e4f432fc8fd94",
@@ -3330,7 +3452,8 @@
     "1faa74d832cc28c015e5a7f8ea782ff63def7f8f",
     "92cd5a30448eb05386dc6bd1263b238e9c67a43e",
     "f7922665e7766faf18b09e36526926f30930960f",
-    "23aeff0523833dd6c6dcd201eb218a898790f80b"
+    "23aeff0523833dd6c6dcd201eb218a898790f80b",
+    "f60ddc72f9749a64827517f077d3374835843389"
   ],
   "recent_generated_prompts": [
     "generated:security:Трамп призвал ряд исламских стран присоединиться к Соглашениям Авраама",
@@ -3353,56 +3476,44 @@
     "generated:diplomacy:Рынок акций РФ открылся в утреннюю сессию незначительным изменением индекса IMOEX2",
     "generated:incident_fire:Один человек пострадал при пожаре на нефтебазе в Башкирии",
     "generated:security:ФСБ сообщила, что Киев пытался ввезти в РФ более 500 взрывных устройств",
-    "generated:security:Глава ФСБ предупредил о росте террористической угрозы для СНГ из-за иранского конфликта"
+    "generated:security:Глава ФСБ предупредил о росте террористической угрозы для СНГ из-за иранского конфликта",
+    "generated:security:Госдума внесла проект обращения к ООН по теракту в Старобельске"
   ],
   "last_post_publish_audit": {
     "version": 2,
-    "checked_at": "2026-05-26T07:10:44+00:00",
-    "checked_at_sakhalin": "2026-05-26T18:10:44+11:00",
-    "checked_count": 3,
+    "checked_at": "2026-05-26T21:50:53+00:00",
+    "checked_at_sakhalin": "2026-05-27T08:50:53+11:00",
+    "checked_count": 2,
     "failed_count": 0,
     "audit_chat_configured": false,
     "delete_bad_posts": false,
     "deleted": [],
     "items": [
       {
-        "telegram_message_id": 130,
-        "title": "Рынок акций РФ открылся в утреннюю сессию незначительным изменением индекса IMOEX2",
+        "telegram_message_id": 135,
+        "title": "Глава ФСБ предупредил о росте террористической угрозы для СНГ из-за иранского конфликта",
         "category": "🧭 Геополитика",
-        "time_sakhalin": "2026-05-26T17:13:37+11:00",
+        "time_sakhalin": "2026-05-26T18:11:25+11:00",
         "image_mode": "pipeline_generated",
         "image_url": null,
-        "url": "https://www.interfax.ru/russia/1091777",
+        "url": "https://www.interfax.ru/russia/1091790",
         "status": "pass",
         "severity": "ok",
         "issues": [],
-        "content_preview": "🧭 Геополитика Рынок акций РФ открылся в утреннюю сессию незначительным изменением индекса IMOEX2 Российский рынок акций на старте торгов утренней сессии на Мосбирже во вторник демонстрирует вялую динамику на фоне влияния противоречивых внешних и внутренних факторов, в том числе сохраняющейся напряженности вокруг Украины и на Ближнем Востоке. К 07:01 по Москве индекс Мосбиржи составил 2598,07 пункта (-0,01%); цены \"голубых фишек\" на Московской бирже демонстрируют смешанную динамику в пределах 0,8%. ГЕОПОЛИТИКА · Interfax"
+        "content_preview": "🧭 Геополитика Глава ФСБ предупредил о росте террористической угрозы для СНГ из-за иранского конфликта Директор ФСБ Александр Бортников заявил, что западные спецслужбы намерены использовать боевиков из Сирии, в том числе выходцев из СНГ, в боевых действиях против Ирана, что приведет к росту террористической угрозы для стран Содружества.\"Зачастую спровоцированные западным вмешательством кризисы выходят далеко за пределы границ конкретных государств. \"Зачастую спровоцированные западным вмешательством кризисы выходят далеко за пределы границ конкретных государств. ГЕОПОЛИТИКА · Interfax"
       },
       {
-        "telegram_message_id": 133,
-        "title": "Один человек пострадал при пожаре на нефтебазе в Башкирии",
-        "category": "🇷🇺 РФ / происшествия",
-        "time_sakhalin": "2026-05-26T18:09:59+11:00",
-        "image_mode": "pipeline_generated",
-        "image_url": null,
-        "url": "https://www.interfax.ru/russia/1091797",
-        "status": "pass",
-        "severity": "ok",
-        "issues": [],
-        "content_preview": "🇷🇺 РФ / происшествия Один человек пострадал при пожаре на нефтебазе в Башкирии Несколько резервуаров для хранения нефтепродуктов горели в Туймазинском районе Башкирии, пострадал один человек, информирует региональный Госкомитет по ЧС во вторник. \"Вчера поздно вечером в пожарную часть города Туймазы от диспетчера ГУ МЧС России по РБ поступило сообщение о том, что горит база хранения нефтепродуктов в Туймазинском районе в селе Кандры. РФ | ПРОИСШЕСТВИЯ · Interfax"
-      },
-      {
-        "telegram_message_id": 134,
-        "title": "ФСБ сообщила, что Киев пытался ввезти в РФ более 500 взрывных устройств",
+        "telegram_message_id": 136,
+        "title": "Госдума внесла проект обращения к ООН по теракту в Старобельске",
         "category": "🧭 Геополитика",
-        "time_sakhalin": "2026-05-26T18:10:32+11:00",
+        "time_sakhalin": "2026-05-27T08:50:41+11:00",
         "image_mode": "pipeline_generated",
         "image_url": null,
-        "url": "https://www.interfax.ru/russia/1091789",
+        "url": "https://www.interfax.ru/russia/1092013",
         "status": "pass",
         "severity": "ok",
         "issues": [],
-        "content_preview": "🧭 Геополитика ФСБ сообщила, что Киев пытался ввезти в РФ более 500 взрывных устройств Директор ФСБ России Александр Бортников сообщил о пресечении попытки ввоза в страну свыше 500 взрывных устройств, отправленных Украиной для совершения терактов. \"О масштабах угроз с украинского направления прямо свидетельствуют результаты совместной оперативной работы органов федеральной службы безопасности с партнерами по Содружеству. ГЕОПОЛИТИКА · Interfax"
+        "content_preview": "🧭 Геополитика Госдума внесла проект обращения к ООН по теракту в Старобельске Комитет Госдумы по международным делам внес на рассмотрение Государственной думы проект обращения к ООН, международным парламентским организациям и парламентам стран мира в связи с террористической атакой на педагогический колледж в городе Старобельске, сообщил председатель комитета Леонид Слуцкий. \"Комитет по международным делам подготовил и внес проект обращения к ООН и парламентам стран мира с призывом осудить атаку на педагогический колледж в Старобельске\" - сказал Слуцкий журналистам во вторник. ГЕОПОЛИТИКА · Interfax"
       }
     ]
   }
