@@ -8508,29 +8508,29 @@
     "checked_at_sakhalin": "2026-05-26T11:21:03+11:00"
   },
   "cycle_report": {
-    "reported_at": "2026-05-26T00:11:15+00:00",
-    "reported_at_sakhalin": "2026-05-26T11:11:15+11:00",
-    "queue_updated_at": "2026-05-26T00:11:02+00:00",
-    "queue_updated_at_sakhalin": "2026-05-26T11:11:02+11:00",
-    "total_queue_items": 140,
+    "reported_at": "2026-05-26T00:22:13+00:00",
+    "reported_at_sakhalin": "2026-05-26T11:22:13+11:00",
+    "queue_updated_at": "2026-05-26T00:22:01+00:00",
+    "queue_updated_at_sakhalin": "2026-05-26T11:22:01+11:00",
+    "total_queue_items": 127,
     "status_counts": {
-      "hold": 5,
-      "rejected": 91,
-      "published": 44,
+      "hold": 4,
+      "rejected": 77,
+      "published": 46,
       "pending": 0,
       "approved": 0,
       "skipped": 0,
       "unknown": 0
     },
     "hold_by_category": {
-      "🌐 Мировые IT": 3,
-      "🎮 Игры / индустрия": 1,
-      "🇷🇺 РФ / законы и политика": 1
+      "🌐 Мировые IT": 2,
+      "🇷🇺 РФ / законы и политика": 1,
+      "🎮 Игры / индустрия": 1
     },
     "approved_by_category": {},
     "published_by_category": {
+      "🧭 Геополитика": 18,
       "🇷🇺 РФ / война и безопасность": 16,
-      "🧭 Геополитика": 16,
       "🇷🇺 РФ / происшествия": 5,
       "🌐 Мировые IT": 3,
       "🇷🇺 РФ / экономика": 2,
@@ -8549,29 +8549,50 @@
         "🌐 Мировые IT": 650,
         "🎮 Игры / индустрия": 600
       },
-      "reviewed_pending": 10,
+      "reviewed_pending": 15,
       "approved": 2,
       "approve_limit": 2,
       "min_auto_score": 650,
       "openrouter_enabled": false,
-      "reviewed_at": "2026-05-26T00:11:01+00:00",
-      "reviewed_at_sakhalin": "2026-05-26T11:11:01+11:00"
+      "reviewed_at": "2026-05-26T00:21:03+00:00",
+      "reviewed_at_sakhalin": "2026-05-26T11:21:03+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-26T00:11:01+00:00",
-      "checked_at_sakhalin": "2026-05-26T11:11:01+11:00"
+      "checked_at": "2026-05-26T00:21:03+00:00",
+      "checked_at_sakhalin": "2026-05-26T11:21:03+11:00"
     },
     "final_guard": {
       "version": 2,
-      "changed": 2,
-      "polished": 0,
-      "checked_at": "2026-05-26T00:11:01+00:00",
-      "checked_at_sakhalin": "2026-05-26T11:11:01+11:00"
+      "changed": 0,
+      "polished": 2,
+      "checked_at": "2026-05-26T00:21:03+00:00",
+      "checked_at_sakhalin": "2026-05-26T11:21:03+11:00"
     },
-    "recent_published_20m_count": 0,
-    "recent_published_20m": [],
-    "decision": "no_approved_to_publish"
+    "recent_published_20m_count": 2,
+    "recent_published_20m": [
+      {
+        "time_sakhalin": "2026-05-26T11:21:24+11:00",
+        "source": "Interfax",
+        "category": "🧭 Геополитика",
+        "title": "Землетрясение магнитудой 5,1 произошло у берегов Камчатки",
+        "with_image": true,
+        "image_mode": "pipeline_generated",
+        "publish_method": "sendPhoto/safe/pipeline_generated",
+        "telegram_message_id": 122
+      },
+      {
+        "time_sakhalin": "2026-05-26T11:21:49+11:00",
+        "source": "Habr",
+        "category": "🧭 Геополитика",
+        "title": "MemForge2: загрузочная флешка, которая за минуту говорит — какую планку памяти менять",
+        "with_image": true,
+        "image_mode": "pipeline_generated",
+        "publish_method": "sendPhoto/safe/pipeline_generated",
+        "telegram_message_id": 123
+      }
+    ],
+    "decision": "published"
   },
   "minimum_release": {
     "version": 3,
