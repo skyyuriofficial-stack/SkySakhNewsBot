@@ -108,6 +108,23 @@ RU_POLITICS_WORDS = {
     "министерство", "кремль", "песков", "володин", "депутат", "комитет"
 }
 
+AIRPORT_WORDS = {
+    "аэропорт", "аэродром", "воздушная гавань", "аэровокзал", "рейс", "рейсы", "самолет", "самолеты",
+    "воздушное пространство", "прием и выпуск", "приём и выпуск", "вылет", "прилет", "прилёт",
+}
+
+AIRPORT_RESTRICTION_WORDS = {
+    "ограничения", "ограничили", "ограничивал", "закрыт", "закрыли", "закрывали", "приостановил",
+    "приостановили", "возобновил", "возобновили", "не принимает", "не выпускает", "задержан",
+    "задержаны", "отменен", "отменены", "план ковер", "режим ковер", "угроза бпла", "опасность бпла",
+}
+
+RUSSIAN_AIRPORT_CONTEXT_WORDS = {
+    "псков", "псковск", "брянск", "тул", "белгород", "курск", "воронеж", "ростов", "саратов",
+    "самар", "калуг", "москва", "петербург", "санкт-петербург", "шереметьево", "домодедово",
+    "внуково", "пулково", "росавиац", "россии", "рф", "российск"
+}
+
 
 def norm_text(*parts: str) -> str:
     text = " ".join(str(p or "") for p in parts if p is not None)
@@ -127,6 +144,10 @@ def is_it(text: str) -> bool:
     return it_hits >= 2
 
 
+def is_russian_airport_story(text: str) -> bool:
+    return count_hits(text, AIRPORT_WORDS) >= 1 and count_hits(text, AIRPORT_RESTRICTION_WORDS) >= 1 and count_hits(text, RUSSIAN_AIRPORT_CONTEXT_WORDS) >= 1
+
+
 def resolve_final_category(current_category: str = "", title: str = "", summary: str = "", source_name: str = "", source_url: str = "") -> str:
     text = norm_text(title, summary, source_name, source_url)
 
@@ -136,6 +157,11 @@ def resolve_final_category(current_category: str = "", title: str = "", summary:
         return CATEGORY_GAMES
     if count_hits(text, SPACE_WORDS) >= 2:
         return CATEGORY_IT
+    # Russian airport disruptions are domestic operational/security items, never geopolitics.
+    if is_russian_airport_story(text):
+        if count_hits(text, RU_WAR_WORDS) >= 1 or "бпла" in text or "беспилот" in text or "пво" in text:
+            return CATEGORY_WAR
+        return CATEGORY_INCIDENTS
     # Geopolitics before war/IT: negotiations, Abraham accords, Iran/Israel/US must not become war/security.
     if count_hits(text, GEO_WORDS) >= 2:
         return CATEGORY_GEOPOLITICS
