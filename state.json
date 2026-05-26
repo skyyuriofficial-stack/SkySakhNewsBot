@@ -2817,15 +2817,15 @@
     }
   ],
   "last_cycle_report": {
-    "reported_at": "2026-05-26T06:13:18+00:00",
-    "reported_at_sakhalin": "2026-05-26T17:13:18+11:00",
-    "queue_updated_at": "2026-05-26T06:13:05+00:00",
-    "queue_updated_at_sakhalin": "2026-05-26T17:13:05+11:00",
+    "reported_at": "2026-05-26T06:16:34+00:00",
+    "reported_at_sakhalin": "2026-05-26T17:16:34+11:00",
+    "queue_updated_at": "2026-05-26T06:13:49+00:00",
+    "queue_updated_at_sakhalin": "2026-05-26T17:13:49+11:00",
     "total_queue_items": 159,
     "status_counts": {
-      "hold": 13,
+      "hold": 12,
       "rejected": 96,
-      "published": 50,
+      "published": 51,
       "pending": 0,
       "approved": 0,
       "skipped": 0,
@@ -2834,14 +2834,14 @@
     "hold_by_category": {
       "🌐 Мировые IT": 5,
       "🇷🇺 РФ / происшествия": 2,
-      "🧭 Геополитика": 2,
       "🇷🇺 РФ / война и безопасность": 2,
       "🇷🇺 РФ / законы и политика": 1,
-      "🎮 Игры / индустрия": 1
+      "🎮 Игры / индустрия": 1,
+      "🧭 Геополитика": 1
     },
     "approved_by_category": {},
     "published_by_category": {
-      "🧭 Геополитика": 21,
+      "🧭 Геополитика": 22,
       "🇷🇺 РФ / война и безопасность": 16,
       "🇷🇺 РФ / происшествия": 6,
       "🌐 Мировые IT": 3,
@@ -2881,21 +2881,11 @@
       "version": 2,
       "changed": 0,
       "polished": 0,
-      "checked_at": "2026-05-26T06:11:45+00:00",
-      "checked_at_sakhalin": "2026-05-26T17:11:45+11:00"
+      "checked_at": "2026-05-26T06:13:22+00:00",
+      "checked_at_sakhalin": "2026-05-26T17:13:22+11:00"
     },
     "recent_published_20m_count": 4,
     "recent_published_20m": [
-      {
-        "time_sakhalin": "2026-05-26T16:55:41+11:00",
-        "source": "Interfax",
-        "category": "🧭 Геополитика",
-        "title": "ОАК передала российским военным партию истребителей Су-35С",
-        "with_image": true,
-        "image_mode": "pipeline_search",
-        "publish_method": "sendPhoto/safe/pipeline_search",
-        "telegram_message_id": 126
-      },
       {
         "time_sakhalin": "2026-05-26T16:56:37+11:00",
         "source": "Interfax",
@@ -2925,6 +2915,16 @@
         "image_mode": "pipeline_generated",
         "publish_method": "sendPhoto/safe/pipeline_generated",
         "telegram_message_id": 129
+      },
+      {
+        "time_sakhalin": "2026-05-26T17:13:37+11:00",
+        "source": "Interfax",
+        "category": "🧭 Геополитика",
+        "title": "Рынок акций РФ открылся в утреннюю сессию незначительным изменением индекса IMOEX2",
+        "with_image": true,
+        "image_mode": "pipeline_generated",
+        "publish_method": "sendPhoto/safe/pipeline_generated",
+        "telegram_message_id": 130
       }
     ],
     "decision": "published"
