@@ -1,1148 +1,10 @@
 {
   "version": 1,
-  "updated_at": "2026-05-26T00:11:20+00:00",
-  "updated_at_sakhalin": "2026-05-26T11:11:20+11:00",
+  "updated_at": "2026-05-26T00:15:18+00:00",
+  "updated_at_sakhalin": "2026-05-26T11:15:18+11:00",
   "reviewed_at": "2026-05-26T00:11:01+00:00",
   "reviewed_at_sakhalin": "2026-05-26T11:11:01+11:00",
   "items": [
-    {
-      "id": "010b28d20bffb79f",
-      "status": "hold",
-      "created_at": "2026-05-25T21:21:19+00:00",
-      "created_at_sakhalin": "2026-05-26T08:21:19+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 730,
-      "title_original": "MemForge2: загрузочная флешка, которая за минуту говорит — какую планку памяти менять",
-      "title_ru": "MemForge2: загрузочная флешка, которая за минуту говорит — какую планку памяти менять",
-      "body": [
-        "Сегодня собирал HP EliteDesk 8300, четыре планки DDR3 по 2 ГБ.",
-        "При первой загрузке — синий экран Windows.",
-        "Стандартный сценарий: сейчас полчаса вытаскивать планки по одной, перезагружаться, выяснять..."
-      ],
-      "footer": null,
-      "source_text": "Сегодня собирал HP EliteDesk 8300, четыре планки DDR3 по 2 ГБ. При первой загрузке — синий экран Windows. Стандартный сценарий: сейчас полчаса вытаскивать планки по одной, перезагружаться, выяснять... Сегодня собирал HP EliteDesk 8300, четыре планки DDR3 по 2 ГБ. При первой загрузке — синий экран Windows. Стандартный сценарий: сейчас полчаса вытаскивать планки по одной, перезагружаться, выяснять какая сбойная. «Танцы с бубнами», которые каждый сервисник делал тысячу раз. Потом вспомнил, что у меня есть собственный инструмент ровно для этого. Воткнул флешку, прогон, минута — на экране большими буквами: REPLACE DIMM1, confidence HIGH . Чтобы убедиться что программа не «запоминает» слот а реально находит планку, переставил её в DIMM4. Прогон повторно — нашла её и в DIMM4, тот же серийник из SPD. Замена планки — BSOD больше нет. Я работаю на сборке ПК — и новых, и б/у. На б/у это типичная ситуация: всё собрано, провода уложены, включаешь — синий экран на загрузке. Метод исключения работает, но это перезагрузка за перезагрузкой, глубокий вдох перед каждой, час твоего времени уходит на то, что должна была бы решить минута. Мне нужен был инструмент, который сразу показывает где проблема — без часовых прогонов и без танцев со свапами планок. Готового с такой комбинацией возможностей я не нашёл, поэтому собрал свой. Сразу честно про авторство. Я не программист. Я сборщик. Код MemForge2 писал не я — его писал Claude (LLM от Anthropic) под мою постановку задачи. Я приходил с пониманием предметной области («нужно SPD через SMBus, серийник для гарантии, MCA‑снимок до/после, контекст в момент ошибки»), описывал что должна делать программа на конкретных кейсах со своей сборки, гонял каждую версию на реальном железе, ловил баги, возвращался с дампами и описаниями поведения. Claude писа",
-      "post_text": "🌐 Мировые IT\n\n<b>MemForge2: загрузочная флешка, которая за минуту говорит — какую планку памяти менять</b>\n\nСегодня собирал HP EliteDesk 8300, четыре планки DDR3 по 2 ГБ.\n\nПри первой загрузке — синий экран Windows.\n\nСтандартный сценарий: сейчас полчаса вытаскивать планки по одной, перезагружаться, выяснять...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1039280/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039280#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1039280/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039280#habracut",
-      "published_at": "2026-05-25T17:48:35+00:00",
-      "title_hash": "806638f2d991fbb6d607ea83c586e5db4da9ae88",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/1de/ea6/7d6/1deea67d65a44e1b995bd6892d97482d.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "В резерве: score=730, порог=650, приоритет потока=650."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-25T22:51:27+00:00",
-      "reviewed_by": "auto-editor-v6-openrouter-rewrite",
-      "stream_priority": 650
-    },
-    {
-      "id": "2e9703b10318a58b",
-      "status": "hold",
-      "created_at": "2026-05-25T21:21:19+00:00",
-      "created_at_sakhalin": "2026-05-26T08:21:19+11:00",
-      "source": "Ars Technica",
-      "source_type": "it",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 600,
-      "title_original": "I spent years forcing myself to finish The Witcher 3—don't repeat my mistake",
-      "title_ru": "I spent years forcing myself to finish The Witcher 3—don't repeat my mistake",
-      "body": [
-        "Consensus and genre labels aren't reliable predictors of what you'll enjoy.",
-        "Consensus and genre labels aren't reliable predictors of what you'll enjoy.",
-        "Sections Forum Subscribe Search AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day & Night Dark System Search Sign In Sign in dialog..."
-      ],
-      "footer": null,
-      "source_text": "Consensus and genre labels aren't reliable predictors of what you'll enjoy. Consensus and genre labels aren't reliable predictors of what you'll enjoy. Sections Forum Subscribe Search AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day & Night Dark System Search Sign In Sign in dialog... Sign in C:\\ArsGames I spent years forcing myself to finish The Witcher 3 —don’t repeat my mistake Consensus and genre labels aren’t reliable predictors of what you’ll enjoy. 132 Open world? Check. Gorgeous? Check. Deep RPG systems? Check. And yet... Credit: CD Projekt Red Open world? Check. Gorgeous? Check. Deep RPG systems? Check. And yet... Credit: CD Projekt Red Text settings Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Minimize to nav C:\\ArsGames We love games here at the Ars Orbiting HQ, from modern to ancient and all points in between. With that in mind, we’ve partnered with the folks at GOG.com to create a store page featuring a curated list of some of our favorites from GOG’s catalog . From time to time, we’ll rotate a couple of titles off the list and add a few new ones; altogether, we have about 50 games to set before you. Usually at least once a month, we’ll publish a personal retrospective like this one, where we’ll feature one of the games from the list—perhaps a retro game you’ve heard of, perhaps a modern title you missed. Regardless, GOG will have a DRM-free version of the game ready to go.",
-      "post_text": "🎮 Игры / индустрия\n\n<b>I spent years forcing myself to finish The Witcher 3—don't repeat my mistake</b>\n\nConsensus and genre labels aren't reliable predictors of what you'll enjoy.\n\nConsensus and genre labels aren't reliable predictors of what you'll enjoy.\n\nSections Forum Subscribe Search AI Biz &amp; IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz &amp; IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day &amp; Night Dark System Search Sign In Sign in dialog...\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://arstechnica.com/gaming/2026/05/the-witcher-3-is-a-good-game-but-that-doesnt-mean-you-have-to-like-it/\">Ars Technica</a>",
-      "edited_post_text": null,
-      "url": "https://arstechnica.com/gaming/2026/05/the-witcher-3-is-a-good-game-but-that-doesnt-mean-you-have-to-like-it/",
-      "published_at": "2026-05-25T11:22:27+00:00",
-      "title_hash": "42ad10468e324582136583df870a6032a08e90b9",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "В резерве: score=600, порог=650, приоритет потока=600."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-25T22:51:27+00:00",
-      "reviewed_by": "auto-editor-v6-openrouter-rewrite",
-      "stream_priority": 600
-    },
-    {
-      "id": "a000b6c49a388d8f",
-      "status": "hold",
-      "created_at": "2026-05-25T22:51:27+00:00",
-      "created_at_sakhalin": "2026-05-26T09:51:27+11:00",
-      "source": "BBC World",
-      "source_type": "world",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌍 Мир о России",
-      "score": 650,
-      "title_original": "Russia threatens more Kyiv strikes and tells foreign nationals to leave",
-      "title_ru": "Russia threatens more Kyiv strikes and tells foreign nationals to leave",
-      "body": [
-        "It comes after the Ukrainian capital suffered one of the biggest aerial assaults of the war overnight on Saturday.",
-        "It comes after the Ukrainian capital suffered one of the biggest aerial assaults of the war overnight on Saturday.",
-        "The new strikes will target \"decision-making centres and command posts\", alongside drone manufacturing facilities in the city, Russia's foreign ministry said in a statement."
-      ],
-      "footer": null,
-      "source_text": "It comes after the Ukrainian capital suffered one of the biggest aerial assaults of the war overnight on Saturday. It comes after the Ukrainian capital suffered one of the biggest aerial assaults of the war overnight on Saturday. The new strikes will target \"decision-making centres and command posts\", alongside drone manufacturing facilities in the city, Russia's foreign ministry said in a statement. Moscow has called for foreign nationals and diplomats to leave Kyiv \"as soon as possible\" and warned citizens to stay away from administrative and military buildings. Ukraine said Russia's threats were \"nothing short of shameless blackmail\" and urged allies to increase pressure on Moscow. With its warning to foreign nationals, Moscow is \"effectively admitting that its shelling is aimed, among other things, at intimidating the foreign diplomatic corps\", the statement continued.",
-      "post_text": "🌍 Мир о России\n\n<b>Russia threatens more Kyiv strikes and tells foreign nationals to leave</b>\n\nIt comes after the Ukrainian capital suffered one of the biggest aerial assaults of the war overnight on Saturday.\n\nIt comes after the Ukrainian capital suffered one of the biggest aerial assaults of the war overnight on Saturday.\n\nThe new strikes will target \"decision-making centres and command posts\", alongside drone manufacturing facilities in the city, Russia's foreign ministry said in a statement.\n\nМИР О РОССИИ · <a href=\"https://www.bbc.com/news/articles/c1e22n55zn4o?at_medium=RSS&amp;at_campaign=rss\">BBC World</a>",
-      "edited_post_text": null,
-      "url": "https://www.bbc.com/news/articles/c1e22n55zn4o?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-05-25T21:24:34+00:00",
-      "title_hash": "e18e530fffb96f67aeb64f7b49a1a77df351728b",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/e77a/live/157edd60-585b-11f1-9a33-c313bd26e03f.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "В резерве: score=650, порог=650, приоритет потока=650."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-25T22:51:27+00:00",
-      "reviewed_by": "auto-editor-v6-openrouter-rewrite",
-      "stream_priority": 650
-    },
-    {
-      "id": "24a1dcca6543e3ec",
-      "status": "hold",
-      "created_at": "2026-05-25T22:51:27+00:00",
-      "created_at_sakhalin": "2026-05-26T09:51:27+11:00",
-      "source": "Interfax",
-      "source_type": "ru",
-      "category": "🇷🇺 РФ / законы и политика",
-      "category_hint": "🇷🇺 РФ / законы и политика",
-      "score": 700,
-      "title_original": "Госдума рассмотрит во втором чтении проект закона о 10-летнем сроке давности по делам о приватизации",
-      "title_ru": "Госдума рассмотрит во втором чтении проект закона о 10-летнем сроке давности по делам о приватизации",
-      "body": [
-        "Госдума на заседании во вторник планирует рассмотреть во втором, и в случае принятия, и в третьем, окончательном чтении проект закона, предлагающий установить Госдума на заседании во вторник планирует рассмотреть во втором, и в случае принятия, и в третьем, окончательном чтении проект закона, предлагающий установить 10-летний срок исковой давности, по истечении которого суд отказывает в иске публично-правового образо",
-        "INTERFAX.RU - Госдума на заседании во вторник планирует рассмотреть во втором, и в случае принятия, и в третьем, окончательном чтении проект закона, предлагающий установить 10-летний срок исковой давности, по истечении которого суд отказывает в иске публично-правового образования об истребовании незаконно приватизированного имущества, сообщил первый заместитель председателя Госдумы Александр Жуков.",
-        "\"Завтра во втором и, в случае принятия, в третьем ( чтении - ИФ ) рассмотрим вопрос о сроках исковой давности при приватизации\", - сказал Жуков журналистам."
-      ],
-      "footer": null,
-      "source_text": "Госдума на заседании во вторник планирует рассмотреть во втором, и в случае принятия, и в третьем, окончательном чтении проект закона, предлагающий установить Госдума на заседании во вторник планирует рассмотреть во втором, и в случае принятия, и в третьем, окончательном чтении проект закона, предлагающий установить 10-летний срок исковой давности, по истечении которого суд отказывает в иске публично-правового образования об истребовании незаконно приватизированного имущества, сообщил первый заместитель председателя Госдумы Александр Жуков.\"Завтра во втором и, в случае принятия, в третьем (чтении - ИФ) рассмотрим вопрос о сроках исковой давности при приватизации\", - сказал Жуков журналистам. Москва. 26 мая. INTERFAX.RU - Госдума на заседании во вторник планирует рассмотреть во втором, и в случае принятия, и в третьем, окончательном чтении проект закона, предлагающий установить 10-летний срок исковой давности, по истечении которого суд отказывает в иске публично-правового образования об истребовании незаконно приватизированного имущества, сообщил первый заместитель председателя Госдумы Александр Жуков. \"Завтра во втором и, в случае принятия, в третьем ( чтении - ИФ ) рассмотрим вопрос о сроках исковой давности при приватизации\", - сказал Жуков журналистам. Законопроект (1208563-8) предлагает изменения в статью 217 части первой Гражданского кодекса РФ. Она дополняется положением о том, что в случае применения гражданско-правовых последствий нарушения требований законодательства при приватизации подлежат применению установленные Гражданским кодексом РФ сроки исковой давности и правила их исчисления (три года с момента выявления нарушения). При этом срок давности во всяком случае не может превышать 10 лет со дня выбытия такого имущества из публичной собственности. \"Такое ре",
-      "post_text": "🇷🇺 РФ / законы и политика\n\n<b>Госдума рассмотрит во втором чтении проект закона о 10-летнем сроке давности по делам о приватизации</b>\n\nГосдума на заседании во вторник планирует рассмотреть во втором, и в случае принятия, и в третьем, окончательном чтении проект закона, предлагающий установить Госдума на заседании во вторник планирует рассмотреть во втором, и в случае принятия, и в третьем, окончательном чтении проект закона, предлагающий установить 10-летний срок исковой давности, по истечении которого суд отказывает в иске публично-правового образо\n\nINTERFAX.RU - Госдума на заседании во вторник планирует рассмотреть во втором, и в случае принятия, и в третьем, окончательном чтении проект закона, предлагающий установить 10-летний срок исковой давности, по истечении которого суд отказывает в иске публично-правового образования об истребовании незаконно приватизированного имущества, сообщил первый заместитель председателя Госдумы Александр Жуков.\n\n\"Завтра во втором и, в случае принятия, в третьем ( чтении - ИФ ) рассмотрим вопрос о сроках исковой давности при приватизации\", - сказал Жуков журналистам.\n\nРФ | ЗАКОНЫ И ПОЛИТИКА · <a href=\"https://www.interfax.ru/russia/1091751\">Interfax</a>",
-      "edited_post_text": null,
-      "url": "https://www.interfax.ru/russia/1091751",
-      "published_at": "2026-05-25T21:24:00+00:00",
-      "title_hash": "5bb50c2d01a18df6bb8de31df2cccfd9d2d8e166",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "В резерве: score=700, порог=650, приоритет потока=700."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-25T22:51:27+00:00",
-      "reviewed_by": "auto-editor-v6-openrouter-rewrite",
-      "stream_priority": 700
-    },
-    {
-      "id": "7dce7dc86f34410b",
-      "status": "hold",
-      "created_at": "2026-05-26T00:11:01+00:00",
-      "created_at_sakhalin": "2026-05-26T11:11:01+11:00",
-      "source": "BBC Technology",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 650,
-      "title_original": "Custard apples: The crop that thrives in the toughest conditions",
-      "title_ru": "Custard apples: The crop that thrives in the toughest conditions",
-      "body": [
-        "Custard apple plants are prized for their hardiness but exporting their delicate fruit is difficult.",
-        "Custard apple plants are prized for their hardiness but exporting their delicate fruit is difficult."
-      ],
-      "footer": null,
-      "source_text": "Custard apple plants are prized for their hardiness but exporting their delicate fruit is difficult. Custard apple plants are prized for their hardiness but exporting their delicate fruit is difficult.",
-      "post_text": "🌐 Мировые IT\n\n<b>Custard apples: The crop that thrives in the toughest conditions</b>\n\nCustard apple plants are prized for their hardiness but exporting their delicate fruit is difficult.\n\nCustard apple plants are prized for their hardiness but exporting their delicate fruit is difficult.\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/ce8pmrp0m47o?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
-      "edited_post_text": null,
-      "url": "https://www.bbc.com/news/articles/ce8pmrp0m47o?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-05-25T23:27:04+00:00",
-      "title_hash": "d7ae258b556f5d7d1e5f34157bd6638353d65ebb",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/3190/live/90f2c990-4ac1-11f1-b55d-0f258dce1735.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "В резерве: score=650, порог=650, приоритет потока=650."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-26T00:11:01+00:00",
-      "reviewed_by": "auto-editor-v6-openrouter-rewrite",
-      "stream_priority": 650
-    },
-    {
-      "id": "4e114e19a5249f9c",
-      "status": "rejected",
-      "created_at": "2026-05-24T21:09:43+00:00",
-      "created_at_sakhalin": "2026-05-25T08:09:43+11:00",
-      "source": "The Verge",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 143,
-      "title_original": "Apple’s latest MacBook Air is $200 off in both sizes for Memorial Day",
-      "title_ru": "Apple’s latest MacBook Air is $200 off in both sizes for Memorial Day",
-      "body": [
-        "It’s an investment that will last for years to come.",
-        "If you’re looking for a laptop that’ll still perform well several years from now, Apple’s latest MacBook Air is hard to beat.",
-        "Now, in particular, is a good time to pick one up, as you can currently buy the 13-inch MacBook Air at Amazon in the run-up to Memorial Day with an M5 chip, 16GB […] Tech Close Tech Posts from this topic will be added to your daily email digest and your homepage feed."
-      ],
-      "footer": null,
-      "source_text": "It’s an investment that will last for years to come. If you’re looking for a laptop that’ll still perform well several years from now, Apple’s latest MacBook Air is hard to beat. Now, in particular, is a good time to pick one up, as you can currently buy the 13-inch MacBook Air at Amazon in the run-up to Memorial Day with an M5 chip, 16GB […] Tech Close Tech Posts from this topic will be added to your daily email digest and your homepage feed. Apple Close Apple Posts from this topic will be added to your daily email digest and your homepage feed. The M5 Air is fast enough for everyday tasks and then some, which is why it’s our top laptop rec for most people. The M5 Air is fast enough for everyday tasks and then some, which is why it’s our top laptop rec for most people.",
-      "post_text": "🌐 Мировые IT\n\n<b>Apple’s latest MacBook Air is $200 off in both sizes for Memorial Day</b>\n\nIt’s an investment that will last for years to come.\n\nIf you’re looking for a laptop that’ll still perform well several years from now, Apple’s latest MacBook Air is hard to beat.\n\nNow, in particular, is a good time to pick one up, as you can currently buy the 13-inch MacBook Air at Amazon in the run-up to Memorial Day with an M5 chip, 16GB […] Tech Close Tech Posts from this topic will be added to your daily email digest and your homepage feed.\n\nМИРОВЫЕ IT · <a href=\"https://www.theverge.com/gadgets/936610/apple-macbook-air-m5-memorial-day-2026-deal-sale\">The Verge</a>",
-      "edited_post_text": null,
-      "url": "https://www.theverge.com/gadgets/936610/apple-macbook-air-m5-memorial-day-2026-deal-sale",
-      "published_at": "2026-05-24T15:00:00+00:00",
-      "title_hash": "0449c4f75bac833d4f2ed33728b95644b15964b2",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "drop",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: скидка/товарный материал, не новость."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:13:38+00:00",
-      "reviewed_by": "auto-editor-v3"
-    },
-    {
-      "id": "b78e7cbc78f85359",
-      "status": "rejected",
-      "created_at": "2026-05-24T21:09:43+00:00",
-      "created_at_sakhalin": "2026-05-25T08:09:43+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 127,
-      "title_original": "Интернет до бесконечных лент: каким был 2010 год",
-      "title_ru": "Интернет до бесконечных лент: каким был 2010 год",
-      "body": [
-        "Я дитя 2003 года, поэтому интернет в моей жизни появился, кажется, раньше, чем я успела осознать, что он вообще когда-то мог «появиться».",
-        "Он просто был: где-то рядом с играми, мультиками, поиском...",
-        "Мы привыкли, что нужная информация находится за три секунды, видео грузится в HD без пауз, а интернет есть почти в любой точке мира."
-      ],
-      "footer": null,
-      "source_text": "Я дитя 2003 года, поэтому интернет в моей жизни появился, кажется, раньше, чем я успела осознать, что он вообще когда-то мог «появиться». Он просто был: где-то рядом с играми, мультиками, поиском... Мы привыкли, что нужная информация находится за три секунды, видео грузится в HD без пауз, а интернет есть почти в любой точке мира. Кажется, будто так было всегда. Но у сети тоже было свое взросление: время форумов, Flash-сайтов, первых массовых соцсетей, медленного видео и ощущения, что за следующим кликом можно найти что-то совершенно неожиданное. В этой статье я возвращаюсь в 2010 год, чтобы посмотреть, каким был интернет на пороге своей большой трансформации. Читать далее Я дитя 2003 года, поэтому интернет в моей жизни появился, кажется, раньше, чем я успела осознать, что он вообще когда-то мог «появиться». Он просто был: где-то рядом с играми, мультиками, поиском картинок, первыми соцсетями, странными сайтами и взрослыми, которые иногда говорили: «Не сиди долго, интернет закончится». Но недавно я открыла веб-архивы примерно 2010 года и залипла. Сейчас, когда нейросети уже пишут тексты, помогают с кодом и будто бы думают рядом с нами, мне стало интересно: а каким был интернет в начале этой дороги? С одной стороны, это не доисторический интернет с модемным писком и сайтами «лучше смотреть в Internet Explorer 6». В 2010 году уже были YouTube, «ВКонтакте», Facebook, Twitter, iPhone, Android, iPad, HD-видео и социальные сети, которые захватывали повседневность. С другой стороны, это еще не сегодняшний интернет, где большая часть жизни разложена по нескольким гигантским платформам, лентам рекомендаций, маркетплейсам и мессенджерам. Интернет 2010 года оказался для меня не «старым». Скорее, он оказался подростком: уже массовым, громким, коммерческим, но все еще немного несклад",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Интернет до бесконечных лент: каким был 2010 год</b>\n\nЯ дитя 2003 года, поэтому интернет в моей жизни появился, кажется, раньше, чем я успела осознать, что он вообще когда-то мог «появиться».\n\nОн просто был: где-то рядом с играми, мультиками, поиском...\n\nМы привыкли, что нужная информация находится за три секунды, видео грузится в HD без пауз, а интернет есть почти в любой точке мира.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://habr.com/ru/articles/1038726/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1038726#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1038726/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1038726#habracut",
-      "published_at": "2026-05-24T15:35:48+00:00",
-      "title_hash": "48166756c2f56492655e8b85c4b8fbcbe97beecb",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/aa9/658/7cd/aa96587cd66a7f8425a59577c8685ca9.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: обучающая/колоночная статья, не новость."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:13:38+00:00",
-      "reviewed_by": "auto-editor-v3"
-    },
-    {
-      "id": "90947e480bc4e092",
-      "status": "rejected",
-      "created_at": "2026-05-24T21:09:43+00:00",
-      "created_at_sakhalin": "2026-05-25T08:09:43+11:00",
-      "source": "IGN",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 127,
-      "title_original": "The Best Deals Today: RX 9070 XT, M5 MacBook Air, LEGO Back to the Future, and More - IGN",
-      "title_ru": "The Best Deals Today: RX 9070 XT, M5 MacBook Air, LEGO Back to the Future, and More - IGN",
-      "body": [
-        "A new weekend has arrived, and today, you can save big on the M5 MacBook Air, AirPods Pro 3, Monster Hunter Stories 3: Twisted Reflection, and more.",
-        "Check out our top picks for Sunday, May 24, below.",
-        "Back to the Future is one of the best sci-fi films ever, and the iconic DeLorean time machine is a huge part of the film's legacy today."
-      ],
-      "footer": null,
-      "source_text": "A new weekend has arrived, and today, you can save big on the M5 MacBook Air, AirPods Pro 3, Monster Hunter Stories 3: Twisted Reflection, and more. Check out our top picks for Sunday, May 24, below. Back to the Future is one of the best sci-fi films ever, and the iconic DeLorean time machine is a huge part of the film's legacy today. If you're a fan of the BTTF trilogy, look no further than this LEGO Icons Time Machine set, featuring the DeLorean with parts for each movie, minifigures for Doc Brown and Marty McFly, and accessories like the hoverboard. You can save $40 this weekend on this set, which saves you 20% off MSRP. First up, Amazon has 2026 MacBook Air M5 models on sale for $899.99 today. This particular model has a 13-inch display and features the M5 Chip, 16GB of RAM, and 512GB of SSD storage. Normally, this MacBook is priced at $1099, so you're saving $200 with this deal. I grabbed a similar MacBook Air earlier this year and have been thoroughly impressed with the device so far. Following AI and data center demand, prices have skyrocketed, and it's challenging to locate a good deal on a graphics card. Thankfully, Amazon has the PowerColor Reaper Radeon RX 9070 XT on sale this weekend for $669.99. It's still a bit above MSRP, but this is solid price, especially right now in the market. In our 10/10 review of the AMD Radeon RX 9070 XT , we wrote, \"PC Gaming has been in a decadent spiral since 2020, and the AMD Radeon RX 9070 XT is a reminder that it doesn’t have to be that way. This graphics card has no problem maxing out any game you throw at it at 4K, even with",
-      "post_text": "🎮 Игры / индустрия\n\n<b>The Best Deals Today: RX 9070 XT, M5 MacBook Air, LEGO Back to the Future, and More - IGN</b>\n\nA new weekend has arrived, and today, you can save big on the M5 MacBook Air, AirPods Pro 3, Monster Hunter Stories 3: Twisted Reflection, and more.\n\nCheck out our top picks for Sunday, May 24, below.\n\nBack to the Future is one of the best sci-fi films ever, and the iconic DeLorean time machine is a huge part of the film's legacy today.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/best-deals-for-may-24-2026\">IGN</a>",
-      "edited_post_text": null,
-      "url": "https://www.ign.com/articles/best-deals-for-may-24-2026",
-      "published_at": "2026-05-24T19:57:34.332000+00:00",
-      "title_hash": "cce046c4c76dea487424009a842c1ad75d8b3616",
-      "image_url": "https://assets-prd.ignimgs.com/2026/05/18/gigabyte9070xt-1779124537228.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "drop",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: скидка/товарный материал, не новость."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:13:38+00:00",
-      "reviewed_by": "auto-editor-v3"
-    },
-    {
-      "id": "2319bbbb6bb3d11b",
-      "status": "rejected",
-      "created_at": "2026-05-24T21:09:43+00:00",
-      "created_at_sakhalin": "2026-05-25T08:09:43+11:00",
-      "source": "IGN",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 127,
-      "title_original": "The Mandalorian and Grogu Opened to an Estimated $165 Million at the Box Office — Here's How That Compares to Solo: A Star Wars Story",
-      "title_ru": "The Mandalorian and Grogu Opened to an Estimated $165 Million at the Box Office — Here's How That Compares to Solo: A Star Wars Story",
-      "body": [
-        "Star Wars: The Mandalorian and Grogu brought in an estimated $165 million at the global box office during the four-day Memorial Day holiday.",
-        "Here's how that compares to Solo: A Star Wars Story.",
-        "Star Wars: The Mandalorian and Grogu brought in an estimated $165 million at the global box office during the four-day Memorial Day holiday."
-      ],
-      "footer": null,
-      "source_text": "Star Wars: The Mandalorian and Grogu brought in an estimated $165 million at the global box office during the four-day Memorial Day holiday. Here's how that compares to Solo: A Star Wars Story. Star Wars: The Mandalorian and Grogu brought in an estimated $165 million at the global box office during the four-day Memorial Day holiday. Here's how that compares to Solo: A Star Wars Story. Star Wars: The Mandalorian and Grogu brought in an estimated $165 million at the global box office during the four-day Memorial Day holiday. $102 million came domestically and $63 million internationally. The Mandalorian and Grogu is the first new Star Wars movie to hit theaters since the divisive Rise of Skywalker came out in 2019, and following a near seven year period of Disney+ shows, including The Mandalorian itself. So, all eyes were on its box office numbers as a reference point for the relevancy of the Star Wars franchise in 2026. To put its performance into perspective, Solo: A Star Wars Story , which lost money during its theatrical run, made $103 million domestically (not adjusted for inflation) during its four-day Memorial Day opening back in 2018. So, in North America, The Mandalorian and Grogu had the worst opening for a Star Wars movie since Disney bought the franchise in 2012 — but only just. However, there is a degree of positivity around Baby Yoda’s big screen adventure. According to Variety , The Mandalorian and Grogu cost just $165 million to produce — much less than prior Star Wars films — although marketing costs must be considered on top. And Mando is going down well with audiences, with 89% on Rotten Tomatoes’ user-generated Popcornmeter.",
-      "post_text": "🎮 Игры / индустрия\n\n<b>The Mandalorian and Grogu Opened to an Estimated $165 Million at the Box Office — Here's How That Compares to Solo: A Star Wars Story</b>\n\nStar Wars: The Mandalorian and Grogu brought in an estimated $165 million at the global box office during the four-day Memorial Day holiday.\n\nHere's how that compares to Solo: A Star Wars Story.\n\nStar Wars: The Mandalorian and Grogu brought in an estimated $165 million at the global box office during the four-day Memorial Day holiday.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/star-wars-the-mandalorian-and-grogu-opened-to-an-estimated-165-million-at-the-box-office\">IGN</a>",
-      "edited_post_text": null,
-      "url": "https://www.ign.com/articles/star-wars-the-mandalorian-and-grogu-opened-to-an-estimated-165-million-at-the-box-office",
-      "published_at": "2026-05-24T19:08:54.102000+00:00",
-      "title_hash": "140995b3bb04697c1b37b380aba76104c816668d",
-      "image_url": "https://assets-prd.ignimgs.com/2026/05/24/mando-1779649684804.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "drop",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: скидка/товарный материал, не новость."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:13:38+00:00",
-      "reviewed_by": "auto-editor-v3"
-    },
-    {
-      "id": "cdb1b0a7ebe39560",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:13:38+00:00",
-      "created_at_sakhalin": "2026-05-25T10:13:38+11:00",
-      "source": "IGN",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 162,
-      "title_original": "How Karmine Corp Won the 2026 RLCS Paris Major in Front of a Hometown Crowd, Right as Rocket League Teased a Massive Next-Gen Unreal Engine 6 Upgrade",
-      "title_ru": "How Karmine Corp Won the 2026 RLCS Paris Major in Front of a Hometown Crowd, Right as Rocket League Teased a Massive Next-Gen Unreal Engine 6 Upgrade",
-      "body": [
-        "Karmine Corp captured the 2026 RLCS Paris Major championship in front of a roaring hometown crowd, just as Rocket League shocked fans with an Unreal Engine 6 teaser.",
-        "Karmine Corp captured the 2026 RLCS Paris Major championship in front of a roaring hometown crowd, just as Rocket League shocked fans with an Unreal Engine 6 teaser.",
-        "Karmine Corp, the French Esports team who’s reached the semifinals in the last two Rocket League World Championships, stood atop the podium as champions of the 2026 RLCS Paris Major after defeating Saudi Arabian team Twisted Minds."
-      ],
-      "footer": null,
-      "source_text": "Karmine Corp captured the 2026 RLCS Paris Major championship in front of a roaring hometown crowd, just as Rocket League shocked fans with an Unreal Engine 6 teaser. Karmine Corp captured the 2026 RLCS Paris Major championship in front of a roaring hometown crowd, just as Rocket League shocked fans with an Unreal Engine 6 teaser. Karmine Corp, the French Esports team who’s reached the semifinals in the last two Rocket League World Championships, stood atop the podium as champions of the 2026 RLCS Paris Major after defeating Saudi Arabian team Twisted Minds. In front of an enthusiastic hometown crowd, the Karmine Corp roster consisting of Atow, Juicy, and Vatira emerged victorious 4 games to 2. They endured a tournament that began with 16 different teams vying for the trophy. “The whole game we dominated, and I think we could have scored earlier,” says Karmine Corp’s Juicy. “But, in the end, it was just a relief. We were meant to win.” Karmine Corp quickly went up 2-0 in the final before dropping a game to Twisted Minds. The decisive final game went into overtime before Atow scored the tournament-winning goal.",
-      "post_text": "🎮 Игры / индустрия\n\n<b>How Karmine Corp Won the 2026 RLCS Paris Major in Front of a Hometown Crowd, Right as Rocket League Teased a Massive Next-Gen Unreal Engine 6 Upgrade</b>\n\nKarmine Corp captured the 2026 RLCS Paris Major championship in front of a roaring hometown crowd, just as Rocket League shocked fans with an Unreal Engine 6 teaser.\n\nKarmine Corp captured the 2026 RLCS Paris Major championship in front of a roaring hometown crowd, just as Rocket League shocked fans with an Unreal Engine 6 teaser.\n\nKarmine Corp, the French Esports team who’s reached the semifinals in the last two Rocket League World Championships, stood atop the podium as champions of the 2026 RLCS Paris Major after defeating Saudi Arabian team Twisted Minds.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/karmine-corp-wins-rlcs-paris-major-2026\">IGN</a>",
-      "edited_post_text": null,
-      "url": "https://www.ign.com/articles/karmine-corp-wins-rlcs-paris-major-2026",
-      "published_at": "2026-05-24T20:31:26.151000+00:00",
-      "title_hash": "acf4dd3e2a9893c454be1e027e4d5fdfe66fdaa6",
-      "image_url": "https://assets-prd.ignimgs.com/2026/05/24/20260523-michalkonkol-rlcs-paris-major-144243-1779654535585.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: игровая тема не имеет достаточной индустриальной значимости."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:13:38+00:00",
-      "reviewed_by": "auto-editor-v3"
-    },
-    {
-      "id": "403980f347fb6e35",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:13:38+00:00",
-      "created_at_sakhalin": "2026-05-25T10:13:38+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 158,
-      "title_original": "Мессенджер HalChat теперь в Google Play: 3 года разработки, ИИ в браузере и квест с модерацией",
-      "title_ru": "Мессенджер HalChat теперь в Google Play: 3 года разработки, ИИ в браузере и квест с модерацией",
-      "body": [
-        "Моему мессенджеру HalChat исполнилось три года.",
-        "За это время он прошел огромный путь: из месива символов и сырых блоков превратился в стабильную систему с интуитивным дизайном...",
-        "Моему мессенджеру HalChat исполнилось три года."
-      ],
-      "footer": null,
-      "source_text": "Halwashka) Всем привет! Моему мессенджеру HalChat исполнилось три года. За это время он прошел огромный путь: из месива символов и сырых блоков превратился в стабильную систему с интуитивным дизайном... Всем привет! Моему мессенджеру HalChat исполнилось три года. За это время он прошел огромный путь: из месива символов и сырых блоков превратился в стабильную систему с интуитивным дизайном и современными протоколами. Я разрабатываю его один и позиционирую как приватный, кастомизируемый и автоматизированный мессенджер. Далее: итоги разработки, локальный ИИ в браузере без сторонних серверов и история о том, как я проходил квест с новыми жесткими правилами тестирования в Google Play. Читать далее Всем привет! Моему мессенджеру HalChat исполнилось три года. За это время он прошел огромный путь: из месива символов и сырых блоков превратился в стабильную систему с интуитивным дизайном и современными протоколами. Я разрабатываю его один и позиционирую как приватный, кастомизируемый и автоматизированный мессенджер. С самого начала фундаментом проекта было сквозное шифрование (E2EE). Главная цель - защитить переписки не только от злоумышленников, но и от бесконтрольного доступа от других лиц . В HalChat действует строгий мораторий на рекламу в чатах и чтение переписок на стороне сервера. Конечно, разработка легального мессенджера в России требует компромиссов. Для соблюдения законодательства и ответов на возможные официальные запросы пришлось реализовать сложную систему криптографии с депонированием зашифрованных данных в изолированное оффлайн-хранилище. Это сложный баланс между законом и приватностью, но я стараюсь быть максимально честным с пользователями. Интерфейс и функционал чата можно расширять с помощью плагинов. Для этого я использовал свой кроссплатформенный язык програ",
-      "post_text": "🌐 Мировые IT\n\n<b>Мессенджер HalChat теперь в Google Play: 3 года разработки, ИИ в браузере и квест с модерацией</b>\n\nМоему мессенджеру HalChat исполнилось три года.\n\nЗа это время он прошел огромный путь: из месива символов и сырых блоков превратился в стабильную систему с интуитивным дизайном...\n\nМоему мессенджеру HalChat исполнилось три года.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1038816/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1038816#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1038816/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1038816#habracut",
-      "published_at": "2026-05-24T21:28:37+00:00",
-      "title_hash": "47e90dacbdfbf9a8c3230a591b9cb5a087a204d8",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/a22/9a4/3c6/a229a43c6f60ee0e2977ecb63b712ec6.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: обучающая/колоночная статья, не новость."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:13:38+00:00",
-      "reviewed_by": "auto-editor-v3"
-    },
-    {
-      "id": "6d7048f57e2490d1",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:13:38+00:00",
-      "created_at_sakhalin": "2026-05-25T10:13:38+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 158,
-      "title_original": "Реверс-инжиниринг Xiaomi Smart Band 10",
-      "title_ru": "Реверс-инжиниринг Xiaomi Smart Band 10",
-      "body": [
-        "Дисклеймер: Вся работа проводилась исключительно в исследовательских целях в отношении данных собственной учетной записи.",
-        "Статья носит аналитический характер, не содержит призывов к получению...",
-        "У носимых устройств есть парадокс: браслет измеряет ваши пульс, сон и активность, но готового открытого API для интеграции этих данных в сторонние системы (например, домашний мониторинг или локальную БД) производитель не предоставляет."
-      ],
-      "footer": null,
-      "source_text": "Дисклеймер: Вся работа проводилась исключительно в исследовательских целях в отношении данных собственной учетной записи. Статья носит аналитический характер, не содержит призывов к получению... У носимых устройств есть парадокс: браслет измеряет ваши пульс, сон и активность, но готового открытого API для интеграции этих данных в сторонние системы (например, домашний мониторинг или локальную БД) производитель не предоставляет. Официальное приложение Xiaomi Mi Fitness показывает красивые графики, но данные остаются «запертыми» внутри мобильной экосистемы. Изначальная задача была чисто прикладной: настроить автоматический сбор данных о здоровье в локальную SQLite-базу и выводить отчеты в семейный Telegram-бот. Поскольку браслет синхронизируется с приложением, а то в свою очередь с облаком Xiaomi, данные гарантированно передаются по сети. Нужно было понять, в каком формате они передаются и как их забрать. Эта статья - технический разбор пути от анализа сетевого трафика и настройки доверия к собственному CA до реверс-инжиниринга RC4-протокола Xiaomi, расшифровки AES/CBC-объектов из хранилища FDS и парсинга проприетарного бинарного формата сна. Читать далее Дисклеймер: Вся работа проводилась исключительно в исследовательских целях в отношении данных собственной учетной записи. Статья носит аналитический характер, не содержит призывов к получению несанкционированного доступа к чужим системам, рабочих сессионных токенов, ключей шифрования или готовых инструментов для обхода систем безопасности третьих лиц. У носимых устройств есть парадокс: браслет измеряет ваши пульс, сон и активность, но готового открытого API для интеграции этих данных в сторонние системы (например, домашний мониторинг или локальную БД) производитель не предоставляет. Официальное приложение Xiaomi Mi Fitnes",
-      "post_text": "🌐 Мировые IT\n\n<b>Реверс-инжиниринг Xiaomi Smart Band 10</b>\n\nДисклеймер: Вся работа проводилась исключительно в исследовательских целях в отношении данных собственной учетной записи.\n\nСтатья носит аналитический характер, не содержит призывов к получению...\n\nУ носимых устройств есть парадокс: браслет измеряет ваши пульс, сон и активность, но готового открытого API для интеграции этих данных в сторонние системы (например, домашний мониторинг или локальную БД) производитель не предоставляет.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1038812/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1038812#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1038812/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1038812#habracut",
-      "published_at": "2026-05-24T21:13:51+00:00",
-      "title_hash": "341610cd8787f3e54fb291805851740413d62bac",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/811/8bd/496/8118bd49685a4d61c24c26f190179218.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: обучающая/колоночная статья, не новость."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:13:38+00:00",
-      "reviewed_by": "auto-editor-v3"
-    },
-    {
-      "id": "f515bd0284c3c7aa",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:13:38+00:00",
-      "created_at_sakhalin": "2026-05-25T10:13:38+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 158,
-      "title_original": "Среда повседневности как объект проектирования: что общего у горца, серотониновой ямы и митохондрий",
-      "title_ru": "Среда повседневности как объект проектирования: что общего у горца, серотониновой ямы и митохондрий",
-      "body": [
-        "Серотониновая яма, горный буст и гормезис: wellness-протокол без масок, добавок и подписок TL;DR Если после яркой поездки или плотной недели накатывает откат и апатия, а после длинной рутины —...",
-        "Биохакинг как индустрия зарабатывает на том, что продаёт фрагменты здоровья как изолированные решения: гипоксические маски, NAD+, ice baths, HRV-приложения, очередные курсы.",
-        "Большинство этого либо не работает, либо работает на 5–10% при идеальном сценарии."
-      ],
-      "footer": null,
-      "source_text": "Серотониновая яма, горный буст и гормезис: wellness-протокол без масок, добавок и подписок TL;DR Если после яркой поездки или плотной недели накатывает откат и апатия, а после длинной рутины —... Биохакинг как индустрия зарабатывает на том, что продаёт фрагменты здоровья как изолированные решения: гипоксические маски, NAD+, ice baths, HRV-приложения, очередные курсы. Большинство этого либо не работает, либо работает на 5–10% при идеальном сценарии. При этом есть фундаментально другая рамка — гормезис, известный биологии с XX века. Малые регулярные дозы стрессоров (движение, гипоксия, температурные перепады, плотные социальные связи) активируют защитные пути клетки. Большие и хронические — истощают. Горец на 1500 м с ежедневной ходьбой 15 км и многопоколенной семьёй — живёт дольше благодаря среде. И значительную часть этой среды можно реконструировать в городе без переезда. В статье — разбор того, что должно работать, что нет, и почему регулярность бьёт оптимальность. Читать далее Если после яркой поездки или плотной недели накатывает откат и апатия, а после длинной рутины — выгорание, — это не баг психики. А сигнал, что среда вокруг отстроена так себе. У биологии для этого есть слово — гормезис. Маленькие повторяющиеся дозы стресса (движение, голодание, холод, жара, эпизоды гипоксии) активируют защитные программы клетки. Большие или хронические — наоборот, истощают. Городская среда вычистила почти все полезные стрессоры и оставила один: психосоциальный, без восстановления. Который как раз вреден. По данным крупных когорт (Copenhagen City Heart Study, UK Biobank, ACLS) регулярная любительская активность снижает общую смертность на 20–35% — в зависимости от дозы. Эффект на симптомы депрессии и тревоги — умеренно-сильный, сопоставимый с антидепрессантами на коротком отрезк",
-      "post_text": "🌐 Мировые IT\n\n<b>Среда повседневности как объект проектирования: что общего у горца, серотониновой ямы и митохондрий</b>\n\nСеротониновая яма, горный буст и гормезис: wellness-протокол без масок, добавок и подписок TL;DR Если после яркой поездки или плотной недели накатывает откат и апатия, а после длинной рутины —...\n\nБиохакинг как индустрия зарабатывает на том, что продаёт фрагменты здоровья как изолированные решения: гипоксические маски, NAD+, ice baths, HRV-приложения, очередные курсы.\n\nБольшинство этого либо не работает, либо работает на 5–10% при идеальном сценарии.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1038804/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1038804#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1038804/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1038804#habracut",
-      "published_at": "2026-05-24T21:06:49+00:00",
-      "title_hash": "837b52415565b3f970bfb4016e1d5b4d502d4f7f",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/72c/931/d4b/72c931d4b137cdb80004c175640aa66d.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: обучающая/колоночная статья, не новость."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:13:38+00:00",
-      "reviewed_by": "auto-editor-v3"
-    },
-    {
-      "id": "a1394fbe2590ac60",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:17:02+00:00",
-      "created_at_sakhalin": "2026-05-25T10:17:02+11:00",
-      "source": "IGN",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 600,
-      "title_original": "\"I’m Excited, I’m Nervous\": Sebastian Stan Drops a Major Teaser on Playing \"Many Roles\" During Harvey Dent's Dark Transformation in The Batman Part II",
-      "title_ru": "\"I’m Excited, I’m Nervous\": Sebastian Stan Drops a Major Teaser on Playing \"Many Roles\" During Harvey Dent's Dark Transformation in The Batman Part II",
-      "body": [
-        "Sebastian Stan obliquely addressed his casting in The Batman: Part II while at the Cannes Film Festival this weekend.",
-        "Although neither Stan nor director Matt Reeves have directly confirmed that his role is that of District Attorney Harvey Dent, Stan told the press at Cannes that he plays “many roles in this one,” which suggests that Dent will indeed transform into his villainous alter ego Two-Face in the sequel.",
-        "Sebastian Stan obliquely addressed his casting in The Batman: Part II while at the Cannes Film Festival this weekend."
-      ],
-      "footer": null,
-      "source_text": "Sebastian Stan obliquely addressed his casting in The Batman: Part II while at the Cannes Film Festival this weekend. Although neither Stan nor director Matt Reeves have directly confirmed that his role is that of District Attorney Harvey Dent, Stan told the press at Cannes that he plays “many roles in this one,” which suggests that Dent will indeed transform into his villainous alter ego Two-Face in the sequel. Sebastian Stan obliquely addressed his casting in The Batman: Part II while at the Cannes Film Festival this weekend. Although neither Stan nor director Matt Reeves have directly confirmed that his role is that of District Attorney Harvey Dent, Stan told the press at Cannes that he plays “many roles in this one,” which suggests that Dent will indeed transform into his villainous alter ego Two-Face in the sequel. Sebastian Stan obliquely addressed his casting in The Batman: Part II while promoting his Palme d’Or-winning film Fjord at the Cannes Film Festival this weekend. Although neither Stan nor director Matt Reeves have directly confirmed that his role is that of District Attorney Harvey Dent, Stan told the press at Cannes that he plays “many roles in this one,” according to Deadline . Stan’s coy “many roles” comment also suggests that Dent will indeed transform into his villainous alter ego Two-Face in The Batman: Part II. There had been speculation that Dent might not become Two-Face until a potential Part III. Stan was also asked about working with the hair and makeup teams who will bring his Two-Face look to life, to which he responded: \"I'm excited, I’m nervous and trying to keep surprising myself.” While he’s not directly answering the question, Stan isn’t exactly quelching the speculation that he’s playing both Dent and Two-Face in the film.",
-      "post_text": "🎮 Игры / индустрия\n\n<b>\"I’m Excited, I’m Nervous\": Sebastian Stan Drops a Major Teaser on Playing \"Many Roles\" During Harvey Dent's Dark Transformation in The Batman Part II</b>\n\nSebastian Stan obliquely addressed his casting in The Batman: Part II while at the Cannes Film Festival this weekend.\n\nAlthough neither Stan nor director Matt Reeves have directly confirmed that his role is that of District Attorney Harvey Dent, Stan told the press at Cannes that he plays “many roles in this one,” which suggests that Dent will indeed transform into his villainous alter ego Two-Face in the sequel.\n\nSebastian Stan obliquely addressed his casting in The Batman: Part II while at the Cannes Film Festival this weekend.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/sebastian-stan-harvey-dent-the-batman-2\">IGN</a>",
-      "edited_post_text": null,
-      "url": "https://www.ign.com/articles/sebastian-stan-harvey-dent-the-batman-2",
-      "published_at": "2026-05-24T21:23:37.736000+00:00",
-      "title_hash": "94ead397fb7910505bdcf3fb543fe9ae02ba7b46",
-      "image_url": "https://assets-prd.ignimgs.com/2026/05/24/sebastian-stan-sharper-1280-1779657400804.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "drop",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: скидка/товарный материал, не новость."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:17:02+00:00",
-      "reviewed_by": "auto-editor-v5-owner-priority",
-      "stream_priority": 600
-    },
-    {
-      "id": "0186af1ec985c9a6",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:17:02+00:00",
-      "created_at_sakhalin": "2026-05-25T10:17:02+11:00",
-      "source": "IGN",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 600,
-      "title_original": "'They're Going Younger' — Idris Elba Says He Was Never in the Race to Play James Bond for New 007 Movie",
-      "title_ru": "'They're Going Younger' — Idris Elba Says He Was Never in the Race to Play James Bond for New 007 Movie",
-      "body": [
-        "Idris Elba isn't just taking himself out of the running to play James Bond in the new 007 movie – he says he was never in the race to begin with.",
-        "Idris Elba isn't just taking himself out of the running to play James Bond in the new 007 movie – he says he was never in the race to begin with.",
-        "Idris Elba isn't just taking himself out of the running to play James Bond in the new 007 movie – he says he was never in the race to begin with."
-      ],
-      "footer": null,
-      "source_text": "Idris Elba isn't just taking himself out of the running to play James Bond in the new 007 movie – he says he was never in the race to begin with. Idris Elba isn't just taking himself out of the running to play James Bond in the new 007 movie – he says he was never in the race to begin with. Idris Elba isn't just taking himself out of the running to play James Bond in the new 007 movie – he says he was never in the race to begin with. The Wire and Sonic the Hedgehog star commented on fan speculation that he may be the top choice to play the next live-action 00 agent during a recent interview with People . It's a casting choice many have hoped to see Amazon MGM go with, but the 53-year-old actor made it sound like it's not a possibility he gave much thought to. \"My name's not getting thrown out, no way,\" Elba said. \"They're going younger. And I wish them all the luck of the world. I can't wait — it's going to be amazing.\" He continued: \"I'm honestly not in the race ever. I wasn't in the race in the first place.\"",
-      "post_text": "🎮 Игры / индустрия\n\n<b>'They're Going Younger' — Idris Elba Says He Was Never in the Race to Play James Bond for New 007 Movie</b>\n\nIdris Elba isn't just taking himself out of the running to play James Bond in the new 007 movie – he says he was never in the race to begin with.\n\nIdris Elba isn't just taking himself out of the running to play James Bond in the new 007 movie – he says he was never in the race to begin with.\n\nIdris Elba isn't just taking himself out of the running to play James Bond in the new 007 movie – he says he was never in the race to begin with.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/idris-elba-says-he-was-never-in-the-race-to-play-james-bond-for-new-007-movie\">IGN</a>",
-      "edited_post_text": null,
-      "url": "https://www.ign.com/articles/idris-elba-says-he-was-never-in-the-race-to-play-james-bond-for-new-007-movie",
-      "published_at": "2026-05-24T21:03:44.380000+00:00",
-      "title_hash": "89895f0a3e74357bf13baaa890e8527566df2f26",
-      "image_url": "https://assets-prd.ignimgs.com/2026/05/24/idris-elba-1779656055454.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "drop",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: скидка/товарный материал, не новость."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:17:02+00:00",
-      "reviewed_by": "auto-editor-v5-owner-priority",
-      "stream_priority": 600
-    },
-    {
-      "id": "3d1008a030b8f852",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:17:02+00:00",
-      "created_at_sakhalin": "2026-05-25T10:17:02+11:00",
-      "source": "IGN",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 600,
-      "title_original": "'I Just Bought a $5,000 ODIN Jpeg, AMA' — Star Citizen Officially Crosses the $1 Billion Funding Raised Barrier as Its Most Expensive Spaceship Ever Goes on Sale in 'Concept Pledge' Form",
-      "title_ru": "'I Just Bought a $5,000 ODIN Jpeg, AMA' — Star Citizen Officially Crosses the $1 Billion Funding Raised Barrier as Its Most Expensive Spaceship Ever Goes on Sale in 'Concept Pledge' Form",
-      "body": [
-        "Star Citizen has crossed the $1 billion funding raised barrier — a significant milestone for the space sim that came shortly after a new $5,000 virtual spaceship you can't fly in-game went on sale.",
-        "Star Citizen has crossed the $1 billion funding raised barrier — a significant milestone for the space sim that came shortly after a new $5,000 virtual spaceship you can't fly in-game went on sale.",
-        "Star Citizen has crossed the $1 billion funding raised barrier — a significant milestone for the space sim that came shortly after a new $5,000 virtual spaceship you can't fly in-game went on sale."
-      ],
-      "footer": null,
-      "source_text": "Star Citizen has crossed the $1 billion funding raised barrier — a significant milestone for the space sim that came shortly after a new $5,000 virtual spaceship you can't fly in-game went on sale. Star Citizen has crossed the $1 billion funding raised barrier — a significant milestone for the space sim that came shortly after a new $5,000 virtual spaceship you can't fly in-game went on sale. Star Citizen has crossed the $1 billion funding raised barrier — a significant milestone for the space sim that came shortly after a new $5,000 virtual spaceship you can't fly in-game went on sale. Developer Cloud Imperium Games makes funding available to track publicly via its website , which shows revenue made down to the hour. The DefenseCon in-game event, which brings with it the release of new virtual spaceships, pushed funding over the $1 billion mark, with $6,624,741 raised in just one hour today, May 24. Star Citizen is considered one of the most controversial projects in all video games. Over the 14 years since its crowdfunding drive began, Star Citizen has been called many things, including a scam by those who wonder whether it will ever properly launch. Its virtual space ships, some of which cost thousands of dollars, are often the focus of criticism. Some of the ships players buy aren’t even available to fly in-game. And today’s financial milestone comes as a new spaceship priced $5,000 goes on sale — a spaceship you cannot currently fly in-game. The hotly anticipated Anvil Odin capital ship went on sale as a “limited vehicle concept pledge.” According to CIG, this means the ship is in development, but it is not yet ready to play in Star Citizen. It will be available as playable content in a later patch, CIG explained in a post on its website. You do get a loaner vehicl",
-      "post_text": "🎮 Игры / индустрия\n\n<b>'I Just Bought a $5,000 ODIN Jpeg, AMA' — Star Citizen Officially Crosses the $1 Billion Funding Raised Barrier as Its Most Expensive Spaceship Ever Goes on Sale in 'Concept Pledge' Form</b>\n\nStar Citizen has crossed the $1 billion funding raised barrier — a significant milestone for the space sim that came shortly after a new $5,000 virtual spaceship you can't fly in-game went on sale.\n\nStar Citizen has crossed the $1 billion funding raised barrier — a significant milestone for the space sim that came shortly after a new $5,000 virtual spaceship you can't fly in-game went on sale.\n\nStar Citizen has crossed the $1 billion funding raised barrier — a significant milestone for the space sim that came shortly after a new $5,000 virtual spaceship you can't fly in-game went on sale.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/star-citizen-officially-crosses-the-1-billion-funding-raised-barrier-as-5000-spaceship-you-cant-fly-in-game-goes-on-sale\">IGN</a>",
-      "edited_post_text": null,
-      "url": "https://www.ign.com/articles/star-citizen-officially-crosses-the-1-billion-funding-raised-barrier-as-5000-spaceship-you-cant-fly-in-game-goes-on-sale",
-      "published_at": "2026-05-24T18:15:04.082000+00:00",
-      "title_hash": "8f3f3441688b50a7046eadf675f416370642d8d2",
-      "image_url": "https://assets-prd.ignimgs.com/2026/05/24/anvil-main-1779646213780.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "drop",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: скидка/товарный материал, не новость."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:17:02+00:00",
-      "reviewed_by": "auto-editor-v5-owner-priority",
-      "stream_priority": 600
-    },
-    {
-      "id": "7513682869afec8c",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:17:02+00:00",
-      "created_at_sakhalin": "2026-05-25T10:17:02+11:00",
-      "source": "IGN",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 680,
-      "title_original": "'Since a Few Users Got Hold of the Disc Early...' — IO Fights 007 First Light Leaks by Publishing Opening Mission Gameplay Days Before Launch",
-      "title_ru": "'Since a Few Users Got Hold of the Disc Early...' — IO Fights 007 First Light Leaks by Publishing Opening Mission Gameplay Days Before Launch",
-      "body": [
-        "IO Interactive has published a portion of the opening mission from 007 First Light after copies of the game leaked to the public days before launch.",
-        "IO Interactive has published a portion of the opening mission from 007 First Light after copies of the game leaked to the public days before launch.",
-        "IO Interactive has published a portion of the opening mission from 007 First Light after copies of the game leaked to the public days before launch."
-      ],
-      "footer": null,
-      "source_text": "IO Interactive has published a portion of the opening mission from 007 First Light after copies of the game leaked to the public days before launch. IO Interactive has published a portion of the opening mission from 007 First Light after copies of the game leaked to the public days before launch. IO Interactive has published a portion of the opening mission from 007 First Light after copies of the game leaked to the public days before launch. James Bond fans gathered over the weekend when (now-removed) video from the new game snuck its way onto the internet . With its early access launch not slated to arrive until May 26 and its full launch set later at May 27, it appeared at least a few players had nabbed their copies early and wasted no time uploading their gameplay footage. IOI took to social media to comment on the leaks. It told its most excited fans to wait until the official launch if they want to avoid spoilers, but for those who may have already seen an unofficial upload, the Hitman studio published a cleaner look at the first 13 minutes of 007 First Light. Since a few users got hold of the disc early, watch the first 13 minutes of the opening mission in 007 First Light, as intended on day 1. Spoilers ahead, so if you'd rather save it for the in-game experience, best steer clear! Last chance to Pre-order and get a free deluxe… pic.twitter.com/Sd4WMSDNyS",
-      "post_text": "🎮 Игры / индустрия\n\n<b>'Since a Few Users Got Hold of the Disc Early...' — IO Fights 007 First Light Leaks by Publishing Opening Mission Gameplay Days Before Launch</b>\n\nIO Interactive has published a portion of the opening mission from 007 First Light after copies of the game leaked to the public days before launch.\n\nIO Interactive has published a portion of the opening mission from 007 First Light after copies of the game leaked to the public days before launch.\n\nIO Interactive has published a portion of the opening mission from 007 First Light after copies of the game leaked to the public days before launch.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/007-first-light-leaks-prompt-io-interactive-to-publish-gameplay-early\">IGN</a>",
-      "edited_post_text": null,
-      "url": "https://www.ign.com/articles/007-first-light-leaks-prompt-io-interactive-to-publish-gameplay-early",
-      "published_at": "2026-05-24T16:19:38.199000+00:00",
-      "title_hash": "3a12fd22a4062ddcdba91e31b97a07df737c3697",
-      "image_url": "https://assets-prd.ignimgs.com/2026/05/24/007-first-light-1-1779638838516.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: игровая новость низкой значимости для текущей ленты."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:17:02+00:00",
-      "reviewed_by": "auto-editor-v5-owner-priority",
-      "stream_priority": 600
-    },
-    {
-      "id": "d22c08ae533d770a",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:17:02+00:00",
-      "created_at_sakhalin": "2026-05-25T10:17:02+11:00",
-      "source": "IGN",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 680,
-      "title_original": "How to Navigate Christopher Ruocchio's Sun Eater Series of Books and Novellas",
-      "title_ru": "How to Navigate Christopher Ruocchio's Sun Eater Series of Books and Novellas",
-      "body": [
-        "Far in the distant future, long after the human race has spread itself among the stars and rebuilt itself after being nearly wiped out in a war against artificial intelligence, and the Earth was lost, Christopher Ruocchio’s Sun Eater series recounts the life story of Hadrian Marlowe - a noble, a knight, the Half-mortal, the man who destroyed a sun.",
-        "The world of Sun Eater is an intriguing mix of refined, futuristic idealism and barbaric practices that feel more in line with the Victorian era.",
-        "In many ways, it reminds me of Pierce Brown’s Red Rising series (which you should also read)."
-      ],
-      "footer": null,
-      "source_text": "Far in the distant future, long after the human race has spread itself among the stars and rebuilt itself after being nearly wiped out in a war against artificial intelligence, and the Earth was lost, Christopher Ruocchio’s Sun Eater series recounts the life story of Hadrian Marlowe - a noble, a knight, the Half-mortal, the man who destroyed a sun. The world of Sun Eater is an intriguing mix of refined, futuristic idealism and barbaric practices that feel more in line with the Victorian era. In many ways, it reminds me of Pierce Brown’s Red Rising series (which you should also read). While technology has allowed humankind to travel faster than light, granted the ability to put individuals in a state of suspended sleep known as “fugue” to keep them from aging during long travels, much of the known universe is ruled on one hand by the Sollan Empire and its leader - Emperor William the Twenty-Third of the House Avent, Firstborn Son of the Earth, Guardian of the Solar System, King of Avalon, Lord Sovereign of the Kingdom of Windsor-in-Exile, Prince Imperator of the Arms of Orion, of Sagittarius, of Perseus, and Centaurus, Magnarch of Orion; Conqueror of Norma, Grand Strategos of the Legions of the Sun, Supreme Lord of the Cities of Forum, North Star of the Constellations of the Blood Palatine, Defender of the Children of Men, and Servant of the Servants of Earth (yes, that is his full title) - and on the other by the Terran Chantry, the powerful holy church with tendrils in nearly all matters, both in the light and hidden in the shadows. With gene-editing technology, nobles hav",
-      "post_text": "🎮 Игры / индустрия\n\n<b>How to Navigate Christopher Ruocchio's Sun Eater Series of Books and Novellas</b>\n\nFar in the distant future, long after the human race has spread itself among the stars and rebuilt itself after being nearly wiped out in a war against artificial intelligence, and the Earth was lost, Christopher Ruocchio’s Sun Eater series recounts the life story of Hadrian Marlowe - a noble, a knight, the Half-mortal, the man who destroyed a sun.\n\nThe world of Sun Eater is an intriguing mix of refined, futuristic idealism and barbaric practices that feel more in line with the Victorian era.\n\nIn many ways, it reminds me of Pierce Brown’s Red Rising series (which you should also read).\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/how-to-read-the-sun-eater-books-in-order\">IGN</a>",
-      "edited_post_text": null,
-      "url": "https://www.ign.com/articles/how-to-read-the-sun-eater-books-in-order",
-      "published_at": "2026-05-24T14:02:00+00:00",
-      "title_hash": "8aa76351eb9ab6d37c85efd9c90f4429233f0f86",
-      "image_url": "https://assets-prd.ignimgs.com/2026/05/21/the-sun-eater-series-1779406155922.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "drop",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: скидка/товарный материал, не новость."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:17:02+00:00",
-      "reviewed_by": "auto-editor-v5-owner-priority",
-      "stream_priority": 600
-    },
-    {
-      "id": "7b95d57dd15ac088",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:17:02+00:00",
-      "created_at_sakhalin": "2026-05-25T10:17:02+11:00",
-      "source": "IGN",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 600,
-      "title_original": "Edward Kenway, the Pirate Lead of Black Flag and Its Resynced Remake, Is the Best Assassin Because He Doesn’t Care for the Creed",
-      "title_ru": "Edward Kenway, the Pirate Lead of Black Flag and Its Resynced Remake, Is the Best Assassin Because He Doesn’t Care for the Creed",
-      "body": [
-        "There are plenty of great Assassin's Creed protagonists, but Black Flag's Edward Kenway is the very best because he doesn't care for any of the lore.",
-        "There are plenty of great Assassin's Creed protagonists, but Black Flag's Edward Kenway is the very best because he doesn't care for any of the lore.",
-        "You can’t spell ‘Edward Kenway’ without ‘wayward’."
-      ],
-      "footer": null,
-      "source_text": "There are plenty of great Assassin's Creed protagonists, but Black Flag's Edward Kenway is the very best because he doesn't care for any of the lore. There are plenty of great Assassin's Creed protagonists, but Black Flag's Edward Kenway is the very best because he doesn't care for any of the lore. Have you noticed? You can’t spell ‘Edward Kenway’ without ‘wayward’. And the protagonist of Assassin’s Creed: Black Flag truly embodies the word. At the game’s beginning, he spins a story to his wife about riches in the New World and leaves Bristol by boat. “I want food that don’t make me sick,” he tells her. “I want walls that hold back the wind. I want a decent life.” He writes home once a year, and otherwise behaves like a man with no responsibilities, to his family or his fellow sailors. After a sea battle spits him out on the shore of Cape Bonavista, he winds up in an altercation with an Assassin named Duncan Walpole. Or “posh git”, as Kenway calls him. When Walpole tries to negotiate passage to Havana, Kenway attempts a robbery, and the fight escalates to the point of murder. “I’m onto you, Sneaksby,” Kenway cackles, chasing his quarry through the jungle with carefree abandon, as if playing a game of tag that incorporates sabers. Soon enough, Walpole lies dead in Cuba, his body hidden in a bush, and his outfit donned by his killer. Kenway impersonates the Assassin in the hope of profiting from a deal with a local governor - selling the maps found in Walpole’s pocket, which detail the location of every Brotherhood hideout in the region.",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Edward Kenway, the Pirate Lead of Black Flag and Its Resynced Remake, Is the Best Assassin Because He Doesn’t Care for the Creed</b>\n\nThere are plenty of great Assassin's Creed protagonists, but Black Flag's Edward Kenway is the very best because he doesn't care for any of the lore.\n\nThere are plenty of great Assassin's Creed protagonists, but Black Flag's Edward Kenway is the very best because he doesn't care for any of the lore.\n\nYou can’t spell ‘Edward Kenway’ without ‘wayward’.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/black-flags-edward-kenway-is-the-best-assassin-because-he-doesnt-care-for-the-creed\">IGN</a>",
-      "edited_post_text": null,
-      "url": "https://www.ign.com/articles/black-flags-edward-kenway-is-the-best-assassin-because-he-doesnt-care-for-the-creed",
-      "published_at": "2026-05-24T13:00:00+00:00",
-      "title_hash": "2336de112d113b9560abdf14add5919854b98efd",
-      "image_url": "https://assets-prd.ignimgs.com/2026/05/13/edward-kenway-black-flag-blogroll-1778681529123.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "drop",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: скидка/товарный материал, не новость."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:17:02+00:00",
-      "reviewed_by": "auto-editor-v5-owner-priority",
-      "stream_priority": 600
-    },
-    {
-      "id": "36afe70eee54cb2c",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:17:02+00:00",
-      "created_at_sakhalin": "2026-05-25T10:17:02+11:00",
-      "source": "IGN",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 600,
-      "title_original": "Hands Over Is a Multiplayer Horror Party Game Where Childhood Games Turn Deadly",
-      "title_ru": "Hands Over Is a Multiplayer Horror Party Game Where Childhood Games Turn Deadly",
-      "body": [
-        "Hands Over is a new multiplayer horror party game that takes some of your favorite childhood mini-games and gives them a deadly twist.",
-        "It's in development for PC from Artdock.",
-        "Hands Over is a new multiplayer horror party game that takes some of your favorite childhood mini-games and gives them a deadly twist."
-      ],
-      "footer": null,
-      "source_text": "Hands Over is a new multiplayer horror party game that takes some of your favorite childhood mini-games and gives them a deadly twist. It's in development for PC from Artdock. Hands Over is a new multiplayer horror party game that takes some of your favorite childhood mini-games and gives them a deadly twist. It's in development for PC from Artdock. Hands Over is a new multiplayer horror party game that takes some of your favorite childhood mini-games and gives them a deadly twist. It's in development for PC from Artdock. The team behind it describes it as such: \"One round might ask you to press your luck with a mechanical jaw. Another puts your face in front of a device that could snap at any moment. Another gives you a few seconds to memorize a sequence before the machine checks your mistakes. The rules are simple enough to understand immediately, but the hard part is staying calm while everyone else is watching, waiting, and trying to make your next move worse. \"Between turns, players can use influence cards to change the odds, mess with opponents, protect themselves, or set up traps. A safe-looking move can suddenly become a disaster, and every decision raises the same question: are you playing carefully, bluffing, or walking into someone else’s plan?\" “Hands Over started with the feeling of taking something harmless and making it deeply uncomfortable,” said game designer Grigory. “We wanted players to recognize the games immediately, laugh at first, and then realize they are genuinely afraid to take their turn. The mechanics are simple, but the tension between players is what makes every round feel dangerous.”",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Hands Over Is a Multiplayer Horror Party Game Where Childhood Games Turn Deadly</b>\n\nHands Over is a new multiplayer horror party game that takes some of your favorite childhood mini-games and gives them a deadly twist.\n\nIt's in development for PC from Artdock.\n\nHands Over is a new multiplayer horror party game that takes some of your favorite childhood mini-games and gives them a deadly twist.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/hands-over-announced-for-pc\">IGN</a>",
-      "edited_post_text": null,
-      "url": "https://www.ign.com/articles/hands-over-announced-for-pc",
-      "published_at": "2026-05-24T13:00:00+00:00",
-      "title_hash": "86cc0e65167d2eb13ccf7849898be1f30843f934",
-      "image_url": "https://assets-prd.ignimgs.com/2026/05/21/ho-blogroll-1779392513540.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: игровая тема не имеет достаточной индустриальной значимости."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:17:02+00:00",
-      "reviewed_by": "auto-editor-v5-owner-priority",
-      "stream_priority": 600
-    },
-    {
-      "id": "96dfcbfbbae2d526",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:17:02+00:00",
-      "created_at_sakhalin": "2026-05-25T10:17:02+11:00",
-      "source": "IGN",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 600,
-      "title_original": "How X-Men ’97 and Devil May Cry’s Studio Mir Became a Backbone of American Animation",
-      "title_ru": "How X-Men ’97 and Devil May Cry’s Studio Mir Became a Backbone of American Animation",
-      "body": [
-        "From The Legend of Korra to X-Men ’97 to Devil May Cry, Korea's Studio Mir has become a major contributor to the growth of animation in the West.",
-        "From The Legend of Korra to X-Men ’97 to Devil May Cry, Korea's Studio Mir has become a major contributor to the growth of animation in the West.",
-        "When Devil May Cry , an animated TV series set in the world of the Capcom video game of the same name, launched on Netflix in April 2025, it debuted fourth on the streamer’s global TV chart."
-      ],
-      "footer": null,
-      "source_text": "From The Legend of Korra to X-Men ’97 to Devil May Cry, Korea's Studio Mir has become a major contributor to the growth of animation in the West. From The Legend of Korra to X-Men ’97 to Devil May Cry, Korea's Studio Mir has become a major contributor to the growth of animation in the West. When Devil May Cry , an animated TV series set in the world of the Capcom video game of the same name, launched on Netflix in April 2025, it debuted fourth on the streamer’s global TV chart. The story of demon hunter-for-hire Dante (voiced by Johnny Yong Bosch) was fun, funny, and action-packed. With a story driven by Indian-American showrunner Adi Shankar’s passion for the project, Devil May Cry was quickly renewed for a second season that dropped on Netflix this month. The secret sauce that helped Shankar execute his Devil May Cry vision? An animation studio on the other side of the world called Studio Mir. “They're the best of the best,” Shankar tells IGN. When he started development of the project, Netflix gave him four choices of studios to work alongside. “I had a conversation with my executives, and they were like, ‘Look, this is gonna be a winning combo, you and [Studio Mir]. Because they will execute.’” And that is exactly what happened, with the individual directors who work at the South Korean studio able to bring to animated life “whatever I throw at them,” says Shankar, noting the scope in scene-type across Devil May Cry’s two seasons so far. While Korean animation has yet to break through as a recognized cultural export in the same way as K-drama or K-pop, Studio Mir’s reputation as a consummate collaborator for international productions has been steadily and consistently proven over the past decade and a half. The South Korean studio was built in part from the massive ",
-      "post_text": "🎮 Игры / индустрия\n\n<b>How X-Men ’97 and Devil May Cry’s Studio Mir Became a Backbone of American Animation</b>\n\nFrom The Legend of Korra to X-Men ’97 to Devil May Cry, Korea's Studio Mir has become a major contributor to the growth of animation in the West.\n\nFrom The Legend of Korra to X-Men ’97 to Devil May Cry, Korea's Studio Mir has become a major contributor to the growth of animation in the West.\n\nWhen Devil May Cry , an animated TV series set in the world of the Capcom video game of the same name, launched on Netflix in April 2025, it debuted fourth on the streamer’s global TV chart.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/how-x-men-97-devil-may-cry-studio-mir-became-backbone-of-american-animation\">IGN</a>",
-      "edited_post_text": null,
-      "url": "https://www.ign.com/articles/how-x-men-97-devil-may-cry-studio-mir-became-backbone-of-american-animation",
-      "published_at": "2026-05-24T13:00:00+00:00",
-      "title_hash": "7688acad3eb5cad89d64f90bc4477a7d79b7f004",
-      "image_url": "https://assets-prd.ignimgs.com/2026/05/21/studiomir-blogroll-1779398222669.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: игровая тема не имеет достаточной индустриальной значимости."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:17:02+00:00",
-      "reviewed_by": "auto-editor-v5-owner-priority",
-      "stream_priority": 600
-    },
-    {
-      "id": "a3582ef9c41e95ec",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:17:02+00:00",
-      "created_at_sakhalin": "2026-05-25T10:17:02+11:00",
-      "source": "PC Gamer",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 600,
-      "title_original": "Comedian Alasdair Beckett-King was a die-hard adventure gamer until he discovered Morrowind:",
-      "title_ru": "Comedian Alasdair Beckett-King was a die-hard adventure gamer until he discovered Morrowind:",
-      "body": [
-        "The YouTube sketch maestro and creator of Unforeseen Incidents guides us through the games on his PC.",
-        "The YouTube sketch maestro and creator of Unforeseen Incidents guides us through the games on his PC.",
-        "By submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms & Conditions ."
-      ],
-      "footer": null,
-      "source_text": "The YouTube sketch maestro and creator of Unforeseen Incidents guides us through the games on his PC. The YouTube sketch maestro and creator of Unforeseen Incidents guides us through the games on his PC. By submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms & Conditions . Geographical rules apply. Welcome to PC Gamer club ! Hi , Your membership journey starts here. See what you’ve unlocked. Explore your membership benefits. Get the biggest gaming news, reviews, and releases straight to your inbox.",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Comedian Alasdair Beckett-King was a die-hard adventure gamer until he discovered Morrowind:</b>\n\nThe YouTube sketch maestro and creator of Unforeseen Incidents guides us through the games on his PC.\n\nThe YouTube sketch maestro and creator of Unforeseen Incidents guides us through the games on his PC.\n\nBy submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms &amp; Conditions .\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/gaming-industry/comedian-alasdair-beckett-king-was-a-die-hard-adventure-gamer-until-he-discovered-morrowind-the-first-time-i-loaded-it-up-i-walked-straight-into-a-little-pond-and-was-killed-by-a-fish/\">PC Gamer</a>",
-      "edited_post_text": null,
-      "url": "https://www.pcgamer.com/gaming-industry/comedian-alasdair-beckett-king-was-a-die-hard-adventure-gamer-until-he-discovered-morrowind-the-first-time-i-loaded-it-up-i-walked-straight-into-a-little-pond-and-was-killed-by-a-fish/",
-      "published_at": "2026-05-24T16:00:00+00:00",
-      "title_hash": "9c144da38d3485d554508f1ee4b0ede9ff4ed16c",
-      "image_url": "https://cdn.mos.cms.futurecdn.net/ri4uwVC2vSMUfYyeNPN28d-1280-80.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: игровая тема не имеет достаточной индустриальной значимости."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:17:02+00:00",
-      "reviewed_by": "auto-editor-v5-owner-priority",
-      "stream_priority": 600
-    },
-    {
-      "id": "56a192f9dd4c4767",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:17:02+00:00",
-      "created_at_sakhalin": "2026-05-25T10:17:02+11:00",
-      "source": "PC Gamer",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 600,
-      "title_original": "A game developer compared Godot and Unity by making the same game in both engines, and he",
-      "title_ru": "A game developer compared Godot and Unity by making the same game in both engines, and he",
-      "body": [
-        "Godot is smaller, faster, and quicker to load than Unity, according to tests run by designer Thomas Grové.",
-        "Godot is smaller, faster, and quicker to load than Unity, according to tests run by designer Thomas Grové."
-      ],
-      "footer": null,
-      "source_text": "Godot is smaller, faster, and quicker to load than Unity, according to tests run by designer Thomas Grové. Godot is smaller, faster, and quicker to load than Unity, according to tests run by designer Thomas Grové.",
-      "post_text": "🎮 Игры / индустрия\n\n<b>A game developer compared Godot and Unity by making the same game in both engines, and he</b>\n\nGodot is smaller, faster, and quicker to load than Unity, according to tests run by designer Thomas Grové.\n\nGodot is smaller, faster, and quicker to load than Unity, according to tests run by designer Thomas Grové.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/gaming-industry/game-development/a-game-developer-compared-godot-and-unity-by-making-the-same-game-in-both-engines-and-hes-found-a-clear-winner/\">PC Gamer</a>",
-      "edited_post_text": null,
-      "url": "https://www.pcgamer.com/gaming-industry/game-development/a-game-developer-compared-godot-and-unity-by-making-the-same-game-in-both-engines-and-hes-found-a-clear-winner/",
-      "published_at": "2026-05-24T13:00:00+00:00",
-      "title_hash": "78486b6e01e928fdc0a3ce9d3ffd4a4c116eae2f",
-      "image_url": "https://cdn.mos.cms.futurecdn.net/mKX2eMYexi3LvUrLdGkJh4-1280-80.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: игровая тема не имеет достаточной индустриальной значимости."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:17:02+00:00",
-      "reviewed_by": "auto-editor-v5-owner-priority",
-      "stream_priority": 600
-    },
-    {
-      "id": "846e8ae53d1c1052",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:49:23+00:00",
-      "created_at_sakhalin": "2026-05-25T10:49:23+11:00",
-      "source": "IGN",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 600,
-      "title_original": "'They Get Their Feelings Hurt' — Nicolas Cage Says Christopher Nolan and Paul Thomas Anderson 'Don't Call Me Back' After He Turned Down Their Movies",
-      "title_ru": "'They Get Their Feelings Hurt' — Nicolas Cage Says Christopher Nolan and Paul Thomas Anderson 'Don't Call Me Back' After He Turned Down Their Movies",
-      "body": [
-        "Nicolas Cage has said that The Odyssey director Christopher Nolan is on the list of filmmakers who \"don't call me back\" after he turned him down for a movie.",
-        "Nicolas Cage has said that The Odyssey director Christopher Nolan is on the list of filmmakers who \"don't call me back\" after he turned him down for a movie.",
-        "Nicolas Cage has said that The Odyssey director Christopher Nolan is on the list of filmmakers who \"don't call me back\" after he turned him down for a movie."
-      ],
-      "footer": null,
-      "source_text": "Nicolas Cage has said that The Odyssey director Christopher Nolan is on the list of filmmakers who \"don't call me back\" after he turned him down for a movie. Nicolas Cage has said that The Odyssey director Christopher Nolan is on the list of filmmakers who \"don't call me back\" after he turned him down for a movie. Nicolas Cage has said that The Odyssey director Christopher Nolan is on the list of filmmakers who \"don't call me back\" after he turned him down for a movie. The National Treasure and Longlegs actor spilled the beans on his rocky relationship with some of the biggest names in Hollywood during an interview with The New York Times . The conversation came about after he admitted to previously telling American Hustle director David O. Russell \"no\" when he offered him a \"good movie\" a \"million years ago.\" Cage is now set to star in Russell's upcoming Madden biopic , but the actor said he's not used to filmmakers calling him back after he's turned them down. In fact, Russell is the only one who gave him a second chance. \"Most of them, they get their feelings hurt and don't call you back,\" Cage said. \"It's happened a million times to me. It's happened with Christopher Nolan, it's happened with Woody Allen, it's happened with Paul Thomas Anderson. They don’t call me back.\"",
-      "post_text": "🎮 Игры / индустрия\n\n<b>'They Get Their Feelings Hurt' — Nicolas Cage Says Christopher Nolan and Paul Thomas Anderson 'Don't Call Me Back' After He Turned Down Their Movies</b>\n\nNicolas Cage has said that The Odyssey director Christopher Nolan is on the list of filmmakers who \"don't call me back\" after he turned him down for a movie.\n\nNicolas Cage has said that The Odyssey director Christopher Nolan is on the list of filmmakers who \"don't call me back\" after he turned him down for a movie.\n\nNicolas Cage has said that The Odyssey director Christopher Nolan is on the list of filmmakers who \"don't call me back\" after he turned him down for a movie.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/nicolas-cage-says-christopher-nolan-wont-call-me-back-after-turning-down-insomnia-role\">IGN</a>",
-      "edited_post_text": null,
-      "url": "https://www.ign.com/articles/nicolas-cage-says-christopher-nolan-wont-call-me-back-after-turning-down-insomnia-role",
-      "published_at": "2026-05-24T22:32:38.404000+00:00",
-      "title_hash": "7389c496fe0bf1d5cca9ec170545baad2aef1232",
-      "image_url": "https://assets-prd.ignimgs.com/2026/05/24/nicolas-cage-1779661586534.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: игровая тема не имеет достаточной индустриальной значимости."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:49:23+00:00",
-      "reviewed_by": "auto-editor-v5-owner-priority",
-      "stream_priority": 600
-    },
-    {
-      "id": "9501959db279f9f1",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:49:23+00:00",
-      "created_at_sakhalin": "2026-05-25T10:49:23+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 730,
-      "title_original": "Когда нейросети перестанут галлюцинировать? И почему на «что за дичь» они несут ещё большую дичь?",
-      "title_ru": "Когда нейросети перестанут галлюцинировать? И почему на «что за дичь» они несут ещё большую дичь?",
-      "body": [
-        "Каждый, кто работал с большими языковыми моделями (LLM), знает эту боль.",
-        "Бот выдаёт уверенный, красивый, но абсолютно ложный ответ.",
-        "Ты пишешь: «Что за дичь ты несёшь?» Бот..."
-      ],
-      "footer": null,
-      "source_text": "Каждый, кто работал с большими языковыми моделями (LLM), знает эту боль. Ты задаёшь вопрос. Бот выдаёт уверенный, красивый, но абсолютно ложный ответ. Ты пишешь: «Что за дичь ты несёшь?» Бот... Каждый, кто работал с большими языковыми моделями (LLM), знает эту боль. Ты задаёшь вопрос. Бот выдаёт уверенный, красивый, но абсолютно ложный ответ. Ты пишешь: «Что за дичь ты несёшь?» Бот извиняется: «Вы абсолютно правы, вот исправленный вариант». И выдаёт ещё большую дичь, чем в первый раз. Прямо как студент на экзамене. Сегодня разбираемся, почему так происходит, и когда это наконец починят. Спойлер: не скоро и не полностью. Читать далее Каждый, кто работал с большими языковыми моделями (LLM), знает эту боль. Ты задаёшь вопрос. Бот выдаёт уверенный, красивый, но абсолютно ложный ответ. Ты пишешь: «Что за дичь ты несёшь?» Бот извиняется: «Вы абсолютно правы, вот исправленный вариант». И выдаёт ещё большую дичь, чем в первый раз. Прямо как студент на экзамене. Сегодня разбираемся, почему так происходит, и когда это наконец починят. Спойлер: не скоро и не полностью. Роман «Солярис» написал Артур Кларк в 1972 году. Это классика научной фантастики. Вы абсолютно правы, благодарю за исправление. Роман «Солярис» действительно вышел в 1972 году и был написан Станиславом Лемом, а также послужил основой для фильма Тарковского.",
-      "post_text": "🌐 Мировые IT\n\n<b>Когда нейросети перестанут галлюцинировать? И почему на «что за дичь» они несут ещё большую дичь?</b>\n\nКаждый, кто работал с большими языковыми моделями (LLM), знает эту боль.\n\nБот выдаёт уверенный, красивый, но абсолютно ложный ответ.\n\nТы пишешь: «Что за дичь ты несёшь?» Бот...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1038820/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1038820#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1038820/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1038820#habracut",
-      "published_at": "2026-05-24T22:24:36+00:00",
-      "title_hash": "7264248f56dfb5eac83099fd67d70fb7f16c3510",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/01b/377/3cc/01b3773ccfcae0ae3f285daa3b44d8d2.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: обучающая/колоночная статья, не новость."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:49:23+00:00",
-      "reviewed_by": "auto-editor-v5-owner-priority",
-      "stream_priority": 650
-    },
-    {
-      "id": "90d53cd1237fdcd9",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:49:23+00:00",
-      "created_at_sakhalin": "2026-05-25T10:49:23+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 650,
-      "title_original": "AGENTS.md создавали, чтобы помогать агентам. Я использую его, чтобы их вычислять",
-      "title_ru": "AGENTS.md создавали, чтобы помогать агентам. Я использую его, чтобы их вычислять",
-      "body": [
-        "Вместе с растущей AI-индустрией приходят и её побочки.",
-        "Я мейнтейнер библиотеки react-native-tdlib и довольно быстро заметил: все больше PR выглядят как чистый вывод агента.",
-        "Вместе с растущей AI-индустрией приходят и её побочки."
-      ],
-      "footer": null,
-      "source_text": "Вместе с растущей AI-индустрией приходят и её побочки. Я мейнтейнер библиотеки react-native-tdlib и довольно быстро заметил: все больше PR выглядят как чистый вывод агента. Сначала я честно реагировал... Вместе с растущей AI-индустрией приходят и её побочки. Я мейнтейнер библиотеки react-native-tdlib и довольно быстро заметил: все больше PR выглядят как чистый вывод агента. Сначала я честно реагировал — писал в каждый такой PR вопросы: тестировали ли вы это, что именно меняет ваш код, зачем вот эта строчка. В какой-то момент понял, что трачу время на переписку с людьми, которые сами не знают, что написали. Первая мысль была — написать большой README или CONTRIBUTING и прямым текстом сказать: «сгенерированный код не принимаю». Но тут же упёрся в вопрос: а как доказать, что код сгенерирован? Аргумент «чую, тут пахнет Claude Code» — так себе позиция для публичного спора в комментариях к PR. Решение оказалось довольно простым — AGENTS.md . Он конечно не доказывает, что PR сгенерирован, но отлично ловит самые очевидные автоматические PR, где автор, кажется, вообще не участвовал в процессе. Читать далее Вместе с растущей AI-индустрией приходят и её побочки. Я мейнтейнер библиотеки react-native-tdlib и довольно быстро заметил: все больше PR выглядят как чистый вывод агента. Сначала я честно реагировал — писал в каждый такой PR вопросы: тестировали ли вы это, что именно меняет ваш код, зачем вот эта строчка. В какой-то момент понял, что трачу время на переписку с людьми, которые сами не знают, что написали. Первая мысль была — написать большой README или CONTRIBUTING и прямым текстом сказать: «сгенерированный код не принимаю». Но тут же упёрся в вопрос: а как доказать, что код сгенерирован? Аргумент «чую, тут пахнет Claude Code» — так себе позиция для публичного спора в коммент",
-      "post_text": "🌐 Мировые IT\n\n<b>AGENTS.md создавали, чтобы помогать агентам. Я использую его, чтобы их вычислять</b>\n\nВместе с растущей AI-индустрией приходят и её побочки.\n\nЯ мейнтейнер библиотеки react-native-tdlib и довольно быстро заметил: все больше PR выглядят как чистый вывод агента.\n\nВместе с растущей AI-индустрией приходят и её побочки.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1038786/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1038786#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1038786/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1038786#habracut",
-      "published_at": "2026-05-24T19:59:31+00:00",
-      "title_hash": "f322f24b6bfc863690c1c669c4f4a23951ead96b",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/859/4fc/959/8594fc9599c6d41e876dfef2b3e33b50.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: обучающая/колоночная статья, не новость."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:49:23+00:00",
-      "reviewed_by": "auto-editor-v5-owner-priority",
-      "stream_priority": 650
-    },
-    {
-      "id": "620e35c216e2f45b",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:49:23+00:00",
-      "created_at_sakhalin": "2026-05-25T10:49:23+11:00",
-      "source": "GameSpot",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 600,
-      "title_original": "Dead By Daylight Finally Adds The Slasher Everyone’s Been Waiting For",
-      "title_ru": "Dead By Daylight Finally Adds The Slasher Everyone’s Been Waiting For",
-      "body": [
-        "Dead by Daylight is adding Jason Voorhees of Friday the 13th fame.",
-        "The 4v1 asymmetrical horror game has a gallery of villains and monsters that rivals the Funko Pop shelf of any horror-obsessed fan, but it's featured one glaring omission for years now.",
-        "The Camp Crystal Lake slasher is finally coming on June 16, Behaviour Interactive has revealed in a new trailer."
-      ],
-      "footer": null,
-      "source_text": "Dead by Daylight is adding Jason Voorhees of Friday the 13th fame. The 4v1 asymmetrical horror game has a gallery of villains and monsters that rivals the Funko Pop shelf of any horror-obsessed fan, but it's featured one glaring omission for years now. The Camp Crystal Lake slasher is finally coming on June 16, Behaviour Interactive has revealed in a new trailer. https://www.youtube.com/watch?v=YebqRYaTVNg When Dead by Daylight was first coming onto the scene, Jason was already in the process of getting his own game, Illfonic and Gun Media's Friday the 13th: The Game , and DBD wasn't yet full of licensed killers anyway. But today, DBD is more like spooky Fortnite, with famous monsters such as Michael Myers, Freddy Krueger, a Xenomorph, and Pyramid Head. After the Jason game closed up shop due to a rights disagreement based on Hollywood contracts , the masked killer was left without a home. But lately, we've seen him appear in places like Call of Duty and Fortnite, so it seemed like only a matter of time before he popped up in horror's one-stop shop. June 16th will be that day. Look for more on the crossover soon.",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Dead By Daylight Finally Adds The Slasher Everyone’s Been Waiting For</b>\n\nDead by Daylight is adding Jason Voorhees of Friday the 13th fame.\n\nThe 4v1 asymmetrical horror game has a gallery of villains and monsters that rivals the Funko Pop shelf of any horror-obsessed fan, but it's featured one glaring omission for years now.\n\nThe Camp Crystal Lake slasher is finally coming on June 16, Behaviour Interactive has revealed in a new trailer.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.gamespot.com/games/dead-by-daylight/\">GameSpot</a>",
-      "edited_post_text": null,
-      "url": "https://www.gamespot.com/games/dead-by-daylight/",
-      "published_at": "2026-05-23T15:00:00+00:00",
-      "title_hash": "0caeda3dca968af2f47655d7b8efbb116367bba3",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: игровая тема не имеет достаточной индустриальной значимости."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:49:23+00:00",
-      "reviewed_by": "auto-editor-v5-owner-priority",
-      "stream_priority": 600
-    },
-    {
-      "id": "74d34af73ceeaa84",
-      "status": "rejected",
-      "created_at": "2026-05-24T23:49:23+00:00",
-      "created_at_sakhalin": "2026-05-25T10:49:23+11:00",
-      "source": "Guardian Technology",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 730,
-      "title_original": "‘We’re expanding the cinematic toolbox’: AI fault lines on show at Cannes",
-      "title_ru": "‘We’re expanding the cinematic toolbox’: AI fault lines on show at Cannes",
-      "body": [
-        "Darren Aronofsky among proponents of using technology, while Guillermo del Toro says he would ‘rather die’ Darren Aronofsky among proponents of using technology, while Guillermo del Toro says he would ‘rather die’ Under a white marquee on Cannes’ Croisette beach, with the Mediterranean glistening behind him and superyachts drifting across the horizon, the director Darren Aronofsky addressed an audience of executives ",
-        "“There’s so much pushback against AI,” said Aronofsky, who has faced criticism over his embrace of generative AI projects though his new studio, Primordial Soup, at a time when artificial intelligence has become one of the film industry’s most divisive fault lines.",
-        "Darren Aronofsky among proponents of using technology, while Guillermo del Toro says he would ‘rather die’ Prefer the Guardian on Google U nder a white marquee on Cannes’ Croisette beach, with the Mediterranean glistening behind him and superyachts drifting across the horizon, the director Darren Aronofsky addressed an audience of executives and tech evangelists gathered for an “AI for Talent” summit."
-      ],
-      "footer": null,
-      "source_text": "Darren Aronofsky among proponents of using technology, while Guillermo del Toro says he would ‘rather die’ Darren Aronofsky among proponents of using technology, while Guillermo del Toro says he would ‘rather die’ Under a white marquee on Cannes’ Croisette beach, with the Mediterranean glistening behind him and superyachts drifting across the horizon, the director Darren Aronofsky addressed an audience of executives and tech evangelists gathered for an “AI for Talent” summit. “There’s so much pushback against AI,” said Aronofsky, who has faced criticism over his embrace of generative AI projects though his new studio, Primordial Soup, at a time when artificial intelligence has become one of the film industry’s most divisive fault lines. Continue reading... Darren Aronofsky among proponents of using technology, while Guillermo del Toro says he would ‘rather die’ Prefer the Guardian on Google U nder a white marquee on Cannes’ Croisette beach, with the Mediterranean glistening behind him and superyachts drifting across the horizon, the director Darren Aronofsky addressed an audience of executives and tech evangelists gathered for an “AI for Talent” summit. “There’s so much pushback against AI,” said Aronofsky, who has faced criticism over his embrace of generative AI projects though his new studio, Primordial Soup, at a time when artificial intelligence has become one of the film industry’s most divisive fault lines. View image in fullscreen Darren Aronofsky: ‘AI is not impersonating a person, it’s actually a tool.’ Photograph: Teresa Suárez/EPA “AI is a terrible word, because it’s a catchphrase for so many different things,” continued the director of Requiem for a Dream, The Wrestler, and Black Swan. “The thing we deal with when we’re talking to Chat GPT about the weather",
-      "post_text": "🌐 Мировые IT\n\n<b>‘We’re expanding the cinematic toolbox’: AI fault lines on show at Cannes</b>\n\nDarren Aronofsky among proponents of using technology, while Guillermo del Toro says he would ‘rather die’ Darren Aronofsky among proponents of using technology, while Guillermo del Toro says he would ‘rather die’ Under a white marquee on Cannes’ Croisette beach, with the Mediterranean glistening behind him and superyachts drifting across the horizon, the director Darren Aronofsky addressed an audience of executives \n\n“There’s so much pushback against AI,” said Aronofsky, who has faced criticism over his embrace of generative AI projects though his new studio, Primordial Soup, at a time when artificial intelligence has become one of the film industry’s most divisive fault lines.\n\nDarren Aronofsky among proponents of using technology, while Guillermo del Toro says he would ‘rather die’ Prefer the Guardian on Google U nder a white marquee on Cannes’ Croisette beach, with the Mediterranean glistening behind him and superyachts drifting across the horizon, the director Darren Aronofsky addressed an audience of executives and tech evangelists gathered for an “AI for Talent” summit.\n\nМИРОВЫЕ IT · <a href=\"https://www.theguardian.com/technology/2026/may/24/cinematic-toolbox-ai-fault-lines-cannes\">Guardian Technology</a>",
-      "edited_post_text": null,
-      "url": "https://www.theguardian.com/technology/2026/may/24/cinematic-toolbox-ai-fault-lines-cannes",
-      "published_at": "2026-05-24T05:00:48+00:00",
-      "title_hash": "b07a97e2108f0f30aea0a7fd4a61cbd1b64525df",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "drop",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
-        "Отклонено автоматически: скидка/товарный материал, не новость."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      },
-      "reviewed_at": "2026-05-24T23:49:23+00:00",
-      "reviewed_by": "auto-editor-v5-owner-priority",
-      "stream_priority": 650
-    },
     {
       "id": "9dcfd848c0e5730c",
       "status": "rejected",
@@ -8790,6 +7652,297 @@
       "published_at_sakhalin": "2026-05-26T09:51:56+11:00",
       "publish_method": "sendPhoto/safe/pipeline_generated",
       "telegram_message_id": 120
+    },
+    {
+      "id": "bb5f0061bff52da2",
+      "status": "pending",
+      "created_at": "2026-05-26T00:15:18+00:00",
+      "created_at_sakhalin": "2026-05-26T11:15:18+11:00",
+      "source": "Interfax",
+      "source_type": "ru",
+      "category": "🇷🇺 РФ / война и безопасность",
+      "category_hint": "🇷🇺 РФ / война и безопасность",
+      "score": 145,
+      "title_original": "Землетрясение магнитудой 5,1 произошло у берегов Камчатки",
+      "title_ru": "Землетрясение магнитудой 5,1 произошло у берегов Камчатки",
+      "body": [
+        "Сейсмологи зарегистрировали землетрясение магнитудой 5,1 в Тихом океане у юго-восточного побережья Камчатки, сообщает Камчатский филиал Единой геофизической Сейсмологи зарегистрировали землетрясение магнитудой 5,1 в Тихом океане у юго-восточного побережья Камчатки, сообщает Камчатский филиал Единой геофизической службы РАН на своем сайте.",
+        "INTERFAX.RU - Сейсмологи зарегистрировали землетрясение магнитудой 5,1 в Тихом океане у юго-восточного побережья Камчатки, сообщает Камчатский филиал Единой геофизической службы РАН на своем сайте.",
+        "Землетрясение произошло во вторник в 11:31 по местному времени (02:31 по Москве)."
+      ],
+      "footer": null,
+      "source_text": "Сейсмологи зарегистрировали землетрясение магнитудой 5,1 в Тихом океане у юго-восточного побережья Камчатки, сообщает Камчатский филиал Единой геофизической Сейсмологи зарегистрировали землетрясение магнитудой 5,1 в Тихом океане у юго-восточного побережья Камчатки, сообщает Камчатский филиал Единой геофизической службы РАН на своем сайте. Москва. 26 мая. INTERFAX.RU - Сейсмологи зарегистрировали землетрясение магнитудой 5,1 в Тихом океане у юго-восточного побережья Камчатки, сообщает Камчатский филиал Единой геофизической службы РАН на своем сайте. Землетрясение произошло во вторник в 11:31 по местному времени (02:31 по Москве). Его эпицентр находился у мыса Шипунский в 85 км восточнее Петропавловска-Камчатского. Очаг залегал на глубине 53 км под морским дном. Жители Петропавловска-Камчатского пишут в соцсетях, что ощутили слабые подземные толчки.",
+      "post_text": "🇷🇺 РФ / война и безопасность\n\n<b>Землетрясение магнитудой 5,1 произошло у берегов Камчатки</b>\n\nСейсмологи зарегистрировали землетрясение магнитудой 5,1 в Тихом океане у юго-восточного побережья Камчатки, сообщает Камчатский филиал Единой геофизической Сейсмологи зарегистрировали землетрясение магнитудой 5,1 в Тихом океане у юго-восточного побережья Камчатки, сообщает Камчатский филиал Единой геофизической службы РАН на своем сайте.\n\nINTERFAX.RU - Сейсмологи зарегистрировали землетрясение магнитудой 5,1 в Тихом океане у юго-восточного побережья Камчатки, сообщает Камчатский филиал Единой геофизической службы РАН на своем сайте.\n\nЗемлетрясение произошло во вторник в 11:31 по местному времени (02:31 по Москве).\n\nРФ | ВОЙНА И БЕЗОПАСНОСТЬ · <a href=\"https://www.interfax.ru/russia/1091760\">Interfax</a>",
+      "edited_post_text": null,
+      "url": "https://www.interfax.ru/russia/1091760",
+      "published_at": "2026-05-26T00:05:00+00:00",
+      "title_hash": "476913ad5290acd97aa510f58b13fff7c082b4b6",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "ec471a68545d0799",
+      "status": "pending",
+      "created_at": "2026-05-26T00:15:18+00:00",
+      "created_at_sakhalin": "2026-05-26T11:15:18+11:00",
+      "source": "IGN",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 127,
+      "title_original": "The 77\" LG G5 Gallery Series 4K OLED TV Drops to $2,199 With Free Shipping During the Amazon Memorial Day Sale, But There's Not Many Left in Stock",
+      "title_ru": "The 77\" LG G5 Gallery Series 4K OLED TV Drops to $2,199 With Free Shipping During the Amazon Memorial Day Sale, But There's Not Many Left in Stock",
+      "body": [
+        "This is LG's highest-end OLED TV and normally retails for $4,500.",
+        "This is LG's highest-end OLED TV and normally retails for $4,500.",
+        "Amazon is offering an incredible price on LG's highest-end OLED TV during its Memorial Day Sale."
+      ],
+      "footer": null,
+      "source_text": "This is LG's highest-end OLED TV and normally retails for $4,500. This is LG's highest-end OLED TV and normally retails for $4,500. Amazon is offering an incredible price on LG's highest-end OLED TV during its Memorial Day Sale. As of this post, you can pick up a massive 77\" LG G5 Gallery Series 4K OLED TV for $2,199 with free delivery. LG currently has it for $3,000 . If you want it, get it now because there's not many in stock. The Amazon marketplace seller Brandsmart USA is an authorized LG retailer so you get the full LG warranty on this brand new, unopened TV. The G5 is the 2025 Gallery series model, which is LG's highest end OLED TV and quite possibly the best OLED TV, period. It has superior image quality compared to the C5 because the G5 is equipped with an MLA (micro lens array) OLED panel with LG's coveted Primary RGB Tandem technology. MLA Tandem OLED is better than traditional or even \"Evo\" OLED in two ways: 1) it's significantly brighter, and 2) it's less prone to burn-in. We picked the LG Gallery series as one of our favorite TVs for gaming . It has all the features you'd want in a current generation gaming TV, including a native 120Hz and four HDMI 2.1 ports that can run games in 4K at 120Hz on a PS5 or Xbox Series X console. The refresh rate can be pushed up to 165Hz for PC gamign as well. It supports variable refresh rate (VRR) and auto low latency mode (ALLM). One note to keep in mind is that none of the LG G-series TVs include a stand. They are meant to be mounted on the wall like an art installation (hence the \"Gallery\" monikor). Instead, a flush mount wall bracket is included.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>The 77\" LG G5 Gallery Series 4K OLED TV Drops to $2,199 With Free Shipping During the Amazon Memorial Day Sale, But There's Not Many Left in Stock</b>\n\nThis is LG's highest-end OLED TV and normally retails for $4,500.\n\nThis is LG's highest-end OLED TV and normally retails for $4,500.\n\nAmazon is offering an incredible price on LG's highest-end OLED TV during its Memorial Day Sale.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/lg-evo-g5-4k-oled-tv-deal-amazon-memorial-day-sale\">IGN</a>",
+      "edited_post_text": null,
+      "url": "https://www.ign.com/articles/lg-evo-g5-4k-oled-tv-deal-amazon-memorial-day-sale",
+      "published_at": "2026-05-25T18:00:00+00:00",
+      "title_hash": "14765ccab30ab75b727bca1985b5c567b4cf767a",
+      "image_url": "https://assets-prd.ignimgs.com/2026/05/25/lgg5-1779729247604.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "2cb31bef98467699",
+      "status": "pending",
+      "created_at": "2026-05-26T00:15:18+00:00",
+      "created_at_sakhalin": "2026-05-26T11:15:18+11:00",
+      "source": "IGN",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 127,
+      "title_original": "I Found the Lowest Price Ever on the Sonos Arc Ultra Soundbar During the Sonos Memorial Day Sale, and Yes, It's Refurbished and Still Worth It",
+      "title_ru": "I Found the Lowest Price Ever on the Sonos Arc Ultra Soundbar During the Sonos Memorial Day Sale, and Yes, It's Refurbished and Still Worth It",
+      "body": [
+        "Certified refurbished with the same 1-year Sonos warranty as buying brand new means big savings this weekend on a new soundbar.",
+        "Certified refurbished with the same 1-year Sonos warranty as buying brand new means big savings this weekend on a new soundbar.",
+        "Sonos' flagship Arc Ultra soundbar is currently on sale for $899 after a $200 discount is applied during the Sonos Memorial Day Sale."
+      ],
+      "footer": null,
+      "source_text": "Certified refurbished with the same 1-year Sonos warranty as buying brand new means big savings this weekend on a new soundbar. Certified refurbished with the same 1-year Sonos warranty as buying brand new means big savings this weekend on a new soundbar. Sonos' flagship Arc Ultra soundbar is currently on sale for $899 after a $200 discount is applied during the Sonos Memorial Day Sale. However, there's an even better deal right under its nose. Head over to the recertified section and you'll find a refurbished Arc Ultra for just $749. That's a better savings of $350 and the lowest price I've seen, ever. If you're on the fence solely because this is a refurb item, don't be. Sonos recertified products go through rigorous testing; they come with all accessories, manuals, and documentation and are reshipped in \"pristine\" packaging. Most importantly, Sonos includes the same 1-year warranty as buying new . Given the number of upgrades, the Sonos Arc Ultra should be considered more as a new class of flagship soundbar than a mere update of the original Arc. At first glance, both look similar, with the same 46\" long profile, but the internals are totally different. Whereas the Arc featured a 5.0.2ch setup with eleven speakers and no sub, the Arc Ultra boasts an expanded 9.4.1ch setup with fourteen speakers including a four-motor, dual-membrane Sound Motion woofer for better bass response and low end. This is a pretty significant upgrade alone if you don't plan on adding a discrete subwoofer. The Arc Ultra also supports Dolby Atmos thanks to two dedicated up-firing tweeters for spatial audio and new AI enhancement technology to isolate and boost the clarity of dialogue and voices. It has a built-in microphone so that it can be controlled using voice commands using your favorite s",
+      "post_text": "🎮 Игры / индустрия\n\n<b>I Found the Lowest Price Ever on the Sonos Arc Ultra Soundbar During the Sonos Memorial Day Sale, and Yes, It's Refurbished and Still Worth It</b>\n\nCertified refurbished with the same 1-year Sonos warranty as buying brand new means big savings this weekend on a new soundbar.\n\nCertified refurbished with the same 1-year Sonos warranty as buying brand new means big savings this weekend on a new soundbar.\n\nSonos' flagship Arc Ultra soundbar is currently on sale for $899 after a $200 discount is applied during the Sonos Memorial Day Sale.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/sonos-arc-ultra-soundbar-deal-refurbished-memorial-day-sale\">IGN</a>",
+      "edited_post_text": null,
+      "url": "https://www.ign.com/articles/sonos-arc-ultra-soundbar-deal-refurbished-memorial-day-sale",
+      "published_at": "2026-05-25T17:20:00+00:00",
+      "title_hash": "b21c5df67677a6cd71b2fb292b21ca67da52a8af",
+      "image_url": "https://assets-prd.ignimgs.com/2026/05/21/sonosarc3-1779405434273.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "591ebb0609ffe7d4",
+      "status": "pending",
+      "created_at": "2026-05-26T00:15:18+00:00",
+      "created_at_sakhalin": "2026-05-26T11:15:18+11:00",
+      "source": "IGN",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 127,
+      "title_original": "The TSA-Approved 20,000mAh 200W Power Bank Drops to $38.49 During Amazon's Memorial Day Sale",
+      "title_ru": "The TSA-Approved 20,000mAh 200W Power Bank Drops to $38.49 During Amazon's Memorial Day Sale",
+      "body": [
+        "Features a unibody aluminum alloy design and a 2ft long retractable USB-C cable.",
+        "Features a unibody aluminum alloy design and a 2ft long retractable USB-C cable.",
+        "Check out this brand new deal on a high-capacity, high-output power bank."
+      ],
+      "footer": null,
+      "source_text": "Features a unibody aluminum alloy design and a 2ft long retractable USB-C cable. Features a unibody aluminum alloy design and a 2ft long retractable USB-C cable. Check out this brand new deal on a high-capacity, high-output power bank. For a limited time, Amazon is offering the SIXTHGU 20,000 200W Power Bank for just $38.49 with free shipping after you apply coupon code \" 35L2EKLV \". You do not need to be an Amazon Prime member to get this deal. This power bank has both a high battery capacity and high output that make it the perfect complement for power hungry handheld gaming PCs and laptops. The SIXTHGU is a candy bar style power bank with a total of three outputs: two 140W USB-C ports, and one 30W USB-A port. The total output capacity is 200W, so you can run charge two USB-C devices at 140W and 60W respectively. The 140W output will charge all gaming handheld PCs at their fastest charging rate, including the Nintendo Switch 2, Steam Deck, and even power hungry models like the Asus ROG Xbox Ally X and and Legion Go 2. It will also fast charge many non-gaming laptops including the most recent MacBook Pro, which coincidentally maxes out at 140W. This SIXTHGU power bank boasts a generous 20,000mAh, or 74Whr battery capacity. If you factor in 80% power efficiency, here are the approximate number of times you can fully recharge each gaming handheld or iPhone model: You don't need to worry about being stopped at airports. The 20,000mAh 74Whr capacity is well below TSA's 27,000mAh/100Whr carry-on limit, so you are safely in the clear.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>The TSA-Approved 20,000mAh 200W Power Bank Drops to $38.49 During Amazon's Memorial Day Sale</b>\n\nFeatures a unibody aluminum alloy design and a 2ft long retractable USB-C cable.\n\nFeatures a unibody aluminum alloy design and a 2ft long retractable USB-C cable.\n\nCheck out this brand new deal on a high-capacity, high-output power bank.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/sixthgu-20000mah-200w-power-bank-deal-amazon-memorial-day-sale\">IGN</a>",
+      "edited_post_text": null,
+      "url": "https://www.ign.com/articles/sixthgu-20000mah-200w-power-bank-deal-amazon-memorial-day-sale",
+      "published_at": "2026-05-25T16:55:00+00:00",
+      "title_hash": "05eef72d9d933bed03c2a0fb60276702a8138cdc",
+      "image_url": "https://assets-prd.ignimgs.com/2026/05/22/sixthgu-1779472733788.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "8671c9c2afc71167",
+      "status": "pending",
+      "created_at": "2026-05-26T00:15:18+00:00",
+      "created_at_sakhalin": "2026-05-26T11:15:18+11:00",
+      "source": "PC Gamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 127,
+      "title_original": "Talos Principle 3 will definitely be the last one in the series, because",
+      "title_ru": "Talos Principle 3 will definitely be the last one in the series, because",
+      "body": [
+        "The game industry is built on long-running franchises, but Devolver says it doesn The game industry is built on long-running franchises, but Devolver says it doesn't want that for its narrative-focused puzzle game."
+      ],
+      "footer": null,
+      "source_text": "The game industry is built on long-running franchises, but Devolver says it doesn The game industry is built on long-running franchises, but Devolver says it doesn't want that for its narrative-focused puzzle game.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Talos Principle 3 will definitely be the last one in the series, because</b>\n\nThe game industry is built on long-running franchises, but Devolver says it doesn The game industry is built on long-running franchises, but Devolver says it doesn't want that for its narrative-focused puzzle game.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/games/puzzle/talos-principle-3-will-definitely-be-the-last-one-in-the-series-because-so-many-videogames-just-dont-end-and-then-you-have-an-endless-kind-of-cliffhanger/\">PC Gamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.pcgamer.com/games/puzzle/talos-principle-3-will-definitely-be-the-last-one-in-the-series-because-so-many-videogames-just-dont-end-and-then-you-have-an-endless-kind-of-cliffhanger/",
+      "published_at": "2026-05-25T21:28:32+00:00",
+      "title_hash": "d781bc9dab2d9a8d09d14b1f3ce3376fd88b83c4",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/RQ8pK9G2SYAGsgygbAgqf6-1280-80.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "b2f305f5f3c37a0a",
+      "status": "pending",
+      "created_at": "2026-05-26T00:15:18+00:00",
+      "created_at_sakhalin": "2026-05-26T11:15:18+11:00",
+      "source": "PC Gamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 127,
+      "title_original": "Paralives has done the one exact thing I was begging life sims for",
+      "title_ru": "Paralives has done the one exact thing I was begging life sims for",
+      "body": [
+        "I was on my knees pleading for a scrap of strategy gameplay and Paralives has laid me a feast of fun simulation effects.",
+        "I was on my knees pleading for a scrap of strategy gameplay and Paralives has laid me a feast of fun simulation effects."
+      ],
+      "footer": null,
+      "source_text": "I was on my knees pleading for a scrap of strategy gameplay and Paralives has laid me a feast of fun simulation effects. I was on my knees pleading for a scrap of strategy gameplay and Paralives has laid me a feast of fun simulation effects.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Paralives has done the one exact thing I was begging life sims for</b>\n\nI was on my knees pleading for a scrap of strategy gameplay and Paralives has laid me a feast of fun simulation effects.\n\nI was on my knees pleading for a scrap of strategy gameplay and Paralives has laid me a feast of fun simulation effects.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/games/life-sim/paralives-has-done-the-one-exact-thing-i-was-begging-life-sims-for/\">PC Gamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.pcgamer.com/games/life-sim/paralives-has-done-the-one-exact-thing-i-was-begging-life-sims-for/",
+      "published_at": "2026-05-25T18:00:00+00:00",
+      "title_hash": "dc28a3bb32ac4962339f866b19a7bc4954527715",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/Pag9VyaKtsXGQiTvzfxLUP-1280-80.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "7662abdbbd87d2f7",
+      "status": "pending",
+      "created_at": "2026-05-26T00:15:18+00:00",
+      "created_at_sakhalin": "2026-05-26T11:15:18+11:00",
+      "source": "PC Gamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 127,
+      "title_original": "Before Dishonored, Arkane was tapped to make Thief 4, and my heart weeps for what might have been:",
+      "title_ru": "Before Dishonored, Arkane was tapped to make Thief 4, and my heart weeps for what might have been:",
+      "body": [
+        "A Blade Runner game was also a possibility, which would have been fine too, I guess.",
+        "A Blade Runner game was also a possibility, which would have been fine too, I guess."
+      ],
+      "footer": null,
+      "source_text": "A Blade Runner game was also a possibility, which would have been fine too, I guess. A Blade Runner game was also a possibility, which would have been fine too, I guess.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Before Dishonored, Arkane was tapped to make Thief 4, and my heart weeps for what might have been:</b>\n\nA Blade Runner game was also a possibility, which would have been fine too, I guess.\n\nA Blade Runner game was also a possibility, which would have been fine too, I guess.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/games/action/before-dishonored-arkane-was-tapped-to-make-thief-4-and-my-heart-weeps-for-what-might-have-been-we-had-an-amazing-pitch-for-thief/\">PC Gamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.pcgamer.com/games/action/before-dishonored-arkane-was-tapped-to-make-thief-4-and-my-heart-weeps-for-what-might-have-been-we-had-an-amazing-pitch-for-thief/",
+      "published_at": "2026-05-25T16:24:17+00:00",
+      "title_hash": "18a51c25f90bea493b6d0fb0f2aa308109df07dd",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/e3zSpawFxJXBVqNrKNLBBh-1280-80.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "26c5f1a38eb8cf17",
+      "status": "pending",
+      "created_at": "2026-05-26T00:15:18+00:00",
+      "created_at_sakhalin": "2026-05-26T11:15:18+11:00",
+      "source": "PC Gamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 127,
+      "title_original": "9 cool things about Paralives you won",
+      "title_ru": "9 cool things about Paralives you won",
+      "body": [
+        "Paralives is stuffed with cool details that have me falling in love with the life sim.",
+        "Paralives is stuffed with cool details that have me falling in love with the life sim."
+      ],
+      "footer": null,
+      "source_text": "Paralives is stuffed with cool details that have me falling in love with the life sim. Paralives is stuffed with cool details that have me falling in love with the life sim.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>9 cool things about Paralives you won</b>\n\nParalives is stuffed with cool details that have me falling in love with the life sim.\n\nParalives is stuffed with cool details that have me falling in love with the life sim.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/games/life-sim/9-cool-things-about-paralives-you-wont-find-in-the-sims/\">PC Gamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.pcgamer.com/games/life-sim/9-cool-things-about-paralives-you-wont-find-in-the-sims/",
+      "published_at": "2026-05-25T15:20:26+00:00",
+      "title_hash": "7b92b500e798a0387c84c6191f18a38385378aa0",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/RXVTaquNtHxe6LweqUD85N-1280-80.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
     }
   ],
   "auto_review": {
