@@ -98,7 +98,9 @@
     "https://www.interfax.ru/russia/1091760",
     "https://habr.com/ru/articles/1039280/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039280#habracut",
     "https://www.interfax.ru/russia/1091780",
-    "https://www.interfax.ru/russia/1091783"
+    "https://www.interfax.ru/russia/1091783",
+    "https://www.interfax.ru/russia/1091788",
+    "https://www.interfax.ru/russia/1091786"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -199,31 +201,12 @@
     "476913ad5290acd97aa510f58b13fff7c082b4b6",
     "806638f2d991fbb6d607ea83c586e5db4da9ae88",
     "dd27ed2505945abc9c022d09673facfa6acc224e",
-    "a896cf4b65312de6f5a789a3c35a84aecec56442"
+    "a896cf4b65312de6f5a789a3c35a84aecec56442",
+    "3a04b20ffaacafa67abde9f30cfdc197a91ded62",
+    "41f3e9340a3c819479c8c8da96fa22906af16dc9"
   ],
-  "last_run_sakhalin": "2026-05-26T16:56:49+11:00",
+  "last_run_sakhalin": "2026-05-26T17:13:05+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-19T21:12:48+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 Россия / политика",
-      "title": "В Великом Новгороде отменили общегородской праздник выпускников \"Последний звонок\"",
-      "url": "https://www.interfax.ru/russia/1090390",
-      "published_at": "2026-05-19T09:52:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload"
-    },
-    {
-      "time_sakhalin": "2026-05-20T01:44:22+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "title": "В Брянской области дронами атакована автозаправка, двое мужчин ранены",
-      "url": "https://www.interfax.ru/russia/1090454",
-      "published_at": "2026-05-19T13:38:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload",
-      "score": 160
-    },
     {
       "time_sakhalin": "2026-05-20T01:46:43+11:00",
       "source": "The Verge",
@@ -2455,7 +2438,267 @@
       "score": 863,
       "stream_priority": 820,
       "rewrite_mode": null,
-      "audit_status": "pending"
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-26T06:13:05+00:00",
+      "audited_at_sakhalin": "2026-05-26T17:13:05+11:00"
+    },
+    {
+      "time_sakhalin": "2026-05-26T17:12:05+11:00",
+      "source": "Interfax",
+      "category": "🧭 Геополитика",
+      "title": "Бортников предостерег коллег по СНГ от использования западных ИИ-технологий",
+      "body": [
+        "Директор ФСБ Александр Бортников заявил, что внедрение странами СНГ западных ИИ-технологий может привести к уязвимости перед кибератакам и создает риски для руководства этих стран.",
+        "Он предупредил об этом, выступая на заседании Совета руководителей органов безопасности и специальных служб стран СНГ (СОРБ)."
+      ],
+      "caption": "🧭 Геополитика\n\n<b>Бортников предостерег коллег по СНГ от использования западных ИИ-технологий</b>\n\nДиректор ФСБ Александр Бортников заявил, что внедрение странами СНГ западных ИИ-технологий может привести к уязвимости перед кибератакам и создает риски для руководства этих стран.\n\nОн предупредил об этом, выступая на заседании Совета руководителей органов безопасности и специальных служб стран СНГ (СОРБ).\n\nГЕОПОЛИТИКА · <a href=\"https://www.interfax.ru/russia/1091788\">Interfax</a>",
+      "caption_plain": "🧭 Геополитика\n\n Бортников предостерег коллег по СНГ от использования западных ИИ-технологий \n\nДиректор ФСБ Александр Бортников заявил, что внедрение странами СНГ западных ИИ-технологий может привести к уязвимости перед кибератакам и создает риски для руководства этих стран.\n\nОн предупредил об этом, выступая на заседании Совета руководителей органов безопасности и специальных служб стран СНГ (СОРБ).\n\nГЕОПОЛИТИКА ·  Interfax ",
+      "url": "https://www.interfax.ru/russia/1091788",
+      "published_at": "2026-05-26T06:04:00+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_generated",
+      "image_url": null,
+      "image_fingerprint": "07517f9561deff6a6de1eb6862379c219a29a1bc",
+      "image_pipeline": {
+        "strategy": "generated",
+        "reason": "generated semantic image accepted",
+        "selected": {
+          "url": null,
+          "source": "generated",
+          "width": 1200,
+          "height": 675,
+          "mime_type": "image/jpeg",
+          "query_used": "generated:it:Бортников предостерег коллег по СНГ от использования западных ИИ-технологий",
+          "relevance_score": 0.9,
+          "image_kind": "generated",
+          "filename": "thematic.jpg",
+          "reason": "local semantic generation; topic=it; hits=[]; entity_hits=[]; bad_hits=[]"
+        },
+        "attempts": [
+          {
+            "stage": "external_search",
+            "query": "computer chip technology",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/ML34003P.jpg",
+            "ok": false,
+            "reason": "low relevance: 0.57; topic=it; hits=['chip', 'computer', 'technology']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "computer chip technology",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/NXP_PCF8577C_LCD_driver_with_I%C2%B2C_%28Colour_Corrected%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "computer chip technology",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/SN7493N.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "computer chip technology",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Silicon_chip_from_a_computer_laser_mouse_under_a_microscope_50%D1%85.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "server room network",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Data_Center_2_%28UNC%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "server room network",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Data_Center_3_%28UNC%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "server room network",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Network_cables_in_server_room.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "server room network",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Server_Room_-_DPLA_-_0a62d5947facc70bd04e6d169556a60c.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "server room network",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Server_Room_-_DPLA_-_98c158d56428076ae66e79c88648d48e.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "server room network",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Server_Room_-_DPLA_-_bcc07e65dc17d8acad1f6f5f1ae9e4a8.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "server room network",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Server_Room_-_DPLA_-_c8677f0d285b30976d93489799641dc7.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "generated",
+            "ok": true,
+            "reason": "accepted: 1200x675; score=0.90; topic=it; hits=[]; entity_hits=[]; bad_hits=[]"
+          }
+        ]
+      },
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 128,
+      "score": 900,
+      "stream_priority": 820,
+      "rewrite_mode": "local",
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-26T06:13:05+00:00",
+      "audited_at_sakhalin": "2026-05-26T17:13:05+11:00"
+    },
+    {
+      "time_sakhalin": "2026-05-26T17:12:53+11:00",
+      "source": "Interfax",
+      "category": "🇷🇺 РФ / происшествия",
+      "title": "В Вологде восстановили водоснабжение после аварии",
+      "body": [
+        "В Вологде устранили последствия аварии на водопроводе и восстановили подачу холодной воды в многоквартирные дома, сообщил в мессенджере глава города Сергей Жестянников.",
+        "\"Дефект на водопроводе на улице Гагарина полностью устранен, вода подана в дома."
+      ],
+      "caption": "🇷🇺 РФ / происшествия\n\n<b>В Вологде восстановили водоснабжение после аварии</b>\n\nВ Вологде устранили последствия аварии на водопроводе и восстановили подачу холодной воды в многоквартирные дома, сообщил в мессенджере глава города Сергей Жестянников.\n\n\"Дефект на водопроводе на улице Гагарина полностью устранен, вода подана в дома.\n\nРФ | ПРОИСШЕСТВИЯ · <a href=\"https://www.interfax.ru/russia/1091786\">Interfax</a>",
+      "caption_plain": "🇷🇺 РФ / происшествия\n\n В Вологде восстановили водоснабжение после аварии \n\nВ Вологде устранили последствия аварии на водопроводе и восстановили подачу холодной воды в многоквартирные дома, сообщил в мессенджере глава города Сергей Жестянников.\n\n\"Дефект на водопроводе на улице Гагарина полностью устранен, вода подана в дома.\n\nРФ | ПРОИСШЕСТВИЯ ·  Interfax ",
+      "url": "https://www.interfax.ru/russia/1091786",
+      "published_at": "2026-05-26T05:56:00+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_generated",
+      "image_url": null,
+      "image_fingerprint": "2cf39cbb9bd3d3029d853d97eb9577c9fc5bd6c8",
+      "image_pipeline": {
+        "strategy": "generated",
+        "reason": "generated semantic image accepted",
+        "selected": {
+          "url": null,
+          "source": "generated",
+          "width": 1200,
+          "height": 675,
+          "mime_type": "image/jpeg",
+          "query_used": "generated:incident_water:В Вологде восстановили водоснабжение после аварии",
+          "relevance_score": 1.2600000000000002,
+          "image_kind": "generated",
+          "filename": "thematic.jpg",
+          "reason": "local semantic generation; topic=incident_water; hits=['water', 'вод']; entity_hits=[]; bad_hits=[]"
+        },
+        "attempts": [
+          {
+            "stage": "external_search",
+            "query": "water pipeline repair emergency",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Memorandum_of_understanding_on_coordination_of_environmental_reviews_for_pipeline_repair_projects_-_USACE-p16021coll11-2516.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "water pipeline repair emergency",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/ONEOK_102_Pipeline_Missouri_River_exposure_relocation_project-_Appendix_G%2C_spill_risk_assessment_-_USACE-p16021coll7-14668.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "water pipeline repair emergency",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/ONEOK_102_Pipeline_Missouri_River_exposure_relocation_project-_Appendix_J%2C_wetland_and_waterbody_report_-_USACE-p16021coll7-14671.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "water pipeline repair emergency",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Public_notice-_Reauthorization_of_regional_general_permit_RGP_63_for_repair_and_protection_activities_in_emergency_situations_-_USACE-p16021coll15-2085.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "municipal water main break repair",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Alberta_municipal_counsellor%2C_volume_2_no._9_1957-09_%28IA_albertamunicipal29albe%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "municipal water main break repair",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Municipal_record_%28IA_municipalrecord141921sanf%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "municipal water main break repair",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Soil_and_water_conservation_news_%28IA_CAT81757230061%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "municipal water main break repair",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/The_municipal_and_sanitary_engineer%27s_handbook_%28IA_b21940538%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "municipal water main break repair",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/24/The_municipal_and_sanitary_engineer%27s_handbook_%28electronic_resource%29_%28IA_b20410244%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "municipal water main break repair",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/The_municipal_water_supply_system_of_the_city_of_New_York._A_general_description_%28IA_municipalwatersu00newy%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "municipal water main break repair",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Water_quality_management_of_bilge_wastes_at_Pearl_Harbor%2C_Hawaii_%28IA_waterqualitymana00bern%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "generated",
+            "ok": true,
+            "reason": "accepted: 1200x675; score=1.26; topic=incident_water; hits=['water', 'вод']; entity_hits=[]; bad_hits=[]"
+          }
+        ]
+      },
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 129,
+      "score": 780,
+      "stream_priority": 780,
+      "rewrite_mode": "local",
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-26T06:13:05+00:00",
+      "audited_at_sakhalin": "2026-05-26T17:13:05+11:00"
     }
   ],
   "last_cycle_report": {
@@ -2570,8 +2813,6 @@
     "https://upload.wikimedia.org/wikipedia/commons/9/90/Rear_view_of_Tiangong_Space_Station.jpg"
   ],
   "recent_image_fingerprints": [
-    "12ecf5fcfbba9160353020fc80684d24efa9433c",
-    "93a798a0486f314b31cea2fbe231f2cafc5fcfd4",
     "b929fdfebf2fe060385a66e7632b94cd1b505f5e",
     "556c9be1bebdb7ea225a29d4971fd5c7b6e20489",
     "f1737df89cd8e59dae71e243f9d0d7411247fb39",
@@ -2609,7 +2850,9 @@
     "b2275be508dec4bc42ace092badd4062f68cbd28",
     "ed77c059d346f7558d6d0da35b66c48611e10209",
     "96f24c2907d7265a80e8c5450c30605708575c80",
-    "a265d82bc337fd9931b95dd416dfb8d886fc11d0"
+    "a265d82bc337fd9931b95dd416dfb8d886fc11d0",
+    "07517f9561deff6a6de1eb6862379c219a29a1bc",
+    "2cf39cbb9bd3d3029d853d97eb9577c9fc5bd6c8"
   ],
   "recent_generated_prompts": [
     "generated:security:Трамп призвал ряд исламских стран присоединиться к Соглашениям Авраама",
@@ -2626,30 +2869,58 @@
     "generated:diplomacy:Псковский аэропорт временно закрыт",
     "generated:diplomacy:Землетрясение магнитудой 5,1 произошло у берегов Камчатки",
     "generated:it:MemForge2: загрузочная флешка, которая за минуту говорит — какую планку памяти менять",
-    "generated:security:Глава Белгородской области сообщил о 62 атаках на регион за сутки"
+    "generated:security:Глава Белгородской области сообщил о 62 атаках на регион за сутки",
+    "generated:it:Бортников предостерег коллег по СНГ от использования западных ИИ-технологий",
+    "generated:incident_water:В Вологде восстановили водоснабжение после аварии"
   ],
   "last_post_publish_audit": {
     "version": 2,
-    "checked_at": "2026-05-26T05:55:53+00:00",
-    "checked_at_sakhalin": "2026-05-26T16:55:53+11:00",
-    "checked_count": 1,
+    "checked_at": "2026-05-26T06:13:05+00:00",
+    "checked_at_sakhalin": "2026-05-26T17:13:05+11:00",
+    "checked_count": 3,
     "failed_count": 0,
     "audit_chat_configured": false,
     "delete_bad_posts": false,
     "deleted": [],
     "items": [
       {
-        "telegram_message_id": 126,
-        "title": "ОАК передала российским военным партию истребителей Су-35С",
+        "telegram_message_id": 127,
+        "title": "Глава Белгородской области сообщил о 62 атаках на регион за сутки",
         "category": "🧭 Геополитика",
-        "time_sakhalin": "2026-05-26T16:55:41+11:00",
-        "image_mode": "pipeline_search",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Rear_view_of_Tiangong_Space_Station.jpg",
-        "url": "https://www.interfax.ru/russia/1091780",
+        "time_sakhalin": "2026-05-26T16:56:37+11:00",
+        "image_mode": "pipeline_generated",
+        "image_url": null,
+        "url": "https://www.interfax.ru/russia/1091783",
         "status": "pass",
         "severity": "ok",
         "issues": [],
-        "content_preview": "🧭 Геополитика ОАК передала российским военным партию истребителей Су-35С Объединенная авиастроительная корпорация передала Воздушно-космическим силам России партию новых многофункциональных истребителей Су-35С, сообщила пресс-служба госкорпорации \"Ростех\".\"Самолеты поколения 4++ прошли полный цикл заводских испытаний. \"Самолеты поколения 4++ прошли полный цикл заводских испытаний. ГЕОПОЛИТИКА · Interfax"
+        "content_preview": "🧭 Геополитика Глава Белгородской области сообщил о 62 атаках на регион за сутки Врио губернатора Белгородской области Александр Шуваев сообщил в Max о 62 атаках на регионза минувшие сутки Врио губернатора Белгородской области Александр Шуваев сообщил в Max о 62 атаках на регионза минувшие сутки. Удары были нанесены по Белгородскому, Борисовскому, Валуйскому, Волоконовскому, Грайворонскому, Краснояружскому, Ракитянскому и Шебекинскому округам. ГЕОПОЛИТИКА · Interfax"
+      },
+      {
+        "telegram_message_id": 128,
+        "title": "Бортников предостерег коллег по СНГ от использования западных ИИ-технологий",
+        "category": "🧭 Геополитика",
+        "time_sakhalin": "2026-05-26T17:12:05+11:00",
+        "image_mode": "pipeline_generated",
+        "image_url": null,
+        "url": "https://www.interfax.ru/russia/1091788",
+        "status": "pass",
+        "severity": "ok",
+        "issues": [],
+        "content_preview": "🧭 Геополитика Бортников предостерег коллег по СНГ от использования западных ИИ-технологий Директор ФСБ Александр Бортников заявил, что внедрение странами СНГ западных ИИ-технологий может привести к уязвимости перед кибератакам и создает риски для руководства этих стран. Он предупредил об этом, выступая на заседании Совета руководителей органов безопасности и специальных служб стран СНГ (СОРБ). ГЕОПОЛИТИКА · Interfax"
+      },
+      {
+        "telegram_message_id": 129,
+        "title": "В Вологде восстановили водоснабжение после аварии",
+        "category": "🇷🇺 РФ / происшествия",
+        "time_sakhalin": "2026-05-26T17:12:53+11:00",
+        "image_mode": "pipeline_generated",
+        "image_url": null,
+        "url": "https://www.interfax.ru/russia/1091786",
+        "status": "pass",
+        "severity": "ok",
+        "issues": [],
+        "content_preview": "🇷🇺 РФ / происшествия В Вологде восстановили водоснабжение после аварии В Вологде устранили последствия аварии на водопроводе и восстановили подачу холодной воды в многоквартирные дома, сообщил в мессенджере глава города Сергей Жестянников. \"Дефект на водопроводе на улице Гагарина полностью устранен, вода подана в дома. РФ | ПРОИСШЕСТВИЯ · Interfax"
       }
     ]
   }
