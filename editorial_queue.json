@@ -9971,27 +9971,26 @@
     "checked_at_sakhalin": "2026-05-27T08:50:09+11:00"
   },
   "cycle_report": {
-    "reported_at": "2026-05-26T07:11:00+00:00",
-    "reported_at_sakhalin": "2026-05-26T18:11:00+11:00",
-    "queue_updated_at": "2026-05-26T07:10:44+00:00",
-    "queue_updated_at_sakhalin": "2026-05-26T18:10:44+11:00",
-    "total_queue_items": 130,
+    "reported_at": "2026-05-26T21:51:07+00:00",
+    "reported_at_sakhalin": "2026-05-27T08:51:07+11:00",
+    "queue_updated_at": "2026-05-26T21:50:53+00:00",
+    "queue_updated_at_sakhalin": "2026-05-27T08:50:53+11:00",
+    "total_queue_items": 140,
     "status_counts": {
-      "hold": 3,
-      "rejected": 74,
-      "published": 53,
+      "hold": 2,
+      "rejected": 83,
+      "published": 55,
       "pending": 0,
       "approved": 0,
       "skipped": 0,
       "unknown": 0
     },
     "hold_by_category": {
-      "🌐 Мировые IT": 2,
-      "🧭 Геополитика": 1
+      "🌐 Мировые IT": 2
     },
     "approved_by_category": {},
     "published_by_category": {
-      "🧭 Геополитика": 23,
+      "🧭 Геополитика": 25,
       "🇷🇺 РФ / война и безопасность": 16,
       "🇷🇺 РФ / происшествия": 7,
       "🌐 Мировые IT": 3,
@@ -10011,50 +10010,40 @@
         "🌐 Мировые IT": 650,
         "🎮 Игры / индустрия": 600
       },
-      "reviewed_pending": 11,
-      "approved": 2,
+      "reviewed_pending": 10,
+      "approved": 1,
       "approve_limit": 2,
       "min_auto_score": 600,
       "openrouter_enabled": false,
-      "reviewed_at": "2026-05-26T07:09:32+00:00",
-      "reviewed_at_sakhalin": "2026-05-26T18:09:32+11:00"
+      "reviewed_at": "2026-05-26T21:50:08+00:00",
+      "reviewed_at_sakhalin": "2026-05-27T08:50:08+11:00"
     },
     "priority_guard": {
       "version": 3,
       "changed": 0,
       "airport_changed": 0,
       "security_changed": 0,
-      "checked_at": "2026-05-26T07:09:33+00:00",
-      "checked_at_sakhalin": "2026-05-26T18:09:33+11:00"
+      "checked_at": "2026-05-26T21:50:09+00:00",
+      "checked_at_sakhalin": "2026-05-27T08:50:09+11:00"
     },
     "final_guard": {
       "version": 3,
       "changed": 0,
-      "polished": 2,
-      "checked_at": "2026-05-26T07:09:33+00:00",
-      "checked_at_sakhalin": "2026-05-26T18:09:33+11:00"
+      "polished": 0,
+      "checked_at": "2026-05-26T21:50:09+00:00",
+      "checked_at_sakhalin": "2026-05-27T08:50:09+11:00"
     },
-    "recent_published_20m_count": 2,
+    "recent_published_20m_count": 1,
     "recent_published_20m": [
       {
-        "time_sakhalin": "2026-05-26T18:09:59+11:00",
-        "source": "Interfax",
-        "category": "🇷🇺 РФ / происшествия",
-        "title": "Один человек пострадал при пожаре на нефтебазе в Башкирии",
-        "with_image": true,
-        "image_mode": "pipeline_generated",
-        "publish_method": "sendPhoto/safe/pipeline_generated",
-        "telegram_message_id": 133
-      },
-      {
-        "time_sakhalin": "2026-05-26T18:10:32+11:00",
+        "time_sakhalin": "2026-05-27T08:50:41+11:00",
         "source": "Interfax",
         "category": "🧭 Геополитика",
-        "title": "ФСБ сообщила, что Киев пытался ввезти в РФ более 500 взрывных устройств",
+        "title": "Госдума внесла проект обращения к ООН по теракту в Старобельске",
         "with_image": true,
         "image_mode": "pipeline_generated",
         "publish_method": "sendPhoto/safe/pipeline_generated",
-        "telegram_message_id": 134
+        "telegram_message_id": 136
       }
     ],
     "decision": "published"
