@@ -101,7 +101,9 @@
     "https://www.interfax.ru/russia/1091783",
     "https://www.interfax.ru/russia/1091788",
     "https://www.interfax.ru/russia/1091786",
-    "https://www.interfax.ru/russia/1091777"
+    "https://www.interfax.ru/russia/1091777",
+    "https://www.interfax.ru/russia/1091797",
+    "https://www.interfax.ru/russia/1091789"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -205,32 +207,12 @@
     "a896cf4b65312de6f5a789a3c35a84aecec56442",
     "3a04b20ffaacafa67abde9f30cfdc197a91ded62",
     "41f3e9340a3c819479c8c8da96fa22906af16dc9",
-    "269b9637282edad822c938049a787164f30e1e1e"
+    "269b9637282edad822c938049a787164f30e1e1e",
+    "d1bf67914b43657aa6c4f06a0d7318f2786d70a7",
+    "f7f6558d61f6965ea556afd53b536d469608968f"
   ],
-  "last_run_sakhalin": "2026-05-26T17:29:16+11:00",
+  "last_run_sakhalin": "2026-05-26T18:10:44+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-20T08:24:36+11:00",
-      "source": "BBC World",
-      "category": "🌍 Мир о России",
-      "title": "Эстония сообщает, что НАТО сбило дрон над своей территорией",
-      "url": "https://www.bbc.com/news/articles/c302jy8z4vro?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-05-19T19:01:44+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload",
-      "score": 205
-    },
-    {
-      "time_sakhalin": "2026-05-20T08:25:56+11:00",
-      "source": "GameSpot",
-      "category": "🎮 Игры / индустрия",
-      "title": "Мифический предмет Diablo 4 найден в виде амулета",
-      "url": "https://www.gamespot.com/games/diablo-iv/",
-      "published_at": "2026-05-19T16:26:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload",
-      "score": 162
-    },
     {
       "time_sakhalin": "2026-05-20T09:07:23+11:00",
       "source": "Eurogamer",
@@ -2813,7 +2795,267 @@
       "score": 827,
       "stream_priority": 820,
       "rewrite_mode": null,
-      "audit_status": "pending"
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-26T07:10:44+00:00",
+      "audited_at_sakhalin": "2026-05-26T18:10:44+11:00"
+    },
+    {
+      "time_sakhalin": "2026-05-26T18:09:59+11:00",
+      "source": "Interfax",
+      "category": "🇷🇺 РФ / происшествия",
+      "title": "Один человек пострадал при пожаре на нефтебазе в Башкирии",
+      "body": [
+        "Несколько резервуаров для хранения нефтепродуктов горели в Туймазинском районе Башкирии, пострадал один человек, информирует региональный Госкомитет по ЧС во вторник.",
+        "\"Вчера поздно вечером в пожарную часть города Туймазы от диспетчера ГУ МЧС России по РБ поступило сообщение о том, что горит база хранения нефтепродуктов в Туймазинском районе в селе Кандры."
+      ],
+      "caption": "🇷🇺 РФ / происшествия\n\n<b>Один человек пострадал при пожаре на нефтебазе в Башкирии</b>\n\nНесколько резервуаров для хранения нефтепродуктов горели в Туймазинском районе Башкирии, пострадал один человек, информирует региональный Госкомитет по ЧС во вторник.\n\n\"Вчера поздно вечером в пожарную часть города Туймазы от диспетчера ГУ МЧС России по РБ поступило сообщение о том, что горит база хранения нефтепродуктов в Туймазинском районе в селе Кандры.\n\nРФ | ПРОИСШЕСТВИЯ · <a href=\"https://www.interfax.ru/russia/1091797\">Interfax</a>",
+      "caption_plain": "🇷🇺 РФ / происшествия\n\n Один человек пострадал при пожаре на нефтебазе в Башкирии \n\nНесколько резервуаров для хранения нефтепродуктов горели в Туймазинском районе Башкирии, пострадал один человек, информирует региональный Госкомитет по ЧС во вторник.\n\n\"Вчера поздно вечером в пожарную часть города Туймазы от диспетчера ГУ МЧС России по РБ поступило сообщение о том, что горит база хранения нефтепродуктов в Туймазинском районе в селе Кандры.\n\nРФ | ПРОИСШЕСТВИЯ ·  Interfax ",
+      "url": "https://www.interfax.ru/russia/1091797",
+      "published_at": "2026-05-26T06:55:00+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_generated",
+      "image_url": null,
+      "image_fingerprint": "92cd5a30448eb05386dc6bd1263b238e9c67a43e",
+      "image_pipeline": {
+        "strategy": "generated",
+        "reason": "generated semantic image accepted",
+        "selected": {
+          "url": null,
+          "source": "generated",
+          "width": 1200,
+          "height": 675,
+          "mime_type": "image/jpeg",
+          "query_used": "generated:incident_fire:Один человек пострадал при пожаре на нефтебазе в Башкирии",
+          "relevance_score": 1.2600000000000002,
+          "image_kind": "generated",
+          "filename": "thematic.jpg",
+          "reason": "local semantic generation; topic=incident_fire; hits=['fire', 'пожар']; entity_hits=[]; bad_hits=[]"
+        },
+        "attempts": [
+          {
+            "stage": "external_search",
+            "query": "fire truck emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/CNRJ_Fire_and_Emergency_Services_Sasebo_Hosts_%22Push-In%22_Ceremony_for_New_Fire_Truck_%289628504%29.jpg",
+            "ok": false,
+            "reason": "low relevance: 0.44; topic=incident_fire; hits=['fire', 'emergency']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "fire truck emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/CNRJ_Fire_and_Emergency_Services_Sasebo_Hosts_%22Push-In%22_Ceremony_for_New_Fire_Truck_%289628507%29.jpg",
+            "ok": false,
+            "reason": "low relevance: 0.44; topic=incident_fire; hits=['fire', 'emergency']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "fire truck emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/CNRJ_Fire_and_Emergency_Services_Sasebo_Hosts_%22Push-In%22_Ceremony_for_New_Fire_Truck_%289628513%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "fire truck emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Fire_defense_and_emergency_response_%28IA_firedefenseemerg00netc%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "fire rescue operation",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Fire_and_Rescue_Headquarters%2C_Belait_Operation_Branch_%27B%27.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "fire rescue operation",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Fire_at_Hadar_Dafna_House_in_Tel_Aviv_with_rescue_operation_%28FL62599272%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "fire rescue operation",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Fire_at_Hadar_Dafna_House_in_Tel_Aviv_with_rescue_operation_%28FL62601431%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "fire rescue operation",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Fire_at_Hadar_Dafna_House_in_Tel_Aviv_with_rescue_operation_%28FL62601569%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "fire rescue operation",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Fire_at_Hadar_Dafna_House_in_Tel_Aviv_with_rescue_operation_%28FL62601713%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "fire rescue operation",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/New_York_City_Fire_Department_Rescue_Company_1%2C_2025_jeh.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "fire rescue operation",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/RAF_Search_and_Rescue_Helicopter_in_the_Cairngorms_MOD_45155350.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "generated",
+            "ok": true,
+            "reason": "accepted: 1200x675; score=1.26; topic=incident_fire; hits=['fire', 'пожар']; entity_hits=[]; bad_hits=[]"
+          }
+        ]
+      },
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 133,
+      "score": 980,
+      "stream_priority": 900,
+      "rewrite_mode": "local",
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-26T07:10:44+00:00",
+      "audited_at_sakhalin": "2026-05-26T18:10:44+11:00"
+    },
+    {
+      "time_sakhalin": "2026-05-26T18:10:32+11:00",
+      "source": "Interfax",
+      "category": "🧭 Геополитика",
+      "title": "ФСБ сообщила, что Киев пытался ввезти в РФ более 500 взрывных устройств",
+      "body": [
+        "Директор ФСБ России Александр Бортников сообщил о пресечении попытки ввоза в страну свыше 500 взрывных устройств, отправленных Украиной для совершения терактов.",
+        "\"О масштабах угроз с украинского направления прямо свидетельствуют результаты совместной оперативной работы органов федеральной службы безопасности с партнерами по Содружеству."
+      ],
+      "caption": "🧭 Геополитика\n\n<b>ФСБ сообщила, что Киев пытался ввезти в РФ более 500 взрывных устройств</b>\n\nДиректор ФСБ России Александр Бортников сообщил о пресечении попытки ввоза в страну свыше 500 взрывных устройств, отправленных Украиной для совершения терактов.\n\n\"О масштабах угроз с украинского направления прямо свидетельствуют результаты совместной оперативной работы органов федеральной службы безопасности с партнерами по Содружеству.\n\nГЕОПОЛИТИКА · <a href=\"https://www.interfax.ru/russia/1091789\">Interfax</a>",
+      "caption_plain": "🧭 Геополитика\n\n ФСБ сообщила, что Киев пытался ввезти в РФ более 500 взрывных устройств \n\nДиректор ФСБ России Александр Бортников сообщил о пресечении попытки ввоза в страну свыше 500 взрывных устройств, отправленных Украиной для совершения терактов.\n\n\"О масштабах угроз с украинского направления прямо свидетельствуют результаты совместной оперативной работы органов федеральной службы безопасности с партнерами по Содружеству.\n\nГЕОПОЛИТИКА ·  Interfax ",
+      "url": "https://www.interfax.ru/russia/1091789",
+      "published_at": "2026-05-26T06:09:00+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_generated",
+      "image_url": null,
+      "image_fingerprint": "f7922665e7766faf18b09e36526926f30930960f",
+      "image_pipeline": {
+        "strategy": "generated",
+        "reason": "generated semantic image accepted",
+        "selected": {
+          "url": null,
+          "source": "generated",
+          "width": 1200,
+          "height": 675,
+          "mime_type": "image/jpeg",
+          "query_used": "generated:security:ФСБ сообщила, что Киев пытался ввезти в РФ более 500 взрывных устройств",
+          "relevance_score": 1.03,
+          "image_kind": "generated",
+          "filename": "thematic.jpg",
+          "reason": "local semantic generation; topic=security; hits=['security']; entity_hits=[]; bad_hits=[]"
+        },
+        "attempts": [
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Emergency_response_drone_team_discusses_flight_path_%287136594%29.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Emergency_response_team_member_checks_drone_before_deploying_%287136593%29.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Emergency_response_teams_gather_to_watch_drone_footage_%287136602%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Eyes_in_the_sky-_A_look_at_drones_for_emergency_response_in_Vanuatu.webm",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/2022-MILITARY-AND-SECURITY-DEVELOPMENTS-INVOLVING-THE-PEOPLES-REPUBLIC-OF-CHINA.PDF",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/2023-MILITARY-AND-SECURITY-DEVELOPMENTS-INVOLVING-THE-PEOPLES-REPUBLIC-OF-CHINA.PDF",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Australian_and_U.S._Military_Police_Radar_Speed_Detection_Training_%28Image_3_of_8%29.webp",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Australian_and_U.S._Military_Police_Radar_Speed_Detection_Training_%28Image_6_of_8%29.webp",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Australian_and_U_S_Military_Police_Radar_Speed_Detection_Training_%289191330%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Australian_and_U_S_Military_Police_Radar_Speed_Detection_Training_%289191365%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Radar_gun.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "generated",
+            "ok": true,
+            "reason": "accepted: 1200x675; score=1.03; topic=security; hits=['security']; entity_hits=[]; bad_hits=[]"
+          }
+        ]
+      },
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 134,
+      "score": 1080,
+      "stream_priority": 1000,
+      "rewrite_mode": "local",
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-26T07:10:44+00:00",
+      "audited_at_sakhalin": "2026-05-26T18:10:44+11:00"
     }
   ],
   "last_cycle_report": {
@@ -2958,8 +3200,6 @@
     "https://upload.wikimedia.org/wikipedia/commons/9/90/Rear_view_of_Tiangong_Space_Station.jpg"
   ],
   "recent_image_fingerprints": [
-    "556c9be1bebdb7ea225a29d4971fd5c7b6e20489",
-    "f1737df89cd8e59dae71e243f9d0d7411247fb39",
     "a20bc46b4fb357a04f1e3cf842fa340e31245227",
     "c6100fa4d318a902ff65605bc9bd32e02638e32d",
     "026c388070ea78026cd26d7bf3e7e45b3e053d99",
@@ -2997,7 +3237,9 @@
     "a265d82bc337fd9931b95dd416dfb8d886fc11d0",
     "07517f9561deff6a6de1eb6862379c219a29a1bc",
     "2cf39cbb9bd3d3029d853d97eb9577c9fc5bd6c8",
-    "1faa74d832cc28c015e5a7f8ea782ff63def7f8f"
+    "1faa74d832cc28c015e5a7f8ea782ff63def7f8f",
+    "92cd5a30448eb05386dc6bd1263b238e9c67a43e",
+    "f7922665e7766faf18b09e36526926f30930960f"
   ],
   "recent_generated_prompts": [
     "generated:security:Трамп призвал ряд исламских стран присоединиться к Соглашениям Авраама",
@@ -3017,12 +3259,14 @@
     "generated:security:Глава Белгородской области сообщил о 62 атаках на регион за сутки",
     "generated:it:Бортников предостерег коллег по СНГ от использования западных ИИ-технологий",
     "generated:incident_water:В Вологде восстановили водоснабжение после аварии",
-    "generated:diplomacy:Рынок акций РФ открылся в утреннюю сессию незначительным изменением индекса IMOEX2"
+    "generated:diplomacy:Рынок акций РФ открылся в утреннюю сессию незначительным изменением индекса IMOEX2",
+    "generated:incident_fire:Один человек пострадал при пожаре на нефтебазе в Башкирии",
+    "generated:security:ФСБ сообщила, что Киев пытался ввезти в РФ более 500 взрывных устройств"
   ],
   "last_post_publish_audit": {
     "version": 2,
-    "checked_at": "2026-05-26T06:13:05+00:00",
-    "checked_at_sakhalin": "2026-05-26T17:13:05+11:00",
+    "checked_at": "2026-05-26T07:10:44+00:00",
+    "checked_at_sakhalin": "2026-05-26T18:10:44+11:00",
     "checked_count": 3,
     "failed_count": 0,
     "audit_chat_configured": false,
@@ -3030,43 +3274,43 @@
     "deleted": [],
     "items": [
       {
-        "telegram_message_id": 127,
-        "title": "Глава Белгородской области сообщил о 62 атаках на регион за сутки",
+        "telegram_message_id": 130,
+        "title": "Рынок акций РФ открылся в утреннюю сессию незначительным изменением индекса IMOEX2",
         "category": "🧭 Геополитика",
-        "time_sakhalin": "2026-05-26T16:56:37+11:00",
+        "time_sakhalin": "2026-05-26T17:13:37+11:00",
         "image_mode": "pipeline_generated",
         "image_url": null,
-        "url": "https://www.interfax.ru/russia/1091783",
+        "url": "https://www.interfax.ru/russia/1091777",
         "status": "pass",
         "severity": "ok",
         "issues": [],
-        "content_preview": "🧭 Геополитика Глава Белгородской области сообщил о 62 атаках на регион за сутки Врио губернатора Белгородской области Александр Шуваев сообщил в Max о 62 атаках на регионза минувшие сутки Врио губернатора Белгородской области Александр Шуваев сообщил в Max о 62 атаках на регионза минувшие сутки. Удары были нанесены по Белгородскому, Борисовскому, Валуйскому, Волоконовскому, Грайворонскому, Краснояружскому, Ракитянскому и Шебекинскому округам. ГЕОПОЛИТИКА · Interfax"
+        "content_preview": "🧭 Геополитика Рынок акций РФ открылся в утреннюю сессию незначительным изменением индекса IMOEX2 Российский рынок акций на старте торгов утренней сессии на Мосбирже во вторник демонстрирует вялую динамику на фоне влияния противоречивых внешних и внутренних факторов, в том числе сохраняющейся напряженности вокруг Украины и на Ближнем Востоке. К 07:01 по Москве индекс Мосбиржи составил 2598,07 пункта (-0,01%); цены \"голубых фишек\" на Московской бирже демонстрируют смешанную динамику в пределах 0,8%. ГЕОПОЛИТИКА · Interfax"
       },
       {
-        "telegram_message_id": 128,
-        "title": "Бортников предостерег коллег по СНГ от использования западных ИИ-технологий",
-        "category": "🧭 Геополитика",
-        "time_sakhalin": "2026-05-26T17:12:05+11:00",
-        "image_mode": "pipeline_generated",
-        "image_url": null,
-        "url": "https://www.interfax.ru/russia/1091788",
-        "status": "pass",
-        "severity": "ok",
-        "issues": [],
-        "content_preview": "🧭 Геополитика Бортников предостерег коллег по СНГ от использования западных ИИ-технологий Директор ФСБ Александр Бортников заявил, что внедрение странами СНГ западных ИИ-технологий может привести к уязвимости перед кибератакам и создает риски для руководства этих стран. Он предупредил об этом, выступая на заседании Совета руководителей органов безопасности и специальных служб стран СНГ (СОРБ). ГЕОПОЛИТИКА · Interfax"
-      },
-      {
-        "telegram_message_id": 129,
-        "title": "В Вологде восстановили водоснабжение после аварии",
+        "telegram_message_id": 133,
+        "title": "Один человек пострадал при пожаре на нефтебазе в Башкирии",
         "category": "🇷🇺 РФ / происшествия",
-        "time_sakhalin": "2026-05-26T17:12:53+11:00",
+        "time_sakhalin": "2026-05-26T18:09:59+11:00",
         "image_mode": "pipeline_generated",
         "image_url": null,
-        "url": "https://www.interfax.ru/russia/1091786",
+        "url": "https://www.interfax.ru/russia/1091797",
         "status": "pass",
         "severity": "ok",
         "issues": [],
-        "content_preview": "🇷🇺 РФ / происшествия В Вологде восстановили водоснабжение после аварии В Вологде устранили последствия аварии на водопроводе и восстановили подачу холодной воды в многоквартирные дома, сообщил в мессенджере глава города Сергей Жестянников. \"Дефект на водопроводе на улице Гагарина полностью устранен, вода подана в дома. РФ | ПРОИСШЕСТВИЯ · Interfax"
+        "content_preview": "🇷🇺 РФ / происшествия Один человек пострадал при пожаре на нефтебазе в Башкирии Несколько резервуаров для хранения нефтепродуктов горели в Туймазинском районе Башкирии, пострадал один человек, информирует региональный Госкомитет по ЧС во вторник. \"Вчера поздно вечером в пожарную часть города Туймазы от диспетчера ГУ МЧС России по РБ поступило сообщение о том, что горит база хранения нефтепродуктов в Туймазинском районе в селе Кандры. РФ | ПРОИСШЕСТВИЯ · Interfax"
+      },
+      {
+        "telegram_message_id": 134,
+        "title": "ФСБ сообщила, что Киев пытался ввезти в РФ более 500 взрывных устройств",
+        "category": "🧭 Геополитика",
+        "time_sakhalin": "2026-05-26T18:10:32+11:00",
+        "image_mode": "pipeline_generated",
+        "image_url": null,
+        "url": "https://www.interfax.ru/russia/1091789",
+        "status": "pass",
+        "severity": "ok",
+        "issues": [],
+        "content_preview": "🧭 Геополитика ФСБ сообщила, что Киев пытался ввезти в РФ более 500 взрывных устройств Директор ФСБ России Александр Бортников сообщил о пресечении попытки ввоза в страну свыше 500 взрывных устройств, отправленных Украиной для совершения терактов. \"О масштабах угроз с украинского направления прямо свидетельствуют результаты совместной оперативной работы органов федеральной службы безопасности с партнерами по Содружеству. ГЕОПОЛИТИКА · Interfax"
       }
     ]
   }
