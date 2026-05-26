@@ -94,7 +94,9 @@
     "https://www.interfax.ru/world/1091583",
     "https://www.interfax.ru/russia/1091637",
     "https://www.interfax.ru/business/1091642",
-    "https://www.interfax.ru/russia/1091755"
+    "https://www.interfax.ru/russia/1091755",
+    "https://www.interfax.ru/russia/1091760",
+    "https://habr.com/ru/articles/1039280/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039280#habracut"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -191,28 +193,12 @@
     "bdbffcb53d84d8cc5e3628c74a6a88e891831731",
     "ea8634e5d3719c9d1e5b8525da59b07cdde41570",
     "66edbe6a287e36885878075b222b57d04056401f",
-    "e9537dba9a332b92acd2fab188d92df32ab0ac4f"
+    "e9537dba9a332b92acd2fab188d92df32ab0ac4f",
+    "476913ad5290acd97aa510f58b13fff7c082b4b6",
+    "806638f2d991fbb6d607ea83c586e5db4da9ae88"
   ],
-  "last_run_sakhalin": "2026-05-26T11:11:20+11:00",
+  "last_run_sakhalin": "2026-05-26T11:22:01+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-19T20:30:43+11:00",
-      "source": "BBC World",
-      "category": "🌍 Мир о России",
-      "title": "Что действительно связывает Китай и Россию",
-      "url": "https://www.bbc.com/news/articles/c4g8kpkjkl0o?at_medium=RSS&at_campaign=rss",
-      "with_image": true,
-      "published_at": "2026-05-18T23:06:55+00:00"
-    },
-    {
-      "time_sakhalin": "2026-05-19T20:50:42+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 Россия",
-      "title": "Аварийно севший в лесу в Якутии Ан-2 сгорел",
-      "url": "https://www.interfax.ru/russia/1090387",
-      "with_image": true,
-      "published_at": "2026-05-19T09:41:00+00:00"
-    },
     {
       "time_sakhalin": "2026-05-19T20:51:05+11:00",
       "source": "Interfax",
@@ -1992,6 +1978,262 @@
       "audit_issues": [],
       "audited_at": "2026-05-25T22:52:09+00:00",
       "audited_at_sakhalin": "2026-05-26T09:52:09+11:00"
+    },
+    {
+      "time_sakhalin": "2026-05-26T11:21:24+11:00",
+      "source": "Interfax",
+      "category": "🧭 Геополитика",
+      "title": "Землетрясение магнитудой 5,1 произошло у берегов Камчатки",
+      "body": [
+        "Сейсмологи зарегистрировали землетрясение магнитудой 5,1 в Тихом океане у юго-восточного побережья Камчатки, сообщает Камчатский филиал Единой геофизической службы РАН на своем сайте.",
+        "Землетрясение произошло во вторник в 11:31 по местному времени (02:31 по Москве)."
+      ],
+      "caption": "🧭 Геополитика\n\n<b>Землетрясение магнитудой 5,1 произошло у берегов Камчатки</b>\n\nСейсмологи зарегистрировали землетрясение магнитудой 5,1 в Тихом океане у юго-восточного побережья Камчатки, сообщает Камчатский филиал Единой геофизической службы РАН на своем сайте.\n\nЗемлетрясение произошло во вторник в 11:31 по местному времени (02:31 по Москве).\n\nГЕОПОЛИТИКА · <a href=\"https://www.interfax.ru/russia/1091760\">Interfax</a>",
+      "caption_plain": "🧭 Геополитика\n\n Землетрясение магнитудой 5,1 произошло у берегов Камчатки \n\nСейсмологи зарегистрировали землетрясение магнитудой 5,1 в Тихом океане у юго-восточного побережья Камчатки, сообщает Камчатский филиал Единой геофизической службы РАН на своем сайте.\n\nЗемлетрясение произошло во вторник в 11:31 по местному времени (02:31 по Москве).\n\nГЕОПОЛИТИКА ·  Interfax ",
+      "url": "https://www.interfax.ru/russia/1091760",
+      "published_at": "2026-05-26T00:05:00+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_generated",
+      "image_url": null,
+      "image_fingerprint": "b2275be508dec4bc42ace092badd4062f68cbd28",
+      "image_pipeline": {
+        "strategy": "generated",
+        "reason": "generated semantic image accepted",
+        "selected": {
+          "url": null,
+          "source": "generated",
+          "width": 1200,
+          "height": 675,
+          "mime_type": "image/jpeg",
+          "query_used": "generated:diplomacy:Землетрясение магнитудой 5,1 произошло у берегов Камчатки",
+          "relevance_score": 1.03,
+          "image_kind": "generated",
+          "filename": "thematic.jpg",
+          "reason": "local semantic generation; topic=diplomacy; hits=['diplomacy']; entity_hits=[]; bad_hits=[]"
+        },
+        "attempts": [
+          {
+            "stage": "external_search",
+            "query": "government meeting flags",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Lawrence_Wong_Singapore_Prime_Minister_meets_United_Kingdom_Prime_Minister_Keir_Starmer_at_the_Commonwealth_Heads_of_Government_Meeting_%28CHOGM%29_in_Apia%2C_Samoa_on_26_October_2024.jpg",
+            "ok": false,
+            "reason": "low relevance: 0.70; topic=diplomacy; hits=['flags', 'meeting', 'government', 'minister']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "government meeting flags",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Secretary_Kerry_Sits_Along_an_Array_of_Flags_Between_Meetings_as_he_Attends_a_NATO_Ministerial_Meeting_in_Brussels_%2831483306745%29.jpg",
+            "ok": false,
+            "reason": "low relevance: 0.70; topic=diplomacy; hits=['flags', 'meeting', 'government', 'minister']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "government meeting flags",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Vladimir_Putin_chaired_a_meeting_of_the_Presidium_of_the_Government_of_the_Russian_Federation_%282009-12-30%29_2.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "government meeting flags",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Volodymyr_Zelensky_during_a_Joint_Meeting_of_Congress_with_flag_of_the_United_States.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "international diplomacy meeting",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/A_history_of_diplomacy_in_the_international_development_of_Europe_%28IA_cu31924088045657%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "international diplomacy meeting",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/A_history_of_diplomacy_in_the_international_development_of_Europe_%28IA_cu31924088046341%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "international diplomacy meeting",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Diplomacy_and_the_Study_of_International_Relations_%281919%29.djvu",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "international diplomacy meeting",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Diplomacy_and_the_study_of_international_relations_%28IA_diplomacystudyof00heatiala%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "international diplomacy meeting",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/26/UCDM_Malaysia_2025_-_Pre-Event_Meeting_%282%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "international diplomacy meeting",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/UCDM_Malaysia_2025_-_Pre-Event_Meeting_%283%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "international diplomacy meeting",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Ukraine%27s_Cultural_Diplomacy_Month._Highlighting_Ukrainian_culture_through_Wikipedia%2C_CEEM_2025.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "generated",
+            "ok": true,
+            "reason": "accepted: 1200x675; score=1.03; topic=diplomacy; hits=['diplomacy']; entity_hits=[]; bad_hits=[]"
+          }
+        ]
+      },
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 122,
+      "score": 1000,
+      "stream_priority": 1000,
+      "rewrite_mode": "generic",
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-26T00:22:01+00:00",
+      "audited_at_sakhalin": "2026-05-26T11:22:01+11:00"
+    },
+    {
+      "time_sakhalin": "2026-05-26T11:21:49+11:00",
+      "source": "Habr",
+      "category": "🧭 Геополитика",
+      "title": "MemForge2: загрузочная флешка, которая за минуту говорит — какую планку памяти менять",
+      "body": [
+        "Сегодня собирал HP EliteDesk 8300, четыре планки DDR3 по 2 ГБ.",
+        "Стандартный сценарий: сейчас полчаса вытаскивать планки по одной, перезагружаться, выяснять..."
+      ],
+      "caption": "🧭 Геополитика\n\n<b>MemForge2: загрузочная флешка, которая за минуту говорит — какую планку памяти менять</b>\n\nСегодня собирал HP EliteDesk 8300, четыре планки DDR3 по 2 ГБ.\n\nСтандартный сценарий: сейчас полчаса вытаскивать планки по одной, перезагружаться, выяснять...\n\nГЕОПОЛИТИКА · <a href=\"https://habr.com/ru/articles/1039280/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039280#habracut\">Habr</a>",
+      "caption_plain": "🧭 Геополитика\n\n MemForge2: загрузочная флешка, которая за минуту говорит — какую планку памяти менять \n\nСегодня собирал HP EliteDesk 8300, четыре планки DDR3 по 2 ГБ.\n\nСтандартный сценарий: сейчас полчаса вытаскивать планки по одной, перезагружаться, выяснять...\n\nГЕОПОЛИТИКА ·  Habr ",
+      "url": "https://habr.com/ru/articles/1039280/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039280#habracut",
+      "published_at": "2026-05-25T17:48:35+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_generated",
+      "image_url": null,
+      "image_fingerprint": "ed77c059d346f7558d6d0da35b66c48611e10209",
+      "image_pipeline": {
+        "strategy": "generated",
+        "reason": "generated semantic image accepted",
+        "selected": {
+          "url": null,
+          "source": "generated",
+          "width": 1200,
+          "height": 675,
+          "mime_type": "image/jpeg",
+          "query_used": "generated:it:MemForge2: загрузочная флешка, которая за минуту говорит — какую планку памяти менять",
+          "relevance_score": 0.9,
+          "image_kind": "generated",
+          "filename": "thematic.jpg",
+          "reason": "local semantic generation; topic=it; hits=[]; entity_hits=[]; bad_hits=[]"
+        },
+        "attempts": [
+          {
+            "stage": "external_search",
+            "query": "computer chip technology",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/ML34003P.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "computer chip technology",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/NXP_PCF8577C_LCD_driver_with_I%C2%B2C_%28Colour_Corrected%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "computer chip technology",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/SN7493N.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "computer chip technology",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Silicon_chip_from_a_computer_laser_mouse_under_a_microscope_50%D1%85.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "server room network",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Data_Center_2_%28UNC%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "server room network",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Data_Center_3_%28UNC%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "server room network",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Network_cables_in_server_room.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "server room network",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Server_Room_-_DPLA_-_0a62d5947facc70bd04e6d169556a60c.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "server room network",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Server_Room_-_DPLA_-_98c158d56428076ae66e79c88648d48e.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "server room network",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Server_Room_-_DPLA_-_bcc07e65dc17d8acad1f6f5f1ae9e4a8.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "server room network",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Server_Room_-_DPLA_-_c8677f0d285b30976d93489799641dc7.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "generated",
+            "ok": true,
+            "reason": "accepted: 1200x675; score=0.90; topic=it; hits=[]; entity_hits=[]; bad_hits=[]"
+          }
+        ]
+      },
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 123,
+      "score": 730,
+      "stream_priority": 650,
+      "rewrite_mode": "generic",
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-26T00:22:01+00:00",
+      "audited_at_sakhalin": "2026-05-26T11:22:01+11:00"
     }
   ],
   "last_cycle_report": {
@@ -2124,7 +2366,9 @@
     "73e407a2936702a669b79c7a1a778635ccbb32f0",
     "a80f206bd2b14615b20b01f791a187296670c5a1",
     "d4b0455697dfd8f1972bed8e5da12db944cb5029",
-    "bbf69f1c8e170f99d06114b0bb8421e43dd0988d"
+    "bbf69f1c8e170f99d06114b0bb8421e43dd0988d",
+    "b2275be508dec4bc42ace092badd4062f68cbd28",
+    "ed77c059d346f7558d6d0da35b66c48611e10209"
   ],
   "recent_generated_prompts": [
     "generated:security:Трамп призвал ряд исламских стран присоединиться к Соглашениям Авраама",
@@ -2138,17 +2382,46 @@
     "generated:diplomacy_middle_east:CBS сообщил об ограниченном доступе верховного лидера Ирана к внешнему миру",
     "generated:diplomacy:Новый замминистра обороны РФ Виталий Шулика будет руководить аппаратом Минобороны",
     "generated:diplomacy_middle_east:Глава ЦБ Греции не исключил осторожного ужесточения политики ЕЦБ",
-    "generated:diplomacy:Псковский аэропорт временно закрыт"
+    "generated:diplomacy:Псковский аэропорт временно закрыт",
+    "generated:diplomacy:Землетрясение магнитудой 5,1 произошло у берегов Камчатки",
+    "generated:it:MemForge2: загрузочная флешка, которая за минуту говорит — какую планку памяти менять"
   ],
   "last_post_publish_audit": {
     "version": 2,
-    "checked_at": "2026-05-26T00:11:02+00:00",
-    "checked_at_sakhalin": "2026-05-26T11:11:02+11:00",
-    "checked_count": 0,
+    "checked_at": "2026-05-26T00:22:01+00:00",
+    "checked_at_sakhalin": "2026-05-26T11:22:01+11:00",
+    "checked_count": 2,
     "failed_count": 0,
     "audit_chat_configured": false,
     "delete_bad_posts": false,
     "deleted": [],
-    "items": []
+    "items": [
+      {
+        "telegram_message_id": 122,
+        "title": "Землетрясение магнитудой 5,1 произошло у берегов Камчатки",
+        "category": "🧭 Геополитика",
+        "time_sakhalin": "2026-05-26T11:21:24+11:00",
+        "image_mode": "pipeline_generated",
+        "image_url": null,
+        "url": "https://www.interfax.ru/russia/1091760",
+        "status": "pass",
+        "severity": "ok",
+        "issues": [],
+        "content_preview": "🧭 Геополитика Землетрясение магнитудой 5,1 произошло у берегов Камчатки Сейсмологи зарегистрировали землетрясение магнитудой 5,1 в Тихом океане у юго-восточного побережья Камчатки, сообщает Камчатский филиал Единой геофизической службы РАН на своем сайте. Землетрясение произошло во вторник в 11:31 по местному времени (02:31 по Москве). ГЕОПОЛИТИКА · Interfax"
+      },
+      {
+        "telegram_message_id": 123,
+        "title": "MemForge2: загрузочная флешка, которая за минуту говорит — какую планку памяти менять",
+        "category": "🧭 Геополитика",
+        "time_sakhalin": "2026-05-26T11:21:49+11:00",
+        "image_mode": "pipeline_generated",
+        "image_url": null,
+        "url": "https://habr.com/ru/articles/1039280/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039280#habracut",
+        "status": "pass",
+        "severity": "ok",
+        "issues": [],
+        "content_preview": "🧭 Геополитика MemForge2: загрузочная флешка, которая за минуту говорит — какую планку памяти менять Сегодня собирал HP EliteDesk 8300, четыре планки DDR3 по 2 ГБ. Стандартный сценарий: сейчас полчаса вытаскивать планки по одной, перезагружаться, выяснять... ГЕОПОЛИТИКА · Habr"
+      }
+    ]
   }
 }
