@@ -1,6 +1,5 @@
 # Editorial scope guard for SkySakhNews.
-# Blocks formally valid but channel-irrelevant foreign macro/commentary items.
-# Example blocked class: Greece/ECB monetary-policy commentary with no direct Russia/Sakhalin impact.
+# Blocks formally valid but channel-irrelevant items before publication.
 
 import json
 import re
@@ -39,6 +38,23 @@ HIGH_IMPACT_FOREIGN_TERMS = [
     "соглашение", "трамп", "иран", "израил", "сша", "китай", "нато", "оон",
 ]
 
+HABR_LOW_VALUE_TERMS = [
+    "habr", "хабр", "memforge", "загрузочная флешка", "флешка", "планка памяти", "планки памяти",
+    "ddr", "elitedesk", "сегодня собирал", "стандартный сценарий", "полчаса", "прошивка", "утилита",
+    "самодельн", "личный опыт", "разбираемся", "гайд", "руководство", "как ", "инструкция",
+]
+
+HABR_MAJOR_TERMS = [
+    "уязвимость", "cve", "утечка данных", "кибератака", "rce", "0-day", "zero-day",
+    "openai", "google", "microsoft", "apple", "nvidia", "amd", "intel", "санкции",
+]
+
+QUAKE_TERMS = ["землетряс", "сейсм", "магнитуд", "камчатк", "курил", "цунами"]
+QUAKE_IMPACT_TERMS = [
+    "пострадал", "пострадали", "погиб", "погибли", "разрушен", "разрушены", "поврежден",
+    "повреждены", "цунами", "угроза цунами", "эвакуац", "афтершок", "магнитудой 6", "магнитудой 7", "магнитудой 8",
+]
+
 TARGET_CATEGORIES = {"🧭 Геополитика", "🇷🇺 РФ / экономика", "🌍 Мир о России"}
 
 
@@ -72,6 +88,16 @@ def title_blob(item: Dict) -> str:
     return norm(" ".join([str(item.get("title_ru") or ""), str(item.get("title_original") or "")]))
 
 
+def magnitude_value(text: str) -> float:
+    m = re.search(r"магнитуд[а-я\s]*([0-9]+(?:[,.][0-9]+)?)", norm(text))
+    if not m:
+        return 0.0
+    try:
+        return float(m.group(1).replace(",", "."))
+    except Exception:
+        return 0.0
+
+
 def is_foreign_macro_commentary(item: Dict) -> bool:
     text = text_blob(item)
     title = title_blob(item)
@@ -92,10 +118,31 @@ def is_low_value_foreign_geopolitics(item: Dict) -> bool:
     title = title_blob(item)
     if has_any(text, PROTECTED_RELEVANCE_TERMS):
         return False
-    # Do not block real large foreign events. Block small-country commentary without hard event.
     if has_any(title, LOW_VALUE_FOREIGN_COUNTRY_TERMS) and not has_any(text, HIGH_IMPACT_FOREIGN_TERMS):
         return True
     return False
+
+
+def is_low_value_habr_post(item: Dict) -> bool:
+    text = text_blob(item)
+    source = norm(item.get("source") or "")
+    if "habr" not in source and "habr" not in text and "хабр" not in text:
+        return False
+    if has_any(text, HABR_MAJOR_TERMS):
+        return False
+    return has_any(text, HABR_LOW_VALUE_TERMS)
+
+
+def is_minor_quake_without_impact(item: Dict) -> bool:
+    text = text_blob(item)
+    if not has_any(text, QUAKE_TERMS):
+        return False
+    if has_any(text, QUAKE_IMPACT_TERMS):
+        return False
+    mag = magnitude_value(text)
+    if mag and mag >= 6.0:
+        return False
+    return True
 
 
 def reject_reason(item: Dict) -> str | None:
@@ -103,6 +150,10 @@ def reject_reason(item: Dict) -> str | None:
         return "Scope guard: отклонено как нерелевантная иностранная макро/ЕЦБ-аналитика без прямого влияния на РФ/Сахалин или крупного события."
     if is_low_value_foreign_geopolitics(item):
         return "Scope guard: отклонено как низкоприоритетная зарубежная геополитика/политика вне целевых потоков канала."
+    if is_low_value_habr_post(item):
+        return "Scope guard: отклонено как низкоприоритетный Habr/туториал/железячная заметка, не новость канала."
+    if is_minor_quake_without_impact(item):
+        return "Scope guard: отклонено как слабое землетрясение без ущерба, пострадавших, угрозы цунами или магнитуды 6+."
     return None
 
 
@@ -130,19 +181,19 @@ def main() -> None:
         if reason:
             item["status"] = "rejected"
             item["reviewed_at"] = now_utc()
-            item["reviewed_by"] = "editorial-scope-guard-v1"
+            item["reviewed_by"] = "editorial-scope-guard-v2"
             item.setdefault("editor_notes", []).append(reason)
             rejected += 1
     queue["scope_guard"] = {
-        "version": 1,
+        "version": 2,
         "checked": checked,
         "rejected": rejected,
         "checked_at": now_utc(),
         "checked_at_sakhalin": now_sakh(),
-        "policy": "block foreign ECB/Greece macro commentary and low-value foreign-country geopolitics unless Russia/Sakhalin/direct high-impact event is present",
+        "policy": "block foreign ECB/Greece macro commentary, low-value Habr posts, minor quakes without impact, and weak foreign geopolitics",
     }
     save_queue(queue)
-    print(f"editorial-scope-guard-v1: checked={checked}, rejected={rejected}")
+    print(f"editorial-scope-guard-v2: checked={checked}, rejected={rejected}")
 
 
 if __name__ == "__main__":
