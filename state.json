@@ -1995,14 +1995,14 @@
     }
   ],
   "last_cycle_report": {
-    "reported_at": "2026-05-25T22:55:30+00:00",
-    "reported_at_sakhalin": "2026-05-26T09:55:30+11:00",
-    "queue_updated_at": "2026-05-25T22:52:29+00:00",
-    "queue_updated_at_sakhalin": "2026-05-26T09:52:29+11:00",
-    "total_queue_items": 130,
+    "reported_at": "2026-05-26T00:11:15+00:00",
+    "reported_at_sakhalin": "2026-05-26T11:11:15+11:00",
+    "queue_updated_at": "2026-05-26T00:11:02+00:00",
+    "queue_updated_at_sakhalin": "2026-05-26T11:11:02+11:00",
+    "total_queue_items": 140,
     "status_counts": {
-      "hold": 4,
-      "rejected": 82,
+      "hold": 5,
+      "rejected": 91,
       "published": 44,
       "pending": 0,
       "approved": 0,
@@ -2010,7 +2010,7 @@
       "unknown": 0
     },
     "hold_by_category": {
-      "🌐 Мировые IT": 2,
+      "🌐 Мировые IT": 3,
       "🎮 Игры / индустрия": 1,
       "🇷🇺 РФ / законы и политика": 1
     },
@@ -2036,40 +2036,29 @@
         "🌐 Мировые IT": 650,
         "🎮 Игры / индустрия": 600
       },
-      "reviewed_pending": 18,
+      "reviewed_pending": 10,
       "approved": 2,
       "approve_limit": 2,
       "min_auto_score": 650,
       "openrouter_enabled": false,
-      "reviewed_at": "2026-05-25T22:51:27+00:00",
-      "reviewed_at_sakhalin": "2026-05-26T09:51:27+11:00"
+      "reviewed_at": "2026-05-26T00:11:01+00:00",
+      "reviewed_at_sakhalin": "2026-05-26T11:11:01+11:00"
     },
     "priority_guard": {
       "changed": 0,
-      "checked_at": "2026-05-25T22:51:27+00:00",
-      "checked_at_sakhalin": "2026-05-26T09:51:27+11:00"
+      "checked_at": "2026-05-26T00:11:01+00:00",
+      "checked_at_sakhalin": "2026-05-26T11:11:01+11:00"
     },
     "final_guard": {
       "version": 2,
-      "changed": 0,
+      "changed": 2,
       "polished": 0,
-      "checked_at": "2026-05-25T22:52:28+00:00",
-      "checked_at_sakhalin": "2026-05-26T09:52:28+11:00"
+      "checked_at": "2026-05-26T00:11:01+00:00",
+      "checked_at_sakhalin": "2026-05-26T11:11:01+11:00"
     },
-    "recent_published_20m_count": 1,
-    "recent_published_20m": [
-      {
-        "time_sakhalin": "2026-05-26T09:51:56+11:00",
-        "source": "Interfax",
-        "category": "🌍 Мир о России",
-        "title": "Псковский аэропорт временно закрыт",
-        "with_image": true,
-        "image_mode": "pipeline_generated",
-        "publish_method": "sendPhoto/safe/pipeline_generated",
-        "telegram_message_id": 120
-      }
-    ],
-    "decision": "published"
+    "recent_published_20m_count": 0,
+    "recent_published_20m": [],
+    "decision": "no_approved_to_publish"
   },
   "recent_image_urls": [
     "https://www.interfax.ru/aspimg/1091101.jpg",
