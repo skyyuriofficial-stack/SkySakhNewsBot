@@ -13,6 +13,8 @@ from image_pipeline import (
     external_thematic_search,
     generated_candidate,
 )
+from image_pipeline import ImageCandidate
+from news_photo_resolver import source_photo
 
 
 def log(message: str) -> None:
@@ -162,12 +164,34 @@ def resolve_without_source(article: dict, state: dict):
     return ImageDecision(None, "none", "source text-card rejected; no valid replacement image found", attempts)
 
 
+def source_photo_decision(article: dict, state: dict):
+    resolved, meta = source_photo(article, state, logger=log)
+    if not resolved:
+        return None
+    data, mime, filename = resolved
+    cand = ImageCandidate(
+        url=meta.get("url"),
+        source="source_photo",
+        data=data,
+        filename=filename,
+        image_kind="photo",
+        mime_type=mime,
+        relevance_score=0.86,
+        reason="real source photo accepted before semantic fallback",
+    )
+    return ImageDecision(cand, "source_photo", "real source photo accepted", meta.get("attempts", []))
+
+
 def resolve_image_file(draft: dict, state: dict):
     if draft.get("image_decision") == "drop":
         return None, None
 
     article = article_for_image(draft)
-    decision = resolve_article_image(article, state, logger=log)
+
+    # First: real article/source photo. This fixes overuse of generated abstract cards.
+    decision = source_photo_decision(article, state)
+    if not decision:
+        decision = resolve_article_image(article, state, logger=log)
 
     if decision.selected and is_forbidden_source_text_card(article, decision.selected):
         log("image source rejected as text/title card: " + str(decision.selected.url)[:160])
