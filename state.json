@@ -105,7 +105,9 @@
     "https://www.interfax.ru/russia/1091797",
     "https://www.interfax.ru/russia/1091789",
     "https://www.interfax.ru/russia/1091790",
-    "https://www.interfax.ru/russia/1092013"
+    "https://www.interfax.ru/russia/1092013",
+    "https://www.interfax.ru/russia/1092029",
+    "https://www.interfax.ru/russia/1092027"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -213,32 +215,12 @@
     "d1bf67914b43657aa6c4f06a0d7318f2786d70a7",
     "f7f6558d61f6965ea556afd53b536d469608968f",
     "2aeb0edc371d039926b01604df6abbaf4d38a0c7",
-    "1aafcf3b290124b28452859d26292208c9566be4"
+    "1aafcf3b290124b28452859d26292208c9566be4",
+    "d85f10a261edb021e9057be00a40cf61ca5e9e25",
+    "89ea7fffdd5b8b6a8e7ebccd4af7abf33880a78a"
   ],
-  "last_run_sakhalin": "2026-05-27T09:00:02+11:00",
+  "last_run_sakhalin": "2026-05-27T11:12:44+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-20T10:21:35+11:00",
-      "source": "Guardian World",
-      "category": "🌍 Мир о России",
-      "title": "Путин прибыл в Пекин для 25‑го визита в Китай",
-      "url": "https://www.theguardian.com/world/2026/may/18/xi-jinping-vladimir-putin-china-russia-four-days-after-donald-trump-us-visit",
-      "published_at": "2026-05-18T14:10:44+00:00",
-      "with_image": false,
-      "publish_method": "sendMessage/no-preview-no-bad-card",
-      "score": 180
-    },
-    {
-      "time_sakhalin": "2026-05-20T10:22:11+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "title": "ПВО под Невинномысском сбили вражеские беспилотники, нацеленные на промзону",
-      "url": "https://www.interfax.ru/russia/1090529",
-      "published_at": "2026-05-19T22:52:00+00:00",
-      "with_image": false,
-      "publish_method": "sendMessage/no-preview-no-bad-card",
-      "score": 145
-    },
     {
       "time_sakhalin": "2026-05-20T11:07:05+11:00",
       "source": "Guardian World",
@@ -3294,6 +3276,264 @@
       "audit_issues": [],
       "audited_at": "2026-05-26T21:50:53+00:00",
       "audited_at_sakhalin": "2026-05-27T08:50:53+11:00"
+    },
+    {
+      "time_sakhalin": "2026-05-27T11:12:05+11:00",
+      "source": "Interfax",
+      "category": "🧭 Геополитика",
+      "title": "Число БПЛА, сбитых над Севастополем, достигло 14",
+      "body": [
+        "Еще семь беспилотников сбиты над Севастополем, сообщил губернатор города Михаил Развожаев.",
+        "\"Уже сбито 14 БПЛА\", - написал он в своем канале в мессенджере Max."
+      ],
+      "caption": "🧭 Геополитика\n\n<b>Число БПЛА, сбитых над Севастополем, достигло 14</b>\n\nЕще семь беспилотников сбиты над Севастополем, сообщил губернатор города Михаил Развожаев.\n\n\"Уже сбито 14 БПЛА\", - написал он в своем канале в мессенджере Max.\n\nГЕОПОЛИТИКА · <a href=\"https://www.interfax.ru/russia/1092029\">Interfax</a>",
+      "caption_plain": "🧭 Геополитика\n\n Число БПЛА, сбитых над Севастополем, достигло 14 \n\nЕще семь беспилотников сбиты над Севастополем, сообщил губернатор города Михаил Развожаев.\n\n\"Уже сбито 14 БПЛА\", - написал он в своем канале в мессенджере Max.\n\nГЕОПОЛИТИКА ·  Interfax ",
+      "url": "https://www.interfax.ru/russia/1092029",
+      "published_at": "2026-05-26T22:03:00+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_generated",
+      "image_url": null,
+      "image_fingerprint": "bea8611c867d6d12bf9ec3f6c0d7df8478b62417",
+      "image_pipeline": {
+        "strategy": "generated",
+        "reason": "generated semantic image accepted",
+        "selected": {
+          "url": null,
+          "source": "generated",
+          "width": 1200,
+          "height": 675,
+          "mime_type": "image/jpeg",
+          "query_used": "generated:security:Число БПЛА, сбитых над Севастополем, достигло 14",
+          "relevance_score": 1.1600000000000001,
+          "image_kind": "generated",
+          "filename": "thematic.jpg",
+          "reason": "local semantic generation; topic=security; hits=['security', 'бпла']; entity_hits=[]; bad_hits=[]"
+        },
+        "attempts": [
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Emergency_response_drone_team_discusses_flight_path_%287136594%29.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Emergency_response_team_member_checks_drone_before_deploying_%287136593%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Emergency_response_teams_gather_to_watch_drone_footage_%287136602%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "drone emergency response",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Eyes_in_the_sky-_A_look_at_drones_for_emergency_response_in_Vanuatu.webm",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/2022-MILITARY-AND-SECURITY-DEVELOPMENTS-INVOLVING-THE-PEOPLES-REPUBLIC-OF-CHINA.PDF",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Australian_and_U.S._Military_Police_Radar_Speed_Detection_Training_%28Image_3_of_8%29.webp",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Australian_and_U.S._Military_Police_Radar_Speed_Detection_Training_%28Image_6_of_8%29.webp",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Australian_and_U_S_Military_Police_Radar_Speed_Detection_Training_%289191328%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Australian_and_U_S_Military_Police_Radar_Speed_Detection_Training_%289191330%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Australian_and_U_S_Military_Police_Radar_Speed_Detection_Training_%289191365%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "military security radar",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Radar_gun.jpg",
+            "ok": false,
+            "reason": "recent image URL duplicate"
+          },
+          {
+            "stage": "generated",
+            "ok": true,
+            "reason": "accepted: 1200x675; score=1.16; topic=security; hits=['security', 'бпла']; entity_hits=[]; bad_hits=[]"
+          }
+        ]
+      },
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 137,
+      "score": 900,
+      "stream_priority": 820,
+      "rewrite_mode": "local",
+      "audit_status": "fail",
+      "audit_severity": "critical",
+      "audit_issues": [
+        "weak_bpla_without_impact"
+      ],
+      "audited_at": "2026-05-27T00:12:44+00:00",
+      "audited_at_sakhalin": "2026-05-27T11:12:44+11:00"
+    },
+    {
+      "time_sakhalin": "2026-05-27T11:12:32+11:00",
+      "source": "Interfax",
+      "category": "🧭 Геополитика",
+      "title": "Доходы российских ИТ-компаний в 2025 году выросли на 14%",
+      "body": [
+        "Выручка российских ИТ-компаний по итогам 2025 года составила 13,97 трлн рублей, увеличившись на 14% по сравнению с предыдущим годом, сообщили журналистам в аппарате вице-премьера РФ Дмитрия Григоренко, курирующего ИТ-отрасль.",
+        "Совокупная прибыль ИТ-компаний в прошедшем году выросла на 21% и достигла 1,676 трлн рублей."
+      ],
+      "caption": "🧭 Геополитика\n\n<b>Доходы российских ИТ-компаний в 2025 году выросли на 14%</b>\n\nВыручка российских ИТ-компаний по итогам 2025 года составила 13,97 трлн рублей, увеличившись на 14% по сравнению с предыдущим годом, сообщили журналистам в аппарате вице-премьера РФ Дмитрия Григоренко, курирующего ИТ-отрасль.\n\nСовокупная прибыль ИТ-компаний в прошедшем году выросла на 21% и достигла 1,676 трлн рублей.\n\nГЕОПОЛИТИКА · <a href=\"https://www.interfax.ru/russia/1092027\">Interfax</a>",
+      "caption_plain": "🧭 Геополитика\n\n Доходы российских ИТ-компаний в 2025 году выросли на 14% \n\nВыручка российских ИТ-компаний по итогам 2025 года составила 13,97 трлн рублей, увеличившись на 14% по сравнению с предыдущим годом, сообщили журналистам в аппарате вице-премьера РФ Дмитрия Григоренко, курирующего ИТ-отрасль.\n\nСовокупная прибыль ИТ-компаний в прошедшем году выросла на 21% и достигла 1,676 трлн рублей.\n\nГЕОПОЛИТИКА ·  Interfax ",
+      "url": "https://www.interfax.ru/russia/1092027",
+      "published_at": "2026-05-26T21:56:00+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_generated",
+      "image_url": null,
+      "image_fingerprint": "d9ac31867f7d4f3962da0637ce7b83c3a3a667e0",
+      "image_pipeline": {
+        "strategy": "generated",
+        "reason": "generated semantic image accepted",
+        "selected": {
+          "url": null,
+          "source": "generated",
+          "width": 1200,
+          "height": 675,
+          "mime_type": "image/jpeg",
+          "query_used": "generated:diplomacy:Доходы российских ИТ-компаний в 2025 году выросли на 14%",
+          "relevance_score": 1.03,
+          "image_kind": "generated",
+          "filename": "thematic.jpg",
+          "reason": "local semantic generation; topic=diplomacy; hits=['diplomacy']; entity_hits=[]; bad_hits=[]"
+        },
+        "attempts": [
+          {
+            "stage": "external_search",
+            "query": "government meeting flags",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Lawrence_Wong_Singapore_Prime_Minister_meets_United_Kingdom_Prime_Minister_Keir_Starmer_at_the_Commonwealth_Heads_of_Government_Meeting_%28CHOGM%29_in_Apia%2C_Samoa_on_26_October_2024.jpg",
+            "ok": false,
+            "reason": "low relevance: 0.70; topic=diplomacy; hits=['flags', 'meeting', 'government', 'minister']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "government meeting flags",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Secretary_Kerry_Sits_Along_an_Array_of_Flags_Between_Meetings_as_he_Attends_a_NATO_Ministerial_Meeting_in_Brussels_%2831483306745%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "government meeting flags",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Vladimir_Putin_chaired_a_meeting_of_the_Presidium_of_the_Government_of_the_Russian_Federation_%282009-12-30%29_2.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "government meeting flags",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Volodymyr_Zelensky_during_a_Joint_Meeting_of_Congress_with_flag_of_the_United_States.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "international diplomacy meeting",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/A_history_of_diplomacy_in_the_international_development_of_Europe_%28IA_cu31924088045657%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "international diplomacy meeting",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/A_history_of_diplomacy_in_the_international_development_of_Europe_%28IA_cu31924088046341%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "international diplomacy meeting",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Diplomacy_and_the_Study_of_International_Relations_%281919%29.djvu",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "international diplomacy meeting",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Diplomacy_and_the_study_of_international_relations_%28IA_diplomacystudyof00heatiala%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "international diplomacy meeting",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/26/UCDM_Malaysia_2025_-_Pre-Event_Meeting_%282%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "international diplomacy meeting",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/UCDM_Malaysia_2025_-_Pre-Event_Meeting_%283%29.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "international diplomacy meeting",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Ukraine%27s_Cultural_Diplomacy_Month._Highlighting_Ukrainian_culture_through_Wikipedia%2C_CEEM_2025.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "generated",
+            "ok": true,
+            "reason": "accepted: 1200x675; score=1.03; topic=diplomacy; hits=['diplomacy']; entity_hits=[]; bad_hits=[]"
+          }
+        ]
+      },
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 138,
+      "score": 900,
+      "stream_priority": 820,
+      "rewrite_mode": "local",
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-27T00:12:44+00:00",
+      "audited_at_sakhalin": "2026-05-27T11:12:44+11:00"
     }
   ],
   "last_cycle_report": {
@@ -3403,8 +3643,6 @@
     "https://upload.wikimedia.org/wikipedia/commons/9/90/Rear_view_of_Tiangong_Space_Station.jpg"
   ],
   "recent_image_fingerprints": [
-    "026c388070ea78026cd26d7bf3e7e45b3e053d99",
-    "61b9c4343efadbec9846525123a74690a210fb83",
     "3874ffbfd9deee273a789695bb1e4f432fc8fd94",
     "c4963b83f2e5036b598c55086f27034829362093",
     "2e28c1814756da785103e7e69d7d1110cb62803d",
@@ -3442,7 +3680,9 @@
     "92cd5a30448eb05386dc6bd1263b238e9c67a43e",
     "f7922665e7766faf18b09e36526926f30930960f",
     "23aeff0523833dd6c6dcd201eb218a898790f80b",
-    "f60ddc72f9749a64827517f077d3374835843389"
+    "f60ddc72f9749a64827517f077d3374835843389",
+    "bea8611c867d6d12bf9ec3f6c0d7df8478b62417",
+    "d9ac31867f7d4f3962da0637ce7b83c3a3a667e0"
   ],
   "recent_generated_prompts": [
     "generated:security:Трамп призвал ряд исламских стран присоединиться к Соглашениям Авраама",
@@ -3466,43 +3706,47 @@
     "generated:incident_fire:Один человек пострадал при пожаре на нефтебазе в Башкирии",
     "generated:security:ФСБ сообщила, что Киев пытался ввезти в РФ более 500 взрывных устройств",
     "generated:security:Глава ФСБ предупредил о росте террористической угрозы для СНГ из-за иранского конфликта",
-    "generated:security:Госдума внесла проект обращения к ООН по теракту в Старобельске"
+    "generated:security:Госдума внесла проект обращения к ООН по теракту в Старобельске",
+    "generated:security:Число БПЛА, сбитых над Севастополем, достигло 14",
+    "generated:diplomacy:Доходы российских ИТ-компаний в 2025 году выросли на 14%"
   ],
   "last_post_publish_audit": {
     "version": 2,
-    "checked_at": "2026-05-26T21:50:53+00:00",
-    "checked_at_sakhalin": "2026-05-27T08:50:53+11:00",
+    "checked_at": "2026-05-27T00:12:44+00:00",
+    "checked_at_sakhalin": "2026-05-27T11:12:44+11:00",
     "checked_count": 2,
-    "failed_count": 0,
+    "failed_count": 1,
     "audit_chat_configured": false,
     "delete_bad_posts": false,
     "deleted": [],
     "items": [
       {
-        "telegram_message_id": 135,
-        "title": "Глава ФСБ предупредил о росте террористической угрозы для СНГ из-за иранского конфликта",
+        "telegram_message_id": 137,
+        "title": "Число БПЛА, сбитых над Севастополем, достигло 14",
         "category": "🧭 Геополитика",
-        "time_sakhalin": "2026-05-26T18:11:25+11:00",
+        "time_sakhalin": "2026-05-27T11:12:05+11:00",
         "image_mode": "pipeline_generated",
         "image_url": null,
-        "url": "https://www.interfax.ru/russia/1091790",
-        "status": "pass",
-        "severity": "ok",
-        "issues": [],
-        "content_preview": "🧭 Геополитика Глава ФСБ предупредил о росте террористической угрозы для СНГ из-за иранского конфликта Директор ФСБ Александр Бортников заявил, что западные спецслужбы намерены использовать боевиков из Сирии, в том числе выходцев из СНГ, в боевых действиях против Ирана, что приведет к росту террористической угрозы для стран Содружества.\"Зачастую спровоцированные западным вмешательством кризисы выходят далеко за пределы границ конкретных государств. \"Зачастую спровоцированные западным вмешательством кризисы выходят далеко за пределы границ конкретных государств. ГЕОПОЛИТИКА · Interfax"
+        "url": "https://www.interfax.ru/russia/1092029",
+        "status": "fail",
+        "severity": "critical",
+        "issues": [
+          "weak_bpla_without_impact"
+        ],
+        "content_preview": "🧭 Геополитика Число БПЛА, сбитых над Севастополем, достигло 14 Еще семь беспилотников сбиты над Севастополем, сообщил губернатор города Михаил Развожаев. \"Уже сбито 14 БПЛА\", - написал он в своем канале в мессенджере Max. ГЕОПОЛИТИКА · Interfax"
       },
       {
-        "telegram_message_id": 136,
-        "title": "Госдума внесла проект обращения к ООН по теракту в Старобельске",
+        "telegram_message_id": 138,
+        "title": "Доходы российских ИТ-компаний в 2025 году выросли на 14%",
         "category": "🧭 Геополитика",
-        "time_sakhalin": "2026-05-27T08:50:41+11:00",
+        "time_sakhalin": "2026-05-27T11:12:32+11:00",
         "image_mode": "pipeline_generated",
         "image_url": null,
-        "url": "https://www.interfax.ru/russia/1092013",
+        "url": "https://www.interfax.ru/russia/1092027",
         "status": "pass",
         "severity": "ok",
         "issues": [],
-        "content_preview": "🧭 Геополитика Госдума внесла проект обращения к ООН по теракту в Старобельске Комитет Госдумы по международным делам внес на рассмотрение Государственной думы проект обращения к ООН, международным парламентским организациям и парламентам стран мира в связи с террористической атакой на педагогический колледж в городе Старобельске, сообщил председатель комитета Леонид Слуцкий. \"Комитет по международным делам подготовил и внес проект обращения к ООН и парламентам стран мира с призывом осудить атаку на педагогический колледж в Старобельске\" - сказал Слуцкий журналистам во вторник. ГЕОПОЛИТИКА · Interfax"
+        "content_preview": "🧭 Геополитика Доходы российских ИТ-компаний в 2025 году выросли на 14% Выручка российских ИТ-компаний по итогам 2025 года составила 13,97 трлн рублей, увеличившись на 14% по сравнению с предыдущим годом, сообщили журналистам в аппарате вице-премьера РФ Дмитрия Григоренко, курирующего ИТ-отрасль. Совокупная прибыль ИТ-компаний в прошедшем году выросла на 21% и достигла 1,676 трлн рублей. ГЕОПОЛИТИКА · Interfax"
       }
     ]
   }
