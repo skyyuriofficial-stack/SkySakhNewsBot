@@ -221,7 +221,7 @@
     "89ea7fffdd5b8b6a8e7ebccd4af7abf33880a78a",
     "11c6de71ab6db46e33ded9fc5ea78ccf2080999b"
   ],
-  "last_run_sakhalin": "2026-05-27T11:13:45+11:00",
+  "last_run_sakhalin": "2026-05-27T11:19:46+11:00",
   "last_posts": [
     {
       "time_sakhalin": "2026-05-20T11:10:41+11:00",
@@ -3646,7 +3646,13 @@
       "score": 819,
       "stream_priority": 780,
       "rewrite_mode": null,
-      "audit_status": "pending"
+      "audit_status": "fail",
+      "audit_severity": "critical",
+      "audit_issues": [
+        "image_conflicts_snow_rescue"
+      ],
+      "audited_at": "2026-05-27T00:19:46+00:00",
+      "audited_at_sakhalin": "2026-05-27T11:19:46+11:00"
     }
   ],
   "last_cycle_report": {
@@ -3838,41 +3844,28 @@
   ],
   "last_post_publish_audit": {
     "version": 2,
-    "checked_at": "2026-05-27T00:12:44+00:00",
-    "checked_at_sakhalin": "2026-05-27T11:12:44+11:00",
-    "checked_count": 2,
+    "checked_at": "2026-05-27T00:19:46+00:00",
+    "checked_at_sakhalin": "2026-05-27T11:19:46+11:00",
+    "checked_count": 1,
     "failed_count": 1,
     "audit_chat_configured": false,
     "delete_bad_posts": false,
     "deleted": [],
     "items": [
       {
-        "telegram_message_id": 137,
-        "title": "Число БПЛА, сбитых над Севастополем, достигло 14",
-        "category": "🧭 Геополитика",
-        "time_sakhalin": "2026-05-27T11:12:05+11:00",
+        "telegram_message_id": 139,
+        "title": "Три человека стали жертвами пожара в частном доме в Липецке",
+        "category": "🇷🇺 РФ / происшествия",
+        "time_sakhalin": "2026-05-27T11:13:33+11:00",
         "image_mode": "pipeline_generated",
         "image_url": null,
-        "url": "https://www.interfax.ru/russia/1092029",
+        "url": "https://www.interfax.ru/russia/1092030",
         "status": "fail",
         "severity": "critical",
         "issues": [
-          "weak_bpla_without_impact"
+          "image_conflicts_snow_rescue"
         ],
-        "content_preview": "🧭 Геополитика Число БПЛА, сбитых над Севастополем, достигло 14 Еще семь беспилотников сбиты над Севастополем, сообщил губернатор города Михаил Развожаев. \"Уже сбито 14 БПЛА\", - написал он в своем канале в мессенджере Max. ГЕОПОЛИТИКА · Interfax"
-      },
-      {
-        "telegram_message_id": 138,
-        "title": "Доходы российских ИТ-компаний в 2025 году выросли на 14%",
-        "category": "🧭 Геополитика",
-        "time_sakhalin": "2026-05-27T11:12:32+11:00",
-        "image_mode": "pipeline_generated",
-        "image_url": null,
-        "url": "https://www.interfax.ru/russia/1092027",
-        "status": "pass",
-        "severity": "ok",
-        "issues": [],
-        "content_preview": "🧭 Геополитика Доходы российских ИТ-компаний в 2025 году выросли на 14% Выручка российских ИТ-компаний по итогам 2025 года составила 13,97 трлн рублей, увеличившись на 14% по сравнению с предыдущим годом, сообщили журналистам в аппарате вице-премьера РФ Дмитрия Григоренко, курирующего ИТ-отрасль. Совокупная прибыль ИТ-компаний в прошедшем году выросла на 21% и достигла 1,676 трлн рублей. ГЕОПОЛИТИКА · Interfax"
+        "content_preview": "🇷🇺 РФ / происшествия Три человека стали жертвами пожара в частном доме в Липецке \"Спасатели извлекли из-под завалов тело третьего погибшего\", - говорится в сообщении ведомства. Обнаружены тела еще двух погибших, одним из которых был ребенок. РФ | ПРОИСШЕСТВИЯ · Interfax"
       }
     ]
   }
