@@ -20,7 +20,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Dict, Optional
 
-import news_bot_v14 as v14
+import news_bot_v15 as v14
 
 b = v14.b
 
@@ -358,19 +358,11 @@ def publish_approved() -> None:
 
     b.save_state(state)
     save_queue(queue)
-    b.log(f"Editorial queue: published={published}, stale_rejected={rejected_stale}")
-
-
-def print_queue_summary() -> None:
-    q = load_queue()
-    counts = {}
-    for item in q.get("items", []) or []:
-        counts[item.get("status", "unknown")] = counts.get(item.get("status", "unknown"), 0) + 1
-    b.log("Editorial queue summary: " + json.dumps(counts, ensure_ascii=False))
+    b.log(f"Editorial queue publish: published={published}, stale_rejected={rejected_stale}")
 
 
 def main() -> None:
-    mode = (sys.argv[1] if len(sys.argv) > 1 else os.getenv("EDITORIAL_MODE", "collect")).strip().lower()
+    mode = sys.argv[1] if len(sys.argv) > 1 else "collect"
     if mode == "collect":
         collect_to_queue()
     elif mode == "publish":
@@ -379,11 +371,9 @@ def main() -> None:
         q = load_queue()
         count = reject_stale(q)
         save_queue(q)
-        b.log(f"Stale pending rejected: {count}")
-    elif mode == "summary":
-        print_queue_summary()
+        b.log(f"Editorial queue: stale_rejected={count}")
     else:
-        raise SystemExit("Unknown editorial_queue mode: " + mode)
+        raise SystemExit(f"unknown mode: {mode}")
 
 
 if __name__ == "__main__":
