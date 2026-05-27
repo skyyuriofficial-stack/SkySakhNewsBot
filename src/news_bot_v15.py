@@ -1,6 +1,6 @@
-# v15: source mix overlay over v14.
+# v15: source policy overlay over v14.
 # Owner source policy:
-# - Interfax remains available, but must appear about 3x less often;
+# - Interfax is completely removed from active collection and publication candidates;
 # - Euronews Russian is added as a preferred external source for "Мир о России";
 # - ordering favours source diversity before the editorial queue.
 
@@ -19,18 +19,12 @@ EURONEWS_QUERY = (
     '(Россия OR российские OR Путин OR Москва OR Кремль OR Украина OR Киев OR санкции OR война OR НАТО OR ЕС OR дипломатия OR удары OR БПЛА OR экономика)'
 )
 
-HIGH_IMPACT_TERMS = [
-    "погиб", "погибли", "ранен", "ранены", "пострадал", "пострадали", "жертвы",
-    "удар", "обстрел", "атака", "пожар", "поврежден", "повреждены", "ущерб",
-    "санкц", "путин", "кремль", "россия", "сахалин", "нефть", "газ", "бпла",
-]
-
 PREFERRED_SOURCES = {
-    EURONEWS_NAME: 260,
-    "Reuters": 150,
-    "AP News": 130,
-    "BBC World": 120,
-    "Guardian World": 110,
+    EURONEWS_NAME: 320,
+    "Reuters": 170,
+    "AP News": 150,
+    "BBC World": 135,
+    "Guardian World": 125,
     "BBC Technology": 90,
     "Guardian Technology": 80,
     "The Verge": 80,
@@ -39,7 +33,6 @@ PREFERRED_SOURCES = {
 }
 
 SOURCE_PENALTY = {
-    "Interfax": -260,
     "Habr": -180,
     "GameSpot": -80,
     "IGN": -80,
@@ -47,14 +40,11 @@ SOURCE_PENALTY = {
     "Eurogamer": -80,
 }
 
+BLOCKED_SOURCES = {"Interfax"}
+
 
 def norm(value: str) -> str:
     return re.sub(r"\s+", " ", str(value or "").lower().replace("ё", "е")).strip()
-
-
-def has_any(text: str, terms) -> bool:
-    text = norm(text)
-    return any(norm(t) in text for t in terms)
 
 
 def canonical_source_name(value: str, url: str = "") -> str:
@@ -94,29 +84,18 @@ def canonical_source_name(value: str, url: str = "") -> str:
     return str(value or "Источник")
 
 
-def item_text(item: Dict) -> str:
-    return norm(" ".join([
-        str(item.get("source") or ""),
-        str(item.get("title") or item.get("title_ru") or item.get("title_original") or ""),
-        str(item.get("summary") or item.get("source_text") or ""),
-        str(item.get("url") or ""),
-        str(item.get("category_hint") or item.get("category") or ""),
-    ]))
+def is_blocked_source_name(name: str, url: str = "") -> bool:
+    return canonical_source_name(name, url) in BLOCKED_SOURCES
 
 
-def is_interfax_item(item: Dict) -> bool:
-    return canonical_source_name(item.get("source") or "", item.get("url") or "") == "Interfax"
-
-
-def is_euronews_item(item: Dict) -> bool:
-    return canonical_source_name(item.get("source") or "", item.get("url") or "") == EURONEWS_NAME
-
-
-def add_euronews_source() -> None:
-    sources = list(getattr(b, "SOURCES", []) or [])
+def remove_blocked_sources_and_add_euronews() -> None:
+    sources = []
+    for name, stype, rss in list(getattr(b, "SOURCES", []) or []):
+        if is_blocked_source_name(str(name), str(rss)):
+            continue
+        sources.append((name, stype, rss))
     exists = any(name == EURONEWS_NAME or "euronews" in str(rss).lower() for name, _stype, rss in sources)
     if not exists:
-        # Google News wrapper is more stable than a direct Euronews RSS endpoint and keeps Russian results.
         insert_at = 1 if sources else 0
         sources.insert(insert_at, (EURONEWS_NAME, "world", b.gnews(EURONEWS_QUERY, "ru", "RU")))
     b.SOURCES = sources
@@ -125,11 +104,11 @@ def add_euronews_source() -> None:
 def source_adjusted_score(item: Dict) -> int:
     src = canonical_source_name(item.get("source") or "", item.get("url") or "")
     base = int(item.get("score") or 0)
+    if src in BLOCKED_SOURCES:
+        return 0
     score = base + PREFERRED_SOURCES.get(src, 0) + SOURCE_PENALTY.get(src, 0)
-    if src == "Interfax" and has_any(item_text(item), HIGH_IMPACT_TERMS):
-        score += 90
     if src == EURONEWS_NAME and item.get("category_hint") == "🌍 Мир о России":
-        score += 120
+        score += 160
     return max(1, score)
 
 
@@ -146,8 +125,6 @@ def recent_source_counts() -> Dict[str, int]:
 
 
 def source_soft_cap(src: str) -> int:
-    if src == "Interfax":
-        return 1
     if src in {"Habr", "GameSpot", "IGN", "PC Gamer", "Eurogamer"}:
         return 1
     return 2
@@ -157,8 +134,10 @@ def select_order_v15(items: List[Dict]) -> List[Dict]:
     recent_counts = recent_source_counts()
     enriched: List[Dict] = []
     for raw in items:
+        src = canonical_source_name(raw.get("source") or "", raw.get("url") or "")
+        if src in BLOCKED_SOURCES:
+            continue
         item = dict(raw)
-        src = canonical_source_name(item.get("source") or "", item.get("url") or "")
         item["source"] = src
         item["score"] = source_adjusted_score(item)
         if recent_counts.get(src, 0) >= source_soft_cap(src):
@@ -174,24 +153,19 @@ def select_order_v15(items: List[Dict]) -> List[Dict]:
 
     ordered: List[Dict] = []
     used_sources = set()
-
-    # First pass: one candidate per source, strongest first.
     for item in enriched:
         src = canonical_source_name(item.get("source") or "", item.get("url") or "")
         if src in used_sources:
             continue
         ordered.append(item)
         used_sources.add(src)
-
-    # Second pass: fill remaining slots; Interfax already has lower score and recent penalty.
     for item in enriched:
         if item not in ordered:
             ordered.append(item)
-
     return ordered
 
 
-add_euronews_source()
+remove_blocked_sources_and_add_euronews()
 b.select_order = select_order_v15
 
 
