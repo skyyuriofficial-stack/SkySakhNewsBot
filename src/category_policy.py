@@ -40,7 +40,6 @@ GAME_WORDS = {
     "gta", "call of duty", "dota", "cs2", "game pass"
 }
 
-# Space/spaceflight goes to the broader tech stream until a separate science stream is introduced.
 SPACE_WORDS = {
     "космос", "космич", "космонав", "тайконавт", "астронавт", "орбит", "орбитальн",
     "корабль шэньчжоу", "шэньчжоу", "shenzhou", "тяньгун", "tiangong", "cmsa",
@@ -56,7 +55,8 @@ IT_WORDS = {
     "typescript", "react", "node.js", "nodejs", "database", "sql", "postgres", "mongodb",
     "api", "sdk", "cloud", "кибератака", "cyber", "cybersecurity", "security vulnerability",
     "cve", "уязвимость", "эксплойт", "веб-приложение", "gpu", "cpu", "server", "data center",
-    "semiconductor", "chip", "software", "firmware", "дата-центр", "сервер", "чип"
+    "semiconductor", "chip", "software", "firmware", "дата-центр", "сервер", "чип", "ит-компан",
+    "it-компан", "ит-отрасл", "it-отрасл", "цифров", "разработчик", "разработка по"
 }
 
 POLITICS_BLOCK_IT = {
@@ -84,23 +84,24 @@ WORLD_ABOUT_RUSSIA_WORDS = {
 }
 
 RU_WAR_WORDS = {
-    "дрон", "дроны", "бпла", "беспилотник", "атака", "обстрел", "ракет", "пво",
-    "минобороны", "военные", "удар", "всу", "фронт", "боеприпас", "войска", "ранен",
-    "ранения", "разрушения", "пожар после атаки", "с-400", "диверсия", "теракт", "заэс", "аэс"
+    "дрон", "дроны", "бпла", "беспилотник", "беспилотники", "атака", "атак", "обстрел", "ракет",
+    "пво", "минобороны", "военные", "удар", "всу", "фронт", "боеприпас", "войска", "ранен",
+    "ранения", "разрушения", "пожар после атаки", "с-400", "диверсия", "теракт", "заэс", "аэс",
+    "севастопол", "крым", "крымск", "развожаев", "черноморск", "черноморский флот"
 }
 
 RU_ECON_WORDS = {
     "экономика", "нефть", "газ", "спг", "банк", "кредит", "рубль", "экспорт", "импорт",
-    "поставки", "россельхозбанк", "финансирование", "доход", "инвестиции", "бюджет",
-    "налог", "производство", "промышленность", "зерно", "сельхоз", "ставка", "цб"
+    "поставки", "россельхозбанк", "финансирование", "доход", "доходы", "выручка", "прибыль",
+    "трлн", "млрд", "инвестиции", "бюджет", "налог", "производство", "промышленность",
+    "зерно", "сельхоз", "ставка", "цб", "компани", "отрасль", "ит-компан", "it-компан"
 }
 
 RU_INCIDENT_WORDS = {
     "дтп", "авария", "пожар", "столкновение", "взрыв", "пострадал", "пострадали",
     "погиб", "погибли", "происшествие", "чп", "убийство", "грабеж", "мошенники",
     "без воды", "без света", "водопровод", "мчс", "криминал",
-    "лавина", "сход лавины", "спасатели", "пропал", "пропали", "пропавшие",
-    "поисково-спасательные", "горы", "снег", "оползень", "наводнение", "паводок"
+    "лавина", "сход лавины", "поисково-спасательные", "горы", "снег", "оползень", "наводнение", "паводок"
 }
 
 RU_POLITICS_WORDS = {
@@ -125,6 +126,11 @@ RUSSIAN_AIRPORT_CONTEXT_WORDS = {
     "внуково", "пулково", "росавиац", "россии", "рф", "российск"
 }
 
+RUSSIAN_REGION_WAR_CONTEXT = {
+    "севастопол", "крым", "белгород", "брянск", "курск", "воронеж", "ростов", "тул", "саратов",
+    "самар", "калуг", "липецк", "орел", "орловск", "краснодар", "ставропол", "днр", "лнр"
+}
+
 
 def norm_text(*parts: str) -> str:
     text = " ".join(str(p or "") for p in parts if p is not None)
@@ -139,6 +145,9 @@ def count_hits(text: str, words) -> int:
 def is_it(text: str) -> bool:
     it_hits = count_hits(text, IT_WORDS)
     block_hits = count_hits(text, POLITICS_BLOCK_IT)
+    # Russian IT company financials are economy, not geopolitics and not generic world IT.
+    if count_hits(text, {"ит-компан", "it-компан", "ит-отрасл", "выручка", "прибыль", "доходы"}) >= 2:
+        return False
     if block_hits >= 1 and it_hits < 3:
         return False
     return it_hits >= 2
@@ -146,6 +155,17 @@ def is_it(text: str) -> bool:
 
 def is_russian_airport_story(text: str) -> bool:
     return count_hits(text, AIRPORT_WORDS) >= 1 and count_hits(text, AIRPORT_RESTRICTION_WORDS) >= 1 and count_hits(text, RUSSIAN_AIRPORT_CONTEXT_WORDS) >= 1
+
+
+def is_russian_war_security_story(text: str) -> bool:
+    if count_hits(text, {"бпла", "беспилотник", "беспилотники", "дрон", "дроны", "пво", "всу", "ракет", "обстрел", "атака"}) >= 1:
+        if count_hits(text, RUSSIAN_REGION_WAR_CONTEXT) >= 1 or "минобороны" in text or "россии" in text or "рф" in text:
+            return True
+    return count_hits(text, RU_WAR_WORDS) >= 2
+
+
+def is_russian_it_economy(text: str) -> bool:
+    return count_hits(text, {"ит-компан", "it-компан", "ит-отрасл", "выручка", "прибыль", "доходы", "трлн", "млрд"}) >= 2
 
 
 def resolve_final_category(current_category: str = "", title: str = "", summary: str = "", source_name: str = "", source_url: str = "") -> str:
@@ -157,22 +177,20 @@ def resolve_final_category(current_category: str = "", title: str = "", summary:
         return CATEGORY_GAMES
     if count_hits(text, SPACE_WORDS) >= 2:
         return CATEGORY_IT
-    # Russian airport disruptions are domestic operational/security items, never geopolitics.
     if is_russian_airport_story(text):
-        if count_hits(text, RU_WAR_WORDS) >= 1 or "бпла" in text or "беспилот" in text or "пво" in text:
+        if "бпла" in text or "беспилот" in text or "пво" in text:
             return CATEGORY_WAR
         return CATEGORY_INCIDENTS
-    # Geopolitics before war/IT: negotiations, Abraham accords, Iran/Israel/US must not become war/security.
-    if count_hits(text, GEO_WORDS) >= 2:
-        return CATEGORY_GEOPOLITICS
-    if is_it(text):
-        return CATEGORY_IT
-    if count_hits(text, RU_WAR_WORDS) >= 2:
+    if is_russian_war_security_story(text):
         return CATEGORY_WAR
+    if is_russian_it_economy(text) or count_hits(text, RU_ECON_WORDS) >= 2:
+        return CATEGORY_ECONOMY
     if count_hits(text, RU_INCIDENT_WORDS) >= 2:
         return CATEGORY_INCIDENTS
-    if count_hits(text, RU_ECON_WORDS) >= 2:
-        return CATEGORY_ECONOMY
+    if is_it(text):
+        return CATEGORY_IT
+    if count_hits(text, GEO_WORDS) >= 2:
+        return CATEGORY_GEOPOLITICS
     if count_hits(text, RU_POLITICS_WORDS) >= 2:
         return CATEGORY_POLITICS
     if count_hits(text, WORLD_ABOUT_RUSSIA_WORDS) >= 1:
