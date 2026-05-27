@@ -107,7 +107,8 @@
     "https://www.interfax.ru/russia/1091790",
     "https://www.interfax.ru/russia/1092013",
     "https://www.interfax.ru/russia/1092029",
-    "https://www.interfax.ru/russia/1092027"
+    "https://www.interfax.ru/russia/1092027",
+    "https://www.interfax.ru/russia/1092030"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -217,23 +218,11 @@
     "2aeb0edc371d039926b01604df6abbaf4d38a0c7",
     "1aafcf3b290124b28452859d26292208c9566be4",
     "d85f10a261edb021e9057be00a40cf61ca5e9e25",
-    "89ea7fffdd5b8b6a8e7ebccd4af7abf33880a78a"
+    "89ea7fffdd5b8b6a8e7ebccd4af7abf33880a78a",
+    "11c6de71ab6db46e33ded9fc5ea78ccf2080999b"
   ],
-  "last_run_sakhalin": "2026-05-27T11:12:44+11:00",
+  "last_run_sakhalin": "2026-05-27T11:13:45+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-20T11:07:05+11:00",
-      "source": "Guardian World",
-      "category": "🌍 Мир о России",
-      "title": "Европа боится нового китайского шока из-за роста зависимости от импорта",
-      "url": "https://www.theguardian.com/business/2026/may/19/china-shock-eu-european-union-industry-imports",
-      "published_at": "2026-05-19T06:00:02+00:00",
-      "with_image": false,
-      "image_mode": "none",
-      "image_url": null,
-      "publish_method": "sendMessage/no-preview/no-image",
-      "score": 206
-    },
     {
       "time_sakhalin": "2026-05-20T11:10:41+11:00",
       "source": "Interfax",
@@ -3534,6 +3523,130 @@
       "audit_issues": [],
       "audited_at": "2026-05-27T00:12:44+00:00",
       "audited_at_sakhalin": "2026-05-27T11:12:44+11:00"
+    },
+    {
+      "time_sakhalin": "2026-05-27T11:13:33+11:00",
+      "source": "Interfax",
+      "category": "🇷🇺 РФ / происшествия",
+      "title": "Три человека стали жертвами пожара в частном доме в Липецке",
+      "body": [
+        "\"Спасатели извлекли из-под завалов тело третьего погибшего\", - говорится в сообщении ведомства.",
+        "Обнаружены тела еще двух погибших, одним из которых был ребенок."
+      ],
+      "caption": "🇷🇺 РФ / происшествия\n\n<b>Три человека стали жертвами пожара в частном доме в Липецке</b>\n\n\"Спасатели извлекли из-под завалов тело третьего погибшего\", - говорится в сообщении ведомства.\n\nОбнаружены тела еще двух погибших, одним из которых был ребенок.\n\nРФ | ПРОИСШЕСТВИЯ · <a href=\"https://www.interfax.ru/russia/1092030\">Interfax</a>",
+      "caption_plain": "🇷🇺 РФ / происшествия\n\n Три человека стали жертвами пожара в частном доме в Липецке \n\n\"Спасатели извлекли из-под завалов тело третьего погибшего\", - говорится в сообщении ведомства.\n\nОбнаружены тела еще двух погибших, одним из которых был ребенок.\n\nРФ | ПРОИСШЕСТВИЯ ·  Interfax ",
+      "url": "https://www.interfax.ru/russia/1092030",
+      "published_at": "2026-05-26T22:50:00+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_generated",
+      "image_url": null,
+      "image_fingerprint": "2c5a09deda0b1cd340458ac3cbb7372f9a097fba",
+      "image_pipeline": {
+        "strategy": "generated",
+        "reason": "generated semantic image accepted",
+        "selected": {
+          "url": null,
+          "source": "generated",
+          "width": 1200,
+          "height": 675,
+          "mime_type": "image/jpeg",
+          "query_used": "generated:incident_avalanche:Три человека стали жертвами пожара в частном доме в Липецке",
+          "relevance_score": 1.1300000000000001,
+          "image_kind": "generated",
+          "filename": "thematic.jpg",
+          "reason": "local semantic generation; topic=incident_avalanche; hits=['avalanche']; entity_hits=[]; bad_hits=[]"
+        },
+        "attempts": [
+          {
+            "stage": "external_search",
+            "query": "mountain search rescue snow",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Royal_Air_Force_Search_and_Rescue_%28SAR%29_Sea_King_in_Snowdonia%2C_Wales_MOD_45152357.jpg",
+            "ok": false,
+            "reason": "low relevance: 0.73; topic=incident_avalanche; hits=['snow', 'mountain', 'mountains', 'rescue', 'search']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "mountain search rescue snow",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/SDRF_%28Uttarakhand%29_Course_on_Ski_and_Snow_Craft_based_Search_and_Rescue_by_Nanda_Devi_Institute_of_Adventure_Sports_%28NDI%29.jpg",
+            "ok": false,
+            "reason": "low relevance: 0.73; topic=incident_avalanche; hits=['snow', 'mountain', 'mountains', 'rescue', 'search']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "mountain search rescue snow",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/SDRF_Uttarakhand_search_%26_rescue_course_at_Auli%2C_Nanda_Devi_Institute_of_Adventure_Sports.jpg",
+            "ok": false,
+            "reason": "low relevance: 0.73; topic=incident_avalanche; hits=['snow', 'mountain', 'mountains', 'rescue', 'search']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "mountain search rescue snow",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Zepper-BK_117-C2-%28EC145%29-SchweizerischeRettungsflugwacht.jpg",
+            "ok": false,
+            "reason": "low relevance: 0.70; topic=incident_avalanche; hits=['snow', 'mountain', 'rescue', 'search']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "winter avalanche rescue operation",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Avalanche_notes_%28IA_CAT91947502011%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "winter avalanche rescue operation",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Cold_Weather_Training-_U_S_Marines_and_Norwegian_Armed_Forces_during_Exercise_Northern_Winter_%288287484%29.jpg",
+            "ok": false,
+            "reason": "low relevance: 0.70; topic=incident_avalanche; hits=['avalanche', 'rescue', 'search', 'winter']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "winter avalanche rescue operation",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Modern_avalanche_rescue_%28IA_CAT77689528%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "winter avalanche rescue operation",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Snow_and_avalanche_conditions_at_Mt._Baldy%2C_California_%28IA_CAT31387287%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "winter avalanche rescue operation",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/The_Antarctic_book_-_winter_quarters_1907-1909_%28IA_antarcticbookwin00jamerich%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "winter avalanche rescue operation",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/The_National_Avalanche_Center_%28IA_CAT10636441%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "winter avalanche rescue operation",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/The_snowy_torrents_-_avalanche_accidents_in_the_United_States_1910-1966_%28IA_CAT76673126%29.pdf",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "generated",
+            "ok": true,
+            "reason": "accepted: 1200x675; score=1.13; topic=incident_avalanche; hits=['avalanche']; entity_hits=[]; bad_hits=[]"
+          }
+        ]
+      },
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 139,
+      "score": 819,
+      "stream_priority": 780,
+      "rewrite_mode": null,
+      "audit_status": "pending"
     }
   ],
   "last_cycle_report": {
@@ -3655,7 +3768,6 @@
     "https://upload.wikimedia.org/wikipedia/commons/9/90/Rear_view_of_Tiangong_Space_Station.jpg"
   ],
   "recent_image_fingerprints": [
-    "3874ffbfd9deee273a789695bb1e4f432fc8fd94",
     "c4963b83f2e5036b598c55086f27034829362093",
     "2e28c1814756da785103e7e69d7d1110cb62803d",
     "0d931b1467de65c877f525af89c08f5c45dbaed1",
@@ -3694,7 +3806,8 @@
     "23aeff0523833dd6c6dcd201eb218a898790f80b",
     "f60ddc72f9749a64827517f077d3374835843389",
     "bea8611c867d6d12bf9ec3f6c0d7df8478b62417",
-    "d9ac31867f7d4f3962da0637ce7b83c3a3a667e0"
+    "d9ac31867f7d4f3962da0637ce7b83c3a3a667e0",
+    "2c5a09deda0b1cd340458ac3cbb7372f9a097fba"
   ],
   "recent_generated_prompts": [
     "generated:security:Трамп призвал ряд исламских стран присоединиться к Соглашениям Авраама",
@@ -3720,7 +3833,8 @@
     "generated:security:Глава ФСБ предупредил о росте террористической угрозы для СНГ из-за иранского конфликта",
     "generated:security:Госдума внесла проект обращения к ООН по теракту в Старобельске",
     "generated:security:Число БПЛА, сбитых над Севастополем, достигло 14",
-    "generated:diplomacy:Доходы российских ИТ-компаний в 2025 году выросли на 14%"
+    "generated:diplomacy:Доходы российских ИТ-компаний в 2025 году выросли на 14%",
+    "generated:incident_avalanche:Три человека стали жертвами пожара в частном доме в Липецке"
   ],
   "last_post_publish_audit": {
     "version": 2,
