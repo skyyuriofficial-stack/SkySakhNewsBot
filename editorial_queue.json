@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updated_at": "2026-05-27T04:15:51+00:00",
-  "updated_at_sakhalin": "2026-05-27T15:15:51+11:00",
-  "reviewed_at": "2026-05-27T04:15:14+00:00",
-  "reviewed_at_sakhalin": "2026-05-27T15:15:14+11:00",
+  "updated_at": "2026-05-27T05:42:27+00:00",
+  "updated_at_sakhalin": "2026-05-27T16:42:27+11:00",
+  "reviewed_at": "2026-05-27T05:42:26+00:00",
+  "reviewed_at_sakhalin": "2026-05-27T16:42:26+11:00",
   "items": [
     {
       "id": "6568c9d58c42064f",
@@ -3440,6 +3440,45 @@
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
       },
       "reviewed_at": "2026-05-27T04:15:14+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "c63efc41e905b463",
+      "status": "rejected",
+      "created_at": "2026-05-27T05:42:26+00:00",
+      "created_at_sakhalin": "2026-05-27T16:42:26+11:00",
+      "source": "PC Gamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 600,
+      "title_original": "Paralives early access roadmap and current features",
+      "title_ru": "Paralives early access roadmap and current features",
+      "body": [
+        "A breakdown of everything you can do right now in the Paralives early access build, and what the roadmap tells us about future updates."
+      ],
+      "footer": null,
+      "source_text": "A breakdown of everything you can do right now in the Paralives early access build, and what the roadmap tells us about future updates. Count me in for a houseboat.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Paralives early access roadmap and current features</b>\n\nA breakdown of everything you can do right now in the Paralives early access build, and what the roadmap tells us about future updates.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/games/life-sim/paralives-early-access-roadmap/\">PC Gamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.pcgamer.com/games/life-sim/paralives-early-access-roadmap/",
+      "published_at": "2026-05-27T00:57:25+00:00",
+      "title_hash": "38ecd7ac9594e741a09b66ac4765937ea4f46472",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/DVHQ7vfp77NecsiMmuvYQ8-1280-80.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: игровая тема не имеет достаточной индустриальной значимости."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-27T05:42:26+00:00",
       "reviewed_by": "auto-editor-v7-local-cleaner",
       "stream_priority": 600
     },
@@ -10412,28 +10451,28 @@
       "🌐 Мировые IT": 650,
       "🎮 Игры / индустрия": 600
     },
-    "reviewed_pending": 3,
-    "approved": 1,
+    "reviewed_pending": 1,
+    "approved": 0,
     "approve_limit": 2,
     "min_auto_score": 600,
     "openrouter_enabled": false,
-    "reviewed_at": "2026-05-27T04:15:14+00:00",
-    "reviewed_at_sakhalin": "2026-05-27T15:15:14+11:00"
+    "reviewed_at": "2026-05-27T05:42:26+00:00",
+    "reviewed_at_sakhalin": "2026-05-27T16:42:26+11:00"
   },
   "final_guard": {
     "version": 3,
     "changed": 0,
     "polished": 0,
-    "checked_at": "2026-05-27T04:15:50+00:00",
-    "checked_at_sakhalin": "2026-05-27T15:15:50+11:00"
+    "checked_at": "2026-05-27T05:42:27+00:00",
+    "checked_at_sakhalin": "2026-05-27T16:42:27+11:00"
   },
   "priority_guard": {
     "version": 3,
     "changed": 0,
     "airport_changed": 0,
     "security_changed": 0,
-    "checked_at": "2026-05-27T04:15:15+00:00",
-    "checked_at_sakhalin": "2026-05-27T15:15:15+11:00"
+    "checked_at": "2026-05-27T05:42:27+00:00",
+    "checked_at_sakhalin": "2026-05-27T16:42:27+11:00"
   },
   "cycle_report": {
     "reported_at": "2026-05-27T04:15:41+00:00",
@@ -10536,10 +10575,10 @@
   },
   "scope_guard": {
     "version": 2,
-    "checked": 7,
+    "checked": 6,
     "rejected": 0,
-    "checked_at": "2026-05-27T04:15:15+00:00",
-    "checked_at_sakhalin": "2026-05-27T15:15:15+11:00",
+    "checked_at": "2026-05-27T05:42:27+00:00",
+    "checked_at_sakhalin": "2026-05-27T16:42:27+11:00",
     "policy": "block foreign ECB/Greece macro commentary, low-value Habr posts, minor quakes without impact, and weak foreign geopolitics"
   }
 }
