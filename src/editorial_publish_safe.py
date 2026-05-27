@@ -156,12 +156,25 @@ def resolve_without_source(article: dict, state: dict):
     searched, a = external_thematic_search(article, state, logger=log)
     attempts.extend(a)
     if searched:
-        return ImageDecision(searched, "search", "source text-card rejected; external thematic image accepted", attempts)
+        return ImageDecision(searched, "search", "source image unavailable/rejected; external thematic image accepted", attempts)
     generated, a = generated_candidate(article, state, logger=log)
     attempts.extend(a)
     if generated:
-        return ImageDecision(generated, "generated", "source text-card rejected; generated semantic image accepted", attempts)
-    return ImageDecision(None, "none", "source text-card rejected; no valid replacement image found", attempts)
+        return ImageDecision(generated, "generated", "source/search image unavailable; generated semantic image accepted", attempts)
+    return ImageDecision(None, "none", "source/search/generate all failed", attempts)
+
+
+def ensure_generated_if_no_image(article: dict, state: dict, decision: ImageDecision | None, reason: str) -> ImageDecision:
+    """Production rule: no valid source/search image must not stop the post.
+    If a post is approved and no valid image is available, generate a semantic image and publish it.
+    Hold is allowed only when generation itself fails.
+    """
+    if decision and decision.selected:
+        return decision
+    generated = resolve_generated_only(article, state, reason)
+    if decision:
+        generated.attempts = decision.attempts + generated.attempts
+    return generated
 
 
 def source_photo_decision(article: dict, state: dict):
@@ -188,7 +201,9 @@ def resolve_image_file(draft: dict, state: dict):
 
     article = article_for_image(draft)
 
-    # First: real article/source photo. This fixes overuse of generated abstract cards.
+    # Production image order:
+    # 1) real source photo; 2) source/search semantic pipeline; 3) generated semantic image.
+    # Absence of a valid external image is not a publication stop condition.
     decision = source_photo_decision(article, state)
     if not decision:
         decision = resolve_article_image(article, state, logger=log)
@@ -198,6 +213,13 @@ def resolve_image_file(draft: dict, state: dict):
         replacement = resolve_without_source(article, state)
         replacement.attempts = decision.attempts + replacement.attempts
         decision = replacement
+
+    decision = ensure_generated_if_no_image(
+        article,
+        state,
+        decision,
+        "no valid source/search image; generated image is mandatory production fallback",
+    )
 
     mismatch = story_image_mismatch(article, decision.selected)
     if mismatch:
@@ -210,15 +232,22 @@ def resolve_image_file(draft: dict, state: dict):
 
     if not decision.selected:
         draft["status"] = "hold"
-        draft.setdefault("editor_notes", []).append("Safe publisher: нет валидного изображения после source/search/generate; публикация остановлена.")
+        draft.setdefault("editor_notes", []).append("Safe publisher: генерация обязательной картинки не удалась; публикация остановлена.")
         return None, decision
 
     candidate = decision.selected
     image_file = candidate_to_file(candidate)
     if not image_file:
-        draft["status"] = "hold"
-        draft.setdefault("editor_notes", []).append("Safe publisher: image pipeline вернул кандидата без данных; публикация остановлена.")
-        return None, decision
+        regenerated = resolve_generated_only(article, state, "selected image had no bytes; regenerated mandatory image")
+        regenerated.attempts = decision.attempts + regenerated.attempts
+        decision = regenerated
+        draft["image_pipeline"] = decision_to_dict(decision)
+        candidate = decision.selected
+        image_file = candidate_to_file(candidate) if candidate else None
+        if not image_file:
+            draft["status"] = "hold"
+            draft.setdefault("editor_notes", []).append("Safe publisher: обязательная генерация картинки не дала файла; публикация остановлена.")
+            return None, decision
 
     draft["image_mode"] = f"pipeline_{decision.strategy}"
     draft["image_url"] = candidate.url
@@ -259,7 +288,7 @@ def publish_safe() -> None:
 
         image_file, decision = resolve_image_file(draft, state)
         if not image_file:
-            log("safe publisher hold: no valid image for " + str(draft.get("title_ru") or draft.get("title_original"))[:120])
+            log("safe publisher hold: mandatory generated image failed for " + str(draft.get("title_ru") or draft.get("title_original"))[:120])
             continue
 
         try:
