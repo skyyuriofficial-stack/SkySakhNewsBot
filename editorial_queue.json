@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updated_at": "2026-05-27T03:36:57+00:00",
-  "updated_at_sakhalin": "2026-05-27T14:36:57+11:00",
-  "reviewed_at": "2026-05-27T03:36:39+00:00",
-  "reviewed_at_sakhalin": "2026-05-27T14:36:39+11:00",
+  "updated_at": "2026-05-27T04:15:29+00:00",
+  "updated_at_sakhalin": "2026-05-27T15:15:29+11:00",
+  "reviewed_at": "2026-05-27T04:15:14+00:00",
+  "reviewed_at_sakhalin": "2026-05-27T15:15:14+11:00",
   "items": [
     {
       "id": "6568c9d58c42064f",
@@ -3360,6 +3360,88 @@
       "reviewed_at": "2026-05-27T03:36:39+00:00",
       "reviewed_by": "auto-editor-v7-local-cleaner",
       "stream_priority": 760
+    },
+    {
+      "id": "a15a0e3e5cc83af9",
+      "status": "rejected",
+      "created_at": "2026-05-27T04:15:14+00:00",
+      "created_at_sakhalin": "2026-05-27T15:15:14+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🇷🇺 РФ / экономика",
+      "category_hint": "🌐 Мировые IT",
+      "score": 840,
+      "title_original": "Импортозамещаем numpy, pandas, scipy и sklearn",
+      "title_ru": "Импортозамещаем numpy, pandas, scipy и sklearn",
+      "body": [
+        "Конечно же, ни о каком импортозамещении речи нет.",
+        "Просто мы хайпуем на возросшей волне популярности DA и DS, получаем фан, и при этом пытаемся утилизировать...",
+        "С момента публикации статьи на Хабре « Импортозамещаем numpy, pandas, scipy и sklearn » прошло почти три года."
+      ],
+      "footer": null,
+      "source_text": "Hidden text Спойлер: это тизер. Конечно же, ни о каком импортозамещении речи нет. Просто мы хайпуем на возросшей волне популярности DA и DS, получаем фан, и при этом пытаемся утилизировать... С момента публикации статьи на Хабре « Импортозамещаем numpy, pandas, scipy и sklearn » прошло почти три года. В течение этого времени я приостановил работу над проектом из-за нехватки времени, ресурсов и сил. К тому же, меня расстроило, что не смог выполнить просьбу пользователя @N-Cube , который активно интересовался моей библиотекой и хотел ускорить работу своего Jupyter Notebook. В самый критический момент на помощь пришел волшебный AI, который, хоть и иногда проявлял недостаток гибкости, с готовностью исполнял все пожелания своего хозяина. Благодаря этому проект начал продвигаться вперед. За это время в библиотеки были добавлены поддержка CUDA, множество ручных SIMD-оптимизаций с динамическим выбором SIMD, несколько реализаций линейной регрессии и многое другое. Давайте рассмотрим, что на сегодняшний день позволяет сделать моя библиотека. Я представлю несколько тестовых примеров в двух вариантах: с использованием AVX-2 на процессоре Intel® Core™ i7-4790K и AVX-512 на Intel® Xeon. Также покажу результаты замеров для каждого из них. Все тесты проводились без использования GPU, исключительно на процессоре. Это позволяет сравнивать производительность Python и моей библиотеки на равных условиях. Операционная система – Ubuntu 24.04, компилятор – GNU 13.3.0. Читать далее Спойлер: это тизер. Конечно же, ни о каком импортозамещении речи нет. Просто мы хайпуем на возросшей волне популярности DA и DS, получаем фан, и при этом пытаемся утилизировать преимущества C++. No cringe, no fear. Речь пойдет о библиотеках-аналогах numpy , pandas , scipy и sklearn на C++ ( np , pd , scipy , sklearn ",
+      "post_text": "🌐 Мировые IT\n\n<b>Импортозамещаем numpy, pandas, scipy и sklearn</b>\n\nКонечно же, ни о каком импортозамещении речи нет.\n\nПросто мы хайпуем на возросшей волне популярности DA и DS, получаем фан, и при этом пытаемся утилизировать...\n\nС момента публикации статьи на Хабре « Импортозамещаем numpy, pandas, scipy и sklearn » прошло почти три года.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/752762/\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/752762/",
+      "published_at": "2026-05-27T03:44:12+00:00",
+      "title_hash": "d8791d43450a73fdade84c92412013f101099a41",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/e3a/2e4/ab0/e3a2e4ab0767d738fad92644a25d2350.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-27T04:15:14+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 760
+    },
+    {
+      "id": "8fbe0b1a5faef57f",
+      "status": "rejected",
+      "created_at": "2026-05-27T04:15:14+00:00",
+      "created_at_sakhalin": "2026-05-27T15:15:14+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 680,
+      "title_original": "Архитектурные компромиссы в разработке игр",
+      "title_ru": "Архитектурные компромиссы в разработке игр",
+      "body": [
+        "У меня есть книга, которая называется Game++ и несколько статей, где я разбирал какие паттерны применяются в играх и движках.",
+        "В книге почти сто страниц отведено про эти самые паттерны и подробно...",
+        "В прошлой статье я разбирал паттерны и необходимость компромиссов в реальной разработке, и там была одна мысль которую я намеренно оставил в стороне."
+      ],
+      "footer": null,
+      "source_text": "У меня есть книга, которая называется Game++ и несколько статей, где я разбирал какие паттерны применяются в играх и движках. В книге почти сто страниц отведено про эти самые паттерны и подробно... В прошлой статье я разбирал паттерны и необходимость компромиссов в реальной разработке, и там была одна мысль которую я намеренно оставил в стороне. Паттерны редко живут в одиночку, и любая реальная система это не один паттерн, а несколько, склеенных, скрученые, слепленных, и местами прибитых сбоку гвоздями, и каждый из них закрывает только часть проблемы. Менеджер ресурсов это, наверное, самый показательный пример такой склейки, потому что снаружи он обычно выглядит как пару строчек вида LoadTexture(\" bark.dds \") , а внутри это кэш, политика дефолтов, механика восстановления после сбоя и ещё полдюжины вещей, каждая из которых прошла через пот, кровь и пиксели и осталась в архитектуре этой системы. Если открыть любую книгу по разработке игр или игрового движка и попробовать найти определение \"игровой ресурс\", то получится что ресурс - это набор данных, которые были загружены или созданы с конкретными параметрами. Любые уточнения вроде «текстура», «меш», «звук» или «шейдер» здесь уже будут лишними, потому что нам важна не природа данных, а что они существуют именно определенной форме. Понятие \"определенная форма\" тем не менее тоже звучит абстрактно, поэтому люди предпочитают использовать \"текстуру\", \"меш\", \"звук\" и т.д. Но одну и ту же текстуру wall.dds , которую можно загрузить в DXT5 со сжатием, sRGB и mip-фильтром box, а можно без сжатия, в линейном пространстве и с другим фильтром. Формально у нас был один файл на диске, но с точки зрения ресурсного менеджера теперь это два разных \"ресурса\", потому что их параметры различаются. Подмена одного ресурса другим в рантайме мож",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Архитектурные компромиссы в разработке игр</b>\n\nУ меня есть книга, которая называется Game++ и несколько статей, где я разбирал какие паттерны применяются в играх и движках.\n\nВ книге почти сто страниц отведено про эти самые паттерны и подробно...\n\nВ прошлой статье я разбирал паттерны и необходимость компромиссов в реальной разработке, и там была одна мысль которую я намеренно оставил в стороне.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://habr.com/ru/articles/1037740/\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1037740/",
+      "published_at": "2026-05-26T20:48:26+00:00",
+      "title_hash": "abe1dc7bdb5e3a5d5519e248b80e40b0e2239bdf",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/f18/fc4/dcc/f18fc4dcce6c28d8b9b6080ac5e22f2a.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-27T04:15:14+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
     },
     {
       "id": "ec44a45aa73888ea",
@@ -10244,6 +10326,77 @@
       "published_at_sakhalin": "2026-05-27T11:12:32+11:00",
       "publish_method": "sendPhoto/safe/pipeline_generated",
       "telegram_message_id": 138
+    },
+    {
+      "id": "6de768f9525277f8",
+      "status": "published",
+      "created_at": "2026-05-27T04:15:14+00:00",
+      "created_at_sakhalin": "2026-05-27T15:15:14+11:00",
+      "source": "Interfax",
+      "source_type": "ru",
+      "category": "🧭 Геополитика",
+      "category_hint": "📍 Сахалин",
+      "score": 950,
+      "title_original": "Два человека пострадали в результате ракетной атаки на Таганрог",
+      "title_ru": "Два человека пострадали в результате ракетной атаки на Таганрог",
+      "body": [
+        "В результате ракетной атаки на Таганрог ранены два человека, сообщила глава города Светлана Камбулова.",
+        "\"Сегодня утром в ходе отражения воздушной атаки на Ростовскую область в Таганроге была уничтожена ракета."
+      ],
+      "footer": null,
+      "source_text": "В результате ракетной атаки на Таганрог ранены два человека, сообщила глава города Светлана Камбулова В результате ракетной атаки на Таганрог ранены два человека, сообщила глава города Светлана Камбулова.\"Сегодня утром в ходе отражения воздушной атаки на Ростовскую область в Таганроге была уничтожена ракета. Москва. 27 мая. INTERFAX.RU - В результате ракетной атаки на Таганрог ранены два человека, сообщила глава города Светлана Камбулова. \"Сегодня утром в ходе отражения воздушной атаки на Ростовскую область в Таганроге была уничтожена ракета. Есть пострадавшие - два человека\", - написала она в своем канале в мессенджере Max. Пострадавшие госпитализированы, произошедшее в результате атаки возгорание автомобилей локализовано, добавила Камбулова. Ранее в среду губернатор Ростовской области Юрий Слюсарь сообщил об уничтожении ракеты над Таганрогом и возгорании автомобилей в результате падения обломков.",
+      "post_text": "🧭 Геополитика\n\n<b>Два человека пострадали в результате ракетной атаки на Таганрог</b>\n\nВ результате ракетной атаки на Таганрог ранены два человека, сообщила глава города Светлана Камбулова.\n\n\"Сегодня утром в ходе отражения воздушной атаки на Ростовскую область в Таганроге была уничтожена ракета.\n\nГЕОПОЛИТИКА · <a href=\"https://www.interfax.ru/russia/1092051\">Interfax</a>",
+      "edited_post_text": "🧭 Геополитика\n\n<b>Два человека пострадали в результате ракетной атаки на Таганрог</b>\n\nВ результате ракетной атаки на Таганрог ранены два человека, сообщила глава города Светлана Камбулова.\n\n\"Сегодня утром в ходе отражения воздушной атаки на Ростовскую область в Таганроге была уничтожена ракета.\n\nГЕОПОЛИТИКА · <a href=\"https://www.interfax.ru/russia/1092051\">Interfax</a>",
+      "url": "https://www.interfax.ru/russia/1092051",
+      "published_at": "2026-05-27T03:59:00+00:00",
+      "title_hash": "cdcf77d4bb6b8523799395d827177c1501267d45",
+      "image_url": "https://www.interfax.ru/aspimg/1092051.jpg",
+      "image_mode": "pipeline_source_photo",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Одобрено автоматическим редактором v7: clean Russian post via local.",
+        "Final guard v3: текст пересобран shared robust builder; дубли/битые фразы удалены.",
+        "Image pipeline: source_photo; real source photo accepted; score=0.86."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-27T04:15:14+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 950,
+      "rewrite_mode": "local",
+      "image_pipeline": {
+        "strategy": "source_photo",
+        "reason": "real source photo accepted",
+        "selected": {
+          "url": "https://www.interfax.ru/aspimg/1092051.jpg",
+          "source": "source_photo",
+          "width": null,
+          "height": null,
+          "mime_type": "image/jpeg",
+          "query_used": null,
+          "relevance_score": 0.86,
+          "image_kind": "photo",
+          "filename": "1092051.jpg",
+          "reason": "real source photo accepted before semantic fallback"
+        },
+        "attempts": [
+          {
+            "url": "https://www.interfax.ru/aspimg/1092051.jpg",
+            "ok": true,
+            "reason": "source photo accepted",
+            "size": "700x350"
+          }
+        ]
+      },
+      "image_fingerprint": "720d0dad328a7020239198da01f9392e9f59c2ea",
+      "published_at_sakhalin": "2026-05-27T15:15:17+11:00",
+      "publish_method": "sendPhoto/safe/pipeline_source_photo",
+      "telegram_message_id": 140
     }
   ],
   "auto_review": {
@@ -10259,28 +10412,28 @@
       "🌐 Мировые IT": 650,
       "🎮 Игры / индустрия": 600
     },
-    "reviewed_pending": 10,
-    "approved": 0,
+    "reviewed_pending": 3,
+    "approved": 1,
     "approve_limit": 2,
     "min_auto_score": 600,
     "openrouter_enabled": false,
-    "reviewed_at": "2026-05-27T03:36:39+00:00",
-    "reviewed_at_sakhalin": "2026-05-27T14:36:39+11:00"
+    "reviewed_at": "2026-05-27T04:15:14+00:00",
+    "reviewed_at_sakhalin": "2026-05-27T15:15:14+11:00"
   },
   "final_guard": {
     "version": 3,
     "changed": 0,
-    "polished": 0,
-    "checked_at": "2026-05-27T03:36:56+00:00",
-    "checked_at_sakhalin": "2026-05-27T14:36:56+11:00"
+    "polished": 1,
+    "checked_at": "2026-05-27T04:15:15+00:00",
+    "checked_at_sakhalin": "2026-05-27T15:15:15+11:00"
   },
   "priority_guard": {
     "version": 3,
     "changed": 0,
     "airport_changed": 0,
     "security_changed": 0,
-    "checked_at": "2026-05-27T03:36:39+00:00",
-    "checked_at_sakhalin": "2026-05-27T14:36:39+11:00"
+    "checked_at": "2026-05-27T04:15:15+00:00",
+    "checked_at_sakhalin": "2026-05-27T15:15:15+11:00"
   },
   "cycle_report": {
     "reported_at": "2026-05-27T03:36:52+00:00",
@@ -10372,10 +10525,10 @@
   },
   "scope_guard": {
     "version": 2,
-    "checked": 6,
+    "checked": 7,
     "rejected": 0,
-    "checked_at": "2026-05-27T03:36:39+00:00",
-    "checked_at_sakhalin": "2026-05-27T14:36:39+11:00",
+    "checked_at": "2026-05-27T04:15:15+00:00",
+    "checked_at_sakhalin": "2026-05-27T15:15:15+11:00",
     "policy": "block foreign ECB/Greece macro commentary, low-value Habr posts, minor quakes without impact, and weak foreign geopolitics"
   }
 }

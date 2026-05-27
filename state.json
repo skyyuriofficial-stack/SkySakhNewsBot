@@ -108,7 +108,8 @@
     "https://www.interfax.ru/russia/1092013",
     "https://www.interfax.ru/russia/1092029",
     "https://www.interfax.ru/russia/1092027",
-    "https://www.interfax.ru/russia/1092030"
+    "https://www.interfax.ru/russia/1092030",
+    "https://www.interfax.ru/russia/1092051"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -219,23 +220,11 @@
     "1aafcf3b290124b28452859d26292208c9566be4",
     "d85f10a261edb021e9057be00a40cf61ca5e9e25",
     "89ea7fffdd5b8b6a8e7ebccd4af7abf33880a78a",
-    "11c6de71ab6db46e33ded9fc5ea78ccf2080999b"
+    "11c6de71ab6db46e33ded9fc5ea78ccf2080999b",
+    "cdcf77d4bb6b8523799395d827177c1501267d45"
   ],
-  "last_run_sakhalin": "2026-05-27T14:36:57+11:00",
+  "last_run_sakhalin": "2026-05-27T15:15:29+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-20T11:10:41+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "title": "Иранский министр: возобновление ударов США по Ирану принесёт множество сюрпризов",
-      "url": "https://www.interfax.ru/world/1090537",
-      "published_at": "2026-05-19T23:55:00+00:00",
-      "with_image": false,
-      "image_mode": "none",
-      "image_url": null,
-      "publish_method": "sendMessage/no-preview/no-image",
-      "score": 145
-    },
     {
       "time_sakhalin": "2026-05-20T11:18:41+11:00",
       "source": "Interfax",
@@ -3653,6 +3642,58 @@
       ],
       "audited_at": "2026-05-27T00:19:46+00:00",
       "audited_at_sakhalin": "2026-05-27T11:19:46+11:00"
+    },
+    {
+      "time_sakhalin": "2026-05-27T15:15:17+11:00",
+      "source": "Interfax",
+      "category": "🧭 Геополитика",
+      "title": "Два человека пострадали в результате ракетной атаки на Таганрог",
+      "body": [
+        "В результате ракетной атаки на Таганрог ранены два человека, сообщила глава города Светлана Камбулова.",
+        "\"Сегодня утром в ходе отражения воздушной атаки на Ростовскую область в Таганроге была уничтожена ракета."
+      ],
+      "caption": "🧭 Геополитика\n\n<b>Два человека пострадали в результате ракетной атаки на Таганрог</b>\n\nВ результате ракетной атаки на Таганрог ранены два человека, сообщила глава города Светлана Камбулова.\n\n\"Сегодня утром в ходе отражения воздушной атаки на Ростовскую область в Таганроге была уничтожена ракета.\n\nГЕОПОЛИТИКА · <a href=\"https://www.interfax.ru/russia/1092051\">Interfax</a>",
+      "caption_plain": "🧭 Геополитика\n\n Два человека пострадали в результате ракетной атаки на Таганрог \n\nВ результате ракетной атаки на Таганрог ранены два человека, сообщила глава города Светлана Камбулова.\n\n\"Сегодня утром в ходе отражения воздушной атаки на Ростовскую область в Таганроге была уничтожена ракета.\n\nГЕОПОЛИТИКА ·  Interfax ",
+      "url": "https://www.interfax.ru/russia/1092051",
+      "published_at": "2026-05-27T03:59:00+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_source_photo",
+      "image_url": "https://www.interfax.ru/aspimg/1092051.jpg",
+      "image_fingerprint": "720d0dad328a7020239198da01f9392e9f59c2ea",
+      "image_pipeline": {
+        "strategy": "source_photo",
+        "reason": "real source photo accepted",
+        "selected": {
+          "url": "https://www.interfax.ru/aspimg/1092051.jpg",
+          "source": "source_photo",
+          "width": null,
+          "height": null,
+          "mime_type": "image/jpeg",
+          "query_used": null,
+          "relevance_score": 0.86,
+          "image_kind": "photo",
+          "filename": "1092051.jpg",
+          "reason": "real source photo accepted before semantic fallback"
+        },
+        "attempts": [
+          {
+            "url": "https://www.interfax.ru/aspimg/1092051.jpg",
+            "ok": true,
+            "reason": "source photo accepted",
+            "size": "700x350"
+          }
+        ]
+      },
+      "publish_method": "sendPhoto/safe/pipeline_source_photo",
+      "telegram_message_id": 140,
+      "score": 950,
+      "stream_priority": 950,
+      "rewrite_mode": "local",
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-27T04:15:29+00:00",
+      "audited_at_sakhalin": "2026-05-27T15:15:29+11:00"
     }
   ],
   "last_cycle_report": {
@@ -3750,10 +3791,10 @@
     "https://upload.wikimedia.org/wikipedia/commons/b/b3/Stamps_of_Uzbekistan%2C_2006-060.jpg",
     "https://upload.wikimedia.org/wikipedia/commons/4/4a/US-China_expanded_meeting_at_the_Filoli_Garden%2C_before_the_2023_APEC_Summit.jpg",
     "https://upload.wikimedia.org/wikipedia/commons/9/94/Commonwealth_Heads_of_Government_Meeting_MOD_45164080.jpg",
-    "https://upload.wikimedia.org/wikipedia/commons/9/90/Rear_view_of_Tiangong_Space_Station.jpg"
+    "https://upload.wikimedia.org/wikipedia/commons/9/90/Rear_view_of_Tiangong_Space_Station.jpg",
+    "https://www.interfax.ru/aspimg/1092051.jpg"
   ],
   "recent_image_fingerprints": [
-    "c4963b83f2e5036b598c55086f27034829362093",
     "2e28c1814756da785103e7e69d7d1110cb62803d",
     "0d931b1467de65c877f525af89c08f5c45dbaed1",
     "758795874057362241d3058a1a03535b74f7c2fc",
@@ -3792,7 +3833,8 @@
     "f60ddc72f9749a64827517f077d3374835843389",
     "bea8611c867d6d12bf9ec3f6c0d7df8478b62417",
     "d9ac31867f7d4f3962da0637ce7b83c3a3a667e0",
-    "2c5a09deda0b1cd340458ac3cbb7372f9a097fba"
+    "2c5a09deda0b1cd340458ac3cbb7372f9a097fba",
+    "720d0dad328a7020239198da01f9392e9f59c2ea"
   ],
   "recent_generated_prompts": [
     "generated:security:Трамп призвал ряд исламских стран присоединиться к Соглашениям Авраама",
@@ -3823,13 +3865,27 @@
   ],
   "last_post_publish_audit": {
     "version": 2,
-    "checked_at": "2026-05-27T03:36:39+00:00",
-    "checked_at_sakhalin": "2026-05-27T14:36:39+11:00",
-    "checked_count": 0,
+    "checked_at": "2026-05-27T04:15:29+00:00",
+    "checked_at_sakhalin": "2026-05-27T15:15:29+11:00",
+    "checked_count": 1,
     "failed_count": 0,
     "audit_chat_configured": false,
     "delete_bad_posts": false,
     "deleted": [],
-    "items": []
+    "items": [
+      {
+        "telegram_message_id": 140,
+        "title": "Два человека пострадали в результате ракетной атаки на Таганрог",
+        "category": "🧭 Геополитика",
+        "time_sakhalin": "2026-05-27T15:15:17+11:00",
+        "image_mode": "pipeline_source_photo",
+        "image_url": "https://www.interfax.ru/aspimg/1092051.jpg",
+        "url": "https://www.interfax.ru/russia/1092051",
+        "status": "pass",
+        "severity": "ok",
+        "issues": [],
+        "content_preview": "🧭 Геополитика Два человека пострадали в результате ракетной атаки на Таганрог В результате ракетной атаки на Таганрог ранены два человека, сообщила глава города Светлана Камбулова. \"Сегодня утром в ходе отражения воздушной атаки на Ростовскую область в Таганроге была уничтожена ракета. ГЕОПОЛИТИКА · Interfax"
+      }
+    ]
   }
 }
