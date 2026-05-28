@@ -42,11 +42,19 @@ HABR_LOW_VALUE_TERMS = [
     "habr", "хабр", "memforge", "загрузочная флешка", "флешка", "планка памяти", "планки памяти",
     "ddr", "elitedesk", "сегодня собирал", "стандартный сценарий", "полчаса", "прошивка", "утилита",
     "самодельн", "личный опыт", "разбираемся", "гайд", "руководство", "как ", "инструкция",
+    "почему", "история", "ретро", "ретроспектив", "советские программисты", "советск", "ссср",
+    "тетрис", "tetris", "pac-man", "pacman", "nintendo", "nes", "gta", "электроника-60",
+    "алексей пажитнов", "пажитнов", "в 1984", "1984", "самых влиятельных видеоигр",
 ]
 
 HABR_MAJOR_TERMS = [
     "уязвимость", "cve", "утечка данных", "кибератака", "rce", "0-day", "zero-day",
     "openai", "google", "microsoft", "apple", "nvidia", "amd", "intel", "санкции",
+    "исправили критическую", "критическая уязвимость", "массовый сбой", "утекли данные",
+]
+
+HABR_NEVER_GEOPOLITICS_TERMS = [
+    "habr", "хабр", "гта", "gta", "тетрис", "tetris", "игра", "видеоигр", "программист",
 ]
 
 QUAKE_TERMS = ["землетряс", "сейсм", "магнитуд", "камчатк", "курил", "цунами"]
@@ -88,6 +96,12 @@ def title_blob(item: Dict) -> str:
     return norm(" ".join([str(item.get("title_ru") or ""), str(item.get("title_original") or "")]))
 
 
+def is_habr_item(item: Dict) -> bool:
+    text = text_blob(item)
+    source = norm(item.get("source") or "")
+    return "habr" in source or "habr" in text or "хабр" in text
+
+
 def magnitude_value(text: str) -> float:
     m = re.search(r"магнитуд[а-я\s]*([0-9]+(?:[,.][0-9]+)?)", norm(text))
     if not m:
@@ -124,13 +138,19 @@ def is_low_value_foreign_geopolitics(item: Dict) -> bool:
 
 
 def is_low_value_habr_post(item: Dict) -> bool:
+    if not is_habr_item(item):
+        return False
     text = text_blob(item)
-    source = norm(item.get("source") or "")
-    if "habr" not in source and "habr" not in text and "хабр" not in text:
-        return False
-    if has_any(text, HABR_MAJOR_TERMS):
-        return False
-    return has_any(text, HABR_LOW_VALUE_TERMS)
+    category = item.get("category") or item.get("category_hint") or ""
+    # Habr must never be published as geopolitics. It is either a major IT/security item or not a channel news item.
+    if category == "🧭 Геополитика":
+        return True
+    if has_any(text, HABR_LOW_VALUE_TERMS):
+        return True
+    # Habr is allowed only for hard current IT/security/industry news, not evergreen essays.
+    if not has_any(text, HABR_MAJOR_TERMS):
+        return True
+    return False
 
 
 def is_minor_quake_without_impact(item: Dict) -> bool:
@@ -151,7 +171,7 @@ def reject_reason(item: Dict) -> str | None:
     if is_low_value_foreign_geopolitics(item):
         return "Scope guard: отклонено как низкоприоритетная зарубежная геополитика/политика вне целевых потоков канала."
     if is_low_value_habr_post(item):
-        return "Scope guard: отклонено как низкоприоритетный Habr/туториал/железячная заметка, не новость канала."
+        return "Scope guard: отклонено как Habr-лонгрид/ретро/туториал/не новость канала; Habr допускается только для текущих крупных IT/security событий и никогда не как геополитика."
     if is_minor_quake_without_impact(item):
         return "Scope guard: отклонено как слабое землетрясение без ущерба, пострадавших, угрозы цунами или магнитуды 6+."
     return None
@@ -181,19 +201,19 @@ def main() -> None:
         if reason:
             item["status"] = "rejected"
             item["reviewed_at"] = now_utc()
-            item["reviewed_by"] = "editorial-scope-guard-v2"
+            item["reviewed_by"] = "editorial-scope-guard-v3"
             item.setdefault("editor_notes", []).append(reason)
             rejected += 1
     queue["scope_guard"] = {
-        "version": 2,
+        "version": 3,
         "checked": checked,
         "rejected": rejected,
         "checked_at": now_utc(),
         "checked_at_sakhalin": now_sakh(),
-        "policy": "block foreign ECB/Greece macro commentary, low-value Habr posts, minor quakes without impact, and weak foreign geopolitics",
+        "policy": "block foreign ECB/Greece macro commentary, low-value Habr/retro/essay posts, minor quakes without impact, and weak foreign geopolitics",
     }
     save_queue(queue)
-    print(f"editorial-scope-guard-v2: checked={checked}, rejected={rejected}")
+    print(f"editorial-scope-guard-v3: checked={checked}, rejected={rejected}")
 
 
 if __name__ == "__main__":
