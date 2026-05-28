@@ -109,7 +109,8 @@
     "https://www.interfax.ru/russia/1092029",
     "https://www.interfax.ru/russia/1092027",
     "https://www.interfax.ru/russia/1092030",
-    "https://www.interfax.ru/russia/1092051"
+    "https://www.interfax.ru/russia/1092051",
+    "https://habr.com/ru/articles/1039828/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039828#habracut"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -221,23 +222,11 @@
     "d85f10a261edb021e9057be00a40cf61ca5e9e25",
     "89ea7fffdd5b8b6a8e7ebccd4af7abf33880a78a",
     "11c6de71ab6db46e33ded9fc5ea78ccf2080999b",
-    "cdcf77d4bb6b8523799395d827177c1501267d45"
+    "cdcf77d4bb6b8523799395d827177c1501267d45",
+    "09f52044ea0ea045b27d045e1fc86482fd97b27c"
   ],
-  "last_run_sakhalin": "2026-05-28T10:22:35+11:00",
+  "last_run_sakhalin": "2026-05-28T11:04:36+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-20T11:18:41+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "title": "Сенат США рассмотрит предложение по ограничению полномочий Трампа в отношении Ирана",
-      "url": "https://www.interfax.ru/world/1090528",
-      "published_at": "2026-05-19T22:50:00+00:00",
-      "with_image": false,
-      "image_mode": "none",
-      "image_url": null,
-      "publish_method": "sendMessage/no-preview/no-image",
-      "score": 145
-    },
     {
       "time_sakhalin": "2026-05-20T11:19:21+11:00",
       "source": "Interfax",
@@ -3694,6 +3683,58 @@
       "audit_issues": [],
       "audited_at": "2026-05-27T04:15:29+00:00",
       "audited_at_sakhalin": "2026-05-27T15:15:29+11:00"
+    },
+    {
+      "time_sakhalin": "2026-05-28T11:04:24+11:00",
+      "source": "Habr",
+      "category": "🧭 Геополитика",
+      "title": "Почему советские программисты не сделали GTA",
+      "body": [
+        "Алексей Пажитнов написал \"Тетрис\" в 1984 году на \"Электронике-60\", работая в Вычислительном центре АН СССР, и эта игра до сих пор входит в любой список \"самых влиятельных видеоигр всех времён\".",
+        "же 1984 году в США уже четвёртый год подряд продавался Pac-Man, а в Японии Nintendo готовилась к экспорту NES."
+      ],
+      "caption": "🧭 Геополитика\n\n<b>Почему советские программисты не сделали GTA</b>\n\nАлексей Пажитнов написал \"Тетрис\" в 1984 году на \"Электронике-60\", работая в Вычислительном центре АН СССР, и эта игра до сих пор входит в любой список \"самых влиятельных видеоигр всех времён\".\n\nже 1984 году в США уже четвёртый год подряд продавался Pac-Man, а в Японии Nintendo готовилась к экспорту NES.\n\nГЕОПОЛИТИКА · <a href=\"https://habr.com/ru/articles/1039828/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039828#habracut\">Habr</a>",
+      "caption_plain": "🧭 Геополитика\n\n Почему советские программисты не сделали GTA \n\nАлексей Пажитнов написал \"Тетрис\" в 1984 году на \"Электронике-60\", работая в Вычислительном центре АН СССР, и эта игра до сих пор входит в любой список \"самых влиятельных видеоигр всех времён\".\n\nже 1984 году в США уже четвёртый год подряд продавался Pac-Man, а в Японии Nintendo готовилась к экспорту NES.\n\nГЕОПОЛИТИКА ·  Habr ",
+      "url": "https://habr.com/ru/articles/1039828/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039828#habracut",
+      "published_at": "2026-05-27T22:29:18+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_source_photo",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/486/ce7/7be/486ce77beb6315497d0f900e7678b413.png",
+      "image_fingerprint": "c29bf021f0017cb00dfcd2d77e5a823f3db8e4a3",
+      "image_pipeline": {
+        "strategy": "source_photo",
+        "reason": "real source photo accepted",
+        "selected": {
+          "url": "https://habrastorage.org/getpro/habr/upload_files/486/ce7/7be/486ce77beb6315497d0f900e7678b413.png",
+          "source": "source_photo",
+          "width": null,
+          "height": null,
+          "mime_type": "image/png",
+          "query_used": null,
+          "relevance_score": 0.86,
+          "image_kind": "photo",
+          "filename": "486ce77beb6315497d0f900e7678b413.png",
+          "reason": "real source photo accepted before semantic fallback"
+        },
+        "attempts": [
+          {
+            "url": "https://habrastorage.org/getpro/habr/upload_files/486/ce7/7be/486ce77beb6315497d0f900e7678b413.png",
+            "ok": true,
+            "reason": "source photo accepted",
+            "size": "560x350"
+          }
+        ]
+      },
+      "publish_method": "sendPhoto/safe/pipeline_source_photo",
+      "telegram_message_id": 141,
+      "score": 680,
+      "stream_priority": 600,
+      "rewrite_mode": "local",
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-28T00:04:37+00:00",
+      "audited_at_sakhalin": "2026-05-28T11:04:37+11:00"
     }
   ],
   "last_cycle_report": {
@@ -3791,10 +3832,10 @@
     "https://upload.wikimedia.org/wikipedia/commons/4/4a/US-China_expanded_meeting_at_the_Filoli_Garden%2C_before_the_2023_APEC_Summit.jpg",
     "https://upload.wikimedia.org/wikipedia/commons/9/94/Commonwealth_Heads_of_Government_Meeting_MOD_45164080.jpg",
     "https://upload.wikimedia.org/wikipedia/commons/9/90/Rear_view_of_Tiangong_Space_Station.jpg",
-    "https://www.interfax.ru/aspimg/1092051.jpg"
+    "https://www.interfax.ru/aspimg/1092051.jpg",
+    "https://habrastorage.org/getpro/habr/upload_files/486/ce7/7be/486ce77beb6315497d0f900e7678b413.png"
   ],
   "recent_image_fingerprints": [
-    "2e28c1814756da785103e7e69d7d1110cb62803d",
     "0d931b1467de65c877f525af89c08f5c45dbaed1",
     "758795874057362241d3058a1a03535b74f7c2fc",
     "a10addfb245f4b09e0460ae3da4733cec409f65f",
@@ -3833,7 +3874,8 @@
     "bea8611c867d6d12bf9ec3f6c0d7df8478b62417",
     "d9ac31867f7d4f3962da0637ce7b83c3a3a667e0",
     "2c5a09deda0b1cd340458ac3cbb7372f9a097fba",
-    "720d0dad328a7020239198da01f9392e9f59c2ea"
+    "720d0dad328a7020239198da01f9392e9f59c2ea",
+    "c29bf021f0017cb00dfcd2d77e5a823f3db8e4a3"
   ],
   "recent_generated_prompts": [
     "generated:security:Трамп призвал ряд исламских стран присоединиться к Соглашениям Авраама",
@@ -3864,13 +3906,27 @@
   ],
   "last_post_publish_audit": {
     "version": 2,
-    "checked_at": "2026-05-27T23:22:13+00:00",
-    "checked_at_sakhalin": "2026-05-28T10:22:13+11:00",
-    "checked_count": 0,
+    "checked_at": "2026-05-28T00:04:37+00:00",
+    "checked_at_sakhalin": "2026-05-28T11:04:37+11:00",
+    "checked_count": 1,
     "failed_count": 0,
     "audit_chat_configured": false,
     "delete_bad_posts": false,
     "deleted": [],
-    "items": []
+    "items": [
+      {
+        "telegram_message_id": 141,
+        "title": "Почему советские программисты не сделали GTA",
+        "category": "🧭 Геополитика",
+        "time_sakhalin": "2026-05-28T11:04:24+11:00",
+        "image_mode": "pipeline_source_photo",
+        "image_url": "https://habrastorage.org/getpro/habr/upload_files/486/ce7/7be/486ce77beb6315497d0f900e7678b413.png",
+        "url": "https://habr.com/ru/articles/1039828/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039828#habracut",
+        "status": "pass",
+        "severity": "ok",
+        "issues": [],
+        "content_preview": "🧭 Геополитика Почему советские программисты не сделали GTA Алексей Пажитнов написал \"Тетрис\" в 1984 году на \"Электронике-60\", работая в Вычислительном центре АН СССР, и эта игра до сих пор входит в любой список \"самых влиятельных видеоигр всех времён\". же 1984 году в США уже четвёртый год подряд продавался Pac-Man, а в Японии Nintendo готовилась к экспорту NES. ГЕОПОЛИТИКА · Habr"
+      }
+    ]
   }
 }
