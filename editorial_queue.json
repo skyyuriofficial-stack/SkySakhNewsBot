@@ -1,10 +1,305 @@
 {
   "version": 1,
-  "updated_at": "2026-05-29T06:25:13+00:00",
-  "updated_at_sakhalin": "2026-05-29T17:25:13+11:00",
+  "updated_at": "2026-05-29T06:35:29+00:00",
+  "updated_at_sakhalin": "2026-05-29T17:35:29+11:00",
   "reviewed_at": "2026-05-29T06:20:00+00:00",
   "reviewed_at_sakhalin": "2026-05-29T17:20:00+11:00",
   "items": [
+    {
+      "id": "7e92c5902312240e",
+      "status": "pending",
+      "created_at": "2026-05-29T06:25:13+00:00",
+      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "async‑profiler в production: CPU, аллокации, lock contention и чтение flame graph",
+      "title_ru": "async‑profiler в production: CPU, аллокации, lock contention и чтение flame graph",
+      "body": [
+        "Стандартный набор инструментов для профилирования Java ‑приложений из коробки JDK — JFR (Java Flight Recorder), jstack, jmap, VisualVM — закрывает многие задачи,...",
+        "Профилирование Java‑приложений в production часто упирается не в отсутствие инструментов, а в их ограничения: CPU горит в одном месте, latency копится в другом, аллокации давят на GC, а lock contention вообще не виден в обычном CPU‑профиле.",
+        "В статье разбираем, как использовать async‑profiler для диагностики реальных Java‑сервисов: снимать CPU, allocation, wall‑clock и lock‑профили, читать flame graph и понимать, где именно приложение тратит ресурсы."
+      ],
+      "footer": null,
+      "source_text": "Стандартный набор инструментов для профилирования Java ‑приложений из коробки JDK — JFR (Java Flight Recorder), jstack, jmap, VisualVM — закрывает многие задачи,... Профилирование Java‑приложений в production часто упирается не в отсутствие инструментов, а в их ограничения: CPU горит в одном месте, latency копится в другом, аллокации давят на GC, а lock contention вообще не виден в обычном CPU‑профиле. В статье разбираем, как использовать async‑profiler для диагностики реальных Java‑сервисов: снимать CPU, allocation, wall‑clock и lock‑профили, читать flame graph и понимать, где именно приложение тратит ресурсы. Читать далее Стандартный набор инструментов для профилирования Java ‑приложений из коробки JDK — JFR (Java Flight Recorder), jstack, jmap, VisualVM — закрывает многие задачи, но в реальных же сценариях у каждого есть ограничения. JFR хорош для общего обзора, но плохо показывает горячие методы из‑за безопасных точек (safepoint bias) — sampling срабатывает только на safepoint, и методы, инлайненные JIT или без safepoint‑poll, в выборку не попадают. jstack даёт срез стека на момент вызова, но один срез — это случайность, а серия с шагом 100 мс уже неудобно анализировать руками. VisualVM требует JMX‑подключения, что в проде с сетевой политикой или Kubernetes‑подами часто блокировано. async‑profiler — внешний инструмент, который в целом решает эту проблему. К маю 2026 актуальная версия — async‑profiler 4.3, команда перешла на квартальный цикл релизов. С январских обновлений 2026 года инструмент идёт в комплекте Amazon Corretto, отдельно скачивать не нужно. В статье обзор основных режимов профилирования, как использовать, как читать flame graph и где async‑profiler помогает, а где лучше взять другой инструмент.",
+      "post_text": "🌐 Мировые IT\n\n<b>async‑profiler в production: CPU, аллокации, lock contention и чтение flame graph</b>\n\nСтандартный набор инструментов для профилирования Java ‑приложений из коробки JDK — JFR (Java Flight Recorder), jstack, jmap, VisualVM — закрывает многие задачи,...\n\nПрофилирование Java‑приложений в production часто упирается не в отсутствие инструментов, а в их ограничения: CPU горит в одном месте, latency копится в другом, аллокации давят на GC, а lock contention вообще не виден в обычном CPU‑профиле.\n\nВ статье разбираем, как использовать async‑profiler для диагностики реальных Java‑сервисов: снимать CPU, allocation, wall‑clock и lock‑профили, читать flame graph и понимать, где именно приложение тратит ресурсы.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/otus/articles/1039968/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039968#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/otus/articles/1039968/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039968#habracut",
+      "published_at": "2026-05-29T06:16:00+00:00",
+      "title_hash": "f294a8d037e4832aec22bc6addb1332551065bc1",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/985/8ac/4e1/9858ac4e1957d4e438761249ee160763.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "2768e41ce3b267e9",
+      "status": "pending",
+      "created_at": "2026-05-29T06:25:13+00:00",
+      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса",
+      "title_ru": "Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса",
+      "body": [
+        "Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса.",
+        "Мы делаем доступ к облакам и ИИ простым и удобным.",
+        "Более 130 IaaS- и PaaS-сервисов, дата-центры уровня Tier III и доступность по SLA 99,982%."
+      ],
+      "footer": null,
+      "source_text": "Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса. Мы делаем доступ к облакам и ИИ простым и удобным. Более 130 IaaS- и PaaS-сервисов, дата-центры уровня Tier III и доступность по SLA 99,982%. Соответствие требованиям 152-ФЗ и 187-ФЗ. Привычная многим картина, когда бизнес «с полей» запрашивает дополнительную аналитику, менеджер идет выбивать ресурсы команды под задачу, аналитик вручную «перемалывает» данные и собирает обновленные дашборды…проходят недели, бюрократические жернова перемалывают прибыль, \"гиря ударяется о пол\" и бизнес в итоге принимает решение «на глазок». С приходом AI в индустрию бизнес-аналитики забрезжила надежда, что эти темные времена останутся только в воспоминаниях тех, кто еще застал пейджер и охоту на мамонта. В сегодняшней статье разберём, как на базе версии Apache Superset с поддержкой MCP и связки Foundation Models от Cloud.ru можно собрать рабочего AI-агента аналитика, который фразу «построй мне аналитику по продажам» за минуты превращает в полноценный дашборд с возможностью скейлинга в продакшене. Читать далее Ваш браузер не поддерживается. Установите современный браузер, к примеру, Google Chrome. Калькулятор цен Тарифы Акции Документация О нас Карьера в Cloud.ru Новости Юридические документы Контакты Решения Реферальная программа Кейсы Партнерство с Cloud.ru Безопасность Evolution Advanced Evolution Stack Облако VMware В чем отличия платформ? Блог Обучение и сертификация Мероприятия Исследования Cloud.ru Личный кабинет Войти Зарегистрироваться Облако для мобильных и веб‑приложений Сайт в облаке Аналитика данных в облаке Хранение данных в облаке Аналитика данных в облаке Инфраструктура для 1С в облаке Миграция IT‑инфраструктуры в облако 3D-моделирование и рендеринг Разработка и тестирование в облаке Evolution Compute Evolution Managed",
+      "post_text": "🌐 Мировые IT\n\n<b>Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса</b>\n\nCloud.ru — облачные сервисы и ИИ-технологии для бизнеса.\n\nМы делаем доступ к облакам и ИИ простым и удобным.\n\nБолее 130 IaaS- и PaaS-сервисов, дата-центры уровня Tier III и доступность по SLA 99,982%.\n\nМИРОВЫЕ IT · <a href=\"https://cloud.ru/\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://cloud.ru/",
+      "published_at": "2026-05-29T06:01:19+00:00",
+      "title_hash": "7948bf4b2fb6d07f9b9b9410d57e487c63abf52c",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/81e/de7/c8e/81ede7c8e89ebdbf949bc6a6ed680391.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "38ed53a585d78670",
+      "status": "pending",
+      "created_at": "2026-05-29T06:25:13+00:00",
+      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "“Арсик”: Как гениальный самоучка из СССР построил робота у себя в квартире",
+      "title_ru": "“Арсик”: Как гениальный самоучка из СССР построил робота у себя в квартире",
+      "body": [
+        "У него не было бюджета огромной корпорации.",
+        "У него даже не было специального образования.",
+        "Но тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура..."
+      ],
+      "footer": null,
+      "source_text": "У него не было бюджета огромной корпорации. У него даже не было специального образования. Но тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура... У него не было бюджета огромной корпорации. У него даже не было специального образования. Но тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура справлялся со своими не всегда простыми задачами. Читать далее У него не было бюджета огромной корпорации. У него даже не было специального образования. Но тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура справлялся со своими не всегда простыми задачами. “Нужда — мать изобретения”, как гласит английская поговорка. У преподавателя черчения в калужском техникуме, Бориса Гришина, нужда была самая острая: тяжело болела мама Мария Васильевна, которой подчас не хватало сил налить себе стакан воды или вызвать скорую. А вызывать карету скорой помощи приходилось часто. Гришин, к слову, никогда не штудировал робототехнику профильно. Он закончил Московский институт инженеров транспорта (МИИТ) и после устроился в калужский техникум преподавать черчение, а на полставки еще и подрабатывал в районной школе. Работа отнимала много времени, а за мамой нужен был уход. И тогда, как настоящий покоритель судьбы — архетип воспетый в книгах Лондона и Купера — Гришин решается на смелый, отчаянный и немного безумный ход: своими руками собрать робота-дворецкого, который бы взял на себя каждодневную опеку. Так в 1962 появился замысел Автоматического Радиоэлектронного Секретаря или “АРС”.",
+      "post_text": "🌐 Мировые IT\n\n<b>“Арсик”: Как гениальный самоучка из СССР построил робота у себя в квартире</b>\n\nУ него не было бюджета огромной корпорации.\n\nУ него даже не было специального образования.\n\nНо тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/studyai/articles/1039994/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039994#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/studyai/articles/1039994/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039994#habracut",
+      "published_at": "2026-05-29T06:00:49+00:00",
+      "title_hash": "e4b4205de987514c8de3cf4192a20be37ae4b6fd",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/ee9/1d7/c88/ee91d7c887a7b5135e587d223e977753.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "4956ce3af9263325",
+      "status": "pending",
+      "created_at": "2026-05-29T06:25:13+00:00",
+      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "KeyboardHook: кроссплатформенный глобальный перехват клавиатуры и мыши для .NET",
+      "title_ru": "KeyboardHook: кроссплатформенный глобальный перехват клавиатуры и мыши для .NET",
+      "body": [
+        "Проблема: ни один готовый пакет не подошёл Первые несколько пакетов, которые я попробовал, работали исключительно на Windows и молчали на macOS.",
+        "Другие просто вешали приложение при первом нажатии...",
+        "Рассказываю, как написал кроссплатформенную .NET-библиотеку для глобального перехвата клавиатуры и мыши."
+      ],
+      "footer": null,
+      "source_text": "Проблема: ни один готовый пакет не подошёл Первые несколько пакетов, которые я попробовал, работали исключительно на Windows и молчали на macOS. Другие просто вешали приложение при первом нажатии... Рассказываю, как написал кроссплатформенную .NET-библиотеку для глобального перехвата клавиатуры и мыши. Под капотом: WH_KEYBOARD_LL на Windows, CGEventTap на macOS и polling через XQueryKeymap на Linux. Один интерфейс, три реализации, ноль внешних зависимостей. Читать далее Первые несколько пакетов, которые я попробовал, работали исключительно на Windows и молчали на macOS. Другие просто вешали приложение при первом нажатии клавиши. Я искал кроссплатформенное решение, «только Windows» меня не устраивало. Если чего-то нет, что делать? Конечно, писать самому. По началу всё было написано даже без вынесения в отдельную библиотеку, но чуть позже, когда данный код понадобился и в других моих проектах, подумал написать библиотеку с нуля. Самое главное чего я хотел добиться: без лишних зависимостей, кроссплатформенность, возможность кочевать между pet-проектами. По ходу решил сделать ее open source, чтобы неминуемо улучшать и совершенствовать данное решение. KeyboardHook - кроссплатформенный глобальный хук клавиатуры и мыши для .NET Standard 2.0. Глобальный перехват нажатий и отпусканий клавиш — работает даже когда ваше приложение не в фокусе",
+      "post_text": "🌐 Мировые IT\n\n<b>KeyboardHook: кроссплатформенный глобальный перехват клавиатуры и мыши для .NET</b>\n\nПроблема: ни один готовый пакет не подошёл Первые несколько пакетов, которые я попробовал, работали исключительно на Windows и молчали на macOS.\n\nДругие просто вешали приложение при первом нажатии...\n\nРассказываю, как написал кроссплатформенную .NET-библиотеку для глобального перехвата клавиатуры и мыши.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1040932/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040932#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1040932/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040932#habracut",
+      "published_at": "2026-05-29T05:48:59+00:00",
+      "title_hash": "7cda40112fe63ac8e6e54f4b3eb658f81d26cf12",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/7f1/3fb/7bf/7f13fb7bf1db79ed8891ef0a6fbd7673.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "e500fd83c6e646ac",
+      "status": "pending",
+      "created_at": "2026-05-29T06:25:13+00:00",
+      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Лингвистика + статистика = NLP",
+      "title_ru": "Лингвистика + статистика = NLP",
+      "body": [
+        "Как-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет.",
+        "Мне нравится ковыряться в коде и мозгах нейросетей, при этом я стараюсь не забывать,...",
+        "Как-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет."
+      ],
+      "footer": null,
+      "source_text": "Как-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет. Мне нравится ковыряться в коде и мозгах нейросетей, при этом я стараюсь не забывать,... Как-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет. Мне нравится ковыряться в коде и мозгах нейросетей, при этом я стараюсь не забывать, на каком фундаменте выросла трендовая ныне область под названием Natural Language Processing (NLP). Поэтому захотелось собрать в одной статье беглый обзор истории компьютерной лингвистики — от первых теорий и грамматик Хомского до появления рекуррентных сетей и механизма внимания. Думаю, стоит остановиться ровно перед эпохой трансформеров, потому что это отдельная, глубокая и достойная собственного рассказа тема. Читать далее",
+      "post_text": "🌐 Мировые IT\n\n<b>Лингвистика + статистика = NLP</b>\n\nКак-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет.\n\nМне нравится ковыряться в коде и мозгах нейросетей, при этом я стараюсь не забывать,...\n\nКак-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1040930/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040930#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1040930/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040930#habracut",
+      "published_at": "2026-05-29T05:39:55+00:00",
+      "title_hash": "810d8e23a05482885e5bbc74f0a16528da68b145",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/092/f8b/821/092f8b8214596a7a63a85adf14fcd303.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "cfa49c585ac6d60e",
+      "status": "pending",
+      "created_at": "2026-05-29T06:25:13+00:00",
+      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Микросекундные оценки опционов: как пересчитать портфель из 200k инструментов за 10 мс",
+      "title_ru": "Микросекундные оценки опционов: как пересчитать портфель из 200k инструментов за 10 мс",
+      "body": [
+        "Финансовые системы предъявляют жёсткие требования к производительности.",
+        "Риск-департамент запрашивает переоценку портфеля из 200 000 опционов.",
+        "Маржинальная система требует пересчитать все позиции..."
+      ],
+      "footer": null,
+      "source_text": "Финансовые системы предъявляют жёсткие требования к производительности. Риск-департамент запрашивает переоценку портфеля из 200 000 опционов. Маржинальная система требует пересчитать все позиции... Финансовые системы предъявляют жёсткие требования к производительности. Риск-департамент запрашивает переоценку портфеля из 200 000 опционов. Маржинальная система требует пересчитать все позиции клиентов после сильного движения рынка. Алгоритмический трейдер хочет оценить Greeks для тысяч потенциальных сделок за миллисекунды. Стандартные подходы на .NET дают сбой по трём причинам. Причина 1: Объектная модель Каждый опцион становится отдельным объектом в куче. Виртуальные методы, ссылки, разрозненное расположение в памяти. Для 200 000 объектов — миллионы байтов, GC-паузы на сборку, промахи кэша процессора. Причина 2: Позлементные вычисления Вызов функции ценообразования в цикле — плохо. Процессор не может векторизовать код, потому что не видит всю картину целиком. SIMD-инструкции простаивают. Причина 3: Аллокации в горячем пути Каждый вызов new double[100000] для хранения промежуточных результатов — это давление на GC. В 24/7 сервисе такие аллокации накапливаются и вызывают непредсказуемые паузы. Требования к решению Читать далее Финансовые системы предъявляют жёсткие требования к производительности. Риск-департамент запрашивает переоценку портфеля из 200 000 опционов. Маржинальная система требует пересчитать все позиции клиентов после сильного движения рынка. Алгоритмический трейдер хочет оценить Greeks для тысяч потенциальных сделок за миллисекунды. Каждый опцион становится отдельным объектом в куче. Виртуальные методы, ссылки, разрозненное расположение в памяти. Для 200 000 объектов — миллионы байтов, GC-паузы на сборку, промахи кэша процессора. Вызов функции ценообразовани",
+      "post_text": "🌐 Мировые IT\n\n<b>Микросекундные оценки опционов: как пересчитать портфель из 200k инструментов за 10 мс</b>\n\nФинансовые системы предъявляют жёсткие требования к производительности.\n\nРиск-департамент запрашивает переоценку портфеля из 200 000 опционов.\n\nМаржинальная система требует пересчитать все позиции...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1040914/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040914#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1040914/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040914#habracut",
+      "published_at": "2026-05-29T04:19:57+00:00",
+      "title_hash": "be213d58adbd392f4b80e2e3e9ac9d5c47ca875f",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/e64/b3a/383/e64b3a383e64b95278087d1fc3dc40ed.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "e73b8fd2a1058671",
+      "status": "pending",
+      "created_at": "2026-05-29T06:25:13+00:00",
+      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
+      "source": "PC Gamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 102,
+      "title_original": "'Proper big': The Witcher 3's new expansion will be 'closer to Blood and Wine' in scope | PC Gamer",
+      "title_ru": "'Proper big': The Witcher 3's new expansion will be 'closer to Blood and Wine' in scope | PC Gamer",
+      "body": [
+        "CD Projekt also has \"some other content currently at an advanced production phase,\" and it CD Projekt also has \"some other content currently at an advanced production phase,\" and it's expected to be out later this year.",
+        "By submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms & Conditions .",
+        "Hi , Your membership journey starts here."
+      ],
+      "footer": null,
+      "source_text": "CD Projekt also has \"some other content currently at an advanced production phase,\" and it CD Projekt also has \"some other content currently at an advanced production phase,\" and it's expected to be out later this year. By submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms & Conditions . Geographical rules apply. Welcome to PC Gamer club ! Hi , Your membership journey starts here. See what you’ve unlocked. Explore your membership benefits. Get the biggest gaming news, reviews, and releases straight to your inbox.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>'Proper big': The Witcher 3's new expansion will be 'closer to Blood and Wine' in scope | PC Gamer</b>\n\nCD Projekt also has \"some other content currently at an advanced production phase,\" and it CD Projekt also has \"some other content currently at an advanced production phase,\" and it's expected to be out later this year.\n\nBy submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms &amp; Conditions .\n\nHi , Your membership journey starts here.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/games/the-witcher/proper-big-the-witcher-3s-new-expansion-will-be-closer-to-blood-and-wine-in-scope/\">PC Gamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.pcgamer.com/games/the-witcher/proper-big-the-witcher-3s-new-expansion-will-be-closer-to-blood-and-wine-in-scope/",
+      "published_at": "2026-05-28T19:45:54+00:00",
+      "title_hash": "5058e69b135f9d93269779b560377978c7327c1d",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/mv4epWzmh2PxrUr3zrdAza-1280-80.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "e32d7c0891fc77c8",
+      "status": "pending",
+      "created_at": "2026-05-29T06:25:13+00:00",
+      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
+      "source": "PC Gamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 102,
+      "title_original": "Despite astronomical price hike, the Steam Deck has sold out again in North America",
+      "title_ru": "Despite astronomical price hike, the Steam Deck has sold out again in North America",
+      "body": [
+        "Less than 24 hours after the stock was replenished, the stock is gone.",
+        "Less than 24 hours after the stock was replenished, the stock is gone."
+      ],
+      "footer": null,
+      "source_text": "Less than 24 hours after the stock was replenished, the stock is gone. Less than 24 hours after the stock was replenished, the stock is gone.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Despite astronomical price hike, the Steam Deck has sold out again in North America</b>\n\nLess than 24 hours after the stock was replenished, the stock is gone.\n\nLess than 24 hours after the stock was replenished, the stock is gone.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/hardware/despite-astronomical-price-hike-the-steam-deck-has-sold-out-again-in-north-america/\">PC Gamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.pcgamer.com/hardware/despite-astronomical-price-hike-the-steam-deck-has-sold-out-again-in-north-america/",
+      "published_at": "2026-05-28T17:45:21+00:00",
+      "title_hash": "2bbd6e56c25ec2692d3cf2daaf13ec17030e73d3",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/R9seprdTBu8cRsdnXmmafJ-1280-80.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
     {
       "id": "dfbc9625cb68c966",
       "status": "rejected",
@@ -9265,301 +9560,6 @@
       "published_at_sakhalin": "2026-05-29T11:09:58+11:00",
       "publish_method": "sendPhoto/safe/pipeline_generated",
       "telegram_message_id": 142
-    },
-    {
-      "id": "7e92c5902312240e",
-      "status": "pending",
-      "created_at": "2026-05-29T06:25:13+00:00",
-      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "async‑profiler в production: CPU, аллокации, lock contention и чтение flame graph",
-      "title_ru": "async‑profiler в production: CPU, аллокации, lock contention и чтение flame graph",
-      "body": [
-        "Стандартный набор инструментов для профилирования Java ‑приложений из коробки JDK — JFR (Java Flight Recorder), jstack, jmap, VisualVM — закрывает многие задачи,...",
-        "Профилирование Java‑приложений в production часто упирается не в отсутствие инструментов, а в их ограничения: CPU горит в одном месте, latency копится в другом, аллокации давят на GC, а lock contention вообще не виден в обычном CPU‑профиле.",
-        "В статье разбираем, как использовать async‑profiler для диагностики реальных Java‑сервисов: снимать CPU, allocation, wall‑clock и lock‑профили, читать flame graph и понимать, где именно приложение тратит ресурсы."
-      ],
-      "footer": null,
-      "source_text": "Стандартный набор инструментов для профилирования Java ‑приложений из коробки JDK — JFR (Java Flight Recorder), jstack, jmap, VisualVM — закрывает многие задачи,... Профилирование Java‑приложений в production часто упирается не в отсутствие инструментов, а в их ограничения: CPU горит в одном месте, latency копится в другом, аллокации давят на GC, а lock contention вообще не виден в обычном CPU‑профиле. В статье разбираем, как использовать async‑profiler для диагностики реальных Java‑сервисов: снимать CPU, allocation, wall‑clock и lock‑профили, читать flame graph и понимать, где именно приложение тратит ресурсы. Читать далее Стандартный набор инструментов для профилирования Java ‑приложений из коробки JDK — JFR (Java Flight Recorder), jstack, jmap, VisualVM — закрывает многие задачи, но в реальных же сценариях у каждого есть ограничения. JFR хорош для общего обзора, но плохо показывает горячие методы из‑за безопасных точек (safepoint bias) — sampling срабатывает только на safepoint, и методы, инлайненные JIT или без safepoint‑poll, в выборку не попадают. jstack даёт срез стека на момент вызова, но один срез — это случайность, а серия с шагом 100 мс уже неудобно анализировать руками. VisualVM требует JMX‑подключения, что в проде с сетевой политикой или Kubernetes‑подами часто блокировано. async‑profiler — внешний инструмент, который в целом решает эту проблему. К маю 2026 актуальная версия — async‑profiler 4.3, команда перешла на квартальный цикл релизов. С январских обновлений 2026 года инструмент идёт в комплекте Amazon Corretto, отдельно скачивать не нужно. В статье обзор основных режимов профилирования, как использовать, как читать flame graph и где async‑profiler помогает, а где лучше взять другой инструмент.",
-      "post_text": "🌐 Мировые IT\n\n<b>async‑profiler в production: CPU, аллокации, lock contention и чтение flame graph</b>\n\nСтандартный набор инструментов для профилирования Java ‑приложений из коробки JDK — JFR (Java Flight Recorder), jstack, jmap, VisualVM — закрывает многие задачи,...\n\nПрофилирование Java‑приложений в production часто упирается не в отсутствие инструментов, а в их ограничения: CPU горит в одном месте, latency копится в другом, аллокации давят на GC, а lock contention вообще не виден в обычном CPU‑профиле.\n\nВ статье разбираем, как использовать async‑profiler для диагностики реальных Java‑сервисов: снимать CPU, allocation, wall‑clock и lock‑профили, читать flame graph и понимать, где именно приложение тратит ресурсы.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/otus/articles/1039968/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039968#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/otus/articles/1039968/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039968#habracut",
-      "published_at": "2026-05-29T06:16:00+00:00",
-      "title_hash": "f294a8d037e4832aec22bc6addb1332551065bc1",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/985/8ac/4e1/9858ac4e1957d4e438761249ee160763.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "2768e41ce3b267e9",
-      "status": "pending",
-      "created_at": "2026-05-29T06:25:13+00:00",
-      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса",
-      "title_ru": "Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса",
-      "body": [
-        "Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса.",
-        "Мы делаем доступ к облакам и ИИ простым и удобным.",
-        "Более 130 IaaS- и PaaS-сервисов, дата-центры уровня Tier III и доступность по SLA 99,982%."
-      ],
-      "footer": null,
-      "source_text": "Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса. Мы делаем доступ к облакам и ИИ простым и удобным. Более 130 IaaS- и PaaS-сервисов, дата-центры уровня Tier III и доступность по SLA 99,982%. Соответствие требованиям 152-ФЗ и 187-ФЗ. Привычная многим картина, когда бизнес «с полей» запрашивает дополнительную аналитику, менеджер идет выбивать ресурсы команды под задачу, аналитик вручную «перемалывает» данные и собирает обновленные дашборды…проходят недели, бюрократические жернова перемалывают прибыль, \"гиря ударяется о пол\" и бизнес в итоге принимает решение «на глазок». С приходом AI в индустрию бизнес-аналитики забрезжила надежда, что эти темные времена останутся только в воспоминаниях тех, кто еще застал пейджер и охоту на мамонта. В сегодняшней статье разберём, как на базе версии Apache Superset с поддержкой MCP и связки Foundation Models от Cloud.ru можно собрать рабочего AI-агента аналитика, который фразу «построй мне аналитику по продажам» за минуты превращает в полноценный дашборд с возможностью скейлинга в продакшене. Читать далее Ваш браузер не поддерживается. Установите современный браузер, к примеру, Google Chrome. Калькулятор цен Тарифы Акции Документация О нас Карьера в Cloud.ru Новости Юридические документы Контакты Решения Реферальная программа Кейсы Партнерство с Cloud.ru Безопасность Evolution Advanced Evolution Stack Облако VMware В чем отличия платформ? Блог Обучение и сертификация Мероприятия Исследования Cloud.ru Личный кабинет Войти Зарегистрироваться Облако для мобильных и веб‑приложений Сайт в облаке Аналитика данных в облаке Хранение данных в облаке Аналитика данных в облаке Инфраструктура для 1С в облаке Миграция IT‑инфраструктуры в облако 3D-моделирование и рендеринг Разработка и тестирование в облаке Evolution Compute Evolution Managed",
-      "post_text": "🌐 Мировые IT\n\n<b>Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса</b>\n\nCloud.ru — облачные сервисы и ИИ-технологии для бизнеса.\n\nМы делаем доступ к облакам и ИИ простым и удобным.\n\nБолее 130 IaaS- и PaaS-сервисов, дата-центры уровня Tier III и доступность по SLA 99,982%.\n\nМИРОВЫЕ IT · <a href=\"https://cloud.ru/\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://cloud.ru/",
-      "published_at": "2026-05-29T06:01:19+00:00",
-      "title_hash": "7948bf4b2fb6d07f9b9b9410d57e487c63abf52c",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/81e/de7/c8e/81ede7c8e89ebdbf949bc6a6ed680391.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "38ed53a585d78670",
-      "status": "pending",
-      "created_at": "2026-05-29T06:25:13+00:00",
-      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "“Арсик”: Как гениальный самоучка из СССР построил робота у себя в квартире",
-      "title_ru": "“Арсик”: Как гениальный самоучка из СССР построил робота у себя в квартире",
-      "body": [
-        "У него не было бюджета огромной корпорации.",
-        "У него даже не было специального образования.",
-        "Но тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура..."
-      ],
-      "footer": null,
-      "source_text": "У него не было бюджета огромной корпорации. У него даже не было специального образования. Но тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура... У него не было бюджета огромной корпорации. У него даже не было специального образования. Но тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура справлялся со своими не всегда простыми задачами. Читать далее У него не было бюджета огромной корпорации. У него даже не было специального образования. Но тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура справлялся со своими не всегда простыми задачами. “Нужда — мать изобретения”, как гласит английская поговорка. У преподавателя черчения в калужском техникуме, Бориса Гришина, нужда была самая острая: тяжело болела мама Мария Васильевна, которой подчас не хватало сил налить себе стакан воды или вызвать скорую. А вызывать карету скорой помощи приходилось часто. Гришин, к слову, никогда не штудировал робототехнику профильно. Он закончил Московский институт инженеров транспорта (МИИТ) и после устроился в калужский техникум преподавать черчение, а на полставки еще и подрабатывал в районной школе. Работа отнимала много времени, а за мамой нужен был уход. И тогда, как настоящий покоритель судьбы — архетип воспетый в книгах Лондона и Купера — Гришин решается на смелый, отчаянный и немного безумный ход: своими руками собрать робота-дворецкого, который бы взял на себя каждодневную опеку. Так в 1962 появился замысел Автоматического Радиоэлектронного Секретаря или “АРС”.",
-      "post_text": "🌐 Мировые IT\n\n<b>“Арсик”: Как гениальный самоучка из СССР построил робота у себя в квартире</b>\n\nУ него не было бюджета огромной корпорации.\n\nУ него даже не было специального образования.\n\nНо тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/studyai/articles/1039994/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039994#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/studyai/articles/1039994/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039994#habracut",
-      "published_at": "2026-05-29T06:00:49+00:00",
-      "title_hash": "e4b4205de987514c8de3cf4192a20be37ae4b6fd",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/ee9/1d7/c88/ee91d7c887a7b5135e587d223e977753.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "4956ce3af9263325",
-      "status": "pending",
-      "created_at": "2026-05-29T06:25:13+00:00",
-      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "KeyboardHook: кроссплатформенный глобальный перехват клавиатуры и мыши для .NET",
-      "title_ru": "KeyboardHook: кроссплатформенный глобальный перехват клавиатуры и мыши для .NET",
-      "body": [
-        "Проблема: ни один готовый пакет не подошёл Первые несколько пакетов, которые я попробовал, работали исключительно на Windows и молчали на macOS.",
-        "Другие просто вешали приложение при первом нажатии...",
-        "Рассказываю, как написал кроссплатформенную .NET-библиотеку для глобального перехвата клавиатуры и мыши."
-      ],
-      "footer": null,
-      "source_text": "Проблема: ни один готовый пакет не подошёл Первые несколько пакетов, которые я попробовал, работали исключительно на Windows и молчали на macOS. Другие просто вешали приложение при первом нажатии... Рассказываю, как написал кроссплатформенную .NET-библиотеку для глобального перехвата клавиатуры и мыши. Под капотом: WH_KEYBOARD_LL на Windows, CGEventTap на macOS и polling через XQueryKeymap на Linux. Один интерфейс, три реализации, ноль внешних зависимостей. Читать далее Первые несколько пакетов, которые я попробовал, работали исключительно на Windows и молчали на macOS. Другие просто вешали приложение при первом нажатии клавиши. Я искал кроссплатформенное решение, «только Windows» меня не устраивало. Если чего-то нет, что делать? Конечно, писать самому. По началу всё было написано даже без вынесения в отдельную библиотеку, но чуть позже, когда данный код понадобился и в других моих проектах, подумал написать библиотеку с нуля. Самое главное чего я хотел добиться: без лишних зависимостей, кроссплатформенность, возможность кочевать между pet-проектами. По ходу решил сделать ее open source, чтобы неминуемо улучшать и совершенствовать данное решение. KeyboardHook - кроссплатформенный глобальный хук клавиатуры и мыши для .NET Standard 2.0. Глобальный перехват нажатий и отпусканий клавиш — работает даже когда ваше приложение не в фокусе",
-      "post_text": "🌐 Мировые IT\n\n<b>KeyboardHook: кроссплатформенный глобальный перехват клавиатуры и мыши для .NET</b>\n\nПроблема: ни один готовый пакет не подошёл Первые несколько пакетов, которые я попробовал, работали исключительно на Windows и молчали на macOS.\n\nДругие просто вешали приложение при первом нажатии...\n\nРассказываю, как написал кроссплатформенную .NET-библиотеку для глобального перехвата клавиатуры и мыши.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1040932/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040932#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1040932/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040932#habracut",
-      "published_at": "2026-05-29T05:48:59+00:00",
-      "title_hash": "7cda40112fe63ac8e6e54f4b3eb658f81d26cf12",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/7f1/3fb/7bf/7f13fb7bf1db79ed8891ef0a6fbd7673.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "e500fd83c6e646ac",
-      "status": "pending",
-      "created_at": "2026-05-29T06:25:13+00:00",
-      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Лингвистика + статистика = NLP",
-      "title_ru": "Лингвистика + статистика = NLP",
-      "body": [
-        "Как-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет.",
-        "Мне нравится ковыряться в коде и мозгах нейросетей, при этом я стараюсь не забывать,...",
-        "Как-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет."
-      ],
-      "footer": null,
-      "source_text": "Как-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет. Мне нравится ковыряться в коде и мозгах нейросетей, при этом я стараюсь не забывать,... Как-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет. Мне нравится ковыряться в коде и мозгах нейросетей, при этом я стараюсь не забывать, на каком фундаменте выросла трендовая ныне область под названием Natural Language Processing (NLP). Поэтому захотелось собрать в одной статье беглый обзор истории компьютерной лингвистики — от первых теорий и грамматик Хомского до появления рекуррентных сетей и механизма внимания. Думаю, стоит остановиться ровно перед эпохой трансформеров, потому что это отдельная, глубокая и достойная собственного рассказа тема. Читать далее",
-      "post_text": "🌐 Мировые IT\n\n<b>Лингвистика + статистика = NLP</b>\n\nКак-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет.\n\nМне нравится ковыряться в коде и мозгах нейросетей, при этом я стараюсь не забывать,...\n\nКак-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1040930/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040930#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1040930/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040930#habracut",
-      "published_at": "2026-05-29T05:39:55+00:00",
-      "title_hash": "810d8e23a05482885e5bbc74f0a16528da68b145",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/092/f8b/821/092f8b8214596a7a63a85adf14fcd303.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "cfa49c585ac6d60e",
-      "status": "pending",
-      "created_at": "2026-05-29T06:25:13+00:00",
-      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Микросекундные оценки опционов: как пересчитать портфель из 200k инструментов за 10 мс",
-      "title_ru": "Микросекундные оценки опционов: как пересчитать портфель из 200k инструментов за 10 мс",
-      "body": [
-        "Финансовые системы предъявляют жёсткие требования к производительности.",
-        "Риск-департамент запрашивает переоценку портфеля из 200 000 опционов.",
-        "Маржинальная система требует пересчитать все позиции..."
-      ],
-      "footer": null,
-      "source_text": "Финансовые системы предъявляют жёсткие требования к производительности. Риск-департамент запрашивает переоценку портфеля из 200 000 опционов. Маржинальная система требует пересчитать все позиции... Финансовые системы предъявляют жёсткие требования к производительности. Риск-департамент запрашивает переоценку портфеля из 200 000 опционов. Маржинальная система требует пересчитать все позиции клиентов после сильного движения рынка. Алгоритмический трейдер хочет оценить Greeks для тысяч потенциальных сделок за миллисекунды. Стандартные подходы на .NET дают сбой по трём причинам. Причина 1: Объектная модель Каждый опцион становится отдельным объектом в куче. Виртуальные методы, ссылки, разрозненное расположение в памяти. Для 200 000 объектов — миллионы байтов, GC-паузы на сборку, промахи кэша процессора. Причина 2: Позлементные вычисления Вызов функции ценообразования в цикле — плохо. Процессор не может векторизовать код, потому что не видит всю картину целиком. SIMD-инструкции простаивают. Причина 3: Аллокации в горячем пути Каждый вызов new double[100000] для хранения промежуточных результатов — это давление на GC. В 24/7 сервисе такие аллокации накапливаются и вызывают непредсказуемые паузы. Требования к решению Читать далее Финансовые системы предъявляют жёсткие требования к производительности. Риск-департамент запрашивает переоценку портфеля из 200 000 опционов. Маржинальная система требует пересчитать все позиции клиентов после сильного движения рынка. Алгоритмический трейдер хочет оценить Greeks для тысяч потенциальных сделок за миллисекунды. Каждый опцион становится отдельным объектом в куче. Виртуальные методы, ссылки, разрозненное расположение в памяти. Для 200 000 объектов — миллионы байтов, GC-паузы на сборку, промахи кэша процессора. Вызов функции ценообразовани",
-      "post_text": "🌐 Мировые IT\n\n<b>Микросекундные оценки опционов: как пересчитать портфель из 200k инструментов за 10 мс</b>\n\nФинансовые системы предъявляют жёсткие требования к производительности.\n\nРиск-департамент запрашивает переоценку портфеля из 200 000 опционов.\n\nМаржинальная система требует пересчитать все позиции...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1040914/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040914#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1040914/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040914#habracut",
-      "published_at": "2026-05-29T04:19:57+00:00",
-      "title_hash": "be213d58adbd392f4b80e2e3e9ac9d5c47ca875f",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/e64/b3a/383/e64b3a383e64b95278087d1fc3dc40ed.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "e73b8fd2a1058671",
-      "status": "pending",
-      "created_at": "2026-05-29T06:25:13+00:00",
-      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
-      "source": "PC Gamer",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 102,
-      "title_original": "'Proper big': The Witcher 3's new expansion will be 'closer to Blood and Wine' in scope | PC Gamer",
-      "title_ru": "'Proper big': The Witcher 3's new expansion will be 'closer to Blood and Wine' in scope | PC Gamer",
-      "body": [
-        "CD Projekt also has \"some other content currently at an advanced production phase,\" and it CD Projekt also has \"some other content currently at an advanced production phase,\" and it's expected to be out later this year.",
-        "By submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms & Conditions .",
-        "Hi , Your membership journey starts here."
-      ],
-      "footer": null,
-      "source_text": "CD Projekt also has \"some other content currently at an advanced production phase,\" and it CD Projekt also has \"some other content currently at an advanced production phase,\" and it's expected to be out later this year. By submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms & Conditions . Geographical rules apply. Welcome to PC Gamer club ! Hi , Your membership journey starts here. See what you’ve unlocked. Explore your membership benefits. Get the biggest gaming news, reviews, and releases straight to your inbox.",
-      "post_text": "🎮 Игры / индустрия\n\n<b>'Proper big': The Witcher 3's new expansion will be 'closer to Blood and Wine' in scope | PC Gamer</b>\n\nCD Projekt also has \"some other content currently at an advanced production phase,\" and it CD Projekt also has \"some other content currently at an advanced production phase,\" and it's expected to be out later this year.\n\nBy submitting your information, you confirm you are aged 16 or over, have read our Privacy Policy and agree to the Terms &amp; Conditions .\n\nHi , Your membership journey starts here.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/games/the-witcher/proper-big-the-witcher-3s-new-expansion-will-be-closer-to-blood-and-wine-in-scope/\">PC Gamer</a>",
-      "edited_post_text": null,
-      "url": "https://www.pcgamer.com/games/the-witcher/proper-big-the-witcher-3s-new-expansion-will-be-closer-to-blood-and-wine-in-scope/",
-      "published_at": "2026-05-28T19:45:54+00:00",
-      "title_hash": "5058e69b135f9d93269779b560377978c7327c1d",
-      "image_url": "https://cdn.mos.cms.futurecdn.net/mv4epWzmh2PxrUr3zrdAza-1280-80.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "e32d7c0891fc77c8",
-      "status": "pending",
-      "created_at": "2026-05-29T06:25:13+00:00",
-      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
-      "source": "PC Gamer",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 102,
-      "title_original": "Despite astronomical price hike, the Steam Deck has sold out again in North America",
-      "title_ru": "Despite astronomical price hike, the Steam Deck has sold out again in North America",
-      "body": [
-        "Less than 24 hours after the stock was replenished, the stock is gone.",
-        "Less than 24 hours after the stock was replenished, the stock is gone."
-      ],
-      "footer": null,
-      "source_text": "Less than 24 hours after the stock was replenished, the stock is gone. Less than 24 hours after the stock was replenished, the stock is gone.",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Despite astronomical price hike, the Steam Deck has sold out again in North America</b>\n\nLess than 24 hours after the stock was replenished, the stock is gone.\n\nLess than 24 hours after the stock was replenished, the stock is gone.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/hardware/despite-astronomical-price-hike-the-steam-deck-has-sold-out-again-in-north-america/\">PC Gamer</a>",
-      "edited_post_text": null,
-      "url": "https://www.pcgamer.com/hardware/despite-astronomical-price-hike-the-steam-deck-has-sold-out-again-in-north-america/",
-      "published_at": "2026-05-28T17:45:21+00:00",
-      "title_hash": "2bbd6e56c25ec2692d3cf2daaf13ec17030e73d3",
-      "image_url": "https://cdn.mos.cms.futurecdn.net/R9seprdTBu8cRsdnXmmafJ-1280-80.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
     }
   ],
   "auto_review": {
