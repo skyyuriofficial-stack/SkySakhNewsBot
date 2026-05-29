@@ -110,7 +110,8 @@
     "https://www.interfax.ru/russia/1092027",
     "https://www.interfax.ru/russia/1092030",
     "https://www.interfax.ru/russia/1092051",
-    "https://habr.com/ru/articles/1039828/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039828#habracut"
+    "https://habr.com/ru/articles/1039828/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039828#habracut",
+    "https://www.theverge.com/tech/938807/microsoft-surface-future-devices-notepad"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -223,23 +224,11 @@
     "89ea7fffdd5b8b6a8e7ebccd4af7abf33880a78a",
     "11c6de71ab6db46e33ded9fc5ea78ccf2080999b",
     "cdcf77d4bb6b8523799395d827177c1501267d45",
-    "09f52044ea0ea045b27d045e1fc86482fd97b27c"
+    "09f52044ea0ea045b27d045e1fc86482fd97b27c",
+    "b92140d183adf9684bbabce5b45a5beb71db0ed4"
   ],
-  "last_run_sakhalin": "2026-05-29T09:14:29+11:00",
+  "last_run_sakhalin": "2026-05-29T11:10:10+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-20T11:19:21+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "title": "Россия планирует продлить договор о ПВО с Киргизией на пятилетие",
-      "url": "https://www.interfax.ru/russia/1090526",
-      "published_at": "2026-05-19T22:23:00+00:00",
-      "with_image": false,
-      "image_mode": "none",
-      "image_url": null,
-      "publish_method": "sendMessage/no-preview/no-image",
-      "score": 145
-    },
     {
       "time_sakhalin": "2026-05-20T11:51:14+11:00",
       "source": "Guardian World",
@@ -3735,6 +3724,134 @@
       "audit_issues": [],
       "audited_at": "2026-05-28T00:04:37+00:00",
       "audited_at_sakhalin": "2026-05-28T11:04:37+11:00"
+    },
+    {
+      "time_sakhalin": "2026-05-29T11:09:58+11:00",
+      "source": "The Verge",
+      "category": "🎮 Игры / индустрия",
+      "title": "Microsoft раскрыла новую подборку игр для Xbox Game Pass",
+      "body": [
+        "Microsoft объявила очередную подборку игр, которые появятся в Xbox Game Pass.",
+        "Для игровой индустрии это сервисная новость: Game Pass остаётся одним из ключевых инструментов удержания аудитории Xbox и PC."
+      ],
+      "caption": "🎮 Игры / индустрия\n\n<b>Microsoft раскрыла новую подборку игр для Xbox Game Pass</b>\n\nMicrosoft объявила очередную подборку игр, которые появятся в Xbox Game Pass.\n\nДля игровой индустрии это сервисная новость: Game Pass остаётся одним из ключевых инструментов удержания аудитории Xbox и PC.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/tech/938807/microsoft-surface-future-devices-notepad\">The Verge</a>",
+      "caption_plain": "🎮 Игры / индустрия\n\n Microsoft раскрыла новую подборку игр для Xbox Game Pass \n\nMicrosoft объявила очередную подборку игр, которые появятся в Xbox Game Pass.\n\nДля игровой индустрии это сервисная новость: Game Pass остаётся одним из ключевых инструментов удержания аудитории Xbox и PC.\n\nИГРОВАЯ ИНДУСТРИЯ ·  The Verge ",
+      "url": "https://www.theverge.com/tech/938807/microsoft-surface-future-devices-notepad",
+      "published_at": "2026-05-28T16:00:00+00:00",
+      "with_image": true,
+      "image_mode": "pipeline_generated",
+      "image_url": null,
+      "image_fingerprint": "cd20853faac5cd8188a28cb150d924cb26d49234",
+      "image_pipeline": {
+        "strategy": "generated",
+        "reason": "generated semantic image accepted",
+        "selected": {
+          "url": null,
+          "source": "generated",
+          "width": 1200,
+          "height": 675,
+          "mime_type": "image/jpeg",
+          "query_used": "generated:games:Microsoft раскрыла новую подборку игр для Xbox Game Pass",
+          "relevance_score": 1.1600000000000001,
+          "image_kind": "generated",
+          "filename": "thematic.jpg",
+          "reason": "local semantic generation; topic=games; hits=['game', 'xbox']; entity_hits=[]; bad_hits=[]"
+        },
+        "attempts": [
+          {
+            "stage": "external_search",
+            "query": "video game industry studio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Halo_Studios_Logo.svg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "video game industry studio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Keywords_Studios_Logo.png",
+            "ok": false,
+            "reason": "bad image URL token"
+          },
+          {
+            "stage": "external_search",
+            "query": "video game industry studio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Laniatus_videogame_company_logo_2024.png",
+            "ok": false,
+            "reason": "bad image URL token"
+          },
+          {
+            "stage": "external_search",
+            "query": "video game industry studio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Outside_picture_of_a_video_game_truck_and_trailer.JPG",
+            "ok": false,
+            "reason": "low relevance: 0.31; topic=games; hits=['game']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "gaming console controller",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/FC-Twin-Console-Set-H.jpg",
+            "ok": false,
+            "reason": "low relevance: 0.70; topic=games; hits=['game', 'gaming', 'controller', 'console']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "gaming console controller",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Microsoft-Xbox-One-Console-Set-wKinect.jpg",
+            "ok": false,
+            "reason": "low relevance: 0.73; topic=games; hits=['game', 'gaming', 'controller', 'console', 'xbox']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "gaming console controller",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/OUYA-Console-set-h.jpg",
+            "ok": false,
+            "reason": "low relevance: 0.70; topic=games; hits=['game', 'gaming', 'controller', 'console']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "gaming console controller",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Sega-Mega-Drive-JP-Mk1-Console-Set.jpg",
+            "ok": false,
+            "reason": "low relevance: 0.70; topic=games; hits=['game', 'gaming', 'controller', 'console']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "gaming console controller",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Sega-SG-1000-Console-Set.jpg",
+            "ok": false,
+            "reason": "low relevance: 0.70; topic=games; hits=['game', 'gaming', 'controller', 'console']; entity_hits=[]; bad_hits=[]"
+          },
+          {
+            "stage": "external_search",
+            "query": "gaming console controller",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Wii-Mini-Console-Set-H.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "external_search",
+            "query": "gaming console controller",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Xbox-360-Pro-wController.jpg",
+            "ok": false,
+            "reason": "no image data"
+          },
+          {
+            "stage": "generated",
+            "ok": true,
+            "reason": "accepted: 1200x675; score=1.16; topic=games; hits=['game', 'xbox']; entity_hits=[]; bad_hits=[]"
+          }
+        ]
+      },
+      "publish_method": "sendPhoto/safe/pipeline_generated",
+      "telegram_message_id": 142,
+      "score": 600,
+      "stream_priority": 600,
+      "rewrite_mode": "special",
+      "audit_status": "pass",
+      "audit_severity": "ok",
+      "audit_issues": [],
+      "audited_at": "2026-05-29T00:10:10+00:00",
+      "audited_at_sakhalin": "2026-05-29T11:10:10+11:00"
     }
   ],
   "last_cycle_report": {
@@ -3836,7 +3953,6 @@
     "https://habrastorage.org/getpro/habr/upload_files/486/ce7/7be/486ce77beb6315497d0f900e7678b413.png"
   ],
   "recent_image_fingerprints": [
-    "0d931b1467de65c877f525af89c08f5c45dbaed1",
     "758795874057362241d3058a1a03535b74f7c2fc",
     "a10addfb245f4b09e0460ae3da4733cec409f65f",
     "b91098184a0d7ea765a266ee3905514e4e293b07",
@@ -3875,7 +3991,8 @@
     "d9ac31867f7d4f3962da0637ce7b83c3a3a667e0",
     "2c5a09deda0b1cd340458ac3cbb7372f9a097fba",
     "720d0dad328a7020239198da01f9392e9f59c2ea",
-    "c29bf021f0017cb00dfcd2d77e5a823f3db8e4a3"
+    "c29bf021f0017cb00dfcd2d77e5a823f3db8e4a3",
+    "cd20853faac5cd8188a28cb150d924cb26d49234"
   ],
   "recent_generated_prompts": [
     "generated:security:Трамп призвал ряд исламских стран присоединиться к Соглашениям Авраама",
@@ -3902,17 +4019,32 @@
     "generated:security:Госдума внесла проект обращения к ООН по теракту в Старобельске",
     "generated:security:Число БПЛА, сбитых над Севастополем, достигло 14",
     "generated:diplomacy:Доходы российских ИТ-компаний в 2025 году выросли на 14%",
-    "generated:incident_avalanche:Три человека стали жертвами пожара в частном доме в Липецке"
+    "generated:incident_avalanche:Три человека стали жертвами пожара в частном доме в Липецке",
+    "generated:games:Microsoft раскрыла новую подборку игр для Xbox Game Pass"
   ],
   "last_post_publish_audit": {
     "version": 2,
-    "checked_at": "2026-05-28T22:00:36+00:00",
-    "checked_at_sakhalin": "2026-05-29T09:00:36+11:00",
-    "checked_count": 0,
+    "checked_at": "2026-05-29T00:10:10+00:00",
+    "checked_at_sakhalin": "2026-05-29T11:10:10+11:00",
+    "checked_count": 1,
     "failed_count": 0,
     "audit_chat_configured": false,
     "delete_bad_posts": false,
     "deleted": [],
-    "items": []
+    "items": [
+      {
+        "telegram_message_id": 142,
+        "title": "Microsoft раскрыла новую подборку игр для Xbox Game Pass",
+        "category": "🎮 Игры / индустрия",
+        "time_sakhalin": "2026-05-29T11:09:58+11:00",
+        "image_mode": "pipeline_generated",
+        "image_url": null,
+        "url": "https://www.theverge.com/tech/938807/microsoft-surface-future-devices-notepad",
+        "status": "pass",
+        "severity": "ok",
+        "issues": [],
+        "content_preview": "🎮 Игры / индустрия Microsoft раскрыла новую подборку игр для Xbox Game Pass Microsoft объявила очередную подборку игр, которые появятся в Xbox Game Pass. Для игровой индустрии это сервисная новость: Game Pass остаётся одним из ключевых инструментов удержания аудитории Xbox и PC. ИГРОВАЯ ИНДУСТРИЯ · The Verge"
+      }
+    ]
   }
 }
