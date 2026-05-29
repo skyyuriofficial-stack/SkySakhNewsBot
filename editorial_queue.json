@@ -1,242 +1,20 @@
 {
   "version": 1,
-  "updated_at": "2026-05-29T06:35:29+00:00",
-  "updated_at_sakhalin": "2026-05-29T17:35:29+11:00",
-  "reviewed_at": "2026-05-29T06:20:00+00:00",
-  "reviewed_at_sakhalin": "2026-05-29T17:20:00+11:00",
+  "updated_at": "2026-05-29T11:35:31+00:00",
+  "updated_at_sakhalin": "2026-05-29T22:35:31+11:00",
+  "reviewed_at": "2026-05-29T11:35:31+00:00",
+  "reviewed_at_sakhalin": "2026-05-29T22:35:31+11:00",
   "items": [
     {
-      "id": "7e92c5902312240e",
-      "status": "pending",
-      "created_at": "2026-05-29T06:25:13+00:00",
-      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "async‑profiler в production: CPU, аллокации, lock contention и чтение flame graph",
-      "title_ru": "async‑profiler в production: CPU, аллокации, lock contention и чтение flame graph",
-      "body": [
-        "Стандартный набор инструментов для профилирования Java ‑приложений из коробки JDK — JFR (Java Flight Recorder), jstack, jmap, VisualVM — закрывает многие задачи,...",
-        "Профилирование Java‑приложений в production часто упирается не в отсутствие инструментов, а в их ограничения: CPU горит в одном месте, latency копится в другом, аллокации давят на GC, а lock contention вообще не виден в обычном CPU‑профиле.",
-        "В статье разбираем, как использовать async‑profiler для диагностики реальных Java‑сервисов: снимать CPU, allocation, wall‑clock и lock‑профили, читать flame graph и понимать, где именно приложение тратит ресурсы."
-      ],
-      "footer": null,
-      "source_text": "Стандартный набор инструментов для профилирования Java ‑приложений из коробки JDK — JFR (Java Flight Recorder), jstack, jmap, VisualVM — закрывает многие задачи,... Профилирование Java‑приложений в production часто упирается не в отсутствие инструментов, а в их ограничения: CPU горит в одном месте, latency копится в другом, аллокации давят на GC, а lock contention вообще не виден в обычном CPU‑профиле. В статье разбираем, как использовать async‑profiler для диагностики реальных Java‑сервисов: снимать CPU, allocation, wall‑clock и lock‑профили, читать flame graph и понимать, где именно приложение тратит ресурсы. Читать далее Стандартный набор инструментов для профилирования Java ‑приложений из коробки JDK — JFR (Java Flight Recorder), jstack, jmap, VisualVM — закрывает многие задачи, но в реальных же сценариях у каждого есть ограничения. JFR хорош для общего обзора, но плохо показывает горячие методы из‑за безопасных точек (safepoint bias) — sampling срабатывает только на safepoint, и методы, инлайненные JIT или без safepoint‑poll, в выборку не попадают. jstack даёт срез стека на момент вызова, но один срез — это случайность, а серия с шагом 100 мс уже неудобно анализировать руками. VisualVM требует JMX‑подключения, что в проде с сетевой политикой или Kubernetes‑подами часто блокировано. async‑profiler — внешний инструмент, который в целом решает эту проблему. К маю 2026 актуальная версия — async‑profiler 4.3, команда перешла на квартальный цикл релизов. С январских обновлений 2026 года инструмент идёт в комплекте Amazon Corretto, отдельно скачивать не нужно. В статье обзор основных режимов профилирования, как использовать, как читать flame graph и где async‑profiler помогает, а где лучше взять другой инструмент.",
-      "post_text": "🌐 Мировые IT\n\n<b>async‑profiler в production: CPU, аллокации, lock contention и чтение flame graph</b>\n\nСтандартный набор инструментов для профилирования Java ‑приложений из коробки JDK — JFR (Java Flight Recorder), jstack, jmap, VisualVM — закрывает многие задачи,...\n\nПрофилирование Java‑приложений в production часто упирается не в отсутствие инструментов, а в их ограничения: CPU горит в одном месте, latency копится в другом, аллокации давят на GC, а lock contention вообще не виден в обычном CPU‑профиле.\n\nВ статье разбираем, как использовать async‑profiler для диагностики реальных Java‑сервисов: снимать CPU, allocation, wall‑clock и lock‑профили, читать flame graph и понимать, где именно приложение тратит ресурсы.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/otus/articles/1039968/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039968#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/otus/articles/1039968/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039968#habracut",
-      "published_at": "2026-05-29T06:16:00+00:00",
-      "title_hash": "f294a8d037e4832aec22bc6addb1332551065bc1",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/985/8ac/4e1/9858ac4e1957d4e438761249ee160763.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "2768e41ce3b267e9",
-      "status": "pending",
-      "created_at": "2026-05-29T06:25:13+00:00",
-      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса",
-      "title_ru": "Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса",
-      "body": [
-        "Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса.",
-        "Мы делаем доступ к облакам и ИИ простым и удобным.",
-        "Более 130 IaaS- и PaaS-сервисов, дата-центры уровня Tier III и доступность по SLA 99,982%."
-      ],
-      "footer": null,
-      "source_text": "Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса. Мы делаем доступ к облакам и ИИ простым и удобным. Более 130 IaaS- и PaaS-сервисов, дата-центры уровня Tier III и доступность по SLA 99,982%. Соответствие требованиям 152-ФЗ и 187-ФЗ. Привычная многим картина, когда бизнес «с полей» запрашивает дополнительную аналитику, менеджер идет выбивать ресурсы команды под задачу, аналитик вручную «перемалывает» данные и собирает обновленные дашборды…проходят недели, бюрократические жернова перемалывают прибыль, \"гиря ударяется о пол\" и бизнес в итоге принимает решение «на глазок». С приходом AI в индустрию бизнес-аналитики забрезжила надежда, что эти темные времена останутся только в воспоминаниях тех, кто еще застал пейджер и охоту на мамонта. В сегодняшней статье разберём, как на базе версии Apache Superset с поддержкой MCP и связки Foundation Models от Cloud.ru можно собрать рабочего AI-агента аналитика, который фразу «построй мне аналитику по продажам» за минуты превращает в полноценный дашборд с возможностью скейлинга в продакшене. Читать далее Ваш браузер не поддерживается. Установите современный браузер, к примеру, Google Chrome. Калькулятор цен Тарифы Акции Документация О нас Карьера в Cloud.ru Новости Юридические документы Контакты Решения Реферальная программа Кейсы Партнерство с Cloud.ru Безопасность Evolution Advanced Evolution Stack Облако VMware В чем отличия платформ? Блог Обучение и сертификация Мероприятия Исследования Cloud.ru Личный кабинет Войти Зарегистрироваться Облако для мобильных и веб‑приложений Сайт в облаке Аналитика данных в облаке Хранение данных в облаке Аналитика данных в облаке Инфраструктура для 1С в облаке Миграция IT‑инфраструктуры в облако 3D-моделирование и рендеринг Разработка и тестирование в облаке Evolution Compute Evolution Managed",
-      "post_text": "🌐 Мировые IT\n\n<b>Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса</b>\n\nCloud.ru — облачные сервисы и ИИ-технологии для бизнеса.\n\nМы делаем доступ к облакам и ИИ простым и удобным.\n\nБолее 130 IaaS- и PaaS-сервисов, дата-центры уровня Tier III и доступность по SLA 99,982%.\n\nМИРОВЫЕ IT · <a href=\"https://cloud.ru/\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://cloud.ru/",
-      "published_at": "2026-05-29T06:01:19+00:00",
-      "title_hash": "7948bf4b2fb6d07f9b9b9410d57e487c63abf52c",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/81e/de7/c8e/81ede7c8e89ebdbf949bc6a6ed680391.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "38ed53a585d78670",
-      "status": "pending",
-      "created_at": "2026-05-29T06:25:13+00:00",
-      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "“Арсик”: Как гениальный самоучка из СССР построил робота у себя в квартире",
-      "title_ru": "“Арсик”: Как гениальный самоучка из СССР построил робота у себя в квартире",
-      "body": [
-        "У него не было бюджета огромной корпорации.",
-        "У него даже не было специального образования.",
-        "Но тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура..."
-      ],
-      "footer": null,
-      "source_text": "У него не было бюджета огромной корпорации. У него даже не было специального образования. Но тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура... У него не было бюджета огромной корпорации. У него даже не было специального образования. Но тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура справлялся со своими не всегда простыми задачами. Читать далее У него не было бюджета огромной корпорации. У него даже не было специального образования. Но тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура справлялся со своими не всегда простыми задачами. “Нужда — мать изобретения”, как гласит английская поговорка. У преподавателя черчения в калужском техникуме, Бориса Гришина, нужда была самая острая: тяжело болела мама Мария Васильевна, которой подчас не хватало сил налить себе стакан воды или вызвать скорую. А вызывать карету скорой помощи приходилось часто. Гришин, к слову, никогда не штудировал робототехнику профильно. Он закончил Московский институт инженеров транспорта (МИИТ) и после устроился в калужский техникум преподавать черчение, а на полставки еще и подрабатывал в районной школе. Работа отнимала много времени, а за мамой нужен был уход. И тогда, как настоящий покоритель судьбы — архетип воспетый в книгах Лондона и Купера — Гришин решается на смелый, отчаянный и немного безумный ход: своими руками собрать робота-дворецкого, который бы взял на себя каждодневную опеку. Так в 1962 появился замысел Автоматического Радиоэлектронного Секретаря или “АРС”.",
-      "post_text": "🌐 Мировые IT\n\n<b>“Арсик”: Как гениальный самоучка из СССР построил робота у себя в квартире</b>\n\nУ него не было бюджета огромной корпорации.\n\nУ него даже не было специального образования.\n\nНо тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/studyai/articles/1039994/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039994#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/studyai/articles/1039994/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039994#habracut",
-      "published_at": "2026-05-29T06:00:49+00:00",
-      "title_hash": "e4b4205de987514c8de3cf4192a20be37ae4b6fd",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/ee9/1d7/c88/ee91d7c887a7b5135e587d223e977753.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "4956ce3af9263325",
-      "status": "pending",
-      "created_at": "2026-05-29T06:25:13+00:00",
-      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "KeyboardHook: кроссплатформенный глобальный перехват клавиатуры и мыши для .NET",
-      "title_ru": "KeyboardHook: кроссплатформенный глобальный перехват клавиатуры и мыши для .NET",
-      "body": [
-        "Проблема: ни один готовый пакет не подошёл Первые несколько пакетов, которые я попробовал, работали исключительно на Windows и молчали на macOS.",
-        "Другие просто вешали приложение при первом нажатии...",
-        "Рассказываю, как написал кроссплатформенную .NET-библиотеку для глобального перехвата клавиатуры и мыши."
-      ],
-      "footer": null,
-      "source_text": "Проблема: ни один готовый пакет не подошёл Первые несколько пакетов, которые я попробовал, работали исключительно на Windows и молчали на macOS. Другие просто вешали приложение при первом нажатии... Рассказываю, как написал кроссплатформенную .NET-библиотеку для глобального перехвата клавиатуры и мыши. Под капотом: WH_KEYBOARD_LL на Windows, CGEventTap на macOS и polling через XQueryKeymap на Linux. Один интерфейс, три реализации, ноль внешних зависимостей. Читать далее Первые несколько пакетов, которые я попробовал, работали исключительно на Windows и молчали на macOS. Другие просто вешали приложение при первом нажатии клавиши. Я искал кроссплатформенное решение, «только Windows» меня не устраивало. Если чего-то нет, что делать? Конечно, писать самому. По началу всё было написано даже без вынесения в отдельную библиотеку, но чуть позже, когда данный код понадобился и в других моих проектах, подумал написать библиотеку с нуля. Самое главное чего я хотел добиться: без лишних зависимостей, кроссплатформенность, возможность кочевать между pet-проектами. По ходу решил сделать ее open source, чтобы неминуемо улучшать и совершенствовать данное решение. KeyboardHook - кроссплатформенный глобальный хук клавиатуры и мыши для .NET Standard 2.0. Глобальный перехват нажатий и отпусканий клавиш — работает даже когда ваше приложение не в фокусе",
-      "post_text": "🌐 Мировые IT\n\n<b>KeyboardHook: кроссплатформенный глобальный перехват клавиатуры и мыши для .NET</b>\n\nПроблема: ни один готовый пакет не подошёл Первые несколько пакетов, которые я попробовал, работали исключительно на Windows и молчали на macOS.\n\nДругие просто вешали приложение при первом нажатии...\n\nРассказываю, как написал кроссплатформенную .NET-библиотеку для глобального перехвата клавиатуры и мыши.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1040932/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040932#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1040932/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040932#habracut",
-      "published_at": "2026-05-29T05:48:59+00:00",
-      "title_hash": "7cda40112fe63ac8e6e54f4b3eb658f81d26cf12",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/7f1/3fb/7bf/7f13fb7bf1db79ed8891ef0a6fbd7673.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "e500fd83c6e646ac",
-      "status": "pending",
-      "created_at": "2026-05-29T06:25:13+00:00",
-      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Лингвистика + статистика = NLP",
-      "title_ru": "Лингвистика + статистика = NLP",
-      "body": [
-        "Как-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет.",
-        "Мне нравится ковыряться в коде и мозгах нейросетей, при этом я стараюсь не забывать,...",
-        "Как-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет."
-      ],
-      "footer": null,
-      "source_text": "Как-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет. Мне нравится ковыряться в коде и мозгах нейросетей, при этом я стараюсь не забывать,... Как-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет. Мне нравится ковыряться в коде и мозгах нейросетей, при этом я стараюсь не забывать, на каком фундаменте выросла трендовая ныне область под названием Natural Language Processing (NLP). Поэтому захотелось собрать в одной статье беглый обзор истории компьютерной лингвистики — от первых теорий и грамматик Хомского до появления рекуррентных сетей и механизма внимания. Думаю, стоит остановиться ровно перед эпохой трансформеров, потому что это отдельная, глубокая и достойная собственного рассказа тема. Читать далее",
-      "post_text": "🌐 Мировые IT\n\n<b>Лингвистика + статистика = NLP</b>\n\nКак-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет.\n\nМне нравится ковыряться в коде и мозгах нейросетей, при этом я стараюсь не забывать,...\n\nКак-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1040930/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040930#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1040930/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040930#habracut",
-      "published_at": "2026-05-29T05:39:55+00:00",
-      "title_hash": "810d8e23a05482885e5bbc74f0a16528da68b145",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/092/f8b/821/092f8b8214596a7a63a85adf14fcd303.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "cfa49c585ac6d60e",
-      "status": "pending",
-      "created_at": "2026-05-29T06:25:13+00:00",
-      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Микросекундные оценки опционов: как пересчитать портфель из 200k инструментов за 10 мс",
-      "title_ru": "Микросекундные оценки опционов: как пересчитать портфель из 200k инструментов за 10 мс",
-      "body": [
-        "Финансовые системы предъявляют жёсткие требования к производительности.",
-        "Риск-департамент запрашивает переоценку портфеля из 200 000 опционов.",
-        "Маржинальная система требует пересчитать все позиции..."
-      ],
-      "footer": null,
-      "source_text": "Финансовые системы предъявляют жёсткие требования к производительности. Риск-департамент запрашивает переоценку портфеля из 200 000 опционов. Маржинальная система требует пересчитать все позиции... Финансовые системы предъявляют жёсткие требования к производительности. Риск-департамент запрашивает переоценку портфеля из 200 000 опционов. Маржинальная система требует пересчитать все позиции клиентов после сильного движения рынка. Алгоритмический трейдер хочет оценить Greeks для тысяч потенциальных сделок за миллисекунды. Стандартные подходы на .NET дают сбой по трём причинам. Причина 1: Объектная модель Каждый опцион становится отдельным объектом в куче. Виртуальные методы, ссылки, разрозненное расположение в памяти. Для 200 000 объектов — миллионы байтов, GC-паузы на сборку, промахи кэша процессора. Причина 2: Позлементные вычисления Вызов функции ценообразования в цикле — плохо. Процессор не может векторизовать код, потому что не видит всю картину целиком. SIMD-инструкции простаивают. Причина 3: Аллокации в горячем пути Каждый вызов new double[100000] для хранения промежуточных результатов — это давление на GC. В 24/7 сервисе такие аллокации накапливаются и вызывают непредсказуемые паузы. Требования к решению Читать далее Финансовые системы предъявляют жёсткие требования к производительности. Риск-департамент запрашивает переоценку портфеля из 200 000 опционов. Маржинальная система требует пересчитать все позиции клиентов после сильного движения рынка. Алгоритмический трейдер хочет оценить Greeks для тысяч потенциальных сделок за миллисекунды. Каждый опцион становится отдельным объектом в куче. Виртуальные методы, ссылки, разрозненное расположение в памяти. Для 200 000 объектов — миллионы байтов, GC-паузы на сборку, промахи кэша процессора. Вызов функции ценообразовани",
-      "post_text": "🌐 Мировые IT\n\n<b>Микросекундные оценки опционов: как пересчитать портфель из 200k инструментов за 10 мс</b>\n\nФинансовые системы предъявляют жёсткие требования к производительности.\n\nРиск-департамент запрашивает переоценку портфеля из 200 000 опционов.\n\nМаржинальная система требует пересчитать все позиции...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1040914/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040914#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1040914/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040914#habracut",
-      "published_at": "2026-05-29T04:19:57+00:00",
-      "title_hash": "be213d58adbd392f4b80e2e3e9ac9d5c47ca875f",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/e64/b3a/383/e64b3a383e64b95278087d1fc3dc40ed.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
       "id": "e73b8fd2a1058671",
-      "status": "pending",
+      "status": "hold",
       "created_at": "2026-05-29T06:25:13+00:00",
       "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
       "source": "PC Gamer",
       "source_type": "gaming",
       "category": "🎮 Игры / индустрия",
       "category_hint": "🎮 Игры / индустрия",
-      "score": 102,
+      "score": 600,
       "title_original": "'Proper big': The Witcher 3's new expansion will be 'closer to Blood and Wine' in scope | PC Gamer",
       "title_ru": "'Proper big': The Witcher 3's new expansion will be 'closer to Blood and Wine' in scope | PC Gamer",
       "body": [
@@ -256,24 +34,28 @@
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-29T11:35:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
     },
     {
       "id": "e32d7c0891fc77c8",
-      "status": "pending",
+      "status": "hold",
       "created_at": "2026-05-29T06:25:13+00:00",
       "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
       "source": "PC Gamer",
       "source_type": "gaming",
       "category": "🎮 Игры / индустрия",
       "category_hint": "🎮 Игры / индустрия",
-      "score": 102,
+      "score": 600,
       "title_original": "Despite astronomical price hike, the Steam Deck has sold out again in North America",
       "title_ru": "Despite astronomical price hike, the Steam Deck has sold out again in North America",
       "body": [
@@ -292,13 +74,261 @@
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-29T11:35:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "69f6900cd4b05944",
+      "status": "hold",
+      "created_at": "2026-05-29T11:35:30+00:00",
+      "created_at_sakhalin": "2026-05-29T22:35:30+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 600,
+      "title_original": "Nintendo’s newest WarioWare is a weirdo smartphone app",
+      "title_ru": "Nintendo’s newest WarioWare is a weirdo smartphone app",
+      "body": [
+        "Despite moving away from mobile games, Nintendo just launched a new title called Pictonico.",
+        "A decade ago, Nintendo made a big splash into the world of mobile gaming with a new Super Mario platformer directed by none other than Shigeru Miyamoto.",
+        "But even though the game proved popular, it wasn't the success the company had hoped for."
+      ],
+      "footer": null,
+      "source_text": "Despite moving away from mobile games, Nintendo just launched a new title called Pictonico. A decade ago, Nintendo made a big splash into the world of mobile gaming with a new Super Mario platformer directed by none other than Shigeru Miyamoto. But even though the game proved popular, it wasn't the success the company had hoped for. Over the ensuing years Nintendo has slowly retreated from smartphone gaming, with […] Entertainment Close Entertainment Posts from this topic will be added to your daily email digest and your homepage feed. Report Close Report Posts from this topic will be added to your daily email digest and your homepage feed. Despite moving away from mobile games, Nintendo just launched a new title called Pictonico. Despite moving away from mobile games, Nintendo just launched a new title called Pictonico.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Nintendo’s newest WarioWare is a weirdo smartphone app</b>\n\nDespite moving away from mobile games, Nintendo just launched a new title called Pictonico.\n\nA decade ago, Nintendo made a big splash into the world of mobile gaming with a new Super Mario platformer directed by none other than Shigeru Miyamoto.\n\nBut even though the game proved popular, it wasn't the success the company had hoped for.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/games/939283/pictonico-nintendo-mobile-game\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/games/939283/pictonico-nintendo-mobile-game",
+      "published_at": "2026-05-28T20:16:16+00:00",
+      "title_hash": "aa648e8c482d10d804091099040268acf3fb16ed",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-29T11:35:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "1cccaedbc6323efe",
+      "status": "hold",
+      "created_at": "2026-05-29T11:35:30+00:00",
+      "created_at_sakhalin": "2026-05-29T22:35:30+11:00",
+      "source": "PC Gamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 680,
+      "title_original": "6 months before the launch of Grand Theft Auto 6, Rockstar employees in the UK have formed a union",
+      "title_ru": "6 months before the launch of Grand Theft Auto 6, Rockstar employees in the UK have formed a union",
+      "body": [
+        "The Rockstar Game Workers Union is a subsidiary of the Independent Workers of Great Britain union that The Rockstar Game Workers Union is a subsidiary of the Independent Workers of Great Britain union that's been fighting Rockstar over the 2025 firing of 31 employees."
+      ],
+      "footer": null,
+      "source_text": "The Rockstar Game Workers Union is a subsidiary of the Independent Workers of Great Britain union that The Rockstar Game Workers Union is a subsidiary of the Independent Workers of Great Britain union that's been fighting Rockstar over the 2025 firing of 31 employees.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>6 months before the launch of Grand Theft Auto 6, Rockstar employees in the UK have formed a union</b>\n\nThe Rockstar Game Workers Union is a subsidiary of the Independent Workers of Great Britain union that The Rockstar Game Workers Union is a subsidiary of the Independent Workers of Great Britain union that's been fighting Rockstar over the 2025 firing of 31 employees.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/gaming-industry/6-months-before-the-launch-of-grand-theft-auto-6-rockstar-employees-in-the-uk-have-formed-a-union/\">PC Gamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.pcgamer.com/gaming-industry/6-months-before-the-launch-of-grand-theft-auto-6-rockstar-employees-in-the-uk-have-formed-a-union/",
+      "published_at": "2026-05-28T21:49:09+00:00",
+      "title_hash": "86adf660994a1f368e43cfdaf0e2122dd3e64bbe",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/QjS7aeuaixoi5SJTpsZs2L-1280-80.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-29T11:35:30+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "1134bc95011853a1",
+      "status": "hold",
+      "created_at": "2026-05-29T11:35:30+00:00",
+      "created_at_sakhalin": "2026-05-29T22:35:30+11:00",
+      "source": "GameSpot",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 680,
+      "title_original": "Take-Two: GTA 6 review scores are important",
+      "title_ru": "Take-Two: GTA 6 review scores are important",
+      "body": [
+        "We discuss professional criticism, console pricing, staff retention and 2K missteps with Strauss Zelnick Grand Theft Auto 6 is still on-track to release in just under six months.",
+        "And while it’s too soon to claim the title will receive the same critical acclaim that Grand Theft Auto 5 received in 2013, Strauss Zelnick--the CEO of Rockstar Games’ parent company, Take-Two Interactive--is confident the sequel will receive high reviews.",
+        "He also believes the glowing response to Rockstar’s previous games reflects well on the company itself."
+      ],
+      "footer": null,
+      "source_text": "It’s a GTA 6 special! We discuss professional criticism, console pricing, staff retention and 2K missteps with Strauss Zelnick Grand Theft Auto 6 is still on-track to release in just under six months. And while it’s too soon to claim the title will receive the same critical acclaim that Grand Theft Auto 5 received in 2013, Strauss Zelnick--the CEO of Rockstar Games’ parent company, Take-Two Interactive--is confident the sequel will receive high reviews. He also believes the glowing response to Rockstar’s previous games reflects well on the company itself. “Rockstar’s scores are typically in the mid-90s, sometimes high 90s,” Zelnick said during an interview with The Game Business . “Not many games can say that. And that’s a reflection on Rockstar’s commitment to quality.” Zelnick also acknowledged that great reviews still matter for games like GTA 6, but his fellow guest, Future content director Dan Dawkins, suggested that the gaming media landscape has greatly changed in the 13 years since GTA 5 was released. “The media and cultural environment has completely transformed,” Dawkins said. “At that point in time ... it was easier--not easy, but easier--to handpick the journalists you wanted to review that game ahead of time. I was one of those journalists. Social media is so noisy. And someone has to be first to say the thing you like is rubbish. Someone will do that. All narratives are available at once now, about everything. Rockstar are going to get, from the gates, some dissenting voices.” Regardless, Zelnick remains bullish about GTA 6’s prospects , even in the face of rising costs for everyday needs. “If you give people what they want in the entertainment business, they will come out for it,” Zelnick told IGN earlier this week. He also hinted that GTA 6 will have a “",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Take-Two: GTA 6 review scores are important</b>\n\nWe discuss professional criticism, console pricing, staff retention and 2K missteps with Strauss Zelnick Grand Theft Auto 6 is still on-track to release in just under six months.\n\nAnd while it’s too soon to claim the title will receive the same critical acclaim that Grand Theft Auto 5 received in 2013, Strauss Zelnick--the CEO of Rockstar Games’ parent company, Take-Two Interactive--is confident the sequel will receive high reviews.\n\nHe also believes the glowing response to Rockstar’s previous games reflects well on the company itself.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.thegamebusiness.com/p/take-two-gta-6-review-scores-are\">GameSpot</a>",
+      "edited_post_text": null,
+      "url": "https://www.thegamebusiness.com/p/take-two-gta-6-review-scores-are",
+      "published_at": "2026-05-28T22:01:26+00:00",
+      "title_hash": "752e7c8415925c9c020f9fa78eb8eff920e50a5b",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-29T11:35:30+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "221e5f22b7e7fe36",
+      "status": "hold",
+      "created_at": "2026-05-29T11:35:30+00:00",
+      "created_at_sakhalin": "2026-05-29T22:35:30+11:00",
+      "source": "BBC Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "First UK team to use Google Willow quantum chip announced",
+      "title_ru": "First UK team to use Google Willow quantum chip announced",
+      "body": [
+        "King's College London researchers hope the chip will help answer previously unanswerable questions about the most important natural processes.",
+        "King's College London researchers hope the chip will help answer previously unanswerable questions about the most important natural processes.",
+        "Quantum computers can in theory solve problems which the most powerful conventional computers cannot."
+      ],
+      "footer": null,
+      "source_text": "King's College London researchers hope the chip will help answer previously unanswerable questions about the most important natural processes. King's College London researchers hope the chip will help answer previously unanswerable questions about the most important natural processes. Quantum computers can in theory solve problems which the most powerful conventional computers cannot. Google says Willow can solve a theoretical problem in five minutes which would take the world's current fastest super computers 10 septillion - or 10,000,000,000,000,000,000,000,000 - years to complete. King's lead for the project Dr Eleanor Crane said its use of Willow would \"light a torch\" for research to answer questions about the most important natural processes. \"It would be useful if society could understand how plants transform sunlight into energy, find materials which transport electricity quickly, or how molecules bind to each other,\" said Crane, who will co-lead the research team alongside Dr Alexander Schuckert from ENS Paris.",
+      "post_text": "🌐 Мировые IT\n\n<b>First UK team to use Google Willow quantum chip announced</b>\n\nKing's College London researchers hope the chip will help answer previously unanswerable questions about the most important natural processes.\n\nKing's College London researchers hope the chip will help answer previously unanswerable questions about the most important natural processes.\n\nQuantum computers can in theory solve problems which the most powerful conventional computers cannot.\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/cd7pwezyze1o?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/cd7pwezyze1o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-05-28T08:41:28+00:00",
+      "title_hash": "46364fd9558655578d8170b6f89be0da818f0d20",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/7b75/live/87affa50-59d1-11f1-b682-cf91850925ea.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-29T11:35:30+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "aa147e8383d679cb",
+      "status": "hold",
+      "created_at": "2026-05-29T11:35:30+00:00",
+      "created_at_sakhalin": "2026-05-29T22:35:30+11:00",
+      "source": "BBC Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 650,
+      "title_original": "Meta repeatedly snubs EU body on Facebook and Instagram user bans",
+      "title_ru": "Meta repeatedly snubs EU body on Facebook and Instagram user bans",
+      "body": [
+        "The BBC has been contacted by hundreds of users who claimed they had been wrongly banned from the sites.",
+        "The BBC has been contacted by hundreds of users who claimed they had been wrongly banned from the sites.",
+        "Appeals Centre Europe looked at 4,600 cases of Facebook, Instagram and Threads users who said they had been wrongly banned, but Meta provided evidence in fewer than 100 of these cases."
+      ],
+      "footer": null,
+      "source_text": "The BBC has been contacted by hundreds of users who claimed they had been wrongly banned from the sites. The BBC has been contacted by hundreds of users who claimed they had been wrongly banned from the sites. Appeals Centre Europe looked at 4,600 cases of Facebook, Instagram and Threads users who said they had been wrongly banned, but Meta provided evidence in fewer than 100 of these cases. Last year, the BBC was contacted by hundreds of Facebook and Instagram users in countries around the world, including the UK, who claimed they had been wrongly banned and had no way of getting their accounts back. Appeals Centre Europe is one of a number of independent dispute settlement bodies which allow people in the EU to challenge social media platforms' decisions including on account bans and content moderation. Its report shows only a snapshot of the wider social media landscape in Europe, where hundreds of millions of pieces of content are taken down by platforms every year for a variety of reasons.",
+      "post_text": "🌐 Мировые IT\n\n<b>Meta repeatedly snubs EU body on Facebook and Instagram user bans</b>\n\nThe BBC has been contacted by hundreds of users who claimed they had been wrongly banned from the sites.\n\nThe BBC has been contacted by hundreds of users who claimed they had been wrongly banned from the sites.\n\nAppeals Centre Europe looked at 4,600 cases of Facebook, Instagram and Threads users who said they had been wrongly banned, but Meta provided evidence in fewer than 100 of these cases.\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/c152yvwjwkko?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/c152yvwjwkko?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-05-28T08:28:43+00:00",
+      "title_hash": "d15f0ebc681f1708f89e1cf25d3031069280a16c",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/bb66/live/92ae8910-59c4-11f1-881a-473372e64622.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-29T11:35:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "11e6e2adfb184885",
+      "status": "hold",
+      "created_at": "2026-05-29T11:35:30+00:00",
+      "created_at_sakhalin": "2026-05-29T22:35:30+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 650,
+      "title_original": "Microsoft 365 Copilot gets a speed boost and cleaner design",
+      "title_ru": "Microsoft 365 Copilot gets a speed boost and cleaner design",
+      "body": [
+        "The productivity-focused assistant will provide more ‘structured’ responses.",
+        "Microsoft is launching a revamped version of Microsoft 365 Copilot, offering a cleaner design that the company claims loads twice as fast.",
+        "As part of this update, Copilot will provide more reliable and structured responses that are easier to scan, according to Microsoft."
+      ],
+      "footer": null,
+      "source_text": "The productivity-focused assistant will provide more ‘structured’ responses. Microsoft is launching a revamped version of Microsoft 365 Copilot, offering a cleaner design that the company claims loads twice as fast. As part of this update, Copilot will provide more reliable and structured responses that are easier to scan, according to Microsoft. The redesign, which is rolling out across desktop and mobile devices, comes […]",
+      "post_text": "🌐 Мировые IT\n\n<b>Microsoft 365 Copilot gets a speed boost and cleaner design</b>\n\nThe productivity-focused assistant will provide more ‘structured’ responses.\n\nMicrosoft is launching a revamped version of Microsoft 365 Copilot, offering a cleaner design that the company claims loads twice as fast.\n\nAs part of this update, Copilot will provide more reliable and structured responses that are easier to scan, according to Microsoft.\n\nМИРОВЫЕ IT · <a href=\"https://www.theverge.com/tech/939273/microsoft-365-copilot-redesign\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/tech/939273/microsoft-365-copilot-redesign",
+      "published_at": "2026-05-28T20:14:07+00:00",
+      "title_hash": "365c726c37cc9e34462e3714e5ba45bd83a1f42a",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-29T11:35:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
     },
     {
       "id": "dfbc9625cb68c966",
@@ -2388,6 +2418,416 @@
       "reviewed_at": "2026-05-29T06:20:00+00:00",
       "reviewed_by": "auto-editor-v7-local-cleaner",
       "stream_priority": 650
+    },
+    {
+      "id": "7e92c5902312240e",
+      "status": "rejected",
+      "created_at": "2026-05-29T06:25:13+00:00",
+      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "async‑profiler в production: CPU, аллокации, lock contention и чтение flame graph",
+      "title_ru": "async‑profiler в production: CPU, аллокации, lock contention и чтение flame graph",
+      "body": [
+        "Стандартный набор инструментов для профилирования Java ‑приложений из коробки JDK — JFR (Java Flight Recorder), jstack, jmap, VisualVM — закрывает многие задачи,...",
+        "Профилирование Java‑приложений в production часто упирается не в отсутствие инструментов, а в их ограничения: CPU горит в одном месте, latency копится в другом, аллокации давят на GC, а lock contention вообще не виден в обычном CPU‑профиле.",
+        "В статье разбираем, как использовать async‑profiler для диагностики реальных Java‑сервисов: снимать CPU, allocation, wall‑clock и lock‑профили, читать flame graph и понимать, где именно приложение тратит ресурсы."
+      ],
+      "footer": null,
+      "source_text": "Стандартный набор инструментов для профилирования Java ‑приложений из коробки JDK — JFR (Java Flight Recorder), jstack, jmap, VisualVM — закрывает многие задачи,... Профилирование Java‑приложений в production часто упирается не в отсутствие инструментов, а в их ограничения: CPU горит в одном месте, latency копится в другом, аллокации давят на GC, а lock contention вообще не виден в обычном CPU‑профиле. В статье разбираем, как использовать async‑profiler для диагностики реальных Java‑сервисов: снимать CPU, allocation, wall‑clock и lock‑профили, читать flame graph и понимать, где именно приложение тратит ресурсы. Читать далее Стандартный набор инструментов для профилирования Java ‑приложений из коробки JDK — JFR (Java Flight Recorder), jstack, jmap, VisualVM — закрывает многие задачи, но в реальных же сценариях у каждого есть ограничения. JFR хорош для общего обзора, но плохо показывает горячие методы из‑за безопасных точек (safepoint bias) — sampling срабатывает только на safepoint, и методы, инлайненные JIT или без safepoint‑poll, в выборку не попадают. jstack даёт срез стека на момент вызова, но один срез — это случайность, а серия с шагом 100 мс уже неудобно анализировать руками. VisualVM требует JMX‑подключения, что в проде с сетевой политикой или Kubernetes‑подами часто блокировано. async‑profiler — внешний инструмент, который в целом решает эту проблему. К маю 2026 актуальная версия — async‑profiler 4.3, команда перешла на квартальный цикл релизов. С январских обновлений 2026 года инструмент идёт в комплекте Amazon Corretto, отдельно скачивать не нужно. В статье обзор основных режимов профилирования, как использовать, как читать flame graph и где async‑profiler помогает, а где лучше взять другой инструмент.",
+      "post_text": "🌐 Мировые IT\n\n<b>async‑profiler в production: CPU, аллокации, lock contention и чтение flame graph</b>\n\nСтандартный набор инструментов для профилирования Java ‑приложений из коробки JDK — JFR (Java Flight Recorder), jstack, jmap, VisualVM — закрывает многие задачи,...\n\nПрофилирование Java‑приложений в production часто упирается не в отсутствие инструментов, а в их ограничения: CPU горит в одном месте, latency копится в другом, аллокации давят на GC, а lock contention вообще не виден в обычном CPU‑профиле.\n\nВ статье разбираем, как использовать async‑profiler для диагностики реальных Java‑сервисов: снимать CPU, allocation, wall‑clock и lock‑профили, читать flame graph и понимать, где именно приложение тратит ресурсы.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/otus/articles/1039968/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039968#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/otus/articles/1039968/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039968#habracut",
+      "published_at": "2026-05-29T06:16:00+00:00",
+      "title_hash": "f294a8d037e4832aec22bc6addb1332551065bc1",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/985/8ac/4e1/9858ac4e1957d4e438761249ee160763.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-29T11:35:30+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "2768e41ce3b267e9",
+      "status": "rejected",
+      "created_at": "2026-05-29T06:25:13+00:00",
+      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🇷🇺 РФ / война и безопасность",
+      "category_hint": "🌐 Мировые IT",
+      "score": 980,
+      "title_original": "Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса",
+      "title_ru": "Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса",
+      "body": [
+        "Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса.",
+        "Мы делаем доступ к облакам и ИИ простым и удобным.",
+        "Более 130 IaaS- и PaaS-сервисов, дата-центры уровня Tier III и доступность по SLA 99,982%."
+      ],
+      "footer": null,
+      "source_text": "Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса. Мы делаем доступ к облакам и ИИ простым и удобным. Более 130 IaaS- и PaaS-сервисов, дата-центры уровня Tier III и доступность по SLA 99,982%. Соответствие требованиям 152-ФЗ и 187-ФЗ. Привычная многим картина, когда бизнес «с полей» запрашивает дополнительную аналитику, менеджер идет выбивать ресурсы команды под задачу, аналитик вручную «перемалывает» данные и собирает обновленные дашборды…проходят недели, бюрократические жернова перемалывают прибыль, \"гиря ударяется о пол\" и бизнес в итоге принимает решение «на глазок». С приходом AI в индустрию бизнес-аналитики забрезжила надежда, что эти темные времена останутся только в воспоминаниях тех, кто еще застал пейджер и охоту на мамонта. В сегодняшней статье разберём, как на базе версии Apache Superset с поддержкой MCP и связки Foundation Models от Cloud.ru можно собрать рабочего AI-агента аналитика, который фразу «построй мне аналитику по продажам» за минуты превращает в полноценный дашборд с возможностью скейлинга в продакшене. Читать далее Ваш браузер не поддерживается. Установите современный браузер, к примеру, Google Chrome. Калькулятор цен Тарифы Акции Документация О нас Карьера в Cloud.ru Новости Юридические документы Контакты Решения Реферальная программа Кейсы Партнерство с Cloud.ru Безопасность Evolution Advanced Evolution Stack Облако VMware В чем отличия платформ? Блог Обучение и сертификация Мероприятия Исследования Cloud.ru Личный кабинет Войти Зарегистрироваться Облако для мобильных и веб‑приложений Сайт в облаке Аналитика данных в облаке Хранение данных в облаке Аналитика данных в облаке Инфраструктура для 1С в облаке Миграция IT‑инфраструктуры в облако 3D-моделирование и рендеринг Разработка и тестирование в облаке Evolution Compute Evolution Managed",
+      "post_text": "🌐 Мировые IT\n\n<b>Cloud.ru — облачные сервисы и ИИ-технологии для бизнеса</b>\n\nCloud.ru — облачные сервисы и ИИ-технологии для бизнеса.\n\nМы делаем доступ к облакам и ИИ простым и удобным.\n\nБолее 130 IaaS- и PaaS-сервисов, дата-центры уровня Tier III и доступность по SLA 99,982%.\n\nМИРОВЫЕ IT · <a href=\"https://cloud.ru/\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://cloud.ru/",
+      "published_at": "2026-05-29T06:01:19+00:00",
+      "title_hash": "7948bf4b2fb6d07f9b9b9410d57e487c63abf52c",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/81e/de7/c8e/81ede7c8e89ebdbf949bc6a6ed680391.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-29T11:35:30+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 900
+    },
+    {
+      "id": "38ed53a585d78670",
+      "status": "rejected",
+      "created_at": "2026-05-29T06:25:13+00:00",
+      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "“Арсик”: Как гениальный самоучка из СССР построил робота у себя в квартире",
+      "title_ru": "“Арсик”: Как гениальный самоучка из СССР построил робота у себя в квартире",
+      "body": [
+        "У него не было бюджета огромной корпорации.",
+        "У него даже не было специального образования.",
+        "Но тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура..."
+      ],
+      "footer": null,
+      "source_text": "У него не было бюджета огромной корпорации. У него даже не было специального образования. Но тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура... У него не было бюджета огромной корпорации. У него даже не было специального образования. Но тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура справлялся со своими не всегда простыми задачами. Читать далее У него не было бюджета огромной корпорации. У него даже не было специального образования. Но тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура справлялся со своими не всегда простыми задачами. “Нужда — мать изобретения”, как гласит английская поговорка. У преподавателя черчения в калужском техникуме, Бориса Гришина, нужда была самая острая: тяжело болела мама Мария Васильевна, которой подчас не хватало сил налить себе стакан воды или вызвать скорую. А вызывать карету скорой помощи приходилось часто. Гришин, к слову, никогда не штудировал робототехнику профильно. Он закончил Московский институт инженеров транспорта (МИИТ) и после устроился в калужский техникум преподавать черчение, а на полставки еще и подрабатывал в районной школе. Работа отнимала много времени, а за мамой нужен был уход. И тогда, как настоящий покоритель судьбы — архетип воспетый в книгах Лондона и Купера — Гришин решается на смелый, отчаянный и немного безумный ход: своими руками собрать робота-дворецкого, который бы взял на себя каждодневную опеку. Так в 1962 появился замысел Автоматического Радиоэлектронного Секретаря или “АРС”.",
+      "post_text": "🌐 Мировые IT\n\n<b>“Арсик”: Как гениальный самоучка из СССР построил робота у себя в квартире</b>\n\nУ него не было бюджета огромной корпорации.\n\nУ него даже не было специального образования.\n\nНо тем не менее, этот советский робо-Кулибин сумел создать автономного домашнего робота, который на ура...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/studyai/articles/1039994/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039994#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/studyai/articles/1039994/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039994#habracut",
+      "published_at": "2026-05-29T06:00:49+00:00",
+      "title_hash": "e4b4205de987514c8de3cf4192a20be37ae4b6fd",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/ee9/1d7/c88/ee91d7c887a7b5135e587d223e977753.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-29T11:35:30+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "4956ce3af9263325",
+      "status": "rejected",
+      "created_at": "2026-05-29T06:25:13+00:00",
+      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌍 Мир о России",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1080,
+      "title_original": "KeyboardHook: кроссплатформенный глобальный перехват клавиатуры и мыши для .NET",
+      "title_ru": "KeyboardHook: кроссплатформенный глобальный перехват клавиатуры и мыши для .NET",
+      "body": [
+        "Проблема: ни один готовый пакет не подошёл Первые несколько пакетов, которые я попробовал, работали исключительно на Windows и молчали на macOS.",
+        "Другие просто вешали приложение при первом нажатии...",
+        "Рассказываю, как написал кроссплатформенную .NET-библиотеку для глобального перехвата клавиатуры и мыши."
+      ],
+      "footer": null,
+      "source_text": "Проблема: ни один готовый пакет не подошёл Первые несколько пакетов, которые я попробовал, работали исключительно на Windows и молчали на macOS. Другие просто вешали приложение при первом нажатии... Рассказываю, как написал кроссплатформенную .NET-библиотеку для глобального перехвата клавиатуры и мыши. Под капотом: WH_KEYBOARD_LL на Windows, CGEventTap на macOS и polling через XQueryKeymap на Linux. Один интерфейс, три реализации, ноль внешних зависимостей. Читать далее Первые несколько пакетов, которые я попробовал, работали исключительно на Windows и молчали на macOS. Другие просто вешали приложение при первом нажатии клавиши. Я искал кроссплатформенное решение, «только Windows» меня не устраивало. Если чего-то нет, что делать? Конечно, писать самому. По началу всё было написано даже без вынесения в отдельную библиотеку, но чуть позже, когда данный код понадобился и в других моих проектах, подумал написать библиотеку с нуля. Самое главное чего я хотел добиться: без лишних зависимостей, кроссплатформенность, возможность кочевать между pet-проектами. По ходу решил сделать ее open source, чтобы неминуемо улучшать и совершенствовать данное решение. KeyboardHook - кроссплатформенный глобальный хук клавиатуры и мыши для .NET Standard 2.0. Глобальный перехват нажатий и отпусканий клавиш — работает даже когда ваше приложение не в фокусе",
+      "post_text": "🌐 Мировые IT\n\n<b>KeyboardHook: кроссплатформенный глобальный перехват клавиатуры и мыши для .NET</b>\n\nПроблема: ни один готовый пакет не подошёл Первые несколько пакетов, которые я попробовал, работали исключительно на Windows и молчали на macOS.\n\nДругие просто вешали приложение при первом нажатии...\n\nРассказываю, как написал кроссплатформенную .NET-библиотеку для глобального перехвата клавиатуры и мыши.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1040932/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040932#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1040932/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040932#habracut",
+      "published_at": "2026-05-29T05:48:59+00:00",
+      "title_hash": "7cda40112fe63ac8e6e54f4b3eb658f81d26cf12",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/7f1/3fb/7bf/7f13fb7bf1db79ed8891ef0a6fbd7673.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-29T11:35:30+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 1000
+    },
+    {
+      "id": "e500fd83c6e646ac",
+      "status": "rejected",
+      "created_at": "2026-05-29T06:25:13+00:00",
+      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Лингвистика + статистика = NLP",
+      "title_ru": "Лингвистика + статистика = NLP",
+      "body": [
+        "Как-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет.",
+        "Мне нравится ковыряться в коде и мозгах нейросетей, при этом я стараюсь не забывать,...",
+        "Как-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет."
+      ],
+      "footer": null,
+      "source_text": "Как-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет. Мне нравится ковыряться в коде и мозгах нейросетей, при этом я стараюсь не забывать,... Как-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет. Мне нравится ковыряться в коде и мозгах нейросетей, при этом я стараюсь не забывать, на каком фундаменте выросла трендовая ныне область под названием Natural Language Processing (NLP). Поэтому захотелось собрать в одной статье беглый обзор истории компьютерной лингвистики — от первых теорий и грамматик Хомского до появления рекуррентных сетей и механизма внимания. Думаю, стоит остановиться ровно перед эпохой трансформеров, потому что это отдельная, глубокая и достойная собственного рассказа тема. Читать далее",
+      "post_text": "🌐 Мировые IT\n\n<b>Лингвистика + статистика = NLP</b>\n\nКак-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет.\n\nМне нравится ковыряться в коде и мозгах нейросетей, при этом я стараюсь не забывать,...\n\nКак-то так получилось, что я NLP-инженер, который закончил Московский государственный лингвистический университет.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1040930/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040930#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1040930/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040930#habracut",
+      "published_at": "2026-05-29T05:39:55+00:00",
+      "title_hash": "810d8e23a05482885e5bbc74f0a16528da68b145",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/092/f8b/821/092f8b8214596a7a63a85adf14fcd303.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-29T11:35:30+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "cfa49c585ac6d60e",
+      "status": "rejected",
+      "created_at": "2026-05-29T06:25:13+00:00",
+      "created_at_sakhalin": "2026-05-29T17:25:13+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🇷🇺 РФ / война и безопасность",
+      "category_hint": "🌐 Мировые IT",
+      "score": 980,
+      "title_original": "Микросекундные оценки опционов: как пересчитать портфель из 200k инструментов за 10 мс",
+      "title_ru": "Микросекундные оценки опционов: как пересчитать портфель из 200k инструментов за 10 мс",
+      "body": [
+        "Финансовые системы предъявляют жёсткие требования к производительности.",
+        "Риск-департамент запрашивает переоценку портфеля из 200 000 опционов.",
+        "Маржинальная система требует пересчитать все позиции..."
+      ],
+      "footer": null,
+      "source_text": "Финансовые системы предъявляют жёсткие требования к производительности. Риск-департамент запрашивает переоценку портфеля из 200 000 опционов. Маржинальная система требует пересчитать все позиции... Финансовые системы предъявляют жёсткие требования к производительности. Риск-департамент запрашивает переоценку портфеля из 200 000 опционов. Маржинальная система требует пересчитать все позиции клиентов после сильного движения рынка. Алгоритмический трейдер хочет оценить Greeks для тысяч потенциальных сделок за миллисекунды. Стандартные подходы на .NET дают сбой по трём причинам. Причина 1: Объектная модель Каждый опцион становится отдельным объектом в куче. Виртуальные методы, ссылки, разрозненное расположение в памяти. Для 200 000 объектов — миллионы байтов, GC-паузы на сборку, промахи кэша процессора. Причина 2: Позлементные вычисления Вызов функции ценообразования в цикле — плохо. Процессор не может векторизовать код, потому что не видит всю картину целиком. SIMD-инструкции простаивают. Причина 3: Аллокации в горячем пути Каждый вызов new double[100000] для хранения промежуточных результатов — это давление на GC. В 24/7 сервисе такие аллокации накапливаются и вызывают непредсказуемые паузы. Требования к решению Читать далее Финансовые системы предъявляют жёсткие требования к производительности. Риск-департамент запрашивает переоценку портфеля из 200 000 опционов. Маржинальная система требует пересчитать все позиции клиентов после сильного движения рынка. Алгоритмический трейдер хочет оценить Greeks для тысяч потенциальных сделок за миллисекунды. Каждый опцион становится отдельным объектом в куче. Виртуальные методы, ссылки, разрозненное расположение в памяти. Для 200 000 объектов — миллионы байтов, GC-паузы на сборку, промахи кэша процессора. Вызов функции ценообразовани",
+      "post_text": "🌐 Мировые IT\n\n<b>Микросекундные оценки опционов: как пересчитать портфель из 200k инструментов за 10 мс</b>\n\nФинансовые системы предъявляют жёсткие требования к производительности.\n\nРиск-департамент запрашивает переоценку портфеля из 200 000 опционов.\n\nМаржинальная система требует пересчитать все позиции...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1040914/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040914#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1040914/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040914#habracut",
+      "published_at": "2026-05-29T04:19:57+00:00",
+      "title_hash": "be213d58adbd392f4b80e2e3e9ac9d5c47ca875f",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/e64/b3a/383/e64b3a383e64b95278087d1fc3dc40ed.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-29T11:35:30+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 900
+    },
+    {
+      "id": "a3d8c6fadccfee2b",
+      "status": "rejected",
+      "created_at": "2026-05-29T11:35:30+00:00",
+      "created_at_sakhalin": "2026-05-29T22:35:30+11:00",
+      "source": "Guardian Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Anthropic raises $65B in Series H funding at $965B post-money valuation",
+      "title_ru": "Anthropic raises $65B in Series H funding at $965B post-money valuation",
+      "body": [
+        "Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.",
+        "Claude’s parent company’s $65bn in latest funding round underscores vast sums of money still flowing into industry Anthropic, the AI firm behind the Claude chatbot, announced on Thursday it had raised $65bn in funding to value the company at $965bn post-money.",
+        "The move makes Anthropic the world’s most valuable AI startup, eclipsing its competitor OpenAI."
+      ],
+      "footer": null,
+      "source_text": "Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital. Claude’s parent company’s $65bn in latest funding round underscores vast sums of money still flowing into industry Anthropic, the AI firm behind the Claude chatbot, announced on Thursday it had raised $65bn in funding to value the company at $965bn post-money. The move makes Anthropic the world’s most valuable AI startup, eclipsing its competitor OpenAI. The deal marks an exceedingly successful period of growth for Anthropic, which was once considered to be a smaller player in the global AI arms race. The widespread adoption of its products by large enterprise businesses, especially following its release of powerful coding assistants late last year, has turned it into a dominant player in the industry. Continue reading... Research Economic Futures Commitments Learn News Try Claude Announcements Anthropic raises $65B in Series H funding at $965B post-money valuation May 28, 2026 Anthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital, valuing the company at $965 billion post-money. Global enterprises across industries are deploying Claude in their core operations, and a growing number of people around the world use it for their everyday work. Since our Series G in February, adoption has continued to grow across global enterprise customers, and our run-rate revenue crossed $47 billion earlier this month. This latest funding is expected to advance our safety and interpretability research, expand compute to meet growing demand for Claude, and scale the products and partnerships our customers rely on. “Claude is increasingly indispensable to our growing global community of customers, and we ",
+      "post_text": "🌐 Мировые IT\n\n<b>Anthropic raises $65B in Series H funding at $965B post-money valuation</b>\n\nAnthropic has raised $65 billion in Series H funding led by Altimeter Capital, Dragoneer, Greenoaks, and Sequoia Capital.\n\nClaude’s parent company’s $65bn in latest funding round underscores vast sums of money still flowing into industry Anthropic, the AI firm behind the Claude chatbot, announced on Thursday it had raised $65bn in funding to value the company at $965bn post-money.\n\nThe move makes Anthropic the world’s most valuable AI startup, eclipsing its competitor OpenAI.\n\nМИРОВЫЕ IT · <a href=\"https://www.anthropic.com/news/series-h\">Guardian Technology</a>",
+      "edited_post_text": null,
+      "url": "https://www.anthropic.com/news/series-h",
+      "published_at": "2026-05-28T19:56:23+00:00",
+      "title_hash": "9cce1f8aecd0e8c50d7ee0a880437cf502382ef1",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-29T11:35:30+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "5d787295496b0dd2",
+      "status": "rejected",
+      "created_at": "2026-05-29T11:35:30+00:00",
+      "created_at_sakhalin": "2026-05-29T22:35:30+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Проблемы печей оплавления припоя Pu*** и их превенция",
+      "title_ru": "Проблемы печей оплавления припоя Pu*** и их превенция",
+      "body": [
+        "Георгий Александров Главный инженер компании ProSMD ЛУТовый текстолит, паяльная паста Mechanic, настольная печь Puhui и, опционально, руки из плеч – базовый набор начинающего контрактного...",
+        "ЛУТовый текстолит, паяльная паста Mechanic, настольная печь Puhui и, опционально, руки из плеч – базовый набор начинающего контрактного монтажника/производителя микросерий.",
+        "Если быть точным, Puhui Electric Technology CO., LTD ."
+      ],
+      "footer": null,
+      "source_text": "Георгий Александров Главный инженер компании ProSMD ЛУТовый текстолит, паяльная паста Mechanic, настольная печь Puhui и, опционально, руки из плеч – базовый набор начинающего контрактного... ЛУТовый текстолит, паяльная паста Mechanic, настольная печь Puhui и, опционально, руки из плеч – базовый набор начинающего контрактного монтажника/производителя микросерий. Если быть точным, Puhui Electric Technology CO., LTD . Их модели, такие как T-960, T962, T-937 и разнообразные модификации – друзья радиолюбителей в России и по всему миру, где, благодаря интернет коммерции, с ними знакомы уже очень давно. Читать далее",
+      "post_text": "🌐 Мировые IT\n\n<b>Проблемы печей оплавления припоя Pu*** и их превенция</b>\n\nГеоргий Александров Главный инженер компании ProSMD ЛУТовый текстолит, паяльная паста Mechanic, настольная печь Puhui и, опционально, руки из плеч – базовый набор начинающего контрактного...\n\nЛУТовый текстолит, паяльная паста Mechanic, настольная печь Puhui и, опционально, руки из плеч – базовый набор начинающего контрактного монтажника/производителя микросерий.\n\nЕсли быть точным, Puhui Electric Technology CO., LTD .\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1041162/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041162#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1041162/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041162#habracut",
+      "published_at": "2026-05-29T11:31:57+00:00",
+      "title_hash": "366768a50723c8f55a30783a66268a5c59cb7184",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/ea4/cbb/94c/ea4cbb94c0e2eec4da8fa60e387c4918.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-29T11:35:30+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "bbfdae1dcf9dc9d2",
+      "status": "rejected",
+      "created_at": "2026-05-29T11:35:30+00:00",
+      "created_at_sakhalin": "2026-05-29T22:35:30+11:00",
+      "source": "Eurogamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 600,
+      "title_original": "The Xbox Game Pass price cut is working, Asha Sharma reportedly tells staff, but \"we will not solve this in one moment or one launch\"",
+      "title_ru": "The Xbox Game Pass price cut is working, Asha Sharma reportedly tells staff, but \"we will not solve this in one moment or one launch\"",
+      "body": [
+        "\"We are building a stronger Xbox,\" the company's new leader says.",
+        "Microsoft's recent decision to cut the price of Xbox Game Pass seems to have done what it was designed to do and increase Game Pass subscriber activity.",
+        "Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Latest News Sign in for free to manage your site experience."
+      ],
+      "footer": null,
+      "source_text": "\"We are building a stronger Xbox,\" the company's new leader says. Microsoft's recent decision to cut the price of Xbox Game Pass seems to have done what it was designed to do and increase Game Pass subscriber activity. Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Latest News Sign in for free to manage your site experience. The Xbox Game Pass price cut is working, Asha Sharma reportedly tells staff, but \"we will not solve this in one moment or one launch\" Crimson Desert's 1.09.00 patch adds another highly-requested player feature (as well as loads of new pets) 007 First Light truly 'earns the number', as critical acclaim leads to impressive sales milestone in just 24 hours The Witcher 3 expansion Songs of the Past was once intended to launch this year, CD Projekt Red reveals, so the rumours were correct CD Projekt Red reveals huge The Witcher 3 sales milestone, which helps explain why a third expansion is in development 11 years later Unlike The Sims, early access hit Paralives will \"never\" have paid DLC and will stick to free updates, devs say Call of Duty: Modern Warfare 4 finally revealed, and it's officially leaving last-generation consoles behind Heroes of Might and Magic: Olden Era reveals early access roadmap as publisher Hooded Horse celebrates 1m copies sold during its first month IOI is 'keeping the British end up' in 007 First Light by switching out Americanisms to \"reinforce the immersion\" That sword Geralt unsheaths in The Witcher 3 Songs of the Past expansion artwork? We've seen it before If you click on a link and make a purchase we may receive a small commission. Read our editorial policy . Home News The Xbox Game Pass price cut is working, Asha Sharma reportedly tells staff,",
+      "post_text": "🎮 Игры / индустрия\n\n<b>The Xbox Game Pass price cut is working, Asha Sharma reportedly tells staff, but \"we will not solve this in one moment or one launch\"</b>\n\n\"We are building a stronger Xbox,\" the company's new leader says.\n\nMicrosoft's recent decision to cut the price of Xbox Game Pass seems to have done what it was designed to do and increase Game Pass subscriber activity.\n\nRead more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Latest News Sign in for free to manage your site experience.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.eurogamer.net/xbox-game-pass-price-cut-working-asha-sharma\">Eurogamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.eurogamer.net/xbox-game-pass-price-cut-working-asha-sharma",
+      "published_at": "2026-05-29T10:25:25.917936+00:00",
+      "title_hash": "882dbfe89a8054d32571b257c7d896d57dd841b8",
+      "image_url": "https://assetsio.gnwcdn.com/asha-sharma-xbox_ETUJlFF.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-29T11:35:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "2386d4c007d0fa59",
+      "status": "rejected",
+      "created_at": "2026-05-29T11:35:30+00:00",
+      "created_at_sakhalin": "2026-05-29T22:35:30+11:00",
+      "source": "IGN",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 680,
+      "title_original": "The Baseus 20,000mAh Power Bank With Dual USB Cables Drops to $21, Simultaneously Charge and Play on the Nintendo Switch or Steam Deck",
+      "title_ru": "The Baseus 20,000mAh Power Bank With Dual USB Cables Drops to $21, Simultaneously Charge and Play on the Nintendo Switch or Steam Deck",
+      "body": [
+        "Charge and play on the Nintendo Switch 2 or Steam Deck at the same time.",
+        "Charge and play on the Nintendo Switch 2 or Steam Deck at the same time.",
+        "With the prices on imported goods continuing to rise, I don't see as many 20,000mAh power banks under $25 anymore."
+      ],
+      "footer": null,
+      "source_text": "Charge and play on the Nintendo Switch 2 or Steam Deck at the same time. Charge and play on the Nintendo Switch 2 or Steam Deck at the same time. With the prices on imported goods continuing to rise, I don't see as many 20,000mAh power banks under $25 anymore. Fortunately, there's one such deal today, although the coupon may not last very long. Amazon is currently offering the Baseus 20,000mAh 45W Power Bank for just $20.99 after coupopn code \" L3PTWW4V \". Better yet, you don't need to be an Amazon Prime member to get in on the discount. This Baseus power bank boasts a generous 20,000mAh, or 74Whr battery capacity. If you factor in 80% power efficiency, here are the approximate number of times you can fully recharge each gaming handheld: The power bank has four total USB outputs: not one, but two built-in 45W USB-C cables that clip together to form a mini lanyard loop when not in use, another 45W USB-C port, and a 33W USB-A port. The 45W Power Dlievery output can charge the Nintendo Switch, Nintendo Switch 2, and Steam Deck at their maximum rate, which means you can play and charge simultaneously. The built-in cable is a popular feature on newer power banks because you no longer have to bring along your own USB Type-C cable. The IGN Deals team has over 30 years of combined experience finding the best discounts and preorders available online. If you want the latest updates from our trusted team, here’s how to follow our coverage:",
+      "post_text": "🎮 Игры / индустрия\n\n<b>The Baseus 20,000mAh Power Bank With Dual USB Cables Drops to $21, Simultaneously Charge and Play on the Nintendo Switch or Steam Deck</b>\n\nCharge and play on the Nintendo Switch 2 or Steam Deck at the same time.\n\nCharge and play on the Nintendo Switch 2 or Steam Deck at the same time.\n\nWith the prices on imported goods continuing to rise, I don't see as many 20,000mAh power banks under $25 anymore.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/baseus-20000mah-45w-power-bank-deal-may-2026\">IGN</a>",
+      "edited_post_text": null,
+      "url": "https://www.ign.com/articles/baseus-20000mah-45w-power-bank-deal-may-2026",
+      "published_at": "2026-05-28T22:00:00+00:00",
+      "title_hash": "07852cadd737d553da0830a159b9d59de62808d5",
+      "image_url": "https://assets-prd.ignimgs.com/2026/05/26/baseuspowerbank2-1779815529926.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-29T11:35:30+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
     },
     {
       "id": "ec44a45aa73888ea",
@@ -9575,28 +10015,28 @@
       "🌐 Мировые IT": 650,
       "🎮 Игры / индустрия": 600
     },
-    "reviewed_pending": 10,
+    "reviewed_pending": 18,
     "approved": 0,
     "approve_limit": 2,
     "min_auto_score": 600,
     "openrouter_enabled": false,
-    "reviewed_at": "2026-05-29T06:20:00+00:00",
-    "reviewed_at_sakhalin": "2026-05-29T17:20:00+11:00"
+    "reviewed_at": "2026-05-29T11:35:31+00:00",
+    "reviewed_at_sakhalin": "2026-05-29T22:35:31+11:00"
   },
   "final_guard": {
     "version": 3,
     "changed": 0,
     "polished": 0,
-    "checked_at": "2026-05-29T06:20:19+00:00",
-    "checked_at_sakhalin": "2026-05-29T17:20:19+11:00"
+    "checked_at": "2026-05-29T11:35:31+00:00",
+    "checked_at_sakhalin": "2026-05-29T22:35:31+11:00"
   },
   "priority_guard": {
     "version": 3,
     "changed": 0,
     "airport_changed": 0,
     "security_changed": 0,
-    "checked_at": "2026-05-29T06:20:00+00:00",
-    "checked_at_sakhalin": "2026-05-29T17:20:00+11:00"
+    "checked_at": "2026-05-29T11:35:31+00:00",
+    "checked_at_sakhalin": "2026-05-29T22:35:31+11:00"
   },
   "cycle_report": {
     "reported_at": "2026-05-29T06:20:14+00:00",
@@ -9689,10 +10129,10 @@
   },
   "scope_guard": {
     "version": 3,
-    "checked": 6,
+    "checked": 8,
     "rejected": 0,
-    "checked_at": "2026-05-29T06:20:00+00:00",
-    "checked_at_sakhalin": "2026-05-29T17:20:00+11:00",
+    "checked_at": "2026-05-29T11:35:31+00:00",
+    "checked_at_sakhalin": "2026-05-29T22:35:31+11:00",
     "policy": "block foreign ECB/Greece macro commentary, low-value Habr/retro/essay posts, minor quakes without impact, and weak foreign geopolitics"
   }
 }
