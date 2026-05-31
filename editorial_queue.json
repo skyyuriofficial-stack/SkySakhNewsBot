@@ -1,10 +1,305 @@
 {
   "version": 1,
-  "updated_at": "2026-05-31T10:24:12+00:00",
-  "updated_at_sakhalin": "2026-05-31T21:24:12+11:00",
+  "updated_at": "2026-05-31T10:27:35+00:00",
+  "updated_at_sakhalin": "2026-05-31T21:27:35+11:00",
   "reviewed_at": "2026-05-31T10:20:24+00:00",
   "reviewed_at_sakhalin": "2026-05-31T21:20:24+11:00",
   "items": [
+    {
+      "id": "18d51f92cfb165fd",
+      "status": "pending",
+      "created_at": "2026-05-31T10:24:12+00:00",
+      "created_at_sakhalin": "2026-05-31T21:24:12+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Квантовые компьютеры не угроза 128-битным симметричным ключам",
+      "title_ru": "Квантовые компьютеры не угроза 128-битным симметричным ключам",
+      "body": [
+        "Надвигающаяся угроза для криптографии со стороны квантовых компьютеров заставила срочно менять действующие примитивы асимметричной криптографии — обмен ключами (ECDH) и цифровые подписи (RSA, ECDSA,...",
+        "Надвигающаяся угроза со стороны заточенных на криптографию квантовых компьютеров заставила срочно менять действующие примитивы асимметричной криптографии — обмен ключами (ECDH) и цифровые подписи (RSA, ECDSA, EdDSA) — которые уязвимы для квантового алгоритма Шора.",
+        "Однако существующих симметричных методов криптографии (AES, SHA-2, SHA-3) или уровней их стойкости это не коснулось."
+      ],
+      "footer": null,
+      "source_text": "Надвигающаяся угроза для криптографии со стороны квантовых компьютеров заставила срочно менять действующие примитивы асимметричной криптографии — обмен ключами (ECDH) и цифровые подписи (RSA, ECDSA,... Надвигающаяся угроза со стороны заточенных на криптографию квантовых компьютеров заставила срочно менять действующие примитивы асимметричной криптографии — обмен ключами (ECDH) и цифровые подписи (RSA, ECDSA, EdDSA) — которые уязвимы для квантового алгоритма Шора. Однако существующих симметричных методов криптографии (AES, SHA-2, SHA-3) или уровней их стойкости это не коснулось. ccc В индустрии бытует заблуждение, что квантовые компьютеры вдвое ослабят безопасность симметричных ключей, и для обеспечения того же 128-битного уровня защиты потребуется перейти на 256-битные ключи. Это неточная интерпретация ускорения, которое несут в себе квантовые алгоритмы. Она не отражена ни в одном из нормативных стандартов и рискует отвлечь внимание от реально необходимой работы по переходу к постквантовой системе криптографии. Обычно это заблуждение происходит из недопонимания применимости другого квантового метода — алгоритма Гровера. AES-128, как и SHA-256, обеспечивает достаточную защиту от атак с применением квантовых компьютеров. В рамках перехода в постквантовую эпоху размер симметричных ключей изменять не требуется. Это почти единогласное мнение среди профильных экспертов и органов стандартизации, которое нужно распространить среди остальной части IT-сообщества. И дальше в статье я подкреплю это утверждение техническими аргументами со ссылками на авторитетные источники. Читать далее В индустрии бытует заблуждение, что квантовые компьютеры вдвое ослабят безопасность симметричных ключей, и для обеспечения того же 128-битного уровня защиты потребуется перейти на 256-битные ключи. Эт",
+      "post_text": "🌐 Мировые IT\n\n<b>Квантовые компьютеры не угроза 128-битным симметричным ключам</b>\n\nНадвигающаяся угроза для криптографии со стороны квантовых компьютеров заставила срочно менять действующие примитивы асимметричной криптографии — обмен ключами (ECDH) и цифровые подписи (RSA, ECDSA,...\n\nНадвигающаяся угроза со стороны заточенных на криптографию квантовых компьютеров заставила срочно менять действующие примитивы асимметричной криптографии — обмен ключами (ECDH) и цифровые подписи (RSA, ECDSA, EdDSA) — которые уязвимы для квантового алгоритма Шора.\n\nОднако существующих симметричных методов криптографии (AES, SHA-2, SHA-3) или уровней их стойкости это не коснулось.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/ruvds/articles/1040544/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040544#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/ruvds/articles/1040544/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040544#habracut",
+      "published_at": "2026-05-31T09:01:10+00:00",
+      "title_hash": "89239c9e8b7e6645b60e7da844b543ac31f84e14",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/a88/e71/7cf/a88e717cf79be894f4ad82b8db35a6cb.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "e62c861b4f8d4b13",
+      "status": "pending",
+      "created_at": "2026-05-31T10:24:12+00:00",
+      "created_at_sakhalin": "2026-05-31T21:24:12+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "An ultra-faint, chemically primitive galaxy forming in the reionization era - Nature",
+      "title_ru": "An ultra-faint, chemically primitive galaxy forming in the reionization era - Nature",
+      "body": [
+        "LAP1-B—an ultra-faint and tiny galaxy that formed in the reionization era and is strongly magnified by gravitational lensing—is chemically primitive and hosts very few stars in an otherwise dominant dark matter halo.",
+        "На протяжении десятилетий астрономы, глядя в такие телескопы, как «Хаббл», пытались заглянуть в древнюю эпоху, когда зажглось первое поколение звёзд во Вселенной.",
+        "Но маленькие галактики, которые были строительными блоками известного нам сегодня космоса, слишком тусклые, чтобы их можно было заметить даже с помощью самых мощных инструментов."
+      ],
+      "footer": null,
+      "source_text": "LAP1-B—an ultra-faint and tiny galaxy that formed in the reionization era and is strongly magnified by gravitational lensing—is chemically primitive and hosts very few stars in an otherwise dominant dark matter halo. На протяжении десятилетий астрономы, глядя в такие телескопы, как «Хаббл», пытались заглянуть в древнюю эпоху, когда зажглось первое поколение звёзд во Вселенной. Но маленькие галактики, которые были строительными блоками известного нам сегодня космоса, слишком тусклые, чтобы их можно было заметить даже с помощью самых мощных инструментов. Теперь, похоже, у астрономов наконец-то появилось два преимущества: космический телескоп «Уэбб» и немного удачи. В недавней статье , опубликованной в журнале Nature, группа учёных под руководством Кимихико Накадзимы, астронома из Университета Канадзава (Япония), использовала космический телескоп «Уэбб» для наблюдения за сверхслабой галактикой под названием LAP1-B, существовавшей примерно через 800 миллионов лет после Большого взрыва. Это самая химически примитивная галактика из всех, что мы когда-либо видели. Читать далее View all journals Search Log in Content Explore content About the journal Publish with us Subscribe Sign up for alerts RSS feed nature articles article Article Published: 13 May 2026 An ultra-faint, chemically primitive galaxy forming in the reionization era Kimihiko Nakajima ORCID: orcid.org/0000-0003-2965-5070 1 , 2 , 3 , Masami Ouchi ORCID: orcid.org/0000-0002-1049-6658 3 , 4 , 5 , 6 , Yuichi Harikane ORCID: orcid.org/0000-0002-6047-430X 4 , Eros Vanzella ORCID: orcid.org/0000-0001-5228-9326 7 , Yoshiaki Ono 4 , Yuki Isobe 8 , 9 , 10 , Moka Nishigaki 3 , 5 , Takuji Tsujimoto 3 , 5 , Fumitaka Nakamura ORCID: orcid.org/0000-0001-5431-2294 3 , 5 , 11 , Yi Xu 4 , 11 , Hiroya Umeda 4 , 12 & … Yechi Zhang 1",
+      "post_text": "🌐 Мировые IT\n\n<b>An ultra-faint, chemically primitive galaxy forming in the reionization era - Nature</b>\n\nLAP1-B—an ultra-faint and tiny galaxy that formed in the reionization era and is strongly magnified by gravitational lensing—is chemically primitive and hosts very few stars in an otherwise dominant dark matter halo.\n\nНа протяжении десятилетий астрономы, глядя в такие телескопы, как «Хаббл», пытались заглянуть в древнюю эпоху, когда зажглось первое поколение звёзд во Вселенной.\n\nНо маленькие галактики, которые были строительными блоками известного нам сегодня космоса, слишком тусклые, чтобы их можно было заметить даже с помощью самых мощных инструментов.\n\nМИРОВЫЕ IT · <a href=\"https://www.nature.com/articles/s41586-026-10374-1\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://www.nature.com/articles/s41586-026-10374-1",
+      "published_at": "2026-05-31T08:54:59+00:00",
+      "title_hash": "062c894a22f0dafeeed4cf9089d2fc376ea70219",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/bfd/9bb/b96/bfd9bbb967ab64f22b4ecc313e50a17d.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "73d9ed21e496e9b0",
+      "status": "pending",
+      "created_at": "2026-05-31T10:24:12+00:00",
+      "created_at_sakhalin": "2026-05-31T21:24:12+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "DNSSEC validation на Go: написал свой validator и не до конца сошёл с ума",
+      "title_ru": "DNSSEC validation на Go: написал свой validator и не до конца сошёл с ума",
+      "body": [
+        "Я пилю VantageDNS, privacy-focused recursive DNS-резолвер с фильтрацией.",
+        "Edge-фронт на Go, 10 нод по миру, миекговский miekg/dns под капотом.",
+        "Я пилю VantageDNS, privacy-focused recursive DNS-резолвер с фильтрацией."
+      ],
+      "footer": null,
+      "source_text": "ну и снова привет, Хабр! Я пилю VantageDNS, privacy-focused recursive DNS-резолвер с фильтрацией. Edge-фронт на Go, 10 нод по миру, миекговский miekg/dns под капотом. На каком-то этапе у меня... Я пилю VantageDNS, privacy-focused recursive DNS-резолвер с фильтрацией. Edge-фронт на Go, 10 нод по миру, миекговский miekg/dns под капотом. На каком-то этапе у меня закончились отговорки, и пришлось писать DNSSEC validator. Своими руками. Ночью. Под кофе восьмой кружки. Ниже расскажу, как устроен trust chain, что есть в стандартной библиотеке, какие грабли разложены по дороге, и почему алгоритм 14 я до сих пор обхожу как кота во дворе. И не сошёл с ума Я пилю VantageDNS, privacy-focused recursive DNS-резолвер с фильтрацией. Edge-фронт на Go, 10 нод по миру, миекговский miekg/dns под капотом. На каком-то этапе у меня закончились отговорки, и пришлось писать DNSSEC validator. Своими руками. Ночью. Под кофе восьмой кружки. Ниже расскажу, как устроен trust chain, что есть в стандартной библиотеке, какие грабли разложены по дороге, и почему алгоритм 14 я до сих пор обхожу как кота во дворе. В конце ссылки на open-source реализацию, можно поковырять. Я сначала пытался его игнорировать. Реальность, как водится, побила меня палкой по голове. DS (Delegation Signer) лежит у родителя. Это hash от KSK ребёнка. Родитель говорит: «вот этот ключ у моего ребёнка настоящий».",
+      "post_text": "🌐 Мировые IT\n\n<b>DNSSEC validation на Go: написал свой validator и не до конца сошёл с ума</b>\n\nЯ пилю VantageDNS, privacy-focused recursive DNS-резолвер с фильтрацией.\n\nEdge-фронт на Go, 10 нод по миру, миекговский miekg/dns под капотом.\n\nЯ пилю VantageDNS, privacy-focused recursive DNS-резолвер с фильтрацией.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1035656/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1035656#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1035656/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1035656#habracut",
+      "published_at": "2026-05-31T08:22:56+00:00",
+      "title_hash": "2832d11fe4b69a8ff9973537e8dc9e7998d36a5f",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/8b3/7dd/2d4/8b37dd2d46c2b0c8c39d88a605d61c61.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "3aa6c387ec1ec67b",
+      "status": "pending",
+      "created_at": "2026-05-31T10:24:12+00:00",
+      "created_at_sakhalin": "2026-05-31T21:24:12+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 237,
+      "title_original": "Listen to the new Steam Controller buzz to the tune of Doom",
+      "title_ru": "Listen to the new Steam Controller buzz to the tune of Doom",
+      "body": [
+        "The music rocks, even on a controller.",
+        "You may have heard that Valve's new Steam Controller can ring like a telephone or do the Wilhelm scream.",
+        "But did you know it can sing songs, too?"
+      ],
+      "footer": null,
+      "source_text": "The music rocks, even on a controller. You may have heard that Valve's new Steam Controller can ring like a telephone or do the Wilhelm scream. But did you know it can sing songs, too? Let me show you. Here's the new Steam Controller performing the \"Ground Theme\" from Super Mario Bros. 2: Here is \"Still Alive\" from Portal - fitting for […] Entertainment Close Entertainment Posts from this topic will be added to your daily email digest and your homepage feed. Report Close Report Posts from this topic will be added to your daily email digest and your homepage feed. And a bunch of other songs, thanks to the haptic motors in the controller. And a bunch of other songs, thanks to the haptic motors in the controller.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Listen to the new Steam Controller buzz to the tune of Doom</b>\n\nThe music rocks, even on a controller.\n\nYou may have heard that Valve's new Steam Controller can ring like a telephone or do the Wilhelm scream.\n\nBut did you know it can sing songs, too?\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/games/940157/valve-steam-controller-singing-music-doom\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/games/940157/valve-steam-controller-singing-music-doom",
+      "published_at": "2026-05-30T14:02:51+00:00",
+      "title_hash": "8ce1132859df5658237f02eb36698273d6def9c1",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "fdcbfecf4d711a88",
+      "status": "pending",
+      "created_at": "2026-05-31T10:24:12+00:00",
+      "created_at_sakhalin": "2026-05-31T21:24:12+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 202,
+      "title_original": "Sometimes, a short game hits the spot",
+      "title_ru": "Sometimes, a short game hits the spot",
+      "body": [
+        "Slots & Daggers, a low-key, fantasy-themed slot machine roguelike, was one of my favorite games last year.",
+        "That may sound like a complicated description, but the game mixes ideas from deckbuilding roguelikes with slot machines to create an engrossing loop, and there's steady meta-progression that helps you push further with just about every run."
+      ],
+      "footer": null,
+      "source_text": "Take a spin of Slots & Daggers. Slots & Daggers, a low-key, fantasy-themed slot machine roguelike, was one of my favorite games last year. That may sound like a complicated description, but the game mixes ideas from deckbuilding roguelikes with slot machines to create an engrossing loop, and there's steady meta-progression that helps you push further with just about every run. Perhaps […]",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Sometimes, a short game hits the spot</b>\n\nSlots &amp; Daggers, a low-key, fantasy-themed slot machine roguelike, was one of my favorite games last year.\n\nThat may sound like a complicated description, but the game mixes ideas from deckbuilding roguelikes with slot machines to create an engrossing loop, and there's steady meta-progression that helps you push further with just about every run.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/games/937499/slots-and-daggers-review-nintendo-switch-ps5-xbox-series-x-s-pc\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/games/937499/slots-and-daggers-review-nintendo-switch-ps5-xbox-series-x-s-pc",
+      "published_at": "2026-05-30T12:00:00+00:00",
+      "title_hash": "3ca6579ba860276acfeaa2ce28dd96a052b3a140",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "7814fc9d6bf5d631",
+      "status": "pending",
+      "created_at": "2026-05-31T10:24:12+00:00",
+      "created_at_sakhalin": "2026-05-31T21:24:12+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 1,
+      "title_original": "Как мы делаем приложение для научного нетворкинга в университете",
+      "title_ru": "Как мы делаем приложение для научного нетворкинга в университете",
+      "body": [
+        "В 2025 году у исследователя есть всё: пред-принты, чаты, Telegram-каналы и даже нейросети, которые помогают писать черновики статей.",
+        "Но когда речь заходит о поиске конкретного специалиста под...",
+        "Это третий пост о нашем проекте на Хабре."
+      ],
+      "footer": null,
+      "source_text": "В 2025 году у исследователя есть всё: пред-принты, чаты, Telegram-каналы и даже нейросети, которые помогают писать черновики статей. Но когда речь заходит о поиске конкретного специалиста под... Это третий пост о нашем проекте на Хабре. В первом мы рассказывали гипотезу, во втором — что из неё выжило после первых пользователей. Сейчас короткий и довольно прямой пост: мы ищем разработчика. Без модной формулировки про «rockstar ninja» — реально студенческий проект, в котором сейчас не хватает рук, чтобы двигаться дальше. Читать далее В 2025 году у исследователя есть всё: пред-принты, чаты, Telegram-каналы и даже нейросети, которые помогают писать черновики статей. Но когда речь заходит о поиске конкретного специалиста под конкретную научную задачу, мы по-прежнему действуем по старинке: Мы — команда студентов, и сейчас разрабатываем приложение для научного нетворкинга: место, где учёные смогут знакомиться по интересам, находить помощь для исследований, присоединяться к проектам и обмениваться компетенциями. Ниже расскажем: почему обычные соцсети и ResearchGate не закрывают задачу «найти своего учёного»; как мы собирали требования от исследователей и студентов;",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Как мы делаем приложение для научного нетворкинга в университете</b>\n\nВ 2025 году у исследователя есть всё: пред-принты, чаты, Telegram-каналы и даже нейросети, которые помогают писать черновики статей.\n\nНо когда речь заходит о поиске конкретного специалиста под...\n\nЭто третий пост о нашем проекте на Хабре.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://habr.com/ru/articles/1008172/\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1008172/",
+      "published_at": "2026-05-31T09:58:12+00:00",
+      "title_hash": "8e084ccd78d05f6194fbfb1813acd72bacbb2206",
+      "image_url": "https://habrastorage.org/webt/qq/ey/pn/qqeypn-py71suynxbusbakjdfjw.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "0dd83aef5517e23a",
+      "status": "pending",
+      "created_at": "2026-05-31T10:24:12+00:00",
+      "created_at_sakhalin": "2026-05-31T21:24:12+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 1,
+      "title_original": "Зачем мне фото- и видеоредакторы с GUI, когда есть FFmpeg?",
+      "title_ru": "Зачем мне фото- и видеоредакторы с GUI, когда есть FFmpeg?",
+      "body": [
+        "\"Мне больше не придётся крякать Фотошоп и Вегас!\".",
+        "Научился блюрить лица и айпишники через командную строку.",
+        "Провёл сравнительное тестирование аппаратных и программных..."
+      ],
+      "footer": null,
+      "source_text": "День 1 . \"Мне больше не придётся крякать Фотошоп и Вегас!\". День 2 . Научился блюрить лица и айпишники через командную строку. День 4 . Провёл сравнительное тестирование аппаратных и программных... ...или записки из палаты Линуксоида Часто ли вам пригождается базовая обработка фото или видео? Понизить разрешение, вырезать область, нанести текст, перекодировать в другой формат и другие задачи. Раньше я пользовался для этих целей самыми разными средствами - загрузка в веб-редакторы, Paint, Photoshop, Sony Vegas. Пока в один прекрасный момент не пересел на Linux...Удобного видеоредактора для себя не нашёл, а к рабочему процессу в командной строке и установке через dnf install уже привык (я использую Fedora). И понеслась... Внутри - интересная справка по FFmpeg. Ничего лишнего, максимум примеров с визуализацией и компактными объяснениями. Покажу, какие задачи можно решать с помощью этого инструмента не выходя из командной строки - а таких очень много. В конце - личный опыт: зачем мне эта шизофрения понадобилась и что она мне дала. Увидеть нестандартный workflow День 1 . \"Мне больше не придётся крякать Фотошоп и Вегас!\". День 2 . Научился блюрить лица и айпишники через командную строку. День 4 . Провёл сравнительное тестирование аппаратных и программных видеокодеков. День 8 . Натравил ИИ-агентов на задачу по монтажу видео. День 16 . Объясняю жене, почему не могу просто запустить Paint и нажать две кнопки. Хабр, привет! В последнее время моя работа во многом сосредоточена на вопросах Remote Desktop и стриминга медиа в реальном времени. Я часто использую FFmpeg в работе - и со временем всё чаще и чаще. В этой статье я покажу примеры того, что я периодически делаю через FFmpeg не покидая командную строку и не переходя в редакторы с тяжеловесным GUI. С компактно изложенными пояс",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Зачем мне фото- и видеоредакторы с GUI, когда есть FFmpeg?</b>\n\n\"Мне больше не придётся крякать Фотошоп и Вегас!\".\n\nНаучился блюрить лица и айпишники через командную строку.\n\nПровёл сравнительное тестирование аппаратных и программных...\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://habr.com/ru/articles/1041600/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041600#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1041600/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041600#habracut",
+      "published_at": "2026-05-31T09:00:01+00:00",
+      "title_hash": "7dd27d71451d3d3f91ff58b8d6c193b51edc8489",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/adc/0f4/bb8/adc0f4bb8d5d3183dd55a519abce2bee.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "ae5d84ee8d0db96d",
+      "status": "pending",
+      "created_at": "2026-05-31T10:24:12+00:00",
+      "created_at_sakhalin": "2026-05-31T21:24:12+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 1,
+      "title_original": "Video post-processing - Wikipedia",
+      "title_ru": "Video post-processing - Wikipedia",
+      "body": [
+        "Размытие — базовый строительный блок множества эффектов постобработки в видеоиграх , без него не обходятся красивые современные GUI .",
+        "Оно используется в эффектах Depth of Field , Bloom или панелях с эффектом матового стекла современных пользовательских интерфейсов.",
+        "Эффект Bloom — один из множества способов применения алгоритмов размытия Концептуально реализовать размытие легко, его принцип сводится к тому или иному способу усреднения цветов в заданном радиусе."
+      ],
+      "footer": null,
+      "source_text": "Размытие — базовый строительный блок множества эффектов постобработки в видеоиграх , без него не обходятся красивые современные GUI . Оно используется в эффектах Depth of Field , Bloom или панелях с эффектом матового стекла современных пользовательских интерфейсов. Эффект Bloom — один из множества способов применения алгоритмов размытия Концептуально реализовать размытие легко, его принцип сводится к тому или иному способу усреднения цветов в заданном радиусе. Однако для того, чтобы выполнять его в реальном времени , понадобились десятки лет исследований и экспериментов в computer science и математике. В этой статье мы поэтапно разберём их; можно назвать это путешествием во времени в сфере программирования графики. В оригинале статьи техники размытия реализованы в реальном времени благодаря использованию GPU и возможностям WebGL браузера. Читать далее The term post-processing (or postproc for short) is used in the video and film industry for quality-improvement image processing (specifically digital image processing ) methods used in video playback devices, such as stand-alone DVD-Video players; video playing software; and transcoding software. It is also commonly used in real-time 3D rendering (such as in video games ) to add additional effects. Video post-processing is the process of changing the perceived quality of a video on playback (done after the decoding process). Image scaling routines such as linear interpolation , bilinear interpolation , or cubic interpolation can for example be performed when increasing the size of images; this involves either subsampling (reducing or shrinking an image) or zooming (enlarging an image). This helps reduce or hide image artifacts and flaws in the original film material. Post-processing always involves a trade-off between spe",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Video post-processing - Wikipedia</b>\n\nРазмытие — базовый строительный блок множества эффектов постобработки в видеоиграх , без него не обходятся красивые современные GUI .\n\nОно используется в эффектах Depth of Field , Bloom или панелях с эффектом матового стекла современных пользовательских интерфейсов.\n\nЭффект Bloom — один из множества способов применения алгоритмов размытия Концептуально реализовать размытие легко, его принцип сводится к тому или иному способу усреднения цветов в заданном радиусе.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://en.wikipedia.org/wiki/Video_post-processing#Uses_in_3D_rendering\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://en.wikipedia.org/wiki/Video_post-processing#Uses_in_3D_rendering",
+      "published_at": "2026-05-31T09:53:59+00:00",
+      "title_hash": "fd1edd0945f75c020b4f502d52372b56b4e4a7ca",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/67e/c97/91f/67ec9791fcd8bf675f3d8d7ce20a53eb.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
     {
       "id": "5a601e333844ad56",
       "status": "rejected",
@@ -9257,301 +9552,6 @@
       "published_at_sakhalin": "2026-05-29T11:09:58+11:00",
       "publish_method": "sendPhoto/safe/pipeline_generated",
       "telegram_message_id": 142
-    },
-    {
-      "id": "18d51f92cfb165fd",
-      "status": "pending",
-      "created_at": "2026-05-31T10:24:12+00:00",
-      "created_at_sakhalin": "2026-05-31T21:24:12+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Квантовые компьютеры не угроза 128-битным симметричным ключам",
-      "title_ru": "Квантовые компьютеры не угроза 128-битным симметричным ключам",
-      "body": [
-        "Надвигающаяся угроза для криптографии со стороны квантовых компьютеров заставила срочно менять действующие примитивы асимметричной криптографии — обмен ключами (ECDH) и цифровые подписи (RSA, ECDSA,...",
-        "Надвигающаяся угроза со стороны заточенных на криптографию квантовых компьютеров заставила срочно менять действующие примитивы асимметричной криптографии — обмен ключами (ECDH) и цифровые подписи (RSA, ECDSA, EdDSA) — которые уязвимы для квантового алгоритма Шора.",
-        "Однако существующих симметричных методов криптографии (AES, SHA-2, SHA-3) или уровней их стойкости это не коснулось."
-      ],
-      "footer": null,
-      "source_text": "Надвигающаяся угроза для криптографии со стороны квантовых компьютеров заставила срочно менять действующие примитивы асимметричной криптографии — обмен ключами (ECDH) и цифровые подписи (RSA, ECDSA,... Надвигающаяся угроза со стороны заточенных на криптографию квантовых компьютеров заставила срочно менять действующие примитивы асимметричной криптографии — обмен ключами (ECDH) и цифровые подписи (RSA, ECDSA, EdDSA) — которые уязвимы для квантового алгоритма Шора. Однако существующих симметричных методов криптографии (AES, SHA-2, SHA-3) или уровней их стойкости это не коснулось. ccc В индустрии бытует заблуждение, что квантовые компьютеры вдвое ослабят безопасность симметричных ключей, и для обеспечения того же 128-битного уровня защиты потребуется перейти на 256-битные ключи. Это неточная интерпретация ускорения, которое несут в себе квантовые алгоритмы. Она не отражена ни в одном из нормативных стандартов и рискует отвлечь внимание от реально необходимой работы по переходу к постквантовой системе криптографии. Обычно это заблуждение происходит из недопонимания применимости другого квантового метода — алгоритма Гровера. AES-128, как и SHA-256, обеспечивает достаточную защиту от атак с применением квантовых компьютеров. В рамках перехода в постквантовую эпоху размер симметричных ключей изменять не требуется. Это почти единогласное мнение среди профильных экспертов и органов стандартизации, которое нужно распространить среди остальной части IT-сообщества. И дальше в статье я подкреплю это утверждение техническими аргументами со ссылками на авторитетные источники. Читать далее В индустрии бытует заблуждение, что квантовые компьютеры вдвое ослабят безопасность симметричных ключей, и для обеспечения того же 128-битного уровня защиты потребуется перейти на 256-битные ключи. Эт",
-      "post_text": "🌐 Мировые IT\n\n<b>Квантовые компьютеры не угроза 128-битным симметричным ключам</b>\n\nНадвигающаяся угроза для криптографии со стороны квантовых компьютеров заставила срочно менять действующие примитивы асимметричной криптографии — обмен ключами (ECDH) и цифровые подписи (RSA, ECDSA,...\n\nНадвигающаяся угроза со стороны заточенных на криптографию квантовых компьютеров заставила срочно менять действующие примитивы асимметричной криптографии — обмен ключами (ECDH) и цифровые подписи (RSA, ECDSA, EdDSA) — которые уязвимы для квантового алгоритма Шора.\n\nОднако существующих симметричных методов криптографии (AES, SHA-2, SHA-3) или уровней их стойкости это не коснулось.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/ruvds/articles/1040544/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040544#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/ruvds/articles/1040544/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040544#habracut",
-      "published_at": "2026-05-31T09:01:10+00:00",
-      "title_hash": "89239c9e8b7e6645b60e7da844b543ac31f84e14",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/a88/e71/7cf/a88e717cf79be894f4ad82b8db35a6cb.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "e62c861b4f8d4b13",
-      "status": "pending",
-      "created_at": "2026-05-31T10:24:12+00:00",
-      "created_at_sakhalin": "2026-05-31T21:24:12+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "An ultra-faint, chemically primitive galaxy forming in the reionization era - Nature",
-      "title_ru": "An ultra-faint, chemically primitive galaxy forming in the reionization era - Nature",
-      "body": [
-        "LAP1-B—an ultra-faint and tiny galaxy that formed in the reionization era and is strongly magnified by gravitational lensing—is chemically primitive and hosts very few stars in an otherwise dominant dark matter halo.",
-        "На протяжении десятилетий астрономы, глядя в такие телескопы, как «Хаббл», пытались заглянуть в древнюю эпоху, когда зажглось первое поколение звёзд во Вселенной.",
-        "Но маленькие галактики, которые были строительными блоками известного нам сегодня космоса, слишком тусклые, чтобы их можно было заметить даже с помощью самых мощных инструментов."
-      ],
-      "footer": null,
-      "source_text": "LAP1-B—an ultra-faint and tiny galaxy that formed in the reionization era and is strongly magnified by gravitational lensing—is chemically primitive and hosts very few stars in an otherwise dominant dark matter halo. На протяжении десятилетий астрономы, глядя в такие телескопы, как «Хаббл», пытались заглянуть в древнюю эпоху, когда зажглось первое поколение звёзд во Вселенной. Но маленькие галактики, которые были строительными блоками известного нам сегодня космоса, слишком тусклые, чтобы их можно было заметить даже с помощью самых мощных инструментов. Теперь, похоже, у астрономов наконец-то появилось два преимущества: космический телескоп «Уэбб» и немного удачи. В недавней статье , опубликованной в журнале Nature, группа учёных под руководством Кимихико Накадзимы, астронома из Университета Канадзава (Япония), использовала космический телескоп «Уэбб» для наблюдения за сверхслабой галактикой под названием LAP1-B, существовавшей примерно через 800 миллионов лет после Большого взрыва. Это самая химически примитивная галактика из всех, что мы когда-либо видели. Читать далее View all journals Search Log in Content Explore content About the journal Publish with us Subscribe Sign up for alerts RSS feed nature articles article Article Published: 13 May 2026 An ultra-faint, chemically primitive galaxy forming in the reionization era Kimihiko Nakajima ORCID: orcid.org/0000-0003-2965-5070 1 , 2 , 3 , Masami Ouchi ORCID: orcid.org/0000-0002-1049-6658 3 , 4 , 5 , 6 , Yuichi Harikane ORCID: orcid.org/0000-0002-6047-430X 4 , Eros Vanzella ORCID: orcid.org/0000-0001-5228-9326 7 , Yoshiaki Ono 4 , Yuki Isobe 8 , 9 , 10 , Moka Nishigaki 3 , 5 , Takuji Tsujimoto 3 , 5 , Fumitaka Nakamura ORCID: orcid.org/0000-0001-5431-2294 3 , 5 , 11 , Yi Xu 4 , 11 , Hiroya Umeda 4 , 12 & … Yechi Zhang 1",
-      "post_text": "🌐 Мировые IT\n\n<b>An ultra-faint, chemically primitive galaxy forming in the reionization era - Nature</b>\n\nLAP1-B—an ultra-faint and tiny galaxy that formed in the reionization era and is strongly magnified by gravitational lensing—is chemically primitive and hosts very few stars in an otherwise dominant dark matter halo.\n\nНа протяжении десятилетий астрономы, глядя в такие телескопы, как «Хаббл», пытались заглянуть в древнюю эпоху, когда зажглось первое поколение звёзд во Вселенной.\n\nНо маленькие галактики, которые были строительными блоками известного нам сегодня космоса, слишком тусклые, чтобы их можно было заметить даже с помощью самых мощных инструментов.\n\nМИРОВЫЕ IT · <a href=\"https://www.nature.com/articles/s41586-026-10374-1\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://www.nature.com/articles/s41586-026-10374-1",
-      "published_at": "2026-05-31T08:54:59+00:00",
-      "title_hash": "062c894a22f0dafeeed4cf9089d2fc376ea70219",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/bfd/9bb/b96/bfd9bbb967ab64f22b4ecc313e50a17d.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "73d9ed21e496e9b0",
-      "status": "pending",
-      "created_at": "2026-05-31T10:24:12+00:00",
-      "created_at_sakhalin": "2026-05-31T21:24:12+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "DNSSEC validation на Go: написал свой validator и не до конца сошёл с ума",
-      "title_ru": "DNSSEC validation на Go: написал свой validator и не до конца сошёл с ума",
-      "body": [
-        "Я пилю VantageDNS, privacy-focused recursive DNS-резолвер с фильтрацией.",
-        "Edge-фронт на Go, 10 нод по миру, миекговский miekg/dns под капотом.",
-        "Я пилю VantageDNS, privacy-focused recursive DNS-резолвер с фильтрацией."
-      ],
-      "footer": null,
-      "source_text": "ну и снова привет, Хабр! Я пилю VantageDNS, privacy-focused recursive DNS-резолвер с фильтрацией. Edge-фронт на Go, 10 нод по миру, миекговский miekg/dns под капотом. На каком-то этапе у меня... Я пилю VantageDNS, privacy-focused recursive DNS-резолвер с фильтрацией. Edge-фронт на Go, 10 нод по миру, миекговский miekg/dns под капотом. На каком-то этапе у меня закончились отговорки, и пришлось писать DNSSEC validator. Своими руками. Ночью. Под кофе восьмой кружки. Ниже расскажу, как устроен trust chain, что есть в стандартной библиотеке, какие грабли разложены по дороге, и почему алгоритм 14 я до сих пор обхожу как кота во дворе. И не сошёл с ума Я пилю VantageDNS, privacy-focused recursive DNS-резолвер с фильтрацией. Edge-фронт на Go, 10 нод по миру, миекговский miekg/dns под капотом. На каком-то этапе у меня закончились отговорки, и пришлось писать DNSSEC validator. Своими руками. Ночью. Под кофе восьмой кружки. Ниже расскажу, как устроен trust chain, что есть в стандартной библиотеке, какие грабли разложены по дороге, и почему алгоритм 14 я до сих пор обхожу как кота во дворе. В конце ссылки на open-source реализацию, можно поковырять. Я сначала пытался его игнорировать. Реальность, как водится, побила меня палкой по голове. DS (Delegation Signer) лежит у родителя. Это hash от KSK ребёнка. Родитель говорит: «вот этот ключ у моего ребёнка настоящий».",
-      "post_text": "🌐 Мировые IT\n\n<b>DNSSEC validation на Go: написал свой validator и не до конца сошёл с ума</b>\n\nЯ пилю VantageDNS, privacy-focused recursive DNS-резолвер с фильтрацией.\n\nEdge-фронт на Go, 10 нод по миру, миекговский miekg/dns под капотом.\n\nЯ пилю VantageDNS, privacy-focused recursive DNS-резолвер с фильтрацией.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1035656/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1035656#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1035656/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1035656#habracut",
-      "published_at": "2026-05-31T08:22:56+00:00",
-      "title_hash": "2832d11fe4b69a8ff9973537e8dc9e7998d36a5f",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/8b3/7dd/2d4/8b37dd2d46c2b0c8c39d88a605d61c61.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "3aa6c387ec1ec67b",
-      "status": "pending",
-      "created_at": "2026-05-31T10:24:12+00:00",
-      "created_at_sakhalin": "2026-05-31T21:24:12+11:00",
-      "source": "The Verge",
-      "source_type": "it",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 237,
-      "title_original": "Listen to the new Steam Controller buzz to the tune of Doom",
-      "title_ru": "Listen to the new Steam Controller buzz to the tune of Doom",
-      "body": [
-        "The music rocks, even on a controller.",
-        "You may have heard that Valve's new Steam Controller can ring like a telephone or do the Wilhelm scream.",
-        "But did you know it can sing songs, too?"
-      ],
-      "footer": null,
-      "source_text": "The music rocks, even on a controller. You may have heard that Valve's new Steam Controller can ring like a telephone or do the Wilhelm scream. But did you know it can sing songs, too? Let me show you. Here's the new Steam Controller performing the \"Ground Theme\" from Super Mario Bros. 2: Here is \"Still Alive\" from Portal - fitting for […] Entertainment Close Entertainment Posts from this topic will be added to your daily email digest and your homepage feed. Report Close Report Posts from this topic will be added to your daily email digest and your homepage feed. And a bunch of other songs, thanks to the haptic motors in the controller. And a bunch of other songs, thanks to the haptic motors in the controller.",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Listen to the new Steam Controller buzz to the tune of Doom</b>\n\nThe music rocks, even on a controller.\n\nYou may have heard that Valve's new Steam Controller can ring like a telephone or do the Wilhelm scream.\n\nBut did you know it can sing songs, too?\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/games/940157/valve-steam-controller-singing-music-doom\">The Verge</a>",
-      "edited_post_text": null,
-      "url": "https://www.theverge.com/games/940157/valve-steam-controller-singing-music-doom",
-      "published_at": "2026-05-30T14:02:51+00:00",
-      "title_hash": "8ce1132859df5658237f02eb36698273d6def9c1",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "fdcbfecf4d711a88",
-      "status": "pending",
-      "created_at": "2026-05-31T10:24:12+00:00",
-      "created_at_sakhalin": "2026-05-31T21:24:12+11:00",
-      "source": "The Verge",
-      "source_type": "it",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 202,
-      "title_original": "Sometimes, a short game hits the spot",
-      "title_ru": "Sometimes, a short game hits the spot",
-      "body": [
-        "Slots & Daggers, a low-key, fantasy-themed slot machine roguelike, was one of my favorite games last year.",
-        "That may sound like a complicated description, but the game mixes ideas from deckbuilding roguelikes with slot machines to create an engrossing loop, and there's steady meta-progression that helps you push further with just about every run."
-      ],
-      "footer": null,
-      "source_text": "Take a spin of Slots & Daggers. Slots & Daggers, a low-key, fantasy-themed slot machine roguelike, was one of my favorite games last year. That may sound like a complicated description, but the game mixes ideas from deckbuilding roguelikes with slot machines to create an engrossing loop, and there's steady meta-progression that helps you push further with just about every run. Perhaps […]",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Sometimes, a short game hits the spot</b>\n\nSlots &amp; Daggers, a low-key, fantasy-themed slot machine roguelike, was one of my favorite games last year.\n\nThat may sound like a complicated description, but the game mixes ideas from deckbuilding roguelikes with slot machines to create an engrossing loop, and there's steady meta-progression that helps you push further with just about every run.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/games/937499/slots-and-daggers-review-nintendo-switch-ps5-xbox-series-x-s-pc\">The Verge</a>",
-      "edited_post_text": null,
-      "url": "https://www.theverge.com/games/937499/slots-and-daggers-review-nintendo-switch-ps5-xbox-series-x-s-pc",
-      "published_at": "2026-05-30T12:00:00+00:00",
-      "title_hash": "3ca6579ba860276acfeaa2ce28dd96a052b3a140",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "7814fc9d6bf5d631",
-      "status": "pending",
-      "created_at": "2026-05-31T10:24:12+00:00",
-      "created_at_sakhalin": "2026-05-31T21:24:12+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 1,
-      "title_original": "Как мы делаем приложение для научного нетворкинга в университете",
-      "title_ru": "Как мы делаем приложение для научного нетворкинга в университете",
-      "body": [
-        "В 2025 году у исследователя есть всё: пред-принты, чаты, Telegram-каналы и даже нейросети, которые помогают писать черновики статей.",
-        "Но когда речь заходит о поиске конкретного специалиста под...",
-        "Это третий пост о нашем проекте на Хабре."
-      ],
-      "footer": null,
-      "source_text": "В 2025 году у исследователя есть всё: пред-принты, чаты, Telegram-каналы и даже нейросети, которые помогают писать черновики статей. Но когда речь заходит о поиске конкретного специалиста под... Это третий пост о нашем проекте на Хабре. В первом мы рассказывали гипотезу, во втором — что из неё выжило после первых пользователей. Сейчас короткий и довольно прямой пост: мы ищем разработчика. Без модной формулировки про «rockstar ninja» — реально студенческий проект, в котором сейчас не хватает рук, чтобы двигаться дальше. Читать далее В 2025 году у исследователя есть всё: пред-принты, чаты, Telegram-каналы и даже нейросети, которые помогают писать черновики статей. Но когда речь заходит о поиске конкретного специалиста под конкретную научную задачу, мы по-прежнему действуем по старинке: Мы — команда студентов, и сейчас разрабатываем приложение для научного нетворкинга: место, где учёные смогут знакомиться по интересам, находить помощь для исследований, присоединяться к проектам и обмениваться компетенциями. Ниже расскажем: почему обычные соцсети и ResearchGate не закрывают задачу «найти своего учёного»; как мы собирали требования от исследователей и студентов;",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Как мы делаем приложение для научного нетворкинга в университете</b>\n\nВ 2025 году у исследователя есть всё: пред-принты, чаты, Telegram-каналы и даже нейросети, которые помогают писать черновики статей.\n\nНо когда речь заходит о поиске конкретного специалиста под...\n\nЭто третий пост о нашем проекте на Хабре.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://habr.com/ru/articles/1008172/\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1008172/",
-      "published_at": "2026-05-31T09:58:12+00:00",
-      "title_hash": "8e084ccd78d05f6194fbfb1813acd72bacbb2206",
-      "image_url": "https://habrastorage.org/webt/qq/ey/pn/qqeypn-py71suynxbusbakjdfjw.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "0dd83aef5517e23a",
-      "status": "pending",
-      "created_at": "2026-05-31T10:24:12+00:00",
-      "created_at_sakhalin": "2026-05-31T21:24:12+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 1,
-      "title_original": "Зачем мне фото- и видеоредакторы с GUI, когда есть FFmpeg?",
-      "title_ru": "Зачем мне фото- и видеоредакторы с GUI, когда есть FFmpeg?",
-      "body": [
-        "\"Мне больше не придётся крякать Фотошоп и Вегас!\".",
-        "Научился блюрить лица и айпишники через командную строку.",
-        "Провёл сравнительное тестирование аппаратных и программных..."
-      ],
-      "footer": null,
-      "source_text": "День 1 . \"Мне больше не придётся крякать Фотошоп и Вегас!\". День 2 . Научился блюрить лица и айпишники через командную строку. День 4 . Провёл сравнительное тестирование аппаратных и программных... ...или записки из палаты Линуксоида Часто ли вам пригождается базовая обработка фото или видео? Понизить разрешение, вырезать область, нанести текст, перекодировать в другой формат и другие задачи. Раньше я пользовался для этих целей самыми разными средствами - загрузка в веб-редакторы, Paint, Photoshop, Sony Vegas. Пока в один прекрасный момент не пересел на Linux...Удобного видеоредактора для себя не нашёл, а к рабочему процессу в командной строке и установке через dnf install уже привык (я использую Fedora). И понеслась... Внутри - интересная справка по FFmpeg. Ничего лишнего, максимум примеров с визуализацией и компактными объяснениями. Покажу, какие задачи можно решать с помощью этого инструмента не выходя из командной строки - а таких очень много. В конце - личный опыт: зачем мне эта шизофрения понадобилась и что она мне дала. Увидеть нестандартный workflow День 1 . \"Мне больше не придётся крякать Фотошоп и Вегас!\". День 2 . Научился блюрить лица и айпишники через командную строку. День 4 . Провёл сравнительное тестирование аппаратных и программных видеокодеков. День 8 . Натравил ИИ-агентов на задачу по монтажу видео. День 16 . Объясняю жене, почему не могу просто запустить Paint и нажать две кнопки. Хабр, привет! В последнее время моя работа во многом сосредоточена на вопросах Remote Desktop и стриминга медиа в реальном времени. Я часто использую FFmpeg в работе - и со временем всё чаще и чаще. В этой статье я покажу примеры того, что я периодически делаю через FFmpeg не покидая командную строку и не переходя в редакторы с тяжеловесным GUI. С компактно изложенными пояс",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Зачем мне фото- и видеоредакторы с GUI, когда есть FFmpeg?</b>\n\n\"Мне больше не придётся крякать Фотошоп и Вегас!\".\n\nНаучился блюрить лица и айпишники через командную строку.\n\nПровёл сравнительное тестирование аппаратных и программных...\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://habr.com/ru/articles/1041600/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041600#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1041600/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041600#habracut",
-      "published_at": "2026-05-31T09:00:01+00:00",
-      "title_hash": "7dd27d71451d3d3f91ff58b8d6c193b51edc8489",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/adc/0f4/bb8/adc0f4bb8d5d3183dd55a519abce2bee.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "ae5d84ee8d0db96d",
-      "status": "pending",
-      "created_at": "2026-05-31T10:24:12+00:00",
-      "created_at_sakhalin": "2026-05-31T21:24:12+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 1,
-      "title_original": "Video post-processing - Wikipedia",
-      "title_ru": "Video post-processing - Wikipedia",
-      "body": [
-        "Размытие — базовый строительный блок множества эффектов постобработки в видеоиграх , без него не обходятся красивые современные GUI .",
-        "Оно используется в эффектах Depth of Field , Bloom или панелях с эффектом матового стекла современных пользовательских интерфейсов.",
-        "Эффект Bloom — один из множества способов применения алгоритмов размытия Концептуально реализовать размытие легко, его принцип сводится к тому или иному способу усреднения цветов в заданном радиусе."
-      ],
-      "footer": null,
-      "source_text": "Размытие — базовый строительный блок множества эффектов постобработки в видеоиграх , без него не обходятся красивые современные GUI . Оно используется в эффектах Depth of Field , Bloom или панелях с эффектом матового стекла современных пользовательских интерфейсов. Эффект Bloom — один из множества способов применения алгоритмов размытия Концептуально реализовать размытие легко, его принцип сводится к тому или иному способу усреднения цветов в заданном радиусе. Однако для того, чтобы выполнять его в реальном времени , понадобились десятки лет исследований и экспериментов в computer science и математике. В этой статье мы поэтапно разберём их; можно назвать это путешествием во времени в сфере программирования графики. В оригинале статьи техники размытия реализованы в реальном времени благодаря использованию GPU и возможностям WebGL браузера. Читать далее The term post-processing (or postproc for short) is used in the video and film industry for quality-improvement image processing (specifically digital image processing ) methods used in video playback devices, such as stand-alone DVD-Video players; video playing software; and transcoding software. It is also commonly used in real-time 3D rendering (such as in video games ) to add additional effects. Video post-processing is the process of changing the perceived quality of a video on playback (done after the decoding process). Image scaling routines such as linear interpolation , bilinear interpolation , or cubic interpolation can for example be performed when increasing the size of images; this involves either subsampling (reducing or shrinking an image) or zooming (enlarging an image). This helps reduce or hide image artifacts and flaws in the original film material. Post-processing always involves a trade-off between spe",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Video post-processing - Wikipedia</b>\n\nРазмытие — базовый строительный блок множества эффектов постобработки в видеоиграх , без него не обходятся красивые современные GUI .\n\nОно используется в эффектах Depth of Field , Bloom или панелях с эффектом матового стекла современных пользовательских интерфейсов.\n\nЭффект Bloom — один из множества способов применения алгоритмов размытия Концептуально реализовать размытие легко, его принцип сводится к тому или иному способу усреднения цветов в заданном радиусе.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://en.wikipedia.org/wiki/Video_post-processing#Uses_in_3D_rendering\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://en.wikipedia.org/wiki/Video_post-processing#Uses_in_3D_rendering",
-      "published_at": "2026-05-31T09:53:59+00:00",
-      "title_hash": "fd1edd0945f75c020b4f502d52372b56b4e4a7ca",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/67e/c97/91f/67ec9791fcd8bf675f3d8d7ce20a53eb.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
     }
   ],
   "auto_review": {
