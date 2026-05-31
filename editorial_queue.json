@@ -1,83 +1,50 @@
 {
   "version": 1,
-  "updated_at": "2026-05-31T12:53:25+00:00",
-  "updated_at_sakhalin": "2026-05-31T23:53:25+11:00",
-  "reviewed_at": "2026-05-31T12:14:32+00:00",
-  "reviewed_at_sakhalin": "2026-05-31T23:14:32+11:00",
+  "updated_at": "2026-05-31T21:05:01+00:00",
+  "updated_at_sakhalin": "2026-06-01T08:05:01+11:00",
+  "reviewed_at": "2026-05-31T21:05:01+00:00",
+  "reviewed_at_sakhalin": "2026-06-01T08:05:01+11:00",
   "items": [
     {
-      "id": "a46dd849d557ab0e",
-      "status": "pending",
-      "created_at": "2026-05-31T12:19:10+00:00",
-      "created_at_sakhalin": "2026-05-31T23:19:10+11:00",
-      "source": "Habr",
+      "id": "a4b9705e2ba4c05e",
+      "status": "hold",
+      "created_at": "2026-05-31T21:05:00+00:00",
+      "created_at_sakhalin": "2026-06-01T08:05:00+11:00",
+      "source": "The Verge",
       "source_type": "it",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 1,
-      "title_original": "Синхронизируем проекты Codex и Claude Code между несколькими устройствами через GitHub (для неинженерных проектов!)",
-      "title_ru": "Синхронизируем проекты Codex и Claude Code между несколькими устройствами через GitHub (для неинженерных проектов!)",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 650,
+      "title_original": "How to watch Nvidia’s Computex keynote",
+      "title_ru": "How to watch Nvidia’s Computex keynote",
       "body": [
-        "У меня MacBook Air M4, ПК под Ubuntu 24.04, консальные Claude Code и Codex (каждый хорош немного под свои задачи, как по мне).",
-        "Я люблю Ubuntu, но вот в поездках Mac прям незаменим — с ним удобно...",
-        "У меня MacBook Air M4, ПК под Ubuntu 24.04, консальные Claude Code и Codex (каждый хорош немного под свои задачи, как по мне)."
+        "Tune in for the livestream at 8PM PT / 11PM ET NVIDIA's CEO Jensen Huang is set to take the stage for his GTC Taipei keynote at 8PM PT / 11PM ET.",
+        "You can watch all the announcements here and embedded below.",
+        "Rumors have been flying about what to expect from today's presentation, but the big one is the possibility of a partnership with Microsoft and […] Computex Close Computex Posts from this topic will be added to your daily email digest and your homepage feed."
       ],
       "footer": null,
-      "source_text": "У меня MacBook Air M4, ПК под Ubuntu 24.04, консальные Claude Code и Codex (каждый хорош немного под свои задачи, как по мне). Я люблю Ubuntu, но вот в поездках Mac прям незаменим — с ним удобно... У меня MacBook Air M4, ПК под Ubuntu 24.04, консальные Claude Code и Codex (каждый хорош немного под свои задачи, как по мне). Я люблю Ubuntu, но вот в поездках Mac прям незаменим — с ним удобно работать, батарея живет достаточно долго, даже в самолете можно комфортно что-то тыкать тачпадом. При этом яблочную экосистему я не люблю, Ubuntu мне ближе и приятнее в использовании. Важный момент: я не программист, так что большая часть моих проектов — это всякая маркетинговая, менеджерская и редакторская штукенция. Поэтому у меня нет под это всё каких-то IDE и т.п. Конечно, разработчики и другие инженеры обычно работают с кодом, а потому просто коммият всё напрямую в гитхаб. Но к делу. У меня постоянно запущено по 6-10 окон Claude и Codex в терминале и я заколебался проекты синхронизировать через Избранное телеграма — зипами. Плюс хочется, чтобы проекты нормально работали и в той, и в другой нейронке. То есть мне понадобилась какая-то система синхнонизации проектов между разными устройствами и разными нейронками. Сегодня наконец собрался с силами и доделал такую — выложил ее под Apache 2.0 на гитхабе, можно пользоваться, форкать, дорабатывать и выражать своё «фи» в ишшьюсах и комментариях. Наверянка уже кто-то что-то такое себе делал и я просто изобретаю велосипед. Но что ж теперь поделать, я его уже переизобрел. В статье расскажу, как делал, что делал, где и что пришлось дотюнивать. Скажу честно, мне эту часть с инструкцией писать было лень и она написана уже GPT, так что простите. Немного пробегусь по стилистике, конечно, но в целом текст править почти не буду. Читать далее У мен",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Синхронизируем проекты Codex и Claude Code между несколькими устройствами через GitHub (для неинженерных проектов!)</b>\n\nУ меня MacBook Air M4, ПК под Ubuntu 24.04, консальные Claude Code и Codex (каждый хорош немного под свои задачи, как по мне).\n\nЯ люблю Ubuntu, но вот в поездках Mac прям незаменим — с ним удобно...\n\nУ меня MacBook Air M4, ПК под Ubuntu 24.04, консальные Claude Code и Codex (каждый хорош немного под свои задачи, как по мне).\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://habr.com/ru/articles/1041750/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041750#habracut\">Habr</a>",
+      "source_text": "Tune in for the livestream at 8PM PT / 11PM ET NVIDIA's CEO Jensen Huang is set to take the stage for his GTC Taipei keynote at 8PM PT / 11PM ET. You can watch all the announcements here and embedded below. Rumors have been flying about what to expect from today's presentation, but the big one is the possibility of a partnership with Microsoft and […] Computex Close Computex Posts from this topic will be added to your daily email digest and your homepage feed. Nvidia Close Nvidia Posts from this topic will be added to your daily email digest and your homepage feed. Tune in at 8PM PT / 11PM ET to see if Jensen Huang announces the rumored N1 and N1X ARM CPUs. Tune in at 8PM PT / 11PM ET to see if Jensen Huang announces the rumored N1 and N1X ARM CPUs.",
+      "post_text": "🌐 Мировые IT\n\n<b>How to watch Nvidia’s Computex keynote</b>\n\nTune in for the livestream at 8PM PT / 11PM ET NVIDIA's CEO Jensen Huang is set to take the stage for his GTC Taipei keynote at 8PM PT / 11PM ET.\n\nYou can watch all the announcements here and embedded below.\n\nRumors have been flying about what to expect from today's presentation, but the big one is the possibility of a partnership with Microsoft and […] Computex Close Computex Posts from this topic will be added to your daily email digest and your homepage feed.\n\nМИРОВЫЕ IT · <a href=\"https://www.theverge.com/tech/940540/how-to-watch-nvidias-computex-keynote\">The Verge</a>",
       "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1041750/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041750#habracut",
-      "published_at": "2026-05-31T11:28:06+00:00",
-      "title_hash": "fc466581a420596e0c299ecd9a05790d23f9b29a",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/488/fc0/2bd/488fc02bdd8c4154215d482c9d68e1dd.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
+      "url": "https://www.theverge.com/tech/940540/how-to-watch-nvidias-computex-keynote",
+      "published_at": "2026-05-31T20:20:35+00:00",
+      "title_hash": "3a71c34ac5ac7af3ae45a3271c12c1dd26829082",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "edf3cc870f8c997b",
-      "status": "pending",
-      "created_at": "2026-05-31T12:19:10+00:00",
-      "created_at_sakhalin": "2026-05-31T23:19:10+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 1,
-      "title_original": "QPSK HDL приёмопередатчик",
-      "title_ru": "QPSK HDL приёмопередатчик",
-      "body": [
-        "В этой статье описано, как создать QPSK передатчик и приёмник на HDL языке, интегрировать их в ПЛИС и проверить работоспособность.",
-        "В одной из прошлых статей было рассказано, что нужно чтобы...",
-        "В этой статье описано, как создать QPSK передатчик и приёмник на HDL языке, интегрировать их в ПЛИС и передать данные через радиоканал."
-      ],
-      "footer": null,
-      "source_text": "В этой статье описано, как создать QPSK передатчик и приёмник на HDL языке, интегрировать их в ПЛИС и проверить работоспособность. В одной из прошлых статей было рассказано, что нужно чтобы... В этой статье описано, как создать QPSK передатчик и приёмник на HDL языке, интегрировать их в ПЛИС и передать данные через радиоканал. В одной из прошлых статей было рассказано, что нужно чтобы инициализировать ad9361 на PlutoSDR. Эта статья может считаться продолжением работы, которая была начата в той статье. Для создания HDL реализации QPSK приёмопередатчика использованы Matlab и Simulink c их возможностями генерации HDL кода из моделей. В качестве моделей использованы примеры, которые предоставляются с дополнительными пакетами, разработанные специально для демонстрации возможностей генерации HDL кода. Запустим этот код на плате из прошлой статьи, а также и на новой плате — ещё одном клоне PlutoSDR с более ресурсоёмкой ПЛИС Z7020. И посмотрим на график созвездия. Читать далее",
-      "post_text": "🎮 Игры / индустрия\n\n<b>QPSK HDL приёмопередатчик</b>\n\nВ этой статье описано, как создать QPSK передатчик и приёмник на HDL языке, интегрировать их в ПЛИС и проверить работоспособность.\n\nВ одной из прошлых статей было рассказано, что нужно чтобы...\n\nВ этой статье описано, как создать QPSK передатчик и приёмник на HDL языке, интегрировать их в ПЛИС и передать данные через радиоканал.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://habr.com/ru/articles/1028214/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1028214#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1028214/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1028214#habracut",
-      "published_at": "2026-05-31T10:36:43+00:00",
-      "title_hash": "cb317e11adf718320b877fe4e698673af67afd29",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/bcd/0e4/b80/bcd0e4b80df9108deaa4fd2ef6cbb4e8.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-05-31T21:05:00+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
     },
     {
       "id": "fe00d97dbdd7a4df",
@@ -2404,6 +2371,456 @@
       "reviewed_at": "2026-05-31T12:14:32+00:00",
       "reviewed_by": "auto-editor-v7-local-cleaner",
       "stream_priority": 600
+    },
+    {
+      "id": "a46dd849d557ab0e",
+      "status": "rejected",
+      "created_at": "2026-05-31T12:19:10+00:00",
+      "created_at_sakhalin": "2026-05-31T23:19:10+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 730,
+      "title_original": "Синхронизируем проекты Codex и Claude Code между несколькими устройствами через GitHub (для неинженерных проектов!)",
+      "title_ru": "Синхронизируем проекты Codex и Claude Code между несколькими устройствами через GitHub (для неинженерных проектов!)",
+      "body": [
+        "У меня MacBook Air M4, ПК под Ubuntu 24.04, консальные Claude Code и Codex (каждый хорош немного под свои задачи, как по мне).",
+        "Я люблю Ubuntu, но вот в поездках Mac прям незаменим — с ним удобно...",
+        "У меня MacBook Air M4, ПК под Ubuntu 24.04, консальные Claude Code и Codex (каждый хорош немного под свои задачи, как по мне)."
+      ],
+      "footer": null,
+      "source_text": "У меня MacBook Air M4, ПК под Ubuntu 24.04, консальные Claude Code и Codex (каждый хорош немного под свои задачи, как по мне). Я люблю Ubuntu, но вот в поездках Mac прям незаменим — с ним удобно... У меня MacBook Air M4, ПК под Ubuntu 24.04, консальные Claude Code и Codex (каждый хорош немного под свои задачи, как по мне). Я люблю Ubuntu, но вот в поездках Mac прям незаменим — с ним удобно работать, батарея живет достаточно долго, даже в самолете можно комфортно что-то тыкать тачпадом. При этом яблочную экосистему я не люблю, Ubuntu мне ближе и приятнее в использовании. Важный момент: я не программист, так что большая часть моих проектов — это всякая маркетинговая, менеджерская и редакторская штукенция. Поэтому у меня нет под это всё каких-то IDE и т.п. Конечно, разработчики и другие инженеры обычно работают с кодом, а потому просто коммият всё напрямую в гитхаб. Но к делу. У меня постоянно запущено по 6-10 окон Claude и Codex в терминале и я заколебался проекты синхронизировать через Избранное телеграма — зипами. Плюс хочется, чтобы проекты нормально работали и в той, и в другой нейронке. То есть мне понадобилась какая-то система синхнонизации проектов между разными устройствами и разными нейронками. Сегодня наконец собрался с силами и доделал такую — выложил ее под Apache 2.0 на гитхабе, можно пользоваться, форкать, дорабатывать и выражать своё «фи» в ишшьюсах и комментариях. Наверянка уже кто-то что-то такое себе делал и я просто изобретаю велосипед. Но что ж теперь поделать, я его уже переизобрел. В статье расскажу, как делал, что делал, где и что пришлось дотюнивать. Скажу честно, мне эту часть с инструкцией писать было лень и она написана уже GPT, так что простите. Немного пробегусь по стилистике, конечно, но в целом текст править почти не буду. Читать далее У мен",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Синхронизируем проекты Codex и Claude Code между несколькими устройствами через GitHub (для неинженерных проектов!)</b>\n\nУ меня MacBook Air M4, ПК под Ubuntu 24.04, консальные Claude Code и Codex (каждый хорош немного под свои задачи, как по мне).\n\nЯ люблю Ubuntu, но вот в поездках Mac прям незаменим — с ним удобно...\n\nУ меня MacBook Air M4, ПК под Ubuntu 24.04, консальные Claude Code и Codex (каждый хорош немного под свои задачи, как по мне).\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://habr.com/ru/articles/1041750/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041750#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1041750/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041750#habracut",
+      "published_at": "2026-05-31T11:28:06+00:00",
+      "title_hash": "fc466581a420596e0c299ecd9a05790d23f9b29a",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/488/fc0/2bd/488fc02bdd8c4154215d482c9d68e1dd.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-31T21:05:00+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "edf3cc870f8c997b",
+      "status": "rejected",
+      "created_at": "2026-05-31T12:19:10+00:00",
+      "created_at_sakhalin": "2026-05-31T23:19:10+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 600,
+      "title_original": "QPSK HDL приёмопередатчик",
+      "title_ru": "QPSK HDL приёмопередатчик",
+      "body": [
+        "В этой статье описано, как создать QPSK передатчик и приёмник на HDL языке, интегрировать их в ПЛИС и проверить работоспособность.",
+        "В одной из прошлых статей было рассказано, что нужно чтобы...",
+        "В этой статье описано, как создать QPSK передатчик и приёмник на HDL языке, интегрировать их в ПЛИС и передать данные через радиоканал."
+      ],
+      "footer": null,
+      "source_text": "В этой статье описано, как создать QPSK передатчик и приёмник на HDL языке, интегрировать их в ПЛИС и проверить работоспособность. В одной из прошлых статей было рассказано, что нужно чтобы... В этой статье описано, как создать QPSK передатчик и приёмник на HDL языке, интегрировать их в ПЛИС и передать данные через радиоканал. В одной из прошлых статей было рассказано, что нужно чтобы инициализировать ad9361 на PlutoSDR. Эта статья может считаться продолжением работы, которая была начата в той статье. Для создания HDL реализации QPSK приёмопередатчика использованы Matlab и Simulink c их возможностями генерации HDL кода из моделей. В качестве моделей использованы примеры, которые предоставляются с дополнительными пакетами, разработанные специально для демонстрации возможностей генерации HDL кода. Запустим этот код на плате из прошлой статьи, а также и на новой плате — ещё одном клоне PlutoSDR с более ресурсоёмкой ПЛИС Z7020. И посмотрим на график созвездия. Читать далее",
+      "post_text": "🎮 Игры / индустрия\n\n<b>QPSK HDL приёмопередатчик</b>\n\nВ этой статье описано, как создать QPSK передатчик и приёмник на HDL языке, интегрировать их в ПЛИС и проверить работоспособность.\n\nВ одной из прошлых статей было рассказано, что нужно чтобы...\n\nВ этой статье описано, как создать QPSK передатчик и приёмник на HDL языке, интегрировать их в ПЛИС и передать данные через радиоканал.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://habr.com/ru/articles/1028214/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1028214#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1028214/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1028214#habracut",
+      "published_at": "2026-05-31T10:36:43+00:00",
+      "title_hash": "cb317e11adf718320b877fe4e698673af67afd29",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/bcd/0e4/b80/bcd0e4b80df9108deaa4fd2ef6cbb4e8.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-31T21:05:01+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "882b6c9ad93cc9da",
+      "status": "rejected",
+      "created_at": "2026-05-31T21:05:00+00:00",
+      "created_at_sakhalin": "2026-06-01T08:05:00+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "ERA2 Card — AI-карточки для маркетплейсов",
+      "title_ru": "ERA2 Card — AI-карточки для маркетплейсов",
+      "body": [
+        "Загрузите фото товара — ИИ создаст продающую карточку за 60 секунд На маркетплейсе покупатель сначала видит картинку и только потом — цену, бренд и отзывы.",
+        "Главное фото в выдаче решает, кликнут по вам или пролистнут к соседу, поэтому слабый визуал означает слитый трафик и низкий CTR.",
+        "Долгое время выход был один: платить дизайнеру и ждать правки по два-три дня."
+      ],
+      "footer": null,
+      "source_text": "Загрузите фото товара — ИИ создаст продающую карточку за 60 секунд На маркетплейсе покупатель сначала видит картинку и только потом — цену, бренд и отзывы. Главное фото в выдаче решает, кликнут по вам или пролистнут к соседу, поэтому слабый визуал означает слитый трафик и низкий CTR. Долгое время выход был один: платить дизайнеру и ждать правки по два-три дня. Сегодня собрать карточку товара для Озон онлайн бесплатно можно самому за пару минут — и в этом гайде мы покажем весь путь по шагам, на реальном товаре и без приукрашиваний. Работать будем в ERA2 Card — это часть экосистемы ERA2 , нейросеть, которая из обычной фотографии готовит визуал под требования маркетплейсов. Чтобы было честно, мы взяли не студийный кадр, а снимок со смартфона прямо с домашнего стола и прогнали его через сервис на ваших глазах. Читать далее ² ERA2 Card Возможности Как работает Примеры Шаблоны Тарифы FAQ Войти Попробовать бесплатно Создать Часть экосистемы ERA2 card.era2.core · v1.0 Карточки для WB и Ozon из обычного фото товара Загрузите фото — ERA2 Card уберёт фон, добавит инфографику, преимущества и подготовит визуал для маркетплейса. Создать первую карточку Посмотреть примеры Без дизайнера Без студии 15 зарядов в подарок Без привязки карты До SERUM VITAMIN C После · WB WB −40% скидка SERUM VITAMIN C Премиум серия для ежедневного ухода ✓ ВИТАМИН C 12% ✓ ГИАЛУРОН ✓ ПОДХОДИТ ВСЕМ ТИПАМ КОЖИ Ozon PREMIUM LINE для ежедневного ухода СЕРИЯ NOIR · 2026 ОТКРЫТЬ КОЛЛЕКЦИЮ ЯМ Премиум серия для ежедневного ухода Создано для дома, где приятно проводить время ПОДРОБНЕЕ → ДЛЯ WB ✦ ДЛЯ OZON ✦ ДЛЯ ЯНДЕКС МАРКЕТ ✦ ИНФОГРАФИКА ✦ ФОТО НА МОДЕЛИ ✦ ВИДЕООБЛОЖКИ ✦ БЕЗ ДИЗАЙНЕРА ✦ ДЛЯ WB ✦ ДЛЯ OZON ✦ ДЛЯ ЯНДЕКС МАРКЕТ ✦ ИНФОГРАФИКА ✦ ФОТО НА МОДЕЛИ ✦ ВИДЕООБЛОЖКИ ✦ БЕЗ ДИЗАЙНЕРА ✦ как это работает 3 шага — и гот",
+      "post_text": "🌐 Мировые IT\n\n<b>ERA2 Card — AI-карточки для маркетплейсов</b>\n\nЗагрузите фото товара — ИИ создаст продающую карточку за 60 секунд На маркетплейсе покупатель сначала видит картинку и только потом — цену, бренд и отзывы.\n\nГлавное фото в выдаче решает, кликнут по вам или пролистнут к соседу, поэтому слабый визуал означает слитый трафик и низкий CTR.\n\nДолгое время выход был один: платить дизайнеру и ждать правки по два-три дня.\n\nМИРОВЫЕ IT · <a href=\"https://card.era2.ai/\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://card.era2.ai/",
+      "published_at": "2026-05-31T20:29:54+00:00",
+      "title_hash": "fcdba311fc6d29a49049eacc437f27c8355944cc",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/9f0/111/e7b/9f0111e7bc200a3f18e194eddaaae9f9.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-31T21:05:00+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "c2d2b20dea270344",
+      "status": "rejected",
+      "created_at": "2026-05-31T21:05:00+00:00",
+      "created_at_sakhalin": "2026-06-01T08:05:00+11:00",
+      "source": "Eurogamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 600,
+      "title_original": "Xbox CEO admits decision to use rival logos in its showcases 'a miss', commits to 'adjusting' its stance",
+      "title_ru": "Xbox CEO admits decision to use rival logos in its showcases 'a miss', commits to 'adjusting' its stance",
+      "body": [
+        "Xbox boss Asha Sharma has admitted that including competitor logos in Xbox teasers and showcase presentations is \"a miss\", confirming this will be \"adjusted\".",
+        "Xbox boss Asha Sharma has admitted that including competitor logos in Xbox teasers and showcase presentations is \"a miss\", confirming this will be \"adjusted\" for future Xbox showcases.",
+        "Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Latest News Sign in for free to manage your site experience."
+      ],
+      "footer": null,
+      "source_text": "Xbox boss Asha Sharma has admitted that including competitor logos in Xbox teasers and showcase presentations is \"a miss\", confirming this will be \"adjusted\". Xbox boss Asha Sharma has admitted that including competitor logos in Xbox teasers and showcase presentations is \"a miss\", confirming this will be \"adjusted\" for future Xbox showcases. Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Latest News Sign in for free to manage your site experience. Xbox will \"adjust\" its promotional materials after fans slam decision to use rival logos in its showcases Call of Duty: Modern Warfare 4 invites you to \"keep the receipts\" as it fights to be a more \"authentic\", \"grounded, and transparent\" shooter experience Another unannounced Rayman game, Rayman Origins: Enhanced Edition, briefly popped up on the Xbox Store Little Nightmares 2 Enhanced Edition is finally available on Nintendo Switch 2 Ace Combat 8: Wings of Theve just popped up on PEGI's website Tomodachi Life: Living the Dream was April 2026's best-selling game in the US Twitch's new Dual Format feature lets streamers broadcast horizontally and vertically at the same time Stop Killing Games consumer protection bill passes floor vote in California \"The secret weapon of Star Wars\" and editor Marcia Lucas dies aged 80 Diablo 4's next season is doing something bold with Mythical items that should pique the interest of casual players If you click on a link and make a purchase we may receive a small commission. Read our editorial policy . Home News Xbox will \"adjust\" its promotional materials after fans slam decision to use rival logos in its showcases Xbox CEO called the decision \"a miss\". Image credit: Microsoft / Eurogamer News by Vikki Blake Contrib",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Xbox CEO admits decision to use rival logos in its showcases 'a miss', commits to 'adjusting' its stance</b>\n\nXbox boss Asha Sharma has admitted that including competitor logos in Xbox teasers and showcase presentations is \"a miss\", confirming this will be \"adjusted\".\n\nXbox boss Asha Sharma has admitted that including competitor logos in Xbox teasers and showcase presentations is \"a miss\", confirming this will be \"adjusted\" for future Xbox showcases.\n\nRead more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Latest News Sign in for free to manage your site experience.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.eurogamer.net/xbox-ceo-calls-rival-logos-marketing-a-miss\">Eurogamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.eurogamer.net/xbox-ceo-calls-rival-logos-marketing-a-miss",
+      "published_at": "2026-05-31T15:53:05.102638+00:00",
+      "title_hash": "24877669827b1591f6e037126b8cd44fa21a3158",
+      "image_url": "https://assetsio.gnwcdn.com/asha-sharma-and-matt-booty-this-is-an-xbox.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-31T21:05:01+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "0b703a8b14529881",
+      "status": "rejected",
+      "created_at": "2026-05-31T21:05:00+00:00",
+      "created_at_sakhalin": "2026-06-01T08:05:00+11:00",
+      "source": "PC Gamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 600,
+      "title_original": "What songs do you want to see on Grand Theft Auto 6",
+      "title_ru": "What songs do you want to see on Grand Theft Auto 6",
+      "body": [
+        "The series has blasted some iconic tracks through our stolen car speakers.",
+        "The series has blasted some iconic tracks through our stolen car speakers."
+      ],
+      "footer": null,
+      "source_text": "The series has blasted some iconic tracks through our stolen car speakers. The series has blasted some iconic tracks through our stolen car speakers.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>What songs do you want to see on Grand Theft Auto 6</b>\n\nThe series has blasted some iconic tracks through our stolen car speakers.\n\nThe series has blasted some iconic tracks through our stolen car speakers.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/games/grand-theft-auto/what-songs-do-you-want-to-see-on-grand-theft-auto-6s-radio-stations/\">PC Gamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.pcgamer.com/games/grand-theft-auto/what-songs-do-you-want-to-see-on-grand-theft-auto-6s-radio-stations/",
+      "published_at": "2026-05-31T17:00:00+00:00",
+      "title_hash": "173bfc0f7a26c243e90111b91ae2a26f02ff8eea",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/QjS7aeuaixoi5SJTpsZs2L-1280-80.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: игровая тема не имеет достаточной индустриальной значимости."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-31T21:05:01+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "dd66cedecb62117b",
+      "status": "rejected",
+      "created_at": "2026-05-31T21:05:00+00:00",
+      "created_at_sakhalin": "2026-06-01T08:05:00+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Из чего состоит мировой эфир. Последняя теория Менделеева",
+      "title_ru": "Из чего состоит мировой эфир. Последняя теория Менделеева",
+      "body": [
+        "В марте 1869 года была опубликована первая версия периодической системы Менделеева.",
+        "Систематический вид из рядов и групп она приобрела через пару лет – вот так выглядел вариант от 1871 года.",
+        "Весной 2022 года я поднимал в этом блоге две необычные темы из области фундаментальной химии."
+      ],
+      "footer": null,
+      "source_text": "В марте 1869 года была опубликована первая версия периодической системы Менделеева. Систематический вид из рядов и групп она приобрела через пару лет – вот так выглядел вариант от 1871 года. Как... Весной 2022 года я поднимал в этом блоге две необычные темы из области фундаментальной химии. Первая называлась « Из чего состоит мировой эфир. Последняя теория Менделеева » — в ней я рассказывал, как Дмитрий Иванович Менделеев, продолжая опираться на атомный вес, пытался надстроить «нулевой» период над водородом и, вероятно, неосознанно двигался к открытию нейтрона. Вторая статья называлась « Распад протона – невозможность 2,5 класса ». Наряду с проблемой практически абсолютной стабильности протона (без внешнего воздействия он не распадается, в отличие от нейтрона, который вне атома живёт всего около 10 минут ). В этой статье я также упомянул некоторые экзотические атомы, то есть, атомоподобные частицы, имеющие нулевой заряд; наиболее известной из них является антипротон . Чтобы представить себе химический элемент, который был бы значительно легче водорода, нужно поместить в его ядро частицу, значительно уступающую по массе протону, но превосходящую по массе электрон или позитрон, так, что вокруг неё могло бы собраться «электронное облако». Сегодня расскажу об удивительном атоме такой природы, открытом ещё в 1960 году. Он называется « мюоний ». Читать далее В марте 1869 года была опубликована первая версия периодической системы Менделеева. Систематический вид из рядов и групп она приобрела через пару лет – вот так выглядел вариант от 1871 года. Как известно (о чем я уже упоминал в статье про пределы таблицы Менделеева и элемент фейнманий ). Дмитрий Иванович Менделеев (1834-1907) принципиально превзошел своих учителей и коллег, в частности, Роберта Бунзена, Жана Лекока Буабод",
+      "post_text": "🌐 Мировые IT\n\n<b>Из чего состоит мировой эфир. Последняя теория Менделеева</b>\n\nВ марте 1869 года была опубликована первая версия периодической системы Менделеева.\n\nСистематический вид из рядов и групп она приобрела через пару лет – вот так выглядел вариант от 1871 года.\n\nВесной 2022 года я поднимал в этом блоге две необычные темы из области фундаментальной химии.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/653695/\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/653695/",
+      "published_at": "2026-05-31T19:35:41+00:00",
+      "title_hash": "1de3516095f703fde3e002feb10451e6a58688ac",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/810/cb6/2e9/810cb62e9b6fedd2f38f4b60ae58ae29.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-31T21:05:00+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "7e191ef853a8df6a",
+      "status": "rejected",
+      "created_at": "2026-05-31T21:05:00+00:00",
+      "created_at_sakhalin": "2026-06-01T08:05:00+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Как создать карточку товара и инфографику для маркетплейсов в нейросети: WB, Ozon, ЯМ",
+      "title_ru": "Как создать карточку товара и инфографику для маркетплейсов в нейросети: WB, Ozon, ЯМ",
+      "body": [
+        "На Wildberries и Ozon покупатель решает, открыть карточку или пролистнуть дальше, за доли секунды — и решает по первому изображению.",
+        "Не по цене, не по отзывам, а по тому, как выглядит главное фото и...",
+        "На Wildberries и Ozon покупатель решает, открыть карточку или пролистнуть дальше, за доли секунды — и решает по первому изображению."
+      ],
+      "footer": null,
+      "source_text": "На Wildberries и Ozon покупатель решает, открыть карточку или пролистнуть дальше, за доли секунды — и решает по первому изображению. Не по цене, не по отзывам, а по тому, как выглядит главное фото и... На Wildberries и Ozon покупатель решает, открыть карточку или пролистнуть дальше, за доли секунды — и решает по первому изображению. Не по цене, не по отзывам, а по тому, как выглядит главное фото и насколько понятно с него, что за товар перед ним. Поэтому визуал карточки давно перестал быть украшением и стал инструментом продаж: хорошая инфографика поднимает конверсию ощутимее, чем очередная скидка. Проблема в том, что сделать такой визуал вручную — дорого и долго. Дизайнер за комплект карточек берёт от нескольких тысяч рублей, фотостудия с предметной съёмкой — ещё больше, а правки растягиваются на дни. Для продавца с ассортиментом в сотню позиций это превращается в отдельную статью расходов и постоянную головную боль. Именно сюда пришли нейросети: сегодня создать карточку товара и собрать инфографику для маркетплейсов можно без дизайнера и студии, из обычного фото со смартфона. Читать далее На Wildberries и Ozon покупатель решает, открыть карточку или пролистнуть дальше, за доли секунды — и решает по первому изображению. Не по цене, не по отзывам, а по тому, как выглядит главное фото и насколько понятно с него, что за товар перед ним. Поэтому визуал карточки давно перестал быть украшением и стал инструментом продаж: хорошая инфографика поднимает конверсию ощутимее, чем очередная скидка. Проблема в том, что сделать такой визуал вручную — дорого и долго. Дизайнер за комплект карточек берёт от нескольких тысяч рублей, фотостудия с предметной съёмкой — ещё больше, а правки растягиваются на дни. Для продавца с ассортиментом в сотню позиций это превращается в отдельную статью",
+      "post_text": "🌐 Мировые IT\n\n<b>Как создать карточку товара и инфографику для маркетплейсов в нейросети: WB, Ozon, ЯМ</b>\n\nНа Wildberries и Ozon покупатель решает, открыть карточку или пролистнуть дальше, за доли секунды — и решает по первому изображению.\n\nНе по цене, не по отзывам, а по тому, как выглядит главное фото и...\n\nНа Wildberries и Ozon покупатель решает, открыть карточку или пролистнуть дальше, за доли секунды — и решает по первому изображению.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/era2/articles/1041878/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041878#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/era2/articles/1041878/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041878#habracut",
+      "published_at": "2026-05-31T19:26:46+00:00",
+      "title_hash": "2572f0d44a6f39a913f5c4093b84869d30a45629",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/fcd/421/6da/fcd4216dae3cbdea13f72b5d5436064c.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-31T21:05:00+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "3777835b6e3d158c",
+      "status": "rejected",
+      "created_at": "2026-05-31T21:05:00+00:00",
+      "created_at_sakhalin": "2026-06-01T08:05:00+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 650,
+      "title_original": "Промокод Джум на сегодня: Joom купон на первый заказ",
+      "title_ru": "Промокод Джум на сегодня: Joom купон на первый заказ",
+      "body": [
+        "Актуальные промокоды Джум на сегодня ✅ Используйте купоны Joom на скидку при первом и повторном заказе товаров из Китая ✌️ Сэкономьте на покупках с помощью бонусов и спецпредложений от Ranvik Промокоды.",
+        "Покупки на маркетплейсах стали привычным способом экономить время, сравнивать товары и находить выгодные предложения без походов по магазинам.",
+        "Но даже когда цена выглядит низкой, почти всегда есть способ сделать заказ дешевле: проверить акции, подобрать купон, применить скидку на категорию или использовать специальное предложение для новых пользователей."
+      ],
+      "footer": null,
+      "source_text": "Актуальные промокоды Джум на сегодня ✅ Используйте купоны Joom на скидку при первом и повторном заказе товаров из Китая ✌️ Сэкономьте на покупках с помощью бонусов и спецпредложений от Ranvik Промокоды. Покупки на маркетплейсах стали привычным способом экономить время, сравнивать товары и находить выгодные предложения без походов по магазинам. Но даже когда цена выглядит низкой, почти всегда есть способ сделать заказ дешевле: проверить акции, подобрать купон, применить скидку на категорию или использовать специальное предложение для новых пользователей. В июне 2026 года для покупателей Joom особенно интересны предложения на первый заказ. Новым пользователям доступна скидка до 11%, а также дополнительные акции на популярные категории: товары для дома, женские товары, мужскую одежду, обувь, аксессуары и детскую продукцию. Проверить доступные предложения можно на странице промокодов Джум , где собраны актуальные варианты для экономии перед оформлением покупки. Читать далее",
+      "post_text": "🌐 Мировые IT\n\n<b>Промокод Джум на сегодня: Joom купон на первый заказ</b>\n\nАктуальные промокоды Джум на сегодня ✅ Используйте купоны Joom на скидку при первом и повторном заказе товаров из Китая ✌️ Сэкономьте на покупках с помощью бонусов и спецпредложений от Ranvik Промокоды.\n\nПокупки на маркетплейсах стали привычным способом экономить время, сравнивать товары и находить выгодные предложения без походов по магазинам.\n\nНо даже когда цена выглядит низкой, почти всегда есть способ сделать заказ дешевле: проверить акции, подобрать купон, применить скидку на категорию или использовать специальное предложение для новых пользователей.\n\nМИРОВЫЕ IT · <a href=\"https://promokod.ranvik.ru/store/joom\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://promokod.ranvik.ru/store/joom",
+      "published_at": "2026-05-31T19:17:06+00:00",
+      "title_hash": "4bf674260456453b6f739569b67b03b1d85f3dc2",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/210/b6b/9f1/210b6b9f1b42624fc7ee469e668447fa.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-31T21:05:01+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "5926b4e1058d03b5",
+      "status": "rejected",
+      "created_at": "2026-05-31T21:05:00+00:00",
+      "created_at_sakhalin": "2026-06-01T08:05:00+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Промокод Петрович на скидку: купон а заказ Petrovich",
+      "title_ru": "Промокод Петрович на скидку: купон а заказ Petrovich",
+      "body": [
+        "Действующие промокоды Петрович на сегодня ✅ Выбирайте купоны Петрович на скидку при первом и последующем заказе строительных товаров и оборудования ✌️ Сэкономьте на покупке в интернет-магазине Petrovich с помощью бонусов и спецпредложений от Ranvik Промокоды.",
+        "Планировать ремонт в 2026 году стало сложнее: цены на стройматериалы, инструмент, электрику, сантехнику и инженерные системы меняются быстро, а итоговая смета часто растёт уже после первых закупок.",
+        "Поэтому покупатели всё чаще заранее ищут рабочие способы снизить расходы: сезонные акции, распродажи, кешбэк, бонусные программы и специальные предложения от магазинов."
+      ],
+      "footer": null,
+      "source_text": "Действующие промокоды Петрович на сегодня ✅ Выбирайте купоны Петрович на скидку при первом и последующем заказе строительных товаров и оборудования ✌️ Сэкономьте на покупке в интернет-магазине Petrovich с помощью бонусов и спецпредложений от Ranvik Промокоды. Планировать ремонт в 2026 году стало сложнее: цены на стройматериалы, инструмент, электрику, сантехнику и инженерные системы меняются быстро, а итоговая смета часто растёт уже после первых закупок. Поэтому покупатели всё чаще заранее ищут рабочие способы снизить расходы: сезонные акции, распродажи, кешбэк, бонусные программы и специальные предложения от магазинов. Один из самых востребованных вариантов — Петрович промокод , который помогает получить дополнительную выгоду при оформлении заказа онлайн. В июне 2026 года у покупателей «Петровича» есть несколько заметных направлений для экономии: строительные материалы со скидками до 20%, инструменты со снижением цены до 70%, электрика до 25%, инженерные системы до 30%, товары для дома до 40%, а также сантехника со скидками до 1500₽. Такие предложения особенно полезны тем, кто закупает товары не поштучно, а комплектом: для ремонта квартиры, строительства дома, обновления дачи, монтажа электрики или замены сантехники. Читать далее",
+      "post_text": "🌐 Мировые IT\n\n<b>Промокод Петрович на скидку: купон а заказ Petrovich</b>\n\nДействующие промокоды Петрович на сегодня ✅ Выбирайте купоны Петрович на скидку при первом и последующем заказе строительных товаров и оборудования ✌️ Сэкономьте на покупке в интернет-магазине Petrovich с помощью бонусов и спецпредложений от Ranvik Промокоды.\n\nПланировать ремонт в 2026 году стало сложнее: цены на стройматериалы, инструмент, электрику, сантехнику и инженерные системы меняются быстро, а итоговая смета часто растёт уже после первых закупок.\n\nПоэтому покупатели всё чаще заранее ищут рабочие способы снизить расходы: сезонные акции, распродажи, кешбэк, бонусные программы и специальные предложения от магазинов.\n\nМИРОВЫЕ IT · <a href=\"https://promokod.ranvik.ru/store/petrovich\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://promokod.ranvik.ru/store/petrovich",
+      "published_at": "2026-05-31T17:56:06+00:00",
+      "title_hash": "45b33f82a9f1adb9e392f4a011e29a8186078597",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/330/a70/fe8/330a70fe845ce9a309a99593e1102773.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-31T21:05:00+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "ea83e976387b95e6",
+      "status": "rejected",
+      "created_at": "2026-05-31T21:05:00+00:00",
+      "created_at_sakhalin": "2026-06-01T08:05:00+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🧭 Геополитика",
+      "category_hint": "🌐 Мировые IT",
+      "score": 900,
+      "title_original": "Ментальное переформатирование: Разум, Справедливость и технологии Социального Герметизма",
+      "title_ru": "Ментальное переформатирование: Разум, Справедливость и технологии Социального Герметизма",
+      "body": [
+        "Изображение взято абстрактное, приготовлено для реверса \"эстафеты хвоста\", реверс будет позже Человеческое общество на протяжении всей истории является не просто случайным скоплением людей, а...",
+        "Человеческое общество на протяжении всей истории является не просто случайным скоплением людей, а гигантским ментальным конструктом (Макрокосмосом).",
+        "В этой системе социальные группы, властные элиты и правовые институты подчиняются тем же фундаментальным законам, что и разум отдельного лидера (Микрокосмоса)."
+      ],
+      "footer": null,
+      "source_text": "Изображение взято абстрактное, приготовлено для реверса \"эстафеты хвоста\", реверс будет позже Человеческое общество на протяжении всей истории является не просто случайным скоплением людей, а... Человеческое общество на протяжении всей истории является не просто случайным скоплением людей, а гигантским ментальным конструктом (Макрокосмосом). В этой системе социальные группы, властные элиты и правовые институты подчиняются тем же фундаментальным законам, что и разум отдельного лидера (Микрокосмоса). Если классическая философия веками спорила о моральной стороне «разумности» и «справедливости», то социальный герметизм рассматривает эти категории как технологии управления социальной реальностью через ментальные законы. На самом деле исследование больше затрагивает интересы личного характера, но кроме как \"Управление сообществом\" подходящего хаба нет, да и наверное разницы особой нет... Ниже представлен полный системный пересмотр классического философского спора Платона и Аристотеля, трансформированный в практическую контрстратегию защиты личных ресурсов от скрытых манипулятивных систем. Читать далее Человеческое общество на протяжении всей истории является не просто случайным скоплением людей, а гигантским ментальным конструктом (Макрокосмосом). В этой системе социальные группы, властные элиты и правовые институты подчиняются тем же фундаментальным законам, что и разум отдельного лидера (Микрокосмоса). Если классическая философия веками спорила о моральной стороне «разумности» и «справедливости», то социальный герметизм рассматривает эти категории как технологии управления социальной реальностью через ментальные законы. Ниже представлен полный системный пересмотр классического философского спора Платона и Аристотеля, трансформированный в практическую контрстратегию защиты ",
+      "post_text": "🌐 Мировые IT\n\n<b>Ментальное переформатирование: Разум, Справедливость и технологии Социального Герметизма</b>\n\nИзображение взято абстрактное, приготовлено для реверса \"эстафеты хвоста\", реверс будет позже Человеческое общество на протяжении всей истории является не просто случайным скоплением людей, а...\n\nЧеловеческое общество на протяжении всей истории является не просто случайным скоплением людей, а гигантским ментальным конструктом (Макрокосмосом).\n\nВ этой системе социальные группы, властные элиты и правовые институты подчиняются тем же фундаментальным законам, что и разум отдельного лидера (Микрокосмоса).\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1041862/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041862#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1041862/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041862#habracut",
+      "published_at": "2026-05-31T17:55:51+00:00",
+      "title_hash": "dd7d1fa0be5be38046f524ca74f862ca22c095fa",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/2fe/f60/0c6/2fef600c614c4f499f37c79229e29235.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-31T21:05:00+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 820
+    },
+    {
+      "id": "8cbe21d3f81a4dc0",
+      "status": "rejected",
+      "created_at": "2026-05-31T21:05:00+00:00",
+      "created_at_sakhalin": "2026-06-01T08:05:00+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Gemini Google нейросеть в России: Джемини ИИ от Гугл",
+      "title_ru": "Gemini Google нейросеть в России: Джемини ИИ от Гугл",
+      "body": [
+        "Интеллектуальный чат-бот Джемини генерирует идеи, пишет тексты и помогает в работе и учёбе — доступно для пользователей в России.",
+        "Gemini — это семейство нейросетей Google и одновременно пользовательский ИИ-помощник, который помогает писать тексты, анализировать документы, работать с кодом и создавать изображения.",
+        "В 2026 году это уже не просто чат для ответов на вопросы, а большая экосистема: веб-версия, мобильное приложение, модели для разработчиков, функции в сервисах Google и генеративные инструменты для медиа."
+      ],
+      "footer": null,
+      "source_text": "Испытайте мощь Google Gemini! Интеллектуальный чат-бот Джемини генерирует идеи, пишет тексты и помогает в работе и учёбе — доступно для пользователей в России. Gemini — это семейство нейросетей Google и одновременно пользовательский ИИ-помощник, который помогает писать тексты, анализировать документы, работать с кодом и создавать изображения. В 2026 году это уже не просто чат для ответов на вопросы, а большая экосистема: веб-версия, мобильное приложение, модели для разработчиков, функции в сервисах Google и генеративные инструменты для медиа. Для обычного пользователя Gemini нейросеть полезна тем, что снижает количество рутинной работы. Она может быстро собрать черновик письма, объяснить сложный текст, подготовить структуру презентации, помочь с переводом, переписать материал в другом стиле, найти ошибки в рассуждении или подсказать, как оформить идею. Читать далее Flash-модель Gemini от Google превращает запросы в фото и иллюстрации. Pro-версия Google Gemini анализирует цифры и упрощает выводы. Поддержка русского языка делает сервис доступным каждому. Нам доверяют профессионалы, команды и организации из разных сфер",
+      "post_text": "🌐 Мировые IT\n\n<b>Gemini Google нейросеть в России: Джемини ИИ от Гугл</b>\n\nИнтеллектуальный чат-бот Джемини генерирует идеи, пишет тексты и помогает в работе и учёбе — доступно для пользователей в России.\n\nGemini — это семейство нейросетей Google и одновременно пользовательский ИИ-помощник, который помогает писать тексты, анализировать документы, работать с кодом и создавать изображения.\n\nВ 2026 году это уже не просто чат для ответов на вопросы, а большая экосистема: веб-версия, мобильное приложение, модели для разработчиков, функции в сервисах Google и генеративные инструменты для медиа.\n\nМИРОВЫЕ IT · <a href=\"https://ranvik.ru/gemini\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://ranvik.ru/gemini",
+      "published_at": "2026-05-31T17:54:53+00:00",
+      "title_hash": "fa87d649b8142e888ee564c9ea32529e8539a3a9",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/118/f5a/8c0/118f5a8c0ea6311c77b8a79438e96f17.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-05-31T21:05:00+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
     },
     {
       "id": "ec44a45aa73888ea",
@@ -9591,28 +10008,28 @@
       "🌐 Мировые IT": 650,
       "🎮 Игры / индустрия": 600
     },
-    "reviewed_pending": 18,
+    "reviewed_pending": 12,
     "approved": 0,
     "approve_limit": 2,
     "min_auto_score": 600,
     "openrouter_enabled": false,
-    "reviewed_at": "2026-05-31T12:14:32+00:00",
-    "reviewed_at_sakhalin": "2026-05-31T23:14:32+11:00"
+    "reviewed_at": "2026-05-31T21:05:01+00:00",
+    "reviewed_at_sakhalin": "2026-06-01T08:05:01+11:00"
   },
   "final_guard": {
     "version": 3,
     "changed": 0,
     "polished": 0,
-    "checked_at": "2026-05-31T12:14:50+00:00",
-    "checked_at_sakhalin": "2026-05-31T23:14:50+11:00"
+    "checked_at": "2026-05-31T21:05:01+00:00",
+    "checked_at_sakhalin": "2026-06-01T08:05:01+11:00"
   },
   "priority_guard": {
     "version": 3,
     "changed": 0,
     "airport_changed": 0,
     "security_changed": 0,
-    "checked_at": "2026-05-31T12:14:33+00:00",
-    "checked_at_sakhalin": "2026-05-31T23:14:33+11:00"
+    "checked_at": "2026-05-31T21:05:01+00:00",
+    "checked_at_sakhalin": "2026-06-01T08:05:01+11:00"
   },
   "cycle_report": {
     "reported_at": "2026-05-31T12:14:46+00:00",
@@ -9705,10 +10122,10 @@
   },
   "scope_guard": {
     "version": 3,
-    "checked": 5,
+    "checked": 1,
     "rejected": 0,
-    "checked_at": "2026-05-31T12:14:32+00:00",
-    "checked_at_sakhalin": "2026-05-31T23:14:32+11:00",
+    "checked_at": "2026-05-31T21:05:01+00:00",
+    "checked_at_sakhalin": "2026-06-01T08:05:01+11:00",
     "policy": "block foreign ECB/Greece macro commentary, low-value Habr/retro/essay posts, minor quakes without impact, and weak foreign geopolitics"
   }
 }
