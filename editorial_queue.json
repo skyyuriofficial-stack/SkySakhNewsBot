@@ -1,10 +1,306 @@
 {
   "version": 1,
-  "updated_at": "2026-06-01T13:47:27+00:00",
-  "updated_at_sakhalin": "2026-06-02T00:47:27+11:00",
+  "updated_at": "2026-06-01T14:28:14+00:00",
+  "updated_at_sakhalin": "2026-06-02T01:28:14+11:00",
   "reviewed_at": "2026-06-01T13:42:36+00:00",
   "reviewed_at_sakhalin": "2026-06-02T00:42:36+11:00",
   "items": [
+    {
+      "id": "f3ec8ba5e856accf",
+      "status": "pending",
+      "created_at": "2026-06-01T13:47:27+00:00",
+      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Интерфейс RS-485 и протокол MODBUS RTU под микроскопом или как обследовать оборудование не мешая ему",
+      "title_ru": "Интерфейс RS-485 и протокол MODBUS RTU под микроскопом или как обследовать оборудование не мешая ему",
+      "body": [
+        "Данная статья ориентирована на начинающих инженеров АСУ ТП.",
+        "Статья родилась на основе проделанной работы по обследованию объекта автоматизации.",
+        "Так как в интернете, на казалось бы, \"старую\" тему..."
+      ],
+      "footer": null,
+      "source_text": "Данная статья ориентирована на начинающих инженеров АСУ ТП. Статья родилась на основе проделанной работы по обследованию объекта автоматизации. Так как в интернете, на казалось бы, \"старую\" тему... Как обследовать шину MODBUS RTU к которой подключено промышленное оборудование не разрывая соединения и немного про диагностику MODBUS RTU Читать далее Данная статья ориентирована на начинающих инженеров АСУ ТП. Статья родилась на основе проделанной работы по обследованию объекта автоматизации. Так как в интернете, на казалось бы, \"старую\" тему передачи информации по MODBUS RTU, мало информации про то, как на обследуемом оборудовании узнать с какими настройками работает RS-485, адреса и запросы MODBUS RTU к устройству, не отключая обследоваемое устройства от сети передачи данных, попробуем восполнить данный пробел и описать метод, который применили мы, и за одно, распишем практику работы с RS - 485. Самое главное, обследоваемое оборудование должно всегда быть подключенной к сети MODBUS RTU и отрабатывать по запросам от ПЛК. Вводные понятны, вопрос, как реализовать? Опытные инженеры сразу вспомнят про осциллограф, но есть проблема, как обследовать сам пакет данных, ведь нам надо узнать не только настройки RS-485, но и ID устройств на шине и какие запросы отправляет ПЛК, электронщики сразу вспомнят про логический анализатор и будут абсолютно правы, так как данное устройство отлично справится с поставленной задачей. У меня логический анализатор saleae logic 16, но можно использовать любой другой где есть возможность анализа данных. Обратите внимание на выделенную область, это щупы с помощью которых можно подключится к шине RS-485 (щуп-зажим типа захват)",
+      "post_text": "🌐 Мировые IT\n\n<b>Интерфейс RS-485 и протокол MODBUS RTU под микроскопом или как обследовать оборудование не мешая ему</b>\n\nДанная статья ориентирована на начинающих инженеров АСУ ТП.\n\nСтатья родилась на основе проделанной работы по обследованию объекта автоматизации.\n\nТак как в интернете, на казалось бы, \"старую\" тему...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042242/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042242#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042242/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042242#habracut",
+      "published_at": "2026-06-01T13:44:22+00:00",
+      "title_hash": "e046b1a74cefd2e68cd23eeed8c75fbf27e3b6a7",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/329/bcc/bc7/329bccbc76feb6b8234dc8b22fcdff81.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "a4b9705e2ba4c05e",
+      "status": "pending",
+      "created_at": "2026-06-01T13:47:27+00:00",
+      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 233,
+      "title_original": "How to watch Nvidia’s Computex keynote",
+      "title_ru": "How to watch Nvidia’s Computex keynote",
+      "body": [
+        "Tune in for the livestream at 8PM PT / 11PM ET NVIDIA's CEO Jensen Huang is set to take the stage for his GTC Taipei keynote at 8PM PT / 11PM ET.",
+        "You can watch all the announcements here and embedded below.",
+        "Rumors have been flying about what to expect from today's presentation, but the big one is the possibility of a partnership with Microsoft and […] Computex Close Computex Posts from this topic will be added to your daily email digest and your homepage feed."
+      ],
+      "footer": null,
+      "source_text": "Tune in for the livestream at 8PM PT / 11PM ET NVIDIA's CEO Jensen Huang is set to take the stage for his GTC Taipei keynote at 8PM PT / 11PM ET. You can watch all the announcements here and embedded below. Rumors have been flying about what to expect from today's presentation, but the big one is the possibility of a partnership with Microsoft and […] Computex Close Computex Posts from this topic will be added to your daily email digest and your homepage feed. Nvidia Close Nvidia Posts from this topic will be added to your daily email digest and your homepage feed. Tune in at 8PM PT / 11PM ET to see if Jensen Huang announces the rumored N1 and N1X ARM CPUs. Tune in at 8PM PT / 11PM ET to see if Jensen Huang announces the rumored N1 and N1X ARM CPUs.",
+      "post_text": "🌐 Мировые IT\n\n<b>How to watch Nvidia’s Computex keynote</b>\n\nTune in for the livestream at 8PM PT / 11PM ET NVIDIA's CEO Jensen Huang is set to take the stage for his GTC Taipei keynote at 8PM PT / 11PM ET.\n\nYou can watch all the announcements here and embedded below.\n\nRumors have been flying about what to expect from today's presentation, but the big one is the possibility of a partnership with Microsoft and […] Computex Close Computex Posts from this topic will be added to your daily email digest and your homepage feed.\n\nМИРОВЫЕ IT · <a href=\"https://www.theverge.com/tech/940540/how-to-watch-nvidias-computex-keynote\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/tech/940540/how-to-watch-nvidias-computex-keynote",
+      "published_at": "2026-05-31T20:20:35+00:00",
+      "title_hash": "3a71c34ac5ac7af3ae45a3271c12c1dd26829082",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "5bf453320116a531",
+      "status": "pending",
+      "created_at": "2026-06-01T13:47:27+00:00",
+      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Прошёл 15 собесов за месяц. Что спрашивали, сколько длилось и кто вообще не ответил",
+      "title_ru": "Прошёл 15 собесов за месяц. Что спрашивали, сколько длилось и кто вообще не ответил",
+      "body": [
+        "Месяц назад я уволился из аутсорса и решил, что найду работу за 2-3 недели.",
+        "Три года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио.",
+        "Месяц назад я уволился из аутсорса и решил, что найду работу за 2–3 недели."
+      ],
+      "footer": null,
+      "source_text": "Месяц назад я уволился из аутсорса и решил, что найду работу за 2-3 недели. Три года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио. Казалось бы, садись и выбирай. Через 4... Месяц назад я уволился из аутсорса и решил, что найду работу за 2–3 недели. Три года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио. Казалось бы — садись и выбирай. Через 4 недели у меня было 15 собеседований, 2 оффера, 6 молчаний без ответа и один рекрутер который прислал отказ на вакансию на которую я не откликался. Записывал всё в заметки потому что к 10-му собесу уже начал путать компании. Вот что получилось. Читать далее Месяц назад я уволился из аутсорса и решил, что найду работу за 2-3 недели. Три года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио. Казалось бы, садись и выбирай. Через 4 недели у меня было 15 собеседований, 2 оффера, 6 молчаний без ответа и один рекрутер, который прислал отказ на вакансию, на которую я не откликался. Записывал всё в заметки потому что к 10-му собесу уже начал путать компании. Вот что получилось. Собес 1. Продуктовая компания, ~200 человек. HR‑скрининг 20 мин, потом техническое 55 мин — лайвкодинг в CoderPad, задача на деревья. Фидбек через 3 дня, отказ — «недостаточно опыта с алгоритмами». На работе за 3 года ни разу не обходил дерево. Собес 2. Банк из топ-10. HR‑скрининг 15 мин, тестовое задание на дом (оценили в «2-3 часа», делал 8), техническое 1,5 часа — SOLID, паттерны, System Design «спроектируйте платёжный шлюз». Фидбек: тишина. Прошло 4 недели. До сих пор тишина.",
+      "post_text": "🌐 Мировые IT\n\n<b>Прошёл 15 собесов за месяц. Что спрашивали, сколько длилось и кто вообще не ответил</b>\n\nМесяц назад я уволился из аутсорса и решил, что найду работу за 2-3 недели.\n\nТри года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио.\n\nМесяц назад я уволился из аутсорса и решил, что найду работу за 2–3 недели.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042250/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042250#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042250/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042250#habracut",
+      "published_at": "2026-06-01T13:44:03+00:00",
+      "title_hash": "4a70388a3064b712656fe84a6d9aa8bbb9a76cd6",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/d19/21e/fbd/d1921efbd277ad1d06e79116de9e1752.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "13ca6f32f5b05018",
+      "status": "pending",
+      "created_at": "2026-06-01T13:47:27+00:00",
+      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "MiniMax M3: открытая модель с миллионом токенов контекста обошла GPT-5.5 на SWE-Bench Pro",
+      "title_ru": "MiniMax M3: открытая модель с миллионом токенов контекста обошла GPT-5.5 на SWE-Bench Pro",
+      "body": [
+        "1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а...",
+        "1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а не через костыли поверх языковой базы.",
+        "Разбираемся, что внутри и зачем это вообще нужно."
+      ],
+      "footer": null,
+      "source_text": "1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а... 1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а не через костыли поверх языковой базы. Разбираемся, что внутри и зачем это вообще нужно. Читать далее 1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а не через костыли поверх языковой базы. Разбираемся, что внутри и зачем это вообще нужно. MiniMax M3 — флагман китайской лаборатории MiniMax, заточенный под два сценария: длинные автономные агентные сессии и кодинг. API доступен с сегодняшнего дня, веса и технический отчёт обещают выложить на HuggingFace и GitHub в течение десяти дней. Главное, чем M3 отличается от большинства конкурентов с открытыми весами: мультимодальность заложена в архитектуру с самого начала обучения. Обучающая выборка — 100 триллионов токенов смешанных данных (текст + изображения + видео). На SWE-Bench Pro — тесте на реальные задачи из GitHub-репозиториев — M3 набрала 59,0%. Это выше GPT-5.5 и Gemini 3.1 Pro, хотя и чуть ниже Claude Opus 4.7. На Terminal Bench 2.1 (работа в терминале) — 66,0%. На BrowseComp, где модель должна автономно искать информацию в интернете, — 83,5%, обогнав Claude Opus 4.7 с его 79,3%. На KernelBench Hard модель пока уступает закрытым конкурентам — это честная картина без приукрашиваний. Но самая показательная история — не бенчмарки, а демонстрации долгих прогонов. В одном тест",
+      "post_text": "🌐 Мировые IT\n\n<b>MiniMax M3: открытая модель с миллионом токенов контекста обошла GPT-5.5 на SWE-Bench Pro</b>\n\n1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а...\n\n1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а не через костыли поверх языковой базы.\n\nРазбираемся, что внутри и зачем это вообще нужно.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/tsnis/articles/1042248/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042248#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/tsnis/articles/1042248/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042248#habracut",
+      "published_at": "2026-06-01T13:43:54+00:00",
+      "title_hash": "9850a4aa1212e87d8d160fd311ee9226ecfc5be8",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/de5/ef9/470/de5ef947049e2237678829ba2587920b.jpeg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "d205b6f6af8b3fef",
+      "status": "pending",
+      "created_at": "2026-06-01T13:47:27+00:00",
+      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Реализация Statefull команд в Telegram API",
+      "title_ru": "Реализация Statefull команд в Telegram API",
+      "body": [
+        "Проблема На протяжении года мы с моей командой пишем телеграмм ботов для коммерческого использования малыми бизнесами (аутсорсинг) и столкнулись с большим количеством проблем, самая неприятная из...",
+        "Java Telegram API обманывает разработчиков дубликатами запросов при отключении интернета?",
+        "Мы команда разработки телеграмм ботов, которая смогла придумать решение для работы с дубликатами в Statefull командах Telegram API используя REST."
+      ],
+      "footer": null,
+      "source_text": "Проблема На протяжении года мы с моей командой пишем телеграмм ботов для коммерческого использования малыми бизнесами (аутсорсинг) и столкнулись с большим количеством проблем, самая неприятная из... Java Telegram API обманывает разработчиков дубликатами запросов при отключении интернета? Мы команда разработки телеграмм ботов, которая смогла придумать решение для работы с дубликатами в Statefull командах Telegram API используя REST. Прошли путь от наивного решения до работающего продукта. Читать далее На протяжении года мы с моей командой пишем телеграмм ботов для коммерческого использования малыми бизнесами (аутсорсинг) и столкнулись с большим количеством проблем, самая неприятная из которых это реализация statefull через stateless . Эта проблема знакома всем разработчикам, которые пытались реализовать заполнение формы в TelegramApi. Разработчики придумывают всякие костыли для этого, потому что в эталонном REST API поддержка состояния от запроса к запросу это нарушение REST-паттерна, однако при заполнении формы приходится использовать состояние . Первый раз я столкнулся с этой проблемой на первом курсе университета в 2024 году. После долгого серчинга мне пришлось смириться с тем что сегодня за меня код будет писать LLM (вернее помогать). Информации и правда мало, что очень странно, так как проблема нерешенная. Например неделю назад, в довольно распространенном боте @MergeBot, который специализируется на записи данных о мигренях мне попался странный баг: если достаточно быстро нажать 2 раза на одну и ту же inline-кнопку ответа на первый вопрос, то бот начинает спрашивать третий вопрос, вместо того чтобы перейти ко второму, причем в ответе на второй вопрос даже нету варианта ответа как в первом.",
+      "post_text": "🌐 Мировые IT\n\n<b>Реализация Statefull команд в Telegram API</b>\n\nПроблема На протяжении года мы с моей командой пишем телеграмм ботов для коммерческого использования малыми бизнесами (аутсорсинг) и столкнулись с большим количеством проблем, самая неприятная из...\n\nJava Telegram API обманывает разработчиков дубликатами запросов при отключении интернета?\n\nМы команда разработки телеграмм ботов, которая смогла придумать решение для работы с дубликатами в Statefull командах Telegram API используя REST.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042246/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042246#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042246/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042246#habracut",
+      "published_at": "2026-06-01T13:41:16+00:00",
+      "title_hash": "74a423df3f64f80581a3dcd9427b7794bb4c1b2e",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/904/b35/bfd/904b35bfd8eb445af061bcbc73280876.jpeg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "3102b620dbaaf4ab",
+      "status": "pending",
+      "created_at": "2026-06-01T13:47:27+00:00",
+      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "GEO вместо SEO, низкие чеки и 1,5 секунды на юзера. Инсайты ИН: Ритейл 2026",
+      "title_ru": "GEO вместо SEO, низкие чеки и 1,5 секунды на юзера. Инсайты ИН: Ритейл 2026",
+      "body": [
+        "Я продакт-менеджер с опытом управления интернет-магазинами в e-commerce.",
+        "По роду деятельности я привык оценивать изменения рынка не через абстрактный «успешный...",
+        "Пока e-com команды по привычке полируют стандартные конверсии и ведут А/Б-тесты кнопок, ландшафт рынка фундаментально меняется."
+      ],
+      "footer": null,
+      "source_text": "Привет, Хабр! Меня зовут Дмитрий. Я продакт-менеджер с опытом управления интернет-магазинами в e-commerce. По роду деятельности я привык оценивать изменения рынка не через абстрактный «успешный... Пока e-com команды по привычке полируют стандартные конверсии и ведут А/Б-тесты кнопок, ландшафт рынка фундаментально меняется. Среднее удержание внимания упало до катастрофических 1,5 секунд, доходы растут параллельно с падением чеков, а на смену SEO приходит GEO — оптимизация под генеративные ИИ-движки. Разбираем 5 главных вызовов для ИТ-продуктов в e-commerce на 2026 год, понимание которых становится вопросом выживания. Читать далее Привет, Хабр! Меня зовут Дмитрий. Я продакт-менеджер с опытом управления интернет-магазинами в e-commerce. По роду деятельности я привык оценивать изменения рынка не через абстрактный «успешный успех», а через жесткие продуктовые метрики, P&L, конверсии и реальную экономику бизнеса. Недавняя профильная конференция «ИН:Ритейл» от Яндекс Рекламы подсветила несколько тектонических сдвигов в ритейле. Пока e-com команды по привычке полируют стандартные конверсии в корзину и ведут бесконечные А/Б-тесты цвета кнопок, ландшафт рынка фундаментально меняется. Ниже — разбор 5 главных вызовов для ИТ-продуктов в e-commerce на 2026 год, понимание которых становится для проектов вопросом выживания. На презентации привели пугающие данные психофизиологических исследований: средний показатель удержания внимания к мобильной рекламе упал до катастрофических 1,5–2,2 секунд. При этом, чтобы бренд или УТП вообще зафиксировались в долговременной памяти человека, качественный рекламный контакт должен длиться минимум 2,5 секунды. Мы физически перестаем успевать достучаться до пользователя классическими методами. Что это значит для e-com продуктов: Классический перформанс",
+      "post_text": "🌐 Мировые IT\n\n<b>GEO вместо SEO, низкие чеки и 1,5 секунды на юзера. Инсайты ИН: Ритейл 2026</b>\n\nЯ продакт-менеджер с опытом управления интернет-магазинами в e-commerce.\n\nПо роду деятельности я привык оценивать изменения рынка не через абстрактный «успешный...\n\nПока e-com команды по привычке полируют стандартные конверсии и ведут А/Б-тесты кнопок, ландшафт рынка фундаментально меняется.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042244/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042244#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042244/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042244#habracut",
+      "published_at": "2026-06-01T13:27:56+00:00",
+      "title_hash": "db5a2436a85f52c6f67c826dfa917a63af235528",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/b66/ea7/1af/b66ea71af8460d9e2fe7f824855c55b7.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "9fc77cfa10d92d4c",
+      "status": "pending",
+      "created_at": "2026-06-01T13:47:27+00:00",
+      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Подключаем к ПЛИС клавиатуру PS/2 и ПК по интерфейсу RS232",
+      "title_ru": "Подключаем к ПЛИС клавиатуру PS/2 и ПК по интерфейсу RS232",
+      "body": [
+        "Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт).",
+        "Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт).",
+        "Начнём с главного, необходимо обеспечить правильное аппаратное подключение, что бы ничего не спалить."
+      ],
+      "footer": null,
+      "source_text": "Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт). Начнём с главного,... Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт). Начнём с главного, необходимо обеспечить правильное аппаратное подключение, что бы ничего не спалить. Мне в этом отношении повезло, наши друзья китайцы, всё сделали за меня. Далее привожу схему, которую вам следует всё же проверить, так как это как раз то место, где вас может ждать сюрприз (может ещё где то, но не фатальный). Так как я сам начинающий в этом вопросе, будьте внимательны. Читать далее Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт). Начнём с главного, необходимо обеспечить правильное аппаратное подключение, что бы ничего не спалить. Мне в этом отношении повезло, наши друзья китайцы, всё сделали за меня. Далее привожу схему, которую вам следует всё же проверить, так как это как раз то место, где вас может ждать сюрприз (может ещё где то, но не фатальный). Так как я сам начинающий в этом вопросе, будьте внимательны. В настройках программы Quartus 2, настроить соответствующие ножки микросхемы как 3.3-V LVTTL. Программа выдаёт предупреждение, но в документации указано, что при таком конфигурации (пишу по памяти) ограничительные диоды подключены, то есть всё правильно. Точно так же настраиваются ножки микросхемы идущие на приёмопередатчик. Сразу привожу схему для приёмопередатчика. (Смотрите документацию на ваши микросхемы и будьте внимательны.) Алгоритм работы устройства следую",
+      "post_text": "🌐 Мировые IT\n\n<b>Подключаем к ПЛИС клавиатуру PS/2 и ПК по интерфейсу RS232</b>\n\nНе большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт).\n\nНе большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт).\n\nНачнём с главного, необходимо обеспечить правильное аппаратное подключение, что бы ничего не спалить.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042234/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042234#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042234/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042234#habracut",
+      "published_at": "2026-06-01T13:21:23+00:00",
+      "title_hash": "a6485c253ef79c08cb4e6840b22ae53e1c1da928",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/da5/a17/f20/da5a17f20cc53f9565dec0093c273ec7.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "feca2422097a1e95",
+      "status": "pending",
+      "created_at": "2026-06-01T13:47:27+00:00",
+      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Как глушить нефтяную скважину… машинным обучением. Часть 1",
+      "title_ru": "Как глушить нефтяную скважину… машинным обучением. Часть 1",
+      "body": [
+        "Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS,...",
+        "Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS, но и как основной исполнитель.",
+        "Проект начался в 2024 году и, по сути, сейчас продолжается, но основная часть уже выполнена."
+      ],
+      "footer": null,
+      "source_text": "Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS,... Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS, но и как основной исполнитель. Проект начался в 2024 году и, по сути, сейчас продолжается, но основная часть уже выполнена. В первой части расскажу в целом о проекте: какую проблему мы решали, какова постановка задачи, о рабочем процессе. Во второй части уже будет больше технической информации, и подведу итоги того, что удалось нам в итоге получить. Спойлер: результаты проекта признаны успешными по итогам реальных, в прямом смысле, полевых испытаний. Читать далее Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS, но и как основной исполнитель. В статье делюсь больше своими впечатлениями и общим подходом в силу политики конфиденциальности, хотя были выступления на профильных конференциях. Проект начался в 2024 году и, по сути, сейчас продолжается, но основная часть уже выполнена. В первой части расскажу в целом о проекте: какую проблему мы решали, какова постановка задачи, о рабочем процессе. Во второй части уже будет больше технической информации, и подведу итоги того, что удалось нам в итоге получить. Спойлер: результаты проекта признаны успешными по итогам реальных, в прямом смысле, полевых испытаний. Зачастую в процессе эксплуатации нефтяной скважины возникает необходимость заменить или отремонтировать оборудование, размещенное внутри нее, или провести другие работы, требующие остановки выхода нефти и газа чере",
+      "post_text": "🌐 Мировые IT\n\n<b>Как глушить нефтяную скважину… машинным обучением. Часть 1</b>\n\nДумаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS,...\n\nДумаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS, но и как основной исполнитель.\n\nПроект начался в 2024 году и, по сути, сейчас продолжается, но основная часть уже выполнена.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042232/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042232#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042232/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042232#habracut",
+      "published_at": "2026-06-01T13:21:20+00:00",
+      "title_hash": "b6e2e26e4713e8db427f8d7c513e92dec4d89e88",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/758/160/ca2/758160ca26c8aac215c6e5bfe8f7b824.jpeg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
     {
       "id": "d5f39c40569c63f1",
       "status": "rejected",
@@ -9264,302 +9560,6 @@
       "published_at_sakhalin": "2026-05-29T11:09:58+11:00",
       "publish_method": "sendPhoto/safe/pipeline_generated",
       "telegram_message_id": 142
-    },
-    {
-      "id": "f3ec8ba5e856accf",
-      "status": "pending",
-      "created_at": "2026-06-01T13:47:27+00:00",
-      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Интерфейс RS-485 и протокол MODBUS RTU под микроскопом или как обследовать оборудование не мешая ему",
-      "title_ru": "Интерфейс RS-485 и протокол MODBUS RTU под микроскопом или как обследовать оборудование не мешая ему",
-      "body": [
-        "Данная статья ориентирована на начинающих инженеров АСУ ТП.",
-        "Статья родилась на основе проделанной работы по обследованию объекта автоматизации.",
-        "Так как в интернете, на казалось бы, \"старую\" тему..."
-      ],
-      "footer": null,
-      "source_text": "Данная статья ориентирована на начинающих инженеров АСУ ТП. Статья родилась на основе проделанной работы по обследованию объекта автоматизации. Так как в интернете, на казалось бы, \"старую\" тему... Как обследовать шину MODBUS RTU к которой подключено промышленное оборудование не разрывая соединения и немного про диагностику MODBUS RTU Читать далее Данная статья ориентирована на начинающих инженеров АСУ ТП. Статья родилась на основе проделанной работы по обследованию объекта автоматизации. Так как в интернете, на казалось бы, \"старую\" тему передачи информации по MODBUS RTU, мало информации про то, как на обследуемом оборудовании узнать с какими настройками работает RS-485, адреса и запросы MODBUS RTU к устройству, не отключая обследоваемое устройства от сети передачи данных, попробуем восполнить данный пробел и описать метод, который применили мы, и за одно, распишем практику работы с RS - 485. Самое главное, обследоваемое оборудование должно всегда быть подключенной к сети MODBUS RTU и отрабатывать по запросам от ПЛК. Вводные понятны, вопрос, как реализовать? Опытные инженеры сразу вспомнят про осциллограф, но есть проблема, как обследовать сам пакет данных, ведь нам надо узнать не только настройки RS-485, но и ID устройств на шине и какие запросы отправляет ПЛК, электронщики сразу вспомнят про логический анализатор и будут абсолютно правы, так как данное устройство отлично справится с поставленной задачей. У меня логический анализатор saleae logic 16, но можно использовать любой другой где есть возможность анализа данных. Обратите внимание на выделенную область, это щупы с помощью которых можно подключится к шине RS-485 (щуп-зажим типа захват)",
-      "post_text": "🌐 Мировые IT\n\n<b>Интерфейс RS-485 и протокол MODBUS RTU под микроскопом или как обследовать оборудование не мешая ему</b>\n\nДанная статья ориентирована на начинающих инженеров АСУ ТП.\n\nСтатья родилась на основе проделанной работы по обследованию объекта автоматизации.\n\nТак как в интернете, на казалось бы, \"старую\" тему...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042242/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042242#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042242/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042242#habracut",
-      "published_at": "2026-06-01T13:44:22+00:00",
-      "title_hash": "e046b1a74cefd2e68cd23eeed8c75fbf27e3b6a7",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/329/bcc/bc7/329bccbc76feb6b8234dc8b22fcdff81.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "a4b9705e2ba4c05e",
-      "status": "pending",
-      "created_at": "2026-06-01T13:47:27+00:00",
-      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
-      "source": "The Verge",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 233,
-      "title_original": "How to watch Nvidia’s Computex keynote",
-      "title_ru": "How to watch Nvidia’s Computex keynote",
-      "body": [
-        "Tune in for the livestream at 8PM PT / 11PM ET NVIDIA's CEO Jensen Huang is set to take the stage for his GTC Taipei keynote at 8PM PT / 11PM ET.",
-        "You can watch all the announcements here and embedded below.",
-        "Rumors have been flying about what to expect from today's presentation, but the big one is the possibility of a partnership with Microsoft and […] Computex Close Computex Posts from this topic will be added to your daily email digest and your homepage feed."
-      ],
-      "footer": null,
-      "source_text": "Tune in for the livestream at 8PM PT / 11PM ET NVIDIA's CEO Jensen Huang is set to take the stage for his GTC Taipei keynote at 8PM PT / 11PM ET. You can watch all the announcements here and embedded below. Rumors have been flying about what to expect from today's presentation, but the big one is the possibility of a partnership with Microsoft and […] Computex Close Computex Posts from this topic will be added to your daily email digest and your homepage feed. Nvidia Close Nvidia Posts from this topic will be added to your daily email digest and your homepage feed. Tune in at 8PM PT / 11PM ET to see if Jensen Huang announces the rumored N1 and N1X ARM CPUs. Tune in at 8PM PT / 11PM ET to see if Jensen Huang announces the rumored N1 and N1X ARM CPUs.",
-      "post_text": "🌐 Мировые IT\n\n<b>How to watch Nvidia’s Computex keynote</b>\n\nTune in for the livestream at 8PM PT / 11PM ET NVIDIA's CEO Jensen Huang is set to take the stage for his GTC Taipei keynote at 8PM PT / 11PM ET.\n\nYou can watch all the announcements here and embedded below.\n\nRumors have been flying about what to expect from today's presentation, but the big one is the possibility of a partnership with Microsoft and […] Computex Close Computex Posts from this topic will be added to your daily email digest and your homepage feed.\n\nМИРОВЫЕ IT · <a href=\"https://www.theverge.com/tech/940540/how-to-watch-nvidias-computex-keynote\">The Verge</a>",
-      "edited_post_text": null,
-      "url": "https://www.theverge.com/tech/940540/how-to-watch-nvidias-computex-keynote",
-      "published_at": "2026-05-31T20:20:35+00:00",
-      "title_hash": "3a71c34ac5ac7af3ae45a3271c12c1dd26829082",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "5bf453320116a531",
-      "status": "pending",
-      "created_at": "2026-06-01T13:47:27+00:00",
-      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Прошёл 15 собесов за месяц. Что спрашивали, сколько длилось и кто вообще не ответил",
-      "title_ru": "Прошёл 15 собесов за месяц. Что спрашивали, сколько длилось и кто вообще не ответил",
-      "body": [
-        "Месяц назад я уволился из аутсорса и решил, что найду работу за 2-3 недели.",
-        "Три года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио.",
-        "Месяц назад я уволился из аутсорса и решил, что найду работу за 2–3 недели."
-      ],
-      "footer": null,
-      "source_text": "Месяц назад я уволился из аутсорса и решил, что найду работу за 2-3 недели. Три года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио. Казалось бы, садись и выбирай. Через 4... Месяц назад я уволился из аутсорса и решил, что найду работу за 2–3 недели. Три года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио. Казалось бы — садись и выбирай. Через 4 недели у меня было 15 собеседований, 2 оффера, 6 молчаний без ответа и один рекрутер который прислал отказ на вакансию на которую я не откликался. Записывал всё в заметки потому что к 10-му собесу уже начал путать компании. Вот что получилось. Читать далее Месяц назад я уволился из аутсорса и решил, что найду работу за 2-3 недели. Три года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио. Казалось бы, садись и выбирай. Через 4 недели у меня было 15 собеседований, 2 оффера, 6 молчаний без ответа и один рекрутер, который прислал отказ на вакансию, на которую я не откликался. Записывал всё в заметки потому что к 10-му собесу уже начал путать компании. Вот что получилось. Собес 1. Продуктовая компания, ~200 человек. HR‑скрининг 20 мин, потом техническое 55 мин — лайвкодинг в CoderPad, задача на деревья. Фидбек через 3 дня, отказ — «недостаточно опыта с алгоритмами». На работе за 3 года ни разу не обходил дерево. Собес 2. Банк из топ-10. HR‑скрининг 15 мин, тестовое задание на дом (оценили в «2-3 часа», делал 8), техническое 1,5 часа — SOLID, паттерны, System Design «спроектируйте платёжный шлюз». Фидбек: тишина. Прошло 4 недели. До сих пор тишина.",
-      "post_text": "🌐 Мировые IT\n\n<b>Прошёл 15 собесов за месяц. Что спрашивали, сколько длилось и кто вообще не ответил</b>\n\nМесяц назад я уволился из аутсорса и решил, что найду работу за 2-3 недели.\n\nТри года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио.\n\nМесяц назад я уволился из аутсорса и решил, что найду работу за 2–3 недели.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042250/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042250#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042250/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042250#habracut",
-      "published_at": "2026-06-01T13:44:03+00:00",
-      "title_hash": "4a70388a3064b712656fe84a6d9aa8bbb9a76cd6",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/d19/21e/fbd/d1921efbd277ad1d06e79116de9e1752.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "13ca6f32f5b05018",
-      "status": "pending",
-      "created_at": "2026-06-01T13:47:27+00:00",
-      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "MiniMax M3: открытая модель с миллионом токенов контекста обошла GPT-5.5 на SWE-Bench Pro",
-      "title_ru": "MiniMax M3: открытая модель с миллионом токенов контекста обошла GPT-5.5 на SWE-Bench Pro",
-      "body": [
-        "1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а...",
-        "1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а не через костыли поверх языковой базы.",
-        "Разбираемся, что внутри и зачем это вообще нужно."
-      ],
-      "footer": null,
-      "source_text": "1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а... 1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а не через костыли поверх языковой базы. Разбираемся, что внутри и зачем это вообще нужно. Читать далее 1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а не через костыли поверх языковой базы. Разбираемся, что внутри и зачем это вообще нужно. MiniMax M3 — флагман китайской лаборатории MiniMax, заточенный под два сценария: длинные автономные агентные сессии и кодинг. API доступен с сегодняшнего дня, веса и технический отчёт обещают выложить на HuggingFace и GitHub в течение десяти дней. Главное, чем M3 отличается от большинства конкурентов с открытыми весами: мультимодальность заложена в архитектуру с самого начала обучения. Обучающая выборка — 100 триллионов токенов смешанных данных (текст + изображения + видео). На SWE-Bench Pro — тесте на реальные задачи из GitHub-репозиториев — M3 набрала 59,0%. Это выше GPT-5.5 и Gemini 3.1 Pro, хотя и чуть ниже Claude Opus 4.7. На Terminal Bench 2.1 (работа в терминале) — 66,0%. На BrowseComp, где модель должна автономно искать информацию в интернете, — 83,5%, обогнав Claude Opus 4.7 с его 79,3%. На KernelBench Hard модель пока уступает закрытым конкурентам — это честная картина без приукрашиваний. Но самая показательная история — не бенчмарки, а демонстрации долгих прогонов. В одном тест",
-      "post_text": "🌐 Мировые IT\n\n<b>MiniMax M3: открытая модель с миллионом токенов контекста обошла GPT-5.5 на SWE-Bench Pro</b>\n\n1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а...\n\n1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а не через костыли поверх языковой базы.\n\nРазбираемся, что внутри и зачем это вообще нужно.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/tsnis/articles/1042248/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042248#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/tsnis/articles/1042248/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042248#habracut",
-      "published_at": "2026-06-01T13:43:54+00:00",
-      "title_hash": "9850a4aa1212e87d8d160fd311ee9226ecfc5be8",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/de5/ef9/470/de5ef947049e2237678829ba2587920b.jpeg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "d205b6f6af8b3fef",
-      "status": "pending",
-      "created_at": "2026-06-01T13:47:27+00:00",
-      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Реализация Statefull команд в Telegram API",
-      "title_ru": "Реализация Statefull команд в Telegram API",
-      "body": [
-        "Проблема На протяжении года мы с моей командой пишем телеграмм ботов для коммерческого использования малыми бизнесами (аутсорсинг) и столкнулись с большим количеством проблем, самая неприятная из...",
-        "Java Telegram API обманывает разработчиков дубликатами запросов при отключении интернета?",
-        "Мы команда разработки телеграмм ботов, которая смогла придумать решение для работы с дубликатами в Statefull командах Telegram API используя REST."
-      ],
-      "footer": null,
-      "source_text": "Проблема На протяжении года мы с моей командой пишем телеграмм ботов для коммерческого использования малыми бизнесами (аутсорсинг) и столкнулись с большим количеством проблем, самая неприятная из... Java Telegram API обманывает разработчиков дубликатами запросов при отключении интернета? Мы команда разработки телеграмм ботов, которая смогла придумать решение для работы с дубликатами в Statefull командах Telegram API используя REST. Прошли путь от наивного решения до работающего продукта. Читать далее На протяжении года мы с моей командой пишем телеграмм ботов для коммерческого использования малыми бизнесами (аутсорсинг) и столкнулись с большим количеством проблем, самая неприятная из которых это реализация statefull через stateless . Эта проблема знакома всем разработчикам, которые пытались реализовать заполнение формы в TelegramApi. Разработчики придумывают всякие костыли для этого, потому что в эталонном REST API поддержка состояния от запроса к запросу это нарушение REST-паттерна, однако при заполнении формы приходится использовать состояние . Первый раз я столкнулся с этой проблемой на первом курсе университета в 2024 году. После долгого серчинга мне пришлось смириться с тем что сегодня за меня код будет писать LLM (вернее помогать). Информации и правда мало, что очень странно, так как проблема нерешенная. Например неделю назад, в довольно распространенном боте @MergeBot, который специализируется на записи данных о мигренях мне попался странный баг: если достаточно быстро нажать 2 раза на одну и ту же inline-кнопку ответа на первый вопрос, то бот начинает спрашивать третий вопрос, вместо того чтобы перейти ко второму, причем в ответе на второй вопрос даже нету варианта ответа как в первом.",
-      "post_text": "🌐 Мировые IT\n\n<b>Реализация Statefull команд в Telegram API</b>\n\nПроблема На протяжении года мы с моей командой пишем телеграмм ботов для коммерческого использования малыми бизнесами (аутсорсинг) и столкнулись с большим количеством проблем, самая неприятная из...\n\nJava Telegram API обманывает разработчиков дубликатами запросов при отключении интернета?\n\nМы команда разработки телеграмм ботов, которая смогла придумать решение для работы с дубликатами в Statefull командах Telegram API используя REST.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042246/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042246#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042246/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042246#habracut",
-      "published_at": "2026-06-01T13:41:16+00:00",
-      "title_hash": "74a423df3f64f80581a3dcd9427b7794bb4c1b2e",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/904/b35/bfd/904b35bfd8eb445af061bcbc73280876.jpeg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "3102b620dbaaf4ab",
-      "status": "pending",
-      "created_at": "2026-06-01T13:47:27+00:00",
-      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "GEO вместо SEO, низкие чеки и 1,5 секунды на юзера. Инсайты ИН: Ритейл 2026",
-      "title_ru": "GEO вместо SEO, низкие чеки и 1,5 секунды на юзера. Инсайты ИН: Ритейл 2026",
-      "body": [
-        "Я продакт-менеджер с опытом управления интернет-магазинами в e-commerce.",
-        "По роду деятельности я привык оценивать изменения рынка не через абстрактный «успешный...",
-        "Пока e-com команды по привычке полируют стандартные конверсии и ведут А/Б-тесты кнопок, ландшафт рынка фундаментально меняется."
-      ],
-      "footer": null,
-      "source_text": "Привет, Хабр! Меня зовут Дмитрий. Я продакт-менеджер с опытом управления интернет-магазинами в e-commerce. По роду деятельности я привык оценивать изменения рынка не через абстрактный «успешный... Пока e-com команды по привычке полируют стандартные конверсии и ведут А/Б-тесты кнопок, ландшафт рынка фундаментально меняется. Среднее удержание внимания упало до катастрофических 1,5 секунд, доходы растут параллельно с падением чеков, а на смену SEO приходит GEO — оптимизация под генеративные ИИ-движки. Разбираем 5 главных вызовов для ИТ-продуктов в e-commerce на 2026 год, понимание которых становится вопросом выживания. Читать далее Привет, Хабр! Меня зовут Дмитрий. Я продакт-менеджер с опытом управления интернет-магазинами в e-commerce. По роду деятельности я привык оценивать изменения рынка не через абстрактный «успешный успех», а через жесткие продуктовые метрики, P&L, конверсии и реальную экономику бизнеса. Недавняя профильная конференция «ИН:Ритейл» от Яндекс Рекламы подсветила несколько тектонических сдвигов в ритейле. Пока e-com команды по привычке полируют стандартные конверсии в корзину и ведут бесконечные А/Б-тесты цвета кнопок, ландшафт рынка фундаментально меняется. Ниже — разбор 5 главных вызовов для ИТ-продуктов в e-commerce на 2026 год, понимание которых становится для проектов вопросом выживания. На презентации привели пугающие данные психофизиологических исследований: средний показатель удержания внимания к мобильной рекламе упал до катастрофических 1,5–2,2 секунд. При этом, чтобы бренд или УТП вообще зафиксировались в долговременной памяти человека, качественный рекламный контакт должен длиться минимум 2,5 секунды. Мы физически перестаем успевать достучаться до пользователя классическими методами. Что это значит для e-com продуктов: Классический перформанс",
-      "post_text": "🌐 Мировые IT\n\n<b>GEO вместо SEO, низкие чеки и 1,5 секунды на юзера. Инсайты ИН: Ритейл 2026</b>\n\nЯ продакт-менеджер с опытом управления интернет-магазинами в e-commerce.\n\nПо роду деятельности я привык оценивать изменения рынка не через абстрактный «успешный...\n\nПока e-com команды по привычке полируют стандартные конверсии и ведут А/Б-тесты кнопок, ландшафт рынка фундаментально меняется.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042244/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042244#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042244/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042244#habracut",
-      "published_at": "2026-06-01T13:27:56+00:00",
-      "title_hash": "db5a2436a85f52c6f67c826dfa917a63af235528",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/b66/ea7/1af/b66ea71af8460d9e2fe7f824855c55b7.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "9fc77cfa10d92d4c",
-      "status": "pending",
-      "created_at": "2026-06-01T13:47:27+00:00",
-      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Подключаем к ПЛИС клавиатуру PS/2 и ПК по интерфейсу RS232",
-      "title_ru": "Подключаем к ПЛИС клавиатуру PS/2 и ПК по интерфейсу RS232",
-      "body": [
-        "Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт).",
-        "Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт).",
-        "Начнём с главного, необходимо обеспечить правильное аппаратное подключение, что бы ничего не спалить."
-      ],
-      "footer": null,
-      "source_text": "Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт). Начнём с главного,... Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт). Начнём с главного, необходимо обеспечить правильное аппаратное подключение, что бы ничего не спалить. Мне в этом отношении повезло, наши друзья китайцы, всё сделали за меня. Далее привожу схему, которую вам следует всё же проверить, так как это как раз то место, где вас может ждать сюрприз (может ещё где то, но не фатальный). Так как я сам начинающий в этом вопросе, будьте внимательны. Читать далее Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт). Начнём с главного, необходимо обеспечить правильное аппаратное подключение, что бы ничего не спалить. Мне в этом отношении повезло, наши друзья китайцы, всё сделали за меня. Далее привожу схему, которую вам следует всё же проверить, так как это как раз то место, где вас может ждать сюрприз (может ещё где то, но не фатальный). Так как я сам начинающий в этом вопросе, будьте внимательны. В настройках программы Quartus 2, настроить соответствующие ножки микросхемы как 3.3-V LVTTL. Программа выдаёт предупреждение, но в документации указано, что при таком конфигурации (пишу по памяти) ограничительные диоды подключены, то есть всё правильно. Точно так же настраиваются ножки микросхемы идущие на приёмопередатчик. Сразу привожу схему для приёмопередатчика. (Смотрите документацию на ваши микросхемы и будьте внимательны.) Алгоритм работы устройства следую",
-      "post_text": "🌐 Мировые IT\n\n<b>Подключаем к ПЛИС клавиатуру PS/2 и ПК по интерфейсу RS232</b>\n\nНе большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт).\n\nНе большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт).\n\nНачнём с главного, необходимо обеспечить правильное аппаратное подключение, что бы ничего не спалить.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042234/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042234#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042234/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042234#habracut",
-      "published_at": "2026-06-01T13:21:23+00:00",
-      "title_hash": "a6485c253ef79c08cb4e6840b22ae53e1c1da928",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/da5/a17/f20/da5a17f20cc53f9565dec0093c273ec7.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "feca2422097a1e95",
-      "status": "pending",
-      "created_at": "2026-06-01T13:47:27+00:00",
-      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Как глушить нефтяную скважину… машинным обучением. Часть 1",
-      "title_ru": "Как глушить нефтяную скважину… машинным обучением. Часть 1",
-      "body": [
-        "Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS,...",
-        "Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS, но и как основной исполнитель.",
-        "Проект начался в 2024 году и, по сути, сейчас продолжается, но основная часть уже выполнена."
-      ],
-      "footer": null,
-      "source_text": "Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS,... Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS, но и как основной исполнитель. Проект начался в 2024 году и, по сути, сейчас продолжается, но основная часть уже выполнена. В первой части расскажу в целом о проекте: какую проблему мы решали, какова постановка задачи, о рабочем процессе. Во второй части уже будет больше технической информации, и подведу итоги того, что удалось нам в итоге получить. Спойлер: результаты проекта признаны успешными по итогам реальных, в прямом смысле, полевых испытаний. Читать далее Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS, но и как основной исполнитель. В статье делюсь больше своими впечатлениями и общим подходом в силу политики конфиденциальности, хотя были выступления на профильных конференциях. Проект начался в 2024 году и, по сути, сейчас продолжается, но основная часть уже выполнена. В первой части расскажу в целом о проекте: какую проблему мы решали, какова постановка задачи, о рабочем процессе. Во второй части уже будет больше технической информации, и подведу итоги того, что удалось нам в итоге получить. Спойлер: результаты проекта признаны успешными по итогам реальных, в прямом смысле, полевых испытаний. Зачастую в процессе эксплуатации нефтяной скважины возникает необходимость заменить или отремонтировать оборудование, размещенное внутри нее, или провести другие работы, требующие остановки выхода нефти и газа чере",
-      "post_text": "🌐 Мировые IT\n\n<b>Как глушить нефтяную скважину… машинным обучением. Часть 1</b>\n\nДумаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS,...\n\nДумаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS, но и как основной исполнитель.\n\nПроект начался в 2024 году и, по сути, сейчас продолжается, но основная часть уже выполнена.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042232/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042232#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042232/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042232#habracut",
-      "published_at": "2026-06-01T13:21:20+00:00",
-      "title_hash": "b6e2e26e4713e8db427f8d7c513e92dec4d89e88",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/758/160/ca2/758160ca26c8aac215c6e5bfe8f7b824.jpeg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
     }
   ],
   "auto_review": {
