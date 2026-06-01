@@ -1,10 +1,306 @@
 {
   "version": 1,
-  "updated_at": "2026-06-01T07:19:41+00:00",
-  "updated_at_sakhalin": "2026-06-01T18:19:41+11:00",
+  "updated_at": "2026-06-01T07:26:06+00:00",
+  "updated_at_sakhalin": "2026-06-01T18:26:06+11:00",
   "reviewed_at": "2026-06-01T07:04:09+00:00",
   "reviewed_at_sakhalin": "2026-06-01T18:04:09+11:00",
   "items": [
+    {
+      "id": "2639a4ef3654beee",
+      "status": "pending",
+      "created_at": "2026-06-01T07:19:41+00:00",
+      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Записки оптимизатора 1С (ч.17). Как избежать падения Postgres при большом потреблении памяти запросами",
+      "title_ru": "Записки оптимизатора 1С (ч.17). Как избежать падения Postgres при большом потреблении памяти запросами",
+      "body": [
+        "Речь пойдет об одной из старых проблем со стабильностью работы Postgres – об отсутствии полного контроля за потреблением оперативной памяти при выполнении запросов (через work_mem), что в ряде случаев...",
+        "Рассмотрим одну из старых проблем со стабильностью работы Postgres – отсутствие полного контроля за потреблением оперативной памяти при выполнении запросов.",
+        "В ряде случаев это приводит либо к свопированию, либо к падению СУБД и остановке работы информационной системы."
+      ],
+      "footer": null,
+      "source_text": "Речь пойдет об одной из старых проблем со стабильностью работы Postgres – об отсутствии полного контроля за потреблением оперативной памяти при выполнении запросов (через work_mem), что в ряде случаев... Рассмотрим одну из старых проблем со стабильностью работы Postgres – отсутствие полного контроля за потреблением оперативной памяти при выполнении запросов. В ряде случаев это приводит либо к свопированию, либо к падению СУБД и остановке работы информационной системы. Происходит это неожиданно, без предупреждения и в не самый удачный момент. В системах 1С эта проблема точно существует, встречали не раз. Вроде бы на помощь должна прийти технология OOM Killer Linux, но, как обычно, не все так радужно и есть неприятные нюансы. Читать далее Речь пойдет об одной из старых проблем со стабильностью работы Postgres – об отсутствии полного контроля за потреблением оперативной памяти при выполнении запросов (через work_mem), что в ряде случаев приводит либо к свопированию, либо к падению СУБД и остановке работы информационной системы. Происходит это неожиданно, без предупреждения и в не самый удачный момент, например, ночью, когда все спят. В системах 1С эта проблема точно существует, в силу использования платформой сложных многоэтажных запросов с большим количеством соединений, группировок и сортировок. Вроде бы на помощь должна прийти технология OOM Killer Linux, но как обычно не все так радужно и есть неприятные нюансы. В управлении памятью Linux существует концепция overcommit, которая позволяет системе выделять больше виртуальной памяти, чем физически доступно. Это может быть полезно, но требует осторожного подхода для предотвращения проблем с производительностью и стабильностью. По умолчанию Linux использует overcommit памяти, когда ядро разрешает процессам запросить больше",
+      "post_text": "🌐 Мировые IT\n\n<b>Записки оптимизатора 1С (ч.17). Как избежать падения Postgres при большом потреблении памяти запросами</b>\n\nРечь пойдет об одной из старых проблем со стабильностью работы Postgres – об отсутствии полного контроля за потреблением оперативной памяти при выполнении запросов (через work_mem), что в ряде случаев...\n\nРассмотрим одну из старых проблем со стабильностью работы Postgres – отсутствие полного контроля за потреблением оперативной памяти при выполнении запросов.\n\nВ ряде случаев это приводит либо к свопированию, либо к падению СУБД и остановке работы информационной системы.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/softpoint/articles/1041984/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041984#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/softpoint/articles/1041984/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041984#habracut",
+      "published_at": "2026-06-01T07:10:37+00:00",
+      "title_hash": "7ca9570c4737bc6bcdc62c5070957a7f4fc08489",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/4c8/15a/52a/4c815a52a4a8cf1f58f5f27ab3aa11e2.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "5bf96d25b0ff3160",
+      "status": "pending",
+      "created_at": "2026-06-01T07:19:41+00:00",
+      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Какое будущее ждет человечество, согласно IMDb?",
+      "title_ru": "Какое будущее ждет человечество, согласно IMDb?",
+      "body": [
+        "Как и многие читатели Хабра, я люблю научную фантастику.",
+        "Люблю думать об изобретениях, о прогрессе.",
+        "Вопреки обывательскому мнению, фантастика – это совсем не тот жанр, где всё с начала и до конца выдумано."
+      ],
+      "footer": null,
+      "source_text": "Как и многие читатели Хабра, я люблю научную фантастику. Люблю думать об изобретениях, о прогрессе. Вопреки обывательскому мнению, фантастика – это совсем не тот жанр, где всё с начала и до конца выдумано. Хорошая фантастика характеризуется тем, что в ней показан реальный, близкий нам человек (люди, общество), но в других условиях. Если хотите, в других декорациях. Хорошая фантастика помещает человека в несколько необычное окружение и дает ответ на вопрос – как он себя поведет в этих условиях, что изменится в его поведении, в его целях, в его желаниях. Несмотря на внешнюю неузнаваемость облика персонажей и окружающих декораций, некоторые базовые человеческие черты должны оставаться в персонажах в любых условиях. Нам неинтересно будет читать фантастику, если в ней будет говориться не о людях, а только о гамадрилах или только о камнях. Людям интересны люди. Возможно, эволюционировавшие, возможно, живущие в обществе с другим материальным базисом и, как следствие, с другой моралью и другими ценностями. Исследовать такое общество, задумываться о таком обществе будущего – интересно. Я задумался о том, какое общество будущего показывает нам лучшая мировая фантастика: каковы условия существования людей, каковы отношения между людьми, насколько вообще приятно или отвратительно жить в мире будущего. Чтобы ответить на этот вопрос, я взял срез фантастики – фильмы. Чтобы отобрать лучшие фильмы, я залез в базу IMDb и взял первые 1000 фильмов, лучшие по рейтингу. Из них я отобрал те, в которых говорится о будущем (или хотя бы упоминается). Получилось около 50 фильмов. Затем я выкинул наиболее старые фильмы (примерно до 1970 года) – потому что совсем старые представления о будущем мне показалось неактуально исследовать. Затем я вычеркнул откровенно комиксовые фильмы (не потому что плох",
+      "post_text": "🌐 Мировые IT\n\n<b>Какое будущее ждет человечество, согласно IMDb?</b>\n\nКак и многие читатели Хабра, я люблю научную фантастику.\n\nЛюблю думать об изобретениях, о прогрессе.\n\nВопреки обывательскому мнению, фантастика – это совсем не тот жанр, где всё с начала и до конца выдумано.\n\nМИРОВЫЕ IT · <a href=\"https://www.imdb.com/\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://www.imdb.com/",
+      "published_at": "2026-06-01T07:10:21+00:00",
+      "title_hash": "b2f215a052fe71d73f8c3ad5771becbc430a1e39",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/ec7/4f0/aad/ec74f0aad62066ba0dab8f985627758d.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "d5588760763743a9",
+      "status": "pending",
+      "created_at": "2026-06-01T07:19:41+00:00",
+      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Как обучить тысячи сотрудников работе с ИИ за полтора года",
+      "title_ru": "Как обучить тысячи сотрудников работе с ИИ за полтора года",
+      "body": [
+        "66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд.",
+        "В компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти.",
+        "66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд."
+      ],
+      "footer": null,
+      "source_text": "66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд. В компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти. Работе с ИИ обучилось более... 66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд. В компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти. Работе с ИИ обучилось более 6000 сотрудников – это около 78% целевой аудитории. Как получили такие результаты – расскажем в статье. Читать далее 66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд. В компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти. Работе с ИИ обучилось более 6000 сотрудников – это около 78% целевой аудитории. Как получили такие результаты – расскажем в статье. ИИ становится новым английским. Так считают во многих крупных компаниях. Мы пригласили на конференцию Teamly «Знание, обучение и ИИ – в единой рабочей среде» Надежду Шилову, руководителя управления по обучению массового сегмента компании ПАО «Ростелеком». Она поделилась опытом внедрения искусственного интеллекта в процессы обучения и работу сотрудников. «Ростелеком» – не просто провайдер интернет‑услуг, а магистральный оператор, обеспечивающий работу других провайдеров и государственных сервисов. Компания играет ключевую роль в обеспечении доступа к Госуслугам и интернету для миллионов россиян. Отсюда – высокие требования к информационной безопасности. Утечка данных, например, из базы Госуслуг может привести к масштабным последствиям. Несколько лет назад совет директоров ПАО «Ростелеком» включил использование ИИ в стратегию компании. Цель – повысить эффективность за счёт автоматизации рутинных процессов и перераспределения человеческих ресурсов на более сложные задачи.",
+      "post_text": "🌐 Мировые IT\n\n<b>Как обучить тысячи сотрудников работе с ИИ за полтора года</b>\n\n66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд.\n\nВ компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти.\n\n66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/teamly/articles/1041982/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041982#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/teamly/articles/1041982/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041982#habracut",
+      "published_at": "2026-06-01T07:05:40+00:00",
+      "title_hash": "abab915543f14e666b3c331d803f35a7590e374e",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/ce2/fb8/575/ce2fb8575d14158f44690240552a69ec.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "3d89d8ffa3d46707",
+      "status": "pending",
+      "created_at": "2026-06-01T07:19:41+00:00",
+      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Сага о подшипнике. Как маленький шарик борется с силой трения",
+      "title_ru": "Сага о подшипнике. Как маленький шарик борется с силой трения",
+      "body": [
+        "На заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки.",
+        "Но это был лишь первый шаг в борьбе с силой трения.",
+        "В Древней Греции, около 330 года до н."
+      ],
+      "footer": null,
+      "source_text": "На заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки. Но это был лишь первый шаг в борьбе с силой трения. В Древней Греции, около 330 года до н. э.,... На заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки. Но это был лишь первый шаг в борьбе с силой трения. В Древней Греции, около 330 года до н. э., военный инженер Диадес создал прототип подшипника для таранного механизма, где ролики двигались в специальных желобах. Чуть позже, во времена Римской империи, великий архитектор Витрувий описал применение подобных устройств в осадных машинах. А одним из самых ярких античных следов этой идеи стала находка на озере Неми. Среди деталей, связанных с роскошными кораблями Калигулы, обнаружили поворотную опору с бронзовыми шариками. Это не был шарикоподшипник в современном смысле, но сам принцип опоры качения римлянам уже был знаком — просто его время еще не пришло. Но как мы дошли от этих катков и античных диковин до современных прецизионных узлов, точность которых измеряется микронами? Давайте проследим эту революцию вращения. Читать далее На заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки. Но это был лишь первый шаг в борьбе с силой трения. В Древней Греции, около 330 года до н. э., военный инженер Диадес создал прототип подшипника для таранного механизма, где ролики двигались в специальных желобах. Чуть позже, во времена Римской империи, великий архитектор Витрувий описал применение подобных устройств в осадных машинах. А одним из самых ярких античных следов этой идеи стала находка на озере Неми. Среди деталей, связанных с роскошными кораблями Калигулы, обнаружили поворотную опору с бронзовыми шариками. Это не был шарикоподшипни",
+      "post_text": "🌐 Мировые IT\n\n<b>Сага о подшипнике. Как маленький шарик борется с силой трения</b>\n\nНа заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки.\n\nНо это был лишь первый шаг в борьбе с силой трения.\n\nВ Древней Греции, около 330 года до н.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/beget/articles/1041340/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041340#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/beget/articles/1041340/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041340#habracut",
+      "published_at": "2026-06-01T07:05:20+00:00",
+      "title_hash": "41e1b9344809ad8709937f0d351dc6bf16dc84e6",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/33f/e4e/906/33fe4e90631e7cb3293b7d2f6f137c59.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "54b8129be30a7e22",
+      "status": "pending",
+      "created_at": "2026-06-01T07:19:41+00:00",
+      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "От диплома до продакшена: … Часть 7: Инфра, MLOps и уроки масштабирования",
+      "title_ru": "От диплома до продакшена: … Часть 7: Инфра, MLOps и уроки масштабирования",
+      "body": [
+        "От диплома до продакшена: Как я создавал архитектуру ИИ-проекта для… Часть 7: Инфраструктура, MLOps и уроки масштабирования Автор : Алексей Бобрешов, руководитель отдела искусственного интеллекта...",
+        "Что я сделал бы иначе Закладывал бы MLOps с первого дня , а не «сначала модель, потом инфраструктура».",
+        "Автоматизировал бы тестирование данных раньше."
+      ],
+      "footer": null,
+      "source_text": "От диплома до продакшена: Как я создавал архитектуру ИИ-проекта для… Часть 7: Инфраструктура, MLOps и уроки масштабирования Автор : Алексей Бобрешов, руководитель отдела искусственного интеллекта... 3.3. Что я сделал бы иначе Закладывал бы MLOps с первого дня , а не «сначала модель, потом инфраструктура». Параллельно — дешевле. Автоматизировал бы тестирование данных раньше. Самые неприятные баги — не в коде, а в «тихом» изменении распределения. Завёл бы playbook для инцидентов. Когда что-то падает в три часа ночи, нужен чеклист, а не паника. Глава 4. Чеклист: готов ли проект к масштабированию Это самая практичная часть — её можно унести с собой. Читать далее Автор : Алексей Бобрешов, руководитель отдела искусственного интеллекта Категория : Искусственный интеллект, MLOps, управление проектами, масштабирование Время чтения : 13–16 минут Это седьмая, заключительная часть серии. Для контекста по безопасности рекомендую Часть 6 . Когда я защищал диплом по «умному дому» в 2021 году, у меня была работающая нейросеть с точностью 94.06%. Я думал: «Вот оно — готовое решение». Реальность оказалась сложнее. И сразу честно, как и в Части 6: сам дипломный проект в продакшн не пошёл — это был proof of concept, который я довёл до рабочего прототипа и проверял дома. Всё, что я расскажу дальше про масштабирование, MLOps и эксплуатацию, — это уроки из последующей коммерческой работы над ИИ-проектами, наложенные на тот самый дипломный прототип как на сквозной пример.",
+      "post_text": "🌐 Мировые IT\n\n<b>От диплома до продакшена: … Часть 7: Инфра, MLOps и уроки масштабирования</b>\n\nОт диплома до продакшена: Как я создавал архитектуру ИИ-проекта для… Часть 7: Инфраструктура, MLOps и уроки масштабирования Автор : Алексей Бобрешов, руководитель отдела искусственного интеллекта...\n\nЧто я сделал бы иначе Закладывал бы MLOps с первого дня , а не «сначала модель, потом инфраструктура».\n\nАвтоматизировал бы тестирование данных раньше.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1041706/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041706#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1041706/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041706#habracut",
+      "published_at": "2026-06-01T07:02:16+00:00",
+      "title_hash": "59ce7014cf26747c1dbecd827e15ff5d54916c8a",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/505/fa2/7bb/505fa27bba98249c6bf51797181983d2.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "8f3c78447810e16f",
+      "status": "pending",
+      "created_at": "2026-06-01T07:19:41+00:00",
+      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 237,
+      "title_original": "This is the Microsoft Surface Laptop Ultra with Nvidia RTX Spark",
+      "title_ru": "This is the Microsoft Surface Laptop Ultra with Nvidia RTX Spark",
+      "body": [
+        "Once upon a time, Microsoft had to write off $900 million betting an Arm-based Nvidia chip could power its first flagship Windows portable, the original Microsoft Surface.",
+        "Microsoft and Nvidia have just announced the Surface Laptop Ultra, a computer with a new Arm-based Nvidia chip at its core.",
+        "There's a […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed."
+      ],
+      "footer": null,
+      "source_text": "Nvidia inside. Once upon a time, Microsoft had to write off $900 million betting an Arm-based Nvidia chip could power its first flagship Windows portable, the original Microsoft Surface. But today, it's trying again. Microsoft and Nvidia have just announced the Surface Laptop Ultra, a computer with a new Arm-based Nvidia chip at its core. There's a […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed. News Close News Posts from this topic will be added to your daily email digest and your homepage feed. Microsoft has a new flagship Surface, and it’s got Nvidia inside. Microsoft has a new flagship Surface, and it’s got Nvidia inside.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>This is the Microsoft Surface Laptop Ultra with Nvidia RTX Spark</b>\n\nOnce upon a time, Microsoft had to write off $900 million betting an Arm-based Nvidia chip could power its first flagship Windows portable, the original Microsoft Surface.\n\nMicrosoft and Nvidia have just announced the Surface Laptop Ultra, a computer with a new Arm-based Nvidia chip at its core.\n\nThere's a […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/tech/940584/microsoft-surface-laptop-ultra-nvidia-rtx-spark-pictures\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/tech/940584/microsoft-surface-laptop-ultra-nvidia-rtx-spark-pictures",
+      "published_at": "2026-06-01T04:36:41+00:00",
+      "title_hash": "bb4395c32fba1820508c864b0638f8473c934cbe",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "87b168d868ef4ab1",
+      "status": "pending",
+      "created_at": "2026-06-01T07:19:41+00:00",
+      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 237,
+      "title_original": "Nvidia announces RTX Spark as ‘the most efficient PC chip ever built’",
+      "title_ru": "Nvidia announces RTX Spark as ‘the most efficient PC chip ever built’",
+      "body": [
+        "Nvidia enters the consumer laptop realm.",
+        "This fall, Nvidia will officially become a consumer PC chipmaker like Intel, AMD, Apple, and Qualcomm, putting a complete computing chip - not just graphics - into the very heart of laptops and mini-PCs.",
+        "After many months of leaks, it's finally announcing the RTX Spark, the first in a family of chips that will meet […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed."
+      ],
+      "footer": null,
+      "source_text": "Nvidia enters the consumer laptop realm. This fall, Nvidia will officially become a consumer PC chipmaker like Intel, AMD, Apple, and Qualcomm, putting a complete computing chip - not just graphics - into the very heart of laptops and mini-PCs. After many months of leaks, it's finally announcing the RTX Spark, the first in a family of chips that will meet […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed. News Close News Posts from this topic will be added to your daily email digest and your homepage feed. Sean Hollister Close Sean Hollister Senior Editor Posts from this author will be added to your daily email digest and your homepage feed. Share Gift Image: Nvidia Sean Hollister Close Sean Hollister Posts from this author will be added to your daily email digest and your homepage feed.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Nvidia announces RTX Spark as ‘the most efficient PC chip ever built’</b>\n\nNvidia enters the consumer laptop realm.\n\nThis fall, Nvidia will officially become a consumer PC chipmaker like Intel, AMD, Apple, and Qualcomm, putting a complete computing chip - not just graphics - into the very heart of laptops and mini-PCs.\n\nAfter many months of leaks, it's finally announcing the RTX Spark, the first in a family of chips that will meet […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/tech/940589/nvidia-rtx-spark-n1-n1x-laptop-desktop-pc-cpu-gpu-ai-release-date\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/tech/940589/nvidia-rtx-spark-n1-n1x-laptop-desktop-pc-cpu-gpu-ai-release-date",
+      "published_at": "2026-06-01T04:28:53+00:00",
+      "title_hash": "76f8c15fc37e6d503c7c229429c65d3fe3fb0d96",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "288e2ebb02333086",
+      "status": "pending",
+      "created_at": "2026-06-01T07:19:41+00:00",
+      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
+      "source": "Eurogamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 102,
+      "title_original": "Little Nightmares II",
+      "title_ru": "Little Nightmares II",
+      "body": [
+        "Discover everything you need to know about Little Nightmares II.",
+        "Little Nightmares 2 's Enhanced Edition is finally available on Nintendo Switch 2 .",
+        "Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Little Nightmares II Jump to Feed Gallery Follow Little Nightmares II Get it from Platforms Nintendo Switch PC PS4 PS5 Stadia Xbox One Xbox Series X/S Initial release Feb."
+      ],
+      "footer": null,
+      "source_text": "Discover everything you need to know about Little Nightmares II. Little Nightmares 2 's Enhanced Edition is finally available on Nintendo Switch 2 . Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Little Nightmares II Jump to Feed Gallery Follow Little Nightmares II Get it from Platforms Nintendo Switch PC PS4 PS5 Stadia Xbox One Xbox Series X/S Initial release Feb. 10, 2021 Developers Tarsier Studios Genres Action Adventure Platformer Puzzle Publishers Bandai Namco Entertainment Little Nightmares II Feed All (17) News (9) Reviews (1) Features (7) News Little Nightmares 2 Enhanced Edition is finally available on Nintendo Switch 2 Sur la mare. May 31, 2026 Vikki Blake 1 comment Feature Getting into the Halloween spirit? Here are the 21 best spooky, scary games to play right now Ghosts in the machine. Oct. 27, 2025 Matt Wales 81 comments Feature What we've been playing - nightmares, getaways, skonging, frog hats, and unpacking A few of the things that have us hooked this week. Oct. 11, 2025 Robert Purchese 147 comments News Here are your PlayStation Plus monthly games for September MLB The Show 24! Little Nightmares 2! Aug. 28, 2024 Victoria Phillips Kennedy 57 comments News Little Nightmares 3 in development from Dark Pictures studio Supermassive Along with a six-part narrative podcast series. Aug. 23, 2023 Tom Phillips 12 comments News Little Nightmares 2's free Enhanced Edition update out today on PC, PS5, and Xbox Series X/S Adds raytraced reflections, improved fog, more. Aug. 25, 2021 Matt Wales Feature Whatever happened to City of Metronome, the missing game by Little Nightmares developer Tarsier? \"You change.\" July 13, 2021 Robert Purchese 9 commen",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Little Nightmares II</b>\n\nDiscover everything you need to know about Little Nightmares II.\n\nLittle Nightmares 2 's Enhanced Edition is finally available on Nintendo Switch 2 .\n\nRead more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Little Nightmares II Jump to Feed Gallery Follow Little Nightmares II Get it from Platforms Nintendo Switch PC PS4 PS5 Stadia Xbox One Xbox Series X/S Initial release Feb.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.eurogamer.net/games/little-nightmares-ii\">Eurogamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.eurogamer.net/games/little-nightmares-ii",
+      "published_at": "2026-05-31T13:07:51+00:00",
+      "title_hash": "df67718730dccde44dc47e3ca8c99a1a43493059",
+      "image_url": "https://assetsio.gnwcdn.com/little-nightmares-2s-free-enhanced-edition-update-out-now-for-pc-ps5-and-xbox-series-x-s-1629905869658.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
     {
       "id": "0dd83aef5517e23a",
       "status": "rejected",
@@ -9263,302 +9559,6 @@
       "published_at_sakhalin": "2026-05-29T11:09:58+11:00",
       "publish_method": "sendPhoto/safe/pipeline_generated",
       "telegram_message_id": 142
-    },
-    {
-      "id": "2639a4ef3654beee",
-      "status": "pending",
-      "created_at": "2026-06-01T07:19:41+00:00",
-      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Записки оптимизатора 1С (ч.17). Как избежать падения Postgres при большом потреблении памяти запросами",
-      "title_ru": "Записки оптимизатора 1С (ч.17). Как избежать падения Postgres при большом потреблении памяти запросами",
-      "body": [
-        "Речь пойдет об одной из старых проблем со стабильностью работы Postgres – об отсутствии полного контроля за потреблением оперативной памяти при выполнении запросов (через work_mem), что в ряде случаев...",
-        "Рассмотрим одну из старых проблем со стабильностью работы Postgres – отсутствие полного контроля за потреблением оперативной памяти при выполнении запросов.",
-        "В ряде случаев это приводит либо к свопированию, либо к падению СУБД и остановке работы информационной системы."
-      ],
-      "footer": null,
-      "source_text": "Речь пойдет об одной из старых проблем со стабильностью работы Postgres – об отсутствии полного контроля за потреблением оперативной памяти при выполнении запросов (через work_mem), что в ряде случаев... Рассмотрим одну из старых проблем со стабильностью работы Postgres – отсутствие полного контроля за потреблением оперативной памяти при выполнении запросов. В ряде случаев это приводит либо к свопированию, либо к падению СУБД и остановке работы информационной системы. Происходит это неожиданно, без предупреждения и в не самый удачный момент. В системах 1С эта проблема точно существует, встречали не раз. Вроде бы на помощь должна прийти технология OOM Killer Linux, но, как обычно, не все так радужно и есть неприятные нюансы. Читать далее Речь пойдет об одной из старых проблем со стабильностью работы Postgres – об отсутствии полного контроля за потреблением оперативной памяти при выполнении запросов (через work_mem), что в ряде случаев приводит либо к свопированию, либо к падению СУБД и остановке работы информационной системы. Происходит это неожиданно, без предупреждения и в не самый удачный момент, например, ночью, когда все спят. В системах 1С эта проблема точно существует, в силу использования платформой сложных многоэтажных запросов с большим количеством соединений, группировок и сортировок. Вроде бы на помощь должна прийти технология OOM Killer Linux, но как обычно не все так радужно и есть неприятные нюансы. В управлении памятью Linux существует концепция overcommit, которая позволяет системе выделять больше виртуальной памяти, чем физически доступно. Это может быть полезно, но требует осторожного подхода для предотвращения проблем с производительностью и стабильностью. По умолчанию Linux использует overcommit памяти, когда ядро разрешает процессам запросить больше",
-      "post_text": "🌐 Мировые IT\n\n<b>Записки оптимизатора 1С (ч.17). Как избежать падения Postgres при большом потреблении памяти запросами</b>\n\nРечь пойдет об одной из старых проблем со стабильностью работы Postgres – об отсутствии полного контроля за потреблением оперативной памяти при выполнении запросов (через work_mem), что в ряде случаев...\n\nРассмотрим одну из старых проблем со стабильностью работы Postgres – отсутствие полного контроля за потреблением оперативной памяти при выполнении запросов.\n\nВ ряде случаев это приводит либо к свопированию, либо к падению СУБД и остановке работы информационной системы.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/softpoint/articles/1041984/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041984#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/softpoint/articles/1041984/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041984#habracut",
-      "published_at": "2026-06-01T07:10:37+00:00",
-      "title_hash": "7ca9570c4737bc6bcdc62c5070957a7f4fc08489",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/4c8/15a/52a/4c815a52a4a8cf1f58f5f27ab3aa11e2.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "5bf96d25b0ff3160",
-      "status": "pending",
-      "created_at": "2026-06-01T07:19:41+00:00",
-      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Какое будущее ждет человечество, согласно IMDb?",
-      "title_ru": "Какое будущее ждет человечество, согласно IMDb?",
-      "body": [
-        "Как и многие читатели Хабра, я люблю научную фантастику.",
-        "Люблю думать об изобретениях, о прогрессе.",
-        "Вопреки обывательскому мнению, фантастика – это совсем не тот жанр, где всё с начала и до конца выдумано."
-      ],
-      "footer": null,
-      "source_text": "Как и многие читатели Хабра, я люблю научную фантастику. Люблю думать об изобретениях, о прогрессе. Вопреки обывательскому мнению, фантастика – это совсем не тот жанр, где всё с начала и до конца выдумано. Хорошая фантастика характеризуется тем, что в ней показан реальный, близкий нам человек (люди, общество), но в других условиях. Если хотите, в других декорациях. Хорошая фантастика помещает человека в несколько необычное окружение и дает ответ на вопрос – как он себя поведет в этих условиях, что изменится в его поведении, в его целях, в его желаниях. Несмотря на внешнюю неузнаваемость облика персонажей и окружающих декораций, некоторые базовые человеческие черты должны оставаться в персонажах в любых условиях. Нам неинтересно будет читать фантастику, если в ней будет говориться не о людях, а только о гамадрилах или только о камнях. Людям интересны люди. Возможно, эволюционировавшие, возможно, живущие в обществе с другим материальным базисом и, как следствие, с другой моралью и другими ценностями. Исследовать такое общество, задумываться о таком обществе будущего – интересно. Я задумался о том, какое общество будущего показывает нам лучшая мировая фантастика: каковы условия существования людей, каковы отношения между людьми, насколько вообще приятно или отвратительно жить в мире будущего. Чтобы ответить на этот вопрос, я взял срез фантастики – фильмы. Чтобы отобрать лучшие фильмы, я залез в базу IMDb и взял первые 1000 фильмов, лучшие по рейтингу. Из них я отобрал те, в которых говорится о будущем (или хотя бы упоминается). Получилось около 50 фильмов. Затем я выкинул наиболее старые фильмы (примерно до 1970 года) – потому что совсем старые представления о будущем мне показалось неактуально исследовать. Затем я вычеркнул откровенно комиксовые фильмы (не потому что плох",
-      "post_text": "🌐 Мировые IT\n\n<b>Какое будущее ждет человечество, согласно IMDb?</b>\n\nКак и многие читатели Хабра, я люблю научную фантастику.\n\nЛюблю думать об изобретениях, о прогрессе.\n\nВопреки обывательскому мнению, фантастика – это совсем не тот жанр, где всё с начала и до конца выдумано.\n\nМИРОВЫЕ IT · <a href=\"https://www.imdb.com/\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://www.imdb.com/",
-      "published_at": "2026-06-01T07:10:21+00:00",
-      "title_hash": "b2f215a052fe71d73f8c3ad5771becbc430a1e39",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/ec7/4f0/aad/ec74f0aad62066ba0dab8f985627758d.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "d5588760763743a9",
-      "status": "pending",
-      "created_at": "2026-06-01T07:19:41+00:00",
-      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Как обучить тысячи сотрудников работе с ИИ за полтора года",
-      "title_ru": "Как обучить тысячи сотрудников работе с ИИ за полтора года",
-      "body": [
-        "66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд.",
-        "В компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти.",
-        "66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд."
-      ],
-      "footer": null,
-      "source_text": "66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд. В компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти. Работе с ИИ обучилось более... 66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд. В компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти. Работе с ИИ обучилось более 6000 сотрудников – это около 78% целевой аудитории. Как получили такие результаты – расскажем в статье. Читать далее 66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд. В компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти. Работе с ИИ обучилось более 6000 сотрудников – это около 78% целевой аудитории. Как получили такие результаты – расскажем в статье. ИИ становится новым английским. Так считают во многих крупных компаниях. Мы пригласили на конференцию Teamly «Знание, обучение и ИИ – в единой рабочей среде» Надежду Шилову, руководителя управления по обучению массового сегмента компании ПАО «Ростелеком». Она поделилась опытом внедрения искусственного интеллекта в процессы обучения и работу сотрудников. «Ростелеком» – не просто провайдер интернет‑услуг, а магистральный оператор, обеспечивающий работу других провайдеров и государственных сервисов. Компания играет ключевую роль в обеспечении доступа к Госуслугам и интернету для миллионов россиян. Отсюда – высокие требования к информационной безопасности. Утечка данных, например, из базы Госуслуг может привести к масштабным последствиям. Несколько лет назад совет директоров ПАО «Ростелеком» включил использование ИИ в стратегию компании. Цель – повысить эффективность за счёт автоматизации рутинных процессов и перераспределения человеческих ресурсов на более сложные задачи.",
-      "post_text": "🌐 Мировые IT\n\n<b>Как обучить тысячи сотрудников работе с ИИ за полтора года</b>\n\n66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд.\n\nВ компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти.\n\n66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/teamly/articles/1041982/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041982#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/teamly/articles/1041982/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041982#habracut",
-      "published_at": "2026-06-01T07:05:40+00:00",
-      "title_hash": "abab915543f14e666b3c331d803f35a7590e374e",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/ce2/fb8/575/ce2fb8575d14158f44690240552a69ec.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "3d89d8ffa3d46707",
-      "status": "pending",
-      "created_at": "2026-06-01T07:19:41+00:00",
-      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Сага о подшипнике. Как маленький шарик борется с силой трения",
-      "title_ru": "Сага о подшипнике. Как маленький шарик борется с силой трения",
-      "body": [
-        "На заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки.",
-        "Но это был лишь первый шаг в борьбе с силой трения.",
-        "В Древней Греции, около 330 года до н."
-      ],
-      "footer": null,
-      "source_text": "На заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки. Но это был лишь первый шаг в борьбе с силой трения. В Древней Греции, около 330 года до н. э.,... На заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки. Но это был лишь первый шаг в борьбе с силой трения. В Древней Греции, около 330 года до н. э., военный инженер Диадес создал прототип подшипника для таранного механизма, где ролики двигались в специальных желобах. Чуть позже, во времена Римской империи, великий архитектор Витрувий описал применение подобных устройств в осадных машинах. А одним из самых ярких античных следов этой идеи стала находка на озере Неми. Среди деталей, связанных с роскошными кораблями Калигулы, обнаружили поворотную опору с бронзовыми шариками. Это не был шарикоподшипник в современном смысле, но сам принцип опоры качения римлянам уже был знаком — просто его время еще не пришло. Но как мы дошли от этих катков и античных диковин до современных прецизионных узлов, точность которых измеряется микронами? Давайте проследим эту революцию вращения. Читать далее На заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки. Но это был лишь первый шаг в борьбе с силой трения. В Древней Греции, около 330 года до н. э., военный инженер Диадес создал прототип подшипника для таранного механизма, где ролики двигались в специальных желобах. Чуть позже, во времена Римской империи, великий архитектор Витрувий описал применение подобных устройств в осадных машинах. А одним из самых ярких античных следов этой идеи стала находка на озере Неми. Среди деталей, связанных с роскошными кораблями Калигулы, обнаружили поворотную опору с бронзовыми шариками. Это не был шарикоподшипни",
-      "post_text": "🌐 Мировые IT\n\n<b>Сага о подшипнике. Как маленький шарик борется с силой трения</b>\n\nНа заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки.\n\nНо это был лишь первый шаг в борьбе с силой трения.\n\nВ Древней Греции, около 330 года до н.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/beget/articles/1041340/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041340#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/beget/articles/1041340/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041340#habracut",
-      "published_at": "2026-06-01T07:05:20+00:00",
-      "title_hash": "41e1b9344809ad8709937f0d351dc6bf16dc84e6",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/33f/e4e/906/33fe4e90631e7cb3293b7d2f6f137c59.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "54b8129be30a7e22",
-      "status": "pending",
-      "created_at": "2026-06-01T07:19:41+00:00",
-      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "От диплома до продакшена: … Часть 7: Инфра, MLOps и уроки масштабирования",
-      "title_ru": "От диплома до продакшена: … Часть 7: Инфра, MLOps и уроки масштабирования",
-      "body": [
-        "От диплома до продакшена: Как я создавал архитектуру ИИ-проекта для… Часть 7: Инфраструктура, MLOps и уроки масштабирования Автор : Алексей Бобрешов, руководитель отдела искусственного интеллекта...",
-        "Что я сделал бы иначе Закладывал бы MLOps с первого дня , а не «сначала модель, потом инфраструктура».",
-        "Автоматизировал бы тестирование данных раньше."
-      ],
-      "footer": null,
-      "source_text": "От диплома до продакшена: Как я создавал архитектуру ИИ-проекта для… Часть 7: Инфраструктура, MLOps и уроки масштабирования Автор : Алексей Бобрешов, руководитель отдела искусственного интеллекта... 3.3. Что я сделал бы иначе Закладывал бы MLOps с первого дня , а не «сначала модель, потом инфраструктура». Параллельно — дешевле. Автоматизировал бы тестирование данных раньше. Самые неприятные баги — не в коде, а в «тихом» изменении распределения. Завёл бы playbook для инцидентов. Когда что-то падает в три часа ночи, нужен чеклист, а не паника. Глава 4. Чеклист: готов ли проект к масштабированию Это самая практичная часть — её можно унести с собой. Читать далее Автор : Алексей Бобрешов, руководитель отдела искусственного интеллекта Категория : Искусственный интеллект, MLOps, управление проектами, масштабирование Время чтения : 13–16 минут Это седьмая, заключительная часть серии. Для контекста по безопасности рекомендую Часть 6 . Когда я защищал диплом по «умному дому» в 2021 году, у меня была работающая нейросеть с точностью 94.06%. Я думал: «Вот оно — готовое решение». Реальность оказалась сложнее. И сразу честно, как и в Части 6: сам дипломный проект в продакшн не пошёл — это был proof of concept, который я довёл до рабочего прототипа и проверял дома. Всё, что я расскажу дальше про масштабирование, MLOps и эксплуатацию, — это уроки из последующей коммерческой работы над ИИ-проектами, наложенные на тот самый дипломный прототип как на сквозной пример.",
-      "post_text": "🌐 Мировые IT\n\n<b>От диплома до продакшена: … Часть 7: Инфра, MLOps и уроки масштабирования</b>\n\nОт диплома до продакшена: Как я создавал архитектуру ИИ-проекта для… Часть 7: Инфраструктура, MLOps и уроки масштабирования Автор : Алексей Бобрешов, руководитель отдела искусственного интеллекта...\n\nЧто я сделал бы иначе Закладывал бы MLOps с первого дня , а не «сначала модель, потом инфраструктура».\n\nАвтоматизировал бы тестирование данных раньше.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1041706/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041706#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1041706/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041706#habracut",
-      "published_at": "2026-06-01T07:02:16+00:00",
-      "title_hash": "59ce7014cf26747c1dbecd827e15ff5d54916c8a",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/505/fa2/7bb/505fa27bba98249c6bf51797181983d2.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "8f3c78447810e16f",
-      "status": "pending",
-      "created_at": "2026-06-01T07:19:41+00:00",
-      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
-      "source": "The Verge",
-      "source_type": "it",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 237,
-      "title_original": "This is the Microsoft Surface Laptop Ultra with Nvidia RTX Spark",
-      "title_ru": "This is the Microsoft Surface Laptop Ultra with Nvidia RTX Spark",
-      "body": [
-        "Once upon a time, Microsoft had to write off $900 million betting an Arm-based Nvidia chip could power its first flagship Windows portable, the original Microsoft Surface.",
-        "Microsoft and Nvidia have just announced the Surface Laptop Ultra, a computer with a new Arm-based Nvidia chip at its core.",
-        "There's a […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed."
-      ],
-      "footer": null,
-      "source_text": "Nvidia inside. Once upon a time, Microsoft had to write off $900 million betting an Arm-based Nvidia chip could power its first flagship Windows portable, the original Microsoft Surface. But today, it's trying again. Microsoft and Nvidia have just announced the Surface Laptop Ultra, a computer with a new Arm-based Nvidia chip at its core. There's a […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed. News Close News Posts from this topic will be added to your daily email digest and your homepage feed. Microsoft has a new flagship Surface, and it’s got Nvidia inside. Microsoft has a new flagship Surface, and it’s got Nvidia inside.",
-      "post_text": "🎮 Игры / индустрия\n\n<b>This is the Microsoft Surface Laptop Ultra with Nvidia RTX Spark</b>\n\nOnce upon a time, Microsoft had to write off $900 million betting an Arm-based Nvidia chip could power its first flagship Windows portable, the original Microsoft Surface.\n\nMicrosoft and Nvidia have just announced the Surface Laptop Ultra, a computer with a new Arm-based Nvidia chip at its core.\n\nThere's a […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/tech/940584/microsoft-surface-laptop-ultra-nvidia-rtx-spark-pictures\">The Verge</a>",
-      "edited_post_text": null,
-      "url": "https://www.theverge.com/tech/940584/microsoft-surface-laptop-ultra-nvidia-rtx-spark-pictures",
-      "published_at": "2026-06-01T04:36:41+00:00",
-      "title_hash": "bb4395c32fba1820508c864b0638f8473c934cbe",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "87b168d868ef4ab1",
-      "status": "pending",
-      "created_at": "2026-06-01T07:19:41+00:00",
-      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
-      "source": "The Verge",
-      "source_type": "it",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 237,
-      "title_original": "Nvidia announces RTX Spark as ‘the most efficient PC chip ever built’",
-      "title_ru": "Nvidia announces RTX Spark as ‘the most efficient PC chip ever built’",
-      "body": [
-        "Nvidia enters the consumer laptop realm.",
-        "This fall, Nvidia will officially become a consumer PC chipmaker like Intel, AMD, Apple, and Qualcomm, putting a complete computing chip - not just graphics - into the very heart of laptops and mini-PCs.",
-        "After many months of leaks, it's finally announcing the RTX Spark, the first in a family of chips that will meet […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed."
-      ],
-      "footer": null,
-      "source_text": "Nvidia enters the consumer laptop realm. This fall, Nvidia will officially become a consumer PC chipmaker like Intel, AMD, Apple, and Qualcomm, putting a complete computing chip - not just graphics - into the very heart of laptops and mini-PCs. After many months of leaks, it's finally announcing the RTX Spark, the first in a family of chips that will meet […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed. News Close News Posts from this topic will be added to your daily email digest and your homepage feed. Sean Hollister Close Sean Hollister Senior Editor Posts from this author will be added to your daily email digest and your homepage feed. Share Gift Image: Nvidia Sean Hollister Close Sean Hollister Posts from this author will be added to your daily email digest and your homepage feed.",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Nvidia announces RTX Spark as ‘the most efficient PC chip ever built’</b>\n\nNvidia enters the consumer laptop realm.\n\nThis fall, Nvidia will officially become a consumer PC chipmaker like Intel, AMD, Apple, and Qualcomm, putting a complete computing chip - not just graphics - into the very heart of laptops and mini-PCs.\n\nAfter many months of leaks, it's finally announcing the RTX Spark, the first in a family of chips that will meet […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/tech/940589/nvidia-rtx-spark-n1-n1x-laptop-desktop-pc-cpu-gpu-ai-release-date\">The Verge</a>",
-      "edited_post_text": null,
-      "url": "https://www.theverge.com/tech/940589/nvidia-rtx-spark-n1-n1x-laptop-desktop-pc-cpu-gpu-ai-release-date",
-      "published_at": "2026-06-01T04:28:53+00:00",
-      "title_hash": "76f8c15fc37e6d503c7c229429c65d3fe3fb0d96",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "288e2ebb02333086",
-      "status": "pending",
-      "created_at": "2026-06-01T07:19:41+00:00",
-      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
-      "source": "Eurogamer",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 102,
-      "title_original": "Little Nightmares II",
-      "title_ru": "Little Nightmares II",
-      "body": [
-        "Discover everything you need to know about Little Nightmares II.",
-        "Little Nightmares 2 's Enhanced Edition is finally available on Nintendo Switch 2 .",
-        "Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Little Nightmares II Jump to Feed Gallery Follow Little Nightmares II Get it from Platforms Nintendo Switch PC PS4 PS5 Stadia Xbox One Xbox Series X/S Initial release Feb."
-      ],
-      "footer": null,
-      "source_text": "Discover everything you need to know about Little Nightmares II. Little Nightmares 2 's Enhanced Edition is finally available on Nintendo Switch 2 . Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Little Nightmares II Jump to Feed Gallery Follow Little Nightmares II Get it from Platforms Nintendo Switch PC PS4 PS5 Stadia Xbox One Xbox Series X/S Initial release Feb. 10, 2021 Developers Tarsier Studios Genres Action Adventure Platformer Puzzle Publishers Bandai Namco Entertainment Little Nightmares II Feed All (17) News (9) Reviews (1) Features (7) News Little Nightmares 2 Enhanced Edition is finally available on Nintendo Switch 2 Sur la mare. May 31, 2026 Vikki Blake 1 comment Feature Getting into the Halloween spirit? Here are the 21 best spooky, scary games to play right now Ghosts in the machine. Oct. 27, 2025 Matt Wales 81 comments Feature What we've been playing - nightmares, getaways, skonging, frog hats, and unpacking A few of the things that have us hooked this week. Oct. 11, 2025 Robert Purchese 147 comments News Here are your PlayStation Plus monthly games for September MLB The Show 24! Little Nightmares 2! Aug. 28, 2024 Victoria Phillips Kennedy 57 comments News Little Nightmares 3 in development from Dark Pictures studio Supermassive Along with a six-part narrative podcast series. Aug. 23, 2023 Tom Phillips 12 comments News Little Nightmares 2's free Enhanced Edition update out today on PC, PS5, and Xbox Series X/S Adds raytraced reflections, improved fog, more. Aug. 25, 2021 Matt Wales Feature Whatever happened to City of Metronome, the missing game by Little Nightmares developer Tarsier? \"You change.\" July 13, 2021 Robert Purchese 9 commen",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Little Nightmares II</b>\n\nDiscover everything you need to know about Little Nightmares II.\n\nLittle Nightmares 2 's Enhanced Edition is finally available on Nintendo Switch 2 .\n\nRead more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Little Nightmares II Jump to Feed Gallery Follow Little Nightmares II Get it from Platforms Nintendo Switch PC PS4 PS5 Stadia Xbox One Xbox Series X/S Initial release Feb.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.eurogamer.net/games/little-nightmares-ii\">Eurogamer</a>",
-      "edited_post_text": null,
-      "url": "https://www.eurogamer.net/games/little-nightmares-ii",
-      "published_at": "2026-05-31T13:07:51+00:00",
-      "title_hash": "df67718730dccde44dc47e3ca8c99a1a43493059",
-      "image_url": "https://assetsio.gnwcdn.com/little-nightmares-2s-free-enhanced-edition-update-out-now-for-pc-ps5-and-xbox-series-x-s-1629905869658.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
     }
   ],
   "auto_review": {
