@@ -1,242 +1,20 @@
 {
   "version": 1,
-  "updated_at": "2026-06-01T07:26:06+00:00",
-  "updated_at_sakhalin": "2026-06-01T18:26:06+11:00",
-  "reviewed_at": "2026-06-01T07:04:09+00:00",
-  "reviewed_at_sakhalin": "2026-06-01T18:04:09+11:00",
+  "updated_at": "2026-06-01T13:42:37+00:00",
+  "updated_at_sakhalin": "2026-06-02T00:42:37+11:00",
+  "reviewed_at": "2026-06-01T13:42:36+00:00",
+  "reviewed_at_sakhalin": "2026-06-02T00:42:36+11:00",
   "items": [
     {
-      "id": "2639a4ef3654beee",
-      "status": "pending",
-      "created_at": "2026-06-01T07:19:41+00:00",
-      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Записки оптимизатора 1С (ч.17). Как избежать падения Postgres при большом потреблении памяти запросами",
-      "title_ru": "Записки оптимизатора 1С (ч.17). Как избежать падения Postgres при большом потреблении памяти запросами",
-      "body": [
-        "Речь пойдет об одной из старых проблем со стабильностью работы Postgres – об отсутствии полного контроля за потреблением оперативной памяти при выполнении запросов (через work_mem), что в ряде случаев...",
-        "Рассмотрим одну из старых проблем со стабильностью работы Postgres – отсутствие полного контроля за потреблением оперативной памяти при выполнении запросов.",
-        "В ряде случаев это приводит либо к свопированию, либо к падению СУБД и остановке работы информационной системы."
-      ],
-      "footer": null,
-      "source_text": "Речь пойдет об одной из старых проблем со стабильностью работы Postgres – об отсутствии полного контроля за потреблением оперативной памяти при выполнении запросов (через work_mem), что в ряде случаев... Рассмотрим одну из старых проблем со стабильностью работы Postgres – отсутствие полного контроля за потреблением оперативной памяти при выполнении запросов. В ряде случаев это приводит либо к свопированию, либо к падению СУБД и остановке работы информационной системы. Происходит это неожиданно, без предупреждения и в не самый удачный момент. В системах 1С эта проблема точно существует, встречали не раз. Вроде бы на помощь должна прийти технология OOM Killer Linux, но, как обычно, не все так радужно и есть неприятные нюансы. Читать далее Речь пойдет об одной из старых проблем со стабильностью работы Postgres – об отсутствии полного контроля за потреблением оперативной памяти при выполнении запросов (через work_mem), что в ряде случаев приводит либо к свопированию, либо к падению СУБД и остановке работы информационной системы. Происходит это неожиданно, без предупреждения и в не самый удачный момент, например, ночью, когда все спят. В системах 1С эта проблема точно существует, в силу использования платформой сложных многоэтажных запросов с большим количеством соединений, группировок и сортировок. Вроде бы на помощь должна прийти технология OOM Killer Linux, но как обычно не все так радужно и есть неприятные нюансы. В управлении памятью Linux существует концепция overcommit, которая позволяет системе выделять больше виртуальной памяти, чем физически доступно. Это может быть полезно, но требует осторожного подхода для предотвращения проблем с производительностью и стабильностью. По умолчанию Linux использует overcommit памяти, когда ядро разрешает процессам запросить больше",
-      "post_text": "🌐 Мировые IT\n\n<b>Записки оптимизатора 1С (ч.17). Как избежать падения Postgres при большом потреблении памяти запросами</b>\n\nРечь пойдет об одной из старых проблем со стабильностью работы Postgres – об отсутствии полного контроля за потреблением оперативной памяти при выполнении запросов (через work_mem), что в ряде случаев...\n\nРассмотрим одну из старых проблем со стабильностью работы Postgres – отсутствие полного контроля за потреблением оперативной памяти при выполнении запросов.\n\nВ ряде случаев это приводит либо к свопированию, либо к падению СУБД и остановке работы информационной системы.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/softpoint/articles/1041984/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041984#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/softpoint/articles/1041984/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041984#habracut",
-      "published_at": "2026-06-01T07:10:37+00:00",
-      "title_hash": "7ca9570c4737bc6bcdc62c5070957a7f4fc08489",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/4c8/15a/52a/4c815a52a4a8cf1f58f5f27ab3aa11e2.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "5bf96d25b0ff3160",
-      "status": "pending",
-      "created_at": "2026-06-01T07:19:41+00:00",
-      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Какое будущее ждет человечество, согласно IMDb?",
-      "title_ru": "Какое будущее ждет человечество, согласно IMDb?",
-      "body": [
-        "Как и многие читатели Хабра, я люблю научную фантастику.",
-        "Люблю думать об изобретениях, о прогрессе.",
-        "Вопреки обывательскому мнению, фантастика – это совсем не тот жанр, где всё с начала и до конца выдумано."
-      ],
-      "footer": null,
-      "source_text": "Как и многие читатели Хабра, я люблю научную фантастику. Люблю думать об изобретениях, о прогрессе. Вопреки обывательскому мнению, фантастика – это совсем не тот жанр, где всё с начала и до конца выдумано. Хорошая фантастика характеризуется тем, что в ней показан реальный, близкий нам человек (люди, общество), но в других условиях. Если хотите, в других декорациях. Хорошая фантастика помещает человека в несколько необычное окружение и дает ответ на вопрос – как он себя поведет в этих условиях, что изменится в его поведении, в его целях, в его желаниях. Несмотря на внешнюю неузнаваемость облика персонажей и окружающих декораций, некоторые базовые человеческие черты должны оставаться в персонажах в любых условиях. Нам неинтересно будет читать фантастику, если в ней будет говориться не о людях, а только о гамадрилах или только о камнях. Людям интересны люди. Возможно, эволюционировавшие, возможно, живущие в обществе с другим материальным базисом и, как следствие, с другой моралью и другими ценностями. Исследовать такое общество, задумываться о таком обществе будущего – интересно. Я задумался о том, какое общество будущего показывает нам лучшая мировая фантастика: каковы условия существования людей, каковы отношения между людьми, насколько вообще приятно или отвратительно жить в мире будущего. Чтобы ответить на этот вопрос, я взял срез фантастики – фильмы. Чтобы отобрать лучшие фильмы, я залез в базу IMDb и взял первые 1000 фильмов, лучшие по рейтингу. Из них я отобрал те, в которых говорится о будущем (или хотя бы упоминается). Получилось около 50 фильмов. Затем я выкинул наиболее старые фильмы (примерно до 1970 года) – потому что совсем старые представления о будущем мне показалось неактуально исследовать. Затем я вычеркнул откровенно комиксовые фильмы (не потому что плох",
-      "post_text": "🌐 Мировые IT\n\n<b>Какое будущее ждет человечество, согласно IMDb?</b>\n\nКак и многие читатели Хабра, я люблю научную фантастику.\n\nЛюблю думать об изобретениях, о прогрессе.\n\nВопреки обывательскому мнению, фантастика – это совсем не тот жанр, где всё с начала и до конца выдумано.\n\nМИРОВЫЕ IT · <a href=\"https://www.imdb.com/\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://www.imdb.com/",
-      "published_at": "2026-06-01T07:10:21+00:00",
-      "title_hash": "b2f215a052fe71d73f8c3ad5771becbc430a1e39",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/ec7/4f0/aad/ec74f0aad62066ba0dab8f985627758d.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "d5588760763743a9",
-      "status": "pending",
-      "created_at": "2026-06-01T07:19:41+00:00",
-      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Как обучить тысячи сотрудников работе с ИИ за полтора года",
-      "title_ru": "Как обучить тысячи сотрудников работе с ИИ за полтора года",
-      "body": [
-        "66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд.",
-        "В компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти.",
-        "66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд."
-      ],
-      "footer": null,
-      "source_text": "66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд. В компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти. Работе с ИИ обучилось более... 66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд. В компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти. Работе с ИИ обучилось более 6000 сотрудников – это около 78% целевой аудитории. Как получили такие результаты – расскажем в статье. Читать далее 66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд. В компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти. Работе с ИИ обучилось более 6000 сотрудников – это около 78% целевой аудитории. Как получили такие результаты – расскажем в статье. ИИ становится новым английским. Так считают во многих крупных компаниях. Мы пригласили на конференцию Teamly «Знание, обучение и ИИ – в единой рабочей среде» Надежду Шилову, руководителя управления по обучению массового сегмента компании ПАО «Ростелеком». Она поделилась опытом внедрения искусственного интеллекта в процессы обучения и работу сотрудников. «Ростелеком» – не просто провайдер интернет‑услуг, а магистральный оператор, обеспечивающий работу других провайдеров и государственных сервисов. Компания играет ключевую роль в обеспечении доступа к Госуслугам и интернету для миллионов россиян. Отсюда – высокие требования к информационной безопасности. Утечка данных, например, из базы Госуслуг может привести к масштабным последствиям. Несколько лет назад совет директоров ПАО «Ростелеком» включил использование ИИ в стратегию компании. Цель – повысить эффективность за счёт автоматизации рутинных процессов и перераспределения человеческих ресурсов на более сложные задачи.",
-      "post_text": "🌐 Мировые IT\n\n<b>Как обучить тысячи сотрудников работе с ИИ за полтора года</b>\n\n66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд.\n\nВ компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти.\n\n66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/teamly/articles/1041982/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041982#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/teamly/articles/1041982/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041982#habracut",
-      "published_at": "2026-06-01T07:05:40+00:00",
-      "title_hash": "abab915543f14e666b3c331d803f35a7590e374e",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/ce2/fb8/575/ce2fb8575d14158f44690240552a69ec.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "3d89d8ffa3d46707",
-      "status": "pending",
-      "created_at": "2026-06-01T07:19:41+00:00",
-      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Сага о подшипнике. Как маленький шарик борется с силой трения",
-      "title_ru": "Сага о подшипнике. Как маленький шарик борется с силой трения",
-      "body": [
-        "На заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки.",
-        "Но это был лишь первый шаг в борьбе с силой трения.",
-        "В Древней Греции, около 330 года до н."
-      ],
-      "footer": null,
-      "source_text": "На заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки. Но это был лишь первый шаг в борьбе с силой трения. В Древней Греции, около 330 года до н. э.,... На заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки. Но это был лишь первый шаг в борьбе с силой трения. В Древней Греции, около 330 года до н. э., военный инженер Диадес создал прототип подшипника для таранного механизма, где ролики двигались в специальных желобах. Чуть позже, во времена Римской империи, великий архитектор Витрувий описал применение подобных устройств в осадных машинах. А одним из самых ярких античных следов этой идеи стала находка на озере Неми. Среди деталей, связанных с роскошными кораблями Калигулы, обнаружили поворотную опору с бронзовыми шариками. Это не был шарикоподшипник в современном смысле, но сам принцип опоры качения римлянам уже был знаком — просто его время еще не пришло. Но как мы дошли от этих катков и античных диковин до современных прецизионных узлов, точность которых измеряется микронами? Давайте проследим эту революцию вращения. Читать далее На заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки. Но это был лишь первый шаг в борьбе с силой трения. В Древней Греции, около 330 года до н. э., военный инженер Диадес создал прототип подшипника для таранного механизма, где ролики двигались в специальных желобах. Чуть позже, во времена Римской империи, великий архитектор Витрувий описал применение подобных устройств в осадных машинах. А одним из самых ярких античных следов этой идеи стала находка на озере Неми. Среди деталей, связанных с роскошными кораблями Калигулы, обнаружили поворотную опору с бронзовыми шариками. Это не был шарикоподшипни",
-      "post_text": "🌐 Мировые IT\n\n<b>Сага о подшипнике. Как маленький шарик борется с силой трения</b>\n\nНа заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки.\n\nНо это был лишь первый шаг в борьбе с силой трения.\n\nВ Древней Греции, около 330 года до н.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/beget/articles/1041340/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041340#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/beget/articles/1041340/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041340#habracut",
-      "published_at": "2026-06-01T07:05:20+00:00",
-      "title_hash": "41e1b9344809ad8709937f0d351dc6bf16dc84e6",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/33f/e4e/906/33fe4e90631e7cb3293b7d2f6f137c59.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "54b8129be30a7e22",
-      "status": "pending",
-      "created_at": "2026-06-01T07:19:41+00:00",
-      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "От диплома до продакшена: … Часть 7: Инфра, MLOps и уроки масштабирования",
-      "title_ru": "От диплома до продакшена: … Часть 7: Инфра, MLOps и уроки масштабирования",
-      "body": [
-        "От диплома до продакшена: Как я создавал архитектуру ИИ-проекта для… Часть 7: Инфраструктура, MLOps и уроки масштабирования Автор : Алексей Бобрешов, руководитель отдела искусственного интеллекта...",
-        "Что я сделал бы иначе Закладывал бы MLOps с первого дня , а не «сначала модель, потом инфраструктура».",
-        "Автоматизировал бы тестирование данных раньше."
-      ],
-      "footer": null,
-      "source_text": "От диплома до продакшена: Как я создавал архитектуру ИИ-проекта для… Часть 7: Инфраструктура, MLOps и уроки масштабирования Автор : Алексей Бобрешов, руководитель отдела искусственного интеллекта... 3.3. Что я сделал бы иначе Закладывал бы MLOps с первого дня , а не «сначала модель, потом инфраструктура». Параллельно — дешевле. Автоматизировал бы тестирование данных раньше. Самые неприятные баги — не в коде, а в «тихом» изменении распределения. Завёл бы playbook для инцидентов. Когда что-то падает в три часа ночи, нужен чеклист, а не паника. Глава 4. Чеклист: готов ли проект к масштабированию Это самая практичная часть — её можно унести с собой. Читать далее Автор : Алексей Бобрешов, руководитель отдела искусственного интеллекта Категория : Искусственный интеллект, MLOps, управление проектами, масштабирование Время чтения : 13–16 минут Это седьмая, заключительная часть серии. Для контекста по безопасности рекомендую Часть 6 . Когда я защищал диплом по «умному дому» в 2021 году, у меня была работающая нейросеть с точностью 94.06%. Я думал: «Вот оно — готовое решение». Реальность оказалась сложнее. И сразу честно, как и в Части 6: сам дипломный проект в продакшн не пошёл — это был proof of concept, который я довёл до рабочего прототипа и проверял дома. Всё, что я расскажу дальше про масштабирование, MLOps и эксплуатацию, — это уроки из последующей коммерческой работы над ИИ-проектами, наложенные на тот самый дипломный прототип как на сквозной пример.",
-      "post_text": "🌐 Мировые IT\n\n<b>От диплома до продакшена: … Часть 7: Инфра, MLOps и уроки масштабирования</b>\n\nОт диплома до продакшена: Как я создавал архитектуру ИИ-проекта для… Часть 7: Инфраструктура, MLOps и уроки масштабирования Автор : Алексей Бобрешов, руководитель отдела искусственного интеллекта...\n\nЧто я сделал бы иначе Закладывал бы MLOps с первого дня , а не «сначала модель, потом инфраструктура».\n\nАвтоматизировал бы тестирование данных раньше.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1041706/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041706#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1041706/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041706#habracut",
-      "published_at": "2026-06-01T07:02:16+00:00",
-      "title_hash": "59ce7014cf26747c1dbecd827e15ff5d54916c8a",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/505/fa2/7bb/505fa27bba98249c6bf51797181983d2.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "8f3c78447810e16f",
-      "status": "pending",
-      "created_at": "2026-06-01T07:19:41+00:00",
-      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
-      "source": "The Verge",
-      "source_type": "it",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 237,
-      "title_original": "This is the Microsoft Surface Laptop Ultra with Nvidia RTX Spark",
-      "title_ru": "This is the Microsoft Surface Laptop Ultra with Nvidia RTX Spark",
-      "body": [
-        "Once upon a time, Microsoft had to write off $900 million betting an Arm-based Nvidia chip could power its first flagship Windows portable, the original Microsoft Surface.",
-        "Microsoft and Nvidia have just announced the Surface Laptop Ultra, a computer with a new Arm-based Nvidia chip at its core.",
-        "There's a […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed."
-      ],
-      "footer": null,
-      "source_text": "Nvidia inside. Once upon a time, Microsoft had to write off $900 million betting an Arm-based Nvidia chip could power its first flagship Windows portable, the original Microsoft Surface. But today, it's trying again. Microsoft and Nvidia have just announced the Surface Laptop Ultra, a computer with a new Arm-based Nvidia chip at its core. There's a […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed. News Close News Posts from this topic will be added to your daily email digest and your homepage feed. Microsoft has a new flagship Surface, and it’s got Nvidia inside. Microsoft has a new flagship Surface, and it’s got Nvidia inside.",
-      "post_text": "🎮 Игры / индустрия\n\n<b>This is the Microsoft Surface Laptop Ultra with Nvidia RTX Spark</b>\n\nOnce upon a time, Microsoft had to write off $900 million betting an Arm-based Nvidia chip could power its first flagship Windows portable, the original Microsoft Surface.\n\nMicrosoft and Nvidia have just announced the Surface Laptop Ultra, a computer with a new Arm-based Nvidia chip at its core.\n\nThere's a […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/tech/940584/microsoft-surface-laptop-ultra-nvidia-rtx-spark-pictures\">The Verge</a>",
-      "edited_post_text": null,
-      "url": "https://www.theverge.com/tech/940584/microsoft-surface-laptop-ultra-nvidia-rtx-spark-pictures",
-      "published_at": "2026-06-01T04:36:41+00:00",
-      "title_hash": "bb4395c32fba1820508c864b0638f8473c934cbe",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
       "id": "87b168d868ef4ab1",
-      "status": "pending",
+      "status": "hold",
       "created_at": "2026-06-01T07:19:41+00:00",
       "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
       "source": "The Verge",
       "source_type": "it",
-      "category": "🎮 Игры / индустрия",
+      "category": "🌐 Мировые IT",
       "category_hint": "🎮 Игры / индустрия",
-      "score": 237,
+      "score": 730,
       "title_original": "Nvidia announces RTX Spark as ‘the most efficient PC chip ever built’",
       "title_ru": "Nvidia announces RTX Spark as ‘the most efficient PC chip ever built’",
       "body": [
@@ -256,24 +34,28 @@
       "with_image": false,
       "image_decision": "none",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
     },
     {
       "id": "288e2ebb02333086",
-      "status": "pending",
+      "status": "hold",
       "created_at": "2026-06-01T07:19:41+00:00",
       "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
       "source": "Eurogamer",
       "source_type": "gaming",
       "category": "🎮 Игры / индустрия",
       "category_hint": "🎮 Игры / индустрия",
-      "score": 102,
+      "score": 600,
       "title_original": "Little Nightmares II",
       "title_ru": "Little Nightmares II",
       "body": [
@@ -293,13 +75,344 @@
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "1eb1bc6e40d99adf",
+      "status": "hold",
+      "created_at": "2026-06-01T13:42:35+00:00",
+      "created_at_sakhalin": "2026-06-02T00:42:35+11:00",
+      "source": "BBC World",
+      "source_type": "world",
+      "category": "🌍 Мир о России",
+      "category_hint": "🌍 Мир о России",
+      "score": 1080,
+      "title_original": "France intercepts sanctioned Russian oil tanker with UK help, Macron says",
+      "title_ru": "France intercepts sanctioned Russian oil tanker with UK help, Macron says",
+      "body": [
+        "A British helicopter provided support during the operation on Sunday, the UK ministry of defence says.",
+        "A British helicopter provided support during the operation on Sunday, the UK ministry of defence says.",
+        "Officers boarded the Tagor in the Atlantic, which maritime authorities said had been flying a false flag when it was detained around 400 nautical miles west of Brittany."
+      ],
+      "footer": null,
+      "source_text": "A British helicopter provided support during the operation on Sunday, the UK ministry of defence says. A British helicopter provided support during the operation on Sunday, the UK ministry of defence says. Officers boarded the Tagor in the Atlantic, which maritime authorities said had been flying a false flag when it was detained around 400 nautical miles west of Brittany. \"It is unacceptable for ships to circumvent international sanctions, violate the law of the sea, and fund the war that Russia has been waging against Ukraine,\" Macron wrote on X. A British helicopter provided support during the operation, the UK Ministry of Defence (MoD) told the BBC. The Kremlin said the \"illegal\" seizure was \"bordering on international piracy\".",
+      "post_text": "🌍 Мир о России\n\n<b>France intercepts sanctioned Russian oil tanker with UK help, Macron says</b>\n\nA British helicopter provided support during the operation on Sunday, the UK ministry of defence says.\n\nA British helicopter provided support during the operation on Sunday, the UK ministry of defence says.\n\nOfficers boarded the Tagor in the Atlantic, which maritime authorities said had been flying a false flag when it was detained around 400 nautical miles west of Brittany.\n\nМИР О РОССИИ · <a href=\"https://www.bbc.com/news/articles/cn8pwgej1gxo?at_medium=RSS&amp;at_campaign=rss\">BBC World</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/cn8pwgej1gxo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-01T11:53:26+00:00",
+      "title_hash": "c7ece752989721c5f3b7cbbfa5b920144b75b2aa",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/7291/live/b8611440-5d9b-11f1-b199-9da46582c1b0.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 1000
+    },
+    {
+      "id": "26a469cec4cf8bbe",
+      "status": "hold",
+      "created_at": "2026-06-01T13:42:35+00:00",
+      "created_at_sakhalin": "2026-06-02T00:42:35+11:00",
+      "source": "Guardian Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Meta legal action forces Facebook whistleblower to sit in silence at Hay festival",
+      "title_ru": "Meta legal action forces Facebook whistleblower to sit in silence at Hay festival",
+      "body": [
+        "Sarah Wynn-Williams did not speak during event after lawyers warned of possible sanctions from tech firm Sarah Wynn-Williams did not speak during event after lawyers warned of possible sanctions from tech firm Facebook whistleblower Sarah Wynn-Williams was forced to sit in silence on stage at an event at Hay festival, after lawyers advised her not to speak because of ongoing legal action brought by Meta.",
+        "Wynn-Williams, whose bestselling memoir, Careless People, details her years working at Facebook, was due to appear in conversation with the investigative journalist Carole Cadwalladr and academic Tim Wu.",
+        "Sarah Wynn-Williams did not speak during event after lawyers warned of possible sanctions from tech firm Prefer the Guardian on Google Facebook whistleblower Sarah Wynn-Williams was forced to sit in silence on stage at an event at Hay festival , after lawyers advised her not to speak because of ongoing legal action brought by Meta."
+      ],
+      "footer": null,
+      "source_text": "Sarah Wynn-Williams did not speak during event after lawyers warned of possible sanctions from tech firm Sarah Wynn-Williams did not speak during event after lawyers warned of possible sanctions from tech firm Facebook whistleblower Sarah Wynn-Williams was forced to sit in silence on stage at an event at Hay festival, after lawyers advised her not to speak because of ongoing legal action brought by Meta. Wynn-Williams, whose bestselling memoir, Careless People, details her years working at Facebook, was due to appear in conversation with the investigative journalist Carole Cadwalladr and academic Tim Wu. Continue reading... Sarah Wynn-Williams did not speak during event after lawyers warned of possible sanctions from tech firm Prefer the Guardian on Google Facebook whistleblower Sarah Wynn-Williams was forced to sit in silence on stage at an event at Hay festival , after lawyers advised her not to speak because of ongoing legal action brought by Meta. Wynn-Williams, whose bestselling memoir, Careless People, details her years working at Facebook , was due to appear in conversation with the investigative journalist Carole Cadwalladr and academic Tim Wu. Instead, Wynn-Williams sat on stage for the duration of the hour-long discussion between Cadwalladr and Wu, without speaking or responding. She was unable even to nod or shake her head.",
+      "post_text": "🌐 Мировые IT\n\n<b>Meta legal action forces Facebook whistleblower to sit in silence at Hay festival</b>\n\nSarah Wynn-Williams did not speak during event after lawyers warned of possible sanctions from tech firm Sarah Wynn-Williams did not speak during event after lawyers warned of possible sanctions from tech firm Facebook whistleblower Sarah Wynn-Williams was forced to sit in silence on stage at an event at Hay festival, after lawyers advised her not to speak because of ongoing legal action brought by Meta.\n\nWynn-Williams, whose bestselling memoir, Careless People, details her years working at Facebook, was due to appear in conversation with the investigative journalist Carole Cadwalladr and academic Tim Wu.\n\nSarah Wynn-Williams did not speak during event after lawyers warned of possible sanctions from tech firm Prefer the Guardian on Google Facebook whistleblower Sarah Wynn-Williams was forced to sit in silence on stage at an event at Hay festival , after lawyers advised her not to speak because of ongoing legal action brought by Meta.\n\nМИРОВЫЕ IT · <a href=\"https://www.theguardian.com/technology/2026/may/31/meta-legal-action-forces-facebook-whistleblower-to-stay-silent-at-hay-festival\">Guardian Technology</a>",
+      "edited_post_text": null,
+      "url": "https://www.theguardian.com/technology/2026/may/31/meta-legal-action-forces-facebook-whistleblower-to-stay-silent-at-hay-festival",
+      "published_at": "2026-05-31T17:18:27+00:00",
+      "title_hash": "90282bca73cb532f8d9fb779d1c28bec5258084e",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "e56d38631bdd0064",
+      "status": "hold",
+      "created_at": "2026-06-01T13:42:35+00:00",
+      "created_at_sakhalin": "2026-06-02T00:42:35+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 650,
+      "title_original": "These are the first Nvidia RTX Spark laptops",
+      "title_ru": "These are the first Nvidia RTX Spark laptops",
+      "body": [
+        "Nvidia has officially entered the world of consumer laptop chips with the RTX Spark, and several device makers already have hardware lined up for it.",
+        "Microsoft, Asus, HP, MSI, Lenovo, and Dell are expected to launch RTX Spark laptops sometime this fall, and some of those partner companies have shared details about what we can […]"
+      ],
+      "footer": null,
+      "source_text": "Details are looking a bit sparse. Nvidia has officially entered the world of consumer laptop chips with the RTX Spark, and several device makers already have hardware lined up for it. Microsoft, Asus, HP, MSI, Lenovo, and Dell are expected to launch RTX Spark laptops sometime this fall, and some of those partner companies have shared details about what we can […]",
+      "post_text": "🎮 Игры / индустрия\n\n<b>These are the first Nvidia RTX Spark laptops</b>\n\nNvidia has officially entered the world of consumer laptop chips with the RTX Spark, and several device makers already have hardware lined up for it.\n\nMicrosoft, Asus, HP, MSI, Lenovo, and Dell are expected to launch RTX Spark laptops sometime this fall, and some of those partner companies have shared details about what we can […]\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/gadgets/940794/first-nvidia-rtx-spark-laptops-roundup-computex-2026\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/gadgets/940794/first-nvidia-rtx-spark-laptops-roundup-computex-2026",
+      "published_at": "2026-06-01T11:29:52+00:00",
+      "title_hash": "92c63c40e1779efc8b62f58643ec95f7b291d9fc",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "c4d159d8bb5c4e88",
+      "status": "hold",
+      "created_at": "2026-06-01T13:42:35+00:00",
+      "created_at_sakhalin": "2026-06-02T00:42:35+11:00",
+      "source": "Eurogamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 600,
+      "title_original": "The Witcher 3: Wild Hunt",
+      "title_ru": "The Witcher 3: Wild Hunt",
+      "body": [
+        "Discover everything you need to know about The Witcher 3: Wild Hunt.",
+        "There are as many people making The Witcher 3 expansion Songs of the Past - potentially more - than made the original base Witcher 3 game.",
+        "Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides The Witcher 3: Wild Hunt Jump to Spotlight Feed Gallery Games Follow The Witcher 3: Wild Hunt Get it from Platforms Nintendo Switch PC PS4 PS5 Xbox One Xbox Series X/S Initial release May 19, 2015 Developers CD Projekt RED Genres Action Adventure RPG Publishers Bandai Namco Entertainment CD Pr"
+      ],
+      "footer": null,
+      "source_text": "Discover everything you need to know about The Witcher 3: Wild Hunt. There are as many people making The Witcher 3 expansion Songs of the Past - potentially more - than made the original base Witcher 3 game. Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides The Witcher 3: Wild Hunt Jump to Spotlight Feed Gallery Games Follow The Witcher 3: Wild Hunt Get it from Platforms Nintendo Switch PC PS4 PS5 Xbox One Xbox Series X/S Initial release May 19, 2015 Developers CD Projekt RED Genres Action Adventure RPG Publishers Bandai Namco Entertainment CD Projekt CD Projekt RED Franchise The Witcher The Witcher 3: Wild Hunt Spotlight Essential | The Witcher 3: Wild Hunt review Out now in a new complete edition, this is a landmark RPG. The Witcher 3 expansion Songs of the Past is being made by as many people as made The Witcher 3 - potentially even more From the biggest open worlds to the most thought-provoking stories across PC and consoles.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>The Witcher 3: Wild Hunt</b>\n\nDiscover everything you need to know about The Witcher 3: Wild Hunt.\n\nThere are as many people making The Witcher 3 expansion Songs of the Past - potentially more - than made the original base Witcher 3 game.\n\nRead more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides The Witcher 3: Wild Hunt Jump to Spotlight Feed Gallery Games Follow The Witcher 3: Wild Hunt Get it from Platforms Nintendo Switch PC PS4 PS5 Xbox One Xbox Series X/S Initial release May 19, 2015 Developers CD Projekt RED Genres Action Adventure RPG Publishers Bandai Namco Entertainment CD Pr\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.eurogamer.net/games/the-witcher-3-wild-hunt\">Eurogamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.eurogamer.net/games/the-witcher-3-wild-hunt",
+      "published_at": "2026-06-01T13:26:08+00:00",
+      "title_hash": "776ba37e947eb95886fb56ac4b5e9e5d51c290f3",
+      "image_url": "https://assetsio.gnwcdn.com/witcher_swearing.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "888005ebad9ee17b",
+      "status": "hold",
+      "created_at": "2026-06-01T13:42:35+00:00",
+      "created_at_sakhalin": "2026-06-02T00:42:35+11:00",
+      "source": "IGN",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 600,
+      "title_original": "'There Isn't Anything We Feel Is Majorly Missing' — One of the Most Influential Steam Games Ever Is Set for Its Last Major Update, a Decade After Launch",
+      "title_ru": "'There Isn't Anything We Feel Is Majorly Missing' — One of the Most Influential Steam Games Ever Is Set for Its Last Major Update, a Decade After Launch",
+      "body": [
+        "Factorio is set for its last major update soon, developer Wube Software has announced.",
+        "Factorio is set for its last major update soon, developer Wube Software has announced.",
+        "Factorio is set for its last major update soon, developer Wube Software has announced in a blog post ."
+      ],
+      "footer": null,
+      "source_text": "Factorio is set for its last major update soon, developer Wube Software has announced. Here's what to expect from 2.1. Factorio is set for its last major update soon, developer Wube Software has announced. Here's what to expect from 2.1. Factorio is set for its last major update soon, developer Wube Software has announced in a blog post . The influential strategy game about building and creating automated factories launched on Steam in early access form in February 2016, before launching proper in August 2020. It is a huge hit for Wube, one of those eternal Steam games with addictive gameplay mechanics, complex systems, and near infinite replayability. Factorio, which has seen superb support over the years, is credited with popularising the factory-building and automation genre on PC, and retains an ‘Overwhelmingly Positive’ user review rating on Valve’s platform. \"I can’t imagine how different Steam gaming landscape would have been if there was no Factorio,\" John “Bucky” Buckley, communications director and publishing manager for Palworld developer Pocketpair, said in a post on social media . \"Thank you for making an incredible game!\" Managing expectations on the scope of the 2.1 update, Wube said: “Generally, we are happy with the game design of Factorio and Space age. The progression is good, things are mostly well balanced (one or two exceptions), and there isn't anything we feel is majorly missing. That is to say, we didn't go into 2.1 development with grand designs of large new pieces of content or huge features.”",
+      "post_text": "🎮 Игры / индустрия\n\n<b>'There Isn't Anything We Feel Is Majorly Missing' — One of the Most Influential Steam Games Ever Is Set for Its Last Major Update, a Decade After Launch</b>\n\nFactorio is set for its last major update soon, developer Wube Software has announced.\n\nFactorio is set for its last major update soon, developer Wube Software has announced.\n\nFactorio is set for its last major update soon, developer Wube Software has announced in a blog post .\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/factorio-set-for-its-last-major-update-a-decade-after-launch\">IGN</a>",
+      "edited_post_text": null,
+      "url": "https://www.ign.com/articles/factorio-set-for-its-last-major-update-a-decade-after-launch",
+      "published_at": "2026-06-01T09:46:36.834000+00:00",
+      "title_hash": "305da048d4bede042fc590c538fc4011f28cd33d",
+      "image_url": "https://assets-prd.ignimgs.com/2026/06/01/ss-2533e54b0bd90a29adbedb60108ed277536ad445-1920x1080-1780306984155.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "db680a8f6de4f53a",
+      "status": "hold",
+      "created_at": "2026-06-01T13:42:35+00:00",
+      "created_at_sakhalin": "2026-06-02T00:42:35+11:00",
+      "source": "GameSpot",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 600,
+      "title_original": "ASHA (@asha_shar) on X",
+      "title_ru": "ASHA (@asha_shar) on X",
+      "body": [
+        "@klobrille Seeing the feedback on logos.",
+        "We are talking about how we adjust for future XBOX shows.",
+        "Xbox CEO Asha Sharma has said it was a \"miss\" for Microsoft to re-commit to showing the logos of its competitors during Xbox broadcasts, going on to say the company is now looking at how to \"adjust\" this for future events."
+      ],
+      "footer": null,
+      "source_text": "@klobrille Seeing the feedback on logos. It was a miss, and I own it. We are talking about how we adjust for future XBOX shows. Xbox CEO Asha Sharma has said it was a \"miss\" for Microsoft to re-commit to showing the logos of its competitors during Xbox broadcasts, going on to say the company is now looking at how to \"adjust\" this for future events. \"Seeing the feedback on logos. It was a miss, and I own it. We are talking about how we adjust for future Xbox shows,\" she wrote . https://twitter.com/asha_shar/status/2060501522556022919?s=46 Sharma said this on the same day that Microsoft published the newest Xbox Podcast in which Xbox chief content officer Matt Booty doubled down on showing the logos of competitor consoles during the upcoming Xbox Games Showcase on June 7. \"Yes. Absolutely. We'll be very clear about what platforms a game is coming to. We want to continue the precedent; I think we have a good system going where we make it clear [what platform a game is coming to],\" he said. In February 2025, Microsoft said it would start showing PlayStation and Nintendo logos during official broadcasts as part of a transparency effort that many fans and industry observers praised. Apart from the Xbox events, it remains commonplace for gaming showcases from platform holders like PlayStation and Nintendo to only show their own logos, even if their games are multiplatform. This was seen as shifty, and many praised Microsoft for changing the tide. Other people did not embrace the change, saying it was important for Microsoft to speak directly to its loyal consumers and show them preference. With Sharma taking over as Xbox CEO, she has promised a \"return to our roots\" and has said Xbox-exclusives could return . So when Booty re-committed to the transparency push for the upcoming",
+      "post_text": "🎮 Игры / индустрия\n\n<b>ASHA (@asha_shar) on X</b>\n\n@klobrille Seeing the feedback on logos.\n\nWe are talking about how we adjust for future XBOX shows.\n\nXbox CEO Asha Sharma has said it was a \"miss\" for Microsoft to re-commit to showing the logos of its competitors during Xbox broadcasts, going on to say the company is now looking at how to \"adjust\" this for future events.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://x.com/asha_shar/status/2060501522556022919?s=46\">GameSpot</a>",
+      "edited_post_text": null,
+      "url": "https://x.com/asha_shar/status/2060501522556022919?s=46",
+      "published_at": "2026-06-01T12:49:20+00:00",
+      "title_hash": "5f45fc0c5e8e3040bef8c46c1f2ca4262e465986",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "f6b063c37b1f504c",
+      "status": "hold",
+      "created_at": "2026-06-01T13:42:35+00:00",
+      "created_at_sakhalin": "2026-06-02T00:42:35+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 650,
+      "title_original": "Microsoft could be the next Big Tech antitrust target",
+      "title_ru": "Microsoft could be the next Big Tech antitrust target",
+      "body": [
+        "Four other US Big Tech firms have faced monopolization charges.",
+        "Over the past several years, Microsoft has largely managed to withstand populist calls to break up Big Tech while peers faced sweeping lawsuits.",
+        "But a probe by the Federal Trade Commission suggests that grace period could be nearing an end."
+      ],
+      "footer": null,
+      "source_text": "Four other US Big Tech firms have faced monopolization charges. Over the past several years, Microsoft has largely managed to withstand populist calls to break up Big Tech while peers faced sweeping lawsuits. But a probe by the Federal Trade Commission suggests that grace period could be nearing an end. Earlier this year, Bloomberg outlined the contents of civil investigative demands (CIDs) - similar to […] Report Close Report Posts from this topic will be added to your daily email digest and your homepage feed. Tech Close Tech Posts from this topic will be added to your daily email digest and your homepage feed. ﻿After 25 years, an FTC investigation could put it back in the hot seat. ﻿After 25 years, an FTC investigation could put it back in the hot seat.",
+      "post_text": "🌐 Мировые IT\n\n<b>Microsoft could be the next Big Tech antitrust target</b>\n\nFour other US Big Tech firms have faced monopolization charges.\n\nOver the past several years, Microsoft has largely managed to withstand populist calls to break up Big Tech while peers faced sweeping lawsuits.\n\nBut a probe by the Federal Trade Commission suggests that grace period could be nearing an end.\n\nМИРОВЫЕ IT · <a href=\"https://www.theverge.com/policy/940220/microsoft-ftc-antitrust-investigation-cloud-ai\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/policy/940220/microsoft-ftc-antitrust-investigation-cloud-ai",
+      "published_at": "2026-06-01T13:23:39+00:00",
+      "title_hash": "48267b171ceb1092bda4a10fe28d46c941173e93",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "d05fb71f8902963d",
+      "status": "hold",
+      "created_at": "2026-06-01T13:42:35+00:00",
+      "created_at_sakhalin": "2026-06-02T00:42:35+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 650,
+      "title_original": "Apple’s strategy for smart glasses is the same as for smart watches",
+      "title_ru": "Apple’s strategy for smart glasses is the same as for smart watches",
+      "body": [
+        "It’s not just taking on Meta, it’s going after Ray-Ban and Warby Parker too.",
+        "Apple isn't just looking to take on Meta in the smart glasses market; it's looking to upend eyewear as a whole, according to Bloomberg's Mark Gurman.",
+        "When the Apple Watch launched, it wasn't simply competing against the Pebbles and the Motorolas of the world."
+      ],
+      "footer": null,
+      "source_text": "It’s not just taking on Meta, it’s going after Ray-Ban and Warby Parker too. Apple isn't just looking to take on Meta in the smart glasses market; it's looking to upend eyewear as a whole, according to Bloomberg's Mark Gurman. When the Apple Watch launched, it wasn't simply competing against the Pebbles and the Motorolas of the world. The company also had Swatch, Fossil, and Seiko in its crosshairs. […] News Close News Posts from this topic will be added to your daily email digest and your homepage feed. Apple Close Apple Posts from this topic will be added to your daily email digest and your homepage feed. It’s not just taking on Meta, it’s going after Ray-Ban and Warby Parker too. It’s not just taking on Meta, it’s going after Ray-Ban and Warby Parker too.",
+      "post_text": "🌐 Мировые IT\n\n<b>Apple’s strategy for smart glasses is the same as for smart watches</b>\n\nIt’s not just taking on Meta, it’s going after Ray-Ban and Warby Parker too.\n\nApple isn't just looking to take on Meta in the smart glasses market; it's looking to upend eyewear as a whole, according to Bloomberg's Mark Gurman.\n\nWhen the Apple Watch launched, it wasn't simply competing against the Pebbles and the Motorolas of the world.\n\nМИРОВЫЕ IT · <a href=\"https://www.theverge.com/tech/940572/apples-strategy-smart-glasses-smart-watches\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/tech/940572/apples-strategy-smart-glasses-smart-watches",
+      "published_at": "2026-05-31T21:33:11+00:00",
+      "title_hash": "9309cabcf4721bf4c5fb68af4a1c71a7020014f9",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
     },
     {
       "id": "0dd83aef5517e23a",
@@ -2387,6 +2500,334 @@
       "reviewed_at": "2026-06-01T07:04:09+00:00",
       "reviewed_by": "auto-editor-v7-local-cleaner",
       "stream_priority": 650
+    },
+    {
+      "id": "2639a4ef3654beee",
+      "status": "rejected",
+      "created_at": "2026-06-01T07:19:41+00:00",
+      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Записки оптимизатора 1С (ч.17). Как избежать падения Postgres при большом потреблении памяти запросами",
+      "title_ru": "Записки оптимизатора 1С (ч.17). Как избежать падения Postgres при большом потреблении памяти запросами",
+      "body": [
+        "Речь пойдет об одной из старых проблем со стабильностью работы Postgres – об отсутствии полного контроля за потреблением оперативной памяти при выполнении запросов (через work_mem), что в ряде случаев...",
+        "Рассмотрим одну из старых проблем со стабильностью работы Postgres – отсутствие полного контроля за потреблением оперативной памяти при выполнении запросов.",
+        "В ряде случаев это приводит либо к свопированию, либо к падению СУБД и остановке работы информационной системы."
+      ],
+      "footer": null,
+      "source_text": "Речь пойдет об одной из старых проблем со стабильностью работы Postgres – об отсутствии полного контроля за потреблением оперативной памяти при выполнении запросов (через work_mem), что в ряде случаев... Рассмотрим одну из старых проблем со стабильностью работы Postgres – отсутствие полного контроля за потреблением оперативной памяти при выполнении запросов. В ряде случаев это приводит либо к свопированию, либо к падению СУБД и остановке работы информационной системы. Происходит это неожиданно, без предупреждения и в не самый удачный момент. В системах 1С эта проблема точно существует, встречали не раз. Вроде бы на помощь должна прийти технология OOM Killer Linux, но, как обычно, не все так радужно и есть неприятные нюансы. Читать далее Речь пойдет об одной из старых проблем со стабильностью работы Postgres – об отсутствии полного контроля за потреблением оперативной памяти при выполнении запросов (через work_mem), что в ряде случаев приводит либо к свопированию, либо к падению СУБД и остановке работы информационной системы. Происходит это неожиданно, без предупреждения и в не самый удачный момент, например, ночью, когда все спят. В системах 1С эта проблема точно существует, в силу использования платформой сложных многоэтажных запросов с большим количеством соединений, группировок и сортировок. Вроде бы на помощь должна прийти технология OOM Killer Linux, но как обычно не все так радужно и есть неприятные нюансы. В управлении памятью Linux существует концепция overcommit, которая позволяет системе выделять больше виртуальной памяти, чем физически доступно. Это может быть полезно, но требует осторожного подхода для предотвращения проблем с производительностью и стабильностью. По умолчанию Linux использует overcommit памяти, когда ядро разрешает процессам запросить больше",
+      "post_text": "🌐 Мировые IT\n\n<b>Записки оптимизатора 1С (ч.17). Как избежать падения Postgres при большом потреблении памяти запросами</b>\n\nРечь пойдет об одной из старых проблем со стабильностью работы Postgres – об отсутствии полного контроля за потреблением оперативной памяти при выполнении запросов (через work_mem), что в ряде случаев...\n\nРассмотрим одну из старых проблем со стабильностью работы Postgres – отсутствие полного контроля за потреблением оперативной памяти при выполнении запросов.\n\nВ ряде случаев это приводит либо к свопированию, либо к падению СУБД и остановке работы информационной системы.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/softpoint/articles/1041984/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041984#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/softpoint/articles/1041984/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041984#habracut",
+      "published_at": "2026-06-01T07:10:37+00:00",
+      "title_hash": "7ca9570c4737bc6bcdc62c5070957a7f4fc08489",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/4c8/15a/52a/4c815a52a4a8cf1f58f5f27ab3aa11e2.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "5bf96d25b0ff3160",
+      "status": "rejected",
+      "created_at": "2026-06-01T07:19:41+00:00",
+      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 650,
+      "title_original": "Какое будущее ждет человечество, согласно IMDb?",
+      "title_ru": "Какое будущее ждет человечество, согласно IMDb?",
+      "body": [
+        "Как и многие читатели Хабра, я люблю научную фантастику.",
+        "Люблю думать об изобретениях, о прогрессе.",
+        "Вопреки обывательскому мнению, фантастика – это совсем не тот жанр, где всё с начала и до конца выдумано."
+      ],
+      "footer": null,
+      "source_text": "Как и многие читатели Хабра, я люблю научную фантастику. Люблю думать об изобретениях, о прогрессе. Вопреки обывательскому мнению, фантастика – это совсем не тот жанр, где всё с начала и до конца выдумано. Хорошая фантастика характеризуется тем, что в ней показан реальный, близкий нам человек (люди, общество), но в других условиях. Если хотите, в других декорациях. Хорошая фантастика помещает человека в несколько необычное окружение и дает ответ на вопрос – как он себя поведет в этих условиях, что изменится в его поведении, в его целях, в его желаниях. Несмотря на внешнюю неузнаваемость облика персонажей и окружающих декораций, некоторые базовые человеческие черты должны оставаться в персонажах в любых условиях. Нам неинтересно будет читать фантастику, если в ней будет говориться не о людях, а только о гамадрилах или только о камнях. Людям интересны люди. Возможно, эволюционировавшие, возможно, живущие в обществе с другим материальным базисом и, как следствие, с другой моралью и другими ценностями. Исследовать такое общество, задумываться о таком обществе будущего – интересно. Я задумался о том, какое общество будущего показывает нам лучшая мировая фантастика: каковы условия существования людей, каковы отношения между людьми, насколько вообще приятно или отвратительно жить в мире будущего. Чтобы ответить на этот вопрос, я взял срез фантастики – фильмы. Чтобы отобрать лучшие фильмы, я залез в базу IMDb и взял первые 1000 фильмов, лучшие по рейтингу. Из них я отобрал те, в которых говорится о будущем (или хотя бы упоминается). Получилось около 50 фильмов. Затем я выкинул наиболее старые фильмы (примерно до 1970 года) – потому что совсем старые представления о будущем мне показалось неактуально исследовать. Затем я вычеркнул откровенно комиксовые фильмы (не потому что плох",
+      "post_text": "🌐 Мировые IT\n\n<b>Какое будущее ждет человечество, согласно IMDb?</b>\n\nКак и многие читатели Хабра, я люблю научную фантастику.\n\nЛюблю думать об изобретениях, о прогрессе.\n\nВопреки обывательскому мнению, фантастика – это совсем не тот жанр, где всё с начала и до конца выдумано.\n\nМИРОВЫЕ IT · <a href=\"https://www.imdb.com/\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://www.imdb.com/",
+      "published_at": "2026-06-01T07:10:21+00:00",
+      "title_hash": "b2f215a052fe71d73f8c3ad5771becbc430a1e39",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/ec7/4f0/aad/ec74f0aad62066ba0dab8f985627758d.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "d5588760763743a9",
+      "status": "rejected",
+      "created_at": "2026-06-01T07:19:41+00:00",
+      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌍 Мир о России",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1080,
+      "title_original": "Как обучить тысячи сотрудников работе с ИИ за полтора года",
+      "title_ru": "Как обучить тысячи сотрудников работе с ИИ за полтора года",
+      "body": [
+        "66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд.",
+        "В компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти.",
+        "66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд."
+      ],
+      "footer": null,
+      "source_text": "66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд. В компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти. Работе с ИИ обучилось более... 66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд. В компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти. Работе с ИИ обучилось более 6000 сотрудников – это около 78% целевой аудитории. Как получили такие результаты – расскажем в статье. Читать далее 66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд. В компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти. Работе с ИИ обучилось более 6000 сотрудников – это около 78% целевой аудитории. Как получили такие результаты – расскажем в статье. ИИ становится новым английским. Так считают во многих крупных компаниях. Мы пригласили на конференцию Teamly «Знание, обучение и ИИ – в единой рабочей среде» Надежду Шилову, руководителя управления по обучению массового сегмента компании ПАО «Ростелеком». Она поделилась опытом внедрения искусственного интеллекта в процессы обучения и работу сотрудников. «Ростелеком» – не просто провайдер интернет‑услуг, а магистральный оператор, обеспечивающий работу других провайдеров и государственных сервисов. Компания играет ключевую роль в обеспечении доступа к Госуслугам и интернету для миллионов россиян. Отсюда – высокие требования к информационной безопасности. Утечка данных, например, из базы Госуслуг может привести к масштабным последствиям. Несколько лет назад совет директоров ПАО «Ростелеком» включил использование ИИ в стратегию компании. Цель – повысить эффективность за счёт автоматизации рутинных процессов и перераспределения человеческих ресурсов на более сложные задачи.",
+      "post_text": "🌐 Мировые IT\n\n<b>Как обучить тысячи сотрудников работе с ИИ за полтора года</b>\n\n66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд.\n\nВ компании появилось более 40 внутренних ИИ-менторов, и их число продолжает расти.\n\n66% руководителей подразделений в «Ростелекоме» используют нейросети в работе команд.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/teamly/articles/1041982/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041982#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/teamly/articles/1041982/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041982#habracut",
+      "published_at": "2026-06-01T07:05:40+00:00",
+      "title_hash": "abab915543f14e666b3c331d803f35a7590e374e",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/ce2/fb8/575/ce2fb8575d14158f44690240552a69ec.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 1000
+    },
+    {
+      "id": "3d89d8ffa3d46707",
+      "status": "rejected",
+      "created_at": "2026-06-01T07:19:41+00:00",
+      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Сага о подшипнике. Как маленький шарик борется с силой трения",
+      "title_ru": "Сага о подшипнике. Как маленький шарик борется с силой трения",
+      "body": [
+        "На заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки.",
+        "Но это был лишь первый шаг в борьбе с силой трения.",
+        "В Древней Греции, около 330 года до н."
+      ],
+      "footer": null,
+      "source_text": "На заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки. Но это был лишь первый шаг в борьбе с силой трения. В Древней Греции, около 330 года до н. э.,... На заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки. Но это был лишь первый шаг в борьбе с силой трения. В Древней Греции, около 330 года до н. э., военный инженер Диадес создал прототип подшипника для таранного механизма, где ролики двигались в специальных желобах. Чуть позже, во времена Римской империи, великий архитектор Витрувий описал применение подобных устройств в осадных машинах. А одним из самых ярких античных следов этой идеи стала находка на озере Неми. Среди деталей, связанных с роскошными кораблями Калигулы, обнаружили поворотную опору с бронзовыми шариками. Это не был шарикоподшипник в современном смысле, но сам принцип опоры качения римлянам уже был знаком — просто его время еще не пришло. Но как мы дошли от этих катков и античных диковин до современных прецизионных узлов, точность которых измеряется микронами? Давайте проследим эту революцию вращения. Читать далее На заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки. Но это был лишь первый шаг в борьбе с силой трения. В Древней Греции, около 330 года до н. э., военный инженер Диадес создал прототип подшипника для таранного механизма, где ролики двигались в специальных желобах. Чуть позже, во времена Римской империи, великий архитектор Витрувий описал применение подобных устройств в осадных машинах. А одним из самых ярких античных следов этой идеи стала находка на озере Неми. Среди деталей, связанных с роскошными кораблями Калигулы, обнаружили поворотную опору с бронзовыми шариками. Это не был шарикоподшипни",
+      "post_text": "🌐 Мировые IT\n\n<b>Сага о подшипнике. Как маленький шарик борется с силой трения</b>\n\nНа заре цивилизации, чтобы сдвинуть многотонный груз, наши предки использовали простейшие бревна-катки.\n\nНо это был лишь первый шаг в борьбе с силой трения.\n\nВ Древней Греции, около 330 года до н.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/beget/articles/1041340/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041340#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/beget/articles/1041340/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041340#habracut",
+      "published_at": "2026-06-01T07:05:20+00:00",
+      "title_hash": "41e1b9344809ad8709937f0d351dc6bf16dc84e6",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/33f/e4e/906/33fe4e90631e7cb3293b7d2f6f137c59.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "54b8129be30a7e22",
+      "status": "rejected",
+      "created_at": "2026-06-01T07:19:41+00:00",
+      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 650,
+      "title_original": "От диплома до продакшена: … Часть 7: Инфра, MLOps и уроки масштабирования",
+      "title_ru": "От диплома до продакшена: … Часть 7: Инфра, MLOps и уроки масштабирования",
+      "body": [
+        "От диплома до продакшена: Как я создавал архитектуру ИИ-проекта для… Часть 7: Инфраструктура, MLOps и уроки масштабирования Автор : Алексей Бобрешов, руководитель отдела искусственного интеллекта...",
+        "Что я сделал бы иначе Закладывал бы MLOps с первого дня , а не «сначала модель, потом инфраструктура».",
+        "Автоматизировал бы тестирование данных раньше."
+      ],
+      "footer": null,
+      "source_text": "От диплома до продакшена: Как я создавал архитектуру ИИ-проекта для… Часть 7: Инфраструктура, MLOps и уроки масштабирования Автор : Алексей Бобрешов, руководитель отдела искусственного интеллекта... 3.3. Что я сделал бы иначе Закладывал бы MLOps с первого дня , а не «сначала модель, потом инфраструктура». Параллельно — дешевле. Автоматизировал бы тестирование данных раньше. Самые неприятные баги — не в коде, а в «тихом» изменении распределения. Завёл бы playbook для инцидентов. Когда что-то падает в три часа ночи, нужен чеклист, а не паника. Глава 4. Чеклист: готов ли проект к масштабированию Это самая практичная часть — её можно унести с собой. Читать далее Автор : Алексей Бобрешов, руководитель отдела искусственного интеллекта Категория : Искусственный интеллект, MLOps, управление проектами, масштабирование Время чтения : 13–16 минут Это седьмая, заключительная часть серии. Для контекста по безопасности рекомендую Часть 6 . Когда я защищал диплом по «умному дому» в 2021 году, у меня была работающая нейросеть с точностью 94.06%. Я думал: «Вот оно — готовое решение». Реальность оказалась сложнее. И сразу честно, как и в Части 6: сам дипломный проект в продакшн не пошёл — это был proof of concept, который я довёл до рабочего прототипа и проверял дома. Всё, что я расскажу дальше про масштабирование, MLOps и эксплуатацию, — это уроки из последующей коммерческой работы над ИИ-проектами, наложенные на тот самый дипломный прототип как на сквозной пример.",
+      "post_text": "🌐 Мировые IT\n\n<b>От диплома до продакшена: … Часть 7: Инфра, MLOps и уроки масштабирования</b>\n\nОт диплома до продакшена: Как я создавал архитектуру ИИ-проекта для… Часть 7: Инфраструктура, MLOps и уроки масштабирования Автор : Алексей Бобрешов, руководитель отдела искусственного интеллекта...\n\nЧто я сделал бы иначе Закладывал бы MLOps с первого дня , а не «сначала модель, потом инфраструктура».\n\nАвтоматизировал бы тестирование данных раньше.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1041706/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041706#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1041706/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041706#habracut",
+      "published_at": "2026-06-01T07:02:16+00:00",
+      "title_hash": "59ce7014cf26747c1dbecd827e15ff5d54916c8a",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/505/fa2/7bb/505fa27bba98249c6bf51797181983d2.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "8f3c78447810e16f",
+      "status": "rejected",
+      "created_at": "2026-06-01T07:19:41+00:00",
+      "created_at_sakhalin": "2026-06-01T18:19:41+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 650,
+      "title_original": "This is the Microsoft Surface Laptop Ultra with Nvidia RTX Spark",
+      "title_ru": "This is the Microsoft Surface Laptop Ultra with Nvidia RTX Spark",
+      "body": [
+        "Once upon a time, Microsoft had to write off $900 million betting an Arm-based Nvidia chip could power its first flagship Windows portable, the original Microsoft Surface.",
+        "Microsoft and Nvidia have just announced the Surface Laptop Ultra, a computer with a new Arm-based Nvidia chip at its core.",
+        "There's a […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed."
+      ],
+      "footer": null,
+      "source_text": "Nvidia inside. Once upon a time, Microsoft had to write off $900 million betting an Arm-based Nvidia chip could power its first flagship Windows portable, the original Microsoft Surface. But today, it's trying again. Microsoft and Nvidia have just announced the Surface Laptop Ultra, a computer with a new Arm-based Nvidia chip at its core. There's a […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed. News Close News Posts from this topic will be added to your daily email digest and your homepage feed. Microsoft has a new flagship Surface, and it’s got Nvidia inside. Microsoft has a new flagship Surface, and it’s got Nvidia inside.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>This is the Microsoft Surface Laptop Ultra with Nvidia RTX Spark</b>\n\nOnce upon a time, Microsoft had to write off $900 million betting an Arm-based Nvidia chip could power its first flagship Windows portable, the original Microsoft Surface.\n\nMicrosoft and Nvidia have just announced the Surface Laptop Ultra, a computer with a new Arm-based Nvidia chip at its core.\n\nThere's a […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/tech/940584/microsoft-surface-laptop-ultra-nvidia-rtx-spark-pictures\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/tech/940584/microsoft-surface-laptop-ultra-nvidia-rtx-spark-pictures",
+      "published_at": "2026-06-01T04:36:41+00:00",
+      "title_hash": "bb4395c32fba1820508c864b0638f8473c934cbe",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "b5bf7fc1ab3f8eef",
+      "status": "rejected",
+      "created_at": "2026-06-01T13:42:35+00:00",
+      "created_at_sakhalin": "2026-06-02T00:42:35+11:00",
+      "source": "Ars Technica",
+      "source_type": "it",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🌐 Мировые IT",
+      "score": 680,
+      "title_original": "An OpenAI model solved a famous math problem that stumped humans for 80 years",
+      "title_ru": "An OpenAI model solved a famous math problem that stumped humans for 80 years",
+      "body": [
+        "I tried to explain OpenAI’s solution more clearly than OpenAI did.",
+        "I tried to explain OpenAI’s solution more clearly than OpenAI did.",
+        "Sections Forum Subscribe Search AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day & Night Dark System Search Sign In Sign in dialog..."
+      ],
+      "footer": null,
+      "source_text": "I tried to explain OpenAI’s solution more clearly than OpenAI did. I tried to explain OpenAI’s solution more clearly than OpenAI did. Sections Forum Subscribe Search AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day & Night Dark System Search Sign In Sign in dialog... Sign in AI math An OpenAI model solved a famous math problem that stumped humans for 80 years I tried to explain OpenAI’s solution more clearly than OpenAI did. 36 Credit: Getty Images Credit: Getty Images Text settings Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Minimize to nav In mid-May, OpenAI announced that an internal AI model had disproved the Erdős unit distance conjecture, a famous problem in discrete geometry that had stumped human mathematicians for the last 80 years. OpenAI gave several mathematicians early access to the result and published their reactions . Tim Gowers —who won the Fields Medal, the most prestigious prize in mathematics—wrote that “there is no doubt that the solution to the unit-distance problem is a milestone in AI mathematics.” University of Toronto professor Daniel Litt wrote that “this is the first example of a result produced autonomously by an AI that I find exciting in itself, as opposed to as a leading indicator.”",
+      "post_text": "🌐 Мировые IT\n\n<b>An OpenAI model solved a famous math problem that stumped humans for 80 years</b>\n\nI tried to explain OpenAI’s solution more clearly than OpenAI did.\n\nI tried to explain OpenAI’s solution more clearly than OpenAI did.\n\nSections Forum Subscribe Search AI Biz &amp; IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz &amp; IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day &amp; Night Dark System Search Sign In Sign in dialog...\n\nМИРОВЫЕ IT · <a href=\"https://arstechnica.com/ai/2026/06/openais-math-breakthrough-played-to-ais-strengths/\">Ars Technica</a>",
+      "edited_post_text": null,
+      "url": "https://arstechnica.com/ai/2026/06/openais-math-breakthrough-played-to-ais-strengths/",
+      "published_at": "2026-06-01T11:00:00+00:00",
+      "title_hash": "63208e0e215bbed520144fe2dd69f032bd1c3869",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: игровая тема не имеет достаточной индустриальной значимости."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "0d7ad197fe9346cc",
+      "status": "rejected",
+      "created_at": "2026-06-01T13:42:35+00:00",
+      "created_at_sakhalin": "2026-06-02T00:42:35+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🇷🇺 РФ / экономика",
+      "category_hint": "🌐 Мировые IT",
+      "score": 840,
+      "title_original": "SpaceX перед IPO: $2 трлн за Starlink и веру в Маска. Разбор бизнеса, рисков и ставок на будущее",
+      "title_ru": "SpaceX перед IPO: $2 трлн за Starlink и веру в Маска. Разбор бизнеса, рисков и ставок на будущее",
+      "body": [
+        "SpaceX планирует провести размещение с оценкой бизнеса примерно в $1,75-2 трлн.",
+        "Если IPO пройдёт успешно, оно станет крупнейшим в истории мирового фондового рынка, обойдя предыдущие рекорды Ant Financial и Saudi Aramco.",
+        "Компания подала регистрационную форму S-1 20 мая, а выход на биржу Nasdaq под тикером SPCX ожидается 12 июня ."
+      ],
+      "footer": null,
+      "source_text": "SpaceX планирует провести размещение с оценкой бизнеса примерно в $1,75-2 трлн. Если IPO пройдёт успешно, оно станет крупнейшим в истории мирового фондового рынка, обойдя предыдущие рекорды Ant Financial и Saudi Aramco. Компания подала регистрационную форму S-1 20 мая, а выход на биржу Nasdaq под тикером SPCX ожидается 12 июня . Объём размещения может достичь $75 млрд. Организаторами IPO выступают Goldman Sachs, Morgan Stanley, Bank of America, Citigroup и JPMorgan Chase. Для сравнения: крупнейшее завершённое IPO на данный момент принадлежит Saudi Aramco, которая привлекла $29,4 млрд. В случае успеха SpaceX более чем вдвое превзойдёт действующий рекорд. Читать далее",
+      "post_text": "🌐 Мировые IT\n\n<b>SpaceX перед IPO: $2 трлн за Starlink и веру в Маска. Разбор бизнеса, рисков и ставок на будущее</b>\n\nSpaceX планирует провести размещение с оценкой бизнеса примерно в $1,75-2 трлн.\n\nЕсли IPO пройдёт успешно, оно станет крупнейшим в истории мирового фондового рынка, обойдя предыдущие рекорды Ant Financial и Saudi Aramco.\n\nКомпания подала регистрационную форму S-1 20 мая, а выход на биржу Nasdaq под тикером SPCX ожидается 12 июня .\n\nМИРОВЫЕ IT · <a href=\"https://broker.finam.ru/landing/spacex/?utm_source=habr&amp;utm_medium=social&amp;utm_campaign=ipo_spacex\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://broker.finam.ru/landing/spacex/?utm_source=habr&utm_medium=social&utm_campaign=ipo_spacex",
+      "published_at": "2026-06-01T13:30:58+00:00",
+      "title_hash": "37869fb9f7b3a40186644349e4af14a55dd0022b",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/0f3/2e6/578/0f32e6578b1c8216cde08ffde08a3e98.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T13:42:36+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 760
     },
     {
       "id": "ec44a45aa73888ea",
@@ -9579,23 +10020,23 @@
     "approve_limit": 2,
     "min_auto_score": 600,
     "openrouter_enabled": false,
-    "reviewed_at": "2026-06-01T07:04:09+00:00",
-    "reviewed_at_sakhalin": "2026-06-01T18:04:09+11:00"
+    "reviewed_at": "2026-06-01T13:42:36+00:00",
+    "reviewed_at_sakhalin": "2026-06-02T00:42:36+11:00"
   },
   "final_guard": {
     "version": 3,
     "changed": 0,
     "polished": 0,
-    "checked_at": "2026-06-01T07:04:29+00:00",
-    "checked_at_sakhalin": "2026-06-01T18:04:29+11:00"
+    "checked_at": "2026-06-01T13:42:37+00:00",
+    "checked_at_sakhalin": "2026-06-02T00:42:37+11:00"
   },
   "priority_guard": {
     "version": 3,
     "changed": 0,
     "airport_changed": 0,
     "security_changed": 0,
-    "checked_at": "2026-06-01T07:04:09+00:00",
-    "checked_at_sakhalin": "2026-06-01T18:04:09+11:00"
+    "checked_at": "2026-06-01T13:42:37+00:00",
+    "checked_at_sakhalin": "2026-06-02T00:42:37+11:00"
   },
   "cycle_report": {
     "reported_at": "2026-06-01T07:04:23+00:00",
@@ -9686,10 +10127,10 @@
   },
   "scope_guard": {
     "version": 3,
-    "checked": 2,
+    "checked": 10,
     "rejected": 0,
-    "checked_at": "2026-06-01T07:04:09+00:00",
-    "checked_at_sakhalin": "2026-06-01T18:04:09+11:00",
+    "checked_at": "2026-06-01T13:42:37+00:00",
+    "checked_at_sakhalin": "2026-06-02T00:42:37+11:00",
     "policy": "block foreign ECB/Greece macro commentary, low-value Habr/retro/essay posts, minor quakes without impact, and weak foreign geopolitics"
   }
 }
