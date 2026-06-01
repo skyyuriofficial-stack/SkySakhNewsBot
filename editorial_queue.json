@@ -1,57 +1,20 @@
 {
   "version": 1,
-  "updated_at": "2026-06-01T14:28:14+00:00",
-  "updated_at_sakhalin": "2026-06-02T01:28:14+11:00",
-  "reviewed_at": "2026-06-01T13:42:36+00:00",
-  "reviewed_at_sakhalin": "2026-06-02T00:42:36+11:00",
+  "updated_at": "2026-06-01T22:35:57+00:00",
+  "updated_at_sakhalin": "2026-06-02T09:35:57+11:00",
+  "reviewed_at": "2026-06-01T22:35:56+00:00",
+  "reviewed_at_sakhalin": "2026-06-02T09:35:56+11:00",
   "items": [
     {
-      "id": "f3ec8ba5e856accf",
-      "status": "pending",
-      "created_at": "2026-06-01T13:47:27+00:00",
-      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Интерфейс RS-485 и протокол MODBUS RTU под микроскопом или как обследовать оборудование не мешая ему",
-      "title_ru": "Интерфейс RS-485 и протокол MODBUS RTU под микроскопом или как обследовать оборудование не мешая ему",
-      "body": [
-        "Данная статья ориентирована на начинающих инженеров АСУ ТП.",
-        "Статья родилась на основе проделанной работы по обследованию объекта автоматизации.",
-        "Так как в интернете, на казалось бы, \"старую\" тему..."
-      ],
-      "footer": null,
-      "source_text": "Данная статья ориентирована на начинающих инженеров АСУ ТП. Статья родилась на основе проделанной работы по обследованию объекта автоматизации. Так как в интернете, на казалось бы, \"старую\" тему... Как обследовать шину MODBUS RTU к которой подключено промышленное оборудование не разрывая соединения и немного про диагностику MODBUS RTU Читать далее Данная статья ориентирована на начинающих инженеров АСУ ТП. Статья родилась на основе проделанной работы по обследованию объекта автоматизации. Так как в интернете, на казалось бы, \"старую\" тему передачи информации по MODBUS RTU, мало информации про то, как на обследуемом оборудовании узнать с какими настройками работает RS-485, адреса и запросы MODBUS RTU к устройству, не отключая обследоваемое устройства от сети передачи данных, попробуем восполнить данный пробел и описать метод, который применили мы, и за одно, распишем практику работы с RS - 485. Самое главное, обследоваемое оборудование должно всегда быть подключенной к сети MODBUS RTU и отрабатывать по запросам от ПЛК. Вводные понятны, вопрос, как реализовать? Опытные инженеры сразу вспомнят про осциллограф, но есть проблема, как обследовать сам пакет данных, ведь нам надо узнать не только настройки RS-485, но и ID устройств на шине и какие запросы отправляет ПЛК, электронщики сразу вспомнят про логический анализатор и будут абсолютно правы, так как данное устройство отлично справится с поставленной задачей. У меня логический анализатор saleae logic 16, но можно использовать любой другой где есть возможность анализа данных. Обратите внимание на выделенную область, это щупы с помощью которых можно подключится к шине RS-485 (щуп-зажим типа захват)",
-      "post_text": "🌐 Мировые IT\n\n<b>Интерфейс RS-485 и протокол MODBUS RTU под микроскопом или как обследовать оборудование не мешая ему</b>\n\nДанная статья ориентирована на начинающих инженеров АСУ ТП.\n\nСтатья родилась на основе проделанной работы по обследованию объекта автоматизации.\n\nТак как в интернете, на казалось бы, \"старую\" тему...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042242/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042242#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042242/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042242#habracut",
-      "published_at": "2026-06-01T13:44:22+00:00",
-      "title_hash": "e046b1a74cefd2e68cd23eeed8c75fbf27e3b6a7",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/329/bcc/bc7/329bccbc76feb6b8234dc8b22fcdff81.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
       "id": "a4b9705e2ba4c05e",
-      "status": "pending",
+      "status": "hold",
       "created_at": "2026-06-01T13:47:27+00:00",
       "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
       "source": "The Verge",
       "source_type": "it",
       "category": "🌐 Мировые IT",
       "category_hint": "🌐 Мировые IT",
-      "score": 233,
+      "score": 650,
       "title_original": "How to watch Nvidia’s Computex keynote",
       "title_ru": "How to watch Nvidia’s Computex keynote",
       "body": [
@@ -71,235 +34,261 @@
       "with_image": false,
       "image_decision": "none",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
     },
     {
-      "id": "5bf453320116a531",
-      "status": "pending",
-      "created_at": "2026-06-01T13:47:27+00:00",
-      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Прошёл 15 собесов за месяц. Что спрашивали, сколько длилось и кто вообще не ответил",
-      "title_ru": "Прошёл 15 собесов за месяц. Что спрашивали, сколько длилось и кто вообще не ответил",
+      "id": "1eb1bc6e40d99adf",
+      "status": "hold",
+      "created_at": "2026-06-01T22:35:55+00:00",
+      "created_at_sakhalin": "2026-06-02T09:35:55+11:00",
+      "source": "BBC World",
+      "source_type": "world",
+      "category": "🌍 Мир о России",
+      "category_hint": "🌍 Мир о России",
+      "score": 1080,
+      "title_original": "France intercepts sanctioned Russian oil tanker with UK help, Macron says",
+      "title_ru": "France intercepts sanctioned Russian oil tanker with UK help, Macron says",
       "body": [
-        "Месяц назад я уволился из аутсорса и решил, что найду работу за 2-3 недели.",
-        "Три года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио.",
-        "Месяц назад я уволился из аутсорса и решил, что найду работу за 2–3 недели."
+        "A British helicopter provided support during the operation on Sunday, the UK ministry of defence says.",
+        "A British helicopter provided support during the operation on Sunday, the UK ministry of defence says.",
+        "Officers boarded the Tagor in the Atlantic, which maritime authorities said had been flying a false flag when it was detained around 400 nautical miles west of Brittany."
       ],
       "footer": null,
-      "source_text": "Месяц назад я уволился из аутсорса и решил, что найду работу за 2-3 недели. Три года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио. Казалось бы, садись и выбирай. Через 4... Месяц назад я уволился из аутсорса и решил, что найду работу за 2–3 недели. Три года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио. Казалось бы — садись и выбирай. Через 4 недели у меня было 15 собеседований, 2 оффера, 6 молчаний без ответа и один рекрутер который прислал отказ на вакансию на которую я не откликался. Записывал всё в заметки потому что к 10-му собесу уже начал путать компании. Вот что получилось. Читать далее Месяц назад я уволился из аутсорса и решил, что найду работу за 2-3 недели. Три года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио. Казалось бы, садись и выбирай. Через 4 недели у меня было 15 собеседований, 2 оффера, 6 молчаний без ответа и один рекрутер, который прислал отказ на вакансию, на которую я не откликался. Записывал всё в заметки потому что к 10-му собесу уже начал путать компании. Вот что получилось. Собес 1. Продуктовая компания, ~200 человек. HR‑скрининг 20 мин, потом техническое 55 мин — лайвкодинг в CoderPad, задача на деревья. Фидбек через 3 дня, отказ — «недостаточно опыта с алгоритмами». На работе за 3 года ни разу не обходил дерево. Собес 2. Банк из топ-10. HR‑скрининг 15 мин, тестовое задание на дом (оценили в «2-3 часа», делал 8), техническое 1,5 часа — SOLID, паттерны, System Design «спроектируйте платёжный шлюз». Фидбек: тишина. Прошло 4 недели. До сих пор тишина.",
-      "post_text": "🌐 Мировые IT\n\n<b>Прошёл 15 собесов за месяц. Что спрашивали, сколько длилось и кто вообще не ответил</b>\n\nМесяц назад я уволился из аутсорса и решил, что найду работу за 2-3 недели.\n\nТри года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио.\n\nМесяц назад я уволился из аутсорса и решил, что найду работу за 2–3 недели.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042250/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042250#habracut\">Habr</a>",
+      "source_text": "A British helicopter provided support during the operation on Sunday, the UK ministry of defence says. A British helicopter provided support during the operation on Sunday, the UK ministry of defence says. Officers boarded the Tagor in the Atlantic, which maritime authorities said had been flying a false flag when it was detained around 400 nautical miles west of Brittany. \"It is unacceptable for ships to circumvent international sanctions, violate the law of the sea, and fund the war that Russia has been waging against Ukraine,\" Macron wrote on X. A British helicopter provided support during the operation, the UK Ministry of Defence (MoD) told the BBC. The Kremlin said the \"illegal\" seizure was \"bordering on international piracy\".",
+      "post_text": "🌍 Мир о России\n\n<b>France intercepts sanctioned Russian oil tanker with UK help, Macron says</b>\n\nA British helicopter provided support during the operation on Sunday, the UK ministry of defence says.\n\nA British helicopter provided support during the operation on Sunday, the UK ministry of defence says.\n\nOfficers boarded the Tagor in the Atlantic, which maritime authorities said had been flying a false flag when it was detained around 400 nautical miles west of Brittany.\n\nМИР О РОССИИ · <a href=\"https://www.bbc.com/news/articles/cn8pwgej1gxo?at_medium=RSS&amp;at_campaign=rss\">BBC World</a>",
       "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042250/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042250#habracut",
-      "published_at": "2026-06-01T13:44:03+00:00",
-      "title_hash": "4a70388a3064b712656fe84a6d9aa8bbb9a76cd6",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/d19/21e/fbd/d1921efbd277ad1d06e79116de9e1752.png",
+      "url": "https://www.bbc.com/news/articles/cn8pwgej1gxo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-01T11:53:26+00:00",
+      "title_hash": "c7ece752989721c5f3b7cbbfa5b920144b75b2aa",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/7291/live/b8611440-5d9b-11f1-b199-9da46582c1b0.jpg",
       "image_mode": "source",
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 1000
     },
     {
-      "id": "13ca6f32f5b05018",
-      "status": "pending",
-      "created_at": "2026-06-01T13:47:27+00:00",
-      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
-      "source": "Habr",
+      "id": "ac889fc5a1863e04",
+      "status": "hold",
+      "created_at": "2026-06-01T22:35:55+00:00",
+      "created_at_sakhalin": "2026-06-02T09:35:55+11:00",
+      "source": "BBC Technology",
       "source_type": "it",
       "category": "🌐 Мировые IT",
       "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "MiniMax M3: открытая модель с миллионом токенов контекста обошла GPT-5.5 на SWE-Bench Pro",
-      "title_ru": "MiniMax M3: открытая модель с миллионом токенов контекста обошла GPT-5.5 на SWE-Bench Pro",
+      "score": 730,
+      "title_original": "OpenAI let ChatGPT aid and abet mass shooters, Florida suit says",
+      "title_ru": "OpenAI let ChatGPT aid and abet mass shooters, Florida suit says",
       "body": [
-        "1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а...",
-        "1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а не через костыли поверх языковой базы.",
-        "Разбираемся, что внутри и зачем это вообще нужно."
+        "Florida Attorney General James Uthmeier alleges OpenAI and boss Sam Altman built a 'web of deceit' Florida Attorney General James Uthmeier alleges OpenAI and boss Sam Altman built a 'web of deceit' The sweeping lawsuit brought by Attorney General James Uthmeier alleges OpenAI and its boss Sam Altman are endangering and addicting children, aiding and abetting mass shooters, and coaxing users into suicide as the compan",
+        "In a statement responding to the suit, OpenAI said it has \"put in place industry leading protections and policies.\" The legal action comes as Florida is pursuing a criminal investigation into whether ChatGPT played a part in the murder of two people during a mass shooting at Florida State University last year.",
+        "Florida's civil suit is also aiming to hold Altman personally liable for alleged \"reckless and wilful conduct\", including showing \"utter disregard for the risk to human life caused by his firms' conduct\", according to the complaint."
       ],
       "footer": null,
-      "source_text": "1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а... 1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а не через костыли поверх языковой базы. Разбираемся, что внутри и зачем это вообще нужно. Читать далее 1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а не через костыли поверх языковой базы. Разбираемся, что внутри и зачем это вообще нужно. MiniMax M3 — флагман китайской лаборатории MiniMax, заточенный под два сценария: длинные автономные агентные сессии и кодинг. API доступен с сегодняшнего дня, веса и технический отчёт обещают выложить на HuggingFace и GitHub в течение десяти дней. Главное, чем M3 отличается от большинства конкурентов с открытыми весами: мультимодальность заложена в архитектуру с самого начала обучения. Обучающая выборка — 100 триллионов токенов смешанных данных (текст + изображения + видео). На SWE-Bench Pro — тесте на реальные задачи из GitHub-репозиториев — M3 набрала 59,0%. Это выше GPT-5.5 и Gemini 3.1 Pro, хотя и чуть ниже Claude Opus 4.7. На Terminal Bench 2.1 (работа в терминале) — 66,0%. На BrowseComp, где модель должна автономно искать информацию в интернете, — 83,5%, обогнав Claude Opus 4.7 с его 79,3%. На KernelBench Hard модель пока уступает закрытым конкурентам — это честная картина без приукрашиваний. Но самая показательная история — не бенчмарки, а демонстрации долгих прогонов. В одном тест",
-      "post_text": "🌐 Мировые IT\n\n<b>MiniMax M3: открытая модель с миллионом токенов контекста обошла GPT-5.5 на SWE-Bench Pro</b>\n\n1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а...\n\n1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а не через костыли поверх языковой базы.\n\nРазбираемся, что внутри и зачем это вообще нужно.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/tsnis/articles/1042248/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042248#habracut\">Habr</a>",
+      "source_text": "Florida Attorney General James Uthmeier alleges OpenAI and boss Sam Altman built a 'web of deceit' Florida Attorney General James Uthmeier alleges OpenAI and boss Sam Altman built a 'web of deceit' The sweeping lawsuit brought by Attorney General James Uthmeier alleges OpenAI and its boss Sam Altman are endangering and addicting children, aiding and abetting mass shooters, and coaxing users into suicide as the company pursues profit. In a statement responding to the suit, OpenAI said it has \"put in place industry leading protections and policies.\" The legal action comes as Florida is pursuing a criminal investigation into whether ChatGPT played a part in the murder of two people during a mass shooting at Florida State University last year. Florida's civil suit is also aiming to hold Altman personally liable for alleged \"reckless and wilful conduct\", including showing \"utter disregard for the risk to human life caused by his firms' conduct\", according to the complaint.",
+      "post_text": "🌐 Мировые IT\n\n<b>OpenAI let ChatGPT aid and abet mass shooters, Florida suit says</b>\n\nFlorida Attorney General James Uthmeier alleges OpenAI and boss Sam Altman built a 'web of deceit' Florida Attorney General James Uthmeier alleges OpenAI and boss Sam Altman built a 'web of deceit' The sweeping lawsuit brought by Attorney General James Uthmeier alleges OpenAI and its boss Sam Altman are endangering and addicting children, aiding and abetting mass shooters, and coaxing users into suicide as the compan\n\nIn a statement responding to the suit, OpenAI said it has \"put in place industry leading protections and policies.\" The legal action comes as Florida is pursuing a criminal investigation into whether ChatGPT played a part in the murder of two people during a mass shooting at Florida State University last year.\n\nFlorida's civil suit is also aiming to hold Altman personally liable for alleged \"reckless and wilful conduct\", including showing \"utter disregard for the risk to human life caused by his firms' conduct\", according to the complaint.\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/czx2j0v8d2xo?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
       "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/tsnis/articles/1042248/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042248#habracut",
-      "published_at": "2026-06-01T13:43:54+00:00",
-      "title_hash": "9850a4aa1212e87d8d160fd311ee9226ecfc5be8",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/de5/ef9/470/de5ef947049e2237678829ba2587920b.jpeg",
+      "url": "https://www.bbc.com/news/articles/czx2j0v8d2xo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-01T18:58:26+00:00",
+      "title_hash": "8590b34caabba6b0574a92448bf83e9cf3192778",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/56df/live/5b04bfb0-5df3-11f1-9565-ef0970da1cfe.jpg",
       "image_mode": "source",
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
     },
     {
-      "id": "d205b6f6af8b3fef",
-      "status": "pending",
-      "created_at": "2026-06-01T13:47:27+00:00",
-      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
-      "source": "Habr",
+      "id": "638dc762f5b7383d",
+      "status": "hold",
+      "created_at": "2026-06-01T22:35:55+00:00",
+      "created_at_sakhalin": "2026-06-02T09:35:55+11:00",
+      "source": "The Verge",
       "source_type": "it",
       "category": "🌐 Мировые IT",
       "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Реализация Statefull команд в Telegram API",
-      "title_ru": "Реализация Statefull команд в Telegram API",
+      "score": 730,
+      "title_original": "Gemini’s new AI agent is about as good as Google’s demo",
+      "title_ru": "Gemini’s new AI agent is about as good as Google’s demo",
       "body": [
-        "Проблема На протяжении года мы с моей командой пишем телеграмм ботов для коммерческого использования малыми бизнесами (аутсорсинг) и столкнулись с большим количеством проблем, самая неприятная из...",
-        "Java Telegram API обманывает разработчиков дубликатами запросов при отключении интернета?",
-        "Мы команда разработки телеграмм ботов, которая смогла придумать решение для работы с дубликатами в Statefull командах Telegram API используя REST."
+        "It’s imperfect, but surprisingly capable.",
+        "Google's new \"24/7\" AI agent, Gemini Spark, can be shockingly good at doing things on your behalf.",
+        "But I'm not sure it's worth the financial cost and potential privacy tradeoffs."
       ],
       "footer": null,
-      "source_text": "Проблема На протяжении года мы с моей командой пишем телеграмм ботов для коммерческого использования малыми бизнесами (аутсорсинг) и столкнулись с большим количеством проблем, самая неприятная из... Java Telegram API обманывает разработчиков дубликатами запросов при отключении интернета? Мы команда разработки телеграмм ботов, которая смогла придумать решение для работы с дубликатами в Statefull командах Telegram API используя REST. Прошли путь от наивного решения до работающего продукта. Читать далее На протяжении года мы с моей командой пишем телеграмм ботов для коммерческого использования малыми бизнесами (аутсорсинг) и столкнулись с большим количеством проблем, самая неприятная из которых это реализация statefull через stateless . Эта проблема знакома всем разработчикам, которые пытались реализовать заполнение формы в TelegramApi. Разработчики придумывают всякие костыли для этого, потому что в эталонном REST API поддержка состояния от запроса к запросу это нарушение REST-паттерна, однако при заполнении формы приходится использовать состояние . Первый раз я столкнулся с этой проблемой на первом курсе университета в 2024 году. После долгого серчинга мне пришлось смириться с тем что сегодня за меня код будет писать LLM (вернее помогать). Информации и правда мало, что очень странно, так как проблема нерешенная. Например неделю назад, в довольно распространенном боте @MergeBot, который специализируется на записи данных о мигренях мне попался странный баг: если достаточно быстро нажать 2 раза на одну и ту же inline-кнопку ответа на первый вопрос, то бот начинает спрашивать третий вопрос, вместо того чтобы перейти ко второму, причем в ответе на второй вопрос даже нету варианта ответа как в первом.",
-      "post_text": "🌐 Мировые IT\n\n<b>Реализация Statefull команд в Telegram API</b>\n\nПроблема На протяжении года мы с моей командой пишем телеграмм ботов для коммерческого использования малыми бизнесами (аутсорсинг) и столкнулись с большим количеством проблем, самая неприятная из...\n\nJava Telegram API обманывает разработчиков дубликатами запросов при отключении интернета?\n\nМы команда разработки телеграмм ботов, которая смогла придумать решение для работы с дубликатами в Statefull командах Telegram API используя REST.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042246/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042246#habracut\">Habr</a>",
+      "source_text": "It’s imperfect, but surprisingly capable. Google's new \"24/7\" AI agent, Gemini Spark, can be shockingly good at doing things on your behalf. But I'm not sure it's worth the financial cost and potential privacy tradeoffs. The company gave me access to Spark last week. Google advertises Spark as an AI agent that can take on tasks and work on them […] AI Close AI Posts from this topic will be added to your daily email digest and your homepage feed. Report Close Report Posts from this topic will be added to your daily email digest and your homepage feed. Gemini Spark is impressive, but it’s not worth the cost just yet. Gemini Spark is impressive, but it’s not worth the cost just yet.",
+      "post_text": "🌐 Мировые IT\n\n<b>Gemini’s new AI agent is about as good as Google’s demo</b>\n\nIt’s imperfect, but surprisingly capable.\n\nGoogle's new \"24/7\" AI agent, Gemini Spark, can be shockingly good at doing things on your behalf.\n\nBut I'm not sure it's worth the financial cost and potential privacy tradeoffs.\n\nМИРОВЫЕ IT · <a href=\"https://www.theverge.com/tech/941138/google-gemini-spark-ai-agent-hands-on\">The Verge</a>",
       "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042246/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042246#habracut",
-      "published_at": "2026-06-01T13:41:16+00:00",
-      "title_hash": "74a423df3f64f80581a3dcd9427b7794bb4c1b2e",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/904/b35/bfd/904b35bfd8eb445af061bcbc73280876.jpeg",
+      "url": "https://www.theverge.com/tech/941138/google-gemini-spark-ai-agent-hands-on",
+      "published_at": "2026-06-01T20:00:00+00:00",
+      "title_hash": "4f1b9a665e13a3a8a5e6e4edcd09ec8adaf5bfaf",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "12902922372574cc",
+      "status": "hold",
+      "created_at": "2026-06-01T22:35:55+00:00",
+      "created_at_sakhalin": "2026-06-02T09:35:55+11:00",
+      "source": "Eurogamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 680,
+      "title_original": "“The PC is being reinvented” - Nvidia announces new AI-focused RTX Spark laptop as widespread doubt bubbles",
+      "title_ru": "“The PC is being reinvented” - Nvidia announces new AI-focused RTX Spark laptop as widespread doubt bubbles",
+      "body": [
+        "Made to support RTX-powered games and AI agents.",
+        "Nvidia has announced the RTX Spark computer chip, which it claims will revolutionize personal computing thanks to its AI capabilities.",
+        "Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Latest News Sign in for free to manage your site experience."
+      ],
+      "footer": null,
+      "source_text": "Made to support RTX-powered games and AI agents. Nvidia has announced the RTX Spark computer chip, which it claims will revolutionize personal computing thanks to its AI capabilities. Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Latest News Sign in for free to manage your site experience. \"The PC is being reinvented\" - Nvidia announces new AI-focused RTX Spark chip for laptops as widespread doubt bubbles As Path of Exile 2 player numbers surge, Grinding Gear Games promises it won't forget about Path of Exile 1 Blizzard surprises with meta-shaking StarCraft 2 update after years of quieter support and fixes - \"Some of these changes are wild\" We may learn the Steam Machine launch date very soon, as Steam's backend just got updated with a welcome tour Matt Berry won't tell us who is he playing in the A Minecraft Movie sequel, but at least the film has an official release date Minecraft may be headed to the Switch 2, as an ESRB rating has suddenly appeared ahead of Summer Game Fest Baldur's Gate 2 remake reportedly in the works at Wizards of the Coast, with the first game \"likely\" getting the same treatment too Is Mina the Hollower too hard? The debate is on, as players discuss the challenge of Yacht Club's smash hit Infinity Ward sneakily offers first look at Modern Warfare 4 multiplayer gameplay, and apparently it's all about movement now \"The live-action Smurfs movie paid for itself entirely through product placement\" - Former Dragon Age boss suggests games can be funded another way If you click on a link and make a purchase we may receive a small commission. Read our editorial policy . Home News \"The PC is being reinvented\" - Nvidia announces new AI-focused RTX Spark chip for laptops a",
+      "post_text": "🎮 Игры / индустрия\n\n<b>“The PC is being reinvented” - Nvidia announces new AI-focused RTX Spark laptop as widespread doubt bubbles</b>\n\nMade to support RTX-powered games and AI agents.\n\nNvidia has announced the RTX Spark computer chip, which it claims will revolutionize personal computing thanks to its AI capabilities.\n\nRead more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Latest News Sign in for free to manage your site experience.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.eurogamer.net/nvidia-rtx-spark-announced-ai-chip\">Eurogamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.eurogamer.net/nvidia-rtx-spark-announced-ai-chip",
+      "published_at": "2026-06-01T15:51:43.325826+00:00",
+      "title_hash": "fe672ee7f61bc1c267eed29dfc7faab36c5078b5",
+      "image_url": "https://assetsio.gnwcdn.com/nvidia-rtx-spark.png?width=690&quality=85&format=jpg&auto=webp",
       "image_mode": "source",
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
     },
     {
-      "id": "3102b620dbaaf4ab",
-      "status": "pending",
-      "created_at": "2026-06-01T13:47:27+00:00",
-      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "GEO вместо SEO, низкие чеки и 1,5 секунды на юзера. Инсайты ИН: Ритейл 2026",
-      "title_ru": "GEO вместо SEO, низкие чеки и 1,5 секунды на юзера. Инсайты ИН: Ритейл 2026",
+      "id": "12251dc76498599a",
+      "status": "hold",
+      "created_at": "2026-06-01T22:35:55+00:00",
+      "created_at_sakhalin": "2026-06-02T09:35:55+11:00",
+      "source": "PC Gamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 680,
+      "title_original": "Gabe Newell on Steam monopoly accusations: Gamers have",
+      "title_ru": "Gabe Newell on Steam monopoly accusations: Gamers have",
       "body": [
-        "Я продакт-менеджер с опытом управления интернет-магазинами в e-commerce.",
-        "По роду деятельности я привык оценивать изменения рынка не через абстрактный «успешный...",
-        "Пока e-com команды по привычке полируют стандартные конверсии и ведут А/Б-тесты кнопок, ландшафт рынка фундаментально меняется."
+        "Newell also said in 2023 testimony that Steam Newell also said in 2023 testimony that Steam's 'unwritten rule' against charging lower prices on other storefronts does not exist."
       ],
       "footer": null,
-      "source_text": "Привет, Хабр! Меня зовут Дмитрий. Я продакт-менеджер с опытом управления интернет-магазинами в e-commerce. По роду деятельности я привык оценивать изменения рынка не через абстрактный «успешный... Пока e-com команды по привычке полируют стандартные конверсии и ведут А/Б-тесты кнопок, ландшафт рынка фундаментально меняется. Среднее удержание внимания упало до катастрофических 1,5 секунд, доходы растут параллельно с падением чеков, а на смену SEO приходит GEO — оптимизация под генеративные ИИ-движки. Разбираем 5 главных вызовов для ИТ-продуктов в e-commerce на 2026 год, понимание которых становится вопросом выживания. Читать далее Привет, Хабр! Меня зовут Дмитрий. Я продакт-менеджер с опытом управления интернет-магазинами в e-commerce. По роду деятельности я привык оценивать изменения рынка не через абстрактный «успешный успех», а через жесткие продуктовые метрики, P&L, конверсии и реальную экономику бизнеса. Недавняя профильная конференция «ИН:Ритейл» от Яндекс Рекламы подсветила несколько тектонических сдвигов в ритейле. Пока e-com команды по привычке полируют стандартные конверсии в корзину и ведут бесконечные А/Б-тесты цвета кнопок, ландшафт рынка фундаментально меняется. Ниже — разбор 5 главных вызовов для ИТ-продуктов в e-commerce на 2026 год, понимание которых становится для проектов вопросом выживания. На презентации привели пугающие данные психофизиологических исследований: средний показатель удержания внимания к мобильной рекламе упал до катастрофических 1,5–2,2 секунд. При этом, чтобы бренд или УТП вообще зафиксировались в долговременной памяти человека, качественный рекламный контакт должен длиться минимум 2,5 секунды. Мы физически перестаем успевать достучаться до пользователя классическими методами. Что это значит для e-com продуктов: Классический перформанс",
-      "post_text": "🌐 Мировые IT\n\n<b>GEO вместо SEO, низкие чеки и 1,5 секунды на юзера. Инсайты ИН: Ритейл 2026</b>\n\nЯ продакт-менеджер с опытом управления интернет-магазинами в e-commerce.\n\nПо роду деятельности я привык оценивать изменения рынка не через абстрактный «успешный...\n\nПока e-com команды по привычке полируют стандартные конверсии и ведут А/Б-тесты кнопок, ландшафт рынка фундаментально меняется.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042244/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042244#habracut\">Habr</a>",
+      "source_text": "Newell also said in 2023 testimony that Steam Newell also said in 2023 testimony that Steam's 'unwritten rule' against charging lower prices on other storefronts does not exist.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Gabe Newell on Steam monopoly accusations: Gamers have</b>\n\nNewell also said in 2023 testimony that Steam Newell also said in 2023 testimony that Steam's 'unwritten rule' against charging lower prices on other storefronts does not exist.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/gaming-industry/gabe-newell-on-steam-monopoly-accusations-gamers-have-enormous-choice-about-where-to-buy-games/\">PC Gamer</a>",
       "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042244/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042244#habracut",
-      "published_at": "2026-06-01T13:27:56+00:00",
-      "title_hash": "db5a2436a85f52c6f67c826dfa917a63af235528",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/b66/ea7/1af/b66ea71af8460d9e2fe7f824855c55b7.png",
+      "url": "https://www.pcgamer.com/gaming-industry/gabe-newell-on-steam-monopoly-accusations-gamers-have-enormous-choice-about-where-to-buy-games/",
+      "published_at": "2026-06-01T20:04:40+00:00",
+      "title_hash": "345ed527e85b5ac75262a2a1a8cf95ffd5c9bb4a",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/g5JApP3aq7axZiVRi7vnj-1280-80.jpg",
       "image_mode": "source",
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
     },
     {
-      "id": "9fc77cfa10d92d4c",
-      "status": "pending",
-      "created_at": "2026-06-01T13:47:27+00:00",
-      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
-      "source": "Habr",
+      "id": "ea546788ba89de5e",
+      "status": "hold",
+      "created_at": "2026-06-01T22:35:55+00:00",
+      "created_at_sakhalin": "2026-06-02T09:35:55+11:00",
+      "source": "BBC Technology",
       "source_type": "it",
       "category": "🌐 Мировые IT",
       "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Подключаем к ПЛИС клавиатуру PS/2 и ПК по интерфейсу RS232",
-      "title_ru": "Подключаем к ПЛИС клавиатуру PS/2 и ПК по интерфейсу RS232",
+      "score": 730,
+      "title_original": "OpenAI offers rival AI to UK banks blocked from Claude Mythos",
+      "title_ru": "OpenAI offers rival AI to UK banks blocked from Claude Mythos",
       "body": [
-        "Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт).",
-        "Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт).",
-        "Начнём с главного, необходимо обеспечить правильное аппаратное подключение, что бы ничего не спалить."
+        "Nine banks have been offered access to GPT 5.5 Cyber, as fierce rival Anthropic has blocked previews of its tool.",
+        "Nine banks have been offered access to GPT 5.5 Cyber, as fierce rival Anthropic has blocked previews of its tool.",
+        "Both tools are designed to find hidden security weaknesses in digital systems and can outperform humans at some hacking and cyber-security tasks."
       ],
       "footer": null,
-      "source_text": "Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт). Начнём с главного,... Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт). Начнём с главного, необходимо обеспечить правильное аппаратное подключение, что бы ничего не спалить. Мне в этом отношении повезло, наши друзья китайцы, всё сделали за меня. Далее привожу схему, которую вам следует всё же проверить, так как это как раз то место, где вас может ждать сюрприз (может ещё где то, но не фатальный). Так как я сам начинающий в этом вопросе, будьте внимательны. Читать далее Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт). Начнём с главного, необходимо обеспечить правильное аппаратное подключение, что бы ничего не спалить. Мне в этом отношении повезло, наши друзья китайцы, всё сделали за меня. Далее привожу схему, которую вам следует всё же проверить, так как это как раз то место, где вас может ждать сюрприз (может ещё где то, но не фатальный). Так как я сам начинающий в этом вопросе, будьте внимательны. В настройках программы Quartus 2, настроить соответствующие ножки микросхемы как 3.3-V LVTTL. Программа выдаёт предупреждение, но в документации указано, что при таком конфигурации (пишу по памяти) ограничительные диоды подключены, то есть всё правильно. Точно так же настраиваются ножки микросхемы идущие на приёмопередатчик. Сразу привожу схему для приёмопередатчика. (Смотрите документацию на ваши микросхемы и будьте внимательны.) Алгоритм работы устройства следую",
-      "post_text": "🌐 Мировые IT\n\n<b>Подключаем к ПЛИС клавиатуру PS/2 и ПК по интерфейсу RS232</b>\n\nНе большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт).\n\nНе большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт).\n\nНачнём с главного, необходимо обеспечить правильное аппаратное подключение, что бы ничего не спалить.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042234/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042234#habracut\">Habr</a>",
+      "source_text": "Nine banks have been offered access to GPT 5.5 Cyber, as fierce rival Anthropic has blocked previews of its tool. Nine banks have been offered access to GPT 5.5 Cyber, as fierce rival Anthropic has blocked previews of its tool. Both tools are designed to find hidden security weaknesses in digital systems and can outperform humans at some hacking and cyber-security tasks. Mythos caused a stir when it was announced in April, with Anthropic claiming it had found a weakness in one legacy system which had remained hidden for nearly 30 years. Some finance ministers, central bankers and financiers have since expressed serious concerns about it , fearing the model could undermine the security of all financial systems. The AI Security Institute, which has tested both Anthropic's Mythos and OpenAI's GPT-5.5 Cyber, said in its report that they reached \"a similar level of performance\" in the tasks it set them.",
+      "post_text": "🌐 Мировые IT\n\n<b>OpenAI offers rival AI to UK banks blocked from Claude Mythos</b>\n\nNine banks have been offered access to GPT 5.5 Cyber, as fierce rival Anthropic has blocked previews of its tool.\n\nNine banks have been offered access to GPT 5.5 Cyber, as fierce rival Anthropic has blocked previews of its tool.\n\nBoth tools are designed to find hidden security weaknesses in digital systems and can outperform humans at some hacking and cyber-security tasks.\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/cm2p3j6lvn7o?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
       "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042234/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042234#habracut",
-      "published_at": "2026-06-01T13:21:23+00:00",
-      "title_hash": "a6485c253ef79c08cb4e6840b22ae53e1c1da928",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/da5/a17/f20/da5a17f20cc53f9565dec0093c273ec7.jpg",
+      "url": "https://www.bbc.com/news/articles/cm2p3j6lvn7o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-01T17:07:20+00:00",
+      "title_hash": "76b44f689ce5963e4e28f4f1ecf2d8933d741b73",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/1da9/live/87ea54d0-5dae-11f1-8132-9508271dd882.jpg",
       "image_mode": "source",
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "feca2422097a1e95",
-      "status": "pending",
-      "created_at": "2026-06-01T13:47:27+00:00",
-      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Как глушить нефтяную скважину… машинным обучением. Часть 1",
-      "title_ru": "Как глушить нефтяную скважину… машинным обучением. Часть 1",
-      "body": [
-        "Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS,...",
-        "Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS, но и как основной исполнитель.",
-        "Проект начался в 2024 году и, по сути, сейчас продолжается, но основная часть уже выполнена."
-      ],
-      "footer": null,
-      "source_text": "Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS,... Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS, но и как основной исполнитель. Проект начался в 2024 году и, по сути, сейчас продолжается, но основная часть уже выполнена. В первой части расскажу в целом о проекте: какую проблему мы решали, какова постановка задачи, о рабочем процессе. Во второй части уже будет больше технической информации, и подведу итоги того, что удалось нам в итоге получить. Спойлер: результаты проекта признаны успешными по итогам реальных, в прямом смысле, полевых испытаний. Читать далее Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS, но и как основной исполнитель. В статье делюсь больше своими впечатлениями и общим подходом в силу политики конфиденциальности, хотя были выступления на профильных конференциях. Проект начался в 2024 году и, по сути, сейчас продолжается, но основная часть уже выполнена. В первой части расскажу в целом о проекте: какую проблему мы решали, какова постановка задачи, о рабочем процессе. Во второй части уже будет больше технической информации, и подведу итоги того, что удалось нам в итоге получить. Спойлер: результаты проекта признаны успешными по итогам реальных, в прямом смысле, полевых испытаний. Зачастую в процессе эксплуатации нефтяной скважины возникает необходимость заменить или отремонтировать оборудование, размещенное внутри нее, или провести другие работы, требующие остановки выхода нефти и газа чере",
-      "post_text": "🌐 Мировые IT\n\n<b>Как глушить нефтяную скважину… машинным обучением. Часть 1</b>\n\nДумаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS,...\n\nДумаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS, но и как основной исполнитель.\n\nПроект начался в 2024 году и, по сути, сейчас продолжается, но основная часть уже выполнена.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042232/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042232#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042232/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042232#habracut",
-      "published_at": "2026-06-01T13:21:20+00:00",
-      "title_hash": "b6e2e26e4713e8db427f8d7c513e92dec4d89e88",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/758/160/ca2/758160ca26c8aac215c6e5bfe8f7b824.jpeg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
     },
     {
       "id": "d5f39c40569c63f1",
@@ -2388,6 +2377,457 @@
       "reviewed_at": "2026-06-01T13:42:36+00:00",
       "reviewed_by": "auto-editor-v7-local-cleaner",
       "stream_priority": 760
+    },
+    {
+      "id": "f3ec8ba5e856accf",
+      "status": "rejected",
+      "created_at": "2026-06-01T13:47:27+00:00",
+      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌍 Мир о России",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1000,
+      "title_original": "Интерфейс RS-485 и протокол MODBUS RTU под микроскопом или как обследовать оборудование не мешая ему",
+      "title_ru": "Интерфейс RS-485 и протокол MODBUS RTU под микроскопом или как обследовать оборудование не мешая ему",
+      "body": [
+        "Данная статья ориентирована на начинающих инженеров АСУ ТП.",
+        "Статья родилась на основе проделанной работы по обследованию объекта автоматизации.",
+        "Так как в интернете, на казалось бы, \"старую\" тему..."
+      ],
+      "footer": null,
+      "source_text": "Данная статья ориентирована на начинающих инженеров АСУ ТП. Статья родилась на основе проделанной работы по обследованию объекта автоматизации. Так как в интернете, на казалось бы, \"старую\" тему... Как обследовать шину MODBUS RTU к которой подключено промышленное оборудование не разрывая соединения и немного про диагностику MODBUS RTU Читать далее Данная статья ориентирована на начинающих инженеров АСУ ТП. Статья родилась на основе проделанной работы по обследованию объекта автоматизации. Так как в интернете, на казалось бы, \"старую\" тему передачи информации по MODBUS RTU, мало информации про то, как на обследуемом оборудовании узнать с какими настройками работает RS-485, адреса и запросы MODBUS RTU к устройству, не отключая обследоваемое устройства от сети передачи данных, попробуем восполнить данный пробел и описать метод, который применили мы, и за одно, распишем практику работы с RS - 485. Самое главное, обследоваемое оборудование должно всегда быть подключенной к сети MODBUS RTU и отрабатывать по запросам от ПЛК. Вводные понятны, вопрос, как реализовать? Опытные инженеры сразу вспомнят про осциллограф, но есть проблема, как обследовать сам пакет данных, ведь нам надо узнать не только настройки RS-485, но и ID устройств на шине и какие запросы отправляет ПЛК, электронщики сразу вспомнят про логический анализатор и будут абсолютно правы, так как данное устройство отлично справится с поставленной задачей. У меня логический анализатор saleae logic 16, но можно использовать любой другой где есть возможность анализа данных. Обратите внимание на выделенную область, это щупы с помощью которых можно подключится к шине RS-485 (щуп-зажим типа захват)",
+      "post_text": "🌐 Мировые IT\n\n<b>Интерфейс RS-485 и протокол MODBUS RTU под микроскопом или как обследовать оборудование не мешая ему</b>\n\nДанная статья ориентирована на начинающих инженеров АСУ ТП.\n\nСтатья родилась на основе проделанной работы по обследованию объекта автоматизации.\n\nТак как в интернете, на казалось бы, \"старую\" тему...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042242/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042242#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042242/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042242#habracut",
+      "published_at": "2026-06-01T13:44:22+00:00",
+      "title_hash": "e046b1a74cefd2e68cd23eeed8c75fbf27e3b6a7",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/329/bcc/bc7/329bccbc76feb6b8234dc8b22fcdff81.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 1000
+    },
+    {
+      "id": "5bf453320116a531",
+      "status": "rejected",
+      "created_at": "2026-06-01T13:47:27+00:00",
+      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🇷🇺 РФ / экономика",
+      "category_hint": "🌐 Мировые IT",
+      "score": 840,
+      "title_original": "Прошёл 15 собесов за месяц. Что спрашивали, сколько длилось и кто вообще не ответил",
+      "title_ru": "Прошёл 15 собесов за месяц. Что спрашивали, сколько длилось и кто вообще не ответил",
+      "body": [
+        "Месяц назад я уволился из аутсорса и решил, что найду работу за 2-3 недели.",
+        "Три года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио.",
+        "Месяц назад я уволился из аутсорса и решил, что найду работу за 2–3 недели."
+      ],
+      "footer": null,
+      "source_text": "Месяц назад я уволился из аутсорса и решил, что найду работу за 2-3 недели. Три года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио. Казалось бы, садись и выбирай. Через 4... Месяц назад я уволился из аутсорса и решил, что найду работу за 2–3 недели. Три года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио. Казалось бы — садись и выбирай. Через 4 недели у меня было 15 собеседований, 2 оффера, 6 молчаний без ответа и один рекрутер который прислал отказ на вакансию на которую я не откликался. Записывал всё в заметки потому что к 10-му собесу уже начал путать компании. Вот что получилось. Читать далее Месяц назад я уволился из аутсорса и решил, что найду работу за 2-3 недели. Три года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио. Казалось бы, садись и выбирай. Через 4 недели у меня было 15 собеседований, 2 оффера, 6 молчаний без ответа и один рекрутер, который прислал отказ на вакансию, на которую я не откликался. Записывал всё в заметки потому что к 10-му собесу уже начал путать компании. Вот что получилось. Собес 1. Продуктовая компания, ~200 человек. HR‑скрининг 20 мин, потом техническое 55 мин — лайвкодинг в CoderPad, задача на деревья. Фидбек через 3 дня, отказ — «недостаточно опыта с алгоритмами». На работе за 3 года ни разу не обходил дерево. Собес 2. Банк из топ-10. HR‑скрининг 15 мин, тестовое задание на дом (оценили в «2-3 часа», делал 8), техническое 1,5 часа — SOLID, паттерны, System Design «спроектируйте платёжный шлюз». Фидбек: тишина. Прошло 4 недели. До сих пор тишина.",
+      "post_text": "🌐 Мировые IT\n\n<b>Прошёл 15 собесов за месяц. Что спрашивали, сколько длилось и кто вообще не ответил</b>\n\nМесяц назад я уволился из аутсорса и решил, что найду работу за 2-3 недели.\n\nТри года опыта, фуллстек, React + Node, пара нормальных проектов в портфолио.\n\nМесяц назад я уволился из аутсорса и решил, что найду работу за 2–3 недели.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042250/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042250#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042250/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042250#habracut",
+      "published_at": "2026-06-01T13:44:03+00:00",
+      "title_hash": "4a70388a3064b712656fe84a6d9aa8bbb9a76cd6",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/d19/21e/fbd/d1921efbd277ad1d06e79116de9e1752.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 760
+    },
+    {
+      "id": "13ca6f32f5b05018",
+      "status": "rejected",
+      "created_at": "2026-06-01T13:47:27+00:00",
+      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "MiniMax M3: открытая модель с миллионом токенов контекста обошла GPT-5.5 на SWE-Bench Pro",
+      "title_ru": "MiniMax M3: открытая модель с миллионом токенов контекста обошла GPT-5.5 на SWE-Bench Pro",
+      "body": [
+        "1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а...",
+        "1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а не через костыли поверх языковой базы.",
+        "Разбираемся, что внутри и зачем это вообще нужно."
+      ],
+      "footer": null,
+      "source_text": "1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а... 1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а не через костыли поверх языковой базы. Разбираемся, что внутри и зачем это вообще нужно. Читать далее 1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а не через костыли поверх языковой базы. Разбираемся, что внутри и зачем это вообще нужно. MiniMax M3 — флагман китайской лаборатории MiniMax, заточенный под два сценария: длинные автономные агентные сессии и кодинг. API доступен с сегодняшнего дня, веса и технический отчёт обещают выложить на HuggingFace и GitHub в течение десяти дней. Главное, чем M3 отличается от большинства конкурентов с открытыми весами: мультимодальность заложена в архитектуру с самого начала обучения. Обучающая выборка — 100 триллионов токенов смешанных данных (текст + изображения + видео). На SWE-Bench Pro — тесте на реальные задачи из GitHub-репозиториев — M3 набрала 59,0%. Это выше GPT-5.5 и Gemini 3.1 Pro, хотя и чуть ниже Claude Opus 4.7. На Terminal Bench 2.1 (работа в терминале) — 66,0%. На BrowseComp, где модель должна автономно искать информацию в интернете, — 83,5%, обогнав Claude Opus 4.7 с его 79,3%. На KernelBench Hard модель пока уступает закрытым конкурентам — это честная картина без приукрашиваний. Но самая показательная история — не бенчмарки, а демонстрации долгих прогонов. В одном тест",
+      "post_text": "🌐 Мировые IT\n\n<b>MiniMax M3: открытая модель с миллионом токенов контекста обошла GPT-5.5 на SWE-Bench Pro</b>\n\n1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а...\n\n1 июня вышла MiniMax M3 — и это первая open-weight модель, которая одновременно тянет агентный кодинг на уровне фронтира, держит миллион токенов контекста и работает с изображениями и видео нативно, а не через костыли поверх языковой базы.\n\nРазбираемся, что внутри и зачем это вообще нужно.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/tsnis/articles/1042248/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042248#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/tsnis/articles/1042248/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042248#habracut",
+      "published_at": "2026-06-01T13:43:54+00:00",
+      "title_hash": "9850a4aa1212e87d8d160fd311ee9226ecfc5be8",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/de5/ef9/470/de5ef947049e2237678829ba2587920b.jpeg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "d205b6f6af8b3fef",
+      "status": "rejected",
+      "created_at": "2026-06-01T13:47:27+00:00",
+      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Реализация Statefull команд в Telegram API",
+      "title_ru": "Реализация Statefull команд в Telegram API",
+      "body": [
+        "Проблема На протяжении года мы с моей командой пишем телеграмм ботов для коммерческого использования малыми бизнесами (аутсорсинг) и столкнулись с большим количеством проблем, самая неприятная из...",
+        "Java Telegram API обманывает разработчиков дубликатами запросов при отключении интернета?",
+        "Мы команда разработки телеграмм ботов, которая смогла придумать решение для работы с дубликатами в Statefull командах Telegram API используя REST."
+      ],
+      "footer": null,
+      "source_text": "Проблема На протяжении года мы с моей командой пишем телеграмм ботов для коммерческого использования малыми бизнесами (аутсорсинг) и столкнулись с большим количеством проблем, самая неприятная из... Java Telegram API обманывает разработчиков дубликатами запросов при отключении интернета? Мы команда разработки телеграмм ботов, которая смогла придумать решение для работы с дубликатами в Statefull командах Telegram API используя REST. Прошли путь от наивного решения до работающего продукта. Читать далее На протяжении года мы с моей командой пишем телеграмм ботов для коммерческого использования малыми бизнесами (аутсорсинг) и столкнулись с большим количеством проблем, самая неприятная из которых это реализация statefull через stateless . Эта проблема знакома всем разработчикам, которые пытались реализовать заполнение формы в TelegramApi. Разработчики придумывают всякие костыли для этого, потому что в эталонном REST API поддержка состояния от запроса к запросу это нарушение REST-паттерна, однако при заполнении формы приходится использовать состояние . Первый раз я столкнулся с этой проблемой на первом курсе университета в 2024 году. После долгого серчинга мне пришлось смириться с тем что сегодня за меня код будет писать LLM (вернее помогать). Информации и правда мало, что очень странно, так как проблема нерешенная. Например неделю назад, в довольно распространенном боте @MergeBot, который специализируется на записи данных о мигренях мне попался странный баг: если достаточно быстро нажать 2 раза на одну и ту же inline-кнопку ответа на первый вопрос, то бот начинает спрашивать третий вопрос, вместо того чтобы перейти ко второму, причем в ответе на второй вопрос даже нету варианта ответа как в первом.",
+      "post_text": "🌐 Мировые IT\n\n<b>Реализация Statefull команд в Telegram API</b>\n\nПроблема На протяжении года мы с моей командой пишем телеграмм ботов для коммерческого использования малыми бизнесами (аутсорсинг) и столкнулись с большим количеством проблем, самая неприятная из...\n\nJava Telegram API обманывает разработчиков дубликатами запросов при отключении интернета?\n\nМы команда разработки телеграмм ботов, которая смогла придумать решение для работы с дубликатами в Statefull командах Telegram API используя REST.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042246/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042246#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042246/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042246#habracut",
+      "published_at": "2026-06-01T13:41:16+00:00",
+      "title_hash": "74a423df3f64f80581a3dcd9427b7794bb4c1b2e",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/904/b35/bfd/904b35bfd8eb445af061bcbc73280876.jpeg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "3102b620dbaaf4ab",
+      "status": "rejected",
+      "created_at": "2026-06-01T13:47:27+00:00",
+      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🇷🇺 РФ / экономика",
+      "category_hint": "🌐 Мировые IT",
+      "score": 840,
+      "title_original": "GEO вместо SEO, низкие чеки и 1,5 секунды на юзера. Инсайты ИН: Ритейл 2026",
+      "title_ru": "GEO вместо SEO, низкие чеки и 1,5 секунды на юзера. Инсайты ИН: Ритейл 2026",
+      "body": [
+        "Я продакт-менеджер с опытом управления интернет-магазинами в e-commerce.",
+        "По роду деятельности я привык оценивать изменения рынка не через абстрактный «успешный...",
+        "Пока e-com команды по привычке полируют стандартные конверсии и ведут А/Б-тесты кнопок, ландшафт рынка фундаментально меняется."
+      ],
+      "footer": null,
+      "source_text": "Привет, Хабр! Меня зовут Дмитрий. Я продакт-менеджер с опытом управления интернет-магазинами в e-commerce. По роду деятельности я привык оценивать изменения рынка не через абстрактный «успешный... Пока e-com команды по привычке полируют стандартные конверсии и ведут А/Б-тесты кнопок, ландшафт рынка фундаментально меняется. Среднее удержание внимания упало до катастрофических 1,5 секунд, доходы растут параллельно с падением чеков, а на смену SEO приходит GEO — оптимизация под генеративные ИИ-движки. Разбираем 5 главных вызовов для ИТ-продуктов в e-commerce на 2026 год, понимание которых становится вопросом выживания. Читать далее Привет, Хабр! Меня зовут Дмитрий. Я продакт-менеджер с опытом управления интернет-магазинами в e-commerce. По роду деятельности я привык оценивать изменения рынка не через абстрактный «успешный успех», а через жесткие продуктовые метрики, P&L, конверсии и реальную экономику бизнеса. Недавняя профильная конференция «ИН:Ритейл» от Яндекс Рекламы подсветила несколько тектонических сдвигов в ритейле. Пока e-com команды по привычке полируют стандартные конверсии в корзину и ведут бесконечные А/Б-тесты цвета кнопок, ландшафт рынка фундаментально меняется. Ниже — разбор 5 главных вызовов для ИТ-продуктов в e-commerce на 2026 год, понимание которых становится для проектов вопросом выживания. На презентации привели пугающие данные психофизиологических исследований: средний показатель удержания внимания к мобильной рекламе упал до катастрофических 1,5–2,2 секунд. При этом, чтобы бренд или УТП вообще зафиксировались в долговременной памяти человека, качественный рекламный контакт должен длиться минимум 2,5 секунды. Мы физически перестаем успевать достучаться до пользователя классическими методами. Что это значит для e-com продуктов: Классический перформанс",
+      "post_text": "🌐 Мировые IT\n\n<b>GEO вместо SEO, низкие чеки и 1,5 секунды на юзера. Инсайты ИН: Ритейл 2026</b>\n\nЯ продакт-менеджер с опытом управления интернет-магазинами в e-commerce.\n\nПо роду деятельности я привык оценивать изменения рынка не через абстрактный «успешный...\n\nПока e-com команды по привычке полируют стандартные конверсии и ведут А/Б-тесты кнопок, ландшафт рынка фундаментально меняется.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042244/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042244#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042244/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042244#habracut",
+      "published_at": "2026-06-01T13:27:56+00:00",
+      "title_hash": "db5a2436a85f52c6f67c826dfa917a63af235528",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/b66/ea7/1af/b66ea71af8460d9e2fe7f824855c55b7.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 760
+    },
+    {
+      "id": "9fc77cfa10d92d4c",
+      "status": "rejected",
+      "created_at": "2026-06-01T13:47:27+00:00",
+      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🧭 Геополитика",
+      "category_hint": "🌐 Мировые IT",
+      "score": 820,
+      "title_original": "Подключаем к ПЛИС клавиатуру PS/2 и ПК по интерфейсу RS232",
+      "title_ru": "Подключаем к ПЛИС клавиатуру PS/2 и ПК по интерфейсу RS232",
+      "body": [
+        "Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт).",
+        "Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт).",
+        "Начнём с главного, необходимо обеспечить правильное аппаратное подключение, что бы ничего не спалить."
+      ],
+      "footer": null,
+      "source_text": "Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт). Начнём с главного,... Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт). Начнём с главного, необходимо обеспечить правильное аппаратное подключение, что бы ничего не спалить. Мне в этом отношении повезло, наши друзья китайцы, всё сделали за меня. Далее привожу схему, которую вам следует всё же проверить, так как это как раз то место, где вас может ждать сюрприз (может ещё где то, но не фатальный). Так как я сам начинающий в этом вопросе, будьте внимательны. Читать далее Не большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт). Начнём с главного, необходимо обеспечить правильное аппаратное подключение, что бы ничего не спалить. Мне в этом отношении повезло, наши друзья китайцы, всё сделали за меня. Далее привожу схему, которую вам следует всё же проверить, так как это как раз то место, где вас может ждать сюрприз (может ещё где то, но не фатальный). Так как я сам начинающий в этом вопросе, будьте внимательны. В настройках программы Quartus 2, настроить соответствующие ножки микросхемы как 3.3-V LVTTL. Программа выдаёт предупреждение, но в документации указано, что при таком конфигурации (пишу по памяти) ограничительные диоды подключены, то есть всё правильно. Точно так же настраиваются ножки микросхемы идущие на приёмопередатчик. Сразу привожу схему для приёмопередатчика. (Смотрите документацию на ваши микросхемы и будьте внимательны.) Алгоритм работы устройства следую",
+      "post_text": "🌐 Мировые IT\n\n<b>Подключаем к ПЛИС клавиатуру PS/2 и ПК по интерфейсу RS232</b>\n\nНе большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт).\n\nНе большой пример для начинающих ПЛИСоводов, как подключить к ПЛИС (ALTERA Cyclon 4) клавиатуру с интерфейсом PS/2, а так же компьютер по интерфейсу RS232 (он же COM-порт).\n\nНачнём с главного, необходимо обеспечить правильное аппаратное подключение, что бы ничего не спалить.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042234/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042234#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042234/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042234#habracut",
+      "published_at": "2026-06-01T13:21:23+00:00",
+      "title_hash": "a6485c253ef79c08cb4e6840b22ae53e1c1da928",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/da5/a17/f20/da5a17f20cc53f9565dec0093c273ec7.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 820
+    },
+    {
+      "id": "feca2422097a1e95",
+      "status": "rejected",
+      "created_at": "2026-06-01T13:47:27+00:00",
+      "created_at_sakhalin": "2026-06-02T00:47:27+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🧭 Геополитика",
+      "category_hint": "🌐 Мировые IT",
+      "score": 900,
+      "title_original": "Как глушить нефтяную скважину… машинным обучением. Часть 1",
+      "title_ru": "Как глушить нефтяную скважину… машинным обучением. Часть 1",
+      "body": [
+        "Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS,...",
+        "Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS, но и как основной исполнитель.",
+        "Проект начался в 2024 году и, по сути, сейчас продолжается, но основная часть уже выполнена."
+      ],
+      "footer": null,
+      "source_text": "Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS,... Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS, но и как основной исполнитель. Проект начался в 2024 году и, по сути, сейчас продолжается, но основная часть уже выполнена. В первой части расскажу в целом о проекте: какую проблему мы решали, какова постановка задачи, о рабочем процессе. Во второй части уже будет больше технической информации, и подведу итоги того, что удалось нам в итоге получить. Спойлер: результаты проекта признаны успешными по итогам реальных, в прямом смысле, полевых испытаний. Читать далее Думаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS, но и как основной исполнитель. В статье делюсь больше своими впечатлениями и общим подходом в силу политики конфиденциальности, хотя были выступления на профильных конференциях. Проект начался в 2024 году и, по сути, сейчас продолжается, но основная часть уже выполнена. В первой части расскажу в целом о проекте: какую проблему мы решали, какова постановка задачи, о рабочем процессе. Во второй части уже будет больше технической информации, и подведу итоги того, что удалось нам в итоге получить. Спойлер: результаты проекта признаны успешными по итогам реальных, в прямом смысле, полевых испытаний. Зачастую в процессе эксплуатации нефтяной скважины возникает необходимость заменить или отремонтировать оборудование, размещенное внутри нее, или провести другие работы, требующие остановки выхода нефти и газа чере",
+      "post_text": "🌐 Мировые IT\n\n<b>Как глушить нефтяную скважину… машинным обучением. Часть 1</b>\n\nДумаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS,...\n\nДумаю, пришло время рассказать широкой общественности об интересном ML проекте в нефтяной отрасли, в котором я принимал участие не только как руководитель направления DS, но и как основной исполнитель.\n\nПроект начался в 2024 году и, по сути, сейчас продолжается, но основная часть уже выполнена.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042232/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042232#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042232/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042232#habracut",
+      "published_at": "2026-06-01T13:21:20+00:00",
+      "title_hash": "b6e2e26e4713e8db427f8d7c513e92dec4d89e88",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/758/160/ca2/758160ca26c8aac215c6e5bfe8f7b824.jpeg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 820
+    },
+    {
+      "id": "3eb358ff2dc282dc",
+      "status": "rejected",
+      "created_at": "2026-06-01T22:35:55+00:00",
+      "created_at_sakhalin": "2026-06-02T09:35:55+11:00",
+      "source": "Guardian Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 730,
+      "title_original": "Oil price rises to $97 a barrel as ‘Iran stops exchanging messages with US’ – as it happened",
+      "title_ru": "Oil price rises to $97 a barrel as ‘Iran stops exchanging messages with US’ – as it happened",
+      "body": [
+        "British house prices fell 0.6% in May, leaving them 1.7% higher than a year earlier, Nationwide reports Firm says its RTX Spark PC chip for Microsoft Windows will let AI agents replace the mouse and keyboard Business live – latest updates A new front has opened up in the battle for dominance in AI chips, as Nvidia said its latest development could replace the mouse and keyboard in how people use computers.",
+        "The $5tn (£3.7tn) US semiconductor company has launched a “superchip” that puts AI capabilities into laptops and desktop computers, a move that will pit it against Intel, Apple, Qualcomm and AMD.",
+        "British house prices fell 0.6% in May, leaving them 1.7% higher than a year earlier, Nationwide reports UK house prices fall for first time this year amid rising rates UK house prices fall for first time this year amid rising rates Time to recap… \",\"elementId\":\"07164b52-d29a-4fd0-9157-d99b7548e6c2\"},{\"_type\":\"model.dotcomrendering.pageElements.TextBlockElement\",\"html\":\" The oil price is moving back towards the $100 a"
+      ],
+      "footer": null,
+      "source_text": "British house prices fell 0.6% in May, leaving them 1.7% higher than a year earlier, Nationwide reports Firm says its RTX Spark PC chip for Microsoft Windows will let AI agents replace the mouse and keyboard Business live – latest updates A new front has opened up in the battle for dominance in AI chips, as Nvidia said its latest development could replace the mouse and keyboard in how people use computers. The $5tn (£3.7tn) US semiconductor company has launched a “superchip” that puts AI capabilities into laptops and desktop computers, a move that will pit it against Intel, Apple, Qualcomm and AMD. Continue reading... British house prices fell 0.6% in May, leaving them 1.7% higher than a year earlier, Nationwide reports UK house prices fall for first time this year amid rising rates UK house prices fall for first time this year amid rising rates Time to recap… \",\"elementId\":\"07164b52-d29a-4fd0-9157-d99b7548e6c2\"},{\"_type\":\"model.dotcomrendering.pageElements.TextBlockElement\",\"html\":\" The oil price is moving back towards the $100 a barrel mark, as hopes of a breakthough in the US-Iran peace deal talks evaporate. \",\"elementId\":\"679bdfef-dba6-46b7-93fd-2d5157edbfec\"},{\"_type\":\"model.dotcomrendering.pageElements.TextBlockElement\",\"html\":\" Brent crude has now hit $97.58 a barrel, following reports that Tehran’s negotiating team is stopping exchanges of messages with the United States through mediators due to attacks on Lebanon. \",\"elementId\":\"4ce52286-d956-46dc-aa5e-99e09a9ce93d\"},{\"_type\":\"model.dotcomrendering.pageElements.TextBlockElement\",\"html\":\" Iran has said there will be no peace talks with the US until its demands on the cessation of Israeli operations in Lebanon and Gaza are met, according to the IRGC-affiliated Tasnim news agency. \",\"elementId\":\"9829e638-3523-4025",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Oil price rises to $97 a barrel as ‘Iran stops exchanging messages with US’ – as it happened</b>\n\nBritish house prices fell 0.6% in May, leaving them 1.7% higher than a year earlier, Nationwide reports Firm says its RTX Spark PC chip for Microsoft Windows will let AI agents replace the mouse and keyboard Business live – latest updates A new front has opened up in the battle for dominance in AI chips, as Nvidia said its latest development could replace the mouse and keyboard in how people use computers.\n\nThe $5tn (£3.7tn) US semiconductor company has launched a “superchip” that puts AI capabilities into laptops and desktop computers, a move that will pit it against Intel, Apple, Qualcomm and AMD.\n\nBritish house prices fell 0.6% in May, leaving them 1.7% higher than a year earlier, Nationwide reports UK house prices fall for first time this year amid rising rates UK house prices fall for first time this year amid rising rates Time to recap… \",\"elementId\":\"07164b52-d29a-4fd0-9157-d99b7548e6c2\"},{\"_type\":\"model.dotcomrendering.pageElements.TextBlockElement\",\"html\":\" The oil price is moving back towards the $100 a\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theguardian.com/business/live/2026/jun/01/uk-house-prices-fall-middle-east-interest-rates-manufacturing-softbank-ai-boom-chipmakers-live-updates\">Guardian Technology</a>",
+      "edited_post_text": null,
+      "url": "https://www.theguardian.com/business/live/2026/jun/01/uk-house-prices-fall-middle-east-interest-rates-manufacturing-softbank-ai-boom-chipmakers-live-updates",
+      "published_at": "2026-06-01T14:53:16+00:00",
+      "title_hash": "cb7bb07c1bc80f94c3baea29981f82dc60249e5e",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "d23714aa946c1f83",
+      "status": "rejected",
+      "created_at": "2026-06-01T22:35:55+00:00",
+      "created_at_sakhalin": "2026-06-02T09:35:55+11:00",
+      "source": "Ars Technica",
+      "source_type": "it",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🌐 Мировые IT",
+      "score": 600,
+      "title_original": "Hackers duped Meta AI support chatbot to steal celebrity Instagram accounts",
+      "title_ru": "Hackers duped Meta AI support chatbot to steal celebrity Instagram accounts",
+      "body": [
+        "Pricey Instagram handles were stolen and resold before Meta patched the exploit.",
+        "Pricey Instagram handles were stolen and resold before Meta patched the exploit.",
+        "Sections Forum Subscribe Search AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day & Night Dark System Search Sign In Sign in dialog..."
+      ],
+      "footer": null,
+      "source_text": "Pricey Instagram handles were stolen and resold before Meta patched the exploit. Pricey Instagram handles were stolen and resold before Meta patched the exploit. Sections Forum Subscribe Search AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day & Night Dark System Search Sign In Sign in dialog... Sign in Confused AI deputy Hackers duped Meta AI support chatbot to steal celebrity Instagram accounts Pricey Instagram handles were stolen and resold before Meta patched the exploit. 22 The Meta AI logo is seen on a smartphone screen. Credit: Marcin Golba/NurPhoto via Getty Images The Meta AI logo is seen on a smartphone screen. Credit: Marcin Golba/NurPhoto via Getty Images Text settings Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Minimize to nav Meta’s AI support chatbot proved unusually helpful to hackers looking to steal and resell notable Instagram accounts—the hackers simply asking the bot to change the accounts’ associated email addresses while using VPN to mask their true locations. Videos featuring the “shockingly easy” exploit have been circulating among Telegram groups for hackers and security researchers, according to 404 Media . The exploit allowed hackers to take over and flip valuable Instagram accounts worth hundreds of thousands of dollars on the gray market before Meta implemented an emergency patch on May 29. The Barack Obama White House account and the Chief Master Sergeant of Space Fo",
+      "post_text": "🌐 Мировые IT\n\n<b>Hackers duped Meta AI support chatbot to steal celebrity Instagram accounts</b>\n\nPricey Instagram handles were stolen and resold before Meta patched the exploit.\n\nPricey Instagram handles were stolen and resold before Meta patched the exploit.\n\nSections Forum Subscribe Search AI Biz &amp; IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz &amp; IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day &amp; Night Dark System Search Sign In Sign in dialog...\n\nМИРОВЫЕ IT · <a href=\"https://arstechnica.com/ai/2026/06/meta-ai-support-chatbot-gave-hackers-access-to-notable-instagram-accounts/\">Ars Technica</a>",
+      "edited_post_text": null,
+      "url": "https://arstechnica.com/ai/2026/06/meta-ai-support-chatbot-gave-hackers-access-to-notable-instagram-accounts/",
+      "published_at": "2026-06-01T20:44:37+00:00",
+      "title_hash": "797ee13ea13f57f8f514f52c546aa91d55aceca9",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: игровая тема не имеет достаточной индустриальной значимости."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "649efb2e1a412ff6",
+      "status": "rejected",
+      "created_at": "2026-06-01T22:35:55+00:00",
+      "created_at_sakhalin": "2026-06-02T09:35:55+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Overview - Claude Code Docs",
+      "title_ru": "Overview - Claude Code Docs",
+      "body": [
+        "Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools.",
+        "Available in your terminal, IDE, desktop app, and browser.",
+        "Claude Code у меня появился в марте 2025-го."
+      ],
+      "footer": null,
+      "source_text": "Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools. Available in your terminal, IDE, desktop app, and browser. Claude Code у меня появился в марте 2025-го. Точную неделю не помню — в какой-то момент он у меня просто стал инструментом по умолчанию, и я с ним отработал примерно год. Это не «AI убил программирование» и не «AI = x10 продуктивность». И то и другое — пустое. Реальность скучнее и интереснее одновременно. Сразу важная оговорка: я использую Claude Code на максимум . Не «иногда», не «когда подходит» — постоянно, на каждой задаче. Если что-то можно сделать через него, я делаю через него. Под него подстроены CLAUDE.md , hooks, skills, slash-команды, два MCP-сервера. Это контекст для всех выводов ниже. Стек: Python, бэкенд, команда маленькая. Где он реально помог Массовые рутинные правки. Самое чистое попадание. Когда у тебя задача «во всех 47 эндпоинтах добавь параметр request_id в логи и пробрось его в нижний слой» — это его работа, а не моя. Открываю агента, описываю абзацем, прошу сначала план, смотрю план, говорю «давай» — и через минут десять у меня PR с тестами. По ощущениям часов тридцать-сорок за год сэкономил только на таких задачах. Совет, который я выработал не сразу: на больших правках сначала только план , без кода. Если план мимо — лучше потерять минуту на новой просьбе, чем час на разгребании неверно сделанного. Чтение чужого репозитория. Раньше я тратил полдня на «понять, что тут вообще происходит». Сейчас открываю агента и говорю: «прочти структуру, расскажи как устроена аутентификация». Через минуту — приличный пересказ с указанием файлов. Только проверяю всегда — открываю пару названных файлов и сверяю с пересказом. Примерно в каждом пятом пересказе он что-то слег",
+      "post_text": "🌐 Мировые IT\n\n<b>Overview - Claude Code Docs</b>\n\nClaude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools.\n\nAvailable in your terminal, IDE, desktop app, and browser.\n\nClaude Code у меня появился в марте 2025-го.\n\nМИРОВЫЕ IT · <a href=\"https://code.claude.com/docs\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://code.claude.com/docs",
+      "published_at": "2026-06-01T19:55:26+00:00",
+      "title_hash": "ff7dd5e401bfee4a4d466e35fb6ed9c3a2e9c8de",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/65d/cb8/b48/65dcb8b48f8b4ad965f9abfb8bf4bf3a.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "a026de341fcf50fc",
+      "status": "rejected",
+      "created_at": "2026-06-01T22:35:55+00:00",
+      "created_at_sakhalin": "2026-06-02T09:35:55+11:00",
+      "source": "GameSpot",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 680,
+      "title_original": "Rockstar Games (@RockstarGames) on X",
+      "title_ru": "Rockstar Games (@RockstarGames) on X",
+      "body": [
+        "Hi everyone, Grand Theft Auto VI will now release on Thursday, November 19, 2026.",
+        "We are sorry for adding additional time to what we realize has been a long wait, but these extra months will allow us to finish the game with the level of polish you have come to expect and Marvel's Wolverine is going to take center stage at the June 2 State of Play, and developer Insomniac recently scared fans into thinking the game might be delayed with a cheeky post.",
+        "Posting on social media, Insomniac spooked fans by releasing a statement in the style of GTA 6 developer Rockstar's posts about the delays for that game."
+      ],
+      "footer": null,
+      "source_text": "Hi everyone, Grand Theft Auto VI will now release on Thursday, November 19, 2026. We are sorry for adding additional time to what we realize has been a long wait, but these extra months will allow us to finish the game with the level of polish you have come to expect and Marvel's Wolverine is going to take center stage at the June 2 State of Play, and developer Insomniac recently scared fans into thinking the game might be delayed with a cheeky post. Posting on social media, Insomniac spooked fans by releasing a statement in the style of GTA 6 developer Rockstar's posts about the delays for that game. For reference, Rockstar's post about the latest GTA 6 delay began with \"Hi everyone.\" That wording has become something of a meme these days. So when people saw Insomniac's post that started with \"Hey everyone,\" they thought Insomniac might have been informing fans about a Wolverine delay. The replies to Insomniac's posts are filled with people saying they thought Wolverine was delayed due to the wording of the message. Insomniac responded to one person with a laughing face emoji. https://twitter.com/s1nicki/status/2060969961640820877 Wolverine is among the PlayStation games that will be on display during the June 2 State of Play. The game is set to release on September 15 for PS5. The State of Play will be about an hour long, and people are theorizing about what other games may show up, like Naughty Dog's Intergalactic: The Heretic Prophet, a new God of War game, or the return of Fairgame$. The event begins at 2 PM PT / 5 PM ET on June 2, so be sure to keep checking back with GameSpot for all the news as it's revealed.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Rockstar Games (@RockstarGames) on X</b>\n\nHi everyone, Grand Theft Auto VI will now release on Thursday, November 19, 2026.\n\nWe are sorry for adding additional time to what we realize has been a long wait, but these extra months will allow us to finish the game with the level of polish you have come to expect and Marvel's Wolverine is going to take center stage at the June 2 State of Play, and developer Insomniac recently scared fans into thinking the game might be delayed with a cheeky post.\n\nPosting on social media, Insomniac spooked fans by releasing a statement in the style of GTA 6 developer Rockstar's posts about the delays for that game.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://x.com/RockstarGames/status/1986540361011880167?lang=en\">GameSpot</a>",
+      "edited_post_text": null,
+      "url": "https://x.com/RockstarGames/status/1986540361011880167?lang=en",
+      "published_at": "2026-06-01T19:38:48+00:00",
+      "title_hash": "1f9f1c899738b474af5a965373167cc3ff1daf95",
+      "image_url": "https://pbs.twimg.com/media/G5Gb7bPXQAAJWhG.jpg:large",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-01T22:35:56+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
     },
     {
       "id": "ec44a45aa73888ea",
@@ -9580,23 +10020,23 @@
     "approve_limit": 2,
     "min_auto_score": 600,
     "openrouter_enabled": false,
-    "reviewed_at": "2026-06-01T13:42:36+00:00",
-    "reviewed_at_sakhalin": "2026-06-02T00:42:36+11:00"
+    "reviewed_at": "2026-06-01T22:35:56+00:00",
+    "reviewed_at_sakhalin": "2026-06-02T09:35:56+11:00"
   },
   "final_guard": {
     "version": 3,
     "changed": 0,
     "polished": 0,
-    "checked_at": "2026-06-01T13:42:59+00:00",
-    "checked_at_sakhalin": "2026-06-02T00:42:59+11:00"
+    "checked_at": "2026-06-01T22:35:56+00:00",
+    "checked_at_sakhalin": "2026-06-02T09:35:56+11:00"
   },
   "priority_guard": {
     "version": 3,
     "changed": 0,
     "airport_changed": 0,
     "security_changed": 0,
-    "checked_at": "2026-06-01T13:42:37+00:00",
-    "checked_at_sakhalin": "2026-06-02T00:42:37+11:00"
+    "checked_at": "2026-06-01T22:35:56+00:00",
+    "checked_at_sakhalin": "2026-06-02T09:35:56+11:00"
   },
   "cycle_report": {
     "reported_at": "2026-06-01T13:42:56+00:00",
@@ -9689,10 +10129,10 @@
   },
   "scope_guard": {
     "version": 3,
-    "checked": 10,
+    "checked": 7,
     "rejected": 0,
-    "checked_at": "2026-06-01T13:42:37+00:00",
-    "checked_at_sakhalin": "2026-06-02T00:42:37+11:00",
+    "checked_at": "2026-06-01T22:35:56+00:00",
+    "checked_at_sakhalin": "2026-06-02T09:35:56+11:00",
     "policy": "block foreign ECB/Greece macro commentary, low-value Habr/retro/essay posts, minor quakes without impact, and weak foreign geopolitics"
   }
 }
