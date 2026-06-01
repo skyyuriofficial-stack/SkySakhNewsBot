@@ -3855,14 +3855,14 @@
     }
   ],
   "last_cycle_report": {
-    "reported_at": "2026-05-31T21:05:13+00:00",
-    "reported_at_sakhalin": "2026-06-01T08:05:13+11:00",
-    "queue_updated_at": "2026-05-31T21:05:01+00:00",
-    "queue_updated_at_sakhalin": "2026-06-01T08:05:01+11:00",
+    "reported_at": "2026-06-01T00:11:25+00:00",
+    "reported_at_sakhalin": "2026-06-01T11:11:25+11:00",
+    "queue_updated_at": "2026-06-01T00:11:14+00:00",
+    "queue_updated_at_sakhalin": "2026-06-01T11:11:14+11:00",
     "total_queue_items": 130,
     "status_counts": {
-      "hold": 1,
-      "rejected": 68,
+      "hold": 3,
+      "rejected": 66,
       "published": 61,
       "pending": 0,
       "approved": 0,
@@ -3870,7 +3870,8 @@
       "unknown": 0
     },
     "hold_by_category": {
-      "🌐 Мировые IT": 1
+      "🌐 Мировые IT": 2,
+      "🎮 Игры / индустрия": 1
     },
     "approved_by_category": {},
     "published_by_category": {
@@ -3895,28 +3896,28 @@
         "🌐 Мировые IT": 650,
         "🎮 Игры / индустрия": 600
       },
-      "reviewed_pending": 12,
+      "reviewed_pending": 18,
       "approved": 0,
       "approve_limit": 2,
       "min_auto_score": 600,
       "openrouter_enabled": false,
-      "reviewed_at": "2026-05-31T21:05:01+00:00",
-      "reviewed_at_sakhalin": "2026-06-01T08:05:01+11:00"
+      "reviewed_at": "2026-06-01T00:11:13+00:00",
+      "reviewed_at_sakhalin": "2026-06-01T11:11:13+11:00"
     },
     "priority_guard": {
       "version": 3,
       "changed": 0,
       "airport_changed": 0,
       "security_changed": 0,
-      "checked_at": "2026-05-31T21:05:01+00:00",
-      "checked_at_sakhalin": "2026-06-01T08:05:01+11:00"
+      "checked_at": "2026-06-01T00:11:14+00:00",
+      "checked_at_sakhalin": "2026-06-01T11:11:14+11:00"
     },
     "final_guard": {
       "version": 3,
       "changed": 0,
       "polished": 0,
-      "checked_at": "2026-05-31T21:05:01+00:00",
-      "checked_at_sakhalin": "2026-06-01T08:05:01+11:00"
+      "checked_at": "2026-06-01T00:11:14+00:00",
+      "checked_at_sakhalin": "2026-06-01T11:11:14+11:00"
     },
     "recent_published_20m_count": 0,
     "recent_published_20m": [],
