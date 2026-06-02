@@ -1,20 +1,20 @@
 {
   "version": 1,
-  "updated_at": "2026-06-02T12:22:32+00:00",
-  "updated_at_sakhalin": "2026-06-02T23:22:32+11:00",
-  "reviewed_at": "2026-06-02T12:09:43+00:00",
-  "reviewed_at_sakhalin": "2026-06-02T23:09:43+11:00",
+  "updated_at": "2026-06-02T22:27:16+00:00",
+  "updated_at_sakhalin": "2026-06-03T09:27:16+11:00",
+  "reviewed_at": "2026-06-02T22:27:15+00:00",
+  "reviewed_at_sakhalin": "2026-06-03T09:27:15+11:00",
   "items": [
     {
       "id": "1c6a7a537e9f263e",
-      "status": "pending",
+      "status": "hold",
       "created_at": "2026-06-02T12:15:20+00:00",
       "created_at_sakhalin": "2026-06-02T23:15:20+11:00",
       "source": "Eurogamer",
       "source_type": "gaming",
       "category": "🎮 Игры / индустрия",
       "category_hint": "🎮 Игры / индустрия",
-      "score": 1,
+      "score": 600,
       "title_original": "StarCraft II: The Legacy of the Void",
       "title_ru": "StarCraft II: The Legacy of the Void",
       "body": [
@@ -34,24 +34,28 @@
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-06-02T22:27:15+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
     },
     {
       "id": "d9f3508cd2d041b2",
-      "status": "pending",
+      "status": "hold",
       "created_at": "2026-06-02T12:15:20+00:00",
       "created_at_sakhalin": "2026-06-02T23:15:20+11:00",
       "source": "Guardian Technology",
       "source_type": "it",
       "category": "🌐 Мировые IT",
       "category_hint": "🌐 Мировые IT",
-      "score": 233,
+      "score": 730,
       "title_original": "Florida lawsuit accuses OpenAI of ignoring safety warnings and putting children at risk",
       "title_ru": "Florida lawsuit accuses OpenAI of ignoring safety warnings and putting children at risk",
       "body": [
@@ -71,61 +75,28 @@
       "with_image": false,
       "image_decision": "none",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "023e2871810069fe",
-      "status": "pending",
-      "created_at": "2026-06-02T12:15:20+00:00",
-      "created_at_sakhalin": "2026-06-02T23:15:20+11:00",
-      "source": "Guardian Technology",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 233,
-      "title_original": "Anthropic confidentially files for initial public offering on US stock market",
-      "title_ru": "Anthropic confidentially files for initial public offering on US stock market",
-      "body": [
-        "Financial stakes of the AI race rise as Elon Musk’s SpaceX, OpenAI and Anthropic are slated to go public this year Rolling coverage of the latest economic and financial news Anthropic confidentially files for initial public offering on US stock market In a landmark moment, gold has overtaken US government bonds as the world’s top reserve asset, according to calculations from the European Central Bank.",
-        "The ECB says that gold made up 27% of total official foreign reserves at the end of 2025, ahead of US Treasuries (22% of reserves) and the euro (15%).",
-        "Forces of fragmentation are becoming more pronounced."
-      ],
-      "footer": null,
-      "source_text": "Financial stakes of the AI race rise as Elon Musk’s SpaceX, OpenAI and Anthropic are slated to go public this year Rolling coverage of the latest economic and financial news Anthropic confidentially files for initial public offering on US stock market In a landmark moment, gold has overtaken US government bonds as the world’s top reserve asset, according to calculations from the European Central Bank. The ECB says that gold made up 27% of total official foreign reserves at the end of 2025, ahead of US Treasuries (22% of reserves) and the euro (15%). Forces of fragmentation are becoming more pronounced. Geopolitical tensions continue to drive strong central bank demand for gold. In nominal terms, the gold price surged by around 60% and 30% in 2025 and 2024 respectively, which mechanically increases the share of gold in total official foreign reserves. Correcting for such valuation effects by using the gold price at the end of 2023, the share of the euro (16%) remains at par with the share of gold (16%), while the share of US Treasuries continues to be markedly higher (26%). Continue reading... Financial stakes of AI race rise as Elon Musk’s SpaceX, OpenAI and Anthropic are slated to go public this year Prefer the Guardian on Google Anthropic has filed confidentially for an initial public offering on the US stock market, the company announced on Monday. The AI firm makes the Claude chatbot, popular with software engineers and other business clients, and has seen a meteoric rise this year. The company did not disclose the valuation it will target on the stock market, nor did it make public other terms of the offering. The startup announced on Thursday that it had raised $65bn in funding to value the company at $965bn post-money. Anthropic was valued at $380bn in February. ",
-      "post_text": "🌐 Мировые IT\n\n<b>Anthropic confidentially files for initial public offering on US stock market</b>\n\nFinancial stakes of the AI race rise as Elon Musk’s SpaceX, OpenAI and Anthropic are slated to go public this year Rolling coverage of the latest economic and financial news Anthropic confidentially files for initial public offering on US stock market In a landmark moment, gold has overtaken US government bonds as the world’s top reserve asset, according to calculations from the European Central Bank.\n\nThe ECB says that gold made up 27% of total official foreign reserves at the end of 2025, ahead of US Treasuries (22% of reserves) and the euro (15%).\n\nForces of fragmentation are becoming more pronounced.\n\nМИРОВЫЕ IT · <a href=\"https://www.theguardian.com/technology/2026/jun/01/anthropic-ai-ipo\">Guardian Technology</a>",
-      "edited_post_text": null,
-      "url": "https://www.theguardian.com/technology/2026/jun/01/anthropic-ai-ipo",
-      "published_at": "2026-06-01T18:12:30+00:00",
-      "title_hash": "56dab6c7a61e38584098e0449be40779ef208bfc",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-06-02T22:27:14+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
     },
     {
       "id": "638dc762f5b7383d",
-      "status": "pending",
+      "status": "hold",
       "created_at": "2026-06-02T12:15:20+00:00",
       "created_at_sakhalin": "2026-06-02T23:15:20+11:00",
       "source": "The Verge",
       "source_type": "it",
       "category": "🌐 Мировые IT",
       "category_hint": "🌐 Мировые IT",
-      "score": 233,
+      "score": 730,
       "title_original": "Gemini’s new AI agent is about as good as Google’s demo",
       "title_ru": "Gemini’s new AI agent is about as good as Google’s demo",
       "body": [
@@ -145,24 +116,28 @@
       "with_image": false,
       "image_decision": "none",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-06-02T22:27:14+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
     },
     {
       "id": "835af53f538849b0",
-      "status": "pending",
+      "status": "hold",
       "created_at": "2026-06-02T12:15:20+00:00",
       "created_at_sakhalin": "2026-06-02T23:15:20+11:00",
       "source": "The Verge",
       "source_type": "it",
       "category": "🌐 Мировые IT",
       "category_hint": "🌐 Мировые IT",
-      "score": 233,
+      "score": 730,
       "title_original": "Anthropic has officially filed to go public",
       "title_ru": "Anthropic has officially filed to go public",
       "body": [
@@ -182,24 +157,28 @@
       "with_image": false,
       "image_decision": "none",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-06-02T22:27:15+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
     },
     {
       "id": "f1c405c519cc4034",
-      "status": "pending",
+      "status": "hold",
       "created_at": "2026-06-02T12:15:20+00:00",
       "created_at_sakhalin": "2026-06-02T23:15:20+11:00",
       "source": "Ars Technica",
       "source_type": "it",
       "category": "🌐 Мировые IT",
       "category_hint": "🌐 Мировые IT",
-      "score": 228,
+      "score": 650,
       "title_original": "Microsoft's Surface Laptop Ultra looks like its first true MacBook Pro competitor",
       "title_ru": "Microsoft's Surface Laptop Ultra looks like its first true MacBook Pro competitor",
       "body": [
@@ -219,87 +198,304 @@
       "with_image": false,
       "image_decision": "none",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-06-02T22:27:15+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
     },
     {
-      "id": "d1cd07a8af823068",
-      "status": "pending",
-      "created_at": "2026-06-02T12:15:20+00:00",
-      "created_at_sakhalin": "2026-06-02T23:15:20+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Лампочка из гипермаркета и ваш GPU. Что у них общего?",
-      "title_ru": "Лампочка из гипермаркета и ваш GPU. Что у них общего?",
+      "id": "ceef6d076d99379a",
+      "status": "hold",
+      "created_at": "2026-06-02T22:27:14+00:00",
+      "created_at_sakhalin": "2026-06-03T09:27:14+11:00",
+      "source": "BBC World",
+      "source_type": "world",
+      "category": "🌍 Мир о России",
+      "category_hint": "🌍 Мир о России",
+      "score": 1000,
+      "title_original": "'They'll fix the building, but not our souls': Sleepy Kyiv neighbourhood hit in Russian strike",
+      "title_ru": "'They'll fix the building, but not our souls': Sleepy Kyiv neighbourhood hit in Russian strike",
       "body": [
-        "Представьте синюю светодиодную лампочку из строительного магазина за 100 ₽, и NVIDIA H100 за три миллиона.",
-        "Внутри у обоих работает один и тот же физический принцип: PN-переход.",
-        "Представьте синюю светодиодную лампочку из строительного магазина за 100 ₽, и NVIDIA H100 за три миллиона."
+        "Scenes of devastation greet residents emerging from underground shelters after a major Russian attack.",
+        "Scenes of devastation greet residents emerging from underground shelters after a major Russian attack.",
+        "We were two floors underground, and yet we could feel and hear the massive explosions above."
       ],
       "footer": null,
-      "source_text": "Представьте синюю светодиодную лампочку из строительного магазина за 100 ₽, и NVIDIA H100 за три миллиона. Внутри у обоих работает один и тот же физический принцип: PN-переход. Меня это в свое время... Представьте синюю светодиодную лампочку из строительного магазина за 100 ₽, и NVIDIA H100 за три миллиона. Внутри у обоих работает один и тот же физический принцип: PN-переход. Меня это в свое время сильно удивило. Так вот эта статья примерно про то, как лампочка и видеокарта оказались родственниками. Читать далее Представьте синюю светодиодную лампочку из строительного магазина за 100 ₽, и NVIDIA H100 за три миллиона. Внутри у обоих работает один и тот же физический принцип: PN-переход. Меня это в свое время сильно удивило. Так вот эта статья примерно про то, как лампочка и видеокарта оказались родственниками. Сразу оговорюсь: я не специалист по электронике, а мои знания физики твердого тела после университета остались где-то на среднем уровне. Скорее, я тот, кто разбирает свою перегоревшую лампочку и лезет читать Википедию. Так что, если где-то напутаю в тонкостях теории — смело дополняйте и поправляйте в комментариях. Начнем с истоков, с горстки очищенного кремния. Это, на минуточку, тот самый песок из-под ваших ног, у которого отняли кислород. Сам по себе чистый кремний проводит ток плохо: носителей заряда в нем почти нет, проводить нечем.",
-      "post_text": "🌐 Мировые IT\n\n<b>Лампочка из гипермаркета и ваш GPU. Что у них общего?</b>\n\nПредставьте синюю светодиодную лампочку из строительного магазина за 100 ₽, и NVIDIA H100 за три миллиона.\n\nВнутри у обоих работает один и тот же физический принцип: PN-переход.\n\nПредставьте синюю светодиодную лампочку из строительного магазина за 100 ₽, и NVIDIA H100 за три миллиона.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/selectel/articles/1038442/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1038442#habracut\">Habr</a>",
+      "source_text": "Scenes of devastation greet residents emerging from underground shelters after a major Russian attack. Scenes of devastation greet residents emerging from underground shelters after a major Russian attack. We were two floors underground, and yet we could feel and hear the massive explosions above. Then came the Russian drones, possibly carrying more explosives or scouting out the damage done by the missiles. Then more missiles. More than 41,000 people - including almost 4,500 children - sheltered underground in the Kyiv metro overnight, a record number in recent years, the metro company said. Even though Moscow had said its attacks would get much worse, this one was not much different from what Kyiv had seen already, many times. Yet again, Russia said it would strike military targets, but civilians suffered. As they emerged from shelters after the attack, many were shocked to see their neighbourhoods completely transformed, for the worse. Windows smashed, cars turned into unrecognisable heaps of burnt, twisted metal.",
+      "post_text": "🌍 Мир о России\n\n<b>'They'll fix the building, but not our souls': Sleepy Kyiv neighbourhood hit in Russian strike</b>\n\nScenes of devastation greet residents emerging from underground shelters after a major Russian attack.\n\nScenes of devastation greet residents emerging from underground shelters after a major Russian attack.\n\nWe were two floors underground, and yet we could feel and hear the massive explosions above.\n\nМИР О РОССИИ · <a href=\"https://www.bbc.com/news/articles/c5y9nyvg9z2o?at_medium=RSS&amp;at_campaign=rss\">BBC World</a>",
       "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/selectel/articles/1038442/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1038442#habracut",
-      "published_at": "2026-06-02T12:00:53+00:00",
-      "title_hash": "7e12dfc6816ba3374f814b97928ea3d891dbc037",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/a16/480/223/a164802236e5aa483c426ff1c838a0b7.png",
+      "url": "https://www.bbc.com/news/articles/c5y9nyvg9z2o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-02T19:13:21+00:00",
+      "title_hash": "40cb91a965ad64806408703d54b9e32267cf8d5b",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/a4a9/live/364daf50-5ead-11f1-9877-71c2729415b9.jpg",
       "image_mode": "source",
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-06-02T22:27:14+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 1000
     },
     {
-      "id": "f79fa7026764d255",
-      "status": "pending",
-      "created_at": "2026-06-02T12:15:20+00:00",
-      "created_at_sakhalin": "2026-06-02T23:15:20+11:00",
-      "source": "Habr",
+      "id": "f55f7df09d472fd6",
+      "status": "hold",
+      "created_at": "2026-06-02T22:27:14+00:00",
+      "created_at_sakhalin": "2026-06-03T09:27:14+11:00",
+      "source": "BBC Technology",
       "source_type": "it",
       "category": "🌐 Мировые IT",
       "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Настоящие HDR фото — от съемки до просмотра",
-      "title_ru": "Настоящие HDR фото — от съемки до просмотра",
+      "score": 650,
+      "title_original": "Microsoft working on wearable AI gadget aimed at office workers",
+      "title_ru": "Microsoft working on wearable AI gadget aimed at office workers",
       "body": [
-        "Я постарался максимально понятно изложить проблематику получения HDR изображений на современных мониторах и операционных системах.",
-        "Я постарался максимально понятно изложить проблематику получения HDR изображений на современных мониторах и операционных системах.",
-        "Давайте сразу проясним, что подразумевается под HDR фото, а что нет."
+        "The company said its own workers are testing a \"wearable access badge\" and a desktop device.",
+        "The company said its own workers are testing a \"wearable access badge\" and a desktop device.",
+        "During its yearly conference for technology developers, Microsoft executive Steven Bathiche showed off two \"concepts\" that the company has developed for hardware products intended for people who often use AI tools in their work."
       ],
       "footer": null,
-      "source_text": "Сгенерировано ИИ Всем привет! Это моя первая статья на Хабре. Я постарался максимально понятно изложить проблематику получения HDR изображений на современных мониторах и операционных системах. Но... Всем привет! Это моя первая статья на Хабре. Я постарался максимально понятно изложить проблематику получения HDR изображений на современных мониторах и операционных системах. Давайте сразу проясним, что подразумевается под HDR фото, а что нет. В начале двухтысячных было модное занятие сначала фоткать высококонтрастный объект с разными экспозициями, проводить так называемый брекетинг экспозиции, а затем с помощью софта склеивать все в одно изображение. Изначальный огромный перепад яркостей сужался до обычного JPG и демонстрировался как достижение. Да, достижение было в виде сохранённых деталей в светах и тенях, но минимальный и, что самое важное, максимальный уровень яркости был далек от натуры. К тому же неизбежным следствием являлось падение общего контраста. Так вот, это не HDR. Это, назовем его, прокрустово ложе, куда надо впихнуть невпихуемое, и на выходе получить псевдо-HDR. Данная статья просвещена получению настоящего HDR, где узость диапазона уже не мешает делать высококонтрастные снимки. И не только делать, но и увидеть. Читать далее",
-      "post_text": "🌐 Мировые IT\n\n<b>Настоящие HDR фото — от съемки до просмотра</b>\n\nЯ постарался максимально понятно изложить проблематику получения HDR изображений на современных мониторах и операционных системах.\n\nЯ постарался максимально понятно изложить проблематику получения HDR изображений на современных мониторах и операционных системах.\n\nДавайте сразу проясним, что подразумевается под HDR фото, а что нет.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042682/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042682#habracut\">Habr</a>",
+      "source_text": "The company said its own workers are testing a \"wearable access badge\" and a desktop device. The company said its own workers are testing a \"wearable access badge\" and a desktop device. During its yearly conference for technology developers, Microsoft executive Steven Bathiche showed off two \"concepts\" that the company has developed for hardware products intended for people who often use AI tools in their work. One device was a small portable cube with a touch and voice-activated screen, meant for a desk. The other was \"a wearable access badge,\" Bathiche said, to hang around the neck or on a belt loop, giving quick access to AI-driven work Satya Nadella, Microsoft chief executive, said such gadgets represented a \"new form factor\" for technology devices. While Microsoft did not say it would bring either of these products to market, it said current pilots with the devices \"will inform how these form factors can be built\" in the future.",
+      "post_text": "🌐 Мировые IT\n\n<b>Microsoft working on wearable AI gadget aimed at office workers</b>\n\nThe company said its own workers are testing a \"wearable access badge\" and a desktop device.\n\nThe company said its own workers are testing a \"wearable access badge\" and a desktop device.\n\nDuring its yearly conference for technology developers, Microsoft executive Steven Bathiche showed off two \"concepts\" that the company has developed for hardware products intended for people who often use AI tools in their work.\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/cwy25x97wrxo?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
       "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042682/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042682#habracut",
-      "published_at": "2026-06-02T11:59:44+00:00",
-      "title_hash": "f6efce97c08b7b80f22c585abec3cc393a241cf1",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/2f4/7d7/3f8/2f47d73f847857f521b84011d3ed6528.jpg",
+      "url": "https://www.bbc.com/news/articles/cwy25x97wrxo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-02T21:47:42+00:00",
+      "title_hash": "64098951625d78fc3e3d7b4d83b100829bb02e96",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/f1a4/live/e0ba4220-5ec4-11f1-b588-45cc931ea6f1.png",
       "image_mode": "source",
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-06-02T22:27:15+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "c61321a4e0cb9f9d",
+      "status": "hold",
+      "created_at": "2026-06-02T22:27:14+00:00",
+      "created_at_sakhalin": "2026-06-03T09:27:14+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 600,
+      "title_original": "God of War Laufey is coming to the PS5",
+      "title_ru": "God of War Laufey is coming to the PS5",
+      "body": [
+        "Sony ended its big State of Play showcase with a major reveal: the next God of War.",
+        "The new title is called God of War Laufey, and is once again developed by Sony's Santa Monica studio.",
+        "Currently, the game doesn't have a date, but it's coming to the PS5 whenever it does launch."
+      ],
+      "footer": null,
+      "source_text": "Dad games are so over. Sony ended its big State of Play showcase with a major reveal: the next God of War. The new title is called God of War Laufey, and is once again developed by Sony's Santa Monica studio. Currently, the game doesn't have a date, but it's coming to the PS5 whenever it does launch. This time, […] Gaming Close Gaming Posts from this topic will be added to your daily email digest and your homepage feed. Andrew Webster Close Andrew Webster Senior entertainment editor Posts from this author will be added to your daily email digest and your homepage feed. Share Gift Image: Sony Interactive Entertainment Part Of PlayStation State of Play June 2026: All the news and trailers see all updates Andrew Webster Close Andrew Webster Posts from this author will be added to your daily email digest and your homepage feed. Sony ended its big State of Play showcase with a major reveal: the next God of War . The new title is called God of War Laufey , and is once again developed by Sony’s Santa Monica studio. Currently, the game doesn’t have a date, but it’s coming to the PS5 whenever it does launch.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>God of War Laufey is coming to the PS5</b>\n\nSony ended its big State of Play showcase with a major reveal: the next God of War.\n\nThe new title is called God of War Laufey, and is once again developed by Sony's Santa Monica studio.\n\nCurrently, the game doesn't have a date, but it's coming to the PS5 whenever it does launch.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/entertainment/941516/god-of-war-laufey-ps5-trailer\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/entertainment/941516/god-of-war-laufey-ps5-trailer",
+      "published_at": "2026-06-02T22:16:08+00:00",
+      "title_hash": "860b2b773d7f1b67ae26cae73b586af716f28085",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-02T22:27:15+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "74f6022a916bf64a",
+      "status": "hold",
+      "created_at": "2026-06-02T22:27:14+00:00",
+      "created_at_sakhalin": "2026-06-03T09:27:14+11:00",
+      "source": "IGN",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 600,
+      "title_original": "Until Dawn 2 Heads to Sandy Beaches on PS5 in PlayStation State of Play Reveal Trailer",
+      "title_ru": "Until Dawn 2 Heads to Sandy Beaches on PS5 in PlayStation State of Play Reveal Trailer",
+      "body": [
+        "First-party PlayStation developer Firesprite came to the State of Play June 2026 showcase to reveal Until Dawn 2 with plans to launch for PS5 in 2027.",
+        "First-party PlayStation developer Firesprite came to the State of Play June 2026 showcase to reveal Until Dawn 2 with plans to launch for PS5 in 2027.",
+        "First-party PlayStation developer Firesprite came to the State of Play June 2026 showcase to reveal Until Dawn 2 with plans to launch for PS5 in 2027."
+      ],
+      "footer": null,
+      "source_text": "First-party PlayStation developer Firesprite came to the State of Play June 2026 showcase to reveal Until Dawn 2 with plans to launch for PS5 in 2027. First-party PlayStation developer Firesprite came to the State of Play June 2026 showcase to reveal Until Dawn 2 with plans to launch for PS5 in 2027. First-party PlayStation developer Firesprite came to the State of Play June 2026 showcase to reveal Until Dawn 2 with plans to launch for PS5 in 2027. First footage of what already looks to be a star-studded follow-up revealed quite the change of pace from Supermassive Games' winter-set original. This time around, it looks like players can expect to head to a more tropical setting for a story that follows a group of ghost hunters. \"Our cast this time is a crew of ghost hunters, the faces behind the wildly popular paranormal channel, Dead True.. Only, well… they’ve never actually seen anything supernatural,\" a story description for Until Dawn 2 shared on the PlayStation.blog said. \"The scares they are known for are, let’s say, a little staged. But all that changes when for the very first time, they come face-to-face with real horrors and must start living up to their reputation to survive until dawn.\" Here's everything announced at State of Play June 2026 if you need a catch-up on what PlayStation has in store.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Until Dawn 2 Heads to Sandy Beaches on PS5 in PlayStation State of Play Reveal Trailer</b>\n\nFirst-party PlayStation developer Firesprite came to the State of Play June 2026 showcase to reveal Until Dawn 2 with plans to launch for PS5 in 2027.\n\nFirst-party PlayStation developer Firesprite came to the State of Play June 2026 showcase to reveal Until Dawn 2 with plans to launch for PS5 in 2027.\n\nFirst-party PlayStation developer Firesprite came to the State of Play June 2026 showcase to reveal Until Dawn 2 with plans to launch for PS5 in 2027.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/until-dawn-2-revealed-at-playstation-state-of-play\">IGN</a>",
+      "edited_post_text": null,
+      "url": "https://www.ign.com/articles/until-dawn-2-revealed-at-playstation-state-of-play",
+      "published_at": "2026-06-02T21:59:46.734000+00:00",
+      "title_hash": "1297c97ab9c2f0a062485c6e497afdac9b71995c",
+      "image_url": "https://assets-prd.ignimgs.com/2026/06/02/until-dawn-2-1780437439986.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-02T22:27:15+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "41090fd3229bccdf",
+      "status": "hold",
+      "created_at": "2026-06-02T22:27:14+00:00",
+      "created_at_sakhalin": "2026-06-03T09:27:14+11:00",
+      "source": "Eurogamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 600,
+      "title_original": "Control Resonant's release date revealed in bombshell Sony State of Play story trailer",
+      "title_ru": "Control Resonant's release date revealed in bombshell Sony State of Play story trailer",
+      "body": [
+        "More looks at what Dylan is up to floods the trailer, for our pleasure.",
+        "The release date for Control Resonant has been revealed, as part of a new trailer shown off at tonight's Sony State of Play event.",
+        "Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Latest News Sign in for free to manage your site experience."
+      ],
+      "footer": null,
+      "source_text": "More looks at what Dylan is up to floods the trailer, for our pleasure. The release date for Control Resonant has been revealed, as part of a new trailer shown off at tonight's Sony State of Play event. Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Latest News Sign in for free to manage your site experience. Control Resonant's release date revealed in bombshell Sony State of Play story trailer Silent Hill: Townfall has a PS5 release date, and things are getting scary in very foggy Scotland this September For the first time in its 25-year history, Runescape comes to PlayStation 5 this year with survival game RuneScape Dragonwilds Ace Combat 8 soars onto the Sony State of Play with a new release date trailer Tomb Raider: Legacy of Atlantis gets new trailer featuring Lara, Natla and Larson, as well as slight a delay Onimusha: Way of the Sword gets September release date, and a playable demo available right now Marvel's Wolverine gets gruesome with over seven minutes of uninterrupted gameplay footage, and he's bought a familiar X-Men pal Magneto, Green Goblin, and Carnage announced for Marvel Tokon Fighting Souls at Sony State of Play Super Yooka-Laylee Kart leaks ahead of Summer Game Fest as developer Playtonic Games teases \"there may be faster ways to go\" Subnautica 2 gets first hotfix to tweak the behaviour of certain creatures If you click on a link and make a purchase we may receive a small commission. Read our editorial policy . Home News Control Resonant Control Resonant's release date revealed in bombshell Sony State of Play story trailer Lockdown Shmockdown. Image credit: Sony / Remedy Entertainment News by Connor Makar Staff Writer Published on June 2, 2026 Follow Control Resonant The ",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Control Resonant's release date revealed in bombshell Sony State of Play story trailer</b>\n\nMore looks at what Dylan is up to floods the trailer, for our pleasure.\n\nThe release date for Control Resonant has been revealed, as part of a new trailer shown off at tonight's Sony State of Play event.\n\nRead more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Latest News Sign in for free to manage your site experience.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.eurogamer.net/control-resonant-release-date-sony-state-of-play-trailer\">Eurogamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.eurogamer.net/control-resonant-release-date-sony-state-of-play-trailer",
+      "published_at": "2026-06-02T22:13:39.711340+00:00",
+      "title_hash": "bd65c6f33eb98804ed9ec6fb0fedbb28d752b4df",
+      "image_url": "https://assetsio.gnwcdn.com/control-resonant-dylan-hammer.webp?width=690&quality=85&format=jpg&auto=webp",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-02T22:27:15+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "c478297c42b495ee",
+      "status": "hold",
+      "created_at": "2026-06-02T22:27:14+00:00",
+      "created_at_sakhalin": "2026-06-03T09:27:14+11:00",
+      "source": "BBC Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Microsoft claims new quantum chip 1,000 times better than before",
+      "title_ru": "Microsoft claims new quantum chip 1,000 times better than before",
+      "body": [
+        "The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.",
+        "The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.",
+        "At the heart of quantum computing are qubits, which offer the promise of answering questions that defeat today's machines, but are notoriously delicate and unstable."
+      ],
+      "footer": null,
+      "source_text": "The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade. The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade. At the heart of quantum computing are qubits, which offer the promise of answering questions that defeat today's machines, but are notoriously delicate and unstable. Microsoft says the qubits on Majorana 2, its new chip, survive for an average of 20 seconds, rather than the milliseconds of Majorana 1. That means the new chip is 1,000 times more reliable - an improvement in performance the tech giant compares to the difference between a phone that needs charging every day to one which needs charging every few years. \"We will have a quantum machine in 2029 that can solve commercially viable, reasonable problems\", said Zulfi Alam, corporate vice president of Microsoft Quantum.",
+      "post_text": "🌐 Мировые IT\n\n<b>Microsoft claims new quantum chip 1,000 times better than before</b>\n\nThe tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.\n\nThe tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.\n\nAt the heart of quantum computing are qubits, which offer the promise of answering questions that defeat today's machines, but are notoriously delicate and unstable.\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/cj4p7gyvp52o?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/cj4p7gyvp52o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-02T19:24:31+00:00",
+      "title_hash": "6f18942ad36d2a472d7e65c04431a0171df1d684",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/823e/live/9bf6bfd0-5e9a-11f1-95ff-f5086c3b3d40.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-02T22:27:15+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "ab114a59ebbb9992",
+      "status": "hold",
+      "created_at": "2026-06-02T22:27:14+00:00",
+      "created_at_sakhalin": "2026-06-03T09:27:14+11:00",
+      "source": "BBC Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 650,
+      "title_original": "Meta AI chatbot enabled hackers to access others' Instagram accounts",
+      "title_ru": "Meta AI chatbot enabled hackers to access others' Instagram accounts",
+      "body": [
+        "Some reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked.",
+        "Some reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked.",
+        "According to claims shown in screenshots and videos shared on social media, Instagram's AI chatbot allowed users to \"hijack\" accounts in recent days."
+      ],
+      "footer": null,
+      "source_text": "Some reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked. Some reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked. According to claims shown in screenshots and videos shared on social media, Instagram's AI chatbot allowed users to \"hijack\" accounts in recent days. Hackers could reportedly change passwords for other accounts by faking their location and then asking the AI to change the emails associated with them. \"This issue has been resolved and we are securing impacted accounts,\" Meta spokesperson Andy Stone told users in a statement on X . In a response to another post on X, Stone said claims the vulnerability was used to hack into accounts of world leaders were \"totally false\" .",
+      "post_text": "🌐 Мировые IT\n\n<b>Meta AI chatbot enabled hackers to access others' Instagram accounts</b>\n\nSome reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked.\n\nSome reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked.\n\nAccording to claims shown in screenshots and videos shared on social media, Instagram's AI chatbot allowed users to \"hijack\" accounts in recent days.\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/c98rzr72dpyo?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/c98rzr72dpyo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-02T11:40:02+00:00",
+      "title_hash": "7b61659b39199d0b1842a4d5a184bad42c0129ed",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/04d6/live/0af82d50-5e74-11f1-9bb7-93b44936b5cf.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-02T22:27:15+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
     },
     {
       "id": "7e3708d81767fadc",
@@ -2347,6 +2543,250 @@
       "reviewed_at": "2026-06-02T12:09:43+00:00",
       "reviewed_by": "auto-editor-v7-local-cleaner",
       "stream_priority": 650
+    },
+    {
+      "id": "023e2871810069fe",
+      "status": "rejected",
+      "created_at": "2026-06-02T12:15:20+00:00",
+      "created_at_sakhalin": "2026-06-02T23:15:20+11:00",
+      "source": "Guardian Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Anthropic confidentially files for initial public offering on US stock market",
+      "title_ru": "Anthropic confidentially files for initial public offering on US stock market",
+      "body": [
+        "Financial stakes of the AI race rise as Elon Musk’s SpaceX, OpenAI and Anthropic are slated to go public this year Rolling coverage of the latest economic and financial news Anthropic confidentially files for initial public offering on US stock market In a landmark moment, gold has overtaken US government bonds as the world’s top reserve asset, according to calculations from the European Central Bank.",
+        "The ECB says that gold made up 27% of total official foreign reserves at the end of 2025, ahead of US Treasuries (22% of reserves) and the euro (15%).",
+        "Forces of fragmentation are becoming more pronounced."
+      ],
+      "footer": null,
+      "source_text": "Financial stakes of the AI race rise as Elon Musk’s SpaceX, OpenAI and Anthropic are slated to go public this year Rolling coverage of the latest economic and financial news Anthropic confidentially files for initial public offering on US stock market In a landmark moment, gold has overtaken US government bonds as the world’s top reserve asset, according to calculations from the European Central Bank. The ECB says that gold made up 27% of total official foreign reserves at the end of 2025, ahead of US Treasuries (22% of reserves) and the euro (15%). Forces of fragmentation are becoming more pronounced. Geopolitical tensions continue to drive strong central bank demand for gold. In nominal terms, the gold price surged by around 60% and 30% in 2025 and 2024 respectively, which mechanically increases the share of gold in total official foreign reserves. Correcting for such valuation effects by using the gold price at the end of 2023, the share of the euro (16%) remains at par with the share of gold (16%), while the share of US Treasuries continues to be markedly higher (26%). Continue reading... Financial stakes of AI race rise as Elon Musk’s SpaceX, OpenAI and Anthropic are slated to go public this year Prefer the Guardian on Google Anthropic has filed confidentially for an initial public offering on the US stock market, the company announced on Monday. The AI firm makes the Claude chatbot, popular with software engineers and other business clients, and has seen a meteoric rise this year. The company did not disclose the valuation it will target on the stock market, nor did it make public other terms of the offering. The startup announced on Thursday that it had raised $65bn in funding to value the company at $965bn post-money. Anthropic was valued at $380bn in February. ",
+      "post_text": "🌐 Мировые IT\n\n<b>Anthropic confidentially files for initial public offering on US stock market</b>\n\nFinancial stakes of the AI race rise as Elon Musk’s SpaceX, OpenAI and Anthropic are slated to go public this year Rolling coverage of the latest economic and financial news Anthropic confidentially files for initial public offering on US stock market In a landmark moment, gold has overtaken US government bonds as the world’s top reserve asset, according to calculations from the European Central Bank.\n\nThe ECB says that gold made up 27% of total official foreign reserves at the end of 2025, ahead of US Treasuries (22% of reserves) and the euro (15%).\n\nForces of fragmentation are becoming more pronounced.\n\nМИРОВЫЕ IT · <a href=\"https://www.theguardian.com/technology/2026/jun/01/anthropic-ai-ipo\">Guardian Technology</a>",
+      "edited_post_text": null,
+      "url": "https://www.theguardian.com/technology/2026/jun/01/anthropic-ai-ipo",
+      "published_at": "2026-06-01T18:12:30+00:00",
+      "title_hash": "56dab6c7a61e38584098e0449be40779ef208bfc",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-02T22:27:14+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "d1cd07a8af823068",
+      "status": "rejected",
+      "created_at": "2026-06-02T12:15:20+00:00",
+      "created_at_sakhalin": "2026-06-02T23:15:20+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Лампочка из гипермаркета и ваш GPU. Что у них общего?",
+      "title_ru": "Лампочка из гипермаркета и ваш GPU. Что у них общего?",
+      "body": [
+        "Представьте синюю светодиодную лампочку из строительного магазина за 100 ₽, и NVIDIA H100 за три миллиона.",
+        "Внутри у обоих работает один и тот же физический принцип: PN-переход.",
+        "Представьте синюю светодиодную лампочку из строительного магазина за 100 ₽, и NVIDIA H100 за три миллиона."
+      ],
+      "footer": null,
+      "source_text": "Представьте синюю светодиодную лампочку из строительного магазина за 100 ₽, и NVIDIA H100 за три миллиона. Внутри у обоих работает один и тот же физический принцип: PN-переход. Меня это в свое время... Представьте синюю светодиодную лампочку из строительного магазина за 100 ₽, и NVIDIA H100 за три миллиона. Внутри у обоих работает один и тот же физический принцип: PN-переход. Меня это в свое время сильно удивило. Так вот эта статья примерно про то, как лампочка и видеокарта оказались родственниками. Читать далее Представьте синюю светодиодную лампочку из строительного магазина за 100 ₽, и NVIDIA H100 за три миллиона. Внутри у обоих работает один и тот же физический принцип: PN-переход. Меня это в свое время сильно удивило. Так вот эта статья примерно про то, как лампочка и видеокарта оказались родственниками. Сразу оговорюсь: я не специалист по электронике, а мои знания физики твердого тела после университета остались где-то на среднем уровне. Скорее, я тот, кто разбирает свою перегоревшую лампочку и лезет читать Википедию. Так что, если где-то напутаю в тонкостях теории — смело дополняйте и поправляйте в комментариях. Начнем с истоков, с горстки очищенного кремния. Это, на минуточку, тот самый песок из-под ваших ног, у которого отняли кислород. Сам по себе чистый кремний проводит ток плохо: носителей заряда в нем почти нет, проводить нечем.",
+      "post_text": "🌐 Мировые IT\n\n<b>Лампочка из гипермаркета и ваш GPU. Что у них общего?</b>\n\nПредставьте синюю светодиодную лампочку из строительного магазина за 100 ₽, и NVIDIA H100 за три миллиона.\n\nВнутри у обоих работает один и тот же физический принцип: PN-переход.\n\nПредставьте синюю светодиодную лампочку из строительного магазина за 100 ₽, и NVIDIA H100 за три миллиона.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/selectel/articles/1038442/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1038442#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/selectel/articles/1038442/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1038442#habracut",
+      "published_at": "2026-06-02T12:00:53+00:00",
+      "title_hash": "7e12dfc6816ba3374f814b97928ea3d891dbc037",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/a16/480/223/a164802236e5aa483c426ff1c838a0b7.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-02T22:27:15+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "f79fa7026764d255",
+      "status": "rejected",
+      "created_at": "2026-06-02T12:15:20+00:00",
+      "created_at_sakhalin": "2026-06-02T23:15:20+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Настоящие HDR фото — от съемки до просмотра",
+      "title_ru": "Настоящие HDR фото — от съемки до просмотра",
+      "body": [
+        "Я постарался максимально понятно изложить проблематику получения HDR изображений на современных мониторах и операционных системах.",
+        "Я постарался максимально понятно изложить проблематику получения HDR изображений на современных мониторах и операционных системах.",
+        "Давайте сразу проясним, что подразумевается под HDR фото, а что нет."
+      ],
+      "footer": null,
+      "source_text": "Сгенерировано ИИ Всем привет! Это моя первая статья на Хабре. Я постарался максимально понятно изложить проблематику получения HDR изображений на современных мониторах и операционных системах. Но... Всем привет! Это моя первая статья на Хабре. Я постарался максимально понятно изложить проблематику получения HDR изображений на современных мониторах и операционных системах. Давайте сразу проясним, что подразумевается под HDR фото, а что нет. В начале двухтысячных было модное занятие сначала фоткать высококонтрастный объект с разными экспозициями, проводить так называемый брекетинг экспозиции, а затем с помощью софта склеивать все в одно изображение. Изначальный огромный перепад яркостей сужался до обычного JPG и демонстрировался как достижение. Да, достижение было в виде сохранённых деталей в светах и тенях, но минимальный и, что самое важное, максимальный уровень яркости был далек от натуры. К тому же неизбежным следствием являлось падение общего контраста. Так вот, это не HDR. Это, назовем его, прокрустово ложе, куда надо впихнуть невпихуемое, и на выходе получить псевдо-HDR. Данная статья просвещена получению настоящего HDR, где узость диапазона уже не мешает делать высококонтрастные снимки. И не только делать, но и увидеть. Читать далее",
+      "post_text": "🌐 Мировые IT\n\n<b>Настоящие HDR фото — от съемки до просмотра</b>\n\nЯ постарался максимально понятно изложить проблематику получения HDR изображений на современных мониторах и операционных системах.\n\nЯ постарался максимально понятно изложить проблематику получения HDR изображений на современных мониторах и операционных системах.\n\nДавайте сразу проясним, что подразумевается под HDR фото, а что нет.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042682/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042682#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042682/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042682#habracut",
+      "published_at": "2026-06-02T11:59:44+00:00",
+      "title_hash": "f6efce97c08b7b80f22c585abec3cc393a241cf1",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/2f4/7d7/3f8/2f47d73f847857f521b84011d3ed6528.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-02T22:27:15+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "f3a0494e1f8cb137",
+      "status": "rejected",
+      "created_at": "2026-06-02T22:27:14+00:00",
+      "created_at_sakhalin": "2026-06-03T09:27:14+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🇷🇺 РФ / война и безопасность",
+      "category_hint": "🌐 Мировые IT",
+      "score": 980,
+      "title_original": "Агент читает 20 файлов ради одной функции. Лечим это графом кода: CodeGraph vs Graphify и другие невиданные твари",
+      "title_ru": "Агент читает 20 файлов ради одной функции. Лечим это графом кода: CodeGraph vs Graphify и другие невиданные твари",
+      "body": [
+        "CodeGraph и Graphify решают разные задачи, хотя оба строят граф кода на tree-sitter.",
+        "CodeGraph — лёгкий локальный индекс символов для рантайма агента.",
+        "Graphify — граф знаний всего проекта, включая..."
+      ],
+      "footer": null,
+      "source_text": "CodeGraph и Graphify решают разные задачи, хотя оба строят граф кода на tree-sitter. CodeGraph — лёгкий локальный индекс символов для рантайма агента. Graphify — граф знаний всего проекта, включая... Мне регулярно пишут: «У тебя Max-подписка, токенов вагон — зачем городить индексацию кода? Дай агенту grep и не выпендривайся». Полгода назад я бы согласился. Сейчас — нет. Когда агент ищет «где тут авторизация», он спавнит эксплорацию, грепает по ключевым словам и читает 15-20 файлов целиком, чтобы догадаться о связях. Это сотни тысяч токенов, куча tool calls и регулярные промахи. Граф кода схлопывает этот веер чтений в один точный запрос к индексу. Я сейчас гоняю CodeGraph (лёгкий локальный индекс символов для агента), а Graphify (граф знаний всего проекта — код плюс документы, PDF и медиа) только собираюсь попробовать. Это два разных инструмента под разные боли, и их постоянно путают. В статье: чем они отличаются архитектурно, почему модель хранения индекса — следствие этой архитектуры (и как держать индекс при работе с разных машин и командой), их бенчмарки с честной пометкой «не мои цифры», кому что брать — плюс карта соседних инструментов: Gortex, CodeGraphContext, Sourcegraph MCP и Cognee. Читать далее CodeGraph и Graphify решают разные задачи, хотя оба строят граф кода на tree-sitter. CodeGraph — лёгкий локальный индекс символов для рантайма агента. Graphify — граф знаний всего проекта, включая документы, PDF и медиа. CodeGraph работает 100% локально (SQLite + FTS5), без внешних API. Graphify код тоже парсит локально и бесплатно, а токены тратит только на документы и медиа — и то через модель твоей IDE-сессии, без отдельных ключей. Их бенчмарки CodeGraph: −57% токенов, −71% tool calls, −46% времени на 7 репозиториях. Это их цифры на их выборке, я не воспроизводил. С",
+      "post_text": "🌐 Мировые IT\n\n<b>Агент читает 20 файлов ради одной функции. Лечим это графом кода: CodeGraph vs Graphify и другие невиданные твари</b>\n\nCodeGraph и Graphify решают разные задачи, хотя оба строят граф кода на tree-sitter.\n\nCodeGraph — лёгкий локальный индекс символов для рантайма агента.\n\nGraphify — граф знаний всего проекта, включая...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042930/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042930#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042930/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042930#habracut",
+      "published_at": "2026-06-02T22:08:37+00:00",
+      "title_hash": "5e8c8974ffca9d6900e2791d8deffd0b243b3e0b",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/24e/4a6/b37/24e4a6b374025b27f352bc7827608eb0.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-02T22:27:14+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 900
+    },
+    {
+      "id": "a0d4da48c10eab18",
+      "status": "rejected",
+      "created_at": "2026-06-02T22:27:14+00:00",
+      "created_at_sakhalin": "2026-06-03T09:27:14+11:00",
+      "source": "GameSpot",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 600,
+      "title_original": "Amazon.com: Wolverine PS5 : Video Games",
+      "title_ru": "Amazon.com: Wolverine PS5 : Video Games",
+      "body": [
+        "Amazon.com: Wolverine PS5 : Video Games Marvel's Wolverine $70 | Releases September 15, 2026 Preorder at Amazon Marvel's Wolverine Digital Deluxe Edition $80 | Releases September 15, 2026 Preorder at PlayStation Marvel's Wolverine launches for PlayStation 5 on September 15, 2026 and will retail for $70.",
+        "Preorders are available now at Amazon .",
+        "We expect preorders will open at additional retailers soon, so we will update as soon as other retailers are available, as well as if preorder bonuses and other information is announced."
+      ],
+      "footer": null,
+      "source_text": "Amazon.com: Wolverine PS5 : Video Games Marvel's Wolverine $70 | Releases September 15, 2026 Preorder at Amazon Marvel's Wolverine Digital Deluxe Edition $80 | Releases September 15, 2026 Preorder at PlayStation Marvel's Wolverine launches for PlayStation 5 on September 15, 2026 and will retail for $70. Preorders are available now at Amazon . We expect preorders will open at additional retailers soon, so we will update as soon as other retailers are available, as well as if preorder bonuses and other information is announced. Marvel's Wolverine $70 | Releases September 15, 2026 Preordering the game unlocks several useful bonuses. Early Access Suit: Classic Brown Early Access Claws: Reflective Claws 1 Additional Technique Point 4 PS Avatars Preorder at Amazon Marvel's Wolverine Digital Deluxe Edition $80 | Releases September 15, 2026 The Digital Deluxe Edition comes with a slew of preorder bonuses. Check them all out below. Marvel’s Wolverine Digital Game All Pre-Order Bonuses 5 Exclusive Suits Incredible Savage Age of Apocalypse Night Hunt New Leather 5 Exclusive Claws Smooth-Edged Claws Hollow Blade Claws Thick Claws Serrated Spine Claws Tapered Claws 3 Additional Technique Points Preorder at PlayStation Developed by Insomniac Games in partnership with Sony Interactive Entertainment, Marvel's Wolverine was originally announced in September 2021 and is exclusive to PlayStation. The game will feature many key characters from the X-Men series, including Mystique, Jean Grey, Omega Red, and the Sentinels. \"As he searches for answers about his past, Wolverine will do whatever it takes – unleashing brutal claw combat, violent rage and relentless determination – to cut through the mystery of the man he used to be,\" the official website for the game says. https://www.youtube.co",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Amazon.com: Wolverine PS5 : Video Games</b>\n\nAmazon.com: Wolverine PS5 : Video Games Marvel's Wolverine $70 | Releases September 15, 2026 Preorder at Amazon Marvel's Wolverine Digital Deluxe Edition $80 | Releases September 15, 2026 Preorder at PlayStation Marvel's Wolverine launches for PlayStation 5 on September 15, 2026 and will retail for $70.\n\nPreorders are available now at Amazon .\n\nWe expect preorders will open at additional retailers soon, so we will update as soon as other retailers are available, as well as if preorder bonuses and other information is announced.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.amazon.com/Wolverine-PS5-PlayStation-5/dp/B0G6157JKW/ref=sr_1_2?tag=gamespot-preorders-20&amp;tag=gamespot-buybutton-20\">GameSpot</a>",
+      "edited_post_text": null,
+      "url": "https://www.amazon.com/Wolverine-PS5-PlayStation-5/dp/B0G6157JKW/ref=sr_1_2?tag=gamespot-preorders-20&tag=gamespot-buybutton-20",
+      "published_at": "2026-06-02T21:17:43+00:00",
+      "title_hash": "38998180b37c460620a8c644993b50d6d0ea5b69",
+      "image_url": "https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/yoda/flyout_72dpi._V270255989_.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-02T22:27:15+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "f7e7b8c033c07671",
+      "status": "rejected",
+      "created_at": "2026-06-02T22:27:14+00:00",
+      "created_at_sakhalin": "2026-06-03T09:27:14+11:00",
+      "source": "PC Gamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 600,
+      "title_original": "Tomb Raider: Legacy of Atlantis delayed into 2027, but there",
+      "title_ru": "Tomb Raider: Legacy of Atlantis delayed into 2027, but there",
+      "body": [
+        "Our first proper look at the Unreal Engine 5-powered remake of Lara Croft Our first proper look at the Unreal Engine 5-powered remake of Lara Croft's original adventure dropped during today's Sony State of Play."
+      ],
+      "footer": null,
+      "source_text": "Our first proper look at the Unreal Engine 5-powered remake of Lara Croft Our first proper look at the Unreal Engine 5-powered remake of Lara Croft's original adventure dropped during today's Sony State of Play.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Tomb Raider: Legacy of Atlantis delayed into 2027, but there</b>\n\nOur first proper look at the Unreal Engine 5-powered remake of Lara Croft Our first proper look at the Unreal Engine 5-powered remake of Lara Croft's original adventure dropped during today's Sony State of Play.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/games/action/tomb-raider-legacy-of-atlantis-delayed-into-2027-but-theres-a-new-gameplay-trailer-to-make-up-for-it/\">PC Gamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.pcgamer.com/games/action/tomb-raider-legacy-of-atlantis-delayed-into-2027-but-theres-a-new-gameplay-trailer-to-make-up-for-it/",
+      "published_at": "2026-06-02T22:00:03+00:00",
+      "title_hash": "7454d64daf67ee32b2314a610a4e92b27ed41a41",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/cqtyUchBPUox4yfnMYeH5B-1280-80.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: игровая тема не имеет достаточной индустриальной значимости."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-02T22:27:15+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
     },
     {
       "id": "ec44a45aa73888ea",
@@ -9606,27 +10046,27 @@
       "🎮 Игры / индустрия": 600
     },
     "reviewed_pending": 18,
-    "approved": 2,
+    "approved": 0,
     "approve_limit": 2,
     "min_auto_score": 600,
     "openrouter_enabled": false,
-    "reviewed_at": "2026-06-02T12:09:43+00:00",
-    "reviewed_at_sakhalin": "2026-06-02T23:09:43+11:00"
+    "reviewed_at": "2026-06-02T22:27:15+00:00",
+    "reviewed_at_sakhalin": "2026-06-03T09:27:15+11:00"
   },
   "final_guard": {
     "version": 3,
     "changed": 0,
     "polished": 0,
-    "checked_at": "2026-06-02T12:10:24+00:00",
-    "checked_at_sakhalin": "2026-06-02T23:10:24+11:00"
+    "checked_at": "2026-06-02T22:27:16+00:00",
+    "checked_at_sakhalin": "2026-06-03T09:27:16+11:00"
   },
   "priority_guard": {
     "version": 3,
     "changed": 0,
     "airport_changed": 0,
     "security_changed": 0,
-    "checked_at": "2026-06-02T12:09:43+00:00",
-    "checked_at_sakhalin": "2026-06-02T23:09:43+11:00"
+    "checked_at": "2026-06-02T22:27:16+00:00",
+    "checked_at_sakhalin": "2026-06-03T09:27:16+11:00"
   },
   "cycle_report": {
     "reported_at": "2026-06-02T12:10:14+00:00",
@@ -9730,10 +10170,10 @@
   },
   "scope_guard": {
     "version": 3,
-    "checked": 11,
-    "rejected": 1,
-    "checked_at": "2026-06-02T12:09:43+00:00",
-    "checked_at_sakhalin": "2026-06-02T23:09:43+11:00",
+    "checked": 12,
+    "rejected": 0,
+    "checked_at": "2026-06-02T22:27:16+00:00",
+    "checked_at_sakhalin": "2026-06-03T09:27:16+11:00",
     "policy": "block foreign ECB/Greece macro commentary, low-value Habr/retro/essay posts, minor quakes without impact, and weak foreign geopolitics"
   }
 }
