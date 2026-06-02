@@ -1,10 +1,306 @@
 {
   "version": 1,
-  "updated_at": "2026-06-02T06:53:20+00:00",
-  "updated_at_sakhalin": "2026-06-02T17:53:20+11:00",
+  "updated_at": "2026-06-02T07:00:59+00:00",
+  "updated_at_sakhalin": "2026-06-02T18:00:59+11:00",
   "reviewed_at": "2026-06-02T06:46:57+00:00",
   "reviewed_at_sakhalin": "2026-06-02T17:46:57+11:00",
   "items": [
+    {
+      "id": "119e3750a21f1ecf",
+      "status": "pending",
+      "created_at": "2026-06-02T06:53:20+00:00",
+      "created_at_sakhalin": "2026-06-02T17:53:20+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Загрузка утилит Windows в обход Store и без лишних гигабайт: используем Microsoft Symbol Server",
+      "title_ru": "Загрузка утилит Windows в обход Store и без лишних гигабайт: используем Microsoft Symbol Server",
+      "body": [
+        "Предыстория (делюсь болью) Сидел я тут на днях ковырял образы винды различными утилитами ( хотя изначально должен был использовать oscdimg.exe ), но желаемой цели добиться не мог.",
+        "В данной статье я покажу Вам, как вместо загрузки тяжелых ADK и SDK от Microsoft, скачивать легкие .exe утилиты при помощи Microsoft Symbol Server Читать далее Сидел я тут на днях ковырял образы винды различными утилитами ( хотя изначально должен был использовать oscdimg.exe ), но желаемой цели добиться не мог.",
+        "И всё же решил загрузить oscdigm, но мелкомягкие приготовили целый квест..."
+      ],
+      "footer": null,
+      "source_text": "Предыстория (делюсь болью) Сидел я тут на днях ковырял образы винды различными утилитами ( хотя изначально должен был использовать oscdimg.exe ), но желаемой цели добиться не мог. И всё же решил... В данной статье я покажу Вам, как вместо загрузки тяжелых ADK и SDK от Microsoft, скачивать легкие .exe утилиты при помощи Microsoft Symbol Server Читать далее Сидел я тут на днях ковырял образы винды различными утилитами ( хотя изначально должен был использовать oscdimg.exe ), но желаемой цели добиться не мог. И всё же решил загрузить oscdigm, но мелкомягкие приготовили целый квест... Для тех кто не вкурсе поясню, oscdimg.exe - это экзешник ввесом около 400 КБ, который позволяет через ps редактировать ISO-образы. Только Microsoft решили впихнуть его в пакет Windows ADK, загрузить который можно с оф.сайта в двух вариантах (с онлайн-установкой и \"офлайн-установкой\"). Вы скачиваете .exe для установки ADK, потом он обращается к серверу Microsoft Store, догружает всё что нужно и готово. Но так как, у меня (не только у меня, но всё же) существует ряд проблем с работой Microsoft Store, загрузкой приложений из него - то онлайн вариант нам не подошел. И я уверенный в своих силах, решил сейчас скачаю офлайн-инсталлер, установлю пакет ADK, уберу всё лишнее и буду использовать oscdimg. Да вот только \"офлайн\"-инстраллер, работает крайне интересным способом: Цель - один исполняемый файл весом 400 КБ. Официальный путь - скачать Windows ADK размером в несколько гигабайт, установить, найти нужный .exe, удалить установщик. Именно так Microsoft предлагает получить oscdimg.exe Но есть способ лучше. В этой статье разберём технику прямой загрузки PE-исполняемых файлов с серверов Microsoft, поймём, как она устроена изнутри, и напишем инструментарий для автоматизации. Microsoft поддерживает публичн",
+      "post_text": "🌐 Мировые IT\n\n<b>Загрузка утилит Windows в обход Store и без лишних гигабайт: используем Microsoft Symbol Server</b>\n\nПредыстория (делюсь болью) Сидел я тут на днях ковырял образы винды различными утилитами ( хотя изначально должен был использовать oscdimg.exe ), но желаемой цели добиться не мог.\n\nВ данной статье я покажу Вам, как вместо загрузки тяжелых ADK и SDK от Microsoft, скачивать легкие .exe утилиты при помощи Microsoft Symbol Server Читать далее Сидел я тут на днях ковырял образы винды различными утилитами ( хотя изначально должен был использовать oscdimg.exe ), но желаемой цели добиться не мог.\n\nИ всё же решил загрузить oscdigm, но мелкомягкие приготовили целый квест...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042486/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042486#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042486/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042486#habracut",
+      "published_at": "2026-06-02T06:46:59+00:00",
+      "title_hash": "0f892577ed6a962f9416fa768e5b7b1e45dc4d6a",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/c42/ed8/77e/c42ed877ece917a45d0781486950c218.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "cd87a1e11b58dea7",
+      "status": "pending",
+      "created_at": "2026-06-02T06:53:20+00:00",
+      "created_at_sakhalin": "2026-06-02T17:53:20+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Самые странные деньги прошлого: ракушки, камни, чай и маленькие шиферные колечки",
+      "title_ru": "Самые странные деньги прошлого: ракушки, камни, чай и маленькие шиферные колечки",
+      "body": [
+        "Деньги, какими мы их знаем и понимаем сегодня, возникли в VII веке до нашей эры — это были первые монеты.",
+        "А спустя почти полторы тысячи лет в Китае стали использовать прообразы бумажных денег —...",
+        "Деньги, какими мы их знаем и понимаем сегодня, возникли в VII веке до нашей эры — это были первые монеты."
+      ],
+      "footer": null,
+      "source_text": "Деньги, какими мы их знаем и понимаем сегодня, возникли в VII веке до нашей эры — это были первые монеты. А спустя почти полторы тысячи лет в Китае стали использовать прообразы бумажных денег —... Деньги, какими мы их знаем и понимаем сегодня, возникли в VII веке до нашей эры — это были первые монеты. А спустя почти полторы тысячи лет в Китае стали использовать прообразы бумажных денег — расписки, которые можно было перевозить вместо тяжёлых монет. Вообще история эволюции денег интересна — они не всегда выглядели как привычные нам монеты или банкноты. В разные времена и в разных культурах долго использовались «товарные деньги», то есть нечто дорогое и нужное всем и всегда, вроде шкурок животных или соли. В качестве платёжных инструментов использовали и весьма неожиданные вещи — ткани, ракушки, камни, шиферные колечки, чай в брикетах… Давайте вспомним самые необычные платёжные средства из прошлого. Читать далее Деньги, какими мы их знаем и понимаем сегодня, возникли в VII веке до нашей эры — это были первые монеты. А спустя почти полторы тысячи лет в Китае стали использовать прообразы бумажных денег — расписки, которые можно было перевозить вместо тяжёлых монет. Вообще история эволюции денег интересна — они не всегда выглядели как привычные нам монеты или банкноты. В разные времена и в разных культурах долго использовались «товарные деньги», то есть нечто дорогое и нужное всем и всегда, вроде шкурок животных или соли. В качестве платёжных инструментов использовали и весьма неожиданные вещи — ткани, ракушки, камни, шиферные колечки, чай в брикетах… Давайте вспомним самые необычные платёжные средства из прошлого. Наверное, все знают, как люди пришли к использованию денег, но всё же освежим память. Изначально наши предки могли чем-то обмениваться: молоко поменять на зерно, ",
+      "post_text": "🌐 Мировые IT\n\n<b>Самые странные деньги прошлого: ракушки, камни, чай и маленькие шиферные колечки</b>\n\nДеньги, какими мы их знаем и понимаем сегодня, возникли в VII веке до нашей эры — это были первые монеты.\n\nА спустя почти полторы тысячи лет в Китае стали использовать прообразы бумажных денег —...\n\nДеньги, какими мы их знаем и понимаем сегодня, возникли в VII веке до нашей эры — это были первые монеты.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/psb/articles/1041992/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041992#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/psb/articles/1041992/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041992#habracut",
+      "published_at": "2026-06-02T06:43:55+00:00",
+      "title_hash": "e27f1d8abfa35db5c1987e5fc3ce911009a12b0f",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/cb3/843/759/cb3843759f12d2f381755e2eb70d6937.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "2eb0e1f20e2002f6",
+      "status": "pending",
+      "created_at": "2026-06-02T06:53:20+00:00",
+      "created_at_sakhalin": "2026-06-02T17:53:20+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Чему учить техлидов: как мы прокачали инженерам навыки управления",
+      "title_ru": "Чему учить техлидов: как мы прокачали инженерам навыки управления",
+      "body": [
+        "Хотим рассказать, как провели обучение для наших техлидов: нужно было дополнить их инженерные компетенции базовыми навыками управления, чтобы эффективней выстраивать комплексную кибербезопасность...",
+        "Хотим рассказать, как провели обучение для наших техлидов: нужно было дополнить их инженерные компетенции базовыми навыками управления, чтобы эффективней выстраивать комплексную кибербезопасность на крупных интеграционных проектах.",
+        "Программу придумали сами, опираясь на реальный опыт и процессы, а обучение провел не теоретик, а практикующий специалист."
+      ],
+      "footer": null,
+      "source_text": "Хотим рассказать, как провели обучение для наших техлидов: нужно было дополнить их инженерные компетенции базовыми навыками управления, чтобы эффективней выстраивать комплексную кибербезопасность... Хотим рассказать, как провели обучение для наших техлидов: нужно было дополнить их инженерные компетенции базовыми навыками управления, чтобы эффективней выстраивать комплексную кибербезопасность на крупных интеграционных проектах. Программу придумали сами, опираясь на реальный опыт и процессы, а обучение провел не теоретик, а практикующий специалист. Собрали обратную связь, сделали выводы и готовы поделиться с хабром нашим видением, как и чему надо обучать техлидов, чтобы процесс реализации проекта шел качественней, заказчик не был в печали, а команда была «на изи». Читать далее Хотим рассказать, как провели обучение для наших техлидов: нужно было дополнить их инженерные компетенции базовыми навыками управления, чтобы эффективней выстраивать комплексную кибербезопасность на крупных интеграционных проектах. Программу придумали сами, опираясь на реальный опыт и процессы, а обучение провел не теоретик, а практикующий специалист. Собрали обратную связь, сделали выводы и готовы поделиться с хабром нашим видением, как и чему надо обучать техлидов, чтобы процесс реализации проекта шел качественней, заказчик не был в печали, а команда была «на изи». В одном из прошлых блогов мы уже рассказывали про схему ролевой модели архитектора комплексной кибербезопасности. Если кратко, то под каждый интеграционный ИБ‑проект набирается команда, в ней выделяется группа управления проектом в составе руководителя проекта (РП), который отвечает за организационную часть проекта, и главного инженера проекта (ГИП), которому при необходимости подключают технических ответственных (ТО). ГИП и ТО отвечают",
+      "post_text": "🌐 Мировые IT\n\n<b>Чему учить техлидов: как мы прокачали инженерам навыки управления</b>\n\nХотим рассказать, как провели обучение для наших техлидов: нужно было дополнить их инженерные компетенции базовыми навыками управления, чтобы эффективней выстраивать комплексную кибербезопасность...\n\nХотим рассказать, как провели обучение для наших техлидов: нужно было дополнить их инженерные компетенции базовыми навыками управления, чтобы эффективней выстраивать комплексную кибербезопасность на крупных интеграционных проектах.\n\nПрограмму придумали сами, опираясь на реальный опыт и процессы, а обучение провел не теоретик, а практикующий специалист.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/solarsecurity/articles/1041206/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041206#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/solarsecurity/articles/1041206/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041206#habracut",
+      "published_at": "2026-06-02T06:42:45+00:00",
+      "title_hash": "2001615ebc4c265a46f62992e7978afbd03a7322",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/46d/8d8/b5a/46d8d8b5a987b7e2aba6506fa2bac939.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "ae846221aec091ff",
+      "status": "pending",
+      "created_at": "2026-06-02T06:53:20+00:00",
+      "created_at_sakhalin": "2026-06-02T17:53:20+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Инферит ИТМен 7.1: завершенная ролевая модель и новые возможности инвентаризации",
+      "title_ru": "Инферит ИТМен 7.1: завершенная ролевая модель и новые возможности инвентаризации",
+      "body": [
+        "Меня зовут Данила Трусов, я директор продукта «Инферит ИТМен».",
+        "В этой статье расскажу, что изменилось в новой версии 7.1 нашей системы «Инферит ИТМен» и почему эти доработки важны для...",
+        "Меня зовут Данила Трусов, я директор продукта «Инферит ИТМен»."
+      ],
+      "footer": null,
+      "source_text": "Привет, Хабр! Меня зовут Данила Трусов, я директор продукта «Инферит ИТМен». В этой статье расскажу, что изменилось в новой версии 7.1 нашей системы «Инферит ИТМен» и почему эти доработки важны для... Привет, Хабр! Меня зовут Данила Трусов, я директор продукта «Инферит ИТМен». В этой статье расскажу, что изменилось в новой версии 7.1 нашей системы «Инферит ИТМен» и почему эти доработки важны для учета, инвентаризации и контроля ИТ-активов. Если у вас крупная ИТ-инфраструктура, вы знаете: чем больше людей работают в системе, тем острее встает вопрос, кто что видит и что может сделать. Инженер не должен случайно удалить чужой отчет, ИБ-специалист не должен разбираться в настройках инвентаризации. А администратор не должен каждый раз объяснять новым сотрудникам, куда им можно, а куда нельзя. В версии 7.1 мы закрыли этот вопрос полностью. Гибкая ролевая модель: финальный этап В версии 7.0 мы заложили основу — доработали управление пользователями и группами, базовое разграничение административных полномочий, парольные политики. В версии 7.1 завершили начатое. Теперь права доступа применяются ко всем основным разделам системы: сбору данных, анализу данных, активам, администрированию, библиотеке ПО и другим. Администраторы могут создавать уникальные роли с индивидуальным набором прав, отдельно настраивая доступность каждого раздела и подраздела (на просмотр, редактирование или удаление). Каждый пользователь видит только то, что нужно ему. Для крупных заказчиков, у которых ролевая модель — обязательное условие для соблюдения политик ИБ, это принципиально важно. Дополнительно реализован механизм применения прав по минимальным или максимальным привилегиям. Если пользователь состоит в нескольких группах с разными правами, система автоматически применит тот уровень доступа, который",
+      "post_text": "🌐 Мировые IT\n\n<b>Инферит ИТМен 7.1: завершенная ролевая модель и новые возможности инвентаризации</b>\n\nМеня зовут Данила Трусов, я директор продукта «Инферит ИТМен».\n\nВ этой статье расскажу, что изменилось в новой версии 7.1 нашей системы «Инферит ИТМен» и почему эти доработки важны для...\n\nМеня зовут Данила Трусов, я директор продукта «Инферит ИТМен».\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/inferit/articles/1042338/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042338#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/inferit/articles/1042338/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042338#habracut",
+      "published_at": "2026-06-02T06:27:44+00:00",
+      "title_hash": "4a51746f55dd7066901d08030981dcb254326e89",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/e62/d86/395/e62d8639583524fd2553b82b3b61b31d.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "c3668088a823de25",
+      "status": "pending",
+      "created_at": "2026-06-02T06:53:20+00:00",
+      "created_at_sakhalin": "2026-06-02T17:53:20+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Словарь ИИ для бизнеса · 89 терминов · Зинин × Штурбин",
+      "title_ru": "Словарь ИИ для бизнеса · 89 терминов · Зинин × Штурбин",
+      "body": [
+        "89 ключевых терминов мира ИИ для фаундеров и руководителей — без жаргона, с применением в бизнесе.",
+        "MCP (Model Context Protocol) называют «USB-C для ИИ-агентов»: один протокол, и к модели подключаются десятки готовых интеграций без костылей.",
+        "Звучит красиво, но настоящее понимание приходит только когда соберёшь сервер руками — где протокол реально экономит, а где придётся повозиться, видно лишь на практике."
+      ],
+      "footer": null,
+      "source_text": "89 ключевых терминов мира ИИ для фаундеров и руководителей — без жаргона, с применением в бизнесе. MCP (Model Context Protocol) называют «USB-C для ИИ-агентов»: один протокол, и к модели подключаются десятки готовых интеграций без костылей. Звучит красиво, но настоящее понимание приходит только когда соберёшь сервер руками — где протокол реально экономит, а где придётся повозиться, видно лишь на практике. Я собрал свой за вечер и рассказываю по шагам. Коннектор отдаёт Claude мою базу знаний — словарь из 90 ИИ-терминов и блок частых вопросов. Спрашиваешь в диалоге «что такое RAG» — и Claude достаёт определение из моей базы, со ссылкой на источник. Дальше — стек, код, деплой за nginx и три грабли, на которых я залип. Читать далее Восемьдесят девять ключевых терминов мира ИИ — для фаундеров и руководителей. Каждый термин с отдельной страницей, можно сослаться в письме или на встрече. Структура для запоминания: концепции → инструменты → компании → инфраструктура. Large Language Model — большая языковая модель. Базовый компонент любого AI-агента: понимает запросы и генерирует ответы. Программа на основе LLM, автономно решающая задачи: понимает запрос, разбивает на шаги, использует инструменты, доводит до результата. Архитектура из специализированных AI-агентов, работающих через оркестратор. Каждый агент решает свою подзадачу.",
+      "post_text": "🌐 Мировые IT\n\n<b>Словарь ИИ для бизнеса · 89 терминов · Зинин × Штурбин</b>\n\n89 ключевых терминов мира ИИ для фаундеров и руководителей — без жаргона, с применением в бизнесе.\n\nMCP (Model Context Protocol) называют «USB-C для ИИ-агентов»: один протокол, и к модели подключаются десятки готовых интеграций без костылей.\n\nЗвучит красиво, но настоящее понимание приходит только когда соберёшь сервер руками — где протокол реально экономит, а где придётся повозиться, видно лишь на практике.\n\nМИРОВЫЕ IT · <a href=\"https://zinin-shturbin.com/glossary/\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://zinin-shturbin.com/glossary/",
+      "published_at": "2026-06-02T06:15:19+00:00",
+      "title_hash": "b8ac6fbb4727b88330811f76e5f3152323ea3f3e",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/8c2/ae1/87d/8c2ae187d0952044889502a0b88e8126.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "70fc56bf45ee5166",
+      "status": "pending",
+      "created_at": "2026-06-02T06:53:20+00:00",
+      "created_at_sakhalin": "2026-06-02T17:53:20+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Автоматический отбор few_shot примеров для обучения модели",
+      "title_ru": "Автоматический отбор few_shot примеров для обучения модели",
+      "body": [
+        "Введение Нормализация справочников НСИ - головная боль аналитиков: в базе десятки тысяч записей, и каждая будто создана по своим правилам.",
+        "И это еще не все трудности: в базе полно дублей, форматы...",
+        "Справочники МТР на крупных предприятиях ‒ это десятки тысяч строк вида «Кабель ВВГнг 3х2.5 кв.мм, серая изоляция, 100м» , которые нужно разложить по атрибутам (тип, сечение, длина, цвет изоляции)."
+      ],
+      "footer": null,
+      "source_text": "1. Введение Нормализация справочников НСИ - головная боль аналитиков: в базе десятки тысяч записей, и каждая будто создана по своим правилам. И это еще не все трудности: в базе полно дублей, форматы... Справочники МТР на крупных предприятиях ‒ это десятки тысяч строк вида «Кабель ВВГнг 3х2.5 кв.мм, серая изоляция, 100м» , которые нужно разложить по атрибутам (тип, сечение, длина, цвет изоляции). Дубли, ошибки, разнородные форматы от разных поставщиков, почему это больная тема, а также подходы и методы решения, подробно разобраны в этой статье. Читать далее Нормализация справочников НСИ - головная боль аналитиков: в базе десятки тысяч записей, и каждая будто создана по своим правилам. И это еще не все трудности: в базе полно дублей, форматы данных пляшут, в полях то лишние символы, то транслитерация, то опечатки от ручного ввода. Мы не раз сталкивались с этим в своих проектах. Решений хватает, но мы остановили выбор на LLM. Модель хорошо справляется с разбором неструктурированных строк на атрибуты, если правильно её настроить. Однако на практике мы столкнулись с тем, что успех LLM-нормализации на 90% определяется качеством few-shot примеров. Чем набор примеров репрезентативнее, тем стабильнее результат. Но как найти те самые, хорошие примеры в огромной массе разнородных записей? Вручную, особенно не имея достаточной экспертизы, проводить глубокий анализ трудоемко и неэффективно. Поэтому мы решили пойти другим путём - автоматизировать подбор. В этой статье мы разберем два подхода к автоматизации процесса подбора примеров для обучения, проверим их на реальных данных и выясним, какой из них и в каких условиях работает лучше. Посмотрим, что нам покажут «автоматические эксперты». Начнем с постановки задачи. Есть справочник МТР, в котором находятся различные строки с товарными",
+      "post_text": "🌐 Мировые IT\n\n<b>Автоматический отбор few_shot примеров для обучения модели</b>\n\nВведение Нормализация справочников НСИ - головная боль аналитиков: в базе десятки тысяч записей, и каждая будто создана по своим правилам.\n\nИ это еще не все трудности: в базе полно дублей, форматы...\n\nСправочники МТР на крупных предприятиях ‒ это десятки тысяч строк вида «Кабель ВВГнг 3х2.5 кв.мм, серая изоляция, 100м» , которые нужно разложить по атрибутам (тип, сечение, длина, цвет изоляции).\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042468/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042468#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042468/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042468#habracut",
+      "published_at": "2026-06-02T06:10:35+00:00",
+      "title_hash": "23e6715f5900a815b86209f03c64e7cce7c9bc57",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "2419b6ab48c14634",
+      "status": "pending",
+      "created_at": "2026-06-02T06:53:20+00:00",
+      "created_at_sakhalin": "2026-06-02T17:53:20+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 237,
+      "title_original": "This could be Windows’ M1 moment — but expect it to cost a ton",
+      "title_ru": "This could be Windows’ M1 moment — but expect it to cost a ton",
+      "body": [
+        "﻿Nvidia’s RTX Spark ‘superchip’ shows promise for Windows laptops.",
+        "But it also comes at the worst time.",
+        "Nvidia's announcement that it's getting into the consumer laptop chip space with RTX Spark is huge."
+      ],
+      "footer": null,
+      "source_text": "﻿Nvidia’s RTX Spark ‘superchip’ shows promise for Windows laptops. But it also comes at the worst time. Nvidia's announcement that it's getting into the consumer laptop chip space with RTX Spark is huge. Apple has proved for years that Arm-based chips can perform incredibly well while also delivering great battery life - at least on the Mac. In the Windows world, performance hasn't fully matched up under Qualcomm chips, mostly in the […] AI Close AI Posts from this topic will be added to your daily email digest and your homepage feed. Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed. ﻿Nvidia’s RTX Spark ‘superchip’ shows promise for Windows laptops. But it also comes at the worst time. Antonio G. Di Benedetto Close Antonio G. Di Benedetto Reviewer, Laptops Posts from this author will be added to your daily email digest and your homepage feed.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>This could be Windows’ M1 moment — but expect it to cost a ton</b>\n\n﻿Nvidia’s RTX Spark ‘superchip’ shows promise for Windows laptops.\n\nBut it also comes at the worst time.\n\nNvidia's announcement that it's getting into the consumer laptop chip space with RTX Spark is huge.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/tech/941215/windows-laptops-nvidia-rtx-spark-apple-m1-arm-price-ram\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/tech/941215/windows-laptops-nvidia-rtx-spark-apple-m1-arm-price-ram",
+      "published_at": "2026-06-01T20:02:31+00:00",
+      "title_hash": "897ff90930353aac3e81191c19036d4a2487aa39",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "33b6f0b1d9ef964a",
+      "status": "pending",
+      "created_at": "2026-06-02T06:53:20+00:00",
+      "created_at_sakhalin": "2026-06-02T17:53:20+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 237,
+      "title_original": "Sony’s new fight stick and gaming monitor launch in August",
+      "title_ru": "Sony’s new fight stick and gaming monitor launch in August",
+      "body": [
+        "Sony is sharing new details about some of its upcoming gaming-focused hardware, including pricing and August launch dates for its FlexStrike fight stick and its 27-inch monitor.",
+        "The FlexStrike fight stick will be available starting August 6th - the same day as the new PlayStation-published fighting game Marvel Tōkon: Fighting Souls - and will cost […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed.",
+        "News Close News Posts from this topic will be added to your daily email digest and your homepage feed."
+      ],
+      "footer": null,
+      "source_text": "Preorders start soon. Sony is sharing new details about some of its upcoming gaming-focused hardware, including pricing and August launch dates for its FlexStrike fight stick and its 27-inch monitor. The FlexStrike fight stick will be available starting August 6th - the same day as the new PlayStation-published fighting game Marvel Tōkon: Fighting Souls - and will cost […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed. News Close News Posts from this topic will be added to your daily email digest and your homepage feed. The Pulse Elevate speakers are also set to launch ‘later this year.’ The Pulse Elevate speakers are also set to launch ‘later this year.’",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Sony’s new fight stick and gaming monitor launch in August</b>\n\nSony is sharing new details about some of its upcoming gaming-focused hardware, including pricing and August launch dates for its FlexStrike fight stick and its 27-inch monitor.\n\nThe FlexStrike fight stick will be available starting August 6th - the same day as the new PlayStation-published fighting game Marvel Tōkon: Fighting Souls - and will cost […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed.\n\nNews Close News Posts from this topic will be added to your daily email digest and your homepage feed.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/games/941031/sony-playstation-flexstrike-fight-stick-gaming-monitor-pulse-elevate-speakers-launch-date-price\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/games/941031/sony-playstation-flexstrike-fight-stick-gaming-monitor-pulse-elevate-speakers-launch-date-price",
+      "published_at": "2026-06-01T16:36:18+00:00",
+      "title_hash": "23aa18a74371902486fe7ebc92508ec7ea401923",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
     {
       "id": "4411fb1b01fce1b7",
       "status": "rejected",
@@ -9265,302 +9561,6 @@
       "published_at_sakhalin": "2026-05-29T11:09:58+11:00",
       "publish_method": "sendPhoto/safe/pipeline_generated",
       "telegram_message_id": 142
-    },
-    {
-      "id": "119e3750a21f1ecf",
-      "status": "pending",
-      "created_at": "2026-06-02T06:53:20+00:00",
-      "created_at_sakhalin": "2026-06-02T17:53:20+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Загрузка утилит Windows в обход Store и без лишних гигабайт: используем Microsoft Symbol Server",
-      "title_ru": "Загрузка утилит Windows в обход Store и без лишних гигабайт: используем Microsoft Symbol Server",
-      "body": [
-        "Предыстория (делюсь болью) Сидел я тут на днях ковырял образы винды различными утилитами ( хотя изначально должен был использовать oscdimg.exe ), но желаемой цели добиться не мог.",
-        "В данной статье я покажу Вам, как вместо загрузки тяжелых ADK и SDK от Microsoft, скачивать легкие .exe утилиты при помощи Microsoft Symbol Server Читать далее Сидел я тут на днях ковырял образы винды различными утилитами ( хотя изначально должен был использовать oscdimg.exe ), но желаемой цели добиться не мог.",
-        "И всё же решил загрузить oscdigm, но мелкомягкие приготовили целый квест..."
-      ],
-      "footer": null,
-      "source_text": "Предыстория (делюсь болью) Сидел я тут на днях ковырял образы винды различными утилитами ( хотя изначально должен был использовать oscdimg.exe ), но желаемой цели добиться не мог. И всё же решил... В данной статье я покажу Вам, как вместо загрузки тяжелых ADK и SDK от Microsoft, скачивать легкие .exe утилиты при помощи Microsoft Symbol Server Читать далее Сидел я тут на днях ковырял образы винды различными утилитами ( хотя изначально должен был использовать oscdimg.exe ), но желаемой цели добиться не мог. И всё же решил загрузить oscdigm, но мелкомягкие приготовили целый квест... Для тех кто не вкурсе поясню, oscdimg.exe - это экзешник ввесом около 400 КБ, который позволяет через ps редактировать ISO-образы. Только Microsoft решили впихнуть его в пакет Windows ADK, загрузить который можно с оф.сайта в двух вариантах (с онлайн-установкой и \"офлайн-установкой\"). Вы скачиваете .exe для установки ADK, потом он обращается к серверу Microsoft Store, догружает всё что нужно и готово. Но так как, у меня (не только у меня, но всё же) существует ряд проблем с работой Microsoft Store, загрузкой приложений из него - то онлайн вариант нам не подошел. И я уверенный в своих силах, решил сейчас скачаю офлайн-инсталлер, установлю пакет ADK, уберу всё лишнее и буду использовать oscdimg. Да вот только \"офлайн\"-инстраллер, работает крайне интересным способом: Цель - один исполняемый файл весом 400 КБ. Официальный путь - скачать Windows ADK размером в несколько гигабайт, установить, найти нужный .exe, удалить установщик. Именно так Microsoft предлагает получить oscdimg.exe Но есть способ лучше. В этой статье разберём технику прямой загрузки PE-исполняемых файлов с серверов Microsoft, поймём, как она устроена изнутри, и напишем инструментарий для автоматизации. Microsoft поддерживает публичн",
-      "post_text": "🌐 Мировые IT\n\n<b>Загрузка утилит Windows в обход Store и без лишних гигабайт: используем Microsoft Symbol Server</b>\n\nПредыстория (делюсь болью) Сидел я тут на днях ковырял образы винды различными утилитами ( хотя изначально должен был использовать oscdimg.exe ), но желаемой цели добиться не мог.\n\nВ данной статье я покажу Вам, как вместо загрузки тяжелых ADK и SDK от Microsoft, скачивать легкие .exe утилиты при помощи Microsoft Symbol Server Читать далее Сидел я тут на днях ковырял образы винды различными утилитами ( хотя изначально должен был использовать oscdimg.exe ), но желаемой цели добиться не мог.\n\nИ всё же решил загрузить oscdigm, но мелкомягкие приготовили целый квест...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042486/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042486#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042486/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042486#habracut",
-      "published_at": "2026-06-02T06:46:59+00:00",
-      "title_hash": "0f892577ed6a962f9416fa768e5b7b1e45dc4d6a",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/c42/ed8/77e/c42ed877ece917a45d0781486950c218.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "cd87a1e11b58dea7",
-      "status": "pending",
-      "created_at": "2026-06-02T06:53:20+00:00",
-      "created_at_sakhalin": "2026-06-02T17:53:20+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Самые странные деньги прошлого: ракушки, камни, чай и маленькие шиферные колечки",
-      "title_ru": "Самые странные деньги прошлого: ракушки, камни, чай и маленькие шиферные колечки",
-      "body": [
-        "Деньги, какими мы их знаем и понимаем сегодня, возникли в VII веке до нашей эры — это были первые монеты.",
-        "А спустя почти полторы тысячи лет в Китае стали использовать прообразы бумажных денег —...",
-        "Деньги, какими мы их знаем и понимаем сегодня, возникли в VII веке до нашей эры — это были первые монеты."
-      ],
-      "footer": null,
-      "source_text": "Деньги, какими мы их знаем и понимаем сегодня, возникли в VII веке до нашей эры — это были первые монеты. А спустя почти полторы тысячи лет в Китае стали использовать прообразы бумажных денег —... Деньги, какими мы их знаем и понимаем сегодня, возникли в VII веке до нашей эры — это были первые монеты. А спустя почти полторы тысячи лет в Китае стали использовать прообразы бумажных денег — расписки, которые можно было перевозить вместо тяжёлых монет. Вообще история эволюции денег интересна — они не всегда выглядели как привычные нам монеты или банкноты. В разные времена и в разных культурах долго использовались «товарные деньги», то есть нечто дорогое и нужное всем и всегда, вроде шкурок животных или соли. В качестве платёжных инструментов использовали и весьма неожиданные вещи — ткани, ракушки, камни, шиферные колечки, чай в брикетах… Давайте вспомним самые необычные платёжные средства из прошлого. Читать далее Деньги, какими мы их знаем и понимаем сегодня, возникли в VII веке до нашей эры — это были первые монеты. А спустя почти полторы тысячи лет в Китае стали использовать прообразы бумажных денег — расписки, которые можно было перевозить вместо тяжёлых монет. Вообще история эволюции денег интересна — они не всегда выглядели как привычные нам монеты или банкноты. В разные времена и в разных культурах долго использовались «товарные деньги», то есть нечто дорогое и нужное всем и всегда, вроде шкурок животных или соли. В качестве платёжных инструментов использовали и весьма неожиданные вещи — ткани, ракушки, камни, шиферные колечки, чай в брикетах… Давайте вспомним самые необычные платёжные средства из прошлого. Наверное, все знают, как люди пришли к использованию денег, но всё же освежим память. Изначально наши предки могли чем-то обмениваться: молоко поменять на зерно, ",
-      "post_text": "🌐 Мировые IT\n\n<b>Самые странные деньги прошлого: ракушки, камни, чай и маленькие шиферные колечки</b>\n\nДеньги, какими мы их знаем и понимаем сегодня, возникли в VII веке до нашей эры — это были первые монеты.\n\nА спустя почти полторы тысячи лет в Китае стали использовать прообразы бумажных денег —...\n\nДеньги, какими мы их знаем и понимаем сегодня, возникли в VII веке до нашей эры — это были первые монеты.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/psb/articles/1041992/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041992#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/psb/articles/1041992/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041992#habracut",
-      "published_at": "2026-06-02T06:43:55+00:00",
-      "title_hash": "e27f1d8abfa35db5c1987e5fc3ce911009a12b0f",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/cb3/843/759/cb3843759f12d2f381755e2eb70d6937.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "2eb0e1f20e2002f6",
-      "status": "pending",
-      "created_at": "2026-06-02T06:53:20+00:00",
-      "created_at_sakhalin": "2026-06-02T17:53:20+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Чему учить техлидов: как мы прокачали инженерам навыки управления",
-      "title_ru": "Чему учить техлидов: как мы прокачали инженерам навыки управления",
-      "body": [
-        "Хотим рассказать, как провели обучение для наших техлидов: нужно было дополнить их инженерные компетенции базовыми навыками управления, чтобы эффективней выстраивать комплексную кибербезопасность...",
-        "Хотим рассказать, как провели обучение для наших техлидов: нужно было дополнить их инженерные компетенции базовыми навыками управления, чтобы эффективней выстраивать комплексную кибербезопасность на крупных интеграционных проектах.",
-        "Программу придумали сами, опираясь на реальный опыт и процессы, а обучение провел не теоретик, а практикующий специалист."
-      ],
-      "footer": null,
-      "source_text": "Хотим рассказать, как провели обучение для наших техлидов: нужно было дополнить их инженерные компетенции базовыми навыками управления, чтобы эффективней выстраивать комплексную кибербезопасность... Хотим рассказать, как провели обучение для наших техлидов: нужно было дополнить их инженерные компетенции базовыми навыками управления, чтобы эффективней выстраивать комплексную кибербезопасность на крупных интеграционных проектах. Программу придумали сами, опираясь на реальный опыт и процессы, а обучение провел не теоретик, а практикующий специалист. Собрали обратную связь, сделали выводы и готовы поделиться с хабром нашим видением, как и чему надо обучать техлидов, чтобы процесс реализации проекта шел качественней, заказчик не был в печали, а команда была «на изи». Читать далее Хотим рассказать, как провели обучение для наших техлидов: нужно было дополнить их инженерные компетенции базовыми навыками управления, чтобы эффективней выстраивать комплексную кибербезопасность на крупных интеграционных проектах. Программу придумали сами, опираясь на реальный опыт и процессы, а обучение провел не теоретик, а практикующий специалист. Собрали обратную связь, сделали выводы и готовы поделиться с хабром нашим видением, как и чему надо обучать техлидов, чтобы процесс реализации проекта шел качественней, заказчик не был в печали, а команда была «на изи». В одном из прошлых блогов мы уже рассказывали про схему ролевой модели архитектора комплексной кибербезопасности. Если кратко, то под каждый интеграционный ИБ‑проект набирается команда, в ней выделяется группа управления проектом в составе руководителя проекта (РП), который отвечает за организационную часть проекта, и главного инженера проекта (ГИП), которому при необходимости подключают технических ответственных (ТО). ГИП и ТО отвечают",
-      "post_text": "🌐 Мировые IT\n\n<b>Чему учить техлидов: как мы прокачали инженерам навыки управления</b>\n\nХотим рассказать, как провели обучение для наших техлидов: нужно было дополнить их инженерные компетенции базовыми навыками управления, чтобы эффективней выстраивать комплексную кибербезопасность...\n\nХотим рассказать, как провели обучение для наших техлидов: нужно было дополнить их инженерные компетенции базовыми навыками управления, чтобы эффективней выстраивать комплексную кибербезопасность на крупных интеграционных проектах.\n\nПрограмму придумали сами, опираясь на реальный опыт и процессы, а обучение провел не теоретик, а практикующий специалист.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/solarsecurity/articles/1041206/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1041206#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/solarsecurity/articles/1041206/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1041206#habracut",
-      "published_at": "2026-06-02T06:42:45+00:00",
-      "title_hash": "2001615ebc4c265a46f62992e7978afbd03a7322",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/46d/8d8/b5a/46d8d8b5a987b7e2aba6506fa2bac939.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "ae846221aec091ff",
-      "status": "pending",
-      "created_at": "2026-06-02T06:53:20+00:00",
-      "created_at_sakhalin": "2026-06-02T17:53:20+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Инферит ИТМен 7.1: завершенная ролевая модель и новые возможности инвентаризации",
-      "title_ru": "Инферит ИТМен 7.1: завершенная ролевая модель и новые возможности инвентаризации",
-      "body": [
-        "Меня зовут Данила Трусов, я директор продукта «Инферит ИТМен».",
-        "В этой статье расскажу, что изменилось в новой версии 7.1 нашей системы «Инферит ИТМен» и почему эти доработки важны для...",
-        "Меня зовут Данила Трусов, я директор продукта «Инферит ИТМен»."
-      ],
-      "footer": null,
-      "source_text": "Привет, Хабр! Меня зовут Данила Трусов, я директор продукта «Инферит ИТМен». В этой статье расскажу, что изменилось в новой версии 7.1 нашей системы «Инферит ИТМен» и почему эти доработки важны для... Привет, Хабр! Меня зовут Данила Трусов, я директор продукта «Инферит ИТМен». В этой статье расскажу, что изменилось в новой версии 7.1 нашей системы «Инферит ИТМен» и почему эти доработки важны для учета, инвентаризации и контроля ИТ-активов. Если у вас крупная ИТ-инфраструктура, вы знаете: чем больше людей работают в системе, тем острее встает вопрос, кто что видит и что может сделать. Инженер не должен случайно удалить чужой отчет, ИБ-специалист не должен разбираться в настройках инвентаризации. А администратор не должен каждый раз объяснять новым сотрудникам, куда им можно, а куда нельзя. В версии 7.1 мы закрыли этот вопрос полностью. Гибкая ролевая модель: финальный этап В версии 7.0 мы заложили основу — доработали управление пользователями и группами, базовое разграничение административных полномочий, парольные политики. В версии 7.1 завершили начатое. Теперь права доступа применяются ко всем основным разделам системы: сбору данных, анализу данных, активам, администрированию, библиотеке ПО и другим. Администраторы могут создавать уникальные роли с индивидуальным набором прав, отдельно настраивая доступность каждого раздела и подраздела (на просмотр, редактирование или удаление). Каждый пользователь видит только то, что нужно ему. Для крупных заказчиков, у которых ролевая модель — обязательное условие для соблюдения политик ИБ, это принципиально важно. Дополнительно реализован механизм применения прав по минимальным или максимальным привилегиям. Если пользователь состоит в нескольких группах с разными правами, система автоматически применит тот уровень доступа, который",
-      "post_text": "🌐 Мировые IT\n\n<b>Инферит ИТМен 7.1: завершенная ролевая модель и новые возможности инвентаризации</b>\n\nМеня зовут Данила Трусов, я директор продукта «Инферит ИТМен».\n\nВ этой статье расскажу, что изменилось в новой версии 7.1 нашей системы «Инферит ИТМен» и почему эти доработки важны для...\n\nМеня зовут Данила Трусов, я директор продукта «Инферит ИТМен».\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/inferit/articles/1042338/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042338#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/inferit/articles/1042338/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042338#habracut",
-      "published_at": "2026-06-02T06:27:44+00:00",
-      "title_hash": "4a51746f55dd7066901d08030981dcb254326e89",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/e62/d86/395/e62d8639583524fd2553b82b3b61b31d.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "c3668088a823de25",
-      "status": "pending",
-      "created_at": "2026-06-02T06:53:20+00:00",
-      "created_at_sakhalin": "2026-06-02T17:53:20+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Словарь ИИ для бизнеса · 89 терминов · Зинин × Штурбин",
-      "title_ru": "Словарь ИИ для бизнеса · 89 терминов · Зинин × Штурбин",
-      "body": [
-        "89 ключевых терминов мира ИИ для фаундеров и руководителей — без жаргона, с применением в бизнесе.",
-        "MCP (Model Context Protocol) называют «USB-C для ИИ-агентов»: один протокол, и к модели подключаются десятки готовых интеграций без костылей.",
-        "Звучит красиво, но настоящее понимание приходит только когда соберёшь сервер руками — где протокол реально экономит, а где придётся повозиться, видно лишь на практике."
-      ],
-      "footer": null,
-      "source_text": "89 ключевых терминов мира ИИ для фаундеров и руководителей — без жаргона, с применением в бизнесе. MCP (Model Context Protocol) называют «USB-C для ИИ-агентов»: один протокол, и к модели подключаются десятки готовых интеграций без костылей. Звучит красиво, но настоящее понимание приходит только когда соберёшь сервер руками — где протокол реально экономит, а где придётся повозиться, видно лишь на практике. Я собрал свой за вечер и рассказываю по шагам. Коннектор отдаёт Claude мою базу знаний — словарь из 90 ИИ-терминов и блок частых вопросов. Спрашиваешь в диалоге «что такое RAG» — и Claude достаёт определение из моей базы, со ссылкой на источник. Дальше — стек, код, деплой за nginx и три грабли, на которых я залип. Читать далее Восемьдесят девять ключевых терминов мира ИИ — для фаундеров и руководителей. Каждый термин с отдельной страницей, можно сослаться в письме или на встрече. Структура для запоминания: концепции → инструменты → компании → инфраструктура. Large Language Model — большая языковая модель. Базовый компонент любого AI-агента: понимает запросы и генерирует ответы. Программа на основе LLM, автономно решающая задачи: понимает запрос, разбивает на шаги, использует инструменты, доводит до результата. Архитектура из специализированных AI-агентов, работающих через оркестратор. Каждый агент решает свою подзадачу.",
-      "post_text": "🌐 Мировые IT\n\n<b>Словарь ИИ для бизнеса · 89 терминов · Зинин × Штурбин</b>\n\n89 ключевых терминов мира ИИ для фаундеров и руководителей — без жаргона, с применением в бизнесе.\n\nMCP (Model Context Protocol) называют «USB-C для ИИ-агентов»: один протокол, и к модели подключаются десятки готовых интеграций без костылей.\n\nЗвучит красиво, но настоящее понимание приходит только когда соберёшь сервер руками — где протокол реально экономит, а где придётся повозиться, видно лишь на практике.\n\nМИРОВЫЕ IT · <a href=\"https://zinin-shturbin.com/glossary/\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://zinin-shturbin.com/glossary/",
-      "published_at": "2026-06-02T06:15:19+00:00",
-      "title_hash": "b8ac6fbb4727b88330811f76e5f3152323ea3f3e",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/8c2/ae1/87d/8c2ae187d0952044889502a0b88e8126.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "70fc56bf45ee5166",
-      "status": "pending",
-      "created_at": "2026-06-02T06:53:20+00:00",
-      "created_at_sakhalin": "2026-06-02T17:53:20+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Автоматический отбор few_shot примеров для обучения модели",
-      "title_ru": "Автоматический отбор few_shot примеров для обучения модели",
-      "body": [
-        "Введение Нормализация справочников НСИ - головная боль аналитиков: в базе десятки тысяч записей, и каждая будто создана по своим правилам.",
-        "И это еще не все трудности: в базе полно дублей, форматы...",
-        "Справочники МТР на крупных предприятиях ‒ это десятки тысяч строк вида «Кабель ВВГнг 3х2.5 кв.мм, серая изоляция, 100м» , которые нужно разложить по атрибутам (тип, сечение, длина, цвет изоляции)."
-      ],
-      "footer": null,
-      "source_text": "1. Введение Нормализация справочников НСИ - головная боль аналитиков: в базе десятки тысяч записей, и каждая будто создана по своим правилам. И это еще не все трудности: в базе полно дублей, форматы... Справочники МТР на крупных предприятиях ‒ это десятки тысяч строк вида «Кабель ВВГнг 3х2.5 кв.мм, серая изоляция, 100м» , которые нужно разложить по атрибутам (тип, сечение, длина, цвет изоляции). Дубли, ошибки, разнородные форматы от разных поставщиков, почему это больная тема, а также подходы и методы решения, подробно разобраны в этой статье. Читать далее Нормализация справочников НСИ - головная боль аналитиков: в базе десятки тысяч записей, и каждая будто создана по своим правилам. И это еще не все трудности: в базе полно дублей, форматы данных пляшут, в полях то лишние символы, то транслитерация, то опечатки от ручного ввода. Мы не раз сталкивались с этим в своих проектах. Решений хватает, но мы остановили выбор на LLM. Модель хорошо справляется с разбором неструктурированных строк на атрибуты, если правильно её настроить. Однако на практике мы столкнулись с тем, что успех LLM-нормализации на 90% определяется качеством few-shot примеров. Чем набор примеров репрезентативнее, тем стабильнее результат. Но как найти те самые, хорошие примеры в огромной массе разнородных записей? Вручную, особенно не имея достаточной экспертизы, проводить глубокий анализ трудоемко и неэффективно. Поэтому мы решили пойти другим путём - автоматизировать подбор. В этой статье мы разберем два подхода к автоматизации процесса подбора примеров для обучения, проверим их на реальных данных и выясним, какой из них и в каких условиях работает лучше. Посмотрим, что нам покажут «автоматические эксперты». Начнем с постановки задачи. Есть справочник МТР, в котором находятся различные строки с товарными",
-      "post_text": "🌐 Мировые IT\n\n<b>Автоматический отбор few_shot примеров для обучения модели</b>\n\nВведение Нормализация справочников НСИ - головная боль аналитиков: в базе десятки тысяч записей, и каждая будто создана по своим правилам.\n\nИ это еще не все трудности: в базе полно дублей, форматы...\n\nСправочники МТР на крупных предприятиях ‒ это десятки тысяч строк вида «Кабель ВВГнг 3х2.5 кв.мм, серая изоляция, 100м» , которые нужно разложить по атрибутам (тип, сечение, длина, цвет изоляции).\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042468/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042468#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042468/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042468#habracut",
-      "published_at": "2026-06-02T06:10:35+00:00",
-      "title_hash": "23e6715f5900a815b86209f03c64e7cce7c9bc57",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "2419b6ab48c14634",
-      "status": "pending",
-      "created_at": "2026-06-02T06:53:20+00:00",
-      "created_at_sakhalin": "2026-06-02T17:53:20+11:00",
-      "source": "The Verge",
-      "source_type": "it",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 237,
-      "title_original": "This could be Windows’ M1 moment — but expect it to cost a ton",
-      "title_ru": "This could be Windows’ M1 moment — but expect it to cost a ton",
-      "body": [
-        "﻿Nvidia’s RTX Spark ‘superchip’ shows promise for Windows laptops.",
-        "But it also comes at the worst time.",
-        "Nvidia's announcement that it's getting into the consumer laptop chip space with RTX Spark is huge."
-      ],
-      "footer": null,
-      "source_text": "﻿Nvidia’s RTX Spark ‘superchip’ shows promise for Windows laptops. But it also comes at the worst time. Nvidia's announcement that it's getting into the consumer laptop chip space with RTX Spark is huge. Apple has proved for years that Arm-based chips can perform incredibly well while also delivering great battery life - at least on the Mac. In the Windows world, performance hasn't fully matched up under Qualcomm chips, mostly in the […] AI Close AI Posts from this topic will be added to your daily email digest and your homepage feed. Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed. ﻿Nvidia’s RTX Spark ‘superchip’ shows promise for Windows laptops. But it also comes at the worst time. Antonio G. Di Benedetto Close Antonio G. Di Benedetto Reviewer, Laptops Posts from this author will be added to your daily email digest and your homepage feed.",
-      "post_text": "🎮 Игры / индустрия\n\n<b>This could be Windows’ M1 moment — but expect it to cost a ton</b>\n\n﻿Nvidia’s RTX Spark ‘superchip’ shows promise for Windows laptops.\n\nBut it also comes at the worst time.\n\nNvidia's announcement that it's getting into the consumer laptop chip space with RTX Spark is huge.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/tech/941215/windows-laptops-nvidia-rtx-spark-apple-m1-arm-price-ram\">The Verge</a>",
-      "edited_post_text": null,
-      "url": "https://www.theverge.com/tech/941215/windows-laptops-nvidia-rtx-spark-apple-m1-arm-price-ram",
-      "published_at": "2026-06-01T20:02:31+00:00",
-      "title_hash": "897ff90930353aac3e81191c19036d4a2487aa39",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "33b6f0b1d9ef964a",
-      "status": "pending",
-      "created_at": "2026-06-02T06:53:20+00:00",
-      "created_at_sakhalin": "2026-06-02T17:53:20+11:00",
-      "source": "The Verge",
-      "source_type": "it",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 237,
-      "title_original": "Sony’s new fight stick and gaming monitor launch in August",
-      "title_ru": "Sony’s new fight stick and gaming monitor launch in August",
-      "body": [
-        "Sony is sharing new details about some of its upcoming gaming-focused hardware, including pricing and August launch dates for its FlexStrike fight stick and its 27-inch monitor.",
-        "The FlexStrike fight stick will be available starting August 6th - the same day as the new PlayStation-published fighting game Marvel Tōkon: Fighting Souls - and will cost […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed.",
-        "News Close News Posts from this topic will be added to your daily email digest and your homepage feed."
-      ],
-      "footer": null,
-      "source_text": "Preorders start soon. Sony is sharing new details about some of its upcoming gaming-focused hardware, including pricing and August launch dates for its FlexStrike fight stick and its 27-inch monitor. The FlexStrike fight stick will be available starting August 6th - the same day as the new PlayStation-published fighting game Marvel Tōkon: Fighting Souls - and will cost […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed. News Close News Posts from this topic will be added to your daily email digest and your homepage feed. The Pulse Elevate speakers are also set to launch ‘later this year.’ The Pulse Elevate speakers are also set to launch ‘later this year.’",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Sony’s new fight stick and gaming monitor launch in August</b>\n\nSony is sharing new details about some of its upcoming gaming-focused hardware, including pricing and August launch dates for its FlexStrike fight stick and its 27-inch monitor.\n\nThe FlexStrike fight stick will be available starting August 6th - the same day as the new PlayStation-published fighting game Marvel Tōkon: Fighting Souls - and will cost […] Gadgets Close Gadgets Posts from this topic will be added to your daily email digest and your homepage feed.\n\nNews Close News Posts from this topic will be added to your daily email digest and your homepage feed.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/games/941031/sony-playstation-flexstrike-fight-stick-gaming-monitor-pulse-elevate-speakers-launch-date-price\">The Verge</a>",
-      "edited_post_text": null,
-      "url": "https://www.theverge.com/games/941031/sony-playstation-flexstrike-fight-stick-gaming-monitor-pulse-elevate-speakers-launch-date-price",
-      "published_at": "2026-06-01T16:36:18+00:00",
-      "title_hash": "23aa18a74371902486fe7ebc92508ec7ea401923",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
     }
   ],
   "auto_review": {
