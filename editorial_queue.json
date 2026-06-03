@@ -1,10 +1,306 @@
 {
   "version": 1,
-  "updated_at": "2026-06-03T07:04:18+00:00",
-  "updated_at_sakhalin": "2026-06-03T18:04:18+11:00",
+  "updated_at": "2026-06-03T07:18:51+00:00",
+  "updated_at_sakhalin": "2026-06-03T18:18:51+11:00",
   "reviewed_at": "2026-06-03T06:58:32+00:00",
   "reviewed_at_sakhalin": "2026-06-03T17:58:32+11:00",
   "items": [
+    {
+      "id": "66fec60f35fd0681",
+      "status": "pending",
+      "created_at": "2026-06-03T07:04:18+00:00",
+      "created_at_sakhalin": "2026-06-03T18:04:18+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Избегаем парадокса пестицида, или Как мы внедрили систему рекомендаций «забытых» тест‑кейсов",
+      "title_ru": "Избегаем парадокса пестицида, или Как мы внедрили систему рекомендаций «забытых» тест‑кейсов",
+      "body": [
+        "Регрессионное тестирование часто опирается на один и тот же набор сценариев, и со временем это превращается в проблему: привычные проверки перестают находить новые дефекты, а часть...",
+        "Регрессионное тестирование часто опирается на один и тот же набор сценариев, и со временем это превращается в проблему: привычные проверки перестают находить новые дефекты, а часть функциональности надолго выпадает из поля зрения команды.",
+        "Возникает так называемый парадокс пестицида — снижение эффективности неизменных тестовых сценариев с течением времени."
+      ],
+      "footer": null,
+      "source_text": "Регрессионное тестирование часто опирается на один и тот же набор сценариев, и со временем это превращается в проблему: привычные проверки перестают находить новые дефекты, а часть... Регрессионное тестирование часто опирается на один и тот же набор сценариев, и со временем это превращается в проблему: привычные проверки перестают находить новые дефекты, а часть функциональности надолго выпадает из поля зрения команды. Возникает так называемый парадокс пестицида — снижение эффективности неизменных тестовых сценариев с течением времени. Название возникло по аналогии с сельскохозяйственными вредителями, которые вырабатывают устойчивость к постоянно применяемым веществам. Меня зовут Александра Атаман, я QA‑инженер в команде веба Яндекс Такси. В этой статье я расскажу, как мы оптимизировали процесс формирования регрессионного тестирования для ручного прогона, внедрив систему весов для тест‑кейсов. Этот подход помогает прицельно отбирать наиболее «опасные» сценарии: самые старые, забагованные или потенциально проблемные. Я поделюсь техническими деталями реализации, логикой распределения весов и результатами нашего эксперимента. Спойлер: ожидания не во всём совпали с реальностью — но именно этот опыт оказался для нас самым ценным. Читать далее Регрессионное тестирование часто опирается на один и тот же набор сценариев, и со временем это превращается в проблему: привычные проверки перестают находить новые дефекты, а часть функциональности надолго выпадает из поля зрения команды. Возникает так называемый парадокс пестицида — снижение эффективности неизменных тестовых сценариев с течением времени. Название возникло по аналогии с сельскохозяйственными вредителями, которые вырабатывают устойчивость к постоянно применяемым веществам. Меня зовут Александра Атаман, я QA‑инженер в ком",
+      "post_text": "🌐 Мировые IT\n\n<b>Избегаем парадокса пестицида, или Как мы внедрили систему рекомендаций «забытых» тест‑кейсов</b>\n\nРегрессионное тестирование часто опирается на один и тот же набор сценариев, и со временем это превращается в проблему: привычные проверки перестают находить новые дефекты, а часть...\n\nРегрессионное тестирование часто опирается на один и тот же набор сценариев, и со временем это превращается в проблему: привычные проверки перестают находить новые дефекты, а часть функциональности надолго выпадает из поля зрения команды.\n\nВозникает так называемый парадокс пестицида — снижение эффективности неизменных тестовых сценариев с течением времени.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/yandex/articles/1040612/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040612#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/yandex/articles/1040612/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040612#habracut",
+      "published_at": "2026-06-03T07:00:51+00:00",
+      "title_hash": "8035f7ab2c7037f9d298f0ab1268225efc3a81c3",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/514/79c/6d0/51479c6d0df51ad952be4bc8f5602e83.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "a749203ce5fa2daa",
+      "status": "pending",
+      "created_at": "2026-06-03T07:04:18+00:00",
+      "created_at_sakhalin": "2026-06-03T18:04:18+11:00",
+      "source": "GameSpot",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 102,
+      "title_original": "Amazon.com: Wolverine PS5 : Video Games",
+      "title_ru": "Amazon.com: Wolverine PS5 : Video Games",
+      "body": [
+        "Amazon.com: Wolverine PS5 : Video Games Marvel's Wolverine Standard Edition $70 | Releases September 15, 2026 Preorder at Amazon View at other stores Preorder at Best Buy Preorder at Walmart Preorder at GameStop Marvel's Wolverine Digital Deluxe Edition $80 | Releases September 15, 2026 Preorder at PlayStation Marvel's Wolverine launches for PlayStation 5 on September 15, 2026 and will retail for $70.",
+        "Preorders for the physical edition are available now at Amazon , Best Buy , Walmart , and GameStop , and there is a $80 Digital Deluxe Edition available at the PlayStation Store that includes a bunch of extra content.",
+        "Both versions also offer a few preorder perks if you grab a copy ahead of launch, including unique skins for Wolverine."
+      ],
+      "footer": null,
+      "source_text": "Amazon.com: Wolverine PS5 : Video Games Marvel's Wolverine Standard Edition $70 | Releases September 15, 2026 Preorder at Amazon View at other stores Preorder at Best Buy Preorder at Walmart Preorder at GameStop Marvel's Wolverine Digital Deluxe Edition $80 | Releases September 15, 2026 Preorder at PlayStation Marvel's Wolverine launches for PlayStation 5 on September 15, 2026 and will retail for $70. Preorders for the physical edition are available now at Amazon , Best Buy , Walmart , and GameStop , and there is a $80 Digital Deluxe Edition available at the PlayStation Store that includes a bunch of extra content. Both versions also offer a few preorder perks if you grab a copy ahead of launch, including unique skins for Wolverine. Marvel's Wolverine Preorder Bonuses Preordering any version of Marvel's Wolverine on PS5 gets you early access to the Classic Brown Suit and Reflective Claws items, one additional Technique Point to use in-game, and four unique PlayStation Avatars for your PSN profile. Here's the full list: Early Access to Classic Brown Wolverine Suit Early Access to Reflective Claws One Additional Technique Point Four PlayStation Avatars Marvel's Wolverine Standard Edition $70 | Releases September 15, 2026 Marvel's Wolverine Standard Edition includes the base game plus all the preorder bonuses outlines above. Physical preorders are available for $70 at Amazon, Best Buy, Walmart, and GameStop. Digital preorders are also available. Preorder at Amazon Preorder at Best Buy Preorder at Walmart Preorder at GameStop Marvel's Wolverine Digital Deluxe Edition $80 | Releases September 15, 2026 The Digital Deluxe Edition comes the base game, plus a bunch of Check them all out below. Five unique suits for Wolverine Incredible Suit Savage Suit Age of Apocalypse Suit Nig",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Amazon.com: Wolverine PS5 : Video Games</b>\n\nAmazon.com: Wolverine PS5 : Video Games Marvel's Wolverine Standard Edition $70 | Releases September 15, 2026 Preorder at Amazon View at other stores Preorder at Best Buy Preorder at Walmart Preorder at GameStop Marvel's Wolverine Digital Deluxe Edition $80 | Releases September 15, 2026 Preorder at PlayStation Marvel's Wolverine launches for PlayStation 5 on September 15, 2026 and will retail for $70.\n\nPreorders for the physical edition are available now at Amazon , Best Buy , Walmart , and GameStop , and there is a $80 Digital Deluxe Edition available at the PlayStation Store that includes a bunch of extra content.\n\nBoth versions also offer a few preorder perks if you grab a copy ahead of launch, including unique skins for Wolverine.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.amazon.com/Wolverine-PS5-PlayStation-5/dp/B0G6157JKW\">GameSpot</a>",
+      "edited_post_text": null,
+      "url": "https://www.amazon.com/Wolverine-PS5-PlayStation-5/dp/B0G6157JKW",
+      "published_at": "2026-06-02T23:33:00+00:00",
+      "title_hash": "38998180b37c460620a8c644993b50d6d0ea5b69",
+      "image_url": "https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/yoda/flyout_72dpi._V270255989_.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "c478297c42b495ee",
+      "status": "pending",
+      "created_at": "2026-06-03T07:04:18+00:00",
+      "created_at_sakhalin": "2026-06-03T18:04:18+11:00",
+      "source": "BBC Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 258,
+      "title_original": "Microsoft claims new quantum chip 1,000 times better than before",
+      "title_ru": "Microsoft claims new quantum chip 1,000 times better than before",
+      "body": [
+        "The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.",
+        "The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.",
+        "At the heart of quantum computing are qubits, which offer the promise of answering questions that defeat today's machines, but are notoriously delicate and unstable."
+      ],
+      "footer": null,
+      "source_text": "The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade. The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade. At the heart of quantum computing are qubits, which offer the promise of answering questions that defeat today's machines, but are notoriously delicate and unstable. Microsoft says the qubits on Majorana 2, its new chip, survive for an average of 20 seconds, rather than the milliseconds of Majorana 1. That means the new chip is 1,000 times more reliable - an improvement in performance the tech giant compares to the difference between a phone that needs charging every day to one which needs charging every few years. \"We will have a quantum machine in 2029 that can solve commercially viable, reasonable problems\", said Zulfi Alam, corporate vice president of Microsoft Quantum.",
+      "post_text": "🌐 Мировые IT\n\n<b>Microsoft claims new quantum chip 1,000 times better than before</b>\n\nThe tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.\n\nThe tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.\n\nAt the heart of quantum computing are qubits, which offer the promise of answering questions that defeat today's machines, but are notoriously delicate and unstable.\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/cj4p7gyvp52o?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/cj4p7gyvp52o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-02T19:24:31+00:00",
+      "title_hash": "6f18942ad36d2a472d7e65c04431a0171df1d684",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/823e/live/9bf6bfd0-5e9a-11f1-95ff-f5086c3b3d40.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "ab114a59ebbb9992",
+      "status": "pending",
+      "created_at": "2026-06-03T07:04:18+00:00",
+      "created_at_sakhalin": "2026-06-03T18:04:18+11:00",
+      "source": "BBC Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 258,
+      "title_original": "Meta AI chatbot enabled hackers to access others' Instagram accounts",
+      "title_ru": "Meta AI chatbot enabled hackers to access others' Instagram accounts",
+      "body": [
+        "Some reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked.",
+        "Some reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked.",
+        "According to claims shown in screenshots and videos shared on social media, Instagram's AI chatbot allowed users to \"hijack\" accounts in recent days."
+      ],
+      "footer": null,
+      "source_text": "Some reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked. Some reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked. According to claims shown in screenshots and videos shared on social media, Instagram's AI chatbot allowed users to \"hijack\" accounts in recent days. Hackers could reportedly change passwords for other accounts by faking their location and then asking the AI to change the emails associated with them. \"This issue has been resolved and we are securing impacted accounts,\" Meta spokesperson Andy Stone told users in a statement on X . In a response to another post on X, Stone said claims the vulnerability was used to hack into accounts of world leaders were \"totally false\" .",
+      "post_text": "🌐 Мировые IT\n\n<b>Meta AI chatbot enabled hackers to access others' Instagram accounts</b>\n\nSome reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked.\n\nSome reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked.\n\nAccording to claims shown in screenshots and videos shared on social media, Instagram's AI chatbot allowed users to \"hijack\" accounts in recent days.\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/c98rzr72dpyo?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/c98rzr72dpyo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-02T11:40:02+00:00",
+      "title_hash": "7b61659b39199d0b1842a4d5a184bad42c0129ed",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/04d6/live/0af82d50-5e74-11f1-9bb7-93b44936b5cf.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "4e8e07cd2852dfeb",
+      "status": "pending",
+      "created_at": "2026-06-03T07:04:18+00:00",
+      "created_at_sakhalin": "2026-06-03T18:04:18+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Экспедиции по организационному ландшафту",
+      "title_ru": "Экспедиции по организационному ландшафту",
+      "body": [
+        "Провел первое тестирование своего сервиса для диагностики организационной культуры.",
+        "Занимаюсь разработкой своего, по причине, что стандартные тесты не дают пользы для моего контекста.",
+        "Провел первое тестирование своего сервиса для диагностики организационной культуры."
+      ],
+      "footer": null,
+      "source_text": "Провел первое тестирование своего сервиса для диагностики организационной культуры. Занимаюсь разработкой своего, по причине, что стандартные тесты не дают пользы для моего контекста. На первых тестах... Провел первое тестирование своего сервиса для диагностики организационной культуры. Занимаюсь разработкой своего, по причине, что стандартные тесты не дают пользы для моего контекста. На первых тестах получил неожиданную обратную связь. Несколько человек отписались: \"Если говорить о нашем отделе - результат высокий. Но если выйти за пределы отдела - там для меня начинается настоящий ад\". Тут можно подумать, что человек противоречит сам себе, но на поверхности сразу оказалась одна из ключевых проблем большинства корпоративных исследований культуры. Они смотрят на компанию, как на единый организм, а на практике такое бывает редко. Читать далее",
+      "post_text": "🌐 Мировые IT\n\n<b>Экспедиции по организационному ландшафту</b>\n\nПровел первое тестирование своего сервиса для диагностики организационной культуры.\n\nЗанимаюсь разработкой своего, по причине, что стандартные тесты не дают пользы для моего контекста.\n\nПровел первое тестирование своего сервиса для диагностики организационной культуры.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042902/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042902#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042902/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042902#habracut",
+      "published_at": "2026-06-03T06:57:45+00:00",
+      "title_hash": "4e1444e55a9d7babf34e93ce222a35876ac643dd",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/e50/989/d5e/e50989d5eaa368506842650a1016a9ce.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "2dfc5e557e5d187b",
+      "status": "pending",
+      "created_at": "2026-06-03T07:04:18+00:00",
+      "created_at_sakhalin": "2026-06-03T18:04:18+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Evals для чайников. Как тестировать AI-агента, чтобы понимать, где именно он ломается",
+      "title_ru": "Evals для чайников. Как тестировать AI-агента, чтобы понимать, где именно он ломается",
+      "body": [
+        "Большинство команд оценивают производительность AI-агентов через end-to-end метрики: success rate, количество токенов, tool usage, стоимость запроса, долю успешных задач.",
+        "Большинство команд оценивают производительность AI-агентов через end-to-end метрики: success rate, количество токенов, tool usage, стоимость запроса, долю успешных задач.",
+        "Это полезно для общего контроля ситуации, но почти бесполезно для реальной диагностики системы."
+      ],
+      "footer": null,
+      "source_text": "Большинство команд оценивают производительность AI-агентов через end-to-end метрики: success rate, количество токенов, tool usage, стоимость запроса, долю успешных задач. Это полезно для общего... Большинство команд оценивают производительность AI-агентов через end-to-end метрики: success rate, количество токенов, tool usage, стоимость запроса, долю успешных задач. Это полезно для общего контроля ситуации, но почти бесполезно для реальной диагностики системы. Например, если success rate упал с 85% до 72%, то само по себе число не объясняет причину деградации. Команда вынуждена гадать, какая часть системы вдруг начала допускать ошибки. Сломался retrieval? Модель хуже начала выбирать инструменты? Контекст загрязняется после нескольких ходов? Или система уперлась в возможности base model? При росте проекта и увеличении сложности кодовой базы, сбои начинают расти мультипликативно – ошибки всех систем начинают перемножаться между собой. В конечном итоге, команда теряет реальный контроль. Проблему решает внедрение покомпонентных eval. Они дополняют end-to-end метрики, показывая, какой слой AI-агента работает, какой деградировал – и где именно искать причину. То есть внедрение evals помогает получать метрики производительности каждого компонента вашего агента. Читать далее Большинство команд оценивают производительность AI-агентов через end-to-end метрики: success rate, количество токенов, tool usage, стоимость запроса, долю успешных задач. Это полезно для общего контроля ситуации, но почти бесполезно для реальной диагностики системы. Например, если success rate упал с 85% до 72%, то само по себе число не объясняет причину деградации. Команда вынуждена гадать, какая часть системы вдруг начала допускать ошибки. Сломался retrieval? Модель хуже начала выбирать инструменты? Контек",
+      "post_text": "🌐 Мировые IT\n\n<b>Evals для чайников. Как тестировать AI-агента, чтобы понимать, где именно он ломается</b>\n\nБольшинство команд оценивают производительность AI-агентов через end-to-end метрики: success rate, количество токенов, tool usage, стоимость запроса, долю успешных задач.\n\nБольшинство команд оценивают производительность AI-агентов через end-to-end метрики: success rate, количество токенов, tool usage, стоимость запроса, долю успешных задач.\n\nЭто полезно для общего контроля ситуации, но почти бесполезно для реальной диагностики системы.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042924/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042924#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042924/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042924#habracut",
+      "published_at": "2026-06-03T06:42:35+00:00",
+      "title_hash": "f10a3ff785f7f693ed817327adbd8c36dd4901fc",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/230/133/203/2301332037811abc6a22ac784c1c4fac.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "422d57e7130b663b",
+      "status": "pending",
+      "created_at": "2026-06-03T07:04:18+00:00",
+      "created_at_sakhalin": "2026-06-03T18:04:18+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Инструмент работы со знаниями и данными компании: умные таблицы",
+      "title_ru": "Инструмент работы со знаниями и данными компании: умные таблицы",
+      "body": [
+        "У «Здоровье-Ресурс» всё как у многих производств: технологические карты лежат в папках у технологов, инструкции по безопасности — на отдельном общем диске, коммерческие предложения теряются в почте, а...",
+        "У «Здоровье-Ресурс» всё как у многих производств: технологические карты лежат в папках у технологов, инструкции по безопасности — на отдельном общем диске, коммерческие предложения теряются в почте, а регламенты работы магазинов знает только старший продавец.",
+        "Новичок в цехе тратит час, чтобы найти актуальную инструкцию, логист сверяет остатки с Excel-файлом трёхмесячной давности, а руководитель узнаёт про ошибку в рецептуре уже по итогам списаний и претензий клиентов."
+      ],
+      "footer": null,
+      "source_text": "У «Здоровье-Ресурс» всё как у многих производств: технологические карты лежат в папках у технологов, инструкции по безопасности — на отдельном общем диске, коммерческие предложения теряются в почте, а... У «Здоровье-Ресурс» всё как у многих производств: технологические карты лежат в папках у технологов, инструкции по безопасности — на отдельном общем диске, коммерческие предложения теряются в почте, а регламенты работы магазинов знает только старший продавец. Новичок в цехе тратит час, чтобы найти актуальную инструкцию, логист сверяет остатки с Excel-файлом трёхмесячной давности, а руководитель узнаёт про ошибку в рецептуре уже по итогам списаний и претензий клиентов. Читать далее У «Здоровье-Ресурс» всё как у многих производств: технологические карты лежат в папках у технологов, инструкции по безопасности — на отдельном общем диске, коммерческие предложения теряются в почте, а регламенты работы магазинов знает только старший продавец. Новичок в цехе тратит час, чтобы найти актуальную инструкцию, логист сверяет остатки с Excel-файлом трёхмесячной давности, а руководитель узнаёт про ошибку в рецептуре уже по итогам списаний и претензий клиентов. Пока база знаний и данные о запасах живут в разных таблицах и файлах, компания каждый день теряет деньги на простоях, браке и «телефонном праве» — кто громче всех кричит, тот и прав. В статье покажем на примере условной компании, как собрать технологические карты в умной таблице TEAMLY , связать её со складскими остатками и наконец синхронизировать реальность на складе с тем, что написано в регламентах. Умные таблицы TEAMLY — это базы данных без кода: каждая строка — объект (продукт, заказ, сотрудник, документ), а столбцы — его свойства, которые можно настроить под конкретную бизнес-задачу. Для пользователей это выглядит как «таб",
+      "post_text": "🌐 Мировые IT\n\n<b>Инструмент работы со знаниями и данными компании: умные таблицы</b>\n\nУ «Здоровье-Ресурс» всё как у многих производств: технологические карты лежат в папках у технологов, инструкции по безопасности — на отдельном общем диске, коммерческие предложения теряются в почте, а...\n\nУ «Здоровье-Ресурс» всё как у многих производств: технологические карты лежат в папках у технологов, инструкции по безопасности — на отдельном общем диске, коммерческие предложения теряются в почте, а регламенты работы магазинов знает только старший продавец.\n\nНовичок в цехе тратит час, чтобы найти актуальную инструкцию, логист сверяет остатки с Excel-файлом трёхмесячной давности, а руководитель узнаёт про ошибку в рецептуре уже по итогам списаний и претензий клиентов.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/teamly/articles/1042972/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042972#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/teamly/articles/1042972/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042972#habracut",
+      "published_at": "2026-06-03T06:28:44+00:00",
+      "title_hash": "d6609aabf29fa0c95207cf8184c527d17ccb45b5",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/b31/659/78e/b3165978e6120b24582e0ae85c0abdae.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "6d313c987b5476d1",
+      "status": "pending",
+      "created_at": "2026-06-03T07:04:18+00:00",
+      "created_at_sakhalin": "2026-06-03T18:04:18+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Спутниковая связь в симуляторе NS-3. Часть 1",
+      "title_ru": "Спутниковая связь в симуляторе NS-3. Часть 1",
+      "body": [
+        "Введение Данное руководство содержит сведения, необходимые для быстрого начала работы с симулятором компьютерных сетей NS-3 и модулем симуляции спутниковой связи Satellite .",
+        "Моделирование спутниковых систем связи в симуляторе компьютерных сетей NS-3 с использованием модуля Satellite.",
+        "Продолжение статьи https://habr.com/ru/articles/1041426/ , где мы выполнили скачивание и компиляцию симулятора NS-3 ."
+      ],
+      "footer": null,
+      "source_text": "Введение Данное руководство содержит сведения, необходимые для быстрого начала работы с симулятором компьютерных сетей NS-3 и модулем симуляции спутниковой связи Satellite . Описаны установка,... Моделирование спутниковых систем связи в симуляторе компьютерных сетей NS-3 с использованием модуля Satellite. Продолжение статьи https://habr.com/ru/articles/1041426/ , где мы выполнили скачивание и компиляцию симулятора NS-3 . В этой статье мы рассмотрим варианты организации проекта в NS-3 . Читать далее",
+      "post_text": "🌐 Мировые IT\n\n<b>Спутниковая связь в симуляторе NS-3. Часть 1</b>\n\nВведение Данное руководство содержит сведения, необходимые для быстрого начала работы с симулятором компьютерных сетей NS-3 и модулем симуляции спутниковой связи Satellite .\n\nМоделирование спутниковых систем связи в симуляторе компьютерных сетей NS-3 с использованием модуля Satellite.\n\nПродолжение статьи https://habr.com/ru/articles/1041426/ , где мы выполнили скачивание и компиляцию симулятора NS-3 .\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1041426/\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1041426/",
+      "published_at": "2026-06-03T06:24:28+00:00",
+      "title_hash": "da4e655933ff3f56f885b75477d049436ff24fdf",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/cc3/0f2/680/cc30f2680dd2b5fa5f30f68af8cb7904.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
     {
       "id": "d5588760763743a9",
       "status": "rejected",
@@ -9294,302 +9590,6 @@
       "published_at_sakhalin": "2026-06-02T23:09:45+11:00",
       "publish_method": "sendPhoto/safe/pipeline_source_photo",
       "telegram_message_id": 143
-    },
-    {
-      "id": "66fec60f35fd0681",
-      "status": "pending",
-      "created_at": "2026-06-03T07:04:18+00:00",
-      "created_at_sakhalin": "2026-06-03T18:04:18+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Избегаем парадокса пестицида, или Как мы внедрили систему рекомендаций «забытых» тест‑кейсов",
-      "title_ru": "Избегаем парадокса пестицида, или Как мы внедрили систему рекомендаций «забытых» тест‑кейсов",
-      "body": [
-        "Регрессионное тестирование часто опирается на один и тот же набор сценариев, и со временем это превращается в проблему: привычные проверки перестают находить новые дефекты, а часть...",
-        "Регрессионное тестирование часто опирается на один и тот же набор сценариев, и со временем это превращается в проблему: привычные проверки перестают находить новые дефекты, а часть функциональности надолго выпадает из поля зрения команды.",
-        "Возникает так называемый парадокс пестицида — снижение эффективности неизменных тестовых сценариев с течением времени."
-      ],
-      "footer": null,
-      "source_text": "Регрессионное тестирование часто опирается на один и тот же набор сценариев, и со временем это превращается в проблему: привычные проверки перестают находить новые дефекты, а часть... Регрессионное тестирование часто опирается на один и тот же набор сценариев, и со временем это превращается в проблему: привычные проверки перестают находить новые дефекты, а часть функциональности надолго выпадает из поля зрения команды. Возникает так называемый парадокс пестицида — снижение эффективности неизменных тестовых сценариев с течением времени. Название возникло по аналогии с сельскохозяйственными вредителями, которые вырабатывают устойчивость к постоянно применяемым веществам. Меня зовут Александра Атаман, я QA‑инженер в команде веба Яндекс Такси. В этой статье я расскажу, как мы оптимизировали процесс формирования регрессионного тестирования для ручного прогона, внедрив систему весов для тест‑кейсов. Этот подход помогает прицельно отбирать наиболее «опасные» сценарии: самые старые, забагованные или потенциально проблемные. Я поделюсь техническими деталями реализации, логикой распределения весов и результатами нашего эксперимента. Спойлер: ожидания не во всём совпали с реальностью — но именно этот опыт оказался для нас самым ценным. Читать далее Регрессионное тестирование часто опирается на один и тот же набор сценариев, и со временем это превращается в проблему: привычные проверки перестают находить новые дефекты, а часть функциональности надолго выпадает из поля зрения команды. Возникает так называемый парадокс пестицида — снижение эффективности неизменных тестовых сценариев с течением времени. Название возникло по аналогии с сельскохозяйственными вредителями, которые вырабатывают устойчивость к постоянно применяемым веществам. Меня зовут Александра Атаман, я QA‑инженер в ком",
-      "post_text": "🌐 Мировые IT\n\n<b>Избегаем парадокса пестицида, или Как мы внедрили систему рекомендаций «забытых» тест‑кейсов</b>\n\nРегрессионное тестирование часто опирается на один и тот же набор сценариев, и со временем это превращается в проблему: привычные проверки перестают находить новые дефекты, а часть...\n\nРегрессионное тестирование часто опирается на один и тот же набор сценариев, и со временем это превращается в проблему: привычные проверки перестают находить новые дефекты, а часть функциональности надолго выпадает из поля зрения команды.\n\nВозникает так называемый парадокс пестицида — снижение эффективности неизменных тестовых сценариев с течением времени.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/yandex/articles/1040612/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040612#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/yandex/articles/1040612/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040612#habracut",
-      "published_at": "2026-06-03T07:00:51+00:00",
-      "title_hash": "8035f7ab2c7037f9d298f0ab1268225efc3a81c3",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/514/79c/6d0/51479c6d0df51ad952be4bc8f5602e83.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "a749203ce5fa2daa",
-      "status": "pending",
-      "created_at": "2026-06-03T07:04:18+00:00",
-      "created_at_sakhalin": "2026-06-03T18:04:18+11:00",
-      "source": "GameSpot",
-      "source_type": "gaming",
-      "category": "🎮 Игры / индустрия",
-      "category_hint": "🎮 Игры / индустрия",
-      "score": 102,
-      "title_original": "Amazon.com: Wolverine PS5 : Video Games",
-      "title_ru": "Amazon.com: Wolverine PS5 : Video Games",
-      "body": [
-        "Amazon.com: Wolverine PS5 : Video Games Marvel's Wolverine Standard Edition $70 | Releases September 15, 2026 Preorder at Amazon View at other stores Preorder at Best Buy Preorder at Walmart Preorder at GameStop Marvel's Wolverine Digital Deluxe Edition $80 | Releases September 15, 2026 Preorder at PlayStation Marvel's Wolverine launches for PlayStation 5 on September 15, 2026 and will retail for $70.",
-        "Preorders for the physical edition are available now at Amazon , Best Buy , Walmart , and GameStop , and there is a $80 Digital Deluxe Edition available at the PlayStation Store that includes a bunch of extra content.",
-        "Both versions also offer a few preorder perks if you grab a copy ahead of launch, including unique skins for Wolverine."
-      ],
-      "footer": null,
-      "source_text": "Amazon.com: Wolverine PS5 : Video Games Marvel's Wolverine Standard Edition $70 | Releases September 15, 2026 Preorder at Amazon View at other stores Preorder at Best Buy Preorder at Walmart Preorder at GameStop Marvel's Wolverine Digital Deluxe Edition $80 | Releases September 15, 2026 Preorder at PlayStation Marvel's Wolverine launches for PlayStation 5 on September 15, 2026 and will retail for $70. Preorders for the physical edition are available now at Amazon , Best Buy , Walmart , and GameStop , and there is a $80 Digital Deluxe Edition available at the PlayStation Store that includes a bunch of extra content. Both versions also offer a few preorder perks if you grab a copy ahead of launch, including unique skins for Wolverine. Marvel's Wolverine Preorder Bonuses Preordering any version of Marvel's Wolverine on PS5 gets you early access to the Classic Brown Suit and Reflective Claws items, one additional Technique Point to use in-game, and four unique PlayStation Avatars for your PSN profile. Here's the full list: Early Access to Classic Brown Wolverine Suit Early Access to Reflective Claws One Additional Technique Point Four PlayStation Avatars Marvel's Wolverine Standard Edition $70 | Releases September 15, 2026 Marvel's Wolverine Standard Edition includes the base game plus all the preorder bonuses outlines above. Physical preorders are available for $70 at Amazon, Best Buy, Walmart, and GameStop. Digital preorders are also available. Preorder at Amazon Preorder at Best Buy Preorder at Walmart Preorder at GameStop Marvel's Wolverine Digital Deluxe Edition $80 | Releases September 15, 2026 The Digital Deluxe Edition comes the base game, plus a bunch of Check them all out below. Five unique suits for Wolverine Incredible Suit Savage Suit Age of Apocalypse Suit Nig",
-      "post_text": "🎮 Игры / индустрия\n\n<b>Amazon.com: Wolverine PS5 : Video Games</b>\n\nAmazon.com: Wolverine PS5 : Video Games Marvel's Wolverine Standard Edition $70 | Releases September 15, 2026 Preorder at Amazon View at other stores Preorder at Best Buy Preorder at Walmart Preorder at GameStop Marvel's Wolverine Digital Deluxe Edition $80 | Releases September 15, 2026 Preorder at PlayStation Marvel's Wolverine launches for PlayStation 5 on September 15, 2026 and will retail for $70.\n\nPreorders for the physical edition are available now at Amazon , Best Buy , Walmart , and GameStop , and there is a $80 Digital Deluxe Edition available at the PlayStation Store that includes a bunch of extra content.\n\nBoth versions also offer a few preorder perks if you grab a copy ahead of launch, including unique skins for Wolverine.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.amazon.com/Wolverine-PS5-PlayStation-5/dp/B0G6157JKW\">GameSpot</a>",
-      "edited_post_text": null,
-      "url": "https://www.amazon.com/Wolverine-PS5-PlayStation-5/dp/B0G6157JKW",
-      "published_at": "2026-06-02T23:33:00+00:00",
-      "title_hash": "38998180b37c460620a8c644993b50d6d0ea5b69",
-      "image_url": "https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/yoda/flyout_72dpi._V270255989_.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "c478297c42b495ee",
-      "status": "pending",
-      "created_at": "2026-06-03T07:04:18+00:00",
-      "created_at_sakhalin": "2026-06-03T18:04:18+11:00",
-      "source": "BBC Technology",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 258,
-      "title_original": "Microsoft claims new quantum chip 1,000 times better than before",
-      "title_ru": "Microsoft claims new quantum chip 1,000 times better than before",
-      "body": [
-        "The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.",
-        "The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.",
-        "At the heart of quantum computing are qubits, which offer the promise of answering questions that defeat today's machines, but are notoriously delicate and unstable."
-      ],
-      "footer": null,
-      "source_text": "The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade. The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade. At the heart of quantum computing are qubits, which offer the promise of answering questions that defeat today's machines, but are notoriously delicate and unstable. Microsoft says the qubits on Majorana 2, its new chip, survive for an average of 20 seconds, rather than the milliseconds of Majorana 1. That means the new chip is 1,000 times more reliable - an improvement in performance the tech giant compares to the difference between a phone that needs charging every day to one which needs charging every few years. \"We will have a quantum machine in 2029 that can solve commercially viable, reasonable problems\", said Zulfi Alam, corporate vice president of Microsoft Quantum.",
-      "post_text": "🌐 Мировые IT\n\n<b>Microsoft claims new quantum chip 1,000 times better than before</b>\n\nThe tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.\n\nThe tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.\n\nAt the heart of quantum computing are qubits, which offer the promise of answering questions that defeat today's machines, but are notoriously delicate and unstable.\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/cj4p7gyvp52o?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
-      "edited_post_text": null,
-      "url": "https://www.bbc.com/news/articles/cj4p7gyvp52o?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-06-02T19:24:31+00:00",
-      "title_hash": "6f18942ad36d2a472d7e65c04431a0171df1d684",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/823e/live/9bf6bfd0-5e9a-11f1-95ff-f5086c3b3d40.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "ab114a59ebbb9992",
-      "status": "pending",
-      "created_at": "2026-06-03T07:04:18+00:00",
-      "created_at_sakhalin": "2026-06-03T18:04:18+11:00",
-      "source": "BBC Technology",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 258,
-      "title_original": "Meta AI chatbot enabled hackers to access others' Instagram accounts",
-      "title_ru": "Meta AI chatbot enabled hackers to access others' Instagram accounts",
-      "body": [
-        "Some reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked.",
-        "Some reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked.",
-        "According to claims shown in screenshots and videos shared on social media, Instagram's AI chatbot allowed users to \"hijack\" accounts in recent days."
-      ],
-      "footer": null,
-      "source_text": "Some reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked. Some reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked. According to claims shown in screenshots and videos shared on social media, Instagram's AI chatbot allowed users to \"hijack\" accounts in recent days. Hackers could reportedly change passwords for other accounts by faking their location and then asking the AI to change the emails associated with them. \"This issue has been resolved and we are securing impacted accounts,\" Meta spokesperson Andy Stone told users in a statement on X . In a response to another post on X, Stone said claims the vulnerability was used to hack into accounts of world leaders were \"totally false\" .",
-      "post_text": "🌐 Мировые IT\n\n<b>Meta AI chatbot enabled hackers to access others' Instagram accounts</b>\n\nSome reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked.\n\nSome reports have linked the incident to recent cases of high-profile Instagram accounts being hijacked.\n\nAccording to claims shown in screenshots and videos shared on social media, Instagram's AI chatbot allowed users to \"hijack\" accounts in recent days.\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/c98rzr72dpyo?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
-      "edited_post_text": null,
-      "url": "https://www.bbc.com/news/articles/c98rzr72dpyo?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-06-02T11:40:02+00:00",
-      "title_hash": "7b61659b39199d0b1842a4d5a184bad42c0129ed",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/04d6/live/0af82d50-5e74-11f1-9bb7-93b44936b5cf.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "4e8e07cd2852dfeb",
-      "status": "pending",
-      "created_at": "2026-06-03T07:04:18+00:00",
-      "created_at_sakhalin": "2026-06-03T18:04:18+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Экспедиции по организационному ландшафту",
-      "title_ru": "Экспедиции по организационному ландшафту",
-      "body": [
-        "Провел первое тестирование своего сервиса для диагностики организационной культуры.",
-        "Занимаюсь разработкой своего, по причине, что стандартные тесты не дают пользы для моего контекста.",
-        "Провел первое тестирование своего сервиса для диагностики организационной культуры."
-      ],
-      "footer": null,
-      "source_text": "Провел первое тестирование своего сервиса для диагностики организационной культуры. Занимаюсь разработкой своего, по причине, что стандартные тесты не дают пользы для моего контекста. На первых тестах... Провел первое тестирование своего сервиса для диагностики организационной культуры. Занимаюсь разработкой своего, по причине, что стандартные тесты не дают пользы для моего контекста. На первых тестах получил неожиданную обратную связь. Несколько человек отписались: \"Если говорить о нашем отделе - результат высокий. Но если выйти за пределы отдела - там для меня начинается настоящий ад\". Тут можно подумать, что человек противоречит сам себе, но на поверхности сразу оказалась одна из ключевых проблем большинства корпоративных исследований культуры. Они смотрят на компанию, как на единый организм, а на практике такое бывает редко. Читать далее",
-      "post_text": "🌐 Мировые IT\n\n<b>Экспедиции по организационному ландшафту</b>\n\nПровел первое тестирование своего сервиса для диагностики организационной культуры.\n\nЗанимаюсь разработкой своего, по причине, что стандартные тесты не дают пользы для моего контекста.\n\nПровел первое тестирование своего сервиса для диагностики организационной культуры.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042902/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042902#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042902/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042902#habracut",
-      "published_at": "2026-06-03T06:57:45+00:00",
-      "title_hash": "4e1444e55a9d7babf34e93ce222a35876ac643dd",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/e50/989/d5e/e50989d5eaa368506842650a1016a9ce.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "2dfc5e557e5d187b",
-      "status": "pending",
-      "created_at": "2026-06-03T07:04:18+00:00",
-      "created_at_sakhalin": "2026-06-03T18:04:18+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Evals для чайников. Как тестировать AI-агента, чтобы понимать, где именно он ломается",
-      "title_ru": "Evals для чайников. Как тестировать AI-агента, чтобы понимать, где именно он ломается",
-      "body": [
-        "Большинство команд оценивают производительность AI-агентов через end-to-end метрики: success rate, количество токенов, tool usage, стоимость запроса, долю успешных задач.",
-        "Большинство команд оценивают производительность AI-агентов через end-to-end метрики: success rate, количество токенов, tool usage, стоимость запроса, долю успешных задач.",
-        "Это полезно для общего контроля ситуации, но почти бесполезно для реальной диагностики системы."
-      ],
-      "footer": null,
-      "source_text": "Большинство команд оценивают производительность AI-агентов через end-to-end метрики: success rate, количество токенов, tool usage, стоимость запроса, долю успешных задач. Это полезно для общего... Большинство команд оценивают производительность AI-агентов через end-to-end метрики: success rate, количество токенов, tool usage, стоимость запроса, долю успешных задач. Это полезно для общего контроля ситуации, но почти бесполезно для реальной диагностики системы. Например, если success rate упал с 85% до 72%, то само по себе число не объясняет причину деградации. Команда вынуждена гадать, какая часть системы вдруг начала допускать ошибки. Сломался retrieval? Модель хуже начала выбирать инструменты? Контекст загрязняется после нескольких ходов? Или система уперлась в возможности base model? При росте проекта и увеличении сложности кодовой базы, сбои начинают расти мультипликативно – ошибки всех систем начинают перемножаться между собой. В конечном итоге, команда теряет реальный контроль. Проблему решает внедрение покомпонентных eval. Они дополняют end-to-end метрики, показывая, какой слой AI-агента работает, какой деградировал – и где именно искать причину. То есть внедрение evals помогает получать метрики производительности каждого компонента вашего агента. Читать далее Большинство команд оценивают производительность AI-агентов через end-to-end метрики: success rate, количество токенов, tool usage, стоимость запроса, долю успешных задач. Это полезно для общего контроля ситуации, но почти бесполезно для реальной диагностики системы. Например, если success rate упал с 85% до 72%, то само по себе число не объясняет причину деградации. Команда вынуждена гадать, какая часть системы вдруг начала допускать ошибки. Сломался retrieval? Модель хуже начала выбирать инструменты? Контек",
-      "post_text": "🌐 Мировые IT\n\n<b>Evals для чайников. Как тестировать AI-агента, чтобы понимать, где именно он ломается</b>\n\nБольшинство команд оценивают производительность AI-агентов через end-to-end метрики: success rate, количество токенов, tool usage, стоимость запроса, долю успешных задач.\n\nБольшинство команд оценивают производительность AI-агентов через end-to-end метрики: success rate, количество токенов, tool usage, стоимость запроса, долю успешных задач.\n\nЭто полезно для общего контроля ситуации, но почти бесполезно для реальной диагностики системы.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042924/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042924#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042924/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042924#habracut",
-      "published_at": "2026-06-03T06:42:35+00:00",
-      "title_hash": "f10a3ff785f7f693ed817327adbd8c36dd4901fc",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/230/133/203/2301332037811abc6a22ac784c1c4fac.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "422d57e7130b663b",
-      "status": "pending",
-      "created_at": "2026-06-03T07:04:18+00:00",
-      "created_at_sakhalin": "2026-06-03T18:04:18+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Инструмент работы со знаниями и данными компании: умные таблицы",
-      "title_ru": "Инструмент работы со знаниями и данными компании: умные таблицы",
-      "body": [
-        "У «Здоровье-Ресурс» всё как у многих производств: технологические карты лежат в папках у технологов, инструкции по безопасности — на отдельном общем диске, коммерческие предложения теряются в почте, а...",
-        "У «Здоровье-Ресурс» всё как у многих производств: технологические карты лежат в папках у технологов, инструкции по безопасности — на отдельном общем диске, коммерческие предложения теряются в почте, а регламенты работы магазинов знает только старший продавец.",
-        "Новичок в цехе тратит час, чтобы найти актуальную инструкцию, логист сверяет остатки с Excel-файлом трёхмесячной давности, а руководитель узнаёт про ошибку в рецептуре уже по итогам списаний и претензий клиентов."
-      ],
-      "footer": null,
-      "source_text": "У «Здоровье-Ресурс» всё как у многих производств: технологические карты лежат в папках у технологов, инструкции по безопасности — на отдельном общем диске, коммерческие предложения теряются в почте, а... У «Здоровье-Ресурс» всё как у многих производств: технологические карты лежат в папках у технологов, инструкции по безопасности — на отдельном общем диске, коммерческие предложения теряются в почте, а регламенты работы магазинов знает только старший продавец. Новичок в цехе тратит час, чтобы найти актуальную инструкцию, логист сверяет остатки с Excel-файлом трёхмесячной давности, а руководитель узнаёт про ошибку в рецептуре уже по итогам списаний и претензий клиентов. Читать далее У «Здоровье-Ресурс» всё как у многих производств: технологические карты лежат в папках у технологов, инструкции по безопасности — на отдельном общем диске, коммерческие предложения теряются в почте, а регламенты работы магазинов знает только старший продавец. Новичок в цехе тратит час, чтобы найти актуальную инструкцию, логист сверяет остатки с Excel-файлом трёхмесячной давности, а руководитель узнаёт про ошибку в рецептуре уже по итогам списаний и претензий клиентов. Пока база знаний и данные о запасах живут в разных таблицах и файлах, компания каждый день теряет деньги на простоях, браке и «телефонном праве» — кто громче всех кричит, тот и прав. В статье покажем на примере условной компании, как собрать технологические карты в умной таблице TEAMLY , связать её со складскими остатками и наконец синхронизировать реальность на складе с тем, что написано в регламентах. Умные таблицы TEAMLY — это базы данных без кода: каждая строка — объект (продукт, заказ, сотрудник, документ), а столбцы — его свойства, которые можно настроить под конкретную бизнес-задачу. Для пользователей это выглядит как «таб",
-      "post_text": "🌐 Мировые IT\n\n<b>Инструмент работы со знаниями и данными компании: умные таблицы</b>\n\nУ «Здоровье-Ресурс» всё как у многих производств: технологические карты лежат в папках у технологов, инструкции по безопасности — на отдельном общем диске, коммерческие предложения теряются в почте, а...\n\nУ «Здоровье-Ресурс» всё как у многих производств: технологические карты лежат в папках у технологов, инструкции по безопасности — на отдельном общем диске, коммерческие предложения теряются в почте, а регламенты работы магазинов знает только старший продавец.\n\nНовичок в цехе тратит час, чтобы найти актуальную инструкцию, логист сверяет остатки с Excel-файлом трёхмесячной давности, а руководитель узнаёт про ошибку в рецептуре уже по итогам списаний и претензий клиентов.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/teamly/articles/1042972/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042972#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/teamly/articles/1042972/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042972#habracut",
-      "published_at": "2026-06-03T06:28:44+00:00",
-      "title_hash": "d6609aabf29fa0c95207cf8184c527d17ccb45b5",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/b31/659/78e/b3165978e6120b24582e0ae85c0abdae.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "6d313c987b5476d1",
-      "status": "pending",
-      "created_at": "2026-06-03T07:04:18+00:00",
-      "created_at_sakhalin": "2026-06-03T18:04:18+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Спутниковая связь в симуляторе NS-3. Часть 1",
-      "title_ru": "Спутниковая связь в симуляторе NS-3. Часть 1",
-      "body": [
-        "Введение Данное руководство содержит сведения, необходимые для быстрого начала работы с симулятором компьютерных сетей NS-3 и модулем симуляции спутниковой связи Satellite .",
-        "Моделирование спутниковых систем связи в симуляторе компьютерных сетей NS-3 с использованием модуля Satellite.",
-        "Продолжение статьи https://habr.com/ru/articles/1041426/ , где мы выполнили скачивание и компиляцию симулятора NS-3 ."
-      ],
-      "footer": null,
-      "source_text": "Введение Данное руководство содержит сведения, необходимые для быстрого начала работы с симулятором компьютерных сетей NS-3 и модулем симуляции спутниковой связи Satellite . Описаны установка,... Моделирование спутниковых систем связи в симуляторе компьютерных сетей NS-3 с использованием модуля Satellite. Продолжение статьи https://habr.com/ru/articles/1041426/ , где мы выполнили скачивание и компиляцию симулятора NS-3 . В этой статье мы рассмотрим варианты организации проекта в NS-3 . Читать далее",
-      "post_text": "🌐 Мировые IT\n\n<b>Спутниковая связь в симуляторе NS-3. Часть 1</b>\n\nВведение Данное руководство содержит сведения, необходимые для быстрого начала работы с симулятором компьютерных сетей NS-3 и модулем симуляции спутниковой связи Satellite .\n\nМоделирование спутниковых систем связи в симуляторе компьютерных сетей NS-3 с использованием модуля Satellite.\n\nПродолжение статьи https://habr.com/ru/articles/1041426/ , где мы выполнили скачивание и компиляцию симулятора NS-3 .\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1041426/\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1041426/",
-      "published_at": "2026-06-03T06:24:28+00:00",
-      "title_hash": "da4e655933ff3f56f885b75477d049436ff24fdf",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/cc3/0f2/680/cc30f2680dd2b5fa5f30f68af8cb7904.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
     }
   ],
   "auto_review": {
