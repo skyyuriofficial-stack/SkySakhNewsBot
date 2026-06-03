@@ -1,20 +1,20 @@
 {
   "version": 1,
-  "updated_at": "2026-06-03T02:03:34+00:00",
-  "updated_at_sakhalin": "2026-06-03T13:03:34+11:00",
-  "reviewed_at": "2026-06-03T01:43:47+00:00",
-  "reviewed_at_sakhalin": "2026-06-03T12:43:47+11:00",
+  "updated_at": "2026-06-03T06:58:33+00:00",
+  "updated_at_sakhalin": "2026-06-03T17:58:33+11:00",
+  "reviewed_at": "2026-06-03T06:58:32+00:00",
+  "reviewed_at_sakhalin": "2026-06-03T17:58:32+11:00",
   "items": [
     {
       "id": "ea546788ba89de5e",
-      "status": "pending",
+      "status": "hold",
       "created_at": "2026-06-03T01:46:56+00:00",
       "created_at_sakhalin": "2026-06-03T12:46:56+11:00",
       "source": "BBC Technology",
       "source_type": "it",
       "category": "🌐 Мировые IT",
       "category_hint": "🌐 Мировые IT",
-      "score": 258,
+      "score": 730,
       "title_original": "OpenAI offers rival AI to UK banks blocked from Claude Mythos",
       "title_ru": "OpenAI offers rival AI to UK banks blocked from Claude Mythos",
       "body": [
@@ -34,246 +34,28 @@
       "with_image": true,
       "image_decision": "use",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "a61b453ec3ef0591",
-      "status": "pending",
-      "created_at": "2026-06-03T01:46:56+00:00",
-      "created_at_sakhalin": "2026-06-03T12:46:56+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Превращаем бухгалтера группы компаний в data-инженера",
-      "title_ru": "Превращаем бухгалтера группы компаний в data-инженера",
-      "body": [
-        "Я эксперт в области ИТ и ИБ, преподаю в учебных центрах и пишу книги.",
-        "Сбор первичных документов из 1С, SAP и ERP из разных юридических лиц...",
-        "Сбор первичных документов из 1С, SAP и ERP из разных юридических лиц традиционно является серьезной головной болью бухгалтерии."
-      ],
-      "footer": null,
-      "source_text": "Привет, Хабр! Меня зовут Андрей Бирюков. Я эксперт в области ИТ и ИБ, преподаю в учебных центрах и пишу книги. Сбор первичных документов из 1С, SAP и ERP из разных юридических лиц... Сбор первичных документов из 1С, SAP и ERP из разных юридических лиц традиционно является серьезной головной болью бухгалтерии. В этой статье мы поговорим о том, как с помощью low-code платформ можно автоматизировать данный процесс и сформируем гайд по построению такого пайплайна. Читать далее",
-      "post_text": "🌐 Мировые IT\n\n<b>Превращаем бухгалтера группы компаний в data-инженера</b>\n\nЯ эксперт в области ИТ и ИБ, преподаю в учебных центрах и пишу книги.\n\nСбор первичных документов из 1С, SAP и ERP из разных юридических лиц...\n\nСбор первичных документов из 1С, SAP и ERP из разных юридических лиц традиционно является серьезной головной болью бухгалтерии.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/otus/articles/1040792/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040792#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/otus/articles/1040792/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040792#habracut",
-      "published_at": "2026-06-02T20:31:17+00:00",
-      "title_hash": "615690fbb233e42c9cb777243788e936d797753d",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/da7/113/30e/da711330e0244158bb6eccc0ab97e9bb.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "1fda92447bf9259b",
-      "status": "pending",
-      "created_at": "2026-06-03T01:46:56+00:00",
-      "created_at_sakhalin": "2026-06-03T12:46:56+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Рефакторинг и реинжиниринг легаси. Погружаемся глубже",
-      "title_ru": "Рефакторинг и реинжиниринг легаси. Погружаемся глубже",
-      "body": [
-        "Это продолжение статьи Рефакторинг и реинжиниринг легаси Преамбула Долгоживущие системы почти никогда нельзя просто заменить целиком.",
-        "Это слишком дорого и слишком рискованно: у них уже есть...",
-        "Долгоживущие системы нельзя просто взять и заменить, это дорого."
-      ],
-      "footer": null,
-      "source_text": "Это продолжение статьи Рефакторинг и реинжиниринг легаси Преамбула Долгоживущие системы почти никогда нельзя просто заменить целиком. Это слишком дорого и слишком рискованно: у них уже есть... Долгоживущие системы нельзя просто взять и заменить, это дорого. Переезд может оказать дороже новой системы. Поэтому на практике такие системы рефакторят кусочно, по частям. Но для этого мало сохранить код или даже внешнее поведение. Нужно сохранить связь кода с целью и ограничениями системы, с намерениями при ее создании. Эта связь должна переживать смену разработчика. Если она живёт только в головах, каждое серьёзное изменение снова начинается с археологии. В этой части статьи Археология. Нужно восстановить, как система реально работает, что в ней было задумано, какие ограничения спрятаны в ней или во внешней среде. Обеспечение соответствия старому поведению. Пока новая реализация не доказала, что ведёт себя так же, любое изменение рискованно. Требуется повторить даже то, что вы не обещали (Закон Хайрама) Читать далее Это продолжение статьи Рефакторинг и реинжиниринг легаси Долгоживущие системы почти никогда нельзя просто заменить целиком. Это слишком дорого и слишком рискованно: у них уже есть интеграции, пользовательские привычки, отчёты, ручные обходные процессы, внешние контракты и эксплуатационные ограничения. Поэтому на практике такие системы переписывают по частям. Но для этого мало сохранить код или даже внешнее поведение. Нужно сохранить связь между целью системы, её ограничениями и конкретной реализацией . Эта связь должна переживать смену разработчика. Если она живёт только в головах, каждое серьёзное изменение снова начинается с археологии. Когда говорят “переписываем легаси”, звучит так, будто речь об одной большой инженерной задаче. На практике это четыре разные де",
-      "post_text": "🌐 Мировые IT\n\n<b>Рефакторинг и реинжиниринг легаси. Погружаемся глубже</b>\n\nЭто продолжение статьи Рефакторинг и реинжиниринг легаси Преамбула Долгоживущие системы почти никогда нельзя просто заменить целиком.\n\nЭто слишком дорого и слишком рискованно: у них уже есть...\n\nДолгоживущие системы нельзя просто взять и заменить, это дорого.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042688/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042688#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042688/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042688#habracut",
-      "published_at": "2026-06-02T20:18:48+00:00",
-      "title_hash": "1f6d9c6067bcb196b7baa11533ea919130a198d8",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/890/f4f/59a/890f4f59aad9b9c21f5523fea3984c9e.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "672fb5f4da94a668",
-      "status": "pending",
-      "created_at": "2026-06-03T01:46:56+00:00",
-      "created_at_sakhalin": "2026-06-03T12:46:56+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Мой опыт с ИИ в России глазами европейца",
-      "title_ru": "Мой опыт с ИИ в России глазами европейца",
-      "body": [
-        "Это история о том, как я собрал полностью локальную ИИ-среду разработки (и почему вам стоит сделать то же самое).",
-        "Переезд из Евросоюза в Москву казался большим приключением — ровно до того момента,...",
-        "Это история о том, как я собрал полностью локальную ИИ-среду разработки (и почему вам стоит сделать то же самое)."
-      ],
-      "footer": null,
-      "source_text": "Это история о том, как я собрал полностью локальную ИИ-среду разработки (и почему вам стоит сделать то же самое). Переезд из Евросоюза в Москву казался большим приключением — ровно до того момента,... Это история о том, как я собрал полностью локальную ИИ-среду разработки (и почему вам стоит сделать то же самое). Переезд из Евросоюза в Москву казался большим приключением — ровно до того момента, как я открыл ноутбук и попытался работать. Я обычный пользователь экосистемы GCP. Ничего сверхъестественного: обычное API Gemini, Vertex AI Studio, Antigravity, иногда Claude и так далее. У меня было три корпоративных заказчика, ждущих кастомные ИИ-решения, куча личных проектов и слепая уверенность, что «всё само собой заработает». Как вы уже догадались — не заработало. С 15 апреля 2026 года Россия не просто заблокировала VPN — их научились вылавливать с пугающей эффективностью. Речь о 99% мгновенной смертности коммерческих VPN, как только ваше устройство подключается к сети. Продвинутые кастомные VPS-связки, судя по некоторым Telegram-каналам, работают — но только если вы настроили их до прилёта. И тут началась паническая мысль: «И как же плохо всё может быть?» Читать далее",
-      "post_text": "🌐 Мировые IT\n\n<b>Мой опыт с ИИ в России глазами европейца</b>\n\nЭто история о том, как я собрал полностью локальную ИИ-среду разработки (и почему вам стоит сделать то же самое).\n\nПереезд из Евросоюза в Москву казался большим приключением — ровно до того момента,...\n\nЭто история о том, как я собрал полностью локальную ИИ-среду разработки (и почему вам стоит сделать то же самое).\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042910/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042910#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042910/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042910#habracut",
-      "published_at": "2026-06-02T19:59:02+00:00",
-      "title_hash": "60ace0cb2bf516b5895c9cb5fc3b709cfcb03b85",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/e3d/5aa/a6c/e3d5aaa6cbe7e5a3bcaa4fbf3ef911c4.jpeg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "9d85dd7dfa5a7bc1",
-      "status": "pending",
-      "created_at": "2026-06-03T01:46:56+00:00",
-      "created_at_sakhalin": "2026-06-03T12:46:56+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Как сознание вернулось в науку и почему физика больше не может его игнорировать",
-      "title_ru": "Как сознание вернулось в науку и почему физика больше не может его игнорировать",
-      "body": [
-        "Долгое время в фундаментальной науке существовало негласное правило: если вы хотите сохранить репутацию серьезного ученого, не говорите о сознании.",
-        "На протяжении почти всего XX века исследование...",
-        "Долгое время в фундаментальной науке существовало негласное правило: если вы хотите сохранить репутацию серьезного ученого, не говорите о сознании."
-      ],
-      "footer": null,
-      "source_text": "Долгое время в фундаментальной науке существовало негласное правило: если вы хотите сохранить репутацию серьезного ученого, не говорите о сознании. На протяжении почти всего XX века исследование... Долгое время в фундаментальной науке существовало негласное правило: если вы хотите сохранить репутацию серьезного ученого, не говорите о сознании. На протяжении почти всего XX века исследование субъективного опыта считалось прерогативой философов, мистиков или, в лучшем случае, психоаналитиков. Физики, химики и биологи строили строгую, объективную картину мира, где были кварки, молекулы, клетки и тектонические плиты. Сознание в эту схему не помещалось, поэтому его просто вынесли за скобки, объявив чем-то вроде \"шума в системе\" или побочного продукта работы нейронов - эпифеномена, который ни на что не влияет. Но в этой позиции всегда крылось странное логическое противоречие. Сознание - это такая же часть наблюдаемой реальности, как звезды, океаны или атомы. Более того, сознание - это единственный инструмент, с помощью которого мы вообще знаем о существовании звезд и атомов. Игнорировать его в попытке построить \"полную теорию всего\" - все равно что пытаться составить карту Земли, принципиально отказываясь признавать существование океанов. Сегодня этот лед тронулся. Научный дискурс медленно, но верно возвращает сознанию его законный статус главного вызова современной науки. Причем толчок пришел оттуда, откуда его ждали меньше всего - из фундаментальной физики. Читать далее Долгое время в фундаментальной науке существовало негласное правило: если вы хотите сохранить репутацию серьезного ученого, не говорите о сознании. На протяжении почти всего XX века исследование субъективного опыта считалось прерогативой философов, мистиков или, в лучшем случае, психоаналитиков. Физики, химик",
-      "post_text": "🌐 Мировые IT\n\n<b>Как сознание вернулось в науку и почему физика больше не может его игнорировать</b>\n\nДолгое время в фундаментальной науке существовало негласное правило: если вы хотите сохранить репутацию серьезного ученого, не говорите о сознании.\n\nНа протяжении почти всего XX века исследование...\n\nДолгое время в фундаментальной науке существовало негласное правило: если вы хотите сохранить репутацию серьезного ученого, не говорите о сознании.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042906/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042906#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042906/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042906#habracut",
-      "published_at": "2026-06-02T19:44:07+00:00",
-      "title_hash": "423b36ca7dc75e09e2ed37f5f822c266cf93fe59",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/d32/121/327/d32121327ef8d5d25533e7e5e9252701.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "e9fdb33c9ead851c",
-      "status": "pending",
-      "created_at": "2026-06-03T01:46:56+00:00",
-      "created_at_sakhalin": "2026-06-03T12:46:56+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Как добавить кнопку «Спроси о нас у ИИ» (Яндекс Алиса, ChatGPT, Claude и другие)",
-      "title_ru": "Как добавить кнопку «Спроси о нас у ИИ» (Яндекс Алиса, ChatGPT, Claude и другие)",
-      "body": [
-        "Потенциальные клиенты все чаще проверяет вас в AI-поисках типа Perplexity, Яндекс Алиса, ChatGPT и т.д.",
-        "За последний год доля поиска информации через Яндекс Алису, ChatGPT, Perplexity и выросла в...",
-        "Новый тренд для сайтов - кнопка «Спросите ИИ о нас»."
-      ],
-      "footer": null,
-      "source_text": "Потенциальные клиенты все чаще проверяет вас в AI-поисках типа Perplexity, Яндекс Алиса, ChatGPT и т.д. За последний год доля поиска информации через Яндекс Алису, ChatGPT, Perplexity и выросла в... Новый тренд для сайтов - кнопка «Спросите ИИ о нас». Такие кнопки открывают Яндекс Алису, ChatGPT, Perplexity или другие ИИ-поисковики с заранее подготовленным запросом, помогая потенциальным клиентам быстрее разобраться в вашем продукте. В этой статье я расскажу как добавить такую кнопку на свой сайт. Читать далее Потенциальные клиенты все чаще проверяет вас в AI-поисках типа Perplexity, Яндекс Алиса, ChatGPT и т.д. За последний год доля поиска информации через Яндекс Алису, ChatGPT, Perplexity и выросла в разы. И если ваш сервис там не упоминается или говорят о вас плохо - это потерянный клиент. Но есть решение: прямые кнопки на вашем сайте, которые открывают уже готовый поисковый запрос в Яндекс Алисе, ChatGPT, Claude, Perplexity и других ИИ-поисковиках. Пользователь в один клик может спросить AI: «Что это за сервис? Он надёжный? Стоит ли его использовать?» А вы берёте поиск под контроль.",
-      "post_text": "🌐 Мировые IT\n\n<b>Как добавить кнопку «Спроси о нас у ИИ» (Яндекс Алиса, ChatGPT, Claude и другие)</b>\n\nПотенциальные клиенты все чаще проверяет вас в AI-поисках типа Perplexity, Яндекс Алиса, ChatGPT и т.д.\n\nЗа последний год доля поиска информации через Яндекс Алису, ChatGPT, Perplexity и выросла в...\n\nНовый тренд для сайтов - кнопка «Спросите ИИ о нас».\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042876/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042876#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1042876/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042876#habracut",
-      "published_at": "2026-06-02T18:08:58+00:00",
-      "title_hash": "ca59d77e1892c3c967c09b139167f1afb7432407",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/64d/c20/f0e/64dc20f0ebcb4074fbb94a3a10d014a0.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "664c7d567ccce86d",
-      "status": "pending",
-      "created_at": "2026-06-03T01:46:56+00:00",
-      "created_at_sakhalin": "2026-06-03T12:46:56+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Контракты данных между командами: гайд по data contracts в дата‑пайплайнах",
-      "title_ru": "Контракты данных между командами: гайд по data contracts в дата‑пайплайнах",
-      "body": [
-        "Утром заходим в дашборд выручки и видим нули по половине регионов.",
-        "Пайплайн в Airflow отработал, тесты dbt test зелёные, в Sentry тишина.",
-        "Через двадцать минут разборок выясняется..."
-      ],
-      "footer": null,
-      "source_text": "Утром заходим в дашборд выручки и видим нули по половине регионов. Пайплайн в Airflow отработал, тесты dbt test зелёные, в Sentry тишина. Через двадцать минут разборок выясняется... Когда пайплайн отработал без ошибок, тесты зелёные, а в дашборде внезапно нули, проблема может быть не в инфраструктуре, а в отсутствии договорённостей между командами. В статье разбираем, как data contracts помогают фиксировать структуру, правила и ответственность за данные — и почему это спасает витрины, отчёты и нервы дата-инженеров. Читать далее Утром заходим в дашборд выручки и видим нули по половине регионов. Пайплайн в Airflow отработал, тесты dbt test зелёные, в Sentry тишина. Через двадцать минут разборок выясняется простая вещь: бэкенд‑команда вчера выкатила релиз и поменяла значение order_status с awaiting_payment на pending_payment в API заказов. Схема таблицы не изменилась, тип поля тот же string , nullable тот же false . Изменился набор значений — и фильтр WHERE order_status = 'awaiting_payment' в витрине стал возвращать пустоту. История, знакомая любой компании, где данные текут от продуктовых команд в общее хранилище. На один такой инцидент уходит полдня: найти причину, написать в Slack, согласовать фикс, обновить витрину, перезалить вчерашние данные. Через месяц повторяется на другой команде, через два — на третьей. К концу года дата‑инженеры тратят значимую долю времени на разбор «почему опять сломалось», а доверие бизнеса к аналитике падает быстрее, чем растут зарплаты. Контракт данных — формальный способ договориться о структуре и поведении датасета между командой‑продюсером и командами‑консьюмерами. Разберём, как такой контракт устроен внутри, что в нём должно быть и как встроить его в существующий пайплайн без переписывания всей инфраструктуры. Контракт — это YAML или J",
-      "post_text": "🌐 Мировые IT\n\n<b>Контракты данных между командами: гайд по data contracts в дата‑пайплайнах</b>\n\nУтром заходим в дашборд выручки и видим нули по половине регионов.\n\nПайплайн в Airflow отработал, тесты dbt test зелёные, в Sentry тишина.\n\nЧерез двадцать минут разборок выясняется...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/otus/articles/1042140/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042140#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/otus/articles/1042140/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042140#habracut",
-      "published_at": "2026-06-02T17:50:03+00:00",
-      "title_hash": "75eb8132069bb35b264a6ff8c8b3052e67855ec6",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/46c/1e3/51b/46c1e351b9224de1f4f3da1656289ddf.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-06-03T06:58:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
     },
     {
       "id": "d3623f5e6273e2c7",
-      "status": "pending",
+      "status": "hold",
       "created_at": "2026-06-03T01:46:56+00:00",
       "created_at_sakhalin": "2026-06-03T12:46:56+11:00",
       "source": "The Verge",
       "source_type": "it",
       "category": "🎮 Игры / индустрия",
       "category_hint": "🎮 Игры / индустрия",
-      "score": 237,
+      "score": 600,
       "title_original": "Remedy’s Control sequel launches in September",
       "title_ru": "Remedy’s Control sequel launches in September",
       "body": [
@@ -292,13 +74,344 @@
       "with_image": false,
       "image_decision": "none",
       "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
       ],
       "review": {
         "required": true,
         "reviewer": "ChatGPT/editor",
         "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
+      },
+      "reviewed_at": "2026-06-03T06:58:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "06ed761887dcac99",
+      "status": "hold",
+      "created_at": "2026-06-03T06:58:31+00:00",
+      "created_at_sakhalin": "2026-06-03T17:58:31+11:00",
+      "source": "BBC World",
+      "source_type": "world",
+      "category": "🌍 Мир о России",
+      "category_hint": "🌍 Мир о России",
+      "score": 1000,
+      "title_original": "Seven killed in drone attack on bus in Russia-controlled part of Ukraine",
+      "title_ru": "Seven killed in drone attack on bus in Russia-controlled part of Ukraine",
+      "body": [
+        "The bus was travelling between Moscow and Simferopol, in Russian-occupied Crimea, an official says.",
+        "The bus was travelling between Moscow and Simferopol, in Russian-occupied Crimea, an official says.",
+        "Denis Pushilin, the Kremlin-installed leader of Ukraine's eastern Donetsk region, said the bus was struck in the early hours of Wednesday as it was travelling between Moscow and Simferopol, in Russian-occupied Crimea."
+      ],
+      "footer": null,
+      "source_text": "The bus was travelling between Moscow and Simferopol, in Russian-occupied Crimea, an official says. The bus was travelling between Moscow and Simferopol, in Russian-occupied Crimea, an official says. Denis Pushilin, the Kremlin-installed leader of Ukraine's eastern Donetsk region, said the bus was struck in the early hours of Wednesday as it was travelling between Moscow and Simferopol, in Russian-occupied Crimea. Russia downed more than 350 drones overnight, according to Russian officials. It comes a day after a massive Russian assault on cities across Ukraine killed at least 22 people, including several women and children. \"In Yenakiyevo, a UAV attacked a Moscow-Simferopol coach; according to preliminary reports, seven civilians were killed,\" Pushilin said in a Telegram post on Wednesday.",
+      "post_text": "🌍 Мир о России\n\n<b>Seven killed in drone attack on bus in Russia-controlled part of Ukraine</b>\n\nThe bus was travelling between Moscow and Simferopol, in Russian-occupied Crimea, an official says.\n\nThe bus was travelling between Moscow and Simferopol, in Russian-occupied Crimea, an official says.\n\nDenis Pushilin, the Kremlin-installed leader of Ukraine's eastern Donetsk region, said the bus was struck in the early hours of Wednesday as it was travelling between Moscow and Simferopol, in Russian-occupied Crimea.\n\nМИР О РОССИИ · <a href=\"https://www.bbc.com/news/articles/cp3peyykxd5o?at_medium=RSS&amp;at_campaign=rss\">BBC World</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/cp3peyykxd5o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-03T06:30:51+00:00",
+      "title_hash": "fc0e6474e834689620f2da1dca73266b88c783f2",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/163d/live/5daad590-5f08-11f1-a71c-b5829ec0cc2c.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-03T06:58:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 1000
+    },
+    {
+      "id": "c61321a4e0cb9f9d",
+      "status": "hold",
+      "created_at": "2026-06-03T06:58:31+00:00",
+      "created_at_sakhalin": "2026-06-03T17:58:31+11:00",
+      "source": "The Verge",
+      "source_type": "it",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 600,
+      "title_original": "God of War Laufey is coming to the PS5",
+      "title_ru": "God of War Laufey is coming to the PS5",
+      "body": [
+        "Sony ended its big State of Play showcase with a major reveal: the next God of War.",
+        "The new title is called God of War Laufey, and is once again developed by Sony's Santa Monica Studio.",
+        "Currently, the game doesn't have a date, but it's coming to the PS5 whenever it does launch."
+      ],
+      "footer": null,
+      "source_text": "Dad games are so over. Sony ended its big State of Play showcase with a major reveal: the next God of War. The new title is called God of War Laufey, and is once again developed by Sony's Santa Monica Studio. Currently, the game doesn't have a date, but it's coming to the PS5 whenever it does launch. This time, […] Gaming Close Gaming Posts from this topic will be added to your daily email digest and your homepage feed. Andrew Webster Close Andrew Webster Senior entertainment editor Posts from this author will be added to your daily email digest and your homepage feed. Share Gift Image: Sony Interactive Entertainment Part Of PlayStation State of Play June 2026: All the news and trailers see all updates Andrew Webster Close Andrew Webster Posts from this author will be added to your daily email digest and your homepage feed. Sony ended its big State of Play showcase with a major reveal: the next God of War . The new title is called God of War Laufey , and is once again developed by Sony’s Santa Monica Studio. Currently, the game doesn’t have a date, but it’s coming to the PS5 whenever it does launch.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>God of War Laufey is coming to the PS5</b>\n\nSony ended its big State of Play showcase with a major reveal: the next God of War.\n\nThe new title is called God of War Laufey, and is once again developed by Sony's Santa Monica Studio.\n\nCurrently, the game doesn't have a date, but it's coming to the PS5 whenever it does launch.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/entertainment/941516/god-of-war-laufey-ps5-trailer\">The Verge</a>",
+      "edited_post_text": null,
+      "url": "https://www.theverge.com/entertainment/941516/god-of-war-laufey-ps5-trailer",
+      "published_at": "2026-06-02T22:16:08+00:00",
+      "title_hash": "860b2b773d7f1b67ae26cae73b586af716f28085",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-03T06:58:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "d1b7394135e10785",
+      "status": "hold",
+      "created_at": "2026-06-03T06:58:31+00:00",
+      "created_at_sakhalin": "2026-06-03T17:58:31+11:00",
+      "source": "IGN",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 600,
+      "title_original": "'I Want to Offer My Sincere Apologies' — Phantom Blade Zero Dev Issues Lengthy Explanation After Delay Moves Launch Back 2 Months",
+      "title_ru": "'I Want to Offer My Sincere Apologies' — Phantom Blade Zero Dev Issues Lengthy Explanation After Delay Moves Launch Back 2 Months",
+      "body": [
+        "Developer S-Game has announced a delay for Phantom Blade Zero that will see its PC and PlayStation 5 release date pushed back almost two months.",
+        "Developer S-Game has announced a delay for Phantom Blade Zero that will see its PC and PlayStation 5 release date pushed back almost two months.",
+        "Developer S-Game has announced a delay for Phantom Blade Zero that will see its PC and PlayStation 5 release date pushed back almost two months."
+      ],
+      "footer": null,
+      "source_text": "Developer S-Game has announced a delay for Phantom Blade Zero that will see its PC and PlayStation 5 release date pushed back almost two months. Developer S-Game has announced a delay for Phantom Blade Zero that will see its PC and PlayStation 5 release date pushed back almost two months. Developer S-Game has announced a delay for Phantom Blade Zero that will see its PC and PlayStation 5 release date pushed back almost two months. CEO and game creator Soulframe took to the studio's X/Twitter account to share the news and their \"sincere apologies\" following its appearance at today's State of Play June 2026 presentation. It's a lengthy note to players with a full explanation for the 50-day delay, which will see the PS5 console exclusive action-RPG move its launch from September 9, 2026, to October 29, 2026. \"First of all, I want to offer my sincere apologies to all the players who have been following and supporting us,\" Soulframe said. \"This was not an easy decision. More than anyone, we understand the expectations our players have placed on us. And precisely because of those expectations, we do not want to release Phantom Blade Zero knowing there is still an opportunity to take it one step further.\" Soulframe said they saw \"one final opportunity\" to make \"another meaningful leap forward\" while polishing Phantom Blade Zero during the last few months. This final push past the finish line involved upgrading character models, reworking environments, and \"preserving as much of this visual impact as possible even without relying on ray tracing.\" Soulframe acknowledged that ray tracing could improve visuals, but said the studio's first goal is to \"make sure the core look, atmosphere, and intensity of Phantom Blade Zero come through at full force for as many players as possible.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>'I Want to Offer My Sincere Apologies' — Phantom Blade Zero Dev Issues Lengthy Explanation After Delay Moves Launch Back 2 Months</b>\n\nDeveloper S-Game has announced a delay for Phantom Blade Zero that will see its PC and PlayStation 5 release date pushed back almost two months.\n\nDeveloper S-Game has announced a delay for Phantom Blade Zero that will see its PC and PlayStation 5 release date pushed back almost two months.\n\nDeveloper S-Game has announced a delay for Phantom Blade Zero that will see its PC and PlayStation 5 release date pushed back almost two months.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.ign.com/articles/phantom-blade-zero-delay-moves-launch-to-late-october-2026\">IGN</a>",
+      "edited_post_text": null,
+      "url": "https://www.ign.com/articles/phantom-blade-zero-delay-moves-launch-to-late-october-2026",
+      "published_at": "2026-06-03T00:34:04.184000+00:00",
+      "title_hash": "43d8b354f929da7ff88e0b51c9aaf4e300bbc021",
+      "image_url": "https://assets-prd.ignimgs.com/2026/06/03/phantom-blade-zero-delay-1780446237064.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-03T06:58:32+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "e8b1f9ea76533b17",
+      "status": "hold",
+      "created_at": "2026-06-03T06:58:31+00:00",
+      "created_at_sakhalin": "2026-06-03T17:58:31+11:00",
+      "source": "PC Gamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 680,
+      "title_original": "Silent Hill: Townfall will release in September alongside a handful of other blockbuster games hellbent on avoiding GTA 6",
+      "title_ru": "Silent Hill: Townfall will release in September alongside a handful of other blockbuster games hellbent on avoiding GTA 6",
+      "body": [
+        "Five heavyweights are taking shelter earlier in the holiday season.",
+        "Five heavyweights are taking shelter earlier in the holiday season."
+      ],
+      "footer": null,
+      "source_text": "Five heavyweights are taking shelter earlier in the holiday season. Five heavyweights are taking shelter earlier in the holiday season.",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Silent Hill: Townfall will release in September alongside a handful of other blockbuster games hellbent on avoiding GTA 6</b>\n\nFive heavyweights are taking shelter earlier in the holiday season.\n\nFive heavyweights are taking shelter earlier in the holiday season.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.pcgamer.com/games/horror/silent-hill-townfall-will-release-in-september-alongside-a-handful-of-other-blockbuster-games-hellbent-on-avoiding-gta-6/\">PC Gamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.pcgamer.com/games/horror/silent-hill-townfall-will-release-in-september-alongside-a-handful-of-other-blockbuster-games-hellbent-on-avoiding-gta-6/",
+      "published_at": "2026-06-03T04:00:41+00:00",
+      "title_hash": "77ac59524f58062d11ef3b4314d2046f4bcc203c",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/T6XULT8iHwMg4JDN5n6xr9-1280-80.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-03T06:58:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "44ab66ecb6f8de65",
+      "status": "hold",
+      "created_at": "2026-06-03T06:58:31+00:00",
+      "created_at_sakhalin": "2026-06-03T17:58:31+11:00",
+      "source": "Eurogamer",
+      "source_type": "gaming",
+      "category": "🎮 Игры / индустрия",
+      "category_hint": "🎮 Игры / индустрия",
+      "score": 600,
+      "title_original": "Stuntman Hollywood revealed at Sony State of Play, coming soon to PS5",
+      "title_ru": "Stuntman Hollywood revealed at Sony State of Play, coming soon to PS5",
+      "body": [
+        "Cars from The Fast and Furious, Back to the Future, and more present.",
+        "Stuntman Hollywood - an explosive return for the beloved racing series - has been revealed at tonight's State of Play livestream.",
+        "Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Latest News Sign in for free to manage your site experience."
+      ],
+      "footer": null,
+      "source_text": "Cars from The Fast and Furious, Back to the Future, and more present. Stuntman Hollywood - an explosive return for the beloved racing series - has been revealed at tonight's State of Play livestream. Read more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Latest News Sign in for free to manage your site experience. Stuntman Hollywood revealed at Sony State of Play, coming soon to PS5 The leaks were real: God of War Laufey is all about Faye, and it's coming to PlayStation 5 'soon' A decade later, PlayStation's cult classic cinematic horror hit Until Dawn is returning with a fully fledged, sun-kissed sequel The Lost Wild - a dinosaur survival horror game by former Alien: Isolation developers - announced at Sony State of Play Control Resonant's release date revealed in bombshell Sony State of Play story trailer Silent Hill: Townfall has a PS5 release date, and things are getting scary in very foggy Scotland this September For the first time in its 25-year history, Runescape comes to PlayStation 5 this year with survival game RuneScape Dragonwilds Ace Combat 8 soars onto the Sony State of Play with a new release date trailer Tomb Raider: Legacy of Atlantis gets new trailer featuring Lara, Natla and Larson, as well as slight a delay Onimusha: Way of the Sword gets September release date, and a playable demo available right now If you click on a link and make a purchase we may receive a small commission. Read our editorial policy . Home News Stuntman: Hollywood Stuntman Hollywood revealed at Sony State of Play, coming soon to PS5 Fighter of the night man. Image credit: Sony News by Connor Makar Staff Writer Published on June 2, 2026 8 comments Follow Stuntman: Hollywood Stuntman Hollywood - an explosive ret",
+      "post_text": "🎮 Игры / индустрия\n\n<b>Stuntman Hollywood revealed at Sony State of Play, coming soon to PS5</b>\n\nCars from The Fast and Furious, Back to the Future, and more present.\n\nStuntman Hollywood - an explosive return for the beloved racing series - has been revealed at tonight's State of Play livestream.\n\nRead more Go Support us Sign in / Create account Latest PC PlayStation Xbox Nintendo Tech News Reviews Videos Features Guides Latest News Sign in for free to manage your site experience.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.eurogamer.net/stuntman-hollywood-revealed-at-sony-state-of-play-coming-soon-to-ps5\">Eurogamer</a>",
+      "edited_post_text": null,
+      "url": "https://www.eurogamer.net/stuntman-hollywood-revealed-at-sony-state-of-play-coming-soon-to-ps5",
+      "published_at": "2026-06-02T22:49:33.513522+00:00",
+      "title_hash": "e92f93559573c26f8a7208adf71cdd0815f153e3",
+      "image_url": "https://assetsio.gnwcdn.com/stuntman-hollywood-white-car.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-03T06:58:32+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 600
+    },
+    {
+      "id": "dd2c65f9abc884b2",
+      "status": "hold",
+      "created_at": "2026-06-03T06:58:31+00:00",
+      "created_at_sakhalin": "2026-06-03T17:58:31+11:00",
+      "source": "BBC World",
+      "source_type": "world",
+      "category": "🌍 Мир о России",
+      "category_hint": "🌍 Мир о России",
+      "score": 1080,
+      "title_original": "Putin remains uncompromising on Ukraine, but is public discourse on war changing in Russia?",
+      "title_ru": "Putin remains uncompromising on Ukraine, but is public discourse on war changing in Russia?",
+      "body": [
+        "Russia is intensifying attacks in Ukraine but more than four years of war are causing concern even among Putin loyalists.",
+        "Russia is intensifying attacks in Ukraine but more than four years of war are causing concern even among Putin loyalists.",
+        "\"Russia is what it is, and we're not ashamed of showing it,\" Foreign Minister Sergei Lavrov once told me in an interview."
+      ],
+      "footer": null,
+      "source_text": "Russia is intensifying attacks in Ukraine but more than four years of war are causing concern even among Putin loyalists. Russia is intensifying attacks in Ukraine but more than four years of war are causing concern even among Putin loyalists. \"Russia is what it is, and we're not ashamed of showing it,\" Foreign Minister Sergei Lavrov once told me in an interview. But I recently heard an updated version from veteran pop and folk singer Nadezhda Babkina. After receiving an award from President Putin, Babkina told an audience in the Kremlin: \"Russia will never surrender thanks to our remarkable, multi-ethnic genetic code... that holds us all together. \"Anyone who doesn't like that,\" she added, \"can go and poison themselves.\"",
+      "post_text": "🌍 Мир о России\n\n<b>Putin remains uncompromising on Ukraine, but is public discourse on war changing in Russia?</b>\n\nRussia is intensifying attacks in Ukraine but more than four years of war are causing concern even among Putin loyalists.\n\nRussia is intensifying attacks in Ukraine but more than four years of war are causing concern even among Putin loyalists.\n\n\"Russia is what it is, and we're not ashamed of showing it,\" Foreign Minister Sergei Lavrov once told me in an interview.\n\nМИР О РОССИИ · <a href=\"https://www.bbc.com/news/articles/cy82339793go?at_medium=RSS&amp;at_campaign=rss\">BBC World</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/cy82339793go?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-02T23:33:34+00:00",
+      "title_hash": "b3a6fb919ea2626086737de70e0df82419c650bf",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/8a79/live/ddbe4530-5e8d-11f1-89a3-d1f559421220.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-03T06:58:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 1000
+    },
+    {
+      "id": "ceef6d076d99379a",
+      "status": "hold",
+      "created_at": "2026-06-03T06:58:31+00:00",
+      "created_at_sakhalin": "2026-06-03T17:58:31+11:00",
+      "source": "BBC World",
+      "source_type": "world",
+      "category": "🌍 Мир о России",
+      "category_hint": "🌍 Мир о России",
+      "score": 1000,
+      "title_original": "'They'll fix the building, but not our souls': Sleepy Kyiv neighbourhood hit in Russian strike",
+      "title_ru": "'They'll fix the building, but not our souls': Sleepy Kyiv neighbourhood hit in Russian strike",
+      "body": [
+        "Scenes of devastation greet residents emerging from underground shelters after a major Russian attack.",
+        "Scenes of devastation greet residents emerging from underground shelters after a major Russian attack.",
+        "We were two floors underground, and yet we could feel and hear the massive explosions above."
+      ],
+      "footer": null,
+      "source_text": "Scenes of devastation greet residents emerging from underground shelters after a major Russian attack. Scenes of devastation greet residents emerging from underground shelters after a major Russian attack. We were two floors underground, and yet we could feel and hear the massive explosions above. Then came the Russian drones, possibly carrying more explosives or scouting out the damage done by the missiles. Then more missiles. More than 41,000 people - including almost 4,500 children - sheltered underground in the Kyiv metro overnight, a record number in recent years, the metro company said. Even though Moscow had said its attacks would get much worse, this one was not much different from what Kyiv had seen already, many times. Yet again, Russia said it would strike military targets, but civilians suffered. As they emerged from shelters after the attack, many were shocked to see their neighbourhoods completely transformed, for the worse. Windows smashed, cars turned into unrecognisable heaps of burnt, twisted metal.",
+      "post_text": "🌍 Мир о России\n\n<b>'They'll fix the building, but not our souls': Sleepy Kyiv neighbourhood hit in Russian strike</b>\n\nScenes of devastation greet residents emerging from underground shelters after a major Russian attack.\n\nScenes of devastation greet residents emerging from underground shelters after a major Russian attack.\n\nWe were two floors underground, and yet we could feel and hear the massive explosions above.\n\nМИР О РОССИИ · <a href=\"https://www.bbc.com/news/articles/c5y9nyvg9z2o?at_medium=RSS&amp;at_campaign=rss\">BBC World</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/c5y9nyvg9z2o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-02T19:13:21+00:00",
+      "title_hash": "40cb91a965ad64806408703d54b9e32267cf8d5b",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/a4a9/live/364daf50-5ead-11f1-9877-71c2729415b9.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-03T06:58:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 1000
+    },
+    {
+      "id": "f55f7df09d472fd6",
+      "status": "hold",
+      "created_at": "2026-06-03T06:58:31+00:00",
+      "created_at_sakhalin": "2026-06-03T17:58:31+11:00",
+      "source": "BBC Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 650,
+      "title_original": "Microsoft working on wearable AI gadget aimed at office workers",
+      "title_ru": "Microsoft working on wearable AI gadget aimed at office workers",
+      "body": [
+        "The company said its own workers are testing a \"wearable access badge\" and a desktop device.",
+        "The company said its own workers are testing a \"wearable access badge\" and a desktop device.",
+        "During its yearly conference for technology developers, Microsoft executive Steven Bathiche showed off two \"concepts\" that the company has developed for hardware products intended for people who often use AI tools in their work."
+      ],
+      "footer": null,
+      "source_text": "The company said its own workers are testing a \"wearable access badge\" and a desktop device. The company said its own workers are testing a \"wearable access badge\" and a desktop device. During its yearly conference for technology developers, Microsoft executive Steven Bathiche showed off two \"concepts\" that the company has developed for hardware products intended for people who often use AI tools in their work. One device was a small portable cube with a touch and voice-activated screen, meant for a desk. The other was \"a wearable access badge,\" Bathiche said, to hang around the neck or on a belt loop, giving quick access to AI-driven work Satya Nadella, Microsoft chief executive, said such gadgets represented a \"new form factor\" for technology devices. While Microsoft did not say it would bring either of these products to market, it said current pilots with the devices \"will inform how these form factors can be built\" in the future.",
+      "post_text": "🌐 Мировые IT\n\n<b>Microsoft working on wearable AI gadget aimed at office workers</b>\n\nThe company said its own workers are testing a \"wearable access badge\" and a desktop device.\n\nThe company said its own workers are testing a \"wearable access badge\" and a desktop device.\n\nDuring its yearly conference for technology developers, Microsoft executive Steven Bathiche showed off two \"concepts\" that the company has developed for hardware products intended for people who often use AI tools in their work.\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/cwy25x97wrxo?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/cwy25x97wrxo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-02T21:47:42+00:00",
+      "title_hash": "64098951625d78fc3e3d7b4d83b100829bb02e96",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/f1a4/live/e0ba4220-5ec4-11f1-b588-45cc931ea6f1.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "В резерве: не удалось собрать чистый русский текст локально или через OpenRouter."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-03T06:58:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
     },
     {
       "id": "516dd949aa8c2902",
@@ -2345,6 +2458,334 @@
       "reviewed_at": "2026-06-03T01:43:47+00:00",
       "reviewed_by": "auto-editor-v7-local-cleaner",
       "stream_priority": 600
+    },
+    {
+      "id": "a61b453ec3ef0591",
+      "status": "rejected",
+      "created_at": "2026-06-03T01:46:56+00:00",
+      "created_at_sakhalin": "2026-06-03T12:46:56+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 650,
+      "title_original": "Превращаем бухгалтера группы компаний в data-инженера",
+      "title_ru": "Превращаем бухгалтера группы компаний в data-инженера",
+      "body": [
+        "Я эксперт в области ИТ и ИБ, преподаю в учебных центрах и пишу книги.",
+        "Сбор первичных документов из 1С, SAP и ERP из разных юридических лиц...",
+        "Сбор первичных документов из 1С, SAP и ERP из разных юридических лиц традиционно является серьезной головной болью бухгалтерии."
+      ],
+      "footer": null,
+      "source_text": "Привет, Хабр! Меня зовут Андрей Бирюков. Я эксперт в области ИТ и ИБ, преподаю в учебных центрах и пишу книги. Сбор первичных документов из 1С, SAP и ERP из разных юридических лиц... Сбор первичных документов из 1С, SAP и ERP из разных юридических лиц традиционно является серьезной головной болью бухгалтерии. В этой статье мы поговорим о том, как с помощью low-code платформ можно автоматизировать данный процесс и сформируем гайд по построению такого пайплайна. Читать далее",
+      "post_text": "🌐 Мировые IT\n\n<b>Превращаем бухгалтера группы компаний в data-инженера</b>\n\nЯ эксперт в области ИТ и ИБ, преподаю в учебных центрах и пишу книги.\n\nСбор первичных документов из 1С, SAP и ERP из разных юридических лиц...\n\nСбор первичных документов из 1С, SAP и ERP из разных юридических лиц традиционно является серьезной головной болью бухгалтерии.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/otus/articles/1040792/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1040792#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/otus/articles/1040792/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1040792#habracut",
+      "published_at": "2026-06-02T20:31:17+00:00",
+      "title_hash": "615690fbb233e42c9cb777243788e936d797753d",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/da7/113/30e/da711330e0244158bb6eccc0ab97e9bb.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-03T06:58:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "1fda92447bf9259b",
+      "status": "rejected",
+      "created_at": "2026-06-03T01:46:56+00:00",
+      "created_at_sakhalin": "2026-06-03T12:46:56+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Рефакторинг и реинжиниринг легаси. Погружаемся глубже",
+      "title_ru": "Рефакторинг и реинжиниринг легаси. Погружаемся глубже",
+      "body": [
+        "Это продолжение статьи Рефакторинг и реинжиниринг легаси Преамбула Долгоживущие системы почти никогда нельзя просто заменить целиком.",
+        "Это слишком дорого и слишком рискованно: у них уже есть...",
+        "Долгоживущие системы нельзя просто взять и заменить, это дорого."
+      ],
+      "footer": null,
+      "source_text": "Это продолжение статьи Рефакторинг и реинжиниринг легаси Преамбула Долгоживущие системы почти никогда нельзя просто заменить целиком. Это слишком дорого и слишком рискованно: у них уже есть... Долгоживущие системы нельзя просто взять и заменить, это дорого. Переезд может оказать дороже новой системы. Поэтому на практике такие системы рефакторят кусочно, по частям. Но для этого мало сохранить код или даже внешнее поведение. Нужно сохранить связь кода с целью и ограничениями системы, с намерениями при ее создании. Эта связь должна переживать смену разработчика. Если она живёт только в головах, каждое серьёзное изменение снова начинается с археологии. В этой части статьи Археология. Нужно восстановить, как система реально работает, что в ней было задумано, какие ограничения спрятаны в ней или во внешней среде. Обеспечение соответствия старому поведению. Пока новая реализация не доказала, что ведёт себя так же, любое изменение рискованно. Требуется повторить даже то, что вы не обещали (Закон Хайрама) Читать далее Это продолжение статьи Рефакторинг и реинжиниринг легаси Долгоживущие системы почти никогда нельзя просто заменить целиком. Это слишком дорого и слишком рискованно: у них уже есть интеграции, пользовательские привычки, отчёты, ручные обходные процессы, внешние контракты и эксплуатационные ограничения. Поэтому на практике такие системы переписывают по частям. Но для этого мало сохранить код или даже внешнее поведение. Нужно сохранить связь между целью системы, её ограничениями и конкретной реализацией . Эта связь должна переживать смену разработчика. Если она живёт только в головах, каждое серьёзное изменение снова начинается с археологии. Когда говорят “переписываем легаси”, звучит так, будто речь об одной большой инженерной задаче. На практике это четыре разные де",
+      "post_text": "🌐 Мировые IT\n\n<b>Рефакторинг и реинжиниринг легаси. Погружаемся глубже</b>\n\nЭто продолжение статьи Рефакторинг и реинжиниринг легаси Преамбула Долгоживущие системы почти никогда нельзя просто заменить целиком.\n\nЭто слишком дорого и слишком рискованно: у них уже есть...\n\nДолгоживущие системы нельзя просто взять и заменить, это дорого.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042688/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042688#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042688/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042688#habracut",
+      "published_at": "2026-06-02T20:18:48+00:00",
+      "title_hash": "1f6d9c6067bcb196b7baa11533ea919130a198d8",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/890/f4f/59a/890f4f59aad9b9c21f5523fea3984c9e.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-03T06:58:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "672fb5f4da94a668",
+      "status": "rejected",
+      "created_at": "2026-06-03T01:46:56+00:00",
+      "created_at_sakhalin": "2026-06-03T12:46:56+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Мой опыт с ИИ в России глазами европейца",
+      "title_ru": "Мой опыт с ИИ в России глазами европейца",
+      "body": [
+        "Это история о том, как я собрал полностью локальную ИИ-среду разработки (и почему вам стоит сделать то же самое).",
+        "Переезд из Евросоюза в Москву казался большим приключением — ровно до того момента,...",
+        "Это история о том, как я собрал полностью локальную ИИ-среду разработки (и почему вам стоит сделать то же самое)."
+      ],
+      "footer": null,
+      "source_text": "Это история о том, как я собрал полностью локальную ИИ-среду разработки (и почему вам стоит сделать то же самое). Переезд из Евросоюза в Москву казался большим приключением — ровно до того момента,... Это история о том, как я собрал полностью локальную ИИ-среду разработки (и почему вам стоит сделать то же самое). Переезд из Евросоюза в Москву казался большим приключением — ровно до того момента, как я открыл ноутбук и попытался работать. Я обычный пользователь экосистемы GCP. Ничего сверхъестественного: обычное API Gemini, Vertex AI Studio, Antigravity, иногда Claude и так далее. У меня было три корпоративных заказчика, ждущих кастомные ИИ-решения, куча личных проектов и слепая уверенность, что «всё само собой заработает». Как вы уже догадались — не заработало. С 15 апреля 2026 года Россия не просто заблокировала VPN — их научились вылавливать с пугающей эффективностью. Речь о 99% мгновенной смертности коммерческих VPN, как только ваше устройство подключается к сети. Продвинутые кастомные VPS-связки, судя по некоторым Telegram-каналам, работают — но только если вы настроили их до прилёта. И тут началась паническая мысль: «И как же плохо всё может быть?» Читать далее",
+      "post_text": "🌐 Мировые IT\n\n<b>Мой опыт с ИИ в России глазами европейца</b>\n\nЭто история о том, как я собрал полностью локальную ИИ-среду разработки (и почему вам стоит сделать то же самое).\n\nПереезд из Евросоюза в Москву казался большим приключением — ровно до того момента,...\n\nЭто история о том, как я собрал полностью локальную ИИ-среду разработки (и почему вам стоит сделать то же самое).\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042910/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042910#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042910/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042910#habracut",
+      "published_at": "2026-06-02T19:59:02+00:00",
+      "title_hash": "60ace0cb2bf516b5895c9cb5fc3b709cfcb03b85",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/e3d/5aa/a6c/e3d5aaa6cbe7e5a3bcaa4fbf3ef911c4.jpeg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-03T06:58:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "9d85dd7dfa5a7bc1",
+      "status": "rejected",
+      "created_at": "2026-06-03T01:46:56+00:00",
+      "created_at_sakhalin": "2026-06-03T12:46:56+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Как сознание вернулось в науку и почему физика больше не может его игнорировать",
+      "title_ru": "Как сознание вернулось в науку и почему физика больше не может его игнорировать",
+      "body": [
+        "Долгое время в фундаментальной науке существовало негласное правило: если вы хотите сохранить репутацию серьезного ученого, не говорите о сознании.",
+        "На протяжении почти всего XX века исследование...",
+        "Долгое время в фундаментальной науке существовало негласное правило: если вы хотите сохранить репутацию серьезного ученого, не говорите о сознании."
+      ],
+      "footer": null,
+      "source_text": "Долгое время в фундаментальной науке существовало негласное правило: если вы хотите сохранить репутацию серьезного ученого, не говорите о сознании. На протяжении почти всего XX века исследование... Долгое время в фундаментальной науке существовало негласное правило: если вы хотите сохранить репутацию серьезного ученого, не говорите о сознании. На протяжении почти всего XX века исследование субъективного опыта считалось прерогативой философов, мистиков или, в лучшем случае, психоаналитиков. Физики, химики и биологи строили строгую, объективную картину мира, где были кварки, молекулы, клетки и тектонические плиты. Сознание в эту схему не помещалось, поэтому его просто вынесли за скобки, объявив чем-то вроде \"шума в системе\" или побочного продукта работы нейронов - эпифеномена, который ни на что не влияет. Но в этой позиции всегда крылось странное логическое противоречие. Сознание - это такая же часть наблюдаемой реальности, как звезды, океаны или атомы. Более того, сознание - это единственный инструмент, с помощью которого мы вообще знаем о существовании звезд и атомов. Игнорировать его в попытке построить \"полную теорию всего\" - все равно что пытаться составить карту Земли, принципиально отказываясь признавать существование океанов. Сегодня этот лед тронулся. Научный дискурс медленно, но верно возвращает сознанию его законный статус главного вызова современной науки. Причем толчок пришел оттуда, откуда его ждали меньше всего - из фундаментальной физики. Читать далее Долгое время в фундаментальной науке существовало негласное правило: если вы хотите сохранить репутацию серьезного ученого, не говорите о сознании. На протяжении почти всего XX века исследование субъективного опыта считалось прерогативой философов, мистиков или, в лучшем случае, психоаналитиков. Физики, химик",
+      "post_text": "🌐 Мировые IT\n\n<b>Как сознание вернулось в науку и почему физика больше не может его игнорировать</b>\n\nДолгое время в фундаментальной науке существовало негласное правило: если вы хотите сохранить репутацию серьезного ученого, не говорите о сознании.\n\nНа протяжении почти всего XX века исследование...\n\nДолгое время в фундаментальной науке существовало негласное правило: если вы хотите сохранить репутацию серьезного ученого, не говорите о сознании.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042906/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042906#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042906/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042906#habracut",
+      "published_at": "2026-06-02T19:44:07+00:00",
+      "title_hash": "423b36ca7dc75e09e2ed37f5f822c266cf93fe59",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/d32/121/327/d32121327ef8d5d25533e7e5e9252701.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-03T06:58:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "e9fdb33c9ead851c",
+      "status": "rejected",
+      "created_at": "2026-06-03T01:46:56+00:00",
+      "created_at_sakhalin": "2026-06-03T12:46:56+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Как добавить кнопку «Спроси о нас у ИИ» (Яндекс Алиса, ChatGPT, Claude и другие)",
+      "title_ru": "Как добавить кнопку «Спроси о нас у ИИ» (Яндекс Алиса, ChatGPT, Claude и другие)",
+      "body": [
+        "Потенциальные клиенты все чаще проверяет вас в AI-поисках типа Perplexity, Яндекс Алиса, ChatGPT и т.д.",
+        "За последний год доля поиска информации через Яндекс Алису, ChatGPT, Perplexity и выросла в...",
+        "Новый тренд для сайтов - кнопка «Спросите ИИ о нас»."
+      ],
+      "footer": null,
+      "source_text": "Потенциальные клиенты все чаще проверяет вас в AI-поисках типа Perplexity, Яндекс Алиса, ChatGPT и т.д. За последний год доля поиска информации через Яндекс Алису, ChatGPT, Perplexity и выросла в... Новый тренд для сайтов - кнопка «Спросите ИИ о нас». Такие кнопки открывают Яндекс Алису, ChatGPT, Perplexity или другие ИИ-поисковики с заранее подготовленным запросом, помогая потенциальным клиентам быстрее разобраться в вашем продукте. В этой статье я расскажу как добавить такую кнопку на свой сайт. Читать далее Потенциальные клиенты все чаще проверяет вас в AI-поисках типа Perplexity, Яндекс Алиса, ChatGPT и т.д. За последний год доля поиска информации через Яндекс Алису, ChatGPT, Perplexity и выросла в разы. И если ваш сервис там не упоминается или говорят о вас плохо - это потерянный клиент. Но есть решение: прямые кнопки на вашем сайте, которые открывают уже готовый поисковый запрос в Яндекс Алисе, ChatGPT, Claude, Perplexity и других ИИ-поисковиках. Пользователь в один клик может спросить AI: «Что это за сервис? Он надёжный? Стоит ли его использовать?» А вы берёте поиск под контроль.",
+      "post_text": "🌐 Мировые IT\n\n<b>Как добавить кнопку «Спроси о нас у ИИ» (Яндекс Алиса, ChatGPT, Claude и другие)</b>\n\nПотенциальные клиенты все чаще проверяет вас в AI-поисках типа Perplexity, Яндекс Алиса, ChatGPT и т.д.\n\nЗа последний год доля поиска информации через Яндекс Алису, ChatGPT, Perplexity и выросла в...\n\nНовый тренд для сайтов - кнопка «Спросите ИИ о нас».\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1042876/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042876#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1042876/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042876#habracut",
+      "published_at": "2026-06-02T18:08:58+00:00",
+      "title_hash": "ca59d77e1892c3c967c09b139167f1afb7432407",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/64d/c20/f0e/64dc20f0ebcb4074fbb94a3a10d014a0.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-03T06:58:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "664c7d567ccce86d",
+      "status": "rejected",
+      "created_at": "2026-06-03T01:46:56+00:00",
+      "created_at_sakhalin": "2026-06-03T12:46:56+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "Контракты данных между командами: гайд по data contracts в дата‑пайплайнах",
+      "title_ru": "Контракты данных между командами: гайд по data contracts в дата‑пайплайнах",
+      "body": [
+        "Утром заходим в дашборд выручки и видим нули по половине регионов.",
+        "Пайплайн в Airflow отработал, тесты dbt test зелёные, в Sentry тишина.",
+        "Через двадцать минут разборок выясняется..."
+      ],
+      "footer": null,
+      "source_text": "Утром заходим в дашборд выручки и видим нули по половине регионов. Пайплайн в Airflow отработал, тесты dbt test зелёные, в Sentry тишина. Через двадцать минут разборок выясняется... Когда пайплайн отработал без ошибок, тесты зелёные, а в дашборде внезапно нули, проблема может быть не в инфраструктуре, а в отсутствии договорённостей между командами. В статье разбираем, как data contracts помогают фиксировать структуру, правила и ответственность за данные — и почему это спасает витрины, отчёты и нервы дата-инженеров. Читать далее Утром заходим в дашборд выручки и видим нули по половине регионов. Пайплайн в Airflow отработал, тесты dbt test зелёные, в Sentry тишина. Через двадцать минут разборок выясняется простая вещь: бэкенд‑команда вчера выкатила релиз и поменяла значение order_status с awaiting_payment на pending_payment в API заказов. Схема таблицы не изменилась, тип поля тот же string , nullable тот же false . Изменился набор значений — и фильтр WHERE order_status = 'awaiting_payment' в витрине стал возвращать пустоту. История, знакомая любой компании, где данные текут от продуктовых команд в общее хранилище. На один такой инцидент уходит полдня: найти причину, написать в Slack, согласовать фикс, обновить витрину, перезалить вчерашние данные. Через месяц повторяется на другой команде, через два — на третьей. К концу года дата‑инженеры тратят значимую долю времени на разбор «почему опять сломалось», а доверие бизнеса к аналитике падает быстрее, чем растут зарплаты. Контракт данных — формальный способ договориться о структуре и поведении датасета между командой‑продюсером и командами‑консьюмерами. Разберём, как такой контракт устроен внутри, что в нём должно быть и как встроить его в существующий пайплайн без переписывания всей инфраструктуры. Контракт — это YAML или J",
+      "post_text": "🌐 Мировые IT\n\n<b>Контракты данных между командами: гайд по data contracts в дата‑пайплайнах</b>\n\nУтром заходим в дашборд выручки и видим нули по половине регионов.\n\nПайплайн в Airflow отработал, тесты dbt test зелёные, в Sentry тишина.\n\nЧерез двадцать минут разборок выясняется...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/otus/articles/1042140/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042140#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/otus/articles/1042140/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042140#habracut",
+      "published_at": "2026-06-02T17:50:03+00:00",
+      "title_hash": "75eb8132069bb35b264a6ff8c8b3052e67855ec6",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/46c/1e3/51b/46c1e351b9224de1f4f3da1656289ddf.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-03T06:58:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "daa4fdb886fc6a55",
+      "status": "rejected",
+      "created_at": "2026-06-03T06:58:31+00:00",
+      "created_at_sakhalin": "2026-06-03T17:58:31+11:00",
+      "source": "BBC Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 730,
+      "title_original": "UK publishers allowed to opt out of Google AI search results",
+      "title_ru": "UK publishers allowed to opt out of Google AI search results",
+      "body": [
+        "The Competition and Markets Authority says it would put publishers \"in a stronger position to negotiate content deals with Google\".",
+        "The Competition and Markets Authority says it would put publishers \"in a stronger position to negotiate content deals with Google\".",
+        "The competition regulator said this would \"put publishers, like news organisations, in a stronger position to negotiate content deals with Google\"."
+      ],
+      "footer": null,
+      "source_text": "The Competition and Markets Authority says it would put publishers \"in a stronger position to negotiate content deals with Google\". The Competition and Markets Authority says it would put publishers \"in a stronger position to negotiate content deals with Google\". The competition regulator said this would \"put publishers, like news organisations, in a stronger position to negotiate content deals with Google\". Many websites have complained that they have seen a large drop in traffic since Google started placing AI summaries at the top of its search results page . The CMA also said Google must properly attribute publishers' content which appears in its AI search results, with clear links to their sites. Google has been approached for comment. \"It is crucial that content publishers, including news organisations, have appropriate bargaining power over how their content is used,\" said CMA Chief Executive Sarah Cardell.",
+      "post_text": "🌐 Мировые IT\n\n<b>UK publishers allowed to opt out of Google AI search results</b>\n\nThe Competition and Markets Authority says it would put publishers \"in a stronger position to negotiate content deals with Google\".\n\nThe Competition and Markets Authority says it would put publishers \"in a stronger position to negotiate content deals with Google\".\n\nThe competition regulator said this would \"put publishers, like news organisations, in a stronger position to negotiate content deals with Google\".\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/c775pp26yz5o?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/c775pp26yz5o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-03T05:18:00+00:00",
+      "title_hash": "99ffa0571ce4e1ba214920a8e09daa71239c18fe",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/f805/live/92789b10-5e9d-11f1-be30-5d712cf191bd.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "drop",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: скидка/товарный материал, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-03T06:58:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 650
+    },
+    {
+      "id": "13b2360f026aa0a7",
+      "status": "rejected",
+      "created_at": "2026-06-03T06:58:31+00:00",
+      "created_at_sakhalin": "2026-06-03T17:58:31+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🇷🇺 РФ / экономика",
+      "category_hint": "🌐 Мировые IT",
+      "score": 760,
+      "title_original": "Пока все воюют на маркетплесах, я собрал сайт нейросетью, и он сам продал на 2,5 млн",
+      "title_ru": "Пока все воюют на маркетплесах, я собрал сайт нейросетью, и он сам продал на 2,5 млн",
+      "body": [
+        "Статья написана на основе интервью с Дмитрием Покатаевым, основателем мебельного производства «Столетти» и интернет-магазина «Скелетт».",
+        "Я больше двадцати лет делаю мебель в Екатеринбурге....",
+        "Статья написана на основе интервью с Дмитрием Покатаевым, основателем мебельного производства «Столетти» и интернет-магазина «Скелетт»."
+      ],
+      "footer": null,
+      "source_text": "Статья написана на основе интервью с Дмитрием Покатаевым, основателем мебельного производства «Столетти» и интернет-магазина «Скелетт». Я больше двадцати лет делаю мебель в Екатеринбурге.... Статья написана на основе интервью с Дмитрием Покатаевым, основателем мебельного производства «Столетти» и интернет-магазина «Скелетт». Я больше двадцати лет делаю мебель в Екатеринбурге. Привык, что клиенты приходят в наш салон ножками, с рулеткой, с вопросами, с мужьями. А с конца 2024 года ко мне начали приходить заказы из городов, в которых я никогда не был: Алматы, Владивосток, Чебоксары, Ростов-на-Дону, Новокузнецк. Этих людей я в глаза не видел: они оставляют заявку на сайте, оплачивают, и через несколько недель присылают мне фотографию готовой ванной или прихожей у себя дома. Производство у меня небольшое, четыре человека в цеху. Делаем кухни, ванные, прихожие, гардеробные, любую корпусную мебель для жилья. Основное направление — обстановка квартир под дизайн-проекты, по 3-4 полных проекта в год плюс частичные заказы. Параллельно я запустили совсем новое направление: интернет-магазин типовой мебели в плоской упаковке. Бренд назвали «Скелетт», от русского слова, основа, каркас. За полтора года работы направление принесло около 2,5 миллиона рублей при среднем чеке 48 тысяч. Запустили без новых сотрудников и без выхода на маркетплейс. Расскажу, как мы к этому пришли. Читать далее",
+      "post_text": "🌐 Мировые IT\n\n<b>Пока все воюют на маркетплесах, я собрал сайт нейросетью, и он сам продал на 2,5 млн</b>\n\nСтатья написана на основе интервью с Дмитрием Покатаевым, основателем мебельного производства «Столетти» и интернет-магазина «Скелетт».\n\nЯ больше двадцати лет делаю мебель в Екатеринбурге....\n\nСтатья написана на основе интервью с Дмитрием Покатаевым, основателем мебельного производства «Столетти» и интернет-магазина «Скелетт».\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/moysklad/articles/1042736/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1042736#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/moysklad/articles/1042736/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1042736#habracut",
+      "published_at": "2026-06-03T06:48:23+00:00",
+      "title_hash": "ba2ec650ffaf6555e1a14257ac650a41d2f6f9d5",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/2c8/c30/f1f/2c8c30f1f77d8460d2b97aab72210289.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved.",
+        "Отклонено автоматически: обучающая/колоночная статья, не новость."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      },
+      "reviewed_at": "2026-06-03T06:58:31+00:00",
+      "reviewed_by": "auto-editor-v7-local-cleaner",
+      "stream_priority": 760
     },
     {
       "id": "ec44a45aa73888ea",
@@ -9603,28 +10044,28 @@
       "🌐 Мировые IT": 650,
       "🎮 Игры / индустрия": 600
     },
-    "reviewed_pending": 11,
+    "reviewed_pending": 18,
     "approved": 0,
     "approve_limit": 2,
     "min_auto_score": 600,
     "openrouter_enabled": false,
-    "reviewed_at": "2026-06-03T01:43:47+00:00",
-    "reviewed_at_sakhalin": "2026-06-03T12:43:47+11:00"
+    "reviewed_at": "2026-06-03T06:58:32+00:00",
+    "reviewed_at_sakhalin": "2026-06-03T17:58:32+11:00"
   },
   "final_guard": {
     "version": 3,
     "changed": 0,
     "polished": 0,
-    "checked_at": "2026-06-03T01:44:08+00:00",
-    "checked_at_sakhalin": "2026-06-03T12:44:08+11:00"
+    "checked_at": "2026-06-03T06:58:32+00:00",
+    "checked_at_sakhalin": "2026-06-03T17:58:32+11:00"
   },
   "priority_guard": {
     "version": 3,
     "changed": 0,
     "airport_changed": 0,
     "security_changed": 0,
-    "checked_at": "2026-06-03T01:43:48+00:00",
-    "checked_at_sakhalin": "2026-06-03T12:43:48+11:00"
+    "checked_at": "2026-06-03T06:58:32+00:00",
+    "checked_at_sakhalin": "2026-06-03T17:58:32+11:00"
   },
   "cycle_report": {
     "reported_at": "2026-06-03T01:44:03+00:00",
@@ -9717,10 +10158,10 @@
   },
   "scope_guard": {
     "version": 3,
-    "checked": 9,
+    "checked": 10,
     "rejected": 0,
-    "checked_at": "2026-06-03T01:43:47+00:00",
-    "checked_at_sakhalin": "2026-06-03T12:43:47+11:00",
+    "checked_at": "2026-06-03T06:58:32+00:00",
+    "checked_at_sakhalin": "2026-06-03T17:58:32+11:00",
     "policy": "block foreign ECB/Greece macro commentary, low-value Habr/retro/essay posts, minor quakes without impact, and weak foreign geopolitics"
   }
 }
