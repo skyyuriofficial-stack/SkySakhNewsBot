@@ -1,10 +1,305 @@
 {
   "version": 1,
-  "updated_at": "2026-06-04T06:55:04+00:00",
-  "updated_at_sakhalin": "2026-06-04T17:55:04+11:00",
+  "updated_at": "2026-06-04T06:58:51+00:00",
+  "updated_at_sakhalin": "2026-06-04T17:58:51+11:00",
   "reviewed_at": "2026-06-04T06:48:25+00:00",
   "reviewed_at_sakhalin": "2026-06-04T17:48:25+11:00",
   "items": [
+    {
+      "id": "427350656ea9bcab",
+      "status": "pending",
+      "created_at": "2026-06-04T06:55:04+00:00",
+      "created_at_sakhalin": "2026-06-04T17:55:04+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Внедряем BX.UI.AccessRights.V2: современный интерфейс прав доступа Битрикс24 для своего компонента",
+      "title_ru": "Внедряем BX.UI.AccessRights.V2: современный интерфейс прав доступа Битрикс24 для своего компонента",
+      "body": [
+        "Впроцессе кастомизации коробочной CRM Битрикс24 часто клиенты просят внедрить им права доступа.",
+        "Захотелось внедрить с интерфейсом, как это выглядит в Задачах или Сделках....",
+        "В процессе кастомизации коробочной CRM Битрикс24 часто клиенты просят внедрить им права доступа."
+      ],
+      "footer": null,
+      "source_text": "Впроцессе кастомизации коробочной CRM Битрикс24 часто клиенты просят внедрить им права доступа. Захотелось внедрить с интерфейсом, как это выглядит в Задачах или Сделках.... В процессе кастомизации коробочной CRM Битрикс24 часто клиенты просят внедрить им права доступа. Захотелось внедрить с интерфейсом, как это выглядит в Задачах или Сделках. Изучил документацию — там всё изложено лишь в общем виде, пришлось анализировать исходники, сжечь несколько миллионов токенов различных нейронок, и даже после этого вникать в нюансы и дебажить код. В статье подробно разбираются нюансы архитектуры компонента BX.UI.AccessRights.V2, подводные камни при внедрении в свой модуль (готовый репозиторий прилагается). Читать далее Впроцессе кастомизации коробочной CRM Битрикс24 часто клиенты просят внедрить им права доступа. Захотелось внедрить с интерфейсом, как это выглядит в Задачах или Сделках. Изучил документацию — там всё изложено лишь в общем виде, пришлось анализировать исходники, сжечь несколько миллионов токенов различных нейронок, и даже после этого вникать в нюансы и дебажить код. Мне всегда легче понять, как что‑то работает, когда, кроме сухой справки, есть живой пример, который можно пощупать. Поэтому был написан демо‑модуль, который сам сгенерирует некоторый список «План продаж» со статусами и разными ответственными. Да, пример несколько надуманный, однако позволяющий наглядно показать различные возможности UI компонента. Не хочется читать статью дальше, а скорее запустить у себя, пожалуйста: ссылка на GitHub В документации есть пример компонента BX.UI.AccessRights, попробовали его — вывелось окно настройки прав, как в Задачах. Однако оно уже устарело и в сделках мы видим более новую версию данного компонента, документации по которому нет.",
+      "post_text": "🌐 Мировые IT\n\n<b>Внедряем BX.UI.AccessRights.V2: современный интерфейс прав доступа Битрикс24 для своего компонента</b>\n\nВпроцессе кастомизации коробочной CRM Битрикс24 часто клиенты просят внедрить им права доступа.\n\nЗахотелось внедрить с интерфейсом, как это выглядит в Задачах или Сделках....\n\nВ процессе кастомизации коробочной CRM Битрикс24 часто клиенты просят внедрить им права доступа.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1043436/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1043436#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1043436/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1043436#habracut",
+      "published_at": "2026-06-04T06:49:35+00:00",
+      "title_hash": "e13fb6082e99d58c01f405d4bcc0e5e004bb5828",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/0e7/12e/757/0e712e757c91301234db2de7cebf0ddf.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "f55f7df09d472fd6",
+      "status": "pending",
+      "created_at": "2026-06-04T06:55:04+00:00",
+      "created_at_sakhalin": "2026-06-04T17:55:04+11:00",
+      "source": "BBC Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 258,
+      "title_original": "Microsoft working on wearable AI gadget aimed at office workers",
+      "title_ru": "Microsoft working on wearable AI gadget aimed at office workers",
+      "body": [
+        "The company said its own workers are testing a \"wearable access badge\" and a desktop device.",
+        "The company said its own workers are testing a \"wearable access badge\" and a desktop device.",
+        "The company unveiled two concept products it has developed for people who often use AI tools in their work during its yearly conference for technology developers."
+      ],
+      "footer": null,
+      "source_text": "The company said its own workers are testing a \"wearable access badge\" and a desktop device. The company said its own workers are testing a \"wearable access badge\" and a desktop device. The company unveiled two concept products it has developed for people who often use AI tools in their work during its yearly conference for technology developers. One device is a small portable cube with a touch and voice-activated screen, meant for a desk. The other was \"a wearable access badge,\" Microsoft executive Steven Bathiche said, to hang around the neck or on a belt loop, giving quick access to AI-driven work. Microsoft, which did not say when it would bring either of the devices to market, said current pilots \"will inform how these form factors can be built\" in the future. Satya Nadella, Microsoft chief executive, said such gadgets represented a \"new form factor\" for technology devices.",
+      "post_text": "🌐 Мировые IT\n\n<b>Microsoft working on wearable AI gadget aimed at office workers</b>\n\nThe company said its own workers are testing a \"wearable access badge\" and a desktop device.\n\nThe company said its own workers are testing a \"wearable access badge\" and a desktop device.\n\nThe company unveiled two concept products it has developed for people who often use AI tools in their work during its yearly conference for technology developers.\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/cwy25x97wrxo?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/cwy25x97wrxo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-02T21:47:42+00:00",
+      "title_hash": "64098951625d78fc3e3d7b4d83b100829bb02e96",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/f1a4/live/e0ba4220-5ec4-11f1-b588-45cc931ea6f1.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "c478297c42b495ee",
+      "status": "pending",
+      "created_at": "2026-06-04T06:55:04+00:00",
+      "created_at_sakhalin": "2026-06-04T17:55:04+11:00",
+      "source": "BBC Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 258,
+      "title_original": "Microsoft claims new quantum chip 1,000 times better than before",
+      "title_ru": "Microsoft claims new quantum chip 1,000 times better than before",
+      "body": [
+        "The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.",
+        "The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.",
+        "At the heart of quantum computing are qubits, which offer the promise of answering questions that defeat today's machines, but are notoriously delicate and unstable."
+      ],
+      "footer": null,
+      "source_text": "The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade. The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade. At the heart of quantum computing are qubits, which offer the promise of answering questions that defeat today's machines, but are notoriously delicate and unstable. Microsoft says the qubits on Majorana 2, its new chip, survive for an average of 20 seconds, rather than the milliseconds of Majorana 1. That means the new chip is 1,000 times more reliable - an improvement in performance the tech giant compares to the difference between a phone that needs charging every day to one which needs charging every few years. \"We will have a quantum machine in 2029 that can solve commercially viable, reasonable problems\", said Zulfi Alam, corporate vice president of Microsoft Quantum.",
+      "post_text": "🌐 Мировые IT\n\n<b>Microsoft claims new quantum chip 1,000 times better than before</b>\n\nThe tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.\n\nThe tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.\n\nAt the heart of quantum computing are qubits, which offer the promise of answering questions that defeat today's machines, but are notoriously delicate and unstable.\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/cj4p7gyvp52o?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/cj4p7gyvp52o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-02T19:24:31+00:00",
+      "title_hash": "6f18942ad36d2a472d7e65c04431a0171df1d684",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/823e/live/9bf6bfd0-5e9a-11f1-95ff-f5086c3b3d40.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "5df6e531c916bc6e",
+      "status": "pending",
+      "created_at": "2026-06-04T06:55:04+00:00",
+      "created_at_sakhalin": "2026-06-04T17:55:04+11:00",
+      "source": "BBC Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 243,
+      "title_original": "Tech Life - Microsoft's big quantum bet - BBC Sounds",
+      "title_ru": "Tech Life - Microsoft's big quantum bet - BBC Sounds",
+      "body": [
+        "The tech company announces its new Majorana 2 chip.",
+        "The tech company announces its new Majorana 2 chip.",
+        "Homepage Accessibility links Skip to content Accessibility Help BBC Account Notifications Home News Sport Weather iPlayer Sounds Bitesize CBeebies CBBC Food Home News Sport Business Technology Health Culture Arts Travel Earth Audio Video Live More menu Search Sounds Home News Sport Weather iPlayer Sounds Bitesize CBeebies CBBC Food Home News Sport Business Technology Health Culture Arts Travel Earth Audio Video Live "
+      ],
+      "footer": null,
+      "source_text": "The tech company announces its new Majorana 2 chip. The tech company announces its new Majorana 2 chip. Homepage Accessibility links Skip to content Accessibility Help BBC Account Notifications Home News Sport Weather iPlayer Sounds Bitesize CBeebies CBBC Food Home News Sport Business Technology Health Culture Arts Travel Earth Audio Video Live More menu Search Sounds Home News Sport Weather iPlayer Sounds Bitesize CBeebies CBBC Food Home News Sport Business Technology Health Culture Arts Travel Earth Audio Video Live Close menu BBC Sounds Sounds home page Menu Home Music Podcasts My Sounds Use BBC.com or the new BBC App to listen to BBC podcasts, Radio 4 and the World Service outside the UK. Play Bookmark Bookmark Subscribe Subscribe Available for over a year Microsoft unveils a new quantum chip. It's a big moment for the company, as its quantum programme has faced criticism. Is the tech giant's strategy finally paying off? And when will this chip deliver practical quantum computing? The BBC's Technology Editor, Zoe Kleinman, interviews Microsoft's executive vice president for quantum. Also this week: what new tech can soccer fans expect at the World Cup? Shiona McCallum reports from FIFA headquarters in Switzerland. And a leading critic of AI hype returns to Tech Life. Presenter: Chris Vallance Producer: Tom Quinn (Photo: A hand is seen holding the new Majorana 2 quantum chip from Microsoft. The chip is gold-coloured. It is so large that it is the same size as the hand. Credit: Microsoft)",
+      "post_text": "🌐 Мировые IT\n\n<b>Tech Life - Microsoft's big quantum bet - BBC Sounds</b>\n\nThe tech company announces its new Majorana 2 chip.\n\nThe tech company announces its new Majorana 2 chip.\n\nHomepage Accessibility links Skip to content Accessibility Help BBC Account Notifications Home News Sport Weather iPlayer Sounds Bitesize CBeebies CBBC Food Home News Sport Business Technology Health Culture Arts Travel Earth Audio Video Live More menu Search Sounds Home News Sport Weather iPlayer Sounds Bitesize CBeebies CBBC Food Home News Sport Business Technology Health Culture Arts Travel Earth Audio Video Live \n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.co.uk/sounds/play/w3ct8jxy?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.co.uk/sounds/play/w3ct8jxy?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-02T19:30:00+00:00",
+      "title_hash": "61c0f95bc3ea304182a1f8ce80f9cea7c40758d9",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "d3cd7669dd3294bd",
+      "status": "pending",
+      "created_at": "2026-06-04T06:55:04+00:00",
+      "created_at_sakhalin": "2026-06-04T17:55:04+11:00",
+      "source": "Guardian Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 233,
+      "title_original": "The Gentle Singularity",
+      "title_ru": "The Gentle Singularity",
+      "body": [
+        "We are past the event horizon; the takeoff has started.",
+        "Humanity is close to building digital superintelligence, and at least so far it’s much less weird than it seems like it should be.",
+        "With rivals racing to market to raise ‘eye-popping sums’, the spotlight is now on the AI sector’s one-time ‘poster child’ A year is a long time in AI."
+      ],
+      "footer": null,
+      "source_text": "We are past the event horizon; the takeoff has started. Humanity is close to building digital superintelligence, and at least so far it’s much less weird than it seems like it should be. Robots... With rivals racing to market to raise ‘eye-popping sums’, the spotlight is now on the AI sector’s one-time ‘poster child’ A year is a long time in AI. Just 12 months ago, Sam Altman was predicting his company OpenAI would build a super intelligence and fundamentally remake society. Now the boss of the ChatGPT developer is walking back those ideas after failing to make money from ads and erotic chatbots. Meanwhile, rivals are storming ahead with plans to expand and go public on the stock market, in what is widely expected to be a season of record-setting initial public offerings (IPOs). Continue reading...",
+      "post_text": "🌐 Мировые IT\n\n<b>The Gentle Singularity</b>\n\nWe are past the event horizon; the takeoff has started.\n\nHumanity is close to building digital superintelligence, and at least so far it’s much less weird than it seems like it should be.\n\nWith rivals racing to market to raise ‘eye-popping sums’, the spotlight is now on the AI sector’s one-time ‘poster child’ A year is a long time in AI.\n\nМИРОВЫЕ IT · <a href=\"https://blog.samaltman.com/the-gentle-singularity\">Guardian Technology</a>",
+      "edited_post_text": null,
+      "url": "https://blog.samaltman.com/the-gentle-singularity",
+      "published_at": "2026-06-03T10:38:09+00:00",
+      "title_hash": "6596ca6c64b58f6b26ccf435cc7f3c35d0881106",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "03f31e089383e9e1",
+      "status": "pending",
+      "created_at": "2026-06-04T06:55:04+00:00",
+      "created_at_sakhalin": "2026-06-04T17:55:04+11:00",
+      "source": "Guardian Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 233,
+      "title_original": "Sign in - Google Accounts",
+      "title_ru": "Sign in - Google Accounts",
+      "body": [
+        "While many US city councils have passed moratoriums, Monterey Park is first where residents have voted on a ban Sign up for the Breaking News US newsletter email Residents in Monterey Park, California , became the first in the US to vote on a permanent ban on datacenters on Tuesday, and early results indicate a resounding victory for the prohibition.",
+        "While many cities and counties have already passed temporary or indefinite moratoriums via their local governments, Monterey Park would be the first to do so through a ballot initiative."
+      ],
+      "footer": null,
+      "source_text": "While many US city councils have passed moratoriums, Monterey Park is first where residents have voted on a ban Sign up for the Breaking News US newsletter email Residents in Monterey Park, California , became the first in the US to vote on a permanent ban on datacenters on Tuesday, and early results indicate a resounding victory for the prohibition. While many cities and counties have already passed temporary or indefinite moratoriums via their local governments, Monterey Park would be the first to do so through a ballot initiative. Continue reading...",
+      "post_text": "🌐 Мировые IT\n\n<b>Sign in - Google Accounts</b>\n\nWhile many US city councils have passed moratoriums, Monterey Park is first where residents have voted on a ban Sign up for the Breaking News US newsletter email Residents in Monterey Park, California , became the first in the US to vote on a permanent ban on datacenters on Tuesday, and early results indicate a resounding victory for the prohibition.\n\nWhile many cities and counties have already passed temporary or indefinite moratoriums via their local governments, Monterey Park would be the first to do so through a ballot initiative.\n\nМИРОВЫЕ IT · <a href=\"https://accounts.google.com/v3/signin/identifier?opparams=%253Fhd%253Dguardian.co.uk&amp;dsh=S-450888403%3A1780556007810394&amp;client_id=778291736053-qahejj5v10o0dskvg2aereaqe1gqq24q.apps.googleusercontent.com&amp;hd=guardian.co.uk&amp;o2v=2&amp;redirect_uri=https%3A%2F%2Fviewer.gutools.co.uk%2FoauthCallback&amp;response_type=code&amp;scope=openid+email+profile&amp;service=lso&amp;state=u37eukgi9spbfesl8j7me2ucm2&amp;flowName=GeneralOAuthLite&amp;continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Flegacy%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAPAcdukIFTadODRIZ5FEyNZaZxu8a2wF_owm6X6fFLrjmfXjFothCJpqgE7y0q4EgA9iZc2er9eB9m_Sxy0v0dpJZTcvUdjjtw_NWW9Tauk92tfig6MQ2MFzt_EjH3b2U1K1n-D8patWmWgshRnyoG9sgqJXROYnCoYrwhAKN7S3rlaYfYXwHkxahDI0cL_h9NDsqFazG8T0pCcGriVo9n6IUTnvGZK0v7jGQluMyInEJ4JSWLSNOWFEJs4qUIJLIq3ctKiF4K7MvaFGJj6vZTRueE3zJFWPlDaEJ4zzbzSLp9qWjKzT0WbyyvywmaBI2mrX7ZVRvkDyYzuDYGEwpXa0HyK2QJEdxgIQn8j1Ilr_LDnA8csoeJUXFyh34umMINI8cL6rL1s8BlodDomC1FW8_0YfQC66Utp9Lo9vla-O_GBcc1mWaQwvNyje4iStLHjr-3cBFX_BrFZ2Tez50Pik-sX0F4xwK89zG1mbB3_TdVC6t8%26flowName%3DGeneralOAuthFlow%26as%3DS-450888403%253A1780556007810394%26client_id%3D778291736053-qahejj5v10o0dskvg2aereaqe1gqq24q.apps.googleusercontent.com%23&amp;app_domain=https%3A%2F%2Fviewer.gutools.co.uk&amp;rart=ANgoxceIjqrpZDhGGzsmwKx6QyruApfvfhugq5Y-kMlY2y_hcPnK_sBlVAvBvcAXOAtbzikv-RnUIJcZdvs7FDwiLnItLxgkQHCL3MFMn3QKIDrTfFAVS14\">Guardian Technology</a>",
+      "edited_post_text": null,
+      "url": "https://accounts.google.com/v3/signin/identifier?opparams=%253Fhd%253Dguardian.co.uk&dsh=S-450888403%3A1780556007810394&client_id=778291736053-qahejj5v10o0dskvg2aereaqe1gqq24q.apps.googleusercontent.com&hd=guardian.co.uk&o2v=2&redirect_uri=https%3A%2F%2Fviewer.gutools.co.uk%2FoauthCallback&response_type=code&scope=openid+email+profile&service=lso&state=u37eukgi9spbfesl8j7me2ucm2&flowName=GeneralOAuthLite&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Flegacy%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAPAcdukIFTadODRIZ5FEyNZaZxu8a2wF_owm6X6fFLrjmfXjFothCJpqgE7y0q4EgA9iZc2er9eB9m_Sxy0v0dpJZTcvUdjjtw_NWW9Tauk92tfig6MQ2MFzt_EjH3b2U1K1n-D8patWmWgshRnyoG9sgqJXROYnCoYrwhAKN7S3rlaYfYXwHkxahDI0cL_h9NDsqFazG8T0pCcGriVo9n6IUTnvGZK0v7jGQluMyInEJ4JSWLSNOWFEJs4qUIJLIq3ctKiF4K7MvaFGJj6vZTRueE3zJFWPlDaEJ4zzbzSLp9qWjKzT0WbyyvywmaBI2mrX7ZVRvkDyYzuDYGEwpXa0HyK2QJEdxgIQn8j1Ilr_LDnA8csoeJUXFyh34umMINI8cL6rL1s8BlodDomC1FW8_0YfQC66Utp9Lo9vla-O_GBcc1mWaQwvNyje4iStLHjr-3cBFX_BrFZ2Tez50Pik-sX0F4xwK89zG1mbB3_TdVC6t8%26flowName%3DGeneralOAuthFlow%26as%3DS-450888403%253A1780556007810394%26client_id%3D778291736053-qahejj5v10o0dskvg2aereaqe1gqq24q.apps.googleusercontent.com%23&app_domain=https%3A%2F%2Fviewer.gutools.co.uk&rart=ANgoxceIjqrpZDhGGzsmwKx6QyruApfvfhugq5Y-kMlY2y_hcPnK_sBlVAvBvcAXOAtbzikv-RnUIJcZdvs7FDwiLnItLxgkQHCL3MFMn3QKIDrTfFAVS14",
+      "published_at": "2026-06-03T19:40:36+00:00",
+      "title_hash": "0274fe6ffba893b69228599982acb4bc7da7f98f",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "a7346e32949cf5d5",
+      "status": "pending",
+      "created_at": "2026-06-04T06:55:04+00:00",
+      "created_at_sakhalin": "2026-06-04T17:55:04+11:00",
+      "source": "Guardian Technology",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 233,
+      "title_original": "I Am Not a Robot — Joanna Stern",
+      "title_ru": "I Am Not a Robot — Joanna Stern",
+      "body": [
+        "My Year Using AI to Do (Almost) Everything and Replace (Almost) Everyone.",
+        "In 2025, the tech journalist invited artificial intelligence to do nearly everything for her, including editing the book she was writing about the experiment.",
+        "Some of it was useful, some not – but it was her time with a chatbot companion that really shook her For a year, Joanna Stern decided to turn herself into a “lab rat” – the object of her own experiment."
+      ],
+      "footer": null,
+      "source_text": "My Year Using AI to Do (Almost) Everything and Replace (Almost) Everyone. The new book by Joanna Stern. In 2025, the tech journalist invited artificial intelligence to do nearly everything for her, including editing the book she was writing about the experiment. Some of it was useful, some not – but it was her time with a chatbot companion that really shook her For a year, Joanna Stern decided to turn herself into a “lab rat” – the object of her own experiment. Throughout 2025, she invited artificial intelligence into “every corner” of her life. She let AI answer her texts, decide what she ate and cooked, mow her lawn, fold her washing, drive her places, parse her mammograms and even, in the darkness of a burner phone, be her lover. The resulting book, I Am Not a Robot: My Year Using AI to Do (Almost) Everything, asks all the big questions, including: what happens when AI can do everything humans can do? And what comes after that? If anyone can produce answers, surely it’s Stern. Last February, she ended a 12-year stint as a personal technology columnist at the Wall Street Journal. During her tenure, she won an Emmy for her short documentary E-Ternal: A Tech Quest to “Live” Forever, which explored digital legacies, and built a reputation for product reviews that were outlandishly creative and fiendishly stringent. She once took an Apple watch jetskiing on the Hudson river to evaluate its connectivity. Continue reading... NEW! BOOK TOUR DATES! The robot arm is AI-generated. The human is real. Probably. Over 12 years at The Wall Street Journal , my personal technology columns and videos made me one of the most recognizable—and, I hope, entertaining—voices in consumer tech. I'm a two-time Gerald Loeb Award winner, a Pulitzer Prize finalist, and the creator of the 2021 docu",
+      "post_text": "🌐 Мировые IT\n\n<b>I Am Not a Robot — Joanna Stern</b>\n\nMy Year Using AI to Do (Almost) Everything and Replace (Almost) Everyone.\n\nIn 2025, the tech journalist invited artificial intelligence to do nearly everything for her, including editing the book she was writing about the experiment.\n\nSome of it was useful, some not – but it was her time with a chatbot companion that really shook her For a year, Joanna Stern decided to turn herself into a “lab rat” – the object of her own experiment.\n\nМИРОВЫЕ IT · <a href=\"https://joannastern.com/\">Guardian Technology</a>",
+      "edited_post_text": null,
+      "url": "https://joannastern.com/",
+      "published_at": "2026-06-04T04:00:25+00:00",
+      "title_hash": "6bc0cb4dd04d1a72dc8d0d5c59d1518f7f06895e",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "50f5daece8f3d87b",
+      "status": "pending",
+      "created_at": "2026-06-04T06:55:04+00:00",
+      "created_at_sakhalin": "2026-06-04T17:55:04+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Tilda и СБИС Presto: как мы синхронизируем остатки через стоп-лист, а не каталог",
+      "title_ru": "Tilda и СБИС Presto: как мы синхронизируем остатки через стоп-лист, а не каталог",
+      "body": [
+        "В предыдущей статье мы рассказывали, как организовали приём заказов с сайта на Tilda в СБИС Presto через webhook.",
+        "Заказы стали падать в систему мгновенно.",
+        "Но всплыла обратная проблема: что на сайте..."
+      ],
+      "footer": null,
+      "source_text": "В предыдущей статье мы рассказывали, как организовали приём заказов с сайта на Tilda в СБИС Presto через webhook. Заказы стали падать в систему мгновенно. Но всплыла обратная проблема: что на сайте... Как мы избавили общепит от часа ручной работы каждое утро: разобрали реальный кейс синхронизации стоп-листа из СБИС Presto в каталог на Tilda через CommerceML. Поток на Python/FastAPI, дебаунс через SHA-256, eventual consistency без очередей и грабли, на которые наступили в проде. Решение и грабли В предыдущей статье мы рассказывали, как организовали приём заказов с сайта на Tilda в СБИС Presto через webhook. Заказы стали падать в систему мгновенно. Но всплыла обратная проблема: что на сайте показывается покупателю . Клиент — сеть общепита. Каждое утро администратор открывал СБИС, смотрел стоп-лист, потом открывал Tilda и руками выключал в каталоге всё, что в стопе. Час времени каждый день. Без выходных. И всё равно не спасало: что-то заканчивалось в обед, что-то после ужина — а кнопка «Заказать» горела до завтрашнего утра. Клиенты заказывали то, чего на кухне уже не было, менеджеры обзванивали и извинялись. Мы написали сервис, который сам забирает стоп-лист из СБИС каждые 30 секунд и обновляет остатки в Tilda. Реакция от момента «в стоп» в СБИС до момента «нет в наличии» на сайте — около минуты. Никакого ручного переноса. Стек: Python, FastAPI, httpx, CommerceML 2.07 (родной для Tilda обмен с 1С-системами). Месяц в продакшене.",
+      "post_text": "🌐 Мировые IT\n\n<b>Tilda и СБИС Presto: как мы синхронизируем остатки через стоп-лист, а не каталог</b>\n\nВ предыдущей статье мы рассказывали, как организовали приём заказов с сайта на Tilda в СБИС Presto через webhook.\n\nЗаказы стали падать в систему мгновенно.\n\nНо всплыла обратная проблема: что на сайте...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1043428/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1043428#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1043428/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1043428#habracut",
+      "published_at": "2026-06-04T06:25:12+00:00",
+      "title_hash": "ebaf6bc905fb639e2361ac1c68521667793fd45e",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/63b/30b/c79/63b30bc79ffd88aba95bb492cbf8cd33.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
     {
       "id": "9aef6d5aab37bdb4",
       "status": "rejected",
@@ -9292,301 +9587,6 @@
       "published_at_sakhalin": "2026-06-02T23:09:45+11:00",
       "publish_method": "sendPhoto/safe/pipeline_source_photo",
       "telegram_message_id": 143
-    },
-    {
-      "id": "427350656ea9bcab",
-      "status": "pending",
-      "created_at": "2026-06-04T06:55:04+00:00",
-      "created_at_sakhalin": "2026-06-04T17:55:04+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Внедряем BX.UI.AccessRights.V2: современный интерфейс прав доступа Битрикс24 для своего компонента",
-      "title_ru": "Внедряем BX.UI.AccessRights.V2: современный интерфейс прав доступа Битрикс24 для своего компонента",
-      "body": [
-        "Впроцессе кастомизации коробочной CRM Битрикс24 часто клиенты просят внедрить им права доступа.",
-        "Захотелось внедрить с интерфейсом, как это выглядит в Задачах или Сделках....",
-        "В процессе кастомизации коробочной CRM Битрикс24 часто клиенты просят внедрить им права доступа."
-      ],
-      "footer": null,
-      "source_text": "Впроцессе кастомизации коробочной CRM Битрикс24 часто клиенты просят внедрить им права доступа. Захотелось внедрить с интерфейсом, как это выглядит в Задачах или Сделках.... В процессе кастомизации коробочной CRM Битрикс24 часто клиенты просят внедрить им права доступа. Захотелось внедрить с интерфейсом, как это выглядит в Задачах или Сделках. Изучил документацию — там всё изложено лишь в общем виде, пришлось анализировать исходники, сжечь несколько миллионов токенов различных нейронок, и даже после этого вникать в нюансы и дебажить код. В статье подробно разбираются нюансы архитектуры компонента BX.UI.AccessRights.V2, подводные камни при внедрении в свой модуль (готовый репозиторий прилагается). Читать далее Впроцессе кастомизации коробочной CRM Битрикс24 часто клиенты просят внедрить им права доступа. Захотелось внедрить с интерфейсом, как это выглядит в Задачах или Сделках. Изучил документацию — там всё изложено лишь в общем виде, пришлось анализировать исходники, сжечь несколько миллионов токенов различных нейронок, и даже после этого вникать в нюансы и дебажить код. Мне всегда легче понять, как что‑то работает, когда, кроме сухой справки, есть живой пример, который можно пощупать. Поэтому был написан демо‑модуль, который сам сгенерирует некоторый список «План продаж» со статусами и разными ответственными. Да, пример несколько надуманный, однако позволяющий наглядно показать различные возможности UI компонента. Не хочется читать статью дальше, а скорее запустить у себя, пожалуйста: ссылка на GitHub В документации есть пример компонента BX.UI.AccessRights, попробовали его — вывелось окно настройки прав, как в Задачах. Однако оно уже устарело и в сделках мы видим более новую версию данного компонента, документации по которому нет.",
-      "post_text": "🌐 Мировые IT\n\n<b>Внедряем BX.UI.AccessRights.V2: современный интерфейс прав доступа Битрикс24 для своего компонента</b>\n\nВпроцессе кастомизации коробочной CRM Битрикс24 часто клиенты просят внедрить им права доступа.\n\nЗахотелось внедрить с интерфейсом, как это выглядит в Задачах или Сделках....\n\nВ процессе кастомизации коробочной CRM Битрикс24 часто клиенты просят внедрить им права доступа.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1043436/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1043436#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1043436/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1043436#habracut",
-      "published_at": "2026-06-04T06:49:35+00:00",
-      "title_hash": "e13fb6082e99d58c01f405d4bcc0e5e004bb5828",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/0e7/12e/757/0e712e757c91301234db2de7cebf0ddf.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "f55f7df09d472fd6",
-      "status": "pending",
-      "created_at": "2026-06-04T06:55:04+00:00",
-      "created_at_sakhalin": "2026-06-04T17:55:04+11:00",
-      "source": "BBC Technology",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 258,
-      "title_original": "Microsoft working on wearable AI gadget aimed at office workers",
-      "title_ru": "Microsoft working on wearable AI gadget aimed at office workers",
-      "body": [
-        "The company said its own workers are testing a \"wearable access badge\" and a desktop device.",
-        "The company said its own workers are testing a \"wearable access badge\" and a desktop device.",
-        "The company unveiled two concept products it has developed for people who often use AI tools in their work during its yearly conference for technology developers."
-      ],
-      "footer": null,
-      "source_text": "The company said its own workers are testing a \"wearable access badge\" and a desktop device. The company said its own workers are testing a \"wearable access badge\" and a desktop device. The company unveiled two concept products it has developed for people who often use AI tools in their work during its yearly conference for technology developers. One device is a small portable cube with a touch and voice-activated screen, meant for a desk. The other was \"a wearable access badge,\" Microsoft executive Steven Bathiche said, to hang around the neck or on a belt loop, giving quick access to AI-driven work. Microsoft, which did not say when it would bring either of the devices to market, said current pilots \"will inform how these form factors can be built\" in the future. Satya Nadella, Microsoft chief executive, said such gadgets represented a \"new form factor\" for technology devices.",
-      "post_text": "🌐 Мировые IT\n\n<b>Microsoft working on wearable AI gadget aimed at office workers</b>\n\nThe company said its own workers are testing a \"wearable access badge\" and a desktop device.\n\nThe company said its own workers are testing a \"wearable access badge\" and a desktop device.\n\nThe company unveiled two concept products it has developed for people who often use AI tools in their work during its yearly conference for technology developers.\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/cwy25x97wrxo?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
-      "edited_post_text": null,
-      "url": "https://www.bbc.com/news/articles/cwy25x97wrxo?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-06-02T21:47:42+00:00",
-      "title_hash": "64098951625d78fc3e3d7b4d83b100829bb02e96",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/f1a4/live/e0ba4220-5ec4-11f1-b588-45cc931ea6f1.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "c478297c42b495ee",
-      "status": "pending",
-      "created_at": "2026-06-04T06:55:04+00:00",
-      "created_at_sakhalin": "2026-06-04T17:55:04+11:00",
-      "source": "BBC Technology",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 258,
-      "title_original": "Microsoft claims new quantum chip 1,000 times better than before",
-      "title_ru": "Microsoft claims new quantum chip 1,000 times better than before",
-      "body": [
-        "The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.",
-        "The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.",
-        "At the heart of quantum computing are qubits, which offer the promise of answering questions that defeat today's machines, but are notoriously delicate and unstable."
-      ],
-      "footer": null,
-      "source_text": "The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade. The tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade. At the heart of quantum computing are qubits, which offer the promise of answering questions that defeat today's machines, but are notoriously delicate and unstable. Microsoft says the qubits on Majorana 2, its new chip, survive for an average of 20 seconds, rather than the milliseconds of Majorana 1. That means the new chip is 1,000 times more reliable - an improvement in performance the tech giant compares to the difference between a phone that needs charging every day to one which needs charging every few years. \"We will have a quantum machine in 2029 that can solve commercially viable, reasonable problems\", said Zulfi Alam, corporate vice president of Microsoft Quantum.",
-      "post_text": "🌐 Мировые IT\n\n<b>Microsoft claims new quantum chip 1,000 times better than before</b>\n\nThe tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.\n\nThe tech giant predicts it will have a quantum computer that can solve commercially useful problems by the end of the decade.\n\nAt the heart of quantum computing are qubits, which offer the promise of answering questions that defeat today's machines, but are notoriously delicate and unstable.\n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.com/news/articles/cj4p7gyvp52o?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
-      "edited_post_text": null,
-      "url": "https://www.bbc.com/news/articles/cj4p7gyvp52o?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-06-02T19:24:31+00:00",
-      "title_hash": "6f18942ad36d2a472d7e65c04431a0171df1d684",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/823e/live/9bf6bfd0-5e9a-11f1-95ff-f5086c3b3d40.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "5df6e531c916bc6e",
-      "status": "pending",
-      "created_at": "2026-06-04T06:55:04+00:00",
-      "created_at_sakhalin": "2026-06-04T17:55:04+11:00",
-      "source": "BBC Technology",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 243,
-      "title_original": "Tech Life - Microsoft's big quantum bet - BBC Sounds",
-      "title_ru": "Tech Life - Microsoft's big quantum bet - BBC Sounds",
-      "body": [
-        "The tech company announces its new Majorana 2 chip.",
-        "The tech company announces its new Majorana 2 chip.",
-        "Homepage Accessibility links Skip to content Accessibility Help BBC Account Notifications Home News Sport Weather iPlayer Sounds Bitesize CBeebies CBBC Food Home News Sport Business Technology Health Culture Arts Travel Earth Audio Video Live More menu Search Sounds Home News Sport Weather iPlayer Sounds Bitesize CBeebies CBBC Food Home News Sport Business Technology Health Culture Arts Travel Earth Audio Video Live "
-      ],
-      "footer": null,
-      "source_text": "The tech company announces its new Majorana 2 chip. The tech company announces its new Majorana 2 chip. Homepage Accessibility links Skip to content Accessibility Help BBC Account Notifications Home News Sport Weather iPlayer Sounds Bitesize CBeebies CBBC Food Home News Sport Business Technology Health Culture Arts Travel Earth Audio Video Live More menu Search Sounds Home News Sport Weather iPlayer Sounds Bitesize CBeebies CBBC Food Home News Sport Business Technology Health Culture Arts Travel Earth Audio Video Live Close menu BBC Sounds Sounds home page Menu Home Music Podcasts My Sounds Use BBC.com or the new BBC App to listen to BBC podcasts, Radio 4 and the World Service outside the UK. Play Bookmark Bookmark Subscribe Subscribe Available for over a year Microsoft unveils a new quantum chip. It's a big moment for the company, as its quantum programme has faced criticism. Is the tech giant's strategy finally paying off? And when will this chip deliver practical quantum computing? The BBC's Technology Editor, Zoe Kleinman, interviews Microsoft's executive vice president for quantum. Also this week: what new tech can soccer fans expect at the World Cup? Shiona McCallum reports from FIFA headquarters in Switzerland. And a leading critic of AI hype returns to Tech Life. Presenter: Chris Vallance Producer: Tom Quinn (Photo: A hand is seen holding the new Majorana 2 quantum chip from Microsoft. The chip is gold-coloured. It is so large that it is the same size as the hand. Credit: Microsoft)",
-      "post_text": "🌐 Мировые IT\n\n<b>Tech Life - Microsoft's big quantum bet - BBC Sounds</b>\n\nThe tech company announces its new Majorana 2 chip.\n\nThe tech company announces its new Majorana 2 chip.\n\nHomepage Accessibility links Skip to content Accessibility Help BBC Account Notifications Home News Sport Weather iPlayer Sounds Bitesize CBeebies CBBC Food Home News Sport Business Technology Health Culture Arts Travel Earth Audio Video Live More menu Search Sounds Home News Sport Weather iPlayer Sounds Bitesize CBeebies CBBC Food Home News Sport Business Technology Health Culture Arts Travel Earth Audio Video Live \n\nМИРОВЫЕ IT · <a href=\"https://www.bbc.co.uk/sounds/play/w3ct8jxy?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
-      "edited_post_text": null,
-      "url": "https://www.bbc.co.uk/sounds/play/w3ct8jxy?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-06-02T19:30:00+00:00",
-      "title_hash": "61c0f95bc3ea304182a1f8ce80f9cea7c40758d9",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "d3cd7669dd3294bd",
-      "status": "pending",
-      "created_at": "2026-06-04T06:55:04+00:00",
-      "created_at_sakhalin": "2026-06-04T17:55:04+11:00",
-      "source": "Guardian Technology",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 233,
-      "title_original": "The Gentle Singularity",
-      "title_ru": "The Gentle Singularity",
-      "body": [
-        "We are past the event horizon; the takeoff has started.",
-        "Humanity is close to building digital superintelligence, and at least so far it’s much less weird than it seems like it should be.",
-        "With rivals racing to market to raise ‘eye-popping sums’, the spotlight is now on the AI sector’s one-time ‘poster child’ A year is a long time in AI."
-      ],
-      "footer": null,
-      "source_text": "We are past the event horizon; the takeoff has started. Humanity is close to building digital superintelligence, and at least so far it’s much less weird than it seems like it should be. Robots... With rivals racing to market to raise ‘eye-popping sums’, the spotlight is now on the AI sector’s one-time ‘poster child’ A year is a long time in AI. Just 12 months ago, Sam Altman was predicting his company OpenAI would build a super intelligence and fundamentally remake society. Now the boss of the ChatGPT developer is walking back those ideas after failing to make money from ads and erotic chatbots. Meanwhile, rivals are storming ahead with plans to expand and go public on the stock market, in what is widely expected to be a season of record-setting initial public offerings (IPOs). Continue reading...",
-      "post_text": "🌐 Мировые IT\n\n<b>The Gentle Singularity</b>\n\nWe are past the event horizon; the takeoff has started.\n\nHumanity is close to building digital superintelligence, and at least so far it’s much less weird than it seems like it should be.\n\nWith rivals racing to market to raise ‘eye-popping sums’, the spotlight is now on the AI sector’s one-time ‘poster child’ A year is a long time in AI.\n\nМИРОВЫЕ IT · <a href=\"https://blog.samaltman.com/the-gentle-singularity\">Guardian Technology</a>",
-      "edited_post_text": null,
-      "url": "https://blog.samaltman.com/the-gentle-singularity",
-      "published_at": "2026-06-03T10:38:09+00:00",
-      "title_hash": "6596ca6c64b58f6b26ccf435cc7f3c35d0881106",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "03f31e089383e9e1",
-      "status": "pending",
-      "created_at": "2026-06-04T06:55:04+00:00",
-      "created_at_sakhalin": "2026-06-04T17:55:04+11:00",
-      "source": "Guardian Technology",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 233,
-      "title_original": "Sign in - Google Accounts",
-      "title_ru": "Sign in - Google Accounts",
-      "body": [
-        "While many US city councils have passed moratoriums, Monterey Park is first where residents have voted on a ban Sign up for the Breaking News US newsletter email Residents in Monterey Park, California , became the first in the US to vote on a permanent ban on datacenters on Tuesday, and early results indicate a resounding victory for the prohibition.",
-        "While many cities and counties have already passed temporary or indefinite moratoriums via their local governments, Monterey Park would be the first to do so through a ballot initiative."
-      ],
-      "footer": null,
-      "source_text": "While many US city councils have passed moratoriums, Monterey Park is first where residents have voted on a ban Sign up for the Breaking News US newsletter email Residents in Monterey Park, California , became the first in the US to vote on a permanent ban on datacenters on Tuesday, and early results indicate a resounding victory for the prohibition. While many cities and counties have already passed temporary or indefinite moratoriums via their local governments, Monterey Park would be the first to do so through a ballot initiative. Continue reading...",
-      "post_text": "🌐 Мировые IT\n\n<b>Sign in - Google Accounts</b>\n\nWhile many US city councils have passed moratoriums, Monterey Park is first where residents have voted on a ban Sign up for the Breaking News US newsletter email Residents in Monterey Park, California , became the first in the US to vote on a permanent ban on datacenters on Tuesday, and early results indicate a resounding victory for the prohibition.\n\nWhile many cities and counties have already passed temporary or indefinite moratoriums via their local governments, Monterey Park would be the first to do so through a ballot initiative.\n\nМИРОВЫЕ IT · <a href=\"https://accounts.google.com/v3/signin/identifier?opparams=%253Fhd%253Dguardian.co.uk&amp;dsh=S-450888403%3A1780556007810394&amp;client_id=778291736053-qahejj5v10o0dskvg2aereaqe1gqq24q.apps.googleusercontent.com&amp;hd=guardian.co.uk&amp;o2v=2&amp;redirect_uri=https%3A%2F%2Fviewer.gutools.co.uk%2FoauthCallback&amp;response_type=code&amp;scope=openid+email+profile&amp;service=lso&amp;state=u37eukgi9spbfesl8j7me2ucm2&amp;flowName=GeneralOAuthLite&amp;continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Flegacy%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAPAcdukIFTadODRIZ5FEyNZaZxu8a2wF_owm6X6fFLrjmfXjFothCJpqgE7y0q4EgA9iZc2er9eB9m_Sxy0v0dpJZTcvUdjjtw_NWW9Tauk92tfig6MQ2MFzt_EjH3b2U1K1n-D8patWmWgshRnyoG9sgqJXROYnCoYrwhAKN7S3rlaYfYXwHkxahDI0cL_h9NDsqFazG8T0pCcGriVo9n6IUTnvGZK0v7jGQluMyInEJ4JSWLSNOWFEJs4qUIJLIq3ctKiF4K7MvaFGJj6vZTRueE3zJFWPlDaEJ4zzbzSLp9qWjKzT0WbyyvywmaBI2mrX7ZVRvkDyYzuDYGEwpXa0HyK2QJEdxgIQn8j1Ilr_LDnA8csoeJUXFyh34umMINI8cL6rL1s8BlodDomC1FW8_0YfQC66Utp9Lo9vla-O_GBcc1mWaQwvNyje4iStLHjr-3cBFX_BrFZ2Tez50Pik-sX0F4xwK89zG1mbB3_TdVC6t8%26flowName%3DGeneralOAuthFlow%26as%3DS-450888403%253A1780556007810394%26client_id%3D778291736053-qahejj5v10o0dskvg2aereaqe1gqq24q.apps.googleusercontent.com%23&amp;app_domain=https%3A%2F%2Fviewer.gutools.co.uk&amp;rart=ANgoxceIjqrpZDhGGzsmwKx6QyruApfvfhugq5Y-kMlY2y_hcPnK_sBlVAvBvcAXOAtbzikv-RnUIJcZdvs7FDwiLnItLxgkQHCL3MFMn3QKIDrTfFAVS14\">Guardian Technology</a>",
-      "edited_post_text": null,
-      "url": "https://accounts.google.com/v3/signin/identifier?opparams=%253Fhd%253Dguardian.co.uk&dsh=S-450888403%3A1780556007810394&client_id=778291736053-qahejj5v10o0dskvg2aereaqe1gqq24q.apps.googleusercontent.com&hd=guardian.co.uk&o2v=2&redirect_uri=https%3A%2F%2Fviewer.gutools.co.uk%2FoauthCallback&response_type=code&scope=openid+email+profile&service=lso&state=u37eukgi9spbfesl8j7me2ucm2&flowName=GeneralOAuthLite&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Flegacy%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAPAcdukIFTadODRIZ5FEyNZaZxu8a2wF_owm6X6fFLrjmfXjFothCJpqgE7y0q4EgA9iZc2er9eB9m_Sxy0v0dpJZTcvUdjjtw_NWW9Tauk92tfig6MQ2MFzt_EjH3b2U1K1n-D8patWmWgshRnyoG9sgqJXROYnCoYrwhAKN7S3rlaYfYXwHkxahDI0cL_h9NDsqFazG8T0pCcGriVo9n6IUTnvGZK0v7jGQluMyInEJ4JSWLSNOWFEJs4qUIJLIq3ctKiF4K7MvaFGJj6vZTRueE3zJFWPlDaEJ4zzbzSLp9qWjKzT0WbyyvywmaBI2mrX7ZVRvkDyYzuDYGEwpXa0HyK2QJEdxgIQn8j1Ilr_LDnA8csoeJUXFyh34umMINI8cL6rL1s8BlodDomC1FW8_0YfQC66Utp9Lo9vla-O_GBcc1mWaQwvNyje4iStLHjr-3cBFX_BrFZ2Tez50Pik-sX0F4xwK89zG1mbB3_TdVC6t8%26flowName%3DGeneralOAuthFlow%26as%3DS-450888403%253A1780556007810394%26client_id%3D778291736053-qahejj5v10o0dskvg2aereaqe1gqq24q.apps.googleusercontent.com%23&app_domain=https%3A%2F%2Fviewer.gutools.co.uk&rart=ANgoxceIjqrpZDhGGzsmwKx6QyruApfvfhugq5Y-kMlY2y_hcPnK_sBlVAvBvcAXOAtbzikv-RnUIJcZdvs7FDwiLnItLxgkQHCL3MFMn3QKIDrTfFAVS14",
-      "published_at": "2026-06-03T19:40:36+00:00",
-      "title_hash": "0274fe6ffba893b69228599982acb4bc7da7f98f",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "a7346e32949cf5d5",
-      "status": "pending",
-      "created_at": "2026-06-04T06:55:04+00:00",
-      "created_at_sakhalin": "2026-06-04T17:55:04+11:00",
-      "source": "Guardian Technology",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 233,
-      "title_original": "I Am Not a Robot — Joanna Stern",
-      "title_ru": "I Am Not a Robot — Joanna Stern",
-      "body": [
-        "My Year Using AI to Do (Almost) Everything and Replace (Almost) Everyone.",
-        "In 2025, the tech journalist invited artificial intelligence to do nearly everything for her, including editing the book she was writing about the experiment.",
-        "Some of it was useful, some not – but it was her time with a chatbot companion that really shook her For a year, Joanna Stern decided to turn herself into a “lab rat” – the object of her own experiment."
-      ],
-      "footer": null,
-      "source_text": "My Year Using AI to Do (Almost) Everything and Replace (Almost) Everyone. The new book by Joanna Stern. In 2025, the tech journalist invited artificial intelligence to do nearly everything for her, including editing the book she was writing about the experiment. Some of it was useful, some not – but it was her time with a chatbot companion that really shook her For a year, Joanna Stern decided to turn herself into a “lab rat” – the object of her own experiment. Throughout 2025, she invited artificial intelligence into “every corner” of her life. She let AI answer her texts, decide what she ate and cooked, mow her lawn, fold her washing, drive her places, parse her mammograms and even, in the darkness of a burner phone, be her lover. The resulting book, I Am Not a Robot: My Year Using AI to Do (Almost) Everything, asks all the big questions, including: what happens when AI can do everything humans can do? And what comes after that? If anyone can produce answers, surely it’s Stern. Last February, she ended a 12-year stint as a personal technology columnist at the Wall Street Journal. During her tenure, she won an Emmy for her short documentary E-Ternal: A Tech Quest to “Live” Forever, which explored digital legacies, and built a reputation for product reviews that were outlandishly creative and fiendishly stringent. She once took an Apple watch jetskiing on the Hudson river to evaluate its connectivity. Continue reading... NEW! BOOK TOUR DATES! The robot arm is AI-generated. The human is real. Probably. Over 12 years at The Wall Street Journal , my personal technology columns and videos made me one of the most recognizable—and, I hope, entertaining—voices in consumer tech. I'm a two-time Gerald Loeb Award winner, a Pulitzer Prize finalist, and the creator of the 2021 docu",
-      "post_text": "🌐 Мировые IT\n\n<b>I Am Not a Robot — Joanna Stern</b>\n\nMy Year Using AI to Do (Almost) Everything and Replace (Almost) Everyone.\n\nIn 2025, the tech journalist invited artificial intelligence to do nearly everything for her, including editing the book she was writing about the experiment.\n\nSome of it was useful, some not – but it was her time with a chatbot companion that really shook her For a year, Joanna Stern decided to turn herself into a “lab rat” – the object of her own experiment.\n\nМИРОВЫЕ IT · <a href=\"https://joannastern.com/\">Guardian Technology</a>",
-      "edited_post_text": null,
-      "url": "https://joannastern.com/",
-      "published_at": "2026-06-04T04:00:25+00:00",
-      "title_hash": "6bc0cb4dd04d1a72dc8d0d5c59d1518f7f06895e",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "50f5daece8f3d87b",
-      "status": "pending",
-      "created_at": "2026-06-04T06:55:04+00:00",
-      "created_at_sakhalin": "2026-06-04T17:55:04+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Tilda и СБИС Presto: как мы синхронизируем остатки через стоп-лист, а не каталог",
-      "title_ru": "Tilda и СБИС Presto: как мы синхронизируем остатки через стоп-лист, а не каталог",
-      "body": [
-        "В предыдущей статье мы рассказывали, как организовали приём заказов с сайта на Tilda в СБИС Presto через webhook.",
-        "Заказы стали падать в систему мгновенно.",
-        "Но всплыла обратная проблема: что на сайте..."
-      ],
-      "footer": null,
-      "source_text": "В предыдущей статье мы рассказывали, как организовали приём заказов с сайта на Tilda в СБИС Presto через webhook. Заказы стали падать в систему мгновенно. Но всплыла обратная проблема: что на сайте... Как мы избавили общепит от часа ручной работы каждое утро: разобрали реальный кейс синхронизации стоп-листа из СБИС Presto в каталог на Tilda через CommerceML. Поток на Python/FastAPI, дебаунс через SHA-256, eventual consistency без очередей и грабли, на которые наступили в проде. Решение и грабли В предыдущей статье мы рассказывали, как организовали приём заказов с сайта на Tilda в СБИС Presto через webhook. Заказы стали падать в систему мгновенно. Но всплыла обратная проблема: что на сайте показывается покупателю . Клиент — сеть общепита. Каждое утро администратор открывал СБИС, смотрел стоп-лист, потом открывал Tilda и руками выключал в каталоге всё, что в стопе. Час времени каждый день. Без выходных. И всё равно не спасало: что-то заканчивалось в обед, что-то после ужина — а кнопка «Заказать» горела до завтрашнего утра. Клиенты заказывали то, чего на кухне уже не было, менеджеры обзванивали и извинялись. Мы написали сервис, который сам забирает стоп-лист из СБИС каждые 30 секунд и обновляет остатки в Tilda. Реакция от момента «в стоп» в СБИС до момента «нет в наличии» на сайте — около минуты. Никакого ручного переноса. Стек: Python, FastAPI, httpx, CommerceML 2.07 (родной для Tilda обмен с 1С-системами). Месяц в продакшене.",
-      "post_text": "🌐 Мировые IT\n\n<b>Tilda и СБИС Presto: как мы синхронизируем остатки через стоп-лист, а не каталог</b>\n\nВ предыдущей статье мы рассказывали, как организовали приём заказов с сайта на Tilda в СБИС Presto через webhook.\n\nЗаказы стали падать в систему мгновенно.\n\nНо всплыла обратная проблема: что на сайте...\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1043428/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1043428#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1043428/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1043428#habracut",
-      "published_at": "2026-06-04T06:25:12+00:00",
-      "title_hash": "ebaf6bc905fb639e2361ac1c68521667793fd45e",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/63b/30b/c79/63b30bc79ffd88aba95bb492cbf8cd33.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
     }
   ],
   "auto_review": {
