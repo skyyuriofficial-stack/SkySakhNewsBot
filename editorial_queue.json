@@ -1,10 +1,306 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T21:43:32+00:00",
-  "updated_at_sakhalin": "2026-06-06T08:43:32+11:00",
+  "updated_at": "2026-06-05T21:51:13+00:00",
+  "updated_at_sakhalin": "2026-06-06T08:51:13+11:00",
   "reviewed_at": "2026-06-05T21:29:42+00:00",
   "reviewed_at_sakhalin": "2026-06-06T08:29:42+11:00",
   "items": [
+    {
+      "id": "c3be0874633f4f0d",
+      "status": "pending",
+      "created_at": "2026-06-05T21:43:32+00:00",
+      "created_at_sakhalin": "2026-06-06T08:43:32+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Как платформа управления AI-агентами будет справляться с нагрузкой: архитектура без магии",
+      "title_ru": "Как платформа управления AI-агентами будет справляться с нагрузкой: архитектура без магии",
+      "body": [
+        "Когда говорят про AI-агентов, обычно обсуждают качество модели, промпты, рассуждения, hallucinations, стоимость токенов и скорость ответа.",
+        "Но если убрать маркетинговый шум, быстро выясняется более...",
+        "Когда говорят про AI-агентов, обычно обсуждают качество модели, промпты, рассуждения, hallucinations, стоимость токенов и скорость ответа."
+      ],
+      "footer": null,
+      "source_text": "Когда говорят про AI-агентов, обычно обсуждают качество модели, промпты, рассуждения, hallucinations, стоимость токенов и скорость ответа. Но если убрать маркетинговый шум, быстро выясняется более... Когда говорят про AI-агентов, обычно обсуждают качество модели, промпты, рассуждения, hallucinations, стоимость токенов и скорость ответа. Но если убрать маркетинговый шум, быстро выясняется более приземлённая проблема: как вообще такая система будет работать под нагрузкой? Один пользователь попросил агента составить отчёт. Второй запустил проверку данных в CRM. Третий подключил агента к базе, почте и внутреннему API. Четвёртый дал агенту задачу, которая порождает ещё десять внутренних действий. И вот уже перед нами не “чат с искусственным интеллектом”, а полноценная распределённая платформа, где нужно контролировать запросы, права доступа, очереди, лимиты, ошибки, повторные попытки, логи, безопасность и стоимость выполнения. В этой статье я разберу, как может быть устроена платформа управления AI-агентами, подобная нашей: не как один большой чат-бот, а как отдельный слой между пользователем, моделью, API, бизнес-системами и инфраструктурой. Главный вопрос статьи: за счёт чего такая платформа может выдерживать нагрузку и не превращаться в хаос при росте числа пользователей, агентов и выполняемых действий. Читать далее Когда говорят про AI-агентов, обычно обсуждают качество модели, промпты, рассуждения, hallucinations, стоимость токенов и скорость ответа. Но если убрать маркетинговый шум, быстро выясняется более приземлённая проблема: как вообще такая система будет работать под нагрузкой? Один пользователь попросил агента составить отчёт. Второй запустил проверку данных в CRM. Третий подключил агента к базе, почте и внутреннему API. Четвёртый дал агенту задачу, которая порож",
+      "post_text": "🌐 Мировые IT\n\n<b>Как платформа управления AI-агентами будет справляться с нагрузкой: архитектура без магии</b>\n\nКогда говорят про AI-агентов, обычно обсуждают качество модели, промпты, рассуждения, hallucinations, стоимость токенов и скорость ответа.\n\nНо если убрать маркетинговый шум, быстро выясняется более...\n\nКогда говорят про AI-агентов, обычно обсуждают качество модели, промпты, рассуждения, hallucinations, стоимость токенов и скорость ответа.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1044272/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1044272#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1044272/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1044272#habracut",
+      "published_at": "2026-06-05T21:37:09+00:00",
+      "title_hash": "7880d2867dcc7d74fcad1b43f483dd953460b25e",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/9cd/476/65d/9cd47665d7f092ff220d08f831558084.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "baef93ae8ea0ed30",
+      "status": "pending",
+      "created_at": "2026-06-05T21:43:32+00:00",
+      "created_at_sakhalin": "2026-06-06T08:43:32+11:00",
+      "source": "BBC World",
+      "source_type": "world",
+      "category": "🌍 Мир о России",
+      "category_hint": "🌍 Мир о России",
+      "score": 695,
+      "title_original": "Nasa tells ISS astronauts to shelter during air leak repair attempt",
+      "title_ru": "Nasa tells ISS astronauts to shelter during air leak repair attempt",
+      "body": [
+        "Russian attempt to repair tunnel area sparks safe-haven procedure for five other astronauts onboard.",
+        "Russian attempt to repair tunnel area sparks safe-haven procedure for five other astronauts onboard.",
+        "Five of the seven crew were directed to go into the docked SpaceX shuttle Dragon \"Freedom\" on Friday afternoon and were braced for a potential evacuation."
+      ],
+      "footer": null,
+      "source_text": "Russian attempt to repair tunnel area sparks safe-haven procedure for five other astronauts onboard. Russian attempt to repair tunnel area sparks safe-haven procedure for five other astronauts onboard. Five of the seven crew were directed to go into the docked SpaceX shuttle Dragon \"Freedom\" on Friday afternoon and were braced for a potential evacuation. Meanwhile, two remaining personnel - a pair of Russian cosmonauts - attempted to repair a part of the Russian segment of the ISS, where the leaks had started increasing on Monday. The repairs were paused and the crew ordered back onto the ISS by Nasa on Friday afternoon. Jessica Meir, Jack Hathaway, Sophie Adenot and Andrey Fedyaev, who arrived on the ISS in February, had been sheltering on the docked ship, along with another astronaut Chris Williams.",
+      "post_text": "🌍 Мир о России\n\n<b>Nasa tells ISS astronauts to shelter during air leak repair attempt</b>\n\nRussian attempt to repair tunnel area sparks safe-haven procedure for five other astronauts onboard.\n\nRussian attempt to repair tunnel area sparks safe-haven procedure for five other astronauts onboard.\n\nFive of the seven crew were directed to go into the docked SpaceX shuttle Dragon \"Freedom\" on Friday afternoon and were braced for a potential evacuation.\n\nМИР О РОССИИ · <a href=\"https://www.bbc.com/news/articles/c5y7yryg01mo?at_medium=RSS&amp;at_campaign=rss\">BBC World</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/c5y7yryg01mo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-05T21:35:55+00:00",
+      "title_hash": "23778ac7542c055b8d60422b706637c455b9475e",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/e535/live/411ae920-60f6-11f1-bb63-4f1168d17ecf.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "9471b87d88a75314",
+      "status": "pending",
+      "created_at": "2026-06-05T21:43:32+00:00",
+      "created_at_sakhalin": "2026-06-06T08:43:32+11:00",
+      "source": "BBC World",
+      "source_type": "world",
+      "category": "🌍 Мир о России",
+      "category_hint": "🌍 Мир о России",
+      "score": 695,
+      "title_original": "China's Xi Jinping to meet Kim Jong Un in rare visit to North Korea",
+      "title_ru": "China's Xi Jinping to meet Kim Jong Un in rare visit to North Korea",
+      "body": [
+        "It is taking place weeks after Xi met the leaders of the US and Russia - two countries that loom large over North Korea's foreign policy.",
+        "It is taking place weeks after Xi met the leaders of the US and Russia - two countries that loom large over North Korea's foreign policy.",
+        "Xi will be in North Korea from 8 to 9 June at Kim's invitation."
+      ],
+      "footer": null,
+      "source_text": "It is taking place weeks after Xi met the leaders of the US and Russia - two countries that loom large over North Korea's foreign policy. It is taking place weeks after Xi met the leaders of the US and Russia - two countries that loom large over North Korea's foreign policy. Xi will be in North Korea from 8 to 9 June at Kim's invitation. Xi last visited Pyongyang in 2019. The visit comes weeks after Xi received US President Donald Trump and Russian President Vladimir Putin in Beijing - two countries that loom large over Pyongyang's foreign policy. China is a key economic and political partner of North Korea, which faces sweeping international sanctions as a result of its nuclear weapons programme and alleged human rights violations. China and North Korea share a 1,400km-long border and are bound by a defence pact - the only one China has with any country. It guarantees mutual support if either is attacked.",
+      "post_text": "🌍 Мир о России\n\n<b>China's Xi Jinping to meet Kim Jong Un in rare visit to North Korea</b>\n\nIt is taking place weeks after Xi met the leaders of the US and Russia - two countries that loom large over North Korea's foreign policy.\n\nIt is taking place weeks after Xi met the leaders of the US and Russia - two countries that loom large over North Korea's foreign policy.\n\nXi will be in North Korea from 8 to 9 June at Kim's invitation.\n\nМИР О РОССИИ · <a href=\"https://www.bbc.com/news/articles/clypym3q7p1o?at_medium=RSS&amp;at_campaign=rss\">BBC World</a>",
+      "edited_post_text": null,
+      "url": "https://www.bbc.com/news/articles/clypym3q7p1o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-05T05:17:13+00:00",
+      "title_hash": "15e28bdf401964801d19e17a923043b949897d74",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/e12b/live/6d54f040-6096-11f1-aec2-d1b9519839ae.jpg",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "2f92c7684b77fb9b",
+      "status": "pending",
+      "created_at": "2026-06-05T21:43:32+00:00",
+      "created_at_sakhalin": "2026-06-06T08:43:32+11:00",
+      "source": "Ars Technica",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 228,
+      "title_original": "The Fitbit Air is a good wearable weighed down by a chatty AI \"coach\"",
+      "title_ru": "The Fitbit Air is a good wearable weighed down by a chatty AI \"coach\"",
+      "body": [
+        "The Air succeeds as a minimalist, reliable fitness tracker, but Google's AI Health Coach feels unnecessary.",
+        "The Air succeeds as a minimalist, reliable fitness tracker, but Google's AI Health Coach feels unnecessary.",
+        "Sections Forum Subscribe Search AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day & Night Dark System Search Sign In Sign in dialog..."
+      ],
+      "footer": null,
+      "source_text": "The Air succeeds as a minimalist, reliable fitness tracker, but Google's AI Health Coach feels unnecessary. The Air succeeds as a minimalist, reliable fitness tracker, but Google's AI Health Coach feels unnecessary. Sections Forum Subscribe Search AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day & Night Dark System Search Sign In Sign in dialog... Sign in Skip the screen The Fitbit Air is a good wearable weighed down by a chatty AI “coach” The Air succeeds as a minimalist, reliable fitness tracker, but Google’s AI Health Coach feels unnecessary. 32 The Fitbit Air is much more comfortable than a smartwatch. Credit: Ryan Whitwam The Fitbit Air is much more comfortable than a smartwatch. Credit: Ryan Whitwam Text settings Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Minimize to nav Smartwatches can track your health stats, but they also do a lot of other things you might not always want or need. The $100 Fitbit Air tracker ditches the screens that have become common on people’s wrists, leaving behind a tiny puck of health sensors you can often forget you’re wearing. You will not, however, forget that Google’s new health platform is built around AI. The Air has no speaker, and there’s only one LED on the side to indicate battery level. You can double-tap the tracker to check the level, and that’s about the end of on-device features. The vibration motor is only for alarms—it can’t sync with notifications on your phone. That makes sense, gi",
+      "post_text": "🌐 Мировые IT\n\n<b>The Fitbit Air is a good wearable weighed down by a chatty AI \"coach\"</b>\n\nThe Air succeeds as a minimalist, reliable fitness tracker, but Google's AI Health Coach feels unnecessary.\n\nThe Air succeeds as a minimalist, reliable fitness tracker, but Google's AI Health Coach feels unnecessary.\n\nSections Forum Subscribe Search AI Biz &amp; IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz &amp; IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day &amp; Night Dark System Search Sign In Sign in dialog...\n\nМИРОВЫЕ IT · <a href=\"https://arstechnica.com/gadgets/2026/06/the-fitbit-air-is-great-but-googles-ai-is-too-nice-to-be-your-coach/\">Ars Technica</a>",
+      "edited_post_text": null,
+      "url": "https://arstechnica.com/gadgets/2026/06/the-fitbit-air-is-great-but-googles-ai-is-too-nice-to-be-your-coach/",
+      "published_at": "2026-06-05T15:40:48+00:00",
+      "title_hash": "a489a98eed28b34ae84a40eed1ade4b385444c89",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "fce132f3b222e7a7",
+      "status": "pending",
+      "created_at": "2026-06-05T21:43:32+00:00",
+      "created_at_sakhalin": "2026-06-06T08:43:32+11:00",
+      "source": "Ars Technica",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 228,
+      "title_original": "Steve Jobs in Exile is a fine profile of Jobs' years at NeXT",
+      "title_ru": "Steve Jobs in Exile is a fine profile of Jobs' years at NeXT",
+      "body": [
+        "“Why don’t we just frickin’ call Apple?”...",
+        "“Why don’t we just frickin’ call Apple?” Sections Forum Subscribe Search AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day & Night Dark System Se",
+        "Sign in What’s next Steve Jobs in Exile is a fine profile of Jobs’ years at NeXT “Why don’t we just frickin’ call Apple?” 83 Credit: Getty Images Credit: Getty Images Text settings Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Minimize to nav In the late 1990s, I was a precocious Mac nerd who pored over issues of Macworld, stayed up late chatting on IRC"
+      ],
+      "footer": null,
+      "source_text": "“Why don’t we just frickin’ call Apple?”... “Why don’t we just frickin’ call Apple?” Sections Forum Subscribe Search AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day & Night Dark System Search Sign In Sign in dialog... Sign in What’s next Steve Jobs in Exile is a fine profile of Jobs’ years at NeXT “Why don’t we just frickin’ call Apple?” 83 Credit: Getty Images Credit: Getty Images Text settings Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Minimize to nav In the late 1990s, I was a precocious Mac nerd who pored over issues of Macworld, stayed up late chatting on IRC, and downloaded pirated software that I didn’t actually need. I came of age at the tail end of the dial-up modem and BBS era—and got to witness the early days of the World Wide Web. I wanted to know where all of this had come from and how it had happened so quickly. The grown-ups around me seemed mystified at best and indifferent at worst. So I turned to books. I read Fire in the Valley (1984), Where Wizards Stay Up Late (1996), Infinite Loop (1999), and Dealers of Lightning (1999). In my mind (and to a lesser degree, on my actual bookshelf), I had built a mental list of my favorite selections of late 20th-century tech journalism.",
+      "post_text": "🌐 Мировые IT\n\n<b>Steve Jobs in Exile is a fine profile of Jobs' years at NeXT</b>\n\n“Why don’t we just frickin’ call Apple?”...\n\n“Why don’t we just frickin’ call Apple?” Sections Forum Subscribe Search AI Biz &amp; IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz &amp; IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day &amp; Night Dark System Se\n\nSign in What’s next Steve Jobs in Exile is a fine profile of Jobs’ years at NeXT “Why don’t we just frickin’ call Apple?” 83 Credit: Getty Images Credit: Getty Images Text settings Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Minimize to nav In the late 1990s, I was a precocious Mac nerd who pored over issues of Macworld, stayed up late chatting on IRC\n\nМИРОВЫЕ IT · <a href=\"https://arstechnica.com/apple/2026/06/steve-jobs-in-exile-is-a-fine-profile-of-jobs-years-at-next/\">Ars Technica</a>",
+      "edited_post_text": null,
+      "url": "https://arstechnica.com/apple/2026/06/steve-jobs-in-exile-is-a-fine-profile-of-jobs-years-at-next/",
+      "published_at": "2026-06-05T11:15:29+00:00",
+      "title_hash": "f33515363e52edd9d6455de08b3e280e7903df6e",
+      "image_url": null,
+      "image_mode": "none",
+      "with_image": false,
+      "image_decision": "none",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "a1880518643ff007",
+      "status": "pending",
+      "created_at": "2026-06-05T21:43:32+00:00",
+      "created_at_sakhalin": "2026-06-06T08:43:32+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Дофаминовая петля Strava: как геймификация сегментов превратила велосипедистов в «охотников за KOM»",
+      "title_ru": "Дофаминовая петля Strava: как геймификация сегментов превратила велосипедистов в «охотников за KOM»",
+      "body": [
+        "Как одна продуктовая фича может превратить обычный GPS-трекер в главную спортивную зависимость десятилетия?",
+        "Разбираем феномен «KOM-хантеров» в Strava с точки зрения поведенческой психологии и...",
+        "Как одна продуктовая фича может превратить обычный GPS-трекер в главную спортивную зависимость десятилетия?"
+      ],
+      "footer": null,
+      "source_text": "Как одна продуктовая фича может превратить обычный GPS-трекер в главную спортивную зависимость десятилетия? Разбираем феномен «KOM-хантеров» в Strava с точки зрения поведенческой психологии и... Как одна продуктовая фича может превратить обычный GPS-трекер в главную спортивную зависимость десятилетия? Разбираем феномен «KOM-хантеров» в Strava с точки зрения поведенческой психологии и системного анализа. Внутри: механика дофаминовой петли, технические уязвимости алгоритмов расчета сегментов при частоте опроса GPS в 1 Гц, программное читерство через API и то, как комьюнити устраивает самосуд над нарушителями виртуальных границ. Читать далее Как одна продуктовая фича может превратить обычный GPS-трекер в главную спортивную зависимость десятилетия? Разбираем феномен «KOM-хантеров» в Strava с точки зрения поведенческой психологии и системного анализа. Внутри: механика дофаминовой петли, технические уязвимости алгоритмов расчета сегментов при частоте опроса GPS в 1 Гц, программное читерство через API и то, как комьюнити устраивает самосуд над нарушителями виртуальных границ. Обычные фитнес-трекеры вроде Garmin Connect или Apple Health создавались как утилитарные блокноты для записи метрик: пульс, темп, километраж. Они общаются с пользователем на языке сухой графики. Strava пошла по другому пути — она внедрила поведенческую инженерию и развернула классическую модель «крючка» (Hook Model) Нира Эяля прямо на карте ваших ежедневных маршрутов. Продукт эволюционировал из зеркала вашей физической формы в полноценный симулятор доминирования, где главным ресурсом стал дофамин. В основе социальной архитектуры Strava лежит «лайк», получивший название Kudos (от греческого «слава», «гордость»). Но в отличие от стандартного лайка в Instagram, Kudos обладает гораздо более высокой конверсией",
+      "post_text": "🌐 Мировые IT\n\n<b>Дофаминовая петля Strava: как геймификация сегментов превратила велосипедистов в «охотников за KOM»</b>\n\nКак одна продуктовая фича может превратить обычный GPS-трекер в главную спортивную зависимость десятилетия?\n\nРазбираем феномен «KOM-хантеров» в Strava с точки зрения поведенческой психологии и...\n\nКак одна продуктовая фича может превратить обычный GPS-трекер в главную спортивную зависимость десятилетия?\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1044254/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1044254#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1044254/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1044254#habracut",
+      "published_at": "2026-06-05T20:04:43+00:00",
+      "title_hash": "279fc32a94c3c72479171825bd904bec0d1a02bb",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/b18/a37/10b/b18a3710ba680c1e7bd032e26f5260a9.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "313f8eac61173d97",
+      "status": "pending",
+      "created_at": "2026-06-05T21:43:32+00:00",
+      "created_at_sakhalin": "2026-06-06T08:43:32+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Как использовать Gemini в России в 2026",
+      "title_ru": "Как использовать Gemini в России в 2026",
+      "body": [
+        "Google заблокировал Gemini для российских IP — и сделал это на нескольких уровнях одновременно: веб-интерфейс, мобильное приложение, прямой доступ к API через google.com .",
+        "Google заблокировал Gemini для российских IP — и сделал это на нескольких уровнях одновременно: веб-интерфейс, мобильное приложение, прямой доступ к API через google.com .",
+        "Обойти это можно тремя способами, у каждого свои компромиссы по стабильности, стоимости и сложности настройки."
+      ],
+      "footer": null,
+      "source_text": "Google заблокировал Gemini для российских IP — и сделал это на нескольких уровнях одновременно: веб-интерфейс, мобильное приложение, прямой доступ к API через google.com . Обойти это можно тремя... Google заблокировал Gemini для российских IP — и сделал это на нескольких уровнях одновременно: веб-интерфейс, мобильное приложение, прямой доступ к API через google.com . Обойти это можно тремя способами, у каждого свои компромиссы по стабильности, стоимости и сложности настройки. Эта статья — разбор конкретных подходов к доступу: что работает в 2026 году, где ограничения, какой вариант выбрать под конкретную задачу. Читать далее Google заблокировал Gemini для российских IP — и сделал это на нескольких уровнях одновременно: веб-интерфейс, мобильное приложение, прямой доступ к API через google.com . Обойти это можно тремя способами, у каждого свои компромиссы по стабильности, стоимости и сложности настройки. Эта статья — не обзор возможностей Gemini. Это разбор конкретных подходов к доступу: что работает в 2026 году, где ограничения, какой вариант выбрать под конкретную задачу. Google применяет geo-blocking на нескольких уровнях, и важно понимать, где именно происходит проверка — это определяет, какие методы обхода работают. Веб-интерфейс gemini.google.com и мобильное приложение проверяют IP при каждом запросе. Российский IP — редирект на страницу с сообщением о недоступности сервиса. Это стандартный geo-block, который снимается VPN.",
+      "post_text": "🌐 Мировые IT\n\n<b>Как использовать Gemini в России в 2026</b>\n\nGoogle заблокировал Gemini для российских IP — и сделал это на нескольких уровнях одновременно: веб-интерфейс, мобильное приложение, прямой доступ к API через google.com .\n\nGoogle заблокировал Gemini для российских IP — и сделал это на нескольких уровнях одновременно: веб-интерфейс, мобильное приложение, прямой доступ к API через google.com .\n\nОбойти это можно тремя способами, у каждого свои компромиссы по стабильности, стоимости и сложности настройки.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/tsnis/articles/1044252/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1044252#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/companies/tsnis/articles/1044252/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1044252#habracut",
+      "published_at": "2026-06-05T19:49:06+00:00",
+      "title_hash": "ae67f41ef619a35c9492fb9fa49870633951b812",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/446/e6c/22d/446e6c22dc2cb9ab34b76b28330c1a82.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
+    {
+      "id": "1b8adaaa17c1e91d",
+      "status": "pending",
+      "created_at": "2026-06-05T21:43:32+00:00",
+      "created_at_sakhalin": "2026-06-06T08:43:32+11:00",
+      "source": "Habr",
+      "source_type": "it",
+      "category": "🌐 Мировые IT",
+      "category_hint": "🌐 Мировые IT",
+      "score": 1,
+      "title_original": "Жесткая селекция: итоги трансформации ИТ-рынка труда в 2026 году",
+      "title_ru": "Жесткая селекция: итоги трансформации ИТ-рынка труда в 2026 году",
+      "body": [
+        "Статья рассматривает кризис на рынке ИТ-труда, характеризующийся диктатом работодателей, урезанием бюджетов и автоматизацией HR-процессов.",
+        "Также анализируется влияние массового притока начинающих...",
+        "Статья рассматривает кризис на рынке ИТ-труда, характеризующийся диктатом работодателей, урезанием бюджетов и автоматизацией HR-процессов."
+      ],
+      "footer": null,
+      "source_text": "Статья рассматривает кризис на рынке ИТ-труда, характеризующийся диктатом работодателей, урезанием бюджетов и автоматизацией HR-процессов. Также анализируется влияние массового притока начинающих... Статья рассматривает кризис на рынке ИТ-труда, характеризующийся диктатом работодателей, урезанием бюджетов и автоматизацией HR-процессов. Также анализируется влияние массового притока начинающих специалистов на отбор квалифицированных кадров. Период гиперроста и дефицита кадров в ИТ-индустрии, сопровождавшийся агрессивным перекупками специалистов и перманентным увеличением ФОТ, сменился фазой жесткой рыночной коррекции. К середине 2026 года на ИТ-рынке труда окончательно сформировался выраженный тренд на доминирование работодателя (Employer's Market): совокупный объем доступных вакансий сократился в среднем на 40%, а средний hh-индекс в секторе ИТ достиг критической отметки в 20 соискателей на одно рабочее место. В текущих реалиях специалисты уровня Middle сталкиваются с автоматическим высокопроцентным отсевом на этапе первичного скрининга резюме, а соискатели уровня Senior вовлечены в многоуровневые, затяжные циклы технического и архитектурного отбора. В настоящем материале представлен детальный структурный анализ причин деградации процессов найма, исследованы макроэкономические факторы оптимизации бюджетов на разработку и предложены валидированные стратегии адаптации квалифицированных инженеров к новым условиям рынка. Читать далее Статья рассматривает кризис на рынке ИТ-труда, характеризующийся диктатом работодателей, урезанием бюджетов и автоматизацией HR-процессов. Также анализируется влияние массового притока начинающих специалистов на отбор квалифицированных кадров. Период гиперроста и дефицита кадров в ИТ-индустрии, сопровождавшийся агрессивным перекупками специалист",
+      "post_text": "🌐 Мировые IT\n\n<b>Жесткая селекция: итоги трансформации ИТ-рынка труда в 2026 году</b>\n\nСтатья рассматривает кризис на рынке ИТ-труда, характеризующийся диктатом работодателей, урезанием бюджетов и автоматизацией HR-процессов.\n\nТакже анализируется влияние массового притока начинающих...\n\nСтатья рассматривает кризис на рынке ИТ-труда, характеризующийся диктатом работодателей, урезанием бюджетов и автоматизацией HR-процессов.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1044246/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1044246#habracut\">Habr</a>",
+      "edited_post_text": null,
+      "url": "https://habr.com/ru/articles/1044246/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1044246#habracut",
+      "published_at": "2026-06-05T19:23:18+00:00",
+      "title_hash": "a1fbd6a9d42bd6d149c2f46f5861ad90290ab85e",
+      "image_url": "https://habrastorage.org/getpro/habr/upload_files/c85/d7e/e64/c85d7ee6497be1c63b04e69647939a84.png",
+      "image_mode": "source",
+      "with_image": true,
+      "image_decision": "use",
+      "editor_notes": [
+        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
+      ],
+      "review": {
+        "required": true,
+        "reviewer": "ChatGPT/editor",
+        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
+      }
+    },
     {
       "id": "7ffb45b058a8d012",
       "status": "rejected",
@@ -9293,302 +9589,6 @@
       "published_at_sakhalin": "2026-06-02T23:09:45+11:00",
       "publish_method": "sendPhoto/safe/pipeline_source_photo",
       "telegram_message_id": 143
-    },
-    {
-      "id": "c3be0874633f4f0d",
-      "status": "pending",
-      "created_at": "2026-06-05T21:43:32+00:00",
-      "created_at_sakhalin": "2026-06-06T08:43:32+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Как платформа управления AI-агентами будет справляться с нагрузкой: архитектура без магии",
-      "title_ru": "Как платформа управления AI-агентами будет справляться с нагрузкой: архитектура без магии",
-      "body": [
-        "Когда говорят про AI-агентов, обычно обсуждают качество модели, промпты, рассуждения, hallucinations, стоимость токенов и скорость ответа.",
-        "Но если убрать маркетинговый шум, быстро выясняется более...",
-        "Когда говорят про AI-агентов, обычно обсуждают качество модели, промпты, рассуждения, hallucinations, стоимость токенов и скорость ответа."
-      ],
-      "footer": null,
-      "source_text": "Когда говорят про AI-агентов, обычно обсуждают качество модели, промпты, рассуждения, hallucinations, стоимость токенов и скорость ответа. Но если убрать маркетинговый шум, быстро выясняется более... Когда говорят про AI-агентов, обычно обсуждают качество модели, промпты, рассуждения, hallucinations, стоимость токенов и скорость ответа. Но если убрать маркетинговый шум, быстро выясняется более приземлённая проблема: как вообще такая система будет работать под нагрузкой? Один пользователь попросил агента составить отчёт. Второй запустил проверку данных в CRM. Третий подключил агента к базе, почте и внутреннему API. Четвёртый дал агенту задачу, которая порождает ещё десять внутренних действий. И вот уже перед нами не “чат с искусственным интеллектом”, а полноценная распределённая платформа, где нужно контролировать запросы, права доступа, очереди, лимиты, ошибки, повторные попытки, логи, безопасность и стоимость выполнения. В этой статье я разберу, как может быть устроена платформа управления AI-агентами, подобная нашей: не как один большой чат-бот, а как отдельный слой между пользователем, моделью, API, бизнес-системами и инфраструктурой. Главный вопрос статьи: за счёт чего такая платформа может выдерживать нагрузку и не превращаться в хаос при росте числа пользователей, агентов и выполняемых действий. Читать далее Когда говорят про AI-агентов, обычно обсуждают качество модели, промпты, рассуждения, hallucinations, стоимость токенов и скорость ответа. Но если убрать маркетинговый шум, быстро выясняется более приземлённая проблема: как вообще такая система будет работать под нагрузкой? Один пользователь попросил агента составить отчёт. Второй запустил проверку данных в CRM. Третий подключил агента к базе, почте и внутреннему API. Четвёртый дал агенту задачу, которая порож",
-      "post_text": "🌐 Мировые IT\n\n<b>Как платформа управления AI-агентами будет справляться с нагрузкой: архитектура без магии</b>\n\nКогда говорят про AI-агентов, обычно обсуждают качество модели, промпты, рассуждения, hallucinations, стоимость токенов и скорость ответа.\n\nНо если убрать маркетинговый шум, быстро выясняется более...\n\nКогда говорят про AI-агентов, обычно обсуждают качество модели, промпты, рассуждения, hallucinations, стоимость токенов и скорость ответа.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1044272/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1044272#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1044272/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1044272#habracut",
-      "published_at": "2026-06-05T21:37:09+00:00",
-      "title_hash": "7880d2867dcc7d74fcad1b43f483dd953460b25e",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/9cd/476/65d/9cd47665d7f092ff220d08f831558084.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "baef93ae8ea0ed30",
-      "status": "pending",
-      "created_at": "2026-06-05T21:43:32+00:00",
-      "created_at_sakhalin": "2026-06-06T08:43:32+11:00",
-      "source": "BBC World",
-      "source_type": "world",
-      "category": "🌍 Мир о России",
-      "category_hint": "🌍 Мир о России",
-      "score": 695,
-      "title_original": "Nasa tells ISS astronauts to shelter during air leak repair attempt",
-      "title_ru": "Nasa tells ISS astronauts to shelter during air leak repair attempt",
-      "body": [
-        "Russian attempt to repair tunnel area sparks safe-haven procedure for five other astronauts onboard.",
-        "Russian attempt to repair tunnel area sparks safe-haven procedure for five other astronauts onboard.",
-        "Five of the seven crew were directed to go into the docked SpaceX shuttle Dragon \"Freedom\" on Friday afternoon and were braced for a potential evacuation."
-      ],
-      "footer": null,
-      "source_text": "Russian attempt to repair tunnel area sparks safe-haven procedure for five other astronauts onboard. Russian attempt to repair tunnel area sparks safe-haven procedure for five other astronauts onboard. Five of the seven crew were directed to go into the docked SpaceX shuttle Dragon \"Freedom\" on Friday afternoon and were braced for a potential evacuation. Meanwhile, two remaining personnel - a pair of Russian cosmonauts - attempted to repair a part of the Russian segment of the ISS, where the leaks had started increasing on Monday. The repairs were paused and the crew ordered back onto the ISS by Nasa on Friday afternoon. Jessica Meir, Jack Hathaway, Sophie Adenot and Andrey Fedyaev, who arrived on the ISS in February, had been sheltering on the docked ship, along with another astronaut Chris Williams.",
-      "post_text": "🌍 Мир о России\n\n<b>Nasa tells ISS astronauts to shelter during air leak repair attempt</b>\n\nRussian attempt to repair tunnel area sparks safe-haven procedure for five other astronauts onboard.\n\nRussian attempt to repair tunnel area sparks safe-haven procedure for five other astronauts onboard.\n\nFive of the seven crew were directed to go into the docked SpaceX shuttle Dragon \"Freedom\" on Friday afternoon and were braced for a potential evacuation.\n\nМИР О РОССИИ · <a href=\"https://www.bbc.com/news/articles/c5y7yryg01mo?at_medium=RSS&amp;at_campaign=rss\">BBC World</a>",
-      "edited_post_text": null,
-      "url": "https://www.bbc.com/news/articles/c5y7yryg01mo?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-06-05T21:35:55+00:00",
-      "title_hash": "23778ac7542c055b8d60422b706637c455b9475e",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/e535/live/411ae920-60f6-11f1-bb63-4f1168d17ecf.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "9471b87d88a75314",
-      "status": "pending",
-      "created_at": "2026-06-05T21:43:32+00:00",
-      "created_at_sakhalin": "2026-06-06T08:43:32+11:00",
-      "source": "BBC World",
-      "source_type": "world",
-      "category": "🌍 Мир о России",
-      "category_hint": "🌍 Мир о России",
-      "score": 695,
-      "title_original": "China's Xi Jinping to meet Kim Jong Un in rare visit to North Korea",
-      "title_ru": "China's Xi Jinping to meet Kim Jong Un in rare visit to North Korea",
-      "body": [
-        "It is taking place weeks after Xi met the leaders of the US and Russia - two countries that loom large over North Korea's foreign policy.",
-        "It is taking place weeks after Xi met the leaders of the US and Russia - two countries that loom large over North Korea's foreign policy.",
-        "Xi will be in North Korea from 8 to 9 June at Kim's invitation."
-      ],
-      "footer": null,
-      "source_text": "It is taking place weeks after Xi met the leaders of the US and Russia - two countries that loom large over North Korea's foreign policy. It is taking place weeks after Xi met the leaders of the US and Russia - two countries that loom large over North Korea's foreign policy. Xi will be in North Korea from 8 to 9 June at Kim's invitation. Xi last visited Pyongyang in 2019. The visit comes weeks after Xi received US President Donald Trump and Russian President Vladimir Putin in Beijing - two countries that loom large over Pyongyang's foreign policy. China is a key economic and political partner of North Korea, which faces sweeping international sanctions as a result of its nuclear weapons programme and alleged human rights violations. China and North Korea share a 1,400km-long border and are bound by a defence pact - the only one China has with any country. It guarantees mutual support if either is attacked.",
-      "post_text": "🌍 Мир о России\n\n<b>China's Xi Jinping to meet Kim Jong Un in rare visit to North Korea</b>\n\nIt is taking place weeks after Xi met the leaders of the US and Russia - two countries that loom large over North Korea's foreign policy.\n\nIt is taking place weeks after Xi met the leaders of the US and Russia - two countries that loom large over North Korea's foreign policy.\n\nXi will be in North Korea from 8 to 9 June at Kim's invitation.\n\nМИР О РОССИИ · <a href=\"https://www.bbc.com/news/articles/clypym3q7p1o?at_medium=RSS&amp;at_campaign=rss\">BBC World</a>",
-      "edited_post_text": null,
-      "url": "https://www.bbc.com/news/articles/clypym3q7p1o?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-06-05T05:17:13+00:00",
-      "title_hash": "15e28bdf401964801d19e17a923043b949897d74",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/e12b/live/6d54f040-6096-11f1-aec2-d1b9519839ae.jpg",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "2f92c7684b77fb9b",
-      "status": "pending",
-      "created_at": "2026-06-05T21:43:32+00:00",
-      "created_at_sakhalin": "2026-06-06T08:43:32+11:00",
-      "source": "Ars Technica",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 228,
-      "title_original": "The Fitbit Air is a good wearable weighed down by a chatty AI \"coach\"",
-      "title_ru": "The Fitbit Air is a good wearable weighed down by a chatty AI \"coach\"",
-      "body": [
-        "The Air succeeds as a minimalist, reliable fitness tracker, but Google's AI Health Coach feels unnecessary.",
-        "The Air succeeds as a minimalist, reliable fitness tracker, but Google's AI Health Coach feels unnecessary.",
-        "Sections Forum Subscribe Search AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day & Night Dark System Search Sign In Sign in dialog..."
-      ],
-      "footer": null,
-      "source_text": "The Air succeeds as a minimalist, reliable fitness tracker, but Google's AI Health Coach feels unnecessary. The Air succeeds as a minimalist, reliable fitness tracker, but Google's AI Health Coach feels unnecessary. Sections Forum Subscribe Search AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day & Night Dark System Search Sign In Sign in dialog... Sign in Skip the screen The Fitbit Air is a good wearable weighed down by a chatty AI “coach” The Air succeeds as a minimalist, reliable fitness tracker, but Google’s AI Health Coach feels unnecessary. 32 The Fitbit Air is much more comfortable than a smartwatch. Credit: Ryan Whitwam The Fitbit Air is much more comfortable than a smartwatch. Credit: Ryan Whitwam Text settings Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Minimize to nav Smartwatches can track your health stats, but they also do a lot of other things you might not always want or need. The $100 Fitbit Air tracker ditches the screens that have become common on people’s wrists, leaving behind a tiny puck of health sensors you can often forget you’re wearing. You will not, however, forget that Google’s new health platform is built around AI. The Air has no speaker, and there’s only one LED on the side to indicate battery level. You can double-tap the tracker to check the level, and that’s about the end of on-device features. The vibration motor is only for alarms—it can’t sync with notifications on your phone. That makes sense, gi",
-      "post_text": "🌐 Мировые IT\n\n<b>The Fitbit Air is a good wearable weighed down by a chatty AI \"coach\"</b>\n\nThe Air succeeds as a minimalist, reliable fitness tracker, but Google's AI Health Coach feels unnecessary.\n\nThe Air succeeds as a minimalist, reliable fitness tracker, but Google's AI Health Coach feels unnecessary.\n\nSections Forum Subscribe Search AI Biz &amp; IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz &amp; IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day &amp; Night Dark System Search Sign In Sign in dialog...\n\nМИРОВЫЕ IT · <a href=\"https://arstechnica.com/gadgets/2026/06/the-fitbit-air-is-great-but-googles-ai-is-too-nice-to-be-your-coach/\">Ars Technica</a>",
-      "edited_post_text": null,
-      "url": "https://arstechnica.com/gadgets/2026/06/the-fitbit-air-is-great-but-googles-ai-is-too-nice-to-be-your-coach/",
-      "published_at": "2026-06-05T15:40:48+00:00",
-      "title_hash": "a489a98eed28b34ae84a40eed1ade4b385444c89",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "fce132f3b222e7a7",
-      "status": "pending",
-      "created_at": "2026-06-05T21:43:32+00:00",
-      "created_at_sakhalin": "2026-06-06T08:43:32+11:00",
-      "source": "Ars Technica",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 228,
-      "title_original": "Steve Jobs in Exile is a fine profile of Jobs' years at NeXT",
-      "title_ru": "Steve Jobs in Exile is a fine profile of Jobs' years at NeXT",
-      "body": [
-        "“Why don’t we just frickin’ call Apple?”...",
-        "“Why don’t we just frickin’ call Apple?” Sections Forum Subscribe Search AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day & Night Dark System Se",
-        "Sign in What’s next Steve Jobs in Exile is a fine profile of Jobs’ years at NeXT “Why don’t we just frickin’ call Apple?” 83 Credit: Getty Images Credit: Getty Images Text settings Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Minimize to nav In the late 1990s, I was a precocious Mac nerd who pored over issues of Macworld, stayed up late chatting on IRC"
-      ],
-      "footer": null,
-      "source_text": "“Why don’t we just frickin’ call Apple?”... “Why don’t we just frickin’ call Apple?” Sections Forum Subscribe Search AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz & IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day & Night Dark System Search Sign In Sign in dialog... Sign in What’s next Steve Jobs in Exile is a fine profile of Jobs’ years at NeXT “Why don’t we just frickin’ call Apple?” 83 Credit: Getty Images Credit: Getty Images Text settings Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Minimize to nav In the late 1990s, I was a precocious Mac nerd who pored over issues of Macworld, stayed up late chatting on IRC, and downloaded pirated software that I didn’t actually need. I came of age at the tail end of the dial-up modem and BBS era—and got to witness the early days of the World Wide Web. I wanted to know where all of this had come from and how it had happened so quickly. The grown-ups around me seemed mystified at best and indifferent at worst. So I turned to books. I read Fire in the Valley (1984), Where Wizards Stay Up Late (1996), Infinite Loop (1999), and Dealers of Lightning (1999). In my mind (and to a lesser degree, on my actual bookshelf), I had built a mental list of my favorite selections of late 20th-century tech journalism.",
-      "post_text": "🌐 Мировые IT\n\n<b>Steve Jobs in Exile is a fine profile of Jobs' years at NeXT</b>\n\n“Why don’t we just frickin’ call Apple?”...\n\n“Why don’t we just frickin’ call Apple?” Sections Forum Subscribe Search AI Biz &amp; IT Cars Culture Gaming Health Policy Science Security Space Tech Feature Reviews AI Biz &amp; IT Cars Culture Gaming Health Policy Science Security Space Tech Forum Subscribe Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Pin to story Theme HyperLight Day &amp; Night Dark System Se\n\nSign in What’s next Steve Jobs in Exile is a fine profile of Jobs’ years at NeXT “Why don’t we just frickin’ call Apple?” 83 Credit: Getty Images Credit: Getty Images Text settings Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Minimize to nav In the late 1990s, I was a precocious Mac nerd who pored over issues of Macworld, stayed up late chatting on IRC\n\nМИРОВЫЕ IT · <a href=\"https://arstechnica.com/apple/2026/06/steve-jobs-in-exile-is-a-fine-profile-of-jobs-years-at-next/\">Ars Technica</a>",
-      "edited_post_text": null,
-      "url": "https://arstechnica.com/apple/2026/06/steve-jobs-in-exile-is-a-fine-profile-of-jobs-years-at-next/",
-      "published_at": "2026-06-05T11:15:29+00:00",
-      "title_hash": "f33515363e52edd9d6455de08b3e280e7903df6e",
-      "image_url": null,
-      "image_mode": "none",
-      "with_image": false,
-      "image_decision": "none",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "a1880518643ff007",
-      "status": "pending",
-      "created_at": "2026-06-05T21:43:32+00:00",
-      "created_at_sakhalin": "2026-06-06T08:43:32+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Дофаминовая петля Strava: как геймификация сегментов превратила велосипедистов в «охотников за KOM»",
-      "title_ru": "Дофаминовая петля Strava: как геймификация сегментов превратила велосипедистов в «охотников за KOM»",
-      "body": [
-        "Как одна продуктовая фича может превратить обычный GPS-трекер в главную спортивную зависимость десятилетия?",
-        "Разбираем феномен «KOM-хантеров» в Strava с точки зрения поведенческой психологии и...",
-        "Как одна продуктовая фича может превратить обычный GPS-трекер в главную спортивную зависимость десятилетия?"
-      ],
-      "footer": null,
-      "source_text": "Как одна продуктовая фича может превратить обычный GPS-трекер в главную спортивную зависимость десятилетия? Разбираем феномен «KOM-хантеров» в Strava с точки зрения поведенческой психологии и... Как одна продуктовая фича может превратить обычный GPS-трекер в главную спортивную зависимость десятилетия? Разбираем феномен «KOM-хантеров» в Strava с точки зрения поведенческой психологии и системного анализа. Внутри: механика дофаминовой петли, технические уязвимости алгоритмов расчета сегментов при частоте опроса GPS в 1 Гц, программное читерство через API и то, как комьюнити устраивает самосуд над нарушителями виртуальных границ. Читать далее Как одна продуктовая фича может превратить обычный GPS-трекер в главную спортивную зависимость десятилетия? Разбираем феномен «KOM-хантеров» в Strava с точки зрения поведенческой психологии и системного анализа. Внутри: механика дофаминовой петли, технические уязвимости алгоритмов расчета сегментов при частоте опроса GPS в 1 Гц, программное читерство через API и то, как комьюнити устраивает самосуд над нарушителями виртуальных границ. Обычные фитнес-трекеры вроде Garmin Connect или Apple Health создавались как утилитарные блокноты для записи метрик: пульс, темп, километраж. Они общаются с пользователем на языке сухой графики. Strava пошла по другому пути — она внедрила поведенческую инженерию и развернула классическую модель «крючка» (Hook Model) Нира Эяля прямо на карте ваших ежедневных маршрутов. Продукт эволюционировал из зеркала вашей физической формы в полноценный симулятор доминирования, где главным ресурсом стал дофамин. В основе социальной архитектуры Strava лежит «лайк», получивший название Kudos (от греческого «слава», «гордость»). Но в отличие от стандартного лайка в Instagram, Kudos обладает гораздо более высокой конверсией",
-      "post_text": "🌐 Мировые IT\n\n<b>Дофаминовая петля Strava: как геймификация сегментов превратила велосипедистов в «охотников за KOM»</b>\n\nКак одна продуктовая фича может превратить обычный GPS-трекер в главную спортивную зависимость десятилетия?\n\nРазбираем феномен «KOM-хантеров» в Strava с точки зрения поведенческой психологии и...\n\nКак одна продуктовая фича может превратить обычный GPS-трекер в главную спортивную зависимость десятилетия?\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1044254/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1044254#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1044254/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1044254#habracut",
-      "published_at": "2026-06-05T20:04:43+00:00",
-      "title_hash": "279fc32a94c3c72479171825bd904bec0d1a02bb",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/b18/a37/10b/b18a3710ba680c1e7bd032e26f5260a9.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "313f8eac61173d97",
-      "status": "pending",
-      "created_at": "2026-06-05T21:43:32+00:00",
-      "created_at_sakhalin": "2026-06-06T08:43:32+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Как использовать Gemini в России в 2026",
-      "title_ru": "Как использовать Gemini в России в 2026",
-      "body": [
-        "Google заблокировал Gemini для российских IP — и сделал это на нескольких уровнях одновременно: веб-интерфейс, мобильное приложение, прямой доступ к API через google.com .",
-        "Google заблокировал Gemini для российских IP — и сделал это на нескольких уровнях одновременно: веб-интерфейс, мобильное приложение, прямой доступ к API через google.com .",
-        "Обойти это можно тремя способами, у каждого свои компромиссы по стабильности, стоимости и сложности настройки."
-      ],
-      "footer": null,
-      "source_text": "Google заблокировал Gemini для российских IP — и сделал это на нескольких уровнях одновременно: веб-интерфейс, мобильное приложение, прямой доступ к API через google.com . Обойти это можно тремя... Google заблокировал Gemini для российских IP — и сделал это на нескольких уровнях одновременно: веб-интерфейс, мобильное приложение, прямой доступ к API через google.com . Обойти это можно тремя способами, у каждого свои компромиссы по стабильности, стоимости и сложности настройки. Эта статья — разбор конкретных подходов к доступу: что работает в 2026 году, где ограничения, какой вариант выбрать под конкретную задачу. Читать далее Google заблокировал Gemini для российских IP — и сделал это на нескольких уровнях одновременно: веб-интерфейс, мобильное приложение, прямой доступ к API через google.com . Обойти это можно тремя способами, у каждого свои компромиссы по стабильности, стоимости и сложности настройки. Эта статья — не обзор возможностей Gemini. Это разбор конкретных подходов к доступу: что работает в 2026 году, где ограничения, какой вариант выбрать под конкретную задачу. Google применяет geo-blocking на нескольких уровнях, и важно понимать, где именно происходит проверка — это определяет, какие методы обхода работают. Веб-интерфейс gemini.google.com и мобильное приложение проверяют IP при каждом запросе. Российский IP — редирект на страницу с сообщением о недоступности сервиса. Это стандартный geo-block, который снимается VPN.",
-      "post_text": "🌐 Мировые IT\n\n<b>Как использовать Gemini в России в 2026</b>\n\nGoogle заблокировал Gemini для российских IP — и сделал это на нескольких уровнях одновременно: веб-интерфейс, мобильное приложение, прямой доступ к API через google.com .\n\nGoogle заблокировал Gemini для российских IP — и сделал это на нескольких уровнях одновременно: веб-интерфейс, мобильное приложение, прямой доступ к API через google.com .\n\nОбойти это можно тремя способами, у каждого свои компромиссы по стабильности, стоимости и сложности настройки.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/companies/tsnis/articles/1044252/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1044252#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/companies/tsnis/articles/1044252/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1044252#habracut",
-      "published_at": "2026-06-05T19:49:06+00:00",
-      "title_hash": "ae67f41ef619a35c9492fb9fa49870633951b812",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/446/e6c/22d/446e6c22dc2cb9ab34b76b28330c1a82.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
-    },
-    {
-      "id": "1b8adaaa17c1e91d",
-      "status": "pending",
-      "created_at": "2026-06-05T21:43:32+00:00",
-      "created_at_sakhalin": "2026-06-06T08:43:32+11:00",
-      "source": "Habr",
-      "source_type": "it",
-      "category": "🌐 Мировые IT",
-      "category_hint": "🌐 Мировые IT",
-      "score": 1,
-      "title_original": "Жесткая селекция: итоги трансформации ИТ-рынка труда в 2026 году",
-      "title_ru": "Жесткая селекция: итоги трансформации ИТ-рынка труда в 2026 году",
-      "body": [
-        "Статья рассматривает кризис на рынке ИТ-труда, характеризующийся диктатом работодателей, урезанием бюджетов и автоматизацией HR-процессов.",
-        "Также анализируется влияние массового притока начинающих...",
-        "Статья рассматривает кризис на рынке ИТ-труда, характеризующийся диктатом работодателей, урезанием бюджетов и автоматизацией HR-процессов."
-      ],
-      "footer": null,
-      "source_text": "Статья рассматривает кризис на рынке ИТ-труда, характеризующийся диктатом работодателей, урезанием бюджетов и автоматизацией HR-процессов. Также анализируется влияние массового притока начинающих... Статья рассматривает кризис на рынке ИТ-труда, характеризующийся диктатом работодателей, урезанием бюджетов и автоматизацией HR-процессов. Также анализируется влияние массового притока начинающих специалистов на отбор квалифицированных кадров. Период гиперроста и дефицита кадров в ИТ-индустрии, сопровождавшийся агрессивным перекупками специалистов и перманентным увеличением ФОТ, сменился фазой жесткой рыночной коррекции. К середине 2026 года на ИТ-рынке труда окончательно сформировался выраженный тренд на доминирование работодателя (Employer's Market): совокупный объем доступных вакансий сократился в среднем на 40%, а средний hh-индекс в секторе ИТ достиг критической отметки в 20 соискателей на одно рабочее место. В текущих реалиях специалисты уровня Middle сталкиваются с автоматическим высокопроцентным отсевом на этапе первичного скрининга резюме, а соискатели уровня Senior вовлечены в многоуровневые, затяжные циклы технического и архитектурного отбора. В настоящем материале представлен детальный структурный анализ причин деградации процессов найма, исследованы макроэкономические факторы оптимизации бюджетов на разработку и предложены валидированные стратегии адаптации квалифицированных инженеров к новым условиям рынка. Читать далее Статья рассматривает кризис на рынке ИТ-труда, характеризующийся диктатом работодателей, урезанием бюджетов и автоматизацией HR-процессов. Также анализируется влияние массового притока начинающих специалистов на отбор квалифицированных кадров. Период гиперроста и дефицита кадров в ИТ-индустрии, сопровождавшийся агрессивным перекупками специалист",
-      "post_text": "🌐 Мировые IT\n\n<b>Жесткая селекция: итоги трансформации ИТ-рынка труда в 2026 году</b>\n\nСтатья рассматривает кризис на рынке ИТ-труда, характеризующийся диктатом работодателей, урезанием бюджетов и автоматизацией HR-процессов.\n\nТакже анализируется влияние массового притока начинающих...\n\nСтатья рассматривает кризис на рынке ИТ-труда, характеризующийся диктатом работодателей, урезанием бюджетов и автоматизацией HR-процессов.\n\nМИРОВЫЕ IT · <a href=\"https://habr.com/ru/articles/1044246/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1044246#habracut\">Habr</a>",
-      "edited_post_text": null,
-      "url": "https://habr.com/ru/articles/1044246/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1044246#habracut",
-      "published_at": "2026-06-05T19:23:18+00:00",
-      "title_hash": "a1fbd6a9d42bd6d149c2f46f5861ad90290ab85e",
-      "image_url": "https://habrastorage.org/getpro/habr/upload_files/c85/d7e/e64/c85d7ee6497be1c63b04e69647939a84.png",
-      "image_mode": "source",
-      "with_image": true,
-      "image_decision": "use",
-      "editor_notes": [
-        "Черновик сохранён без OpenRouter-генерации: требуется редакторская проверка/правка перед approved."
-      ],
-      "review": {
-        "required": true,
-        "reviewer": "ChatGPT/editor",
-        "instruction": "Approve only after checking: one concrete fresh news item, correct category, factual Russian post text, no mixed digest, no low-value ad/deal/tutorial, image relevant or image_decision=drop. If edited, fill edited_post_text."
-      }
     }
   ],
   "auto_review": {
