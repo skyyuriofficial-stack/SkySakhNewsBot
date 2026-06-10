@@ -1,4 +1,4 @@
-name: SkySakhNews Auto Publisher V8
+name: SkySakhNews Auto Publisher V9
 
 on:
   workflow_dispatch:
@@ -34,8 +34,8 @@ jobs:
           POSTS_PER_RUN: "2"
           MAX_AGE_HOURS: "36"
         run: |
-          python -m py_compile src/news_bot_v8.py
-          python src/news_bot_v8.py
+          python -m py_compile src/news_bot_v9.py
+          python src/news_bot_v9.py
       - name: Commit state
         run: |
           git config user.name "skysakhnews-bot"
