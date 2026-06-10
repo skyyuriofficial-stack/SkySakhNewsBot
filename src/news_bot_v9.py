@@ -1,180 +1,124 @@
-# v9: stable overlay over v7.
-# Fixes:
-# - v7 compatibility bug: RU_WORLD missing in some saved versions.
-# - false gaming matches from tiny tokens like "ea" / "ai" inside normal English words.
-# - keeps the required streams: world about Russia, Sakhalin, RF war/economy/laws,
-#   world IT, loud gaming news.
+# v9: strict stream classification overlay over v8.
+# Goal: prevent non-Russia world stories from being labelled as "Мир о России".
+# Example fixed: USA/Iran/Apache story must be "Геополитика", not "Мир о России".
 
 import re
-import news_bot_v7 as b
+import urllib.parse
+import news_bot_v8 as b
 
-# Compatibility patch for older v7 file where the list was named WORLD_RU.
-if not hasattr(b, "RU_WORLD"):
-    b.RU_WORLD = getattr(b, "WORLD_RU", [])
-
-b.FOOTER.update({
-    "🌐 Мировые IT": "МИРОВЫЕ IT",
-    "🎮 Игры / индустрия": "ИГРОВАЯ ИНДУСТРИЯ",
-})
-
-IT_HARD = [
-    "openai", "chatgpt", "gpt", "gemini", "google", "anthropic", "claude",
-    "microsoft", "apple", "meta", "nvidia", "amd", "intel", "spacex", "tesla",
-    "grok", "deepseek", "neuralink", "tsmc", "samsung", "chip", "chips",
-    "semiconductor", "cyberattack", "hack", "hacker", "breach", "data leak",
-    "privacy", "spyware", "ransomware", "artificial intelligence",
-    "ии", "нейросеть", "нейросети", "искусственный интеллект", "кибератака",
-    "хакер", "взлом", "утечка", "данных", "персональные данные", "чип", "чипы",
+RUSSIA_MARKERS = [
+    "russia", "russian", "moscow", "kremlin", "putin", "lavrov",
+    "россия", "россии", "россию", "россией", "рф", "российск", "москва", "кремль", "путин", "лавров",
 ]
 
-GAMING = [
-    "game", "games", "gaming", "gamer", "videogame", "videogames", "xbox",
-    "playstation", "ps5", "ps6", "nintendo", "switch", "steam", "valve", "epic games",
-    "ubisoft", "electronic arts", "rockstar", "gta", "gta 6", "gta6", "grand theft auto",
-    "take-two", "bethesda", "activision", "blizzard", "sony", "cd projekt", "cyberpunk",
-    "witcher", "stalker", "stalker 2", "warhammer", "elden ring", "fromsoftware",
-    "kojima", "geforce", "rtx", "unreal engine", "unity",
-    "геймдев", "игра", "игры", "игровая", "геймер", "геймеры", "гейминг",
-    "плейстейшен", "нинтендо", "стим", "рокстар", "гта", "сталкер",
-    "киберпанк", "ведьмак", "разработчики", "релиз", "трейлер", "консоль", "консоли",
-]
-
-GAMING_STRONG = [
-    "gta", "gta 6", "gta6", "rockstar", "sony", "microsoft", "xbox", "playstation",
-    "nintendo", "steam", "valve", "nvidia", "unreal engine", "stalker", "cyberpunk",
-    "witcher", "activision", "blizzard", "bethesda", "релиз", "трейлер", "консоль",
-    "гта", "рокстар", "сталкер", "киберпанк", "ведьмак",
-]
-
-IT_STRONG = [
-    "openai", "chatgpt", "gpt", "gemini", "google", "microsoft", "apple", "meta",
-    "nvidia", "deepseek", "cyberattack", "hack", "breach", "data leak",
-    "кибератака", "взлом", "утечка", "ии", "нейросеть",
+GEO_MARKERS = [
+    "iran", "иран", "israel", "израиль", "usa", "u.s.", "us ", "сша", "america", "американ",
+    "trump", "трамп", "nato", "нато", "china", "китай", "taiwan", "тайвань", "g7", "g20",
+    "war", "война", "conflict", "конфликт", "strike", "attack", "удар", "удары", "missile", "ракета",
+    "drone", "дрон", "military", "военн", "base", "база", "air defense", "пво",
+    "sanctions", "санкц", "oil", "нефть", "gas", "газ", "middle east", "ближн", "йемен", "yemen",
 ]
 
 
-def term_hits(text, terms):
-    """Safer term matcher. Short Latin tokens must be whole words, not substrings."""
-    raw = (text or "").lower()
-    hits = []
-    for term in terms:
-        t = term.lower().strip()
-        if not t:
+def has_marker(text, markers):
+    raw = " " + (text or "").lower() + " "
+    for marker in markers:
+        m = marker.lower().strip()
+        if not m:
             continue
-        # Multi-word phrase: plain substring is intended.
-        if " " in t or "-" in t:
-            if t in raw:
-                hits.append(term)
-            continue
-        # Latin short token must be a whole token. Prevents 'ea' in 'fear', 'ai' in 'said'.
-        if re.fullmatch(r"[a-z0-9]{1,3}", t):
-            if re.search(rf"(?<![a-z0-9]){re.escape(t)}(?![a-z0-9])", raw):
-                hits.append(term)
-            continue
-        # Normal terms: word boundary for Latin, substring for Russian stems.
-        if re.fullmatch(r"[a-z0-9]+", t):
-            if re.search(rf"(?<![a-z0-9]){re.escape(t)}(?![a-z0-9])", raw):
-                hits.append(term)
-        else:
-            if t in raw:
-                hits.append(term)
-    return hits
+        if re.fullmatch(r"[a-z0-9.]+", m):
+            if re.search(rf"(?<![a-z0-9]){re.escape(m)}(?![a-z0-9])", raw):
+                return True
+        elif m in raw:
+            return True
+    return False
 
 
-b.SOURCES = [
-    ("Sakhalin", "sakhalin", b.gnews("Сахалин OR Южно-Сахалинск OR Холмск OR Корсаков OR Курилы ДТП OR пожар OR происшествие OR землетрясение OR шторм OR авария OR розыск OR отключение OR задержали OR суд", "ru", "RU")),
-    ("Interfax", "ru", "https://www.interfax.ru/rss.asp"),
-    ("Reuters", "world", b.gnews("site:reuters.com Russia Ukraine sanctions NATO China G7 oil gas drone missile war economy")),
-    ("AP News", "world", b.gnews("site:apnews.com Russia Ukraine sanctions NATO China G7 oil gas Iran Israel drone missile war")),
-    ("BBC World", "world", "https://feeds.bbci.co.uk/news/world/rss.xml"),
-    ("Guardian World", "world", "https://www.theguardian.com/world/rss"),
-    ("BBC Technology", "it", "https://feeds.bbci.co.uk/news/technology/rss.xml"),
-    ("Guardian Technology", "it", "https://www.theguardian.com/technology/rss"),
-    ("The Verge", "it", "https://www.theverge.com/rss/index.xml"),
-    ("Ars Technica", "it", "https://feeds.arstechnica.com/arstechnica/index"),
-    ("Habr", "it", "https://habr.com/ru/rss/articles/"),
-    ("GameSpot", "gaming", "https://www.gamespot.com/feeds/mashup/"),
-    ("IGN", "gaming", "https://feeds.feedburner.com/ign/all"),
-    ("PC Gamer", "gaming", "https://www.pcgamer.com/rss/"),
-    ("Eurogamer", "gaming", "https://www.eurogamer.net/feed/news"),
-]
+def count_markers(text, markers):
+    raw = " " + (text or "").lower() + " "
+    count = 0
+    for marker in markers:
+        m = marker.lower().strip()
+        if not m:
+            continue
+        if re.fullmatch(r"[a-z0-9.]+", m):
+            if re.search(rf"(?<![a-z0-9]){re.escape(m)}(?![a-z0-9])", raw):
+                count += 1
+        elif m in raw:
+            count += 1
+    return count
+
 
 _old_classify = b.classify
 
 
-def classify(source_type, title, rss_text, page_desc, url):
-    text = f"{title} {rss_text} {page_desc}".lower()
+def classify(src_type, weight, title, rss_text, desc, url):
+    text = f"{title} {rss_text} {desc}".lower()
+    path = urllib.parse.urlparse(url or "").path.lower()
 
-    if source_type == "gaming" or term_hits(text, GAMING):
-        # Gaming is allowed only for actual gaming/industry vocabulary, not accidental substrings.
-        score = 112
-        if term_hits(text, GAMING_STRONG):
-            score += 35
-        return "🎮 Игры / индустрия", score
+    if b.terms(text, b.NOISE):
+        return None, 0, "noise"
 
-    if source_type == "it":
-        if term_hits(text, IT_HARD):
-            score = 108
-            if term_hits(text, IT_STRONG):
-                score += 35
-            return "🌐 Мировые IT", score
-        return None, 0
+    # Сахалин: отдельно сейсмика/ЧП, чтобы подпись соответствовала содержанию.
+    is_local = src_type == "sakhalin" or bool(b.terms(text, b.LOCAL))
+    if is_local:
+        if b.terms(text, b.QUAKE):
+            return "sakh_quake", weight + 36, "local_quake"
+        if b.terms(text, b.LOCAL_EVENT):
+            return "sakh_chp", weight + 32, "local_chp"
+        if len(b.clean(rss_text + " " + desc)) >= 180:
+            return "sakh", weight + 18, "local_general"
+        return None, 0, "local_low_signal"
 
-    return _old_classify(source_type, title, rss_text, page_desc, url)
+    # Мир о России: только если есть явный российский маркер.
+    # Trump/China/Iran/USA alone are not Russia-related.
+    if src_type == "world":
+        if has_marker(text, RUSSIA_MARKERS):
+            return "world_ru", weight + 20, "world_about_russia_strict"
+        if count_markers(text, GEO_MARKERS) >= 2:
+            return "geo", weight + 10, "geo_strict"
+        return None, 0, "world_not_in_stream"
+
+    if src_type == "it":
+        return ("it", weight + 10, "it") if b.terms(text, b.IT) else (None, 0, "it_not_relevant")
+
+    if src_type == "ru":
+        if "/moscow/" in path:
+            return None, 0, "moscow_noise"
+        if b.terms(text, b.QUAKE) and b.terms(text, b.LOCAL):
+            return "sakh_quake", weight + 24, "ru_local_quake"
+        if b.terms(text, b.ECO):
+            return "ru_eco", weight + 12, "ru_eco"
+        if b.terms(text, b.POL) or has_marker(text, RUSSIA_MARKERS):
+            return "ru_pol", weight + 10, "ru_pol"
+        if count_markers(text, GEO_MARKERS) >= 2:
+            return "geo", weight + 6, "ru_geo"
+        return None, 0, "ru_not_in_stream"
+
+    return _old_classify(src_type, weight, title, rss_text, desc, url)
 
 
 b.classify = classify
 
-
-def select_order(items):
-    main = [x for x in items if x["category_hint"] in (
-        "🌍 Мир о России",
-        "🇷🇺 РФ / война и безопасность",
-        "🇷🇺 РФ / экономика",
-        "🇷🇺 РФ / законы и политика",
-    )]
-    local = [x for x in items if x["category_hint"] == "📍 Сахалин"]
-    tech_game = [x for x in items if x["category_hint"] in ("🌐 Мировые IT", "🎮 Игры / индустрия")]
-
-    ordered = []
-    if main:
-        ordered.append(main[0])
-    if local:
-        ordered.append(local[0])
-    if len(ordered) < 2 and tech_game:
-        ordered.append(tech_game[0])
-
-    for item in tech_game + main + local + items:
-        if item not in ordered:
-            ordered.append(item)
-    return ordered
+# Extra guard: if a candidate somehow remains world_ru without Russian marker, reject it before publication.
+_old_collect = b.collect
 
 
-b.select_order = select_order
-
-_old_prompt_write = b.prompt_write
-
-
-def prompt_write(item, error=""):
-    if item.get("category_hint") in ("🌐 Мировые IT", "🎮 Игры / индустрия"):
-        return (
-            "Сделай короткий новостной пост для Telegram строго на русском языке.\n"
-            "Тематика: громкие мировые IT и игровые новости: OpenAI, Google, Microsoft, Apple, NVIDIA, кибератаки, утечки, консоли, GTA, Steam, Xbox, PlayStation, крупные игровые релизы и сделки.\n\n"
-            "Правила:\n"
-            "1) Только факты из title/source_text. Ничего не добавляй.\n"
-            "2) Английский текст переведи на русский. Английские предложения запрещены.\n"
-            "3) 2-3 абзаца, каждый 1-2 предложения.\n"
-            "4) Не используй списки, 'Суть', 'Источник', 'Что известно'.\n"
-            "5) Заголовок конкретный. Не общий шаблон.\n"
-            "6) Если новость мелкая, обзорная, рекламная или без явного инфоповода — reject=true.\n"
-            f"Ошибка предыдущей попытки: {error}\n\n"
-            "Формат строго JSON: {\"reject\":false,\"title_ru\":\"...\",\"body\":[\"абзац\",\"абзац\"],\"footer\":\"...\"}\n\n"
-            "Данные:\n" + b.json.dumps({"category": item["category_hint"], "footer": b.FOOTER.get(item["category_hint"], "НОВОСТИ"), "source": item["source"], "title": item["title"], "source_text": item["summary"], "published_at": item["published_at"]}, ensure_ascii=False)
-        )
-    return _old_prompt_write(item, error)
+def collect(state):
+    items = _old_collect(state)
+    filtered = []
+    for item in items:
+        if item.get("category_key") == "world_ru":
+            body = f"{item.get('title', '')} {item.get('source_text', '')}".lower()
+            if not has_marker(body, RUSSIA_MARKERS):
+                b.STATS["category_skip"] = b.STATS.get("category_skip", 0) + 1
+                b.log("skip stream mismatch: " + item.get("title", "")[:90])
+                continue
+        filtered.append(item)
+    return filtered
 
 
-b.prompt_write = prompt_write
+b.collect = collect
 
 if __name__ == "__main__":
     b.main()
