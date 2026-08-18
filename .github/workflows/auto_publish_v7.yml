@@ -4,6 +4,14 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 2,5,8,11,20,23 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - "src/news_bot_v8.py"
+      - "src/news_bot_v9.py"
+      - "requirements.txt"
+      - ".github/workflows/auto_publish_v7.yml"
 
 permissions:
   contents: write
