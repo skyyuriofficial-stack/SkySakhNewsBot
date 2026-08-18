@@ -124,7 +124,9 @@
     "https://www.interfax.ru/world/1095390",
     "https://www.interfax.ru/world/1095396",
     "https://www.interfax.ru/business/1095510",
-    "https://www.bbc.com/news/articles/c78y6w78828o?at_medium=RSS&at_campaign=rss"
+    "https://www.bbc.com/news/articles/c78y6w78828o?at_medium=RSS&at_campaign=rss",
+    "https://www.interfax.ru/world/1110010",
+    "https://www.bbc.co.uk/news/articles/cy5dz0kkn0wo?at_medium=RSS&at_campaign=rss"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -251,36 +253,12 @@
     "ff1e28e93e0e41d22d64928e399a76c36f5c5c4b",
     "6d423866bb5cb58b85f78896e45adac53dcf89bd",
     "f5931ca6ee10c7bc2a85d11e10a539542fa9d166",
-    "938842ac63515ca33546a61cefb58c0429ca331a"
+    "938842ac63515ca33546a61cefb58c0429ca331a",
+    "8f7c669a40e8bdd581bf26031283f039ba115a06",
+    "6c2016281a523bc01423dd35ade168b0a59a37f2"
   ],
-  "last_run_sakhalin": "2026-06-12T17:46:14+11:00",
+  "last_run_sakhalin": "2026-08-19T10:07:09+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-20T15:52:36+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "title": "Путин и Си провели переговоры в Пекине, США голосуют по резолюции по Ирану",
-      "url": "https://www.interfax.ru/world/1090559",
-      "published_at": "2026-05-20T04:30:00+00:00",
-      "with_image": true,
-      "image_mode": "thematic_url",
-      "image_url": "https://loremflickr.com/1280/720/summit%2Cdiplomacy%2Cflags?lock=827157",
-      "publish_method": "sendPhoto/thematic_url",
-      "score": 145
-    },
-    {
-      "time_sakhalin": "2026-05-20T15:53:39+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "title": "Ракетный обстрел Белгорода: повреждена кровля многоквартирного дома",
-      "url": "https://www.interfax.ru/russia/1090575",
-      "published_at": "2026-05-20T04:08:00+00:00",
-      "with_image": true,
-      "image_mode": "thematic_url",
-      "image_url": "https://loremflickr.com/1280/720/technology%2Cserver%2Ccomputer?lock=918690",
-      "publish_method": "sendPhoto/thematic_url",
-      "score": 145
-    },
     {
       "time_sakhalin": "2026-05-20T17:14:15+11:00",
       "source": "Interfax",
@@ -3899,6 +3877,32 @@
       "published_at": "2026-06-12T05:53:19+00:00",
       "with_image": true,
       "publish_method": "sendPhoto/uploaded_jpeg"
+    },
+    {
+      "time_sakhalin": "2026-08-19T10:06:40+11:00",
+      "source": "Interfax",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title": "В парламенте Ирана заявили, что давление на Тегеран не поможет США заключить соглашение",
+      "url": "https://www.interfax.ru/world/1110010",
+      "image_url": null,
+      "image_hash": null,
+      "published_at": "2026-08-18T21:24:00+00:00",
+      "with_image": false,
+      "publish_method": "sendMessage/no-safe-image"
+    },
+    {
+      "time_sakhalin": "2026-08-19T10:07:01+11:00",
+      "source": "BBC World",
+      "category": "🌍 Мир о России",
+      "category_key": "world_ru",
+      "title": "Великобритания поддерживает Украину на 100%, заявил Бёрнхэм после предупреждения России о дронах",
+      "url": "https://www.bbc.co.uk/news/articles/cy5dz0kkn0wo?at_medium=RSS&at_campaign=rss",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/2c0d/live/a0e5f360-9aec-11f1-930b-57cfba7235f9.jpg",
+      "image_hash": "8293c0f769011e281d135e29c120939f9858e277",
+      "published_at": "2026-08-18T12:36:11+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/stable-v9.3"
     }
   ],
   "last_cycle_report": {
@@ -4082,5 +4086,30 @@
     "delete_bad_posts": false,
     "deleted": [],
     "items": []
+  },
+  "last_run": {
+    "version": "stable-v9.3",
+    "started_sakhalin": "2026-08-19T10:05:59+11:00",
+    "status": "ok",
+    "candidates": 18,
+    "published": 2,
+    "finished_sakhalin": "2026-08-19T10:07:09+11:00",
+    "stats": {
+      "rss_seen": 141,
+      "old_skip": 65,
+      "google_skip": 8,
+      "duplicate_skip": 2,
+      "low_info_skip": 15,
+      "category_skip": 33,
+      "no_image_skip": 0,
+      "bad_image_skip": 2,
+      "logo_image_skip": 5,
+      "text_card_image_skip": 0,
+      "candidates": 18,
+      "rewrite_retry": 0,
+      "editorial_skip": 0,
+      "telegram_fail": 0,
+      "published": 2
+    }
   }
 }
