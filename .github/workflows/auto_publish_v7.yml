@@ -1,4 +1,4 @@
-name: SkySakhNews Auto Publisher V16
+name: SkySakhNews Auto Publisher Stable
 
 on:
   workflow_dispatch:
@@ -21,10 +21,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: |
+      - name: Install dependencies
+        run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Run publisher
+      - name: Compile production code
+        run: |
+          python -m py_compile src/news_bot_v8.py src/news_bot_v9.py
+      - name: Run stable publisher
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
@@ -34,9 +38,9 @@ jobs:
           POSTS_PER_RUN: "2"
           MAX_AGE_HOURS: "36"
         run: |
-          python -m py_compile src/news_bot_v16.py
-          python src/news_bot_v16.py
-      - name: Commit state
+          python src/news_bot_v9.py
+      - name: Commit state and health stamp
+        if: always()
         run: |
           git config user.name "skysakhnews-bot"
           git config user.email "actions@github.com"
