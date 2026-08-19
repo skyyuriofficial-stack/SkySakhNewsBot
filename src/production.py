@@ -7,10 +7,11 @@ collection/grounding; this module applies runtime invariants and fail-safe polic
 import os
 import re
 import urllib.parse
+from datetime import datetime, timezone
 
 import news_bot_v9 as core
 
-VERSION = "stable-v9.7"
+VERSION = "stable-v9.8"
 core.VERSION = VERSION
 
 # ---------------------------------------------------------------------------
@@ -35,8 +36,10 @@ core.b.page_info = cached_page_info
 
 
 # ---------------------------------------------------------------------------
-# Source geography: publisher country != story geography
+# Classification policy
 # ---------------------------------------------------------------------------
+core.b.CAT["ru_incident"] = ("🇷🇺 Россия / происшествия", "РОССИЯ | ПРОИСШЕСТВИЯ")
+
 INTERNATIONAL_PATH_MARKERS = (
     "/world/",
     "/international/",
@@ -54,23 +57,54 @@ FOREIGN_CONTEXT_MARKERS = [
     "trump", "трамп", "white house", "белый дом",
 ]
 
+WEATHER_MARKERS = [
+    "погода", "дожд", "ливень", "осадк", "снег", "метел", "циклон", "шторм",
+    "ветер", "туман", "мороз", "жара", "температур", "гидромет", "росгидромет",
+]
+
+INCIDENT_MARKERS = [
+    "дтп", "авари", "пожар", "погиб", "погибли", "смерт", "пострадал", "пострадали",
+    "утонул", "утонула", "катер", "лодк", "крушен", "обрушен", "травм", "происшеств",
+    "убийств", "ранен", "ранены", "пропал", "пропала", "розыск", "спасател", "мчс",
+    "следствен", "следовател", "полици", "прокуратур", "уголовн", "судно",
+]
+
 
 def is_international_url(url):
     path = urllib.parse.urlparse(url or "").path.lower()
     return any(marker in path for marker in INTERNATIONAL_PATH_MARKERS)
 
 
-def classify_v97(src_type, weight, title, rss_text, desc, url):
-    if src_type != "ru":
-        return core.classify(src_type, weight, title, rss_text, desc, url)
-
+def classify_v98(src_type, weight, title, rss_text, desc, url):
     text = f"{title} {rss_text} {desc}".lower()
     path = urllib.parse.urlparse(url or "").path.lower()
 
     if core.b.terms(text, core.b.NOISE):
         return None, 0, "noise"
 
+    # IT/world retain the hardened core rules.
+    if src_type in {"it", "world"}:
+        return core.classify(src_type, weight, title, rss_text, desc, url)
+
+    # Local publisher: weather is normal local news, not an emergency by default.
+    if src_type == "sakhalin":
+        if core.hits(text, WEATHER_MARKERS):
+            return "sakh", weight + 22, "local_weather"
+        if core.b.terms(text, core.b.QUAKE):
+            return "sakh_quake", weight + 36, "local_quake"
+        if core.b.terms(text, core.b.LOCAL_EVENT):
+            return "sakh_chp", weight + 32, "local_chp"
+        if core.b.terms(text, core.b.LOCAL) or len(core.b.clean(rss_text + " " + desc)) >= 140:
+            return "sakh", weight + 18, "local_general"
+        return None, 0, "local_low_signal"
+
+    if src_type != "ru":
+        return None, 0, "unknown_source_type"
+
+    # A national source may become local only with explicit Sakhalin geography.
     if core.b.terms(text, core.b.LOCAL):
+        if core.hits(text, WEATHER_MARKERS):
+            return "sakh", weight + 18, "ru_local_weather"
         if core.b.terms(text, core.b.QUAKE):
             return "sakh_quake", weight + 24, "ru_local_quake"
         if core.b.terms(text, core.b.LOCAL_EVENT):
@@ -80,66 +114,88 @@ def classify_v97(src_type, weight, title, rss_text, desc, url):
     if "/moscow/" in path:
         return None, 0, "moscow_noise"
 
+    # Russian publisher's international desk is classified by story geography.
     if is_international_url(url):
         if core.hits(text, core.RUSSIA_MARKERS):
             return "world_ru", weight + 18, "ru_source_world_about_russia"
-
         foreign_hits = set(core.hits(text, core.GEO_MARKERS + FOREIGN_CONTEXT_MARKERS))
         if len(foreign_hits) >= 2:
             return "geo", weight + 8, "ru_source_foreign_geo"
         return None, 0, "ru_source_foreign_weak"
 
+    # Domestic event type before politics/economy.
     if core.hits(text, core.SECURITY_MARKERS):
         return "ru_security", weight + 18, "ru_security"
+    if core.hits(text, INCIDENT_MARKERS):
+        return "ru_incident", weight + 15, "ru_incident"
     if core.b.terms(text, core.b.ECO):
         return "ru_eco", weight + 12, "ru_eco"
-    if core.b.terms(text, core.b.POL) or core.hits(text, core.RUSSIA_MARKERS):
+    if core.b.terms(text, core.b.POL):
         return "ru_pol", weight + 10, "ru_pol"
     if len(set(core.hits(text, core.GEO_MARKERS))) >= 2:
         return "geo", weight + 6, "ru_geo"
+
+    # Merely mentioning Russia is not a political category.
     return None, 0, "ru_not_in_stream"
 
 
-# b.collect calls b.classify dynamically.
-core.b.classify = classify_v97
+core.b.classify = classify_v98
 
 _original_source_stream_guard = core.valid_source_stream
 
 
-def valid_source_stream_v97(item):
+def valid_source_stream_v98(item):
     cat = item.get("category_key", "")
     url = item.get("url") or ""
     body = f"{item.get('title','')} {item.get('source_text','')}".lower()
 
-    if cat in ("ru_security", "ru_eco", "ru_pol") and is_international_url(url):
+    if cat in {"ru_security", "ru_incident", "ru_eco", "ru_pol"} and is_international_url(url):
         if not core.hits(body, core.RUSSIA_MARKERS):
             return False, "russia_stream_foreign_story"
+
+    # Independent topic guard: labels must have supporting topic markers.
+    if cat == "ru_incident" and not core.hits(body, INCIDENT_MARKERS):
+        return False, "incident_without_incident_marker"
+    if cat == "ru_pol" and not core.b.terms(body, core.b.POL):
+        return False, "politics_without_politics_marker"
+    if cat == "ru_eco" and not core.b.terms(body, core.b.ECO):
+        return False, "economy_without_economy_marker"
+    if cat == "ru_security" and not core.hits(body, core.SECURITY_MARKERS):
+        return False, "security_without_security_marker"
 
     return _original_source_stream_guard(item)
 
 
-# core.collect resolves this global at runtime.
-core.valid_source_stream = valid_source_stream_v97
+core.valid_source_stream = valid_source_stream_v98
+
+
+def ordered_v98(cands):
+    local_keys = {"sakh_quake", "sakh_chp", "sakh"}
+    local = [c for c in cands if c.get("category_key") in local_keys]
+    other = [c for c in cands if c not in local]
+    out = []
+    if local:
+        out.append(local[0])
+    for key in ("world_ru", "ru_security", "ru_incident", "ru_pol", "ru_eco", "geo", "it"):
+        out.extend(c for c in other if c.get("category_key") == key and c not in out)
+    out.extend(c for c in local[1:] if c not in out)
+    out.extend(c for c in other if c not in out)
+    return out
+
+
+core.b.ordered = ordered_v98
 
 
 # ---------------------------------------------------------------------------
 # Editorial reliability
 # ---------------------------------------------------------------------------
-# v9.6 proved the danger of applying a second AI fact-check to every candidate:
-# one degraded/free-provider cycle can reject every story and create a retry storm.
-# v9.7 uses ONE structured AI generation with deterministic evidence validation,
-# caps AI calls per run, and has an extractive Russian-language fail-safe.
 AI_CALL_BUDGET = max(0, int(os.getenv("AI_CALL_BUDGET", "8")))
 _AI_CALLS = 0
 _AI_CIRCUIT_OPEN = False
 
 for _key in (
-    "ai_calls",
-    "ai_budget_exhausted",
-    "ai_api_fail",
-    "evidence_reject",
-    "validation_reject",
-    "extractive_fallback",
+    "ai_calls", "ai_budget_exhausted", "ai_api_fail", "evidence_reject",
+    "validation_reject", "extractive_fallback",
 ):
     core.b.STATS.setdefault(_key, 0)
 
@@ -158,9 +214,7 @@ def _sentence_candidates(text):
     out = []
     for raw in parts:
         s = core.b.clean(raw).strip(" -—–")
-        if len(s) < 65 or len(s) > 520:
-            continue
-        if not _looks_russian(s):
+        if len(s) < 65 or len(s) > 520 or not _looks_russian(s):
             continue
         if any(core.b.too_similar(s, old) for old in out):
             continue
@@ -168,13 +222,24 @@ def _sentence_candidates(text):
     return out
 
 
+def _display_title(c):
+    title = core.b.clean(c.get("title"))
+    # RSS/page titles often append the publisher name; Telegram already shows source in footer.
+    title = re.sub(
+        r"\s*(?:[-–—|]\s*)?(?:SakhalinMedia(?:\.ru)?|ASTV(?:\.ru)?|Sakh\.online|Interfax|Интерфакс|TASS|ТАСС)\s*$",
+        "",
+        title,
+        flags=re.I,
+    ).strip(" -–—|")
+    return title or core.b.clean(c.get("title"))
+
+
 def _extractive_fallback(c):
     """Fail-safe for Russian source text. No paraphrase means no hallucination."""
     source = core.b.clean(c.get("source_text"))
-    title = core.b.clean(c.get("title"))
+    title = _display_title(c)
     if not _looks_russian(title + " " + source):
         return None
-
     sentences = _sentence_candidates(source)
     if len(sentences) < 2:
         return None
@@ -187,11 +252,8 @@ def _extractive_fallback(c):
         "footer": c.get("footer"),
         "editorial_mode": "extractive_fallback",
     }
-
-    # Deterministic safety checks. The fallback is copied from source, so there
-    # is no separate evidence field to validate.
     joined = row["title_ru"] + " " + " ".join(body)
-    source_all = title + " " + source
+    source_all = core.b.clean(c.get("title")) + " " + source
     if len(row["title_ru"]) < 24 or len(row["title_ru"].split()) < 4:
         return None
     if len(joined) < 180 or len(joined) > 1650:
@@ -202,14 +264,12 @@ def _extractive_fallback(c):
         return None
     if any(p in joined.lower() for p in core.b.BAD_TEXT):
         return None
-
-    quake_errors = core.validate_quake(row, c)
-    if quake_errors:
+    if core.validate_quake(row, c):
         return None
     return row
 
 
-def _validate_generated_v97(row, c):
+def _validate_generated_v98(row, c):
     if row.get("reject") is True:
         return ["model_rejected"]
 
@@ -234,28 +294,23 @@ def _validate_generated_v97(row, c):
         errors.append("paragraph_too_short")
     if any(len(x) > 560 for x in body):
         errors.append("paragraph_too_long")
-
     low = joined.lower()
     for phrase in core.b.BAD_TEXT:
         if phrase in low:
             errors.append("bad_phrase:" + phrase)
-
     invented = core.b.nums(joined) - core.b.nums(source)
     if invented:
         errors.append("invented_numbers:" + ",".join(sorted(invented)))
-
     if re.search(
         r"\b(the|who|has|said|will|after|before|with|from|this|that|over|under|against|faces|keeps|what|why|how)\b",
         joined,
         re.I,
     ):
         errors.append("english_words_left")
-
     evidence_errors = core.validate_evidence(row, c)
     if evidence_errors:
         core.b.STATS["evidence_reject"] += 1
         errors.extend(evidence_errors)
-
     errors.extend(core.validate_quake(row, c))
     return errors
 
@@ -268,9 +323,8 @@ def _api_failure_is_systemic(ex):
     ))
 
 
-def valid_post_v97(c):
+def valid_post_v98(c):
     global _AI_CALLS, _AI_CIRCUIT_OPEN
-
     last_error = ""
     attempts = 0
 
@@ -280,10 +334,9 @@ def valid_post_v97(c):
         core.b.STATS["ai_calls"] = _AI_CALLS
         try:
             row = core.generate_grounded(c, last_error)
-            errors = _validate_generated_v97(row, c)
+            errors = _validate_generated_v98(row, c)
             if not errors:
                 return row
-
             core.b.STATS["validation_reject"] += 1
             last_error = "; ".join(errors)[:500]
             core.b.STATS["rewrite_retry"] += 1
@@ -311,10 +364,39 @@ def valid_post_v97(c):
     return None
 
 
-core.b.valid_post = valid_post_v97
+core.b.valid_post = valid_post_v98
+
+
+# ---------------------------------------------------------------------------
+# Duplicate-run protection
+# ---------------------------------------------------------------------------
+RUN_COOLDOWN_MINUTES = max(0, int(os.getenv("RUN_COOLDOWN_MINUTES", "20")))
+
+
+def _recent_publish_in_cooldown():
+    if os.getenv("FORCE_RUN", "0") == "1" or RUN_COOLDOWN_MINUTES <= 0:
+        return False
+    try:
+        state = core.b.load_state()
+        run = state.get("last_run") or {}
+        if run.get("status") != "ok" or int(run.get("published") or 0) <= 0:
+            return False
+        raw = run.get("finished_sakhalin")
+        if not raw:
+            return False
+        finished = datetime.fromisoformat(raw)
+        if finished.tzinfo is None:
+            finished = finished.replace(tzinfo=core.b.TZ)
+        age = datetime.now(timezone.utc) - finished.astimezone(timezone.utc)
+        return 0 <= age.total_seconds() < RUN_COOLDOWN_MINUTES * 60
+    except Exception:
+        return False
 
 
 def main():
+    if _recent_publish_in_cooldown():
+        core.b.log(f"skip duplicate run: successful publication within {RUN_COOLDOWN_MINUTES} minutes")
+        return
     core.b.main()
 
 
