@@ -45,8 +45,8 @@ jobs:
           sys.path.insert(0, "src")
           import production as prod
           core = prod.core
-          assert prod.VERSION == "stable-v9.8"
-          assert core.VERSION == "stable-v9.8"
+          assert prod.VERSION == "stable-v9.9"
+          assert core.VERSION == "stable-v9.9"
           assert core.strict_fresh(None) is False
           assert prod.AI_CALL_BUDGET == 8
           assert prod.RUN_COOLDOWN_MINUTES == 20
@@ -59,10 +59,10 @@ jobs:
               ("sakhalin", "Сильный дождь пройдет в центральных районах Сахалина 20 августа", "Сахалинское УГМС прогнозирует сильный дождь и осадки.", "https://sakhalinmedia.ru/news/2593484/", {"sakh"}),
           ]
           for src_type, title, text, url, allowed in cases:
-              cat, _, _ = prod.classify_v98(src_type, 90, title, text, "", url)
+              cat, _, _ = prod.classify_v99(src_type, 90, title, text, "", url)
               assert cat in allowed, (title, cat, allowed)
 
-          ok, why = prod.valid_source_stream_v98({
+          ok, why = prod.valid_source_stream_v99({
               "category_key": "ru_pol",
               "source": "Interfax",
               "url": "https://www.interfax.ru/russia/1110068",
@@ -71,16 +71,30 @@ jobs:
           })
           assert not ok and why == "politics_without_politics_marker"
 
+          sentences = prod._sentence_candidates(
+              "В полиции возбудили уголовное дело против 50-летнего жителя. "
+              "Его подозревают в краже почти 40 тыс. рублей с банковской карты приятеля, сообщает УМВД. "
+              "Сумма ущерба составила 38 760 рублей."
+          )
+          assert any(s.startswith("Его подозревают") and "40 тыс. рублей" in s for s in sentences), sentences
+          assert not any(s.startswith("рублей") for s in sentences), sentences
+
+          duplicated = "Медведь напал на двух мужчин в лесу, сообщили в МВД Медведь напал на двух мужчин в лесу, сообщили в МВД."
+          deduped = prod._sentence_candidates(duplicated)
+          assert deduped and deduped[0].count("Медведь напал") == 1, deduped
+
           fallback = prod._extractive_fallback({
-              "category_key": "sakh",
-              "footer": "САХАЛИН",
-              "title": "Сильный дождь пройдет на Сахалине - SakhalinMedia.ru",
+              "category_key": "sakh_chp",
+              "footer": "ЧП | САХАЛИН",
+              "title": "Житель Долинска украл карту у приятеля - SakhalinMedia.ru",
               "source_text": (
-                  "Сильный дождь ожидается в центральных районах острова в течение дня. "
-                  "Синоптики предупреждают жителей о возможном ухудшении дорожной обстановки. "
-                  "Прогноз подготовлен специалистами регионального управления гидрометеослужбы."
+                  "В полиции Долинска возбудили уголовное дело против неоднократно судимого 50-летнего местного жителя. "
+                  "Его подозревают в краже почти 40 тыс. рублей с банковской карты приятеля, сообщает пресс-служба УМВД России по Сахалинской области. "
+                  "Сумма ущерба составила 38 760 рублей."
               )
           })
-          assert fallback and "SakhalinMedia" not in fallback["title_ru"]
-          print("stable-v9.8 deterministic regression tests: OK")
+          assert fallback
+          assert all(not x.startswith("рублей") for x in fallback["body"]), fallback
+          assert "SakhalinMedia" not in fallback["title_ru"]
+          print("stable-v9.9 deterministic regression tests: OK")
           PY
