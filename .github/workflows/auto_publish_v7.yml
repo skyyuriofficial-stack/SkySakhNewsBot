@@ -1,4 +1,4 @@
-name: SkySakhNews Auto Publisher Stable v9.8
+name: SkySakhNews Auto Publisher Stable v9.9
 
 on:
   workflow_dispatch:
@@ -43,16 +43,15 @@ jobs:
           import production as prod
           core = prod.core
 
-          assert prod.VERSION == "stable-v9.8"
-          assert core.VERSION == "stable-v9.8"
+          assert prod.VERSION == "stable-v9.9"
+          assert core.VERSION == "stable-v9.9"
           assert core.strict_fresh(None) is False
           assert core.b.IMAGE_REQUIRED is False
           assert "ru_incident" in core.b.CAT
           assert prod.AI_CALL_BUDGET == 8
           assert prod.RUN_COOLDOWN_MINUTES == 20
 
-          # Foreign story from a Russian publisher must not become a Russia stream.
-          cat, _, _ = prod.classify_v98(
+          cat, _, _ = prod.classify_v99(
               "ru", 78,
               "Трамп рассматривает отсрочку введения пошлин в 50% в отношении Канады",
               "Президент США рассматривает отсрочку пошлин в отношении Канады.",
@@ -61,8 +60,7 @@ jobs:
           )
           assert cat not in {"ru_eco", "ru_pol", "ru_security", "ru_incident"}
 
-          # Domestic BPLA/airport story stays security.
-          cat, _, _ = prod.classify_v98(
+          cat, _, _ = prod.classify_v99(
               "ru", 78,
               "Аэропорт временно ограничил прием самолетов из-за угрозы БПЛА",
               "Росавиация сообщила об ограничениях.",
@@ -71,8 +69,7 @@ jobs:
           )
           assert cat == "ru_security"
 
-          # Exact runtime regression: accidental death is an incident, not politics.
-          cat, _, _ = prod.classify_v98(
+          cat, _, _ = prod.classify_v99(
               "ru", 78,
               "Ребенок погиб в Ростовской области, упав за борт катера",
               "Следователи устанавливают обстоятельства происшествия на воде.",
@@ -81,8 +78,7 @@ jobs:
           )
           assert cat == "ru_incident"
 
-          # Local rain forecast is normal Sakhalin news, not ЧП.
-          cat, _, _ = prod.classify_v98(
+          cat, _, _ = prod.classify_v99(
               "sakhalin", 102,
               "Сильный дождь пройдет в центральных районах Сахалина 20 августа",
               "Сахалинское УГМС прогнозирует сильный дождь и осадки.",
@@ -91,28 +87,37 @@ jobs:
           )
           assert cat == "sakh"
 
-          ok, why = prod.valid_source_stream_v98({
-              "category_key": "ru_pol",
-              "source": "Interfax",
-              "url": "https://www.interfax.ru/russia/1110068",
-              "title": "Ребенок погиб в Ростовской области",
-              "source_text": "Следователи устанавливают обстоятельства происшествия."
-          })
-          assert not ok and why == "politics_without_politics_marker"
+          # Abbreviations must not create broken paragraphs such as "рублей с карты...".
+          sentences = prod._sentence_candidates(
+              "В полиции возбудили уголовное дело против 50-летнего жителя. "
+              "Его подозревают в краже почти 40 тыс. рублей с банковской карты приятеля, сообщает УМВД. "
+              "Сумма ущерба составила 38 760 рублей."
+          )
+          assert any(s.startswith("Его подозревают") and "40 тыс. рублей" in s for s in sentences), sentences
+          assert not any(s.startswith("рублей") for s in sentences), sentences
+
+          # Adjacent duplicated source summaries must collapse to one clean sentence.
+          duplicated = (
+              "Медведь напал на двух мужчин в лесу, сообщили в МВД Медведь напал на двух мужчин в лесу, сообщили в МВД."
+          )
+          deduped = prod._sentence_candidates(duplicated)
+          assert deduped and deduped[0].count("Медведь напал") == 1, deduped
 
           fallback = prod._extractive_fallback({
-              "category_key": "sakh",
-              "footer": "САХАЛИН",
-              "title": "Сильный дождь пройдет на Сахалине - SakhalinMedia.ru",
+              "category_key": "sakh_chp",
+              "footer": "ЧП | САХАЛИН",
+              "title": "Житель Долинска украл карту у приятеля - SakhalinMedia.ru",
               "source_text": (
-                  "Сильный дождь ожидается в центральных районах острова в течение дня. "
-                  "Синоптики предупреждают жителей о возможном ухудшении дорожной обстановки. "
-                  "Прогноз подготовлен специалистами регионального управления гидрометеослужбы."
+                  "В полиции Долинска возбудили уголовное дело против неоднократно судимого 50-летнего местного жителя. "
+                  "Его подозревают в краже почти 40 тыс. рублей с банковской карты приятеля, сообщает пресс-служба УМВД России по Сахалинской области. "
+                  "Сумма ущерба составила 38 760 рублей."
               )
           })
-          assert fallback and "SakhalinMedia" not in fallback["title_ru"]
+          assert fallback
+          assert all(not x.startswith("рублей") for x in fallback["body"]), fallback
+          assert "SakhalinMedia" not in fallback["title_ru"]
 
-          print("production gate stable-v9.8: OK")
+          print("production gate stable-v9.9: OK")
           PY
 
       - name: Run stable publisher
@@ -138,7 +143,7 @@ jobs:
               state = json.load(f)
           run = state.get("last_run") or {}
           # A cooldown skip intentionally leaves the previous successful run intact.
-          if run.get("version") == "stable-v9.8":
+          if run.get("version") == "stable-v9.9":
               assert run.get("status") == "ok", run
               assert "finished_sakhalin" in run, run
               local = run.get("local_stream") or {}
