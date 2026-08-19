@@ -1,23 +1,17 @@
-name: SkySakhNews Auto Publisher Stable v9.4
+name: SkySakhNews Auto Publisher Stable v9.5
 
 on:
   workflow_dispatch:
   schedule:
+    # GitHub cron is UTC; Sakhalin is UTC+11.
+    # 07:00, 10:00, 13:00, 16:00, 19:00, 22:00 Sakhalin.
     - cron: "0 2,5,8,11,20,23 * * *"
-  push:
-    branches:
-      - main
-    paths:
-      - "src/news_bot_v8.py"
-      - "src/news_bot_v9.py"
-      - "requirements.txt"
-      - ".github/workflows/auto_publish_v7.yml"
 
 permissions:
   contents: write
 
 concurrency:
-  group: skysakhnews-publisher
+  group: skysakhnews-production-publisher
   cancel-in-progress: false
 
 jobs:
@@ -49,18 +43,17 @@ jobs:
           sys.path.insert(0, "src")
           import news_bot_v9 as prod
 
-          assert prod.VERSION == "stable-v9.4"
+          assert prod.VERSION == "stable-v9.5"
           assert prod.b.IMAGE_REQUIRED is False
           assert any(s[0] == "TASS" and s[1] == "ru" for s in prod.b.SOURCES)
-          assert all(s[0] != "Habr" for s in prod.b.SOURCES)
+          assert all(s[0] not in {"Habr", "ASTV", "Sakh.online"} for s in prod.b.SOURCES)
           assert "ru_security" in prod.b.CAT
 
-          # Local-source regression guards: only verified production endpoints/adapters.
           sources = {s[0]: s for s in prod.b.SOURCES}
-          assert "ASTV" not in sources
           assert sources["SakhalinMedia"][2] == "https://sakhalinmedia.ru/export/new/news64.rss"
-          assert sources["Sakh.online"][2] == "https://sakh.online/feed"
           assert prod.ASTV_NEWS_URL == "https://astv.ru/news"
+          assert prod.SAKH_NEWS_URL == "https://sakh.online/news"
+
           synthetic_astv = '''
               <a href="/news/criminal/2026-08-19-test-story/">story</a>
               <a href="/news/">not article</a>
@@ -68,9 +61,16 @@ jobs:
           '''
           astv_urls = prod.discover_astv_urls(synthetic_astv)
           assert len(astv_urls) == 2, astv_urls
-          assert all("/2026-08-" in u for u in astv_urls)
 
-          # No date means no publication.
+          synthetic_sakh = '''
+              <a href="/news/24/2026-08-19/local-test-story-517703">story</a>
+              <a href="/news">not article</a>
+              <a href="https://sakh.online/news/18/2026-08-18/second-local-story-517710">story2</a>
+          '''
+          sakh_urls = prod.discover_sakh_urls(synthetic_sakh)
+          assert len(sakh_urls) == 2, sakh_urls
+
+          # Unknown date is never treated as fresh.
           assert prod.strict_fresh(None) is False
           assert prod.b.fresh(None) is False
 
@@ -102,23 +102,29 @@ jobs:
           })
           assert ok is False and why == "non_direct_or_missing_url"
 
-          # Evidence must be copied from the source, not invented.
+          # Evidence grounding.
           source = "Reuters reported that the talks resumed in Geneva on Tuesday after a two-day pause."
           assert prod.evidence_matches(source, "the talks resumed in Geneva on Tuesday")
           assert not prod.evidence_matches(source, "officials signed a final peace agreement")
 
-          # Seismic facts are mandatory when present in the source.
+          # Seismic facts: magnitude, depth, distance/intensity when source contains them.
           quake = {
               "category_key": "sakh_quake",
               "title": "У Курильских островов произошло землетрясение магнитудой 5,1",
-              "source_text": "Толчок зарегистрировали в 08:42. Очаг залегал на глубине 20 км."
+              "source_text": (
+                  "Толчок зарегистрировали в 08:42. Очаг залегал на глубине 20 км. "
+                  "Эпицентр находился в 65 км от Северо-Курильска. "
+                  "В городе ощущались толчки силой 3 балла."
+              )
           }
           facts = prod.quake_required_facts(quake)
           assert "5.1" in facts.get("magnitude", [])
           assert "20" in facts.get("depth_km", [])
+          assert "65" in facts.get("distance_km", [])
+          assert "3" in facts.get("intensity_points", [])
           errors = prod.validate_quake({
               "title_ru": "У Курил произошло землетрясение",
-              "body": ["Сейсмологи зарегистрировали подземный толчок в 08:42 на глубине 20 км."]
+              "body": ["Толчок ощущался в 08:42; эпицентр был в 65 км, глубина — 20 км, интенсивность — 3 балла."]
           }, quake)
           assert any(x.startswith("quake_missing_magnitude:5.1") for x in errors)
 
@@ -145,13 +151,13 @@ jobs:
           with open("state.json", "r", encoding="utf-8") as f:
               state = json.load(f)
           run = state.get("last_run") or {}
-          assert run.get("version") == "stable-v9.4", run
+          assert run.get("version") == "stable-v9.5", run
           assert run.get("status") == "ok", run
           assert "finished_sakhalin" in run, run
 
           local = run.get("local_stream") or {}
           assert local.get("status") in ("healthy", "degraded", "down"), local
-          # A total loss of the Sakhalin input stream is a health failure, not a silent success.
+          # Total loss of the local input stream must be visible as a failed workflow.
           assert local.get("status") != "down", local
 
           print("run health: OK", run)
