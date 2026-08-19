@@ -130,7 +130,9 @@
     "https://www.interfax.ru/russia/1110009",
     "https://tass.ru/politika/28023743",
     "https://www.interfax.ru/russia/1110011",
-    "https://www.interfax.ru/world/1110016"
+    "https://www.interfax.ru/world/1110016",
+    "https://sakhalinmedia.ru/news/2593484/",
+    "https://www.interfax.ru/russia/1110068"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -263,38 +265,12 @@
     "50ed108bf262f4432df352819de806148b44b39a",
     "58b3a21ee17fd806a021ebe5862d0964896a8203",
     "c150bf4ded3bb64241b888b391ee2d9b8c53de16",
-    "fdc7e6973f547cfecf849412f6ab75380fa315cb"
+    "fdc7e6973f547cfecf849412f6ab75380fa315cb",
+    "7be7ac0325b55e9d88eb4d4080b236d87a0015d4",
+    "309d2cfc02188fc48d3f44bd21d30a532426b7f3"
   ],
-  "last_run_sakhalin": "2026-08-19T19:55:44+11:00",
+  "last_run_sakhalin": "2026-08-19T20:01:48+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-21T12:09:39+11:00",
-      "source": "GameSpot",
-      "category": "🌐 Мировые IT",
-      "title": "Download The Latest Official NVIDIA Drivers",
-      "url": "https://www.nvidia.com/en-us/drivers/",
-      "published_at": "2026-05-20T16:22:00+00:00",
-      "with_image": true,
-      "image_mode": "source",
-      "image_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/drivers/cut-graphics/nvidia-geforce-drivers-meta-image-1200x627.jpg",
-      "publish_method": "sendPhoto/approved/source",
-      "telegram_message_id": 73,
-      "score": 162
-    },
-    {
-      "time_sakhalin": "2026-05-21T12:09:52+11:00",
-      "source": "Eurogamer",
-      "category": "🌐 Мировые IT",
-      "title": "As Steam early access sensation Far Far West sells over 1 million copies in three weeks, publisher Fireshine Games rejects generative AI",
-      "url": "https://www.eurogamer.net/far-far-west-sells-one-million-copies",
-      "published_at": "2026-05-19T15:01:48.918283+00:00",
-      "with_image": true,
-      "image_mode": "source",
-      "image_url": "https://assetsio.gnwcdn.com/Dead-End-screenshot_Titanium-Court.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "publish_method": "sendPhoto/approved/source",
-      "telegram_message_id": 74,
-      "score": 162
-    },
     {
       "time_sakhalin": "2026-05-21T12:44:50+11:00",
       "source": "Interfax",
@@ -3915,6 +3891,36 @@
       "with_image": false,
       "publish_method": "sendMessage/no-safe-image",
       "grounded_evidence": true
+    },
+    {
+      "time_sakhalin": "2026-08-19T20:01:31+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "Сильный дождь пройдет в центральных районах Сахалина 20 августа - SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2593484/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6330/6329329.jpg?0ec0aa6dd932ee33e7ed0ef645c7eac2",
+      "image_hash": "be8709099efa03b2ecf3d25ce378de2da08484fc",
+      "topic_cluster": "sakh_chp:сильный_дождь_пройдет_центральных_районах_сахалина",
+      "published_at": "2026-08-19T03:14:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/stable-v9.5",
+      "grounded_evidence": true
+    },
+    {
+      "time_sakhalin": "2026-08-19T20:01:40+11:00",
+      "source": "Interfax",
+      "category": "🇷🇺 Россия / политика",
+      "category_key": "ru_pol",
+      "title": "Ребенок погиб в Ростовской области, упав за борт катера",
+      "url": "https://www.interfax.ru/russia/1110068",
+      "image_url": null,
+      "image_hash": null,
+      "topic_cluster": "ru_pol:ребенок_погиб_ростовской_области_катера",
+      "published_at": "2026-08-19T07:27:00+00:00",
+      "with_image": false,
+      "publish_method": "sendMessage/no-safe-image",
+      "grounded_evidence": true
     }
   ],
   "last_cycle_report": {
@@ -4141,12 +4147,12 @@
     "items": []
   },
   "last_run": {
-    "version": "stable-v9.6",
-    "started_sakhalin": "2026-08-19T19:51:33+11:00",
+    "version": "stable-v9.7",
+    "started_sakhalin": "2026-08-19T19:58:46+11:00",
     "status": "ok",
-    "candidates": 44,
-    "published": 0,
-    "local_candidates": 25,
+    "candidates": 45,
+    "published": 2,
+    "local_candidates": 26,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -4177,23 +4183,29 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-08-19T19:55:44+11:00",
+    "finished_sakhalin": "2026-08-19T20:01:48+11:00",
     "stats": {
       "rss_seen": 152,
       "old_skip": 58,
       "google_skip": 13,
       "duplicate_skip": 0,
-      "low_info_skip": 18,
-      "category_skip": 31,
+      "low_info_skip": 17,
+      "category_skip": 32,
       "no_image_skip": 0,
       "bad_image_skip": 6,
       "logo_image_skip": 44,
       "text_card_image_skip": 0,
-      "candidates": 44,
-      "rewrite_retry": 132,
-      "editorial_skip": 44,
+      "candidates": 45,
+      "rewrite_retry": 1,
+      "editorial_skip": 1,
       "telegram_fail": 0,
-      "published": 0
+      "published": 2,
+      "ai_calls": 1,
+      "ai_budget_exhausted": 0,
+      "ai_api_fail": 1,
+      "evidence_reject": 0,
+      "validation_reject": 0,
+      "extractive_fallback": 2
     }
   }
 }
