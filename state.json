@@ -128,7 +128,9 @@
     "https://www.interfax.ru/world/1110010",
     "https://www.bbc.co.uk/news/articles/cy5dz0kkn0wo?at_medium=RSS&at_campaign=rss",
     "https://www.interfax.ru/russia/1110009",
-    "https://tass.ru/politika/28023743"
+    "https://tass.ru/politika/28023743",
+    "https://www.interfax.ru/russia/1110011",
+    "https://www.interfax.ru/world/1110016"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -259,36 +261,12 @@
     "8f7c669a40e8bdd581bf26031283f039ba115a06",
     "6c2016281a523bc01423dd35ade168b0a59a37f2",
     "50ed108bf262f4432df352819de806148b44b39a",
-    "58b3a21ee17fd806a021ebe5862d0964896a8203"
+    "58b3a21ee17fd806a021ebe5862d0964896a8203",
+    "c150bf4ded3bb64241b888b391ee2d9b8c53de16",
+    "fdc7e6973f547cfecf849412f6ab75380fa315cb"
   ],
-  "last_run_sakhalin": "2026-08-19T10:24:45+11:00",
+  "last_run_sakhalin": "2026-08-19T12:41:24+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-20T19:07:38+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / экономика",
-      "title": "Путин заявил о готовности продолжения поставок Китаю нефти, газа и угля",
-      "url": "https://www.interfax.ru/russia/1090611",
-      "published_at": "2026-05-20T07:05:00+00:00",
-      "with_image": false,
-      "image_mode": "none",
-      "image_url": null,
-      "publish_method": "sendMessage/approved/no-image",
-      "score": 132
-    },
-    {
-      "time_sakhalin": "2026-05-20T19:07:51+11:00",
-      "source": "PC Gamer",
-      "category": "🎮 Игры / индустрия",
-      "title": "К спин-оффу The Witcher привлекли сценаристку Destiny 2",
-      "url": "https://www.pcgamer.com/games/rpg/struggling-witcher-spinoff-brings-acclaimed-destiny-2-narrative-veteran-onboard-as-new-lead-writer/",
-      "published_at": "2026-05-19T20:02:09+00:00",
-      "with_image": true,
-      "image_mode": "source",
-      "image_url": "https://cdn.mos.cms.futurecdn.net/csZsVLZhfHvY8Kcd7dzt7d-1280-80.jpg",
-      "publish_method": "sendPhoto/approved/source",
-      "score": 162
-    },
     {
       "time_sakhalin": "2026-05-21T12:09:39+11:00",
       "source": "GameSpot",
@@ -3907,6 +3885,36 @@
       "published_at": "2026-08-18T23:06:45+00:00",
       "with_image": true,
       "publish_method": "sendPhoto/stable-v9.3"
+    },
+    {
+      "time_sakhalin": "2026-08-19T12:32:45+11:00",
+      "source": "Interfax",
+      "category": "🇷🇺 Россия / безопасность",
+      "category_key": "ru_security",
+      "title": "Ограничения в аэропортах Нижнего Новгорода и Тамбова",
+      "url": "https://www.interfax.ru/russia/1110011",
+      "image_url": null,
+      "image_hash": null,
+      "topic_cluster": "ru_security_airspace_drone",
+      "published_at": "2026-08-18T21:29:00+00:00",
+      "with_image": false,
+      "publish_method": "sendMessage/no-safe-image",
+      "grounded_evidence": true
+    },
+    {
+      "time_sakhalin": "2026-08-19T12:41:16+11:00",
+      "source": "Interfax",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "title": "Трамп рассматривает отсрочку введения пошлин в 50% в отношении Канады",
+      "url": "https://www.interfax.ru/world/1110016",
+      "image_url": null,
+      "image_hash": null,
+      "topic_cluster": "ru_eco:трамп_рассматривает_отсрочку_введения_пошлин_отношении",
+      "published_at": "2026-08-18T23:50:00+00:00",
+      "with_image": false,
+      "publish_method": "sendMessage/no-safe-image",
+      "grounded_evidence": true
     }
   ],
   "last_cycle_report": {
@@ -4133,26 +4141,60 @@
     "items": []
   },
   "last_run": {
-    "version": "stable-v9.3",
-    "started_sakhalin": "2026-08-19T10:22:04+11:00",
+    "version": "stable-v9.4",
+    "started_sakhalin": "2026-08-19T12:29:52+11:00",
     "status": "ok",
     "candidates": 17,
     "published": 2,
-    "finished_sakhalin": "2026-08-19T10:24:45+11:00",
+    "local_candidates": 0,
+    "local_stream": {
+      "status": "degraded",
+      "ok_sources": 1,
+      "sources": [
+        {
+          "source": "Sakhalin Google",
+          "status": "ok",
+          "entries": 20,
+          "recent": 12
+        },
+        {
+          "source": "ASTV",
+          "status": "down",
+          "entries": 0,
+          "recent": 0,
+          "error": "404 Client Error: Not Found for url: https://astv.ru/rss/news"
+        },
+        {
+          "source": "SakhalinMedia",
+          "status": "empty",
+          "entries": 0,
+          "recent": 0,
+          "bozo": true
+        },
+        {
+          "source": "Sakh.online",
+          "status": "down",
+          "entries": 0,
+          "recent": 0,
+          "error": "404 Client Error: Not Found for url: https://sakh.online/rss/"
+        }
+      ]
+    },
+    "finished_sakhalin": "2026-08-19T12:41:24+11:00",
     "stats": {
       "rss_seen": 138,
       "old_skip": 61,
-      "google_skip": 9,
+      "google_skip": 0,
       "duplicate_skip": 4,
-      "low_info_skip": 14,
-      "category_skip": 33,
+      "low_info_skip": 27,
+      "category_skip": 29,
       "no_image_skip": 0,
-      "bad_image_skip": 2,
-      "logo_image_skip": 5,
+      "bad_image_skip": 10,
+      "logo_image_skip": 1,
       "text_card_image_skip": 0,
       "candidates": 17,
-      "rewrite_retry": 5,
-      "editorial_skip": 1,
+      "rewrite_retry": 19,
+      "editorial_skip": 5,
       "telegram_fail": 0,
       "published": 2
     }
