@@ -8,6 +8,7 @@ on:
     paths:
       - "src/news_bot_v8.py"
       - "src/news_bot_v9.py"
+      - "src/production.py"
       - "requirements.txt"
       - ".github/workflows/auto_publish_v7.yml"
       - ".github/workflows/production_ci.yml"
@@ -36,7 +37,7 @@ jobs:
 
       - name: Compile
         run: |
-          python -m py_compile src/news_bot_v8.py src/news_bot_v9.py
+          python -m py_compile src/news_bot_v8.py src/news_bot_v9.py src/production.py
 
       - name: Deterministic regression tests
         env:
@@ -45,23 +46,26 @@ jobs:
           python - <<'PY'
           import sys
           sys.path.insert(0, "src")
-          import news_bot_v9 as prod
+          import production as prod
+          core = prod.core
 
-          assert prod.VERSION == "stable-v9.5"
-          assert prod.strict_fresh(None) is False
-          assert all(s[0] not in {"Habr", "ASTV", "Sakh.online"} for s in prod.b.SOURCES)
-          assert any(s[0] == "TASS" for s in prod.b.SOURCES)
-          assert prod.ASTV_NEWS_URL == "https://astv.ru/news"
-          assert prod.SAKH_NEWS_URL == "https://sakh.online/news"
+          assert prod.VERSION == "stable-v9.6"
+          assert core.VERSION == "stable-v9.6"
+          assert core.strict_fresh(None) is False
+          assert all(s[0] not in {"Habr", "ASTV", "Sakh.online"} for s in core.b.SOURCES)
+          assert any(s[0] == "TASS" for s in core.b.SOURCES)
+          assert core.ASTV_NEWS_URL == "https://astv.ru/news"
+          assert core.SAKH_NEWS_URL == "https://sakh.online/news"
 
-          assert len(prod.discover_astv_urls(
+          assert len(core.discover_astv_urls(
               '<a href="/news/criminal/2026-08-19-test-story/">x</a>'
           )) == 1
-          assert len(prod.discover_sakh_urls(
+          assert len(core.discover_sakh_urls(
               '<a href="/news/24/2026-08-19/test-story-517703">x</a>'
           )) == 1
 
-          cat, _, _ = prod.classify(
+          # World feed without Russia cannot become Мир о России.
+          cat, _, _ = core.classify(
               "world", 90,
               "US and Iran discuss military tensions",
               "US and Iran officials met after recent attacks.",
@@ -70,16 +74,36 @@ jobs:
           )
           assert cat != "world_ru"
 
-          cat, _, _ = prod.classify(
-              "ru", 90,
+          # Exact foreign-Russian-publisher regression.
+          cat, _, reason = prod.classify_v96(
+              "ru", 78,
+              "Трамп рассматривает отсрочку введения пошлин в 50% в отношении Канады",
+              "Президент США рассматривает отсрочку пошлин в отношении Канады.",
+              "",
+              "https://www.interfax.ru/world/1110016",
+          )
+          assert cat not in {"ru_eco", "ru_pol", "ru_security"}, (cat, reason)
+
+          # Domestic BPLA/airport story remains security.
+          cat, _, reason = prod.classify_v96(
+              "ru", 78,
               "Аэропорт временно ограничил прием самолетов из-за угрозы БПЛА",
               "Росавиация сообщила об ограничениях.",
               "",
-              "https://example.ru/story",
+              "https://www.interfax.ru/russia/1110011",
           )
-          assert cat == "ru_security"
+          assert cat == "ru_security", (cat, reason)
 
-          ok, why = prod.valid_source_stream({
+          ok, why = prod.valid_source_stream_v96({
+              "category_key": "ru_eco",
+              "source": "Interfax",
+              "url": "https://www.interfax.ru/world/1110016",
+              "title": "Трамп рассматривает отсрочку пошлин для Канады",
+              "source_text": "Президент США обсуждает пошлины в отношении Канады."
+          })
+          assert not ok and why == "russia_stream_foreign_story"
+
+          ok, why = core.valid_source_stream({
               "category_key": "sakh",
               "source": "Sakhalin Google",
               "url": "https://example.com/audio",
@@ -89,19 +113,19 @@ jobs:
           assert not ok and why == "local_without_geo"
 
           source = "Reuters reported that the talks resumed in Geneva on Tuesday after a two-day pause."
-          assert prod.evidence_matches(source, "the talks resumed in Geneva on Tuesday")
-          assert not prod.evidence_matches(source, "officials signed a final peace agreement")
+          assert core.evidence_matches(source, "the talks resumed in Geneva on Tuesday")
+          assert not core.evidence_matches(source, "officials signed a final peace agreement")
 
           quake = {
               "category_key": "sakh_quake",
               "title": "Землетрясение магнитудой 5,1 произошло у Курил",
               "source_text": "Эпицентр находился в 65 км от Северо-Курильска. Толчки ощущались силой 3 балла. Глубина 20 км."
           }
-          facts = prod.quake_required_facts(quake)
+          facts = core.quake_required_facts(quake)
           assert "5.1" in facts.get("magnitude", [])
           assert "65" in facts.get("distance_km", [])
           assert "3" in facts.get("intensity_points", [])
           assert "20" in facts.get("depth_km", [])
 
-          print("stable-v9.5 deterministic regression tests: OK")
+          print("stable-v9.6 deterministic regression tests: OK")
           PY
