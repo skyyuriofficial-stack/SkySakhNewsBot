@@ -1,7 +1,69 @@
 {
-  "generated_at_utc": "2026-08-19T09:13:36+00:00",
+  "generated_at_utc": "2026-08-19T09:18:14+00:00",
   "version": "stable-v9.8",
-  "run": {},
+  "mode": "live-sources / dry-Telegram / extractive-editor",
+  "run": {
+    "version": "stable-v9.8",
+    "started_sakhalin": "2026-08-19T20:14:37+11:00",
+    "status": "ok",
+    "candidates": 45,
+    "published": 2,
+    "local_candidates": 28,
+    "local_stream": {
+      "status": "healthy",
+      "ok_sources": 4,
+      "sources": [
+        {
+          "source": "Sakhalin Google",
+          "status": "ok",
+          "entries": 20,
+          "recent": 17
+        },
+        {
+          "source": "SakhalinMedia",
+          "status": "ok",
+          "entries": 20,
+          "recent": 20
+        },
+        {
+          "source": "ASTV HTML",
+          "status": "ok",
+          "entries": 22,
+          "recent": 15
+        },
+        {
+          "source": "Sakh.online HTML",
+          "status": "ok",
+          "entries": 20,
+          "recent": 20
+        }
+      ]
+    },
+    "finished_sakhalin": "2026-08-19T20:18:14+11:00",
+    "stats": {
+      "rss_seen": 152,
+      "old_skip": 58,
+      "google_skip": 13,
+      "duplicate_skip": 0,
+      "low_info_skip": 15,
+      "category_skip": 34,
+      "no_image_skip": 0,
+      "bad_image_skip": 7,
+      "logo_image_skip": 53,
+      "text_card_image_skip": 0,
+      "candidates": 45,
+      "rewrite_retry": 0,
+      "editorial_skip": 1,
+      "telegram_fail": 0,
+      "published": 2,
+      "ai_calls": 0,
+      "ai_budget_exhausted": 1,
+      "ai_api_fail": 0,
+      "evidence_reject": 0,
+      "validation_reject": 0,
+      "extractive_fallback": 2
+    }
+  },
   "captured_posts": [
     {
       "method": "dry-sendPhoto",
@@ -60,18 +122,18 @@
     },
     {
       "name": "version",
-      "ok": false,
-      "detail": "None"
+      "ok": true,
+      "detail": "stable-v9.8"
     },
     {
       "name": "status_ok",
-      "ok": false,
-      "detail": "None"
+      "ok": true,
+      "detail": "ok"
     },
     {
       "name": "published_exactly_2",
-      "ok": false,
-      "detail": "None"
+      "ok": true,
+      "detail": "2"
     },
     {
       "name": "captured_exactly_2",
@@ -80,18 +142,23 @@
     },
     {
       "name": "candidate_pool_nonempty",
-      "ok": false,
-      "detail": "None"
+      "ok": true,
+      "detail": "45"
     },
     {
       "name": "local_candidates_nonempty",
-      "ok": false,
-      "detail": "None"
+      "ok": true,
+      "detail": "28"
     },
     {
       "name": "local_stream_operational",
-      "ok": false,
-      "detail": "{}"
+      "ok": true,
+      "detail": "{'status': 'healthy', 'ok_sources': 4, 'sources': [{'source': 'Sakhalin Google', 'status': 'ok', 'entries': 20, 'recent': 17}, {'source': 'SakhalinMedia', 'status': 'ok', 'entries': 20, 'recent': 20}, {'source': 'ASTV HTML', 'status': 'ok', 'entries': 22, 'recent': 15}, {'source': 'Sakh.online HTML', 'status': 'ok', 'entries': 20, 'recent': 20}]}"
+    },
+    {
+      "name": "first_post_is_local",
+      "ok": true,
+      "detail": "sakh_chp"
     },
     {
       "name": "different_story_urls",
@@ -184,8 +251,8 @@
       "detail": "['пострадал', 'пострадали', 'травм']"
     }
   ],
-  "passed": 20,
-  "failed": 6,
-  "all_pass": false,
+  "passed": 27,
+  "failed": 0,
+  "all_pass": true,
   "run_error": null
 }
