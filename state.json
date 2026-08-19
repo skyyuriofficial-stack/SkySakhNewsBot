@@ -265,7 +265,7 @@
     "c150bf4ded3bb64241b888b391ee2d9b8c53de16",
     "fdc7e6973f547cfecf849412f6ab75380fa315cb"
   ],
-  "last_run_sakhalin": "2026-08-19T13:59:46+11:00",
+  "last_run_sakhalin": "2026-08-19T16:34:20+11:00",
   "last_posts": [
     {
       "time_sakhalin": "2026-05-21T12:09:39+11:00",
@@ -4142,11 +4142,11 @@
   },
   "last_run": {
     "version": "stable-v9.6",
-    "started_sakhalin": "2026-08-19T13:57:04+11:00",
+    "started_sakhalin": "2026-08-19T16:30:45+11:00",
     "status": "ok",
-    "candidates": 41,
+    "candidates": 56,
     "published": 0,
-    "local_candidates": 26,
+    "local_candidates": 34,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -4155,7 +4155,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 12
+          "recent": 14
         },
         {
           "source": "SakhalinMedia",
@@ -4166,8 +4166,8 @@
         {
           "source": "ASTV HTML",
           "status": "ok",
-          "entries": 20,
-          "recent": 13
+          "entries": 22,
+          "recent": 15
         },
         {
           "source": "Sakh.online HTML",
@@ -4177,21 +4177,21 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-08-19T13:59:46+11:00",
+    "finished_sakhalin": "2026-08-19T16:34:20+11:00",
     "stats": {
-      "rss_seen": 155,
-      "old_skip": 64,
-      "google_skip": 9,
-      "duplicate_skip": 2,
-      "low_info_skip": 16,
-      "category_skip": 34,
+      "rss_seen": 154,
+      "old_skip": 61,
+      "google_skip": 10,
+      "duplicate_skip": 0,
+      "low_info_skip": 15,
+      "category_skip": 32,
       "no_image_skip": 0,
-      "bad_image_skip": 8,
-      "logo_image_skip": 59,
+      "bad_image_skip": 13,
+      "logo_image_skip": 50,
       "text_card_image_skip": 0,
-      "candidates": 41,
-      "rewrite_retry": 123,
-      "editorial_skip": 41,
+      "candidates": 56,
+      "rewrite_retry": 168,
+      "editorial_skip": 56,
       "telegram_fail": 0,
       "published": 0
     }
