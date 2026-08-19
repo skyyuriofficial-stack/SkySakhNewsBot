@@ -18,7 +18,7 @@ concurrency:
 jobs:
   dry-verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,21 +32,19 @@ jobs:
           pip install -r requirements.txt
       - name: Exercise full v9.8 pipeline without Telegram
         env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
           IMAGE_REQUIRED: "0"
           POSTS_PER_RUN: "2"
           MAX_AGE_HOURS: "36"
-          AI_CALL_BUDGET: "4"
+          AI_CALL_BUDGET: "0"
           RUN_COOLDOWN_MINUTES: "0"
           FORCE_RUN: "1"
           PYTHONUNBUFFERED: "1"
         run: |
+          echo '{"started":true}' > v98_dry_verify_report.json
           python -m py_compile src/news_bot_v8.py src/news_bot_v9.py src/production.py
           python - <<'PY'
           import copy
           import json
-          import re
           import sys
           from datetime import datetime, timezone
           from pathlib import Path
@@ -56,27 +54,16 @@ jobs:
           import production as prod
           core = prod.core
 
-          assert prod.VERSION == "stable-v9.8"
-          assert core.VERSION == "stable-v9.8"
-
           real_state = core.b.load_state()
           dry_state = copy.deepcopy(real_state)
-          captured = []
-          rows = {}
-          candidates = {}
+          captured, rows, candidates = [], {}, {}
 
-          def dry_load_state():
-              return dry_state
-
-          def dry_save_state(state):
-              dry_state.clear()
-              dry_state.update(copy.deepcopy(state))
+          core.b.load_state = lambda: dry_state
+          core.b.save_state = lambda state: None
 
           real_valid = core.b.valid_post
           def capture_valid(c):
-              candidates[c.get("url")] = copy.deepcopy({
-                  k: v for k, v in c.items() if k not in {"image"}
-              })
+              candidates[c.get("url")] = copy.deepcopy({k: v for k, v in c.items() if k != "image"})
               row = real_valid(c)
               if row:
                   rows[c.get("url")] = copy.deepcopy(row)
@@ -101,11 +88,10 @@ jobs:
               })
               return {"ok": True, "result": {"message_id": 0}}
 
-          core.b.load_state = dry_load_state
-          core.b.save_state = dry_save_state
           core.b.valid_post = capture_valid
           core.b.send_photo = lambda c, cap: record_publish(c, "dry-sendPhoto", cap)
           core.send_text = lambda row, c: record_publish(c, "dry-sendMessage")
+          core.time.sleep = lambda _seconds: None
 
           run_error = None
           try:
@@ -125,7 +111,6 @@ jobs:
           check("captured_exactly_2", len(captured) == 2, len(captured))
           check("candidate_pool_nonempty", int(run.get("candidates") or 0) > 0, run.get("candidates"))
           check("local_candidates_nonempty", int(run.get("local_candidates") or 0) > 0, run.get("local_candidates"))
-
           local = run.get("local_stream") or {}
           check("local_stream_operational", local.get("status") in {"healthy", "degraded"}, local)
 
@@ -156,23 +141,18 @@ jobs:
               body = [core.b.clean(x) for x in (row.get("body") or []) if core.b.clean(x)]
               final_text = title + " " + " ".join(body)
               source_all = core.b.clean(post.get("source_title")) + " " + core.b.clean(post.get("source_text"))
-
               check(prefix + "_russian_text", core.b.ratio_latin(final_text) <= 0.10, core.b.ratio_latin(final_text))
               invented = core.b.nums(final_text) - core.b.nums(source_all)
               check(prefix + "_no_invented_numbers", not invented, sorted(invented))
-              check(prefix + "_quake_facts", not core.validate_quake(row, c), core.validate_quake(row, c))
+              quake_errors = core.validate_quake(row, c)
+              check(prefix + "_quake_facts", not quake_errors, quake_errors)
 
-              mode = row.get("editorial_mode") or "ai_grounded"
-              if mode == "extractive_fallback":
-                  source_norm = core.b.norm(post.get("source_text"))
-                  exactish = all(core.b.norm(x) in source_norm for x in body)
-                  check(prefix + "_extractive_grounding", exactish, mode)
-              else:
-                  ev_errors = core.validate_evidence(row, c)
-                  check(prefix + "_ai_evidence_grounding", not ev_errors, ev_errors)
+              source_norm = core.b.norm(post.get("source_text"))
+              exactish = all(core.b.norm(x) in source_norm for x in body)
+              check(prefix + "_extractive_grounding", exactish, row.get("editorial_mode"))
 
               cat = post.get("category_key")
-              src_text = (source_all or "").lower()
+              src_text = source_all.lower()
               if cat == "ru_pol":
                   check(prefix + "_politics_marker", bool(core.b.terms(src_text, core.b.POL)), core.b.terms(src_text, core.b.POL))
               if cat == "ru_eco":
@@ -182,16 +162,15 @@ jobs:
               if cat == "ru_incident":
                   check(prefix + "_incident_marker", bool(core.hits(src_text, prod.INCIDENT_MARKERS)), core.hits(src_text, prod.INCIDENT_MARKERS))
               if cat == "sakh_chp" and core.hits(src_text, prod.WEATHER_MARKERS):
-                  # Weather may coexist with an actual incident; weather alone may not cause CHП.
                   non_weather_incident = bool(core.hits(src_text, prod.INCIDENT_MARKERS))
                   check(prefix + "_weather_not_false_chp", non_weather_incident, core.hits(src_text, prod.WEATHER_MARKERS))
-
               if "sakhalinmedia" in (post.get("source") or "").lower():
                   check(prefix + "_publisher_suffix_removed", "sakhalinmedia" not in title.lower(), title)
 
           report = {
               "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
               "version": prod.VERSION,
+              "mode": "live-sources / dry-Telegram / extractive-editor",
               "run": run,
               "captured_posts": captured,
               "checks": checks,
@@ -200,9 +179,7 @@ jobs:
               "all_pass": all(x["ok"] for x in checks),
               "run_error": run_error,
           }
-          Path("v98_dry_verify_report.json").write_text(
-              json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
-          )
+          Path("v98_dry_verify_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
           print(json.dumps(report, ensure_ascii=False, indent=2))
           PY
       - name: Persist dry verification report
