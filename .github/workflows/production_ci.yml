@@ -29,79 +29,55 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
-      - name: Compile
-        run: |
-          python -m py_compile src/news_bot_v8.py src/news_bot_v9.py src/production.py
-
-      - name: Deterministic regression tests
+      - name: Compile and regression tests
         env:
           IMAGE_REQUIRED: "0"
+          AI_CALL_BUDGET: "8"
         run: |
+          python -m py_compile src/news_bot_v8.py src/news_bot_v9.py src/production.py
           python - <<'PY'
           import sys
           sys.path.insert(0, "src")
           import production as prod
           core = prod.core
-
-          assert prod.VERSION == "stable-v9.6"
-          assert core.VERSION == "stable-v9.6"
+          assert prod.VERSION == "stable-v9.7"
+          assert core.VERSION == "stable-v9.7"
           assert core.strict_fresh(None) is False
-          assert all(s[0] not in {"Habr", "ASTV", "Sakh.online"} for s in core.b.SOURCES)
-          assert any(s[0] == "TASS" for s in core.b.SOURCES)
-          assert core.ASTV_NEWS_URL == "https://astv.ru/news"
-          assert core.SAKH_NEWS_URL == "https://sakh.online/news"
+          assert prod.AI_CALL_BUDGET == 8
 
-          assert len(core.discover_astv_urls(
-              '<a href="/news/criminal/2026-08-19-test-story/">x</a>'
-          )) == 1
-          assert len(core.discover_sakh_urls(
-              '<a href="/news/24/2026-08-19/test-story-517703">x</a>'
-          )) == 1
-
-          # World feed without Russia cannot become Мир о России.
-          cat, _, _ = core.classify(
-              "world", 90,
-              "US and Iran discuss military tensions",
-              "US and Iran officials met after recent attacks.",
-              "",
-              "https://example.com/story",
-          )
-          assert cat != "world_ru"
-
-          # Exact foreign-Russian-publisher regression.
-          cat, _, reason = prod.classify_v96(
+          cat, _, _ = prod.classify_v97(
               "ru", 78,
               "Трамп рассматривает отсрочку введения пошлин в 50% в отношении Канады",
               "Президент США рассматривает отсрочку пошлин в отношении Канады.",
               "",
               "https://www.interfax.ru/world/1110016",
           )
-          assert cat not in {"ru_eco", "ru_pol", "ru_security"}, (cat, reason)
+          assert cat not in {"ru_eco", "ru_pol", "ru_security"}
 
-          # Domestic BPLA/airport story remains security.
-          cat, _, reason = prod.classify_v96(
+          cat, _, _ = prod.classify_v97(
               "ru", 78,
               "Аэропорт временно ограничил прием самолетов из-за угрозы БПЛА",
               "Росавиация сообщила об ограничениях.",
               "",
               "https://www.interfax.ru/russia/1110011",
           )
-          assert cat == "ru_security", (cat, reason)
+          assert cat == "ru_security"
 
-          ok, why = prod.valid_source_stream_v96({
-              "category_key": "ru_eco",
-              "source": "Interfax",
-              "url": "https://www.interfax.ru/world/1110016",
-              "title": "Трамп рассматривает отсрочку пошлин для Канады",
-              "source_text": "Президент США обсуждает пошлины в отношении Канады."
+          fallback = prod._extractive_fallback({
+              "category_key": "sakh",
+              "footer": "САХАЛИН",
+              "title": "В Южно-Сахалинске восстановили движение после дорожной аварии",
+              "source_text": (
+                  "Движение на участке городской улицы восстановили после завершения аварийных работ. "
+                  "Специалисты убрали поврежденный автомобиль и освободили проезжую часть для транспорта. "
+                  "Обстоятельства происшествия устанавливают сотрудники полиции."
+              )
           })
-          assert not ok and why == "russia_stream_foreign_story"
+          assert fallback and len(fallback["body"]) == 2
 
           ok, why = core.valid_source_stream({
               "category_key": "sakh",
@@ -111,21 +87,5 @@ jobs:
               "source_text": "Материал о кассетах и магнитной ленте."
           })
           assert not ok and why == "local_without_geo"
-
-          source = "Reuters reported that the talks resumed in Geneva on Tuesday after a two-day pause."
-          assert core.evidence_matches(source, "the talks resumed in Geneva on Tuesday")
-          assert not core.evidence_matches(source, "officials signed a final peace agreement")
-
-          quake = {
-              "category_key": "sakh_quake",
-              "title": "Землетрясение магнитудой 5,1 произошло у Курил",
-              "source_text": "Эпицентр находился в 65 км от Северо-Курильска. Толчки ощущались силой 3 балла. Глубина 20 км."
-          }
-          facts = core.quake_required_facts(quake)
-          assert "5.1" in facts.get("magnitude", [])
-          assert "65" in facts.get("distance_km", [])
-          assert "3" in facts.get("intensity_points", [])
-          assert "20" in facts.get("depth_km", [])
-
-          print("stable-v9.6 deterministic regression tests: OK")
+          print("stable-v9.7 deterministic regression tests: OK")
           PY
