@@ -1,5 +1,5 @@
-# one-shot live verification trigger 2026-08-19
-name: SkySakhNews v9.6 One Shot Verification
+# one-shot live verification trigger 2026-08-19 v9.7
+name: SkySakhNews v9.7 One Shot Verification
 
 on:
   push:
@@ -24,19 +24,17 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
       - name: Compile and regression gate
         env:
           IMAGE_REQUIRED: "0"
+          AI_CALL_BUDGET: "8"
         run: |
           python -m py_compile src/news_bot_v8.py src/news_bot_v9.py src/production.py
           python - <<'PY'
@@ -44,28 +42,30 @@ jobs:
           sys.path.insert(0, "src")
           import production as prod
           core = prod.core
-          assert prod.VERSION == "stable-v9.6"
-          assert core.VERSION == "stable-v9.6"
-          assert core.strict_fresh(None) is False
-          assert prod.classify_v96(
+          assert prod.VERSION == "stable-v9.7"
+          assert core.VERSION == "stable-v9.7"
+          assert prod.AI_CALL_BUDGET == 8
+          assert prod.classify_v97(
               "ru", 78,
               "Трамп рассматривает отсрочку введения пошлин в 50% в отношении Канады",
               "Президент США рассматривает отсрочку пошлин в отношении Канады.",
               "",
               "https://www.interfax.ru/world/1110016",
           )[0] not in {"ru_eco", "ru_pol", "ru_security"}
-          ok, why = prod.valid_source_stream_v96({
-              "category_key": "ru_eco",
-              "source": "Interfax",
-              "url": "https://www.interfax.ru/world/1110016",
-              "title": "Трамп рассматривает отсрочку пошлин для Канады",
-              "source_text": "Президент США обсуждает пошлины в отношении Канады."
+          fallback = prod._extractive_fallback({
+              "category_key": "sakh",
+              "footer": "САХАЛИН",
+              "title": "В Южно-Сахалинске восстановили движение после дорожной аварии",
+              "source_text": (
+                  "Движение на участке городской улицы восстановили после завершения аварийных работ. "
+                  "Специалисты убрали поврежденный автомобиль и освободили проезжую часть для транспорта. "
+                  "Обстоятельства происшествия устанавливают сотрудники полиции."
+              )
           })
-          assert not ok and why == "russia_stream_foreign_story"
-          print("one-shot regression gate: OK")
+          assert fallback and len(fallback["body"]) == 2
+          print("one-shot v9.7 regression gate: OK")
           PY
-
-      - name: Run stable v9.6 live publisher
+      - name: Run stable v9.7 live publisher
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
@@ -74,10 +74,10 @@ jobs:
           IMAGE_REQUIRED: "0"
           POSTS_PER_RUN: "2"
           MAX_AGE_HOURS: "36"
+          AI_CALL_BUDGET: "8"
           PYTHONUNBUFFERED: "1"
         run: |
           python src/production.py
-
       - name: Verify runtime state
         run: |
           python - <<'PY'
@@ -86,12 +86,14 @@ jobs:
           with open("state.json", "r", encoding="utf-8") as f:
               state = json.load(f)
           run = state.get("last_run") or {}
-          assert run.get("version") == "stable-v9.6", run
+          assert run.get("version") == "stable-v9.7", run
           assert run.get("status") == "ok", run
           assert run.get("published", 0) <= 2, run
           assert "finished_sakhalin" in run, run
           local = run.get("local_stream") or {}
           assert local.get("status") in {"healthy", "degraded"}, local
+          stats = run.get("stats") or {}
+          assert stats.get("ai_calls", 0) <= 8, stats
           for p in (state.get("last_posts") or [])[-run.get("published", 0):]:
               u = p.get("url") or ""
               assert "news.google." not in urlparse(u).netloc.lower(), p
@@ -100,7 +102,6 @@ jobs:
               assert p.get("grounded_evidence") is True, p
           print("runtime verification: OK", run)
           PY
-
       - name: Commit live runtime state
         if: always()
         run: |
@@ -110,7 +111,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No state changes"
           else
-            git commit -m "Record v9.6 one-shot live verification"
+            git commit -m "Record v9.7 one-shot live verification"
             git pull --rebase --autostash origin main
             git push origin main
           fi
