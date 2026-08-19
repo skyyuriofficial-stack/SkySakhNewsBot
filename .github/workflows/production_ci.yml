@@ -37,6 +37,7 @@ jobs:
         env:
           IMAGE_REQUIRED: "0"
           AI_CALL_BUDGET: "8"
+          RUN_COOLDOWN_MINUTES: "20"
         run: |
           python -m py_compile src/news_bot_v8.py src/news_bot_v9.py src/production.py
           python - <<'PY'
@@ -44,48 +45,42 @@ jobs:
           sys.path.insert(0, "src")
           import production as prod
           core = prod.core
-          assert prod.VERSION == "stable-v9.7"
-          assert core.VERSION == "stable-v9.7"
+          assert prod.VERSION == "stable-v9.8"
+          assert core.VERSION == "stable-v9.8"
           assert core.strict_fresh(None) is False
           assert prod.AI_CALL_BUDGET == 8
+          assert prod.RUN_COOLDOWN_MINUTES == 20
+          assert "ru_incident" in core.b.CAT
 
-          cat, _, _ = prod.classify_v97(
-              "ru", 78,
-              "Трамп рассматривает отсрочку введения пошлин в 50% в отношении Канады",
-              "Президент США рассматривает отсрочку пошлин в отношении Канады.",
-              "",
-              "https://www.interfax.ru/world/1110016",
-          )
-          assert cat not in {"ru_eco", "ru_pol", "ru_security"}
+          cases = [
+              ("ru", "Трамп рассматривает отсрочку введения пошлин в 50% в отношении Канады", "Президент США рассматривает отсрочку пошлин в отношении Канады.", "https://www.interfax.ru/world/1110016", {"geo", None}),
+              ("ru", "Аэропорт временно ограничил прием самолетов из-за угрозы БПЛА", "Росавиация сообщила об ограничениях.", "https://www.interfax.ru/russia/1110011", {"ru_security"}),
+              ("ru", "Ребенок погиб в Ростовской области, упав за борт катера", "Следователи устанавливают обстоятельства происшествия на воде.", "https://www.interfax.ru/russia/1110068", {"ru_incident"}),
+              ("sakhalin", "Сильный дождь пройдет в центральных районах Сахалина 20 августа", "Сахалинское УГМС прогнозирует сильный дождь и осадки.", "https://sakhalinmedia.ru/news/2593484/", {"sakh"}),
+          ]
+          for src_type, title, text, url, allowed in cases:
+              cat, _, _ = prod.classify_v98(src_type, 90, title, text, "", url)
+              assert cat in allowed, (title, cat, allowed)
 
-          cat, _, _ = prod.classify_v97(
-              "ru", 78,
-              "Аэропорт временно ограничил прием самолетов из-за угрозы БПЛА",
-              "Росавиация сообщила об ограничениях.",
-              "",
-              "https://www.interfax.ru/russia/1110011",
-          )
-          assert cat == "ru_security"
+          ok, why = prod.valid_source_stream_v98({
+              "category_key": "ru_pol",
+              "source": "Interfax",
+              "url": "https://www.interfax.ru/russia/1110068",
+              "title": "Ребенок погиб в Ростовской области",
+              "source_text": "Следователи устанавливают обстоятельства происшествия."
+          })
+          assert not ok and why == "politics_without_politics_marker"
 
           fallback = prod._extractive_fallback({
               "category_key": "sakh",
               "footer": "САХАЛИН",
-              "title": "В Южно-Сахалинске восстановили движение после дорожной аварии",
+              "title": "Сильный дождь пройдет на Сахалине - SakhalinMedia.ru",
               "source_text": (
-                  "Движение на участке городской улицы восстановили после завершения аварийных работ. "
-                  "Специалисты убрали поврежденный автомобиль и освободили проезжую часть для транспорта. "
-                  "Обстоятельства происшествия устанавливают сотрудники полиции."
+                  "Сильный дождь ожидается в центральных районах острова в течение дня. "
+                  "Синоптики предупреждают жителей о возможном ухудшении дорожной обстановки. "
+                  "Прогноз подготовлен специалистами регионального управления гидрометеослужбы."
               )
           })
-          assert fallback and len(fallback["body"]) == 2
-
-          ok, why = core.valid_source_stream({
-              "category_key": "sakh",
-              "source": "Sakhalin Google",
-              "url": "https://example.com/audio",
-              "title": "История магнитной записи",
-              "source_text": "Материал о кассетах и магнитной ленте."
-          })
-          assert not ok and why == "local_without_geo"
-          print("stable-v9.7 deterministic regression tests: OK")
+          assert fallback and "SakhalinMedia" not in fallback["title_ru"]
+          print("stable-v9.8 deterministic regression tests: OK")
           PY
