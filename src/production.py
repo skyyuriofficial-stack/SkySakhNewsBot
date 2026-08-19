@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 
 import news_bot_v9 as core
 
-VERSION = "stable-v9.8"
+VERSION = "stable-v9.9"
 core.VERSION = VERSION
 
 # ---------------------------------------------------------------------------
@@ -75,18 +75,17 @@ def is_international_url(url):
     return any(marker in path for marker in INTERNATIONAL_PATH_MARKERS)
 
 
-def classify_v98(src_type, weight, title, rss_text, desc, url):
+def classify_v99(src_type, weight, title, rss_text, desc, url):
     text = f"{title} {rss_text} {desc}".lower()
     path = urllib.parse.urlparse(url or "").path.lower()
 
     if core.b.terms(text, core.b.NOISE):
         return None, 0, "noise"
 
-    # IT/world retain the hardened core rules.
     if src_type in {"it", "world"}:
         return core.classify(src_type, weight, title, rss_text, desc, url)
 
-    # Local publisher: weather is normal local news, not an emergency by default.
+    # Local weather is ordinary regional news unless an actual incident is present.
     if src_type == "sakhalin":
         if core.hits(text, WEATHER_MARKERS):
             return "sakh", weight + 22, "local_weather"
@@ -101,7 +100,6 @@ def classify_v98(src_type, weight, title, rss_text, desc, url):
     if src_type != "ru":
         return None, 0, "unknown_source_type"
 
-    # A national source may become local only with explicit Sakhalin geography.
     if core.b.terms(text, core.b.LOCAL):
         if core.hits(text, WEATHER_MARKERS):
             return "sakh", weight + 18, "ru_local_weather"
@@ -123,7 +121,7 @@ def classify_v98(src_type, weight, title, rss_text, desc, url):
             return "geo", weight + 8, "ru_source_foreign_geo"
         return None, 0, "ru_source_foreign_weak"
 
-    # Domestic event type before politics/economy.
+    # Domestic event type is determined before politics/economy.
     if core.hits(text, core.SECURITY_MARKERS):
         return "ru_security", weight + 18, "ru_security"
     if core.hits(text, INCIDENT_MARKERS):
@@ -134,17 +132,15 @@ def classify_v98(src_type, weight, title, rss_text, desc, url):
         return "ru_pol", weight + 10, "ru_pol"
     if len(set(core.hits(text, core.GEO_MARKERS))) >= 2:
         return "geo", weight + 6, "ru_geo"
-
-    # Merely mentioning Russia is not a political category.
     return None, 0, "ru_not_in_stream"
 
 
-core.b.classify = classify_v98
+core.b.classify = classify_v99
 
 _original_source_stream_guard = core.valid_source_stream
 
 
-def valid_source_stream_v98(item):
+def valid_source_stream_v99(item):
     cat = item.get("category_key", "")
     url = item.get("url") or ""
     body = f"{item.get('title','')} {item.get('source_text','')}".lower()
@@ -153,7 +149,6 @@ def valid_source_stream_v98(item):
         if not core.hits(body, core.RUSSIA_MARKERS):
             return False, "russia_stream_foreign_story"
 
-    # Independent topic guard: labels must have supporting topic markers.
     if cat == "ru_incident" and not core.hits(body, INCIDENT_MARKERS):
         return False, "incident_without_incident_marker"
     if cat == "ru_pol" and not core.b.terms(body, core.b.POL):
@@ -166,10 +161,10 @@ def valid_source_stream_v98(item):
     return _original_source_stream_guard(item)
 
 
-core.valid_source_stream = valid_source_stream_v98
+core.valid_source_stream = valid_source_stream_v99
 
 
-def ordered_v98(cands):
+def ordered_v99(cands):
     local_keys = {"sakh_quake", "sakh_chp", "sakh"}
     local = [c for c in cands if c.get("category_key") in local_keys]
     other = [c for c in cands if c not in local]
@@ -183,7 +178,7 @@ def ordered_v98(cands):
     return out
 
 
-core.b.ordered = ordered_v98
+core.b.ordered = ordered_v99
 
 
 # ---------------------------------------------------------------------------
@@ -199,6 +194,16 @@ for _key in (
 ):
     core.b.STATS.setdefault(_key, 0)
 
+PROMO_TEXT = (
+    "подпишись", "подписывайтесь", "читайте также", "читайте нас", "реклама",
+    "самые важные новости", "в нашем telegram", "в нашем телеграм", "в max!",
+)
+
+ABBREVIATIONS = (
+    "тыс.", "млн.", "млрд.", "руб.", "коп.", "г.", "ул.", "д.", "стр.",
+    "ст.", "им.", "км.", "см.", "мм.", "ч.", "мин.", "сек.", "т.д.", "т.п.",
+)
+
 
 def _looks_russian(text):
     letters = re.findall(r"[A-Za-zА-Яа-яЁё]", text or "")
@@ -208,13 +213,53 @@ def _looks_russian(text):
     return cyr / len(letters) >= 0.82
 
 
+def _protect_abbreviations(text):
+    out = text
+    for abbr in ABBREVIATIONS:
+        out = re.sub(
+            re.escape(abbr),
+            lambda m: m.group(0).replace(".", "∯"),
+            out,
+            flags=re.I,
+        )
+    return out
+
+
+def _dedupe_adjacent_words(sentence):
+    """Collapse accidental desc/RSS/article concatenation: X X -> X."""
+    words = sentence.split()
+    norms = [core.b.norm(w) for w in words]
+    n = len(words)
+    for width in range(max(6, n // 4), n // 2 + 1):
+        if 2 * width > n:
+            break
+        left = norms[:width]
+        right = norms[width:2 * width]
+        if left and left == right and all(left):
+            trimmed = " ".join(words[:width]).rstrip(" ,;:-")
+            if sentence.rstrip().endswith((".", "!", "?")) and not trimmed.endswith((".", "!", "?")):
+                trimmed += sentence.rstrip()[-1]
+            return trimmed
+    return sentence
+
+
 def _sentence_candidates(text):
     clean = core.b.clean(text)
-    parts = re.split(r"(?<=[.!?])\s+|\s+[—–-]\s+(?=[А-ЯA-Z])", clean)
+    protected = _protect_abbreviations(clean)
+    parts = re.split(
+        r"(?<=[!?])\s+(?=[«\"“„(]?[А-ЯЁA-Z0-9])|(?<=\.)\s+(?=[«\"“„(]?[А-ЯЁA-Z0-9])",
+        protected,
+    )
     out = []
     for raw in parts:
-        s = core.b.clean(raw).strip(" -—–")
+        s = core.b.clean(raw.replace("∯", ".")).strip(" -—–")
+        s = _dedupe_adjacent_words(s)
         if len(s) < 65 or len(s) > 520 or not _looks_russian(s):
+            continue
+        if not re.match(r'^[«\"“„(]*[А-ЯЁA-Z0-9]', s):
+            continue
+        low = s.lower()
+        if any(x in low for x in PROMO_TEXT):
             continue
         if any(core.b.too_similar(s, old) for old in out):
             continue
@@ -224,7 +269,6 @@ def _sentence_candidates(text):
 
 def _display_title(c):
     title = core.b.clean(c.get("title"))
-    # RSS/page titles often append the publisher name; Telegram already shows source in footer.
     title = re.sub(
         r"\s*(?:[-–—|]\s*)?(?:SakhalinMedia(?:\.ru)?|ASTV(?:\.ru)?|Sakh\.online|Interfax|Интерфакс|TASS|ТАСС)\s*$",
         "",
@@ -235,16 +279,25 @@ def _display_title(c):
 
 
 def _extractive_fallback(c):
-    """Fail-safe for Russian source text. No paraphrase means no hallucination."""
+    """Russian fail-safe: copy source sentences, never invent or paraphrase."""
     source = core.b.clean(c.get("source_text"))
     title = _display_title(c)
     if not _looks_russian(title + " " + source):
         return None
-    sentences = _sentence_candidates(source)
-    if len(sentences) < 2:
+
+    candidates = _sentence_candidates(source)
+    body = []
+    for sentence in candidates:
+        if core.b.too_similar(sentence, title):
+            continue
+        if any(core.b.too_similar(sentence, old) for old in body):
+            continue
+        body.append(sentence)
+        if len(body) == 2:
+            break
+    if len(body) < 2:
         return None
 
-    body = sentences[:2]
     row = {
         "reject": False,
         "title_ru": title[:220],
@@ -266,10 +319,14 @@ def _extractive_fallback(c):
         return None
     if core.validate_quake(row, c):
         return None
+    # Every fallback paragraph must remain traceable to the source text.
+    source_norm = core.b.norm(source)
+    if any(core.b.norm(x) not in source_norm for x in body):
+        return None
     return row
 
 
-def _validate_generated_v98(row, c):
+def _validate_generated_v99(row, c):
     if row.get("reject") is True:
         return ["model_rejected"]
 
@@ -323,7 +380,7 @@ def _api_failure_is_systemic(ex):
     ))
 
 
-def valid_post_v98(c):
+def valid_post_v99(c):
     global _AI_CALLS, _AI_CIRCUIT_OPEN
     last_error = ""
     attempts = 0
@@ -334,7 +391,7 @@ def valid_post_v98(c):
         core.b.STATS["ai_calls"] = _AI_CALLS
         try:
             row = core.generate_grounded(c, last_error)
-            errors = _validate_generated_v98(row, c)
+            errors = _validate_generated_v99(row, c)
             if not errors:
                 return row
             core.b.STATS["validation_reject"] += 1
@@ -364,7 +421,7 @@ def valid_post_v98(c):
     return None
 
 
-core.b.valid_post = valid_post_v98
+core.b.valid_post = valid_post_v99
 
 
 # ---------------------------------------------------------------------------
