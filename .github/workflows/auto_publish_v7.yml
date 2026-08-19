@@ -1,4 +1,4 @@
-name: SkySakhNews Auto Publisher Stable v9.5
+name: SkySakhNews Auto Publisher Stable v9.6
 
 on:
   workflow_dispatch:
@@ -32,7 +32,7 @@ jobs:
 
       - name: Compile production code
         run: |
-          python -m py_compile src/news_bot_v8.py src/news_bot_v9.py
+          python -m py_compile src/news_bot_v8.py src/news_bot_v9.py src/production.py
 
       - name: Production self-test
         env:
@@ -41,41 +41,73 @@ jobs:
           python - <<'PY'
           import sys
           sys.path.insert(0, "src")
-          import news_bot_v9 as prod
+          import production as prod
+          core = prod.core
 
-          assert prod.VERSION == "stable-v9.5"
-          assert prod.b.IMAGE_REQUIRED is False
-          assert any(s[0] == "TASS" and s[1] == "ru" for s in prod.b.SOURCES)
-          assert all(s[0] not in {"Habr", "ASTV", "Sakh.online"} for s in prod.b.SOURCES)
-          assert "ru_security" in prod.b.CAT
+          assert prod.VERSION == "stable-v9.6"
+          assert core.VERSION == "stable-v9.6"
+          assert core.b.IMAGE_REQUIRED is False
+          assert any(s[0] == "TASS" and s[1] == "ru" for s in core.b.SOURCES)
+          assert all(s[0] not in {"Habr", "ASTV", "Sakh.online"} for s in core.b.SOURCES)
+          assert "ru_security" in core.b.CAT
 
-          sources = {s[0]: s for s in prod.b.SOURCES}
+          sources = {s[0]: s for s in core.b.SOURCES}
           assert sources["SakhalinMedia"][2] == "https://sakhalinmedia.ru/export/new/news64.rss"
-          assert prod.ASTV_NEWS_URL == "https://astv.ru/news"
-          assert prod.SAKH_NEWS_URL == "https://sakh.online/news"
+          assert core.ASTV_NEWS_URL == "https://astv.ru/news"
+          assert core.SAKH_NEWS_URL == "https://sakh.online/news"
 
-          synthetic_astv = '''
+          # HTML local adapters.
+          astv_urls = core.discover_astv_urls('''
               <a href="/news/criminal/2026-08-19-test-story/">story</a>
               <a href="/news/">not article</a>
               <a href="https://astv.ru/news/society/2026-08-18-second-story/">story2</a>
-          '''
-          astv_urls = prod.discover_astv_urls(synthetic_astv)
+          ''')
           assert len(astv_urls) == 2, astv_urls
 
-          synthetic_sakh = '''
+          sakh_urls = core.discover_sakh_urls('''
               <a href="/news/24/2026-08-19/local-test-story-517703">story</a>
               <a href="/news">not article</a>
               <a href="https://sakh.online/news/18/2026-08-18/second-local-story-517710">story2</a>
-          '''
-          sakh_urls = prod.discover_sakh_urls(synthetic_sakh)
+          ''')
           assert len(sakh_urls) == 2, sakh_urls
 
-          # Unknown date is never treated as fresh.
-          assert prod.strict_fresh(None) is False
-          assert prod.b.fresh(None) is False
+          # Unknown date is never fresh.
+          assert core.strict_fresh(None) is False
+          assert core.b.fresh(None) is False
 
-          # Source/stream guards.
-          ok, why = prod.valid_source_stream({
+          # The exact production regression: a foreign Interfax story is NOT Russia/economy.
+          cat, _, reason = prod.classify_v96(
+              "ru", 78,
+              "Трамп рассматривает отсрочку введения пошлин в 50% в отношении Канады",
+              "Президент США рассматривает отсрочку пошлин в отношении Канады.",
+              "",
+              "https://www.interfax.ru/world/1110016",
+          )
+          assert cat not in {"ru_eco", "ru_pol", "ru_security"}, (cat, reason)
+          assert cat in {"geo", None}, (cat, reason)
+
+          # Domestic airport/BPLA story stays in security.
+          cat, _, reason = prod.classify_v96(
+              "ru", 78,
+              "Аэропорт временно ограничил прием самолетов из-за угрозы БПЛА",
+              "Росавиация сообщила об ограничениях в российском аэропорту.",
+              "",
+              "https://www.interfax.ru/russia/1110011",
+          )
+          assert cat == "ru_security", (cat, reason)
+
+          # Second independent guard against a foreign story entering a Russia stream.
+          ok, why = prod.valid_source_stream_v96({
+              "category_key": "ru_eco",
+              "source": "Interfax",
+              "url": "https://www.interfax.ru/world/1110016",
+              "title": "Трамп рассматривает отсрочку пошлин для Канады",
+              "source_text": "Президент США обсуждает пошлины в отношении Канады."
+          })
+          assert not ok and why == "russia_stream_foreign_story", (ok, why)
+
+          # World-about-Russia guard.
+          ok, why = core.valid_source_stream({
               "category_key": "world_ru",
               "source": "BBC World",
               "url": "https://bbc.com/news/test",
@@ -84,7 +116,8 @@ jobs:
           })
           assert ok is False and why == "world_ru_without_russia"
 
-          ok, why = prod.valid_source_stream({
+          # Foreign content cannot masquerade as Sakhalin.
+          ok, why = core.valid_source_stream({
               "category_key": "sakh",
               "source": "Sakhalin Google",
               "url": "https://example.com/audio",
@@ -93,7 +126,8 @@ jobs:
           })
           assert ok is False and why == "local_without_geo"
 
-          ok, why = prod.valid_source_stream({
+          # Google wrappers are never publishable final URLs.
+          ok, why = core.valid_source_stream({
               "category_key": "geo",
               "source": "Reuters",
               "url": "https://news.google.com/rss/articles/test",
@@ -104,10 +138,10 @@ jobs:
 
           # Evidence grounding.
           source = "Reuters reported that the talks resumed in Geneva on Tuesday after a two-day pause."
-          assert prod.evidence_matches(source, "the talks resumed in Geneva on Tuesday")
-          assert not prod.evidence_matches(source, "officials signed a final peace agreement")
+          assert core.evidence_matches(source, "the talks resumed in Geneva on Tuesday")
+          assert not core.evidence_matches(source, "officials signed a final peace agreement")
 
-          # Seismic facts: magnitude, depth, distance/intensity when source contains them.
+          # Seismic facts are mandatory when present in source.
           quake = {
               "category_key": "sakh_quake",
               "title": "У Курильских островов произошло землетрясение магнитудой 5,1",
@@ -117,18 +151,19 @@ jobs:
                   "В городе ощущались толчки силой 3 балла."
               )
           }
-          facts = prod.quake_required_facts(quake)
+          facts = core.quake_required_facts(quake)
           assert "5.1" in facts.get("magnitude", [])
           assert "20" in facts.get("depth_km", [])
           assert "65" in facts.get("distance_km", [])
           assert "3" in facts.get("intensity_points", [])
-          errors = prod.validate_quake({
+
+          errors = core.validate_quake({
               "title_ru": "У Курил произошло землетрясение",
               "body": ["Толчок ощущался в 08:42; эпицентр был в 65 км, глубина — 20 км, интенсивность — 3 балла."]
           }, quake)
           assert any(x.startswith("quake_missing_magnitude:5.1") for x in errors)
 
-          print("production self-test: OK")
+          print("production self-test stable-v9.6: OK")
           PY
 
       - name: Run stable publisher
@@ -142,7 +177,7 @@ jobs:
           MAX_AGE_HOURS: "36"
           PYTHONUNBUFFERED: "1"
         run: |
-          python src/news_bot_v9.py
+          python src/production.py
 
       - name: Verify run health
         run: |
@@ -150,14 +185,15 @@ jobs:
           import json
           with open("state.json", "r", encoding="utf-8") as f:
               state = json.load(f)
+
           run = state.get("last_run") or {}
-          assert run.get("version") == "stable-v9.5", run
+          assert run.get("version") == "stable-v9.6", run
           assert run.get("status") == "ok", run
           assert "finished_sakhalin" in run, run
 
           local = run.get("local_stream") or {}
           assert local.get("status") in ("healthy", "degraded", "down"), local
-          # Total loss of the local input stream must be visible as a failed workflow.
+          # Total local-source loss must be visible as a failed workflow.
           assert local.get("status") != "down", local
 
           print("run health: OK", run)
