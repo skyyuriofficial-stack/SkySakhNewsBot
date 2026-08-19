@@ -55,6 +55,21 @@ jobs:
           assert all(s[0] != "Habr" for s in prod.b.SOURCES)
           assert "ru_security" in prod.b.CAT
 
+          # Local-source regression guards: only verified production endpoints/adapters.
+          sources = {s[0]: s for s in prod.b.SOURCES}
+          assert "ASTV" not in sources
+          assert sources["SakhalinMedia"][2] == "https://sakhalinmedia.ru/export/new/news64.rss"
+          assert sources["Sakh.online"][2] == "https://sakh.online/feed"
+          assert prod.ASTV_NEWS_URL == "https://astv.ru/news"
+          synthetic_astv = '''
+              <a href="/news/criminal/2026-08-19-test-story/">story</a>
+              <a href="/news/">not article</a>
+              <a href="https://astv.ru/news/society/2026-08-18-second-story/">story2</a>
+          '''
+          astv_urls = prod.discover_astv_urls(synthetic_astv)
+          assert len(astv_urls) == 2, astv_urls
+          assert all("/2026-08-" in u for u in astv_urls)
+
           # No date means no publication.
           assert prod.strict_fresh(None) is False
           assert prod.b.fresh(None) is False
