@@ -1,14 +1,5 @@
 # SkySakhNews stable production overlay over v8.
-# Production goals:
-# - source type is classified before geography;
-# - wrong source/stream pairs are rejected;
-# - Google News wrappers are never published as source links;
-# - undated items are rejected;
-# - bad/duplicate/weakly-related images degrade to text-only instead of killing the news;
-# - every generated paragraph is grounded by an exact source evidence fragment;
-# - earthquake posts preserve key seismic facts from the source;
-# - local Sakhalin feeds are health-checked on every run;
-# - every run writes a health record to state.json.
+# Single production policy layer. Do not stack additional publisher versions on top.
 
 import json
 import re
@@ -22,19 +13,19 @@ import requests
 import feedparser
 import news_bot_v8 as b
 
-VERSION = "stable-v9.4"
+VERSION = "stable-v9.5"
 
+# Quality beats decorative completeness: a safe text post is better than a wrong image.
 b.IMAGE_REQUIRED = False
 
+# Keep only reliable RSS feeds here. Sites without a reliable RSS are collected through
+# first-party HTML adapters below.
 _sources = []
-for s in b.SOURCES:
-    name, src_type, url, weight = s
-    if name in ("Habr", "ASTV"):
+for name, src_type, url, weight in b.SOURCES:
+    if name in ("Habr", "ASTV", "Sakh.online"):
         continue
     if name == "SakhalinMedia":
         url = "https://sakhalinmedia.ru/export/new/news64.rss"
-    elif name == "Sakh.online":
-        url = "https://sakh.online/feed"
     _sources.append((name, src_type, url, weight))
 b.SOURCES = _sources
 
@@ -42,6 +33,7 @@ if not any(s[0] == "TASS" for s in b.SOURCES):
     b.SOURCES.append(("TASS", "ru", "https://tass.ru/rss/v2.xml", 98))
 
 ASTV_NEWS_URL = "https://astv.ru/news"
+SAKH_NEWS_URL = "https://sakh.online/news"
 
 b.CAT["ru_security"] = ("🇷🇺 Россия / безопасность", "РОССИЯ | БЕЗОПАСНОСТЬ")
 
@@ -98,11 +90,14 @@ def hits(text, markers):
     return [m for m in markers if hit(text, m)]
 
 
-# 1) Freshness: no date == no publication.
+# ---------------------------------------------------------------------------
+# Freshness
+# ---------------------------------------------------------------------------
 _old_fresh = b.fresh
 
 
 def strict_fresh(dt):
+    # An unknown publication date is not evidence of freshness.
     if dt is None:
         return False
     try:
@@ -114,7 +109,9 @@ def strict_fresh(dt):
 b.fresh = strict_fresh
 
 
-# 2) Google News: resolve the publisher article or skip the candidate.
+# ---------------------------------------------------------------------------
+# Direct-link integrity for Google News wrappers
+# ---------------------------------------------------------------------------
 def _host(url):
     try:
         return urllib.parse.urlparse(url or "").netloc.lower().split(":")[0]
@@ -139,8 +136,17 @@ def _source_href(entry):
         return ""
 
 
+def _same_site(a, b_url):
+    a_host, b_host = _host(a), _host(b_url)
+    if not a_host or not b_host:
+        return False
+    a_host = a_host.removeprefix("www.")
+    b_host = b_host.removeprefix("www.")
+    return a_host == b_host or a_host.endswith("." + b_host) or b_host.endswith("." + a_host)
+
+
 def resolve_google_wrapper(url, source_href=""):
-    """Best-effort deterministic resolver. Never returns a Google wrapper."""
+    """Best-effort resolver. A Google wrapper is never returned as a publishable URL."""
     if not url or not b.is_google(url):
         return url
 
@@ -156,11 +162,11 @@ def resolve_google_wrapper(url, source_href=""):
 
     final_url = r.url or ""
     if _is_external_http(final_url):
-        return final_url
+        if not source_href or _same_site(final_url, source_href):
+            return final_url
 
     page = html.unescape(r.text[:900000])
     raw_candidates = []
-
     for m in re.finditer(r'(?:href|data-n-au)=["\']([^"\']+)["\']', page, re.I):
         raw_candidates.append(m.group(1))
     raw_candidates += re.findall(r'https?://[^\s"\'<>\\]+', page, flags=re.I)
@@ -184,11 +190,13 @@ def resolve_google_wrapper(url, source_href=""):
 
         if not _is_external_http(u):
             continue
+        if source_href and not _same_site(u, source_href):
+            continue
 
         p = urllib.parse.urlparse(u)
         if p.path in ("", "/"):
             continue
-        if re.search(r"\.(?:jpg|jpeg|png|gif|webp|svg|css|js)(?:$|\?)", p.path, re.I):
+        if re.search(r"\.(?:jpg|jpeg|png|gif|webp|svg|css|js|pdf)(?:$|\?)", p.path, re.I):
             continue
 
         u = urllib.parse.urlunparse((p.scheme, p.netloc, p.path, p.params, p.query, ""))
@@ -197,14 +205,26 @@ def resolve_google_wrapper(url, source_href=""):
         seen.add(u)
 
         score = min(len(p.path), 120)
-        if source_host and (_host(u) == source_host or _host(u).endswith("." + source_host)):
+        if source_host and _same_site(u, source_href):
             score += 250
         candidates.append((score, u))
 
     return max(candidates, default=(0, None))[1]
 
 
-def direct_url_v94(entry):
+def _resolved_title_matches(entry, resolved):
+    """Reject a resolved URL if its page title is not recognisably the RSS story."""
+    rss_title = b.clean(entry.get("title", ""))
+    if not rss_title or not resolved:
+        return False
+    page = b.page_info(resolved)
+    page_title = b.clean(page.get("title"))
+    if not page_title:
+        return False
+    return b.title_overlap(rss_title, page_title) >= 0.28 or b.too_similar(rss_title, page_title)
+
+
+def direct_url_v95(entry):
     base = b.clean(entry.get("link", ""))
     raw_blocks = (
         str(entry.get("summary", "") or ""),
@@ -227,13 +247,20 @@ def direct_url_v94(entry):
         return b.abs_url(base) or base
 
     resolved = resolve_google_wrapper(base, _source_href(entry))
-    return resolved or base
+    if not resolved:
+        return base
+    if not _resolved_title_matches(entry, resolved):
+        b.log("Google resolver title mismatch -> skip wrapper")
+        return base
+    return resolved
 
 
-b.direct_url = direct_url_v94
+b.direct_url = direct_url_v95
 
 
-# 3) Classification: source type first, then geography/event.
+# ---------------------------------------------------------------------------
+# Classification: source type first, then geography/event
+# ---------------------------------------------------------------------------
 def classify(src_type, weight, title, rss_text, desc, url):
     text = f"{title} {rss_text} {desc}".lower()
     path = urllib.parse.urlparse(url or "").path.lower()
@@ -287,8 +314,10 @@ def classify(src_type, weight, title, rss_text, desc, url):
 b.classify = classify
 
 
-# 4) Image relevance: article/RSS are preferred; page/OG need context overlap.
-def select_image_v94(cands, title):
+# ---------------------------------------------------------------------------
+# Images: semantic relevance + quality + duplicate protection
+# ---------------------------------------------------------------------------
+def select_image_v95(cands, title):
     seen = set()
     ranked = []
     for c in cands:
@@ -304,6 +333,7 @@ def select_image_v94(cands, title):
         source = c.get("source", "")
         overlap = b.title_overlap(title, c.get("context", ""))
 
+        # Weakly contextual page/OG images are where logos/header cards most often leak in.
         if source in ("page", "og") and overlap < 0.18:
             last = "weak_image_context"
             continue
@@ -321,17 +351,18 @@ def select_image_v94(cands, title):
     return None, None, last
 
 
-b.select_image = select_image_v94
+b.select_image = select_image_v95
 
 
+# ---------------------------------------------------------------------------
+# First-party local HTML adapters
+# ---------------------------------------------------------------------------
 def discover_astv_urls(page_text):
-    urls = []
-    seen = set()
+    urls, seen = [], set()
     for raw in re.findall(r'href=["\']([^"\']+)["\']', page_text or "", flags=re.I):
         u = urllib.parse.urljoin(ASTV_NEWS_URL, html.unescape(raw))
         p = urllib.parse.urlparse(u)
-        path = p.path.lower()
-        if not re.match(r"^/news/[^/]+/\d{4}-\d{2}-\d{2}-[^/]+/?$", path):
+        if not re.match(r"^/news/[^/]+/\d{4}-\d{2}-\d{2}-[^/]+/?$", p.path.lower()):
             continue
         u = urllib.parse.urlunparse((p.scheme or "https", p.netloc or "astv.ru", p.path, "", "", ""))
         if u not in seen:
@@ -350,22 +381,45 @@ def _astv_url_dt(url):
         return None
 
 
-def collect_astv_html(state):
-    """First-party ASTV adapter; avoids depending on an unverified RSS endpoint."""
+def discover_sakh_urls(page_text):
+    urls, seen = [], set()
+    for raw in re.findall(r'href=["\']([^"\']+)["\']', page_text or "", flags=re.I):
+        u = urllib.parse.urljoin(SAKH_NEWS_URL, html.unescape(raw))
+        p = urllib.parse.urlparse(u)
+        if not re.match(r"^/news/\d+/\d{4}-\d{2}-\d{2}/[^/]+/?$", p.path.lower()):
+            continue
+        u = urllib.parse.urlunparse((p.scheme or "https", p.netloc or "sakh.online", p.path, "", "", ""))
+        if u not in seen:
+            seen.add(u)
+            urls.append(u)
+    return urls[:24]
+
+
+def _sakh_url_dt(url):
+    m = re.search(r"/news/\d+/(\d{4}-\d{2}-\d{2})/", url or "")
+    if not m:
+        return None
+    try:
+        return datetime.fromisoformat(m.group(1)).replace(tzinfo=b.TZ).astimezone(timezone.utc)
+    except Exception:
+        return None
+
+
+def _local_html_candidates(state, source_name, index_url, discover, date_from_url, weight):
     used_u = set(state.get("published_urls", []))
     used_h = set(state.get("published_title_hashes", []))
     out = []
 
     try:
         r = requests.get(
-            ASTV_NEWS_URL,
+            index_url,
             headers={"User-Agent": "Mozilla/5.0 SkySakhNewsBot/1.0"},
             timeout=25,
         )
         r.raise_for_status()
-        urls = discover_astv_urls(r.text[:1200000])
+        urls = discover(r.text[:1200000])
     except Exception as ex:
-        b.log(f"ASTV html source failed: {ex}")
+        b.log(f"{source_name} HTML source failed: {ex}")
         return []
 
     for url in urls[:16]:
@@ -375,11 +429,10 @@ def collect_astv_html(state):
         page = b.page_info(url)
         title = b.clean(page.get("title"))
         desc = b.clean(page.get("desc"))
-        text = " ".join(
-            x for x in (desc, b.clean(page.get("article"))) if x
-        ).strip()[:1800]
+        article = b.clean(page.get("article"))
+        text = " ".join(x for x in (desc, article) if x).strip()[:1800]
 
-        dt = page.get("published") or _astv_url_dt(url)
+        dt = page.get("published") or date_from_url(url)
         if not strict_fresh(dt):
             continue
         if len(title) < 24 or len(text) < 140:
@@ -389,19 +442,19 @@ def collect_astv_html(state):
         if th in used_h:
             continue
 
-        cat, score, reason = classify("sakhalin", 108, title, text, desc, url)
+        cat, score, reason = classify("sakhalin", weight, title, text, desc, url)
         if not cat:
             continue
 
         image, image_url, image_reason = b.select_image(page.get("images", []), title)
         if not image:
             b.STATS["bad_image_skip"] += 1
-            b.log(f"ASTV no safe image -> text-only: {title[:80]} | {image_reason}")
+            b.log(f"{source_name} no safe image -> text-only: {title[:80]} | {image_reason}")
 
         category, footer = b.CAT[cat]
         out.append({
             "id": 10000 + len(out),
-            "source": "ASTV",
+            "source": source_name,
             "category_key": cat,
             "category": category,
             "footer": footer,
@@ -417,6 +470,14 @@ def collect_astv_html(state):
         })
 
     return out
+
+
+def collect_astv_html(state):
+    return _local_html_candidates(state, "ASTV", ASTV_NEWS_URL, discover_astv_urls, _astv_url_dt, 108)
+
+
+def collect_sakh_html(state):
+    return _local_html_candidates(state, "Sakh.online", SAKH_NEWS_URL, discover_sakh_urls, _sakh_url_dt, 106)
 
 
 _old_collect = b.collect
@@ -473,7 +534,7 @@ def valid_source_stream(item):
 
 
 def collect(state):
-    items = _old_collect(state) + collect_astv_html(state)
+    items = _old_collect(state) + collect_astv_html(state) + collect_sakh_html(state)
 
     recent_hashes = {
         p.get("image_hash") for p in state.get("last_posts", [])[-60:] if p.get("image_hash")
@@ -492,6 +553,7 @@ def collect(state):
             b.log(f"skip source-stream guard [{why}]: {item.get('title','')[:90]}")
             continue
 
+        # Interfax frequently exposes branded/title cards rather than event photos.
         if "interfax" in (item.get("source") or "").lower():
             item["image"] = None
             item["image_url"] = None
@@ -536,7 +598,9 @@ def collect(state):
 b.collect = collect
 
 
-# 5) Grounded generation: every title/body element carries exact evidence.
+# ---------------------------------------------------------------------------
+# Grounded generation and deterministic evidence validation
+# ---------------------------------------------------------------------------
 def _evidence_norm(text):
     return re.sub(r"\s+", " ", b.norm(text or "")).strip()
 
@@ -569,13 +633,18 @@ def quake_required_facts(c):
 
     source = f"{c.get('title','')} {c.get('source_text','')}"
     low = source.lower()
-    out = {"magnitude": [], "depth_km": [], "time": []}
+    out = {
+        "magnitude": [],
+        "depth_km": [],
+        "distance_km": [],
+        "intensity_points": [],
+        "time": [],
+    }
 
-    mag_patterns = [
+    for pat in (
         r"(?:магнитуд\w*|magnitude)\D{0,50}([0-9]+(?:[.,][0-9]+)?)",
         r"\bM\s*([0-9](?:[.,][0-9]+)?)\b",
-    ]
-    for pat in mag_patterns:
+    ):
         for v in re.findall(pat, source, flags=re.I):
             v = v.replace(",", ".")
             if v not in out["magnitude"]:
@@ -590,16 +659,40 @@ def quake_required_facts(c):
         if v not in out["depth_km"]:
             out["depth_km"].append(v)
 
+    for pat in (
+        r"(?:эпицентр\w*|epicenter|epicentre)[^.]{0,120}?([0-9]+(?:[.,][0-9]+)?)\s*(?:км|km)\s*(?:от|from)",
+        r"([0-9]+(?:[.,][0-9]+)?)\s*(?:км|km)\s+(?:от|from)\s+[^.,;]{2,80}",
+    ):
+        for v in re.findall(pat, source, flags=re.I):
+            v = v.replace(",", ".")
+            if v not in out["distance_km"]:
+                out["distance_km"].append(v)
+
+    for v in re.findall(
+        r"([0-9]+(?:[.,][0-9]+)?)\s*(?:балл|балла|баллов|points?)\b",
+        source,
+        flags=re.I,
+    ):
+        v = v.replace(",", ".")
+        if v not in out["intensity_points"]:
+            out["intensity_points"].append(v)
+
     if re.search(r"(?:произош\w*|зафикс\w*|зарегистр\w*|occurred|recorded|reported)", low):
         for v in re.findall(r"\b([0-2]?\d:[0-5]\d)\b", source):
             if v not in out["time"]:
                 out["time"].append(v)
 
-    return {k: (v[:1] if k in ("depth_km", "time") else v[:3]) for k, v in out.items() if v}
+    limits = {
+        "magnitude": 3,
+        "depth_km": 1,
+        "distance_km": 1,
+        "intensity_points": 2,
+        "time": 1,
+    }
+    return {k: v[:limits[k]] for k, v in out.items() if v}
 
 
 def grounded_prompt(c, error=""):
-    required = quake_required_facts(c)
     data = {
         "category": c["category"],
         "footer": c["footer"],
@@ -607,7 +700,7 @@ def grounded_prompt(c, error=""):
         "title": c["title"],
         "source_text": c["source_text"],
         "published_at": c["published_at"],
-        "required_facts": required,
+        "required_facts": quake_required_facts(c),
     }
     return (
         "Сделай профессиональный новостной Telegram-пост строго на русском языке. "
@@ -659,13 +752,16 @@ def validate_quake(row, c):
     )
     errors = []
 
-    for value in required.get("magnitude", []):
-        if not _contains_numeric_value(joined, value):
-            errors.append("quake_missing_magnitude:" + value)
-
-    for value in required.get("depth_km", []):
-        if not _contains_numeric_value(joined, value):
-            errors.append("quake_missing_depth:" + value)
+    labels = {
+        "magnitude": "quake_missing_magnitude",
+        "depth_km": "quake_missing_depth",
+        "distance_km": "quake_missing_distance",
+        "intensity_points": "quake_missing_intensity",
+    }
+    for key, prefix in labels.items():
+        for value in required.get(key, []):
+            if not _contains_numeric_value(joined, value):
+                errors.append(prefix + ":" + value)
 
     for value in required.get("time", []):
         if value not in joined:
@@ -683,8 +779,7 @@ def validate_evidence(row, c):
     body_evidence = row.get("body_evidence") if isinstance(row.get("body_evidence"), list) else []
     errors = []
 
-    title_ev = b.clean(row.get("title_evidence"))
-    if not evidence_matches(source, title_ev):
+    if not evidence_matches(source, b.clean(row.get("title_evidence"))):
         errors.append("title_evidence_not_found")
 
     if len(body_evidence) != len(body):
@@ -698,14 +793,6 @@ def validate_evidence(row, c):
 
 
 def semantic_fact_check(row, c):
-    draft = {
-        "title": row.get("title_ru"),
-        "body": row.get("body"),
-    }
-    source = {
-        "title": c.get("title"),
-        "source_text": c.get("source_text"),
-    }
     prompt = (
         "Проверь новостной черновик против исходника. "
         "Каждое фактическое утверждение черновика должно прямо следовать из исходника. "
@@ -713,8 +800,14 @@ def semantic_fact_check(row, c):
         "субъектов, времени, места, количества или статуса события запрещены. "
         'Верни только JSON: {"supported":true,"unsupported":[]} или '
         '{"supported":false,"unsupported":["кратко что не подтверждено"]}.\n'
-        "SOURCE=" + json.dumps(source, ensure_ascii=False) + "\n"
-        "DRAFT=" + json.dumps(draft, ensure_ascii=False)
+        "SOURCE=" + json.dumps({
+            "title": c.get("title"),
+            "source_text": c.get("source_text"),
+        }, ensure_ascii=False) + "\n"
+        "DRAFT=" + json.dumps({
+            "title": row.get("title_ru"),
+            "body": row.get("body"),
+        }, ensure_ascii=False)
     )
     try:
         raw = b.openrouter(
@@ -727,6 +820,7 @@ def semantic_fact_check(row, c):
         verdict = b.parse_obj(raw)
         return verdict.get("supported") is True, verdict.get("unsupported") or []
     except Exception as ex:
+        # Fail closed: infrastructure uncertainty must not become a fabricated post.
         return False, ["fact_checker_error:" + str(ex)[:160]]
 
 
@@ -770,65 +864,55 @@ b.validate = validate_grounded
 b.valid_post = valid_post_grounded
 
 
-# 6) Local stream health: distinguish "no local story" from "local feeds dead".
+# ---------------------------------------------------------------------------
+# Local-source health
+# ---------------------------------------------------------------------------
+def _probe_rss(name, rss):
+    rec = {"source": name, "status": "down", "entries": 0, "recent": 0}
+    try:
+        r = requests.get(rss, headers={"User-Agent": "Mozilla/5.0 SkySakhNewsBot/1.0"}, timeout=20)
+        r.raise_for_status()
+        feed = feedparser.parse(r.content)
+        entries = list(feed.entries[:20])
+        rec["entries"] = len(entries)
+        rec["recent"] = sum(
+            1 for e in entries if (b.entry_dt(e) is not None and strict_fresh(b.entry_dt(e)))
+        )
+        rec["status"] = "ok" if rec["recent"] else ("stale" if entries else "empty")
+        if getattr(feed, "bozo", False):
+            rec["bozo"] = True
+    except Exception as ex:
+        rec["error"] = str(ex)[:180]
+    return rec
+
+
+def _probe_html(name, index_url, discover, date_from_url):
+    rec = {"source": name, "status": "down", "entries": 0, "recent": 0}
+    try:
+        r = requests.get(index_url, headers={"User-Agent": "Mozilla/5.0 SkySakhNewsBot/1.0"}, timeout=20)
+        r.raise_for_status()
+        urls = discover(r.text[:1200000])
+        rec["entries"] = len(urls)
+        recent = 0
+        for u in urls:
+            dt = date_from_url(u)
+            if dt is not None and strict_fresh(dt):
+                recent += 1
+        rec["recent"] = recent
+        rec["status"] = "ok" if recent else ("stale" if urls else "empty")
+    except Exception as ex:
+        rec["error"] = str(ex)[:180]
+    return rec
+
+
 def probe_local_sources():
     results = []
-
     for name, src_type, rss, _weight in b.SOURCES:
-        if src_type != "sakhalin":
-            continue
+        if src_type == "sakhalin":
+            results.append(_probe_rss(name, rss))
 
-        rec = {"source": name, "status": "down", "entries": 0, "recent": 0}
-        try:
-            r = requests.get(
-                rss,
-                headers={"User-Agent": "Mozilla/5.0 SkySakhNewsBot/1.0"},
-                timeout=20,
-            )
-            r.raise_for_status()
-            feed = feedparser.parse(r.content)
-            entries = list(feed.entries[:20])
-            rec["entries"] = len(entries)
-            recent = 0
-
-            for e in entries:
-                dt = b.entry_dt(e)
-                if dt is not None and strict_fresh(dt):
-                    recent += 1
-
-            rec["recent"] = recent
-            if entries and recent:
-                rec["status"] = "ok"
-            elif entries:
-                rec["status"] = "stale"
-            else:
-                rec["status"] = "empty"
-
-            if getattr(feed, "bozo", False):
-                rec["bozo"] = True
-
-        except Exception as ex:
-            rec["error"] = str(ex)[:180]
-
-        results.append(rec)
-
-    astv_rec = {"source": "ASTV HTML", "status": "down", "entries": 0, "recent": 0}
-    try:
-        r = requests.get(
-            ASTV_NEWS_URL,
-            headers={"User-Agent": "Mozilla/5.0 SkySakhNewsBot/1.0"},
-            timeout=20,
-        )
-        r.raise_for_status()
-        urls = discover_astv_urls(r.text[:1200000])
-        astv_rec["entries"] = len(urls)
-        astv_rec["recent"] = sum(
-            1 for u in urls if (_astv_url_dt(u) is not None and strict_fresh(_astv_url_dt(u)))
-        )
-        astv_rec["status"] = "ok" if astv_rec["recent"] else ("stale" if urls else "empty")
-    except Exception as ex:
-        astv_rec["error"] = str(ex)[:180]
-    results.append(astv_rec)
+    results.append(_probe_html("ASTV HTML", ASTV_NEWS_URL, discover_astv_urls, _astv_url_dt))
+    results.append(_probe_html("Sakh.online HTML", SAKH_NEWS_URL, discover_sakh_urls, _sakh_url_dt))
 
     ok_count = sum(1 for x in results if x["status"] == "ok")
     if ok_count >= 2:
@@ -841,6 +925,9 @@ def probe_local_sources():
     return {"status": overall, "ok_sources": ok_count, "sources": results}
 
 
+# ---------------------------------------------------------------------------
+# Editorial balance and Telegram publishing
+# ---------------------------------------------------------------------------
 def ordered(cands):
     local = [c for c in cands if c["category_key"] in ("sakh_quake", "sakh_chp", "sakh")]
     other = [c for c in cands if c not in local]
@@ -857,7 +944,6 @@ def ordered(cands):
     for c in local[1:] + other:
         if c not in out:
             out.append(c)
-
     return out
 
 
@@ -879,19 +965,17 @@ def text_post(row, c):
 def send_text(row, c):
     token = b.os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
     chat = b.os.getenv("TELEGRAM_CHANNEL_ID", "").strip()
-
     if not token or not chat:
         raise RuntimeError("Telegram secrets missing")
 
-    payload = {
-        "chat_id": chat,
-        "text": text_post(row, c),
-        "parse_mode": "HTML",
-        "disable_web_page_preview": "true",
-    }
     r = requests.post(
         f"https://api.telegram.org/bot{token}/sendMessage",
-        data=payload,
+        data={
+            "chat_id": chat,
+            "text": text_post(row, c),
+            "parse_mode": "HTML",
+            "disable_web_page_preview": "true",
+        },
         timeout=90,
     )
     if r.status_code >= 400:
@@ -918,8 +1002,7 @@ def main():
         local_health = probe_local_sources()
         run["local_stream"] = local_health
         b.log(
-            "local stream: "
-            + local_health["status"]
+            "local stream: " + local_health["status"]
             + f" ({local_health['ok_sources']} sources with recent items)"
         )
 
@@ -928,7 +1011,6 @@ def main():
         run["local_candidates"] = sum(
             1 for c in cands if c.get("category_key") in ("sakh_quake", "sakh_chp", "sakh")
         )
-
         b.log(f"Кандидатов после production-фильтра: {len(cands)}")
         b.log(f"Локальных кандидатов: {run['local_candidates']}")
 
@@ -950,7 +1032,7 @@ def main():
             if with_image:
                 try:
                     result = b.send_photo(c, b.caption(row, c))
-                    method = "sendPhoto/stable-v9.4"
+                    method = "sendPhoto/stable-v9.5"
                 except Exception as ex:
                     b.STATS["telegram_fail"] += 1
                     b.log(f"photo failed -> text fallback: {c['title'][:90]} | {ex}")
