@@ -1,5 +1,4 @@
-# one-shot diagnostic live verification trigger 2026-08-19 v9.7
-name: SkySakhNews v9.7 Diagnostic Live Verification
+name: SkySakhNews v9.8 Dry Production Verification
 
 on:
   push:
@@ -13,11 +12,11 @@ permissions:
   contents: write
 
 concurrency:
-  group: skysakhnews-production-publisher
-  cancel-in-progress: false
+  group: skysakhnews-production-verification
+  cancel-in-progress: true
 
 jobs:
-  verify-live:
+  dry-verify:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -31,54 +30,191 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Run v9.7 and capture diagnostics
+      - name: Exercise full v9.8 pipeline without Telegram
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
           IMAGE_REQUIRED: "0"
           POSTS_PER_RUN: "2"
           MAX_AGE_HOURS: "36"
-          AI_CALL_BUDGET: "8"
+          AI_CALL_BUDGET: "4"
+          RUN_COOLDOWN_MINUTES: "0"
+          FORCE_RUN: "1"
           PYTHONUNBUFFERED: "1"
         run: |
-          set +e
-          python -m py_compile src/news_bot_v8.py src/news_bot_v9.py src/production.py > live_verify_report.txt 2>&1
-          compile_rc=$?
-          run_rc=99
-          if [ "$compile_rc" -eq 0 ]; then
-            python src/production.py >> live_verify_report.txt 2>&1
-            run_rc=$?
-          fi
-          echo "compile_rc=$compile_rc" >> live_verify_report.txt
-          echo "run_rc=$run_rc" >> live_verify_report.txt
-          python - <<PY
+          python -m py_compile src/news_bot_v8.py src/news_bot_v9.py src/production.py
+          python - <<'PY'
+          import copy
           import json
+          import re
+          import sys
+          from datetime import datetime, timezone
           from pathlib import Path
-          p = Path('state.json')
-          state = json.loads(p.read_text(encoding='utf-8')) if p.exists() else {}
-          run = state.get('last_run') or {}
-          run.setdefault('version', 'stable-v9.7')
-          if $compile_rc != 0:
-              run.update({'version':'stable-v9.7','status':'error','error':'compile_failed','diagnostic':True})
-          elif $run_rc != 0:
-              run.update({'version':'stable-v9.7','status':'error','error':'runtime_failed','diagnostic':True})
-          state['last_run'] = run
-          p.write_text(json.dumps(state, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          from urllib.parse import urlparse
+
+          sys.path.insert(0, "src")
+          import production as prod
+          core = prod.core
+
+          assert prod.VERSION == "stable-v9.8"
+          assert core.VERSION == "stable-v9.8"
+
+          real_state = core.b.load_state()
+          dry_state = copy.deepcopy(real_state)
+          captured = []
+          rows = {}
+          candidates = {}
+
+          def dry_load_state():
+              return dry_state
+
+          def dry_save_state(state):
+              dry_state.clear()
+              dry_state.update(copy.deepcopy(state))
+
+          real_valid = core.b.valid_post
+          def capture_valid(c):
+              candidates[c.get("url")] = copy.deepcopy({
+                  k: v for k, v in c.items() if k not in {"image"}
+              })
+              row = real_valid(c)
+              if row:
+                  rows[c.get("url")] = copy.deepcopy(row)
+              return row
+
+          def record_publish(c, method, caption=None):
+              url = c.get("url")
+              captured.append({
+                  "method": method,
+                  "url": url,
+                  "source": c.get("source"),
+                  "category": c.get("category"),
+                  "category_key": c.get("category_key"),
+                  "source_title": c.get("title"),
+                  "source_text": c.get("source_text"),
+                  "published_at": c.get("published_at"),
+                  "image_url": c.get("image_url"),
+                  "image_hash": c.get("image_hash"),
+                  "topic_cluster": c.get("topic_cluster"),
+                  "caption": caption,
+                  "row": copy.deepcopy(rows.get(url) or {}),
+              })
+              return {"ok": True, "result": {"message_id": 0}}
+
+          core.b.load_state = dry_load_state
+          core.b.save_state = dry_save_state
+          core.b.valid_post = capture_valid
+          core.b.send_photo = lambda c, cap: record_publish(c, "dry-sendPhoto", cap)
+          core.send_text = lambda row, c: record_publish(c, "dry-sendMessage")
+
+          run_error = None
+          try:
+              core.b.main()
+          except Exception as ex:
+              run_error = repr(ex)
+
+          checks = []
+          def check(name, ok, detail=""):
+              checks.append({"name": name, "ok": bool(ok), "detail": str(detail)[:1200]})
+
+          run = dry_state.get("last_run") or {}
+          check("runtime_no_exception", run_error is None, run_error or "ok")
+          check("version", run.get("version") == "stable-v9.8", run.get("version"))
+          check("status_ok", run.get("status") == "ok", run.get("status"))
+          check("published_exactly_2", run.get("published") == 2, run.get("published"))
+          check("captured_exactly_2", len(captured) == 2, len(captured))
+          check("candidate_pool_nonempty", int(run.get("candidates") or 0) > 0, run.get("candidates"))
+          check("local_candidates_nonempty", int(run.get("local_candidates") or 0) > 0, run.get("local_candidates"))
+
+          local = run.get("local_stream") or {}
+          check("local_stream_operational", local.get("status") in {"healthy", "degraded"}, local)
+
+          if captured and int(run.get("local_candidates") or 0) > 0:
+              check("first_post_is_local", captured[0].get("category_key") in {"sakh", "sakh_chp", "sakh_quake"}, captured[0].get("category_key"))
+
+          if len(captured) == 2:
+              check("different_story_urls", captured[0].get("url") != captured[1].get("url"), [captured[0].get("url"), captured[1].get("url")])
+              h1, h2 = captured[0].get("image_hash"), captured[1].get("image_hash")
+              u1, u2 = captured[0].get("image_url"), captured[1].get("image_url")
+              check("no_duplicate_image_hash", not (h1 and h2 and h1 == h2), [h1, h2])
+              check("no_duplicate_image_url", not (u1 and u2 and u1 == u2), [u1, u2])
+              t1, t2 = captured[0].get("topic_cluster"), captured[1].get("topic_cluster")
+              check("no_duplicate_topic_cluster", not (t1 and t2 and t1 == t2), [t1, t2])
+
+          for i, post in enumerate(captured, 1):
+              prefix = f"post_{i}"
+              url = post.get("url") or ""
+              host = urlparse(url).netloc.lower()
+              check(prefix + "_direct_source_url", bool(url) and "news.google." not in host, url)
+
+              c = candidates.get(url) or post
+              ok, why = prod.valid_source_stream_v98(c)
+              check(prefix + "_source_stream_guard", ok, why)
+
+              row = post.get("row") or {}
+              title = core.b.clean(row.get("title_ru"))
+              body = [core.b.clean(x) for x in (row.get("body") or []) if core.b.clean(x)]
+              final_text = title + " " + " ".join(body)
+              source_all = core.b.clean(post.get("source_title")) + " " + core.b.clean(post.get("source_text"))
+
+              check(prefix + "_russian_text", core.b.ratio_latin(final_text) <= 0.10, core.b.ratio_latin(final_text))
+              invented = core.b.nums(final_text) - core.b.nums(source_all)
+              check(prefix + "_no_invented_numbers", not invented, sorted(invented))
+              check(prefix + "_quake_facts", not core.validate_quake(row, c), core.validate_quake(row, c))
+
+              mode = row.get("editorial_mode") or "ai_grounded"
+              if mode == "extractive_fallback":
+                  source_norm = core.b.norm(post.get("source_text"))
+                  exactish = all(core.b.norm(x) in source_norm for x in body)
+                  check(prefix + "_extractive_grounding", exactish, mode)
+              else:
+                  ev_errors = core.validate_evidence(row, c)
+                  check(prefix + "_ai_evidence_grounding", not ev_errors, ev_errors)
+
+              cat = post.get("category_key")
+              src_text = (source_all or "").lower()
+              if cat == "ru_pol":
+                  check(prefix + "_politics_marker", bool(core.b.terms(src_text, core.b.POL)), core.b.terms(src_text, core.b.POL))
+              if cat == "ru_eco":
+                  check(prefix + "_economy_marker", bool(core.b.terms(src_text, core.b.ECO)), core.b.terms(src_text, core.b.ECO))
+              if cat == "ru_security":
+                  check(prefix + "_security_marker", bool(core.hits(src_text, core.SECURITY_MARKERS)), core.hits(src_text, core.SECURITY_MARKERS))
+              if cat == "ru_incident":
+                  check(prefix + "_incident_marker", bool(core.hits(src_text, prod.INCIDENT_MARKERS)), core.hits(src_text, prod.INCIDENT_MARKERS))
+              if cat == "sakh_chp" and core.hits(src_text, prod.WEATHER_MARKERS):
+                  # Weather may coexist with an actual incident; weather alone may not cause CHП.
+                  non_weather_incident = bool(core.hits(src_text, prod.INCIDENT_MARKERS))
+                  check(prefix + "_weather_not_false_chp", non_weather_incident, core.hits(src_text, prod.WEATHER_MARKERS))
+
+              if "sakhalinmedia" in (post.get("source") or "").lower():
+                  check(prefix + "_publisher_suffix_removed", "sakhalinmedia" not in title.lower(), title)
+
+          report = {
+              "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+              "version": prod.VERSION,
+              "run": run,
+              "captured_posts": captured,
+              "checks": checks,
+              "passed": sum(1 for x in checks if x["ok"]),
+              "failed": sum(1 for x in checks if not x["ok"]),
+              "all_pass": all(x["ok"] for x in checks),
+              "run_error": run_error,
+          }
+          Path("v98_dry_verify_report.json").write_text(
+              json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+          )
+          print(json.dumps(report, ensure_ascii=False, indent=2))
           PY
-          tail -n 300 live_verify_report.txt
-          exit 0
-      - name: Persist diagnostic state and log
+      - name: Persist dry verification report
         if: always()
         run: |
           git config user.name "skysakhnews-bot"
           git config user.email "actions@github.com"
-          git add state.json live_verify_report.txt
+          git add v98_dry_verify_report.json
           if git diff --cached --quiet; then
-            echo "No diagnostic changes"
+            echo "No dry verification changes"
           else
-            git commit -m "Record v9.7 diagnostic live verification"
+            git commit -m "Record v9.8 dry production verification"
             git pull --rebase --autostash origin main
             git push origin main
           fi
