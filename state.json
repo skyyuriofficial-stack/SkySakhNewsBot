@@ -265,7 +265,7 @@
     "c150bf4ded3bb64241b888b391ee2d9b8c53de16",
     "fdc7e6973f547cfecf849412f6ab75380fa315cb"
   ],
-  "last_run_sakhalin": "2026-08-19T12:41:24+11:00",
+  "last_run_sakhalin": "2026-08-19T13:59:46+11:00",
   "last_posts": [
     {
       "time_sakhalin": "2026-05-21T12:09:39+11:00",
@@ -4141,15 +4141,15 @@
     "items": []
   },
   "last_run": {
-    "version": "stable-v9.4",
-    "started_sakhalin": "2026-08-19T12:29:52+11:00",
+    "version": "stable-v9.6",
+    "started_sakhalin": "2026-08-19T13:57:04+11:00",
     "status": "ok",
-    "candidates": 17,
-    "published": 2,
-    "local_candidates": 0,
+    "candidates": 41,
+    "published": 0,
+    "local_candidates": 26,
     "local_stream": {
-      "status": "degraded",
-      "ok_sources": 1,
+      "status": "healthy",
+      "ok_sources": 4,
       "sources": [
         {
           "source": "Sakhalin Google",
@@ -4158,45 +4158,42 @@
           "recent": 12
         },
         {
-          "source": "ASTV",
-          "status": "down",
-          "entries": 0,
-          "recent": 0,
-          "error": "404 Client Error: Not Found for url: https://astv.ru/rss/news"
-        },
-        {
           "source": "SakhalinMedia",
-          "status": "empty",
-          "entries": 0,
-          "recent": 0,
-          "bozo": true
+          "status": "ok",
+          "entries": 20,
+          "recent": 20
         },
         {
-          "source": "Sakh.online",
-          "status": "down",
-          "entries": 0,
-          "recent": 0,
-          "error": "404 Client Error: Not Found for url: https://sakh.online/rss/"
+          "source": "ASTV HTML",
+          "status": "ok",
+          "entries": 20,
+          "recent": 13
+        },
+        {
+          "source": "Sakh.online HTML",
+          "status": "ok",
+          "entries": 20,
+          "recent": 20
         }
       ]
     },
-    "finished_sakhalin": "2026-08-19T12:41:24+11:00",
+    "finished_sakhalin": "2026-08-19T13:59:46+11:00",
     "stats": {
-      "rss_seen": 138,
-      "old_skip": 61,
-      "google_skip": 0,
-      "duplicate_skip": 4,
-      "low_info_skip": 27,
-      "category_skip": 29,
+      "rss_seen": 155,
+      "old_skip": 64,
+      "google_skip": 9,
+      "duplicate_skip": 2,
+      "low_info_skip": 16,
+      "category_skip": 34,
       "no_image_skip": 0,
-      "bad_image_skip": 10,
-      "logo_image_skip": 1,
+      "bad_image_skip": 8,
+      "logo_image_skip": 59,
       "text_card_image_skip": 0,
-      "candidates": 17,
-      "rewrite_retry": 19,
-      "editorial_skip": 5,
+      "candidates": 41,
+      "rewrite_retry": 123,
+      "editorial_skip": 41,
       "telegram_fail": 0,
-      "published": 2
+      "published": 0
     }
   }
 }
