@@ -1,4 +1,4 @@
-name: SkySakhNews Auto Publisher Stable v9.3
+name: SkySakhNews Auto Publisher Stable v9.4
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
@@ -48,11 +48,65 @@ jobs:
           import sys
           sys.path.insert(0, "src")
           import news_bot_v9 as prod
-          assert prod.VERSION == "stable-v9.3"
+
+          assert prod.VERSION == "stable-v9.4"
           assert prod.b.IMAGE_REQUIRED is False
           assert any(s[0] == "TASS" and s[1] == "ru" for s in prod.b.SOURCES)
           assert all(s[0] != "Habr" for s in prod.b.SOURCES)
           assert "ru_security" in prod.b.CAT
+
+          # No date means no publication.
+          assert prod.strict_fresh(None) is False
+          assert prod.b.fresh(None) is False
+
+          # Source/stream guards.
+          ok, why = prod.valid_source_stream({
+              "category_key": "world_ru",
+              "source": "BBC World",
+              "url": "https://bbc.com/news/test",
+              "title": "US and Iran discuss military tensions",
+              "source_text": "US and Iran officials discussed military tensions."
+          })
+          assert ok is False and why == "world_ru_without_russia"
+
+          ok, why = prod.valid_source_stream({
+              "category_key": "sakh",
+              "source": "Sakhalin Google",
+              "url": "https://example.com/audio",
+              "title": "История аналоговой записи",
+              "source_text": "Материал о магнитных лентах и кассетных деках без региональной привязки."
+          })
+          assert ok is False and why == "local_without_geo"
+
+          ok, why = prod.valid_source_stream({
+              "category_key": "geo",
+              "source": "Reuters",
+              "url": "https://news.google.com/rss/articles/test",
+              "title": "Test",
+              "source_text": "Test text"
+          })
+          assert ok is False and why == "non_direct_or_missing_url"
+
+          # Evidence must be copied from the source, not invented.
+          source = "Reuters reported that the talks resumed in Geneva on Tuesday after a two-day pause."
+          assert prod.evidence_matches(source, "the talks resumed in Geneva on Tuesday")
+          assert not prod.evidence_matches(source, "officials signed a final peace agreement")
+
+          # Seismic facts are mandatory when present in the source.
+          quake = {
+              "category_key": "sakh_quake",
+              "title": "У Курильских островов произошло землетрясение магнитудой 5,1",
+              "source_text": "Толчок зарегистрировали в 08:42. Очаг залегал на глубине 20 км."
+          }
+          facts = prod.quake_required_facts(quake)
+          assert "5.1" in facts.get("magnitude", [])
+          assert "20" in facts.get("depth_km", [])
+          errors = prod.validate_quake({
+              "title_ru": "У Курил произошло землетрясение",
+              "body": ["Сейсмологи зарегистрировали подземный толчок в 08:42 на глубине 20 км."]
+          }, quake)
+          assert any(x.startswith("quake_missing_magnitude:5.1") for x in errors)
+
           print("production self-test: OK")
           PY
 
@@ -76,9 +130,15 @@ jobs:
           with open("state.json", "r", encoding="utf-8") as f:
               state = json.load(f)
           run = state.get("last_run") or {}
-          assert run.get("version") == "stable-v9.3", run
+          assert run.get("version") == "stable-v9.4", run
           assert run.get("status") == "ok", run
           assert "finished_sakhalin" in run, run
+
+          local = run.get("local_stream") or {}
+          assert local.get("status") in ("healthy", "degraded", "down"), local
+          # A total loss of the Sakhalin input stream is a health failure, not a silent success.
+          assert local.get("status") != "down", local
+
           print("run health: OK", run)
           PY
 
