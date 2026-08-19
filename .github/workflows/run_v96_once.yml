@@ -1,4 +1,4 @@
-name: SkySakhNews v9.8 Dry Production Verification
+name: SkySakhNews v9.9 Dry Production Verification
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Exercise full v9.8 pipeline without Telegram
+      - name: Exercise live-source v9.9 pipeline without Telegram
         env:
           IMAGE_REQUIRED: "0"
           POSTS_PER_RUN: "2"
@@ -40,11 +40,12 @@ jobs:
           FORCE_RUN: "1"
           PYTHONUNBUFFERED: "1"
         run: |
-          echo '{"started":true}' > v98_dry_verify_report.json
+          echo '{"started":true}' > v99_dry_verify_report.json
           python -m py_compile src/news_bot_v8.py src/news_bot_v9.py src/production.py
           python - <<'PY'
           import copy
           import json
+          import re
           import sys
           from datetime import datetime, timezone
           from pathlib import Path
@@ -54,12 +55,18 @@ jobs:
           import production as prod
           core = prod.core
 
+          assert prod.VERSION == "stable-v9.9"
+          assert core.VERSION == "stable-v9.9"
+
           real_state = core.b.load_state()
           dry_state = copy.deepcopy(real_state)
+          saved = {}
           captured, rows, candidates = [], {}, {}
 
           core.b.load_state = lambda: dry_state
-          core.b.save_state = lambda state: None
+          def dry_save_state(state):
+              saved["state"] = copy.deepcopy(state)
+          core.b.save_state = dry_save_state
 
           real_valid = core.b.valid_post
           def capture_valid(c):
@@ -99,13 +106,14 @@ jobs:
           except Exception as ex:
               run_error = repr(ex)
 
+          result_state = saved.get("state") or dry_state
+          run = result_state.get("last_run") or {}
           checks = []
           def check(name, ok, detail=""):
               checks.append({"name": name, "ok": bool(ok), "detail": str(detail)[:1200]})
 
-          run = dry_state.get("last_run") or {}
           check("runtime_no_exception", run_error is None, run_error or "ok")
-          check("version", run.get("version") == "stable-v9.8", run.get("version"))
+          check("version", run.get("version") == "stable-v9.9", run.get("version"))
           check("status_ok", run.get("status") == "ok", run.get("status"))
           check("published_exactly_2", run.get("published") == 2, run.get("published"))
           check("captured_exactly_2", len(captured) == 2, len(captured))
@@ -133,7 +141,7 @@ jobs:
               check(prefix + "_direct_source_url", bool(url) and "news.google." not in host, url)
 
               c = candidates.get(url) or post
-              ok, why = prod.valid_source_stream_v98(c)
+              ok, why = prod.valid_source_stream_v99(c)
               check(prefix + "_source_stream_guard", ok, why)
 
               row = post.get("row") or {}
@@ -141,6 +149,7 @@ jobs:
               body = [core.b.clean(x) for x in (row.get("body") or []) if core.b.clean(x)]
               final_text = title + " " + " ".join(body)
               source_all = core.b.clean(post.get("source_title")) + " " + core.b.clean(post.get("source_text"))
+
               check(prefix + "_russian_text", core.b.ratio_latin(final_text) <= 0.10, core.b.ratio_latin(final_text))
               invented = core.b.nums(final_text) - core.b.nums(source_all)
               check(prefix + "_no_invented_numbers", not invented, sorted(invented))
@@ -150,6 +159,19 @@ jobs:
               source_norm = core.b.norm(post.get("source_text"))
               exactish = all(core.b.norm(x) in source_norm for x in body)
               check(prefix + "_extractive_grounding", exactish, row.get("editorial_mode"))
+              check(prefix + "_two_paragraphs", len(body) == 2, len(body))
+              check(prefix + "_paragraphs_start_clean", all(re.match(r'^[«\"“„(]*[А-ЯЁA-Z0-9]', x) for x in body), body)
+              check(prefix + "_no_promo_text", not any(y in final_text.lower() for y in prod.PROMO_TEXT), final_text)
+
+              # A paragraph must not contain an accidentally duplicated adjacent source summary.
+              duplicate_inside = False
+              for p in body:
+                  words = [core.b.norm(w) for w in p.split()]
+                  for width in range(6, len(words)//2 + 1):
+                      if words[:width] == words[width:2*width] and all(words[:width]):
+                          duplicate_inside = True
+                          break
+              check(prefix + "_no_adjacent_duplicate_sentence", not duplicate_inside, body)
 
               cat = post.get("category_key")
               src_text = source_all.lower()
@@ -162,8 +184,7 @@ jobs:
               if cat == "ru_incident":
                   check(prefix + "_incident_marker", bool(core.hits(src_text, prod.INCIDENT_MARKERS)), core.hits(src_text, prod.INCIDENT_MARKERS))
               if cat == "sakh_chp" and core.hits(src_text, prod.WEATHER_MARKERS):
-                  non_weather_incident = bool(core.hits(src_text, prod.INCIDENT_MARKERS))
-                  check(prefix + "_weather_not_false_chp", non_weather_incident, core.hits(src_text, prod.WEATHER_MARKERS))
+                  check(prefix + "_weather_not_false_chp", bool(core.hits(src_text, prod.INCIDENT_MARKERS)), core.hits(src_text, prod.WEATHER_MARKERS))
               if "sakhalinmedia" in (post.get("source") or "").lower():
                   check(prefix + "_publisher_suffix_removed", "sakhalinmedia" not in title.lower(), title)
 
@@ -179,7 +200,7 @@ jobs:
               "all_pass": all(x["ok"] for x in checks),
               "run_error": run_error,
           }
-          Path("v98_dry_verify_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          Path("v99_dry_verify_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
           print(json.dumps(report, ensure_ascii=False, indent=2))
           PY
       - name: Persist dry verification report
@@ -187,11 +208,11 @@ jobs:
         run: |
           git config user.name "skysakhnews-bot"
           git config user.email "actions@github.com"
-          git add v98_dry_verify_report.json
+          git add v99_dry_verify_report.json
           if git diff --cached --quiet; then
             echo "No dry verification changes"
           else
-            git commit -m "Record v9.8 dry production verification"
+            git commit -m "Record v9.9 dry production verification"
             git pull --rebase --autostash origin main
             git push origin main
           fi
