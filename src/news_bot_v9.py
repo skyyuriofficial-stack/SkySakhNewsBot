@@ -16,7 +16,7 @@ import time
 import hashlib
 import html
 import urllib.parse
-from datetime import datetime
+from datetime import datetime, timezone
 
 import requests
 import feedparser
@@ -26,9 +26,22 @@ VERSION = "stable-v9.4"
 
 b.IMAGE_REQUIRED = False
 
-b.SOURCES = [s for s in b.SOURCES if s[0] != "Habr"]
+_sources = []
+for s in b.SOURCES:
+    name, src_type, url, weight = s
+    if name in ("Habr", "ASTV"):
+        continue
+    if name == "SakhalinMedia":
+        url = "https://sakhalinmedia.ru/export/new/news64.rss"
+    elif name == "Sakh.online":
+        url = "https://sakh.online/feed"
+    _sources.append((name, src_type, url, weight))
+b.SOURCES = _sources
+
 if not any(s[0] == "TASS" for s in b.SOURCES):
     b.SOURCES.append(("TASS", "ru", "https://tass.ru/rss/v2.xml", 98))
+
+ASTV_NEWS_URL = "https://astv.ru/news"
 
 b.CAT["ru_security"] = ("🇷🇺 Россия / безопасность", "РОССИЯ | БЕЗОПАСНОСТЬ")
 
@@ -311,6 +324,101 @@ def select_image_v94(cands, title):
 b.select_image = select_image_v94
 
 
+def discover_astv_urls(page_text):
+    urls = []
+    seen = set()
+    for raw in re.findall(r'href=["\']([^"\']+)["\']', page_text or "", flags=re.I):
+        u = urllib.parse.urljoin(ASTV_NEWS_URL, html.unescape(raw))
+        p = urllib.parse.urlparse(u)
+        path = p.path.lower()
+        if not re.match(r"^/news/[^/]+/\d{4}-\d{2}-\d{2}-[^/]+/?$", path):
+            continue
+        u = urllib.parse.urlunparse((p.scheme or "https", p.netloc or "astv.ru", p.path, "", "", ""))
+        if u not in seen:
+            seen.add(u)
+            urls.append(u)
+    return urls[:24]
+
+
+def _astv_url_dt(url):
+    m = re.search(r"/(\d{4}-\d{2}-\d{2})-", url or "")
+    if not m:
+        return None
+    try:
+        return datetime.fromisoformat(m.group(1)).replace(tzinfo=b.TZ).astimezone(timezone.utc)
+    except Exception:
+        return None
+
+
+def collect_astv_html(state):
+    """First-party ASTV adapter; avoids depending on an unverified RSS endpoint."""
+    used_u = set(state.get("published_urls", []))
+    used_h = set(state.get("published_title_hashes", []))
+    out = []
+
+    try:
+        r = requests.get(
+            ASTV_NEWS_URL,
+            headers={"User-Agent": "Mozilla/5.0 SkySakhNewsBot/1.0"},
+            timeout=25,
+        )
+        r.raise_for_status()
+        urls = discover_astv_urls(r.text[:1200000])
+    except Exception as ex:
+        b.log(f"ASTV html source failed: {ex}")
+        return []
+
+    for url in urls[:16]:
+        if url in used_u:
+            continue
+
+        page = b.page_info(url)
+        title = b.clean(page.get("title"))
+        desc = b.clean(page.get("desc"))
+        text = " ".join(
+            x for x in (desc, b.clean(page.get("article"))) if x
+        ).strip()[:1800]
+
+        dt = page.get("published") or _astv_url_dt(url)
+        if not strict_fresh(dt):
+            continue
+        if len(title) < 24 or len(text) < 140:
+            continue
+
+        th = b.htitle(title)
+        if th in used_h:
+            continue
+
+        cat, score, reason = classify("sakhalin", 108, title, text, desc, url)
+        if not cat:
+            continue
+
+        image, image_url, image_reason = b.select_image(page.get("images", []), title)
+        if not image:
+            b.STATS["bad_image_skip"] += 1
+            b.log(f"ASTV no safe image -> text-only: {title[:80]} | {image_reason}")
+
+        category, footer = b.CAT[cat]
+        out.append({
+            "id": 10000 + len(out),
+            "source": "ASTV",
+            "category_key": cat,
+            "category": category,
+            "footer": footer,
+            "score": score + (20 if image else 0),
+            "reason": reason,
+            "title": title,
+            "source_text": text,
+            "url": page.get("url") or url,
+            "image_url": image_url,
+            "image": image,
+            "published_at": dt.isoformat(),
+            "title_hash": th,
+        })
+
+    return out
+
+
 _old_collect = b.collect
 
 
@@ -365,7 +473,7 @@ def valid_source_stream(item):
 
 
 def collect(state):
-    items = _old_collect(state)
+    items = _old_collect(state) + collect_astv_html(state)
 
     recent_hashes = {
         p.get("image_hash") for p in state.get("last_posts", [])[-60:] if p.get("image_hash")
@@ -703,6 +811,24 @@ def probe_local_sources():
             rec["error"] = str(ex)[:180]
 
         results.append(rec)
+
+    astv_rec = {"source": "ASTV HTML", "status": "down", "entries": 0, "recent": 0}
+    try:
+        r = requests.get(
+            ASTV_NEWS_URL,
+            headers={"User-Agent": "Mozilla/5.0 SkySakhNewsBot/1.0"},
+            timeout=20,
+        )
+        r.raise_for_status()
+        urls = discover_astv_urls(r.text[:1200000])
+        astv_rec["entries"] = len(urls)
+        astv_rec["recent"] = sum(
+            1 for u in urls if (_astv_url_dt(u) is not None and strict_fresh(_astv_url_dt(u)))
+        )
+        astv_rec["status"] = "ok" if astv_rec["recent"] else ("stale" if urls else "empty")
+    except Exception as ex:
+        astv_rec["error"] = str(ex)[:180]
+    results.append(astv_rec)
 
     ok_count = sum(1 for x in results if x["status"] == "ok")
     if ok_count >= 2:
