@@ -1,4 +1,4 @@
-name: SkySakhNews Direct Publisher Disabled
+name: SkySakhNews Legacy Direct Publisher Disabled
 
 on:
   workflow_dispatch:
@@ -10,8 +10,8 @@ jobs:
   disabled:
     runs-on: ubuntu-latest
     steps:
-      - name: Direct publisher disabled
+      - name: Legacy direct publisher disabled
         run: |
-          echo "Direct publisher is disabled to prevent unreviewed posts."
-          echo "Use SkySakhNews Editorial Cycle instead."
+          echo "Legacy direct publisher is disabled."
+          echo "Production is handled only by SkySakhNews Auto Publisher Stable v9.5."
           exit 0
