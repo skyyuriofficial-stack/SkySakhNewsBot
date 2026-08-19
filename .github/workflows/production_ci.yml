@@ -1,0 +1,107 @@
+name: SkySakhNews Production CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/news_bot_v8.py"
+      - "src/news_bot_v9.py"
+      - "requirements.txt"
+      - ".github/workflows/auto_publish_v7.yml"
+      - ".github/workflows/production_ci.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: skysakhnews-production-ci
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Compile
+        run: |
+          python -m py_compile src/news_bot_v8.py src/news_bot_v9.py
+
+      - name: Deterministic regression tests
+        env:
+          IMAGE_REQUIRED: "0"
+        run: |
+          python - <<'PY'
+          import sys
+          sys.path.insert(0, "src")
+          import news_bot_v9 as prod
+
+          assert prod.VERSION == "stable-v9.5"
+          assert prod.strict_fresh(None) is False
+          assert all(s[0] not in {"Habr", "ASTV", "Sakh.online"} for s in prod.b.SOURCES)
+          assert any(s[0] == "TASS" for s in prod.b.SOURCES)
+          assert prod.ASTV_NEWS_URL == "https://astv.ru/news"
+          assert prod.SAKH_NEWS_URL == "https://sakh.online/news"
+
+          assert len(prod.discover_astv_urls(
+              '<a href="/news/criminal/2026-08-19-test-story/">x</a>'
+          )) == 1
+          assert len(prod.discover_sakh_urls(
+              '<a href="/news/24/2026-08-19/test-story-517703">x</a>'
+          )) == 1
+
+          cat, _, _ = prod.classify(
+              "world", 90,
+              "US and Iran discuss military tensions",
+              "US and Iran officials met after recent attacks.",
+              "",
+              "https://example.com/story",
+          )
+          assert cat != "world_ru"
+
+          cat, _, _ = prod.classify(
+              "ru", 90,
+              "Аэропорт временно ограничил прием самолетов из-за угрозы БПЛА",
+              "Росавиация сообщила об ограничениях.",
+              "",
+              "https://example.ru/story",
+          )
+          assert cat == "ru_security"
+
+          ok, why = prod.valid_source_stream({
+              "category_key": "sakh",
+              "source": "Sakhalin Google",
+              "url": "https://example.com/audio",
+              "title": "История магнитной записи",
+              "source_text": "Материал о кассетах и магнитной ленте."
+          })
+          assert not ok and why == "local_without_geo"
+
+          source = "Reuters reported that the talks resumed in Geneva on Tuesday after a two-day pause."
+          assert prod.evidence_matches(source, "the talks resumed in Geneva on Tuesday")
+          assert not prod.evidence_matches(source, "officials signed a final peace agreement")
+
+          quake = {
+              "category_key": "sakh_quake",
+              "title": "Землетрясение магнитудой 5,1 произошло у Курил",
+              "source_text": "Эпицентр находился в 65 км от Северо-Курильска. Толчки ощущались силой 3 балла. Глубина 20 км."
+          }
+          facts = prod.quake_required_facts(quake)
+          assert "5.1" in facts.get("magnitude", [])
+          assert "65" in facts.get("distance_km", [])
+          assert "3" in facts.get("intensity_points", [])
+          assert "20" in facts.get("depth_km", [])
+
+          print("stable-v9.5 deterministic regression tests: OK")
+          PY
