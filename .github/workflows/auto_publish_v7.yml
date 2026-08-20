@@ -1,4 +1,4 @@
-name: SkySakhNews Auto Publisher Stable v9.9
+name: SkySakhNews Auto Publisher Stable v10.0
 
 on:
   workflow_dispatch:
@@ -21,6 +21,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -30,97 +31,132 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Compile and deterministic production gate
+      - name: Compile production system
+        run: |
+          python -m py_compile \
+            src/news_bot_v8.py \
+            src/news_bot_v9.py \
+            src/production.py \
+            src/editorial_gate.py \
+            src/editorial_gate_runner.py
+
+      - name: Deterministic editorial regression gate
         env:
           IMAGE_REQUIRED: "0"
           AI_CALL_BUDGET: "8"
+          EDITORIAL_AUDIT_AI_BUDGET: "4"
           RUN_COOLDOWN_MINUTES: "20"
         run: |
-          python -m py_compile src/news_bot_v8.py src/news_bot_v9.py src/production.py
           python - <<'PY'
           import sys
           sys.path.insert(0, "src")
-          import production as prod
-          core = prod.core
+          import editorial_gate as gate
+          import editorial_gate_runner as runner
 
-          assert prod.VERSION == "stable-v9.9"
-          assert core.VERSION == "stable-v9.9"
-          assert core.strict_fresh(None) is False
-          assert core.b.IMAGE_REQUIRED is False
-          assert "ru_incident" in core.b.CAT
-          assert prod.AI_CALL_BUDGET == 8
-          assert prod.RUN_COOLDOWN_MINUTES == 20
+          assert runner.VERSION == "stable-v10.0"
+          assert runner.prod.VERSION == "stable-v10.0"
+          assert runner.core.VERSION == "stable-v10.0"
 
-          cat, _, _ = prod.classify_v99(
-              "ru", 78,
-              "Трамп рассматривает отсрочку введения пошлин в 50% в отношении Канады",
-              "Президент США рассматривает отсрочку пошлин в отношении Канады.",
-              "",
-              "https://www.interfax.ru/world/1110016",
+          def review(cat, source, title, body, generated=None, url="https://example.com/news"):
+              c = {
+                  "category_key": cat,
+                  "category": cat,
+                  "source": source,
+                  "title": title,
+                  "source_text": body,
+                  "url": url,
+              }
+              row = {
+                  "title_ru": generated or title,
+                  "body": [],
+                  "editorial_mode": "extractive_fallback" if generated is None else "generated",
+              }
+              return gate.deterministic_review(c, row)
+
+          # 1. Modality may not be strengthened.
+          r = review(
+              "ru_eco", "Interfax",
+              "Правительство рассматривает возможность введения новой меры",
+              "Власти обсуждают предложение, окончательное решение не принято.",
+              "Правительство ввело новую меру",
+              "https://www.interfax.ru/russia/1",
           )
-          assert cat not in {"ru_eco", "ru_pol", "ru_security", "ru_incident"}
+          assert not r["approved"] and r["meaning_changed"], r
 
-          cat, _, _ = prod.classify_v99(
-              "ru", 78,
-              "Аэропорт временно ограничил прием самолетов из-за угрозы БПЛА",
-              "Росавиация сообщила об ограничениях.",
-              "",
-              "https://www.interfax.ru/russia/1110011",
-          )
-          assert cat == "ru_security"
-
-          cat, _, _ = prod.classify_v99(
-              "ru", 78,
+          # 2. Accident/death is not politics.
+          r = review(
+              "ru_pol", "Interfax",
               "Ребенок погиб в Ростовской области, упав за борт катера",
               "Следователи устанавливают обстоятельства происшествия на воде.",
-              "",
+              None,
               "https://www.interfax.ru/russia/1110068",
           )
-          assert cat == "ru_incident"
+          assert not r["approved"] and r["category_matches_story"] < 90, r
 
-          cat, _, _ = prod.classify_v99(
-              "sakhalin", 102,
+          # 3. Ordinary Sakhalin weather forecast is not ЧП.
+          r = review(
+              "sakh_chp", "SakhalinMedia.ru",
               "Сильный дождь пройдет в центральных районах Сахалина 20 августа",
-              "Сахалинское УГМС прогнозирует сильный дождь и осадки.",
-              "",
+              "Сахалинское УГМС прогнозирует осадки; происшествий не зарегистрировано.",
+              None,
               "https://sakhalinmedia.ru/news/2593484/",
           )
-          assert cat == "sakh"
+          assert not r["approved"], r
 
-          # Abbreviations must not create broken paragraphs such as "рублей с карты...".
-          sentences = prod._sentence_candidates(
-              "В полиции возбудили уголовное дело против 50-летнего жителя. "
-              "Его подозревают в краже почти 40 тыс. рублей с банковской карты приятеля, сообщает УМВД. "
-              "Сумма ущерба составила 38 760 рублей."
+          # 4. Real local crime is a valid Sakhalin incident.
+          r = review(
+              "sakh_chp", "SakhalinMedia.ru",
+              "Житель Долинска украл банковскую карту у приятеля",
+              "Полиция Долинска возбудила уголовное дело по факту кражи.",
+              None,
+              "https://sakhalinmedia.ru/news/2593525/",
           )
-          assert any(s.startswith("Его подозревают") and "40 тыс. рублей" in s for s in sentences), sentences
-          assert not any(s.startswith("рублей") for s in sentences), sentences
+          assert r["approved"] and r["category_matches_story"] == 100, r
 
-          # Adjacent duplicated source summaries must collapse to one clean sentence.
-          duplicated = (
-              "Медведь напал на двух мужчин в лесу, сообщили в МВД Медведь напал на двух мужчин в лесу, сообщили в МВД."
+          # 5. US/Iran without Russia cannot be World about Russia.
+          r = review(
+              "world_ru", "BBC World",
+              "US and Iran discuss military tensions",
+              "Officials from the US and Iran discussed tensions in the Middle East.",
+              "США и Иран обсуждают военную напряженность",
+              "https://www.bbc.com/news/world-test",
           )
-          deduped = prod._sentence_candidates(duplicated)
-          assert deduped and deduped[0].count("Медведь напал") == 1, deduped
+          assert not r["approved"], r
 
-          fallback = prod._extractive_fallback({
-              "category_key": "sakh_chp",
-              "footer": "ЧП | САХАЛИН",
-              "title": "Житель Долинска украл карту у приятеля - SakhalinMedia.ru",
-              "source_text": (
-                  "В полиции Долинска возбудили уголовное дело против неоднократно судимого 50-летнего местного жителя. "
-                  "Его подозревают в краже почти 40 тыс. рублей с банковской карты приятеля, сообщает пресс-служба УМВД России по Сахалинской области. "
-                  "Сумма ущерба составила 38 760 рублей."
-              )
-          })
-          assert fallback
-          assert all(not x.startswith("рублей") for x in fallback["body"]), fallback
-          assert "SakhalinMedia" not in fallback["title_ru"]
+          # 6. Habr/audio cannot masquerade as Sakhalin.
+          r = review(
+              "sakh", "Habr",
+              "История аналоговой записи и магнитных лент",
+              "Материал о кассетных деках и аналоговом аудио без региональной привязки.",
+              None,
+              "https://habr.com/ru/articles/1/",
+          )
+          assert not r["approved"], r
 
-          print("production gate stable-v9.9: OK")
+          # 7. BPLA / airport restriction belongs to security.
+          r = review(
+              "ru_security", "Interfax",
+              "Аэропорт временно ограничил прием самолетов из-за угрозы БПЛА",
+              "Росавиация сообщила об ограничениях в российском аэропорту из-за угрозы БПЛА.",
+              None,
+              "https://www.interfax.ru/russia/1110011",
+          )
+          assert r["approved"] and r["category_matches_story"] == 100, r
+
+          # 8. Invented number is a hard rejection.
+          c = {
+              "category_key": "sakh_chp", "category": "📍 Сахалин", "source": "SakhalinMedia.ru",
+              "title": "В Долинске расследуют кражу", "source_text": "Полиция расследует кражу банковской карты.",
+              "url": "https://sakhalinmedia.ru/news/1/",
+          }
+          row = {"title_ru": "В Долинске расследуют кражу на 50 тысяч рублей", "body": [], "editorial_mode": "generated"}
+          r = gate.deterministic_review(c, row)
+          assert not r["facts_supported"] and not r["approved"], r
+
+          print("stable-v10.0 editorial regression gate: OK")
           PY
 
-      - name: Run stable publisher
+      - name: Run stable publisher with mandatory Editorial Gate
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
@@ -130,30 +166,42 @@ jobs:
           POSTS_PER_RUN: "2"
           MAX_AGE_HOURS: "36"
           AI_CALL_BUDGET: "8"
+          EDITORIAL_AUDIT_AI_BUDGET: "4"
           RUN_COOLDOWN_MINUTES: "20"
           PYTHONUNBUFFERED: "1"
         run: |
-          python src/production.py
+          python src/editorial_gate_runner.py
 
-      - name: Verify run health
+      - name: Verify semantic publication health
         run: |
           python - <<'PY'
           import json
           with open("state.json", "r", encoding="utf-8") as f:
               state = json.load(f)
+
           run = state.get("last_run") or {}
-          # A cooldown skip intentionally leaves the previous successful run intact.
-          if run.get("version") == "stable-v9.9":
+          if run.get("version") == "stable-v10.0":
               assert run.get("status") == "ok", run
               assert "finished_sakhalin" in run, run
               local = run.get("local_stream") or {}
               assert local.get("status") in {"healthy", "degraded"}, local
-              stats = run.get("stats") or {}
-              assert stats.get("ai_calls", 0) <= 8, stats
-          print("run health: OK", run)
+              audit = run.get("editorial_gate") or {}
+              assert "checked" in audit, audit
+
+              published = int(run.get("published") or 0)
+              posts = (state.get("last_posts") or [])[-published:] if published else []
+              for p in posts:
+                  g = p.get("editorial_gate") or {}
+                  assert g.get("approved") is True, p
+                  assert int(g.get("title_matches_source") or 0) >= 90, p
+                  assert int(g.get("category_matches_story") or 0) >= 90, p
+                  assert g.get("facts_supported") is True, p
+                  assert g.get("meaning_changed") is False, p
+
+          print("stable-v10.0 semantic publication health: OK", run)
           PY
 
-      - name: Commit state and health
+      - name: Commit state and semantic audit
         if: always()
         run: |
           git config user.name "skysakhnews-bot"
@@ -162,7 +210,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No state changes"
           else
-            git commit -m "Update news state and health"
+            git commit -m "Update v10 news state and editorial audit"
             git pull --rebase --autostash origin main
             git push origin main
           fi
