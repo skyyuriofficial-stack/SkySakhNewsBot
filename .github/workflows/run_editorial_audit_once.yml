@@ -1,4 +1,4 @@
-name: SkySakhNews v10 Editorial Gate Audit
+name: SkySakhNews v10.1 Editorial Gate Audit
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Audit live candidates and dry-run publication
+      - name: Live-source dry audit
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
@@ -44,135 +44,119 @@ jobs:
           PYTHONUNBUFFERED: "1"
         run: |
           set +e
-          python -m py_compile src/news_bot_v8.py src/news_bot_v9.py src/production.py src/editorial_gate.py src/editorial_gate_runner.py > editorial_audit.log 2>&1
+          python -m py_compile src/news_bot_v8.py src/news_bot_v9.py src/production.py src/editorial_gate.py src/category_reconciler.py src/editorial_gate_runner.py > editorial_audit.log 2>&1
           compile_rc=$?
           if [ "$compile_rc" -eq 0 ]; then
             python - <<'PY' >> editorial_audit.log 2>&1
-          import copy
-          import json
-          import traceback
-          import sys
+          import copy, json, sys, traceback
           from datetime import datetime, timezone
           from pathlib import Path
 
           report = {
-              "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-              "version": "stable-v10.0",
-              "mode": "live-sources / dry-Telegram / mandatory-editorial-gate",
-              "run": {}, "candidate_count": 0, "local_candidate_count": 0,
-              "pre_audit": [], "captured_posts": [], "dry_last_posts": [],
-              "checks": [], "passed": 0, "failed": 1, "all_pass": False, "run_error": None,
+            "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "version": "stable-v10.1",
+            "mode": "live-sources / dry-Telegram / category-reconcile + semantic-gate",
+            "run": {}, "candidate_count": 0, "local_candidate_count": 0,
+            "reclassified_count": 0, "pre_rejected_count": 0,
+            "candidate_audit": [], "captured_posts": [], "dry_last_posts": [],
+            "checks": [], "passed": 0, "failed": 1, "all_pass": False, "run_error": None,
           }
           try:
-              sys.path.insert(0, "src")
-              import editorial_gate as gate
-              import editorial_gate_runner as runner
-              core = runner.core
-              prod = runner.prod
+            sys.path.insert(0, "src")
+            import editorial_gate as gate
+            import category_reconciler as rec
+            import editorial_gate_runner as runner
+            core, prod = runner.core, runner.prod
 
-              original_state = json.loads(Path("state.json").read_text(encoding="utf-8"))
-              working_state = copy.deepcopy(original_state)
-              captured_state = {}
-              captured_posts = []
+            original_state = json.loads(Path("state.json").read_text(encoding="utf-8"))
+            working_state = copy.deepcopy(original_state)
+            captured_state, captured_posts = {}, []
 
-              cands = core.b.collect(copy.deepcopy(original_state))
-              pre_audit = []
-              for c in cands:
-                  source_row = {
-                      "title_ru": prod._display_title(c),
-                      "body": [],
-                      "editorial_mode": "extractive_fallback",
-                  }
-                  r = gate.deterministic_review(c, source_row)
-                  pre_audit.append({
-                      "source": c.get("source"), "url": c.get("url"), "title": c.get("title"),
-                      "category": c.get("category"), "category_key": c.get("category_key"),
-                      "title_matches_source": r.get("title_matches_source"),
-                      "category_matches_story": r.get("category_matches_story"),
-                      "approved": r.get("approved"), "issues": r.get("issues"),
-                      "source_topics": r.get("source_topics"), "title_topics": r.get("title_topics"),
-                  })
-
-              def dry_photo(c, cap):
-                  captured_posts.append({
-                      "method": "dry-sendPhoto", "url": c.get("url"), "source": c.get("source"),
-                      "source_title": c.get("title"), "category": c.get("category"),
-                      "category_key": c.get("category_key"), "caption": cap,
-                  })
-                  return {"ok": True, "result": {"message_id": 1}}
-
-              def dry_text(row, c):
-                  captured_posts.append({
-                      "method": "dry-sendMessage", "url": c.get("url"), "source": c.get("source"),
-                      "source_title": c.get("title"), "category": c.get("category"),
-                      "category_key": c.get("category_key"), "row": row,
-                  })
-                  return {"ok": True, "result": {"message_id": 1}}
-
-              core.b.load_state = lambda: copy.deepcopy(working_state)
-              def fake_save(state):
-                  captured_state.clear(); captured_state.update(copy.deepcopy(state))
-              core.b.save_state = fake_save
-              core.b.send_photo = dry_photo
-              core.send_text = dry_text
-              core.time.sleep = lambda _x: None
-
-              run_error = None
-              try:
-                  runner.main()
-              except Exception as ex:
-                  run_error = repr(ex)
-                  traceback.print_exc()
-
-              run = captured_state.get("last_run") or {}
-              published = int(run.get("published") or 0)
-              dry_last_posts = (captured_state.get("last_posts") or [])[-published:] if published else []
-              checks = []
-              def check(name, ok, detail=""):
-                  checks.append({"name": name, "ok": bool(ok), "detail": str(detail)[:1500]})
-
-              local_count = sum(1 for c in cands if c.get("category_key") in {"sakh", "sakh_chp", "sakh_quake"})
-              mismatches = [x for x in pre_audit if int(x.get("category_matches_story") or 0) < 90]
-              check("runtime_no_exception", run_error is None, run_error)
-              check("version_v10", run.get("version") == "stable-v10.0", run.get("version"))
-              check("candidate_pool_nonempty", len(cands) > 0, len(cands))
-              check("local_candidates_nonempty", local_count > 0, local_count)
-              check("pre_audit_no_category_mismatch", len(mismatches) == 0, mismatches[:10])
-              check("published_exactly_2", published == 2, published)
-              check("captured_exactly_2", len(captured_posts) == 2, len(captured_posts))
-              for i, p in enumerate(dry_last_posts, 1):
-                  g = p.get("editorial_gate") or {}
-                  check(f"post_{i}_gate_approved", g.get("approved") is True, g)
-                  check(f"post_{i}_title_match", int(g.get("title_matches_source") or 0) >= 90, g)
-                  check(f"post_{i}_category_match", int(g.get("category_matches_story") or 0) >= 90, g)
-                  check(f"post_{i}_facts_supported", g.get("facts_supported") is True, g)
-                  check(f"post_{i}_meaning_unchanged", g.get("meaning_changed") is False, g)
-
-              report.update({
-                  "run": run, "candidate_count": len(cands), "local_candidate_count": local_count,
-                  "pre_audit": pre_audit, "captured_posts": captured_posts,
-                  "dry_last_posts": dry_last_posts, "checks": checks,
-                  "passed": sum(1 for x in checks if x["ok"]),
-                  "failed": sum(1 for x in checks if not x["ok"]),
-                  "all_pass": all(x["ok"] for x in checks), "run_error": run_error,
+            cands = core.b.collect(copy.deepcopy(original_state))
+            audit = []
+            for c in cands:
+              suggested = rec.suggest_category(c)
+              cc = copy.deepcopy(c)
+              if suggested in core.b.CAT:
+                cc["category_key"] = suggested
+                cc["category"], cc["footer"] = core.b.CAT[suggested]
+              row = {"title_ru": prod._display_title(cc), "body": [], "editorial_mode": "extractive_fallback"}
+              verdict = gate.deterministic_review(cc, row) if suggested else {
+                "approved": False, "category_matches_story": 0, "title_matches_source": 100,
+                "issues": ["reconciler_offtopic"]
+              }
+              audit.append({
+                "source": c.get("source"), "url": c.get("url"), "title": c.get("title"),
+                "original_category": c.get("category_key"), "suggested_category": suggested,
+                "reclassified": bool(suggested and suggested != c.get("category_key")),
+                "approved_after_reconcile": verdict.get("approved"),
+                "title_matches_source": verdict.get("title_matches_source"),
+                "category_matches_story": verdict.get("category_matches_story"),
+                "issues": verdict.get("issues"),
               })
+
+            def dry_photo(c, cap):
+              captured_posts.append({"method":"dry-sendPhoto","url":c.get("url"),"source":c.get("source"),"title":c.get("title"),"category_key":c.get("category_key"),"caption":cap})
+              return {"ok": True, "result": {"message_id": 1}}
+            def dry_text(row, c):
+              captured_posts.append({"method":"dry-sendMessage","url":c.get("url"),"source":c.get("source"),"title":c.get("title"),"category_key":c.get("category_key"),"row":row})
+              return {"ok": True, "result": {"message_id": 1}}
+            core.b.load_state = lambda: copy.deepcopy(working_state)
+            def fake_save(state):
+              captured_state.clear(); captured_state.update(copy.deepcopy(state))
+            core.b.save_state = fake_save
+            core.b.send_photo = dry_photo
+            core.send_text = dry_text
+            core.time.sleep = lambda _x: None
+
+            run_error = None
+            try:
+              runner.main()
+            except Exception as ex:
+              run_error = repr(ex); traceback.print_exc()
+
+            run = captured_state.get("last_run") or {}
+            published = int(run.get("published") or 0)
+            dry_last = (captured_state.get("last_posts") or [])[-published:] if published else []
+            checks = []
+            def check(name, ok, detail=""):
+              checks.append({"name":name,"ok":bool(ok),"detail":str(detail)[:1600]})
+
+            local_count = sum(1 for c in cands if c.get("category_key") in {"sakh","sakh_chp","sakh_quake"})
+            reclass_count = sum(1 for x in audit if x["reclassified"])
+            prereject_count = sum(1 for x in audit if not x["approved_after_reconcile"])
+            check("runtime_no_exception", run_error is None, run_error)
+            check("version_v10_1", run.get("version") == "stable-v10.1", run.get("version"))
+            check("candidate_pool_nonempty", len(cands) > 0, len(cands))
+            check("local_candidates_nonempty", local_count > 0, local_count)
+            check("published_exactly_2", published == 2, published)
+            check("captured_exactly_2", len(captured_posts) == 2, len(captured_posts))
+            for i, p in enumerate(dry_last, 1):
+              g = p.get("editorial_gate") or {}
+              check(f"post_{i}_gate_approved", g.get("approved") is True, g)
+              check(f"post_{i}_title_match", int(g.get("title_matches_source") or 0) >= 90, g)
+              check(f"post_{i}_category_match", int(g.get("category_matches_story") or 0) >= 90, g)
+              check(f"post_{i}_facts_supported", g.get("facts_supported") is True, g)
+              check(f"post_{i}_meaning_unchanged", g.get("meaning_changed") is False, g)
+
+            report.update({
+              "run": run, "candidate_count": len(cands), "local_candidate_count": local_count,
+              "reclassified_count": reclass_count, "pre_rejected_count": prereject_count,
+              "candidate_audit": audit, "captured_posts": captured_posts, "dry_last_posts": dry_last,
+              "checks": checks, "passed": sum(1 for x in checks if x["ok"]),
+              "failed": sum(1 for x in checks if not x["ok"]), "all_pass": all(x["ok"] for x in checks),
+              "run_error": run_error,
+            })
           except Exception as ex:
-              report["run_error"] = repr(ex)
-              report["checks"] = [{"name": "audit_harness", "ok": False, "detail": repr(ex)}]
-              report["passed"] = 0
-              report["failed"] = 1
-              report["all_pass"] = False
-              traceback.print_exc()
+            report["run_error"] = repr(ex)
+            report["checks"] = [{"name":"audit_harness","ok":False,"detail":repr(ex)}]
+            traceback.print_exc()
           finally:
-              Path("v10_editorial_audit_report.json").write_text(
-                  json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
-              )
-              print(json.dumps({
-                  "version": report.get("version"), "candidate_count": report.get("candidate_count"),
-                  "local_candidate_count": report.get("local_candidate_count"),
-                  "passed": report.get("passed"), "failed": report.get("failed"),
-                  "all_pass": report.get("all_pass"), "run_error": report.get("run_error"),
-              }, ensure_ascii=False, indent=2))
+            report["passed"] = sum(1 for x in report.get("checks",[]) if x.get("ok"))
+            report["failed"] = sum(1 for x in report.get("checks",[]) if not x.get("ok"))
+            report["all_pass"] = bool(report.get("checks")) and report["failed"] == 0
+            Path("v10_editorial_audit_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+            print(json.dumps({k:report.get(k) for k in ("version","candidate_count","local_candidate_count","reclassified_count","pre_rejected_count","passed","failed","all_pass","run_error")}, ensure_ascii=False, indent=2))
           PY
             audit_rc=$?
           else
@@ -182,10 +166,7 @@ jobs:
             python - <<PY
           import json
           from pathlib import Path
-          Path('v10_editorial_audit_report.json').write_text(json.dumps({
-            'version':'stable-v10.0','all_pass':False,'passed':0,'failed':1,
-            'run_error':'compile_or_harness_failure','compile_rc':$compile_rc,'audit_rc':$audit_rc
-          }, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+          Path('v10_editorial_audit_report.json').write_text(json.dumps({'version':'stable-v10.1','all_pass':False,'failed':1,'run_error':'compile_or_harness_failure','compile_rc':$compile_rc,'audit_rc':$audit_rc}, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
           PY
           fi
           echo "compile_rc=$compile_rc audit_rc=$audit_rc" >> editorial_audit.log
@@ -200,7 +181,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No audit changes"
           else
-            git commit -m "Record v10 editorial gate live-source audit"
+            git commit -m "Record v10.1 editorial gate live-source audit"
             git pull --rebase --autostash origin main
             git push origin main
           fi
