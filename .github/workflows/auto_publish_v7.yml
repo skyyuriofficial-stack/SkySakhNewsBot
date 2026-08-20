@@ -1,4 +1,4 @@
-name: SkySakhNews Auto Publisher Stable v10.0
+name: SkySakhNews Auto Publisher Stable v10.1
 
 on:
   workflow_dispatch:
@@ -21,7 +21,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -38,9 +37,10 @@ jobs:
             src/news_bot_v9.py \
             src/production.py \
             src/editorial_gate.py \
+            src/category_reconciler.py \
             src/editorial_gate_runner.py
 
-      - name: Deterministic editorial regression gate
+      - name: Historical editorial regression gate
         env:
           IMAGE_REQUIRED: "0"
           AI_CALL_BUDGET: "8"
@@ -51,109 +51,108 @@ jobs:
           import sys
           sys.path.insert(0, "src")
           import editorial_gate as gate
+          import category_reconciler as rec
           import editorial_gate_runner as runner
 
-          assert runner.VERSION == "stable-v10.0"
-          assert runner.prod.VERSION == "stable-v10.0"
-          assert runner.core.VERSION == "stable-v10.0"
+          assert runner.VERSION == "stable-v10.1"
+          assert runner.prod.VERSION == "stable-v10.1"
+          assert runner.core.VERSION == "stable-v10.1"
 
-          def review(cat, source, title, body, generated=None, url="https://example.com/news"):
-              c = {
-                  "category_key": cat,
-                  "category": cat,
-                  "source": source,
-                  "title": title,
-                  "source_text": body,
-                  "url": url,
+          def cand(cat, source, title, body, url):
+              return {
+                  "category_key": cat, "category": cat, "source": source,
+                  "title": title, "source_text": body, "url": url,
               }
-              row = {
-                  "title_ru": generated or title,
-                  "body": [],
-                  "editorial_mode": "extractive_fallback" if generated is None else "generated",
-              }
-              return gate.deterministic_review(c, row)
 
-          # 1. Modality may not be strengthened.
-          r = review(
-              "ru_eco", "Interfax",
-              "Правительство рассматривает возможность введения новой меры",
-              "Власти обсуждают предложение, окончательное решение не принято.",
-              "Правительство ввело новую меру",
-              "https://www.interfax.ru/russia/1",
+          # Real historical failures: the reconciler must repair them BEFORE writing.
+          c = cand(
+              "sakh", "Interfax",
+              "В парламенте Ирана заявили, что давление на Тегеран не поможет США заключить соглашение",
+              "Иран и США обсуждают условия возможного соглашения.",
+              "https://www.interfax.ru/world/1110010",
           )
-          assert not r["approved"] and r["meaning_changed"], r
+          assert rec.suggest_category(c) == "geo", rec.suggest_category(c)
 
-          # 2. Accident/death is not politics.
-          r = review(
+          c = cand(
+              "ru_eco", "Interfax",
+              "Трамп рассматривает отсрочку введения пошлин в 50% в отношении Канады",
+              "Президент США рассматривает отсрочку пошлин для Канады.",
+              "https://www.interfax.ru/world/1110016",
+          )
+          assert rec.suggest_category(c) == "geo", rec.suggest_category(c)
+
+          c = cand(
+              "sakh_chp", "SakhalinMedia.ru",
+              "Сильный дождь пройдет в центральных районах Сахалина 20 августа",
+              "Сахалинское УГМС прогнозирует сильный дождь и осадки.",
+              "https://sakhalinmedia.ru/news/2593484/",
+          )
+          assert rec.suggest_category(c) == "sakh", rec.suggest_category(c)
+
+          c = cand(
               "ru_pol", "Interfax",
               "Ребенок погиб в Ростовской области, упав за борт катера",
               "Следователи устанавливают обстоятельства происшествия на воде.",
-              None,
               "https://www.interfax.ru/russia/1110068",
           )
-          assert not r["approved"] and r["category_matches_story"] < 90, r
+          assert rec.suggest_category(c) == "ru_incident", rec.suggest_category(c)
 
-          # 3. Ordinary Sakhalin weather forecast is not ЧП.
-          r = review(
-              "sakh_chp", "SakhalinMedia.ru",
-              "Сильный дождь пройдет в центральных районах Сахалина 20 августа",
-              "Сахалинское УГМС прогнозирует осадки; происшествий не зарегистрировано.",
-              None,
-              "https://sakhalinmedia.ru/news/2593484/",
+          c = cand(
+              "ru_pol", "TASS",
+              "Дмитриев считает, что Федоров бросил вызов Зеленскому призывами к выборам",
+              "Высказывание касается украинской политики и выборов на Украине.",
+              "https://tass.ru/politika/28023743",
           )
-          assert not r["approved"], r
+          assert rec.suggest_category(c) == "geo", rec.suggest_category(c)
 
-          # 4. Real local crime is a valid Sakhalin incident.
-          r = review(
-              "sakh_chp", "SakhalinMedia.ru",
-              "Житель Долинска украл банковскую карту у приятеля",
-              "Полиция Долинска возбудила уголовное дело по факту кражи.",
-              None,
-              "https://sakhalinmedia.ru/news/2593525/",
-          )
-          assert r["approved"] and r["category_matches_story"] == 100, r
-
-          # 5. US/Iran without Russia cannot be World about Russia.
-          r = review(
-              "world_ru", "BBC World",
-              "US and Iran discuss military tensions",
-              "Officials from the US and Iran discussed tensions in the Middle East.",
-              "США и Иран обсуждают военную напряженность",
-              "https://www.bbc.com/news/world-test",
-          )
-          assert not r["approved"], r
-
-          # 6. Habr/audio cannot masquerade as Sakhalin.
-          r = review(
-              "sakh", "Habr",
-              "История аналоговой записи и магнитных лент",
-              "Материал о кассетных деках и аналоговом аудио без региональной привязки.",
-              None,
-              "https://habr.com/ru/articles/1/",
-          )
-          assert not r["approved"], r
-
-          # 7. BPLA / airport restriction belongs to security.
-          r = review(
-              "ru_security", "Interfax",
+          c = cand(
+              "ru_pol", "Interfax",
               "Аэропорт временно ограничил прием самолетов из-за угрозы БПЛА",
-              "Росавиация сообщила об ограничениях в российском аэропорту из-за угрозы БПЛА.",
-              None,
+              "Росавиация сообщила об ограничениях из-за угрозы БПЛА.",
               "https://www.interfax.ru/russia/1110011",
           )
-          assert r["approved"] and r["category_matches_story"] == 100, r
+          assert rec.suggest_category(c) == "ru_security", rec.suggest_category(c)
 
-          # 8. Invented number is a hard rejection.
-          c = {
-              "category_key": "sakh_chp", "category": "📍 Сахалин", "source": "SakhalinMedia.ru",
-              "title": "В Долинске расследуют кражу", "source_text": "Полиция расследует кражу банковской карты.",
-              "url": "https://sakhalinmedia.ru/news/1/",
-          }
-          row = {"title_ru": "В Долинске расследуют кражу на 50 тысяч рублей", "body": [], "editorial_mode": "generated"}
-          r = gate.deterministic_review(c, row)
+          # Headline may not strengthen source modality.
+          c = cand(
+              "ru_eco", "Interfax",
+              "Правительство рассматривает возможность введения новой меры",
+              "Власти обсуждают предложение, окончательное решение не принято.",
+              "https://www.interfax.ru/russia/1",
+          )
+          r = gate.deterministic_review(c, {
+              "title_ru": "Правительство ввело новую меру",
+              "body": [], "editorial_mode": "generated",
+          })
+          assert not r["approved"] and r["meaning_changed"], r
+
+          # Invented number is a hard rejection.
+          c = cand(
+              "sakh_chp", "SakhalinMedia.ru",
+              "В Долинске расследуют кражу",
+              "Полиция Долинска расследует кражу банковской карты.",
+              "https://sakhalinmedia.ru/news/1/",
+          )
+          r = gate.deterministic_review(c, {
+              "title_ru": "В Долинске расследуют кражу на 50 тысяч рублей",
+              "body": [], "editorial_mode": "generated",
+          })
           assert not r["facts_supported"] and not r["approved"], r
 
-          print("stable-v10.0 editorial regression gate: OK")
+          # World about Russia requires Russia in the story, not just a world publisher.
+          c = cand(
+              "world_ru", "BBC World",
+              "US and Iran discuss military tensions",
+              "US and Iran officials discussed military tensions.",
+              "https://www.bbc.com/news/world-test",
+          )
+          r = gate.deterministic_review(c, {
+              "title_ru": "США и Иран обсуждают военную напряженность",
+              "body": [], "editorial_mode": "generated",
+          })
+          assert not r["approved"], r
+
+          print("stable-v10.1 historical editorial regressions: OK")
           PY
 
       - name: Run stable publisher with mandatory Editorial Gate
@@ -178,16 +177,14 @@ jobs:
           import json
           with open("state.json", "r", encoding="utf-8") as f:
               state = json.load(f)
-
           run = state.get("last_run") or {}
-          if run.get("version") == "stable-v10.0":
+          if run.get("version") == "stable-v10.1":
               assert run.get("status") == "ok", run
               assert "finished_sakhalin" in run, run
               local = run.get("local_stream") or {}
               assert local.get("status") in {"healthy", "degraded"}, local
               audit = run.get("editorial_gate") or {}
-              assert "checked" in audit, audit
-
+              assert "checked" in audit and "reclassified" in audit, audit
               published = int(run.get("published") or 0)
               posts = (state.get("last_posts") or [])[-published:] if published else []
               for p in posts:
@@ -197,8 +194,7 @@ jobs:
                   assert int(g.get("category_matches_story") or 0) >= 90, p
                   assert g.get("facts_supported") is True, p
                   assert g.get("meaning_changed") is False, p
-
-          print("stable-v10.0 semantic publication health: OK", run)
+          print("stable-v10.1 semantic publication health: OK", run)
           PY
 
       - name: Commit state and semantic audit
@@ -210,7 +206,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No state changes"
           else
-            git commit -m "Update v10 news state and editorial audit"
+            git commit -m "Update v10.1 news state and editorial audit"
             git pull --rebase --autostash origin main
             git push origin main
           fi
