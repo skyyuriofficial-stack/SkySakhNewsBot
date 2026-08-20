@@ -1,0 +1,1189 @@
+{
+  "generated_at_utc": "2026-08-20T07:11:31+00:00",
+  "version": "stable-v10.0",
+  "mode": "live-sources / dry-Telegram / mandatory-editorial-gate",
+  "run": {
+    "version": "stable-v10.0",
+    "started_sakhalin": "2026-08-20T18:14:50+11:00",
+    "status": "ok",
+    "candidates": 44,
+    "published": 2,
+    "local_candidates": 31,
+    "local_stream": {
+      "status": "healthy",
+      "ok_sources": 3,
+      "sources": [
+        {
+          "source": "Sakhalin Google",
+          "status": "ok",
+          "entries": 20,
+          "recent": 14
+        },
+        {
+          "source": "SakhalinMedia",
+          "status": "ok",
+          "entries": 20,
+          "recent": 20
+        },
+        {
+          "source": "ASTV HTML",
+          "status": "ok",
+          "entries": 21,
+          "recent": 15
+        },
+        {
+          "source": "Sakh.online HTML",
+          "status": "down",
+          "entries": 0,
+          "recent": 0,
+          "error": "HTTPSConnectionPool(host='sakh.online', port=443): Read timed out. (read timeout=20)"
+        }
+      ]
+    },
+    "finished_sakhalin": "2026-08-20T18:16:50+11:00",
+    "stats": {
+      "rss_seen": 300,
+      "old_skip": 129,
+      "google_skip": 25,
+      "duplicate_skip": 0,
+      "low_info_skip": 18,
+      "category_skip": 72,
+      "no_image_skip": 0,
+      "bad_image_skip": 17,
+      "logo_image_skip": 82,
+      "text_card_image_skip": 0,
+      "candidates": 44,
+      "rewrite_retry": 2,
+      "editorial_skip": 0,
+      "telegram_fail": 0,
+      "published": 2,
+      "ai_calls": 2,
+      "ai_budget_exhausted": 1,
+      "ai_api_fail": 2,
+      "evidence_reject": 0,
+      "validation_reject": 0,
+      "extractive_fallback": 2,
+      "editorial_gate_checked": 4,
+      "editorial_gate_pass": 2,
+      "editorial_gate_reject": 2,
+      "editorial_gate_fallback": 0,
+      "editorial_gate_ai_calls": 0,
+      "editorial_gate_ai_fail": 0,
+      "editorial_title_reject": 2,
+      "editorial_category_reject": 2,
+      "editorial_meaning_reject": 0
+    }
+  },
+  "candidate_count": 46,
+  "local_candidate_count": 31,
+  "pre_audit": [
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2594695/",
+      "title": "Прокуратура помогла сахалинцу возместить 300 тыс. рублей, украденные мошенниками - SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "economy",
+        "incident",
+        "it",
+        "local"
+      ],
+      "title_topics": [
+        "economy",
+        "incident",
+        "local"
+      ]
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2594876/",
+      "title": "Дмитрий Харатьян обсудил с педагогами ЕАО вопросы духовно-нравственного воспитания - SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title_matches_source": 100,
+      "category_matches_story": 72,
+      "approved": true,
+      "issues": [
+        "title_category_weak:incident"
+      ],
+      "source_topics": [
+        "foreign",
+        "incident",
+        "it",
+        "local",
+        "politics",
+        "russia"
+      ],
+      "title_topics": [
+        "local"
+      ]
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2594839/",
+      "title": "Память губернатора Игоря Фархутдинова почтили в Сахалинской области - SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title_matches_source": 100,
+      "category_matches_story": 72,
+      "approved": true,
+      "issues": [
+        "title_category_weak:incident"
+      ],
+      "source_topics": [
+        "economy",
+        "foreign",
+        "incident",
+        "it",
+        "local",
+        "politics",
+        "security"
+      ],
+      "title_topics": [
+        "foreign",
+        "local",
+        "politics"
+      ]
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2594688/",
+      "title": "Дождь жаре не помеха — прогноз погоды в Сахалинской области на 21 августа - SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "it",
+        "local",
+        "weather"
+      ],
+      "title_topics": [
+        "local",
+        "weather"
+      ]
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2594751/",
+      "title": "Мэр Хабаровска Сергей Кравчук: Стабильное тепло начинается с подготовки сетей - SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "it",
+        "local",
+        "politics",
+        "weather"
+      ],
+      "title_topics": [
+        "local"
+      ]
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2594653/",
+      "title": "В Долинской ЦРБ завершили капремонт терапевтического и приемного отделений - SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "economy",
+        "it",
+        "local",
+        "politics"
+      ],
+      "title_topics": [
+        "local"
+      ]
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2594784/",
+      "title": "Мэр Хабаровска Сергей Кравчук: Делаем важную улицу города удобнее для пассажиров и автомобилистов - SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "foreign",
+        "it",
+        "local",
+        "politics",
+        "russia",
+        "weather"
+      ],
+      "title_topics": [
+        "local"
+      ]
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2594805/",
+      "title": "Мэр Хабаровска Сергей Кравчук: Автобусная остановка станет частью маршрутов микрорайона - SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "it",
+        "local",
+        "politics",
+        "weather"
+      ],
+      "title_topics": [
+        "local"
+      ]
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2594807/",
+      "title": "В Аниве завершили возведение опор пешеходного моста через реку Лютогу - SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "foreign",
+        "it",
+        "local",
+        "politics"
+      ],
+      "title_topics": [
+        "local"
+      ]
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2594558/",
+      "title": "Русские Сейшелы на сентябрь - нашла райский остров, где море прозрачное на 40 м и греется до +28°С - хватит кормить Сочи и Турцию - SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "local"
+      ],
+      "title_topics": [
+        "local"
+      ]
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2594853/",
+      "title": "Благоустройство привокзальной площади в Ногликах планируют завершить в сентябре - SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "it",
+        "local",
+        "politics",
+        "weather"
+      ],
+      "title_topics": [
+        "local"
+      ]
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2594913/",
+      "title": "Автобусы №24 и №34 в Южно-Сахалинске временно изменят маршрут 21 августа - SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "foreign",
+        "it",
+        "local"
+      ],
+      "title_topics": [
+        "local"
+      ]
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2594929/",
+      "title": "Более 440 км дорог отремонтируют в Сахалинской области к 2031 году - SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "economy",
+        "foreign",
+        "local",
+        "politics"
+      ],
+      "title_topics": [
+        "local"
+      ]
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/world/1110153",
+      "title": "Японист РАН: Токио \"наказывает\" Россию за Украину, но в уме держит Китай",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "economy",
+        "foreign",
+        "it",
+        "local",
+        "politics",
+        "russia"
+      ],
+      "title_topics": [
+        "foreign",
+        "russia"
+      ]
+    },
+    {
+      "source": "BBC World",
+      "url": "https://www.bbc.co.uk/news/articles/c2k7e83ynj4o?at_medium=RSS&at_campaign=rss",
+      "title": "Trump vows tougher economic measures on Iran and supporting countries",
+      "category": "🧭 Геополитика",
+      "category_key": "geo",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "foreign"
+      ],
+      "title_topics": [
+        "foreign"
+      ]
+    },
+    {
+      "source": "BBC World",
+      "url": "https://www.bbc.co.uk/news/articles/crl7yjlpx2po?at_medium=RSS&at_campaign=rss",
+      "title": "Israel confirms soldiers fired at car in which Hind Rajab was killed and opens criminal investigation",
+      "category": "🧭 Геополитика",
+      "category_key": "geo",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "foreign"
+      ],
+      "title_topics": [
+        "foreign"
+      ]
+    },
+    {
+      "source": "TASS",
+      "url": "https://tass.ru/nauka/28027835",
+      "title": "В ПетрГУ создали сорбент из арктических мхов для очистки воды",
+      "category": "🇷🇺 Россия / происшествия",
+      "category_key": "ru_incident",
+      "title_matches_source": 100,
+      "category_matches_story": 72,
+      "approved": true,
+      "issues": [
+        "title_category_weak:incident"
+      ],
+      "source_topics": [
+        "incident",
+        "it"
+      ],
+      "title_topics": []
+    },
+    {
+      "source": "Guardian World",
+      "url": "https://www.theguardian.com/us-news/2026/aug/19/trump-delay-canada-tariffs-keystone-xl-oil-pipeline",
+      "title": "Trump pauses Canada tariffs threat, and hints at revival of Keystone XL pipeline",
+      "category": "🧭 Геополитика",
+      "category_key": "geo",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "foreign",
+        "it"
+      ],
+      "title_topics": [
+        "foreign"
+      ]
+    },
+    {
+      "source": "Guardian World",
+      "url": "https://www.theguardian.com/world/2026/aug/19/trump-south-korea-alliance-military-seoul-security",
+      "title": "In cutting joint drills, Trump has given South Korea’s president what he wants. So why is Seoul so uneasy?",
+      "category": "🧭 Геополитика",
+      "category_key": "geo",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "foreign"
+      ],
+      "title_topics": [
+        "foreign"
+      ]
+    },
+    {
+      "source": "BBC Technology",
+      "url": "https://www.bbc.co.uk/news/articles/cly5r7vr7q1o?at_medium=RSS&at_campaign=rss",
+      "title": "Meta hooked children on Facebook and Instagram, US court hears",
+      "category": "💻 IT / технологии",
+      "category_key": "it",
+      "title_matches_source": 100,
+      "category_matches_story": 0,
+      "approved": false,
+      "issues": [
+        "category_not_supported:it",
+        "title_category_weak:it"
+      ],
+      "source_topics": [
+        "foreign"
+      ],
+      "title_topics": [
+        "foreign"
+      ]
+    },
+    {
+      "source": "BBC Technology",
+      "url": "https://www.bbc.co.uk/news/articles/c235dmndylzo?at_medium=RSS&at_campaign=rss",
+      "title": "OpenAI slows down training of advanced AI after cyber-attack",
+      "category": "💻 IT / технологии",
+      "category_key": "it",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "foreign",
+        "it"
+      ],
+      "title_topics": [
+        "foreign",
+        "it"
+      ]
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/business/1110251",
+      "title": "Нефть слабо дорожает, Brent торгуется у $91,7 за баррель",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "economy",
+        "foreign",
+        "it",
+        "politics",
+        "russia"
+      ],
+      "title_topics": [
+        "economy"
+      ]
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/business/1110253",
+      "title": "ПХГ ЕС заполнены на 61,61%, темп закачки ниже обычного",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "title_matches_source": 100,
+      "category_matches_story": 72,
+      "approved": true,
+      "issues": [
+        "title_category_weak:economy"
+      ],
+      "source_topics": [
+        "economy"
+      ],
+      "title_topics": []
+    },
+    {
+      "source": "Guardian Technology",
+      "url": "https://ghostmetas.com/",
+      "title": "Did someone wearing Meta Glasses film you today? Are you sure?",
+      "category": "💻 IT / технологии",
+      "category_key": "it",
+      "title_matches_source": 100,
+      "category_matches_story": 0,
+      "approved": false,
+      "issues": [
+        "category_not_supported:it",
+        "title_category_weak:it"
+      ],
+      "source_topics": [
+        "foreign"
+      ],
+      "title_topics": [
+        "foreign"
+      ]
+    },
+    {
+      "source": "TASS",
+      "url": "https://tass.ru/mezhdunarodnaya-panorama/28028111",
+      "title": "Türkiye: Анкара и Дамаск могут заключить военное соглашение из-за угроз Израиля",
+      "category": "🧭 Геополитика",
+      "category_key": "geo",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "foreign"
+      ],
+      "title_topics": [
+        "foreign"
+      ]
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/russia/1110246",
+      "title": "В Московском регионе уничтожены 28 беспилотников",
+      "category": "🇷🇺 Россия / безопасность",
+      "category_key": "ru_security",
+      "title_matches_source": 100,
+      "category_matches_story": 72,
+      "approved": true,
+      "issues": [
+        "title_category_weak:security"
+      ],
+      "source_topics": [
+        "it",
+        "russia",
+        "security"
+      ],
+      "title_topics": [
+        "russia"
+      ]
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/russia/1110252",
+      "title": "ВС РФ нанесли удары по складам с военным имуществом в портах Черноморск и Южный",
+      "category": "🇷🇺 Россия / безопасность",
+      "category_key": "ru_security",
+      "title_matches_source": 100,
+      "category_matches_story": 72,
+      "approved": true,
+      "issues": [
+        "title_category_weak:security"
+      ],
+      "source_topics": [
+        "it",
+        "russia",
+        "security"
+      ],
+      "title_topics": [
+        "russia"
+      ]
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/business/1110255",
+      "title": "Китайский ЦБ ожидаемо сохранил базовую ставку на уровне 3%",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "economy",
+        "foreign",
+        "it",
+        "russia",
+        "weather"
+      ],
+      "title_topics": [
+        "economy",
+        "foreign"
+      ]
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/business/1110259",
+      "title": "Китай за семь месяцев увеличил закупки пшеницы в РФ в 5,2 раза",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "title_matches_source": 100,
+      "category_matches_story": 72,
+      "approved": true,
+      "issues": [
+        "title_category_weak:economy"
+      ],
+      "source_topics": [
+        "economy",
+        "foreign",
+        "russia"
+      ],
+      "title_topics": [
+        "foreign",
+        "russia"
+      ]
+    },
+    {
+      "source": "ASTV",
+      "url": "https://astv.ru/news/criminal/2026-08-20-zatopilo-dom-voda-v-podvalah-bol-nicy-v-uglegorskom-rajone-likvidiruyut-posledstviya-ciklona",
+      "title": "Затопило дом, вода в подвалах больницы: в Углегорском районе ликвидируют последствия циклона",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title_matches_source": 100,
+      "category_matches_story": 0,
+      "approved": false,
+      "issues": [
+        "weather_mislabeled_as_chp",
+        "title_category_weak:incident"
+      ],
+      "source_topics": [
+        "incident",
+        "it",
+        "local",
+        "politics",
+        "weather"
+      ],
+      "title_topics": [
+        "local",
+        "weather"
+      ]
+    },
+    {
+      "source": "ASTV",
+      "url": "https://astv.ru/news/society/2026-08-20-iz-za-remonta-dorogi-dva-avtobusa-izmenyat-shemu-dvizheniya-v-yuzhno-sahalinske",
+      "title": "Из-за ремонта дороги два автобуса изменят схему движения в Южно-Сахалинске",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "foreign",
+        "it",
+        "local",
+        "politics"
+      ],
+      "title_topics": [
+        "foreign",
+        "local"
+      ]
+    },
+    {
+      "source": "ASTV",
+      "url": "https://astv.ru/news/society/2026-08-20-neskol-ko-detskih-sadikov-i-sotni-domov-popadut-pod-otklyuchenie-sveta-21-avgusta-na-sahaline",
+      "title": "Несколько детских садиков и сотни домов попадут под отключение света 21 августа на Сахалине",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title_matches_source": 100,
+      "category_matches_story": 0,
+      "approved": false,
+      "issues": [
+        "category_chp_without_incident",
+        "title_category_weak:incident"
+      ],
+      "source_topics": [
+        "it",
+        "local",
+        "russia"
+      ],
+      "title_topics": [
+        "local"
+      ]
+    },
+    {
+      "source": "ASTV",
+      "url": "https://astv.ru/news/criminal/2026-08-20-povredil-vnedorozhnik-i-skrylsya-v-yuzhno-sahalinske-ishut-ochevidcev-dtp",
+      "title": "Повредил внедорожник и скрылся: в Южно-Сахалинске ищут очевидцев ДТП",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "incident",
+        "it",
+        "local"
+      ],
+      "title_topics": [
+        "incident",
+        "local"
+      ]
+    },
+    {
+      "source": "ASTV",
+      "url": "https://astv.ru/news/society/2026-08-20-na-sahalin-zaglyanet-solnce-a-na-kurilah-zaderzhitsya-dozhd-prognoz-pogody-dlya-regiona-na-21-avgusta",
+      "title": "На Сахалин заглянет солнце, а на Курилах задержится дождь: прогноз погоды для региона на 21 августа",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "local",
+        "weather"
+      ],
+      "title_topics": [
+        "local",
+        "weather"
+      ]
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-20/neskolko-ulits-v-yuzhno-sahalinske-i-poselke-ostanutsya-bez-sveta-21-avgusta-523283",
+      "title": "График отключений света 21 августа: Южно-Сахалинск и Октябрьский",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title_matches_source": 100,
+      "category_matches_story": 0,
+      "approved": false,
+      "issues": [
+        "category_chp_without_incident",
+        "title_category_weak:incident"
+      ],
+      "source_topics": [
+        "local"
+      ],
+      "title_topics": [
+        "local"
+      ]
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-20/mebel-i-dekor-v-stile-retro-na-sahaline-pokupayut-na-86-chasche-523281",
+      "title": "Ретро, баухаус и шинуазри в тренде у жителей Дальнего Востока",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "economy",
+        "foreign",
+        "it",
+        "local",
+        "russia"
+      ],
+      "title_topics": [
+        "local"
+      ]
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-20/ulitsu-tihookeanskuyu-v-yuzhno-sahalinske-zakroyut-na-dva-dnya-523280",
+      "title": "Движение на Тихоокеанской ограничат на два дня в Южно-Сахалинске",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "economy",
+        "foreign",
+        "local",
+        "politics"
+      ],
+      "title_topics": [
+        "local"
+      ]
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-20/rukovoditel-otryada-schastie-zhit-poluchila-znak-dobrovolets-sahalinskoy-oblasti-523277",
+      "title": "Руководитель волонтеров из Поронайска получила знак «Доброволец Сахалинской области»",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "economy",
+        "foreign",
+        "it",
+        "local",
+        "politics",
+        "weather"
+      ],
+      "title_topics": [
+        "local"
+      ]
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-20/deputat-georgiy-karlov-pochtil-pamyat-gubernatora-igorya-farhutdinova-523275",
+      "title": "Депутат Георгий Карлов: «Жива добрая память о губернаторе Игоре Фархутдинове»",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title_matches_source": 100,
+      "category_matches_story": 72,
+      "approved": true,
+      "issues": [
+        "title_category_weak:incident"
+      ],
+      "source_topics": [
+        "foreign",
+        "incident",
+        "local",
+        "politics"
+      ],
+      "title_topics": [
+        "foreign",
+        "local",
+        "politics"
+      ]
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-20/snizhenie-vlazhnosti-i-do-26-gradusov-prognoziruyut-v-yuzhno-sahalinske-21-avgusta-523236",
+      "title": "Сухо и жарко до +26 градусов: погода в Южно-Сахалинске 21 августа",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "local",
+        "weather"
+      ],
+      "title_topics": [
+        "local",
+        "weather"
+      ]
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-20/na-sahaline-proshla-tseremoniya-pamyati-zhertv-aviakatastrofy-2003-goda-523273",
+      "title": "В Южно-Сахалинске у собора почтили память губернатора Фархутдинова и 19 погибших в катастрофе вертолета Ми-8",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "foreign",
+        "incident",
+        "it",
+        "local",
+        "politics",
+        "security"
+      ],
+      "title_topics": [
+        "foreign",
+        "incident",
+        "local",
+        "politics"
+      ]
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-20/zh-d-pereezd-na-ukrainskoy-polnostyu-zakroyut-na-noch-v-yuzhno-sahalinske-523272",
+      "title": "Ж/д-переезд на Украинской полностью закроют ночью 24 августа в Южно-Сахалинске",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "foreign",
+        "local"
+      ],
+      "title_topics": [
+        "foreign",
+        "local"
+      ]
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-20/valeriy-limarenko-prinyal-uchastie-v-zasedanii-gossoveta-s-vladimirom-putinym-523271",
+      "title": "Валерий Лимаренко принял участие в заседании Госсовета с Владимиром Путиным | SAKH.ONLINE",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title_matches_source": 100,
+      "category_matches_story": 72,
+      "approved": true,
+      "issues": [
+        "title_category_weak:incident"
+      ],
+      "source_topics": [
+        "economy",
+        "foreign",
+        "incident",
+        "it",
+        "local",
+        "politics",
+        "russia"
+      ],
+      "title_topics": [
+        "it",
+        "local",
+        "politics",
+        "russia"
+      ]
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-20/sahalinskie-rybaki-snyali-na-video-shou-delfinov-vozle-mayaka-aniva-523269",
+      "title": "Сахалинцы сняли на видео дельфинов-синхронистов возле маяка Анива",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "it",
+        "local"
+      ],
+      "title_topics": [
+        "local"
+      ]
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-20/sahalinenergo-vosstanavlivaet-elektrosnabzhenie-v-uglegorskom-rayone-posle-tsiklona-523268",
+      "title": "Энергетики восстанавливают свет в Углегорском районе после циклона",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title_matches_source": 100,
+      "category_matches_story": 0,
+      "approved": false,
+      "issues": [
+        "weather_mislabeled_as_chp",
+        "title_category_weak:incident"
+      ],
+      "source_topics": [
+        "foreign",
+        "incident",
+        "it",
+        "local",
+        "politics",
+        "weather"
+      ],
+      "title_topics": [
+        "local",
+        "weather"
+      ]
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-20/kapremont-trassy-tymovskoe-aleksandrovsk-sahalinskiy-vyshel-na-finalnuyu-stadiyu-523265",
+      "title": "На трассе к Александровску-Сахалинскому готовятся укладывать асфальт",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "approved": true,
+      "issues": [],
+      "source_topics": [
+        "local"
+      ],
+      "title_topics": [
+        "local"
+      ]
+    }
+  ],
+  "captured_posts": [
+    {
+      "method": "dry-sendPhoto",
+      "url": "https://sakhalinmedia.ru/news/2594695/",
+      "source": "SakhalinMedia.ru",
+      "source_title": "Прокуратура помогла сахалинцу возместить 300 тыс. рублей, украденные мошенниками - SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "caption": "📍 Сахалин\n\n<b>Прокуратура помогла сахалинцу возместить 300 тыс. рублей, украденные мошенниками</b>\n\nХолмская городская прокуратура помогла жителю Сахалина возместить денежные средства, похищенные мошенниками.\n\nДенежные средства возвращены в полном объеме Как установило ведомство, в сентябре прошлого года мошенники в мессенджере с помощью психологических приемов убедили молодого человека, имевшего доступ к деньгам отца, перевести на «безопасный» счет 300 тыс. рублей.\n\nЧП | САХАЛИН · <a href=\"https://sakhalinmedia.ru/news/2594695/\">SakhalinMedia.ru</a>"
+    },
+    {
+      "method": "dry-sendMessage",
+      "url": "https://www.interfax.ru/business/1110251",
+      "source": "Interfax",
+      "source_title": "Нефть слабо дорожает, Brent торгуется у $91,7 за баррель",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "row": {
+        "reject": false,
+        "title_ru": "Нефть слабо дорожает, Brent торгуется у $91,7 за баррель",
+        "body": [
+          "Цены на нефть слабо повышаются утром в четверг из-за отсутствия позитивных сигналов с Ближнего Востока.",
+          "Октябрьские фьючерсы на сорт Brent на лондонской бирже ICE Futures по данным на 8:18 по московскому времени торгуются по $91,69 за баррель, что на 7 центов выше, чем на закрытие предыдущих торгов."
+        ],
+        "footer": "РОССИЯ | ЭКОНОМИКА",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic",
+          "issues": []
+        }
+      }
+    }
+  ],
+  "dry_last_posts": [
+    {
+      "time_sakhalin": "2026-08-20T18:16:50+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "Прокуратура помогла сахалинцу возместить 300 тыс. рублей, украденные мошенниками",
+      "url": "https://sakhalinmedia.ru/news/2594695/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6332/6331454.jpg?61fb45a30a61116e10fb7e06a335b479",
+      "image_hash": "0b65266ec415e54ad16a000494fd9e95bc379356",
+      "topic_cluster": "sakh_chp:прокуратура_помогла_сахалинцу_возместить_рублей_украденные",
+      "published_at": "2026-08-20T05:41:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/stable-v9.5",
+      "grounded_evidence": true
+    },
+    {
+      "time_sakhalin": "2026-08-20T18:16:50+11:00",
+      "source": "Interfax",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "title": "Нефть слабо дорожает, Brent торгуется у $91,7 за баррель",
+      "url": "https://www.interfax.ru/business/1110251",
+      "image_url": null,
+      "image_hash": null,
+      "topic_cluster": "ru_eco:нефть_слабо_дорожает_brent_торгуется_баррель",
+      "published_at": "2026-08-20T05:43:00+00:00",
+      "with_image": false,
+      "publish_method": "sendMessage/no-safe-image",
+      "grounded_evidence": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "runtime_no_exception",
+      "ok": true,
+      "detail": "None"
+    },
+    {
+      "name": "version_v10",
+      "ok": true,
+      "detail": "stable-v10.0"
+    },
+    {
+      "name": "candidate_pool_nonempty",
+      "ok": true,
+      "detail": "46"
+    },
+    {
+      "name": "local_candidates_nonempty",
+      "ok": true,
+      "detail": "31"
+    },
+    {
+      "name": "pre_audit_no_category_mismatch",
+      "ok": false,
+      "detail": "[{'source': 'SakhalinMedia.ru', 'url': 'https://sakhalinmedia.ru/news/2594876/', 'title': 'Дмитрий Харатьян обсудил с педагогами ЕАО вопросы духовно-нравственного воспитания - SakhalinMedia.ru', 'category': '📍 Сахалин', 'category_key': 'sakh_chp', 'title_matches_source': 100, 'category_matches_story': 72, 'approved': True, 'issues': ['title_category_weak:incident'], 'source_topics': ['foreign', 'incident', 'it', 'local', 'politics', 'russia'], 'title_topics': ['local']}, {'source': 'SakhalinMedia.ru', 'url': 'https://sakhalinmedia.ru/news/2594839/', 'title': 'Память губернатора Игоря Фархутдинова почтили в Сахалинской области - SakhalinMedia.ru', 'category': '📍 Сахалин', 'category_key': 'sakh_chp', 'title_matches_source': 100, 'category_matches_story': 72, 'approved': True, 'issues': ['title_category_weak:incident'], 'source_topics': ['economy', 'foreign', 'incident', 'it', 'local', 'politics', 'security'], 'title_topics': ['foreign', 'local', 'politics']}, {'source': 'TASS', 'url': 'https://tass.ru/nauka/28027835', 'title': 'В ПетрГУ создали сорбент из арктических мхов для очистки воды', 'category': '🇷🇺 Россия / происшествия', 'category_key': 'ru_incident', 'title_matches_source': 100, 'category_matches_story': 72, 'approved': True, 'issues': ['title_category_weak:incident'], 'source_topics': ['incident', 'it'], 'title_topics': []}, {'source': 'BBC Technology', 'url': 'https://www.bbc.co.uk/news/articles/cly5r7vr7q1o?at_medium=RSS&at_campaign=rss', 'title': 'Meta hooked chil"
+    },
+    {
+      "name": "published_exactly_2",
+      "ok": true,
+      "detail": "2"
+    },
+    {
+      "name": "captured_exactly_2",
+      "ok": true,
+      "detail": "2"
+    },
+    {
+      "name": "post_1_gate_approved",
+      "ok": false,
+      "detail": "{}"
+    },
+    {
+      "name": "post_1_title_match",
+      "ok": false,
+      "detail": "{}"
+    },
+    {
+      "name": "post_1_category_match",
+      "ok": false,
+      "detail": "{}"
+    },
+    {
+      "name": "post_1_facts_supported",
+      "ok": false,
+      "detail": "{}"
+    },
+    {
+      "name": "post_1_meaning_unchanged",
+      "ok": false,
+      "detail": "{}"
+    },
+    {
+      "name": "post_2_gate_approved",
+      "ok": false,
+      "detail": "{}"
+    },
+    {
+      "name": "post_2_title_match",
+      "ok": false,
+      "detail": "{}"
+    },
+    {
+      "name": "post_2_category_match",
+      "ok": false,
+      "detail": "{}"
+    },
+    {
+      "name": "post_2_facts_supported",
+      "ok": false,
+      "detail": "{}"
+    },
+    {
+      "name": "post_2_meaning_unchanged",
+      "ok": false,
+      "detail": "{}"
+    }
+  ],
+  "passed": 6,
+  "failed": 11,
+  "all_pass": false,
+  "run_error": null
+}
