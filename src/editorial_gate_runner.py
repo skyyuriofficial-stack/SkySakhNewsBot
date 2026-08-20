@@ -6,12 +6,11 @@ import editorial_gate as gate
 import category_reconciler as reconciler
 import production as prod
 
-VERSION = "stable-v10.1"
+VERSION = "stable-v10.2"
 prod.VERSION = VERSION
 prod.core.VERSION = VERSION
 core = prod.core
 
-# Multilingual/meta markers used only by the independent semantic gate.
 gate.RUSSIA = gate.RUSSIA + ("russia", "russian", "moscow", "kremlin", "putin", "lavrov")
 gate.FOREIGN = gate.FOREIGN + ("reuters", "bbc", "guardian", "associated press", " ap ")
 
@@ -20,10 +19,10 @@ _AI_AUDIT_CALLS = 0
 AUDIT_BY_URL = {}
 
 for _key in (
-    "editorial_gate_checked", "editorial_gate_pass", "editorial_gate_reject",
-    "editorial_gate_fallback", "editorial_gate_ai_calls", "editorial_gate_ai_fail",
-    "editorial_title_reject", "editorial_category_reject", "editorial_meaning_reject",
-    "editorial_reclassified", "editorial_offtopic_reject",
+    "editorial_prechecked", "editorial_gate_checked", "editorial_gate_pass",
+    "editorial_gate_reject", "editorial_gate_fallback", "editorial_gate_ai_calls",
+    "editorial_gate_ai_fail", "editorial_title_reject", "editorial_category_reject",
+    "editorial_meaning_reject", "editorial_reclassified", "editorial_offtopic_reject",
 ):
     core.b.STATS.setdefault(_key, 0)
 
@@ -35,19 +34,10 @@ def _independent_ai_review(candidate, row):
     _AI_AUDIT_CALLS += 1
     core.b.STATS["editorial_gate_ai_calls"] = _AI_AUDIT_CALLS
     try:
-        raw = core.b.openrouter(
-            [
-                {
-                    "role": "system",
-                    "content": (
-                        "Ты независимый выпускающий редактор и фактчекер. "
-                        "Не переписывай материал. Проверяй максимально строго. Только JSON."
-                    ),
-                },
-                {"role": "user", "content": gate.ai_review_prompt(candidate, row)},
-            ],
-            max_tokens=500,
-        )
+        raw = core.b.openrouter([
+            {"role": "system", "content": "Ты независимый выпускающий редактор и фактчекер. Не переписывай материал. Проверяй максимально строго. Только JSON."},
+            {"role": "user", "content": gate.ai_review_prompt(candidate, row)},
+        ], max_tokens=500)
         verdict = gate.normalize_ai_verdict(core.b.parse_obj(raw))
         if verdict is None:
             raise ValueError("invalid editorial verdict")
@@ -59,7 +49,7 @@ def _independent_ai_review(candidate, row):
 
 
 def _compact_audit(review, candidate=None):
-    result = {
+    out = {
         "approved": bool(review.get("approved")),
         "title_matches_source": int(review.get("title_matches_source") or 0),
         "category_matches_story": int(review.get("category_matches_story") or 0),
@@ -69,35 +59,29 @@ def _compact_audit(review, candidate=None):
         "issues": [str(x)[:160] for x in (review.get("issues") or [])[:8]],
     }
     if candidate and candidate.get("_editorial_reclass"):
-        result["reclassified_from"] = candidate["_editorial_reclass"][0]
-        result["reclassified_to"] = candidate["_editorial_reclass"][1]
-    return result
+        out["reclassified_from"], out["reclassified_to"] = candidate["_editorial_reclass"]
+    return out
 
 
 def _record_reject(review):
     core.b.STATS["editorial_gate_reject"] += 1
-    issues = review.get("issues") or []
-    if int(review.get("title_matches_source") or 0) < 90 or any("title_" in str(x) for x in issues):
+    issues = [str(x) for x in (review.get("issues") or [])]
+    if int(review.get("title_matches_source") or 0) < 90 or any("title_" in x for x in issues):
         core.b.STATS["editorial_title_reject"] += 1
     if int(review.get("category_matches_story") or 0) < 90 or any(
-        "category" in str(x) or "mislabeled" in str(x) or "foreign_story" in str(x)
-        for x in issues
+        "category" in x or "mislabeled" in x or "foreign_story" in x for x in issues
     ):
         core.b.STATS["editorial_category_reject"] += 1
-    if review.get("meaning_changed") or any("modality" in str(x) for x in issues):
+    if review.get("meaning_changed") or any("modality" in x for x in issues):
         core.b.STATS["editorial_meaning_reject"] += 1
 
 
 def _review(candidate, row):
     det = gate.deterministic_review(candidate, row)
-    hard_issues = [
-        x for x in det.get("issues", [])
-        if not str(x).startswith("title_category_weak:")
-    ]
-    if hard_issues or int(det.get("category_matches_story") or 0) < 70:
+    hard = [x for x in det.get("issues", []) if not str(x).startswith("title_category_weak:")]
+    if hard or int(det.get("category_matches_story") or 0) < 70:
         det["approved"] = False
         return det
-
     if not det.get("requires_ai_review"):
         det["approved"] = (
             bool(det.get("approved"))
@@ -107,9 +91,7 @@ def _review(candidate, row):
             and det.get("meaning_changed") is False
         )
         return det
-
-    ai = _independent_ai_review(candidate, row)
-    merged = gate.merge_reviews(det, ai)
+    merged = gate.merge_reviews(det, _independent_ai_review(candidate, row))
     merged["approved"] = (
         bool(merged.get("approved"))
         and int(merged.get("title_matches_source") or 0) >= 90
@@ -128,67 +110,75 @@ def _reconcile_category(candidate):
         core.b.log(f"editorial category reconcile -> off-topic: {candidate.get('title','')[:90]}")
         return False
     if suggested not in core.b.CAT:
-        core.b.log(f"editorial category reconcile unknown category {suggested}: {candidate.get('title','')[:80]}")
+        core.b.log(f"editorial category reconcile unknown {suggested}: {candidate.get('title','')[:90]}")
         return False
     if suggested != old:
         candidate["_editorial_reclass"] = (old, suggested)
         candidate["category_key"] = suggested
         candidate["category"], candidate["footer"] = core.b.CAT[suggested]
-        # Do not keep a topic-cluster namespace from the wrong stream.
         if candidate.get("topic_cluster"):
             candidate["topic_cluster"] = suggested + ":" + str(candidate["topic_cluster"]).split(":", 1)[-1]
         core.b.STATS["editorial_reclassified"] += 1
-        core.b.log(
-            f"editorial reclassify {old or '-'} -> {suggested}: {candidate.get('title','')[:90]}"
-        )
+        core.b.log(f"editorial reclassify {old or '-'} -> {suggested}: {candidate.get('title','')[:90]}")
     return True
 
+
+def _source_precheck(candidate):
+    row = {"title_ru": prod._display_title(candidate), "body": [], "editorial_mode": "extractive_fallback"}
+    review = gate.deterministic_review(candidate, row)
+    bad = (
+        int(review.get("category_matches_story") or 0) < 90
+        or review.get("meaning_changed")
+        or any(str(x).startswith((
+            "category_", "weather_mislabeled", "world_ru_without", "foreign_story",
+            "title_foreign_focus",
+        )) for x in (review.get("issues") or []))
+    )
+    if bad:
+        review["approved"] = False
+        _record_reject(review)
+        AUDIT_BY_URL[candidate.get("url")] = _compact_audit(review, candidate)
+        core.b.log("editorial pre-gate reject: " + candidate.get("title", "")[:90] + " | " + "; ".join(review.get("issues", [])[:5]))
+        return False
+    candidate["_editorial_prechecked"] = True
+    return True
+
+
+# Reconcile ALL candidates before b.ordered() sees them. This is critical: a
+# foreign story that the old classifier called Sakhalin must not occupy the local
+# priority slot and be repaired only after ordering.
+_original_collect = core.b.collect
+
+
+def collect_reconciled(state):
+    raw = _original_collect(state)
+    out = []
+    for candidate in raw:
+        core.b.STATS["editorial_prechecked"] += 1
+        if not _reconcile_category(candidate):
+            continue
+        if not _source_precheck(candidate):
+            continue
+        out.append(candidate)
+    core.b.STATS["candidates"] = len(out)
+    return out
+
+
+core.b.collect = collect_reconciled
 
 _original_valid_post = core.b.valid_post
 
 
 def valid_post_with_editorial_gate(candidate):
     core.b.STATS["editorial_gate_checked"] += 1
-
-    # Stage 0: independently recompute the stream from story meaning. This fixes
-    # a wrong category instead of merely discarding an otherwise valid article.
-    if not _reconcile_category(candidate):
-        return None
-
-    # Stage 1: source headline/story must agree with the reconciled stream before
-    # the writer is allowed to generate or translate anything.
-    source_row = {
-        "title_ru": prod._display_title(candidate),
-        "body": [],
-        "editorial_mode": "extractive_fallback",
-    }
-    pre = gate.deterministic_review(candidate, source_row)
-    if (
-        int(pre.get("category_matches_story") or 0) < 90
-        or pre.get("meaning_changed")
-        or any(
-            str(x).startswith((
-                "category_", "weather_mislabeled", "world_ru_without",
-                "foreign_story", "title_foreign_focus",
-            ))
-            for x in (pre.get("issues") or [])
-        )
-    ):
-        pre["approved"] = False
-        _record_reject(pre)
-        AUDIT_BY_URL[candidate.get("url")] = _compact_audit(pre, candidate)
-        core.b.log(
-            "editorial pre-gate reject: "
-            + candidate.get("title", "")[:90]
-            + " | " + "; ".join(pre.get("issues", [])[:5])
-        )
-        return None
+    if not candidate.get("_editorial_prechecked"):
+        if not _reconcile_category(candidate) or not _source_precheck(candidate):
+            return None
 
     row = _original_valid_post(candidate)
     if not row:
         return None
 
-    # Stage 2: independently verify generated headline/body against the source.
     review = _review(candidate, row)
     if review.get("approved"):
         core.b.STATS["editorial_gate_pass"] += 1
@@ -197,21 +187,15 @@ def valid_post_with_editorial_gate(candidate):
         return row
 
     _record_reject(review)
-    core.b.log(
-        "editorial gate reject: "
-        + candidate.get("title", "")[:90]
-        + " | " + "; ".join(str(x) for x in (review.get("issues") or [])[:5])
-    )
+    core.b.log("editorial gate reject: " + candidate.get("title", "")[:90] + " | " + "; ".join(str(x) for x in (review.get("issues") or [])[:5]))
 
-    # Generated wording that cannot prove semantic equivalence is replaced by an
-    # extractive source-grounded version. If even that fails, the article is skipped.
     fallback = prod._extractive_fallback(candidate)
     if fallback:
-        fb_review = _review(candidate, fallback)
-        if fb_review.get("approved"):
+        fb = _review(candidate, fallback)
+        if fb.get("approved"):
             core.b.STATS["editorial_gate_fallback"] += 1
             core.b.STATS["editorial_gate_pass"] += 1
-            fallback["editorial_gate"] = _compact_audit(fb_review, candidate)
+            fallback["editorial_gate"] = _compact_audit(fb, candidate)
             AUDIT_BY_URL[candidate.get("url")] = fallback["editorial_gate"]
             core.b.log(f"editorial gate -> extractive fallback: {candidate.get('title','')[:90]}")
             return fallback
@@ -223,8 +207,6 @@ def valid_post_with_editorial_gate(candidate):
 
 core.b.valid_post = valid_post_with_editorial_gate
 
-# Persist the gate verdict beside every newly published post and summarize the
-# semantic audit in last_run.
 _original_save_state = core.b.save_state
 
 
@@ -233,10 +215,10 @@ def save_state_with_editorial_audit(state):
         url = post.get("url")
         if url in AUDIT_BY_URL:
             post["editorial_gate"] = AUDIT_BY_URL[url]
-
     run = state.get("last_run") or {}
     run["version"] = VERSION
     run["editorial_gate"] = {
+        "prechecked": int(core.b.STATS.get("editorial_prechecked", 0)),
         "checked": int(core.b.STATS.get("editorial_gate_checked", 0)),
         "passed": int(core.b.STATS.get("editorial_gate_pass", 0)),
         "rejected": int(core.b.STATS.get("editorial_gate_reject", 0)),
