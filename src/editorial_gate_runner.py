@@ -6,7 +6,7 @@ import editorial_gate as gate
 import category_reconciler as reconciler
 import production as prod
 
-VERSION = "stable-v10.2"
+VERSION = "stable-v10.1"
 prod.VERSION = VERSION
 prod.core.VERSION = VERSION
 core = prod.core
@@ -144,9 +144,6 @@ def _source_precheck(candidate):
     return True
 
 
-# Reconcile ALL candidates before b.ordered() sees them. This is critical: a
-# foreign story that the old classifier called Sakhalin must not occupy the local
-# priority slot and be repaired only after ordering.
 _original_collect = core.b.collect
 
 
