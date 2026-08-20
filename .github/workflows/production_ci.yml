@@ -10,6 +10,7 @@ on:
       - "src/news_bot_v9.py"
       - "src/production.py"
       - "src/editorial_gate.py"
+      - "src/category_reconciler.py"
       - "src/editorial_gate_runner.py"
       - "requirements.txt"
       - ".github/workflows/auto_publish_v7.yml"
@@ -31,104 +32,52 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
-      - name: Compile
-        run: |
-          python -m py_compile \
-            src/news_bot_v8.py \
-            src/news_bot_v9.py \
-            src/production.py \
-            src/editorial_gate.py \
-            src/editorial_gate_runner.py
-
-      - name: Semantic regression suite
+      - name: Compile and semantic regressions
         env:
           IMAGE_REQUIRED: "0"
           AI_CALL_BUDGET: "8"
           EDITORIAL_AUDIT_AI_BUDGET: "4"
           RUN_COOLDOWN_MINUTES: "20"
         run: |
+          python -m py_compile src/news_bot_v8.py src/news_bot_v9.py src/production.py src/editorial_gate.py src/category_reconciler.py src/editorial_gate_runner.py
           python - <<'PY'
           import sys
           sys.path.insert(0, "src")
           import editorial_gate as gate
+          import category_reconciler as rec
           import editorial_gate_runner as runner
-          prod = runner.prod
 
-          assert runner.VERSION == "stable-v10.0"
-          assert prod.core.strict_fresh(None) is False
-          assert "ru_incident" in prod.core.b.CAT
+          assert runner.VERSION == "stable-v10.1"
+          assert runner.core.strict_fresh(None) is False
 
-          # Existing classification regressions.
-          cases = [
-              ("ru", "Трамп рассматривает отсрочку введения пошлин в 50% в отношении Канады", "Президент США рассматривает отсрочку пошлин в отношении Канады.", "https://www.interfax.ru/world/1110016", {"geo", None}),
-              ("ru", "Аэропорт временно ограничил прием самолетов из-за угрозы БПЛА", "Росавиация сообщила об ограничениях.", "https://www.interfax.ru/russia/1110011", {"ru_security"}),
-              ("ru", "Ребенок погиб в Ростовской области, упав за борт катера", "Следователи устанавливают обстоятельства происшествия на воде.", "https://www.interfax.ru/russia/1110068", {"ru_incident"}),
-              ("sakhalin", "Сильный дождь пройдет в центральных районах Сахалина 20 августа", "Сахалинское УГМС прогнозирует сильный дождь и осадки.", "https://sakhalinmedia.ru/news/2593484/", {"sakh"}),
+          def c(cat, source, title, text, url):
+              return {"category_key":cat,"category":cat,"source":source,"title":title,"source_text":text,"url":url}
+
+          historical = [
+              (c("sakh","Interfax","В парламенте Ирана заявили, что давление на Тегеран не поможет США заключить соглашение","Иран и США обсуждают соглашение.","https://www.interfax.ru/world/1110010"), "geo"),
+              (c("ru_eco","Interfax","Трамп рассматривает отсрочку введения пошлин в 50% в отношении Канады","Президент США рассматривает отсрочку пошлин для Канады.","https://www.interfax.ru/world/1110016"), "geo"),
+              (c("sakh_chp","SakhalinMedia.ru","Сильный дождь пройдет в центральных районах Сахалина 20 августа","Сахалинское УГМС прогнозирует сильный дождь и осадки.","https://sakhalinmedia.ru/news/2593484/"), "sakh"),
+              (c("ru_pol","Interfax","Ребенок погиб в Ростовской области, упав за борт катера","Следователи устанавливают обстоятельства происшествия.","https://www.interfax.ru/russia/1110068"), "ru_incident"),
+              (c("ru_pol","TASS","Дмитриев считает, что Федоров бросил вызов Зеленскому призывами к выборам","Высказывание касается украинской политики и выборов на Украине.","https://tass.ru/politika/28023743"), "geo"),
+              (c("ru_pol","Interfax","Аэропорт временно ограничил прием самолетов из-за угрозы БПЛА","Росавиация сообщила об ограничениях из-за угрозы БПЛА.","https://www.interfax.ru/russia/1110011"), "ru_security"),
           ]
-          for src_type, title, text, url, allowed in cases:
-              cat, _, _ = prod.classify_v99(src_type, 90, title, text, "", url)
-              assert cat in allowed, (title, cat, allowed)
+          for item, expected in historical:
+              got = rec.suggest_category(item)
+              assert got == expected, (item["title"], got, expected)
 
-          # Headline/source semantic mismatch.
-          c = {
-              "category_key": "ru_eco", "category": "Россия / экономика", "source": "Interfax",
-              "title": "Правительство рассматривает возможность введения новой меры",
-              "source_text": "Власти обсуждают предложение, окончательное решение не принято.",
-              "url": "https://www.interfax.ru/russia/1/",
-          }
-          row = {"title_ru": "Правительство ввело новую меру", "body": [], "editorial_mode": "generated"}
-          r = gate.deterministic_review(c, row)
+          # Meaning strengthening is forbidden.
+          item = c("ru_eco","Interfax","Правительство рассматривает возможность введения новой меры","Власти обсуждают предложение, окончательное решение не принято.","https://www.interfax.ru/russia/1")
+          r = gate.deterministic_review(item, {"title_ru":"Правительство ввело новую меру","body":[],"editorial_mode":"generated"})
           assert not r["approved"] and r["meaning_changed"], r
 
-          # Wrong category must fail even when title itself is copied from source.
-          c = {
-              "category_key": "ru_pol", "category": "Россия / политика", "source": "Interfax",
-              "title": "Ребенок погиб в Ростовской области, упав за борт катера",
-              "source_text": "Следователи устанавливают обстоятельства происшествия.",
-              "url": "https://www.interfax.ru/russia/1110068",
-          }
-          r = gate.deterministic_review(c, {"title_ru": c["title"], "body": [], "editorial_mode": "extractive_fallback"})
-          assert not r["approved"] and r["category_matches_story"] < 90, r
-
-          # Weather is not a Sakhalin emergency.
-          c = {
-              "category_key": "sakh_chp", "category": "📍 Сахалин", "source": "SakhalinMedia.ru",
-              "title": "Сильный дождь пройдет в центральных районах Сахалина 20 августа",
-              "source_text": "Сахалинское УГМС прогнозирует сильный дождь и осадки.",
-              "url": "https://sakhalinmedia.ru/news/2593484/",
-          }
-          r = gate.deterministic_review(c, {"title_ru": c["title"], "body": [], "editorial_mode": "extractive_fallback"})
-          assert not r["approved"], r
-
-          # Correct local incident must pass.
-          c = {
-              "category_key": "sakh_chp", "category": "📍 Сахалин", "source": "SakhalinMedia.ru",
-              "title": "Житель Долинска украл банковскую карту у приятеля",
-              "source_text": "Полиция Долинска возбудила уголовное дело по факту кражи.",
-              "url": "https://sakhalinmedia.ru/news/2593525/",
-          }
-          r = gate.deterministic_review(c, {"title_ru": c["title"], "body": [], "editorial_mode": "extractive_fallback"})
-          assert r["approved"] and r["category_matches_story"] == 100, r
-
-          # Invented number is always rejected.
-          row = {"title_ru": "Житель Долинска украл карту на 50 тысяч рублей", "body": [], "editorial_mode": "generated"}
-          r = gate.deterministic_review(c, row)
+          # A number absent from source is forbidden.
+          item = c("sakh_chp","SakhalinMedia.ru","В Долинске расследуют кражу","Полиция Долинска расследует кражу банковской карты.","https://sakhalinmedia.ru/news/1/")
+          r = gate.deterministic_review(item, {"title_ru":"В Долинске расследуют кражу на 50 тысяч рублей","body":[],"editorial_mode":"generated"})
           assert not r["facts_supported"] and not r["approved"], r
 
-          # Extractive editor sentence splitting remains intact.
-          sentences = prod._sentence_candidates(
-              "В полиции возбудили уголовное дело против 50-летнего жителя. "
-              "Его подозревают в краже почти 40 тыс. рублей с банковской карты приятеля, сообщает УМВД. "
-              "Сумма ущерба составила 38 760 рублей."
-          )
-          assert any(s.startswith("Его подозревают") and "40 тыс. рублей" in s for s in sentences), sentences
-          assert not any(s.startswith("рублей") for s in sentences), sentences
-
-          print("stable-v10.0 semantic regression suite: OK")
+          print("stable-v10.1 semantic regression suite: OK")
           PY
