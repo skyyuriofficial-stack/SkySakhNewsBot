@@ -3,6 +3,11 @@
 from urllib.parse import urlparse
 import editorial_gate as gate
 
+# The semantic gate and reconciler share the same vocabulary at runtime.
+gate.SECURITY = tuple(dict.fromkeys(gate.SECURITY + (
+    "беспилот", "удар", "всу", "военн", "боев", "противовоздуш", "воздушная тревога",
+)))
+
 WORLD_MEDIA = ("bbc", "reuters", "guardian", "associated press", " ap ")
 LOCAL_MEDIA = ("sakhalinmedia", "astv", "sakh.online")
 TECH_MEDIA = ("technology", "tech")
@@ -65,16 +70,12 @@ def suggest_category(candidate):
     if "it" in title or ("it" in content and (current == "it" or _source_is_tech_media(candidate))):
         return "it"
 
-    # Central headline geography has priority. A Japan/Russia story that merely
-    # mentions Kurils/Sakhalin in the body is not automatically local news.
     if "local" in title:
         return _local_category(title, content)
     if "foreign" in title:
         if _source_is_world_media(candidate) and "russia" in content: return "world_ru"
         return "geo"
 
-    # Without foreign focus in the headline, an explicit Sakhalin marker in the
-    # article body is enough for a local story. Publisher identity alone is never enough.
     if "local" in content:
         return _local_category(title, content)
     if _source_is_local_media(candidate):
@@ -89,14 +90,12 @@ def suggest_category(candidate):
     if "security" in title or "security" in content: return "ru_security"
     if "incident" in title or "incident" in content: return "ru_incident"
 
-    # A Russian business publisher/article is not automatically Russia/economy.
     if "economy" in title or "economy" in content:
         if _contains_any(title_text, GLOBAL_ECON) or ("foreign" in content and not _contains_any(title_text, DOMESTIC_ECON)):
             return "geo"
         if "russia" in title or _contains_any(title_text, DOMESTIC_ECON):
             return "ru_eco"
-        if current == "ru_eco":
-            return None
+        if current == "ru_eco": return None
         return "ru_eco"
 
     if "politics" in title or "politics" in content: return "ru_pol"
