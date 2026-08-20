@@ -1,0 +1,661 @@
+{
+  "version": "stable-v10.1",
+  "generated_at_utc": "2026-08-20T07:27:26+00:00",
+  "checks": [
+    {
+      "name": "compile/runtime",
+      "ok": true,
+      "detail": "None"
+    },
+    {
+      "name": "version",
+      "ok": true,
+      "detail": "stable-v10.1"
+    },
+    {
+      "name": "historical_regressions",
+      "ok": false,
+      "detail": "[{'title': 'Трамп рассматривает отсрочку введения пошлин в 50% в отношении Канады', 'old': 'ru_eco', 'expected': 'geo', 'got': 'it', 'ok': False}, {'title': 'Русские Сейшелы на сентябрь: райский остров для отдыха', 'old': 'sakh', 'expected': None, 'got': 'sakh', 'ok': False}]"
+    },
+    {
+      "name": "raw_candidates",
+      "ok": true,
+      "detail": "49"
+    },
+    {
+      "name": "post_reconcile_candidates",
+      "ok": true,
+      "detail": "41"
+    },
+    {
+      "name": "local_candidates_after_reconcile",
+      "ok": true,
+      "detail": "27"
+    },
+    {
+      "name": "published_two",
+      "ok": true,
+      "detail": "2"
+    },
+    {
+      "name": "captured_two",
+      "ok": true,
+      "detail": "[{'url': 'https://sakhalinmedia.ru/news/2594695/', 'category_key': 'sakh_chp', 'title': 'Прокуратура помогла сахалинцу возместить 300 тыс. рублей, украденные мошенниками - SakhalinMedia.ru', 'method': 'photo'}, {'url': 'https://www.interfax.ru/business/1110261', 'category_key': 'ru_eco', 'title': 'Рубль утром дорожает к юаню на фоне укрепляющейся нефти', 'method': 'text'}]"
+    },
+    {
+      "name": "post1_approved",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 100, 'category_matches_story': 100, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic', 'issues': []}"
+    },
+    {
+      "name": "post1_title90",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 100, 'category_matches_story': 100, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic', 'issues': []}"
+    },
+    {
+      "name": "post1_category90",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 100, 'category_matches_story': 100, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic', 'issues': []}"
+    },
+    {
+      "name": "post1_facts",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 100, 'category_matches_story': 100, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic', 'issues': []}"
+    },
+    {
+      "name": "post1_meaning",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 100, 'category_matches_story': 100, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic', 'issues': []}"
+    },
+    {
+      "name": "post2_approved",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 100, 'category_matches_story': 100, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic', 'issues': []}"
+    },
+    {
+      "name": "post2_title90",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 100, 'category_matches_story': 100, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic', 'issues': []}"
+    },
+    {
+      "name": "post2_category90",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 100, 'category_matches_story': 100, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic', 'issues': []}"
+    },
+    {
+      "name": "post2_facts",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 100, 'category_matches_story': 100, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic', 'issues': []}"
+    },
+    {
+      "name": "post2_meaning",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 100, 'category_matches_story': 100, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic', 'issues': []}"
+    }
+  ],
+  "all_pass": false,
+  "run": {
+    "version": "stable-v10.1",
+    "started_sakhalin": "2026-08-20T18:29:36+11:00",
+    "status": "ok",
+    "candidates": 41,
+    "published": 2,
+    "local_candidates": 27,
+    "local_stream": {
+      "status": "healthy",
+      "ok_sources": 4,
+      "sources": [
+        {
+          "source": "Sakhalin Google",
+          "status": "ok",
+          "entries": 20,
+          "recent": 14
+        },
+        {
+          "source": "SakhalinMedia",
+          "status": "ok",
+          "entries": 20,
+          "recent": 20
+        },
+        {
+          "source": "ASTV HTML",
+          "status": "ok",
+          "entries": 21,
+          "recent": 15
+        },
+        {
+          "source": "Sakh.online HTML",
+          "status": "ok",
+          "entries": 20,
+          "recent": 20
+        }
+      ]
+    },
+    "finished_sakhalin": "2026-08-20T18:33:19+11:00",
+    "stats": {
+      "rss_seen": 316,
+      "old_skip": 128,
+      "google_skip": 26,
+      "duplicate_skip": 0,
+      "low_info_skip": 34,
+      "category_skip": 68,
+      "no_image_skip": 0,
+      "bad_image_skip": 10,
+      "logo_image_skip": 81,
+      "text_card_image_skip": 0,
+      "candidates": 41,
+      "rewrite_retry": 1,
+      "editorial_skip": 0,
+      "telegram_fail": 0,
+      "published": 2,
+      "ai_calls": 2,
+      "ai_budget_exhausted": 1,
+      "ai_api_fail": 1,
+      "evidence_reject": 0,
+      "validation_reject": 0,
+      "extractive_fallback": 1,
+      "editorial_prechecked": 47,
+      "editorial_gate_checked": 2,
+      "editorial_gate_pass": 2,
+      "editorial_gate_reject": 3,
+      "editorial_gate_fallback": 0,
+      "editorial_gate_ai_calls": 0,
+      "editorial_gate_ai_fail": 0,
+      "editorial_title_reject": 3,
+      "editorial_category_reject": 3,
+      "editorial_meaning_reject": 0,
+      "editorial_reclassified": 11,
+      "editorial_offtopic_reject": 3
+    },
+    "editorial_gate": {
+      "prechecked": 47,
+      "checked": 2,
+      "passed": 2,
+      "rejected": 3,
+      "reclassified": 11,
+      "offtopic_reject": 3,
+      "fallback": 0,
+      "ai_calls": 0,
+      "ai_fail": 0,
+      "audited_urls": 5
+    }
+  },
+  "historical_regressions": [
+    {
+      "title": "В парламенте Ирана заявили, что давление на Тегеран не поможет США заключить соглашение",
+      "old": "sakh",
+      "expected": "geo",
+      "got": "geo",
+      "ok": true
+    },
+    {
+      "title": "Трамп рассматривает отсрочку введения пошлин в 50% в отношении Канады",
+      "old": "ru_eco",
+      "expected": "geo",
+      "got": "it",
+      "ok": false
+    },
+    {
+      "title": "Сильный дождь пройдет в центральных районах Сахалина 20 августа",
+      "old": "sakh_chp",
+      "expected": "sakh",
+      "got": "sakh",
+      "ok": true
+    },
+    {
+      "title": "Ребенок погиб в Ростовской области, упав за борт катера",
+      "old": "ru_pol",
+      "expected": "ru_incident",
+      "got": "ru_incident",
+      "ok": true
+    },
+    {
+      "title": "Дмитриев считает, что Федоров бросил вызов Зеленскому призывами к выборам",
+      "old": "ru_pol",
+      "expected": "geo",
+      "got": "geo",
+      "ok": true
+    },
+    {
+      "title": "Японист РАН: Токио наказывает Россию за Украину, но в уме держит Китай",
+      "old": "sakh",
+      "expected": "geo",
+      "got": "geo",
+      "ok": true
+    },
+    {
+      "title": "Мэр Хабаровска рассказал об автобусной остановке",
+      "old": "sakh",
+      "expected": null,
+      "got": null,
+      "ok": true
+    },
+    {
+      "title": "Русские Сейшелы на сентябрь: райский остров для отдыха",
+      "old": "sakh",
+      "expected": null,
+      "got": "sakh",
+      "ok": false
+    },
+    {
+      "title": "Нефть слабо дорожает, Brent торгуется у $91,7 за баррель",
+      "old": "ru_eco",
+      "expected": "geo",
+      "got": "geo",
+      "ok": true
+    }
+  ],
+  "raw_candidate_count": 49,
+  "raw_audit": [
+    {
+      "title": "Прокуратура помогла сахалинцу возместить 300 тыс. рублей, украденные мошенниками - SakhalinMedia.ru",
+      "source": "SakhalinMedia.ru",
+      "old": "sakh_chp",
+      "new": "sakh_chp",
+      "changed": false
+    },
+    {
+      "title": "Дмитрий Харатьян обсудил с педагогами ЕАО вопросы духовно-нравственного воспитания - SakhalinMedia.ru",
+      "source": "SakhalinMedia.ru",
+      "old": "sakh_chp",
+      "new": "sakh_chp",
+      "changed": false
+    },
+    {
+      "title": "Память губернатора Игоря Фархутдинова почтили в Сахалинской области - SakhalinMedia.ru",
+      "source": "SakhalinMedia.ru",
+      "old": "sakh_chp",
+      "new": "sakh_chp",
+      "changed": false
+    },
+    {
+      "title": "Дождь жаре не помеха — прогноз погоды в Сахалинской области на 21 августа - SakhalinMedia.ru",
+      "source": "SakhalinMedia.ru",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "Почти 100 ветеранов СВО в Сахалинской области нашли работу с начала 2026 года - SakhalinMedia.ru",
+      "source": "SakhalinMedia.ru",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "Мэр Хабаровска Сергей Кравчук: Стабильное тепло начинается с подготовки сетей - SakhalinMedia.ru",
+      "source": "SakhalinMedia.ru",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "В Долинской ЦРБ завершили капремонт терапевтического и приемного отделений - SakhalinMedia.ru",
+      "source": "SakhalinMedia.ru",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "Мэр Хабаровска Сергей Кравчук: Делаем важную улицу города удобнее для пассажиров и автомобилистов - SakhalinMedia.ru",
+      "source": "SakhalinMedia.ru",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "Мэр Хабаровска Сергей Кравчук: Автобусная остановка станет частью маршрутов микрорайона - SakhalinMedia.ru",
+      "source": "SakhalinMedia.ru",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "В Аниве завершили возведение опор пешеходного моста через реку Лютогу - SakhalinMedia.ru",
+      "source": "SakhalinMedia.ru",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "Русские Сейшелы на сентябрь - нашла райский остров, где море прозрачное на 40 м и греется до +28°С - хватит кормить Сочи и Турцию - SakhalinMedia.ru",
+      "source": "SakhalinMedia.ru",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "Благоустройство привокзальной площади в Ногликах планируют завершить в сентябре - SakhalinMedia.ru",
+      "source": "SakhalinMedia.ru",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "Автобусы №24 и №34 в Южно-Сахалинске временно изменят маршрут 21 августа - SakhalinMedia.ru",
+      "source": "SakhalinMedia.ru",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "Более 440 км дорог отремонтируют в Сахалинской области к 2031 году - SakhalinMedia.ru",
+      "source": "SakhalinMedia.ru",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "Японист РАН: Токио \"наказывает\" Россию за Украину, но в уме держит Китай",
+      "source": "Interfax",
+      "old": "sakh",
+      "new": "geo",
+      "changed": true
+    },
+    {
+      "title": "Trump vows tougher economic measures on Iran and supporting countries",
+      "source": "BBC World",
+      "old": "geo",
+      "new": "geo",
+      "changed": false
+    },
+    {
+      "title": "Israel confirms soldiers fired at car in which Hind Rajab was killed and opens criminal investigation",
+      "source": "BBC World",
+      "old": "geo",
+      "new": "geo",
+      "changed": false
+    },
+    {
+      "title": "Trump pauses Canada tariffs threat, and hints at revival of Keystone XL pipeline",
+      "source": "Guardian World",
+      "old": "geo",
+      "new": "geo",
+      "changed": false
+    },
+    {
+      "title": "In cutting joint drills, Trump has given South Korea’s president what he wants. So why is Seoul so uneasy?",
+      "source": "Guardian World",
+      "old": "geo",
+      "new": null,
+      "changed": true
+    },
+    {
+      "title": "Meta hooked children on Facebook and Instagram, US court hears",
+      "source": "BBC Technology",
+      "old": "it",
+      "new": "geo",
+      "changed": true
+    },
+    {
+      "title": "OpenAI slows down training of advanced AI after cyber-attack",
+      "source": "BBC Technology",
+      "old": "it",
+      "new": "it",
+      "changed": false
+    },
+    {
+      "title": "Нефть слабо дорожает, Brent торгуется у $91,7 за баррель",
+      "source": "Interfax",
+      "old": "ru_eco",
+      "new": "geo",
+      "changed": true
+    },
+    {
+      "title": "ПХГ ЕС заполнены на 61,61%, темп закачки ниже обычного",
+      "source": "Interfax",
+      "old": "ru_eco",
+      "new": null,
+      "changed": true
+    },
+    {
+      "title": "Рубль утром дорожает к юаню на фоне укрепляющейся нефти",
+      "source": "Interfax",
+      "old": "ru_eco",
+      "new": "ru_eco",
+      "changed": false
+    },
+    {
+      "title": "Did someone wearing Meta Glasses film you today? Are you sure?",
+      "source": "Guardian Technology",
+      "old": "it",
+      "new": null,
+      "changed": true
+    },
+    {
+      "title": "Основатель китайского застройщика China Evergrande получил пожизненный срок",
+      "source": "Interfax",
+      "old": "geo",
+      "new": "geo",
+      "changed": false
+    },
+    {
+      "title": "ВС РФ нанесли удары по складам с военным имуществом в портах Черноморск и Южный",
+      "source": "Interfax",
+      "old": "ru_security",
+      "new": "ru_security",
+      "changed": false
+    },
+    {
+      "title": "Жителя Омска заподозрили в шпионаже в пользу украинских спецслужб",
+      "source": "Interfax",
+      "old": "ru_security",
+      "new": "geo",
+      "changed": true
+    },
+    {
+      "title": "Китайский ЦБ ожидаемо сохранил базовую ставку на уровне 3%",
+      "source": "Interfax",
+      "old": "ru_eco",
+      "new": "geo",
+      "changed": true
+    },
+    {
+      "title": "Китай за семь месяцев увеличил закупки пшеницы в РФ в 5,2 раза",
+      "source": "Interfax",
+      "old": "ru_eco",
+      "new": "geo",
+      "changed": true
+    },
+    {
+      "title": "Индексы МосБиржи и РТС снизились на 0,2% в начале основных торгов",
+      "source": "Interfax",
+      "old": "ru_eco",
+      "new": "geo",
+      "changed": true
+    },
+    {
+      "title": "Затопило дом, вода в подвалах больницы: в Углегорском районе ликвидируют последствия циклона",
+      "source": "ASTV",
+      "old": "sakh_chp",
+      "new": "sakh",
+      "changed": true
+    },
+    {
+      "title": "Из-за ремонта дороги два автобуса изменят схему движения в Южно-Сахалинске",
+      "source": "ASTV",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "Несколько детских садиков и сотни домов попадут под отключение света 21 августа на Сахалине",
+      "source": "ASTV",
+      "old": "sakh_chp",
+      "new": "sakh",
+      "changed": true
+    },
+    {
+      "title": "Повредил внедорожник и скрылся: в Южно-Сахалинске ищут очевидцев ДТП",
+      "source": "ASTV",
+      "old": "sakh_chp",
+      "new": "sakh_chp",
+      "changed": false
+    },
+    {
+      "title": "На Сахалин заглянет солнце, а на Курилах задержится дождь: прогноз погоды для региона на 21 августа",
+      "source": "ASTV",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "Горячую воду отключат в Южно-Сахалинске 21 августа до 20:00",
+      "source": "Sakh.online",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "В Холмском районе нашли тело 57-летнего мужчины",
+      "source": "Sakh.online",
+      "old": "sakh_chp",
+      "new": "sakh_chp",
+      "changed": false
+    },
+    {
+      "title": "Южно-Сахалинск стал центром инженерной мысли: «КВАНТ-ИН» собрал сотни юных изобретателей | SAKH.ONLINE",
+      "source": "Sakh.online",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "График отключений света 21 августа: Южно-Сахалинск и Октябрьский",
+      "source": "Sakh.online",
+      "old": "sakh_chp",
+      "new": "sakh",
+      "changed": true
+    },
+    {
+      "title": "Ретро, баухаус и шинуазри в тренде у жителей Дальнего Востока",
+      "source": "Sakh.online",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "Движение на Тихоокеанской ограничат на два дня в Южно-Сахалинске",
+      "source": "Sakh.online",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "Руководитель волонтеров из Поронайска получила знак «Доброволец Сахалинской области»",
+      "source": "Sakh.online",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "Депутат Георгий Карлов: «Жива добрая память о губернаторе Игоре Фархутдинове»",
+      "source": "Sakh.online",
+      "old": "sakh_chp",
+      "new": "geo",
+      "changed": true
+    },
+    {
+      "title": "Сухо и жарко до +26 градусов: погода в Южно-Сахалинске 21 августа",
+      "source": "Sakh.online",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "В Южно-Сахалинске у собора почтили память губернатора Фархутдинова и 19 погибших в катастрофе вертолета Ми-8",
+      "source": "Sakh.online",
+      "old": "sakh_chp",
+      "new": "sakh_chp",
+      "changed": false
+    },
+    {
+      "title": "Ж/д-переезд на Украинской полностью закроют ночью 24 августа в Южно-Сахалинске",
+      "source": "Sakh.online",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "Дорогу Смирных — Пильво закрыли из-за сильного подтопления | SAKH.ONLINE",
+      "source": "Sakh.online",
+      "old": "sakh",
+      "new": "sakh",
+      "changed": false
+    },
+    {
+      "title": "Валерий Лимаренко принял участие в заседании Госсовета с Владимиром Путиным | SAKH.ONLINE",
+      "source": "Sakh.online",
+      "old": "sakh_chp",
+      "new": "it",
+      "changed": true
+    }
+  ],
+  "sent": [
+    {
+      "url": "https://sakhalinmedia.ru/news/2594695/",
+      "category_key": "sakh_chp",
+      "title": "Прокуратура помогла сахалинцу возместить 300 тыс. рублей, украденные мошенниками - SakhalinMedia.ru",
+      "method": "photo"
+    },
+    {
+      "url": "https://www.interfax.ru/business/1110261",
+      "category_key": "ru_eco",
+      "title": "Рубль утром дорожает к юаню на фоне укрепляющейся нефти",
+      "method": "text"
+    }
+  ],
+  "posts": [
+    {
+      "time_sakhalin": "2026-08-20T18:33:19+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "Прокуратура помогла сахалинцу возместить 300 тыс. рублей, украденные мошенниками - SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2594695/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6332/6331454.jpg?61fb45a30a61116e10fb7e06a335b479",
+      "image_hash": "0b65266ec415e54ad16a000494fd9e95bc379356",
+      "topic_cluster": "sakh_chp:прокуратура_помогла_сахалинцу_возместить_рублей_украденные",
+      "published_at": "2026-08-20T05:41:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/stable-v9.5",
+      "grounded_evidence": true,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": []
+      }
+    },
+    {
+      "time_sakhalin": "2026-08-20T18:33:19+11:00",
+      "source": "Interfax",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "title": "Рубль утром дорожает к юаню на фоне укрепляющейся нефти",
+      "url": "https://www.interfax.ru/business/1110261",
+      "image_url": null,
+      "image_hash": null,
+      "topic_cluster": "ru_eco:рубль_утром_дорожает_укрепляющейся_нефти",
+      "published_at": "2026-08-20T07:12:00+00:00",
+      "with_image": false,
+      "publish_method": "sendMessage/no-safe-image",
+      "grounded_evidence": true,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": []
+      }
+    }
+  ],
+  "run_error": null,
+  "passed": 17,
+  "failed": 1
+}
