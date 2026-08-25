@@ -15,6 +15,17 @@ LOCAL_MEDIA = ("sakhalinmedia", "astv", "sakh.online")
 TECH_MEDIA = ("technology", "tech", "wired", "verge")
 RUSSIAN_MEDIA = ("interfax", "интерфакс", "tass", "тасс")
 
+
+# FINAL_V102_SAKHALIN_GEOGRAPHY
+# District centres, islands and settlements frequently used without the word
+# "Sakhalin" in otherwise local headlines.
+gate.LOCAL_MARKERS = gate.LOCAL_MARKERS + (
+    "анив", "макаров", "смирных", "тымовск", "томари", "шахтерск",
+    "горнозаводск", "чехов", "быков", "синегорск", "троицк", "лугов",
+    "новоалександровск", "лютог", "итуруп", "кунашир", "шикотан",
+    "монерон", "рейдово", "малокурильск", "курильск", "охотское море",
+)
+
 INTERNATIONAL_PATHS = (
     "/world/",
     "/international/",
