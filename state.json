@@ -132,7 +132,9 @@
     "https://www.interfax.ru/russia/1110011",
     "https://www.interfax.ru/world/1110016",
     "https://sakhalinmedia.ru/news/2593484/",
-    "https://www.interfax.ru/russia/1110068"
+    "https://www.interfax.ru/russia/1110068",
+    "https://sakhalinmedia.ru/news/2599353/",
+    "https://www.bbc.co.uk/news/articles/cg598m3meeyo?at_medium=RSS&at_campaign=rss"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -267,38 +269,12 @@
     "c150bf4ded3bb64241b888b391ee2d9b8c53de16",
     "fdc7e6973f547cfecf849412f6ab75380fa315cb",
     "7be7ac0325b55e9d88eb4d4080b236d87a0015d4",
-    "309d2cfc02188fc48d3f44bd21d30a532426b7f3"
+    "309d2cfc02188fc48d3f44bd21d30a532426b7f3",
+    "539c7f965ca603efdf51f3bc683cdd12a05a5cb6",
+    "f1a374a8f829b9b97016826e33d64695db24852e"
   ],
-  "last_run_sakhalin": "2026-08-19T20:01:48+11:00",
+  "last_run_sakhalin": "2026-08-25T21:57:27+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-21T12:44:50+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "title": "План \"Ковер\" действует в Самарской области",
-      "url": "https://www.interfax.ru/russia/1090839",
-      "published_at": "2026-05-21T01:38:00+00:00",
-      "with_image": false,
-      "image_mode": "none",
-      "image_url": null,
-      "publish_method": "sendMessage/approved/no-image",
-      "telegram_message_id": 75,
-      "score": 145
-    },
-    {
-      "time_sakhalin": "2026-05-21T16:01:43+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "title": "Российские военные нейтрализовали в ночь на четверг 121 беспилотник ВСУ",
-      "url": "https://www.interfax.ru/russia/1090856",
-      "published_at": "2026-05-21T04:52:00+00:00",
-      "with_image": true,
-      "image_mode": "generated_thematic",
-      "image_url": null,
-      "publish_method": "sendPhoto/safe/generated_thematic",
-      "telegram_message_id": 76,
-      "score": 145
-    },
     {
       "time_sakhalin": "2026-05-21T20:05:56+11:00",
       "source": "Interfax",
@@ -3921,6 +3897,54 @@
       "with_image": false,
       "publish_method": "sendMessage/no-safe-image",
       "grounded_evidence": true
+    },
+    {
+      "time_sakhalin": "2026-08-25T21:56:04+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "В Южно-Сахалинске помогут семье, у которой обрушился потолок в аварийном доме",
+      "url": "https://sakhalinmedia.ru/news/2599353/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6341/6340824.jpg?744422afd94fcd4d4c8de346861d314f",
+      "image_hash": "cb69fb64771576d6a376098e40e424db254c7cea",
+      "topic_cluster": "sakh_chp:сахалинске_помогут_семье_которой_обрушился_потолок",
+      "published_at": "2026-08-25T06:17:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/stable-v9.5",
+      "grounded_evidence": true,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": []
+      }
+    },
+    {
+      "time_sakhalin": "2026-08-25T21:57:19+11:00",
+      "source": "BBC World",
+      "category": "🌍 Мир о России",
+      "category_key": "world_ru",
+      "title": "Фабрики беспилотников Великобритании могут подвергнуться атакам со стороны «неизвестных источников», заявил бывший российский министр",
+      "url": "https://www.bbc.co.uk/news/articles/cg598m3meeyo?at_medium=RSS&at_campaign=rss",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/d447/live/1dffaa20-a048-11f1-a291-b542ee92de7c.jpg",
+      "image_hash": "03f1585f171c697e14f579e508e40ee655104e99",
+      "topic_cluster": "world_ru:drone_factories_attacks_unknown_sources_former",
+      "published_at": "2026-08-25T04:06:34+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/stable-v9.5",
+      "grounded_evidence": true,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 95,
+        "category_matches_story": 95,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+independent_ai",
+        "issues": []
+      }
     }
   ],
   "last_cycle_report": {
@@ -4147,12 +4171,12 @@
     "items": []
   },
   "last_run": {
-    "version": "stable-v9.7",
-    "started_sakhalin": "2026-08-19T19:58:46+11:00",
+    "version": "stable-v10.2",
+    "started_sakhalin": "2026-08-25T21:52:41+11:00",
     "status": "ok",
-    "candidates": 45,
+    "candidates": 39,
     "published": 2,
-    "local_candidates": 26,
+    "local_candidates": 25,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -4173,7 +4197,7 @@
           "source": "ASTV HTML",
           "status": "ok",
           "entries": 22,
-          "recent": 15
+          "recent": 16
         },
         {
           "source": "Sakh.online HTML",
@@ -4183,29 +4207,55 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-08-19T20:01:48+11:00",
+    "finished_sakhalin": "2026-08-25T21:57:27+11:00",
     "stats": {
-      "rss_seen": 152,
-      "old_skip": 58,
+      "rss_seen": 159,
+      "old_skip": 64,
       "google_skip": 13,
       "duplicate_skip": 0,
       "low_info_skip": 17,
-      "category_skip": 32,
+      "category_skip": 29,
       "no_image_skip": 0,
-      "bad_image_skip": 6,
-      "logo_image_skip": 44,
+      "bad_image_skip": 16,
+      "logo_image_skip": 64,
       "text_card_image_skip": 0,
-      "candidates": 45,
-      "rewrite_retry": 1,
-      "editorial_skip": 1,
+      "candidates": 39,
+      "rewrite_retry": 3,
+      "editorial_skip": 0,
       "telegram_fail": 0,
       "published": 2,
-      "ai_calls": 1,
+      "ai_calls": 4,
       "ai_budget_exhausted": 0,
-      "ai_api_fail": 1,
-      "evidence_reject": 0,
-      "validation_reject": 0,
-      "extractive_fallback": 2
+      "ai_api_fail": 2,
+      "evidence_reject": 1,
+      "validation_reject": 1,
+      "extractive_fallback": 1,
+      "editorial_prechecked": 52,
+      "editorial_gate_checked": 2,
+      "editorial_gate_pass": 2,
+      "editorial_gate_reject": 6,
+      "editorial_gate_fallback": 0,
+      "editorial_gate_ai_calls": 1,
+      "editorial_gate_ai_fail": 0,
+      "editorial_title_reject": 6,
+      "editorial_category_reject": 6,
+      "editorial_meaning_reject": 0,
+      "editorial_reclassified": 10,
+      "editorial_offtopic_reject": 7,
+      "openrouter_empty_content": 0,
+      "openrouter_model_fallback": 0
+    },
+    "editorial_gate": {
+      "prechecked": 52,
+      "checked": 2,
+      "passed": 2,
+      "rejected": 6,
+      "reclassified": 10,
+      "offtopic_reject": 7,
+      "fallback": 0,
+      "ai_calls": 1,
+      "ai_fail": 0,
+      "audited_urls": 8
     }
   }
 }
