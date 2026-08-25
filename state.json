@@ -138,7 +138,9 @@
     "https://sakhalinmedia.ru/news/2599328/",
     "https://www.interfax.ru/russia/1111153",
     "https://sakhalinmedia.ru/news/2599538/",
-    "https://www.bbc.co.uk/news/articles/c87vg9x5d7do?at_medium=RSS&at_campaign=rss"
+    "https://www.bbc.co.uk/news/articles/c87vg9x5d7do?at_medium=RSS&at_campaign=rss",
+    "https://sakhalinmedia.ru/news/2600050/",
+    "https://www.interfax.ru/world/1111245"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -279,38 +281,12 @@
     "27dbf6348fa4048cc836f2e641faf30698f372ae",
     "db717a6f68ecd030302ce1ac9fe0f407dbad3334",
     "42de189f88428238f2bf106a132701eaa5a64200",
-    "f33cd05e2c869e30deac06cf7fd64b031bdfdc09"
+    "f33cd05e2c869e30deac06cf7fd64b031bdfdc09",
+    "999abc0590652d6359013894d012610b0a7abdca",
+    "7225742337df07c98c573082f74baef3053b530b"
   ],
-  "last_run_sakhalin": "2026-08-26T07:33:16+11:00",
+  "last_run_sakhalin": "2026-08-26T10:30:16+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-22T16:06:24+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / происшествия",
-      "title": "Один человек погиб, пятеро пострадали в ДТП с микроавтобусом в Челябинской области",
-      "url": "https://www.interfax.ru/russia/1091098",
-      "published_at": "2026-05-22T04:39:00+00:00",
-      "with_image": true,
-      "image_mode": "generated_semantic",
-      "image_url": null,
-      "publish_method": "sendPhoto/safe/generated_semantic",
-      "telegram_message_id": 81,
-      "score": 145
-    },
-    {
-      "time_sakhalin": "2026-05-22T16:06:39+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / происшествия",
-      "title": "Около 90 тыс. человек остались без воды из-за аварии на водопроводе в Хакасии",
-      "url": "https://www.interfax.ru/russia/1091097",
-      "published_at": "2026-05-22T04:32:00+00:00",
-      "with_image": true,
-      "image_mode": "generated_semantic",
-      "image_url": null,
-      "publish_method": "sendPhoto/safe/generated_semantic",
-      "telegram_message_id": 82,
-      "score": 145
-    },
     {
       "time_sakhalin": "2026-05-22T16:33:25+11:00",
       "source": "Interfax",
@@ -3993,6 +3969,54 @@
         "mode": "deterministic+independent_ai",
         "issues": []
       }
+    },
+    {
+      "time_sakhalin": "2026-08-26T10:27:19+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_quake",
+      "title": "Землетрясение магнитудой 5,2 зафиксировали у Курил",
+      "url": "https://sakhalinmedia.ru/news/2600050/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6342/6341781.jpg?c6dfdf466e8eff1424025fabcd7bf87a",
+      "image_hash": "3346e858be6454023acde81a6061ad0f8ed8c788",
+      "topic_cluster": "sakh_quake:курил",
+      "published_at": "2026-08-25T23:20:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/stable-v9.5",
+      "grounded_evidence": true,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": []
+      }
+    },
+    {
+      "time_sakhalin": "2026-08-26T10:30:08+11:00",
+      "source": "Interfax",
+      "category": "🧭 Геополитика",
+      "category_key": "geo",
+      "title": "США в скором времени усилят экономическое давление на Иран",
+      "url": "https://www.interfax.ru/world/1111245",
+      "image_url": null,
+      "image_hash": null,
+      "topic_cluster": "geo:скором_времени_усилят_экономическое_давление",
+      "published_at": "2026-08-25T22:38:00+00:00",
+      "with_image": false,
+      "publish_method": "sendMessage/no-safe-image",
+      "grounded_evidence": true,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": []
+      }
     }
   ],
   "last_cycle_report": {
@@ -4220,11 +4244,11 @@
   },
   "last_run": {
     "version": "stable-v10.2",
-    "started_sakhalin": "2026-08-26T07:29:05+11:00",
+    "started_sakhalin": "2026-08-26T10:24:42+11:00",
     "status": "ok",
-    "candidates": 27,
+    "candidates": 25,
     "published": 2,
-    "local_candidates": 17,
+    "local_candidates": 19,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -4233,7 +4257,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 9
+          "recent": 10
         },
         {
           "source": "SakhalinMedia",
@@ -4255,55 +4279,55 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-08-26T07:33:16+11:00",
+    "finished_sakhalin": "2026-08-26T10:30:16+11:00",
     "stats": {
-      "rss_seen": 157,
-      "old_skip": 65,
-      "google_skip": 8,
+      "rss_seen": 143,
+      "old_skip": 66,
+      "google_skip": 9,
       "duplicate_skip": 4,
-      "low_info_skip": 15,
-      "category_skip": 36,
+      "low_info_skip": 1,
+      "category_skip": 40,
       "no_image_skip": 0,
       "bad_image_skip": 6,
-      "logo_image_skip": 50,
+      "logo_image_skip": 54,
       "text_card_image_skip": 0,
-      "candidates": 27,
-      "rewrite_retry": 5,
-      "editorial_skip": 1,
+      "candidates": 25,
+      "rewrite_retry": 6,
+      "editorial_skip": 4,
       "telegram_fail": 0,
       "published": 2,
-      "ai_calls": 6,
-      "ai_budget_exhausted": 0,
-      "ai_api_fail": 4,
-      "evidence_reject": 1,
+      "ai_calls": 8,
+      "ai_budget_exhausted": 1,
+      "ai_api_fail": 5,
+      "evidence_reject": 0,
       "validation_reject": 1,
-      "extractive_fallback": 1,
-      "editorial_prechecked": 46,
-      "editorial_gate_checked": 3,
+      "extractive_fallback": 2,
+      "editorial_prechecked": 42,
+      "editorial_gate_checked": 6,
       "editorial_gate_pass": 2,
-      "editorial_gate_reject": 4,
+      "editorial_gate_reject": 5,
       "editorial_gate_fallback": 0,
-      "editorial_gate_ai_calls": 1,
-      "editorial_gate_ai_fail": 0,
-      "editorial_title_reject": 3,
+      "editorial_gate_ai_calls": 2,
+      "editorial_gate_ai_fail": 1,
+      "editorial_title_reject": 4,
       "editorial_category_reject": 4,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 9,
-      "editorial_offtopic_reject": 15,
-      "openrouter_empty_content": 1,
+      "editorial_reclassified": 8,
+      "editorial_offtopic_reject": 14,
+      "openrouter_empty_content": 2,
       "openrouter_model_fallback": 0
     },
     "editorial_gate": {
-      "prechecked": 46,
-      "checked": 3,
+      "prechecked": 42,
+      "checked": 6,
       "passed": 2,
-      "rejected": 4,
-      "reclassified": 9,
-      "offtopic_reject": 15,
+      "rejected": 5,
+      "reclassified": 8,
+      "offtopic_reject": 14,
       "fallback": 0,
-      "ai_calls": 1,
-      "ai_fail": 0,
-      "audited_urls": 6
+      "ai_calls": 2,
+      "ai_fail": 1,
+      "audited_urls": 7
     }
   }
 }
