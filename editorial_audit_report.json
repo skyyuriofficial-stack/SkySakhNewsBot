@@ -1,0 +1,1063 @@
+{
+  "generated_at_utc": "2026-08-25T10:43:42+00:00",
+  "version": "stable-v10.2",
+  "mode": "live-sources / dry-Telegram / title-first reconcile + semantic gate",
+  "checks": [
+    {
+      "name": "compile_and_runtime",
+      "ok": true,
+      "detail": "None"
+    },
+    {
+      "name": "version",
+      "ok": true,
+      "detail": "stable-v10.2"
+    },
+    {
+      "name": "status",
+      "ok": true,
+      "detail": "{'version': 'stable-v10.2', 'started_sakhalin': '2026-08-25T21:46:37+11:00', 'status': 'ok', 'candidates': 39, 'published': 2, 'local_candidates': 25, 'local_stream': {'status': 'healthy', 'ok_sources': 4, 'sources': [{'source': 'Sakhalin Google', 'status': 'ok', 'entries': 20, 'recent': 17}, {'source': 'SakhalinMedia', 'status': 'ok', 'entries': 20, 'recent': 20}, {'source': 'ASTV HTML', 'status': 'ok', 'entries': 22, 'recent': 16}, {'source': 'Sakh.online HTML', 'status': 'ok', 'entries': 20, 'recent': 20}]}, 'finished_sakhalin': '2026-08-25T21:50:01+11:00', 'stats': {'rss_seen': 318, 'old_skip': 128, 'google_skip': 26, 'duplicate_skip': 0, 'low_info_skip': 30, 'category_skip': 59, 'no_image_skip': 0, 'bad_image_skip': 35, 'logo_image_skip': 116, 'text_card_image_skip': 0, 'candidates': 39, 'rewrite_retry': 2, 'editorial_skip': 2, 'telegram_fail': 0, 'published': 2, 'ai_calls': 4, 'ai_budget_exhausted': 1, 'ai_api_fail': 2, 'evidence_reject': 0, 'validation_reject': 0, 'extractive_fallback': 1, 'editorial_prechecked': 53, 'editorial_gate_checked': 4, 'editorial_gate_pass': 2, 'editorial_gate_reject': 7, 'editorial_gate_fallback': 0, 'editorial_gate_ai_calls': 2, 'editorial_gate_ai_fail': 0, 'editorial_title_reject': 7, 'editorial_category_reject': 7, 'editorial_meaning_reject': 0, 'editorial_reclassified': 9, 'editorial_offtopic_reject': 8, 'openrouter_empty_content': 2, 'openrouter_model_fallback': 0}, 'editorial_gate': {'prechecked': 53, 'checked': 4, 'passed': 2, 'rejected': 7, 'reclassified': 9, 'offtopic_reject': 8, 'fallback': 0, 'ai_calls': 2, 'ai_fail': 0, 'audited_urls': 9}}"
+    },
+    {
+      "name": "raw_candidates",
+      "ok": true,
+      "detail": "54"
+    },
+    {
+      "name": "final_candidates",
+      "ok": true,
+      "detail": "39"
+    },
+    {
+      "name": "local_stream",
+      "ok": true,
+      "detail": "{'status': 'healthy', 'ok_sources': 4, 'sources': [{'source': 'Sakhalin Google', 'status': 'ok', 'entries': 20, 'recent': 17}, {'source': 'SakhalinMedia', 'status': 'ok', 'entries': 20, 'recent': 20}, {'source': 'ASTV HTML', 'status': 'ok', 'entries': 22, 'recent': 16}, {'source': 'Sakh.online HTML', 'status': 'ok', 'entries': 20, 'recent': 20}]}"
+    },
+    {
+      "name": "published_two",
+      "ok": true,
+      "detail": "2"
+    },
+    {
+      "name": "captured_two",
+      "ok": true,
+      "detail": "2"
+    },
+    {
+      "name": "different_urls",
+      "ok": true,
+      "detail": "['https://sakhalinmedia.ru/news/2599353/', 'https://www.interfax.ru/russia/1111146']"
+    },
+    {
+      "name": "different_images",
+      "ok": true,
+      "detail": "['cb69fb64771576d6a376098e40e424db254c7cea']"
+    },
+    {
+      "name": "different_topics",
+      "ok": true,
+      "detail": "['sakh_chp:сахалинске_помогут_семье_которой_обрушился_потолок', 'ru_incident:факту_пожара_амурском_возбудили_уголовное']"
+    },
+    {
+      "name": "post_1_approved",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 95, 'category_matches_story': 95, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic+independent_ai', 'issues': []}"
+    },
+    {
+      "name": "post_1_title_90",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 95, 'category_matches_story': 95, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic+independent_ai', 'issues': []}"
+    },
+    {
+      "name": "post_1_category_90",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 95, 'category_matches_story': 95, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic+independent_ai', 'issues': []}"
+    },
+    {
+      "name": "post_1_facts",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 95, 'category_matches_story': 95, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic+independent_ai', 'issues': []}"
+    },
+    {
+      "name": "post_1_meaning",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 95, 'category_matches_story': 95, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic+independent_ai', 'issues': []}"
+    },
+    {
+      "name": "post_1_direct_url",
+      "ok": true,
+      "detail": "https://sakhalinmedia.ru/news/2599353/"
+    },
+    {
+      "name": "post_2_approved",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 100, 'category_matches_story': 100, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic', 'issues': []}"
+    },
+    {
+      "name": "post_2_title_90",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 100, 'category_matches_story': 100, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic', 'issues': []}"
+    },
+    {
+      "name": "post_2_category_90",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 100, 'category_matches_story': 100, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic', 'issues': []}"
+    },
+    {
+      "name": "post_2_facts",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 100, 'category_matches_story': 100, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic', 'issues': []}"
+    },
+    {
+      "name": "post_2_meaning",
+      "ok": true,
+      "detail": "{'approved': True, 'title_matches_source': 100, 'category_matches_story': 100, 'facts_supported': True, 'meaning_changed': False, 'mode': 'deterministic', 'issues': []}"
+    },
+    {
+      "name": "post_2_direct_url",
+      "ok": true,
+      "detail": "https://www.interfax.ru/russia/1111146"
+    },
+    {
+      "name": "captured_category_reconciled:В Южно-Сахалинске помогут семье, у которой обрушился потолок в аварийн",
+      "ok": true,
+      "detail": "('sakh_chp', 'sakh_chp')"
+    },
+    {
+      "name": "captured_category_reconciled:По факту пожара на Амурском ГХК возбудили уголовное дело",
+      "ok": true,
+      "detail": "('ru_incident', 'ru_incident')"
+    },
+    {
+      "name": "no_false_local_candidates",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "historical_error_classes_absent",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "all_pass": true,
+  "run_error": null,
+  "run": {
+    "version": "stable-v10.2",
+    "started_sakhalin": "2026-08-25T21:46:37+11:00",
+    "status": "ok",
+    "candidates": 39,
+    "published": 2,
+    "local_candidates": 25,
+    "local_stream": {
+      "status": "healthy",
+      "ok_sources": 4,
+      "sources": [
+        {
+          "source": "Sakhalin Google",
+          "status": "ok",
+          "entries": 20,
+          "recent": 17
+        },
+        {
+          "source": "SakhalinMedia",
+          "status": "ok",
+          "entries": 20,
+          "recent": 20
+        },
+        {
+          "source": "ASTV HTML",
+          "status": "ok",
+          "entries": 22,
+          "recent": 16
+        },
+        {
+          "source": "Sakh.online HTML",
+          "status": "ok",
+          "entries": 20,
+          "recent": 20
+        }
+      ]
+    },
+    "finished_sakhalin": "2026-08-25T21:50:01+11:00",
+    "stats": {
+      "rss_seen": 318,
+      "old_skip": 128,
+      "google_skip": 26,
+      "duplicate_skip": 0,
+      "low_info_skip": 30,
+      "category_skip": 59,
+      "no_image_skip": 0,
+      "bad_image_skip": 35,
+      "logo_image_skip": 116,
+      "text_card_image_skip": 0,
+      "candidates": 39,
+      "rewrite_retry": 2,
+      "editorial_skip": 2,
+      "telegram_fail": 0,
+      "published": 2,
+      "ai_calls": 4,
+      "ai_budget_exhausted": 1,
+      "ai_api_fail": 2,
+      "evidence_reject": 0,
+      "validation_reject": 0,
+      "extractive_fallback": 1,
+      "editorial_prechecked": 53,
+      "editorial_gate_checked": 4,
+      "editorial_gate_pass": 2,
+      "editorial_gate_reject": 7,
+      "editorial_gate_fallback": 0,
+      "editorial_gate_ai_calls": 2,
+      "editorial_gate_ai_fail": 0,
+      "editorial_title_reject": 7,
+      "editorial_category_reject": 7,
+      "editorial_meaning_reject": 0,
+      "editorial_reclassified": 9,
+      "editorial_offtopic_reject": 8,
+      "openrouter_empty_content": 2,
+      "openrouter_model_fallback": 0
+    },
+    "editorial_gate": {
+      "prechecked": 53,
+      "checked": 4,
+      "passed": 2,
+      "rejected": 7,
+      "reclassified": 9,
+      "offtopic_reject": 8,
+      "fallback": 0,
+      "ai_calls": 2,
+      "ai_fail": 0,
+      "audited_urls": 9
+    }
+  },
+  "raw_candidate_count": 54,
+  "reclassified_count": 10,
+  "rejected_or_offtopic_count": 14,
+  "candidate_audit": [
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2599353/",
+      "title": "В Южно-Сахалинске помогут семье, у которой обрушился потолок в аварийном доме - SakhalinMedia.ru",
+      "source_text_lead": "В Южно-Сахалинске продолжается работа с жильцами квартиры, где обрушилась потолочная плитка. В результате инцидента пострадал ребенок. Городские службы оперативно подключились к решению проблемы, сообщает пресс-служба мэрии города. Городские службы приступят к восстановлению потолка и ремонту кровли По поручению мэра Сергея Надсадина с семьей встретились руководитель управления жилищной политики Александра Стребкова и директор департамента по работе с обращениями граждан Ирина Дитер. Южносахалинцам предложили возможные варианты решения ситуации, в том числе временное проживание в маневренном фонде до момента получения квартиры в новом доме, ввод в эксплуатацию которого запланирован до конца ",
+      "original_category": "sakh_chp",
+      "suggested_category": "sakh_chp",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2599328/",
+      "title": "МЧС: Подтопленные дома в Томаринском районе освобождены от воды - SakhalinMedia.ru",
+      "source_text_lead": "Последствия паводка продолжают ликвидировать в Томаринском районе. По информации ГУ МЧС России по Сахалинской области, подтопленные территории полностью освободились от воды. Уровень воды в реке Томаринка пришел в норму",
+      "original_category": "sakh_chp",
+      "suggested_category": "sakh_chp",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2599389/",
+      "title": "Семейная ссора в Поронайске обернулась уголовным делом - SakhalinMedia.ru",
+      "source_text_lead": "13 августа в Поронайске 32-летний местный житель во время бытового конфликта повредил пластиковое окно в квартире своей супруги. По факту происшествия возбуждено уголовное дело, сообщили в пресс-службе УМВД России по Сахалинской области. Сахалинец разбил окно в квартире супруги, причинив ущерб на 12,5 тысячи рублей",
+      "original_category": "sakh_chp",
+      "suggested_category": "sakh_chp",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2599387/",
+      "title": "В МВД рассказали, что делать при неожиданном поступлении денег на карту - SakhalinMedia.ru",
+      "source_text_lead": "Если на банковскую карту неожиданно поступили деньги от неизвестного отправителя, гражданину необходимо сразу же связаться с банком по официальному каналу связи для установления источника перевода. Самостоятельно возвращать или тратить эти средства не рекомендуется. Соответствующие рекомендации содержатся в материалах МВД России, пишет ТАСС (16+). Тратить чужие средства нельзя — это может быть расценено как неосновательное обогащение В ведомстве предупреждают о новых уловках аферистов. Мошенники могут специально рассылать жертвам уведомления о якобы совершенном переводе и просить перейти по поддельной ссылке, чтобы «убедиться в зачислении средств». Проверка баланса через такой фишинговый рес",
+      "original_category": "sakh_chp",
+      "suggested_category": null,
+      "reclassified": false,
+      "approved_after_reconcile": false,
+      "title_matches_source": 100,
+      "category_matches_story": 0,
+      "issues": [
+        "offtopic_or_no_safe_stream"
+      ]
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2599538/",
+      "title": "Ликвидация последствий наводнения в Томари: что уже сделано - SakhalinMedia.ru",
+      "source_text_lead": "По поручению губернатора Сахалинской области Валерия Лимаренко в Томаринском районе развернута круглосуточная работа по ликвидации последствий непогоды. На территории муниципалитета продолжаются аварийно-восстановительные мероприятия после обрушившегося на острова циклона, сообщает пресс-служба правительства региона. В Томаринском районе круглосуточно ликвидируют последствия стихии Особое внимание уделяется обеспечению жизненно важных нужд населения. Налажена доставка питьевой воды в Томари и село Красногорск. Ресурс в первую очередь подается в социальные учреждения, детские сады, больницы и на местные хлебопекарни. К решению вопроса подключились и местные предприниматели — полки в магазинах",
+      "original_category": "sakh",
+      "suggested_category": "sakh",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2599347/",
+      "title": "Листья смородины больше не выбрасываю: собираю пакетами, и в морозилку — зимой спасает лучше лимона - SakhalinMedia.ru",
+      "source_text_lead": "Узнайте, как с помощью заморозки сохранить максимум пользы в листьях чёрной смородины и готовить зимой витаминный чай для иммунитета. Простой способ заготовки, правила сбора и противопоказания. Узнайте, как с помощью заморозки сохранить максимум пользы в листьях чёрной смородины и готовить зимой витаминный чай для иммунитета. Простой способ заготовки, правила сбора и противопоказания. Листья черной смородины содержат больше аскорбиновой кислоты, чем любые цитрусовые. Такой ароматный напиток отлично поддерживает иммунитет в сезон простуд. При этом нежное растительное сырье совершенно не раздражает желудок. Срывайте только здоровые листья строго до начала цветения куста. Позже все полезные сок",
+      "original_category": "sakh",
+      "suggested_category": null,
+      "reclassified": false,
+      "approved_after_reconcile": false,
+      "title_matches_source": 100,
+      "category_matches_story": 0,
+      "issues": [
+        "offtopic_or_no_safe_stream"
+      ]
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2599287/",
+      "title": "Рыбоохрана Сахалина выявила 48 нарушений и изъяла более 200 кг рыбы за неделю - SakhalinMedia.ru",
+      "source_text_lead": "Инспекторы рыбоохраны Сахалино-Курильского ТУ Росрыболовства с 17 по 23 августа провели 131 выездное обследование водных объектов рыбохозяйственного значения области. По итогам рейдов выявлено 48 правонарушений в области рыболовства и сохранения водных биологических ресурсов (ВБР), сообщает пресс-служба ведомства. Инспекторы провели 131 обследование водоемов и составили 44 административных протокола",
+      "original_category": "sakh",
+      "suggested_category": "sakh",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2599023/",
+      "title": "Из России - сразу в круиз на море: осенью лечу за 38 тыс. в Европу и Азию - без палящего солнца, толп туристов, а цена - сущий подарок - SakhalinMedia.ru",
+      "source_text_lead": "Лучшие круизные маршруты осенью 2026: безвизовые направления в Египте, Турции, на Мальдивах и в Азии от 38 тыс. рублей, а также европейские круизы по Средиземному морю от 650 евро. Подборка с ценами, датами и советами по выбору. Лучшие круизные маршруты осенью 2026: безвизовые направления в Египте, Турции, на Мальдивах и в Азии от 38 тыс. рублей, а также европейские круизы по Средиземному морю от 650 евро. Подборка с ценами, датами и советами по выбору.",
+      "original_category": "sakh",
+      "suggested_category": null,
+      "reclassified": false,
+      "approved_after_reconcile": false,
+      "title_matches_source": 100,
+      "category_matches_story": 0,
+      "issues": [
+        "offtopic_or_no_safe_stream"
+      ]
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2599364/",
+      "title": "Стафилококк мог стать причиной массового отравления в детском саду Корсакова - SakhalinMedia.ru",
+      "source_text_lead": "Массовое отравление в детском саду №8 Корсакова мог вызвать стафилококк. Об этом ТАСС (16+) сообщили в региональном управлении Роспотребнадзора. Исследования смывов, взятых в детсаду, проводятся в национальном исследовательском центре в Оболенске Как уточнили в ведомстве, исследования в референс-центре еще не завершены, поэтому точного вывода сделать нельзя. На данный момент выделенные культуры обнаружены в продуктах, в смывах от больных и от сотрудников пищеблока. \"Если в национальном исследовательском центре в Оболенске, куда отправили смывы, точно подтвердят, что обнаруженные бактерии идентичны, тогда можно будет говорить о том, что причиной отравления детей и взрослых в дошкольном учрежд",
+      "original_category": "sakh",
+      "suggested_category": "sakh",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2599479/",
+      "title": "Владимир Семенчик: Премия Арсеньева это мощный литературный катализатор Дальнего востока - SakhalinMedia.ru",
+      "source_text_lead": "Состав Экспертного совета восьмого сезона Общероссийской литературной Премии Дальний Восток им. В.К. Арсеньева (16+) был объявлен в начале июля. В числе экспертов — поэт, прозаик, журналист, председатель Сахалинского отделения Союза писателей России Владимир Семенчик. Для него участие в работе Премии стало возможностью вновь познакомиться с талантливыми авторами, продолжающими литературное освоение Дальнего Востока. Председатель Сахалинского отделения Союза писателей России — о литературном освоении Дальнего Востока и главных критериях сильной прозы \"Я четыре года назад уже работал в составе жюри Премии имени В.К. Арсеньева, благодаря этому открыл для себя несколько прекрасных авторов. Двое ",
+      "original_category": "sakh",
+      "suggested_category": "sakh",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2595330/",
+      "title": "Химию — в мусорку: от парши и фитофторы не останется и следа — убойная смесь для лечения земли - SakhalinMedia.ru",
+      "source_text_lead": "Как избавиться от парши и фитофтороза без химии: опыт дачника деда Егора и эффективная смесь сидератов — горчицы, фацелии и ржи. Народные методы борьбы с грибковыми болезнями овощей. Как избавиться от парши и фитофтороза без химии: опыт дачника деда Егора и эффективная смесь сидератов — горчицы, фацелии и ржи. Народные методы борьбы с грибковыми болезнями овощей. Огородник предлагает использовать сидераты. Некоторые из этих трав на отлично справляются с паршой и фитофторой. Так, дачник раскрывает секрет смеси из трех семян. Горчица, фацелия и рожь — вот травы, которые кормят почвенную живность, а та сама выдавливает грибок из почвы. Соедините все три вида семян и рассыпьте равномерно по гряд",
+      "original_category": "sakh",
+      "suggested_category": null,
+      "reclassified": false,
+      "approved_after_reconcile": false,
+      "title_matches_source": 100,
+      "category_matches_story": 0,
+      "issues": [
+        "offtopic_or_no_safe_stream"
+      ]
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2599402/",
+      "title": "Закрытый полигон ТКО в Южно-Сахалинске оснащают камерами наблюдения - SakhalinMedia.ru",
+      "source_text_lead": "В Южно-Сахалинске закрытый полигон твердых коммунальных отходов оборудуют камерами высокого разрешения. Объект полностью прекратил свою деятельность в апреле этого года, в настоящее время ведется подготовка к его рекультивации, сообщает пресс-служба мэрии города. Устройство с ИИ-аналитикой будет передавать сигнал в систему \"Безопасный город\"",
+      "original_category": "sakh",
+      "suggested_category": "sakh",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2599532/",
+      "title": "МТС и Министерство образования на Сахалине договорились о цифровизации образовательных проектов - SakhalinMedia.ru",
+      "source_text_lead": "Компания МТС и Министерство образования Сахалинской области заключили соглашение о долгосрочном сотрудничестве. Стороны договорились о совместном развитии в регионе социокультурных проектов на основе информационных технологий и с помощью цифровых решений компании. Соответствующее соглашение подписали директор МТС Шамиль Чекмарев и министр образования Анастасия Киктева. Ключевым направлением сотрудничества станет реализация совместных цифровых проектов, направленных на развитие образования и культуры в Сахалинской области. Так, МТС и Министерство образования займутся поддержкой творческих сообществ, учреждений и организаций образования и культуры, общественных инициатив и предложений граждан ",
+      "original_category": "sakh",
+      "suggested_category": "sakh",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2599611/",
+      "title": "Аэрофлот профинансировал программу плоских тарифов уже на 5 млрд рублей за 7 месяцев года - SakhalinMedia.ru",
+      "source_text_lead": "Программа плоских тарифов, реализуемая Аэрофлотом, действует уже больше 10 лет и на протяжении всего этого периода показывает высокую востребованность среди пассажиров. С января по июль этого года она была профинансирована уже на 5 млрд рублей из собственных средств авиаперевозчика. Об этом в интервью журналисту ИС Вести (16+) Александре Суворовой в преддверии Восточного экономического форума (ВЭФ, 16+) заявил гендиректор авиакомпании Сергей Александровский. Ожидается, что число перевезенных пассажиров будет сопоставимо со значениями 2025 года, когда плоскими тарифами воспользовались 2,3 млн пассажиров По словам Сергея Александровского, в 2025 году по программе \"плоских\" тарифов было перевез",
+      "original_category": "sakh",
+      "suggested_category": null,
+      "reclassified": false,
+      "approved_after_reconcile": false,
+      "title_matches_source": 100,
+      "category_matches_story": 0,
+      "issues": [
+        "offtopic_or_no_safe_stream"
+      ]
+    },
+    {
+      "source": "SakhalinMedia.ru",
+      "url": "https://sakhalinmedia.ru/news/2599527/",
+      "title": "Самые популярные новости ИА SakhalinMedia за 25 августа - SakhalinMedia.ru",
+      "source_text_lead": "В Южно-Сахалинске установили памятник Николаю IIВ Южно-Сахалинске, у кафедрального собора Рождества Христова, появился памятник царю Николаю II. В торжественной церемонии открытия приняли участие члены Братства Александра Невского вместе с сыновьями и братьями, сообщили в канале MAX Невеликий русский писатель (18+). Цветы к 1 сентября: во сколько обойдется праздничный букет в Южно-Сахалинске Первое сентября каждый год становится днем парада букетов: тысячи школьников по всей России в предвкушении идут на торжественную линейку с цветами для учителей. Выбор цветочного подарка уже стал частью подготовки ко Дню знаний и для южносахалинских семей, и выбор этот действительно огромен: начиная от со",
+      "original_category": "sakh",
+      "suggested_category": "sakh",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "BBC World",
+      "url": "https://www.bbc.co.uk/news/articles/cg598m3meeyo?at_medium=RSS&at_campaign=rss",
+      "title": "UK drone factories may face attacks from 'unknown sources', says former Russian minister",
+      "source_text_lead": "The comments on BBC Newsnight come after the UK announced it has agreed to hand over blueprints for British-made missile components to Ukraine. The comments on BBC Newsnight come after the UK announced it has agreed to hand over blueprints for British-made missile components to Ukraine. BBC Homepage Skip to content Accessibility Help Your account Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds More menu More menu Search BBC Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds Close menu BBC News Menu Home Climate World US & Canada UK Business Tech Science Entertainment & Arts Health More In Pictures BBC Verify Newsbeat World Afri",
+      "original_category": "world_ru",
+      "suggested_category": "world_ru",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "BBC World",
+      "url": "https://www.bbc.co.uk/news/articles/c93vpd60654o?at_medium=RSS&at_campaign=rss",
+      "title": "US-Canada trade war heats up as Trump threatens to hike auto tariffs",
+      "source_text_lead": "Mark Carney accused Trump of wanting to \"destroy\" Canada's auto industry, and said he would only resume trade talks if the US comes with the \"right attitude\". Mark Carney accused Trump of wanting to \"destroy\" Canada's auto industry, and said he would only resume trade talks if the US comes with the \"right attitude\". BBC Homepage Skip to content Accessibility Help Your account Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds More menu More menu Search BBC Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds Close menu BBC News Menu Home Climate World US & Canada UK Business Tech Science Entertainment & Arts Health More In Pictures ",
+      "original_category": "geo",
+      "suggested_category": "geo",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "BBC World",
+      "url": "https://www.bbc.co.uk/news/articles/c0qxew81y83o?at_medium=RSS&at_campaign=rss",
+      "title": "Iran says it is 'fully prepared' to counter widened US economic sanctions",
+      "source_text_lead": "The US calls its latest sanctions on Iran an \"economic D-Day\", but Tehran says it has a plan to address them. The US calls its latest sanctions on Iran an \"economic D-Day\", but Tehran says it has a plan to address them. BBC Homepage Skip to content Accessibility Help Your account Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds More menu More menu Search BBC Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds Close menu BBC News Menu Home Climate World US & Canada UK Business Tech Science Entertainment & Arts Health More In Pictures BBC Verify Newsbeat Business New Tech Economy Artificial Intelligence Technology of Business Afric",
+      "original_category": "geo",
+      "suggested_category": "geo",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "TASS",
+      "url": "https://tass.ru/proisshestviya/28042895",
+      "title": "DPA: полиция ФРГ заявила о диверсии на железной дороге",
+      "source_text_lead": "Из-за сбоя повреждения кабелей было временно нарушено движение поездов, а также прервано интернет- и телефонное сообщение в городе Бакнанг, сообщило агентство",
+      "original_category": "ru_incident",
+      "suggested_category": "ru_security",
+      "reclassified": true,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Guardian World",
+      "url": "https://www.theguardian.com/business/live/2026/aug/24/canadian-dollar-dips-us-canada-talks-collapse-trade-war-oil-prices-fall-us-sanctions-on-iran-live-updates",
+      "title": "Iran’s rial falls to record low as Scott Bessent warns of ‘economic D-day’ – as it happened",
+      "source_text_lead": "US Treasury secretary to announce sanctions against Tehran at a press conference at 1pm EDT (6pm London time) China-based retailer swung to $99m loss in first quarter and faces scrutiny over its environmental footprint Business live – latest updates Shein, which built a fast-fashion empire on what seemed like impossibly low prices , has been forced to lower its own valuation in a cut-price stock market float, after falling into the red earlier this year. The online retailer will list on the Hong Kong stock exchange on 1 September at a valuation of close to $27bn (£19.8bn), significantly down from a near-$100bn private market peak four years ago. Continue reading... Let’s wrap up – you can fo",
+      "original_category": "geo",
+      "suggested_category": "geo",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Guardian World",
+      "url": "https://www.theguardian.com/world/2026/aug/24/are-you-a-canadian-boycotting-us-products-wed-like-to-hear-from-you",
+      "title": "Are you a Canadian boycotting US products? We’d like to hear from you",
+      "source_text_lead": "We’d like to hear from Canadians who are avoiding American products and what they’re buying instead Prime minister praised for rejecting US trade proposal as Trump shows little interest in retreating from dispute Are you a Canadian boycotting US products? We’d like to hear from you Mark Carney said on Monday that while American negotiators saw the French language in Canada as an “irritant … in Quebec, these are rights,” days after receiving widespread praise from political leaders for rejecting a US trade proposal that many perceived as weakening the country’s Francophone culture. The prime minister’s remarks came hours after the US president, Donald Trump, showed little interest in retreati",
+      "original_category": "geo",
+      "suggested_category": "geo",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "TASS",
+      "url": "https://tass.ru/ekonomika/28042903",
+      "title": "Экс-глава Бундесбанка отметил неспособность ФРГ проводить фундаментальные реформы",
+      "source_text_lead": "Аксель Вебер считает, что это связано с крайне сложной политической системой, \"в которой приходится искать компромиссы сразу на трех уровнях власти\"",
+      "original_category": "ru_eco",
+      "suggested_category": null,
+      "reclassified": false,
+      "approved_after_reconcile": false,
+      "title_matches_source": 100,
+      "category_matches_story": 0,
+      "issues": [
+        "offtopic_or_no_safe_stream"
+      ]
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/russia/1111141",
+      "title": "Песков отметил, что никакая третья сторона не может управлять Донбассом",
+      "source_text_lead": "Пресс-секретарь президента РФ Дмитрий Песков заявил, что Донбасс входит в состав России и управление этим регионом не может осуществляться некой третьей Пресс-секретарь президента РФ Дмитрий Песков заявил, что Донбасс входит в состав России и управление этим регионом не может осуществляться некой третьей стороной.\"В этом контексте я бы всё-таки сказал, что Донбасс является территорией Российской Федерации, субъектом Российской Федерации. (...) И вряд ли какая-то третья сторона может заниматься управлением регионов РФ\", - сказал Песков журналистам, отвечая на соответствующий вопрос. Москва. 25 августа. INTERFAX.RU - Пресс-секретарь президента РФ Дмитрий Песков заявил, что Донбасс входит в сос",
+      "original_category": "ru_pol",
+      "suggested_category": "ru_pol",
+      "reclassified": false,
+      "approved_after_reconcile": false,
+      "title_matches_source": 100,
+      "category_matches_story": 72,
+      "issues": [
+        "title_category_weak:politics"
+      ]
+    },
+    {
+      "source": "BBC World",
+      "url": "https://www.bbc.co.uk/news/articles/cg598yvrzpro?at_medium=RSS&at_campaign=rss",
+      "title": "Russia's second-biggest online retailer Ozon targeted in Ukrainian strikes",
+      "source_text_lead": "Ozon says its warehouses across southern Russia, including in Dagestan and Krasnodar, were hit in the overnight strikes. Ozon says its warehouses across southern Russia, including in Dagestan and Krasnodar, were hit in the overnight strikes. BBC Homepage Skip to content Accessibility Help Your account Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds More menu More menu Search BBC Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds Close menu BBC News Menu Home Climate World US & Canada UK Business Tech Science Entertainment & Arts Health More In Pictures BBC Verify Newsbeat World Africa Asia Australia Europe Latin America Middle ",
+      "original_category": "world_ru",
+      "suggested_category": "world_ru",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/russia/1111138",
+      "title": "Песков объяснил, что президентский указ призван усилить защиту критической инфраструктуры",
+      "source_text_lead": "Указ президента РФ о возможности введения временного управления в случае необеспечения собственниками мер безопасности на предприятиях критической Указ президента РФ о возможности введения временного управления в случае необеспечения собственниками мер безопасности на предприятиях критической инфраструктуры призван усилить защиту таких объектов от угрозы атак дронов, заявил пресс-секретарь Владимира Путина Дмитрий Песков.\"Мы с вами сталкиваемся с очевидной угрозой атак дронами в отношении объектов критической инфраструктуры и объектов, которые, скажем так, имеют критическое значение для обеспечения экономики, социальной сферы нашей страны, и зачастую собственники предприятий не уделяют должн",
+      "original_category": "ru_security",
+      "suggested_category": "ru_pol",
+      "reclassified": true,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/russia/1111143",
+      "title": "Открытый огонь спустя три дня потушили на складе в Петербурге",
+      "source_text_lead": "Ликвидировано открытое горение на складе в Пушкинском районе Петербурга, где с воскресенья тушат пожар, сообщила пресс-служба городского управления МЧС Ликвидировано открытое горение на складе в Пушкинском районе Петербурга, где с воскресенья тушат пожар, сообщила пресс-служба городского управления МЧС. Москва. 25 августа. INTERFAX.RU - Ликвидировано открытое горение на складе в Пушкинском районе Петербурга, где с воскресенья тушат пожар, сообщила пресс-служба городского управления МЧС. Продолжается тушение отдельных очагов в завалах, добавили в ведомстве. В ночь на воскресенье на Колпинском шоссе в Петербурге начался пожар на складе, где, по данным МЧС, хранились бумага и полимерные материа",
+      "original_category": "ru_incident",
+      "suggested_category": "ru_incident",
+      "reclassified": false,
+      "approved_after_reconcile": false,
+      "title_matches_source": 100,
+      "category_matches_story": 72,
+      "issues": [
+        "title_category_weak:incident"
+      ]
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/russia/1111146",
+      "title": "По факту пожара на Амурском ГХК возбудили уголовное дело",
+      "source_text_lead": "В Амурской области по факту пожара на Амурском газохимическом комплексе возбуждено уголовное дело, расследование взяла на контроль прокуратура В Амурской области по факту пожара на Амурском газохимическом комплексе возбуждено уголовное дело, расследование взяла на контроль прокуратура, сообщило надзорное ведомство региона. Москва. 25 августа. INTERFAX.RU - В Амурской области по факту пожара на Амурском газохимическом комплексе возбуждено уголовное дело, расследование взяла на контроль прокуратура, сообщило надзорное ведомство региона. Дело расследуется по статье о нарушении требований промышленной безопасности опасных производственных объектов (ч. 1 ст. 217 УК ).контролируется прокуратурой\",",
+      "original_category": "ru_incident",
+      "suggested_category": "ru_incident",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/russia/1111147",
+      "title": "Лавров констатировал сохранение взаимоуважительного диалога РФ и Ватикана",
+      "source_text_lead": "России и Ватикану удалось сохранить взаимоуважительный диалог, несмотря на обстановку в мире, заявил министр иностранных дел РФ Сергей Лавров России и Ватикану удалось сохранить взаимоуважительный диалог, несмотря на обстановку в мире, заявил министр иностранных дел РФ Сергей Лавров.\"Отмечаем, что, несмотря на все эти пертурбации на нашей планете, нам удалось сохранить с Ватиканом доверительный, взаимоуважительный диалог, который позволяет нам искать, я надеюсь, позитивные и реализуемые решения\", - сказал Лавров, открывая во вторник в Москве встречу с секретарем Святого престола по отношениям с государствами и международными организациями архиепископом Полом Ричардом Галлахером. Москва. 25 а",
+      "original_category": "ru_incident",
+      "suggested_category": "ru_incident",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/russia/1111152",
+      "title": "В Новгородской области полностью восстановили электроснабжение",
+      "source_text_lead": "В Новгородской области полностью восстановили электроснабжение, сообщило ГУ МЧС региона В Новгородской области полностью восстановили электроснабжение, сообщило ГУ МЧС региона.\"Согласно данным ПАО \"Россети Северо-Запад\", к 23:00 24 августа электроснабжение в области было восстановлено в полном объеме\", - говорится в сообщении. Москва. 25 августа. INTERFAX.RU - В Новгородской области полностью восстановили электроснабжение, сообщило ГУ МЧС региона. \"Согласно данным ПАО \"Россети Северо-Запад\" , к 23:00 24 августа электроснабжение в области было восстановлено в полном объеме\", - говорится в сообщении. Циклон прошел по Новгородской области 23 августа. Сильные дожди сопровождались ветром скорость",
+      "original_category": "ru_incident",
+      "suggested_category": "ru_incident",
+      "reclassified": false,
+      "approved_after_reconcile": false,
+      "title_matches_source": 100,
+      "category_matches_story": 72,
+      "issues": [
+        "title_category_weak:incident"
+      ]
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/russia/1111153",
+      "title": "Гражданин КНР погиб в результате пожара на Амурском газохимическом комплексе",
+      "source_text_lead": "Около 20 пострадавших при пожаре на Амурском газохимическом комплексе (АГХК, Амурская область) доставлены в больницу, одного спасти не удалось Еще свыше 100 человек пострадали, сообщила пресс-служба предприятия Еще свыше 100 человек пострадали, сообщила пресс-служба предприятия Москва. 25 августа. INTERFAX.RU - Около 20 пострадавших при пожаре на Амурском газохимическом комплексе (АГХК, Амурская область) доставлены в больницу, одного спасти не удалось, сообщает пресс-служба предприятия. \"В больницы города Свободный с травмами средней и высокой степени тяжести госпитализированы 19 человек. Несмотря на оперативно оказанную медицинскую помощь, одного из пострадавших, сотрудника подрядной органи",
+      "original_category": "ru_incident",
+      "suggested_category": "ru_incident",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Guardian World",
+      "url": "https://x.com/Southcom/status/2091757856018104599?s=20",
+      "title": "U.S. Southern Command (@Southcom) on X",
+      "source_text_lead": "\"This operation is a clear and decisive reminder that SOUTHCOM is taking the fight directly to the cartels.\" On August 23, under #SOUTHCOM Commander Gen. Francis L. Donovan’s direction, Joint Task Force Western Hemisphere executed a lethal kinetic strike on a low-profile vessel US Southern Command has struck another vessel in the eastern Pacific, killing two accused of trafficking drugs The US military has launched a deadly strike on a vessel in the Pacific Ocean, killing two people accused of drug trafficking. On Monday, US Southern Command (SouthCom) announced it “executed a lethal kinetic strike on a low-profile vessel operating along established narco-trafficking routes in the Eastern Pa",
+      "original_category": "geo",
+      "suggested_category": null,
+      "reclassified": false,
+      "approved_after_reconcile": false,
+      "title_matches_source": 100,
+      "category_matches_story": 0,
+      "issues": [
+        "offtopic_or_no_safe_stream"
+      ]
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/business/1111150",
+      "title": "Розничные инвесторы во II квартале внесли на брокерские счета более 1 трлн руб.",
+      "source_text_lead": "Розничные инвесторы во втором квартале 2026 года внесли на брокерские счета рекордные 1,1 трлн рублей, что на 19% больше, чем в первом квартале Розничные инвесторы во втором квартале 2026 года внесли на брокерские счета рекордные 1,1 трлн рублей, что на 19% больше, чем в первом квартале, говорится в \"Обзоре ключевых показателей брокеров\" Банка России. Москва. 25 августа. INTERFAX.RU - Розничные инвесторы во втором квартале 2026 года внесли на брокерские счета рекордные 1,1 трлн рублей, что на 19% больше, чем в первом квартале, говорится в \"Обзоре ключевых показателей брокеров\" Банка России. Притоку средств способствовало снижение ставок по депозитам, отмечает ЦБ. Основной прирост был обеспеч",
+      "original_category": "ru_eco",
+      "suggested_category": "ru_eco",
+      "reclassified": false,
+      "approved_after_reconcile": false,
+      "title_matches_source": 100,
+      "category_matches_story": 72,
+      "issues": [
+        "title_category_weak:economy"
+      ]
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/russia/1111139",
+      "title": "В Кремле выразили удивление из-за заявления президента Финляндии об ударах вглубь РФ",
+      "source_text_lead": "Заявление президента Финляндии Александра Стубба о том, что удары вглубь России, в частности по складам Wildberries, - это единственный способ возобновить Заявление президента Финляндии Александра Стубба о том, что удары вглубь России, в частности по складам Wildberries, - это единственный способ возобновить мирные переговоры, ничего не вызывают, кроме удивления, заявил пресс-секретарь президента РФ Дмитрий Песков.\"Господин Стубб действительно сделал такие заявления, но кроме удивления это ничего не вызывает. Москва. 25 августа. INTERFAX.RU - Заявление президента Финляндии Александра Стубба о том, что удары вглубь России, в частности по складам Wildberries, - это единственный способ возобнов",
+      "original_category": "ru_pol",
+      "suggested_category": "ru_pol",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/russia/1111142",
+      "title": "Кремль открыт для мирных способов урегулирования украинского конфликта",
+      "source_text_lead": "Россия остается открытой для мирных способов урегулирования украинского конфликта, заявил пресс-секретарь президента Дмитрий Песков В отсутствие таких способов Россия продолжает СВО, сказал Дмитрий Песков В отсутствие таких способов Россия продолжает СВО, сказал Дмитрий Песков Москва. 25 августа. INTERFAX.RU - Россия остается открытой для мирных способов урегулирования украинского конфликта, заявил пресс-секретарь президента Дмитрий Песков. \"Россия продолжает оставаться открытой для мирных способов урегулирования, но в условиях отсутствия таких способов мы продолжаем специальную военную операцию\", - сказал он на брифинге, когда его попросили прокомментировать недавние высказывания президента",
+      "original_category": "ru_pol",
+      "suggested_category": "geo",
+      "reclassified": true,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/russia/1111145",
+      "title": "Кремль переадресовал в МИД вопрос, будут ли Лавров и представитель Ватикана обсуждать Украину",
+      "source_text_lead": "В Кремле не сомневаются, что на переговорах главы МИД РФ Сергея Лаврова со спецпредставителем Ватикана в Москве будет обсужден украинский конфликт В Кремле не сомневаются, что на переговорах главы МИД РФ Сергея Лаврова со спецпредставителем Ватикана в Москве будет обсужден украинский конфликт.\"Я не сомневаюсь, что украинский вопрос будет подниматься, но что касается деталей, то я рекомендую обратиться к моей коллеге Марии Захаровой\", - сказал пресс-секретарь президента Дмитрий Песков на брифинге. Москва. 25 августа. INTERFAX.RU - В Кремле не сомневаются, что на переговорах главы МИД РФ Сергея Лаврова со спецпредставителем Ватикана в Москве будет обсужден украинский конфликт. \"Я не сомневаюсь",
+      "original_category": "ru_pol",
+      "suggested_category": "geo",
+      "reclassified": true,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/business/1111144",
+      "title": "Кабмин изучит ситуацию с введением временного управления на ряде объектов критической инфраструктуры",
+      "source_text_lead": "Ситуация с принятием мер по введению временного управления на предприятиях, не принявших достаточные меры безопасности, будет анализироваться правительством Ситуация с принятием мер по введению временного управления на предприятиях, не принявших достаточные меры безопасности, будет анализироваться правительством, заявил пресс-секретарь президента РФ Дмитрий Песков. Москва. 25 августа. INTERFAX.RU - Ситуация с принятием мер по введению временного управления на предприятиях, не принявших достаточные меры безопасности, будет анализироваться правительством, заявил пресс-секретарь президента РФ Дмитрий Песков. Так он ответил во вторник на вопрос журналистов, есть ли уже претенденты для их практич",
+      "original_category": "ru_pol",
+      "suggested_category": "ru_pol",
+      "reclassified": false,
+      "approved_after_reconcile": false,
+      "title_matches_source": 100,
+      "category_matches_story": 72,
+      "issues": [
+        "title_category_weak:politics"
+      ]
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/business/1111151",
+      "title": "Лукашенко обсудил с Мантуровым недоразумения вокруг проекта самолета \"Освей\"",
+      "source_text_lead": "Президент Александр Лукашенко на встрече с первым вице-премьером России Денисом Мантуровым в Минске заявил о существовании недоразумений в реализации проекта Президент Александр Лукашенко на встрече с первым вице-премьером России Денисом Мантуровым в Минске заявил о существовании \"недоразумений\" в реализации проекта совместного российско-белорусского легкого многоцелевого турбовинтового самолета ЛМС-192 \"Освей\". Москва. 25 августа. INTERFAX.RU - Президент Александр Лукашенко на встрече с первым вице-премьером России Денисом Мантуровым в Минске заявил о существовании \"недоразумений\" в реализации проекта совместного российско-белорусского легкого многоцелевого турбовинтового самолета ЛМС-192 \"",
+      "original_category": "ru_pol",
+      "suggested_category": "ru_pol",
+      "reclassified": false,
+      "approved_after_reconcile": false,
+      "title_matches_source": 100,
+      "category_matches_story": 72,
+      "issues": [
+        "title_category_weak:politics"
+      ]
+    },
+    {
+      "source": "Interfax",
+      "url": "https://www.interfax.ru/world/1111149",
+      "title": "В Китае напомнили о своих интересах на фоне угроз США ввести санкции против сотрудничающих с Ираном",
+      "source_text_lead": "МИД КНР выступает против угроз США отключить от американской финансовой системы те страны, которые ведут недопустимые, по мнению Вашингтона, торговые операции МИД КНР выступает против угроз США отключить от американской финансовой системы те страны, которые ведут недопустимые, по мнению Вашингтона, торговые операции с Ираном, сообщает во вторник The Global Times. Москва. 25 августа. INTERFAX.RU - МИД КНР выступает против угроз США отключить от американской финансовой системы те страны, которые ведут недопустимые, по мнению Вашингтона, торговые операции с Ираном, сообщает во вторник The Global Times. Пекин намерен принять необходимые меры для отстаивания своих прав и интересов. \"Китай неоднок",
+      "original_category": "geo",
+      "suggested_category": "geo",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "ASTV",
+      "url": "https://astv.ru/news/criminal/2026-08-25-na-sahaline-s-vertoleta-nashli-unesennye-potokom-kontejnernye-doma-turistov-tam-net",
+      "title": "На Сахалине с вертолёта нашли унесённые потоком контейнерные дома - туристов там нет",
+      "source_text_lead": "Поиски продолжаются На Сахалине с воздуха заметили контейнерные дома, которые накануне поток воды унёс с Лесогорских термальных источников. Об этом сообщили в региональном МЧС. Домики нашли в пяти километрах от места туристической базы . Ранее astv.ru сообщал, что сегодня к поискам людей подключили вертолет. К месту также прибыли ещё 9 спасателей поисково-спасательного отряда имени Полякова. Продолжает работу и наземная группировка из пятерых спасателей, прибывших в Углегорский район в ночь на 24 августа. Подробная информация здесь .",
+      "original_category": "sakh_chp",
+      "suggested_category": "sakh",
+      "reclassified": true,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "ASTV",
+      "url": "https://astv.ru/news/criminal/2026-08-25-sledkom-telo-muzhchiny-nashli-v-zatoplennom-dome-v-tomari",
+      "title": "Следком: тело мужчины нашли в затопленном доме в Томари",
+      "source_text_lead": "Причины смерти выясняют На Сахалине устанавливают обстоятельства гибели мужчины в результате обильных осадков. О подробностях рассказали в региональном следкоме. Тело 76-летнего пенсионера обнаружили в одном из домов по улице Пархоменко в Томари, который был затоплен. \"Следователями проведён осмотр места происшествия. В ходе осмотра телесных повреждений, указывающих на криминальный характер гибели мужчины, не обнаружено. Для установления точной причины смерти назначена судебно-медицинская экспертиза\", - рассказали в ведомстве. Проводится доследственная проверка, по ее результатам примут процессуальное решение.",
+      "original_category": "sakh_chp",
+      "suggested_category": "sakh",
+      "reclassified": true,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "ASTV",
+      "url": "https://astv.ru/news/society/2026-08-25-voditel-proehal-po-trotuaru-i-priparkovalsya-na-gazone-v-yuzhno-sahalinske",
+      "title": "Водитель проехал по тротуару и припарковался на газоне в Южно-Сахалинске",
+      "source_text_lead": "Маневр попал на камеры за детской поликлиникой В Южно-Сахалинске очевидцев удивил водитель, который проехал по тротуару и оставил машину на газоне. Маневр попал на камеры. По словам очевидцев, это произошло 25 августа около 13:55 за детской поликлиникой на улице Железнодорожной — напротив дома №74 на Анивской. На кадрах видно, как автомобиль едет по тротуару. Сначала очевидцы подумали, что водитель пытается съехать с пешеходной зоны, но в итоге он припарковался на газоне. После этого мужчина вышел из машины и начал ее разгружать. Мы будем присылать вам на почту самые просматриваемые новости за день",
+      "original_category": "sakh",
+      "suggested_category": "sakh",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "ASTV",
+      "url": "https://astv.ru/news/society/2026-08-25-v-nevel-ske-nachnut-ubirat-opasnuyu-armaturu-s-brekvatera-gde-otdyhayut-sivuchi",
+      "title": "В Невельске начнут убирать опасную арматуру с брекватера, где отдыхают сивучи",
+      "source_text_lead": "Работы проведут так, чтобы не беспокоить оставшихся на лежбище животных — большинство покинули берег Работы проведут так, чтобы не беспокоить оставшихся на лежбище животных — большинство покинули берег В Невельске готовятся привести в безопасное состояние брекватер, который в последние годы все чаще выбирают сивучи. Большая часть животных уже покинула сооружение, поэтому специалисты смогут приступить к запланированным работам. Главная задача: срезать выступающие элементы арматуры в надводной и подводной частях брекватера. Именно за них сивучи могут цепляться, получать травмы и не всегда могут освободиться самостоятельно. Несколько животных пока остаются на лежбище. Поэтому работы начнут с пр",
+      "original_category": "sakh",
+      "suggested_category": "sakh",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "ASTV",
+      "url": "https://astv.ru/news/society/2026-08-25-sahalincam-posle-ciklona-pomogayut-vodoj-motopompami-i-teplovymi-pushkami",
+      "title": "Сахалинцам после циклона помогают водой, мотопомпами и тепловыми пушками",
+      "source_text_lead": "Добровольцы фиксируют ущерб и помогают расчищать территории Добровольцы фиксируют ущерб и помогают расчищать территории В пострадавших от мощного циклона районах Сахалинской области продолжают ликвидировать последствия подтоплений. К помощи жителям подключились волонтеры \"Единой России\". Они помогают фиксировать ущерб, расчищать территории и развозят питьевую воду. В Томаринском районе добровольцы оценивают повреждения жилых домов и придомовых территорий. Также они помогают сформировать план восстановительных работ, общаются с жителями и фиксируют их потребности. Нуждающимся уже предоставили мотопомпы и тепловые пушки для откачки воды и просушки помещений.",
+      "original_category": "sakh_chp",
+      "suggested_category": "sakh",
+      "reclassified": true,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "ASTV",
+      "url": "https://astv.ru/news/society/2026-08-25-troih-sahalinskih-shkol-nikov-nagradili-za-pomosh-v-zaderzhanii-podozrevaemogo-v-krazhe",
+      "title": "Троих сахалинских школьников наградили за помощь в задержании подозреваемого в краже",
+      "source_text_lead": "Благодаря подросткам технику стоимостью 250 тысяч рублей быстро вернули владельцу Благодаря подросткам технику стоимостью 250 тысяч рублей быстро вернули владельцу В УМВД России по Сахалинской области наградили троих несовершеннолетних за помощь в борьбе с преступностью. Торжественная часть прошла сегодня, 25 августа, перед рабочим совещанием в региональном управлении МВД. Награды получили Вячеслав Барзаев, Михаил Фролов и Вячеслав Ди Ри. По данным полиции, 23 июля в УМВД поступило заявление о краже мотоцикла стоимостью 250 тысяч рублей. По этому факту следственное управление УМВД России Южно-Сахалинска возбудило уголовное дело о краже в крупном размере.",
+      "original_category": "sakh_chp",
+      "suggested_category": "sakh_chp",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "ASTV",
+      "url": "https://astv.ru/news/society/2026-08-25-v-shesti-rajonah-sahalinskoj-oblasti-zavershilos-blagoustrojstvo-obshestvennyh-prostranstv",
+      "title": "В шести районах Сахалинской области завершилось благоустройство общественных пространств",
+      "source_text_lead": "До конца года сахалинцы и курильчане получат еще 19 комфортных общественных пространств До конца года сахалинцы и курильчане получат еще 19 комфортных общественных пространств Мы будем присылать вам на почту самые просматриваемые новости за день © 2012–2026 г., ИП Филин М.С. Все права защищены. Ни одна часть содержания сайта ASTV.RU не может быть воспроизведена или передана каким-либо образом, электронным, механическим, методом фотокопирования, записи или как-то ещё без письменного разрешения ИП Филин М.С. На сайте astv.ru размещаются текстовые материалы информационного агентства \"АСТВ\". ИА \"АСТВ\" зарегистрировано Федеральной службой по надзору в сфере связи, информационных технологий и масс",
+      "original_category": "sakh",
+      "suggested_category": "sakh",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-25/uchenye-sprognozirovali-pozdniy-podhod-ivasi-i-skumbrii-k-yuzhnym-kurilam-523735",
+      "title": "Ученые спрогнозировали поздний подход сардины и скумбрии в воды у Южных Курил",
+      "source_text_lead": "В то же время на Дальнем Востоке продолжают ловить сайру и тунца. Российские суда до сих пор не начали работу на промысле дальневосточной сардины (иваси) и скумбрии в районе Южных Курил. По прогнозам ученых Тихоокеанского филиала ВНИРО, подходы косяков этих видов рыб в исключительную экономическую зону Российской Федерации ожидаются в конце августа, а также в течение сентября и октября. Об этом пишет портал Fishnews . В то же время на Дальнем Востоке продолжают ловить сайру. На прошлой неделе на промысле работали два российских судна — «Леда 777» и «Надежный 1». Экипажи ведут поиск и лов рыбы в Петропавловско-Командорской подзоне и Северо-Курильской зоне. Нарастающий вылов отечественных рыба",
+      "original_category": "sakh_chp",
+      "suggested_category": "sakh",
+      "reclassified": true,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-25/na-solntse-vozobnovilis-potentsialno-opasnye-dlya-zemli-silnye-vspyshki-523734",
+      "title": "На Солнце возобновились довольно сильные вспышки в центре диска",
+      "source_text_lead": "Как правило, такие вспышки предшествуют магнитным бурям. На Солнце возобновились сильные вспышки, которые могут представлять угрозу для Земли. По информации специалистов Лаборатории солнечной астрономии Института космических исследований РАН, на звезде неожиданно активизировался крупный центр. В данный момент он находится прямо по центру видимого диска. Подробности опубликовали в « Российской газете ». Расположение по центру особенно опасно, так как из этой области возможны прямые удары облаков солнечной плазмы по нашей планете. Приборы уже зарегистрировали три сильные вспышки предпоследнего уровня мощности — класса М. До этого момента за весь август произошло всего четыре подобных события, ",
+      "original_category": "sakh",
+      "suggested_category": null,
+      "reclassified": false,
+      "approved_after_reconcile": false,
+      "title_matches_source": 100,
+      "category_matches_story": 0,
+      "issues": [
+        "offtopic_or_no_safe_stream"
+      ]
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-25/sahalinskie-rybaki-dobyli-okolo-9-tysyach-tonn-lososya-s-nachala-putiny-523730",
+      "title": "Сахалинские рыбопромышленники выловили около 9 тысяч тонн лосося",
+      "source_text_lead": "Область удерживает третью строчку в общедальневосточной статистике. По данным ученых из ВНИРО, к 23 августа общий вылов тихоокеанских лососей на Дальнем Востоке составил 86,7 тысячи тонн. При этом объемы добычи горбуши по всему макрорегиону пока остаются относительно скромными — рыбаки поймали всего около 41 тысячи тонн. Об этом сообщили на портале Fishnews . Сахалинская область уверенно удерживает третью строчку в общедальневосточной статистике. Островные предприятия уже добыли порядка 9 тысяч тонн красной рыбы. Основную часть сахалинского улова составила горбуша — ее поймали 6,7 тысячи тонн. Остальной объем приходится на другие виды тихоокеанских лососей, включая кету. Лидером промысла ост",
+      "original_category": "sakh",
+      "suggested_category": "sakh",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/24/2026-08-25/pensionerka-na-sahaline-vlozhila-v-prilozhenie-moshennika-13-millionov-rubley-523733",
+      "title": "Трое жителей Сахалинской области потеряли миллионы рублей после общения с мошенниками",
+      "source_text_lead": "Одна пенсионерка лишилась накоплений в размере 13 миллионов рублей. Сразу трое сахалинцев стали жертвами дистанционных мошенников и лишились крупных сумм. По всем зарегистрированным фактам следователи уже завели уголовные дела, сейчас сотрудники полиции проводят необходимые следственные действия в Южно-Сахалинске и Углегорске. Подробности опубликовали в пресс-службе регионального УМВД России. Первый случай произошел в областном центре, в отделение 22 августа обратилась 67-летняя женщина. Пенсионерка рассказала, что в период с 9 ноября прошлого года по 25 мая 2026-го неизвестный человек обманом убедил ее вложить деньги в мобильное приложение, которое совмещает мессенджер, платформу для блогов",
+      "original_category": "sakh_chp",
+      "suggested_category": "sakh_chp",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-25/minryby-predlozhilo-skorrektirovat-sroki-lyubitelskogo-lova-kraba-kolyuchego-na-yuzhnyh-kurilah-523620",
+      "title": "По всей территории Сахалинской области могут разрешить любительскую ловлю колючего краба",
+      "source_text_lead": "Читайте последние актуальные новости главных событий Сахалина на тему \"По всей территории Сахалинской области могут разрешить любительскую ловлю колючего краба\" в ленте новостей на сайте Sakh.online Министерство по рыболовству Сахалинской области предложило изменить правила рыболовства для Дальневосточного рыбохозяйственного бассейна и снять ограничения на любительский лов краба колючего в Южно-Курильской зоне. Согласно данным «СахНИРО», которые провели мониторинг биологического состояния ресурсов у берегов островов, есть устойчивые промысловые скопления этого вида краба. Запасы краба колючего в Южно-Курильской зоне остаются стабильными, заверили ученые. Это позволяет говорить о возможности ",
+      "original_category": "sakh",
+      "suggested_category": "sakh",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/24/2026-08-25/v-tomarinskom-rayone-likvidiruyut-posledstviya-pavodka-posle-padeniya-urovnya-vody-523725",
+      "title": "В Томаринском районе ликвидируют последствия подтоплений после циклона",
+      "source_text_lead": "Спасатели вместе с представителями местной администрации обходят пострадавшие территории. Уровень воды в реке Томаринке полностью пришел в норму и составляет 167 сантиметров. За последние сутки этот показатель снизился более чем на три метра. Все подтопленные ранее территории и жилые дома полностью освободились от воды. В настоящее время профильные комиссии продолжают подсчитывать ущерб, который нанес району мощный дождевой паводок. Об этом сообщили в пресс-службе регионального ГУ МЧС России. Спасатели вместе с представителями местной администрации проводят обходы пострадавших дворов и домов. Представители поисково-спасательного отряда имени В. А. Полякова активно помогают жителям справиться",
+      "original_category": "sakh_chp",
+      "suggested_category": "sakh",
+      "reclassified": true,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-25/lyubimyy-gorod-na-otv-sahalin-startuet-novaya-programma-o-zhkh-523724",
+      "title": "«Любимый город»: на ОТВ Сахалин стартует новая программа о ЖКХ | SAKH.ONLINE",
+      "source_text_lead": "Читайте последние актуальные новости главных событий Сахалина на тему \"«Любимый город»: на ОТВ Сахалин стартует новая программа о ЖКХ\" в ленте новостей на сайте Sakh.online На ОТВ Сахалин выходит новая программа «Любимый город» с Наталией Куприной. Первый выпуск посвятят вопросам ЖКХ, которые волнуют жителей региона. В программе расскажут, что на самом деле течет из сахалинских кранов. Зрители увидят репортаж с открытия водозабора «Южный», а также узнают результаты лабораторных исследований питьевой воды. Отдельную тему посвятят газификации. Ведущая разберется, сколько жители могут сэкономить после перехода на газ и почему новый вид топлива может оказаться выгоднее дров, угля и электричества",
+      "original_category": "sakh",
+      "suggested_category": "sakh",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-25/sud-otkazalsya-vzyskat-s-sahalinki-pochti-296-tysyach-rubley-pereplaty-po-pensii-523719",
+      "title": "Суд не вернул Соцфонду 296 тысяч рублей пенсии, переплаченной жительнице Сахалина | SAKH.ONLINE",
+      "source_text_lead": "Читайте последние актуальные новости главных событий Сахалина на тему \"Суд не вернул Соцфонду 296 тысяч рублей пенсии, переплаченной жительнице Сахалина\" в ленте новостей на сайте Sakh.online Отделение Социального фонда России по Сахалинской области пыталось взыскать с местной жительницы 295,9 тысячи рублей излишне выплаченной пенсии и социальных выплат. Однако суды двух инстанций встали на сторону женщины. Как следует из материалов дела, сахалинка получала социальную пенсию по инвалидности с учетом повышенного районного коэффициента. Позже она зарегистрировалась и стала проживать на территории, для которой действует другой коэффициент. При этом женщина продолжала получать выплаты в прежнем ",
+      "original_category": "sakh_chp",
+      "suggested_category": "sakh",
+      "reclassified": true,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    },
+    {
+      "source": "Sakh.online",
+      "url": "https://sakh.online/news/18/2026-08-25/yunym-sahalintsam-i-kurilchanam-iz-nuzhdayuschihsya-semey-pomogayut-sobrat-vse-neobhodimoe-k-shkole-523716",
+      "title": "На Сахалине и Курилах детям из нуждающихся семей помогли собрать необходимое к школе",
+      "source_text_lead": "В рамках традиционной акции «Собери ребенка в школу» десятки юных островитян получают канцелярию и рюкзаки. На Сахалине и Курилах представители «Молодой Гвардии Единой России» уже вручают канцелярские наборы ребятам из семей, которые оказались в сложной жизненной ситуации. В рамках традиционной акции «Собери ребенка в школу» десятки юных островитян получают новые ранцы, пеналы, тетради, карандаши, ручки, альбомы и краски. Все это пригодится им в новом учебном году, отметили в пресс-службе регионального отделения партии. В Смирныховском районе к молодогвардейцам присоединились члены местного отделения «Союза женщин России». Вместе они навестили семьи, которые нуждаются в поддержке, и передали",
+      "original_category": "sakh",
+      "suggested_category": "sakh",
+      "reclassified": false,
+      "approved_after_reconcile": true,
+      "title_matches_source": 100,
+      "category_matches_story": 100,
+      "issues": []
+    }
+  ],
+  "captured_posts": [
+    {
+      "method": "photo",
+      "url": "https://sakhalinmedia.ru/news/2599353/",
+      "source": "SakhalinMedia.ru",
+      "source_title": "В Южно-Сахалинске помогут семье, у которой обрушился потолок в аварийном доме - SakhalinMedia.ru",
+      "source_text": "В Южно-Сахалинске продолжается работа с жильцами квартиры, где обрушилась потолочная плитка. В результате инцидента пострадал ребенок. Городские службы оперативно подключились к решению проблемы, сообщает пресс-служба мэрии города. Городские службы приступят к восстановлению потолка и ремонту кровли По поручению мэра Сергея Надсадина с семьей встретились руководитель управления жилищной политики Александра Стребкова и директор департамента по работе с обращениями граждан Ирина Дитер. Южносахалинцам предложили возможные варианты решения ситуации, в том числе временное проживание в маневренном фонде до момента получения квартиры в новом доме, ввод в эксплуатацию которого запланирован до конца 2026 года. Комиссия, сформированная в департаменте городского хозяйства, провела обследование кровли дома. Сегодня специалисты администрации города совместно с управляющей компанией совершили повторный выезд и определили перечень необходимых работ. Уже завтра специалисты УК «ЖЭУ-10» приступят к восстановлению потолка, а также проведут текущий ремонт проблемных участков кровли. Вчера проводились все обследования и подготовительные работы. Сегодня с собственником жилого помещения достигнуто соглашение о том, что они подготовят комнату для проведения локального ремонта потолка и восстановления целостности данного конструктива. В случае если семье потребуется содействие в перемещении крупногабаритных вещей, наши сотрудники помогут это сделать, — подчеркнул и.о. руководителя «ЖЭУ-10» Александр Соболюк. В ходе работ будет демонтирован старый штукатурный слой, проверены подшивные доски, после чего поверхность потолка будет приведена в порядок.",
+      "category_key": "sakh_chp",
+      "image_url": "https://sakhalinmedia.ru/f/big/6341/6340824.jpg?744422afd94fcd4d4c8de346861d314f",
+      "image_hash": "cb69fb64771576d6a376098e40e424db254c7cea",
+      "topic_cluster": "sakh_chp:сахалинске_помогут_семье_которой_обрушился_потолок",
+      "caption": "📍 Сахалин\n\n<b>В Южно-Сахалинске помогут семье, у которой обрушился потолок в аварийном доме</b>\n\nВ Южно-Сахалинске работа с жильцами квартиры, где обрушилась потолочная плитка, продолжается, пострадал ребенок, и городские службы уже подключились к решению проблемы.\n\nПо поручению мэра Сергея Надсадина семья встретилась с руководителем управления жилищной политики Александром Стребковым и директором Ириной Дитер, и им предложили временное проживание в маневренном фонде до получения квартиры в новом доме, ввод в эксплуатацию которого запланировано до конца 2026 года, а комиссия провела обследование кровли дома.\n\nЗавтра специалисты УК «ЖЭУ-10» приступят к восстановлению потолка и текущему ремонту кровли, а при необходимости помогут с перемещением крупногабаритных вещей.\n\nЧП | САХАЛИН · <a href=\"https://sakhalinmedia.ru/news/2599353/\">SakhalinMedia.ru</a>"
+    },
+    {
+      "method": "text",
+      "url": "https://www.interfax.ru/russia/1111146",
+      "source": "Interfax",
+      "source_title": "По факту пожара на Амурском ГХК возбудили уголовное дело",
+      "source_text": "В Амурской области по факту пожара на Амурском газохимическом комплексе возбуждено уголовное дело, расследование взяла на контроль прокуратура В Амурской области по факту пожара на Амурском газохимическом комплексе возбуждено уголовное дело, расследование взяла на контроль прокуратура, сообщило надзорное ведомство региона. Москва. 25 августа. INTERFAX.RU - В Амурской области по факту пожара на Амурском газохимическом комплексе возбуждено уголовное дело, расследование взяла на контроль прокуратура, сообщило надзорное ведомство региона. Дело расследуется по статье о нарушении требований промышленной безопасности опасных производственных объектов (ч. 1 ст. 217 УК ).контролируется прокуратурой\", - говорится в сообщении. Ранее сообщалось, что по предварительной информации, возгорание произошло на вспомогательном технологическом участке установки пиролиза, основное оборудование комплекса не повреждено. В больницу доставили пять пострадавших . Количество людей, которые получили порезы и ушибы, не уточняется. На предприятии создана комиссия для расследования причин происшествия. После возгорания на Амурском ГХК сотрудники предприятия приступили к остановке оборудования, которое находилось в режиме пусконаладки. Все, кто не принимал участие в этих работах и не был задействован в ликвидации ЧС, были эвакуированы. Пожар локализовали .",
+      "category_key": "ru_incident",
+      "image_url": null,
+      "image_hash": null,
+      "topic_cluster": "ru_incident:факту_пожара_амурском_возбудили_уголовное",
+      "row": {
+        "reject": false,
+        "title_ru": "По факту пожара на Амурском ГХК возбудили уголовное дело",
+        "body": [
+          "Дело расследуется по статье о нарушении требований промышленной безопасности опасных производственных объектов (ч. 1 ст. 217 УК ).контролируется прокуратурой\", - говорится в сообщении.",
+          "Ранее сообщалось, что по предварительной информации, возгорание произошло на вспомогательном технологическом участке установки пиролиза, основное оборудование комплекса не повреждено."
+        ],
+        "footer": "РОССИЯ | ПРОИСШЕСТВИЯ",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic",
+          "issues": []
+        }
+      }
+    }
+  ],
+  "final_posts": [
+    {
+      "time_sakhalin": "2026-08-25T21:48:11+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "В Южно-Сахалинске помогут семье, у которой обрушился потолок в аварийном доме",
+      "url": "https://sakhalinmedia.ru/news/2599353/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6341/6340824.jpg?744422afd94fcd4d4c8de346861d314f",
+      "image_hash": "cb69fb64771576d6a376098e40e424db254c7cea",
+      "topic_cluster": "sakh_chp:сахалинске_помогут_семье_которой_обрушился_потолок",
+      "published_at": "2026-08-25T06:17:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/stable-v9.5",
+      "grounded_evidence": true,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 95,
+        "category_matches_story": 95,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+independent_ai",
+        "issues": []
+      }
+    },
+    {
+      "time_sakhalin": "2026-08-25T21:50:01+11:00",
+      "source": "Interfax",
+      "category": "🇷🇺 Россия / происшествия",
+      "category_key": "ru_incident",
+      "title": "По факту пожара на Амурском ГХК возбудили уголовное дело",
+      "url": "https://www.interfax.ru/russia/1111146",
+      "image_url": null,
+      "image_hash": null,
+      "topic_cluster": "ru_incident:факту_пожара_амурском_возбудили_уголовное",
+      "published_at": "2026-08-25T10:06:00+00:00",
+      "with_image": false,
+      "publish_method": "sendMessage/no-safe-image",
+      "grounded_evidence": true,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": []
+      }
+    }
+  ],
+  "passed": 27,
+  "failed": 0
+}
