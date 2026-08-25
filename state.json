@@ -134,7 +134,9 @@
     "https://sakhalinmedia.ru/news/2593484/",
     "https://www.interfax.ru/russia/1110068",
     "https://sakhalinmedia.ru/news/2599353/",
-    "https://www.bbc.co.uk/news/articles/cg598m3meeyo?at_medium=RSS&at_campaign=rss"
+    "https://www.bbc.co.uk/news/articles/cg598m3meeyo?at_medium=RSS&at_campaign=rss",
+    "https://sakhalinmedia.ru/news/2599328/",
+    "https://www.interfax.ru/russia/1111153"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -271,38 +273,12 @@
     "7be7ac0325b55e9d88eb4d4080b236d87a0015d4",
     "309d2cfc02188fc48d3f44bd21d30a532426b7f3",
     "539c7f965ca603efdf51f3bc683cdd12a05a5cb6",
-    "f1a374a8f829b9b97016826e33d64695db24852e"
+    "f1a374a8f829b9b97016826e33d64695db24852e",
+    "27dbf6348fa4048cc836f2e641faf30698f372ae",
+    "db717a6f68ecd030302ce1ac9fe0f407dbad3334"
   ],
-  "last_run_sakhalin": "2026-08-25T21:57:27+11:00",
+  "last_run_sakhalin": "2026-08-25T22:33:16+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-21T20:05:56+11:00",
-      "source": "Interfax",
-      "category": "🧭 Геополитика",
-      "title": "МИД РФ проинформировал Кубу об аспектах своей поддержки",
-      "url": "https://www.interfax.ru/world/1090906",
-      "published_at": "2026-05-21T08:49:00+00:00",
-      "with_image": true,
-      "image_mode": "generated_thematic",
-      "image_url": null,
-      "publish_method": "sendPhoto/safe/generated_thematic",
-      "telegram_message_id": 77,
-      "score": 145
-    },
-    {
-      "time_sakhalin": "2026-05-21T20:06:10+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / экономика",
-      "title": "Россельхозбанк в январе-апреле профинансировал зерновую отрасль на 71,3 млрд рублей",
-      "url": "https://www.interfax.ru/business/1090912",
-      "published_at": "2026-05-21T08:58:00+00:00",
-      "with_image": true,
-      "image_mode": "category_file",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Oil%20platform%20P-51%20%28Brazil%29.jpg?width=1280",
-      "publish_method": "sendPhoto/safe/category_file",
-      "telegram_message_id": 78,
-      "score": 132
-    },
     {
       "time_sakhalin": "2026-05-22T14:33:13+11:00",
       "source": "Interfax",
@@ -3945,6 +3921,54 @@
         "mode": "deterministic+independent_ai",
         "issues": []
       }
+    },
+    {
+      "time_sakhalin": "2026-08-25T22:31:13+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "МЧС: Подтопленные дома в Томаринском районе освобождены от воды",
+      "url": "https://sakhalinmedia.ru/news/2599328/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6341/6340799.png?818676cfd5edecddeff7c2ce4f9df283",
+      "image_hash": "b9b7dd13ab9294223c324f2c1519d72355039703",
+      "topic_cluster": "sakh_chp:подтопленные_томаринском_районе_освобождены_sakhalinmedia",
+      "published_at": "2026-08-25T06:34:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/stable-v9.5",
+      "grounded_evidence": true,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": []
+      }
+    },
+    {
+      "time_sakhalin": "2026-08-25T22:33:08+11:00",
+      "source": "Interfax",
+      "category": "🇷🇺 Россия / происшествия",
+      "category_key": "ru_incident",
+      "title": "Гражданин КНР погиб в результате пожара на Амурском газохимическом комплексе",
+      "url": "https://www.interfax.ru/russia/1111153",
+      "image_url": null,
+      "image_hash": null,
+      "topic_cluster": "ru_incident:гражданин_погиб_результате_пожара_амурском_газохимическом",
+      "published_at": "2026-08-25T10:27:00+00:00",
+      "with_image": false,
+      "publish_method": "sendMessage/no-safe-image",
+      "grounded_evidence": true,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": []
+      }
     }
   ],
   "last_cycle_report": {
@@ -4172,11 +4196,11 @@
   },
   "last_run": {
     "version": "stable-v10.2",
-    "started_sakhalin": "2026-08-25T21:52:41+11:00",
+    "started_sakhalin": "2026-08-25T22:27:29+11:00",
     "status": "ok",
-    "candidates": 39,
+    "candidates": 36,
     "published": 2,
-    "local_candidates": 25,
+    "local_candidates": 23,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -4185,7 +4209,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 17
+          "recent": 16
         },
         {
           "source": "SakhalinMedia",
@@ -4207,55 +4231,55 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-08-25T21:57:27+11:00",
+    "finished_sakhalin": "2026-08-25T22:33:16+11:00",
     "stats": {
       "rss_seen": 159,
       "old_skip": 64,
-      "google_skip": 13,
-      "duplicate_skip": 0,
-      "low_info_skip": 17,
-      "category_skip": 29,
+      "google_skip": 12,
+      "duplicate_skip": 3,
+      "low_info_skip": 14,
+      "category_skip": 35,
       "no_image_skip": 0,
-      "bad_image_skip": 16,
-      "logo_image_skip": 64,
+      "bad_image_skip": 12,
+      "logo_image_skip": 58,
       "text_card_image_skip": 0,
-      "candidates": 39,
-      "rewrite_retry": 3,
-      "editorial_skip": 0,
+      "candidates": 36,
+      "rewrite_retry": 2,
+      "editorial_skip": 1,
       "telegram_fail": 0,
       "published": 2,
       "ai_calls": 4,
       "ai_budget_exhausted": 0,
-      "ai_api_fail": 2,
-      "evidence_reject": 1,
-      "validation_reject": 1,
+      "ai_api_fail": 0,
+      "evidence_reject": 0,
+      "validation_reject": 2,
       "extractive_fallback": 1,
-      "editorial_prechecked": 52,
-      "editorial_gate_checked": 2,
+      "editorial_prechecked": 47,
+      "editorial_gate_checked": 3,
       "editorial_gate_pass": 2,
-      "editorial_gate_reject": 6,
+      "editorial_gate_reject": 4,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 1,
-      "editorial_gate_ai_fail": 0,
-      "editorial_title_reject": 6,
-      "editorial_category_reject": 6,
+      "editorial_gate_ai_fail": 1,
+      "editorial_title_reject": 4,
+      "editorial_category_reject": 3,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 10,
-      "editorial_offtopic_reject": 7,
-      "openrouter_empty_content": 0,
+      "editorial_reclassified": 9,
+      "editorial_offtopic_reject": 8,
+      "openrouter_empty_content": 1,
       "openrouter_model_fallback": 0
     },
     "editorial_gate": {
-      "prechecked": 52,
-      "checked": 2,
+      "prechecked": 47,
+      "checked": 3,
       "passed": 2,
-      "rejected": 6,
-      "reclassified": 10,
-      "offtopic_reject": 7,
+      "rejected": 4,
+      "reclassified": 9,
+      "offtopic_reject": 8,
       "fallback": 0,
       "ai_calls": 1,
-      "ai_fail": 0,
-      "audited_urls": 8
+      "ai_fail": 1,
+      "audited_urls": 6
     }
   }
 }
