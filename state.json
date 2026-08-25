@@ -136,7 +136,9 @@
     "https://sakhalinmedia.ru/news/2599353/",
     "https://www.bbc.co.uk/news/articles/cg598m3meeyo?at_medium=RSS&at_campaign=rss",
     "https://sakhalinmedia.ru/news/2599328/",
-    "https://www.interfax.ru/russia/1111153"
+    "https://www.interfax.ru/russia/1111153",
+    "https://sakhalinmedia.ru/news/2599538/",
+    "https://www.bbc.co.uk/news/articles/c87vg9x5d7do?at_medium=RSS&at_campaign=rss"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -275,38 +277,12 @@
     "539c7f965ca603efdf51f3bc683cdd12a05a5cb6",
     "f1a374a8f829b9b97016826e33d64695db24852e",
     "27dbf6348fa4048cc836f2e641faf30698f372ae",
-    "db717a6f68ecd030302ce1ac9fe0f407dbad3334"
+    "db717a6f68ecd030302ce1ac9fe0f407dbad3334",
+    "42de189f88428238f2bf106a132701eaa5a64200",
+    "f33cd05e2c869e30deac06cf7fd64b031bdfdc09"
   ],
-  "last_run_sakhalin": "2026-08-25T22:33:16+11:00",
+  "last_run_sakhalin": "2026-08-26T07:33:16+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-22T14:33:13+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / экономика",
-      "title": "Посол РФ на Кубе сообщил, что эвакуация россиян с острова пока не рассматривается",
-      "url": "https://www.interfax.ru/russia/1091071",
-      "published_at": "2026-05-21T23:54:00+00:00",
-      "with_image": true,
-      "image_mode": "generated_semantic",
-      "image_url": null,
-      "publish_method": "sendPhoto/safe/generated_semantic",
-      "telegram_message_id": 79,
-      "score": 132
-    },
-    {
-      "time_sakhalin": "2026-05-22T14:52:02+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "title": "Два человека погибли в результате пожара в Красноярском крае",
-      "url": "https://www.interfax.ru/russia/1091088",
-      "published_at": "2026-05-22T03:10:00+00:00",
-      "with_image": true,
-      "image_mode": "generated_semantic",
-      "image_url": null,
-      "publish_method": "sendPhoto/safe/generated_semantic",
-      "telegram_message_id": 80,
-      "score": 145
-    },
     {
       "time_sakhalin": "2026-05-22T16:06:24+11:00",
       "source": "Interfax",
@@ -3969,6 +3945,54 @@
         "mode": "deterministic",
         "issues": []
       }
+    },
+    {
+      "time_sakhalin": "2026-08-26T07:32:32+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title": "Ликвидация последствий наводнения в Томари: что уже сделано",
+      "url": "https://sakhalinmedia.ru/news/2599538/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6342/6341130.png?b2abf66615197147f95ecb6d93a96fe4",
+      "image_hash": "bea69f1eef765d928149b2b68dbbb27d333f8faa",
+      "topic_cluster": "sakh:ликвидация_последствий_наводнения_томари_сделано_sakhalinmedia",
+      "published_at": "2026-08-25T07:47:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/stable-v9.5",
+      "grounded_evidence": true,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": []
+      }
+    },
+    {
+      "time_sakhalin": "2026-08-26T07:33:08+11:00",
+      "source": "BBC World",
+      "category": "🌍 Мир о России",
+      "category_key": "world_ru",
+      "title": "Глава ЦРУ прибыл в Москву для неанонсированных переговоров, сообщают СМИ США",
+      "url": "https://www.bbc.co.uk/news/articles/c87vg9x5d7do?at_medium=RSS&at_campaign=rss",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/32e3/live/0854ea30-a095-11f1-91dc-4919512f173f.jpg",
+      "image_hash": "c87fe7ae51f056ff9a9584030636ce7fb4aebd19",
+      "topic_cluster": "world_ru:chief_travels_moscow_unannounced_talks_media",
+      "published_at": "2026-08-25T19:48:14+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/stable-v9.5",
+      "grounded_evidence": true,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+independent_ai",
+        "issues": []
+      }
     }
   ],
   "last_cycle_report": {
@@ -4196,11 +4220,11 @@
   },
   "last_run": {
     "version": "stable-v10.2",
-    "started_sakhalin": "2026-08-25T22:27:29+11:00",
+    "started_sakhalin": "2026-08-26T07:29:05+11:00",
     "status": "ok",
-    "candidates": 36,
+    "candidates": 27,
     "published": 2,
-    "local_candidates": 23,
+    "local_candidates": 17,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -4209,7 +4233,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 16
+          "recent": 9
         },
         {
           "source": "SakhalinMedia",
@@ -4231,54 +4255,54 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-08-25T22:33:16+11:00",
+    "finished_sakhalin": "2026-08-26T07:33:16+11:00",
     "stats": {
-      "rss_seen": 159,
-      "old_skip": 64,
-      "google_skip": 12,
-      "duplicate_skip": 3,
-      "low_info_skip": 14,
-      "category_skip": 35,
+      "rss_seen": 157,
+      "old_skip": 65,
+      "google_skip": 8,
+      "duplicate_skip": 4,
+      "low_info_skip": 15,
+      "category_skip": 36,
       "no_image_skip": 0,
-      "bad_image_skip": 12,
-      "logo_image_skip": 58,
+      "bad_image_skip": 6,
+      "logo_image_skip": 50,
       "text_card_image_skip": 0,
-      "candidates": 36,
-      "rewrite_retry": 2,
+      "candidates": 27,
+      "rewrite_retry": 5,
       "editorial_skip": 1,
       "telegram_fail": 0,
       "published": 2,
-      "ai_calls": 4,
+      "ai_calls": 6,
       "ai_budget_exhausted": 0,
-      "ai_api_fail": 0,
-      "evidence_reject": 0,
-      "validation_reject": 2,
+      "ai_api_fail": 4,
+      "evidence_reject": 1,
+      "validation_reject": 1,
       "extractive_fallback": 1,
-      "editorial_prechecked": 47,
+      "editorial_prechecked": 46,
       "editorial_gate_checked": 3,
       "editorial_gate_pass": 2,
       "editorial_gate_reject": 4,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 1,
-      "editorial_gate_ai_fail": 1,
-      "editorial_title_reject": 4,
-      "editorial_category_reject": 3,
+      "editorial_gate_ai_fail": 0,
+      "editorial_title_reject": 3,
+      "editorial_category_reject": 4,
       "editorial_meaning_reject": 0,
       "editorial_reclassified": 9,
-      "editorial_offtopic_reject": 8,
+      "editorial_offtopic_reject": 15,
       "openrouter_empty_content": 1,
       "openrouter_model_fallback": 0
     },
     "editorial_gate": {
-      "prechecked": 47,
+      "prechecked": 46,
       "checked": 3,
       "passed": 2,
       "rejected": 4,
       "reclassified": 9,
-      "offtopic_reject": 8,
+      "offtopic_reject": 15,
       "fallback": 0,
       "ai_calls": 1,
-      "ai_fail": 1,
+      "ai_fail": 0,
       "audited_urls": 6
     }
   }
