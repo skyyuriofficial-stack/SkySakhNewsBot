@@ -1,0 +1,62 @@
+name: Apply stable v10.2 Sakhalin geography patch
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/apply_v102_local_geography_patch.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Extend local geography vocabulary
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('src/category_reconciler.py')
+          text = path.read_text(encoding='utf-8')
+          marker = '# FINAL_V102_SAKHALIN_GEOGRAPHY'
+          if marker not in text:
+              insertion = '''\n# FINAL_V102_SAKHALIN_GEOGRAPHY\n# District centres, islands and settlements frequently used without the word\n# "Sakhalin" in otherwise local headlines.\ngate.LOCAL_MARKERS = gate.LOCAL_MARKERS + (\n    "анив", "макаров", "смирных", "тымовск", "томари", "шахтерск",\n    "горнозаводск", "чехов", "быков", "синегорск", "троицк", "лугов",\n    "новоалександровск", "лютог", "итуруп", "кунашир", "шикотан",\n    "монерон", "рейдово", "малокурильск", "курильск", "охотское море",\n)\n\n'''
+              anchor = 'INTERNATIONAL_PATHS = ('
+              pos = text.find(anchor)
+              if pos < 0:
+                  raise RuntimeError('category reconciler anchor not found')
+              text = text[:pos] + insertion + text[pos:]
+              path.write_text(text, encoding='utf-8')
+          PY
+      - name: Verify geography cases
+        run: |
+          python -m py_compile src/editorial_gate.py src/category_reconciler.py
+          python - <<'PY'
+          import sys
+          sys.path.insert(0, 'src')
+          import category_reconciler as rec
+          def c(title, text):
+              return {'category_key':'sakh','category':'sakh','source':'SakhalinMedia.ru','title':title,'source_text':text,'url':'https://sakhalinmedia.ru/news/1/'}
+          assert rec.suggest_category(c('В Аниве завершили возведение опор моста через Лютогу','Работы выполнены в Анивском районе.')) == 'sakh'
+          assert rec.suggest_category(c('На Итурупе зарегистрировали землетрясение магнитудой 5,1','Толчки ощущались на Курильских островах.')) == 'sakh_quake'
+          assert rec.suggest_category(c('Мэр Хабаровска рассказал об автобусной остановке','Материал о Хабаровске.')) is None
+          print('Sakhalin geography patch: OK')
+          PY
+      - name: Commit patch
+        run: |
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+          git add src/category_reconciler.py
+          if git diff --cached --quiet; then
+            echo "Patch already applied"
+          else
+            git commit -m "Complete stable v10.2 Sakhalin geography vocabulary"
+            git pull --rebase --autostash origin main
+            git push origin main
+          fi
