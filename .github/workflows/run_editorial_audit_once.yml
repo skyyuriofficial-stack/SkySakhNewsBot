@@ -1,4 +1,5 @@
-name: SkySakhNews v10.1 Editorial Gate Audit
+# trigger: stable-v10.2 final live-source audit
+name: SkySakhNews v10.2 Editorial Gate Audit
 
 on:
   push:
@@ -19,13 +20,18 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-        with: {fetch-depth: 0}
+        with:
+          fetch-depth: 0
+
       - uses: actions/setup-python@v5
-        with: {python-version: "3.11"}
-      - name: Install
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
       - name: Live-source dry semantic audit
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -33,131 +39,320 @@ jobs:
           IMAGE_REQUIRED: "0"
           POSTS_PER_RUN: "2"
           MAX_AGE_HOURS: "36"
-          AI_CALL_BUDGET: "2"
-          EDITORIAL_AUDIT_AI_BUDGET: "2"
+          AI_CALL_BUDGET: "4"
+          EDITORIAL_AUDIT_AI_BUDGET: "4"
           RUN_COOLDOWN_MINUTES: "0"
           FORCE_RUN: "1"
           PYTHONUNBUFFERED: "1"
         run: |
           set +e
-          python -m py_compile src/news_bot_v8.py src/news_bot_v9.py src/production.py src/editorial_gate.py src/category_reconciler.py src/editorial_gate_runner.py > editorial_audit.log 2>&1
-          python - <<'PY' >> editorial_audit.log 2>&1
-          import copy, json, sys, traceback
+          python -m py_compile \
+            src/news_bot_v8.py \
+            src/news_bot_v9.py \
+            src/production.py \
+            src/editorial_gate.py \
+            src/category_reconciler.py \
+            src/editorial_gate_runner.py \
+            > editorial_audit_v102.log 2>&1
+          compile_rc=$?
+
+          if [ "$compile_rc" -eq 0 ]; then
+            python - <<'PY' >> editorial_audit_v102.log 2>&1
+          import copy
+          import json
+          import sys
+          import traceback
           from datetime import datetime, timezone
           from pathlib import Path
+          from urllib.parse import urlparse
 
           sys.path.insert(0, "src")
-          import editorial_gate as gate
           import category_reconciler as rec
+          import editorial_gate as gate
           import editorial_gate_runner as runner
 
-          core, prod = runner.core, runner.prod
+          core = runner.core
+          prod = runner.prod
           report = {
               "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
               "version": runner.VERSION,
-              "mode": "live-sources / dry-Telegram / pre-order-reconcile + semantic-gate",
-              "checks": [], "all_pass": False, "run_error": None,
+              "mode": "live-sources / dry-Telegram / title-first reconcile + semantic gate",
+              "checks": [],
+              "all_pass": False,
+              "run_error": None,
           }
+
           try:
               original_state = json.loads(Path("state.json").read_text(encoding="utf-8"))
-              raw = runner._original_collect(copy.deepcopy(original_state))
+              raw_candidates = runner._original_collect(copy.deepcopy(original_state))
+
               candidate_audit = []
-              for c in raw:
-                  suggested = rec.suggest_category(c)
-                  cc = copy.deepcopy(c)
+              for candidate in raw_candidates:
+                  suggested = rec.suggest_category(candidate)
+                  reviewed = copy.deepcopy(candidate)
                   if suggested in core.b.CAT:
-                      cc["category_key"] = suggested
-                      cc["category"], cc["footer"] = core.b.CAT[suggested]
-                      v = gate.deterministic_review(cc, {"title_ru": prod._display_title(cc), "body": [], "editorial_mode": "extractive_fallback"})
+                      reviewed["category_key"] = suggested
+                      reviewed["category"], reviewed["footer"] = core.b.CAT[suggested]
+                      source_row = {
+                          "title_ru": prod._display_title(reviewed),
+                          "body": [],
+                          "editorial_mode": "extractive_fallback",
+                      }
+                      verdict = gate.deterministic_review(reviewed, source_row)
                   else:
-                      v = {"approved": False, "title_matches_source":100, "category_matches_story":0, "issues":["offtopic"]}
+                      verdict = {
+                          "approved": False,
+                          "title_matches_source": 100,
+                          "category_matches_story": 0,
+                          "facts_supported": True,
+                          "meaning_changed": False,
+                          "issues": ["offtopic_or_no_safe_stream"],
+                      }
+
                   candidate_audit.append({
-                      "source": c.get("source"), "url": c.get("url"), "title": c.get("title"),
-                      "original_category": c.get("category_key"), "suggested_category": suggested,
-                      "reclassified": bool(suggested and suggested != c.get("category_key")),
-                      "approved_after_reconcile": bool(v.get("approved")),
-                      "title_matches_source": v.get("title_matches_source"),
-                      "category_matches_story": v.get("category_matches_story"),
-                      "issues": v.get("issues"),
+                      "source": candidate.get("source"),
+                      "url": candidate.get("url"),
+                      "title": candidate.get("title"),
+                      "source_text_lead": str(candidate.get("source_text") or "")[:700],
+                      "original_category": candidate.get("category_key"),
+                      "suggested_category": suggested,
+                      "reclassified": bool(suggested and suggested != candidate.get("category_key")),
+                      "approved_after_reconcile": bool(verdict.get("approved")),
+                      "title_matches_source": verdict.get("title_matches_source"),
+                      "category_matches_story": verdict.get("category_matches_story"),
+                      "issues": verdict.get("issues"),
                   })
 
-              captured_state, captured_posts = {}, []
+              captured_state = {}
+              captured_posts = []
+
               core.b.load_state = lambda: copy.deepcopy(original_state)
+
               def capture_state(state):
-                  captured_state.clear(); captured_state.update(copy.deepcopy(state))
-              # Keep runner's save wrapper active so per-post editorial_gate is persisted.
+                  captured_state.clear()
+                  captured_state.update(copy.deepcopy(state))
+
               runner._original_save_state = capture_state
               core.b.save_state = runner.save_state_with_editorial_audit
-              def dry_photo(c, cap):
-                  captured_posts.append({"method":"photo","url":c.get("url"),"title":c.get("title"),"category_key":c.get("category_key"),"caption":cap})
-                  return {"ok":True,"result":{"message_id":1}}
-              def dry_text(row, c):
-                  captured_posts.append({"method":"text","url":c.get("url"),"title":c.get("title"),"category_key":c.get("category_key"),"row":row})
-                  return {"ok":True,"result":{"message_id":1}}
+
+              def dry_photo(candidate, caption):
+                  captured_posts.append({
+                      "method": "photo",
+                      "url": candidate.get("url"),
+                      "source": candidate.get("source"),
+                      "source_title": candidate.get("title"),
+                      "source_text": candidate.get("source_text"),
+                      "category_key": candidate.get("category_key"),
+                      "image_url": candidate.get("image_url"),
+                      "image_hash": candidate.get("image_hash"),
+                      "topic_cluster": candidate.get("topic_cluster"),
+                      "caption": caption,
+                  })
+                  return {"ok": True, "result": {"message_id": 1}}
+
+              def dry_text(row, candidate):
+                  captured_posts.append({
+                      "method": "text",
+                      "url": candidate.get("url"),
+                      "source": candidate.get("source"),
+                      "source_title": candidate.get("title"),
+                      "source_text": candidate.get("source_text"),
+                      "category_key": candidate.get("category_key"),
+                      "image_url": candidate.get("image_url"),
+                      "image_hash": candidate.get("image_hash"),
+                      "topic_cluster": candidate.get("topic_cluster"),
+                      "row": row,
+                  })
+                  return {"ok": True, "result": {"message_id": 1}}
+
               core.b.send_photo = dry_photo
               core.send_text = dry_text
-              core.time.sleep = lambda _x: None
+              core.time.sleep = lambda _seconds: None
 
               run_error = None
               try:
                   runner.main()
-              except Exception as ex:
-                  run_error = repr(ex); traceback.print_exc()
+              except Exception as exc:
+                  run_error = repr(exc)
+                  traceback.print_exc()
 
               run = captured_state.get("last_run") or {}
               published = int(run.get("published") or 0)
-              final_posts = (captured_state.get("last_posts") or [])[-published:] if published else []
+              final_posts = (
+                  (captured_state.get("last_posts") or [])[-published:]
+                  if published else []
+              )
+
               checks = []
-              def ck(name, ok, detail=""):
-                  checks.append({"name":name,"ok":bool(ok),"detail":str(detail)[:1600]})
-              ck("runtime", run_error is None, run_error)
-              ck("version", run.get("version") == "stable-v10.1", run.get("version"))
-              ck("raw_candidates", len(raw) > 0, len(raw))
-              ck("final_candidates", int(run.get("candidates") or 0) > 0, run.get("candidates"))
-              ck("local_candidates", int(run.get("local_candidates") or 0) > 0, run.get("local_candidates"))
-              ck("published_2", published == 2, published)
-              ck("captured_2", len(captured_posts) == 2, len(captured_posts))
-              for i,p in enumerate(final_posts,1):
-                  g = p.get("editorial_gate") or {}
-                  ck(f"post{i}_approved", g.get("approved") is True, g)
-                  ck(f"post{i}_title90", int(g.get("title_matches_source") or 0) >= 90, g)
-                  ck(f"post{i}_category90", int(g.get("category_matches_story") or 0) >= 90, g)
-                  ck(f"post{i}_facts", g.get("facts_supported") is True, g)
-                  ck(f"post{i}_meaning", g.get("meaning_changed") is False, g)
+
+              def check(name, ok, detail=""):
+                  checks.append({
+                      "name": name,
+                      "ok": bool(ok),
+                      "detail": str(detail)[:2200],
+                  })
+
+              check("compile_and_runtime", run_error is None, run_error)
+              check("version", run.get("version") == "stable-v10.2", run.get("version"))
+              check("status", run.get("status") == "ok", run)
+              check("raw_candidates", len(raw_candidates) > 0, len(raw_candidates))
+              check("final_candidates", int(run.get("candidates") or 0) > 0, run.get("candidates"))
+              check("local_stream", (run.get("local_stream") or {}).get("status") in {"healthy", "degraded"}, run.get("local_stream"))
+              check("published_two", published == 2, published)
+              check("captured_two", len(captured_posts) == 2, len(captured_posts))
+
+              urls = [post.get("url") for post in final_posts]
+              check("different_urls", len(urls) == len(set(urls)), urls)
+
+              image_hashes = [post.get("image_hash") for post in final_posts if post.get("image_hash")]
+              check("different_images", len(image_hashes) == len(set(image_hashes)), image_hashes)
+
+              clusters = [post.get("topic_cluster") for post in final_posts if post.get("topic_cluster")]
+              check("different_topics", len(clusters) == len(set(clusters)), clusters)
+
+              for index, post in enumerate(final_posts, 1):
+                  audit = post.get("editorial_gate") or {}
+                  check(f"post_{index}_approved", audit.get("approved") is True, audit)
+                  check(f"post_{index}_title_90", int(audit.get("title_matches_source") or 0) >= 90, audit)
+                  check(f"post_{index}_category_90", int(audit.get("category_matches_story") or 0) >= 90, audit)
+                  check(f"post_{index}_facts", audit.get("facts_supported") is True, audit)
+                  check(f"post_{index}_meaning", audit.get("meaning_changed") is False, audit)
+                  check(
+                      f"post_{index}_direct_url",
+                      "news.google." not in urlparse(post.get("url") or "").netloc.lower(),
+                      post.get("url"),
+                  )
+
+              for item in captured_posts:
+                  suggested = rec.suggest_category({
+                      "title": item.get("source_title"),
+                      "source_text": item.get("source_text"),
+                      "source": item.get("source"),
+                      "url": item.get("url"),
+                      "category_key": item.get("category_key"),
+                  })
+                  check(
+                      "captured_category_reconciled:" + str(item.get("source_title"))[:70],
+                      suggested == item.get("category_key"),
+                      (suggested, item.get("category_key")),
+                  )
+
+              bad_local = [
+                  item for item in candidate_audit
+                  if item.get("suggested_category") in {"sakh", "sakh_chp", "sakh_quake"}
+                  and "local" not in gate.infer_topics(
+                      str(item.get("title") or "") + " " + str(item.get("source_text_lead") or "")
+                  )
+              ]
+              check("no_false_local_candidates", not bad_local, bad_local[:8])
+
+              known_errors = []
+              for item in candidate_audit:
+                  title = str(item.get("title") or "").lower()
+                  suggested = item.get("suggested_category")
+                  if "хабаровск" in title and suggested in {"sakh", "sakh_chp", "sakh_quake"}:
+                      known_errors.append(("Habarovsk_as_Sakhalin", item))
+                  if "brent" in title and suggested == "ru_eco":
+                      known_errors.append(("global_Brent_as_Russia_economy", item))
+                  if "дожд" in title and "сахалин" in title and suggested == "sakh_chp":
+                      known_errors.append(("weather_as_emergency", item))
+                  if "трамп" in title and "канад" in title and suggested == "ru_eco":
+                      known_errors.append(("Canada_tariffs_as_Russia_economy", item))
+              check("historical_error_classes_absent", not known_errors, known_errors[:8])
 
               report.update({
                   "run": run,
-                  "raw_candidate_count": len(raw),
-                  "reclassified_count": sum(1 for x in candidate_audit if x["reclassified"]),
-                  "rejected_or_offtopic_count": sum(1 for x in candidate_audit if not x["approved_after_reconcile"]),
+                  "raw_candidate_count": len(raw_candidates),
+                  "reclassified_count": sum(1 for item in candidate_audit if item["reclassified"]),
+                  "rejected_or_offtopic_count": sum(
+                      1 for item in candidate_audit
+                      if not item["approved_after_reconcile"]
+                  ),
                   "candidate_audit": candidate_audit,
                   "captured_posts": captured_posts,
                   "final_posts": final_posts,
                   "checks": checks,
                   "run_error": run_error,
               })
-          except Exception as ex:
-              report["run_error"] = repr(ex)
-              report["checks"] = [{"name":"harness","ok":False,"detail":repr(ex)}]
+          except Exception as exc:
+              report["run_error"] = repr(exc)
+              report["checks"] = [{
+                  "name": "audit_harness",
+                  "ok": False,
+                  "detail": repr(exc),
+              }]
               traceback.print_exc()
-          report["passed"] = sum(1 for x in report["checks"] if x.get("ok"))
-          report["failed"] = sum(1 for x in report["checks"] if not x.get("ok"))
+
+          report["passed"] = sum(1 for item in report["checks"] if item.get("ok"))
+          report["failed"] = sum(1 for item in report["checks"] if not item.get("ok"))
           report["all_pass"] = bool(report["checks"]) and report["failed"] == 0
-          Path("v10_editorial_audit_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
-          print(json.dumps({k:report.get(k) for k in ("version","raw_candidate_count","reclassified_count","rejected_or_offtopic_count","passed","failed","all_pass","run_error")}, ensure_ascii=False, indent=2))
+
+          Path("editorial_audit_report.json").write_text(
+              json.dumps(report, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          print(json.dumps({
+              key: report.get(key)
+              for key in (
+                  "version",
+                  "raw_candidate_count",
+                  "reclassified_count",
+                  "rejected_or_offtopic_count",
+                  "passed",
+                  "failed",
+                  "all_pass",
+                  "run_error",
+              )
+          }, ensure_ascii=False, indent=2))
           PY
-          tail -n 250 editorial_audit.log
+          audit_rc=$?
+          else
+            audit_rc=99
+          fi
+
+          if [ ! -f editorial_audit_report.json ]; then
+            python - <<PY
+          import json
+          from pathlib import Path
+          Path("editorial_audit_report.json").write_text(
+              json.dumps({
+                  "version": "stable-v10.2",
+                  "all_pass": False,
+                  "failed": 1,
+                  "run_error": "compile_or_harness_failure",
+                  "compile_rc": $compile_rc,
+                  "audit_rc": $audit_rc,
+              }, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          PY
+          fi
+
+          echo "compile_rc=$compile_rc audit_rc=$audit_rc" >> editorial_audit_v102.log
+          tail -n 300 editorial_audit_v102.log
           exit 0
-      - name: Persist audit
+
+      - name: Persist audit report
         if: always()
         run: |
           git config user.name "skysakhnews-bot"
           git config user.email "actions@github.com"
-          git add -A v10_editorial_audit_report.json editorial_audit.log
+          git add -A editorial_audit_report.json editorial_audit_v102.log
           if git diff --cached --quiet; then
             echo "No audit changes"
           else
-            git commit -m "Record v10.1 editorial gate live-source audit"
+            git commit -m "Record stable v10.2 live-source editorial audit"
             git pull --rebase --autostash origin main
             git push origin main
           fi
+
+      - name: Require audit pass
+        run: |
+          python - <<'PY'
+          import json
+          with open("editorial_audit_report.json", "r", encoding="utf-8") as file:
+              report = json.load(file)
+          assert report.get("version") == "stable-v10.2", report
+          assert report.get("all_pass") is True, report
+          print("stable-v10.2 live-source editorial audit: ALL PASS")
+          PY
