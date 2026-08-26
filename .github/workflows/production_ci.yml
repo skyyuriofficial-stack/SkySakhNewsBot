@@ -50,7 +50,7 @@ jobs:
             src/editorial_gate_runner.py \
             src/media_enforced_runner.py
 
-      - name: Semantic, media and delivery-recovery regression suite
+      - name: Semantic, classification, media and delivery-recovery regression suite
         env:
           IMAGE_REQUIRED: "1"
           AI_CALL_BUDGET: "8"
@@ -114,10 +114,31 @@ jobs:
                   source="Habr",
                   url="https://habr.com/ru/articles/1/",
               ), None),
+              (c(
+                  "Не санаторий и не дача - пенсионеры нашли райское место у моря себе по карману: сентябрьский хит с жильем от 1000 руб",
+                  "Пенсионеры выбирают сентябрьский отдых у моря: недорогие варианты жилья в Лазаревском, Анапе и Ейске.",
+                  source="SakhalinMedia.ru",
+                  url="https://sakhalinmedia.ru/news/2600117/",
+              ), None),
           ]
           for item, wanted in expected:
               got = rec.suggest_category(item)
               assert got == wanted, (item["title"], got, wanted)
+
+          # Historical root cause: the old substring matcher found NATO inside
+          # the Russian word "санаторий" and converted lifestyle SEO into geo.
+          assert "foreign" not in gate.infer_topics(
+              "Не санаторий и не дача — пенсионеры нашли место у моря"
+          )
+          assert "foreign" in gate.infer_topics(
+              "НАТО усиливает военное присутствие в Европе"
+          )
+          assert "foreign" not in gate.infer_topics(
+              "Индекс Мосбиржи вырос на открытии торгов"
+          )
+          assert "foreign" not in gate.infer_topics(
+              "Грузовой автомобиль попал в ДТП на Кубани"
+          )
 
           item = c(
               "Правительство рассматривает возможность введения меры",
@@ -250,5 +271,5 @@ jobs:
           assert queued["image_url"] == candidate2["image_url"]
           assert queued["delivery_attempts"] == 1
 
-          print("stable-v10.4 semantic + resilient media-delivery suite: OK")
+          print("stable-v10.4 semantic + classification + resilient media-delivery suite: OK")
           PY
