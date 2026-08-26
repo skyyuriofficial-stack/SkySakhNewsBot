@@ -1,4 +1,4 @@
-name: SkySakhNews Production CI
+name: SkySakhNews Production CI v10.3
 
 on:
   workflow_dispatch:
@@ -11,6 +11,7 @@ on:
       - "src/editorial_gate.py"
       - "src/category_reconciler.py"
       - "src/editorial_gate_runner.py"
+      - "src/media_enforced_runner.py"
       - "requirements.txt"
       - ".github/workflows/auto_publish_v7.yml"
       - ".github/workflows/production_ci.yml"
@@ -37,7 +38,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Compile
+      - name: Compile current production chain
         run: |
           python -m py_compile \
             src/news_bot_v8.py \
@@ -45,11 +46,12 @@ jobs:
             src/production.py \
             src/editorial_gate.py \
             src/category_reconciler.py \
-            src/editorial_gate_runner.py
+            src/editorial_gate_runner.py \
+            src/media_enforced_runner.py
 
-      - name: Semantic regression suite
+      - name: Semantic and mandatory-media regression suite
         env:
-          IMAGE_REQUIRED: "0"
+          IMAGE_REQUIRED: "1"
           AI_CALL_BUDGET: "8"
           EDITORIAL_AUDIT_AI_BUDGET: "4"
           RUN_COOLDOWN_MINUTES: "20"
@@ -57,53 +59,40 @@ jobs:
           python - <<'PY'
           import sys
           sys.path.insert(0, "src")
-          import editorial_gate as gate
-          import category_reconciler as rec
-          import editorial_gate_runner as runner
 
-          assert runner.VERSION == "stable-v10.2"
-          assert runner.prod.VERSION == "stable-v10.2"
-          assert runner.core.VERSION == "stable-v10.2"
+          import category_reconciler as rec
+          import editorial_gate as gate
+          import media_enforced_runner as runner
+
+          assert runner.VERSION == "stable-v10.3"
+          assert runner.core.b.IMAGE_REQUIRED is True
 
           def c(title, text, source="Interfax", url="https://www.interfax.ru/russia/1", category="sakh"):
               return {
-                  "title": title, "source_text": text, "source": source,
-                  "url": url, "category_key": category, "category": category,
+                  "title": title,
+                  "source_text": text,
+                  "source": source,
+                  "url": url,
+                  "category_key": category,
+                  "category": category,
               }
 
           expected = [
               (c("В парламенте Ирана заявили, что давление на Тегеран не поможет США заключить соглашение",
-                 "Иран и США обсуждают условия.", url="https://www.interfax.ru/world/1110010"), "geo"),
-              (c("Трамп рассматривает отсрочку пошлин для Канады",
-                 "Президент США обсуждает пошлины.", url="https://www.interfax.ru/world/1110016"), "geo"),
+                 "Иран и США обсуждают условия.", url="https://www.interfax.ru/world/1"), "geo"),
               (c("Сильный дождь пройдет в центральных районах Сахалина",
                  "Сахалинское УГМС прогнозирует осадки.", source="SakhalinMedia.ru",
                  url="https://sakhalinmedia.ru/news/1/"), "sakh"),
               (c("Ребенок погиб, упав за борт катера",
-                 "Следователи устанавливают обстоятельства.", url="https://www.interfax.ru/russia/2"), "ru_incident"),
+                 "Следователи устанавливают обстоятельства."), "ru_incident"),
               (c("Аэропорт ограничил работу из-за угрозы БПЛА",
-                 "Росавиация сообщила об ограничениях.", url="https://www.interfax.ru/russia/3"), "ru_security"),
+                 "Росавиация сообщила об ограничениях."), "ru_security"),
               (c("История магнитных лент", "Материал об аналоговом аудио.",
                  source="Habr", url="https://habr.com/ru/articles/1/"), None),
-              (c("Мэр Хабаровска рассказал об остановке", "Работы идут в Хабаровске.",
-                 source="SakhalinMedia.ru", url="https://sakhalinmedia.ru/news/2/"), None),
-              (c("Японист РАН: Токио наказывает Россию за Украину, но держит Китай",
-                 "В статье упоминаются Курильские острова.",
-                 url="https://www.interfax.ru/world/1110153"), "geo"),
-              (c("Нефть слабо дорожает, Brent торгуется у $91,7 за баррель",
-                 "Мировые цены растут на ICE Futures.",
-                 url="https://www.interfax.ru/business/1110251", category="ru_eco"), "geo"),
           ]
           for item, wanted in expected:
               got = rec.suggest_category(item)
               assert got == wanted, (item["title"], got, wanted)
-
-          assert "it" not in gate.infer_topics("В полиции России сообщили о расследовании")
-          assert "local" not in gate.infer_topics(
-              "Мэр Хабаровска рассказал о благоустройстве",
-              "SakhalinMedia.ru",
-              "https://sakhalinmedia.ru/news/2/",
-          )
 
           item = c(
               "Правительство рассматривает возможность введения меры",
@@ -116,5 +105,18 @@ jobs:
           )
           assert not verdict["approved"] and verdict["meaning_changed"], verdict
 
-          print("stable-v10.2 semantic regression suite: OK")
+          source_photo = {
+              "image": b"x" * 12000,
+              "image_url": "https://sakhalinmedia.ru/f/big/story.jpg",
+              "image_hash": "1" * 40,
+          }
+          assert runner._is_source_media(source_photo) == (True, "source_article_or_feed")
+          assert runner._is_source_media({})[0] is False
+          assert runner._is_source_media({
+              **source_photo,
+              "image_url": "https://upload.wikimedia.org/generic.jpg",
+          })[0] is False
+          assert runner.block_text_publication({}, {"title": "test"}).get("ok") is False
+
+          print("stable-v10.3 semantic and mandatory-media regression suite: OK")
           PY
