@@ -140,7 +140,9 @@
     "https://sakhalinmedia.ru/news/2599538/",
     "https://www.bbc.co.uk/news/articles/c87vg9x5d7do?at_medium=RSS&at_campaign=rss",
     "https://sakhalinmedia.ru/news/2600050/",
-    "https://www.interfax.ru/world/1111245"
+    "https://www.interfax.ru/world/1111245",
+    "https://sakhalinmedia.ru/news/2600115/",
+    "https://www.interfax.ru/russia/1111254"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -283,40 +285,12 @@
     "42de189f88428238f2bf106a132701eaa5a64200",
     "f33cd05e2c869e30deac06cf7fd64b031bdfdc09",
     "999abc0590652d6359013894d012610b0a7abdca",
-    "7225742337df07c98c573082f74baef3053b530b"
+    "7225742337df07c98c573082f74baef3053b530b",
+    "9c75289c0b28872956a2a3c94960d423741ebf97",
+    "b44a53d574ab0dcdfc525d86a6642adb871b3954"
   ],
-  "last_run_sakhalin": "2026-08-26T10:30:16+11:00",
+  "last_run_sakhalin": "2026-08-26T14:10:17+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-22T16:33:25+11:00",
-      "source": "Interfax",
-      "category": "🌐 Мировые IT",
-      "title": "Пашинян заверил, что Армения никогда не будет вовлечена в антироссийскую кампанию",
-      "url": "https://www.interfax.ru/world/1091101",
-      "published_at": "2026-05-22T05:03:00+00:00",
-      "with_image": true,
-      "image_mode": "pipeline_source",
-      "image_url": "https://www.interfax.ru/aspimg/1091101.jpg",
-      "image_fingerprint": "fabf6114cb8678432f88d025156234e61dac924b",
-      "publish_method": "sendPhoto/safe/pipeline_source",
-      "telegram_message_id": 83,
-      "score": 145
-    },
-    {
-      "time_sakhalin": "2026-05-22T17:40:19+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "title": "В ЛНР 35 человек пострадали из-за удара ВСУ по учебному корпусу вуза и общежитию",
-      "url": "https://www.interfax.ru/russia/1091106",
-      "published_at": "2026-05-22T06:04:00+00:00",
-      "with_image": true,
-      "image_mode": "pipeline_search",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Indonesian_air_force_air_defense_weapon_systems_on_display.jpg",
-      "image_fingerprint": "12ecf5fcfbba9160353020fc80684d24efa9433c",
-      "publish_method": "sendPhoto/safe/pipeline_search",
-      "telegram_message_id": 85,
-      "score": 145
-    },
     {
       "time_sakhalin": "2026-05-22T21:56:15+11:00",
       "source": "Interfax",
@@ -4017,6 +3991,54 @@
         "mode": "deterministic",
         "issues": []
       }
+    },
+    {
+      "time_sakhalin": "2026-08-26T14:08:45+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "Сахалинец отдал мошенникам более 370 тыс. рублей, пытаясь заработать на бирже",
+      "url": "https://sakhalinmedia.ru/news/2600115/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6342/6341945.jpg?f4917d0b77b79687db46ef04074756c8",
+      "image_hash": "91691847305ed97ae49d787aaf7d3fd765a105e1",
+      "topic_cluster": "sakh_chp:сахалинец_отдал_мошенникам_более_рублей_пытаясь",
+      "published_at": "2026-08-26T00:47:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/stable-v9.5",
+      "grounded_evidence": true,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": []
+      }
+    },
+    {
+      "time_sakhalin": "2026-08-26T14:10:09+11:00",
+      "source": "Interfax",
+      "category": "🇷🇺 Россия / безопасность",
+      "category_key": "ru_security",
+      "title": "В Липецкой области при падении БПЛА на жилой дом погибли два человека",
+      "url": "https://www.interfax.ru/russia/1111254",
+      "image_url": null,
+      "image_hash": null,
+      "topic_cluster": "ru_security_airspace_drone",
+      "published_at": "2026-08-26T00:57:00+00:00",
+      "with_image": false,
+      "publish_method": "sendMessage/no-safe-image",
+      "grounded_evidence": true,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": []
+      }
     }
   ],
   "last_cycle_report": {
@@ -4244,11 +4266,11 @@
   },
   "last_run": {
     "version": "stable-v10.2",
-    "started_sakhalin": "2026-08-26T10:24:42+11:00",
+    "started_sakhalin": "2026-08-26T14:04:56+11:00",
     "status": "ok",
-    "candidates": 25,
+    "candidates": 38,
     "published": 2,
-    "local_candidates": 19,
+    "local_candidates": 28,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -4257,7 +4279,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 10
+          "recent": 14
         },
         {
           "source": "SakhalinMedia",
@@ -4268,8 +4290,8 @@
         {
           "source": "ASTV HTML",
           "status": "ok",
-          "entries": 22,
-          "recent": 16
+          "entries": 21,
+          "recent": 14
         },
         {
           "source": "Sakh.online HTML",
@@ -4279,55 +4301,55 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-08-26T10:30:16+11:00",
+    "finished_sakhalin": "2026-08-26T14:10:17+11:00",
     "stats": {
-      "rss_seen": 143,
-      "old_skip": 66,
-      "google_skip": 9,
-      "duplicate_skip": 4,
-      "low_info_skip": 1,
-      "category_skip": 40,
+      "rss_seen": 158,
+      "old_skip": 62,
+      "google_skip": 13,
+      "duplicate_skip": 2,
+      "low_info_skip": 17,
+      "category_skip": 37,
       "no_image_skip": 0,
-      "bad_image_skip": 6,
-      "logo_image_skip": 54,
+      "bad_image_skip": 10,
+      "logo_image_skip": 67,
       "text_card_image_skip": 0,
-      "candidates": 25,
-      "rewrite_retry": 6,
-      "editorial_skip": 4,
+      "candidates": 38,
+      "rewrite_retry": 5,
+      "editorial_skip": 1,
       "telegram_fail": 0,
       "published": 2,
-      "ai_calls": 8,
-      "ai_budget_exhausted": 1,
+      "ai_calls": 6,
+      "ai_budget_exhausted": 0,
       "ai_api_fail": 5,
       "evidence_reject": 0,
-      "validation_reject": 1,
+      "validation_reject": 0,
       "extractive_fallback": 2,
-      "editorial_prechecked": 42,
-      "editorial_gate_checked": 6,
+      "editorial_prechecked": 45,
+      "editorial_gate_checked": 3,
       "editorial_gate_pass": 2,
-      "editorial_gate_reject": 5,
+      "editorial_gate_reject": 2,
       "editorial_gate_fallback": 0,
-      "editorial_gate_ai_calls": 2,
+      "editorial_gate_ai_calls": 1,
       "editorial_gate_ai_fail": 1,
-      "editorial_title_reject": 4,
-      "editorial_category_reject": 4,
+      "editorial_title_reject": 2,
+      "editorial_category_reject": 1,
       "editorial_meaning_reject": 0,
       "editorial_reclassified": 8,
-      "editorial_offtopic_reject": 14,
-      "openrouter_empty_content": 2,
+      "editorial_offtopic_reject": 6,
+      "openrouter_empty_content": 3,
       "openrouter_model_fallback": 0
     },
     "editorial_gate": {
-      "prechecked": 42,
-      "checked": 6,
+      "prechecked": 45,
+      "checked": 3,
       "passed": 2,
-      "rejected": 5,
+      "rejected": 2,
       "reclassified": 8,
-      "offtopic_reject": 14,
+      "offtopic_reject": 6,
       "fallback": 0,
-      "ai_calls": 2,
+      "ai_calls": 1,
       "ai_fail": 1,
-      "audited_urls": 7
+      "audited_urls": 4
     }
   }
 }
