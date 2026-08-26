@@ -44,6 +44,17 @@ gate.FOREIGN = (
     "turkey", "syria", "india", "georgia", "cuba",
 )
 
+# These are complete inflected country names, not productive stems. They must
+# match the whole token. In particular, "Куба" must not match "Кубани".
+EXACT_TOPIC_MARKERS = {
+    "сша", "нато",
+    "индия", "индии", "индией",
+    "грузия", "грузии", "грузией",
+    "корея", "кореи", "корее", "корею",
+    "куба", "кубы", "кубе", "кубу", "кубой",
+    "usa", "nato", "india", "georgia", "cuba",
+}
+
 INTERNATIONAL_PATHS = (
     "/world/",
     "/international/",
@@ -112,6 +123,9 @@ def _marker_matches(text: str, marker: str) -> bool:
     marker_tokens = _normalized_tokens(marker)
     if not marker_tokens or not text_tokens:
         return False
+
+    if len(marker_tokens) == 1 and marker_tokens[0] in EXACT_TOPIC_MARKERS:
+        return marker_tokens[0] in text_tokens
 
     width = len(marker_tokens)
     for start in range(0, len(text_tokens) - width + 1):
