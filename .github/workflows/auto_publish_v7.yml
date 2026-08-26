@@ -42,7 +42,7 @@ jobs:
             src/editorial_gate_runner.py \
             src/media_enforced_runner.py
 
-      - name: Mandatory semantic, media and recovery regression gate
+      - name: Mandatory semantic, classification, media and recovery regression gate
         env:
           IMAGE_REQUIRED: "1"
           AI_CALL_BUDGET: "8"
@@ -112,10 +112,31 @@ jobs:
                   source="Habr",
                   url="https://habr.com/ru/articles/1/",
               ), None),
+              (candidate(
+                  "Не санаторий и не дача - пенсионеры нашли райское место у моря себе по карману: сентябрьский хит с жильем от 1000 руб",
+                  "Пенсионеры выбирают сентябрьский отдых у моря: недорогие варианты жилья в Лазаревском, Анапе и Ейске.",
+                  source="SakhalinMedia.ru",
+                  url="https://sakhalinmedia.ru/news/2600117/",
+              ), None),
           ]
           for item, expected in cases:
               actual = rec.suggest_category(item)
               assert actual == expected, (item["title"], actual, expected)
+
+          # Regression for the exact published error: substring matching found
+          # NATO inside the word "санаторий". Topic matching is now token-based.
+          assert "foreign" not in gate.infer_topics(
+              "Не санаторий и не дача — пенсионеры нашли место у моря"
+          )
+          assert "foreign" in gate.infer_topics(
+              "НАТО усиливает военное присутствие в Европе"
+          )
+          assert "foreign" not in gate.infer_topics(
+              "Индекс Мосбиржи вырос на открытии торгов"
+          )
+          assert "foreign" not in gate.infer_topics(
+              "Грузовой автомобиль попал в ДТП на Кубани"
+          )
 
           c = candidate(
               "Правительство рассматривает возможность введения меры",
@@ -185,7 +206,7 @@ jobs:
           assert queued["row"]["editorial_gate"]["approved"] is True
           assert queued["delivery_attempts"] == 1
 
-          print("stable-v10.4 semantic + resilient source-media gate: OK")
+          print("stable-v10.4 semantic + classification + resilient source-media gate: OK")
           PY
 
       - name: Run stable publisher with mandatory source media and retry queue
