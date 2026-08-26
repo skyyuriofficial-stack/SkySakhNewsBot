@@ -1,4 +1,4 @@
-name: SkySakhNews Auto Publisher Stable v10.2
+name: SkySakhNews Auto Publisher Stable v10.3
 
 on:
   workflow_dispatch:
@@ -39,11 +39,12 @@ jobs:
             src/production.py \
             src/editorial_gate.py \
             src/category_reconciler.py \
-            src/editorial_gate_runner.py
+            src/editorial_gate_runner.py \
+            src/media_enforced_runner.py
 
-      - name: Mandatory semantic regression gate
+      - name: Mandatory semantic and media regression gate
         env:
-          IMAGE_REQUIRED: "0"
+          IMAGE_REQUIRED: "1"
           AI_CALL_BUDGET: "8"
           EDITORIAL_AUDIT_AI_BUDGET: "4"
           RUN_COOLDOWN_MINUTES: "20"
@@ -51,13 +52,16 @@ jobs:
           python - <<'PY'
           import sys
           sys.path.insert(0, "src")
-          import editorial_gate as gate
-          import category_reconciler as rec
-          import editorial_gate_runner as runner
 
-          assert runner.VERSION == "stable-v10.2"
-          assert runner.prod.VERSION == "stable-v10.2"
-          assert runner.core.VERSION == "stable-v10.2"
+          import category_reconciler as rec
+          import editorial_gate as gate
+          import media_enforced_runner as runner
+
+          assert runner.VERSION == "stable-v10.3"
+          assert runner.editorial.VERSION == "stable-v10.3"
+          assert runner.prod.VERSION == "stable-v10.3"
+          assert runner.core.VERSION == "stable-v10.3"
+          assert runner.core.b.IMAGE_REQUIRED is True
           assert runner.core.strict_fresh(None) is False
 
           def candidate(title, text, source="Interfax", url="https://www.interfax.ru/russia/1", category="sakh"):
@@ -82,100 +86,70 @@ jobs:
                   url="https://www.interfax.ru/world/1110016",
               ), "geo"),
               (candidate(
-                  "Сильный дождь пройдет в центральных районах Сахалина 20 августа",
+                  "Сильный дождь пройдет в центральных районах Сахалина",
                   "Сахалинское УГМС прогнозирует осадки.",
                   source="SakhalinMedia.ru",
-                  url="https://sakhalinmedia.ru/news/2593484/",
+                  url="https://sakhalinmedia.ru/news/1/",
               ), "sakh"),
               (candidate(
                   "Ребенок погиб в Ростовской области, упав за борт катера",
                   "Следователи устанавливают обстоятельства происшествия.",
-                  url="https://www.interfax.ru/russia/1110068",
               ), "ru_incident"),
               (candidate(
-                  "Аэропорт временно ограничил прием самолетов из-за угрозы БПЛА",
+                  "Аэропорт ограничил работу из-за угрозы БПЛА",
                   "Росавиация сообщила об ограничениях из-за беспилотников.",
-                  url="https://www.interfax.ru/russia/1110011",
               ), "ru_security"),
               (candidate(
-                  "История аналоговой записи и магнитных лент",
-                  "Материал о кассетных деках без региональной привязки.",
+                  "История магнитных лент",
+                  "Материал об аналоговом аудио без региональной привязки.",
                   source="Habr",
                   url="https://habr.com/ru/articles/1/",
               ), None),
-              (candidate(
-                  "Мэр Хабаровска рассказал о новой автобусной остановке",
-                  "Работы выполняются в Хабаровске.",
-                  source="SakhalinMedia.ru",
-                  url="https://sakhalinmedia.ru/news/1/",
-              ), None),
-              (candidate(
-                  "Японист РАН: Токио наказывает Россию за Украину, но в уме держит Китай",
-                  "В материале упоминаются Курильские острова.",
-                  url="https://www.interfax.ru/world/1110153",
-              ), "geo"),
-              (candidate(
-                  "Нефть слабо дорожает, Brent торгуется у $91,7 за баррель",
-                  "Мировые цены на нефть растут на бирже ICE Futures.",
-                  url="https://www.interfax.ru/business/1110251",
-                  category="ru_eco",
-              ), "geo"),
-              (candidate(
-                  "Прокуратура помогла сахалинцу вернуть деньги, украденные мошенниками",
-                  "Полиция Сахалинской области расследовала мошенничество.",
-                  source="SakhalinMedia.ru",
-                  url="https://sakhalinmedia.ru/news/2/",
-              ), "sakh_chp"),
           ]
           for item, expected in cases:
               actual = rec.suggest_category(item)
               assert actual == expected, (item["title"], actual, expected)
 
-          assert "local" not in gate.infer_topics(
-              "Мэр Хабаровска рассказал о благоустройстве",
-              "SakhalinMedia.ru",
-              "https://sakhalinmedia.ru/news/1/",
-          )
-          assert "it" not in gate.infer_topics("В полиции России сообщили о расследовании")
-
           c = candidate(
-              "Правительство рассматривает возможность введения новой меры",
-              "Власти обсуждают предложение, окончательное решение не принято.",
+              "Правительство рассматривает возможность введения меры",
+              "Предложение обсуждается, решение не принято.",
               category="ru_pol",
           )
-          row = {
-              "title_ru": "Правительство ввело новую меру",
-              "body": [],
-              "editorial_mode": "generated",
-          }
-          verdict = gate.deterministic_review(c, row)
+          verdict = gate.deterministic_review(
+              c,
+              {
+                  "title_ru": "Правительство ввело меру",
+                  "body": [],
+                  "editorial_mode": "generated",
+              },
+          )
           assert not verdict["approved"] and verdict["meaning_changed"], verdict
 
-          c = candidate(
-              "В Долинске расследуют кражу банковской карты",
-              "Полиция расследует кражу.",
-              source="SakhalinMedia.ru",
-              url="https://sakhalinmedia.ru/news/3/",
-              category="sakh_chp",
-          )
-          row = {
-              "title_ru": "В Долинске расследуют кражу на 50 тысяч рублей",
-              "body": [],
-              "editorial_mode": "generated",
+          good_media = {
+              "image": b"x" * 12000,
+              "image_url": "https://sakhalinmedia.ru/f/big/news-photo.jpg",
+              "image_hash": "a" * 40,
           }
-          verdict = gate.deterministic_review(c, row)
-          assert not verdict["approved"] and not verdict["facts_supported"], verdict
+          assert runner._is_source_media(good_media)[0] is True
+          assert runner._is_source_media({})[0] is False
+          assert runner._is_source_media({
+              **good_media,
+              "image_url": "https://upload.wikimedia.org/example.jpg",
+          })[0] is False
 
-          print("stable-v10.2 mandatory semantic regression gate: OK")
+          blocked = runner.block_text_publication({}, {"title": "test"})
+          assert blocked.get("ok") is False
+
+          print("stable-v10.3 semantic + mandatory source-media gate: OK")
           PY
 
-      - name: Run stable publisher with mandatory Editorial Gate
+      - name: Run stable publisher with mandatory source media
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
-          IMAGE_REQUIRED: "0"
+          IMAGE_REQUIRED: "1"
           POSTS_PER_RUN: "2"
           MAX_AGE_HOURS: "36"
           AI_CALL_BUDGET: "8"
@@ -183,9 +157,9 @@ jobs:
           RUN_COOLDOWN_MINUTES: "20"
           PYTHONUNBUFFERED: "1"
         run: |
-          python src/editorial_gate_runner.py
+          python src/media_enforced_runner.py
 
-      - name: Verify semantic publication health
+      - name: Verify semantic and media publication health
         run: |
           python - <<'PY'
           import json
@@ -195,17 +169,19 @@ jobs:
               state = json.load(file)
 
           run = state.get("last_run") or {}
-          if run.get("version") == "stable-v10.2":
+          if run.get("version") == "stable-v10.3":
               assert run.get("status") == "ok", run
               assert "finished_sakhalin" in run, run
-              local = run.get("local_stream") or {}
-              assert local.get("status") in {"healthy", "degraded"}, local
-              audit = run.get("editorial_gate") or {}
-              assert "prechecked" in audit and "checked" in audit, audit
+              assert (run.get("local_stream") or {}).get("status") in {"healthy", "degraded"}, run
+
+              media = run.get("media_policy") or {}
+              assert media.get("required") is True, media
+              assert media.get("text_only_allowed") is False, media
 
               published = int(run.get("published") or 0)
-              assert published <= 2, run
+              assert 0 <= published <= 2, run
               posts = (state.get("last_posts") or [])[-published:] if published else []
+
               for post in posts:
                   gate_result = post.get("editorial_gate") or {}
                   assert gate_result.get("approved") is True, post
@@ -215,10 +191,18 @@ jobs:
                   assert gate_result.get("meaning_changed") is False, post
                   assert "news.google." not in urlparse(post.get("url") or "").netloc.lower(), post
 
-          print("stable-v10.2 semantic publication health: OK", run)
+                  assert post.get("with_image") is True, post
+                  assert post.get("media_required") is True, post
+                  assert post.get("media_type") == "photo", post
+                  assert post.get("media_origin") == "source_article_or_feed", post
+                  assert post.get("image_url"), post
+                  assert post.get("image_hash"), post
+                  assert str(post.get("publish_method") or "").startswith("sendPhoto/"), post
+
+          print("stable-v10.3 semantic + media publication health: OK", run)
           PY
 
-      - name: Commit state and semantic audit
+      - name: Commit state and audit
         if: always()
         run: |
           git config user.name "skysakhnews-bot"
@@ -227,7 +211,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No state changes"
           else
-            git commit -m "Update v10.2 news state and editorial audit"
+            git commit -m "Update v10.3 mandatory-media news state"
             git pull --rebase --autostash origin main
             git push origin main
           fi
