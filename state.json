@@ -142,7 +142,9 @@
     "https://sakhalinmedia.ru/news/2600050/",
     "https://www.interfax.ru/world/1111245",
     "https://sakhalinmedia.ru/news/2600115/",
-    "https://www.interfax.ru/russia/1111254"
+    "https://www.interfax.ru/russia/1111254",
+    "https://sakhalinmedia.ru/news/2600235/",
+    "https://sakhalinmedia.ru/news/2600258/"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -287,40 +289,12 @@
     "999abc0590652d6359013894d012610b0a7abdca",
     "7225742337df07c98c573082f74baef3053b530b",
     "9c75289c0b28872956a2a3c94960d423741ebf97",
-    "b44a53d574ab0dcdfc525d86a6642adb871b3954"
+    "b44a53d574ab0dcdfc525d86a6642adb871b3954",
+    "f58abfe99926eaa22ca4a4880b1ee06de28b9836",
+    "978cd1c66cb2817e533d320fc84ad857ac929b47"
   ],
-  "last_run_sakhalin": "2026-08-26T14:10:17+11:00",
+  "last_run_sakhalin": "2026-08-26T15:21:13+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-22T21:56:15+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "title": "В суды подано свыше 700 исков о возврате государству участков в заповедников",
-      "url": "https://www.interfax.ru/russia/1091157",
-      "published_at": "2026-05-22T10:10:00+00:00",
-      "with_image": true,
-      "image_mode": "pipeline_search",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Tiered_defense_and_high_energy_laser_weapon_system.jpg",
-      "image_fingerprint": "93a798a0486f314b31cea2fbe231f2cafc5fcfd4",
-      "publish_method": "sendPhoto/safe/pipeline_search",
-      "telegram_message_id": 86,
-      "score": 145
-    },
-    {
-      "time_sakhalin": "2026-05-23T00:35:36+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 РФ / война и безопасность",
-      "title": "Лавров заявил, что США и НАТО ударными темпами распространяют военную инфраструктуру в Азии",
-      "url": "https://www.interfax.ru/russia/1091217",
-      "published_at": "2026-05-22T12:39:00+00:00",
-      "with_image": true,
-      "image_mode": "pipeline_search",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/US_Navy_040229-N-1938O-009_The_second_of_two_RIM-7_NATO_Sea_Sparrow_missiles_is_launched_from_USS_Kitty_Hawk_%28CV_63%29_on_it%27s_way_to_intercept_a_remote-controlled_drone%2C_during_an_exercise_to_test_the_ship%27s_defense.jpg",
-      "image_fingerprint": "b929fdfebf2fe060385a66e7632b94cd1b505f5e",
-      "publish_method": "sendPhoto/safe/pipeline_search",
-      "telegram_message_id": 87,
-      "score": 145
-    },
     {
       "time_sakhalin": "2026-05-23T20:58:10+11:00",
       "source": "Interfax",
@@ -4039,6 +4013,60 @@
         "mode": "deterministic",
         "issues": []
       }
+    },
+    {
+      "time_sakhalin": "2026-08-26T15:18:54+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "Безопасный счёт и липовые инвестиции: сахалинцы отдали мошенникам 13,8 млн рублей",
+      "url": "https://sakhalinmedia.ru/news/2600235/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6343/6342271.jpg?d71b181912da87dba6bcc933d0efc285",
+      "image_hash": "ab805076979363d2010330e4a2ecf9e21387cb07",
+      "topic_cluster": "sakh_chp:безопасный_липовые_инвестиции_сахалинцы_отдали_мошенникам",
+      "published_at": "2026-08-26T01:43:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/stable-v9.5",
+      "grounded_evidence": true,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": []
+      }
+    },
+    {
+      "time_sakhalin": "2026-08-26T15:21:05+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "Мошенник поиграл на чувствах сахалинки и выманил 650 тысяч рублей",
+      "url": "https://sakhalinmedia.ru/news/2600258/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6343/6342313.jpg?a20bd4043bd6e058a9a02b8b062c0374",
+      "image_hash": "85960102a31b86ac6776c6071959eb825427d23e",
+      "topic_cluster": "sakh_chp:мошенник_поиграл_чувствах_сахалинки_выманил_тысяч",
+      "published_at": "2026-08-26T02:21:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/stable-v9.5",
+      "grounded_evidence": true,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": []
+      }
     }
   ],
   "last_cycle_report": {
@@ -4265,12 +4293,12 @@
     "items": []
   },
   "last_run": {
-    "version": "stable-v10.2",
-    "started_sakhalin": "2026-08-26T14:04:56+11:00",
+    "version": "stable-v10.3",
+    "started_sakhalin": "2026-08-26T15:15:27+11:00",
     "status": "ok",
-    "candidates": 38,
+    "candidates": 31,
     "published": 2,
-    "local_candidates": 28,
+    "local_candidates": 26,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -4279,7 +4307,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 14
+          "recent": 15
         },
         {
           "source": "SakhalinMedia",
@@ -4291,7 +4319,7 @@
           "source": "ASTV HTML",
           "status": "ok",
           "entries": 21,
-          "recent": 14
+          "recent": 15
         },
         {
           "source": "Sakh.online HTML",
@@ -4301,55 +4329,76 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-08-26T14:10:17+11:00",
+    "finished_sakhalin": "2026-08-26T15:21:13+11:00",
     "stats": {
       "rss_seen": 158,
-      "old_skip": 62,
-      "google_skip": 13,
-      "duplicate_skip": 2,
+      "old_skip": 64,
+      "google_skip": 12,
+      "duplicate_skip": 3,
       "low_info_skip": 17,
-      "category_skip": 37,
+      "category_skip": 28,
       "no_image_skip": 0,
-      "bad_image_skip": 10,
-      "logo_image_skip": 67,
+      "bad_image_skip": 11,
+      "logo_image_skip": 58,
       "text_card_image_skip": 0,
-      "candidates": 38,
-      "rewrite_retry": 5,
-      "editorial_skip": 1,
+      "candidates": 31,
+      "rewrite_retry": 6,
+      "editorial_skip": 6,
       "telegram_fail": 0,
       "published": 2,
-      "ai_calls": 6,
-      "ai_budget_exhausted": 0,
+      "ai_calls": 8,
+      "ai_budget_exhausted": 1,
       "ai_api_fail": 5,
       "evidence_reject": 0,
-      "validation_reject": 0,
+      "validation_reject": 1,
       "extractive_fallback": 2,
-      "editorial_prechecked": 45,
-      "editorial_gate_checked": 3,
+      "editorial_prechecked": 40,
+      "editorial_gate_checked": 8,
       "editorial_gate_pass": 2,
-      "editorial_gate_reject": 2,
+      "editorial_gate_reject": 3,
       "editorial_gate_fallback": 0,
-      "editorial_gate_ai_calls": 1,
-      "editorial_gate_ai_fail": 1,
-      "editorial_title_reject": 2,
+      "editorial_gate_ai_calls": 2,
+      "editorial_gate_ai_fail": 2,
+      "editorial_title_reject": 3,
       "editorial_category_reject": 1,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 8,
-      "editorial_offtopic_reject": 6,
-      "openrouter_empty_content": 3,
-      "openrouter_model_fallback": 0
+      "editorial_reclassified": 9,
+      "editorial_offtopic_reject": 5,
+      "openrouter_empty_content": 5,
+      "openrouter_model_fallback": 0,
+      "media_required_skip": 3,
+      "media_generic_skip": 0,
+      "media_ready_candidates": 31,
+      "photo_retry": 0,
+      "photo_publish": 2,
+      "text_publish_blocked": 0
+    },
+    "media_policy": {
+      "required": true,
+      "allowed": [
+        "source_photo",
+        "source_video"
+      ],
+      "implemented_publish_mode": "source_photo",
+      "text_only_allowed": false,
+      "ready_candidates": 31,
+      "missing_media_rejected": 3,
+      "generic_media_rejected": 0,
+      "photo_retries": 0,
+      "photo_published": 2,
+      "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 45,
-      "checked": 3,
+      "prechecked": 40,
+      "checked": 8,
       "passed": 2,
-      "rejected": 2,
-      "reclassified": 8,
-      "offtopic_reject": 6,
+      "rejected": 3,
+      "reclassified": 9,
+      "offtopic_reject": 5,
       "fallback": 0,
-      "ai_calls": 1,
-      "ai_fail": 1,
-      "audited_urls": 4
+      "ai_calls": 2,
+      "ai_fail": 2,
+      "audited_urls": 5
     }
   }
 }
