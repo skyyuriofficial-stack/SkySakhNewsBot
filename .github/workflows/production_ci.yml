@@ -1,4 +1,4 @@
-name: SkySakhNews Production CI v10.3
+name: SkySakhNews Production CI v10.4
 
 on:
   workflow_dispatch:
@@ -29,6 +29,7 @@ jobs:
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -49,22 +50,32 @@ jobs:
             src/editorial_gate_runner.py \
             src/media_enforced_runner.py
 
-      - name: Semantic and mandatory-media regression suite
+      - name: Semantic, media and delivery-recovery regression suite
         env:
           IMAGE_REQUIRED: "1"
           AI_CALL_BUDGET: "8"
           EDITORIAL_AUDIT_AI_BUDGET: "4"
           RUN_COOLDOWN_MINUTES: "20"
+          MEDIA_PENDING_MAX_HOURS: "36"
+          MEDIA_PENDING_MAX_ITEMS: "24"
         run: |
           python - <<'PY'
+          import hashlib
+          import io
           import sys
+
+          from PIL import Image
+
           sys.path.insert(0, "src")
 
           import category_reconciler as rec
           import editorial_gate as gate
           import media_enforced_runner as runner
 
-          assert runner.VERSION == "stable-v10.3"
+          assert runner.VERSION == "stable-v10.4"
+          assert runner.editorial.VERSION == "stable-v10.4"
+          assert runner.prod.VERSION == "stable-v10.4"
+          assert runner.core.VERSION == "stable-v10.4"
           assert runner.core.b.IMAGE_REQUIRED is True
 
           def c(title, text, source="Interfax", url="https://www.interfax.ru/russia/1", category="sakh"):
@@ -78,17 +89,31 @@ jobs:
               }
 
           expected = [
-              (c("В парламенте Ирана заявили, что давление на Тегеран не поможет США заключить соглашение",
-                 "Иран и США обсуждают условия.", url="https://www.interfax.ru/world/1"), "geo"),
-              (c("Сильный дождь пройдет в центральных районах Сахалина",
-                 "Сахалинское УГМС прогнозирует осадки.", source="SakhalinMedia.ru",
-                 url="https://sakhalinmedia.ru/news/1/"), "sakh"),
-              (c("Ребенок погиб, упав за борт катера",
-                 "Следователи устанавливают обстоятельства."), "ru_incident"),
-              (c("Аэропорт ограничил работу из-за угрозы БПЛА",
-                 "Росавиация сообщила об ограничениях."), "ru_security"),
-              (c("История магнитных лент", "Материал об аналоговом аудио.",
-                 source="Habr", url="https://habr.com/ru/articles/1/"), None),
+              (c(
+                  "В парламенте Ирана заявили, что давление на Тегеран не поможет США заключить соглашение",
+                  "Иран и США обсуждают условия.",
+                  url="https://www.interfax.ru/world/1",
+              ), "geo"),
+              (c(
+                  "Сильный дождь пройдет в центральных районах Сахалина",
+                  "Сахалинское УГМС прогнозирует осадки.",
+                  source="SakhalinMedia.ru",
+                  url="https://sakhalinmedia.ru/news/1/",
+              ), "sakh"),
+              (c(
+                  "Ребенок погиб, упав за борт катера",
+                  "Следователи устанавливают обстоятельства.",
+              ), "ru_incident"),
+              (c(
+                  "Аэропорт ограничил работу из-за угрозы БПЛА",
+                  "Росавиация сообщила об ограничениях.",
+              ), "ru_security"),
+              (c(
+                  "История магнитных лент",
+                  "Материал об аналоговом аудио.",
+                  source="Habr",
+                  url="https://habr.com/ru/articles/1/",
+              ), None),
           ]
           for item, wanted in expected:
               got = rec.suggest_category(item)
@@ -101,7 +126,11 @@ jobs:
           )
           verdict = gate.deterministic_review(
               item,
-              {"title_ru": "Правительство ввело меру", "body": [], "editorial_mode": "generated"},
+              {
+                  "title_ru": "Правительство ввело меру",
+                  "body": [],
+                  "editorial_mode": "generated",
+              },
           )
           assert not verdict["approved"] and verdict["meaning_changed"], verdict
 
@@ -110,13 +139,116 @@ jobs:
               "image_url": "https://sakhalinmedia.ru/f/big/story.jpg",
               "image_hash": "1" * 40,
           }
-          assert runner._is_source_media(source_photo) == (True, "source_article_or_feed")
+          assert runner._is_source_media(source_photo) == (
+              True,
+              "source_article_or_feed",
+          )
           assert runner._is_source_media({})[0] is False
           assert runner._is_source_media({
               **source_photo,
               "image_url": "https://upload.wikimedia.org/generic.jpg",
           })[0] is False
-          assert runner.block_text_publication({}, {"title": "test"}).get("ok") is False
 
-          print("stable-v10.3 semantic and mandatory-media regression suite: OK")
+          noisy = Image.effect_noise((900, 600), 90).convert("RGB")
+          buffer = io.BytesIO()
+          noisy.save(buffer, format="JPEG", quality=91)
+          original = buffer.getvalue()
+          normalized = runner._normalize_photo_bytes(original)
+          assert normalized.startswith(b"\xff\xd8")
+          assert len(normalized) <= 9_500_000
+
+          real_send = runner._telegram_send_photo
+          real_wait = runner._safe_wait
+          calls = []
+
+          def recover_on_second_call(**kwargs):
+              calls.append(kwargs)
+              if len(calls) == 1:
+                  raise runner.TelegramPhotoError(
+                      "explicit bad photo response",
+                      retry_safe=True,
+                  )
+              return {"ok": True, "result": {"message_id": 1}}
+
+          runner._telegram_send_photo = recover_on_second_call
+          runner._safe_wait = lambda *_args: None
+          candidate = {
+              "url": "https://sakhalinmedia.ru/news/recovery-test/",
+              "title": "Проверка восстановления доставки фотографии новости",
+              "image": original,
+              "image_url": "https://sakhalinmedia.ru/f/big/recovery.jpg",
+              "image_hash": hashlib.sha1(original).hexdigest(),
+              "media_origin": "source_article_or_feed",
+          }
+          result = runner.send_photo_with_recovery(
+              candidate,
+              "<b>Проверка</b>",
+          )
+          assert result.get("ok") is True
+          assert candidate.get("_media_delivery_mode") == "upload_reencoded_html"
+          assert len(calls) == 2
+
+          uncertain_calls = []
+
+          def uncertain_transport(**kwargs):
+              uncertain_calls.append(kwargs)
+              raise runner.TelegramPhotoError(
+                  "ambiguous read timeout",
+                  retry_safe=False,
+              )
+
+          runner._telegram_send_photo = uncertain_transport
+          candidate2 = {
+              "url": "https://sakhalinmedia.ru/news/defer-test/",
+              "title": "Проверка отложенной доставки фотографии новости",
+              "image": original,
+              "image_url": "https://sakhalinmedia.ru/f/big/defer.jpg",
+              "image_hash": hashlib.sha1(original).hexdigest(),
+              "media_origin": "source_article_or_feed",
+          }
+          try:
+              runner.send_photo_with_recovery(
+                  candidate2,
+                  "<b>Проверка</b>",
+              )
+              raise AssertionError("uncertain transport must defer")
+          except RuntimeError as exc:
+              assert "deferred" in str(exc)
+          assert len(uncertain_calls) == 1
+
+          runner._telegram_send_photo = real_send
+          runner._safe_wait = real_wait
+
+          runner._DEFERRED_THIS_RUN.clear()
+          row = {
+              "title_ru": "Проверка сохранения новости в очереди",
+              "body": ["Первый подтвержденный абзац.", "Второй подтвержденный абзац."],
+              "footer": "САХАЛИН",
+              "editorial_gate": {
+                  "approved": True,
+                  "title_matches_source": 100,
+                  "category_matches_story": 100,
+                  "facts_supported": True,
+                  "meaning_changed": False,
+              },
+          }
+          candidate2.update({
+              "source": "SakhalinMedia.ru",
+              "category": "📍 Сахалин",
+              "category_key": "sakh",
+              "footer": "САХАЛИН",
+              "source_text": "Первый подтвержденный абзац. Второй подтвержденный абзац.",
+              "published_at": "2026-08-26T00:00:00+00:00",
+              "title_hash": "2" * 40,
+              "topic_cluster": "sakh:test",
+              "_delivery_error": "temporary Telegram failure",
+          })
+          deferred = runner.defer_media_publication(row, candidate2)
+          assert deferred.get("ok") is False
+          queued = runner._DEFERRED_THIS_RUN[candidate2["url"]]
+          assert queued["row"]["editorial_gate"]["approved"] is True
+          assert queued["image_url"] == candidate2["image_url"]
+          assert queued["delivery_attempts"] == 1
+
+          print("stable-v10.4 semantic + resilient media-delivery suite: OK")
           PY
