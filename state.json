@@ -174,7 +174,9 @@
     "https://sakhalinmedia.ru/news/2604384/",
     "https://sakhalinmedia.ru/news/2604289/",
     "https://sakhalinmedia.ru/news/2604717/",
-    "https://sakhalinmedia.ru/news/2604532/"
+    "https://sakhalinmedia.ru/news/2604532/",
+    "https://sakhalinmedia.ru/news/2604719/",
+    "https://sakhalinmedia.ru/news/2604730/"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -351,266 +353,12 @@
     "3f8e034b408986c6e58f3154ebe220432d1fd5bf",
     "6d99e625e9b9b43cdce39723b2890dd396e8a716",
     "35daca66f3b156600009d1b7f49dfb2ca516ea64",
-    "a069ca3971ce4c92cc1f73feb55c76314c81c42c"
+    "a069ca3971ce4c92cc1f73feb55c76314c81c42c",
+    "4da35c5b5178c789df64a1ac85d56bae9b5bae5e",
+    "fa08ea4e3f0f53204c952f2e92ca732bba0577f9"
   ],
-  "last_run_sakhalin": "2026-08-31T09:31:56+11:00",
+  "last_run_sakhalin": "2026-08-31T12:13:51+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-26T11:21:24+11:00",
-      "source": "Interfax",
-      "category": "🧭 Геополитика",
-      "title": "Землетрясение магнитудой 5,1 произошло у берегов Камчатки",
-      "body": [
-        "Сейсмологи зарегистрировали землетрясение магнитудой 5,1 в Тихом океане у юго-восточного побережья Камчатки, сообщает Камчатский филиал Единой геофизической службы РАН на своем сайте.",
-        "Землетрясение произошло во вторник в 11:31 по местному времени (02:31 по Москве)."
-      ],
-      "caption": "🧭 Геополитика\n\n<b>Землетрясение магнитудой 5,1 произошло у берегов Камчатки</b>\n\nСейсмологи зарегистрировали землетрясение магнитудой 5,1 в Тихом океане у юго-восточного побережья Камчатки, сообщает Камчатский филиал Единой геофизической службы РАН на своем сайте.\n\nЗемлетрясение произошло во вторник в 11:31 по местному времени (02:31 по Москве).\n\nГЕОПОЛИТИКА · <a href=\"https://www.interfax.ru/russia/1091760\">Interfax</a>",
-      "caption_plain": "🧭 Геополитика\n\n Землетрясение магнитудой 5,1 произошло у берегов Камчатки \n\nСейсмологи зарегистрировали землетрясение магнитудой 5,1 в Тихом океане у юго-восточного побережья Камчатки, сообщает Камчатский филиал Единой геофизической службы РАН на своем сайте.\n\nЗемлетрясение произошло во вторник в 11:31 по местному времени (02:31 по Москве).\n\nГЕОПОЛИТИКА ·  Interfax ",
-      "url": "https://www.interfax.ru/russia/1091760",
-      "published_at": "2026-05-26T00:05:00+00:00",
-      "with_image": true,
-      "image_mode": "pipeline_generated",
-      "image_url": null,
-      "image_fingerprint": "b2275be508dec4bc42ace092badd4062f68cbd28",
-      "image_pipeline": {
-        "strategy": "generated",
-        "reason": "generated semantic image accepted",
-        "selected": {
-          "url": null,
-          "source": "generated",
-          "width": 1200,
-          "height": 675,
-          "mime_type": "image/jpeg",
-          "query_used": "generated:diplomacy:Землетрясение магнитудой 5,1 произошло у берегов Камчатки",
-          "relevance_score": 1.03,
-          "image_kind": "generated",
-          "filename": "thematic.jpg",
-          "reason": "local semantic generation; topic=diplomacy; hits=['diplomacy']; entity_hits=[]; bad_hits=[]"
-        },
-        "attempts": [
-          {
-            "stage": "external_search",
-            "query": "government meeting flags",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Lawrence_Wong_Singapore_Prime_Minister_meets_United_Kingdom_Prime_Minister_Keir_Starmer_at_the_Commonwealth_Heads_of_Government_Meeting_%28CHOGM%29_in_Apia%2C_Samoa_on_26_October_2024.jpg",
-            "ok": false,
-            "reason": "low relevance: 0.70; topic=diplomacy; hits=['flags', 'meeting', 'government', 'minister']; entity_hits=[]; bad_hits=[]"
-          },
-          {
-            "stage": "external_search",
-            "query": "government meeting flags",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Secretary_Kerry_Sits_Along_an_Array_of_Flags_Between_Meetings_as_he_Attends_a_NATO_Ministerial_Meeting_in_Brussels_%2831483306745%29.jpg",
-            "ok": false,
-            "reason": "low relevance: 0.70; topic=diplomacy; hits=['flags', 'meeting', 'government', 'minister']; entity_hits=[]; bad_hits=[]"
-          },
-          {
-            "stage": "external_search",
-            "query": "government meeting flags",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Vladimir_Putin_chaired_a_meeting_of_the_Presidium_of_the_Government_of_the_Russian_Federation_%282009-12-30%29_2.jpg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "government meeting flags",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Volodymyr_Zelensky_during_a_Joint_Meeting_of_Congress_with_flag_of_the_United_States.jpg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "international diplomacy meeting",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/A_history_of_diplomacy_in_the_international_development_of_Europe_%28IA_cu31924088045657%29.pdf",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "international diplomacy meeting",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/A_history_of_diplomacy_in_the_international_development_of_Europe_%28IA_cu31924088046341%29.pdf",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "international diplomacy meeting",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Diplomacy_and_the_Study_of_International_Relations_%281919%29.djvu",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "international diplomacy meeting",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Diplomacy_and_the_study_of_international_relations_%28IA_diplomacystudyof00heatiala%29.pdf",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "international diplomacy meeting",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/2/26/UCDM_Malaysia_2025_-_Pre-Event_Meeting_%282%29.jpg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "international diplomacy meeting",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/UCDM_Malaysia_2025_-_Pre-Event_Meeting_%283%29.jpg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "international diplomacy meeting",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Ukraine%27s_Cultural_Diplomacy_Month._Highlighting_Ukrainian_culture_through_Wikipedia%2C_CEEM_2025.pdf",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "generated",
-            "ok": true,
-            "reason": "accepted: 1200x675; score=1.03; topic=diplomacy; hits=['diplomacy']; entity_hits=[]; bad_hits=[]"
-          }
-        ]
-      },
-      "publish_method": "sendPhoto/safe/pipeline_generated",
-      "telegram_message_id": 122,
-      "score": 1000,
-      "stream_priority": 1000,
-      "rewrite_mode": "generic",
-      "audit_status": "pass",
-      "audit_severity": "ok",
-      "audit_issues": [],
-      "audited_at": "2026-05-26T00:22:01+00:00",
-      "audited_at_sakhalin": "2026-05-26T11:22:01+11:00"
-    },
-    {
-      "time_sakhalin": "2026-05-26T11:21:49+11:00",
-      "source": "Habr",
-      "category": "🧭 Геополитика",
-      "title": "MemForge2: загрузочная флешка, которая за минуту говорит — какую планку памяти менять",
-      "body": [
-        "Сегодня собирал HP EliteDesk 8300, четыре планки DDR3 по 2 ГБ.",
-        "Стандартный сценарий: сейчас полчаса вытаскивать планки по одной, перезагружаться, выяснять..."
-      ],
-      "caption": "🧭 Геополитика\n\n<b>MemForge2: загрузочная флешка, которая за минуту говорит — какую планку памяти менять</b>\n\nСегодня собирал HP EliteDesk 8300, четыре планки DDR3 по 2 ГБ.\n\nСтандартный сценарий: сейчас полчаса вытаскивать планки по одной, перезагружаться, выяснять...\n\nГЕОПОЛИТИКА · <a href=\"https://habr.com/ru/articles/1039280/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1039280#habracut\">Habr</a>",
-      "caption_plain": "🧭 Геополитика\n\n MemForge2: загрузочная флешка, которая за минуту говорит — какую планку памяти менять \n\nСегодня собирал HP EliteDesk 8300, четыре планки DDR3 по 2 ГБ.\n\nСтандартный сценарий: сейчас полчаса вытаскивать планки по одной, перезагружаться, выяснять...\n\nГЕОПОЛИТИКА ·  Habr ",
-      "url": "https://habr.com/ru/articles/1039280/?utm_source=habrahabr&utm_medium=rss&utm_campaign=1039280#habracut",
-      "published_at": "2026-05-25T17:48:35+00:00",
-      "with_image": true,
-      "image_mode": "pipeline_generated",
-      "image_url": null,
-      "image_fingerprint": "ed77c059d346f7558d6d0da35b66c48611e10209",
-      "image_pipeline": {
-        "strategy": "generated",
-        "reason": "generated semantic image accepted",
-        "selected": {
-          "url": null,
-          "source": "generated",
-          "width": 1200,
-          "height": 675,
-          "mime_type": "image/jpeg",
-          "query_used": "generated:it:MemForge2: загрузочная флешка, которая за минуту говорит — какую планку памяти менять",
-          "relevance_score": 0.9,
-          "image_kind": "generated",
-          "filename": "thematic.jpg",
-          "reason": "local semantic generation; topic=it; hits=[]; entity_hits=[]; bad_hits=[]"
-        },
-        "attempts": [
-          {
-            "stage": "external_search",
-            "query": "computer chip technology",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/ML34003P.jpg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "computer chip technology",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/NXP_PCF8577C_LCD_driver_with_I%C2%B2C_%28Colour_Corrected%29.jpg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "computer chip technology",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/SN7493N.jpg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "computer chip technology",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Silicon_chip_from_a_computer_laser_mouse_under_a_microscope_50%D1%85.jpg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "server room network",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Data_Center_2_%28UNC%29.jpg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "server room network",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Data_Center_3_%28UNC%29.jpg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "server room network",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Network_cables_in_server_room.jpg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "server room network",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Server_Room_-_DPLA_-_0a62d5947facc70bd04e6d169556a60c.jpg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "server room network",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Server_Room_-_DPLA_-_98c158d56428076ae66e79c88648d48e.jpg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "server room network",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Server_Room_-_DPLA_-_bcc07e65dc17d8acad1f6f5f1ae9e4a8.jpg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "server room network",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Server_Room_-_DPLA_-_c8677f0d285b30976d93489799641dc7.jpg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "generated",
-            "ok": true,
-            "reason": "accepted: 1200x675; score=0.90; topic=it; hits=[]; entity_hits=[]; bad_hits=[]"
-          }
-        ]
-      },
-      "publish_method": "sendPhoto/safe/pipeline_generated",
-      "telegram_message_id": 123,
-      "score": 730,
-      "stream_priority": 650,
-      "rewrite_mode": "generic",
-      "audit_status": "pass",
-      "audit_severity": "ok",
-      "audit_issues": [],
-      "audited_at": "2026-05-26T00:22:01+00:00",
-      "audited_at_sakhalin": "2026-05-26T11:22:01+11:00"
-    },
     {
       "time_sakhalin": "2026-05-26T16:55:41+11:00",
       "source": "Interfax",
@@ -3891,6 +3639,70 @@
         "mode": "deterministic",
         "issues": []
       }
+    },
+    {
+      "time_sakhalin": "2026-08-31T12:11:06+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title": "Топливную компанию на Курилах оштрафовали за отсутствие антитеррористических мер",
+      "url": "https://sakhalinmedia.ru/news/2604719/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6351/6350850.jpg?7437e573770959ff4d572efb697d925a",
+      "image_hash": "a6229532232f363ab268c02d370eb57077ae0a0f",
+      "topic_cluster": "sakh:топливную_компанию_курилах_оштрафовали_отсутствие_антитеррористических",
+      "published_at": "2026-08-30T22:37:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": [],
+        "reclassified_from": "sakh_chp",
+        "reclassified_to": "sakh"
+      }
+    },
+    {
+      "time_sakhalin": "2026-08-31T12:13:43+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title": "Более 30 водителей на Сахалине накажут за просрочку штрафов ГАИ",
+      "url": "https://sakhalinmedia.ru/news/2604730/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6351/6350886.jpg?7f2f86f6a76f00e593327470c319a82a",
+      "image_hash": "464eb1f4e20296f21182dee30105b0f038c9a963",
+      "topic_cluster": "sakh:более_водителей_сахалине_накажут_просрочку_штрафов",
+      "published_at": "2026-08-30T23:16:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": [],
+        "reclassified_from": "sakh_chp",
+        "reclassified_to": "sakh"
+      }
     }
   ],
   "last_cycle_report": {
@@ -4118,21 +3930,20 @@
   },
   "last_run": {
     "version": "stable-v10.4",
-    "started_sakhalin": "2026-08-31T09:26:32+11:00",
+    "started_sakhalin": "2026-08-31T12:07:22+11:00",
     "status": "ok",
-    "candidates": 21,
+    "candidates": 25,
     "published": 2,
-    "local_candidates": 18,
+    "local_candidates": 22,
     "local_stream": {
       "status": "healthy",
-      "ok_sources": 3,
+      "ok_sources": 4,
       "sources": [
         {
           "source": "Sakhalin Google",
-          "status": "down",
-          "entries": 0,
-          "recent": 0,
-          "error": "503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%D0%A1%D0%B0%D1%85%D0%B0%D0%BB%D0%B8%D0%BD+OR+%D0%AE%D0%B6%D0%BD%D0%BE-%D0%A1%D0%B0%D1%85%D0%B0%"
+          "status": "ok",
+          "entries": 20,
+          "recent": 19
         },
         {
           "source": "SakhalinMedia",
@@ -4144,7 +3955,7 @@
           "source": "ASTV HTML",
           "status": "ok",
           "entries": 22,
-          "recent": 15
+          "recent": 14
         },
         {
           "source": "Sakh.online HTML",
@@ -4154,46 +3965,46 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-08-31T09:31:56+11:00",
+    "finished_sakhalin": "2026-08-31T12:13:51+11:00",
     "stats": {
-      "rss_seen": 112,
-      "old_skip": 42,
-      "google_skip": 0,
+      "rss_seen": 160,
+      "old_skip": 75,
+      "google_skip": 15,
       "duplicate_skip": 2,
-      "low_info_skip": 15,
+      "low_info_skip": 11,
       "category_skip": 22,
       "no_image_skip": 0,
       "bad_image_skip": 14,
-      "logo_image_skip": 75,
+      "logo_image_skip": 70,
       "text_card_image_skip": 2,
-      "candidates": 21,
-      "rewrite_retry": 5,
+      "candidates": 25,
+      "rewrite_retry": 7,
       "editorial_skip": 3,
       "telegram_fail": 0,
       "published": 2,
       "ai_calls": 8,
       "ai_budget_exhausted": 1,
-      "ai_api_fail": 5,
+      "ai_api_fail": 6,
       "evidence_reject": 0,
-      "validation_reject": 0,
-      "extractive_fallback": 1,
-      "editorial_prechecked": 40,
+      "validation_reject": 1,
+      "extractive_fallback": 2,
+      "editorial_prechecked": 36,
       "editorial_gate_checked": 5,
       "editorial_gate_pass": 2,
       "editorial_gate_reject": 4,
       "editorial_gate_fallback": 0,
-      "editorial_gate_ai_calls": 3,
-      "editorial_gate_ai_fail": 2,
-      "editorial_title_reject": 4,
-      "editorial_category_reject": 2,
+      "editorial_gate_ai_calls": 1,
+      "editorial_gate_ai_fail": 1,
+      "editorial_title_reject": 3,
+      "editorial_category_reject": 3,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 11,
-      "editorial_offtopic_reject": 15,
+      "editorial_reclassified": 8,
+      "editorial_offtopic_reject": 4,
       "openrouter_empty_content": 3,
       "openrouter_model_fallback": 0,
-      "media_required_skip": 2,
+      "media_required_skip": 4,
       "media_generic_skip": 0,
-      "media_ready_candidates": 21,
+      "media_ready_candidates": 25,
       "photo_retry": 0,
       "photo_publish": 2,
       "photo_upload_original": 2,
@@ -4217,8 +4028,8 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 21,
-      "missing_media_rejected": 2,
+      "ready_candidates": 25,
+      "missing_media_rejected": 4,
       "generic_media_rejected": 0,
       "photo_retries": 0,
       "photo_published": 2,
@@ -4231,15 +4042,15 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 40,
+      "prechecked": 36,
       "checked": 5,
       "passed": 2,
       "rejected": 4,
-      "reclassified": 11,
-      "offtopic_reject": 15,
+      "reclassified": 8,
+      "offtopic_reject": 4,
       "fallback": 0,
-      "ai_calls": 3,
-      "ai_fail": 2,
+      "ai_calls": 1,
+      "ai_fail": 1,
       "audited_urls": 6
     }
   },
