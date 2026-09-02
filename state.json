@@ -190,7 +190,9 @@
     "https://sakhalinmedia.ru/news/2607303/",
     "https://tass.ru/ekonomika/28067783",
     "https://sakhalinmedia.ru/news/2607317/",
-    "https://sakhalinmedia.ru/news/2607307/"
+    "https://sakhalinmedia.ru/news/2607307/",
+    "https://sakhalinmedia.ru/news/2607791/",
+    "https://sakhalinmedia.ru/news/2607890/"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -383,190 +385,12 @@
     "6620038cb8f426fa135e9fcae7e3eb860ce49067",
     "aea2d7bc6f6a9d7717c1fec675e2d556f9f26e7a",
     "204938f5d9da480a59842cb60be9b218e729d394",
-    "2c19f359c7d9dfd35e759aac665d319843ae7087"
+    "2c19f359c7d9dfd35e759aac665d319843ae7087",
+    "3bc49b3270c398a9715fa8592b628dec9dd56620",
+    "4e37abfb0a3559c32a30170ee64657a811624b84"
   ],
-  "last_run_sakhalin": "2026-09-02T11:56:23+11:00",
+  "last_run_sakhalin": "2026-09-02T17:58:23+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-05-29T11:09:58+11:00",
-      "source": "The Verge",
-      "category": "🎮 Игры / индустрия",
-      "title": "Microsoft раскрыла новую подборку игр для Xbox Game Pass",
-      "body": [
-        "Microsoft объявила очередную подборку игр, которые появятся в Xbox Game Pass.",
-        "Для игровой индустрии это сервисная новость: Game Pass остаётся одним из ключевых инструментов удержания аудитории Xbox и PC."
-      ],
-      "caption": "🎮 Игры / индустрия\n\n<b>Microsoft раскрыла новую подборку игр для Xbox Game Pass</b>\n\nMicrosoft объявила очередную подборку игр, которые появятся в Xbox Game Pass.\n\nДля игровой индустрии это сервисная новость: Game Pass остаётся одним из ключевых инструментов удержания аудитории Xbox и PC.\n\nИГРОВАЯ ИНДУСТРИЯ · <a href=\"https://www.theverge.com/tech/938807/microsoft-surface-future-devices-notepad\">The Verge</a>",
-      "caption_plain": "🎮 Игры / индустрия\n\n Microsoft раскрыла новую подборку игр для Xbox Game Pass \n\nMicrosoft объявила очередную подборку игр, которые появятся в Xbox Game Pass.\n\nДля игровой индустрии это сервисная новость: Game Pass остаётся одним из ключевых инструментов удержания аудитории Xbox и PC.\n\nИГРОВАЯ ИНДУСТРИЯ ·  The Verge ",
-      "url": "https://www.theverge.com/tech/938807/microsoft-surface-future-devices-notepad",
-      "published_at": "2026-05-28T16:00:00+00:00",
-      "with_image": true,
-      "image_mode": "pipeline_generated",
-      "image_url": null,
-      "image_fingerprint": "cd20853faac5cd8188a28cb150d924cb26d49234",
-      "image_pipeline": {
-        "strategy": "generated",
-        "reason": "generated semantic image accepted",
-        "selected": {
-          "url": null,
-          "source": "generated",
-          "width": 1200,
-          "height": 675,
-          "mime_type": "image/jpeg",
-          "query_used": "generated:games:Microsoft раскрыла новую подборку игр для Xbox Game Pass",
-          "relevance_score": 1.1600000000000001,
-          "image_kind": "generated",
-          "filename": "thematic.jpg",
-          "reason": "local semantic generation; topic=games; hits=['game', 'xbox']; entity_hits=[]; bad_hits=[]"
-        },
-        "attempts": [
-          {
-            "stage": "external_search",
-            "query": "video game industry studio",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Halo_Studios_Logo.svg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "video game industry studio",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Keywords_Studios_Logo.png",
-            "ok": false,
-            "reason": "bad image URL token"
-          },
-          {
-            "stage": "external_search",
-            "query": "video game industry studio",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Laniatus_videogame_company_logo_2024.png",
-            "ok": false,
-            "reason": "bad image URL token"
-          },
-          {
-            "stage": "external_search",
-            "query": "video game industry studio",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Outside_picture_of_a_video_game_truck_and_trailer.JPG",
-            "ok": false,
-            "reason": "low relevance: 0.31; topic=games; hits=['game']; entity_hits=[]; bad_hits=[]"
-          },
-          {
-            "stage": "external_search",
-            "query": "gaming console controller",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/FC-Twin-Console-Set-H.jpg",
-            "ok": false,
-            "reason": "low relevance: 0.70; topic=games; hits=['game', 'gaming', 'controller', 'console']; entity_hits=[]; bad_hits=[]"
-          },
-          {
-            "stage": "external_search",
-            "query": "gaming console controller",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Microsoft-Xbox-One-Console-Set-wKinect.jpg",
-            "ok": false,
-            "reason": "low relevance: 0.73; topic=games; hits=['game', 'gaming', 'controller', 'console', 'xbox']; entity_hits=[]; bad_hits=[]"
-          },
-          {
-            "stage": "external_search",
-            "query": "gaming console controller",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/OUYA-Console-set-h.jpg",
-            "ok": false,
-            "reason": "low relevance: 0.70; topic=games; hits=['game', 'gaming', 'controller', 'console']; entity_hits=[]; bad_hits=[]"
-          },
-          {
-            "stage": "external_search",
-            "query": "gaming console controller",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Sega-Mega-Drive-JP-Mk1-Console-Set.jpg",
-            "ok": false,
-            "reason": "low relevance: 0.70; topic=games; hits=['game', 'gaming', 'controller', 'console']; entity_hits=[]; bad_hits=[]"
-          },
-          {
-            "stage": "external_search",
-            "query": "gaming console controller",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Sega-SG-1000-Console-Set.jpg",
-            "ok": false,
-            "reason": "low relevance: 0.70; topic=games; hits=['game', 'gaming', 'controller', 'console']; entity_hits=[]; bad_hits=[]"
-          },
-          {
-            "stage": "external_search",
-            "query": "gaming console controller",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Wii-Mini-Console-Set-H.jpg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "external_search",
-            "query": "gaming console controller",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Xbox-360-Pro-wController.jpg",
-            "ok": false,
-            "reason": "no image data"
-          },
-          {
-            "stage": "generated",
-            "ok": true,
-            "reason": "accepted: 1200x675; score=1.16; topic=games; hits=['game', 'xbox']; entity_hits=[]; bad_hits=[]"
-          }
-        ]
-      },
-      "publish_method": "sendPhoto/safe/pipeline_generated",
-      "telegram_message_id": 142,
-      "score": 600,
-      "stream_priority": 600,
-      "rewrite_mode": "special",
-      "audit_status": "pass",
-      "audit_severity": "ok",
-      "audit_issues": [],
-      "audited_at": "2026-05-29T00:10:10+00:00",
-      "audited_at_sakhalin": "2026-05-29T11:10:10+11:00"
-    },
-    {
-      "time_sakhalin": "2026-06-02T23:09:45+11:00",
-      "source": "Eurogamer",
-      "category": "🧭 Геополитика",
-      "title": "К спин-оффу The Witcher привлекли сценаристку Destiny 2",
-      "body": [
-        "К спин-оффу The Witcher присоединилась Кван Пернг, известная по работе над Destiny 2: The Final Shape.",
-        "Она стала новым ведущим сценаристом проекта, что может усилить сюжетную часть игры."
-      ],
-      "caption": "🧭 Геополитика\n\n<b>К спин-оффу The Witcher привлекли сценаристку Destiny 2</b>\n\nК спин-оффу The Witcher присоединилась Кван Пернг, известная по работе над Destiny 2: The Final Shape.\n\nОна стала новым ведущим сценаристом проекта, что может усилить сюжетную часть игры.\n\nГЕОПОЛИТИКА · <a href=\"https://www.eurogamer.net/nvidia-rtx-spark-announced-ai-chip\">Eurogamer</a>",
-      "caption_plain": "🧭 Геополитика\n\n К спин-оффу The Witcher привлекли сценаристку Destiny 2 \n\nК спин-оффу The Witcher присоединилась Кван Пернг, известная по работе над Destiny 2: The Final Shape.\n\nОна стала новым ведущим сценаристом проекта, что может усилить сюжетную часть игры.\n\nГЕОПОЛИТИКА ·  Eurogamer ",
-      "url": "https://www.eurogamer.net/nvidia-rtx-spark-announced-ai-chip",
-      "published_at": "2026-06-01T15:51:43.325826+00:00",
-      "with_image": true,
-      "image_mode": "pipeline_source_photo",
-      "image_url": "https://assetsio.gnwcdn.com/nvidia-rtx-spark.png?width=690&quality=85&format=jpg&auto=webp",
-      "image_fingerprint": "e6470a22b34d4176bbec9dd6131c7a09e79b0987",
-      "image_pipeline": {
-        "strategy": "source_photo",
-        "reason": "real source photo accepted",
-        "selected": {
-          "url": "https://assetsio.gnwcdn.com/nvidia-rtx-spark.png?width=690&quality=85&format=jpg&auto=webp",
-          "source": "source_photo",
-          "width": null,
-          "height": null,
-          "mime_type": "image/jpeg",
-          "query_used": null,
-          "relevance_score": 0.86,
-          "image_kind": "photo",
-          "filename": "nvidia-rtx-spark.png",
-          "reason": "real source photo accepted before semantic fallback"
-        },
-        "attempts": [
-          {
-            "url": "https://assetsio.gnwcdn.com/nvidia-rtx-spark.png?width=690&quality=85&format=jpg&auto=webp",
-            "ok": true,
-            "reason": "source photo accepted",
-            "size": "690x388"
-          }
-        ]
-      },
-      "publish_method": "sendPhoto/safe/pipeline_source_photo",
-      "telegram_message_id": 143,
-      "score": 680,
-      "stream_priority": 600,
-      "rewrite_mode": "special",
-      "audit_status": "pass",
-      "audit_severity": "ok",
-      "audit_issues": [],
-      "audited_at": "2026-06-02T12:09:57+00:00",
-      "audited_at_sakhalin": "2026-06-02T23:09:57+11:00"
-    },
     {
       "time_sakhalin": "2026-06-10T11:16:28+11:00",
       "source": "Interfax",
@@ -2540,6 +2364,68 @@
         "reclassified_from": "sakh_chp",
         "reclassified_to": "geo"
       }
+    },
+    {
+      "time_sakhalin": "2026-09-02T17:58:07+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "Водитель Урала погиб в результате опрокидывания грузовика на Итурупе",
+      "url": "https://sakhalinmedia.ru/news/2607791/",
+      "image_url": "https://sakhalinmedia.ru/f/266x136/6355/6354419.jpg?06192cc9423a41c0715b3c8cb98260f5",
+      "image_hash": "cc7d227b0d5015bbc155a51dae3443176e69c70d",
+      "topic_cluster": "sakh_chp:водитель_урала_погиб_результате_опрокидывания_грузовика",
+      "published_at": "2026-09-02T05:11:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": []
+      }
+    },
+    {
+      "time_sakhalin": "2026-09-02T17:58:15+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title": "Жительница Южно-Сахалинска лишилась денег при попытке купить щенка в интернете",
+      "url": "https://sakhalinmedia.ru/news/2607890/",
+      "image_url": "https://sakhalinmedia.ru/f/266x136/6320/6319561.jpg?20bcc21c38b19675d5f90358b8c8a1a3",
+      "image_hash": "075b0a70f00ae53a3b15b1702bb2a6fc1a849d31",
+      "topic_cluster": "sakh:жительница_сахалинска_лишилась_денег_попытке_купить",
+      "published_at": "2026-09-02T06:21:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": [],
+        "reclassified_from": "sakh_chp",
+        "reclassified_to": "sakh"
+      }
     }
   ],
   "last_cycle_report": {
@@ -2767,9 +2653,9 @@
   },
   "last_run": {
     "version": "stable-v10.4",
-    "started_sakhalin": "2026-09-02T11:51:15+11:00",
+    "started_sakhalin": "2026-09-02T17:52:30+11:00",
     "status": "ok",
-    "candidates": 27,
+    "candidates": 25,
     "published": 2,
     "local_candidates": 18,
     "local_stream": {
@@ -2780,7 +2666,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 14
+          "recent": 15
         },
         {
           "source": "SakhalinMedia",
@@ -2791,8 +2677,8 @@
         {
           "source": "ASTV HTML",
           "status": "ok",
-          "entries": 21,
-          "recent": 16
+          "entries": 22,
+          "recent": 15
         },
         {
           "source": "Sakh.online HTML",
@@ -2802,46 +2688,46 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-09-02T11:56:23+11:00",
+    "finished_sakhalin": "2026-09-02T17:58:23+11:00",
     "stats": {
       "rss_seen": 160,
-      "old_skip": 66,
-      "google_skip": 13,
-      "duplicate_skip": 1,
-      "low_info_skip": 14,
-      "category_skip": 34,
+      "old_skip": 67,
+      "google_skip": 12,
+      "duplicate_skip": 0,
+      "low_info_skip": 16,
+      "category_skip": 28,
       "no_image_skip": 0,
-      "bad_image_skip": 7,
-      "logo_image_skip": 56,
+      "bad_image_skip": 9,
+      "logo_image_skip": 51,
       "text_card_image_skip": 0,
-      "candidates": 27,
-      "rewrite_retry": 4,
-      "editorial_skip": 2,
+      "candidates": 25,
+      "rewrite_retry": 6,
+      "editorial_skip": 8,
       "telegram_fail": 0,
       "published": 2,
-      "ai_calls": 7,
-      "ai_budget_exhausted": 0,
-      "ai_api_fail": 4,
-      "evidence_reject": 0,
-      "validation_reject": 0,
-      "extractive_fallback": 1,
-      "editorial_prechecked": 41,
-      "editorial_gate_checked": 4,
+      "ai_calls": 8,
+      "ai_budget_exhausted": 1,
+      "ai_api_fail": 5,
+      "evidence_reject": 1,
+      "validation_reject": 1,
+      "extractive_fallback": 2,
+      "editorial_prechecked": 39,
+      "editorial_gate_checked": 10,
       "editorial_gate_pass": 2,
-      "editorial_gate_reject": 3,
+      "editorial_gate_reject": 4,
       "editorial_gate_fallback": 0,
-      "editorial_gate_ai_calls": 3,
+      "editorial_gate_ai_calls": 2,
       "editorial_gate_ai_fail": 2,
       "editorial_title_reject": 3,
-      "editorial_category_reject": 1,
+      "editorial_category_reject": 2,
       "editorial_meaning_reject": 0,
       "editorial_reclassified": 8,
       "editorial_offtopic_reject": 10,
-      "openrouter_empty_content": 2,
+      "openrouter_empty_content": 4,
       "openrouter_model_fallback": 0,
-      "media_required_skip": 3,
+      "media_required_skip": 2,
       "media_generic_skip": 0,
-      "media_ready_candidates": 27,
+      "media_ready_candidates": 25,
       "photo_retry": 0,
       "photo_publish": 2,
       "photo_upload_original": 2,
@@ -2865,8 +2751,8 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 27,
-      "missing_media_rejected": 3,
+      "ready_candidates": 25,
+      "missing_media_rejected": 2,
       "generic_media_rejected": 0,
       "photo_retries": 0,
       "photo_published": 2,
@@ -2879,16 +2765,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 41,
-      "checked": 4,
+      "prechecked": 39,
+      "checked": 10,
       "passed": 2,
-      "rejected": 3,
+      "rejected": 4,
       "reclassified": 8,
       "offtopic_reject": 10,
       "fallback": 0,
-      "ai_calls": 3,
+      "ai_calls": 2,
       "ai_fail": 2,
-      "audited_urls": 5
+      "audited_urls": 6
     }
   },
   "pending_media_delivery": []
