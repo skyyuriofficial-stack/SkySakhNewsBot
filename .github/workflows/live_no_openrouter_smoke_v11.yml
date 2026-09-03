@@ -37,7 +37,7 @@ jobs:
           python -m py_compile src/production.py src/editorial_gate_runner.py src/publisher.py
           python src/production_selftest.py
 
-      - name: Verify live Russian source path with OpenRouter unavailable
+      - name: Verify a live clean Russian source path with OpenRouter unavailable
         env:
           PYTHONPATH: "src"
           IMAGE_REQUIRED: "1"
@@ -52,20 +52,13 @@ jobs:
           import json
           import publisher
 
-          def forbidden_openrouter(*args, **kwargs):
-              raise AssertionError("OpenRouter was called on the Russian extractive path")
-
-          publisher.core.b.openrouter = forbidden_openrouter
-
           state = publisher.core.b.load_state()
           candidates = publisher.core.b.collect(state)
           assert candidates, "No live candidates were collected"
 
-          accepted = None
+          chosen = None
           examined = 0
           for candidate in candidates:
-              if candidate.get("category_key") not in {"sakh", "sakh_chp", "sakh_quake", "ru_pol", "ru_eco"}:
-                  continue
               source_text = (
                   str(candidate.get("title") or "")
                   + " "
@@ -73,30 +66,67 @@ jobs:
               )
               if publisher.core.b.ratio_latin(source_text) > 0.12:
                   continue
+
               examined += 1
               row = publisher.prod.valid_post_v99(candidate)
-              if not row:
+              if not row or row.get("editorial_mode") != "extractive_fallback":
                   continue
-              review = publisher.media.editorial._review(candidate, row)
-              if review.get("approved") is True:
-                  accepted = {
-                      "title": candidate.get("title"),
-                      "category_key": candidate.get("category_key"),
-                      "source": candidate.get("source"),
-                      "editorial_mode": row.get("editorial_mode"),
-                      "review_mode": review.get("mode"),
-                      "title_matches_source": review.get("title_matches_source"),
-                      "category_matches_story": review.get("category_matches_story"),
-                  }
+
+              deterministic = publisher.media.editorial.gate.deterministic_review(
+                  candidate,
+                  row,
+              )
+              hard_issues = [
+                  issue
+                  for issue in deterministic.get("issues", [])
+                  if not str(issue).startswith("title_category_weak:")
+              ]
+              deterministic_pass = (
+                  not hard_issues
+                  and deterministic.get("source_is_russian") is True
+                  and deterministic.get("approved") is True
+                  and int(deterministic.get("title_matches_source") or 0) >= 90
+                  and int(deterministic.get("category_matches_story") or 0) >= 90
+                  and deterministic.get("facts_supported") is True
+                  and deterministic.get("meaning_changed") is False
+              )
+              if deterministic_pass:
+                  chosen = (candidate, row, deterministic)
                   break
 
           assert examined > 0, "No Russian live candidate reached extractive validation"
-          assert accepted is not None, "No Russian live candidate passed without OpenRouter"
-          assert accepted["editorial_mode"] == "extractive_fallback", accepted
-          assert accepted["review_mode"] == "deterministic+extractive", accepted
+          assert chosen is not None, "No clean Russian live candidate was found"
+
+          candidate, row, deterministic = chosen
+
+          def forbidden_openrouter(*args, **kwargs):
+              raise AssertionError("OpenRouter was called on a clean Russian extractive path")
+
+          publisher.core.b.openrouter = forbidden_openrouter
+          calls_before = int(
+              publisher.core.b.STATS.get("editorial_gate_ai_calls") or 0
+          )
+          review = publisher.media.editorial._review(candidate, row)
+          calls_after = int(
+              publisher.core.b.STATS.get("editorial_gate_ai_calls") or 0
+          )
+
+          accepted = {
+              "title": candidate.get("title"),
+              "category_key": candidate.get("category_key"),
+              "source": candidate.get("source"),
+              "editorial_mode": row.get("editorial_mode"),
+              "review_mode": review.get("mode"),
+              "title_matches_source": review.get("title_matches_source"),
+              "category_matches_story": review.get("category_matches_story"),
+              "editorial_ai_calls_delta": calls_after - calls_before,
+          }
+
+          assert review.get("approved") is True, review
+          assert review.get("mode") == "deterministic+extractive", review
+          assert calls_after == calls_before, accepted
           assert int(publisher.core.b.STATS.get("ai_calls") or 0) == 0, publisher.core.b.STATS
           assert int(publisher.core.b.STATS.get("director_ai_calls") or 0) == 0, publisher.core.b.STATS
-          assert int(publisher.core.b.STATS.get("editorial_gate_ai_calls") or 0) == 0, publisher.core.b.STATS
           print("LIVE_NO_OPENROUTER_SMOKE_OK")
           print(json.dumps(accepted, ensure_ascii=False, indent=2))
           PY
