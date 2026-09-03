@@ -63,18 +63,18 @@ jobs:
           MEDIA_PENDING_MAX_ITEMS: "24"
         run: python src/production_selftest.py
 
-      - name: Verify clean patch and show diff
+      - name: Verify clean source patch
         run: |
           git diff --check
           git diff --stat
-          git diff -- src/production.py src/editorial_gate_runner.py src/publisher.py src/production_selftest.py .github/workflows/auto_publish_v7.yml .github/workflows/production_ci.yml
+          git diff -- src/production.py src/editorial_gate_runner.py src/publisher.py src/production_selftest.py
 
-      - name: Commit tested hotfix and remove one-shot machinery
+      - name: Commit tested source hotfix
         run: |
           git config user.name "skysakhnews-bot"
           git config user.email "actions@github.com"
-          git rm tools/apply_openrouter_resilience_v11.py
-          git rm .github/workflows/apply_openrouter_resilience_v11.yml
-          git add -A
+          find src -type d -name __pycache__ -prune -exec rm -rf {} +
+          git checkout -- .github/workflows/auto_publish_v7.yml .github/workflows/production_ci.yml
+          git add src/editorial_gate_runner.py src/production.py src/production_selftest.py src/publisher.py
           git commit -m "Harden OpenRouter and remove it from the Russian-news critical path"
           git push origin HEAD:fix/openrouter-resilience-v11
