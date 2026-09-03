@@ -1,8 +1,9 @@
-"""Title-first, geography-first stream reconciliation for SkySakhNews.
+"""Headline-first and geography-first stream reconciliation for SkySakhNews.
 
-A publisher is never treated as the geography of a story. The source headline
-is the primary signal; only the beginning of the article is used as a fallback.
-Topic markers are matched by token prefixes, never by arbitrary substrings.
+The publisher domain is never treated as the geography of the story. The
+headline is authoritative; the article lead is only a controlled fallback.
+Topic markers are matched on token boundaries to avoid false positives such as
+NATO inside the Russian word "санаторий".
 """
 
 from __future__ import annotations
@@ -17,9 +18,6 @@ LOCAL_MEDIA = ("sakhalinmedia", "astv", "sakh.online")
 TECH_MEDIA = ("technology", "tech", "wired", "verge")
 RUSSIAN_MEDIA = ("interfax", "интерфакс", "tass", "тасс")
 
-
-# District centres, islands and settlements frequently used without the word
-# "Sakhalin" in otherwise local headlines.
 gate.LOCAL_MARKERS = gate.LOCAL_MARKERS + (
     "анив", "макаров", "смирных", "тымовск", "томари", "шахтерск",
     "горнозаводск", "чехов", "быков", "синегорск", "троицк", "лугов",
@@ -27,10 +25,11 @@ gate.LOCAL_MARKERS = gate.LOCAL_MARKERS + (
     "монерон", "рейдово", "малокурильск", "курильск", "охотское море",
 )
 
-# Avoid ambiguous three-letter fragments such as "инд", "груз" and "куб".
-# They previously classified "индекс", "грузовик" and Kuban-related stories
-# as foreign. Token-aware matching below also prevents NATO from being found
-# inside the word "санаторий".
+gate.INCIDENT = gate.INCIDENT + (
+    "лишилась денег", "лишился денег", "выманил", "обманули", "мошенничество",
+    "наркотик", "нелегальный улов", "опрокидывание", "сошел с проезжей части",
+)
+
 gate.FOREIGN = (
     "сша", "америк", "трамп", "канада", "канад", "мексик", "иран",
     "израил", "китай", "тайван", "нато", "натов", "евросоюз", "британ",
@@ -44,8 +43,6 @@ gate.FOREIGN = (
     "turkey", "syria", "india", "georgia", "cuba",
 )
 
-# These are complete inflected country names, not productive stems. They must
-# match the whole token. In particular, "Куба" must not match "Кубани".
 EXACT_TOPIC_MARKERS = {
     "сша", "нато",
     "индия", "индии", "индией",
@@ -56,56 +53,57 @@ EXACT_TOPIC_MARKERS = {
 }
 
 INTERNATIONAL_PATHS = (
-    "/world/",
-    "/international/",
-    "/foreign/",
-    "/mezhdunarodnaya-panorama/",
-    "/mezhdunarodnaya-politika/",
+    "/world/", "/international/", "/foreign/",
+    "/mezhdunarodnaya-panorama/", "/mezhdunarodnaya-politika/",
 )
 DOMESTIC_PATHS = (
-    "/russia/",
-    "/business/",
-    "/economy/",
-    "/politics/",
-    "/politika/",
-    "/ekonomika/",
+    "/russia/", "/business/", "/economy/", "/politics/",
+    "/politika/", "/ekonomika/",
 )
 
 GLOBAL_ECONOMY = (
     "brent", "wti", "opec", "опек", "ice futures", "фьючерс",
     "wall street", "nasdaq", "s&p", "dow jones",
     "нефть дорожает", "нефть дешевеет", "мировые цены",
-    "евц", "ецб", "фрс", "банк китая", "китайский цб",
+    "ецб", "фрс", "банк китая", "китайский цб",
 )
 DOMESTIC_ECONOMY = (
-    "россельхозбанк", "сбер", "сбербанк", "втб", "газпром", "роснефт",
+    "втб", "россельхозбанк", "сбер", "сбербанк", "газпром", "роснефт",
     "мосбирж", "imoex", "минфин", "центробанк", "цб рф", "рубль",
     "российск", "рф", "кабмин", "новороссийск", "фнс", "росстат",
+    "рынок сбережений", "трлн рублей", "газификац", "дфо",
+)
+DOMESTIC_POLITICS = (
+    "путин", "кремл", "госдум", "совфед", "правительств", "кабмин",
+    "министр", "губернатор", "президент россии", "мид россии", "совбез",
+)
+LOCAL_HARM_TITLE = (
+    "погиб", "пострад", "дтп", "авари", "пожар", "лишилась денег",
+    "лишился денег", "выманил", "задержали", "задержан", "наркотик",
+    "мошенн", "пропал", "разыскивают", "уголовное дело", "опрокинулся",
 )
 
-# Consumer advice, travel SEO, recipes and similar syndicated service content
-# do not belong to any SkySakhNews stream unless a real hard-news event is the
-# central subject of the headline.
 TRAVEL_LIFESTYLE = (
     "санатори", "отдых", "курорт", "туризм", "турист", "пляж", "отпуск",
     "путевк", "отел", "гостиниц", "жиль", "дач", "пенсионер",
-    "путешеств", "поездк", "море", "лазаревск", "анап", "ейск", "сочи",
+    "путешеств", "поездк", "лазаревск", "анап", "ейск", "сочи",
     "крым", "бронирован",
 )
 SEO_PROMO = (
     "райск", "по карману", "сентябрьский хит", "хит с жиль", "от 1000 руб",
     "недорог", "дешев", "выгодн", "сэконом", "где отдохнуть",
-    "лучшие места", "не санаторий и не дача", "без переплат", "секрет",
+    "лучшие места", "не санаторий и не дача", "без переплат",
 )
 SERVICE_CONTENT = (
-    "гороскоп", "рецепт", "головолом", "тест на внимательность", "церковный праздник",
-    "народные приметы", "как выбрать", "как сэкономить", "лайфхак", "совет дачник",
-    "что приготовить", "куда поехать", "где отдохнуть",
+    "гороскоп", "рецепт", "головолом", "тест на внимательность",
+    "церковный праздник", "народные приметы", "как выбрать",
+    "как сэкономить", "лайфхак", "что приготовить", "куда поехать",
 )
 INSTITUTIONAL_ECONOMY = (
-    "центробанк", "цб рф", "минфин", "правительств", "госдум", "налог",
-    "бюджет", "тариф", "инфляц", "ключев ставк", "росстат", "фнс",
-    "рынок труда", "безработиц", "экспорт", "импорт",
+    "втб", "центробанк", "цб рф", "минфин", "правительств", "госдум",
+    "налог", "бюджет", "тариф", "инфляц", "ключев ставк", "росстат",
+    "фнс", "рынок труда", "безработиц", "экспорт", "импорт",
+    "рынок сбережений", "трлн рублей", "газификац",
 )
 
 
@@ -118,7 +116,6 @@ def _normalized_tokens(value: str) -> list[str]:
 
 
 def _marker_matches(text: str, marker: str) -> bool:
-    """Match a word/phrase only at token starts, never inside another word."""
     text_tokens = _normalized_tokens(text)
     marker_tokens = _normalized_tokens(marker)
     if not marker_tokens or not text_tokens:
@@ -139,8 +136,6 @@ def _token_aware_contains(text: str, markers) -> bool:
     return any(_marker_matches(text, marker) for marker in markers)
 
 
-# editorial_gate.infer_topics calls this function dynamically. Replacing the
-# old substring matcher fixes all topic groups, not only this one regression.
 gate._contains = _token_aware_contains
 
 
@@ -156,20 +151,12 @@ def _title(candidate) -> str:
     return str(candidate.get("title") or "")
 
 
-def _lead(candidate, limit: int = 1100) -> str:
+def _lead(candidate, limit: int = 900) -> str:
     return str(candidate.get("source_text") or "")[:limit]
 
 
 def _topics(text: str):
     return set(gate.infer_topics(text))
-
-
-def _title_topics(candidate):
-    return _topics(_title(candidate))
-
-
-def _lead_topics(candidate):
-    return _topics(_lead(candidate))
 
 
 def _source_name(candidate) -> str:
@@ -210,12 +197,10 @@ def _domestic_section(candidate) -> bool:
     return any(marker in _path(candidate) for marker in DOMESTIC_PATHS)
 
 
-def _local_from_title(title_topics):
+def _local_category(title_topics: set[str], title: str) -> str:
     if "quake" in title_topics:
         return "sakh_quake"
-    if "weather" in title_topics and "incident" not in title_topics:
-        return "sakh"
-    if "incident" in title_topics:
+    if "incident" in title_topics or _contains_any(title, LOCAL_HARM_TITLE):
         return "sakh_chp"
     return "sakh"
 
@@ -232,25 +217,9 @@ def _domestic_topic_from_title(title_topics):
     return None
 
 
-def _soft_content_offtopic(
-    candidate,
-    title_text: str,
-    lead_text: str,
-    title_topics: set[str],
-    lead_topics: set[str],
-) -> bool:
+def _soft_content_offtopic(candidate, title_text, lead_text, title_topics, lead_topics) -> bool:
     combined = f"{title_text} {lead_text}"
-    all_topics = title_topics | lead_topics
-
     hard_topics = {"security", "incident", "politics", "quake", "weather", "it"}
-    if hard_topics & title_topics:
-        return False
-
-    # An economy story is hard news only when the title contains an actual
-    # institution/indicator, not merely a price in rubles for a holiday offer.
-    institutional_economy = _contains_any(title_text, INSTITUTIONAL_ECONOMY)
-    if "economy" in title_topics and institutional_economy:
-        return False
 
     travel_hits = _hit_count(combined, TRAVEL_LIFESTYLE)
     promo_hits = _hit_count(combined, SEO_PROMO)
@@ -258,33 +227,70 @@ def _soft_content_offtopic(
 
     if travel_hits >= 2 and promo_hits >= 1:
         return True
-    if service_hits >= 1 and not (hard_topics & all_topics):
+    if service_hits >= 1 and not (hard_topics & title_topics):
         return True
-    if (
-        _source_is_local_media(candidate)
-        and "local" not in all_topics
-        and travel_hits >= 2
-    ):
+
+    institutional_economy = _contains_any(title_text, INSTITUTIONAL_ECONOMY)
+    if "economy" in title_topics and institutional_economy:
+        return False
+
+    if _source_is_local_media(candidate) and "local" not in title_topics and travel_hits >= 2:
         return True
     return False
 
 
+def _nonlocal_domestic_from_title(candidate, title_text, lead_text, title_topics):
+    direct = _domestic_topic_from_title(title_topics)
+
+    if direct == "ru_eco" or _contains_any(title_text, DOMESTIC_ECONOMY):
+        if _contains_any(title_text, GLOBAL_ECONOMY) and not _contains_any(
+            title_text + " " + lead_text, DOMESTIC_ECONOMY
+        ):
+            return "geo"
+        if (
+            _contains_any(title_text + " " + lead_text, DOMESTIC_ECONOMY)
+            or "russia" in title_topics
+            or (_source_is_russian_media(candidate) and _domestic_section(candidate))
+            or _source_is_local_media(candidate)
+        ):
+            return "ru_eco"
+        return None
+
+    if direct == "ru_pol" or _contains_any(title_text, DOMESTIC_POLITICS):
+        if "foreign" in title_topics and "russia" not in title_topics:
+            return "geo"
+        if (
+            "russia" in title_topics
+            or _contains_any(title_text + " " + lead_text, DOMESTIC_POLITICS)
+            or _source_is_russian_media(candidate)
+            or _source_is_local_media(candidate)
+        ):
+            return "ru_pol"
+        return None
+
+    if direct == "ru_security":
+        if "foreign" in title_topics and "russia" not in title_topics:
+            return "geo"
+        return "ru_security"
+
+    if direct == "ru_incident":
+        if "foreign" in title_topics and "russia" not in title_topics:
+            return "geo"
+        return "ru_incident"
+
+    return None
+
+
 def suggest_category(candidate):
     """Return the semantically preferred category key, or None for off-topic."""
-
     current = str(candidate.get("category_key") or "")
     title_text = _title(candidate)
     lead_text = _lead(candidate)
-    title_topics = _title_topics(candidate)
-    lead_topics = _lead_topics(candidate)
+    title_topics = _topics(title_text)
+    lead_topics = _topics(lead_text)
+    all_topics = title_topics | lead_topics
 
-    if _soft_content_offtopic(
-        candidate,
-        title_text,
-        lead_text,
-        title_topics,
-        lead_topics,
-    ):
+    if _soft_content_offtopic(candidate, title_text, lead_text, title_topics, lead_topics):
         return None
 
     if "it" in title_topics:
@@ -292,80 +298,49 @@ def suggest_category(candidate):
     if _source_is_tech_media(candidate) and "it" in lead_topics:
         return "it"
 
-    if "local" in title_topics and (
-        "quake" in title_topics
-        or "weather" in title_topics
-        or "incident" in title_topics
-    ):
-        return _local_from_title(title_topics)
+    # Geography in the headline is authoritative.
+    if "local" in title_topics:
+        return _local_category(title_topics, title_text)
 
     if "foreign" in title_topics:
-        if _source_is_world_media(candidate) and "russia" in (
-            title_topics | lead_topics
-        ):
+        if _source_is_world_media(candidate) and "russia" in all_topics:
             return "world_ru"
         return "geo"
 
-    if "local" in title_topics:
-        return _local_from_title(title_topics)
+    domestic = _nonlocal_domestic_from_title(candidate, title_text, lead_text, title_topics)
+    if domestic:
+        return domestic
 
+    # Local publishers frequently syndicate federal content. Their site name or
+    # boilerplate in the article body is never enough to create a local story.
+    if _source_is_local_media(candidate):
+        if _contains_any(title_text, DOMESTIC_ECONOMY):
+            return "ru_eco"
+        if _contains_any(title_text, DOMESTIC_POLITICS):
+            return "ru_pol"
+        return None
+
+    # For non-local publishers, a clear Sakhalin lead may recover a headline
+    # which omitted the region, but only when the lead itself has a real event.
     if "local" in lead_topics:
-        if "quake" in title_topics or (
-            "quake" in lead_topics and _source_is_local_media(candidate)
-        ):
+        if "quake" in all_topics:
             return "sakh_quake"
-        if "weather" in title_topics:
-            return "sakh"
-        if "incident" in title_topics:
+        if "incident" in all_topics or _contains_any(title_text, LOCAL_HARM_TITLE):
             return "sakh_chp"
         return "sakh"
 
-    if _source_is_local_media(candidate):
-        return None
-
     if _international_section(candidate):
-        if _source_is_world_media(candidate) and "russia" in (
-            title_topics | lead_topics
-        ):
+        if _source_is_world_media(candidate) and "russia" in all_topics:
             return "world_ru"
-        return "geo" if (
-            "foreign" in title_topics
-            or "foreign" in lead_topics
-            or "russia" in title_topics
-            or "russia" in lead_topics
-        ) else None
+        if "foreign" in all_topics or "russia" in all_topics:
+            return "geo"
+        return None
 
     if _source_is_world_media(candidate):
-        if "russia" in title_topics or "russia" in lead_topics:
+        if "russia" in all_topics:
             return "world_ru"
-        if "foreign" in title_topics or "foreign" in lead_topics:
+        if "foreign" in all_topics:
             return "geo"
-
-    direct = _domestic_topic_from_title(title_topics)
-    if direct == "ru_eco":
-        if _contains_any(title_text, GLOBAL_ECONOMY):
-            return "geo"
-        if (
-            "russia" in title_topics
-            or _contains_any(title_text, DOMESTIC_ECONOMY)
-            or (_source_is_russian_media(candidate) and _domestic_section(candidate))
-        ):
-            return "ru_eco"
-        return None
-    if direct == "ru_pol":
-        if "foreign" in title_topics and "russia" not in title_topics:
-            return "geo"
-        if (
-            "russia" in title_topics
-            or _source_is_russian_media(candidate)
-            or _domestic_section(candidate)
-        ):
-            return "ru_pol"
-        return None
-    if direct in {"ru_security", "ru_incident"}:
-        if "foreign" in title_topics and "russia" not in title_topics:
-            return "geo"
-        return direct
 
     if _source_is_russian_media(candidate) and _domestic_section(candidate):
         if "security" in lead_topics:
