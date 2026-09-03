@@ -198,7 +198,9 @@
     "https://sakhalinmedia.ru/news/2608453/",
     "https://sakhalinmedia.ru/news/1155672/",
     "https://sakhalinmedia.ru/news/2608922/",
-    "https://sakhalinmedia.ru/news/2608836/"
+    "https://sakhalinmedia.ru/news/2608836/",
+    "https://www.bbc.co.uk/news/articles/c62j50n131mo?at_medium=RSS&at_campaign=rss",
+    "https://sakh.online/news/18/2026-09-03/vladimir-putin-vystupil-na-plenarnom-zasedanii-vef-2026-vo-vladivostoke-524854"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -399,36 +401,12 @@
     "ba6a7e038fcf69cdc8e0d47690ed8e8df5a16ea3",
     "9317e1e6ce1723e77066e0d1231a30a30563575c",
     "509d14e01bd3b0d72f01ccee364592146dfbc19b",
-    "5e90a8c477055b953bed9170d684664b9ad4f591"
+    "5e90a8c477055b953bed9170d684664b9ad4f591",
+    "fb7a349417e8b4f5f3172e77843d6a937d5888f7",
+    "e2a1ff7d643512a7627a3ef6001ae8573c334d05"
   ],
-  "last_run_sakhalin": "2026-09-03T12:05:12+11:00",
+  "last_run_sakhalin": "2026-09-03T17:26:23+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-06-10T22:40:43+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 Россия / безопасность",
-      "category_key": "ru_security",
-      "title": "Пять человек пострадали в Запорожской области из‑за атаки украинского дрона",
-      "url": "https://www.interfax.ru/russia/1095170",
-      "image_url": "https://www.interfax.ru/ftproot/textphotos/2026/06/10/ss1200.jpg",
-      "image_hash": "2c58d254e2aa95d3496c1876708c753440c1a144",
-      "published_at": "2026-06-10T11:02:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/uploaded_jpeg"
-    },
-    {
-      "time_sakhalin": "2026-06-10T22:41:07+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 Россия / политика",
-      "category_key": "ru_pol",
-      "title": "В ОДКБ решили рассмотреть применение к Армении статьи устава из-за двухлетней неуплаты взносов",
-      "url": "https://www.interfax.ru/world/1095169",
-      "image_url": "https://www.interfax.ru/ftproot/textphotos/2026/06/10/ar1200.jpg",
-      "image_hash": "d251be0d89bf5ae7c0c1162a5abd585a5dc1c51d",
-      "published_at": "2026-06-10T11:04:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/uploaded_jpeg"
-    },
     {
       "time_sakhalin": "2026-06-11T23:12:12+11:00",
       "source": "Interfax",
@@ -2564,6 +2542,108 @@
         "mode": "deterministic",
         "issues": []
       }
+    },
+    {
+      "time_sakhalin": "2026-09-03T17:23:29+11:00",
+      "source": "BBC World",
+      "category": "🌍 Мир о России",
+      "category_key": "world_ru",
+      "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
+      "url": "https://www.bbc.co.uk/news/articles/c62j50n131mo?at_medium=RSS&at_campaign=rss",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/eb36/live/4c752a20-a6be-11f1-b109-879e35c24276.jpg",
+      "image_hash": "a66db9315dea69af15f8c4cd9a1ddfad033bf34d",
+      "topic_cluster": "world_ru:rosenberg_putin_veiled_threat_russia_campaign",
+      "published_at": "2026-09-02T11:47:11+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v1",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "world_ru",
+        "corrected_category": "world_ru",
+        "group": "world_ru",
+        "subtype": "diplomacy",
+        "seriousness": 96,
+        "threshold": 76,
+        "priority_score": 126,
+        "slot": "backup",
+        "risks": [],
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true
+      },
+      "source_text_excerpt": "The Russian president wants to keep Britain guessing - and stressing - over Moscow's real intentions. The Russian president wants to keep Britain guessing - and stressing - over Moscow's real intentions. BBC Homepage Skip to content Accessibility Help Your account Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds More menu More menu Search BBC Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds Close menu BBC News Menu Home Climate World US & Canada UK Business Tech Science Entertainment & Arts Health More In Pictures BBC Verify Newsbeat World Africa Asia Australia Europe Latin America Middle East Rosenberg: Putin's veiled threat to UK part of Russia's campaign against West Image source, Reuters Image caption, Putin warned that \"if anyone tries to drag us down the food chain, to gobble us up or devour us, they might get punched in the teeth\" Russian President Vladimir Putin responded with one short sentence when asked at a press conference whether Moscow might strike military facilities in the UK in response to British arms supplies to Ukraine. Military secret is not a \"yes\". And not a \"no\". It leaves us hanging. Those t",
+      "telegram_message_id": 246,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": true,
+      "media_delivery_attempts": 2,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 95,
+        "category_matches_story": 95,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+independent_ai",
+        "issues": []
+      }
+    },
+    {
+      "time_sakhalin": "2026-09-03T17:26:14+11:00",
+      "source": "Sakh.online",
+      "category": "🇷🇺 Россия / политика",
+      "category_key": "ru_pol",
+      "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
+      "url": "https://sakh.online/news/18/2026-09-03/vladimir-putin-vystupil-na-plenarnom-zasedanii-vef-2026-vo-vladivostoke-524854",
+      "image_url": "https://sakh.online/attachments/44ef587c670b65ff8ef27019e9f2ed768a71d193/store/crop/0/0/789/446/800/0/0/0/98b7d73035d4f2698e183252b3351a685140492db93e725d4df993e151a5/98b7d73035d4f2698e183252b3351a685140492db93e725d4df993e151a5.webp",
+      "image_hash": "296629870f3607517e96f6eae3b08f37c1d07ccd",
+      "topic_cluster": "ru_pol:владимир_путин_выступил_пленарном_заседании_владивостоке",
+      "published_at": "2026-09-02T13:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v1",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "ru_pol",
+        "corrected_category": "ru_pol",
+        "group": "ru_pol",
+        "subtype": "political_decision",
+        "seriousness": 87,
+        "threshold": 72,
+        "priority_score": 109,
+        "slot": "backup",
+        "risks": [],
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true
+      },
+      "source_text_excerpt": "Читайте последние актуальные новости главных событий Сахалина на тему \"Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке\" в ленте новостей на сайте Sakh.online На заседании выступил Президент Российской Федерации Владимир Путин. Глава государства поприветствовал участников и гостей форума. «Друзья, я приветствую участников и гостей 11‑го Восточного экономического форума. Это деловое мероприятие традиционно собирает в столице Приморья руководителей бизнеса, специалистов, экспертов из десятков стран мира. Прежде всего, конечно, из Азиатско‑Тихоокеанского региона, который является мощным центром, центром роста, задает темпы развития всей глобальной экономики», — сказал российский лидер. Отметим, В ЭФ традиционно становится площадкой для обсуждения экономических трендов, запуска новых проектов и укрепления международных связей — в этом году форум вновь объединил представителей делового сообщества и экспертных кругов из разных стран, прежде всего из Азиатско‑Тихоокеанского региона. по оценке 3 пользователей 5 4 3 2 1 © 2018—2026 • Областное автономное учреждение «Издательский дом «Губернские ведомости»",
+      "telegram_message_id": 247,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": [],
+        "reclassified_from": "sakh_chp",
+        "reclassified_to": "ru_pol"
+      }
     }
   ],
   "last_cycle_report": {
@@ -2790,12 +2870,12 @@
     "items": []
   },
   "last_run": {
-    "version": "stable-v10.4",
-    "started_sakhalin": "2026-09-03T11:58:27+11:00",
+    "version": "stable-v11.0",
+    "started_sakhalin": "2026-09-03T17:19:48+11:00",
     "status": "ok",
-    "candidates": 32,
+    "candidates": 11,
     "published": 2,
-    "local_candidates": 23,
+    "local_candidates": 3,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -2804,7 +2884,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 11
+          "recent": 12
         },
         {
           "source": "SakhalinMedia",
@@ -2826,46 +2906,46 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-09-03T12:05:12+11:00",
+    "finished_sakhalin": "2026-09-03T17:26:22+11:00",
     "stats": {
       "rss_seen": 160,
-      "old_skip": 63,
+      "old_skip": 65,
       "google_skip": 11,
       "duplicate_skip": 0,
-      "low_info_skip": 19,
-      "category_skip": 30,
+      "low_info_skip": 17,
+      "category_skip": 38,
       "no_image_skip": 0,
-      "bad_image_skip": 10,
-      "logo_image_skip": 33,
-      "text_card_image_skip": 2,
-      "candidates": 32,
-      "rewrite_retry": 6,
-      "editorial_skip": 9,
-      "telegram_fail": 2,
+      "bad_image_skip": 9,
+      "logo_image_skip": 82,
+      "text_card_image_skip": 10,
+      "candidates": 30,
+      "rewrite_retry": 7,
+      "editorial_skip": 3,
+      "telegram_fail": 0,
       "published": 2,
       "ai_calls": 8,
       "ai_budget_exhausted": 1,
       "ai_api_fail": 5,
       "evidence_reject": 1,
-      "validation_reject": 1,
-      "extractive_fallback": 3,
-      "editorial_prechecked": 48,
-      "editorial_gate_checked": 13,
-      "editorial_gate_pass": 4,
-      "editorial_gate_reject": 2,
+      "validation_reject": 2,
+      "extractive_fallback": 2,
+      "editorial_prechecked": 41,
+      "editorial_gate_checked": 5,
+      "editorial_gate_pass": 2,
+      "editorial_gate_reject": 6,
       "editorial_gate_fallback": 0,
-      "editorial_gate_ai_calls": 2,
-      "editorial_gate_ai_fail": 0,
-      "editorial_title_reject": 2,
-      "editorial_category_reject": 1,
-      "editorial_meaning_reject": 1,
-      "editorial_reclassified": 10,
-      "editorial_offtopic_reject": 13,
-      "openrouter_empty_content": 2,
+      "editorial_gate_ai_calls": 1,
+      "editorial_gate_ai_fail": 1,
+      "editorial_title_reject": 4,
+      "editorial_category_reject": 5,
+      "editorial_meaning_reject": 0,
+      "editorial_reclassified": 13,
+      "editorial_offtopic_reject": 7,
+      "openrouter_empty_content": 3,
       "openrouter_model_fallback": 0,
-      "media_required_skip": 2,
+      "media_required_skip": 0,
       "media_generic_skip": 0,
-      "media_ready_candidates": 32,
+      "media_ready_candidates": 30,
       "photo_retry": 0,
       "photo_publish": 2,
       "photo_upload_original": 2,
@@ -2873,12 +2953,268 @@
       "photo_upload_plain_caption": 0,
       "photo_remote_url": 0,
       "photo_alternate_source": 0,
-      "media_deferred": 2,
-      "media_queue_ready": 0,
+      "media_deferred": 0,
+      "media_queue_ready": 2,
       "media_queue_unresolved": 0,
-      "media_queue_recovered": 0,
+      "media_queue_recovered": 1,
       "media_queue_expired": 0,
-      "text_publish_blocked": 2
+      "text_publish_blocked": 0,
+      "director_seen": 30,
+      "director_approved": 11,
+      "director_rejected": 19,
+      "director_reclassified": 1,
+      "director_ai_calls": 1,
+      "director_ai_fail": 1,
+      "director_final_reject": 1,
+      "director_pending_retired": 1
+    },
+    "news_director": {
+      "version": "director-v1",
+      "rolling_balance_before": {
+        "window": 12,
+        "targets": {
+          "local": 6,
+          "world_ru": 1,
+          "ru_safety": 1,
+          "ru_pol": 1,
+          "ru_eco": 1,
+          "geo": 1,
+          "it": 1
+        },
+        "counts": {
+          "local": 4,
+          "world_ru": 0,
+          "ru_safety": 0,
+          "ru_pol": 0,
+          "ru_eco": 2,
+          "geo": 1,
+          "it": 0
+        },
+        "deficits": {
+          "local": 2,
+          "world_ru": 1,
+          "ru_safety": 1,
+          "ru_pol": 1,
+          "ru_eco": 0,
+          "geo": 0,
+          "it": 1
+        },
+        "overages": {
+          "local": 0,
+          "world_ru": 0,
+          "ru_safety": 0,
+          "ru_pol": 0,
+          "ru_eco": 1,
+          "geo": 0,
+          "it": 0
+        },
+        "subtype_counts": {
+          "local_infrastructure": 2,
+          "infrastructure_policy": 1,
+          "diplomacy": 1,
+          "fatal_incident": 1,
+          "fraud": 1,
+          "weather_forecast": 1
+        },
+        "retrospective_anomalies": [
+          {
+            "title": "Трое пьяных, шесть без прав: на Сахалине поймали почти 100 нарушителей ПДД",
+            "category_key": "sakh",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
+            "category_key": "geo",
+            "reason": "ceremony_or_congratulation_low_value",
+            "corrected_category": null
+          },
+          {
+            "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
+            "category_key": "geo",
+            "reason": "calendar_or_archive_not_current_news",
+            "corrected_category": null
+          },
+          {
+            "title": "В Углегорском районе обследовали более 60 км территории в поисках пропавших людей",
+            "category_key": "sakh",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
+            "category_key": "sakh",
+            "reason": "ceremony_or_congratulation_low_value",
+            "corrected_category": null
+          }
+        ],
+        "valid_posts_counted": 7
+      },
+      "scheduled_second_group": "ru_eco",
+      "candidate_count": 30,
+      "approved_count": 11,
+      "rejected_count": 19,
+      "rejected_by_reason": {
+        "subtype_quota_exhausted": 5,
+        "borderline_without_independent_review": 13,
+        "no_valid_news_stream": 1
+      },
+      "ai_review_requested": 10,
+      "ai_review_received": 0,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "\"Лопасти разобрали перед эвакуацией\": astv.ru побывал на месте экстремальной посадки вертолёта на Сахалине",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "subtype": "fatal_incident",
+          "seriousness": 100,
+          "priority_score": 119
+        },
+        {
+          "slot": 2,
+          "title": "Google defeats US justice department bid to force ad tech sale",
+          "category_key": "it",
+          "group": "it",
+          "subtype": "technology",
+          "seriousness": 89,
+          "priority_score": 111
+        },
+        {
+          "slot": "backup",
+          "title": "Rosenberg: Putin's veiled threat to UK part of Russia's campaign against West",
+          "category_key": "world_ru",
+          "group": "world_ru",
+          "subtype": "diplomacy",
+          "seriousness": 96,
+          "priority_score": 126
+        },
+        {
+          "slot": "backup",
+          "title": "EU and Nato vow to step up pressure on Russia after 'new escalation' in Leipzig",
+          "category_key": "world_ru",
+          "group": "world_ru",
+          "subtype": "diplomacy",
+          "seriousness": 94,
+          "priority_score": 116
+        },
+        {
+          "slot": "backup",
+          "title": "Trump administration sides with OpenAI in lawsuit against New York Times",
+          "category_key": "it",
+          "group": "it",
+          "subtype": "technology",
+          "seriousness": 89,
+          "priority_score": 111
+        },
+        {
+          "slot": "backup",
+          "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке | SAKH.ONLINE",
+          "category_key": "ru_pol",
+          "group": "ru_pol",
+          "subtype": "political_decision",
+          "seriousness": 87,
+          "priority_score": 109
+        },
+        {
+          "slot": "backup",
+          "title": "Оценка президента позитивна: Трутнев об итогах работы и подготовке к ВЭФ",
+          "category_key": "ru_pol",
+          "group": "ru_pol",
+          "subtype": "political_decision",
+          "seriousness": 87,
+          "priority_score": 109
+        },
+        {
+          "slot": "backup",
+          "title": "Мотоцикл без водителя повредил два байка в Южно-Сахалинске, но виноват автомобилист",
+          "category_key": "sakh",
+          "group": "local",
+          "subtype": "local_public_interest",
+          "seriousness": 76,
+          "priority_score": 95
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 12,
+        "targets": {
+          "local": 6,
+          "world_ru": 1,
+          "ru_safety": 1,
+          "ru_pol": 1,
+          "ru_eco": 1,
+          "geo": 1,
+          "it": 1
+        },
+        "counts": {
+          "local": 3,
+          "world_ru": 1,
+          "ru_safety": 0,
+          "ru_pol": 1,
+          "ru_eco": 1,
+          "geo": 1,
+          "it": 0
+        },
+        "deficits": {
+          "local": 3,
+          "world_ru": 0,
+          "ru_safety": 1,
+          "ru_pol": 0,
+          "ru_eco": 0,
+          "geo": 0,
+          "it": 1
+        },
+        "overages": {
+          "local": 0,
+          "world_ru": 0,
+          "ru_safety": 0,
+          "ru_pol": 0,
+          "ru_eco": 0,
+          "geo": 0,
+          "it": 0
+        },
+        "subtype_counts": {
+          "diplomacy": 2,
+          "fatal_incident": 1,
+          "fraud": 1,
+          "weather_forecast": 1,
+          "local_infrastructure": 1,
+          "political_decision": 1
+        },
+        "retrospective_anomalies": [
+          {
+            "title": "Трое пьяных, шесть без прав: на Сахалине поймали почти 100 нарушителей ПДД",
+            "category_key": "sakh",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
+            "category_key": "geo",
+            "reason": "ceremony_or_congratulation_low_value",
+            "corrected_category": null
+          },
+          {
+            "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
+            "category_key": "geo",
+            "reason": "calendar_or_archive_not_current_news",
+            "corrected_category": null
+          },
+          {
+            "title": "В Углегорском районе обследовали более 60 км территории в поисках пропавших людей",
+            "category_key": "sakh",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
+            "category_key": "sakh",
+            "reason": "ceremony_or_congratulation_low_value",
+            "corrected_category": null
+          }
+        ],
+        "valid_posts_counted": 7
+      }
     },
     "media_policy": {
       "required": true,
@@ -2889,33 +3225,135 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 32,
-      "missing_media_rejected": 2,
+      "ready_candidates": 30,
+      "missing_media_rejected": 0,
       "generic_media_rejected": 0,
       "photo_retries": 0,
       "photo_published": 2,
-      "deferred_this_run": 2,
-      "pending_queue_size": 2,
-      "pending_ready": 0,
-      "pending_recovered": 0,
+      "deferred_this_run": 0,
+      "pending_queue_size": 0,
+      "pending_ready": 2,
+      "pending_recovered": 1,
       "pending_unresolved": 0,
       "pending_expired": 0,
-      "text_publication_blocked": 2
+      "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 48,
-      "checked": 13,
-      "passed": 4,
-      "rejected": 2,
-      "reclassified": 10,
-      "offtopic_reject": 13,
+      "prechecked": 41,
+      "checked": 5,
+      "passed": 2,
+      "rejected": 6,
+      "reclassified": 13,
+      "offtopic_reject": 7,
       "fallback": 0,
-      "ai_calls": 2,
-      "ai_fail": 0,
-      "audited_urls": 6
+      "ai_calls": 1,
+      "ai_fail": 1,
+      "audited_urls": 9
     }
   },
-  "pending_media_delivery": [
+  "pending_media_delivery": [],
+  "news_director_policy": {
+    "version": "director-v1",
+    "rolling_window": 12,
+    "targets": {
+      "local": 6,
+      "world_ru": 1,
+      "ru_safety": 1,
+      "ru_pol": 1,
+      "ru_eco": 1,
+      "geo": 1,
+      "it": 1
+    },
+    "second_slot_by_hour": {
+      "7": "world_ru",
+      "10": "ru_safety",
+      "13": "ru_pol",
+      "16": "ru_eco",
+      "19": "geo",
+      "22": "it"
+    }
+  },
+  "news_balance": {
+    "window": 12,
+    "targets": {
+      "local": 6,
+      "world_ru": 1,
+      "ru_safety": 1,
+      "ru_pol": 1,
+      "ru_eco": 1,
+      "geo": 1,
+      "it": 1
+    },
+    "counts": {
+      "local": 3,
+      "world_ru": 1,
+      "ru_safety": 0,
+      "ru_pol": 1,
+      "ru_eco": 1,
+      "geo": 1,
+      "it": 0
+    },
+    "deficits": {
+      "local": 3,
+      "world_ru": 0,
+      "ru_safety": 1,
+      "ru_pol": 0,
+      "ru_eco": 0,
+      "geo": 0,
+      "it": 1
+    },
+    "overages": {
+      "local": 0,
+      "world_ru": 0,
+      "ru_safety": 0,
+      "ru_pol": 0,
+      "ru_eco": 0,
+      "geo": 0,
+      "it": 0
+    },
+    "subtype_counts": {
+      "diplomacy": 2,
+      "fatal_incident": 1,
+      "fraud": 1,
+      "weather_forecast": 1,
+      "local_infrastructure": 1,
+      "political_decision": 1
+    },
+    "retrospective_anomalies": [
+      {
+        "title": "Трое пьяных, шесть без прав: на Сахалине поймали почти 100 нарушителей ПДД",
+        "category_key": "sakh",
+        "reason": "importance_below_threshold",
+        "corrected_category": "sakh"
+      },
+      {
+        "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
+        "category_key": "geo",
+        "reason": "ceremony_or_congratulation_low_value",
+        "corrected_category": null
+      },
+      {
+        "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
+        "category_key": "geo",
+        "reason": "calendar_or_archive_not_current_news",
+        "corrected_category": null
+      },
+      {
+        "title": "В Углегорском районе обследовали более 60 км территории в поисках пропавших людей",
+        "category_key": "sakh",
+        "reason": "importance_below_threshold",
+        "corrected_category": "sakh"
+      },
+      {
+        "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
+        "category_key": "sakh",
+        "reason": "ceremony_or_congratulation_low_value",
+        "corrected_category": null
+      }
+    ],
+    "valid_posts_counted": 7
+  },
+  "expired_media_delivery": [
     {
       "queued_at": "2026-09-03T01:01:14+00:00",
       "last_attempt_at": "2026-09-03T01:01:14+00:00",
@@ -2952,44 +3390,25 @@
           "mode": "deterministic",
           "issues": []
         }
-      }
-    },
-    {
-      "queued_at": "2026-09-03T01:01:50+00:00",
-      "last_attempt_at": "2026-09-03T01:01:50+00:00",
-      "delivery_attempts": 1,
-      "last_error": "Telegram transport error: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8660518479:AAFgbEIPNAVbt5u7Ak9xHNTcoe7VAJwymXM/sendPhoto (Caused by NewConnectionError(\"HTTPSConnection(host='api.telegram.org', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable\"))",
-      "url": "https://www.bbc.co.uk/news/articles/c62j50n131mo?at_medium=RSS&at_campaign=rss",
-      "title_hash": "fb7a349417e8b4f5f3172e77843d6a937d5888f7",
-      "source": "BBC World",
-      "category": "🌍 Мир о России",
-      "category_key": "world_ru",
-      "footer": "МИР О РОССИИ",
-      "title": "Rosenberg: Putin's veiled threat to UK part of Russia's campaign against West",
-      "source_text": "The Russian president wants to keep Britain guessing - and stressing - over Moscow's real intentions. The Russian president wants to keep Britain guessing - and stressing - over Moscow's real intentions. BBC Homepage Skip to content Accessibility Help Your account Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds More menu More menu Search BBC Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds Close menu BBC News Menu Home Climate World US & Canada UK Business Tech Science Entertainment & Arts Health More In Pictures BBC Verify Newsbeat World Africa Asia Australia Europe Latin America Middle East Rosenberg: Putin's veiled threat to UK part of Russia's campaign against West Image source, Reuters Image caption, Putin warned that \"if anyone tries to drag us down the food chain, to gobble us up or devour us, they might get punched in the teeth\" Russian President Vladimir Putin responded with one short sentence when asked at a press conference whether Moscow might strike military facilities in the UK in response to British arms supplies to Ukraine. Military secret is not a \"yes\". And not a \"no\". It leaves us hanging. Those two words feel like psychological pressure from the Kremlin: to keep Britain guessing - and stressing - over Moscow's intentions, as well as to encourage the UK to think twice about its staunch support for Ukraine.",
-      "published_at": "2026-09-02T11:47:11+00:00",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/eb36/live/4c752a20-a6be-11f1-b109-879e35c24276.jpg",
-      "image_hash": "dd756c591a38fcdc8aca3bd3d927af1ce4813c0a",
-      "topic_cluster": "world_ru:rosenberg_putin_veiled_threat_russia_campaign",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
-        "body": [
-          "Президент России Владимир Путин ответил одной краткой фразой на вопрос о возможности нанесения ударов по военным объектам Великобритании в ответ на поставки британского оружия Украине. Ответ прозвучал как «военная тайна» — не «да», но и не «нет».",
-          "Эти два слова ощущаются как психологическое давление Кремля: заставить Британию гадать и нервничать относительно реальных намерений Москвы, а также побудить Лондон дважды подумать о своей последовательной поддержке Украины."
+      },
+      "expired_at": "2026-09-03T06:22:46+00:00",
+      "expired_reason": "news_director_rejected",
+      "news_director": {
+        "version": "director-v1",
+        "approved": false,
+        "reason": "subtype_quota_exhausted",
+        "original_category": "sakh_chp",
+        "corrected_category": "sakh_chp",
+        "group": "local",
+        "subtype": "local_infrastructure",
+        "seriousness": 100,
+        "threshold": 62,
+        "priority_score": 0,
+        "slot": null,
+        "risks": [
+          "recent_subtype_cap:local_infrastructure:2/2"
         ],
-        "footer": "МИР О РОССИИ",
-        "editorial_mode": "",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 95,
-          "category_matches_story": 95,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+independent_ai",
-          "issues": []
-        }
+        "ai_review": null
       }
     }
   ]
