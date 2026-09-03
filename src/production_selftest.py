@@ -7,10 +7,12 @@ Telegram access.
 
 from __future__ import annotations
 
+import os
 from datetime import datetime, timedelta, timezone
 
 import category_reconciler as reconciler
 import editorial_gate as gate
+import editorial_gate_runner as editorial
 import media_enforced_runner as media
 import news_director as director
 import publisher
@@ -265,6 +267,182 @@ def repetitive_subtype_regression():
     assert review["reason"] == "subtype_quota_exhausted", review
 
 
+
+
+def openrouter_resilience_regression():
+    class FakeResponse:
+        def __init__(self, payload, status_code=200, text=""):
+            self._payload = payload
+            self.status_code = status_code
+            self.text = text
+            self.headers = {}
+
+        def json(self):
+            return self._payload
+
+    responses = [
+        FakeResponse({
+            "model": "free/empty",
+            "choices": [{"message": {"content": ""}}],
+        }),
+        FakeResponse({
+            "model": "free/invalid",
+            "choices": [{"message": {"content": "not-json"}}],
+        }),
+        FakeResponse({
+            "model": "free/valid",
+            "choices": [{"message": {"content": '{"ok": true}'}}],
+        }),
+    ]
+    calls = []
+
+    def fake_post(url, **kwargs):
+        assert url == editorial.core.b.OPENROUTER_URL
+        calls.append(kwargs)
+        return responses.pop(0)
+
+    env_names = (
+        "OPENROUTER_API_KEY",
+        "OPENROUTER_MODEL",
+        "OPENROUTER_FALLBACK_MODELS",
+        "OPENROUTER_MAX_ATTEMPTS",
+        "OPENROUTER_RETRY_BASE_SECONDS",
+    )
+    saved_env = {name: os.environ.get(name) for name in env_names}
+    saved_post = editorial.core.b.requests.post
+    saved_circuit = editorial._OPENROUTER_CIRCUIT_OPEN
+    saved_reason = editorial._OPENROUTER_CIRCUIT_REASON
+    stat_names = (
+        "openrouter_empty_content",
+        "openrouter_model_fallback",
+        "openrouter_attempts",
+        "openrouter_retries",
+        "openrouter_invalid_json",
+        "openrouter_success",
+        "openrouter_circuit_open",
+    )
+    saved_stats = {
+        name: editorial.core.b.STATS.get(name)
+        for name in stat_names
+    }
+
+    try:
+        os.environ["OPENROUTER_API_KEY"] = "test-key"
+        os.environ["OPENROUTER_MODEL"] = ""
+        os.environ["OPENROUTER_FALLBACK_MODELS"] = ""
+        os.environ["OPENROUTER_MAX_ATTEMPTS"] = "3"
+        os.environ["OPENROUTER_RETRY_BASE_SECONDS"] = "0"
+        editorial._OPENROUTER_CIRCUIT_OPEN = False
+        editorial._OPENROUTER_CIRCUIT_REASON = ""
+        editorial.core.b.requests.post = fake_post
+        for name in stat_names:
+            editorial.core.b.STATS[name] = 0
+
+        assert publisher.core.b.openrouter is editorial.resilient_openrouter
+        raw = publisher.core.b.openrouter(
+            [{"role": "user", "content": "Верни JSON"}],
+            max_tokens=128,
+        )
+        assert publisher.core.b.parse_obj(raw) == {"ok": True}
+        assert len(calls) == 3
+        for call in calls:
+            body = call["json"]
+            assert body["model"] == "openrouter/free"
+            assert body["response_format"] == {"type": "json_object"}
+            assert body["provider"]["require_parameters"] is True
+            assert body["provider"]["allow_fallbacks"] is True
+            assert "temperature" not in body
+        assert editorial.core.b.STATS["openrouter_empty_content"] == 1
+        assert editorial.core.b.STATS["openrouter_invalid_json"] == 1
+        assert editorial.core.b.STATS["openrouter_attempts"] == 3
+        assert editorial.core.b.STATS["openrouter_retries"] == 2
+        assert editorial.core.b.STATS["openrouter_success"] == 1
+        assert editorial.core.b.STATS["openrouter_model_fallback"] == 1
+        assert editorial._OPENROUTER_CIRCUIT_OPEN is False
+    finally:
+        editorial.core.b.requests.post = saved_post
+        editorial._OPENROUTER_CIRCUIT_OPEN = saved_circuit
+        editorial._OPENROUTER_CIRCUIT_REASON = saved_reason
+        for name, value in saved_env.items():
+            if value is None:
+                os.environ.pop(name, None)
+            else:
+                os.environ[name] = value
+        for name, value in saved_stats.items():
+            if value is None:
+                editorial.core.b.STATS.pop(name, None)
+            else:
+                editorial.core.b.STATS[name] = value
+
+
+def extractive_first_regression():
+    item = candidate(
+        "В Южно-Сахалинске временно изменили схему движения автобусов",
+        (
+            "Администрация Южно-Сахалинска сообщила, что с понедельника движение "
+            "автобусов по улице Ленина будет организовано по временной схеме. "
+            "Изменение связано с ремонтом дорожного покрытия и будет действовать "
+            "до завершения работ на указанном участке."
+        ),
+        url="https://sakhalinmedia.ru/news/extractive-first/",
+    )
+
+    called = {"value": False}
+    original_generate = publisher.prod.core.generate_grounded
+    original_extract_count = publisher.core.b.STATS.get("extractive_fallback")
+    original_first_count = publisher.core.b.STATS.get("extractive_first")
+
+    def unexpected_generate(*args, **kwargs):
+        called["value"] = True
+        raise AssertionError("Russian extractive post must not call OpenRouter")
+
+    try:
+        publisher.prod.core.generate_grounded = unexpected_generate
+        publisher.core.b.STATS["extractive_fallback"] = 0
+        publisher.core.b.STATS["extractive_first"] = 0
+        row = publisher.prod.valid_post_v99(item)
+        assert row is not None
+        assert row.get("editorial_mode") == "extractive_fallback"
+        assert called["value"] is False
+        assert publisher.core.b.STATS["extractive_first"] == 1
+    finally:
+        publisher.prod.core.generate_grounded = original_generate
+        if original_extract_count is None:
+            publisher.core.b.STATS.pop("extractive_fallback", None)
+        else:
+            publisher.core.b.STATS["extractive_fallback"] = original_extract_count
+        if original_first_count is None:
+            publisher.core.b.STATS.pop("extractive_first", None)
+        else:
+            publisher.core.b.STATS["extractive_first"] = original_first_count
+
+
+def director_ai_outage_regression():
+    borderline = candidate(
+        "На Сахалине изменили график работы областной библиотеки",
+        "Новый график действует для посетителей учреждения до конца месяца.",
+        url="https://sakhalinmedia.ru/news/director-ai-outage/",
+        category="sakh",
+        score=100,
+    )
+    initial = director.review_candidate(borderline)
+    assert initial["approved"] is True, initial
+    assert initial["needs_ai_review"] is True, initial
+    assert initial["seriousness"] < initial["threshold"] + 4, initial
+
+    ordered, report = director.direct_candidates(
+        {"last_posts": []},
+        [borderline],
+        category_map=publisher.core.b.CAT,
+        now=datetime(2026, 9, 4, 7, 0, tzinfo=timezone(timedelta(hours=11))),
+        ai_reviewer=lambda _: {},
+    )
+    assert [item["url"] for item in ordered] == [borderline["url"]], report
+    final = report["by_url"][borderline["url"]]
+    assert final["approved"] is True, final
+    assert final["reason"] == "approved", final
+
+
 def media_and_version_regressions():
     assert publisher.VERSION == "stable-v11.0"
     assert publisher.media.VERSION == "stable-v11.0"
@@ -284,6 +462,9 @@ def main():
     screenshot_regressions()
     proportion_and_order_regressions()
     repetitive_subtype_regression()
+    openrouter_resilience_regression()
+    extractive_first_regression()
+    director_ai_outage_regression()
     media_and_version_regressions()
     print("stable-v11.0 production self-test: ALL PASS")
 

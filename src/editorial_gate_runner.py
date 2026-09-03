@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import os
+import random
+import time
 from typing import Any, Dict, Optional
 
 import category_reconciler as reconciler
@@ -14,7 +16,7 @@ prod.VERSION = VERSION
 prod.core.VERSION = VERSION
 core = prod.core
 
-AI_AUDIT_BUDGET = max(0, int(os.getenv("EDITORIAL_AUDIT_AI_BUDGET", "4")))
+AI_AUDIT_BUDGET = max(0, int(os.getenv("EDITORIAL_AUDIT_AI_BUDGET", "2")))
 _AI_AUDIT_CALLS = 0
 AUDIT_BY_URL: Dict[str, Dict[str, Any]] = {}
 
@@ -33,6 +35,11 @@ for key in (
     "editorial_offtopic_reject",
     "openrouter_empty_content",
     "openrouter_model_fallback",
+    "openrouter_attempts",
+    "openrouter_retries",
+    "openrouter_invalid_json",
+    "openrouter_success",
+    "openrouter_circuit_open",
 ):
     core.b.STATS.setdefault(key, 0)
 
@@ -57,20 +64,84 @@ def _message_text(message: Any) -> Optional[str]:
     return None
 
 
+_OPENROUTER_CIRCUIT_OPEN = False
+_OPENROUTER_CIRCUIT_REASON = ""
+
+
+def _openrouter_model_plan():
+    "Build a bounded plan without silently switching to a paid model."
+    raw_primary = os.getenv("OPENROUTER_MODEL", "").strip()
+    raw_fallbacks = os.getenv("OPENROUTER_FALLBACK_MODELS", "").strip()
+    configured = [
+        value.strip()
+        for value in (raw_primary + "," + raw_fallbacks).split(",")
+        if value.strip()
+    ]
+    try:
+        max_attempts = int(os.getenv("OPENROUTER_MAX_ATTEMPTS", "3"))
+    except ValueError:
+        max_attempts = 3
+    max_attempts = max(1, min(6, max_attempts))
+
+    plan = []
+    for model in configured:
+        if model not in plan:
+            plan.append(model)
+    if not plan:
+        plan.append("openrouter/free")
+
+    # Repeated calls to openrouter/free are intentional: every request can be
+    # routed to a different currently available free model.
+    while len(plan) < max_attempts:
+        plan.append("openrouter/free")
+    return plan[:max_attempts]
+
+
+def _retry_delay_seconds(response, attempt):
+    headers = getattr(response, "headers", {}) or {}
+    retry_after = headers.get("Retry-After") or headers.get("retry-after")
+    if retry_after:
+        try:
+            return max(0.0, min(15.0, float(retry_after)))
+        except (TypeError, ValueError):
+            pass
+
+    try:
+        base = float(os.getenv("OPENROUTER_RETRY_BASE_SECONDS", "1.0"))
+    except ValueError:
+        base = 1.0
+    base = max(0.0, min(5.0, base))
+    jitter = 0.0 if base == 0 else random.uniform(0.0, min(0.35, base / 2))
+    return min(12.0, base * (2 ** attempt) + jitter)
+
+
+def _is_json_object(text):
+    try:
+        return isinstance(core.b.parse_obj(text), dict)
+    except Exception:
+        return False
+
+
 def resilient_openrouter(messages, max_tokens=1100):
+    global _OPENROUTER_CIRCUIT_OPEN, _OPENROUTER_CIRCUIT_REASON
+
     key = os.getenv("OPENROUTER_API_KEY", "").strip()
     if not key:
         raise RuntimeError("OPENROUTER_API_KEY is missing")
+    if _OPENROUTER_CIRCUIT_OPEN:
+        raise RuntimeError(
+            "OpenRouter circuit is open for this run: "
+            + (_OPENROUTER_CIRCUIT_REASON or "previous attempts failed")
+        )
 
-    configured = os.getenv("OPENROUTER_MODEL", "").strip()
-    default_model = configured or getattr(core.b, "MODEL", "") or "openrouter/free"
-    models = []
-    for model in (default_model, "openrouter/free"):
-        if model and model not in models:
-            models.append(model)
-
+    plan = _openrouter_model_plan()
     errors = []
-    for index, model in enumerate(models):
+
+    for attempt, model in enumerate(plan):
+        core.b.STATS["openrouter_attempts"] += 1
+        response = None
+        stop_immediately = False
+
         try:
             response = core.b.requests.post(
                 core.b.OPENROUTER_URL,
@@ -83,40 +154,73 @@ def resilient_openrouter(messages, max_tokens=1100):
                 json={
                     "model": model,
                     "messages": messages,
-                    "temperature": 0.02,
                     "max_tokens": max_tokens,
+                    "stream": False,
+                    "response_format": {"type": "json_object"},
+                    "provider": {
+                        "require_parameters": True,
+                        "allow_fallbacks": True,
+                    },
                 },
                 timeout=90,
             )
+
             if response.status_code >= 400:
-                errors.append(f"{model}: HTTP {response.status_code}: {response.text[:240]}")
-                continue
+                detail = (response.text or "")[:300]
+                errors.append(f"{model}: HTTP {response.status_code}: {detail}")
+                if response.status_code in {401, 403}:
+                    stop_immediately = True
+            else:
+                payload = response.json()
+                if not isinstance(payload, dict):
+                    errors.append(f"{model}: response is not an object")
+                elif payload.get("error"):
+                    errors.append(f"{model}: API error: {str(payload.get('error'))[:300]}")
+                else:
+                    choices = payload.get("choices")
+                    if not isinstance(choices, list) or not choices:
+                        errors.append(f"{model}: missing choices")
+                    else:
+                        first = choices[0] if isinstance(choices[0], dict) else {}
+                        text = _message_text(first.get("message"))
+                        if not text:
+                            alternative = first.get("text")
+                            if isinstance(alternative, str) and alternative.strip():
+                                text = alternative.strip()
 
-            payload = response.json()
-            choices = payload.get("choices") if isinstance(payload, dict) else None
-            if not isinstance(choices, list) or not choices:
-                errors.append(f"{model}: missing choices")
-                continue
-
-            first = choices[0] if isinstance(choices[0], dict) else {}
-            text = _message_text(first.get("message"))
-            if not text:
-                alternative = first.get("text")
-                if isinstance(alternative, str) and alternative.strip():
-                    text = alternative.strip()
-
-            if text:
-                if index > 0:
-                    core.b.STATS["openrouter_model_fallback"] += 1
-                    core.b.log(f"OpenRouter fallback model accepted: {model}")
-                return text
-
-            core.b.STATS["openrouter_empty_content"] += 1
-            errors.append(f"{model}: empty message content")
+                        if not text:
+                            core.b.STATS["openrouter_empty_content"] += 1
+                            errors.append(f"{model}: empty message content")
+                        elif not _is_json_object(text):
+                            core.b.STATS["openrouter_invalid_json"] += 1
+                            errors.append(f"{model}: invalid JSON object")
+                        else:
+                            used_model = str(payload.get("model") or model)
+                            core.b.STATS["openrouter_success"] += 1
+                            if attempt > 0:
+                                core.b.STATS["openrouter_model_fallback"] += 1
+                            core.b.log(
+                                "OpenRouter JSON accepted: "
+                                f"{used_model} (attempt {attempt + 1}/{len(plan)})"
+                            )
+                            return text
         except Exception as exc:
-            errors.append(f"{model}: {type(exc).__name__}: {str(exc)[:240]}")
+            errors.append(
+                f"{model}: {type(exc).__name__}: {str(exc)[:300]}"
+            )
 
-    raise RuntimeError("OpenRouter failed: " + " | ".join(errors[-4:]))
+        if stop_immediately:
+            break
+        if attempt + 1 < len(plan):
+            core.b.STATS["openrouter_retries"] += 1
+            delay = _retry_delay_seconds(response, attempt)
+            if delay > 0:
+                time.sleep(delay)
+
+    _OPENROUTER_CIRCUIT_OPEN = True
+    _OPENROUTER_CIRCUIT_REASON = " | ".join(errors[-4:]) or "unknown failure"
+    core.b.STATS["openrouter_circuit_open"] = 1
+    raise RuntimeError("OpenRouter failed: " + _OPENROUTER_CIRCUIT_REASON)
 
 
 core.b.openrouter = resilient_openrouter
@@ -201,14 +305,29 @@ def _review(candidate, row):
         deterministic["approved"] = False
         return deterministic
 
+    deterministic_pass = (
+        bool(deterministic.get("approved"))
+        and int(deterministic.get("title_matches_source") or 0) >= 90
+        and int(deterministic.get("category_matches_story") or 0) >= 90
+        and deterministic.get("facts_supported") is True
+        and deterministic.get("meaning_changed") is False
+    )
+
+    # An exact Russian extract contains no LLM paraphrase to audit. If every
+    # deterministic invariant already passes, an external model adds latency
+    # and failure risk without adding factual protection.
+    if (
+        row.get("editorial_mode") == "extractive_fallback"
+        and deterministic.get("source_is_russian") is True
+        and deterministic_pass
+    ):
+        deterministic["approved"] = True
+        deterministic["requires_ai_review"] = False
+        deterministic["mode"] = "deterministic+extractive"
+        return deterministic
+
     if not deterministic.get("requires_ai_review"):
-        deterministic["approved"] = (
-            bool(deterministic.get("approved"))
-            and int(deterministic.get("title_matches_source") or 0) >= 90
-            and int(deterministic.get("category_matches_story") or 0) >= 90
-            and deterministic.get("facts_supported") is True
-            and deterministic.get("meaning_changed") is False
-        )
+        deterministic["approved"] = deterministic_pass
         return deterministic
 
     merged = gate.merge_reviews(deterministic, _independent_ai_review(candidate, row))
