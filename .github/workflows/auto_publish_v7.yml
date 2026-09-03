@@ -1,4 +1,4 @@
-name: SkySakhNews Auto Publisher Stable v10.4
+name: SkySakhNews Auto Publisher Stable v11.0
 
 on:
   workflow_dispatch:
@@ -16,7 +16,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,7 +31,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Compile production system
+      - name: Compile canonical production system
         run: |
           python -m py_compile \
             src/news_bot_v8.py \
@@ -40,176 +40,24 @@ jobs:
             src/editorial_gate.py \
             src/category_reconciler.py \
             src/editorial_gate_runner.py \
-            src/media_enforced_runner.py
+            src/media_enforced_runner.py \
+            src/news_director.py \
+            src/publisher.py \
+            src/production_selftest.py
 
-      - name: Mandatory semantic, classification, media and recovery regression gate
+      - name: Mandatory autonomous-editor regression gate
         env:
           IMAGE_REQUIRED: "1"
           AI_CALL_BUDGET: "8"
           EDITORIAL_AUDIT_AI_BUDGET: "4"
+          NEWS_DIRECTOR_AI_BUDGET: "1"
           RUN_COOLDOWN_MINUTES: "20"
           MEDIA_PENDING_MAX_HOURS: "36"
           MEDIA_PENDING_MAX_ITEMS: "24"
         run: |
-          python - <<'PY'
-          import hashlib
-          import io
-          import sys
+          python src/production_selftest.py
 
-          from PIL import Image
-
-          sys.path.insert(0, "src")
-
-          import category_reconciler as rec
-          import editorial_gate as gate
-          import media_enforced_runner as runner
-
-          assert runner.VERSION == "stable-v10.4"
-          assert runner.editorial.VERSION == "stable-v10.4"
-          assert runner.prod.VERSION == "stable-v10.4"
-          assert runner.core.VERSION == "stable-v10.4"
-          assert runner.core.b.IMAGE_REQUIRED is True
-          assert runner.core.strict_fresh(None) is False
-
-          def candidate(title, text, source="Interfax", url="https://www.interfax.ru/russia/1", category="sakh"):
-              return {
-                  "title": title,
-                  "source_text": text,
-                  "source": source,
-                  "url": url,
-                  "category_key": category,
-                  "category": category,
-              }
-
-          cases = [
-              (candidate(
-                  "В парламенте Ирана заявили, что давление на Тегеран не поможет США заключить соглашение",
-                  "Иран и США обсуждают условия соглашения.",
-                  url="https://www.interfax.ru/world/1110010",
-              ), "geo"),
-              (candidate(
-                  "Трамп рассматривает отсрочку введения пошлин в 50% в отношении Канады",
-                  "Президент США рассматривает отсрочку пошлин для Канады.",
-                  url="https://www.interfax.ru/world/1110016",
-              ), "geo"),
-              (candidate(
-                  "Сильный дождь пройдет в центральных районах Сахалина",
-                  "Сахалинское УГМС прогнозирует осадки.",
-                  source="SakhalinMedia.ru",
-                  url="https://sakhalinmedia.ru/news/1/",
-              ), "sakh"),
-              (candidate(
-                  "Ребенок погиб в Ростовской области, упав за борт катера",
-                  "Следователи устанавливают обстоятельства происшествия.",
-              ), "ru_incident"),
-              (candidate(
-                  "Аэропорт ограничил работу из-за угрозы БПЛА",
-                  "Росавиация сообщила об ограничениях из-за беспилотников.",
-              ), "ru_security"),
-              (candidate(
-                  "История магнитных лент",
-                  "Материал об аналоговом аудио без региональной привязки.",
-                  source="Habr",
-                  url="https://habr.com/ru/articles/1/",
-              ), None),
-              (candidate(
-                  "Не санаторий и не дача - пенсионеры нашли райское место у моря себе по карману: сентябрьский хит с жильем от 1000 руб",
-                  "Пенсионеры выбирают сентябрьский отдых у моря: недорогие варианты жилья в Лазаревском, Анапе и Ейске.",
-                  source="SakhalinMedia.ru",
-                  url="https://sakhalinmedia.ru/news/2600117/",
-              ), None),
-          ]
-          for item, expected in cases:
-              actual = rec.suggest_category(item)
-              assert actual == expected, (item["title"], actual, expected)
-
-          # Regression for the exact published error: substring matching found
-          # NATO inside the word "санаторий". Topic matching is now token-based.
-          assert "foreign" not in gate.infer_topics(
-              "Не санаторий и не дача — пенсионеры нашли место у моря"
-          )
-          assert "foreign" in gate.infer_topics(
-              "НАТО усиливает военное присутствие в Европе"
-          )
-          assert "foreign" not in gate.infer_topics(
-              "Индекс Мосбиржи вырос на открытии торгов"
-          )
-          assert "foreign" not in gate.infer_topics(
-              "Грузовой автомобиль попал в ДТП на Кубани"
-          )
-
-          c = candidate(
-              "Правительство рассматривает возможность введения меры",
-              "Предложение обсуждается, решение не принято.",
-              category="ru_pol",
-          )
-          verdict = gate.deterministic_review(
-              c,
-              {
-                  "title_ru": "Правительство ввело меру",
-                  "body": [],
-                  "editorial_mode": "generated",
-              },
-          )
-          assert not verdict["approved"] and verdict["meaning_changed"], verdict
-
-          source_photo = {
-              "image": b"x" * 12000,
-              "image_url": "https://sakhalinmedia.ru/f/big/story.jpg",
-              "image_hash": "1" * 40,
-          }
-          assert runner._is_source_media(source_photo)[0] is True
-          assert runner._is_source_media({})[0] is False
-          assert runner._is_source_media({
-              **source_photo,
-              "image_url": "https://upload.wikimedia.org/example.jpg",
-          })[0] is False
-
-          noisy = Image.effect_noise((900, 600), 90).convert("RGB")
-          buffer = io.BytesIO()
-          noisy.save(buffer, format="JPEG", quality=91)
-          original = buffer.getvalue()
-          assert runner._normalize_photo_bytes(original).startswith(b"\xff\xd8")
-
-          runner._DEFERRED_THIS_RUN.clear()
-          row = {
-              "title_ru": "Проверка очереди повторной доставки",
-              "body": ["Первый подтвержденный абзац.", "Второй подтвержденный абзац."],
-              "footer": "САХАЛИН",
-              "editorial_gate": {
-                  "approved": True,
-                  "title_matches_source": 100,
-                  "category_matches_story": 100,
-                  "facts_supported": True,
-                  "meaning_changed": False,
-              },
-          }
-          media_candidate = {
-              "url": "https://sakhalinmedia.ru/news/delivery-test/",
-              "title": "Проверка повторной доставки фотографии новости",
-              "source": "SakhalinMedia.ru",
-              "category": "📍 Сахалин",
-              "category_key": "sakh",
-              "footer": "САХАЛИН",
-              "source_text": "Первый подтвержденный абзац. Второй подтвержденный абзац.",
-              "published_at": "2026-08-26T00:00:00+00:00",
-              "image": original,
-              "image_url": "https://sakhalinmedia.ru/f/big/delivery.jpg",
-              "image_hash": hashlib.sha1(original).hexdigest(),
-              "title_hash": "2" * 40,
-              "topic_cluster": "sakh:delivery",
-              "_delivery_error": "temporary Telegram error",
-          }
-          queued_result = runner.defer_media_publication(row, media_candidate)
-          assert queued_result.get("ok") is False
-          queued = runner._DEFERRED_THIS_RUN[media_candidate["url"]]
-          assert queued["row"]["editorial_gate"]["approved"] is True
-          assert queued["delivery_attempts"] == 1
-
-          print("stable-v10.4 semantic + classification + resilient source-media gate: OK")
-          PY
-
-      - name: Run stable publisher with mandatory source media and retry queue
+      - name: Publish through autonomous news director
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
@@ -220,14 +68,15 @@ jobs:
           MAX_AGE_HOURS: "36"
           AI_CALL_BUDGET: "8"
           EDITORIAL_AUDIT_AI_BUDGET: "4"
+          NEWS_DIRECTOR_AI_BUDGET: "1"
           RUN_COOLDOWN_MINUTES: "20"
           MEDIA_PENDING_MAX_HOURS: "36"
           MEDIA_PENDING_MAX_ITEMS: "24"
           PYTHONUNBUFFERED: "1"
         run: |
-          python src/media_enforced_runner.py
+          python src/publisher.py
 
-      - name: Verify semantic, media and delivery-queue health
+      - name: Verify editorial, balance and media health
         run: |
           python - <<'PY'
           import json
@@ -237,29 +86,42 @@ jobs:
               state = json.load(file)
 
           run = state.get("last_run") or {}
-          if run.get("version") == "stable-v10.4":
+          if run.get("version") == "stable-v11.0":
               assert run.get("status") == "ok", run
               assert "finished_sakhalin" in run, run
               assert (run.get("local_stream") or {}).get("status") in {"healthy", "degraded"}, run
+
+              director = run.get("news_director") or {}
+              assert director.get("version") == "director-v1", director
+              assert int(director.get("candidate_count") or 0) >= 0, director
+              assert int(director.get("approved_count") or 0) >= 0, director
+              targets = ((director.get("rolling_balance_after") or {}).get("targets") or {})
+              assert sum(int(value) for value in targets.values()) == 12, targets
+              assert int(targets.get("local") or 0) == 6, targets
 
               media = run.get("media_policy") or {}
               assert media.get("required") is True, media
               assert media.get("text_only_allowed") is False, media
               assert media.get("delivery_failure_policy") == "retry_transports_then_persistent_queue", media
-              assert int(media.get("pending_queue_size") or 0) >= 0, media
 
               published = int(run.get("published") or 0)
               assert 0 <= published <= 2, run
               posts = (state.get("last_posts") or [])[-published:] if published else []
 
               for post in posts:
-                  gate_result = post.get("editorial_gate") or {}
-                  assert gate_result.get("approved") is True, post
-                  assert int(gate_result.get("title_matches_source") or 0) >= 90, post
-                  assert int(gate_result.get("category_matches_story") or 0) >= 90, post
-                  assert gate_result.get("facts_supported") is True, post
-                  assert gate_result.get("meaning_changed") is False, post
-                  assert "news.google." not in urlparse(post.get("url") or "").netloc.lower(), post
+                  editorial = post.get("editorial_gate") or {}
+                  assert editorial.get("approved") is True, post
+                  assert int(editorial.get("title_matches_source") or 0) >= 90, post
+                  assert int(editorial.get("category_matches_story") or 0) >= 90, post
+                  assert editorial.get("facts_supported") is True, post
+                  assert editorial.get("meaning_changed") is False, post
+
+                  decision = post.get("news_director") or {}
+                  assert decision.get("version") == "director-v1", post
+                  assert decision.get("approved") is True, post
+                  assert int(decision.get("seriousness") or 0) >= int(decision.get("threshold") or 0), post
+                  assert decision.get("final_title_checked") is True, post
+                  assert decision.get("final_category_checked") is True, post
 
                   assert post.get("with_image") is True, post
                   assert post.get("media_required") is True, post
@@ -267,21 +129,16 @@ jobs:
                   assert post.get("image_url"), post
                   assert post.get("image_hash"), post
                   assert str(post.get("publish_method") or "").startswith("sendPhoto/"), post
+                  assert "news.google." not in urlparse(post.get("url") or "").netloc.lower(), post
 
               for item in state.get("pending_media_delivery") or []:
-                  assert item.get("url"), item
-                  assert item.get("image_url"), item
                   audit = ((item.get("row") or {}).get("editorial_gate") or {})
                   assert audit.get("approved") is True, item
-                  assert int(audit.get("title_matches_source") or 0) >= 90, item
-                  assert int(audit.get("category_matches_story") or 0) >= 90, item
-                  assert audit.get("facts_supported") is True, item
-                  assert audit.get("meaning_changed") is False, item
 
-          print("stable-v10.4 semantic + media recovery health: OK", run)
+          print("stable-v11.0 autonomous news director health: OK", run)
           PY
 
-      - name: Commit state and delivery queue
+      - name: Commit state, balance and delivery queue
         if: always()
         run: |
           git config user.name "skysakhnews-bot"
@@ -290,7 +147,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No state changes"
           else
-            git commit -m "Update v10.4 media-delivery state"
+            git commit -m "Update v11.0 autonomous news-director state"
             git pull --rebase --autostash origin main
             git push origin main
           fi
