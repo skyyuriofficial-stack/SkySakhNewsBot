@@ -202,7 +202,9 @@
     "https://www.bbc.co.uk/news/articles/c62j50n131mo?at_medium=RSS&at_campaign=rss",
     "https://sakh.online/news/18/2026-09-03/vladimir-putin-vystupil-na-plenarnom-zasedanii-vef-2026-vo-vladivostoke-524854",
     "https://sakh.online/news/18/2026-09-03/putin-za-11-let-v-razvitie-dalnego-vostoka-privlekli-25-trln-rubley-524857",
-    "https://astv.ru/news/criminal/2026-09-03-zhitel-poronajska-pereprodal-chuzhoj-velosiped-za-1-500-rublej-i-popal-pod-ugolovnuyu-stat-yu"
+    "https://astv.ru/news/criminal/2026-09-03-zhitel-poronajska-pereprodal-chuzhoj-velosiped-za-1-500-rublej-i-popal-pod-ugolovnuyu-stat-yu",
+    "https://sakhalinmedia.ru/news/2609589/",
+    "https://sakhalinmedia.ru/news/2609528/"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -407,36 +409,12 @@
     "fb7a349417e8b4f5f3172e77843d6a937d5888f7",
     "e2a1ff7d643512a7627a3ef6001ae8573c334d05",
     "e6e7b58ce1e3d08a834c4e5a7ca207fc9acbb6cf",
-    "50313db63d6110b802f79c26891436c63b48b5cc"
+    "50313db63d6110b802f79c26891436c63b48b5cc",
+    "e084ddbb391c6fc5e8bcc306b8b4bad79ef9fae6",
+    "cb357205df87a8e8db1c73f2f8406b61a63c8146"
   ],
-  "last_run_sakhalin": "2026-09-03T18:01:21+11:00",
+  "last_run_sakhalin": "2026-09-03T23:44:54+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-06-12T17:45:25+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 Россия / экономика",
-      "category_key": "ru_eco",
-      "title": "Казахстан не отгружал в мае нефть в Германию и через Батумский терминал",
-      "url": "https://www.interfax.ru/business/1095510",
-      "image_url": "https://www.interfax.ru/ftproot/textphotos/2026/06/11/dt1000.jpg",
-      "image_hash": "cb597d4ddc51ebbd8000abb5cab8f58651eeca69",
-      "published_at": "2026-06-12T05:38:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/uploaded_jpeg"
-    },
-    {
-      "time_sakhalin": "2026-06-12T17:46:02+11:00",
-      "source": "BBC World",
-      "category": "🧭 Геополитика",
-      "category_key": "geo",
-      "title": "Трамп заявил о достижении соглашения для прекращения войны с Ираном",
-      "url": "https://www.bbc.com/news/articles/c78y6w78828o?at_medium=RSS&at_campaign=rss",
-      "image_url": "https://ichef.bbci.co.uk/news/1536/cpsprodpb/f9a2/live/86015ec0-65ec-11f1-a50e-ade503189b0b.jpg.webp",
-      "image_hash": "fe1e4c580b617781cd56a4d54e995a6b01ef3f14",
-      "published_at": "2026-06-12T05:53:19+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/uploaded_jpeg"
-    },
     {
       "time_sakhalin": "2026-08-19T10:06:40+11:00",
       "source": "Interfax",
@@ -2724,6 +2702,110 @@
         "mode": "deterministic",
         "issues": []
       }
+    },
+    {
+      "time_sakhalin": "2026-09-03T23:42:47+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "💻 IT / технологии",
+      "category_key": "it",
+      "title": "Путин: Особый правовой режим запустят на Дальнем Востоке для обкатки технологий с 1 января",
+      "url": "https://sakhalinmedia.ru/news/2609589/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6364/6363398.jpg?796191d48447107793885dec54f00247",
+      "image_hash": "9a037abf0279a694e3900873d4d3df45b98217ba",
+      "topic_cluster": "it:путин_особый_правовой_режим_запустят_дальнем",
+      "published_at": "2026-09-03T06:37:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v1",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "it",
+        "corrected_category": "it",
+        "group": "it",
+        "subtype": "war_security",
+        "seriousness": 90,
+        "threshold": 76,
+        "priority_score": 130,
+        "slot": 2,
+        "risks": [],
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true
+      },
+      "source_text_excerpt": "Президент России Владимир Путин, выступая на пленарном заседании Восточного экономического форума (ВЭФ, 16+), заявил о создании на Дальнем Востоке особого правового режима для ускоренной обкатки новых технологических решений. Режим должен заработать с 1 января 2027 года. Его главная цель — максимально упростить тестирование инноваций в реальных условиях, избавив разработчиков от необходимости ходить по кабинетам. С 1 января 2027 года регион должен стать площадкой быстрого тестирования передовых технологий без бюрократических барьеров \"Дальний Восток должен стать регионом обкатки новых решений. С 1 января на Дальнем Востоке должен быть запущен особый правовой режим. Его суть в быстрой, беспрепятственной обкатке технологий. Например, беспилотников в сельском хозяйстве, промышленных роботов, телемедицины или искусственного интеллекта для медицинского заключения\", — заявил глава государства. Путин признал, что сегодня регуляторика в этих сферах остаётся сложной, и это мешает внедрению новых разработок. \"Нужно сделать так, чтобы тестировать технологические решения было максимально удобно, чтобы не ходить по кабинетам. Это важные вещи\", — подчеркнул он. Глава государства рассказал о пере",
+      "telegram_message_id": 250,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": [],
+        "reclassified_from": "sakh",
+        "reclassified_to": "it"
+      }
+    },
+    {
+      "time_sakhalin": "2026-09-03T23:44:46+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
+      "url": "https://sakhalinmedia.ru/news/2609528/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6364/6363337.png?f2fc06b2fb71b0aab4ff65f4a7b8ae7b",
+      "image_hash": "9b344132608dd840f00d6d65d9a54aa9ee3b9559",
+      "topic_cluster": "sakh_chp:медведя_заметили_возле_трассы_охотское_сахалине",
+      "published_at": "2026-09-03T06:32:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v1",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "sakh_chp",
+        "corrected_category": "sakh_chp",
+        "group": "local",
+        "subtype": "local_infrastructure",
+        "seriousness": 100,
+        "threshold": 62,
+        "priority_score": 111,
+        "slot": "backup",
+        "risks": [],
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true
+      },
+      "source_text_excerpt": "Очевидцы заметили медведя вблизи дороги в селе Охотское Корсаковского района. Об этом сообщили в канале MAX Рыбалка Сахалин и ДВ (18+). Хищник прогуливался у дороги 3 сентября Хищник прогуливался у трассы предположительно 3 сентября. Как отметил водитель, записавший видео с косолапым, \"медведи скоро уже в квартиры заходить будут\". Подпишись на самые важные новости Сахалинской области в MAX!",
+      "telegram_message_id": 251,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": [],
+        "reclassified_from": "sakh",
+        "reclassified_to": "sakh_chp"
+      }
     }
   ],
   "last_cycle_report": {
@@ -2951,20 +3033,21 @@
   },
   "last_run": {
     "version": "stable-v11.0",
-    "started_sakhalin": "2026-09-03T17:55:49+11:00",
+    "started_sakhalin": "2026-09-03T23:38:38+11:00",
     "status": "ok",
-    "candidates": 18,
+    "candidates": 15,
     "published": 2,
-    "local_candidates": 9,
+    "local_candidates": 7,
     "local_stream": {
       "status": "healthy",
-      "ok_sources": 4,
+      "ok_sources": 3,
       "sources": [
         {
           "source": "Sakhalin Google",
-          "status": "ok",
-          "entries": 20,
-          "recent": 13
+          "status": "down",
+          "entries": 0,
+          "recent": 0,
+          "error": "503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%D0%A1%D0%B0%D1%85%D0%B0%D0%BB%D0%B8%D0%BD+OR+%D0%AE%D0%B6%D0%BD%D0%BE-%D0%A1%D0%B0%D1%85%D0%B0%"
         },
         {
           "source": "SakhalinMedia",
@@ -2986,46 +3069,46 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-09-03T18:01:21+11:00",
+    "finished_sakhalin": "2026-09-03T23:44:54+11:00",
     "stats": {
-      "rss_seen": 160,
-      "old_skip": 64,
-      "google_skip": 12,
-      "duplicate_skip": 1,
-      "low_info_skip": 17,
-      "category_skip": 33,
+      "rss_seen": 112,
+      "old_skip": 25,
+      "google_skip": 0,
+      "duplicate_skip": 0,
+      "low_info_skip": 13,
+      "category_skip": 40,
       "no_image_skip": 0,
-      "bad_image_skip": 9,
-      "logo_image_skip": 69,
-      "text_card_image_skip": 3,
-      "candidates": 31,
-      "rewrite_retry": 4,
-      "editorial_skip": 0,
+      "bad_image_skip": 11,
+      "logo_image_skip": 55,
+      "text_card_image_skip": 2,
+      "candidates": 25,
+      "rewrite_retry": 6,
+      "editorial_skip": 2,
       "telegram_fail": 0,
       "published": 2,
-      "ai_calls": 5,
-      "ai_budget_exhausted": 0,
-      "ai_api_fail": 4,
-      "evidence_reject": 0,
-      "validation_reject": 0,
+      "ai_calls": 8,
+      "ai_budget_exhausted": 1,
+      "ai_api_fail": 5,
+      "evidence_reject": 1,
+      "validation_reject": 1,
       "extractive_fallback": 2,
-      "editorial_prechecked": 43,
-      "editorial_gate_checked": 3,
+      "editorial_prechecked": 40,
+      "editorial_gate_checked": 5,
       "editorial_gate_pass": 3,
       "editorial_gate_reject": 5,
-      "editorial_gate_fallback": 0,
-      "editorial_gate_ai_calls": 0,
-      "editorial_gate_ai_fail": 0,
-      "editorial_title_reject": 2,
-      "editorial_category_reject": 5,
+      "editorial_gate_fallback": 1,
+      "editorial_gate_ai_calls": 2,
+      "editorial_gate_ai_fail": 2,
+      "editorial_title_reject": 3,
+      "editorial_category_reject": 3,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 14,
-      "editorial_offtopic_reject": 6,
+      "editorial_reclassified": 11,
+      "editorial_offtopic_reject": 12,
       "openrouter_empty_content": 2,
       "openrouter_model_fallback": 0,
-      "media_required_skip": 1,
+      "media_required_skip": 0,
       "media_generic_skip": 0,
-      "media_ready_candidates": 31,
+      "media_ready_candidates": 25,
       "photo_retry": 0,
       "photo_publish": 2,
       "photo_upload_original": 2,
@@ -3039,10 +3122,10 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 31,
-      "director_approved": 18,
-      "director_rejected": 13,
-      "director_reclassified": 2,
+      "director_seen": 25,
+      "director_approved": 15,
+      "director_rejected": 10,
+      "director_reclassified": 1,
       "director_ai_calls": 1,
       "director_ai_fail": 1,
       "director_final_reject": 1,
@@ -3051,170 +3134,6 @@
     "news_director": {
       "version": "director-v1",
       "rolling_balance_before": {
-        "window": 12,
-        "targets": {
-          "local": 6,
-          "world_ru": 1,
-          "ru_safety": 1,
-          "ru_pol": 1,
-          "ru_eco": 1,
-          "geo": 1,
-          "it": 1
-        },
-        "counts": {
-          "local": 3,
-          "world_ru": 1,
-          "ru_safety": 0,
-          "ru_pol": 1,
-          "ru_eco": 1,
-          "geo": 1,
-          "it": 0
-        },
-        "deficits": {
-          "local": 3,
-          "world_ru": 0,
-          "ru_safety": 1,
-          "ru_pol": 0,
-          "ru_eco": 0,
-          "geo": 0,
-          "it": 1
-        },
-        "overages": {
-          "local": 0,
-          "world_ru": 0,
-          "ru_safety": 0,
-          "ru_pol": 0,
-          "ru_eco": 0,
-          "geo": 0,
-          "it": 0
-        },
-        "subtype_counts": {
-          "diplomacy": 2,
-          "fatal_incident": 1,
-          "fraud": 1,
-          "weather_forecast": 1,
-          "local_infrastructure": 1,
-          "political_decision": 1
-        },
-        "retrospective_anomalies": [
-          {
-            "title": "Трое пьяных, шесть без прав: на Сахалине поймали почти 100 нарушителей ПДД",
-            "category_key": "sakh",
-            "reason": "importance_below_threshold",
-            "corrected_category": "sakh"
-          },
-          {
-            "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
-            "category_key": "geo",
-            "reason": "ceremony_or_congratulation_low_value",
-            "corrected_category": null
-          },
-          {
-            "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
-            "category_key": "geo",
-            "reason": "calendar_or_archive_not_current_news",
-            "corrected_category": null
-          },
-          {
-            "title": "В Углегорском районе обследовали более 60 км территории в поисках пропавших людей",
-            "category_key": "sakh",
-            "reason": "importance_below_threshold",
-            "corrected_category": "sakh"
-          },
-          {
-            "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
-            "category_key": "sakh",
-            "reason": "ceremony_or_congratulation_low_value",
-            "corrected_category": null
-          }
-        ],
-        "valid_posts_counted": 7
-      },
-      "scheduled_second_group": "ru_eco",
-      "candidate_count": 31,
-      "approved_count": 18,
-      "rejected_count": 13,
-      "rejected_by_reason": {
-        "borderline_without_independent_review": 12,
-        "no_valid_news_stream": 1
-      },
-      "ai_review_requested": 10,
-      "ai_review_received": 0,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "\"Лопасти разобрали перед эвакуацией\": astv.ru побывал на месте экстремальной посадки вертолёта на Сахалине",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "subtype": "fatal_incident",
-          "seriousness": 100,
-          "priority_score": 123
-        },
-        {
-          "slot": 2,
-          "title": "Путин: за 11 лет в развитие Дальнего Востока привлекли 25 трлн рублей | SAKH.ONLINE",
-          "category_key": "ru_eco",
-          "group": "ru_eco",
-          "subtype": "economy_policy",
-          "seriousness": 94,
-          "priority_score": 112
-        },
-        {
-          "slot": "backup",
-          "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "subtype": "local_public_interest",
-          "seriousness": 100,
-          "priority_score": 123
-        },
-        {
-          "slot": "backup",
-          "title": "Пожарные части, детский садик, сотни домов - кого отключат от электроснабжения на Сахалине 4 сентября",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "subtype": "local_infrastructure",
-          "seriousness": 100,
-          "priority_score": 115
-        },
-        {
-          "slot": "backup",
-          "title": "На Сахалине машинист и начальник района электроснабжения наловили 60 хвостов симы и пошли под суд | SAKH.ONLINE",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "subtype": "local_infrastructure",
-          "seriousness": 100,
-          "priority_score": 115
-        },
-        {
-          "slot": "backup",
-          "title": "Медведя заметили возле трассы в селе Охотское на Сахалине - SakhalinMedia.ru",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "subtype": "local_infrastructure",
-          "seriousness": 100,
-          "priority_score": 115
-        },
-        {
-          "slot": "backup",
-          "title": "Путин: Особый правовой режим запустят на Дальнем Востоке для обкатки технологий с 1 января - SakhalinMedia.ru",
-          "category_key": "it",
-          "group": "it",
-          "subtype": "war_security",
-          "seriousness": 90,
-          "priority_score": 112
-        },
-        {
-          "slot": "backup",
-          "title": "Google defeats US justice department bid to force ad tech sale",
-          "category_key": "it",
-          "group": "it",
-          "subtype": "technology",
-          "seriousness": 89,
-          "priority_score": 111
-        }
-      ],
-      "rolling_balance_after": {
         "window": 12,
         "targets": {
           "local": 6,
@@ -3289,6 +3208,165 @@
           }
         ],
         "valid_posts_counted": 8
+      },
+      "scheduled_second_group": "it",
+      "candidate_count": 25,
+      "approved_count": 15,
+      "rejected_count": 10,
+      "rejected_by_reason": {
+        "borderline_without_independent_review": 9,
+        "no_valid_news_stream": 1
+      },
+      "ai_review_requested": 10,
+      "ai_review_received": 0,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "\"Лопасти разобрали перед эвакуацией\": astv.ru побывал на месте экстремальной посадки вертолёта на Сахалине",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "subtype": "fatal_incident",
+          "seriousness": 100,
+          "priority_score": 119
+        },
+        {
+          "slot": 2,
+          "title": "Путин: Особый правовой режим запустят на Дальнем Востоке для обкатки технологий с 1 января - SakhalinMedia.ru",
+          "category_key": "it",
+          "group": "it",
+          "subtype": "war_security",
+          "seriousness": 90,
+          "priority_score": 130
+        },
+        {
+          "slot": "backup",
+          "title": "Google defeats US justice department bid to force ad tech sale",
+          "category_key": "it",
+          "group": "it",
+          "subtype": "technology",
+          "seriousness": 89,
+          "priority_score": 129
+        },
+        {
+          "slot": "backup",
+          "title": "Trump administration sides with OpenAI in lawsuit against New York Times",
+          "category_key": "it",
+          "group": "it",
+          "subtype": "technology",
+          "seriousness": 89,
+          "priority_score": 129
+        },
+        {
+          "slot": "backup",
+          "title": "Медведя заметили возле трассы в селе Охотское на Сахалине - SakhalinMedia.ru",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "subtype": "local_infrastructure",
+          "seriousness": 100,
+          "priority_score": 111
+        },
+        {
+          "slot": "backup",
+          "title": "Молодой медведь устроил обход побережья в Корсаковском районе | SAKH.ONLINE",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "subtype": "local_public_interest",
+          "seriousness": 92,
+          "priority_score": 111
+        },
+        {
+          "slot": "backup",
+          "title": "Analysis: China’s CO2 emissions fall in Q2 2026 due to plummeting oil use - Carbon Brief",
+          "category_key": "geo",
+          "group": "geo",
+          "subtype": "diplomacy",
+          "seriousness": 89,
+          "priority_score": 111
+        },
+        {
+          "slot": "backup",
+          "title": "Производство удобрений из органического вторсырья запустили в Южно-Сахалинске - SakhalinMedia.ru",
+          "category_key": "sakh",
+          "group": "local",
+          "subtype": "local_infrastructure",
+          "seriousness": 93,
+          "priority_score": 104
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 12,
+        "targets": {
+          "local": 6,
+          "world_ru": 1,
+          "ru_safety": 1,
+          "ru_pol": 1,
+          "ru_eco": 1,
+          "geo": 1,
+          "it": 1
+        },
+        "counts": {
+          "local": 3,
+          "world_ru": 1,
+          "ru_safety": 0,
+          "ru_pol": 1,
+          "ru_eco": 2,
+          "geo": 0,
+          "it": 1
+        },
+        "deficits": {
+          "local": 3,
+          "world_ru": 0,
+          "ru_safety": 1,
+          "ru_pol": 0,
+          "ru_eco": 0,
+          "geo": 1,
+          "it": 0
+        },
+        "overages": {
+          "local": 0,
+          "world_ru": 0,
+          "ru_safety": 0,
+          "ru_pol": 0,
+          "ru_eco": 1,
+          "geo": 0,
+          "it": 0
+        },
+        "subtype_counts": {
+          "weather_forecast": 1,
+          "local_infrastructure": 2,
+          "diplomacy": 1,
+          "political_decision": 1,
+          "economy_policy": 1,
+          "local_public_interest": 1,
+          "war_security": 1
+        },
+        "retrospective_anomalies": [
+          {
+            "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
+            "category_key": "geo",
+            "reason": "ceremony_or_congratulation_low_value",
+            "corrected_category": null
+          },
+          {
+            "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
+            "category_key": "geo",
+            "reason": "calendar_or_archive_not_current_news",
+            "corrected_category": null
+          },
+          {
+            "title": "В Углегорском районе обследовали более 60 км территории в поисках пропавших людей",
+            "category_key": "sakh",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
+            "category_key": "sakh",
+            "reason": "ceremony_or_congratulation_low_value",
+            "corrected_category": null
+          }
+        ],
+        "valid_posts_counted": 8
       }
     },
     "media_policy": {
@@ -3300,8 +3378,8 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 31,
-      "missing_media_rejected": 1,
+      "ready_candidates": 25,
+      "missing_media_rejected": 0,
       "generic_media_rejected": 0,
       "photo_retries": 0,
       "photo_published": 2,
@@ -3314,16 +3392,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 43,
-      "checked": 3,
+      "prechecked": 40,
+      "checked": 5,
       "passed": 3,
       "rejected": 5,
-      "reclassified": 14,
-      "offtopic_reject": 6,
-      "fallback": 0,
-      "ai_calls": 0,
-      "ai_fail": 0,
-      "audited_urls": 8
+      "reclassified": 11,
+      "offtopic_reject": 12,
+      "fallback": 1,
+      "ai_calls": 2,
+      "ai_fail": 2,
+      "audited_urls": 7
     }
   },
   "pending_media_delivery": [],
@@ -3360,22 +3438,22 @@
       "it": 1
     },
     "counts": {
-      "local": 4,
+      "local": 3,
       "world_ru": 1,
       "ru_safety": 0,
       "ru_pol": 1,
       "ru_eco": 2,
       "geo": 0,
-      "it": 0
+      "it": 1
     },
     "deficits": {
-      "local": 2,
+      "local": 3,
       "world_ru": 0,
       "ru_safety": 1,
       "ru_pol": 0,
       "ru_eco": 0,
       "geo": 1,
-      "it": 1
+      "it": 0
     },
     "overages": {
       "local": 0,
@@ -3387,14 +3465,13 @@
       "it": 0
     },
     "subtype_counts": {
-      "fatal_incident": 1,
-      "fraud": 1,
       "weather_forecast": 1,
-      "local_infrastructure": 1,
+      "local_infrastructure": 2,
       "diplomacy": 1,
       "political_decision": 1,
       "economy_policy": 1,
-      "local_public_interest": 1
+      "local_public_interest": 1,
+      "war_security": 1
     },
     "retrospective_anomalies": [
       {
