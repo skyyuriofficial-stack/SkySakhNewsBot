@@ -204,7 +204,9 @@
     "https://sakh.online/news/18/2026-09-03/putin-za-11-let-v-razvitie-dalnego-vostoka-privlekli-25-trln-rubley-524857",
     "https://astv.ru/news/criminal/2026-09-03-zhitel-poronajska-pereprodal-chuzhoj-velosiped-za-1-500-rublej-i-popal-pod-ugolovnuyu-stat-yu",
     "https://sakhalinmedia.ru/news/2609589/",
-    "https://sakhalinmedia.ru/news/2609528/"
+    "https://sakhalinmedia.ru/news/2609528/",
+    "https://astv.ru/news/society/2026-09-03-moshenniki-nachali-poddelyvat-golosa-uchitelej-dlya-obmana-roditelej",
+    "https://astv.ru/news/society/2026-09-03-vladel-cy-koshek-pozhalovalis-na-smert-pitomcev-posle-vakciny-mul-tifel"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -411,36 +413,12 @@
     "e6e7b58ce1e3d08a834c4e5a7ca207fc9acbb6cf",
     "50313db63d6110b802f79c26891436c63b48b5cc",
     "e084ddbb391c6fc5e8bcc306b8b4bad79ef9fae6",
-    "cb357205df87a8e8db1c73f2f8406b61a63c8146"
+    "cb357205df87a8e8db1c73f2f8406b61a63c8146",
+    "d689aaee75d68280b0d966b065611c5a66d01945",
+    "2270423aaee99d0cf3d65589810465b09e1f3e95"
   ],
-  "last_run_sakhalin": "2026-09-03T23:44:54+11:00",
+  "last_run_sakhalin": "2026-09-04T09:28:33+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-08-19T10:06:40+11:00",
-      "source": "Interfax",
-      "category": "📍 Сахалин",
-      "category_key": "sakh",
-      "title": "В парламенте Ирана заявили, что давление на Тегеран не поможет США заключить соглашение",
-      "url": "https://www.interfax.ru/world/1110010",
-      "image_url": null,
-      "image_hash": null,
-      "published_at": "2026-08-18T21:24:00+00:00",
-      "with_image": false,
-      "publish_method": "sendMessage/no-safe-image"
-    },
-    {
-      "time_sakhalin": "2026-08-19T10:07:01+11:00",
-      "source": "BBC World",
-      "category": "🌍 Мир о России",
-      "category_key": "world_ru",
-      "title": "Великобритания поддерживает Украину на 100%, заявил Бёрнхэм после предупреждения России о дронах",
-      "url": "https://www.bbc.co.uk/news/articles/cy5dz0kkn0wo?at_medium=RSS&at_campaign=rss",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/2c0d/live/a0e5f360-9aec-11f1-930b-57cfba7235f9.jpg",
-      "image_hash": "8293c0f769011e281d135e29c120939f9858e277",
-      "published_at": "2026-08-18T12:36:11+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/stable-v9.3"
-    },
     {
       "time_sakhalin": "2026-08-19T10:24:14+11:00",
       "source": "Interfax",
@@ -2806,6 +2784,110 @@
         "reclassified_from": "sakh",
         "reclassified_to": "sakh_chp"
       }
+    },
+    {
+      "time_sakhalin": "2026-09-04T09:27:49+11:00",
+      "source": "ASTV",
+      "category": "🇷🇺 Россия / происшествия",
+      "category_key": "ru_incident",
+      "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
+      "url": "https://astv.ru/news/society/2026-09-03-moshenniki-nachali-poddelyvat-golosa-uchitelej-dlya-obmana-roditelej",
+      "image_url": "https://astv.ru/content/NewsImage/8c/50/8c509af9-679b-4cbb-b25a-89c83eeefedc_3.jpg",
+      "image_hash": "aba28bc09c5c59a1ae14bbc5bc5511a899b67d0b",
+      "topic_cluster": "ru_incident:мошенники_начали_подделывать_голоса_учителей_обмана",
+      "published_at": "2026-09-02T13:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v1",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "ru_incident",
+        "corrected_category": "ru_incident",
+        "group": "ru_safety",
+        "subtype": "fraud",
+        "seriousness": 100,
+        "threshold": 72,
+        "priority_score": 140,
+        "slot": 2,
+        "risks": [],
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true
+      },
+      "source_text_excerpt": "Схема рассчитана на период, когда родители вступают в новые школьные чаты Схема рассчитана на период, когда родители вступают в новые школьные чаты В начале учебного года мошенники стали использовать поддельные голоса учителей, чтобы выманивать деньги и персональные данные у родителей школьников. Злоумышленники могут звонить или отправлять голосовые сообщения от имени педагогов с просьбой срочно перевести деньги. Схема рассчитана на период, когда родители вступают в новые школьные чаты и активно собирают средства на нужды класса, мероприятия и подарки. Это позволяет мошенникам делать просьбы о переводах более правдоподобными, сообщили в МВД. Эксперты советуют не переводить деньги по неожиданным просьбам из сообщений и звонков, а сначала связаться с учителем или представителем родительского комитета по знакомому номеру и проверить информацию.",
+      "telegram_message_id": 252,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": [],
+        "reclassified_from": "sakh_chp",
+        "reclassified_to": "ru_incident"
+      }
+    },
+    {
+      "time_sakhalin": "2026-09-04T09:28:25+11:00",
+      "source": "ASTV",
+      "category": "🇷🇺 Россия / происшествия",
+      "category_key": "ru_incident",
+      "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
+      "url": "https://astv.ru/news/society/2026-09-03-vladel-cy-koshek-pozhalovalis-na-smert-pitomcev-posle-vakciny-mul-tifel",
+      "image_url": "https://astv.ru/content/NewsImage/8d/e7/8de75ffd-165c-45db-aba4-bb0820a7f9ae_3.jpg",
+      "image_hash": "e5ae3f658260998ed904c033d965dfd55caf9515",
+      "topic_cluster": "ru_incident:владельцы_кошек_пожаловались_смерть_питомцев_после",
+      "published_at": "2026-09-02T13:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v1",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "ru_incident",
+        "corrected_category": "ru_incident",
+        "group": "ru_safety",
+        "subtype": "fatal_incident",
+        "seriousness": 100,
+        "threshold": 72,
+        "priority_score": 140,
+        "slot": "backup",
+        "risks": [],
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true
+      },
+      "source_text_excerpt": "В одном из подмосковных приютов после вакцинации восьми котят заболели пятеро, один из них умер В одном из подмосковных приютов после вакцинации восьми котят заболели пятеро, один из них умер Десятки владельцев кошек в России связывают ухудшение состояния и гибель питомцев с вакцинацией препаратами \"Мультифел\" и \"Рабифел\" производства \"Ветбиохима\", сообщает SHOT ПРОВЕРКА. Среди описываемых симптомов — высокая температура, рвота, кровавый понос и резкая слабость. В одном из подмосковных приютов после вакцинации восьми котят, по словам владелицы, заболели пятеро, один из них впал в кому и умер. В Самаре хозяйка четырёхмесячного абиссинца рассказала о сильном поносе с кровью после второй дозы \"Мультифела-4\" и одновременной прививки \"Рабифелом\". Ещё один владелец сообщил о гибели мейн-куна после вакцинации этими же препаратами. \"Мультифел\" и \"Рабифел\" выпускает \"Ветбиохим\" — производитель вакцины \"Мультикан\". Ранее после жалоб владельцев собак компания отозвала несколько серий \"Мультикана\", а Россельхознадзор приостановил обращение \"Мультикана-8\" и начал проверку.",
+      "telegram_message_id": 253,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic",
+        "issues": [],
+        "reclassified_from": "sakh",
+        "reclassified_to": "ru_incident"
+      }
     }
   ],
   "last_cycle_report": {
@@ -3033,21 +3115,20 @@
   },
   "last_run": {
     "version": "stable-v11.0",
-    "started_sakhalin": "2026-09-03T23:38:38+11:00",
+    "started_sakhalin": "2026-09-04T09:21:04+11:00",
     "status": "ok",
-    "candidates": 15,
+    "candidates": 17,
     "published": 2,
-    "local_candidates": 7,
+    "local_candidates": 5,
     "local_stream": {
       "status": "healthy",
-      "ok_sources": 3,
+      "ok_sources": 4,
       "sources": [
         {
           "source": "Sakhalin Google",
-          "status": "down",
-          "entries": 0,
-          "recent": 0,
-          "error": "503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%D0%A1%D0%B0%D1%85%D0%B0%D0%BB%D0%B8%D0%BD+OR+%D0%AE%D0%B6%D0%BD%D0%BE-%D0%A1%D0%B0%D1%85%D0%B0%"
+          "status": "ok",
+          "entries": 20,
+          "recent": 10
         },
         {
           "source": "SakhalinMedia",
@@ -3058,7 +3139,7 @@
         {
           "source": "ASTV HTML",
           "status": "ok",
-          "entries": 22,
+          "entries": 21,
           "recent": 15
         },
         {
@@ -3069,46 +3150,46 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-09-03T23:44:54+11:00",
+    "finished_sakhalin": "2026-09-04T09:28:33+11:00",
     "stats": {
-      "rss_seen": 112,
-      "old_skip": 25,
-      "google_skip": 0,
-      "duplicate_skip": 0,
-      "low_info_skip": 13,
-      "category_skip": 40,
+      "rss_seen": 160,
+      "old_skip": 60,
+      "google_skip": 10,
+      "duplicate_skip": 1,
+      "low_info_skip": 15,
+      "category_skip": 35,
       "no_image_skip": 0,
-      "bad_image_skip": 11,
-      "logo_image_skip": 55,
-      "text_card_image_skip": 2,
-      "candidates": 25,
-      "rewrite_retry": 6,
-      "editorial_skip": 2,
+      "bad_image_skip": 13,
+      "logo_image_skip": 75,
+      "text_card_image_skip": 3,
+      "candidates": 31,
+      "rewrite_retry": 4,
+      "editorial_skip": 0,
       "telegram_fail": 0,
       "published": 2,
-      "ai_calls": 8,
-      "ai_budget_exhausted": 1,
-      "ai_api_fail": 5,
-      "evidence_reject": 1,
-      "validation_reject": 1,
+      "ai_calls": 5,
+      "ai_budget_exhausted": 0,
+      "ai_api_fail": 4,
+      "evidence_reject": 0,
+      "validation_reject": 0,
       "extractive_fallback": 2,
-      "editorial_prechecked": 40,
-      "editorial_gate_checked": 5,
+      "editorial_prechecked": 50,
+      "editorial_gate_checked": 3,
       "editorial_gate_pass": 3,
-      "editorial_gate_reject": 5,
+      "editorial_gate_reject": 3,
       "editorial_gate_fallback": 1,
-      "editorial_gate_ai_calls": 2,
-      "editorial_gate_ai_fail": 2,
-      "editorial_title_reject": 3,
-      "editorial_category_reject": 3,
+      "editorial_gate_ai_calls": 1,
+      "editorial_gate_ai_fail": 1,
+      "editorial_title_reject": 2,
+      "editorial_category_reject": 2,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 11,
-      "editorial_offtopic_reject": 12,
+      "editorial_reclassified": 14,
+      "editorial_offtopic_reject": 15,
       "openrouter_empty_content": 2,
       "openrouter_model_fallback": 0,
-      "media_required_skip": 0,
+      "media_required_skip": 2,
       "media_generic_skip": 0,
-      "media_ready_candidates": 25,
+      "media_ready_candidates": 31,
       "photo_retry": 0,
       "photo_publish": 2,
       "photo_upload_original": 2,
@@ -3122,9 +3203,9 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 25,
-      "director_approved": 15,
-      "director_rejected": 10,
+      "director_seen": 31,
+      "director_approved": 17,
+      "director_rejected": 14,
       "director_reclassified": 1,
       "director_ai_calls": 1,
       "director_ai_fail": 1,
@@ -3134,166 +3215,6 @@
     "news_director": {
       "version": "director-v1",
       "rolling_balance_before": {
-        "window": 12,
-        "targets": {
-          "local": 6,
-          "world_ru": 1,
-          "ru_safety": 1,
-          "ru_pol": 1,
-          "ru_eco": 1,
-          "geo": 1,
-          "it": 1
-        },
-        "counts": {
-          "local": 4,
-          "world_ru": 1,
-          "ru_safety": 0,
-          "ru_pol": 1,
-          "ru_eco": 2,
-          "geo": 0,
-          "it": 0
-        },
-        "deficits": {
-          "local": 2,
-          "world_ru": 0,
-          "ru_safety": 1,
-          "ru_pol": 0,
-          "ru_eco": 0,
-          "geo": 1,
-          "it": 1
-        },
-        "overages": {
-          "local": 0,
-          "world_ru": 0,
-          "ru_safety": 0,
-          "ru_pol": 0,
-          "ru_eco": 1,
-          "geo": 0,
-          "it": 0
-        },
-        "subtype_counts": {
-          "fatal_incident": 1,
-          "fraud": 1,
-          "weather_forecast": 1,
-          "local_infrastructure": 1,
-          "diplomacy": 1,
-          "political_decision": 1,
-          "economy_policy": 1,
-          "local_public_interest": 1
-        },
-        "retrospective_anomalies": [
-          {
-            "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
-            "category_key": "geo",
-            "reason": "ceremony_or_congratulation_low_value",
-            "corrected_category": null
-          },
-          {
-            "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
-            "category_key": "geo",
-            "reason": "calendar_or_archive_not_current_news",
-            "corrected_category": null
-          },
-          {
-            "title": "В Углегорском районе обследовали более 60 км территории в поисках пропавших людей",
-            "category_key": "sakh",
-            "reason": "importance_below_threshold",
-            "corrected_category": "sakh"
-          },
-          {
-            "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
-            "category_key": "sakh",
-            "reason": "ceremony_or_congratulation_low_value",
-            "corrected_category": null
-          }
-        ],
-        "valid_posts_counted": 8
-      },
-      "scheduled_second_group": "it",
-      "candidate_count": 25,
-      "approved_count": 15,
-      "rejected_count": 10,
-      "rejected_by_reason": {
-        "borderline_without_independent_review": 9,
-        "no_valid_news_stream": 1
-      },
-      "ai_review_requested": 10,
-      "ai_review_received": 0,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "\"Лопасти разобрали перед эвакуацией\": astv.ru побывал на месте экстремальной посадки вертолёта на Сахалине",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "subtype": "fatal_incident",
-          "seriousness": 100,
-          "priority_score": 119
-        },
-        {
-          "slot": 2,
-          "title": "Путин: Особый правовой режим запустят на Дальнем Востоке для обкатки технологий с 1 января - SakhalinMedia.ru",
-          "category_key": "it",
-          "group": "it",
-          "subtype": "war_security",
-          "seriousness": 90,
-          "priority_score": 130
-        },
-        {
-          "slot": "backup",
-          "title": "Google defeats US justice department bid to force ad tech sale",
-          "category_key": "it",
-          "group": "it",
-          "subtype": "technology",
-          "seriousness": 89,
-          "priority_score": 129
-        },
-        {
-          "slot": "backup",
-          "title": "Trump administration sides with OpenAI in lawsuit against New York Times",
-          "category_key": "it",
-          "group": "it",
-          "subtype": "technology",
-          "seriousness": 89,
-          "priority_score": 129
-        },
-        {
-          "slot": "backup",
-          "title": "Медведя заметили возле трассы в селе Охотское на Сахалине - SakhalinMedia.ru",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "subtype": "local_infrastructure",
-          "seriousness": 100,
-          "priority_score": 111
-        },
-        {
-          "slot": "backup",
-          "title": "Молодой медведь устроил обход побережья в Корсаковском районе | SAKH.ONLINE",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "subtype": "local_public_interest",
-          "seriousness": 92,
-          "priority_score": 111
-        },
-        {
-          "slot": "backup",
-          "title": "Analysis: China’s CO2 emissions fall in Q2 2026 due to plummeting oil use - Carbon Brief",
-          "category_key": "geo",
-          "group": "geo",
-          "subtype": "diplomacy",
-          "seriousness": 89,
-          "priority_score": 111
-        },
-        {
-          "slot": "backup",
-          "title": "Производство удобрений из органического вторсырья запустили в Южно-Сахалинске - SakhalinMedia.ru",
-          "category_key": "sakh",
-          "group": "local",
-          "subtype": "local_infrastructure",
-          "seriousness": 93,
-          "priority_score": 104
-        }
-      ],
-      "rolling_balance_after": {
         "window": 12,
         "targets": {
           "local": 6,
@@ -3367,6 +3288,161 @@
           }
         ],
         "valid_posts_counted": 8
+      },
+      "scheduled_second_group": "ru_safety",
+      "candidate_count": 31,
+      "approved_count": 17,
+      "rejected_count": 14,
+      "rejected_by_reason": {
+        "subtype_quota_exhausted": 4,
+        "no_valid_news_stream": 3,
+        "borderline_without_independent_review": 7
+      },
+      "ai_review_requested": 9,
+      "ai_review_received": 0,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "\"Лопасти разобрали перед эвакуацией\": astv.ru побывал на месте экстремальной посадки вертолёта на Сахалине",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "subtype": "fatal_incident",
+          "seriousness": 100,
+          "priority_score": 123
+        },
+        {
+          "slot": 2,
+          "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
+          "category_key": "ru_incident",
+          "group": "ru_safety",
+          "subtype": "fraud",
+          "seriousness": 100,
+          "priority_score": 140
+        },
+        {
+          "slot": "backup",
+          "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
+          "category_key": "ru_incident",
+          "group": "ru_safety",
+          "subtype": "fatal_incident",
+          "seriousness": 100,
+          "priority_score": 140
+        },
+        {
+          "slot": "backup",
+          "title": "Дым от бушующих в Якутии пожаров дошёл до Курил - очевидцы",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "subtype": "local_public_interest",
+          "seriousness": 100,
+          "priority_score": 123
+        },
+        {
+          "slot": "backup",
+          "title": "Аллею Славы пограничникам открыли в Корсакове в День Победы над Японией",
+          "category_key": "sakh",
+          "group": "local",
+          "subtype": "fatal_incident",
+          "seriousness": 94,
+          "priority_score": 117
+        },
+        {
+          "slot": "backup",
+          "title": "Автомобиль сгорел в Анивском районе",
+          "category_key": "sakh",
+          "group": "local",
+          "subtype": "fatal_incident",
+          "seriousness": 92,
+          "priority_score": 115
+        },
+        {
+          "slot": "backup",
+          "title": "Analysis: China’s CO2 emissions fall in Q2 2026 due to plummeting oil use - Carbon Brief",
+          "category_key": "geo",
+          "group": "geo",
+          "subtype": "diplomacy",
+          "seriousness": 89,
+          "priority_score": 111
+        },
+        {
+          "slot": "backup",
+          "title": "ДОМ.РФ готов профинансировать проекты в мастер-планах Дальнего Востока на сумму до 100 млрд рублей - SakhalinMedia.ru",
+          "category_key": "ru_eco",
+          "group": "ru_eco",
+          "subtype": "economy_policy",
+          "seriousness": 100,
+          "priority_score": 100
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 12,
+        "targets": {
+          "local": 6,
+          "world_ru": 1,
+          "ru_safety": 1,
+          "ru_pol": 1,
+          "ru_eco": 1,
+          "geo": 1,
+          "it": 1
+        },
+        "counts": {
+          "local": 3,
+          "world_ru": 1,
+          "ru_safety": 2,
+          "ru_pol": 1,
+          "ru_eco": 1,
+          "geo": 0,
+          "it": 1
+        },
+        "deficits": {
+          "local": 3,
+          "world_ru": 0,
+          "ru_safety": 0,
+          "ru_pol": 0,
+          "ru_eco": 0,
+          "geo": 1,
+          "it": 0
+        },
+        "overages": {
+          "local": 0,
+          "world_ru": 0,
+          "ru_safety": 1,
+          "ru_pol": 0,
+          "ru_eco": 0,
+          "geo": 0,
+          "it": 0
+        },
+        "subtype_counts": {
+          "local_infrastructure": 2,
+          "diplomacy": 1,
+          "political_decision": 1,
+          "economy_policy": 1,
+          "local_public_interest": 1,
+          "war_security": 1,
+          "fraud": 1,
+          "fatal_incident": 1
+        },
+        "retrospective_anomalies": [
+          {
+            "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
+            "category_key": "geo",
+            "reason": "calendar_or_archive_not_current_news",
+            "corrected_category": null
+          },
+          {
+            "title": "В Углегорском районе обследовали более 60 км территории в поисках пропавших людей",
+            "category_key": "sakh",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
+            "category_key": "sakh",
+            "reason": "ceremony_or_congratulation_low_value",
+            "corrected_category": null
+          }
+        ],
+        "valid_posts_counted": 9
       }
     },
     "media_policy": {
@@ -3378,8 +3454,8 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 25,
-      "missing_media_rejected": 0,
+      "ready_candidates": 31,
+      "missing_media_rejected": 2,
       "generic_media_rejected": 0,
       "photo_retries": 0,
       "photo_published": 2,
@@ -3392,16 +3468,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 40,
-      "checked": 5,
+      "prechecked": 50,
+      "checked": 3,
       "passed": 3,
-      "rejected": 5,
-      "reclassified": 11,
-      "offtopic_reject": 12,
+      "rejected": 3,
+      "reclassified": 14,
+      "offtopic_reject": 15,
       "fallback": 1,
-      "ai_calls": 2,
-      "ai_fail": 2,
-      "audited_urls": 7
+      "ai_calls": 1,
+      "ai_fail": 1,
+      "audited_urls": 5
     }
   },
   "pending_media_delivery": [],
@@ -3440,16 +3516,16 @@
     "counts": {
       "local": 3,
       "world_ru": 1,
-      "ru_safety": 0,
+      "ru_safety": 2,
       "ru_pol": 1,
-      "ru_eco": 2,
+      "ru_eco": 1,
       "geo": 0,
       "it": 1
     },
     "deficits": {
       "local": 3,
       "world_ru": 0,
-      "ru_safety": 1,
+      "ru_safety": 0,
       "ru_pol": 0,
       "ru_eco": 0,
       "geo": 1,
@@ -3458,28 +3534,23 @@
     "overages": {
       "local": 0,
       "world_ru": 0,
-      "ru_safety": 0,
+      "ru_safety": 1,
       "ru_pol": 0,
-      "ru_eco": 1,
+      "ru_eco": 0,
       "geo": 0,
       "it": 0
     },
     "subtype_counts": {
-      "weather_forecast": 1,
       "local_infrastructure": 2,
       "diplomacy": 1,
       "political_decision": 1,
       "economy_policy": 1,
       "local_public_interest": 1,
-      "war_security": 1
+      "war_security": 1,
+      "fraud": 1,
+      "fatal_incident": 1
     },
     "retrospective_anomalies": [
-      {
-        "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
-        "category_key": "geo",
-        "reason": "ceremony_or_congratulation_low_value",
-        "corrected_category": null
-      },
       {
         "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
         "category_key": "geo",
@@ -3499,7 +3570,7 @@
         "corrected_category": null
       }
     ],
-    "valid_posts_counted": 8
+    "valid_posts_counted": 9
   },
   "expired_media_delivery": [
     {
