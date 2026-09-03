@@ -39,6 +39,7 @@ jobs:
 
       - name: Verify live Russian source path with OpenRouter unavailable
         env:
+          PYTHONPATH: "src"
           IMAGE_REQUIRED: "1"
           AI_CALL_BUDGET: "4"
           EDITORIAL_AUDIT_AI_BUDGET: "2"
