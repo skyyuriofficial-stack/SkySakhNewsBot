@@ -59,9 +59,11 @@ jobs:
       - name: Run screenshot, category, seriousness, balance and media regressions
         env:
           IMAGE_REQUIRED: "1"
-          AI_CALL_BUDGET: "8"
-          EDITORIAL_AUDIT_AI_BUDGET: "4"
-          NEWS_DIRECTOR_AI_BUDGET: "1"
+          AI_CALL_BUDGET: "4"
+          EDITORIAL_AUDIT_AI_BUDGET: "2"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+          OPENROUTER_MAX_ATTEMPTS: "3"
+          OPENROUTER_RETRY_BASE_SECONDS: "1.0"
           RUN_COOLDOWN_MINUTES: "20"
           MEDIA_PENDING_MAX_HOURS: "36"
           MEDIA_PENDING_MAX_ITEMS: "24"

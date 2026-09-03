@@ -184,13 +184,13 @@ core.b.ordered = ordered_v99
 # ---------------------------------------------------------------------------
 # Editorial reliability
 # ---------------------------------------------------------------------------
-AI_CALL_BUDGET = max(0, int(os.getenv("AI_CALL_BUDGET", "8")))
+AI_CALL_BUDGET = max(0, int(os.getenv("AI_CALL_BUDGET", "4")))
 _AI_CALLS = 0
 _AI_CIRCUIT_OPEN = False
 
 for _key in (
     "ai_calls", "ai_budget_exhausted", "ai_api_fail", "evidence_reject",
-    "validation_reject", "extractive_fallback",
+    "validation_reject", "extractive_fallback", "extractive_first",
 ):
     core.b.STATS.setdefault(_key, 0)
 
@@ -377,6 +377,7 @@ def _api_failure_is_systemic(ex):
     return any(x in s for x in (
         "429", "rate limit", "rate-limit", "quota", "too many requests",
         "temporarily unavailable", "timeout", "timed out", "502", "503", "504",
+        "openrouter failed", "circuit is open",
     ))
 
 
@@ -384,6 +385,16 @@ def valid_post_v99(c):
     global _AI_CALLS, _AI_CIRCUIT_OPEN
     last_error = ""
     attempts = 0
+
+    # Russian-language articles do not need an LLM rewrite. Publishing two
+    # exact, validated source sentences is both safer and substantially more
+    # reliable than spending free-model quota on stylistic paraphrasing.
+    fallback = _extractive_fallback(c)
+    if fallback:
+        core.b.STATS["extractive_fallback"] += 1
+        core.b.STATS["extractive_first"] += 1
+        core.b.log(f"extractive-first accepted: {c['title'][:80]}")
+        return fallback
 
     while attempts < 2 and not _AI_CIRCUIT_OPEN and _AI_CALLS < AI_CALL_BUDGET:
         attempts += 1
@@ -405,17 +416,14 @@ def valid_post_v99(c):
             core.b.log(f"AI generation failed: {c['title'][:70]} | {last_error}")
             if _api_failure_is_systemic(ex):
                 _AI_CIRCUIT_OPEN = True
-                core.b.log("AI circuit opened for this run; switching to safe extractive fallback")
+                core.b.log(
+                    "AI circuit opened for this run; candidates without a safe "
+                    "extractive post will be skipped"
+                )
                 break
 
     if _AI_CALLS >= AI_CALL_BUDGET:
         core.b.STATS["ai_budget_exhausted"] = 1
-
-    fallback = _extractive_fallback(c)
-    if fallback:
-        core.b.STATS["extractive_fallback"] += 1
-        core.b.log(f"extractive fallback accepted: {c['title'][:80]}")
-        return fallback
 
     core.b.STATS["editorial_skip"] += 1
     return None

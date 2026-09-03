@@ -26,7 +26,7 @@ media.core.VERSION = VERSION
 core = media.core
 prod = media.prod
 
-DIRECTOR_AI_BUDGET = max(0, int(os.getenv("NEWS_DIRECTOR_AI_BUDGET", "1")))
+DIRECTOR_AI_BUDGET = max(0, int(os.getenv("NEWS_DIRECTOR_AI_BUDGET", "0")))
 _DIRECTOR_AI_CALLS = 0
 _DIRECTOR_REPORT: Dict[str, Any] = {}
 _DIRECTOR_BY_URL: Dict[str, Dict[str, Any]] = {}
@@ -41,8 +41,26 @@ for key in (
     "director_ai_fail",
     "director_final_reject",
     "director_pending_retired",
+    "director_deterministic_fallback",
 ):
     core.b.STATS.setdefault(key, 0)
+
+
+# The deterministic director is authoritative. OpenRouter is an optional veto,
+# never a single point of failure that can erase otherwise valid candidates.
+_original_apply_ai_review = director._apply_ai_review
+
+
+def _apply_ai_review_optional(review, ai):
+    if ai is None:
+        if review.get("needs_ai_review"):
+            core.b.STATS["director_deterministic_fallback"] += 1
+            review["ai_review_status"] = "unavailable_deterministic_policy"
+        return review
+    return _original_apply_ai_review(review, ai)
+
+
+director._apply_ai_review = _apply_ai_review_optional
 
 
 def _director_ai_review(
