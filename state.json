@@ -209,7 +209,9 @@
     "https://astv.ru/news/society/2026-09-03-vladel-cy-koshek-pozhalovalis-na-smert-pitomcev-posle-vakciny-mul-tifel",
     "https://astv.ru/news/criminal/2026-09-04-dym-ot-bushuyushih-v-yakutii-pozharov-doshel-do-kuril-ochevidcy",
     "https://sakhalinmedia.ru/news/2610302/",
-    "https://astv.ru/news/society/2026-09-04-policiya-na-sahaline-ishet-aleksandra-ledyaeva-chtoby-vernut-emu-veshi-i-dokumenty"
+    "https://astv.ru/news/society/2026-09-04-policiya-na-sahaline-ishet-aleksandra-ledyaeva-chtoby-vernut-emu-veshi-i-dokumenty",
+    "https://sakh.online/news/18/2026-09-04/teplye-vyhodnye-i-dozhdlivaya-nedelya-prognoz-pogody-na-sahaline-i-kurilah-5-11-sentyabrya-524990",
+    "https://sakhalinmedia.ru/news/2611184/"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -422,40 +424,12 @@
     "040a329d49622d7c277a6822ff2572c2942d745f",
     "df46b36e7aa8dcfbcb3050e97f31e4e5dfb16498",
     "dd0776a99cbfec2d2e446a873a44d5a91fd462d1",
-    "6413916bec0e516a0eb8a7ac313ae4d51e400e11"
+    "6413916bec0e516a0eb8a7ac313ae4d51e400e11",
+    "266159f7b5acc1fdf2a551d81f261b192e63ee7c",
+    "7411c9d8089c6ca39fb6667ef8ce6705c9e58311"
   ],
-  "last_run_sakhalin": "2026-09-04T18:04:28+11:00",
+  "last_run_sakhalin": "2026-09-04T23:37:57+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-08-19T20:01:31+11:00",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "title": "Сильный дождь пройдет в центральных районах Сахалина 20 августа - SakhalinMedia.ru",
-      "url": "https://sakhalinmedia.ru/news/2593484/",
-      "image_url": "https://sakhalinmedia.ru/f/big/6330/6329329.jpg?0ec0aa6dd932ee33e7ed0ef645c7eac2",
-      "image_hash": "be8709099efa03b2ecf3d25ce378de2da08484fc",
-      "topic_cluster": "sakh_chp:сильный_дождь_пройдет_центральных_районах_сахалина",
-      "published_at": "2026-08-19T03:14:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/stable-v9.5",
-      "grounded_evidence": true
-    },
-    {
-      "time_sakhalin": "2026-08-19T20:01:40+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 Россия / политика",
-      "category_key": "ru_pol",
-      "title": "Ребенок погиб в Ростовской области, упав за борт катера",
-      "url": "https://www.interfax.ru/russia/1110068",
-      "image_url": null,
-      "image_hash": null,
-      "topic_cluster": "ru_pol:ребенок_погиб_ростовской_области_катера",
-      "published_at": "2026-08-19T07:27:00+00:00",
-      "with_image": false,
-      "publish_method": "sendMessage/no-safe-image",
-      "grounded_evidence": true
-    },
     {
       "time_sakhalin": "2026-08-25T21:56:04+11:00",
       "source": "SakhalinMedia.ru",
@@ -3054,6 +3028,110 @@
       "post_publish_status": "deleted",
       "deleted_at": "2026-09-04T10:06:46+00:00",
       "deleted_reason": "violent_crime_wrong_category_and_malformed_title"
+    },
+    {
+      "time_sakhalin": "2026-09-04T23:36:51+11:00",
+      "source": "Sakh.online",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
+      "url": "https://sakh.online/news/18/2026-09-04/teplye-vyhodnye-i-dozhdlivaya-nedelya-prognoz-pogody-na-sahaline-i-kurilah-5-11-sentyabrya-524990",
+      "image_url": "https://sakh.online/attachments/35f34444f5936d92e7107f76c8d87f76862701bf/store/crop/0/0/792/448/800/0/0/0/dd3e6e626f78dcdeb2c2f2482dd66a531c0ce3a20d11cae15a1e9d687c68/dd3e6e626f78dcdeb2c2f2482dd66a531c0ce3a20d11cae15a1e9d687c68.webp",
+      "image_hash": "7b2e9a0b0cf41086e857b60ed7032af32a0abb71",
+      "topic_cluster": "sakh:погода_сентября_сахалине_градусов_дожди_похолоданием",
+      "published_at": "2026-09-03T13:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v1",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "sakh",
+        "corrected_category": "sakh",
+        "group": "local",
+        "subtype": "weather_forecast",
+        "seriousness": 75,
+        "threshold": 62,
+        "priority_score": 87,
+        "slot": 1,
+        "risks": [],
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true
+      },
+      "source_text_excerpt": "Теплые выходные сменятся дождливой неделей. Температура упадет с +26 градусов до +12. Подробности от УГМС. В предстоящие выходные дни, 5 и 6 сентября, на Сахалине осадков не ожидают. Температура в ночное время суток составит +9…+14 градусов, в долинах центральных районов +2…+7 градусов, на юге +6…+11 градусов. Днем воздух прогреется до 20–26 градусов. Подробности сообщили в пресс-службе сахалинского УГМС . Уже в понедельник на погоду северных районов Сахалина окажет влияние холодный атмосферный фронт, который к середине недели сместится на юг острова. Ожидаются дожди разной интенсивности. Ночью температура воздуха на юге составит от +7 до +13 градусов, на севере — +4…+9 градусов. Днем в северных и центральных районах столбики термометров покажут +12…+17 градусов, на юге — +15…+20 градусов. На Курильских островах в выходные дни существенных осадков не ожидают. Ночью температура воздуха составит +9…+14 градусов, днем от +14 до +20 градусов. В течение предстоящей рабочей недели на погоду окажут влияние серия циклонов, смещающихся по Тихому океану. Ожидают временами дождь и ветер порывами до 12–17 м/с. Температура на севере гряды от +9 до +16 градусов, ночью на юге +10…+15 градусов, дн",
+      "telegram_message_id": 258,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh_chp",
+        "reclassified_to": "sakh"
+      }
+    },
+    {
+      "time_sakhalin": "2026-09-04T23:37:49+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "🧭 Геополитика",
+      "category_key": "geo",
+      "title": "Глава ВТБ: Китайских инвесторов стал интересовать российский хайтек и автопром",
+      "url": "https://sakhalinmedia.ru/news/2611184/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6367/6366334.jpg?e189018f4200cad63e9c805b2865dc96",
+      "image_hash": "46f865a504739bb7fa3dfb5c4728a9e6b4402aef",
+      "topic_cluster": "geo:глава_китайских_инвесторов_интересовать_российский_хайтек",
+      "published_at": "2026-09-04T08:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v1",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "geo",
+        "corrected_category": "geo",
+        "group": "geo",
+        "subtype": "diplomacy",
+        "seriousness": 100,
+        "threshold": 75,
+        "priority_score": 122,
+        "slot": "backup",
+        "risks": [],
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true
+      },
+      "source_text_excerpt": "Структура интереса китайских инвесторов к России меняется: помимо традиционных отраслей — энергетики и добычи природных ресурсов — растет интерес к высоким технологиям, включая робототехнику, а также к автопрому. Площадки, где раньше выпускали западные модели автомобилей, сейчас переориентированы на производство китайских марок. Об этом на ВЭФ 2026 (16+) телеканалу Россия24 рассказал президент — председатель правления ВТБ Андрей Костин. Также глава ВТБ сообщил, что российские банки в разы нарастили объемы расчетов в национальных валютах со странами Азии после того, как часть западных и китайских банков прекратила обслуживание российско-китайской торговли из-за санкций.По его словам, объем работы дочернего банка ВТБ в Китае за год вырос примерно в 40 раз. С Китаем расчеты в нацвалютах наладить было проще из-за сбалансированной двусторонней торговли, а с Индией — сложнее: у банка ранее возник избыток рупий, который пришлось учиться обменивать на другие валюты. Расчеты в нацвалютах ВТБ также ведет с Вьетнамом. \"Мы это делаем сегодня достаточно легко, при том что санкционное давление не ослабевает\", — отметил Костин. По его словам, речь не идет о создании альтернативы долларовой систем",
+      "telegram_message_id": 259,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh",
+        "reclassified_to": "geo"
+      }
     }
   ],
   "last_cycle_report": {
@@ -3281,11 +3359,11 @@
   },
   "last_run": {
     "version": "stable-v11.0",
-    "started_sakhalin": "2026-09-04T17:59:44+11:00",
+    "started_sakhalin": "2026-09-04T23:32:52+11:00",
     "status": "ok",
-    "candidates": 29,
+    "candidates": 17,
     "published": 2,
-    "local_candidates": 21,
+    "local_candidates": 9,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -3294,7 +3372,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 15
+          "recent": 11
         },
         {
           "source": "SakhalinMedia",
@@ -3305,8 +3383,8 @@
         {
           "source": "ASTV HTML",
           "status": "ok",
-          "entries": 21,
-          "recent": 16
+          "entries": 22,
+          "recent": 17
         },
         {
           "source": "Sakh.online HTML",
@@ -3316,52 +3394,52 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-09-04T18:04:28+11:00",
+    "finished_sakhalin": "2026-09-04T23:37:57+11:00",
     "stats": {
-      "rss_seen": 160,
+      "rss_seen": 144,
       "old_skip": 60,
-      "google_skip": 12,
-      "duplicate_skip": 0,
-      "low_info_skip": 16,
-      "category_skip": 37,
+      "google_skip": 10,
+      "duplicate_skip": 2,
+      "low_info_skip": 1,
+      "category_skip": 39,
       "no_image_skip": 0,
-      "bad_image_skip": 14,
-      "logo_image_skip": 61,
-      "text_card_image_skip": 2,
-      "candidates": 31,
-      "rewrite_retry": 1,
-      "editorial_skip": 2,
+      "bad_image_skip": 5,
+      "logo_image_skip": 112,
+      "text_card_image_skip": 0,
+      "candidates": 22,
+      "rewrite_retry": 2,
+      "editorial_skip": 1,
       "telegram_fail": 0,
       "published": 2,
-      "ai_calls": 3,
+      "ai_calls": 2,
       "ai_budget_exhausted": 0,
-      "ai_api_fail": 0,
-      "evidence_reject": 1,
+      "ai_api_fail": 1,
+      "evidence_reject": 0,
       "validation_reject": 1,
       "extractive_fallback": 3,
       "extractive_first": 3,
-      "editorial_prechecked": 42,
-      "editorial_gate_checked": 5,
+      "editorial_prechecked": 45,
+      "editorial_gate_checked": 4,
       "editorial_gate_pass": 3,
-      "editorial_gate_reject": 4,
+      "editorial_gate_reject": 10,
       "editorial_gate_fallback": 0,
-      "editorial_gate_ai_calls": 2,
-      "editorial_gate_ai_fail": 1,
-      "editorial_title_reject": 3,
-      "editorial_category_reject": 3,
+      "editorial_gate_ai_calls": 0,
+      "editorial_gate_ai_fail": 0,
+      "editorial_title_reject": 8,
+      "editorial_category_reject": 10,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 12,
-      "editorial_offtopic_reject": 8,
-      "openrouter_empty_content": 7,
-      "openrouter_model_fallback": 3,
-      "openrouter_attempts": 11,
-      "openrouter_retries": 6,
-      "openrouter_invalid_json": 0,
-      "openrouter_success": 4,
+      "editorial_reclassified": 13,
+      "editorial_offtopic_reject": 12,
+      "openrouter_empty_content": 3,
+      "openrouter_model_fallback": 1,
+      "openrouter_attempts": 5,
+      "openrouter_retries": 3,
+      "openrouter_invalid_json": 1,
+      "openrouter_success": 1,
       "openrouter_circuit_open": 1,
       "media_required_skip": 1,
       "media_generic_skip": 0,
-      "media_ready_candidates": 31,
+      "media_ready_candidates": 22,
       "photo_retry": 0,
       "photo_publish": 2,
       "photo_upload_original": 2,
@@ -3375,167 +3453,19 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 31,
-      "director_approved": 29,
-      "director_rejected": 2,
-      "director_reclassified": 2,
+      "director_seen": 22,
+      "director_approved": 17,
+      "director_rejected": 5,
+      "director_reclassified": 1,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
       "director_final_reject": 1,
       "director_pending_retired": 0,
-      "director_deterministic_fallback": 14
+      "director_deterministic_fallback": 6
     },
     "news_director": {
       "version": "director-v1",
       "rolling_balance_before": {
-        "window": 12,
-        "targets": {
-          "local": 6,
-          "world_ru": 1,
-          "ru_safety": 1,
-          "ru_pol": 1,
-          "ru_eco": 1,
-          "geo": 1,
-          "it": 1
-        },
-        "counts": {
-          "local": 4,
-          "world_ru": 1,
-          "ru_safety": 2,
-          "ru_pol": 1,
-          "ru_eco": 1,
-          "geo": 0,
-          "it": 1
-        },
-        "deficits": {
-          "local": 2,
-          "world_ru": 0,
-          "ru_safety": 0,
-          "ru_pol": 0,
-          "ru_eco": 0,
-          "geo": 1,
-          "it": 0
-        },
-        "overages": {
-          "local": 0,
-          "world_ru": 0,
-          "ru_safety": 1,
-          "ru_pol": 0,
-          "ru_eco": 0,
-          "geo": 0,
-          "it": 0
-        },
-        "subtype_counts": {
-          "diplomacy": 1,
-          "political_decision": 1,
-          "economy_policy": 1,
-          "local_public_interest": 2,
-          "war_security": 1,
-          "local_infrastructure": 1,
-          "fraud": 1,
-          "fatal_incident": 1,
-          "traffic_enforcement": 1
-        },
-        "retrospective_anomalies": [
-          {
-            "title": "В Углегорском районе обследовали более 60 км территории в поисках пропавших людей",
-            "category_key": "sakh",
-            "reason": "importance_below_threshold",
-            "corrected_category": "sakh"
-          },
-          {
-            "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
-            "category_key": "sakh",
-            "reason": "ceremony_or_congratulation_low_value",
-            "corrected_category": null
-          }
-        ],
-        "valid_posts_counted": 10
-      },
-      "scheduled_second_group": "geo",
-      "candidate_count": 31,
-      "approved_count": 29,
-      "rejected_count": 2,
-      "rejected_by_reason": {
-        "no_valid_news_stream": 2
-      },
-      "ai_review_requested": 10,
-      "ai_review_received": 0,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "subtype": "local_public_interest",
-          "seriousness": 93,
-          "priority_score": 112
-        },
-        {
-          "slot": 2,
-          "title": "Analysis: China’s CO2 emissions fall in Q2 2026 due to plummeting oil use - Carbon Brief",
-          "category_key": "geo",
-          "group": "geo",
-          "subtype": "diplomacy",
-          "seriousness": 89,
-          "priority_score": 129
-        },
-        {
-          "slot": "backup",
-          "title": "US investigating if missile hit Iran wedding, Vance says",
-          "category_key": "geo",
-          "group": "geo",
-          "subtype": "diplomacy",
-          "seriousness": 89,
-          "priority_score": 129
-        },
-        {
-          "slot": "backup",
-          "title": "Суд взял под стражу мужчину, который запер сахалинку в квартире и зарезал - SakhalinMedia.ru",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "subtype": "local_infrastructure",
-          "seriousness": 100,
-          "priority_score": 111
-        },
-        {
-          "slot": "backup",
-          "title": "Предъявили обвинение: сахалинца, который ранил и удерживал в сожительницу, взяли под стражу",
-          "category_key": "sakh",
-          "group": "local",
-          "subtype": "local_infrastructure",
-          "seriousness": 94,
-          "priority_score": 105
-        },
-        {
-          "slot": "backup",
-          "title": "Зарплаты в России начали расти в 2,4 раза быстрее: рынок труда разогнал доходы работников - SakhalinMedia.ru",
-          "category_key": "ru_eco",
-          "group": "ru_eco",
-          "subtype": "economy_policy",
-          "seriousness": 94,
-          "priority_score": 94
-        },
-        {
-          "slot": "backup",
-          "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
-          "category_key": "sakh",
-          "group": "local",
-          "subtype": "weather_forecast",
-          "seriousness": 75,
-          "priority_score": 94
-        },
-        {
-          "slot": "backup",
-          "title": "В Южно-Сахалинске открылся 3-й туристический форум «Южно-Сахалинск: маршрут построен» | SAKH.ONLINE",
-          "category_key": "sakh",
-          "group": "local",
-          "subtype": "local_public_interest",
-          "seriousness": 73,
-          "priority_score": 92
-        }
-      ],
-      "rolling_balance_after": {
         "window": 12,
         "targets": {
           "local": 6,
@@ -3586,6 +3516,142 @@
         },
         "retrospective_anomalies": [],
         "valid_posts_counted": 12
+      },
+      "scheduled_second_group": "it",
+      "candidate_count": 22,
+      "approved_count": 17,
+      "rejected_count": 5,
+      "rejected_by_reason": {
+        "no_valid_news_stream": 2,
+        "subtype_quota_exhausted": 3
+      },
+      "ai_review_requested": 6,
+      "ai_review_received": 0,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
+          "category_key": "sakh",
+          "group": "local",
+          "subtype": "weather_forecast",
+          "seriousness": 75,
+          "priority_score": 87
+        },
+        {
+          "slot": 2,
+          "title": "Nvidia strikes $12.9bn deal to buy AI platform Hugging Face",
+          "category_key": "it",
+          "group": "it",
+          "subtype": "technology",
+          "seriousness": 89,
+          "priority_score": 107
+        },
+        {
+          "slot": "backup",
+          "title": "Инженеры будущего: как Россия и Китай объединяют вузы для технологического прорыва - SakhalinMedia.ru",
+          "category_key": "geo",
+          "group": "geo",
+          "subtype": "infrastructure_policy",
+          "seriousness": 100,
+          "priority_score": 122
+        },
+        {
+          "slot": "backup",
+          "title": "Глава ВТБ: Китайских инвесторов стал интересовать российский хайтек и автопром - SakhalinMedia.ru",
+          "category_key": "geo",
+          "group": "geo",
+          "subtype": "diplomacy",
+          "seriousness": 100,
+          "priority_score": 122
+        },
+        {
+          "slot": "backup",
+          "title": "US investigating if missile hit Iran wedding, Vance says",
+          "category_key": "geo",
+          "group": "geo",
+          "subtype": "diplomacy",
+          "seriousness": 89,
+          "priority_score": 111
+        },
+        {
+          "slot": "backup",
+          "title": "How could US-Iran conflict end? Three experts give their views",
+          "category_key": "geo",
+          "group": "geo",
+          "subtype": "diplomacy",
+          "seriousness": 89,
+          "priority_score": 111
+        },
+        {
+          "slot": "backup",
+          "title": "OpenAI hails ‘new era of artificial general intelligence’ with Astra model release",
+          "category_key": "it",
+          "group": "it",
+          "subtype": "technology",
+          "seriousness": 89,
+          "priority_score": 107
+        },
+        {
+          "slot": "backup",
+          "title": "Сбер открывает клиентам доступ к цифровому рублю - SakhalinMedia.ru",
+          "category_key": "ru_eco",
+          "group": "ru_eco",
+          "subtype": "economy_policy",
+          "seriousness": 94,
+          "priority_score": 94
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 12,
+        "targets": {
+          "local": 6,
+          "world_ru": 1,
+          "ru_safety": 1,
+          "ru_pol": 1,
+          "ru_eco": 1,
+          "geo": 1,
+          "it": 1
+        },
+        "counts": {
+          "local": 7,
+          "world_ru": 0,
+          "ru_safety": 2,
+          "ru_pol": 0,
+          "ru_eco": 1,
+          "geo": 1,
+          "it": 1
+        },
+        "deficits": {
+          "local": 0,
+          "world_ru": 1,
+          "ru_safety": 0,
+          "ru_pol": 1,
+          "ru_eco": 0,
+          "geo": 0,
+          "it": 0
+        },
+        "overages": {
+          "local": 1,
+          "world_ru": 0,
+          "ru_safety": 1,
+          "ru_pol": 0,
+          "ru_eco": 0,
+          "geo": 0,
+          "it": 0
+        },
+        "subtype_counts": {
+          "economy_policy": 1,
+          "local_public_interest": 3,
+          "war_security": 1,
+          "local_infrastructure": 2,
+          "fraud": 1,
+          "fatal_incident": 1,
+          "traffic_enforcement": 1,
+          "weather_forecast": 1,
+          "diplomacy": 1
+        },
+        "retrospective_anomalies": [],
+        "valid_posts_counted": 12
       }
     },
     "media_policy": {
@@ -3597,7 +3663,7 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 31,
+      "ready_candidates": 22,
       "missing_media_rejected": 1,
       "generic_media_rejected": 0,
       "photo_retries": 0,
@@ -3611,16 +3677,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 42,
-      "checked": 5,
+      "prechecked": 45,
+      "checked": 4,
       "passed": 3,
-      "rejected": 4,
-      "reclassified": 12,
-      "offtopic_reject": 8,
+      "rejected": 10,
+      "reclassified": 13,
+      "offtopic_reject": 12,
       "fallback": 0,
-      "ai_calls": 2,
-      "ai_fail": 1,
-      "audited_urls": 7
+      "ai_calls": 0,
+      "ai_fail": 0,
+      "audited_urls": 13
     }
   },
   "pending_media_delivery": [],
@@ -3657,25 +3723,25 @@
       "it": 1
     },
     "counts": {
-      "local": 6,
-      "world_ru": 1,
+      "local": 7,
+      "world_ru": 0,
       "ru_safety": 2,
-      "ru_pol": 1,
+      "ru_pol": 0,
       "ru_eco": 1,
-      "geo": 0,
+      "geo": 1,
       "it": 1
     },
     "deficits": {
       "local": 0,
-      "world_ru": 0,
+      "world_ru": 1,
       "ru_safety": 0,
-      "ru_pol": 0,
+      "ru_pol": 1,
       "ru_eco": 0,
-      "geo": 1,
+      "geo": 0,
       "it": 0
     },
     "overages": {
-      "local": 0,
+      "local": 1,
       "world_ru": 0,
       "ru_safety": 1,
       "ru_pol": 0,
@@ -3684,15 +3750,15 @@
       "it": 0
     },
     "subtype_counts": {
-      "diplomacy": 1,
-      "political_decision": 1,
       "economy_policy": 1,
       "local_public_interest": 3,
       "war_security": 1,
       "local_infrastructure": 2,
       "fraud": 1,
       "fatal_incident": 1,
-      "traffic_enforcement": 1
+      "traffic_enforcement": 1,
+      "weather_forecast": 1,
+      "diplomacy": 1
     },
     "retrospective_anomalies": [],
     "valid_posts_counted": 12
