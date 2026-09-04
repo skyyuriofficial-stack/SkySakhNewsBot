@@ -1,0 +1,163 @@
+name: SkySakhNews v12 One-Shot Documentation Sync
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/v12_docs_once.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Write current production documentation
+        run: |
+          cat > README.md <<'EOF'
+          # SkySakhNews Bot
+
+          Автоматический Telegram-публикатор новостей на GitHub Actions.
+
+          ## Current production
+
+          **Version:** `stable-v12.0`
+
+          ```text
+          GitHub Actions
+            → source collectors
+            → strict freshness/direct-link/media filters
+            → quality_v12 editorial director
+            → category autocorrection
+            → semantic Editorial Gate
+            → Telegram sendPhoto
+            → immediate post-publication watchdog
+            → state.json
+          ```
+
+          Штатный entrypoint: `src/publisher_v12.py`.
+
+          ## Editorial policy
+
+          Скользящее окно — 20 видимых публикаций:
+
+          | Направление | Доля | Публикаций |
+          |---|---:|---:|
+          | Сахалин | 30% | 6 |
+          | Россия: политика и законы | 20% | 4 |
+          | Россия: экономика и деньги | 20% | 4 |
+          | Происшествия и безопасность | 15% | 3 |
+          | Мир / геополитика / мир о России | 10% | 2 |
+          | IT и технологии | 5% | 1 |
+
+          Квота повышает приоритет только среди материалов, прошедших абсолютный порог качества. Слабый материал не публикуется ради заполнения пропорции.
+
+          ## Mandatory gates
+
+          Каждый пост обязан пройти:
+
+          - доказанную свежесть не старше 36 часов;
+          - прямую ссылку на оригинальную статью;
+          - корректную географию и категорию;
+          - абсолютный порог общественной значимости;
+          - проверку заголовка, фактов, чисел и модальности;
+          - тематическую фотографию исходной статьи;
+          - дедупликацию URL, заголовка, сюжета и изображения;
+          - повторный аудит уже отправленного Telegram-сообщения.
+
+          Жёстко исключаются календарные материалы, награждения и поздравления, lifestyle/SEO, реклама, сервисные объявления о возврате документов, рядовая дорожная статистика и мягкие мероприятия без общественно значимых последствий.
+
+          Если post-publish watchdog обнаруживает ошибку, сообщение удаляется через Telegram Bot API и помечается в `state.json`.
+
+          ## OpenRouter
+
+          OpenRouter не управляет отбором. Детерминированный редактор является основным. Для русскоязычных источников используется проверенный extractive-first режим; OpenRouter нужен в основном для перевода иностранных материалов и необязательной дополнительной проверки. Его отказ не останавливает выпуск.
+
+          ## Schedule, Sakhalin time
+
+          ```text
+          07:00 · 10:00 · 13:00 · 16:00 · 19:00 · 22:00
+          ```
+
+          ## Main files
+
+          - `src/quality_v12.py` — строгая редакционная политика, категории, значимость и пропорции;
+          - `src/publisher_v12.py` — production orchestration;
+          - `src/post_publish_audit_v12.py` — немедленный повторный аудит и удаление ошибки;
+          - `src/production_selftest_v12.py` — регрессии по фактическим ошибкам ленты;
+          - `src/quality_audit_v12.py` — dry-аудит на живых источниках;
+          - `V12_LIVE_VERIFIED.json` — аттестация реального выпуска;
+          - `V12_FEED_CLEANUP.json` — отчёт очистки известных ошибочных публикаций.
+          EOF
+
+          cat > SYSTEM_SPEC.md <<'EOF'
+          # SkySakhNews stable-v12.0 — production specification
+
+          ## Invariants
+
+          1. Publisher domain is not story geography.
+          2. Headline and article lead are independently classified.
+          3. Category is corrected before ranking and rechecked after formatting.
+          4. Absolute quality threshold is evaluated before proportional balancing.
+          5. Proportions are maintained over 20 visible, valid posts: 30/20/20/15/10/5.
+          6. No source photo means no publication; a Telegram delivery failure goes to the persistent retry queue.
+          7. Russian material uses extractive-first text; foreign material may use OpenRouter translation.
+          8. Generated title cannot strengthen modality, invent facts or change geography.
+          9. Every emitted post is audited again after Telegram returns `message_id`.
+          10. A failed post-audit triggers `deleteMessage`; deleted posts are excluded from the balance.
+
+          ## Hard rejects
+
+          - history/calendar (`В этот день`, anniversaries, archive dates);
+          - awards, congratulations and ceremonial coverage;
+          - travel/lifestyle/SEO, recipes, horoscopes and clickbait service content;
+          - advertorial and partner promotions;
+          - service notices whose only purpose is returning documents/items;
+          - routine traffic-enforcement statistics without a casualty/event;
+          - forums, meetings and exhibitions without a material public decision or consequence.
+
+          ## Category corrections
+
+          - Sakhalin + violence/accident/fire/fraud/hazard → `sakh_chp`;
+          - Sakhalin + earthquake → `sakh_quake`;
+          - Sakhalin infrastructure/public services → `sakh`;
+          - federal banking/economic indicators → `ru_eco` even when syndicated by SakhalinMedia;
+          - federal law/political decision → `ru_pol`;
+          - drones/PVO/terrorism/war threats → `ru_security`;
+          - foreign-state subject → `geo`, or `world_ru` for a world-media story centred on Russia;
+          - material without a safe stream → reject.
+
+          ## Quality thresholds
+
+          ```yaml
+          local: 70
+          ru_pol: 76
+          ru_eco: 76
+          ru_safety: 78
+          world: 80
+          it: 80
+          ```
+
+          Quotas never override these thresholds.
+
+          ## Verification
+
+          Production workflow compiles the full chain, runs exact screenshot/feed regressions, publishes through `publisher_v12.py`, runs `post_publish_audit_v12.py`, verifies quality/media/proportion invariants and commits state only after completion.
+          EOF
+
+      - name: Commit documentation
+        run: |
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+          git add README.md SYSTEM_SPEC.md
+          if git diff --cached --quiet; then
+            echo "Documentation already current"
+          else
+            git commit -m "Document stable v12 strict editorial production"
+            git pull --rebase --autostash origin main
+            git push origin main
+          fi
