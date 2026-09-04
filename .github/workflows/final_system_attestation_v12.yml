@@ -1,0 +1,369 @@
+name: SkySakhNews Final Stable v12.0 Attestation
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/final_system_attestation_v12.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skysakhnews-production-publisher
+  cancel-in-progress: false
+
+jobs:
+  attest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Import the validated v12 editorial sources
+        run: |
+          set -euo pipefail
+          git fetch origin fix/editorial-director-v12
+          for file in \
+            src/editorial_policy.py \
+            src/category_reconciler.py \
+            src/news_director.py \
+            src/publication_auditor.py \
+            src/publisher.py \
+            src/production_selftest.py; do
+            git show "origin/fix/editorial-director-v12:${file}" > "${file}"
+          done
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Verify source, schedule and exact historical regressions
+        env:
+          IMAGE_REQUIRED: "1"
+          AI_CALL_BUDGET: "0"
+          EDITORIAL_AUDIT_AI_BUDGET: "0"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+          POST_AUDIT_AUTOCORRECT: "0"
+          RUN_COOLDOWN_MINUTES: "0"
+          MEDIA_PENDING_MAX_HOURS: "36"
+          MEDIA_PENDING_MAX_ITEMS: "24"
+        run: |
+          set -euo pipefail
+          grep -q "SkySakhNews Auto Publisher Stable v12.0" .github/workflows/auto_publish_v7.yml
+          grep -q 'python src/publisher.py' .github/workflows/auto_publish_v7.yml
+          python -m py_compile \
+            src/news_bot_v8.py src/news_bot_v9.py src/production.py \
+            src/editorial_gate.py src/category_reconciler.py \
+            src/editorial_gate_runner.py src/media_enforced_runner.py \
+            src/editorial_policy.py src/news_director.py \
+            src/publication_auditor.py src/publisher.py \
+            src/production_selftest.py
+          python src/production_selftest.py
+
+      - name: Commit the tested v12 source set over current state
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          Path("V12_MAIN_VERIFIED.json").write_text(
+              json.dumps({
+                  "version": "stable-v12.0",
+                  "all_source_tests_passed": True,
+                  "source_branch": "fix/editorial-director-v12",
+                  "verified_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+              }, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          PY
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+          find src -type d -name __pycache__ -prune -exec rm -rf {} + || true
+          git add \
+            src/editorial_policy.py src/category_reconciler.py \
+            src/news_director.py src/publication_auditor.py \
+            src/publisher.py src/production_selftest.py \
+            V12_MAIN_VERIFIED.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Reconcile main with validated stable v12.0 editorial sources"
+            git pull --rebase --autostash origin main
+            git push origin HEAD:main
+          fi
+
+      - name: Live-source dry editorial examination
+        env:
+          IMAGE_REQUIRED: "1"
+          POSTS_PER_RUN: "2"
+          MAX_AGE_HOURS: "36"
+          AI_CALL_BUDGET: "0"
+          EDITORIAL_AUDIT_AI_BUDGET: "0"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+          POST_AUDIT_AUTOCORRECT: "0"
+          RUN_COOLDOWN_MINUTES: "0"
+          FORCE_RUN: "1"
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python - <<'PY'
+          import copy
+          import json
+          import sys
+          from datetime import datetime, timezone
+          from pathlib import Path
+          from urllib.parse import urlparse
+
+          sys.path.insert(0, "src")
+          import publisher
+
+          core = publisher.core
+          state = core.b.load_state()
+          candidates = core.b.collect(copy.deepcopy(state))
+          ordered = core.b.ordered(candidates)
+          assert publisher.VERSION == "stable-v12.0", publisher.VERSION
+          assert len(candidates) >= 2, len(candidates)
+          assert len(ordered) >= 2, len(ordered)
+
+          forbidden = (
+              "в этот день", "наградили", "поздравили", "торжественная церемония",
+              "гороскоп", "рецепт", "головолом", "райское место", "по карману",
+              "туристический форум", "чтобы вернуть ему вещи и документы",
+              "пять пьяных", "шесть без прав", "16 без прав",
+          )
+          inspected = []
+          accepted = []
+          for candidate in ordered[:24]:
+              title = str(candidate.get("title") or "")
+              decision = candidate.get("_news_director") or {}
+              item = {
+                  "title": title,
+                  "source": candidate.get("source"),
+                  "category_key": candidate.get("category_key"),
+                  "url": candidate.get("url"),
+                  "image_url": candidate.get("image_url"),
+                  "director": decision,
+              }
+              inspected.append(item)
+              assert decision.get("approved") is True, item
+              assert int(decision.get("seriousness") or 0) >= int(decision.get("threshold") or 0), item
+              assert not any(marker in title.lower() for marker in forbidden), item
+              assert candidate.get("image_url"), item
+              assert "news.google." not in urlparse(str(candidate.get("url") or "")).netloc.lower(), item
+
+              row = core.b.valid_post(candidate)
+              if not row:
+                  continue
+              editorial = row.get("editorial_gate") or {}
+              assert editorial.get("approved") is True, {"candidate": item, "row": row}
+              assert int(editorial.get("title_matches_source") or 0) >= 90, editorial
+              assert int(editorial.get("category_matches_story") or 0) >= 90, editorial
+              assert editorial.get("facts_supported") is True, editorial
+              assert editorial.get("meaning_changed") is False, editorial
+              accepted.append({
+                  "source_title": title,
+                  "final_title": row.get("title_ru"),
+                  "source": candidate.get("source"),
+                  "category_key": candidate.get("category_key"),
+                  "url": candidate.get("url"),
+                  "image_url": candidate.get("image_url"),
+                  "director": decision,
+                  "editorial_gate": editorial,
+              })
+              if len(accepted) == 2:
+                  break
+
+          assert len(accepted) == 2, {"accepted": accepted, "inspected": inspected}
+          assert accepted[0]["url"] != accepted[1]["url"], accepted
+          assert accepted[0]["image_url"] != accepted[1]["image_url"], accepted
+
+          report = {
+              "version": publisher.VERSION,
+              "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+              "all_pass": True,
+              "candidate_count": len(candidates),
+              "ordered_count": len(ordered),
+              "accepted": accepted,
+              "inspected": inspected,
+          }
+          Path("V12_FINAL_DRY_AUDIT.json").write_text(
+              json.dumps(report, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          print(json.dumps(report, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Decide whether another live release is required
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          state = json.loads(Path("state.json").read_text(encoding="utf-8"))
+          run = state.get("last_run") or {}
+          published = int(run.get("published") or 0)
+          posts = (state.get("last_posts") or [])[-published:] if published else []
+
+          valid = (
+              run.get("version") == "stable-v12.0"
+              and run.get("status") == "ok"
+              and published == 2
+              and len(posts) == 2
+          )
+          for post in posts:
+              valid = valid and (
+                  post.get("publisher_version") == "stable-v12.0"
+                  and post.get("telegram_message_id") is not None
+                  and post.get("with_image") is True
+                  and (post.get("editorial_gate") or {}).get("approved") is True
+                  and (post.get("news_director") or {}).get("approved") is True
+              )
+
+          Path("/tmp/need_v12_live").write_text("0" if valid else "1", encoding="utf-8")
+          print({"existing_live_v12_valid": bool(valid), "published": published})
+          PY
+
+      - name: Run a real v12 Telegram release when no verified one exists
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
+          IMAGE_REQUIRED: "1"
+          POSTS_PER_RUN: "2"
+          MAX_AGE_HOURS: "36"
+          AI_CALL_BUDGET: "2"
+          EDITORIAL_AUDIT_AI_BUDGET: "0"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+          POST_AUDIT_AUTOCORRECT: "1"
+          RUN_COOLDOWN_MINUTES: "0"
+          FORCE_RUN: "1"
+          MEDIA_PENDING_MAX_HOURS: "36"
+          MEDIA_PENDING_MAX_ITEMS: "24"
+          PYTHONUNBUFFERED: "1"
+        run: |
+          if [ "$(cat /tmp/need_v12_live)" = "1" ]; then
+            python src/publisher.py
+          else
+            echo "A verified stable-v12.0 live release already exists; duplicate publication suppressed"
+          fi
+
+      - name: Independently verify the actual stored Telegram output
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          from urllib.parse import urlparse
+
+          state = json.loads(Path("state.json").read_text(encoding="utf-8"))
+          run = state.get("last_run") or {}
+          assert run.get("version") == "stable-v12.0", run
+          assert run.get("status") == "ok", run
+          assert int(run.get("published") or 0) == 2, run
+          assert (run.get("local_stream") or {}).get("status") in {"healthy", "degraded"}, run
+
+          expected_targets = {
+              "local": 6,
+              "politics": 4,
+              "economy": 4,
+              "safety": 3,
+              "world": 2,
+              "tech": 1,
+          }
+          director_report = run.get("news_director") or {}
+          targets = ((director_report.get("rolling_balance_after") or {}).get("targets") or {})
+          assert targets == expected_targets, targets
+          assert sum(targets.values()) == 20, targets
+
+          posts = (state.get("last_posts") or [])[-2:]
+          assert len(posts) == 2, posts
+          forbidden = (
+              "в этот день", "наградили", "поздравили", "торжественная церемония",
+              "гороскоп", "рецепт", "головолом", "райское место", "по карману",
+              "туристический форум", "чтобы вернуть ему вещи и документы",
+              "пять пьяных", "шесть без прав", "16 без прав",
+          )
+          for post in posts:
+              title = str(post.get("title") or "")
+              assert not any(marker in title.lower() for marker in forbidden), post
+              assert post.get("publisher_version") == "stable-v12.0", post
+              assert post.get("telegram_message_id") is not None, post
+              assert post.get("with_image") is True, post
+              assert post.get("image_url") and post.get("image_hash"), post
+              assert str(post.get("publish_method") or "").startswith("sendPhoto/"), post
+              assert "news.google." not in urlparse(str(post.get("url") or "")).netloc.lower(), post
+
+              editorial = post.get("editorial_gate") or {}
+              assert editorial.get("approved") is True, post
+              assert int(editorial.get("title_matches_source") or 0) >= 90, post
+              assert int(editorial.get("category_matches_story") or 0) >= 90, post
+              assert editorial.get("facts_supported") is True, post
+              assert editorial.get("meaning_changed") is False, post
+
+              decision = post.get("news_director") or {}
+              assert decision.get("approved") is True, post
+              assert int(decision.get("seriousness") or 0) >= int(decision.get("threshold") or 0), post
+              assert decision.get("final_title_checked") is True, post
+              assert decision.get("final_category_checked") is True, post
+
+          post_audit = run.get("post_publication_audit") or {}
+          assert int(post_audit.get("unresolved") or 0) == 0, post_audit
+
+          status = {
+              "version": "stable-v12.0",
+              "attested": True,
+              "attested_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+              "source_tests_passed": True,
+              "live_source_dry_audit_passed": True,
+              "live_telegram_verified": True,
+              "post_publication_unresolved": 0,
+              "scheduled_workflow": "SkySakhNews Auto Publisher Stable v12.0",
+              "topic_targets_20_posts": expected_targets,
+              "last_run": {
+                  "started_sakhalin": run.get("started_sakhalin"),
+                  "finished_sakhalin": run.get("finished_sakhalin"),
+                  "status": run.get("status"),
+                  "published": run.get("published"),
+                  "local_stream": run.get("local_stream"),
+              },
+              "verified_posts": [
+                  {
+                      "message_id": post.get("telegram_message_id"),
+                      "title": post.get("title"),
+                      "category_key": post.get("category_key"),
+                      "source": post.get("source"),
+                      "url": post.get("url"),
+                      "image_url": post.get("image_url"),
+                  }
+                  for post in posts
+              ],
+          }
+          Path("FINAL_SYSTEM_STATUS.json").write_text(
+              json.dumps(status, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          print(json.dumps(status, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Persist final audit and state
+        if: always()
+        run: |
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+          git add state.json V12_FINAL_DRY_AUDIT.json
+          if [ -f FINAL_SYSTEM_STATUS.json ]; then git add FINAL_SYSTEM_STATUS.json; fi
+          if git diff --cached --quiet; then
+            echo "No attestation changes"
+          else
+            git commit -m "Attest strict stable v12.0 production system"
+            git pull --rebase --autostash origin main
+            git push origin HEAD:main
+          fi
