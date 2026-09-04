@@ -1,0 +1,50 @@
+name: Mark stable-v12.0 live result
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/mark_v12_live.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  mark:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Create compact status markers
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          p=json.loads(Path('v12_live_release_attestation.json').read_text(encoding='utf-8'))
+          root=Path('.v12_live'); root.mkdir(exist_ok=True)
+          for f in root.glob('*'): f.unlink()
+          if p.get('all_pass') is True:
+              (root/'ALL_PASS').write_text('true\n',encoding='utf-8')
+          else:
+              for name,value in (p.get('checks') or {}).items():
+                  if not value:
+                      safe=re.sub(r'[^A-Za-z0-9_.-]+','_',name)
+                      (root/f'FAIL_{safe}').write_text('false\n',encoding='utf-8')
+          for i,x in enumerate(p.get('posts') or [],1):
+              source=re.sub(r'[^A-Za-z0-9_.-]+','_',str(x.get('source') or 'unknown'))
+              cat=re.sub(r'[^A-Za-z0-9_.-]+','_',str(x.get('category_key') or 'unknown'))
+              event=re.sub(r'[^A-Za-z0-9_.-]+','_',str((x.get('news_director') or {}).get('event_type') or 'unknown'))
+              message=x.get('telegram_message_id')
+              (root/f'POST_{i}_{source}_{cat}_{event}_MSG_{message}').write_text(
+                  str(x.get('title') or ''),encoding='utf-8'
+              )
+          PY
+      - name: Commit markers
+        run: |
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+          git add .v12_live
+          git commit -m "Materialize stable-v12.0 live result"
+          git pull --rebase --autostash origin main
+          git push origin main
