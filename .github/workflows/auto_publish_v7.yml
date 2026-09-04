@@ -1,4 +1,4 @@
-name: SkySakhNews Auto Publisher Stable v11.0
+name: SkySakhNews Auto Publisher Stable v12.0
 
 on:
   workflow_dispatch:
@@ -43,9 +43,12 @@ jobs:
             src/media_enforced_runner.py \
             src/news_director.py \
             src/publisher.py \
-            src/production_selftest.py
+            src/quality_v12.py \
+            src/publisher_v12.py \
+            src/post_publish_audit_v12.py \
+            src/production_selftest_v12.py
 
-      - name: Mandatory autonomous-editor regression gate
+      - name: Mandatory strict editorial regression gate
         env:
           IMAGE_REQUIRED: "1"
           AI_CALL_BUDGET: "4"
@@ -56,10 +59,9 @@ jobs:
           RUN_COOLDOWN_MINUTES: "20"
           MEDIA_PENDING_MAX_HOURS: "36"
           MEDIA_PENDING_MAX_ITEMS: "24"
-        run: |
-          python src/production_selftest.py
+        run: python src/production_selftest_v12.py
 
-      - name: Publish through autonomous news director
+      - name: Publish through strict v12 quality director
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
@@ -77,10 +79,15 @@ jobs:
           MEDIA_PENDING_MAX_HOURS: "36"
           MEDIA_PENDING_MAX_ITEMS: "24"
           PYTHONUNBUFFERED: "1"
-        run: |
-          python src/publisher.py
+        run: python src/publisher_v12.py
 
-      - name: Verify editorial, balance and media health
+      - name: Immediate post-publication watchdog
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        run: python src/post_publish_audit_v12.py
+
+      - name: Verify strict editorial, proportions and media health
         run: |
           python - <<'PY'
           import json
@@ -90,59 +97,59 @@ jobs:
               state = json.load(file)
 
           run = state.get("last_run") or {}
-          if run.get("version") == "stable-v11.0":
+          if run.get("version") == "stable-v12.0":
               assert run.get("status") == "ok", run
               assert "finished_sakhalin" in run, run
               assert (run.get("local_stream") or {}).get("status") in {"healthy", "degraded"}, run
 
-              director = run.get("news_director") or {}
-              assert director.get("version") == "director-v1", director
-              assert int(director.get("candidate_count") or 0) >= 0, director
-              assert int(director.get("approved_count") or 0) >= 0, director
-              targets = ((director.get("rolling_balance_after") or {}).get("targets") or {})
-              assert sum(int(value) for value in targets.values()) == 12, targets
-              assert int(targets.get("local") or 0) == 6, targets
+              quality = run.get("quality_v12") or {}
+              assert quality.get("version") == "quality-v12.0", quality
+              balance = quality.get("balance_after") or {}
+              assert balance.get("targets") == {
+                  "local": 6,
+                  "ru_pol": 4,
+                  "ru_eco": 4,
+                  "ru_safety": 3,
+                  "world": 2,
+                  "it": 1,
+              }, balance
+              assert sum(int(v) for v in (balance.get("targets") or {}).values()) == 20, balance
+
+              audit = run.get("post_publish_audit_v12") or {}
+              assert audit.get("version") == "stable-v12.0", audit
+              assert audit.get("all_pass") is True, audit
+              assert int(audit.get("failed") or 0) == 0, audit
 
               media = run.get("media_policy") or {}
               assert media.get("required") is True, media
               assert media.get("text_only_allowed") is False, media
-              assert media.get("delivery_failure_policy") == "retry_transports_then_persistent_queue", media
 
               published = int(run.get("published") or 0)
               assert 0 <= published <= 2, run
               posts = (state.get("last_posts") or [])[-published:] if published else []
-
               for post in posts:
+                  assert post.get("post_publish_status") == "audited_ok", post
+                  q = post.get("quality_v12") or {}
+                  assert q.get("approved") is True, post
+                  assert q.get("prepublication_checked") is True, post
+                  assert q.get("final_title_checked") is True, post
+                  assert q.get("final_category_checked") is True, post
+                  assert int(q.get("score") or 0) >= int(q.get("threshold") or 101), post
+
                   editorial = post.get("editorial_gate") or {}
                   assert editorial.get("approved") is True, post
-                  assert int(editorial.get("title_matches_source") or 0) >= 90, post
-                  assert int(editorial.get("category_matches_story") or 0) >= 90, post
                   assert editorial.get("facts_supported") is True, post
                   assert editorial.get("meaning_changed") is False, post
 
-                  decision = post.get("news_director") or {}
-                  assert decision.get("version") == "director-v1", post
-                  assert decision.get("approved") is True, post
-                  assert int(decision.get("seriousness") or 0) >= int(decision.get("threshold") or 0), post
-                  assert decision.get("final_title_checked") is True, post
-                  assert decision.get("final_category_checked") is True, post
-
                   assert post.get("with_image") is True, post
-                  assert post.get("media_required") is True, post
-                  assert post.get("media_type") == "photo", post
-                  assert post.get("image_url"), post
-                  assert post.get("image_hash"), post
+                  assert post.get("image_url") and post.get("image_hash"), post
                   assert str(post.get("publish_method") or "").startswith("sendPhoto/"), post
                   assert "news.google." not in urlparse(post.get("url") or "").netloc.lower(), post
 
-              for item in state.get("pending_media_delivery") or []:
-                  audit = ((item.get("row") or {}).get("editorial_gate") or {})
-                  assert audit.get("approved") is True, item
-
-          print("stable-v11.0 autonomous news director health: OK", run)
+          print("stable-v12.0 strict publication health: OK", run)
           PY
 
-      - name: Commit state, balance and delivery queue
+      - name: Commit state, audit and delivery queue
         if: always()
         run: |
           git config user.name "skysakhnews-bot"
@@ -151,7 +158,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No state changes"
           else
-            git commit -m "Update v11.0 autonomous news-director state"
+            git commit -m "Update stable v12 strict editorial state"
             git pull --rebase --autostash origin main
             git push origin main
           fi
