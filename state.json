@@ -209,8 +209,7 @@
     "https://astv.ru/news/society/2026-09-03-vladel-cy-koshek-pozhalovalis-na-smert-pitomcev-posle-vakciny-mul-tifel",
     "https://astv.ru/news/criminal/2026-09-04-dym-ot-bushuyushih-v-yakutii-pozharov-doshel-do-kuril-ochevidcy",
     "https://sakhalinmedia.ru/news/2610302/",
-    "https://astv.ru/news/society/2026-09-04-policiya-na-sahaline-ishet-aleksandra-ledyaeva-chtoby-vernut-emu-veshi-i-dokumenty",
-    "https://astv.ru/news/criminal/2026-09-04-pred-yavili-obvinenie-i-vzyali-pod-strazhu-sahalinca-kotoryj-ranil-i-uderzhival-v-sozhitel-nicu"
+    "https://astv.ru/news/society/2026-09-04-policiya-na-sahaline-ishet-aleksandra-ledyaeva-chtoby-vernut-emu-veshi-i-dokumenty"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -2943,7 +2942,10 @@
         "issues": [],
         "reclassified_from": "sakh_chp",
         "reclassified_to": "sakh"
-      }
+      },
+      "post_publish_status": "deleted",
+      "deleted_at": "2026-09-04T10:06:46+00:00",
+      "deleted_reason": "routine_clickbait_traffic_statistics"
     },
     {
       "time_sakhalin": "2026-09-04T18:01:43+11:00",
@@ -2993,7 +2995,10 @@
         "meaning_changed": false,
         "mode": "deterministic+extractive",
         "issues": []
-      }
+      },
+      "post_publish_status": "deleted",
+      "deleted_at": "2026-09-04T10:06:46+00:00",
+      "deleted_reason": "service_notice_mislabeled_as_emergency"
     },
     {
       "time_sakhalin": "2026-09-04T18:04:20+11:00",
@@ -3045,7 +3050,10 @@
         "issues": [],
         "reclassified_from": "sakh_chp",
         "reclassified_to": "sakh"
-      }
+      },
+      "post_publish_status": "deleted",
+      "deleted_at": "2026-09-04T10:06:46+00:00",
+      "deleted_reason": "violent_crime_wrong_category_and_malformed_title"
     }
   ],
   "last_cycle_report": {
@@ -3747,5 +3755,117 @@
         "ai_review": null
       }
     }
-  ]
+  ],
+  "recent_image_hashes": [],
+  "legacy_feed_cleanup_v12": {
+    "version": "stable-v12.0",
+    "checked_at": "2026-09-04T10:06:46+00:00",
+    "matched": 9,
+    "deleted": 3,
+    "failed": 6,
+    "all_deleted": false,
+    "removed": [
+      {
+        "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
+        "url": "https://sakhalinmedia.ru/news/2610302/",
+        "category_key": "sakh",
+        "telegram_message_id": 255,
+        "reason": "routine_clickbait_traffic_statistics",
+        "delete_result": {
+          "ok": true,
+          "result": true
+        }
+      },
+      {
+        "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
+        "url": "https://astv.ru/news/society/2026-09-04-policiya-na-sahaline-ishet-aleksandra-ledyaeva-chtoby-vernut-emu-veshi-i-dokumenty",
+        "category_key": "sakh_chp",
+        "telegram_message_id": 256,
+        "reason": "service_notice_mislabeled_as_emergency",
+        "delete_result": {
+          "ok": true,
+          "result": true
+        }
+      },
+      {
+        "title": "Предъявили обвинение: сахалинца, который ранил и удерживал в сожительницу, взяли под стражу",
+        "url": "https://astv.ru/news/criminal/2026-09-04-pred-yavili-obvinenie-i-vzyali-pod-strazhu-sahalinca-kotoryj-ranil-i-uderzhival-v-sozhitel-nicu",
+        "category_key": "sakh",
+        "telegram_message_id": 257,
+        "reason": "violent_crime_wrong_category_and_malformed_title",
+        "delete_result": {
+          "ok": true,
+          "result": true
+        }
+      }
+    ],
+    "failures": [
+      {
+        "title": "Не санаторий и не дача - пенсионеры нашли райское место у моря себе по карману: сентябрьский хит с жильем от 1000 руб",
+        "url": "https://sakhalinmedia.ru/news/2600117/",
+        "category_key": "geo",
+        "telegram_message_id": null,
+        "reason": "lifestyle_seo_mislabeled_as_geopolitics",
+        "delete_result": {
+          "ok": false,
+          "description": "message id or chat id missing"
+        }
+      },
+      {
+        "title": "Трое пьяных, шесть без прав: на Сахалине поймали почти 100 нарушителей ПДД",
+        "url": "https://sakhalinmedia.ru/news/2607317/",
+        "category_key": "sakh",
+        "telegram_message_id": null,
+        "reason": "routine_clickbait_traffic_statistics",
+        "delete_result": {
+          "ok": false,
+          "description": "message id or chat id missing"
+        }
+      },
+      {
+        "title": "Прогноз ВТБ: рынок сбережений в 2026 году вырастет на 8%",
+        "url": "https://sakhalinmedia.ru/news/2608276/",
+        "category_key": "sakh",
+        "telegram_message_id": null,
+        "reason": "federal_economy_mislabeled_as_sakhalin",
+        "delete_result": {
+          "ok": false,
+          "description": "message id or chat id missing"
+        }
+      },
+      {
+        "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
+        "url": "https://sakh.online/news/18/2026-09-02/veterana-vyacheslava-gavrilova-pozdravili-s-dnem-pobedy-nad-militaristskoy-yaponiey-524665",
+        "category_key": "geo",
+        "telegram_message_id": null,
+        "reason": "congratulation_mislabeled_as_geopolitics",
+        "delete_result": {
+          "ok": false,
+          "description": "message id or chat id missing"
+        }
+      },
+      {
+        "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
+        "url": "https://sakhalinmedia.ru/news/1155672/",
+        "category_key": "geo",
+        "telegram_message_id": null,
+        "reason": "historical_calendar_mislabeled_as_current_news",
+        "delete_result": {
+          "ok": false,
+          "description": "message id or chat id missing"
+        }
+      },
+      {
+        "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
+        "url": "https://sakhalinmedia.ru/news/2608836/",
+        "category_key": "sakh",
+        "telegram_message_id": null,
+        "reason": "ceremony_low_value",
+        "delete_result": {
+          "ok": false,
+          "description": "message id or chat id missing"
+        }
+      }
+    ]
+  }
 }
