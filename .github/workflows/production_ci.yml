@@ -1,4 +1,4 @@
-name: SkySakhNews Production CI v11.0
+name: SkySakhNews Production CI v12.0
 
 on:
   workflow_dispatch:
@@ -14,7 +14,11 @@ on:
       - "src/media_enforced_runner.py"
       - "src/news_director.py"
       - "src/publisher.py"
-      - "src/production_selftest.py"
+      - "src/quality_v12.py"
+      - "src/publisher_v12.py"
+      - "src/post_publish_audit_v12.py"
+      - "src/production_selftest_v12.py"
+      - "src/quality_audit_v12.py"
       - "requirements.txt"
       - ".github/workflows/auto_publish_v7.yml"
       - ".github/workflows/production_ci.yml"
@@ -29,7 +33,7 @@ concurrency:
 jobs:
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
 
@@ -54,18 +58,21 @@ jobs:
             src/media_enforced_runner.py \
             src/news_director.py \
             src/publisher.py \
-            src/production_selftest.py
+            src/quality_v12.py \
+            src/publisher_v12.py \
+            src/post_publish_audit_v12.py \
+            src/production_selftest_v12.py \
+            src/quality_audit_v12.py
 
-      - name: Run screenshot, category, seriousness, balance and media regressions
+      - name: Exact feed, category, title, proportions and watchdog regressions
         env:
           IMAGE_REQUIRED: "1"
           AI_CALL_BUDGET: "4"
           EDITORIAL_AUDIT_AI_BUDGET: "2"
           NEWS_DIRECTOR_AI_BUDGET: "0"
           OPENROUTER_MAX_ATTEMPTS: "3"
-          OPENROUTER_RETRY_BASE_SECONDS: "1.0"
+          OPENROUTER_RETRY_BASE_SECONDS: "0"
           RUN_COOLDOWN_MINUTES: "20"
           MEDIA_PENDING_MAX_HOURS: "36"
           MEDIA_PENDING_MAX_ITEMS: "24"
-        run: |
-          python src/production_selftest.py
+        run: python src/production_selftest_v12.py
