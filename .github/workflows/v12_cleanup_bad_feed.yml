@@ -1,0 +1,154 @@
+name: SkySakhNews v12 One-Shot Feed Cleanup
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/v12_cleanup_bad_feed.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skysakhnews-production-publisher
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install requests
+        run: pip install requests==2.32.3
+
+      - name: Delete exact known invalid legacy publications
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          import requests
+
+          state_path=Path('state.json')
+          state=json.loads(state_path.read_text(encoding='utf-8'))
+          token=os.environ['TELEGRAM_BOT_TOKEN'].strip()
+          default_chat=os.environ['TELEGRAM_CHANNEL_ID'].strip()
+          checked_at=datetime.now(timezone.utc).isoformat(timespec='seconds')
+
+          def invalid_reason(post):
+              title=str(post.get('title') or '').lower().replace('ё','е')
+              category=str(post.get('category_key') or '')
+              if 'не санаторий и не дача' in title:
+                  return 'lifestyle_seo_mislabeled_as_geopolitics'
+              if 'в этот день' in title and '1945' in title:
+                  return 'historical_calendar_mislabeled_as_current_news'
+              if 'наградили волонтер' in title:
+                  return 'ceremony_low_value'
+              if 'ветерана' in title and 'поздравили' in title:
+                  return 'congratulation_mislabeled_as_geopolitics'
+              if title.startswith('прогноз втб:') and category in {'sakh','sakh_chp','sakh_quake'}:
+                  return 'federal_economy_mislabeled_as_sakhalin'
+              if ('пять пьяных' in title or 'трое пьяных' in title) and ('без прав' in title or 'нарушител' in title):
+                  return 'routine_clickbait_traffic_statistics'
+              if 'ищет александра ледяева' in title:
+                  return 'service_notice_mislabeled_as_emergency'
+              if title.startswith('предъявили обвинение: сахалинца') and (
+                  category != 'sakh_chp' or 'удерживал в сожительницу' in title
+              ):
+                  return 'violent_crime_wrong_category_and_malformed_title'
+              return None
+
+          removed=[]
+          failed=[]
+          for post in state.get('last_posts') or []:
+              if post.get('post_publish_status')=='deleted' or post.get('deleted_at'):
+                  continue
+              reason=invalid_reason(post)
+              if not reason:
+                  continue
+              message_id=post.get('telegram_message_id')
+              chat_id=post.get('telegram_chat_id') or default_chat
+              result={'ok':False,'description':'message id or chat id missing'}
+              if message_id is not None and chat_id:
+                  response=requests.post(
+                      f'https://api.telegram.org/bot{token}/deleteMessage',
+                      data={'chat_id':str(chat_id),'message_id':str(message_id)},
+                      timeout=30,
+                  )
+                  try:
+                      result=response.json()
+                  except Exception:
+                      result={'ok':False,'description':f'HTTP {response.status_code}: non-JSON'}
+              row={
+                  'title':post.get('title'),'url':post.get('url'),
+                  'category_key':post.get('category_key'),
+                  'telegram_message_id':message_id,'reason':reason,
+                  'delete_result':result,
+              }
+              if result.get('ok') is True:
+                  post['post_publish_status']='deleted'
+                  post['deleted_at']=checked_at
+                  post['deleted_reason']=reason
+                  removed.append(row)
+
+                  # Allow a materially useful item to re-enter only after the
+                  # new v12 classifier rebuilds its category/title correctly.
+                  if reason in {
+                      'federal_economy_mislabeled_as_sakhalin',
+                      'violent_crime_wrong_category_and_malformed_title',
+                  }:
+                      url=post.get('url')
+                      title_hash=post.get('title_hash')
+                      image_url=post.get('image_url')
+                      image_hash=post.get('image_hash')
+                      state['published_urls']=[x for x in state.get('published_urls',[]) if x!=url]
+                      state['published_title_hashes']=[x for x in state.get('published_title_hashes',[]) if x!=title_hash]
+                      state['recent_image_urls']=[x for x in state.get('recent_image_urls',[]) if x!=image_url]
+                      state['recent_image_hashes']=[x for x in state.get('recent_image_hashes',[]) if x!=image_hash]
+                      state['recent_image_fingerprints']=[x for x in state.get('recent_image_fingerprints',[]) if x!=image_hash]
+              else:
+                  failed.append(row)
+
+          report={
+              'version':'stable-v12.0',
+              'checked_at':checked_at,
+              'matched':len(removed)+len(failed),
+              'deleted':len(removed),
+              'failed':len(failed),
+              'all_deleted':len(failed)==0,
+              'removed':removed,
+              'failures':failed,
+          }
+          state['legacy_feed_cleanup_v12']=report
+          state_path.write_text(json.dumps(state,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          Path('V12_FEED_CLEANUP.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print(json.dumps({k:report[k] for k in ('matched','deleted','failed','all_deleted')},ensure_ascii=False))
+          if failed:
+              raise SystemExit(1)
+          PY
+
+      - name: Commit cleanup record
+        if: always()
+        run: |
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+          git add state.json V12_FEED_CLEANUP.json
+          if git diff --cached --quiet; then
+            echo "No cleanup changes"
+          else
+            git commit -m "Record strict v12 legacy feed cleanup"
+            git pull --rebase --autostash origin main
+            git push origin main
+          fi
