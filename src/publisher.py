@@ -1,9 +1,4 @@
-"""Canonical SkySakhNews publisher with autonomous news-director control.
-
-This is the only production entrypoint. The lower modules collect, validate,
-format and deliver; this module decides what is actually news, autocorrects the
-stream, and keeps the rolling editorial proportions.
-"""
+"""Canonical SkySakhNews publisher with a self-correcting editorial contract."""
 
 from __future__ import annotations
 
@@ -14,8 +9,9 @@ from typing import Any, Dict, Mapping, Sequence
 
 import media_enforced_runner as media
 import news_director as director
+import publication_auditor
 
-VERSION = "stable-v11.0"
+VERSION = "stable-v12.0"
 
 media.VERSION = VERSION
 media.editorial.VERSION = VERSION
@@ -27,46 +23,43 @@ core = media.core
 prod = media.prod
 
 DIRECTOR_AI_BUDGET = max(0, int(os.getenv("NEWS_DIRECTOR_AI_BUDGET", "0")))
+POST_AUDIT_AUTOCORRECT = os.getenv("POST_AUDIT_AUTOCORRECT", "1") == "1"
+
 _DIRECTOR_AI_CALLS = 0
 _DIRECTOR_REPORT: Dict[str, Any] = {}
 _DIRECTOR_BY_URL: Dict[str, Dict[str, Any]] = {}
 _CANDIDATE_BY_URL: Dict[str, Dict[str, Any]] = {}
+_ROW_BY_URL: Dict[str, Dict[str, Any]] = {}
+_CAPTION_BY_URL: Dict[str, str] = {}
+_CONTRACT_BY_URL: Dict[str, Dict[str, Any]] = {}
 
 for key in (
     "director_seen",
     "director_approved",
     "director_rejected",
     "director_reclassified",
+    "director_title_corrected",
     "director_ai_calls",
     "director_ai_fail",
+    "director_final_checked",
+    "director_final_autocorrected",
     "director_final_reject",
     "director_pending_retired",
-    "director_deterministic_fallback",
+    "publication_contract_blocked",
+    "post_audit_checked",
+    "post_audit_anomalies",
+    "post_audit_corrected",
+    "post_audit_deleted",
 ):
     core.b.STATS.setdefault(key, 0)
-
-
-# The deterministic director is authoritative. OpenRouter is an optional veto,
-# never a single point of failure that can erase otherwise valid candidates.
-_original_apply_ai_review = director._apply_ai_review
-
-
-def _apply_ai_review_optional(review, ai):
-    if ai is None:
-        if review.get("needs_ai_review"):
-            core.b.STATS["director_deterministic_fallback"] += 1
-            review["ai_review_status"] = "unavailable_deterministic_policy"
-        return review
-    return _original_apply_ai_review(review, ai)
-
-
-director._apply_ai_review = _apply_ai_review_optional
 
 
 def _director_ai_review(
     reviews: Sequence[Mapping[str, Any]],
 ) -> Mapping[str, Mapping[str, Any]]:
     global _DIRECTOR_AI_CALLS
+    if DIRECTOR_AI_BUDGET <= 0:
+        return {}
     if _DIRECTOR_AI_CALLS >= DIRECTOR_AI_BUDGET:
         return {}
     if not os.getenv("OPENROUTER_API_KEY", "").strip():
@@ -80,19 +73,15 @@ def _director_ai_review(
                 {
                     "role": "system",
                     "content": (
-                        "Ты независимый главный редактор. "
-                        "Не переписывай новости. Верни только валидный JSON."
+                        "Ты независимый выпускающий редактор. Не переписывай новости. "
+                        "Верни только валидный JSON."
                     ),
                 },
-                {
-                    "role": "user",
-                    "content": director.ai_review_prompt(reviews),
-                },
+                {"role": "user", "content": director.ai_review_prompt(reviews)},
             ],
-            max_tokens=1300,
+            max_tokens=1000,
         )
-        parsed = core.b.parse_obj(raw)
-        return director.normalize_ai_reviews(parsed)
+        return director.normalize_ai_reviews(core.b.parse_obj(raw))
     except Exception as exc:
         core.b.STATS["director_ai_fail"] += 1
         core.b.log(f"news director AI unavailable: {str(exc)[:260]}")
@@ -102,9 +91,26 @@ def _director_ai_review(
 _original_collect = core.b.collect
 
 
+def _audit_existing_posts(state: Dict[str, Any]) -> None:
+    try:
+        report = publication_auditor.audit_recent_posts(
+            state,
+            category_map=core.b.CAT,
+            render_caption=core.b.caption,
+            mutate=POST_AUDIT_AUTOCORRECT,
+        )
+        core.b.STATS["post_audit_checked"] = int(report.get("checked") or 0)
+        core.b.STATS["post_audit_anomalies"] = len(report.get("anomalies") or [])
+        core.b.STATS["post_audit_corrected"] = len(report.get("corrected") or [])
+        core.b.STATS["post_audit_deleted"] = len(report.get("deleted") or [])
+    except Exception as exc:
+        core.b.log(f"post-publication audit failed safely: {str(exc)[:260]}")
+
+
 def collect_with_news_director(state):
     global _DIRECTOR_REPORT, _DIRECTOR_BY_URL, _CANDIDATE_BY_URL
 
+    _audit_existing_posts(state)
     candidates = _original_collect(state)
     pending_before = {
         str(candidate.get("url") or "")
@@ -117,7 +123,7 @@ def collect_with_news_director(state):
         candidates,
         category_map=core.b.CAT,
         now=datetime.now(core.b.TZ),
-        ai_reviewer=_director_ai_review,
+        ai_reviewer=_director_ai_review if DIRECTOR_AI_BUDGET > 0 else None,
     )
 
     _DIRECTOR_REPORT = report
@@ -128,9 +134,11 @@ def collect_with_news_director(state):
     _CANDIDATE_BY_URL = {
         str(candidate.get("url") or ""): {
             "title": str(candidate.get("title") or ""),
-            "source_text_excerpt": str(candidate.get("source_text") or "")[:1200],
+            "title_original": str(candidate.get("title_original") or ""),
+            "source_text_excerpt": str(candidate.get("source_text") or "")[:2600],
             "source": str(candidate.get("source") or ""),
             "published_at": str(candidate.get("published_at") or ""),
+            "category_key": str(candidate.get("category_key") or ""),
         }
         for candidate in ordered
         if candidate.get("url")
@@ -141,6 +149,9 @@ def collect_with_news_director(state):
     core.b.STATS["director_rejected"] = int(report.get("rejected_count") or 0)
     core.b.STATS["director_reclassified"] = sum(
         1 for candidate in ordered if candidate.get("_news_director_reclass")
+    )
+    core.b.STATS["director_title_corrected"] = sum(
+        1 for candidate in ordered if (candidate.get("_news_director") or {}).get("title_changed")
     )
 
     approved_urls = {str(candidate.get("url") or "") for candidate in ordered}
@@ -167,21 +178,26 @@ def collect_with_news_director(state):
                 media._EXPIRED_THIS_RUN.append(retired)
                 core.b.STATS["director_pending_retired"] += 1
 
+    balance = report.get("rolling_balance_before") or {}
     core.b.log(
-        "news director: "
+        "news director v2: "
         f"seen={report.get('candidate_count', 0)} "
         f"approved={report.get('approved_count', 0)} "
         f"rejected={report.get('rejected_count', 0)} "
-        f"second_slot={report.get('scheduled_second_group')}"
+        f"mix_error={balance.get('distribution_error')}"
     )
-    for preview in (report.get("selected_preview") or [])[:4]:
+    for preview in (report.get("selected_preview") or [])[:6]:
         core.b.log(
             "director slot "
             + str(preview.get("slot"))
             + ": "
             + str(preview.get("category_key"))
             + " / "
+            + str(preview.get("event_type"))
+            + " / score="
             + str(preview.get("seriousness"))
+            + " / utility="
+            + str(preview.get("utility"))
             + " | "
             + str(preview.get("title") or "")[:100]
         )
@@ -205,6 +221,44 @@ core.b.ordered = ordered_by_news_director
 _original_valid_post = core.b.valid_post
 
 
+def _refresh_editorial_gate(candidate, row):
+    try:
+        review = media.editorial._review(candidate, row)
+    except Exception:
+        return None
+    if not review or review.get("approved") is not True:
+        return None
+    row["editorial_gate"] = media.editorial._compact_audit(review, candidate)
+    media.editorial.AUDIT_BY_URL[str(candidate.get("url") or "")] = copy.deepcopy(
+        row["editorial_gate"]
+    )
+    return row
+
+
+def _attempt_final_autocorrection(candidate, row):
+    metadata = candidate.get("_news_director") or {}
+    corrected_title = str(metadata.get("title_corrected") or candidate.get("title") or "")
+
+    title_repaired = copy.deepcopy(row)
+    title_repaired["title_ru"] = corrected_title
+    title_repaired = _refresh_editorial_gate(candidate, title_repaired) or title_repaired
+    contract = director.validate_final(candidate, title_repaired)
+    if contract.get("approved"):
+        core.b.STATS["director_final_autocorrected"] += 1
+        return title_repaired, contract, "corrected_title"
+
+    fallback = prod._extractive_fallback(candidate)
+    if fallback:
+        fallback["title_ru"] = corrected_title
+        fallback = _refresh_editorial_gate(candidate, fallback) or fallback
+        contract = director.validate_final(candidate, fallback)
+        if contract.get("approved"):
+            core.b.STATS["director_final_autocorrected"] += 1
+            return fallback, contract, "safe_extractive_rebuild"
+
+    return None, contract, None
+
+
 def valid_post_with_news_director(candidate):
     metadata = candidate.get("_news_director") or {}
     if metadata.get("approved") is not True:
@@ -215,38 +269,57 @@ def valid_post_with_news_director(candidate):
     if not row:
         return None
 
-    # Read the final generated headline/body again. This catches a late rewrite
-    # which would move the post out of the approved subject or turn it into soft
-    # promotional copy after the source candidate itself had passed.
-    final_candidate = dict(candidate)
-    final_candidate["title"] = row.get("title_ru") or candidate.get("title")
-    final_candidate["source_text"] = " ".join(
-        str(value) for value in (row.get("body") or []) if str(value).strip()
-    ) or candidate.get("source_text")
+    core.b.STATS["director_final_checked"] += 1
+    contract = director.validate_final(candidate, row)
+    correction_mode = None
 
-    final_review = director.review_candidate(final_candidate)
-    if (
-        final_review.get("approved") is not True
-        or final_review.get("corrected_category") != candidate.get("category_key")
-    ):
-        core.b.STATS["director_final_reject"] += 1
-        core.b.log(
-            "news director final reject: "
-            + str(candidate.get("title") or "")[:100]
-            + " | "
-            + str(final_review.get("reason"))
-        )
-        return None
+    if not contract.get("approved"):
+        repaired, contract, correction_mode = _attempt_final_autocorrection(candidate, row)
+        if repaired is None:
+            core.b.STATS["director_final_reject"] += 1
+            core.b.STATS["publication_contract_blocked"] += 1
+            core.b.log(
+                "publication contract reject: "
+                + str(candidate.get("title") or "")[:100]
+                + " | "
+                + "; ".join(str(issue) for issue in contract.get("issues", [])[:8])
+            )
+            return None
+        row = repaired
 
     compact = director.compact_review(metadata)
     compact["final_title_checked"] = True
     compact["final_category_checked"] = True
+    compact["final_autocorrection"] = correction_mode
     row["news_director"] = compact
-    _DIRECTOR_BY_URL[str(candidate.get("url") or "")] = compact
+    row["publication_contract"] = contract
+
+    url = str(candidate.get("url") or "")
+    _DIRECTOR_BY_URL[url] = compact
+    _ROW_BY_URL[url] = copy.deepcopy(row)
+    _CONTRACT_BY_URL[url] = copy.deepcopy(contract)
+    candidate["_final_row"] = copy.deepcopy(row)
+    candidate["_publication_contract"] = copy.deepcopy(contract)
     return row
 
 
 core.b.valid_post = valid_post_with_news_director
+
+
+_original_send_photo = core.b.send_photo
+
+
+def send_photo_with_contract(candidate, caption):
+    contract = candidate.get("_publication_contract") or {}
+    if contract.get("approved") is not True:
+        core.b.STATS["publication_contract_blocked"] += 1
+        raise RuntimeError("publication_contract_missing_or_failed")
+    url = str(candidate.get("url") or "")
+    _CAPTION_BY_URL[url] = str(caption or "")
+    return _original_send_photo(candidate, caption)
+
+
+core.b.send_photo = send_photo_with_contract
 
 
 _original_delivery_success = media._delivery_success
@@ -284,6 +357,16 @@ def save_state_with_news_director(state):
             source = _CANDIDATE_BY_URL.get(url) or {}
             if source:
                 post["source_text_excerpt"] = source.get("source_text_excerpt", "")
+                post["title_original"] = source.get("title_original") or None
+                post["footer"] = core.b.CAT.get(post.get("category_key"), ("", ""))[1]
+            if url in _ROW_BY_URL:
+                post["published_row"] = copy.deepcopy(_ROW_BY_URL[url])
+            if url in _CAPTION_BY_URL:
+                post["published_caption"] = _CAPTION_BY_URL[url]
+            if url in _CONTRACT_BY_URL:
+                post["publication_contract"] = copy.deepcopy(_CONTRACT_BY_URL[url])
+            post["publisher_version"] = VERSION
+
             delivery = media._DELIVERY_BY_URL.get(url) or {}
             if delivery.get("message_id") is not None:
                 post["telegram_message_id"] = delivery.get("message_id")
@@ -293,13 +376,19 @@ def save_state_with_news_director(state):
     report = director.finalize_report(state, _DIRECTOR_REPORT)
     run["version"] = VERSION
     run["news_director"] = report
+    run["post_publication_audit"] = state.get("post_publication_audit") or {}
     run["stats"] = dict(core.b.STATS)
     state["last_run"] = run
     state["news_director_policy"] = {
         "version": director.VERSION,
+        "policy_version": director.policy.VERSION,
         "rolling_window": director.ROLLING_WINDOW,
         "targets": dict(director.TARGET_COUNTS),
-        "second_slot_by_hour": dict(director.SECOND_SLOT_BY_HOUR),
+        "target_percent": {
+            group: round(100 * count / director.ROLLING_WINDOW, 1)
+            for group, count in director.TARGET_COUNTS.items()
+        },
+        "selection": "quality_plus_rolling_mix_optimizer",
     }
     state["news_balance"] = report.get("rolling_balance_after") or {}
 

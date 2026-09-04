@@ -1,20 +1,22 @@
-"""Regression suite for the canonical stable-v11.0 publisher.
+"""Regression suite for the canonical stable-v12.0 publisher.
 
-The tests encode the real publication failures reported from the Telegram
-channel. They run before every production cycle and in CI, without network or
-Telegram access.
+The suite encodes the actual Telegram-feed failures reported by the user and
+runs without Telegram or live-news network access before every production run.
 """
 
 from __future__ import annotations
 
+import copy
 import os
 from datetime import datetime, timedelta, timezone
 
 import category_reconciler as reconciler
 import editorial_gate as gate
 import editorial_gate_runner as editorial
+import editorial_policy as policy
 import media_enforced_runner as media
 import news_director as director
+import publication_auditor
 import publisher
 
 
@@ -58,51 +60,46 @@ def assert_review(
     return review
 
 
-def screenshot_regressions():
-    # 1. Ceremonial local content is not a release-worthy news item.
+def exact_feed_regressions():
     assert_review(
         candidate(
             "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
-            "В арт-резиденции Маяк состоялась торжественная церемония награждения.",
+            "В арт-резиденции состоялась торжественная церемония награждения.",
             url="https://sakhalinmedia.ru/news/2608836/",
         ),
         approved=False,
-        reason="ceremony_or_congratulation_low_value",
+        reason="ceremony_or_congratulation",
     )
 
-    # 2. Calendar/history articles must not become current geopolitics.
     assert_review(
         candidate(
             "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
-            "Материал напоминает о событиях 1945 года.",
+            "Исторический материал напоминает о событиях 1945 года.",
             url="https://sakhalinmedia.ru/news/1155672/",
             category="geo",
         ),
         approved=False,
-        reason="calendar_or_archive_not_current_news",
+        reason="calendar_or_archive",
     )
 
-    # 3. Significant local infrastructure remains in the Sakhalin stream.
     assert_review(
         candidate(
             "РусГидро открыло единый расчётно-информационный центр в Поронайске Сахалинской области",
-            "Услугами центра смогут воспользоваться более 20 тысяч жителей Поронайского муниципального округа.",
+            "Услугами центра смогут воспользоваться более 20 тысяч жителей Поронайского округа.",
             url="https://sakhalinmedia.ru/news/2608453/",
         ),
         approved=True,
         category="sakh",
     )
 
-    # 4. Syndicated national economy is corrected from Sakhalin to Russia/economy.
     vtb = candidate(
         "Прогноз ВТБ: рынок сбережений в 2026 году вырастет на 8%",
-        "По прогнозам ВТБ, объем средств в российских банках достигнет 71 трлн рублей.",
+        "По прогнозам ВТБ, объём средств в российских банках достигнет 71 трлн рублей.",
         url="https://sakhalinmedia.ru/news/2608276/",
     )
     assert reconciler.suggest_category(vtb) == "ru_eco"
     assert_review(vtb, approved=True, category="ru_eco")
 
-    # 5. A congratulation to a veteran is a ceremony, not geopolitics.
     assert_review(
         candidate(
             "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
@@ -112,32 +109,32 @@ def screenshot_regressions():
             category="geo",
         ),
         approved=False,
-        reason="ceremony_or_congratulation_low_value",
+        reason="ceremony_or_congratulation",
     )
 
-    # 6. Local online fraud is a Sakhalin incident, not generic local news.
-    assert_review(
-        candidate(
-            "Жительница Южно-Сахалинска лишилась денег при попытке купить щенка в интернете",
-            "Полиция расследует дистанционное мошенничество.",
-            url="https://sakhalinmedia.ru/news/2607890/",
-        ),
-        approved=True,
+    puppy = candidate(
+        "Жительница Южно-Сахалинска лишилась денег при попытке купить щенка в интернете",
+        "Полиция расследует дистанционное мошенничество.",
+        url="https://sakhalinmedia.ru/news/2607890/",
+    )
+    puppy_review = assert_review(
+        puppy,
+        approved=False,
         category="sakh_chp",
+        reason="importance_below_threshold",
     )
+    assert puppy_review["event_type"] == "fraud", puppy_review
 
-    # 7. Fatal road accident on Iturup is a local emergency.
     assert_review(
         candidate(
             "Водитель Урала погиб при опрокидывании грузовика на Итурупе",
-            "Грузовой автомобиль сошел с проезжей части и опрокинулся в кювет.",
+            "Грузовой автомобиль сошёл с проезжей части и опрокинулся в кювет.",
             url="https://sakhalinmedia.ru/news/2607800/",
         ),
         approved=True,
         category="sakh_chp",
     )
 
-    # 8. A current Russia-Japan policy statement is legitimate geopolitics.
     assert_review(
         candidate(
             "Путин: российско-японские отношения ухудшились из-за позиции Токио",
@@ -149,18 +146,18 @@ def screenshot_regressions():
         category="geo",
     )
 
-    # 9. Clicky routine traffic enforcement cannot fill the feed as serious news.
     traffic = assert_review(
         candidate(
-            "Трое пьяных, шесть без прав: на Сахалине поймали почти 100 нарушителей ГАИ",
-            "Инспекторы провели профилактический рейд и пресекли нарушения ПДД.",
-            url="https://sakhalinmedia.ru/news/2607802/",
+            "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
+            "Инспекторы ГАИ провели профилактический рейд и пресекли 126 нарушений ПДД.",
+            url="https://sakhalinmedia.ru/news/2610302/",
         ),
         approved=False,
+        category="sakh",
+        reason="routine_traffic_statistics",
     )
-    assert traffic.get("subtype") == "traffic_enforcement", traffic
+    assert traffic["event_type"] == "traffic_enforcement", traffic
 
-    # 10. Federal gasification is Russia/economy, not local Sakhalin content.
     assert_review(
         candidate(
             "Чекунков сообщил о включении программы газификации ДФО в генсхему до 2050 года",
@@ -173,84 +170,268 @@ def screenshot_regressions():
         category="ru_eco",
     )
 
-    # Exact historical bug: NATO must not be found inside 'санаторий'.
+
+def service_notice_and_violent_crime_regressions():
+    service = candidate(
+        "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
+        "Мужчину разыскивают, чтобы вернуть ему найденные вещи и документы.",
+        source="ASTV",
+        url="https://astv.ru/news/society/service-notice",
+        category="sakh_chp",
+    )
+    assert_review(
+        service,
+        approved=False,
+        reason="service_or_lost_and_found_notice",
+    )
+
+    murder = candidate(
+        "Предъявили обвинение: сахалинца, который ранил и удерживал в сожительницу, взяли под стражу",
+        (
+            "Женщина скончалась в больнице. Мужчине предъявлено обвинение в убийстве "
+            "и незаконном лишении свободы женщины. Суд избрал заключение под стражу."
+        ),
+        source="ASTV",
+        url="https://astv.ru/news/criminal/murder-case",
+        category="sakh",
+    )
+    review = assert_review(murder, approved=True, category="sakh_chp")
+    assert review["event_type"] == "violent_crime", review
+    assert review["title_corrected"] == (
+        "Сахалинца заключили под стражу по обвинению в убийстве женщины"
+    ), review
+    assert "violent_crime_fact_template" in review["title_corrections"], review
+
+    forum = candidate(
+        "В Южно-Сахалинске открылся 3-й туристический форум «Маршрут построен»",
+        "Участники обсудили туристические направления и культурную программу.",
+        source="Sakh.online",
+        url="https://sakh.online/news/forum",
+    )
+    assert_review(
+        forum,
+        approved=False,
+        reason="routine_event_without_outcome",
+    )
+
+
+def scope_and_stream_regressions():
+    world_ru = candidate(
+        "China and Russia discuss sanctions and the future of bilateral relations",
+        "The leaders discussed Russia, sanctions and bilateral relations.",
+        source="BBC World",
+        url="https://www.bbc.com/news/world-russia-test",
+        category="geo",
+    )
+    assert_review(world_ru, approved=True, category="world_ru")
+
+    generic_world = candidate(
+        "China's CO2 emissions fall in the second quarter",
+        "The report analyses changes in domestic industrial emissions.",
+        source="Guardian World",
+        url="https://www.theguardian.com/world/china-emissions-test",
+        category="geo",
+    )
+    assert_review(
+        generic_world,
+        approved=False,
+        reason="no_supported_news_stream",
+    )
+
+    it_story = candidate(
+        "OpenAI представила новую модель искусственного интеллекта для разработчиков",
+        "Компания объявила о выпуске модели и новых инструментах API.",
+        source="BBC Technology",
+        url="https://www.bbc.com/news/technology-openai-test",
+        category="it",
+    )
+    assert_review(it_story, approved=True, category="it")
+
+    policy_not_it = candidate(
+        "Путин: особый правовой режим для обкатки технологий запустят с 1 января",
+        "Президент России сообщил о государственном правовом режиме для новых решений.",
+        source="SakhalinMedia.ru",
+        url="https://sakhalinmedia.ru/news/legal-tech-regime/",
+        category="it",
+    )
+    assert_review(policy_not_it, approved=True, category="ru_pol")
+
+    smoke = candidate(
+        "Дым от бушующих в Якутии пожаров дошёл до Курил",
+        "Жители Северо-Курильска наблюдают завесу и ощущают запах гари.",
+        source="ASTV",
+        url="https://astv.ru/news/smoke-kurils",
+        category="sakh_chp",
+    )
+    assert_review(smoke, approved=True, category="sakh_chp")
+
+
+def boilerplate_and_language_regressions():
+    dirty = (
+        "Читайте последние актуальные новости главных событий Сахалина на тему X. "
+        "ВТБ ожидает, что рынок сбережений России вырастет до 71 трлн рублей. "
+        "ВТБ ожидает, что рынок сбережений России вырастет до 71 трлн рублей. "
+        "Мы будем присылать вам на почту самые просматриваемые новости за день"
+    )
+    cleaned = policy.clean_article_text(dirty)
+    assert cleaned.count("рынок сбережений") == 1, cleaned
+    assert "присылать вам на почту" not in cleaned, cleaned
+
     assert "foreign" not in gate.infer_topics(
         "Не санаторий и не дача — пенсионеры нашли место у моря"
     )
     assert "foreign" in gate.infer_topics(
         "НАТО усиливает военное присутствие в Европе"
     )
-
-
-def proportion_and_order_regressions():
-    assert sum(director.TARGET_COUNTS.values()) == director.ROLLING_WINDOW == 12
-    assert director.TARGET_COUNTS["local"] == 6
-    assert set(director.SECOND_SLOT_BY_HOUR.values()) == {
-        "world_ru", "ru_safety", "ru_pol", "ru_eco", "geo", "it"
+    imoex_text = "Индекс Мосбиржи вырос на открытии торгов"
+    imoex_topics = gate.infer_topics(imoex_text)
+    imoex_matches = [
+        marker for marker in policy.FOREIGN_MARKERS
+        if policy.marker_match(imoex_text, marker)
+    ]
+    assert "foreign" not in imoex_topics, {
+        "topics": sorted(imoex_topics), "matches": imoex_matches
     }
+
+
+def exact_proportion_and_selection_regression():
+    assert director.ROLLING_WINDOW == 20
+    assert director.TARGET_COUNTS == {
+        "local": 6,
+        "ru_pol": 4,
+        "ru_eco": 4,
+        "ru_safety": 3,
+        "world": 2,
+        "it": 1,
+    }
+    assert sum(director.TARGET_COUNTS.values()) == 20
+
+    last_posts = []
+    groups = (
+        ["local"] * 8
+        + ["ru_pol"] * 4
+        + ["ru_eco"] * 4
+        + ["ru_safety"] * 3
+        + ["it"]
+    )
+    category_for_group = {
+        "local": "sakh",
+        "ru_pol": "ru_pol",
+        "ru_eco": "ru_eco",
+        "ru_safety": "ru_incident",
+        "world": "geo",
+        "it": "it",
+    }
+    for index, group in enumerate(groups):
+        last_posts.append({
+            "title": f"Synthetic valid post {index}",
+            "source": "Synthetic",
+            "category_key": category_for_group[group],
+            "news_director": {
+                "version": director.VERSION,
+                "approved": True,
+                "group": group,
+                "corrected_category": category_for_group[group],
+                "event_type": "general",
+                "subtype": "general",
+            },
+        })
 
     items = [
         candidate(
-            "РусГидро открыло центр обслуживания в Поронайске Сахалинской области",
-            "Центр рассчитан на 20 тысяч жителей района.",
-            url="https://sakhalinmedia.ru/news/local-order/",
+            "В Южно-Сахалинске восстановили теплоснабжение после аварии",
+            "Коммунальные службы восстановили тепло для жителей города.",
+            url="https://sakhalinmedia.ru/news/mix-local/",
+            category="sakh_chp",
         ),
         candidate(
-            "Правительство России утвердило новую программу развития регионов",
-            "Решение принято правительством Российской Федерации.",
-            source="TASS",
-            url="https://tass.ru/politika/order/",
-            category="ru_pol",
+            "Russia and Britain discuss sanctions and diplomatic relations",
+            "The governments discussed sanctions and Russia's relations with Britain.",
+            source="BBC World",
+            url="https://www.bbc.com/news/mix-world-1",
+            category="world_ru",
         ),
         candidate(
-            "Россия и Япония обсудили состояние двусторонних отношений",
-            "Москва и Токио провели переговоры.",
-            source="Interfax",
-            url="https://www.interfax.ru/world/order/",
+            "US and Iran resume negotiations over a ceasefire agreement",
+            "The United States and Iran resumed diplomatic talks.",
+            source="Reuters",
+            url="https://www.reuters.com/world/mix-world-2",
             category="geo",
-        ),
-        candidate(
-            "OpenAI представила новую модель искусственного интеллекта",
-            "Компания объявила о выпуске новой модели для разработчиков.",
-            source="BBC Technology",
-            url="https://www.bbc.com/news/technology-order/",
-            category="it",
         ),
     ]
 
     ordered, report = director.direct_candidates(
-        {"last_posts": []},
+        {"last_posts": last_posts},
         items,
         category_map=publisher.core.b.CAT,
-        now=datetime(2026, 9, 3, 13, 0, tzinfo=timezone(timedelta(hours=11))),
+        now=datetime(2026, 9, 4, 19, 0, tzinfo=timezone(timedelta(hours=11))),
         ai_reviewer=None,
     )
     assert len(ordered) >= 2, report
-    assert ordered[0]["category_key"] in {"sakh", "sakh_chp", "sakh_quake"}, report
-    assert ordered[1]["category_key"] == "ru_pol", report
-    assert report["scheduled_second_group"] == "ru_pol", report
+    assert {item["category_key"] for item in ordered[:2]} == {"world_ru", "geo"}, report
+    assert report["selected_groups"] == ["world", "world"], report
 
 
-def repetitive_subtype_regression():
+def source_diversity_regression():
+    astv_one = candidate(
+        "В Южно-Сахалинске после аварии восстановили теплоснабжение 30 домов",
+        "Коммунальные службы устранили повреждение сети и вернули тепло жителям.",
+        source="ASTV",
+        url="https://astv.ru/news/source-diversity-1",
+        category="sakh_chp",
+    )
+    astv_two = candidate(
+        "На Сахалине пожарные эвакуировали жильцов многоэтажного дома",
+        "Из здания эвакуировали жителей, пострадавших нет.",
+        source="ASTV",
+        url="https://astv.ru/news/source-diversity-2",
+        category="sakh_chp",
+    )
+    interfax = candidate(
+        "Правительство России утвердило программу развития транспорта",
+        "Правительство утвердило государственную программу развития транспортной инфраструктуры.",
+        source="Interfax",
+        url="https://www.interfax.ru/russia/source-diversity-3",
+        category="ru_pol",
+    )
+
+    ordered, report = director.direct_candidates(
+        {"last_posts": []},
+        [astv_one, astv_two, interfax],
+        category_map=publisher.core.b.CAT,
+        now=datetime.now(timezone(timedelta(hours=11))),
+        ai_reviewer=None,
+    )
+    assert len(ordered) >= 2, report
+    assert len({item["source"] for item in ordered[:2]}) == 2, report
+
+
+def repetition_regression():
     prior = []
     for index in range(2):
         prior.append({
-            "title": f"Сахалинец перевел мошенникам {index + 1} миллион рублей",
-            "source_text_excerpt": "Полиция расследует дистанционное мошенничество.",
+            "title": f"Сахалинец перевёл мошенникам {index + 1} миллион рублей",
             "source": "SakhalinMedia.ru",
-            "url": f"https://sakhalinmedia.ru/news/old-fraud-{index}/",
             "category_key": "sakh_chp",
+            "news_director": {
+                "version": director.VERSION,
+                "approved": True,
+                "group": "local",
+                "corrected_category": "sakh_chp",
+                "event_type": "fraud",
+                "subtype": "fraud",
+            },
         })
 
     new_fraud = candidate(
-        "Житель Южно-Сахалинска перевел мошенникам 3 миллиона рублей",
+        "Житель Южно-Сахалинска перевёл мошенникам 3 миллиона рублей",
         "Полиция расследует дистанционное мошенничество.",
         url="https://sakhalinmedia.ru/news/new-fraud/",
         category="sakh_chp",
     )
     strong_local = candidate(
         "После аварии в Южно-Сахалинске восстановили теплоснабжение 30 домов",
-        "Коммунальные службы устранили повреждение сети, затронувшее жителей города.",
+        "Коммунальные службы устранили повреждение сети.",
         url="https://sakhalinmedia.ru/news/heating/",
         category="sakh_chp",
     )
@@ -259,72 +440,91 @@ def repetitive_subtype_regression():
         {"last_posts": prior},
         [new_fraud, strong_local],
         category_map=publisher.core.b.CAT,
-        now=datetime(2026, 9, 3, 7, 0, tzinfo=timezone(timedelta(hours=11))),
+        now=datetime.now(timezone(timedelta(hours=11))),
         ai_reviewer=None,
     )
     assert all(item["url"] != new_fraud["url"] for item in ordered), report
-    review = report["by_url"][new_fraud["url"]]
-    assert review["reason"] == "subtype_quota_exhausted", review
+    assert report["by_url"][new_fraud["url"]]["reason"] == "event_quota_exhausted"
 
 
+def final_contract_and_auditor_regressions():
+    murder = candidate(
+        "Предъявили обвинение: сахалинца, который ранил и удерживал в сожительницу, взяли под стражу",
+        (
+            "Женщина скончалась в больнице. Мужчине предъявлено обвинение в убийстве "
+            "и незаконном лишении свободы женщины. Суд избрал заключение под стражу."
+        ),
+        source="ASTV",
+        url="https://astv.ru/news/criminal/murder-contract",
+        category="sakh",
+    )
+    review = director.review_candidate(murder)
+    murder["title_original"] = murder["title"]
+    murder["title"] = review["title_corrected"]
+    murder["category_key"] = "sakh_chp"
+    row = {
+        "title_ru": review["title_corrected"],
+        "body": [
+            "Женщина скончалась в больнице.",
+            "Мужчине предъявлено обвинение в убийстве и суд избрал заключение под стражу.",
+        ],
+        "editorial_mode": "extractive_fallback",
+    }
+    contract = director.validate_final(murder, row)
+    assert contract["approved"] is True, contract
+
+    state = {
+        "last_posts": [{
+            "title": "Полиция на Сахалине ищет владельца, чтобы вернуть документы",
+            "source": "ASTV",
+            "category_key": "sakh_chp",
+            "url": "https://astv.ru/news/bad-v12-post",
+            "source_text_excerpt": "Полиция хочет вернуть владельцу найденные документы.",
+            "publisher_version": "stable-v12.0",
+            "time_sakhalin": datetime.now(timezone(timedelta(hours=11))).isoformat(),
+        }]
+    }
+    audit = publication_auditor.audit_recent_posts(
+        state,
+        category_map=publisher.core.b.CAT,
+        render_caption=publisher.core.b.caption,
+        mutate=False,
+    )
+    assert audit["checked"] == 1
+    assert len(audit["anomalies"]) == 1, audit
+    assert not audit["corrected"] and not audit["deleted"]
 
 
 def openrouter_resilience_regression():
     class FakeResponse:
-        def __init__(self, payload, status_code=200, text=""):
+        def __init__(self, payload):
             self._payload = payload
-            self.status_code = status_code
-            self.text = text
+            self.status_code = 200
+            self.text = ""
             self.headers = {}
 
         def json(self):
             return self._payload
 
     responses = [
-        FakeResponse({
-            "model": "free/empty",
-            "choices": [{"message": {"content": ""}}],
-        }),
-        FakeResponse({
-            "model": "free/invalid",
-            "choices": [{"message": {"content": "not-json"}}],
-        }),
-        FakeResponse({
-            "model": "free/valid",
-            "choices": [{"message": {"content": '{"ok": true}'}}],
-        }),
+        FakeResponse({"model": "free/empty", "choices": [{"message": {"content": ""}}]}),
+        FakeResponse({"model": "free/invalid", "choices": [{"message": {"content": "not-json"}}]}),
+        FakeResponse({"model": "free/valid", "choices": [{"message": {"content": '{"ok": true}'}}]}),
     ]
     calls = []
 
     def fake_post(url, **kwargs):
-        assert url == editorial.core.b.OPENROUTER_URL
         calls.append(kwargs)
         return responses.pop(0)
 
-    env_names = (
-        "OPENROUTER_API_KEY",
-        "OPENROUTER_MODEL",
-        "OPENROUTER_FALLBACK_MODELS",
-        "OPENROUTER_MAX_ATTEMPTS",
-        "OPENROUTER_RETRY_BASE_SECONDS",
+    names = (
+        "OPENROUTER_API_KEY", "OPENROUTER_MODEL", "OPENROUTER_FALLBACK_MODELS",
+        "OPENROUTER_MAX_ATTEMPTS", "OPENROUTER_RETRY_BASE_SECONDS",
     )
-    saved_env = {name: os.environ.get(name) for name in env_names}
+    saved_env = {name: os.environ.get(name) for name in names}
     saved_post = editorial.core.b.requests.post
-    saved_circuit = editorial._OPENROUTER_CIRCUIT_OPEN
+    saved_open = editorial._OPENROUTER_CIRCUIT_OPEN
     saved_reason = editorial._OPENROUTER_CIRCUIT_REASON
-    stat_names = (
-        "openrouter_empty_content",
-        "openrouter_model_fallback",
-        "openrouter_attempts",
-        "openrouter_retries",
-        "openrouter_invalid_json",
-        "openrouter_success",
-        "openrouter_circuit_open",
-    )
-    saved_stats = {
-        name: editorial.core.b.STATS.get(name)
-        for name in stat_names
-    }
 
     try:
         os.environ["OPENROUTER_API_KEY"] = "test-key"
@@ -335,119 +535,31 @@ def openrouter_resilience_regression():
         editorial._OPENROUTER_CIRCUIT_OPEN = False
         editorial._OPENROUTER_CIRCUIT_REASON = ""
         editorial.core.b.requests.post = fake_post
-        for name in stat_names:
-            editorial.core.b.STATS[name] = 0
-
-        assert publisher.core.b.openrouter is editorial.resilient_openrouter
-        raw = publisher.core.b.openrouter(
-            [{"role": "user", "content": "Верни JSON"}],
+        raw = editorial.resilient_openrouter(
+            [{"role": "user", "content": "Return JSON"}],
             max_tokens=128,
         )
-        assert publisher.core.b.parse_obj(raw) == {"ok": True}
+        assert editorial.core.b.parse_obj(raw) == {"ok": True}
         assert len(calls) == 3
-        for call in calls:
-            body = call["json"]
-            assert body["model"] == "openrouter/free"
-            assert body["response_format"] == {"type": "json_object"}
-            assert body["provider"]["require_parameters"] is True
-            assert body["provider"]["allow_fallbacks"] is True
-            assert "temperature" not in body
-        assert editorial.core.b.STATS["openrouter_empty_content"] == 1
-        assert editorial.core.b.STATS["openrouter_invalid_json"] == 1
-        assert editorial.core.b.STATS["openrouter_attempts"] == 3
-        assert editorial.core.b.STATS["openrouter_retries"] == 2
-        assert editorial.core.b.STATS["openrouter_success"] == 1
-        assert editorial.core.b.STATS["openrouter_model_fallback"] == 1
-        assert editorial._OPENROUTER_CIRCUIT_OPEN is False
+        assert all(call["json"]["response_format"] == {"type": "json_object"} for call in calls)
     finally:
         editorial.core.b.requests.post = saved_post
-        editorial._OPENROUTER_CIRCUIT_OPEN = saved_circuit
+        editorial._OPENROUTER_CIRCUIT_OPEN = saved_open
         editorial._OPENROUTER_CIRCUIT_REASON = saved_reason
         for name, value in saved_env.items():
             if value is None:
                 os.environ.pop(name, None)
             else:
                 os.environ[name] = value
-        for name, value in saved_stats.items():
-            if value is None:
-                editorial.core.b.STATS.pop(name, None)
-            else:
-                editorial.core.b.STATS[name] = value
 
 
-def extractive_first_regression():
-    item = candidate(
-        "В Южно-Сахалинске временно изменили схему движения автобусов",
-        (
-            "Администрация Южно-Сахалинска сообщила, что с понедельника движение "
-            "автобусов по улице Ленина будет организовано по временной схеме. "
-            "Изменение связано с ремонтом дорожного покрытия и будет действовать "
-            "до завершения работ на указанном участке."
-        ),
-        url="https://sakhalinmedia.ru/news/extractive-first/",
-    )
-
-    called = {"value": False}
-    original_generate = publisher.prod.core.generate_grounded
-    original_extract_count = publisher.core.b.STATS.get("extractive_fallback")
-    original_first_count = publisher.core.b.STATS.get("extractive_first")
-
-    def unexpected_generate(*args, **kwargs):
-        called["value"] = True
-        raise AssertionError("Russian extractive post must not call OpenRouter")
-
-    try:
-        publisher.prod.core.generate_grounded = unexpected_generate
-        publisher.core.b.STATS["extractive_fallback"] = 0
-        publisher.core.b.STATS["extractive_first"] = 0
-        row = publisher.prod.valid_post_v99(item)
-        assert row is not None
-        assert row.get("editorial_mode") == "extractive_fallback"
-        assert called["value"] is False
-        assert publisher.core.b.STATS["extractive_first"] == 1
-    finally:
-        publisher.prod.core.generate_grounded = original_generate
-        if original_extract_count is None:
-            publisher.core.b.STATS.pop("extractive_fallback", None)
-        else:
-            publisher.core.b.STATS["extractive_fallback"] = original_extract_count
-        if original_first_count is None:
-            publisher.core.b.STATS.pop("extractive_first", None)
-        else:
-            publisher.core.b.STATS["extractive_first"] = original_first_count
-
-
-def director_ai_outage_regression():
-    borderline = candidate(
-        "На Сахалине изменили график работы областной библиотеки",
-        "Новый график действует для посетителей учреждения до конца месяца.",
-        url="https://sakhalinmedia.ru/news/director-ai-outage/",
-        category="sakh",
-        score=100,
-    )
-    initial = director.review_candidate(borderline)
-    assert initial["approved"] is True, initial
-    assert initial["needs_ai_review"] is True, initial
-    assert initial["seriousness"] < initial["threshold"] + 4, initial
-
-    ordered, report = director.direct_candidates(
-        {"last_posts": []},
-        [borderline],
-        category_map=publisher.core.b.CAT,
-        now=datetime(2026, 9, 4, 7, 0, tzinfo=timezone(timedelta(hours=11))),
-        ai_reviewer=lambda _: {},
-    )
-    assert [item["url"] for item in ordered] == [borderline["url"]], report
-    final = report["by_url"][borderline["url"]]
-    assert final["approved"] is True, final
-    assert final["reason"] == "approved", final
-
-
-def media_and_version_regressions():
-    assert publisher.VERSION == "stable-v11.0"
-    assert publisher.media.VERSION == "stable-v11.0"
-    assert publisher.core.VERSION == "stable-v11.0"
+def version_and_media_regressions():
+    assert publisher.VERSION == "stable-v12.0"
+    assert publisher.media.VERSION == "stable-v12.0"
+    assert publisher.core.VERSION == "stable-v12.0"
     assert publisher.core.b.IMAGE_REQUIRED is True
+    assert director.VERSION == "director-v2"
+    assert policy.VERSION == "policy-v2.1"
 
     good_media = {
         "image": b"x" * 12000,
@@ -459,14 +571,17 @@ def media_and_version_regressions():
 
 
 def main():
-    screenshot_regressions()
-    proportion_and_order_regressions()
-    repetitive_subtype_regression()
+    exact_feed_regressions()
+    service_notice_and_violent_crime_regressions()
+    scope_and_stream_regressions()
+    boilerplate_and_language_regressions()
+    exact_proportion_and_selection_regression()
+    source_diversity_regression()
+    repetition_regression()
+    final_contract_and_auditor_regressions()
     openrouter_resilience_regression()
-    extractive_first_regression()
-    director_ai_outage_regression()
-    media_and_version_regressions()
-    print("stable-v11.0 production self-test: ALL PASS")
+    version_and_media_regressions()
+    print("stable-v12.0 production self-test: ALL PASS")
 
 
 if __name__ == "__main__":

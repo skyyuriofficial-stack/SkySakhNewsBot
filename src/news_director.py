@@ -1,360 +1,125 @@
-"""Autonomous news director for SkySakhNews.
+"""Strict autonomous news director for SkySakhNews.
 
-The director is the final editorial controller before text generation.  It:
-- corrects stream/category from the actual headline and article lead;
-- rejects ceremonial, calendar, lifestyle, advertorial and other low-value items;
-- scores public significance and seriousness;
-- limits repetitive low-value subtypes;
-- maintains the originally requested rolling mix: one strong Sakhalin item per
-  cycle plus one rotating national/international/IT item;
-- records an auditable decision for every candidate.
+The director is authoritative for newsworthiness, category autocorrection,
+headline correction, repetition limits and the rolling thematic mix requested
+for the channel.
 
-The deterministic policy is authoritative.  An optional independent LLM batch
-review can veto borderline stories but cannot override hard rejects.
+Target mix over the last 20 valid publications:
+- Sakhalin/local: 30% (6)
+- Russia politics/laws: 20% (4)
+- Russia economy/money: 20% (4)
+- incidents/security: 15% (3)
+- world/geopolitics/world about Russia: 10% (2)
+- IT/AI/connectivity: 5% (1)
 """
 
 from __future__ import annotations
 
+import hashlib
 import json
+import math
 import re
 from collections import Counter
 from datetime import datetime
 from typing import Any, Callable, Dict, List, Mapping, Optional, Sequence, Tuple
 
-import category_reconciler as reconciler
-import editorial_gate as gate
+import editorial_policy as policy
 
-VERSION = "director-v1"
-ROLLING_WINDOW = 12
-
-# Six scheduled runs x two posts. This is the original operating idea:
-# one useful Sakhalin item in each release and one rotating external stream.
+VERSION = "director-v2"
+ROLLING_WINDOW = 20
 TARGET_COUNTS: Dict[str, int] = {
     "local": 6,
-    "world_ru": 1,
-    "ru_safety": 1,
-    "ru_pol": 1,
-    "ru_eco": 1,
-    "geo": 1,
+    "ru_pol": 4,
+    "ru_eco": 4,
+    "ru_safety": 3,
+    "world": 2,
     "it": 1,
 }
-
-SECOND_SLOT_BY_HOUR = {
-    7: "world_ru",
-    10: "ru_safety",
-    13: "ru_pol",
-    16: "ru_eco",
-    19: "geo",
-    22: "it",
+TARGET_SHARES = {
+    group: count / ROLLING_WINDOW for group, count in TARGET_COUNTS.items()
 }
 
-CATEGORY_GROUP = {
-    "sakh": "local",
-    "sakh_chp": "local",
-    "sakh_quake": "local",
-    "world_ru": "world_ru",
-    "ru_security": "ru_safety",
-    "ru_incident": "ru_safety",
-    "ru_pol": "ru_pol",
-    "ru_eco": "ru_eco",
-    "geo": "geo",
-    "it": "it",
-}
-
-CATEGORY_BASE = {
-    "sakh_quake": 95,
-    "sakh_chp": 82,
-    "sakh": 55,
-    "world_ru": 84,
-    "ru_security": 89,
-    "ru_incident": 80,
-    "ru_pol": 77,
-    "ru_eco": 75,
-    "geo": 80,
-    "it": 72,
-}
+CATEGORY_GROUP = dict(policy.CATEGORY_GROUP)
 
 MIN_SCORE = {
-    "local": 62,
-    "world_ru": 76,
-    "ru_safety": 72,
-    "ru_pol": 72,
-    "ru_eco": 70,
-    "geo": 75,
-    "it": 76,
+    "local": 68,
+    "ru_pol": 75,
+    "ru_eco": 74,
+    "ru_safety": 76,
+    "world": 78,
+    "it": 78,
+}
+
+EVENT_BASE = {
+    "earthquake": 94,
+    "violent_crime": 90,
+    "fatal_incident": 91,
+    "military_security": 89,
+    "major_emergency": 85,
+    "missing_person": 78,
+    "air_quality_hazard": 81,
+    "public_service_disruption": 76,
+    "major_infrastructure": 78,
+    "severe_weather": 80,
+    "ordinary_weather": 57,
+    "fraud": 61,
+    "traffic_enforcement": 43,
+    "routine_crime": 55,
+    "political_decision": 82,
+    "political_statement": 64,
+    "macro_economy": 78,
+    "corporate_forecast": 68,
+    "geopolitical_event": 82,
+    "major_it": 80,
+    "general": 48,
 }
 
 SUBTYPE_CAPS = {
     "fraud": 2,
-    "traffic_enforcement": 1,
-    "weather_forecast": 2,
-    "routine_crime": 2,
-    "local_infrastructure": 2,
+    "traffic_enforcement": 0,
+    "ordinary_weather": 1,
+    "routine_crime": 1,
     "corporate_forecast": 1,
+    "political_statement": 1,
+    "major_infrastructure": 3,
 }
 
-CALENDAR_HISTORY = (
-    "в этот день",
-    "день в истории",
-    "календарь событий",
-    "историческая дата",
-    "памятная дата",
-    "годовщина",
-    "лет назад",
-    "в 1945 году",
-    "в 1941 году",
-    "история праздника",
-)
-
-CEREMONY = (
-    "наградили",
-    "поздравили",
-    "вручили наград",
-    "вручили знак",
-    "торжественная церемония",
-    "чествовали",
-    "почтили память",
-    "отметили юбилей",
-    "праздничный концерт",
-    "доброволец сахалинской области",
-)
-
-LIFESTYLE_PROMO = (
-    "райское место",
-    "по карману",
-    "сентябрьский хит",
-    "от 1000 руб",
-    "куда поехать",
-    "где отдохнуть",
-    "лучшие места",
-    "не санаторий и не дача",
-    "гороскоп",
-    "рецепт",
-    "народные приметы",
-    "церковный праздник",
-    "тест на внимательность",
-    "головолом",
-    "лайфхак",
-    "как выбрать",
-    "как сэкономить",
-    "что приготовить",
-)
-
-ADVERTORIAL = (
-    "на правах рекламы",
-    "партнерский материал",
-    "партнёрский материал",
-    "спецпроект",
-    "акция действует",
-    "скидка",
-    "успейте купить",
-    "подробнее на сайте",
-)
-
-FATAL = (
-    "погиб",
-    "погибли",
-    "умер",
-    "жертв",
-    "смертельн",
-)
-
-HARM = (
-    "пострад",
-    "ранен",
-    "травм",
-    "лишилась денег",
-    "лишился денег",
-    "выманил",
-    "украден",
-    "похитил",
-    "мошенн",
-)
-
-EMERGENCY = (
-    "пожар",
-    "авари",
-    "дтп",
-    "обруш",
-    "эвакуац",
-    "отключен",
-    "без света",
-    "без воды",
-    "подтоп",
-    "наводнен",
-    "шторм",
-    "ураган",
-    "циклон",
-    "землетряс",
-    "цунами",
-)
-
-INFRASTRUCTURE = (
-    "открыл центр",
-    "открыли центр",
-    "ввели в эксплуатацию",
-    "запустили",
-    "запустил",
-    "газификац",
-    "мост",
-    "дорог",
-    "аэропорт",
-    "больниц",
-    "школ",
-    "детский сад",
-    "расчетно информационный центр",
-    "расчётно информационный центр",
-    "коммунальн",
-    "водоснабжен",
-    "электроснабжен",
-    "теплоснабжен",
-)
-
-PUBLIC_IMPACT = (
-    "жителей",
-    "тысяч человек",
-    "тыс человек",
-    "муниципальн",
-    "район",
-    "область",
-    "регион",
-    "населени",
-)
-
-OFFICIAL_DECISION = (
-    "принял закон",
-    "приняла закон",
-    "утвердил",
-    "утвердили",
-    "подписал",
-    "ввел",
-    "ввели",
-    "объявил",
-    "решение",
-    "постановлен",
-    "законопроект",
-    "санкц",
-    "ограничен",
-    "запрет",
-    "программа",
-)
-
-MACRO_ECONOMY = (
-    "втб",
-    "сбер",
-    "центробанк",
-    "цб рф",
-    "минфин",
-    "инфляц",
-    "ключев ставк",
-    "рынок сбережений",
-    "трлн рублей",
-    "ввп",
-    "бюджет",
-    "газификац",
-    "инвестиц",
-)
-
-DIPLOMACY = (
-    "отношени",
-    "переговор",
-    "санкц",
-    "посол",
-    "мид",
-    "саммит",
-    "договор",
-    "соглашен",
-    "позици",
-    "токио",
-    "вашингтон",
-    "пекин",
-)
-
-WAR_SECURITY = (
-    "бпла",
-    "беспилот",
-    "пво",
-    "ракет",
-    "обстрел",
-    "атака",
-    "военн",
-    "минобороны",
-    "террорист",
-    "диверс",
-)
-
-IT_MAJOR = (
-    "openai",
-    "chatgpt",
-    "anthropic",
-    "google",
-    "microsoft",
-    "apple",
-    "nvidia",
-    "amd",
-    "кибератак",
-    "утечка данных",
-    "искусственн интеллект",
-    "нейросет",
-    "чип",
-    "процессор",
-)
-
-FRAUD = (
-    "мошенн",
-    "выманил",
-    "перевел деньги",
-    "перевела деньги",
-    "лишилась денег",
-    "лишился денег",
-    "безопасный счет",
-    "безопасный счёт",
-    "липов инвести",
-)
-
-TRAFFIC_ENFORCEMENT = (
-    "гибдд",
-    "гаи",
-    "нарушител",
-    "без прав",
-    "пьяных",
-    "рейд",
-)
-
-ROUTINE_CRIME = (
-    "задержали",
-    "задержан",
-    "уголовное дело",
-    "возбудили дело",
-    "суд",
-    "нелегальный улов",
-    "наркотик",
-)
-
-CLICKBAIT = (
-    "шок",
-    "срочно",
-    "ужас",
-    "райское",
-    "хит",
-    "по карману",
-    "вы не поверите",
-    "трое пьяных, шесть без прав",
-)
+URGENT_EVENTS = {
+    "earthquake", "violent_crime", "fatal_incident", "military_security",
+    "major_emergency", "severe_weather", "air_quality_hazard",
+}
 
 SOURCE_QUALITY = {
-    "reuters": 5,
-    "associated press": 5,
-    "ap news": 5,
-    "bbc": 4,
-    "guardian": 4,
-    "interfax": 4,
-    "tass": 4,
-    "тасс": 4,
-    "sakhalinmedia": 3,
-    "astv": 3,
-    "sakh.online": 3,
+    "reuters": 6,
+    "associated press": 6,
+    "ap news": 6,
+    "bbc": 5,
+    "guardian": 5,
+    "interfax": 5,
+    "tass": 5,
+    "тасс": 5,
+    "sakhalinmedia": 4,
+    "astv": 4,
+    "sakh.online": 4,
+    "sakh online": 4,
 }
+
+PUBLIC_SCALE = (
+    "жителей", "населени", "тысяч человек", "муниципальн", "область",
+    "регион", "несколько районов", "весь город", "всей страны",
+)
+MULTIPLE_VICTIMS = (
+    "два человека", "три человека", "несколько человек", "массов", "десятки",
+    "свыше 100", "более 100", "пятеро", "шестеро",
+)
+UNCERTAIN = (
+    "предположительно", "по неподтвержденным данным", "по неподтверждённым данным",
+    "возможно", "якобы", "по слухам",
+)
+PRESS_RELEASE_TONE = (
+    "самые технологически продвинутые", "уникальный проект", "успешно реализован",
+    "лидер рынка", "инновационное решение", "новый уровень комфорта",
+)
 
 
 def _clean(value: Any) -> str:
@@ -362,32 +127,15 @@ def _clean(value: Any) -> str:
 
 
 def _norm(value: Any) -> str:
-    return gate._norm(value)
-
-
-def _tokens(value: Any) -> List[str]:
-    return re.findall(r"[a-zа-я0-9]+", _norm(value), flags=re.I)
-
-
-def _marker_match(text: str, marker: str) -> bool:
-    words = _tokens(text)
-    marker_words = _tokens(marker)
-    if not words or not marker_words:
-        return False
-    width = len(marker_words)
-    for start in range(len(words) - width + 1):
-        window = words[start:start + width]
-        if all(word.startswith(prefix) for word, prefix in zip(window, marker_words)):
-            return True
-    return False
+    return policy.norm(value)
 
 
 def _has(text: str, markers: Sequence[str]) -> bool:
-    return any(_marker_match(text, marker) for marker in markers)
+    return policy.has_any(text, markers)
 
 
-def _hits(text: str, markers: Sequence[str]) -> List[str]:
-    return [marker for marker in markers if _marker_match(text, marker)]
+def group_for_category(category_key: Optional[str]) -> Optional[str]:
+    return CATEGORY_GROUP.get(str(category_key or ""))
 
 
 def _source_quality(source: str) -> int:
@@ -398,249 +146,138 @@ def _source_quality(source: str) -> int:
     )
 
 
-def group_for_category(category_key: Optional[str]) -> Optional[str]:
-    return CATEGORY_GROUP.get(str(category_key or ""))
+def _number_density(text: str) -> int:
+    values = re.findall(r"\d+(?:[,.]\d+)?", text or "")
+    return min(4, len(set(values)))
 
 
-def _source_is_world(source: str) -> bool:
-    low = _norm(source)
-    return any(marker in low for marker in ("bbc", "reuters", "guardian", "associated press", "ap news"))
-
-
-def _source_is_russian(source: str) -> bool:
-    low = _norm(source)
-    return any(marker in low for marker in ("interfax", "tass", "тасс", "sakhalinmedia", "astv", "sakh online"))
-
-
-def _hard_reject_reason(title: str, lead: str) -> Optional[str]:
+def _score_candidate(
+    candidate: Mapping[str, Any],
+    classification: policy.Classification,
+) -> Tuple[int, List[str]]:
+    title = policy.strip_source_suffix(candidate.get("title"))
+    lead = _clean(candidate.get("source_text"))[:1800]
     combined = f"{title} {lead}"
-    if _has(title, CALENDAR_HISTORY):
-        return "calendar_or_archive_not_current_news"
-    if _has(title, CEREMONY):
-        return "ceremony_or_congratulation_low_value"
-    if _has(combined, LIFESTYLE_PROMO):
-        return "lifestyle_or_seo_content"
-    if _has(combined, ADVERTORIAL):
-        return "advertorial_or_promotion"
-    return None
-
-
-def _independent_category(candidate: Mapping[str, Any]) -> Optional[str]:
-    """Headline-centred fallback when the lower classifier is inconclusive."""
-    title = _clean(candidate.get("title"))
-    lead = _clean(candidate.get("source_text"))[:1100]
-    source = _clean(candidate.get("source"))
-    title_topics = set(gate.infer_topics(title))
-    lead_topics = set(gate.infer_topics(lead))
-    all_topics = title_topics | lead_topics
-
-    local_title = "local" in title_topics
-    local_incident_signal = (
-        "incident" in title_topics
-        or _has(title, FATAL + HARM + EMERGENCY + ROUTINE_CRIME)
-    )
-
-    if local_title:
-        if "quake" in title_topics:
-            return "sakh_quake"
-        if local_incident_signal:
-            return "sakh_chp"
-        return "sakh"
-
-    if "foreign" in title_topics:
-        if _source_is_world(source) and "russia" in all_topics:
-            return "world_ru"
-        return "geo"
-
-    if "it" in title_topics:
-        return "it"
-
-    if "security" in title_topics or _has(title, WAR_SECURITY):
-        return "ru_security"
-
-    if "incident" in title_topics or _has(title, FATAL + HARM + EMERGENCY):
-        return "ru_incident"
-
-    if "economy" in title_topics or _has(title, MACRO_ECONOMY):
-        return "ru_eco"
-
-    if "politics" in title_topics:
-        return "ru_pol"
-
-    # A local publisher may syndicate a national item. The publisher's name is
-    # not regional evidence; classify the actual headline.
-    if _source_is_russian(source):
-        if _has(title, DIPLOMACY) and ("russia" in all_topics or "foreign" in all_topics):
-            return "geo"
-        if _has(title, OFFICIAL_DECISION):
-            return "ru_pol"
-
-    return None
-
-
-def corrected_category(candidate: Mapping[str, Any]) -> Optional[str]:
-    """Return the final stream key independently from the publisher label."""
-    title = _clean(candidate.get("title"))
-    lead = _clean(candidate.get("source_text"))[:1100]
-
-    if _hard_reject_reason(title, lead):
-        return None
-
-    proposed = reconciler.suggest_category(dict(candidate))
-    independent = _independent_category(candidate)
-
-    current = str(candidate.get("category_key") or "")
-    title_topics = set(gate.infer_topics(title))
-
-    # Never keep a local stream when the headline has no local geography.
-    if current in {"sakh", "sakh_chp", "sakh_quake"} and "local" not in title_topics:
-        if independent:
-            return independent
-        return None
-
-    # A generic geo result must have an actual foreign subject in the title.
-    if current == "geo" and "foreign" not in title_topics:
-        if independent:
-            return independent
-        return None
-
-    # Prefer the independent headline interpretation when it exposes a more
-    # specific stream than a generic local label.
-    if independent and independent != proposed:
-        if current in {"sakh", "geo"} or proposed in {None, "sakh", "geo"}:
-            return independent
-
-    return independent or proposed
-
-
-def _event_subtype(title: str, lead: str, category_key: str) -> str:
-    combined = f"{title} {lead}"
-
-    if _has(combined, FRAUD):
-        return "fraud"
-    if _has(title, TRAFFIC_ENFORCEMENT) and not _has(title, FATAL + HARM):
-        return "traffic_enforcement"
-    if _has(combined, FATAL):
-        return "fatal_incident"
-    if category_key == "sakh_quake":
-        return "earthquake"
-    if "weather" in gate.infer_topics(title):
-        if _has(title, ("опасн", "предупрежд", "шторм", "ураган", "циклон", "ливен", "метел")):
-            return "severe_weather"
-        return "weather_forecast"
-    if _has(combined, INFRASTRUCTURE):
-        return "local_infrastructure" if category_key.startswith("sakh") else "infrastructure_policy"
-    if category_key == "ru_security" or _has(combined, WAR_SECURITY):
-        return "war_security"
-    if category_key in {"ru_incident", "sakh_chp"} and _has(combined, TRAFFIC_ENFORCEMENT):
-        return "traffic_incident"
-    if category_key in {"ru_incident", "sakh_chp"} and _has(combined, ROUTINE_CRIME):
-        return "routine_crime"
-    if category_key == "ru_eco" and _has(combined, ("прогноз", "ожидает", "вырастет", "сбережен")):
-        return "corporate_forecast"
-    if category_key == "ru_eco":
-        return "economy_policy"
-    if category_key == "ru_pol":
-        return "political_decision"
-    if category_key in {"geo", "world_ru"}:
-        return "diplomacy"
-    if category_key == "it":
-        return "technology"
-    return "local_public_interest" if category_key.startswith("sakh") else "general"
-
-
-def _score(candidate: Mapping[str, Any], category_key: str, subtype: str) -> Tuple[int, List[str]]:
-    title = _clean(candidate.get("title"))
-    lead = _clean(candidate.get("source_text"))[:1400]
-    combined = f"{title} {lead}"
-    score = CATEGORY_BASE.get(category_key, 50)
-    reasons = [f"base:{score}"]
-
-    if _has(combined, FATAL):
-        score += 16
-        reasons.append("fatal_or_casualties:+16")
-    elif _has(combined, HARM):
-        score += 8
-        reasons.append("harm_or_loss:+8")
-
-    if _has(combined, EMERGENCY):
-        score += 10
-        reasons.append("emergency:+10")
-
-    if _has(combined, INFRASTRUCTURE):
-        score += 13
-        reasons.append("infrastructure:+13")
-        if _has(combined, PUBLIC_IMPACT):
-            score += 7
-            reasons.append("public_impact:+7")
-
-    if _has(combined, OFFICIAL_DECISION):
-        score += 8
-        reasons.append("official_decision:+8")
-
-    if category_key == "ru_eco" and _has(combined, MACRO_ECONOMY):
-        score += 9
-        reasons.append("macro_economy:+9")
-
-    if category_key in {"geo", "world_ru"} and _has(combined, DIPLOMACY):
-        score += 8
-        reasons.append("diplomacy:+8")
-
-    if category_key == "it" and _has(combined, IT_MAJOR):
-        score += 8
-        reasons.append("major_it:+8")
-
-    if subtype == "traffic_enforcement":
-        score += 5
-        reasons.append("local_public_safety:+5")
+    event = classification.event_type
+    score = EVENT_BASE.get(event, 45)
+    reasons = [f"event:{event}:{score}"]
 
     source_bonus = _source_quality(_clean(candidate.get("source")))
     if source_bonus:
         score += source_bonus
-        reasons.append(f"source_quality:+{source_bonus}")
+        reasons.append(f"source:+{source_bonus}")
 
-    if _has(title, CLICKBAIT):
-        score -= 12
-        reasons.append("clickbait:-12")
+    facts_bonus = _number_density(combined)
+    if facts_bonus:
+        score += facts_bonus
+        reasons.append(f"concrete_facts:+{facts_bonus}")
 
-    if subtype == "corporate_forecast":
-        score -= 3
-        reasons.append("forecast_not_decision:-3")
+    if _has(combined, PUBLIC_SCALE):
+        score += 5
+        reasons.append("public_scale:+5")
+    if _has(combined, MULTIPLE_VICTIMS):
+        score += 5
+        reasons.append("multiple_people:+5")
 
-    original_score = candidate.get("score")
-    try:
-        source_rank = max(0, min(8, int(float(original_score)) // 20))
-    except Exception:
-        source_rank = 0
-    if source_rank:
-        score += source_rank
-        reasons.append(f"collector_rank:+{source_rank}")
+    money = policy.parse_ruble_amount(combined)
+    if event == "fraud":
+        if money >= 10_000_000:
+            score += 18
+            reasons.append("fraud_10m_plus:+18")
+        elif money >= 1_000_000:
+            score += 13
+            reasons.append("fraud_1m_plus:+13")
+        elif money >= 500_000:
+            score += 9
+            reasons.append("fraud_500k_plus:+9")
+        elif money >= 100_000:
+            score += 5
+            reasons.append("fraud_100k_plus:+5")
+        elif money:
+            score -= 4
+            reasons.append("minor_fraud:-4")
+
+    if event == "routine_crime" and money and money < 100_000:
+        score -= 8
+        reasons.append("minor_property_crime:-8")
+
+    if _has(title, policy.CLICKBAIT):
+        score -= 14
+        reasons.append("clickbait:-14")
+    if _has(combined, UNCERTAIN):
+        score -= 5
+        reasons.append("uncertain:-5")
+    if _has(combined, PRESS_RELEASE_TONE):
+        score -= 10
+        reasons.append("press_release_tone:-10")
+
+    # Hard upper bounds prevent routine filler from becoming '93/100' merely
+    # because a long article contains official words, numbers and place names.
+    caps = {
+        "traffic_enforcement": 55,
+        "ordinary_weather": 65,
+        "routine_crime": 66,
+        "political_statement": 72,
+        "corporate_forecast": 78,
+        "general": 58,
+    }
+    if event in caps:
+        score = min(score, caps[event])
+        reasons.append(f"event_cap:{caps[event]}")
 
     return max(0, min(100, int(score))), reasons
 
 
 def review_candidate(candidate: Mapping[str, Any]) -> Dict[str, Any]:
-    title = _clean(candidate.get("title"))
-    lead = _clean(candidate.get("source_text"))[:1400]
+    classification = policy.classify(candidate)
     original_category = str(candidate.get("category_key") or "")
-    hard_reason = _hard_reject_reason(title, lead)
+    original_title = policy.strip_source_suffix(candidate.get("title"))
 
-    if hard_reason:
+    if classification.hard_reject_reason:
         return {
             "approved": False,
             "hard_reject": True,
-            "reason": hard_reason,
+            "reason": classification.hard_reject_reason,
             "original_category": original_category,
-            "corrected_category": None,
-            "group": None,
+            "corrected_category": classification.category_key,
+            "group": classification.group,
+            "event_type": classification.event_type,
+            "subtype": classification.event_type,
             "seriousness": 0,
-            "subtype": hard_reason,
+            "threshold": 100,
+            "risks": [classification.hard_reject_reason],
+            "policy": classification.to_dict(),
+            "title_original": original_title,
+            "title_corrected": original_title,
+            "title_corrections": [],
             "needs_ai_review": False,
-            "risks": [hard_reason],
         }
 
-    category_key = corrected_category(candidate)
-    if not category_key or category_key not in CATEGORY_GROUP:
+    corrected_title, corrections = policy.autocorrect_title(candidate, classification)
+    title_issues = policy.title_quality_issues(corrected_title)
+    if title_issues and classification.event_type not in {"traffic_enforcement"}:
+        return {
+            "approved": False,
+            "hard_reject": True,
+            "reason": "unsafe_or_malformed_headline",
+            "original_category": original_category,
+            "corrected_category": classification.category_key,
+            "group": classification.group,
+            "event_type": classification.event_type,
+            "subtype": classification.event_type,
+            "seriousness": 0,
+            "threshold": 100,
+            "risks": title_issues,
+            "policy": classification.to_dict(),
+            "title_original": original_title,
+            "title_corrected": corrected_title,
+            "title_corrections": corrections,
+            "needs_ai_review": False,
+        }
+
+    category_key = classification.category_key
+    group = classification.group
+    if not category_key or not group:
         return {
             "approved": False,
             "hard_reject": True,
@@ -648,49 +285,70 @@ def review_candidate(candidate: Mapping[str, Any]) -> Dict[str, Any]:
             "original_category": original_category,
             "corrected_category": None,
             "group": None,
+            "event_type": classification.event_type,
+            "subtype": classification.event_type,
             "seriousness": 0,
-            "subtype": "offtopic",
-            "needs_ai_review": False,
+            "threshold": 100,
             "risks": ["no_valid_news_stream"],
+            "policy": classification.to_dict(),
+            "title_original": original_title,
+            "title_corrected": corrected_title,
+            "title_corrections": corrections,
+            "needs_ai_review": False,
         }
 
-    group = group_for_category(category_key)
-    subtype = _event_subtype(title, lead, category_key)
-    score, reasons = _score(candidate, category_key, subtype)
+    score, score_reasons = _score_candidate(candidate, classification)
     threshold = MIN_SCORE[group]
-
+    event = classification.event_type
     risks: List[str] = []
+
     if original_category != category_key:
         risks.append(f"category_corrected:{original_category or '-'}->{category_key}")
-    if score < threshold + 7:
-        risks.append("borderline_importance")
-    if subtype in {"corporate_forecast", "traffic_enforcement", "routine_crime"}:
-        risks.append("routine_or_repetitive_type")
+    if corrections:
+        risks.extend(corrections)
+    if event in {"fraud", "routine_crime", "traffic_enforcement", "ordinary_weather", "corporate_forecast", "political_statement"}:
+        risks.append("low_value_or_repetitive_event_type")
+    if score < threshold + 5:
+        risks.append("near_threshold")
+
+    reason = "approved" if score >= threshold else "importance_below_threshold"
+    if event == "traffic_enforcement":
+        reason = "routine_traffic_statistics"
+    if event == "routine_crime" and score < threshold:
+        reason = "minor_or_routine_crime"
+    if event == "ordinary_weather" and score < threshold:
+        reason = "ordinary_weather_not_release_worthy"
+    if event == "political_statement" and score < threshold:
+        reason = "statement_without_material_decision"
 
     return {
         "approved": score >= threshold,
         "hard_reject": False,
-        "reason": "approved" if score >= threshold else "importance_below_threshold",
+        "reason": reason,
         "original_category": original_category,
         "corrected_category": category_key,
         "group": group,
+        "event_type": event,
+        "subtype": event,
         "seriousness": score,
         "threshold": threshold,
-        "subtype": subtype,
-        "needs_ai_review": score < threshold + 7 or bool(risks),
         "risks": risks,
-        "score_reasons": reasons,
+        "score_reasons": score_reasons,
+        "policy": classification.to_dict(),
+        "title_original": original_title,
+        "title_corrected": corrected_title,
+        "title_corrections": corrections,
+        "needs_ai_review": False,
     }
 
 
-def _legacy_post_review(post: Mapping[str, Any]) -> Dict[str, Any]:
+def _post_review(post: Mapping[str, Any]) -> Dict[str, Any]:
     stored = post.get("news_director")
     if isinstance(stored, dict) and stored.get("version") == VERSION:
         return dict(stored)
-
     candidate = {
         "title": post.get("title"),
-        "source_text": post.get("source_text") or "",
+        "source_text": post.get("source_text_excerpt") or post.get("source_text") or "",
         "source": post.get("source"),
         "url": post.get("url"),
         "category_key": post.get("category_key"),
@@ -701,15 +359,26 @@ def _legacy_post_review(post: Mapping[str, Any]) -> Dict[str, Any]:
     return review
 
 
+def _scaled_targets(length: int) -> Dict[str, float]:
+    n = max(0, min(ROLLING_WINDOW, int(length)))
+    return {group: share * n for group, share in TARGET_SHARES.items()}
+
+
+def _distribution_error(counts: Mapping[str, int], length: int) -> float:
+    targets = _scaled_targets(length)
+    return sum(abs(float(counts.get(group, 0)) - targets[group]) for group in TARGET_COUNTS)
+
+
 def balance_snapshot(state: Mapping[str, Any], *, window: int = ROLLING_WINDOW) -> Dict[str, Any]:
     posts = [post for post in (state.get("last_posts") or []) if isinstance(post, dict)][-window:]
-
-    counts: Counter[str] = Counter()
+    sequence: List[str] = []
+    category_sequence: List[str] = []
+    source_sequence: List[str] = []
     subtype_counts: Counter[str] = Counter()
     anomalies: List[Dict[str, Any]] = []
 
     for post in posts:
-        review = _legacy_post_review(post)
+        review = _post_review(post)
         if not review.get("approved"):
             anomalies.append({
                 "title": _clean(post.get("title"))[:180],
@@ -718,43 +387,42 @@ def balance_snapshot(state: Mapping[str, Any], *, window: int = ROLLING_WINDOW) 
                 "corrected_category": review.get("corrected_category"),
             })
             continue
-
         group = review.get("group") or group_for_category(
             review.get("corrected_category") or post.get("category_key")
         )
-        if group:
-            counts[str(group)] += 1
-        subtype = review.get("subtype")
-        if subtype:
-            subtype_counts[str(subtype)] += 1
+        if not group:
+            continue
+        sequence.append(str(group))
+        category_sequence.append(str(review.get("corrected_category") or post.get("category_key") or ""))
+        source_sequence.append(_norm(post.get("source")))
+        subtype_counts[str(review.get("event_type") or review.get("subtype") or "general")] += 1
 
-    deficits = {
-        group: max(0, target - counts.get(group, 0))
-        for group, target in TARGET_COUNTS.items()
-    }
-    overages = {
-        group: max(0, counts.get(group, 0) - target)
-        for group, target in TARGET_COUNTS.items()
-    }
+    sequence = sequence[-window:]
+    category_sequence = category_sequence[-window:]
+    source_sequence = source_sequence[-window:]
+    counts = Counter(sequence)
+    full_targets = dict(TARGET_COUNTS)
+    scaled = _scaled_targets(len(sequence))
 
     return {
         "window": window,
-        "targets": dict(TARGET_COUNTS),
-        "counts": {group: counts.get(group, 0) for group in TARGET_COUNTS},
-        "deficits": deficits,
-        "overages": overages,
+        "targets": full_targets,
+        "target_percent": {
+            group: round(100 * count / window, 1) for group, count in full_targets.items()
+        },
+        "counts": {group: counts.get(group, 0) for group in full_targets},
+        "scaled_targets": {group: round(value, 2) for group, value in scaled.items()},
+        "deficits": {
+            group: round(scaled[group] - counts.get(group, 0), 2) for group in full_targets
+        },
+        "distribution_error": round(_distribution_error(counts, len(sequence)), 3),
         "subtype_counts": dict(subtype_counts),
-        "retrospective_anomalies": anomalies[-12:],
-        "valid_posts_counted": sum(counts.values()),
+        "sequence": sequence,
+        "category_sequence": category_sequence,
+        "source_sequence": source_sequence,
+        "retrospective_anomalies": anomalies[-20:],
+        "valid_posts_counted": len(sequence),
     }
-
-
-def scheduled_second_group(now: Optional[datetime]) -> str:
-    if now is None:
-        return "world_ru"
-    hour = int(now.hour)
-    nearest = min(SECOND_SLOT_BY_HOUR, key=lambda scheduled: abs(scheduled - hour))
-    return SECOND_SLOT_BY_HOUR[nearest]
 
 
 def _candidate_id(candidate: Mapping[str, Any], index: int) -> str:
@@ -762,63 +430,43 @@ def _candidate_id(candidate: Mapping[str, Any], index: int) -> str:
 
 
 def ai_review_prompt(reviews: Sequence[Mapping[str, Any]]) -> str:
+    # Kept for API compatibility. The deterministic director is authoritative;
+    # OpenRouter is not required to release a Russian-language article.
     items = []
-    for review in reviews[:10]:
+    for review in reviews[:8]:
         candidate = review["_candidate"]
         items.append({
             "id": review["id"],
-            "source": candidate.get("source"),
             "title": candidate.get("title"),
-            "article_lead": _clean(candidate.get("source_text"))[:650],
-            "deterministic_category": review.get("corrected_category"),
-            "deterministic_seriousness": review.get("seriousness"),
-            "subtype": review.get("subtype"),
-            "risks": review.get("risks"),
+            "source": candidate.get("source"),
+            "category": review.get("corrected_category"),
+            "score": review.get("seriousness"),
         })
-
     return (
-        "Ты независимый главный редактор новостного Telegram-канала. "
-        "Проверь только неоднозначные кандидаты. Канал публикует: "
-        "1) важные новости Сахалина — ДТП, происшествия, опасную погоду, отключения, "
-        "существенную инфраструктуру; 2) крупную политику, безопасность и экономику России; "
-        "3) позицию иностранных государств и мировых СМИ о России; "
-        "4) серьёзную геополитику; 5) только крупные IT-события. "
-        "Не являются новостями канала: награждения, поздравления, памятные даты, "
-        "'в этот день', бытовой lifestyle, туризм, рецепты, рекламные и SEO-материалы, "
-        "малозначимые церемонии. Издатель SakhalinMedia сам по себе не делает сюжет "
-        "сахалинским. Верни только JSON вида "
+        "Проверь неоднозначные кандидаты. Верни только JSON "
         '{"reviews":[{"id":"...","newsworthy":true,"importance":0,'
         '"corrected_category":"sakh|sakh_chp|sakh_quake|world_ru|ru_security|'
-        'ru_incident|ru_pol|ru_eco|geo|it|null","reason":"..."}]}. '
-        "newsworthy=true только для общественно значимого текущего события. "
-        "importance ниже 70 означает не публиковать.\n"
+        'ru_incident|ru_pol|ru_eco|geo|it|null","reason":"..."}]}.\n'
         + json.dumps({"items": items}, ensure_ascii=False)
     )
 
 
 def normalize_ai_reviews(value: Any) -> Dict[str, Dict[str, Any]]:
-    if not isinstance(value, dict):
+    if not isinstance(value, dict) or not isinstance(value.get("reviews"), list):
         return {}
-    rows = value.get("reviews")
-    if not isinstance(rows, list):
-        return {}
-
     result: Dict[str, Dict[str, Any]] = {}
     allowed = set(CATEGORY_GROUP)
-    for row in rows[:20]:
-        if not isinstance(row, dict):
-            continue
-        identifier = str(row.get("id") or "")
-        if not identifier:
+    for row in value["reviews"][:12]:
+        if not isinstance(row, dict) or not row.get("id"):
             continue
         category = row.get("corrected_category")
-        if category is not None and category not in allowed:
+        if category not in allowed:
             category = None
         try:
-            importance = int(row.get("importance"))
+            importance = int(row.get("importance") or 0)
         except (TypeError, ValueError):
             importance = 0
-        result[identifier] = {
+        result[str(row["id"])] = {
             "newsworthy": row.get("newsworthy") is True,
             "importance": max(0, min(100, importance)),
             "corrected_category": category,
@@ -828,69 +476,100 @@ def normalize_ai_reviews(value: Any) -> Dict[str, Dict[str, Any]]:
 
 
 def _apply_ai_review(review: Dict[str, Any], ai: Optional[Mapping[str, Any]]) -> Dict[str, Any]:
-    if review.get("hard_reject"):
+    # AI may veto a borderline item, but can never revive a deterministic reject
+    # or move it to another thematic group.
+    if review.get("hard_reject") or not review.get("approved") or ai is None:
         return review
-    if ai is None:
-        if review.get("needs_ai_review") and review.get("seriousness", 0) < review.get("threshold", 0) + 4:
-            review["approved"] = False
-            review["reason"] = "borderline_without_independent_review"
-        return review
-
     review["ai_review"] = dict(ai)
     if not ai.get("newsworthy") or int(ai.get("importance") or 0) < 70:
         review["approved"] = False
-        review["reason"] = "independent_director_rejected"
+        review["reason"] = "independent_editor_veto"
         return review
-
     suggested = ai.get("corrected_category")
-    if (
-        suggested
-        and suggested in CATEGORY_GROUP
-        and group_for_category(suggested) == review.get("group")
-    ):
-        # The independent reviewer may refine only within the same balance group.
-        # It can veto, but cannot move a story to another geography.
+    if suggested and group_for_category(suggested) == review.get("group"):
         review["corrected_category"] = suggested
-
-    review["seriousness"] = min(
-        100,
-        round((int(review.get("seriousness") or 0) * 2 + int(ai.get("importance") or 0)) / 3),
-    )
-    review["approved"] = review["seriousness"] >= review["threshold"]
-    review["reason"] = "approved_with_independent_review" if review["approved"] else "importance_below_threshold"
     return review
 
 
-def _quota_priority(
+def _projected_mix(
+    balance: Mapping[str, Any],
+    selected_groups: Sequence[str],
+    next_group: str,
+) -> Tuple[float, Dict[str, int], int]:
+    sequence = list(balance.get("sequence") or [])
+    sequence.extend(selected_groups)
+    sequence.append(next_group)
+    sequence = sequence[-ROLLING_WINDOW:]
+    counts = Counter(sequence)
+    return _distribution_error(counts, len(sequence)), dict(counts), len(sequence)
+
+
+def _utility(
+    candidate: Mapping[str, Any],
     review: Mapping[str, Any],
     balance: Mapping[str, Any],
-    scheduled_group: str,
-    recent_subtypes: Mapping[str, int],
-    candidate: Mapping[str, Any],
-) -> int:
+    selected: Sequence[Mapping[str, Any]],
+) -> float:
     group = str(review.get("group") or "")
-    score = int(review.get("seriousness") or 0)
-    deficit = int((balance.get("deficits") or {}).get(group, 0))
-    target = max(1, int(TARGET_COUNTS.get(group, 1)))
-    score += round(22 * deficit / target)
+    selected_groups = [str((item.get("_news_director") or {}).get("group") or "") for item in selected]
+    before_counts = Counter(list(balance.get("sequence") or []) + selected_groups)
+    before_length = min(ROLLING_WINDOW, len(balance.get("sequence") or []) + len(selected_groups))
+    before_error = _distribution_error(before_counts, before_length)
+    after_error, _, _ = _projected_mix(balance, selected_groups, group)
+    mix_gain = before_error - after_error
 
-    if group == scheduled_group:
-        score += 18
-    if group == "local":
-        score += 12
+    utility = float(review.get("seriousness") or 0) + 18.0 * mix_gain
+
+    if selected:
+        selected_sources = {_norm(item.get("source")) for item in selected}
+        selected_subtypes = {
+            str((item.get("_news_director") or {}).get("event_type") or "") for item in selected
+        }
+        selected_categories = {
+            str(item.get("category_key") or "") for item in selected
+        }
+        current_sequence = (
+            list(balance.get("sequence") or []) + selected_groups
+        )[-ROLLING_WINDOW:]
+        current_counts = Counter(current_sequence)
+        current_target = _scaled_targets(len(current_sequence)).get(group, 0.0)
+        group_under_target = current_counts.get(group, 0) < current_target
+
+        if _norm(candidate.get("source")) in selected_sources:
+            utility -= 18
+        if group in selected_groups and not group_under_target:
+            utility -= 16
+        if (
+            str(review.get("event_type") or "") in selected_subtypes
+            and not (
+                group_under_target
+                and str(candidate.get("category_key") or "") not in selected_categories
+            )
+        ):
+            utility -= 14
+
+    recent_sources = list(balance.get("source_sequence") or [])[-4:]
+    if recent_sources and _norm(candidate.get("source")) == recent_sources[-1]:
+        utility -= 7
     if candidate.get("_pending_delivery"):
-        score += 8
+        utility += 6
+    return utility
 
-    subtype = str(review.get("subtype") or "")
-    recent_count = int(recent_subtypes.get(subtype, 0))
-    cap = SUBTYPE_CAPS.get(subtype)
-    if cap is not None:
-        if recent_count >= cap and int(review.get("seriousness") or 0) < 90:
-            score -= 36
-        else:
-            score -= recent_count * 8
 
-    return score
+def _apply_repetition_cap(
+    review: Dict[str, Any],
+    balance: Mapping[str, Any],
+) -> Dict[str, Any]:
+    event = str(review.get("event_type") or "")
+    cap = SUBTYPE_CAPS.get(event)
+    if cap is None or not review.get("approved"):
+        return review
+    recent = int((balance.get("subtype_counts") or {}).get(event, 0))
+    if recent >= cap and event not in URGENT_EVENTS:
+        review["approved"] = False
+        review["reason"] = "event_quota_exhausted"
+        review.setdefault("risks", []).append(f"event_cap:{event}:{recent}/{cap}")
+    return review
 
 
 def direct_candidates(
@@ -904,7 +583,6 @@ def direct_candidates(
     ] = None,
 ) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
     balance = balance_snapshot(state)
-    scheduled_group = scheduled_second_group(now)
     reviews: List[Dict[str, Any]] = []
 
     for index, candidate in enumerate(candidates):
@@ -914,13 +592,9 @@ def direct_candidates(
         reviews.append(review)
 
     ambiguous = [
-        review
-        for review in reviews
-        if not review.get("hard_reject")
-        and review.get("needs_ai_review")
-        and review.get("approved")
-    ][:10]
-
+        review for review in reviews
+        if review.get("approved") and review.get("needs_ai_review")
+    ][:8]
     ai_results: Mapping[str, Mapping[str, Any]] = {}
     if ambiguous and ai_reviewer is not None:
         try:
@@ -931,53 +605,37 @@ def direct_candidates(
     approved: List[Dict[str, Any]] = []
     rejected: List[Dict[str, Any]] = []
     by_url: Dict[str, Dict[str, Any]] = {}
-    recent_subtypes = balance.get("subtype_counts") or {}
 
     for review in reviews:
         review = _apply_ai_review(review, ai_results.get(review["id"]))
+        review = _apply_repetition_cap(review, balance)
         candidate = review.pop("_candidate")
         review["version"] = VERSION
-
-        subtype = str(review.get("subtype") or "")
-        subtype_cap = SUBTYPE_CAPS.get(subtype)
-        recent_subtype_count = int(recent_subtypes.get(subtype, 0))
-        urgent_subtypes = {"fatal_incident", "earthquake", "severe_weather", "war_security"}
-        if (
-            review.get("approved")
-            and subtype_cap is not None
-            and recent_subtype_count >= subtype_cap
-            and subtype not in urgent_subtypes
-        ):
-            review["approved"] = False
-            review["reason"] = "subtype_quota_exhausted"
-            review.setdefault("risks", []).append(
-                f"recent_subtype_cap:{subtype}:{recent_subtype_count}/{subtype_cap}"
-            )
-
         category_key = review.get("corrected_category")
+
         if review.get("approved") and category_key in category_map:
-            old = str(candidate.get("category_key") or "")
-            if old != category_key:
-                candidate["_news_director_reclass"] = (old, category_key)
+            old_category = str(candidate.get("category_key") or "")
+            old_title = policy.strip_source_suffix(candidate.get("title"))
+            new_title = str(review.get("title_corrected") or old_title)
+
+            if old_category != category_key:
+                candidate["_news_director_reclass"] = (old_category, category_key)
                 candidate["category_key"] = category_key
                 candidate["category"], candidate["footer"] = category_map[category_key]
                 candidate["_editorial_prechecked"] = False
-                if candidate.get("_pending_delivery"):
-                    # Stored copy was approved for another category; regenerate it.
-                    candidate["_pending_delivery"] = False
-                    candidate.pop("_pending_row", None)
                 if candidate.get("topic_cluster"):
-                    candidate["topic_cluster"] = (
-                        category_key + ":" + str(candidate["topic_cluster"]).split(":", 1)[-1]
-                    )
+                    candidate["topic_cluster"] = category_key + ":" + str(candidate["topic_cluster"]).split(":", 1)[-1]
 
-            review["priority_score"] = _quota_priority(
-                review,
-                balance,
-                scheduled_group,
-                recent_subtypes,
-                candidate,
-            )
+            if new_title and new_title != old_title:
+                candidate["title_original"] = old_title
+                candidate["title"] = new_title
+                candidate["title_hash"] = hashlib.sha1(policy.norm(new_title).encode("utf-8")).hexdigest()
+                candidate["_editorial_prechecked"] = False
+                review["title_changed"] = True
+            else:
+                candidate["title"] = old_title
+                review["title_changed"] = False
+
             candidate["_news_director"] = review
             approved.append(candidate)
         else:
@@ -987,72 +645,63 @@ def direct_candidates(
 
         by_url[str(candidate.get("url") or review["id"])] = dict(review)
 
-    approved.sort(
-        key=lambda item: (
-            -int((item.get("_news_director") or {}).get("priority_score") or 0),
-            -int((item.get("_news_director") or {}).get("seriousness") or 0),
-            str(item.get("published_at") or ""),
-        )
-    )
+    # Greedy two-slot optimizer: significance remains dominant, while the
+    # rolling 30/20/20/15/10/5 mix and source/topic diversity correct the feed.
+    selected: List[Dict[str, Any]] = []
+    remaining = list(approved)
+    while remaining and len(selected) < 2:
+        candidate_pool = remaining
+        if selected:
+            selected_sources = {
+                _norm(item.get("source")) for item in selected
+            }
+            source_diverse = [
+                item for item in remaining
+                if _norm(item.get("source")) not in selected_sources
+            ]
+            # A two-post release from the same publisher looks like a reposted
+            # feed rather than an edited channel. Use another publisher when
+            # any fully approved alternative exists; only relax this when the
+            # entire qualified pool comes from one source.
+            if source_diverse:
+                candidate_pool = source_diverse
 
-    local = [
-        item for item in approved
-        if (item.get("_news_director") or {}).get("group") == "local"
-    ]
-    nonlocal_items = [item for item in approved if item not in local]
-
-    slot_one = local[0] if local else (approved[0] if approved else None)
-
-    available_groups = {
-        str((item.get("_news_director") or {}).get("group"))
-        for item in nonlocal_items
-    }
-    desired_group = None
-    if scheduled_group in available_groups:
-        desired_group = scheduled_group
-    elif available_groups:
-        deficits = balance.get("deficits") or {}
-        desired_group = max(
-            available_groups,
-            key=lambda group: (
-                int(deficits.get(group, 0)),
-                TARGET_COUNTS.get(group, 0),
-            ),
-        )
-
-    slot_two = None
-    if desired_group:
-        same_subtype = (
-            (slot_one.get("_news_director") or {}).get("subtype")
-            if slot_one else None
-        )
-        group_candidates = [
-            item for item in nonlocal_items
-            if (item.get("_news_director") or {}).get("group") == desired_group
-        ]
-        slot_two = next(
+        scored = [
             (
-                item for item in group_candidates
-                if (item.get("_news_director") or {}).get("subtype") != same_subtype
-            ),
-            group_candidates[0] if group_candidates else None,
+                _utility(item, item.get("_news_director") or {}, balance, selected),
+                int((item.get("_news_director") or {}).get("seriousness") or 0),
+                item,
+            )
+            for item in candidate_pool
+        ]
+        scored.sort(key=lambda value: (value[0], value[1]), reverse=True)
+        chosen = scored[0][2]
+        review = chosen["_news_director"]
+        review["selection_utility"] = round(scored[0][0], 3)
+        review["slot"] = len(selected) + 1
+        selected.append(chosen)
+        remaining.remove(chosen)
+
+    # Backups are ordered by the same utility after the selected contract. The
+    # lower publisher can skip a failed item and still preserve the target mix.
+    backup_scored = [
+        (
+            _utility(item, item.get("_news_director") or {}, balance, selected),
+            int((item.get("_news_director") or {}).get("seriousness") or 0),
+            item,
         )
-
-    if slot_two is None:
-        slot_two = next((item for item in approved if item is not slot_one), None)
-
-    ordered: List[Dict[str, Any]] = []
-    for slot, item in ((1, slot_one), (2, slot_two)):
-        if item is not None and item not in ordered:
-            item["_news_director"]["slot"] = slot
-            ordered.append(item)
-
-    for item in approved:
-        if item not in ordered:
-            item["_news_director"]["slot"] = "backup"
-            ordered.append(item)
+        for item in remaining
+    ]
+    backup_scored.sort(key=lambda value: (value[0], value[1]), reverse=True)
+    ordered = selected + [item for _, _, item in backup_scored]
 
     for position, item in enumerate(ordered):
+        review = item["_news_director"]
+        if position >= len(selected):
+            review["slot"] = "backup"
+            review["selection_utility"] = round(
+                next(value[0] for value in backup_scored if value[2] is item), 3
+            )
         item["_news_director_order"] = position
 
     rejected_by_reason = Counter(
@@ -1060,31 +709,70 @@ def direct_candidates(
         for item in rejected
     )
 
+    projected_groups = [
+        str((item.get("_news_director") or {}).get("group") or "")
+        for item in selected
+    ]
+    after_error, after_counts, after_length = (
+        _projected_mix(balance, projected_groups[:-1], projected_groups[-1])
+        if projected_groups else (
+            float(balance.get("distribution_error") or 0),
+            dict(balance.get("counts") or {}),
+            int(balance.get("valid_posts_counted") or 0),
+        )
+    )
+
     report = {
         "version": VERSION,
+        "policy_version": policy.VERSION,
+        "mix_policy": "rolling_20_target_optimizer",
         "rolling_balance_before": balance,
-        "scheduled_second_group": scheduled_group,
         "candidate_count": len(candidates),
         "approved_count": len(approved),
         "rejected_count": len(rejected),
         "rejected_by_reason": dict(rejected_by_reason),
         "ai_review_requested": len(ambiguous),
         "ai_review_received": len(ai_results),
+        "selected_groups": projected_groups,
+        "projected_distribution_error": round(after_error, 3),
+        "projected_counts": after_counts,
+        "projected_length": after_length,
         "selected_preview": [
             {
                 "slot": (item.get("_news_director") or {}).get("slot"),
                 "title": _clean(item.get("title"))[:180],
                 "category_key": item.get("category_key"),
                 "group": (item.get("_news_director") or {}).get("group"),
-                "subtype": (item.get("_news_director") or {}).get("subtype"),
+                "event_type": (item.get("_news_director") or {}).get("event_type"),
                 "seriousness": (item.get("_news_director") or {}).get("seriousness"),
-                "priority_score": (item.get("_news_director") or {}).get("priority_score"),
+                "utility": (item.get("_news_director") or {}).get("selection_utility"),
             }
-            for item in ordered[:8]
+            for item in ordered[:10]
         ],
         "by_url": by_url,
     }
     return ordered, report
+
+
+def validate_final(candidate: Mapping[str, Any], row: Mapping[str, Any]) -> Dict[str, Any]:
+    contract = policy.final_contract(candidate, row)
+    review = review_candidate({
+        **dict(candidate),
+        "title": row.get("title_ru") or candidate.get("title"),
+        "source_text": " ".join(
+            _clean(value) for value in (row.get("body") or []) if _clean(value)
+        ) or candidate.get("source_text"),
+        "category_key": candidate.get("category_key"),
+    })
+    if review.get("corrected_category") != candidate.get("category_key"):
+        contract["issues"].append(
+            f"director_final_category:{review.get('corrected_category')}->{candidate.get('category_key')}"
+        )
+    if not review.get("approved"):
+        contract["issues"].append("director_final_reject:" + str(review.get("reason")))
+    contract["approved"] = not contract["issues"]
+    contract["director_review"] = compact_review(review)
+    return contract
 
 
 def compact_review(review: Mapping[str, Any]) -> Dict[str, Any]:
@@ -1095,12 +783,17 @@ def compact_review(review: Mapping[str, Any]) -> Dict[str, Any]:
         "original_category": review.get("original_category"),
         "corrected_category": review.get("corrected_category"),
         "group": review.get("group"),
-        "subtype": review.get("subtype"),
+        "event_type": review.get("event_type") or review.get("subtype"),
+        "subtype": review.get("event_type") or review.get("subtype"),
         "seriousness": int(review.get("seriousness") or 0),
         "threshold": int(review.get("threshold") or 0),
-        "priority_score": int(review.get("priority_score") or 0),
+        "selection_utility": review.get("selection_utility"),
         "slot": review.get("slot"),
-        "risks": [str(value)[:160] for value in (review.get("risks") or [])[:8]],
+        "risks": [str(value)[:180] for value in (review.get("risks") or [])[:10]],
+        "title_original": review.get("title_original"),
+        "title_corrected": review.get("title_corrected"),
+        "title_corrections": list(review.get("title_corrections") or [])[:8],
+        "title_changed": bool(review.get("title_changed")),
         "ai_review": review.get("ai_review"),
     }
 
