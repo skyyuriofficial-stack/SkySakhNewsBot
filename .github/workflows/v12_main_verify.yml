@@ -1,0 +1,81 @@
+name: Verify promoted stable v12.0 sources
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/v12_main_verify.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skysakhnews-v12-main-verify
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Require promoted v12 source marker
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          marker = Path("V12_SOURCE_READY.json")
+          assert marker.exists(), "V12 sources have not been promoted"
+          data = json.loads(marker.read_text(encoding="utf-8"))
+          assert data.get("version") == "stable-v12.0", data
+          assert data.get("source_tests_passed") is True, data
+          assert data.get("branch_live_dry_audit_passed") is True, data
+          PY
+
+      - name: Install and test promoted sources
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          python -m py_compile \
+            src/news_bot_v8.py src/news_bot_v9.py src/production.py \
+            src/editorial_gate.py src/category_reconciler.py \
+            src/editorial_gate_runner.py src/media_enforced_runner.py \
+            src/editorial_policy.py src/news_director.py \
+            src/publication_auditor.py src/publisher.py \
+            src/production_selftest.py
+          IMAGE_REQUIRED=1 \
+          AI_CALL_BUDGET=0 \
+          EDITORIAL_AUDIT_AI_BUDGET=0 \
+          NEWS_DIRECTOR_AI_BUDGET=0 \
+          POST_AUDIT_AUTOCORRECT=0 \
+          RUN_COOLDOWN_MINUTES=0 \
+          python src/production_selftest.py
+
+      - name: Record verified main source state
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          Path("V12_MAIN_VERIFIED.json").write_text(
+              json.dumps({
+                  "version": "stable-v12.0",
+                  "all_source_tests_passed": True,
+                  "verified_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+              }, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          PY
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+          git add V12_MAIN_VERIFIED.json
+          git commit -m "Record stable v12.0 main source verification"
+          git pull --rebase --autostash origin main
+          git push origin main
