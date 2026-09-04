@@ -1,0 +1,163 @@
+name: SkySakhNews v12 Live Release Verification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/v12_live_release_once.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skysakhnews-production-publisher
+  cancel-in-progress: false
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Compile and run complete v12 regression suite
+        env:
+          IMAGE_REQUIRED: "1"
+          AI_CALL_BUDGET: "4"
+          EDITORIAL_AUDIT_AI_BUDGET: "2"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+          OPENROUTER_MAX_ATTEMPTS: "3"
+          OPENROUTER_RETRY_BASE_SECONDS: "0"
+          POST_AUDIT_AUTOCORRECT: "0"
+          RUN_COOLDOWN_MINUTES: "0"
+          MEDIA_PENDING_MAX_HOURS: "36"
+          MEDIA_PENDING_MAX_ITEMS: "24"
+        run: |
+          python -m py_compile \
+            src/news_bot_v8.py \
+            src/news_bot_v9.py \
+            src/production.py \
+            src/editorial_gate.py \
+            src/editorial_policy.py \
+            src/category_reconciler.py \
+            src/editorial_gate_runner.py \
+            src/media_enforced_runner.py \
+            src/news_director.py \
+            src/publication_auditor.py \
+            src/publisher.py \
+            src/production_selftest.py
+          python src/production_selftest.py
+
+      - name: Publish one verified v12 release to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
+          IMAGE_REQUIRED: "1"
+          POSTS_PER_RUN: "2"
+          MAX_AGE_HOURS: "36"
+          AI_CALL_BUDGET: "4"
+          EDITORIAL_AUDIT_AI_BUDGET: "2"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+          OPENROUTER_MAX_ATTEMPTS: "3"
+          OPENROUTER_RETRY_BASE_SECONDS: "1.0"
+          POST_AUDIT_AUTOCORRECT: "1"
+          RUN_COOLDOWN_MINUTES: "0"
+          FORCE_RUN: "1"
+          MEDIA_PENDING_MAX_HOURS: "36"
+          MEDIA_PENDING_MAX_ITEMS: "24"
+          PYTHONUNBUFFERED: "1"
+        run: python src/publisher.py
+
+      - name: Verify actual Telegram release and write attestation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from urllib.parse import urlparse
+
+          state=json.loads(Path('state.json').read_text(encoding='utf-8'))
+          run=state.get('last_run') or {}
+          published=int(run.get('published') or 0)
+          posts=(state.get('last_posts') or [])[-published:] if published else []
+          checks={
+              'version': run.get('version')=='stable-v12.0',
+              'status': run.get('status')=='ok',
+              'published_two': published==2,
+              'local_stream': (run.get('local_stream') or {}).get('status') in {'healthy','degraded'},
+              'director_v2': (run.get('news_director') or {}).get('version')=='director-v2',
+              'policy_v2_1': (run.get('news_director') or {}).get('policy_version')=='policy-v2.1',
+              'exact_targets': (state.get('news_director_policy') or {}).get('targets')=={
+                  'local':6,'ru_pol':4,'ru_eco':4,'ru_safety':3,'world':2,'it':1,
+              },
+              'two_posts_stored': len(posts)==2,
+              'different_urls': len({p.get('url') for p in posts})==2,
+              'different_sources': len({p.get('source') for p in posts})==2,
+              'different_images': len({p.get('image_hash') for p in posts})==2,
+              'telegram_ids': all(p.get('telegram_message_id') is not None for p in posts),
+              'photos': all(p.get('with_image') and p.get('image_url') and p.get('image_hash') for p in posts),
+              'direct_urls': all('news.google.' not in urlparse(p.get('url') or '').netloc.lower() for p in posts),
+              'director_approved': all((p.get('news_director') or {}).get('approved') is True for p in posts),
+              'serious_events': all((p.get('news_director') or {}).get('event_type') not in {
+                  'traffic_enforcement','ordinary_weather','general'
+              } for p in posts),
+              'publication_contracts': all(
+                  (p.get('publication_contract') or {}).get('approved') is True
+                  and not (p.get('publication_contract') or {}).get('issues')
+                  for p in posts
+              ),
+              'editorial_gate': all(
+                  (p.get('editorial_gate') or {}).get('approved') is True
+                  and (p.get('editorial_gate') or {}).get('facts_supported') is True
+                  and (p.get('editorial_gate') or {}).get('meaning_changed') is False
+                  for p in posts
+              ),
+              'stored_final_material': all(p.get('published_row') and p.get('published_caption') for p in posts),
+              'telegram_fail_zero': int((run.get('stats') or {}).get('telegram_fail') or 0)==0,
+          }
+          attestation={
+              'version':'stable-v12.0',
+              'all_pass':all(checks.values()),
+              'checks':checks,
+              'published':published,
+              'posts':[{k:p.get(k) for k in (
+                  'time_sakhalin','source','category','category_key','title','url',
+                  'image_url','telegram_message_id','publisher_version',
+                  'news_director','publication_contract','editorial_gate'
+              )} for p in posts],
+              'run':run,
+          }
+          Path('v12_live_release_attestation.json').write_text(
+              json.dumps(attestation,ensure_ascii=False,indent=2)+'\n',encoding='utf-8'
+          )
+          print(json.dumps(attestation,ensure_ascii=False,indent=2))
+          if not attestation['all_pass']:
+              raise SystemExit(1)
+          PY
+
+      - name: Commit verified live state and attestation
+        if: always()
+        run: |
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+          git add state.json v12_live_release_attestation.json
+          if git diff --cached --quiet; then
+            echo "No state changes"
+          else
+            git commit -m "Record verified stable-v12.0 live release"
+            git pull --rebase --autostash origin main
+            git push origin main
+          fi
