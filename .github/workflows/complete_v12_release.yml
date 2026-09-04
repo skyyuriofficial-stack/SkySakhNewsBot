@@ -1,0 +1,164 @@
+name: SkySakhNews Stable v12.0 Completion Gate
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/complete_v12_release.yml"]
+  workflow_run:
+    workflows:
+      - "SkySakhNews Final Stable v12.0 Attestation"
+      - "SkySakhNews Idempotent Legacy Feed Cleanup v2"
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skysakhnews-v12-completion-gate
+  cancel-in-progress: false
+
+jobs:
+  complete:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Wait for independent attestation and cleanup records
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 20); do
+            git fetch origin main
+            git reset --hard origin/main
+            if [ -f FINAL_SYSTEM_STATUS.json ] && [ -f FEED_CLEANUP_REPORT_V2.json ]; then
+              echo "Required records found on attempt ${attempt}"
+              exit 0
+            fi
+            echo "Waiting for final records: attempt ${attempt}/20"
+            sleep 20
+          done
+          echo "Required final records were not created"
+          exit 1
+
+      - name: Install dependencies and re-run exact source tests
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          python -m py_compile \
+            src/news_bot_v8.py src/news_bot_v9.py src/production.py \
+            src/editorial_gate.py src/category_reconciler.py \
+            src/editorial_gate_runner.py src/media_enforced_runner.py \
+            src/editorial_policy.py src/news_director.py \
+            src/publication_auditor.py src/publisher.py \
+            src/production_selftest.py
+          IMAGE_REQUIRED=1 \
+          AI_CALL_BUDGET=0 \
+          EDITORIAL_AUDIT_AI_BUDGET=0 \
+          NEWS_DIRECTOR_AI_BUDGET=0 \
+          POST_AUDIT_AUTOCORRECT=0 \
+          RUN_COOLDOWN_MINUTES=0 \
+          python src/production_selftest.py
+
+      - name: Require all production, editorial, Telegram and cleanup gates
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          from urllib.parse import urlparse
+
+          def load(name):
+              return json.loads(Path(name).read_text(encoding="utf-8"))
+
+          final = load("FINAL_SYSTEM_STATUS.json")
+          cleanup = load("FEED_CLEANUP_REPORT_V2.json")
+          state = load("state.json")
+          main_verified = load("V12_MAIN_VERIFIED.json")
+
+          assert main_verified.get("version") == "stable-v12.0", main_verified
+          assert main_verified.get("all_source_tests_passed") is True, main_verified
+
+          assert final.get("version") == "stable-v12.0", final
+          assert final.get("attested") is True, final
+          assert final.get("source_tests_passed") is True, final
+          assert final.get("live_source_dry_audit_passed") is True, final
+          assert final.get("live_telegram_verified") is True, final
+          assert int(final.get("post_publication_unresolved") or 0) == 0, final
+
+          assert cleanup.get("version") == "legacy-feed-cleanup-v2", cleanup
+          assert int(cleanup.get("failed_count") or 0) == 0, cleanup
+
+          run = state.get("last_run") or {}
+          assert run.get("version") == "stable-v12.0", run
+          assert run.get("status") == "ok", run
+          assert int(run.get("published") or 0) == 2, run
+          assert (run.get("local_stream") or {}).get("status") in {"healthy", "degraded"}, run
+
+          expected_targets = {
+              "local": 6,
+              "politics": 4,
+              "economy": 4,
+              "safety": 3,
+              "world": 2,
+              "tech": 1,
+          }
+          director_report = run.get("news_director") or {}
+          targets = ((director_report.get("rolling_balance_after") or {}).get("targets") or {})
+          assert targets == expected_targets, targets
+
+          latest = (state.get("last_posts") or [])[-2:]
+          assert len(latest) == 2, latest
+          for post in latest:
+              assert post.get("publisher_version") == "stable-v12.0", post
+              assert post.get("telegram_message_id") is not None, post
+              assert post.get("with_image") is True, post
+              assert post.get("image_url") and post.get("image_hash"), post
+              assert str(post.get("publish_method") or "").startswith("sendPhoto/"), post
+              assert "news.google." not in urlparse(str(post.get("url") or "")).netloc.lower(), post
+              assert (post.get("editorial_gate") or {}).get("approved") is True, post
+              assert (post.get("news_director") or {}).get("approved") is True, post
+
+          status = {
+              "version": "stable-v12.0",
+              "system_complete": True,
+              "completed_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+              "source_regressions_passed": True,
+              "live_source_audit_passed": True,
+              "telegram_publication_verified": True,
+              "post_publication_audit_unresolved": 0,
+              "legacy_cleanup_failed": 0,
+              "scheduled_publisher": "SkySakhNews Auto Publisher Stable v12.0",
+              "topic_targets_20_posts": expected_targets,
+              "latest_verified_posts": [
+                  {
+                      "message_id": post.get("telegram_message_id"),
+                      "title": post.get("title"),
+                      "category_key": post.get("category_key"),
+                      "source": post.get("source"),
+                      "url": post.get("url"),
+                  }
+                  for post in latest
+              ],
+          }
+          Path("SYSTEM_COMPLETE_V12.json").write_text(
+              json.dumps(status, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          print(json.dumps(status, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Commit final completion certificate
+        run: |
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+          git add SYSTEM_COMPLETE_V12.json
+          git commit -m "Certify complete stable v12.0 editorial system"
+          git pull --rebase --autostash origin main
+          git push origin main
