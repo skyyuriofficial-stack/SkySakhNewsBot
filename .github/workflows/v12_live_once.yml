@@ -1,0 +1,138 @@
+name: SkySakhNews v12 One-Shot Live Verification
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/v12_live_once.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skysakhnews-production-publisher
+  cancel-in-progress: false
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Compile and regress
+        env:
+          IMAGE_REQUIRED: "1"
+          AI_CALL_BUDGET: "4"
+          EDITORIAL_AUDIT_AI_BUDGET: "2"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+          OPENROUTER_MAX_ATTEMPTS: "3"
+          OPENROUTER_RETRY_BASE_SECONDS: "0"
+        run: |
+          python -m py_compile \
+            src/news_bot_v8.py src/news_bot_v9.py src/production.py \
+            src/editorial_gate.py src/category_reconciler.py \
+            src/editorial_gate_runner.py src/media_enforced_runner.py \
+            src/news_director.py src/publisher.py src/quality_v12.py \
+            src/publisher_v12.py src/post_publish_audit_v12.py \
+            src/production_selftest_v12.py
+          python src/production_selftest_v12.py
+
+      - name: Publish strict v12 live
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
+          IMAGE_REQUIRED: "1"
+          POSTS_PER_RUN: "2"
+          MAX_AGE_HOURS: "36"
+          AI_CALL_BUDGET: "4"
+          EDITORIAL_AUDIT_AI_BUDGET: "2"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+          OPENROUTER_MAX_ATTEMPTS: "3"
+          OPENROUTER_RETRY_BASE_SECONDS: "1.0"
+          RUN_COOLDOWN_MINUTES: "0"
+          FORCE_RUN: "1"
+          MEDIA_PENDING_MAX_HOURS: "36"
+          MEDIA_PENDING_MAX_ITEMS: "24"
+          PYTHONUNBUFFERED: "1"
+        run: python src/publisher_v12.py
+
+      - name: Immediate watchdog
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        run: python src/post_publish_audit_v12.py
+
+      - name: Verify and create attestation
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from urllib.parse import urlparse
+
+          state=json.load(open('state.json',encoding='utf-8'))
+          run=state.get('last_run') or {}
+          assert run.get('version')=='stable-v12.0', run
+          assert run.get('status')=='ok', run
+          audit=run.get('post_publish_audit_v12') or {}
+          assert audit.get('all_pass') is True, audit
+          assert int(audit.get('failed') or 0)==0, audit
+          quality=run.get('quality_v12') or {}
+          assert quality.get('version')=='quality-v12.0', quality
+          targets=((quality.get('balance_after') or {}).get('targets') or {})
+          assert targets=={'local':6,'ru_pol':4,'ru_eco':4,'ru_safety':3,'world':2,'it':1}, targets
+          published=int(run.get('published') or 0)
+          assert 0 <= published <= 2, run
+          posts=(state.get('last_posts') or [])[-published:] if published else []
+          checked=[]
+          for post in posts:
+              q=post.get('quality_v12') or {}
+              assert q.get('approved') is True, post
+              assert q.get('prepublication_checked') is True, post
+              assert int(q.get('score') or 0) >= int(q.get('threshold') or 101), post
+              assert post.get('post_publish_status')=='audited_ok', post
+              assert post.get('with_image') is True, post
+              assert post.get('telegram_message_id') is not None, post
+              assert 'news.google.' not in urlparse(post.get('url') or '').netloc.lower(), post
+              checked.append({
+                  'title': post.get('title'), 'category_key': post.get('category_key'),
+                  'source': post.get('source'), 'score': q.get('score'),
+                  'threshold': q.get('threshold'),
+                  'telegram_message_id': post.get('telegram_message_id'),
+                  'post_publish_status': post.get('post_publish_status'),
+              })
+          attestation={
+              'version':'stable-v12.0',
+              'verified_at':datetime.now(timezone.utc).isoformat(timespec='seconds'),
+              'status':'verified', 'published':published,
+              'post_publish_all_pass':True, 'posts':checked,
+              'targets':targets,
+          }
+          json.dump(attestation,open('V12_LIVE_VERIFIED.json','w',encoding='utf-8'),ensure_ascii=False,indent=2)
+          PY
+
+      - name: Commit state and attestation
+        if: always()
+        run: |
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+          git add state.json V12_LIVE_VERIFIED.json
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Record verified strict stable v12 live run"
+            git pull --rebase --autostash origin main
+            git push origin main
+          fi
