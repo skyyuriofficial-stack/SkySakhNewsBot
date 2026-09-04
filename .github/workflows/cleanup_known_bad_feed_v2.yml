@@ -1,0 +1,229 @@
+name: SkySakhNews Idempotent Legacy Feed Cleanup v2
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/cleanup_known_bad_feed_v2.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skysakhnews-feed-cleanup
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Delete low-value posts and repair misclassified posts
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        run: |
+          python - <<'PY'
+          import html
+          import json
+          import os
+          import re
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          import requests
+
+          token = os.environ["TELEGRAM_BOT_TOKEN"].strip()
+          channel = os.environ["TELEGRAM_CHANNEL_ID"].strip()
+          state_path = Path("state.json")
+          state = json.loads(state_path.read_text(encoding="utf-8"))
+
+          delete_prefixes = (
+              "Не санаторий и не дача",
+              "В Южно-Сахалинске наградили волонтёров Победы",
+              "В этот день, 3 сентября, в 1945 году",
+              "Ветерана Вячеслава Гаврилова поздравили",
+              "Пять пьяных, 16 без прав",
+              "Трое пьяных, шесть без прав",
+              "Полиция на Сахалине ищет Александра Ледяева",
+          )
+
+          def telegram(method, **data):
+              response = requests.post(
+                  f"https://api.telegram.org/bot{token}/{method}",
+                  data=data,
+                  timeout=30,
+              )
+              try:
+                  payload = response.json()
+              except Exception:
+                  payload = {"ok": False, "description": response.text[:300]}
+              if payload.get("ok"):
+                  return "ok", payload
+              description = str(payload.get("description") or payload).lower()
+              if any(marker in description for marker in (
+                  "message to delete not found",
+                  "message to edit not found",
+                  "message is not modified",
+              )):
+                  return "already_absent_or_fixed", payload
+              return "failed", payload
+
+          def sentences(value):
+              text = re.sub(r"\s+", " ", str(value or "")).strip()
+              text = re.sub(r"Мы будем присылать.*$", "", text, flags=re.I)
+              result = []
+              for part in re.split(r"(?<=[.!?])\s+(?=[А-ЯЁ])", text):
+                  part = part.strip()
+                  if len(part) >= 45 and part not in result:
+                      result.append(part)
+              return result
+
+          actions = []
+          for post in state.get("last_posts") or []:
+              title = str(post.get("title") or "")
+              message_id = post.get("telegram_message_id")
+              if message_id is None:
+                  continue
+
+              if any(title.startswith(prefix) for prefix in delete_prefixes):
+                  status, payload = telegram(
+                      "deleteMessage",
+                      chat_id=channel,
+                      message_id=str(message_id),
+                  )
+                  actions.append({
+                      "message_id": message_id,
+                      "title": title,
+                      "action": "deleted" if status == "ok" else status,
+                      "telegram": payload if status == "failed" else None,
+                  })
+                  if status != "failed":
+                      post["legacy_cleanup"] = "deleted_or_already_absent"
+                  continue
+
+              if title.startswith("Предъявили обвинение: сахалинца"):
+                  fixed_title = (
+                      "Суд арестовал сахалинца, обвиняемого в убийстве "
+                      "и незаконном лишении свободы женщины"
+                  )
+                  body = sentences(post.get("source_text_excerpt"))[:2]
+                  if len(body) < 2:
+                      body = [
+                          "В Сахалинской области мужчине предъявили обвинение в убийстве и незаконном лишении свободы женщины.",
+                          "По данным следствия, пострадавшая получила ножевые ранения и позже скончалась в больнице; обвиняемого заключили под стражу.",
+                      ]
+                  caption = (
+                      "📍 Сахалин\n\n"
+                      f"<b>{html.escape(fixed_title)}</b>\n\n"
+                      f"{html.escape(body[0])}\n\n"
+                      f"{html.escape(body[1])}\n\n"
+                      "ЧП | САХАЛИН · <a href=\""
+                      + html.escape(str(post.get("url") or ""), quote=True)
+                      + "\">ASTV</a>"
+                  )
+                  status, payload = telegram(
+                      "editMessageCaption",
+                      chat_id=channel,
+                      message_id=str(message_id),
+                      caption=caption,
+                      parse_mode="HTML",
+                  )
+                  actions.append({
+                      "message_id": message_id,
+                      "title": title,
+                      "action": "edited" if status == "ok" else status,
+                      "new_title": fixed_title,
+                      "new_category_key": "sakh_chp",
+                      "telegram": payload if status == "failed" else None,
+                  })
+                  if status != "failed":
+                      post["title"] = fixed_title
+                      post["category"] = "📍 Сахалин"
+                      post["category_key"] = "sakh_chp"
+                      post["topic_cluster"] = "sakh_chp:violent_crime_custody"
+                      post["legacy_cleanup"] = "edited_or_already_fixed"
+                  continue
+
+              if title.startswith("Прогноз ВТБ: рынок сбережений") and post.get("category_key") == "sakh":
+                  body = sentences(post.get("source_text_excerpt"))[:2]
+                  if len(body) >= 2:
+                      caption = (
+                          "🇷🇺 Россия / экономика\n\n"
+                          f"<b>{html.escape(title)}</b>\n\n"
+                          f"{html.escape(body[0])}\n\n"
+                          f"{html.escape(body[1])}\n\n"
+                          "РОССИЯ | ЭКОНОМИКА · <a href=\""
+                          + html.escape(str(post.get("url") or ""), quote=True)
+                          + "\">SakhalinMedia.ru</a>"
+                      )
+                      status, payload = telegram(
+                          "editMessageCaption",
+                          chat_id=channel,
+                          message_id=str(message_id),
+                          caption=caption,
+                          parse_mode="HTML",
+                      )
+                      actions.append({
+                          "message_id": message_id,
+                          "title": title,
+                          "action": "edited" if status == "ok" else status,
+                          "new_category_key": "ru_eco",
+                          "telegram": payload if status == "failed" else None,
+                      })
+                      if status != "failed":
+                          post["category"] = "🇷🇺 Россия / экономика"
+                          post["category_key"] = "ru_eco"
+                          post["legacy_cleanup"] = "edited_or_already_fixed"
+
+          failures = [item for item in actions if item["action"] == "failed"]
+          report = {
+              "version": "legacy-feed-cleanup-v2",
+              "executed_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+              "actions": actions,
+              "deleted_or_absent": sum(
+                  1 for item in actions
+                  if item["action"] in {"deleted", "already_absent_or_fixed"}
+                  and not item.get("new_category_key")
+              ),
+              "edited_or_already_fixed": sum(
+                  1 for item in actions
+                  if item.get("new_category_key")
+                  and item["action"] in {"edited", "already_absent_or_fixed"}
+              ),
+              "failed_count": len(failures),
+          }
+          state["legacy_feed_cleanup_v2"] = report
+          state_path.write_text(
+              json.dumps(state, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          Path("FEED_CLEANUP_REPORT_V2.json").write_text(
+              json.dumps(report, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          print(json.dumps(report, ensure_ascii=False, indent=2))
+          assert not failures, failures
+          PY
+
+      - name: Commit idempotent cleanup record
+        if: always()
+        run: |
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+          git add state.json FEED_CLEANUP_REPORT_V2.json
+          if git diff --cached --quiet; then
+            echo "No cleanup changes"
+          else
+            git commit -m "Complete idempotent cleanup of bad legacy feed posts"
+            git pull --rebase --autostash origin main
+            git push origin main
+          fi
