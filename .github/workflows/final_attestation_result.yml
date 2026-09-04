@@ -1,0 +1,83 @@
+name: Record Final v12 Attestation Result
+
+on:
+  workflow_run:
+    workflows: ["SkySakhNews Final Stable v12.0 Attestation"]
+    types: [completed]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skysakhnews-final-attestation-result
+  cancel-in-progress: false
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Record immutable workflow outcome
+        env:
+          CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          CREATED_AT: ${{ github.event.workflow_run.created_at }}
+          UPDATED_AT: ${{ github.event.workflow_run.updated_at }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          conclusion = os.environ.get("CONCLUSION", "unknown")
+          status_path = Path("FINAL_SYSTEM_STATUS.json")
+          status_valid = False
+          status = None
+          if status_path.exists():
+              try:
+                  status = json.loads(status_path.read_text(encoding="utf-8"))
+                  status_valid = (
+                      status.get("version") == "stable-v12.0"
+                      and status.get("attested") is True
+                      and status.get("source_tests_passed") is True
+                      and status.get("live_source_dry_audit_passed") is True
+                      and status.get("live_telegram_verified") is True
+                      and int(status.get("post_publication_unresolved") or 0) == 0
+                  )
+              except Exception:
+                  status_valid = False
+
+          record = {
+              "version": "stable-v12.0",
+              "workflow_conclusion": conclusion,
+              "workflow_run_id": os.environ.get("RUN_ID"),
+              "workflow_run_url": os.environ.get("RUN_URL"),
+              "head_sha": os.environ.get("HEAD_SHA"),
+              "created_at": os.environ.get("CREATED_AT"),
+              "updated_at": os.environ.get("UPDATED_AT"),
+              "recorded_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+              "final_status_file_valid": status_valid,
+              "system_ready": conclusion == "success" and status_valid,
+              "final_status": status,
+          }
+          Path("FINAL_ATTESTATION_RESULT.json").write_text(
+              json.dumps(record, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          print(json.dumps(record, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Commit result marker
+        run: |
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+          git add FINAL_ATTESTATION_RESULT.json
+          git commit -m "Record final stable v12.0 attestation result"
+          git pull --rebase --autostash origin main
+          git push origin main
