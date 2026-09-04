@@ -213,7 +213,9 @@
     "https://sakh.online/news/18/2026-09-04/teplye-vyhodnye-i-dozhdlivaya-nedelya-prognoz-pogody-na-sahaline-i-kurilah-5-11-sentyabrya-524990",
     "https://sakhalinmedia.ru/news/2611184/",
     "https://sakhalinmedia.ru/news/2611281/",
-    "https://sakhalinmedia.ru/news/2611255/"
+    "https://sakhalinmedia.ru/news/2611255/",
+    "https://sakhalinmedia.ru/news/2611303/",
+    "https://sakhalinmedia.ru/news/2611323/"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -430,58 +432,12 @@
     "266159f7b5acc1fdf2a551d81f261b192e63ee7c",
     "7411c9d8089c6ca39fb6667ef8ce6705c9e58311",
     "4f8ab292f58f9f1be59346c49be313553bcd950d",
-    "32fa81ec0e534151b50bda8b2a3e56343fe8e4ff"
+    "32fa81ec0e534151b50bda8b2a3e56343fe8e4ff",
+    "b6c26795f2360a0d1a77833586396d0aca183a18",
+    "8533ca1a70637f674d8d9c3b4b10341f05fad555"
   ],
-  "last_run_sakhalin": "2026-09-05T02:13:00+11:00",
+  "last_run_sakhalin": "2026-09-05T09:12:21+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-08-25T22:31:13+11:00",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "title": "МЧС: Подтопленные дома в Томаринском районе освобождены от воды",
-      "url": "https://sakhalinmedia.ru/news/2599328/",
-      "image_url": "https://sakhalinmedia.ru/f/big/6341/6340799.png?818676cfd5edecddeff7c2ce4f9df283",
-      "image_hash": "b9b7dd13ab9294223c324f2c1519d72355039703",
-      "topic_cluster": "sakh_chp:подтопленные_томаринском_районе_освобождены_sakhalinmedia",
-      "published_at": "2026-08-25T06:34:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/stable-v9.5",
-      "grounded_evidence": true,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic",
-        "issues": []
-      }
-    },
-    {
-      "time_sakhalin": "2026-08-25T22:33:08+11:00",
-      "source": "Interfax",
-      "category": "🇷🇺 Россия / происшествия",
-      "category_key": "ru_incident",
-      "title": "Гражданин КНР погиб в результате пожара на Амурском газохимическом комплексе",
-      "url": "https://www.interfax.ru/russia/1111153",
-      "image_url": null,
-      "image_hash": null,
-      "topic_cluster": "ru_incident:гражданин_погиб_результате_пожара_амурском_газохимическом",
-      "published_at": "2026-08-25T10:27:00+00:00",
-      "with_image": false,
-      "publish_method": "sendMessage/no-safe-image",
-      "grounded_evidence": true,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic",
-        "issues": []
-      }
-    },
     {
       "time_sakhalin": "2026-08-26T07:32:32+11:00",
       "source": "SakhalinMedia.ru",
@@ -2282,7 +2238,7 @@
       "post_audit": {
         "version": "post-audit-v1",
         "approved": true,
-        "checked_at": "2026-09-04T15:09:43+00:00"
+        "checked_at": "2026-09-04T22:10:10+00:00"
       }
     },
     {
@@ -2319,7 +2275,7 @@
       "post_audit": {
         "version": "post-audit-v1",
         "approved": false,
-        "checked_at": "2026-09-04T15:09:43+00:00",
+        "checked_at": "2026-09-04T22:10:10+00:00",
         "reason": "calendar_or_archive",
         "issues": [
           "calendar_or_archive"
@@ -2360,7 +2316,7 @@
       "post_audit": {
         "version": "post-audit-v1",
         "approved": false,
-        "checked_at": "2026-09-04T15:09:43+00:00",
+        "checked_at": "2026-09-04T22:10:10+00:00",
         "reason": "importance_below_threshold",
         "issues": [
           "importance_below_threshold"
@@ -2399,7 +2355,7 @@
       "post_audit": {
         "version": "post-audit-v1",
         "approved": false,
-        "checked_at": "2026-09-04T15:09:43+00:00",
+        "checked_at": "2026-09-04T22:10:10+00:00",
         "reason": "ceremony_or_congratulation",
         "issues": [
           "ceremony_or_congratulation"
@@ -2458,7 +2414,7 @@
       "post_audit": {
         "version": "post-audit-v1",
         "approved": false,
-        "checked_at": "2026-09-04T15:09:43+00:00",
+        "checked_at": "2026-09-04T22:10:10+00:00",
         "reason": "no_supported_news_stream",
         "issues": [
           "no_supported_news_stream"
@@ -2519,7 +2475,7 @@
       "post_audit": {
         "version": "post-audit-v1",
         "approved": false,
-        "checked_at": "2026-09-04T15:09:43+00:00",
+        "checked_at": "2026-09-04T22:10:10+00:00",
         "reason": "approved",
         "issues": []
       }
@@ -2578,7 +2534,7 @@
       "post_audit": {
         "version": "post-audit-v1",
         "approved": false,
-        "checked_at": "2026-09-04T15:09:43+00:00",
+        "checked_at": "2026-09-04T22:10:10+00:00",
         "reason": "approved",
         "issues": []
       }
@@ -2635,7 +2591,7 @@
       "post_audit": {
         "version": "post-audit-v1",
         "approved": false,
-        "checked_at": "2026-09-04T15:09:43+00:00",
+        "checked_at": "2026-09-04T22:10:10+00:00",
         "reason": "importance_below_threshold",
         "issues": [
           "importance_below_threshold"
@@ -2696,7 +2652,7 @@
       "post_audit": {
         "version": "post-audit-v1",
         "approved": false,
-        "checked_at": "2026-09-04T15:09:43+00:00",
+        "checked_at": "2026-09-04T22:10:10+00:00",
         "reason": "approved",
         "issues": []
       }
@@ -2755,7 +2711,7 @@
       "post_audit": {
         "version": "post-audit-v1",
         "approved": false,
-        "checked_at": "2026-09-04T15:09:43+00:00",
+        "checked_at": "2026-09-04T22:10:10+00:00",
         "reason": "importance_below_threshold",
         "issues": [
           "importance_below_threshold"
@@ -2816,7 +2772,7 @@
       "post_audit": {
         "version": "post-audit-v1",
         "approved": false,
-        "checked_at": "2026-09-04T15:09:43+00:00",
+        "checked_at": "2026-09-04T22:10:10+00:00",
         "reason": "importance_below_threshold",
         "issues": [
           "importance_below_threshold"
@@ -2877,7 +2833,7 @@
       "post_audit": {
         "version": "post-audit-v1",
         "approved": false,
-        "checked_at": "2026-09-04T15:09:43+00:00",
+        "checked_at": "2026-09-04T22:10:11+00:00",
         "reason": "no_supported_news_stream",
         "issues": [
           "no_supported_news_stream"
@@ -2936,7 +2892,7 @@
       "post_audit": {
         "version": "post-audit-v1",
         "approved": true,
-        "checked_at": "2026-09-04T15:09:43+00:00"
+        "checked_at": "2026-09-04T22:10:11+00:00"
       }
     },
     {
@@ -2998,7 +2954,7 @@
       "post_audit": {
         "version": "post-audit-v1",
         "approved": false,
-        "checked_at": "2026-09-04T15:09:44+00:00",
+        "checked_at": "2026-09-04T22:10:11+00:00",
         "reason": "routine_traffic_statistics",
         "issues": [
           "routine_traffic_statistics"
@@ -3061,7 +3017,7 @@
       "post_audit": {
         "version": "post-audit-v1",
         "approved": false,
-        "checked_at": "2026-09-04T15:09:44+00:00",
+        "checked_at": "2026-09-04T22:10:11+00:00",
         "reason": "service_or_lost_and_found_notice",
         "issues": [
           "service_or_lost_and_found_notice"
@@ -3125,10 +3081,8 @@
       "deleted_reason": "violent_crime_wrong_category_and_malformed_title",
       "post_audit": {
         "version": "post-audit-v1",
-        "approved": false,
-        "checked_at": "2026-09-04T15:09:44+00:00",
-        "reason": "approved",
-        "issues": []
+        "approved": true,
+        "checked_at": "2026-09-04T22:10:11+00:00"
       },
       "legacy_cleanup": "edited_or_already_fixed"
     },
@@ -3186,7 +3140,7 @@
       "post_audit": {
         "version": "post-audit-v1",
         "approved": false,
-        "checked_at": "2026-09-04T15:09:44+00:00",
+        "checked_at": "2026-09-04T22:10:11+00:00",
         "reason": "ordinary_weather_not_release_worthy",
         "issues": [
           "ordinary_weather_not_release_worthy"
@@ -3247,7 +3201,7 @@
       "post_audit": {
         "version": "post-audit-v1",
         "approved": false,
-        "checked_at": "2026-09-04T15:09:44+00:00",
+        "checked_at": "2026-09-04T22:10:11+00:00",
         "reason": "approved",
         "issues": []
       }
@@ -3418,6 +3372,11 @@
         "issues": [],
         "reclassified_from": "sakh",
         "reclassified_to": "ru_eco"
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": true,
+        "checked_at": "2026-09-04T22:10:11+00:00"
       }
     },
     {
@@ -3569,6 +3528,351 @@
       },
       "publisher_version": "stable-v12.0",
       "telegram_message_id": 261,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh",
+        "reclassified_to": "ru_eco"
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": true,
+        "checked_at": "2026-09-04T22:10:11+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-09-05T09:12:04+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "title": "Сбер открывает клиентам доступ к цифровому рублю",
+      "url": "https://sakhalinmedia.ru/news/2611303/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6367/6366696.jpg?dadcb313c1c00548b9a6e66cd2158148",
+      "image_hash": "e5b675784ea38af02d5a48902e3906f8adf81871",
+      "topic_cluster": "ru_eco:открывает_клиентам_доступ_цифровому_рублю_sakhalinmedia",
+      "published_at": "2026-09-04T08:45:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "ru_eco",
+        "corrected_category": "ru_eco",
+        "group": "ru_eco",
+        "event_type": "macro_economy",
+        "subtype": "macro_economy",
+        "seriousness": 80,
+        "threshold": 74,
+        "selection_utility": 55.0,
+        "slot": "backup",
+        "risks": [],
+        "title_original": "Сбер открывает клиентам доступ к цифровому рублю",
+        "title_corrected": "Сбер открывает клиентам доступ к цифровому рублю",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Сбер подготовил сервисы для работы с цифровым рублём в соответствии со стандартами Банка России. Новая форма национальной валюты дополняет наличные и привычные безналичные деньги — клиент сам выбирает, какой формой денег ему удобнее пользоваться, сообщает пресс-служба Сбера. С 1 сентября они смогут открыть счёт цифрового рубля в СберБанк Онлайн, переводить цифровые рубли и оплачивать ими покупки и услуги Открыть счёт цифрового рубля можно в СберБанк Онлайн (6+) через кнопку \"Оформить карту или счёт\". В привычном интерфейсе клиент сможет пройти весь путь — от открытия счёта до перевода или оплаты. На первом этапе сервис будет доступен на устройствах с операционной системой Android с версией мобильного приложения не ниже 17.11. Позднее возможность пользоваться сервисом появится и на iOS. Цифровым рублём можно оплачивать покупки и услуги как в физических торговых точках, так и на сайтах онлайн-магазинов. Для приёма оплаты цифровым рублём партнёру необходимо иметь подключённый счёт цифрового рубля и обновить интеграцию со Сбером для работы с новым способом оплаты. Привычные способы расчётов сохраняются: банковские карты, переводы по номеру телефона, наличные и обычные безналичные платежи продолжат работать как прежде. Кроме того, за консультацией можно обратиться в контактный центр Сбера. Специалисты помогут разобраться в сервисе и ответят на вопросы по операциям. Счёт цифрового рубля ведётся на платформе Банка России, а Сбер обеспечивает клиентам доступ к сервису через СберБанк Онлайн. Работа с новой формой денег организована с соблюдением требований Банка России к защите информации, надёжности операций и противодействию мошенничеству.",
+      "title_original": null,
+      "footer": "РОССИЯ | ЭКОНОМИКА",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Сбер открывает клиентам доступ к цифровому рублю",
+        "body": [
+          "Сбер подготовил сервисы для работы с цифровым рублём в соответствии со стандартами Банка России.",
+          "Новая форма национальной валюты дополняет наличные и привычные безналичные деньги — клиент сам выбирает, какой формой денег ему удобнее пользоваться, сообщает пресс-служба Сбера."
+        ],
+        "footer": "РОССИЯ | ЭКОНОМИКА",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh",
+          "reclassified_to": "ru_eco"
+        },
+        "news_director": {
+          "version": "director-v2",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 80,
+          "threshold": 74,
+          "selection_utility": 55.0,
+          "slot": "backup",
+          "risks": [],
+          "title_original": "Сбер открывает клиентам доступ к цифровому рублю",
+          "title_corrected": "Сбер открывает клиентам доступ к цифровому рублю",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "ru_eco",
+          "final_category": "ru_eco",
+          "event_type": "macro_economy",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "issues": [],
+          "policy_version": "policy-v2.1",
+          "director_review": {
+            "version": "director-v2",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "ru_eco",
+            "corrected_category": "ru_eco",
+            "group": "ru_eco",
+            "event_type": "macro_economy",
+            "subtype": "macro_economy",
+            "seriousness": 82,
+            "threshold": 74,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Сбер открывает клиентам доступ к цифровому рублю",
+            "title_corrected": "Сбер открывает клиентам доступ к цифровому рублю",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "🇷🇺 Россия / экономика\n\n<b>Сбер открывает клиентам доступ к цифровому рублю</b>\n\nСбер подготовил сервисы для работы с цифровым рублём в соответствии со стандартами Банка России.\n\nНовая форма национальной валюты дополняет наличные и привычные безналичные деньги — клиент сам выбирает, какой формой денег ему удобнее пользоваться, сообщает пресс-служба Сбера.\n\nРОССИЯ | ЭКОНОМИКА · <a href=\"https://sakhalinmedia.ru/news/2611303/\">SakhalinMedia.ru</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_eco",
+        "final_category": "ru_eco",
+        "event_type": "macro_economy",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "issues": [],
+        "policy_version": "policy-v2.1",
+        "director_review": {
+          "version": "director-v2",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 82,
+          "threshold": 74,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Сбер открывает клиентам доступ к цифровому рублю",
+          "title_corrected": "Сбер открывает клиентам доступ к цифровому рублю",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.0",
+      "telegram_message_id": 262,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh",
+        "reclassified_to": "ru_eco"
+      }
+    },
+    {
+      "time_sakhalin": "2026-09-05T09:12:13+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "title": "Универсальный платёжный код появился на биометрических терминалах Сбера",
+      "url": "https://sakhalinmedia.ru/news/2611323/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6367/6366756.jpg?36bb9941e266cc38d54017ae2db12fdd",
+      "image_hash": "f3b77bd3b10463b3d4568c5f3e5a6b48361d1c11",
+      "topic_cluster": "ru_eco:универсальный_платёжный_появился_биометрических_терминалах_сбера",
+      "published_at": "2026-09-04T09:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "ru_eco",
+        "corrected_category": "ru_eco",
+        "group": "ru_eco",
+        "event_type": "macro_economy",
+        "subtype": "macro_economy",
+        "seriousness": 79,
+        "threshold": 74,
+        "selection_utility": 54.0,
+        "slot": "backup",
+        "risks": [],
+        "title_original": "Универсальный платёжный код появился на биометрических терминалах Сбера",
+        "title_corrected": "Универсальный платёжный код появился на биометрических терминалах Сбера",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Сбер обновил работу своих биометрических терминалов — уже более 1,5 млн терминалов поддерживают универсальный платежный код (УПК), а в торговых точках партнеров банка появилась возможность принимать к оплате цифровые рубли. В ближайшее время оплата по УПК также станет доступна на терминалах без поддержки биометрии, сообщает пресс-служба Сбера. УПК — это единый QR-код для безналичной оплаты, который заменяет отдельные QR-коды различных банков и платёжных сервисов на кассе. Его внедрение связано с новыми требованиями законодательства. Более 8 млн покупателей уже воспользовались бесконтактной оплатой по QR-коду через УПК на биометрических терминалах Сбера, что говорит о бесшовном переходе на новый платежный сценарий. Покупатель может отсканировать единый QR-код на биометрическом терминале Сбера и выбрать удобный для себя способ оплаты: SberPay, цифровой рубль, Систему быстрых платежей или платежные сервисы банков, уже подключившихся к Сберу. В ближайшие месяцы список платежных решений будет пополняться. При оплате через SberPay покупателям доступны бонусы \"Спасибо\" в рамках действующих условий программ лояльности, а при использовании платёжных сервисов других банков они получают предусмотренный ими кешбэк.",
+      "title_original": null,
+      "footer": "РОССИЯ | ЭКОНОМИКА",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Универсальный платёжный код появился на биометрических терминалах Сбера",
+        "body": [
+          "Сбер обновил работу своих биометрических терминалов — уже более 1,5 млн терминалов поддерживают универсальный платежный код (УПК), а в торговых точках партнеров банка появилась возможность принимать к оплате цифровые рубли.",
+          "В ближайшее время оплата по УПК также станет доступна на терминалах без поддержки биометрии, сообщает пресс-служба Сбера."
+        ],
+        "footer": "РОССИЯ | ЭКОНОМИКА",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh",
+          "reclassified_to": "ru_eco"
+        },
+        "news_director": {
+          "version": "director-v2",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 79,
+          "threshold": 74,
+          "selection_utility": 54.0,
+          "slot": "backup",
+          "risks": [],
+          "title_original": "Универсальный платёжный код появился на биометрических терминалах Сбера",
+          "title_corrected": "Универсальный платёжный код появился на биометрических терминалах Сбера",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "ru_eco",
+          "final_category": "ru_eco",
+          "event_type": "macro_economy",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "issues": [],
+          "policy_version": "policy-v2.1",
+          "director_review": {
+            "version": "director-v2",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "ru_eco",
+            "corrected_category": "ru_eco",
+            "group": "ru_eco",
+            "event_type": "macro_economy",
+            "subtype": "macro_economy",
+            "seriousness": 78,
+            "threshold": 74,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [
+              "near_threshold"
+            ],
+            "title_original": "Универсальный платёжный код появился на биометрических терминалах Сбера",
+            "title_corrected": "Универсальный платёжный код появился на биометрических терминалах Сбера",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "🇷🇺 Россия / экономика\n\n<b>Универсальный платёжный код появился на биометрических терминалах Сбера</b>\n\nСбер обновил работу своих биометрических терминалов — уже более 1,5 млн терминалов поддерживают универсальный платежный код (УПК), а в торговых точках партнеров банка появилась возможность принимать к оплате цифровые рубли.\n\nВ ближайшее время оплата по УПК также станет доступна на терминалах без поддержки биометрии, сообщает пресс-служба Сбера.\n\nРОССИЯ | ЭКОНОМИКА · <a href=\"https://sakhalinmedia.ru/news/2611323/\">SakhalinMedia.ru</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_eco",
+        "final_category": "ru_eco",
+        "event_type": "macro_economy",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "issues": [],
+        "policy_version": "policy-v2.1",
+        "director_review": {
+          "version": "director-v2",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 78,
+          "threshold": 74,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [
+            "near_threshold"
+          ],
+          "title_original": "Универсальный платёжный код появился на биометрических терминалах Сбера",
+          "title_corrected": "Универсальный платёжный код появился на биометрических терминалах Сбера",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.0",
+      "telegram_message_id": 263,
       "telegram_chat_id": -1003918486965,
       "media_required": true,
       "media_type": "photo",
@@ -3814,9 +4118,9 @@
   },
   "last_run": {
     "version": "stable-v12.0",
-    "started_sakhalin": "2026-09-05T02:09:39+11:00",
+    "started_sakhalin": "2026-09-05T09:10:07+11:00",
     "status": "ok",
-    "candidates": 8,
+    "candidates": 6,
     "published": 2,
     "local_candidates": 0,
     "local_stream": {
@@ -3827,7 +4131,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 10
+          "recent": 7
         },
         {
           "source": "SakhalinMedia",
@@ -3849,21 +4153,21 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-09-05T02:12:59+11:00",
+    "finished_sakhalin": "2026-09-05T09:12:21+11:00",
     "stats": {
-      "rss_seen": 160,
-      "old_skip": 61,
-      "google_skip": 9,
-      "duplicate_skip": 2,
-      "low_info_skip": 14,
-      "category_skip": 42,
+      "rss_seen": 144,
+      "old_skip": 53,
+      "google_skip": 6,
+      "duplicate_skip": 1,
+      "low_info_skip": 13,
+      "category_skip": 33,
       "no_image_skip": 0,
-      "bad_image_skip": 6,
-      "logo_image_skip": 94,
+      "bad_image_skip": 11,
+      "logo_image_skip": 84,
       "text_card_image_skip": 0,
-      "candidates": 22,
+      "candidates": 13,
       "rewrite_retry": 0,
-      "editorial_skip": 2,
+      "editorial_skip": 4,
       "telegram_fail": 0,
       "published": 2,
       "ai_calls": 0,
@@ -3873,8 +4177,8 @@
       "validation_reject": 0,
       "extractive_fallback": 2,
       "extractive_first": 2,
-      "editorial_prechecked": 42,
-      "editorial_gate_checked": 4,
+      "editorial_prechecked": 35,
+      "editorial_gate_checked": 6,
       "editorial_gate_pass": 2,
       "editorial_gate_reject": 0,
       "editorial_gate_fallback": 0,
@@ -3883,8 +4187,8 @@
       "editorial_title_reject": 0,
       "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 6,
-      "editorial_offtopic_reject": 18,
+      "editorial_reclassified": 4,
+      "editorial_offtopic_reject": 20,
       "openrouter_empty_content": 0,
       "openrouter_model_fallback": 0,
       "openrouter_attempts": 0,
@@ -3894,7 +4198,7 @@
       "openrouter_circuit_open": 0,
       "media_required_skip": 2,
       "media_generic_skip": 0,
-      "media_ready_candidates": 22,
+      "media_ready_candidates": 13,
       "photo_retry": 0,
       "photo_publish": 2,
       "photo_upload_original": 2,
@@ -3908,9 +4212,9 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 22,
-      "director_approved": 8,
-      "director_rejected": 14,
+      "director_seen": 13,
+      "director_approved": 6,
+      "director_rejected": 7,
       "director_reclassified": 0,
       "director_title_corrected": 0,
       "director_ai_calls": 0,
@@ -3921,7 +4225,7 @@
       "director_pending_retired": 0,
       "publication_contract_blocked": 0,
       "post_audit_checked": 20,
-      "post_audit_anomalies": 18,
+      "post_audit_anomalies": 15,
       "post_audit_corrected": 0,
       "post_audit_deleted": 0
     },
@@ -3930,260 +4234,6 @@
       "policy_version": "policy-v2.1",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
-        "window": 20,
-        "targets": {
-          "local": 6,
-          "ru_pol": 4,
-          "ru_eco": 4,
-          "ru_safety": 3,
-          "world": 2,
-          "it": 1
-        },
-        "target_percent": {
-          "local": 30.0,
-          "ru_pol": 20.0,
-          "ru_eco": 20.0,
-          "ru_safety": 15.0,
-          "world": 10.0,
-          "it": 5.0
-        },
-        "counts": {
-          "local": 5,
-          "ru_pol": 1,
-          "ru_eco": 2,
-          "ru_safety": 0,
-          "world": 0,
-          "it": 0
-        },
-        "scaled_targets": {
-          "local": 2.4,
-          "ru_pol": 1.6,
-          "ru_eco": 1.6,
-          "ru_safety": 1.2,
-          "world": 0.8,
-          "it": 0.4
-        },
-        "deficits": {
-          "local": -2.6,
-          "ru_pol": 0.6,
-          "ru_eco": -0.4,
-          "ru_safety": 1.2,
-          "world": 0.8,
-          "it": 0.4
-        },
-        "distribution_error": 6.0,
-        "subtype_counts": {
-          "corporate_forecast": 1,
-          "major_infrastructure": 1,
-          "political_statement": 1,
-          "macro_economy": 2,
-          "political_decision": 1,
-          "major_emergency": 1,
-          "violent_crime": 1
-        },
-        "sequence": [
-          "ru_eco",
-          "local",
-          "local",
-          "local",
-          "ru_pol",
-          "local",
-          "local",
-          "ru_eco"
-        ],
-        "category_sequence": [
-          "ru_eco",
-          "sakh",
-          "sakh",
-          "sakh",
-          "ru_pol",
-          "sakh_chp",
-          "sakh_chp",
-          "ru_eco"
-        ],
-        "source_sequence": [
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "astv",
-          "astv",
-          "sakhalinmedia.ru"
-        ],
-        "retrospective_anomalies": [
-          {
-            "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
-            "category_key": "geo",
-            "reason": "ceremony_or_congratulation",
-            "corrected_category": null
-          },
-          {
-            "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
-            "category_key": "geo",
-            "reason": "calendar_or_archive",
-            "corrected_category": null
-          },
-          {
-            "title": "В Углегорском районе обследовали более 60 км территории в поисках пропавших людей",
-            "category_key": "sakh",
-            "reason": "importance_below_threshold",
-            "corrected_category": "sakh"
-          },
-          {
-            "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
-            "category_key": "sakh",
-            "reason": "ceremony_or_congratulation",
-            "corrected_category": null
-          },
-          {
-            "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
-            "category_key": "world_ru",
-            "reason": "no_supported_news_stream",
-            "corrected_category": null
-          },
-          {
-            "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
-            "category_key": "sakh_chp",
-            "reason": "importance_below_threshold",
-            "corrected_category": "sakh"
-          },
-          {
-            "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
-            "category_key": "sakh_chp",
-            "reason": "importance_below_threshold",
-            "corrected_category": "sakh"
-          },
-          {
-            "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
-            "category_key": "ru_incident",
-            "reason": "importance_below_threshold",
-            "corrected_category": "ru_incident"
-          },
-          {
-            "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
-            "category_key": "ru_incident",
-            "reason": "no_supported_news_stream",
-            "corrected_category": null
-          },
-          {
-            "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
-            "category_key": "sakh",
-            "reason": "routine_traffic_statistics",
-            "corrected_category": "sakh"
-          },
-          {
-            "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
-            "category_key": "sakh_chp",
-            "reason": "service_or_lost_and_found_notice",
-            "corrected_category": null
-          },
-          {
-            "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
-            "category_key": "sakh",
-            "reason": "ordinary_weather_not_release_worthy",
-            "corrected_category": "sakh"
-          }
-        ],
-        "valid_posts_counted": 8
-      },
-      "candidate_count": 22,
-      "approved_count": 8,
-      "rejected_count": 14,
-      "rejected_by_reason": {
-        "importance_below_threshold": 13,
-        "ordinary_weather_not_release_worthy": 1
-      },
-      "ai_review_requested": 0,
-      "ai_review_received": 0,
-      "selected_groups": [
-        "world",
-        "it"
-      ],
-      "projected_distribution_error": 5.0,
-      "projected_counts": {
-        "ru_eco": 2,
-        "local": 5,
-        "ru_pol": 1,
-        "world": 1,
-        "it": 1
-      },
-      "projected_length": 10,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "How could US-Iran conflict end? Three experts give their views",
-          "category_key": "geo",
-          "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 87,
-          "utility": 101.4
-        },
-        {
-          "slot": 2,
-          "title": "Nvidia strikes $12.9bn deal to buy AI platform Hugging Face",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 88,
-          "utility": 91.6
-        },
-        {
-          "slot": "backup",
-          "title": "Сбер стремится задавать новую планку качества в развитии городской среды регионов",
-          "category_key": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "seriousness": 89,
-          "utility": 65.8
-        },
-        {
-          "slot": "backup",
-          "title": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
-          "category_key": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "seriousness": 85,
-          "utility": 61.8
-        },
-        {
-          "slot": "backup",
-          "title": "Сбер открывает клиентам доступ к цифровому рублю",
-          "category_key": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "seriousness": 80,
-          "utility": 56.8
-        },
-        {
-          "slot": "backup",
-          "title": "Универсальный платёжный код появился на биометрических терминалах Сбера",
-          "category_key": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "seriousness": 79,
-          "utility": 55.8
-        },
-        {
-          "slot": "backup",
-          "title": "Сбер открыл доступ к карте навыков и образовательным курсам по агентной разработке",
-          "category_key": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "seriousness": 77,
-          "utility": 53.8
-        },
-        {
-          "slot": "backup",
-          "title": "OpenAI hails ‘new era of artificial general intelligence’ with Astra model release",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 85,
-          "utility": 31.6
-        }
-      ],
-      "rolling_balance_after": {
         "window": 20,
         "targets": {
           "local": 6,
@@ -4336,34 +4386,242 @@
           }
         ],
         "valid_posts_counted": 9
+      },
+      "candidate_count": 13,
+      "approved_count": 6,
+      "rejected_count": 7,
+      "rejected_by_reason": {
+        "importance_below_threshold": 6,
+        "ordinary_weather_not_release_worthy": 1
+      },
+      "ai_review_requested": 0,
+      "ai_review_received": 0,
+      "selected_groups": [
+        "ru_safety",
+        "world"
+      ],
+      "projected_distribution_error": 5.0,
+      "projected_counts": {
+        "local": 5,
+        "ru_pol": 1,
+        "ru_eco": 3,
+        "ru_safety": 1,
+        "world": 1
+      },
+      "projected_length": 11,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "Энергоснабжение Херсонской области частично нарушено из-за атаки ВСУ",
+          "category_key": "ru_security",
+          "group": "ru_safety",
+          "event_type": "military_security",
+          "seriousness": 99,
+          "utility": 117.0
+        },
+        {
+          "slot": 2,
+          "title": "Russian drone hits Ukranian security headquarters, Zelensky says",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "military_security",
+          "seriousness": 98,
+          "utility": 116.0
+        },
+        {
+          "slot": "backup",
+          "title": "Nvidia strikes $12.9bn deal to buy AI platform Hugging Face",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 88,
+          "utility": 91.6
+        },
+        {
+          "slot": "backup",
+          "title": "OpenAI hails ‘new era of artificial general intelligence’ with Astra model release",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 85,
+          "utility": 88.6
+        },
+        {
+          "slot": "backup",
+          "title": "Сбер открывает клиентам доступ к цифровому рублю",
+          "category_key": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "seriousness": 80,
+          "utility": 55.0
+        },
+        {
+          "slot": "backup",
+          "title": "Универсальный платёжный код появился на биометрических терминалах Сбера",
+          "category_key": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "seriousness": 79,
+          "utility": 54.0
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 20,
+        "targets": {
+          "local": 6,
+          "ru_pol": 4,
+          "ru_eco": 4,
+          "ru_safety": 3,
+          "world": 2,
+          "it": 1
+        },
+        "target_percent": {
+          "local": 30.0,
+          "ru_pol": 20.0,
+          "ru_eco": 20.0,
+          "ru_safety": 15.0,
+          "world": 10.0,
+          "it": 5.0
+        },
+        "counts": {
+          "local": 4,
+          "ru_pol": 1,
+          "ru_eco": 5,
+          "ru_safety": 0,
+          "world": 0,
+          "it": 0
+        },
+        "scaled_targets": {
+          "local": 3.0,
+          "ru_pol": 2.0,
+          "ru_eco": 2.0,
+          "ru_safety": 1.5,
+          "world": 1.0,
+          "it": 0.5
+        },
+        "deficits": {
+          "local": -1.0,
+          "ru_pol": 1.0,
+          "ru_eco": -3.0,
+          "ru_safety": 1.5,
+          "world": 1.0,
+          "it": 0.5
+        },
+        "distribution_error": 8.0,
+        "subtype_counts": {
+          "political_statement": 1,
+          "macro_economy": 6,
+          "political_decision": 1,
+          "major_emergency": 1,
+          "violent_crime": 1
+        },
+        "sequence": [
+          "local",
+          "local",
+          "ru_pol",
+          "local",
+          "local",
+          "ru_eco",
+          "ru_eco",
+          "ru_eco",
+          "ru_eco",
+          "ru_eco"
+        ],
+        "category_sequence": [
+          "sakh",
+          "sakh",
+          "ru_pol",
+          "sakh_chp",
+          "sakh_chp",
+          "ru_eco",
+          "ru_eco",
+          "ru_eco",
+          "ru_eco",
+          "ru_eco"
+        ],
+        "source_sequence": [
+          "sakh.online",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "astv",
+          "astv",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru"
+        ],
+        "retrospective_anomalies": [
+          {
+            "title": "В Углегорском районе обследовали более 60 км территории в поисках пропавших людей",
+            "category_key": "sakh",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
+            "category_key": "sakh",
+            "reason": "ceremony_or_congratulation",
+            "corrected_category": null
+          },
+          {
+            "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
+            "category_key": "world_ru",
+            "reason": "no_supported_news_stream",
+            "corrected_category": null
+          },
+          {
+            "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
+            "category_key": "sakh_chp",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
+            "category_key": "sakh_chp",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
+            "category_key": "ru_incident",
+            "reason": "importance_below_threshold",
+            "corrected_category": "ru_incident"
+          },
+          {
+            "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
+            "category_key": "ru_incident",
+            "reason": "no_supported_news_stream",
+            "corrected_category": null
+          },
+          {
+            "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
+            "category_key": "sakh",
+            "reason": "routine_traffic_statistics",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
+            "category_key": "sakh_chp",
+            "reason": "service_or_lost_and_found_notice",
+            "corrected_category": null
+          },
+          {
+            "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
+            "category_key": "sakh",
+            "reason": "ordinary_weather_not_release_worthy",
+            "corrected_category": "sakh"
+          }
+        ],
+        "valid_posts_counted": 10
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1",
-      "checked_at": "2026-09-04T15:09:44+00:00",
+      "checked_at": "2026-09-04T22:10:11+00:00",
       "checked": 20,
-      "passed": 2,
+      "passed": 5,
       "anomalies": [
-        {
-          "title": "Прогноз ВТБ: рынок сбережений в 2026 году вырастет на 8%",
-          "url": "https://sakhalinmedia.ru/news/2608276/",
-          "publisher_version": null,
-          "category_key": "sakh",
-          "corrected_category": "ru_eco",
-          "reason": "approved",
-          "contract_issues": []
-        },
-        {
-          "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
-          "url": "https://sakh.online/news/18/2026-09-02/veterana-vyacheslava-gavrilova-pozdravili-s-dnem-pobedy-nad-militaristskoy-yaponiey-524665",
-          "publisher_version": null,
-          "category_key": "geo",
-          "corrected_category": null,
-          "reason": "ceremony_or_congratulation",
-          "contract_issues": [
-            "ceremony_or_congratulation"
-          ]
-        },
         {
           "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
           "url": "https://sakhalinmedia.ru/news/1155672/",
@@ -4502,15 +4760,6 @@
           ]
         },
         {
-          "title": "Предъявили обвинение: сахалинца, который ранил и удерживал в сожительницу, взяли под стражу",
-          "url": "https://astv.ru/news/criminal/2026-09-04-pred-yavili-obvinenie-i-vzyali-pod-strazhu-sahalinca-kotoryj-ranil-i-uderzhival-v-sozhitel-nicu",
-          "publisher_version": null,
-          "category_key": "sakh",
-          "corrected_category": "sakh_chp",
-          "reason": "approved",
-          "contract_issues": []
-        },
-        {
           "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
           "url": "https://sakh.online/news/18/2026-09-04/teplye-vyhodnye-i-dozhdlivaya-nedelya-prognoz-pogody-na-sahaline-i-kurilah-5-11-sentyabrya-524990",
           "publisher_version": null,
@@ -4546,7 +4795,7 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 22,
+      "ready_candidates": 13,
       "missing_media_rejected": 2,
       "generic_media_rejected": 0,
       "photo_retries": 0,
@@ -4560,12 +4809,12 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 42,
-      "checked": 4,
+      "prechecked": 35,
+      "checked": 6,
       "passed": 2,
       "rejected": 0,
-      "reclassified": 6,
-      "offtopic_reject": 18,
+      "reclassified": 4,
+      "offtopic_reject": 20,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
@@ -4614,34 +4863,33 @@
       "it": 5.0
     },
     "counts": {
-      "local": 5,
+      "local": 4,
       "ru_pol": 1,
-      "ru_eco": 3,
+      "ru_eco": 5,
       "ru_safety": 0,
       "world": 0,
       "it": 0
     },
     "scaled_targets": {
-      "local": 2.7,
-      "ru_pol": 1.8,
-      "ru_eco": 1.8,
-      "ru_safety": 1.35,
-      "world": 0.9,
-      "it": 0.45
+      "local": 3.0,
+      "ru_pol": 2.0,
+      "ru_eco": 2.0,
+      "ru_safety": 1.5,
+      "world": 1.0,
+      "it": 0.5
     },
     "deficits": {
-      "local": -2.3,
-      "ru_pol": 0.8,
-      "ru_eco": -1.2,
-      "ru_safety": 1.35,
-      "world": 0.9,
-      "it": 0.45
+      "local": -1.0,
+      "ru_pol": 1.0,
+      "ru_eco": -3.0,
+      "ru_safety": 1.5,
+      "world": 1.0,
+      "it": 0.5
     },
-    "distribution_error": 7.0,
+    "distribution_error": 8.0,
     "subtype_counts": {
-      "major_infrastructure": 1,
       "political_statement": 1,
-      "macro_economy": 4,
+      "macro_economy": 6,
       "political_decision": 1,
       "major_emergency": 1,
       "violent_crime": 1
@@ -4649,10 +4897,11 @@
     "sequence": [
       "local",
       "local",
-      "local",
       "ru_pol",
       "local",
       "local",
+      "ru_eco",
+      "ru_eco",
       "ru_eco",
       "ru_eco",
       "ru_eco"
@@ -4660,32 +4909,28 @@
     "category_sequence": [
       "sakh",
       "sakh",
-      "sakh",
       "ru_pol",
       "sakh_chp",
       "sakh_chp",
       "ru_eco",
       "ru_eco",
+      "ru_eco",
+      "ru_eco",
       "ru_eco"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakh.online",
       "sakh.online",
       "sakhalinmedia.ru",
       "astv",
       "astv",
+      "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [
-      {
-        "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
-        "category_key": "geo",
-        "reason": "calendar_or_archive",
-        "corrected_category": null
-      },
       {
         "title": "В Углегорском районе обследовали более 60 км территории в поисках пропавших людей",
         "category_key": "sakh",
@@ -4747,7 +4992,7 @@
         "corrected_category": "sakh"
       }
     ],
-    "valid_posts_counted": 9
+    "valid_posts_counted": 10
   },
   "expired_media_delivery": [
     {
@@ -4922,30 +5167,10 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1",
-    "checked_at": "2026-09-04T15:09:44+00:00",
+    "checked_at": "2026-09-04T22:10:11+00:00",
     "checked": 20,
-    "passed": 2,
+    "passed": 5,
     "anomalies": [
-      {
-        "title": "Прогноз ВТБ: рынок сбережений в 2026 году вырастет на 8%",
-        "url": "https://sakhalinmedia.ru/news/2608276/",
-        "publisher_version": null,
-        "category_key": "sakh",
-        "corrected_category": "ru_eco",
-        "reason": "approved",
-        "contract_issues": []
-      },
-      {
-        "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
-        "url": "https://sakh.online/news/18/2026-09-02/veterana-vyacheslava-gavrilova-pozdravili-s-dnem-pobedy-nad-militaristskoy-yaponiey-524665",
-        "publisher_version": null,
-        "category_key": "geo",
-        "corrected_category": null,
-        "reason": "ceremony_or_congratulation",
-        "contract_issues": [
-          "ceremony_or_congratulation"
-        ]
-      },
       {
         "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
         "url": "https://sakhalinmedia.ru/news/1155672/",
@@ -5082,15 +5307,6 @@
         "contract_issues": [
           "service_or_lost_and_found_notice"
         ]
-      },
-      {
-        "title": "Предъявили обвинение: сахалинца, который ранил и удерживал в сожительницу, взяли под стражу",
-        "url": "https://astv.ru/news/criminal/2026-09-04-pred-yavili-obvinenie-i-vzyali-pod-strazhu-sahalinca-kotoryj-ranil-i-uderzhival-v-sozhitel-nicu",
-        "publisher_version": null,
-        "category_key": "sakh",
-        "corrected_category": "sakh_chp",
-        "reason": "approved",
-        "contract_issues": []
       },
       {
         "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
