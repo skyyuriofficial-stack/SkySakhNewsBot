@@ -3003,7 +3003,8 @@
         "issues": [
           "routine_traffic_statistics"
         ]
-      }
+      },
+      "legacy_cleanup": "deleted_or_already_absent"
     },
     {
       "time_sakhalin": "2026-09-04T18:01:43+11:00",
@@ -3065,18 +3066,19 @@
         "issues": [
           "service_or_lost_and_found_notice"
         ]
-      }
+      },
+      "legacy_cleanup": "deleted_or_already_absent"
     },
     {
       "time_sakhalin": "2026-09-04T18:04:20+11:00",
       "source": "ASTV",
       "category": "📍 Сахалин",
-      "category_key": "sakh",
-      "title": "Предъявили обвинение: сахалинца, который ранил и удерживал в сожительницу, взяли под стражу",
+      "category_key": "sakh_chp",
+      "title": "Суд арестовал сахалинца, обвиняемого в убийстве и незаконном лишении свободы женщины",
       "url": "https://astv.ru/news/criminal/2026-09-04-pred-yavili-obvinenie-i-vzyali-pod-strazhu-sahalinca-kotoryj-ranil-i-uderzhival-v-sozhitel-nicu",
       "image_url": "https://astv.ru/content/NewsImage/4b/0e/4b0e7ba1-7208-4c5c-9039-4f7131f78efc_3.jpg",
       "image_hash": "4fe24d125c7b0c77f5c63fee88c2d4f3229ab15a",
-      "topic_cluster": "sakh:предъявили_обвинение_сахалинца_который_ранил_удерживал",
+      "topic_cluster": "sakh_chp:violent_crime_custody",
       "published_at": "2026-09-03T13:00:00+00:00",
       "with_image": true,
       "publish_method": "sendPhoto/upload_original_html",
@@ -3127,7 +3129,8 @@
         "checked_at": "2026-09-04T15:09:44+00:00",
         "reason": "approved",
         "issues": []
-      }
+      },
+      "legacy_cleanup": "edited_or_already_fixed"
     },
     {
       "time_sakhalin": "2026-09-04T23:36:51+11:00",
@@ -5115,5 +5118,32 @@
     "failed_actions": [],
     "mutations_enabled": true,
     "legacy_posts_mutated": false
+  },
+  "legacy_feed_cleanup_v3": {
+    "version": "legacy-feed-cleanup-v3",
+    "executed_at_utc": "2026-09-04T15:30:41+00:00",
+    "actions": [
+      {
+        "message_id": 255,
+        "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
+        "action": "already_absent_or_fixed",
+        "error": null
+      },
+      {
+        "message_id": 256,
+        "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
+        "action": "already_absent_or_fixed",
+        "error": null
+      },
+      {
+        "message_id": 257,
+        "title": "Предъявили обвинение: сахалинца, который ранил и удерживал в сожительницу, взяли под стражу",
+        "action": "already_absent_or_fixed",
+        "new_title": "Суд арестовал сахалинца, обвиняемого в убийстве и незаконном лишении свободы женщины",
+        "new_category_key": "sakh_chp",
+        "error": null
+      }
+    ],
+    "failed_count": 0
   }
 }
