@@ -211,7 +211,9 @@
     "https://sakhalinmedia.ru/news/2610302/",
     "https://astv.ru/news/society/2026-09-04-policiya-na-sahaline-ishet-aleksandra-ledyaeva-chtoby-vernut-emu-veshi-i-dokumenty",
     "https://sakh.online/news/18/2026-09-04/teplye-vyhodnye-i-dozhdlivaya-nedelya-prognoz-pogody-na-sahaline-i-kurilah-5-11-sentyabrya-524990",
-    "https://sakhalinmedia.ru/news/2611184/"
+    "https://sakhalinmedia.ru/news/2611184/",
+    "https://sakhalinmedia.ru/news/2611281/",
+    "https://sakhalinmedia.ru/news/2611255/"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -426,58 +428,12 @@
     "dd0776a99cbfec2d2e446a873a44d5a91fd462d1",
     "6413916bec0e516a0eb8a7ac313ae4d51e400e11",
     "266159f7b5acc1fdf2a551d81f261b192e63ee7c",
-    "7411c9d8089c6ca39fb6667ef8ce6705c9e58311"
+    "7411c9d8089c6ca39fb6667ef8ce6705c9e58311",
+    "4f8ab292f58f9f1be59346c49be313553bcd950d",
+    "32fa81ec0e534151b50bda8b2a3e56343fe8e4ff"
   ],
-  "last_run_sakhalin": "2026-09-04T23:37:57+11:00",
+  "last_run_sakhalin": "2026-09-05T02:13:00+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-08-25T21:56:04+11:00",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "title": "В Южно-Сахалинске помогут семье, у которой обрушился потолок в аварийном доме",
-      "url": "https://sakhalinmedia.ru/news/2599353/",
-      "image_url": "https://sakhalinmedia.ru/f/big/6341/6340824.jpg?744422afd94fcd4d4c8de346861d314f",
-      "image_hash": "cb69fb64771576d6a376098e40e424db254c7cea",
-      "topic_cluster": "sakh_chp:сахалинске_помогут_семье_которой_обрушился_потолок",
-      "published_at": "2026-08-25T06:17:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/stable-v9.5",
-      "grounded_evidence": true,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic",
-        "issues": []
-      }
-    },
-    {
-      "time_sakhalin": "2026-08-25T21:57:19+11:00",
-      "source": "BBC World",
-      "category": "🌍 Мир о России",
-      "category_key": "world_ru",
-      "title": "Фабрики беспилотников Великобритании могут подвергнуться атакам со стороны «неизвестных источников», заявил бывший российский министр",
-      "url": "https://www.bbc.co.uk/news/articles/cg598m3meeyo?at_medium=RSS&at_campaign=rss",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/d447/live/1dffaa20-a048-11f1-a291-b542ee92de7c.jpg",
-      "image_hash": "03f1585f171c697e14f579e508e40ee655104e99",
-      "topic_cluster": "world_ru:drone_factories_attacks_unknown_sources_former",
-      "published_at": "2026-08-25T04:06:34+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/stable-v9.5",
-      "grounded_evidence": true,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 95,
-        "category_matches_story": 95,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+independent_ai",
-        "issues": []
-      }
-    },
     {
       "time_sakhalin": "2026-08-25T22:31:13+11:00",
       "source": "SakhalinMedia.ru",
@@ -2244,6 +2200,13 @@
         "meaning_changed": false,
         "mode": "deterministic",
         "issues": []
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:43+00:00",
+        "reason": "approved",
+        "issues": []
       }
     },
     {
@@ -2276,6 +2239,15 @@
         "issues": [],
         "reclassified_from": "sakh",
         "reclassified_to": "geo"
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:43+00:00",
+        "reason": "ceremony_or_congratulation",
+        "issues": [
+          "ceremony_or_congratulation"
+        ]
       }
     },
     {
@@ -2306,6 +2278,11 @@
         "meaning_changed": false,
         "mode": "deterministic",
         "issues": []
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": true,
+        "checked_at": "2026-09-04T15:09:43+00:00"
       }
     },
     {
@@ -2338,6 +2315,15 @@
         "issues": [],
         "reclassified_from": "sakh_chp",
         "reclassified_to": "geo"
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:43+00:00",
+        "reason": "calendar_or_archive",
+        "issues": [
+          "calendar_or_archive"
+        ]
       }
     },
     {
@@ -2370,6 +2356,15 @@
         "issues": [],
         "reclassified_from": "sakh_chp",
         "reclassified_to": "sakh"
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:43+00:00",
+        "reason": "importance_below_threshold",
+        "issues": [
+          "importance_below_threshold"
+        ]
       }
     },
     {
@@ -2400,6 +2395,15 @@
         "meaning_changed": false,
         "mode": "deterministic",
         "issues": []
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:43+00:00",
+        "reason": "ceremony_or_congratulation",
+        "issues": [
+          "ceremony_or_congratulation"
+        ]
       }
     },
     {
@@ -2450,6 +2454,15 @@
         "meaning_changed": false,
         "mode": "deterministic+independent_ai",
         "issues": []
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:43+00:00",
+        "reason": "no_supported_news_stream",
+        "issues": [
+          "no_supported_news_stream"
+        ]
       }
     },
     {
@@ -2502,6 +2515,13 @@
         "issues": [],
         "reclassified_from": "sakh_chp",
         "reclassified_to": "ru_pol"
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:43+00:00",
+        "reason": "approved",
+        "issues": []
       }
     },
     {
@@ -2554,6 +2574,13 @@
         "issues": [],
         "reclassified_from": "sakh_chp",
         "reclassified_to": "ru_eco"
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:43+00:00",
+        "reason": "approved",
+        "issues": []
       }
     },
     {
@@ -2604,6 +2631,15 @@
         "meaning_changed": false,
         "mode": "deterministic",
         "issues": []
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:43+00:00",
+        "reason": "importance_below_threshold",
+        "issues": [
+          "importance_below_threshold"
+        ]
       }
     },
     {
@@ -2656,6 +2692,13 @@
         "issues": [],
         "reclassified_from": "sakh",
         "reclassified_to": "it"
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:43+00:00",
+        "reason": "approved",
+        "issues": []
       }
     },
     {
@@ -2708,6 +2751,15 @@
         "issues": [],
         "reclassified_from": "sakh",
         "reclassified_to": "sakh_chp"
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:43+00:00",
+        "reason": "importance_below_threshold",
+        "issues": [
+          "importance_below_threshold"
+        ]
       }
     },
     {
@@ -2760,6 +2812,15 @@
         "issues": [],
         "reclassified_from": "sakh_chp",
         "reclassified_to": "ru_incident"
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:43+00:00",
+        "reason": "importance_below_threshold",
+        "issues": [
+          "importance_below_threshold"
+        ]
       }
     },
     {
@@ -2812,6 +2873,15 @@
         "issues": [],
         "reclassified_from": "sakh",
         "reclassified_to": "ru_incident"
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:43+00:00",
+        "reason": "no_supported_news_stream",
+        "issues": [
+          "no_supported_news_stream"
+        ]
       }
     },
     {
@@ -2862,6 +2932,11 @@
         "meaning_changed": false,
         "mode": "deterministic+extractive",
         "issues": []
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": true,
+        "checked_at": "2026-09-04T15:09:43+00:00"
       }
     },
     {
@@ -2919,7 +2994,16 @@
       },
       "post_publish_status": "deleted",
       "deleted_at": "2026-09-04T10:06:46+00:00",
-      "deleted_reason": "routine_clickbait_traffic_statistics"
+      "deleted_reason": "routine_clickbait_traffic_statistics",
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:44+00:00",
+        "reason": "routine_traffic_statistics",
+        "issues": [
+          "routine_traffic_statistics"
+        ]
+      }
     },
     {
       "time_sakhalin": "2026-09-04T18:01:43+11:00",
@@ -2972,7 +3056,16 @@
       },
       "post_publish_status": "deleted",
       "deleted_at": "2026-09-04T10:06:46+00:00",
-      "deleted_reason": "service_notice_mislabeled_as_emergency"
+      "deleted_reason": "service_notice_mislabeled_as_emergency",
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:44+00:00",
+        "reason": "service_or_lost_and_found_notice",
+        "issues": [
+          "service_or_lost_and_found_notice"
+        ]
+      }
     },
     {
       "time_sakhalin": "2026-09-04T18:04:20+11:00",
@@ -3027,7 +3120,14 @@
       },
       "post_publish_status": "deleted",
       "deleted_at": "2026-09-04T10:06:46+00:00",
-      "deleted_reason": "violent_crime_wrong_category_and_malformed_title"
+      "deleted_reason": "violent_crime_wrong_category_and_malformed_title",
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:44+00:00",
+        "reason": "approved",
+        "issues": []
+      }
     },
     {
       "time_sakhalin": "2026-09-04T23:36:51+11:00",
@@ -3079,6 +3179,15 @@
         "issues": [],
         "reclassified_from": "sakh_chp",
         "reclassified_to": "sakh"
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:44+00:00",
+        "reason": "ordinary_weather_not_release_worthy",
+        "issues": [
+          "ordinary_weather_not_release_worthy"
+        ]
       }
     },
     {
@@ -3131,6 +3240,349 @@
         "issues": [],
         "reclassified_from": "sakh",
         "reclassified_to": "geo"
+      },
+      "post_audit": {
+        "version": "post-audit-v1",
+        "approved": false,
+        "checked_at": "2026-09-04T15:09:44+00:00",
+        "reason": "approved",
+        "issues": []
+      }
+    },
+    {
+      "time_sakhalin": "2026-09-05T02:12:42+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "title": "Сбер стремится задавать новую планку качества в развитии городской среды регионов",
+      "url": "https://sakhalinmedia.ru/news/2611281/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6367/6366681.jpg?489f28f5a5a5ac8e885e329361cbc7ae",
+      "image_hash": "1f6e92f173193ceef5583a1f2f09b2442d980a23",
+      "topic_cluster": "ru_eco:стремится_задавать_новую_планку_качества_развитии",
+      "published_at": "2026-09-04T08:30:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "ru_eco",
+        "corrected_category": "ru_eco",
+        "group": "ru_eco",
+        "event_type": "macro_economy",
+        "subtype": "macro_economy",
+        "seriousness": 89,
+        "threshold": 74,
+        "selection_utility": 65.8,
+        "slot": "backup",
+        "risks": [],
+        "title_original": "Сбер стремится задавать новую планку качества в развитии городской среды регионов",
+        "title_corrected": "Сбер стремится задавать новую планку качества в развитии городской среды регионов",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Старший вице-президент, директор департамента маркетинга и коммуникаций Сберба Владислав Крейнин, выступая на сессии Креатив как стратегия: экономика смыслов и международного влияния (16+), рассказал о той работе, которую ведёт Сбер по развитию городской среды российских регионов в целом и Дальнего Востока в частности, сообщает пресс-служба Сбера. О запуске новых общественных пространств в партнёрстве с региональными властями рассказал Владислав Крейнин, выступая на ВЭФ На минувшей неделе состоялись сразу два знаковых события: открылся уникальный ландшафтный парк на Култучном озере в Петропавловске— Камчатском и мультимедийный светомузыкальный фонтан, благоустроенная набережная и парк в Омске. Жители и гости этих городов были впечатлены новыми объектами и вдохновлены масштабом уникальных шоу, которыми Сбер сопровождал открытия общественных пространств. Так, в Омске в ходе торжественного открытия была показана предпремьера уникального балета \"Русские сказки\" (6+) под художественным руководством композитора Петра Дранги с участием примы-балерины Большого театра Светланы Захаровой. В Петропавловске-Камчатском со своими шоу-номерами выступили ученики Академии танца Бориса Эйфмана. Владислав Крейнин, старший вице-президент, директор департамента маркетинга и коммуникаций Сбербанка: \"Нам важно создавать точки притяжения, места силы, вокруг которых формируется уникальная среда для жителей, для их спортивных и творческих активностей, для проведения досуга с детьми, встреч с друзьями и близкими. Через внимание к деталям, большой фокус на архитектуре и ландшафтном дизайне, фокус на качестве спортивного инвентаря и оригинальности общественных зон нам удаётся создавать объекты мирового уровня, которые задают новую планку для города. Такой подход позволяет думать власти и бизнесу да",
+      "title_original": null,
+      "footer": "РОССИЯ | ЭКОНОМИКА",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Сбер стремится задавать новую планку качества в развитии городской среды регионов",
+        "body": [
+          "Старший вице-президент, директор департамента маркетинга и коммуникаций Сберба Владислав Крейнин, выступая на сессии Креатив как стратегия: экономика смыслов и международного влияния (16+), рассказал о той работе, которую ведёт Сбер по развитию городской среды российских регионов в целом и Дальнего Востока в частности, сообщает пресс-служба Сбера.",
+          "О запуске новых общественных пространств в партнёрстве с региональными властями рассказал Владислав Крейнин, выступая на ВЭФ На минувшей неделе состоялись сразу два знаковых события: открылся уникальный ландшафтный парк на Култучном озере в Петропавловске— Камчатском и мультимедийный светомузыкальный фонтан, благоустроенная набережная и парк в Омске."
+        ],
+        "footer": "РОССИЯ | ЭКОНОМИКА",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh",
+          "reclassified_to": "ru_eco"
+        },
+        "news_director": {
+          "version": "director-v2",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 89,
+          "threshold": 74,
+          "selection_utility": 65.8,
+          "slot": "backup",
+          "risks": [],
+          "title_original": "Сбер стремится задавать новую планку качества в развитии городской среды регионов",
+          "title_corrected": "Сбер стремится задавать новую планку качества в развитии городской среды регионов",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "ru_eco",
+          "final_category": "ru_eco",
+          "event_type": "macro_economy",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "issues": [],
+          "policy_version": "policy-v2.1",
+          "director_review": {
+            "version": "director-v2",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "ru_eco",
+            "corrected_category": "ru_eco",
+            "group": "ru_eco",
+            "event_type": "macro_economy",
+            "subtype": "macro_economy",
+            "seriousness": 88,
+            "threshold": 74,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Сбер стремится задавать новую планку качества в развитии городской среды регионов",
+            "title_corrected": "Сбер стремится задавать новую планку качества в развитии городской среды регионов",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "🇷🇺 Россия / экономика\n\n<b>Сбер стремится задавать новую планку качества в развитии городской среды регионов</b>\n\nСтарший вице-президент, директор департамента маркетинга и коммуникаций Сберба Владислав Крейнин, выступая на сессии Креатив как стратегия: экономика смыслов и международного влияния (16+), рассказал о той работе, которую ведёт Сбер по развитию городской среды российских регионов в целом и Дальнего Востока в частности, сообщает пресс-служба Сбера.\n\nО запуске новых общественных пространств в партнёрстве с региональными властями рассказал Владислав Крейнин, выступая на ВЭФ На минувшей неделе состоялись сразу два знаковых события: открылся уникальный ландшафтный парк на Култучном озере в Петропавловске— Камчатском и мультимедийный светомузыкальный фонтан, благоустроенная набережная и парк в Омске.\n\nРОССИЯ | ЭКОНОМИКА · <a href=\"https://sakhalinmedia.ru/news/2611281/\">SakhalinMedia.ru</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_eco",
+        "final_category": "ru_eco",
+        "event_type": "macro_economy",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "issues": [],
+        "policy_version": "policy-v2.1",
+        "director_review": {
+          "version": "director-v2",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 88,
+          "threshold": 74,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Сбер стремится задавать новую планку качества в развитии городской среды регионов",
+          "title_corrected": "Сбер стремится задавать новую планку качества в развитии городской среды регионов",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.0",
+      "telegram_message_id": 260,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh",
+        "reclassified_to": "ru_eco"
+      }
+    },
+    {
+      "time_sakhalin": "2026-09-05T02:12:51+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "title": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
+      "url": "https://sakhalinmedia.ru/news/2611255/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6367/6366620.jpg?16c9515d6251aa46fb646ad544fc4b97",
+      "image_hash": "3fd05c8bb315dbddabe153af8c768fdb559a434d",
+      "topic_cluster": "ru_eco:сбере_появилась_первая_россии_инвестиционная_копилка",
+      "published_at": "2026-09-04T08:15:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "ru_eco",
+        "corrected_category": "ru_eco",
+        "group": "ru_eco",
+        "event_type": "macro_economy",
+        "subtype": "macro_economy",
+        "seriousness": 85,
+        "threshold": 74,
+        "selection_utility": 61.8,
+        "slot": "backup",
+        "risks": [],
+        "title_original": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
+        "title_corrected": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "К новому учебному году СберИнвестиции запускают ИнвестКопилку для школьников. Теперь можно легко стартовать в инвестициях с 14 лет, а сервис поможет сделать этот процесс для молодых инвесторов простым и понятным за счет автоматических и регулярных отчислений. Это первый подобный продукт для подростков в возрасте от 14 лет, в основе которого находится инвестиционный инструмент, а не депозит, сообщает пресс-служба Сбера. ИнвестКопилка — счёт, на котором подросток сможет учиться инвестировать сам: ● Копилка открывается с лимитом пополнения 5 тысяч рублей в год, а увеличить его можно будет с согласования родителей. ● Пополнения от 100 рублей автоматически вкладываются в биржевой фонд с минимальным уровнем риска — \"Консервативный\" (тикер — SAFE). ● Открытие и обслуживание ИнвестКопилки бесплатные, брокерская комиссия за покупку паев фонда также отсутствует.",
+      "title_original": null,
+      "footer": "РОССИЯ | ЭКОНОМИКА",
+      "published_row": {
+        "reject": false,
+        "title_ru": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
+        "body": [
+          "К новому учебному году СберИнвестиции запускают ИнвестКопилку для школьников.",
+          "Теперь можно легко стартовать в инвестициях с 14 лет, а сервис поможет сделать этот процесс для молодых инвесторов простым и понятным за счет автоматических и регулярных отчислений."
+        ],
+        "footer": "РОССИЯ | ЭКОНОМИКА",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh",
+          "reclassified_to": "ru_eco"
+        },
+        "news_director": {
+          "version": "director-v2",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 85,
+          "threshold": 74,
+          "selection_utility": 61.8,
+          "slot": "backup",
+          "risks": [],
+          "title_original": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
+          "title_corrected": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "ru_eco",
+          "final_category": "ru_eco",
+          "event_type": "macro_economy",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "issues": [],
+          "policy_version": "policy-v2.1",
+          "director_review": {
+            "version": "director-v2",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "ru_eco",
+            "corrected_category": "ru_eco",
+            "group": "ru_eco",
+            "event_type": "macro_economy",
+            "subtype": "macro_economy",
+            "seriousness": 83,
+            "threshold": 74,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
+            "title_corrected": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "🇷🇺 Россия / экономика\n\n<b>В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет</b>\n\nК новому учебному году СберИнвестиции запускают ИнвестКопилку для школьников.\n\nТеперь можно легко стартовать в инвестициях с 14 лет, а сервис поможет сделать этот процесс для молодых инвесторов простым и понятным за счет автоматических и регулярных отчислений.\n\nРОССИЯ | ЭКОНОМИКА · <a href=\"https://sakhalinmedia.ru/news/2611255/\">SakhalinMedia.ru</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_eco",
+        "final_category": "ru_eco",
+        "event_type": "macro_economy",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "issues": [],
+        "policy_version": "policy-v2.1",
+        "director_review": {
+          "version": "director-v2",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 83,
+          "threshold": 74,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
+          "title_corrected": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.0",
+      "telegram_message_id": 261,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh",
+        "reclassified_to": "ru_eco"
       }
     }
   ],
@@ -3358,12 +3810,12 @@
     "items": []
   },
   "last_run": {
-    "version": "stable-v11.0",
-    "started_sakhalin": "2026-09-04T23:32:52+11:00",
+    "version": "stable-v12.0",
+    "started_sakhalin": "2026-09-05T02:09:39+11:00",
     "status": "ok",
-    "candidates": 17,
+    "candidates": 8,
     "published": 2,
-    "local_candidates": 9,
+    "local_candidates": 0,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -3372,7 +3824,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 11
+          "recent": 10
         },
         {
           "source": "SakhalinMedia",
@@ -3394,50 +3846,50 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-09-04T23:37:57+11:00",
+    "finished_sakhalin": "2026-09-05T02:12:59+11:00",
     "stats": {
-      "rss_seen": 144,
-      "old_skip": 60,
-      "google_skip": 10,
+      "rss_seen": 160,
+      "old_skip": 61,
+      "google_skip": 9,
       "duplicate_skip": 2,
-      "low_info_skip": 1,
-      "category_skip": 39,
+      "low_info_skip": 14,
+      "category_skip": 42,
       "no_image_skip": 0,
-      "bad_image_skip": 5,
-      "logo_image_skip": 112,
+      "bad_image_skip": 6,
+      "logo_image_skip": 94,
       "text_card_image_skip": 0,
       "candidates": 22,
-      "rewrite_retry": 2,
-      "editorial_skip": 1,
+      "rewrite_retry": 0,
+      "editorial_skip": 2,
       "telegram_fail": 0,
       "published": 2,
-      "ai_calls": 2,
-      "ai_budget_exhausted": 0,
-      "ai_api_fail": 1,
+      "ai_calls": 0,
+      "ai_budget_exhausted": 1,
+      "ai_api_fail": 0,
       "evidence_reject": 0,
-      "validation_reject": 1,
-      "extractive_fallback": 3,
-      "extractive_first": 3,
-      "editorial_prechecked": 45,
+      "validation_reject": 0,
+      "extractive_fallback": 2,
+      "extractive_first": 2,
+      "editorial_prechecked": 42,
       "editorial_gate_checked": 4,
-      "editorial_gate_pass": 3,
-      "editorial_gate_reject": 10,
+      "editorial_gate_pass": 2,
+      "editorial_gate_reject": 0,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 0,
       "editorial_gate_ai_fail": 0,
-      "editorial_title_reject": 8,
-      "editorial_category_reject": 10,
+      "editorial_title_reject": 0,
+      "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 13,
-      "editorial_offtopic_reject": 12,
-      "openrouter_empty_content": 3,
-      "openrouter_model_fallback": 1,
-      "openrouter_attempts": 5,
-      "openrouter_retries": 3,
-      "openrouter_invalid_json": 1,
-      "openrouter_success": 1,
-      "openrouter_circuit_open": 1,
-      "media_required_skip": 1,
+      "editorial_reclassified": 6,
+      "editorial_offtopic_reject": 18,
+      "openrouter_empty_content": 0,
+      "openrouter_model_fallback": 0,
+      "openrouter_attempts": 0,
+      "openrouter_retries": 0,
+      "openrouter_invalid_json": 0,
+      "openrouter_success": 0,
+      "openrouter_circuit_open": 0,
+      "media_required_skip": 2,
       "media_generic_skip": 0,
       "media_ready_candidates": 22,
       "photo_retry": 0,
@@ -3454,205 +3906,633 @@
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
       "director_seen": 22,
-      "director_approved": 17,
-      "director_rejected": 5,
-      "director_reclassified": 1,
+      "director_approved": 8,
+      "director_rejected": 14,
+      "director_reclassified": 0,
+      "director_title_corrected": 0,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
-      "director_final_reject": 1,
+      "director_final_checked": 2,
+      "director_final_autocorrected": 0,
+      "director_final_reject": 0,
       "director_pending_retired": 0,
-      "director_deterministic_fallback": 6
+      "publication_contract_blocked": 0,
+      "post_audit_checked": 20,
+      "post_audit_anomalies": 18,
+      "post_audit_corrected": 0,
+      "post_audit_deleted": 0
     },
     "news_director": {
-      "version": "director-v1",
+      "version": "director-v2",
+      "policy_version": "policy-v2.1",
+      "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
-        "window": 12,
+        "window": 20,
         "targets": {
           "local": 6,
-          "world_ru": 1,
-          "ru_safety": 1,
-          "ru_pol": 1,
-          "ru_eco": 1,
-          "geo": 1,
+          "ru_pol": 4,
+          "ru_eco": 4,
+          "ru_safety": 3,
+          "world": 2,
           "it": 1
+        },
+        "target_percent": {
+          "local": 30.0,
+          "ru_pol": 20.0,
+          "ru_eco": 20.0,
+          "ru_safety": 15.0,
+          "world": 10.0,
+          "it": 5.0
         },
         "counts": {
-          "local": 6,
-          "world_ru": 1,
-          "ru_safety": 2,
+          "local": 5,
           "ru_pol": 1,
-          "ru_eco": 1,
-          "geo": 0,
-          "it": 1
+          "ru_eco": 2,
+          "ru_safety": 0,
+          "world": 0,
+          "it": 0
+        },
+        "scaled_targets": {
+          "local": 2.4,
+          "ru_pol": 1.6,
+          "ru_eco": 1.6,
+          "ru_safety": 1.2,
+          "world": 0.8,
+          "it": 0.4
         },
         "deficits": {
-          "local": 0,
-          "world_ru": 0,
-          "ru_safety": 0,
-          "ru_pol": 0,
-          "ru_eco": 0,
-          "geo": 1,
-          "it": 0
+          "local": -2.6,
+          "ru_pol": 0.6,
+          "ru_eco": -0.4,
+          "ru_safety": 1.2,
+          "world": 0.8,
+          "it": 0.4
         },
-        "overages": {
-          "local": 0,
-          "world_ru": 0,
-          "ru_safety": 1,
-          "ru_pol": 0,
-          "ru_eco": 0,
-          "geo": 0,
-          "it": 0
-        },
+        "distribution_error": 6.0,
         "subtype_counts": {
-          "diplomacy": 1,
+          "corporate_forecast": 1,
+          "major_infrastructure": 1,
+          "political_statement": 1,
+          "macro_economy": 2,
           "political_decision": 1,
-          "economy_policy": 1,
-          "local_public_interest": 3,
-          "war_security": 1,
-          "local_infrastructure": 2,
-          "fraud": 1,
-          "fatal_incident": 1,
-          "traffic_enforcement": 1
+          "major_emergency": 1,
+          "violent_crime": 1
         },
-        "retrospective_anomalies": [],
-        "valid_posts_counted": 12
+        "sequence": [
+          "ru_eco",
+          "local",
+          "local",
+          "local",
+          "ru_pol",
+          "local",
+          "local",
+          "ru_eco"
+        ],
+        "category_sequence": [
+          "ru_eco",
+          "sakh",
+          "sakh",
+          "sakh",
+          "ru_pol",
+          "sakh_chp",
+          "sakh_chp",
+          "ru_eco"
+        ],
+        "source_sequence": [
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "astv",
+          "astv",
+          "sakhalinmedia.ru"
+        ],
+        "retrospective_anomalies": [
+          {
+            "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
+            "category_key": "geo",
+            "reason": "ceremony_or_congratulation",
+            "corrected_category": null
+          },
+          {
+            "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
+            "category_key": "geo",
+            "reason": "calendar_or_archive",
+            "corrected_category": null
+          },
+          {
+            "title": "В Углегорском районе обследовали более 60 км территории в поисках пропавших людей",
+            "category_key": "sakh",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
+            "category_key": "sakh",
+            "reason": "ceremony_or_congratulation",
+            "corrected_category": null
+          },
+          {
+            "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
+            "category_key": "world_ru",
+            "reason": "no_supported_news_stream",
+            "corrected_category": null
+          },
+          {
+            "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
+            "category_key": "sakh_chp",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
+            "category_key": "sakh_chp",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
+            "category_key": "ru_incident",
+            "reason": "importance_below_threshold",
+            "corrected_category": "ru_incident"
+          },
+          {
+            "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
+            "category_key": "ru_incident",
+            "reason": "no_supported_news_stream",
+            "corrected_category": null
+          },
+          {
+            "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
+            "category_key": "sakh",
+            "reason": "routine_traffic_statistics",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
+            "category_key": "sakh_chp",
+            "reason": "service_or_lost_and_found_notice",
+            "corrected_category": null
+          },
+          {
+            "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
+            "category_key": "sakh",
+            "reason": "ordinary_weather_not_release_worthy",
+            "corrected_category": "sakh"
+          }
+        ],
+        "valid_posts_counted": 8
       },
-      "scheduled_second_group": "it",
       "candidate_count": 22,
-      "approved_count": 17,
-      "rejected_count": 5,
+      "approved_count": 8,
+      "rejected_count": 14,
       "rejected_by_reason": {
-        "no_valid_news_stream": 2,
-        "subtype_quota_exhausted": 3
+        "importance_below_threshold": 13,
+        "ordinary_weather_not_release_worthy": 1
       },
-      "ai_review_requested": 6,
+      "ai_review_requested": 0,
       "ai_review_received": 0,
+      "selected_groups": [
+        "world",
+        "it"
+      ],
+      "projected_distribution_error": 5.0,
+      "projected_counts": {
+        "ru_eco": 2,
+        "local": 5,
+        "ru_pol": 1,
+        "world": 1,
+        "it": 1
+      },
+      "projected_length": 10,
       "selected_preview": [
         {
           "slot": 1,
-          "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
-          "category_key": "sakh",
-          "group": "local",
-          "subtype": "weather_forecast",
-          "seriousness": 75,
-          "priority_score": 87
+          "title": "How could US-Iran conflict end? Three experts give their views",
+          "category_key": "geo",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "seriousness": 87,
+          "utility": 101.4
         },
         {
           "slot": 2,
           "title": "Nvidia strikes $12.9bn deal to buy AI platform Hugging Face",
           "category_key": "it",
           "group": "it",
-          "subtype": "technology",
+          "event_type": "major_it",
+          "seriousness": 88,
+          "utility": 91.6
+        },
+        {
+          "slot": "backup",
+          "title": "Сбер стремится задавать новую планку качества в развитии городской среды регионов",
+          "category_key": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
           "seriousness": 89,
-          "priority_score": 107
+          "utility": 65.8
         },
         {
           "slot": "backup",
-          "title": "Инженеры будущего: как Россия и Китай объединяют вузы для технологического прорыва - SakhalinMedia.ru",
-          "category_key": "geo",
-          "group": "geo",
-          "subtype": "infrastructure_policy",
-          "seriousness": 100,
-          "priority_score": 122
+          "title": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
+          "category_key": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "seriousness": 85,
+          "utility": 61.8
         },
         {
           "slot": "backup",
-          "title": "Глава ВТБ: Китайских инвесторов стал интересовать российский хайтек и автопром - SakhalinMedia.ru",
-          "category_key": "geo",
-          "group": "geo",
-          "subtype": "diplomacy",
-          "seriousness": 100,
-          "priority_score": 122
+          "title": "Сбер открывает клиентам доступ к цифровому рублю",
+          "category_key": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "seriousness": 80,
+          "utility": 56.8
         },
         {
           "slot": "backup",
-          "title": "US investigating if missile hit Iran wedding, Vance says",
-          "category_key": "geo",
-          "group": "geo",
-          "subtype": "diplomacy",
-          "seriousness": 89,
-          "priority_score": 111
+          "title": "Универсальный платёжный код появился на биометрических терминалах Сбера",
+          "category_key": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "seriousness": 79,
+          "utility": 55.8
         },
         {
           "slot": "backup",
-          "title": "How could US-Iran conflict end? Three experts give their views",
-          "category_key": "geo",
-          "group": "geo",
-          "subtype": "diplomacy",
-          "seriousness": 89,
-          "priority_score": 111
+          "title": "Сбер открыл доступ к карте навыков и образовательным курсам по агентной разработке",
+          "category_key": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "seriousness": 77,
+          "utility": 53.8
         },
         {
           "slot": "backup",
           "title": "OpenAI hails ‘new era of artificial general intelligence’ with Astra model release",
           "category_key": "it",
           "group": "it",
-          "subtype": "technology",
-          "seriousness": 89,
-          "priority_score": 107
-        },
-        {
-          "slot": "backup",
-          "title": "Сбер открывает клиентам доступ к цифровому рублю - SakhalinMedia.ru",
-          "category_key": "ru_eco",
-          "group": "ru_eco",
-          "subtype": "economy_policy",
-          "seriousness": 94,
-          "priority_score": 94
+          "event_type": "major_it",
+          "seriousness": 85,
+          "utility": 31.6
         }
       ],
       "rolling_balance_after": {
-        "window": 12,
+        "window": 20,
         "targets": {
           "local": 6,
-          "world_ru": 1,
-          "ru_safety": 1,
-          "ru_pol": 1,
-          "ru_eco": 1,
-          "geo": 1,
+          "ru_pol": 4,
+          "ru_eco": 4,
+          "ru_safety": 3,
+          "world": 2,
           "it": 1
+        },
+        "target_percent": {
+          "local": 30.0,
+          "ru_pol": 20.0,
+          "ru_eco": 20.0,
+          "ru_safety": 15.0,
+          "world": 10.0,
+          "it": 5.0
         },
         "counts": {
-          "local": 7,
-          "world_ru": 0,
-          "ru_safety": 2,
-          "ru_pol": 0,
-          "ru_eco": 1,
-          "geo": 1,
-          "it": 1
+          "local": 5,
+          "ru_pol": 1,
+          "ru_eco": 3,
+          "ru_safety": 0,
+          "world": 0,
+          "it": 0
+        },
+        "scaled_targets": {
+          "local": 2.7,
+          "ru_pol": 1.8,
+          "ru_eco": 1.8,
+          "ru_safety": 1.35,
+          "world": 0.9,
+          "it": 0.45
         },
         "deficits": {
-          "local": 0,
-          "world_ru": 1,
-          "ru_safety": 0,
-          "ru_pol": 1,
-          "ru_eco": 0,
-          "geo": 0,
-          "it": 0
+          "local": -2.3,
+          "ru_pol": 0.8,
+          "ru_eco": -1.2,
+          "ru_safety": 1.35,
+          "world": 0.9,
+          "it": 0.45
         },
-        "overages": {
-          "local": 1,
-          "world_ru": 0,
-          "ru_safety": 1,
-          "ru_pol": 0,
-          "ru_eco": 0,
-          "geo": 0,
-          "it": 0
-        },
+        "distribution_error": 7.0,
         "subtype_counts": {
-          "economy_policy": 1,
-          "local_public_interest": 3,
-          "war_security": 1,
-          "local_infrastructure": 2,
-          "fraud": 1,
-          "fatal_incident": 1,
-          "traffic_enforcement": 1,
-          "weather_forecast": 1,
-          "diplomacy": 1
+          "major_infrastructure": 1,
+          "political_statement": 1,
+          "macro_economy": 4,
+          "political_decision": 1,
+          "major_emergency": 1,
+          "violent_crime": 1
         },
-        "retrospective_anomalies": [],
-        "valid_posts_counted": 12
+        "sequence": [
+          "local",
+          "local",
+          "local",
+          "ru_pol",
+          "local",
+          "local",
+          "ru_eco",
+          "ru_eco",
+          "ru_eco"
+        ],
+        "category_sequence": [
+          "sakh",
+          "sakh",
+          "sakh",
+          "ru_pol",
+          "sakh_chp",
+          "sakh_chp",
+          "ru_eco",
+          "ru_eco",
+          "ru_eco"
+        ],
+        "source_sequence": [
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "astv",
+          "astv",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru"
+        ],
+        "retrospective_anomalies": [
+          {
+            "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
+            "category_key": "geo",
+            "reason": "calendar_or_archive",
+            "corrected_category": null
+          },
+          {
+            "title": "В Углегорском районе обследовали более 60 км территории в поисках пропавших людей",
+            "category_key": "sakh",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
+            "category_key": "sakh",
+            "reason": "ceremony_or_congratulation",
+            "corrected_category": null
+          },
+          {
+            "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
+            "category_key": "world_ru",
+            "reason": "no_supported_news_stream",
+            "corrected_category": null
+          },
+          {
+            "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
+            "category_key": "sakh_chp",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
+            "category_key": "sakh_chp",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
+            "category_key": "ru_incident",
+            "reason": "importance_below_threshold",
+            "corrected_category": "ru_incident"
+          },
+          {
+            "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
+            "category_key": "ru_incident",
+            "reason": "no_supported_news_stream",
+            "corrected_category": null
+          },
+          {
+            "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
+            "category_key": "sakh",
+            "reason": "routine_traffic_statistics",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
+            "category_key": "sakh_chp",
+            "reason": "service_or_lost_and_found_notice",
+            "corrected_category": null
+          },
+          {
+            "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
+            "category_key": "sakh",
+            "reason": "ordinary_weather_not_release_worthy",
+            "corrected_category": "sakh"
+          }
+        ],
+        "valid_posts_counted": 9
       }
+    },
+    "post_publication_audit": {
+      "version": "post-audit-v1",
+      "checked_at": "2026-09-04T15:09:44+00:00",
+      "checked": 20,
+      "passed": 2,
+      "anomalies": [
+        {
+          "title": "Прогноз ВТБ: рынок сбережений в 2026 году вырастет на 8%",
+          "url": "https://sakhalinmedia.ru/news/2608276/",
+          "publisher_version": null,
+          "category_key": "sakh",
+          "corrected_category": "ru_eco",
+          "reason": "approved",
+          "contract_issues": []
+        },
+        {
+          "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
+          "url": "https://sakh.online/news/18/2026-09-02/veterana-vyacheslava-gavrilova-pozdravili-s-dnem-pobedy-nad-militaristskoy-yaponiey-524665",
+          "publisher_version": null,
+          "category_key": "geo",
+          "corrected_category": null,
+          "reason": "ceremony_or_congratulation",
+          "contract_issues": [
+            "ceremony_or_congratulation"
+          ]
+        },
+        {
+          "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
+          "url": "https://sakhalinmedia.ru/news/1155672/",
+          "publisher_version": null,
+          "category_key": "geo",
+          "corrected_category": null,
+          "reason": "calendar_or_archive",
+          "contract_issues": [
+            "calendar_or_archive"
+          ]
+        },
+        {
+          "title": "В Углегорском районе обследовали более 60 км территории в поисках пропавших людей",
+          "url": "https://sakhalinmedia.ru/news/2608922/",
+          "publisher_version": null,
+          "category_key": "sakh",
+          "corrected_category": "sakh",
+          "reason": "importance_below_threshold",
+          "contract_issues": [
+            "importance_below_threshold"
+          ]
+        },
+        {
+          "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
+          "url": "https://sakhalinmedia.ru/news/2608836/",
+          "publisher_version": null,
+          "category_key": "sakh",
+          "corrected_category": null,
+          "reason": "ceremony_or_congratulation",
+          "contract_issues": [
+            "ceremony_or_congratulation"
+          ]
+        },
+        {
+          "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
+          "url": "https://www.bbc.co.uk/news/articles/c62j50n131mo?at_medium=RSS&at_campaign=rss",
+          "publisher_version": null,
+          "category_key": "world_ru",
+          "corrected_category": null,
+          "reason": "no_supported_news_stream",
+          "contract_issues": [
+            "no_supported_news_stream"
+          ]
+        },
+        {
+          "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
+          "url": "https://sakh.online/news/18/2026-09-03/vladimir-putin-vystupil-na-plenarnom-zasedanii-vef-2026-vo-vladivostoke-524854",
+          "publisher_version": null,
+          "category_key": "ru_pol",
+          "corrected_category": "sakh",
+          "reason": "approved",
+          "contract_issues": []
+        },
+        {
+          "title": "Путин: за 11 лет в развитие Дальнего Востока привлекли 25 трлн рублей",
+          "url": "https://sakh.online/news/18/2026-09-03/putin-za-11-let-v-razvitie-dalnego-vostoka-privlekli-25-trln-rubley-524857",
+          "publisher_version": null,
+          "category_key": "ru_eco",
+          "corrected_category": "sakh",
+          "reason": "approved",
+          "contract_issues": []
+        },
+        {
+          "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
+          "url": "https://astv.ru/news/criminal/2026-09-03-zhitel-poronajska-pereprodal-chuzhoj-velosiped-za-1-500-rublej-i-popal-pod-ugolovnuyu-stat-yu",
+          "publisher_version": null,
+          "category_key": "sakh_chp",
+          "corrected_category": "sakh",
+          "reason": "importance_below_threshold",
+          "contract_issues": [
+            "importance_below_threshold"
+          ]
+        },
+        {
+          "title": "Путин: Особый правовой режим запустят на Дальнем Востоке для обкатки технологий с 1 января",
+          "url": "https://sakhalinmedia.ru/news/2609589/",
+          "publisher_version": null,
+          "category_key": "it",
+          "corrected_category": "ru_pol",
+          "reason": "approved",
+          "contract_issues": []
+        },
+        {
+          "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
+          "url": "https://sakhalinmedia.ru/news/2609528/",
+          "publisher_version": null,
+          "category_key": "sakh_chp",
+          "corrected_category": "sakh",
+          "reason": "importance_below_threshold",
+          "contract_issues": [
+            "importance_below_threshold"
+          ]
+        },
+        {
+          "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
+          "url": "https://astv.ru/news/society/2026-09-03-moshenniki-nachali-poddelyvat-golosa-uchitelej-dlya-obmana-roditelej",
+          "publisher_version": null,
+          "category_key": "ru_incident",
+          "corrected_category": "ru_incident",
+          "reason": "importance_below_threshold",
+          "contract_issues": [
+            "importance_below_threshold"
+          ]
+        },
+        {
+          "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
+          "url": "https://astv.ru/news/society/2026-09-03-vladel-cy-koshek-pozhalovalis-na-smert-pitomcev-posle-vakciny-mul-tifel",
+          "publisher_version": null,
+          "category_key": "ru_incident",
+          "corrected_category": null,
+          "reason": "no_supported_news_stream",
+          "contract_issues": [
+            "no_supported_news_stream"
+          ]
+        },
+        {
+          "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
+          "url": "https://sakhalinmedia.ru/news/2610302/",
+          "publisher_version": null,
+          "category_key": "sakh",
+          "corrected_category": "sakh",
+          "reason": "routine_traffic_statistics",
+          "contract_issues": [
+            "routine_traffic_statistics"
+          ]
+        },
+        {
+          "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
+          "url": "https://astv.ru/news/society/2026-09-04-policiya-na-sahaline-ishet-aleksandra-ledyaeva-chtoby-vernut-emu-veshi-i-dokumenty",
+          "publisher_version": null,
+          "category_key": "sakh_chp",
+          "corrected_category": null,
+          "reason": "service_or_lost_and_found_notice",
+          "contract_issues": [
+            "service_or_lost_and_found_notice"
+          ]
+        },
+        {
+          "title": "Предъявили обвинение: сахалинца, который ранил и удерживал в сожительницу, взяли под стражу",
+          "url": "https://astv.ru/news/criminal/2026-09-04-pred-yavili-obvinenie-i-vzyali-pod-strazhu-sahalinca-kotoryj-ranil-i-uderzhival-v-sozhitel-nicu",
+          "publisher_version": null,
+          "category_key": "sakh",
+          "corrected_category": "sakh_chp",
+          "reason": "approved",
+          "contract_issues": []
+        },
+        {
+          "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
+          "url": "https://sakh.online/news/18/2026-09-04/teplye-vyhodnye-i-dozhdlivaya-nedelya-prognoz-pogody-na-sahaline-i-kurilah-5-11-sentyabrya-524990",
+          "publisher_version": null,
+          "category_key": "sakh",
+          "corrected_category": "sakh",
+          "reason": "ordinary_weather_not_release_worthy",
+          "contract_issues": [
+            "ordinary_weather_not_release_worthy"
+          ]
+        },
+        {
+          "title": "Глава ВТБ: Китайских инвесторов стал интересовать российский хайтек и автопром",
+          "url": "https://sakhalinmedia.ru/news/2611184/",
+          "publisher_version": null,
+          "category_key": "geo",
+          "corrected_category": "ru_eco",
+          "reason": "approved",
+          "contract_issues": []
+        }
+      ],
+      "corrected": [],
+      "deleted": [],
+      "failed_actions": [],
+      "mutations_enabled": true,
+      "legacy_posts_mutated": false
     },
     "media_policy": {
       "required": true,
@@ -3664,7 +4544,7 @@
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
       "ready_candidates": 22,
-      "missing_media_rejected": 1,
+      "missing_media_rejected": 2,
       "generic_media_rejected": 0,
       "photo_retries": 0,
       "photo_published": 2,
@@ -3677,91 +4557,194 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 45,
+      "prechecked": 42,
       "checked": 4,
-      "passed": 3,
-      "rejected": 10,
-      "reclassified": 13,
-      "offtopic_reject": 12,
+      "passed": 2,
+      "rejected": 0,
+      "reclassified": 6,
+      "offtopic_reject": 18,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
-      "audited_urls": 13
+      "audited_urls": 2
     }
   },
   "pending_media_delivery": [],
   "news_director_policy": {
-    "version": "director-v1",
-    "rolling_window": 12,
+    "version": "director-v2",
+    "policy_version": "policy-v2.1",
+    "rolling_window": 20,
     "targets": {
       "local": 6,
-      "world_ru": 1,
-      "ru_safety": 1,
-      "ru_pol": 1,
-      "ru_eco": 1,
-      "geo": 1,
+      "ru_pol": 4,
+      "ru_eco": 4,
+      "ru_safety": 3,
+      "world": 2,
       "it": 1
     },
-    "second_slot_by_hour": {
-      "7": "world_ru",
-      "10": "ru_safety",
-      "13": "ru_pol",
-      "16": "ru_eco",
-      "19": "geo",
-      "22": "it"
-    }
+    "target_percent": {
+      "local": 30.0,
+      "ru_pol": 20.0,
+      "ru_eco": 20.0,
+      "ru_safety": 15.0,
+      "world": 10.0,
+      "it": 5.0
+    },
+    "selection": "quality_plus_rolling_mix_optimizer"
   },
   "news_balance": {
-    "window": 12,
+    "window": 20,
     "targets": {
       "local": 6,
-      "world_ru": 1,
-      "ru_safety": 1,
-      "ru_pol": 1,
-      "ru_eco": 1,
-      "geo": 1,
+      "ru_pol": 4,
+      "ru_eco": 4,
+      "ru_safety": 3,
+      "world": 2,
       "it": 1
+    },
+    "target_percent": {
+      "local": 30.0,
+      "ru_pol": 20.0,
+      "ru_eco": 20.0,
+      "ru_safety": 15.0,
+      "world": 10.0,
+      "it": 5.0
     },
     "counts": {
-      "local": 7,
-      "world_ru": 0,
-      "ru_safety": 2,
-      "ru_pol": 0,
-      "ru_eco": 1,
-      "geo": 1,
-      "it": 1
+      "local": 5,
+      "ru_pol": 1,
+      "ru_eco": 3,
+      "ru_safety": 0,
+      "world": 0,
+      "it": 0
+    },
+    "scaled_targets": {
+      "local": 2.7,
+      "ru_pol": 1.8,
+      "ru_eco": 1.8,
+      "ru_safety": 1.35,
+      "world": 0.9,
+      "it": 0.45
     },
     "deficits": {
-      "local": 0,
-      "world_ru": 1,
-      "ru_safety": 0,
-      "ru_pol": 1,
-      "ru_eco": 0,
-      "geo": 0,
-      "it": 0
+      "local": -2.3,
+      "ru_pol": 0.8,
+      "ru_eco": -1.2,
+      "ru_safety": 1.35,
+      "world": 0.9,
+      "it": 0.45
     },
-    "overages": {
-      "local": 1,
-      "world_ru": 0,
-      "ru_safety": 1,
-      "ru_pol": 0,
-      "ru_eco": 0,
-      "geo": 0,
-      "it": 0
-    },
+    "distribution_error": 7.0,
     "subtype_counts": {
-      "economy_policy": 1,
-      "local_public_interest": 3,
-      "war_security": 1,
-      "local_infrastructure": 2,
-      "fraud": 1,
-      "fatal_incident": 1,
-      "traffic_enforcement": 1,
-      "weather_forecast": 1,
-      "diplomacy": 1
+      "major_infrastructure": 1,
+      "political_statement": 1,
+      "macro_economy": 4,
+      "political_decision": 1,
+      "major_emergency": 1,
+      "violent_crime": 1
     },
-    "retrospective_anomalies": [],
-    "valid_posts_counted": 12
+    "sequence": [
+      "local",
+      "local",
+      "local",
+      "ru_pol",
+      "local",
+      "local",
+      "ru_eco",
+      "ru_eco",
+      "ru_eco"
+    ],
+    "category_sequence": [
+      "sakh",
+      "sakh",
+      "sakh",
+      "ru_pol",
+      "sakh_chp",
+      "sakh_chp",
+      "ru_eco",
+      "ru_eco",
+      "ru_eco"
+    ],
+    "source_sequence": [
+      "sakhalinmedia.ru",
+      "sakh.online",
+      "sakh.online",
+      "sakhalinmedia.ru",
+      "astv",
+      "astv",
+      "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
+      "sakhalinmedia.ru"
+    ],
+    "retrospective_anomalies": [
+      {
+        "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
+        "category_key": "geo",
+        "reason": "calendar_or_archive",
+        "corrected_category": null
+      },
+      {
+        "title": "В Углегорском районе обследовали более 60 км территории в поисках пропавших людей",
+        "category_key": "sakh",
+        "reason": "importance_below_threshold",
+        "corrected_category": "sakh"
+      },
+      {
+        "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
+        "category_key": "sakh",
+        "reason": "ceremony_or_congratulation",
+        "corrected_category": null
+      },
+      {
+        "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
+        "category_key": "world_ru",
+        "reason": "no_supported_news_stream",
+        "corrected_category": null
+      },
+      {
+        "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
+        "category_key": "sakh_chp",
+        "reason": "importance_below_threshold",
+        "corrected_category": "sakh"
+      },
+      {
+        "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
+        "category_key": "sakh_chp",
+        "reason": "importance_below_threshold",
+        "corrected_category": "sakh"
+      },
+      {
+        "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
+        "category_key": "ru_incident",
+        "reason": "importance_below_threshold",
+        "corrected_category": "ru_incident"
+      },
+      {
+        "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
+        "category_key": "ru_incident",
+        "reason": "no_supported_news_stream",
+        "corrected_category": null
+      },
+      {
+        "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
+        "category_key": "sakh",
+        "reason": "routine_traffic_statistics",
+        "corrected_category": "sakh"
+      },
+      {
+        "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
+        "category_key": "sakh_chp",
+        "reason": "service_or_lost_and_found_notice",
+        "corrected_category": null
+      },
+      {
+        "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
+        "category_key": "sakh",
+        "reason": "ordinary_weather_not_release_worthy",
+        "corrected_category": "sakh"
+      }
+    ],
+    "valid_posts_counted": 9
   },
   "expired_media_delivery": [
     {
@@ -3933,5 +4916,204 @@
         }
       }
     ]
+  },
+  "post_publication_audit": {
+    "version": "post-audit-v1",
+    "checked_at": "2026-09-04T15:09:44+00:00",
+    "checked": 20,
+    "passed": 2,
+    "anomalies": [
+      {
+        "title": "Прогноз ВТБ: рынок сбережений в 2026 году вырастет на 8%",
+        "url": "https://sakhalinmedia.ru/news/2608276/",
+        "publisher_version": null,
+        "category_key": "sakh",
+        "corrected_category": "ru_eco",
+        "reason": "approved",
+        "contract_issues": []
+      },
+      {
+        "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
+        "url": "https://sakh.online/news/18/2026-09-02/veterana-vyacheslava-gavrilova-pozdravili-s-dnem-pobedy-nad-militaristskoy-yaponiey-524665",
+        "publisher_version": null,
+        "category_key": "geo",
+        "corrected_category": null,
+        "reason": "ceremony_or_congratulation",
+        "contract_issues": [
+          "ceremony_or_congratulation"
+        ]
+      },
+      {
+        "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
+        "url": "https://sakhalinmedia.ru/news/1155672/",
+        "publisher_version": null,
+        "category_key": "geo",
+        "corrected_category": null,
+        "reason": "calendar_or_archive",
+        "contract_issues": [
+          "calendar_or_archive"
+        ]
+      },
+      {
+        "title": "В Углегорском районе обследовали более 60 км территории в поисках пропавших людей",
+        "url": "https://sakhalinmedia.ru/news/2608922/",
+        "publisher_version": null,
+        "category_key": "sakh",
+        "corrected_category": "sakh",
+        "reason": "importance_below_threshold",
+        "contract_issues": [
+          "importance_below_threshold"
+        ]
+      },
+      {
+        "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
+        "url": "https://sakhalinmedia.ru/news/2608836/",
+        "publisher_version": null,
+        "category_key": "sakh",
+        "corrected_category": null,
+        "reason": "ceremony_or_congratulation",
+        "contract_issues": [
+          "ceremony_or_congratulation"
+        ]
+      },
+      {
+        "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
+        "url": "https://www.bbc.co.uk/news/articles/c62j50n131mo?at_medium=RSS&at_campaign=rss",
+        "publisher_version": null,
+        "category_key": "world_ru",
+        "corrected_category": null,
+        "reason": "no_supported_news_stream",
+        "contract_issues": [
+          "no_supported_news_stream"
+        ]
+      },
+      {
+        "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
+        "url": "https://sakh.online/news/18/2026-09-03/vladimir-putin-vystupil-na-plenarnom-zasedanii-vef-2026-vo-vladivostoke-524854",
+        "publisher_version": null,
+        "category_key": "ru_pol",
+        "corrected_category": "sakh",
+        "reason": "approved",
+        "contract_issues": []
+      },
+      {
+        "title": "Путин: за 11 лет в развитие Дальнего Востока привлекли 25 трлн рублей",
+        "url": "https://sakh.online/news/18/2026-09-03/putin-za-11-let-v-razvitie-dalnego-vostoka-privlekli-25-trln-rubley-524857",
+        "publisher_version": null,
+        "category_key": "ru_eco",
+        "corrected_category": "sakh",
+        "reason": "approved",
+        "contract_issues": []
+      },
+      {
+        "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
+        "url": "https://astv.ru/news/criminal/2026-09-03-zhitel-poronajska-pereprodal-chuzhoj-velosiped-za-1-500-rublej-i-popal-pod-ugolovnuyu-stat-yu",
+        "publisher_version": null,
+        "category_key": "sakh_chp",
+        "corrected_category": "sakh",
+        "reason": "importance_below_threshold",
+        "contract_issues": [
+          "importance_below_threshold"
+        ]
+      },
+      {
+        "title": "Путин: Особый правовой режим запустят на Дальнем Востоке для обкатки технологий с 1 января",
+        "url": "https://sakhalinmedia.ru/news/2609589/",
+        "publisher_version": null,
+        "category_key": "it",
+        "corrected_category": "ru_pol",
+        "reason": "approved",
+        "contract_issues": []
+      },
+      {
+        "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
+        "url": "https://sakhalinmedia.ru/news/2609528/",
+        "publisher_version": null,
+        "category_key": "sakh_chp",
+        "corrected_category": "sakh",
+        "reason": "importance_below_threshold",
+        "contract_issues": [
+          "importance_below_threshold"
+        ]
+      },
+      {
+        "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
+        "url": "https://astv.ru/news/society/2026-09-03-moshenniki-nachali-poddelyvat-golosa-uchitelej-dlya-obmana-roditelej",
+        "publisher_version": null,
+        "category_key": "ru_incident",
+        "corrected_category": "ru_incident",
+        "reason": "importance_below_threshold",
+        "contract_issues": [
+          "importance_below_threshold"
+        ]
+      },
+      {
+        "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
+        "url": "https://astv.ru/news/society/2026-09-03-vladel-cy-koshek-pozhalovalis-na-smert-pitomcev-posle-vakciny-mul-tifel",
+        "publisher_version": null,
+        "category_key": "ru_incident",
+        "corrected_category": null,
+        "reason": "no_supported_news_stream",
+        "contract_issues": [
+          "no_supported_news_stream"
+        ]
+      },
+      {
+        "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
+        "url": "https://sakhalinmedia.ru/news/2610302/",
+        "publisher_version": null,
+        "category_key": "sakh",
+        "corrected_category": "sakh",
+        "reason": "routine_traffic_statistics",
+        "contract_issues": [
+          "routine_traffic_statistics"
+        ]
+      },
+      {
+        "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
+        "url": "https://astv.ru/news/society/2026-09-04-policiya-na-sahaline-ishet-aleksandra-ledyaeva-chtoby-vernut-emu-veshi-i-dokumenty",
+        "publisher_version": null,
+        "category_key": "sakh_chp",
+        "corrected_category": null,
+        "reason": "service_or_lost_and_found_notice",
+        "contract_issues": [
+          "service_or_lost_and_found_notice"
+        ]
+      },
+      {
+        "title": "Предъявили обвинение: сахалинца, который ранил и удерживал в сожительницу, взяли под стражу",
+        "url": "https://astv.ru/news/criminal/2026-09-04-pred-yavili-obvinenie-i-vzyali-pod-strazhu-sahalinca-kotoryj-ranil-i-uderzhival-v-sozhitel-nicu",
+        "publisher_version": null,
+        "category_key": "sakh",
+        "corrected_category": "sakh_chp",
+        "reason": "approved",
+        "contract_issues": []
+      },
+      {
+        "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
+        "url": "https://sakh.online/news/18/2026-09-04/teplye-vyhodnye-i-dozhdlivaya-nedelya-prognoz-pogody-na-sahaline-i-kurilah-5-11-sentyabrya-524990",
+        "publisher_version": null,
+        "category_key": "sakh",
+        "corrected_category": "sakh",
+        "reason": "ordinary_weather_not_release_worthy",
+        "contract_issues": [
+          "ordinary_weather_not_release_worthy"
+        ]
+      },
+      {
+        "title": "Глава ВТБ: Китайских инвесторов стал интересовать российский хайтек и автопром",
+        "url": "https://sakhalinmedia.ru/news/2611184/",
+        "publisher_version": null,
+        "category_key": "geo",
+        "corrected_category": "ru_eco",
+        "reason": "approved",
+        "contract_issues": []
+      }
+    ],
+    "corrected": [],
+    "deleted": [],
+    "failed_actions": [],
+    "mutations_enabled": true,
+    "legacy_posts_mutated": false
   }
 }
