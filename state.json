@@ -442,7 +442,7 @@
     "d0b88474c79a85ddb77c29bf216760c7fc27fcf8",
     "d9694e67ade38fe0d96d6fe66cfde9c156bbc588"
   ],
-  "last_run_sakhalin": "2026-09-05T22:43:28+11:00",
+  "last_run_sakhalin": "2026-09-06T08:59:17+11:00",
   "last_posts": [
     {
       "time_sakhalin": "2026-08-26T10:30:08+11:00",
@@ -2474,7 +2474,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T21:14:13+00:00"
+        "checked_at": "2026-09-05T21:59:17+00:00"
       }
     },
     {
@@ -2870,7 +2870,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T21:14:13+00:00"
+        "checked_at": "2026-09-05T21:59:17+00:00"
       }
     },
     {
@@ -3078,7 +3078,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T21:14:13+00:00"
+        "checked_at": "2026-09-05T21:59:17+00:00"
       },
       "legacy_cleanup": "edited_or_already_fixed"
     },
@@ -4115,7 +4115,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T21:14:13+00:00"
+        "checked_at": "2026-09-05T21:59:17+00:00"
       }
     },
     {
@@ -4273,7 +4273,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T21:14:13+00:00"
+        "checked_at": "2026-09-05T21:59:18+00:00"
       }
     },
     {
@@ -4455,7 +4455,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T21:14:13+00:00"
+        "checked_at": "2026-09-05T21:59:18+00:00"
       }
     }
   ],
@@ -4684,10 +4684,10 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-09-05T22:41:08+11:00",
+    "started_sakhalin": "2026-09-06T08:56:42+11:00",
     "status": "ok",
-    "candidates": 2,
-    "published": 1,
+    "candidates": 1,
+    "published": 0,
     "local_candidates": 0,
     "local_stream": {
       "status": "healthy",
@@ -4697,7 +4697,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 9
+          "recent": 5
         },
         {
           "source": "SakhalinMedia",
@@ -4719,56 +4719,56 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-09-05T22:43:27+11:00",
+    "finished_sakhalin": "2026-09-06T08:59:16+11:00",
     "stats": {
       "rss_seen": 160,
-      "old_skip": 77,
-      "google_skip": 8,
+      "old_skip": 79,
+      "google_skip": 5,
       "duplicate_skip": 1,
-      "low_info_skip": 10,
-      "category_skip": 35,
+      "low_info_skip": 16,
+      "category_skip": 26,
       "no_image_skip": 0,
-      "bad_image_skip": 13,
-      "logo_image_skip": 45,
-      "text_card_image_skip": 2,
+      "bad_image_skip": 15,
+      "logo_image_skip": 64,
+      "text_card_image_skip": 0,
       "candidates": 10,
-      "rewrite_retry": 0,
-      "editorial_skip": 0,
+      "rewrite_retry": 1,
+      "editorial_skip": 1,
       "telegram_fail": 0,
-      "published": 1,
+      "published": 0,
       "ai_calls": 2,
       "ai_budget_exhausted": 0,
-      "ai_api_fail": 0,
+      "ai_api_fail": 1,
       "evidence_reject": 0,
       "validation_reject": 0,
       "extractive_fallback": 0,
       "extractive_first": 0,
-      "editorial_prechecked": 27,
-      "editorial_gate_checked": 2,
-      "editorial_gate_pass": 2,
-      "editorial_gate_reject": 0,
+      "editorial_prechecked": 31,
+      "editorial_gate_checked": 1,
+      "editorial_gate_pass": 0,
+      "editorial_gate_reject": 1,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 0,
       "editorial_gate_ai_fail": 0,
-      "editorial_title_reject": 0,
+      "editorial_title_reject": 1,
       "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
       "editorial_reclassified": 5,
-      "editorial_offtopic_reject": 17,
-      "openrouter_empty_content": 0,
-      "openrouter_model_fallback": 2,
-      "openrouter_attempts": 4,
-      "openrouter_retries": 2,
-      "openrouter_invalid_json": 0,
-      "openrouter_success": 2,
+      "editorial_offtopic_reject": 21,
+      "openrouter_empty_content": 1,
+      "openrouter_model_fallback": 1,
+      "openrouter_attempts": 5,
+      "openrouter_retries": 3,
+      "openrouter_invalid_json": 1,
+      "openrouter_success": 1,
       "openrouter_circuit_open": 0,
-      "editorial_grounded_translation_fallback": 2,
+      "editorial_grounded_translation_fallback": 0,
       "media_required_skip": 0,
       "media_generic_skip": 0,
       "media_ready_candidates": 10,
       "photo_retry": 0,
-      "photo_publish": 1,
-      "photo_upload_original": 1,
+      "photo_publish": 0,
+      "photo_upload_original": 0,
       "photo_upload_reencoded": 0,
       "photo_upload_plain_caption": 0,
       "photo_remote_url": 0,
@@ -4780,17 +4780,17 @@
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
       "director_seen": 10,
-      "director_approved": 2,
-      "director_rejected": 8,
+      "director_approved": 1,
+      "director_rejected": 9,
       "director_reclassified": 0,
       "director_title_corrected": 0,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
-      "director_final_checked": 2,
+      "director_final_checked": 0,
       "director_final_autocorrected": 0,
-      "director_final_reject": 1,
+      "director_final_reject": 0,
       "director_pending_retired": 0,
-      "publication_contract_blocked": 1,
+      "publication_contract_blocked": 0,
       "post_audit_checked": 6,
       "post_audit_anomalies": 0,
       "post_audit_corrected": 0,
@@ -4819,9 +4819,9 @@
           "it": 5.0
         },
         "counts": {
-          "local": 5,
+          "local": 4,
           "ru_pol": 1,
-          "ru_eco": 3,
+          "ru_eco": 4,
           "ru_safety": 0,
           "world": 3,
           "it": 0
@@ -4835,26 +4835,25 @@
           "it": 0.6
         },
         "deficits": {
-          "local": -1.4,
+          "local": -0.4,
           "ru_pol": 1.4,
-          "ru_eco": -0.6,
+          "ru_eco": -1.6,
           "ru_safety": 1.8,
           "world": -1.8,
           "it": 0.6
         },
         "distribution_error": 7.6,
         "subtype_counts": {
-          "major_infrastructure": 4,
+          "major_infrastructure": 3,
           "geopolitical_event": 2,
           "corporate_forecast": 1,
-          "macro_economy": 1,
+          "macro_economy": 2,
           "major_emergency": 1,
           "violent_crime": 1,
           "political_decision": 1,
           "military_security": 1
         },
         "sequence": [
-          "local",
           "local",
           "ru_eco",
           "world",
@@ -4865,10 +4864,10 @@
           "local",
           "local",
           "ru_pol",
-          "world"
+          "world",
+          "ru_eco"
         ],
         "category_sequence": [
-          "sakh",
           "sakh",
           "ru_eco",
           "geo",
@@ -4879,10 +4878,10 @@
           "sakh_chp",
           "sakh_chp",
           "ru_pol",
-          "world_ru"
+          "world_ru",
+          "ru_eco"
         ],
         "source_sequence": [
-          "sakhalinmedia.ru",
           "sakhalinmedia.ru",
           "tass",
           "sakhalinmedia.ru",
@@ -4893,7 +4892,8 @@
           "astv",
           "astv",
           "sakhalinmedia.ru",
-          "bbc world"
+          "bbc world",
+          "sakh.online"
         ],
         "retrospective_anomalies": [
           {
@@ -4948,43 +4948,34 @@
         "valid_posts_counted": 12
       },
       "candidate_count": 10,
-      "approved_count": 2,
-      "rejected_count": 8,
+      "approved_count": 1,
+      "rejected_count": 9,
       "rejected_by_reason": {
-        "importance_below_threshold": 8
+        "importance_below_threshold": 8,
+        "unsafe_or_malformed_headline": 1
       },
       "ai_review_requested": 0,
       "ai_review_received": 0,
       "selected_groups": [
-        "ru_eco",
         "world"
       ],
-      "projected_distribution_error": 9.2,
+      "projected_distribution_error": 8.4,
       "projected_counts": {
-        "local": 5,
+        "local": 4,
         "ru_eco": 4,
         "world": 4,
         "ru_pol": 1
       },
-      "projected_length": 14,
+      "projected_length": 13,
       "selected_preview": [
         {
           "slot": 1,
-          "title": "Инвестиции в Дальний Восток с 2014 года выросли в 4,7 раза",
-          "category_key": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "seriousness": 84,
-          "utility": 69.6
-        },
-        {
-          "slot": 2,
-          "title": "Trump envoys arrive in Moscow ahead of Ukraine talks",
-          "category_key": "world_ru",
+          "title": "US hits three Iranian oil tankers after saying its warships were targeted",
+          "category_key": "geo",
           "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 87,
-          "utility": 65.6
+          "event_type": "military_security",
+          "seriousness": 94,
+          "utility": 79.6
         }
       ],
       "rolling_balance_after": {
@@ -5137,7 +5128,7 @@
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-09-05T11:41:12+00:00",
+      "checked_at": "2026-09-05T21:56:47+00:00",
       "checked": 6,
       "passed": 6,
       "anomalies": [],
@@ -5162,7 +5153,7 @@
       "missing_media_rejected": 0,
       "generic_media_rejected": 0,
       "photo_retries": 0,
-      "photo_published": 1,
+      "photo_published": 0,
       "deferred_this_run": 0,
       "pending_queue_size": 0,
       "pending_ready": 0,
@@ -5172,16 +5163,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 27,
-      "checked": 2,
-      "passed": 2,
-      "rejected": 0,
+      "prechecked": 31,
+      "checked": 1,
+      "passed": 0,
+      "rejected": 1,
       "reclassified": 5,
-      "offtopic_reject": 17,
+      "offtopic_reject": 21,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
-      "audited_urls": 2
+      "audited_urls": 1
     }
   },
   "pending_media_delivery": [],
@@ -5527,7 +5518,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-05T21:14:13+00:00",
+    "checked_at": "2026-09-05T21:59:18+00:00",
     "checked": 6,
     "passed": 6,
     "anomalies": [],
@@ -5569,27 +5560,21 @@
   "continuous_editorial_monitor": {
     "version": "editorial-monitor-v1",
     "publisher_version": "stable-v12.1",
-    "checked_at_utc": "2026-09-05T21:14:14+00:00",
-    "checked_at_sakhalin": "2026-09-06T08:14:13+11:00",
-    "status": "error",
+    "checked_at_utc": "2026-09-05T21:59:19+00:00",
+    "checked_at_sakhalin": "2026-09-06T08:59:17+11:00",
+    "status": "healthy",
     "mutations_enabled": true,
-    "issues": [
-      {
-        "type": "publisher_stale",
-        "age_hours": 9.51,
-        "limit_hours": 4.5
-      }
-    ],
+    "issues": [],
     "last_run": {
       "version": "stable-v12.1",
       "status": "ok",
-      "finished_sakhalin": "2026-09-05T22:43:27+11:00",
-      "age_hours": 9.51,
-      "published": 1
+      "finished_sakhalin": "2026-09-06T08:59:16+11:00",
+      "age_hours": 0.0,
+      "published": 0
     },
     "post_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-09-05T21:14:13+00:00",
+      "checked_at": "2026-09-05T21:59:18+00:00",
       "checked": 6,
       "passed": 6,
       "anomalies": [],
