@@ -440,7 +440,7 @@
     "9e93338ac7662109acc9a8bade6b1e962cd06f75",
     "d0b88474c79a85ddb77c29bf216760c7fc27fcf8"
   ],
-  "last_run_sakhalin": "2026-09-05T12:24:34+11:00",
+  "last_run_sakhalin": "2026-09-05T17:47:27+11:00",
   "last_posts": [
     {
       "time_sakhalin": "2026-08-26T10:27:19+11:00",
@@ -2370,7 +2370,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T06:19:12+00:00"
+        "checked_at": "2026-09-05T06:47:27+00:00"
       }
     },
     {
@@ -2496,7 +2496,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T06:19:12+00:00"
+        "checked_at": "2026-09-05T06:47:27+00:00"
       }
     },
     {
@@ -2892,7 +2892,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T06:19:12+00:00"
+        "checked_at": "2026-09-05T06:47:27+00:00"
       }
     },
     {
@@ -3100,7 +3100,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T06:19:12+00:00"
+        "checked_at": "2026-09-05T06:47:27+00:00"
       },
       "legacy_cleanup": "edited_or_already_fixed"
     },
@@ -4137,7 +4137,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T06:19:12+00:00"
+        "checked_at": "2026-09-05T06:47:27+00:00"
       }
     },
     {
@@ -4295,7 +4295,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T06:19:12+00:00"
+        "checked_at": "2026-09-05T06:47:27+00:00"
       }
     }
   ],
@@ -4524,10 +4524,10 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-09-05T12:20:35+11:00",
+    "started_sakhalin": "2026-09-05T17:44:04+11:00",
     "status": "ok",
-    "candidates": 3,
-    "published": 1,
+    "candidates": 1,
+    "published": 0,
     "local_candidates": 0,
     "local_stream": {
       "status": "healthy",
@@ -4537,7 +4537,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 8
+          "recent": 9
         },
         {
           "source": "SakhalinMedia",
@@ -4549,66 +4549,66 @@
           "source": "ASTV HTML",
           "status": "ok",
           "entries": 22,
-          "recent": 3
+          "recent": 12
         },
         {
           "source": "Sakh.online HTML",
           "status": "ok",
           "entries": 20,
-          "recent": 10
+          "recent": 20
         }
       ]
     },
-    "finished_sakhalin": "2026-09-05T12:24:33+11:00",
+    "finished_sakhalin": "2026-09-05T17:47:26+11:00",
     "stats": {
       "rss_seen": 160,
-      "old_skip": 72,
+      "old_skip": 78,
       "google_skip": 6,
-      "duplicate_skip": 3,
-      "low_info_skip": 15,
-      "category_skip": 32,
+      "duplicate_skip": 1,
+      "low_info_skip": 14,
+      "category_skip": 34,
       "no_image_skip": 0,
-      "bad_image_skip": 10,
-      "logo_image_skip": 47,
-      "text_card_image_skip": 0,
-      "candidates": 12,
-      "rewrite_retry": 3,
-      "editorial_skip": 2,
+      "bad_image_skip": 11,
+      "logo_image_skip": 48,
+      "text_card_image_skip": 2,
+      "candidates": 9,
+      "rewrite_retry": 2,
+      "editorial_skip": 1,
       "telegram_fail": 0,
-      "published": 1,
-      "ai_calls": 4,
-      "ai_budget_exhausted": 1,
-      "ai_api_fail": 1,
-      "evidence_reject": 2,
-      "validation_reject": 2,
+      "published": 0,
+      "ai_calls": 2,
+      "ai_budget_exhausted": 0,
+      "ai_api_fail": 2,
+      "evidence_reject": 0,
+      "validation_reject": 0,
       "extractive_fallback": 0,
       "extractive_first": 0,
-      "editorial_prechecked": 32,
-      "editorial_gate_checked": 3,
-      "editorial_gate_pass": 1,
+      "editorial_prechecked": 28,
+      "editorial_gate_checked": 1,
+      "editorial_gate_pass": 0,
       "editorial_gate_reject": 0,
       "editorial_gate_fallback": 0,
-      "editorial_gate_ai_calls": 2,
-      "editorial_gate_ai_fail": 2,
+      "editorial_gate_ai_calls": 0,
+      "editorial_gate_ai_fail": 0,
       "editorial_title_reject": 0,
       "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 6,
-      "editorial_offtopic_reject": 18,
-      "openrouter_empty_content": 3,
-      "openrouter_model_fallback": 3,
-      "openrouter_attempts": 16,
-      "openrouter_retries": 10,
-      "openrouter_invalid_json": 4,
-      "openrouter_success": 3,
+      "editorial_reclassified": 5,
+      "editorial_offtopic_reject": 16,
+      "openrouter_empty_content": 4,
+      "openrouter_model_fallback": 0,
+      "openrouter_attempts": 6,
+      "openrouter_retries": 4,
+      "openrouter_invalid_json": 0,
+      "openrouter_success": 0,
       "openrouter_circuit_open": 0,
-      "editorial_grounded_translation_fallback": 1,
-      "media_required_skip": 2,
+      "editorial_grounded_translation_fallback": 0,
+      "media_required_skip": 3,
       "media_generic_skip": 0,
-      "media_ready_candidates": 12,
+      "media_ready_candidates": 9,
       "photo_retry": 0,
-      "photo_publish": 1,
-      "photo_upload_original": 1,
+      "photo_publish": 0,
+      "photo_upload_original": 0,
       "photo_upload_reencoded": 0,
       "photo_upload_plain_caption": 0,
       "photo_remote_url": 0,
@@ -4619,26 +4619,26 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 12,
-      "director_approved": 3,
-      "director_rejected": 9,
+      "director_seen": 9,
+      "director_approved": 1,
+      "director_rejected": 8,
       "director_reclassified": 0,
       "director_title_corrected": 0,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
-      "director_final_checked": 1,
-      "director_final_autocorrected": 1,
+      "director_final_checked": 0,
+      "director_final_autocorrected": 0,
       "director_final_reject": 0,
       "director_pending_retired": 0,
       "publication_contract_blocked": 0,
-      "post_audit_checked": 16,
-      "post_audit_anomalies": 11,
+      "post_audit_checked": 6,
+      "post_audit_anomalies": 0,
       "post_audit_corrected": 0,
       "post_audit_deleted": 0
     },
     "news_director": {
       "version": "director-v2.1",
-      "policy_version": "policy-v2.2",
+      "policy_version": "policy-v2.3",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
         "window": 20,
@@ -4659,69 +4659,107 @@
           "it": 5.0
         },
         "counts": {
-          "local": 3,
-          "ru_pol": 2,
-          "ru_eco": 2,
+          "local": 5,
+          "ru_pol": 1,
+          "ru_eco": 3,
           "ru_safety": 0,
-          "world": 1,
+          "world": 3,
           "it": 0
         },
         "scaled_targets": {
-          "local": 2.4,
-          "ru_pol": 1.6,
-          "ru_eco": 1.6,
-          "ru_safety": 1.2,
-          "world": 0.8,
-          "it": 0.4
+          "local": 3.6,
+          "ru_pol": 2.4,
+          "ru_eco": 2.4,
+          "ru_safety": 1.8,
+          "world": 1.2,
+          "it": 0.6
         },
         "deficits": {
-          "local": -0.6,
-          "ru_pol": -0.4,
-          "ru_eco": -0.4,
-          "ru_safety": 1.2,
-          "world": -0.2,
-          "it": 0.4
+          "local": -1.4,
+          "ru_pol": 1.4,
+          "ru_eco": -0.6,
+          "ru_safety": 1.8,
+          "world": -1.8,
+          "it": 0.6
         },
-        "distribution_error": 3.2,
+        "distribution_error": 7.6,
         "subtype_counts": {
-          "major_infrastructure": 1,
-          "geopolitical_event": 1,
-          "macro_economy": 2,
-          "political_decision": 2,
+          "major_infrastructure": 4,
+          "geopolitical_event": 2,
+          "corporate_forecast": 1,
+          "macro_economy": 1,
           "major_emergency": 1,
-          "violent_crime": 1
+          "violent_crime": 1,
+          "political_decision": 1,
+          "military_security": 1
         },
         "sequence": [
           "local",
+          "local",
+          "ru_eco",
           "world",
           "ru_eco",
-          "ru_pol",
           "local",
-          "local",
+          "world",
           "ru_eco",
-          "ru_pol"
+          "local",
+          "local",
+          "ru_pol",
+          "world"
         ],
         "category_sequence": [
           "sakh",
+          "sakh",
+          "ru_eco",
+          "geo",
+          "ru_eco",
+          "sakh",
           "world_ru",
           "ru_eco",
+          "sakh_chp",
+          "sakh_chp",
           "ru_pol",
-          "sakh_chp",
-          "sakh_chp",
-          "ru_eco",
-          "ru_pol"
+          "world_ru"
         ],
         "source_sequence": [
           "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "tass",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
           "bbc world",
           "sakh.online",
-          "sakhalinmedia.ru",
           "astv",
           "astv",
           "sakhalinmedia.ru",
-          "sakhalinmedia.ru"
+          "bbc world"
         ],
         "retrospective_anomalies": [
+          {
+            "title": "Просвещение (группа ВЭБ.РФ): Дальний Восток может опередить другие регионы России по использованию ИИ",
+            "category_key": "it",
+            "reason": "no_supported_news_stream",
+            "corrected_category": null
+          },
+          {
+            "title": "Трое пьяных, шесть без прав: на Сахалине поймали почти 100 нарушителей ПДД",
+            "category_key": "sakh",
+            "reason": "routine_traffic_statistics",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "Водитель Урала погиб в результате опрокидывания грузовика на Итурупе",
+            "category_key": "sakh_chp",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "Жительница Южно-Сахалинска лишилась денег при попытке купить щенка в интернете",
+            "category_key": "sakh",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh_chp"
+          },
           {
             "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
             "category_key": "geo",
@@ -4745,107 +4783,38 @@
             "category_key": "sakh",
             "reason": "ceremony_or_congratulation",
             "corrected_category": null
-          },
-          {
-            "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
-            "category_key": "ru_pol",
-            "reason": "statement_without_material_decision",
-            "corrected_category": "ru_pol"
-          },
-          {
-            "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
-            "category_key": "sakh_chp",
-            "reason": "importance_below_threshold",
-            "corrected_category": "sakh"
-          },
-          {
-            "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
-            "category_key": "sakh_chp",
-            "reason": "importance_below_threshold",
-            "corrected_category": "sakh"
-          },
-          {
-            "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
-            "category_key": "ru_incident",
-            "reason": "importance_below_threshold",
-            "corrected_category": "ru_incident"
-          },
-          {
-            "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
-            "category_key": "ru_incident",
-            "reason": "no_supported_news_stream",
-            "corrected_category": null
-          },
-          {
-            "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
-            "category_key": "sakh",
-            "reason": "routine_traffic_statistics",
-            "corrected_category": "sakh"
-          },
-          {
-            "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
-            "category_key": "sakh_chp",
-            "reason": "service_or_lost_and_found_notice",
-            "corrected_category": null
-          },
-          {
-            "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
-            "category_key": "sakh",
-            "reason": "ordinary_weather_not_release_worthy",
-            "corrected_category": "sakh"
           }
         ],
-        "valid_posts_counted": 8
+        "valid_posts_counted": 12
       },
-      "candidate_count": 12,
-      "approved_count": 3,
-      "rejected_count": 9,
+      "candidate_count": 9,
+      "approved_count": 1,
+      "rejected_count": 8,
       "rejected_by_reason": {
-        "importance_below_threshold": 8,
-        "ordinary_weather_not_release_worthy": 1
+        "importance_below_threshold": 8
       },
       "ai_review_requested": 0,
       "ai_review_received": 0,
       "selected_groups": [
-        "it",
-        "world"
+        "ru_eco"
       ],
-      "projected_distribution_error": 3.0,
+      "projected_distribution_error": 8.4,
       "projected_counts": {
-        "local": 3,
-        "world": 2,
-        "ru_eco": 2,
-        "ru_pol": 2,
-        "it": 1
+        "local": 5,
+        "ru_eco": 4,
+        "world": 3,
+        "ru_pol": 1
       },
-      "projected_length": 10,
+      "projected_length": 13,
       "selected_preview": [
         {
           "slot": 1,
-          "title": "Nvidia strikes $12.9bn deal to buy AI platform Hugging Face",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 88,
-          "utility": 97.0
-        },
-        {
-          "slot": 2,
-          "title": "Russian drone hits Ukranian security headquarters, Zelensky says",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "military_security",
-          "seriousness": 96,
-          "utility": 90.6
-        },
-        {
-          "slot": "backup",
-          "title": "OpenAI hails ‘new era of artificial general intelligence’ with Astra model release",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 85,
-          "utility": 24.4
+          "title": "Инвестиции в Дальний Восток с 2014 года выросли в 4,7 раза",
+          "category_key": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "seriousness": 84,
+          "utility": 69.6
         }
       ],
       "rolling_balance_after": {
@@ -4867,73 +4836,113 @@
           "it": 5.0
         },
         "counts": {
-          "local": 3,
-          "ru_pol": 2,
-          "ru_eco": 2,
+          "local": 5,
+          "ru_pol": 1,
+          "ru_eco": 3,
           "ru_safety": 0,
-          "world": 2,
+          "world": 3,
           "it": 0
         },
         "scaled_targets": {
-          "local": 2.7,
-          "ru_pol": 1.8,
-          "ru_eco": 1.8,
-          "ru_safety": 1.35,
-          "world": 0.9,
-          "it": 0.45
+          "local": 3.6,
+          "ru_pol": 2.4,
+          "ru_eco": 2.4,
+          "ru_safety": 1.8,
+          "world": 1.2,
+          "it": 0.6
         },
         "deficits": {
-          "local": -0.3,
-          "ru_pol": -0.2,
-          "ru_eco": -0.2,
-          "ru_safety": 1.35,
-          "world": -1.1,
-          "it": 0.45
+          "local": -1.4,
+          "ru_pol": 1.4,
+          "ru_eco": -0.6,
+          "ru_safety": 1.8,
+          "world": -1.8,
+          "it": 0.6
         },
-        "distribution_error": 3.6,
+        "distribution_error": 7.6,
         "subtype_counts": {
-          "major_infrastructure": 1,
-          "geopolitical_event": 1,
-          "macro_economy": 2,
-          "political_decision": 2,
+          "major_infrastructure": 4,
+          "geopolitical_event": 2,
+          "corporate_forecast": 1,
+          "macro_economy": 1,
           "major_emergency": 1,
           "violent_crime": 1,
+          "political_decision": 1,
           "military_security": 1
         },
         "sequence": [
           "local",
+          "local",
+          "ru_eco",
           "world",
           "ru_eco",
-          "ru_pol",
           "local",
-          "local",
+          "world",
           "ru_eco",
+          "local",
+          "local",
           "ru_pol",
           "world"
         ],
         "category_sequence": [
           "sakh",
+          "sakh",
+          "ru_eco",
+          "geo",
+          "ru_eco",
+          "sakh",
           "world_ru",
           "ru_eco",
-          "ru_pol",
           "sakh_chp",
           "sakh_chp",
-          "ru_eco",
           "ru_pol",
           "world_ru"
         ],
         "source_sequence": [
           "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "tass",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
           "bbc world",
           "sakh.online",
-          "sakhalinmedia.ru",
           "astv",
           "astv",
-          "sakhalinmedia.ru",
           "sakhalinmedia.ru",
           "bbc world"
         ],
         "retrospective_anomalies": [
+          {
+            "title": "Просвещение (группа ВЭБ.РФ): Дальний Восток может опередить другие регионы России по использованию ИИ",
+            "category_key": "it",
+            "reason": "no_supported_news_stream",
+            "corrected_category": null
+          },
+          {
+            "title": "Трое пьяных, шесть без прав: на Сахалине поймали почти 100 нарушителей ПДД",
+            "category_key": "sakh",
+            "reason": "routine_traffic_statistics",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "Водитель Урала погиб в результате опрокидывания грузовика на Итурупе",
+            "category_key": "sakh_chp",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "Жительница Южно-Сахалинска лишилась денег при попытке купить щенка в интернете",
+            "category_key": "sakh",
+            "reason": "importance_below_threshold",
+            "corrected_category": "sakh_chp"
+          },
+          {
+            "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
+            "category_key": "geo",
+            "reason": "ceremony_or_congratulation",
+            "corrected_category": null
+          },
           {
             "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
             "category_key": "geo",
@@ -4951,183 +4960,17 @@
             "category_key": "sakh",
             "reason": "ceremony_or_congratulation",
             "corrected_category": null
-          },
-          {
-            "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
-            "category_key": "ru_pol",
-            "reason": "statement_without_material_decision",
-            "corrected_category": "ru_pol"
-          },
-          {
-            "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
-            "category_key": "sakh_chp",
-            "reason": "importance_below_threshold",
-            "corrected_category": "sakh"
-          },
-          {
-            "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
-            "category_key": "sakh_chp",
-            "reason": "importance_below_threshold",
-            "corrected_category": "sakh"
-          },
-          {
-            "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
-            "category_key": "ru_incident",
-            "reason": "importance_below_threshold",
-            "corrected_category": "ru_incident"
-          },
-          {
-            "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
-            "category_key": "ru_incident",
-            "reason": "no_supported_news_stream",
-            "corrected_category": null
-          },
-          {
-            "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
-            "category_key": "sakh",
-            "reason": "routine_traffic_statistics",
-            "corrected_category": "sakh"
-          },
-          {
-            "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
-            "category_key": "sakh_chp",
-            "reason": "service_or_lost_and_found_notice",
-            "corrected_category": null
-          },
-          {
-            "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
-            "category_key": "sakh",
-            "reason": "ordinary_weather_not_release_worthy",
-            "corrected_category": "sakh"
           }
         ],
-        "valid_posts_counted": 9
+        "valid_posts_counted": 12
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-09-05T01:20:40+00:00",
-      "checked": 16,
-      "passed": 5,
-      "anomalies": [
-        {
-          "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
-          "url": "https://sakhalinmedia.ru/news/2608836/",
-          "publisher_version": null,
-          "category_key": "sakh",
-          "corrected_category": null,
-          "reason": "ceremony_or_congratulation",
-          "contract_issues": [
-            "ceremony_or_congratulation"
-          ]
-        },
-        {
-          "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
-          "url": "https://sakh.online/news/18/2026-09-03/vladimir-putin-vystupil-na-plenarnom-zasedanii-vef-2026-vo-vladivostoke-524854",
-          "publisher_version": null,
-          "category_key": "ru_pol",
-          "corrected_category": "ru_pol",
-          "reason": "statement_without_material_decision",
-          "contract_issues": [
-            "statement_without_material_decision"
-          ]
-        },
-        {
-          "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
-          "url": "https://astv.ru/news/criminal/2026-09-03-zhitel-poronajska-pereprodal-chuzhoj-velosiped-za-1-500-rublej-i-popal-pod-ugolovnuyu-stat-yu",
-          "publisher_version": null,
-          "category_key": "sakh_chp",
-          "corrected_category": "sakh",
-          "reason": "importance_below_threshold",
-          "contract_issues": [
-            "importance_below_threshold"
-          ]
-        },
-        {
-          "title": "Путин: Особый правовой режим запустят на Дальнем Востоке для обкатки технологий с 1 января",
-          "url": "https://sakhalinmedia.ru/news/2609589/",
-          "publisher_version": null,
-          "category_key": "it",
-          "corrected_category": "ru_pol",
-          "reason": "approved",
-          "contract_issues": []
-        },
-        {
-          "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
-          "url": "https://sakhalinmedia.ru/news/2609528/",
-          "publisher_version": null,
-          "category_key": "sakh_chp",
-          "corrected_category": "sakh",
-          "reason": "importance_below_threshold",
-          "contract_issues": [
-            "importance_below_threshold"
-          ]
-        },
-        {
-          "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
-          "url": "https://astv.ru/news/society/2026-09-03-moshenniki-nachali-poddelyvat-golosa-uchitelej-dlya-obmana-roditelej",
-          "publisher_version": null,
-          "category_key": "ru_incident",
-          "corrected_category": "ru_incident",
-          "reason": "importance_below_threshold",
-          "contract_issues": [
-            "importance_below_threshold"
-          ]
-        },
-        {
-          "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
-          "url": "https://astv.ru/news/society/2026-09-03-vladel-cy-koshek-pozhalovalis-na-smert-pitomcev-posle-vakciny-mul-tifel",
-          "publisher_version": null,
-          "category_key": "ru_incident",
-          "corrected_category": null,
-          "reason": "no_supported_news_stream",
-          "contract_issues": [
-            "no_supported_news_stream"
-          ]
-        },
-        {
-          "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
-          "url": "https://sakhalinmedia.ru/news/2610302/",
-          "publisher_version": null,
-          "category_key": "sakh",
-          "corrected_category": "sakh",
-          "reason": "routine_traffic_statistics",
-          "contract_issues": [
-            "routine_traffic_statistics"
-          ]
-        },
-        {
-          "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
-          "url": "https://astv.ru/news/society/2026-09-04-policiya-na-sahaline-ishet-aleksandra-ledyaeva-chtoby-vernut-emu-veshi-i-dokumenty",
-          "publisher_version": null,
-          "category_key": "sakh_chp",
-          "corrected_category": null,
-          "reason": "service_or_lost_and_found_notice",
-          "contract_issues": [
-            "service_or_lost_and_found_notice"
-          ]
-        },
-        {
-          "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
-          "url": "https://sakh.online/news/18/2026-09-04/teplye-vyhodnye-i-dozhdlivaya-nedelya-prognoz-pogody-na-sahaline-i-kurilah-5-11-sentyabrya-524990",
-          "publisher_version": null,
-          "category_key": "sakh",
-          "corrected_category": "sakh",
-          "reason": "ordinary_weather_not_release_worthy",
-          "contract_issues": [
-            "ordinary_weather_not_release_worthy"
-          ]
-        },
-        {
-          "title": "Глава ВТБ: Китайских инвесторов стал интересовать российский хайтек и автопром",
-          "url": "https://sakhalinmedia.ru/news/2611184/",
-          "publisher_version": null,
-          "category_key": "geo",
-          "corrected_category": "ru_eco",
-          "reason": "approved",
-          "contract_issues": []
-        }
-      ],
+      "checked_at": "2026-09-05T06:44:08+00:00",
+      "checked": 6,
+      "passed": 6,
+      "anomalies": [],
       "corrected": [],
       "deleted": [],
       "failed_actions": [],
@@ -5145,11 +4988,11 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 12,
-      "missing_media_rejected": 2,
+      "ready_candidates": 9,
+      "missing_media_rejected": 3,
       "generic_media_rejected": 0,
       "photo_retries": 0,
-      "photo_published": 1,
+      "photo_published": 0,
       "deferred_this_run": 0,
       "pending_queue_size": 0,
       "pending_ready": 0,
@@ -5159,22 +5002,22 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 32,
-      "checked": 3,
-      "passed": 1,
+      "prechecked": 28,
+      "checked": 1,
+      "passed": 0,
       "rejected": 0,
-      "reclassified": 6,
-      "offtopic_reject": 18,
+      "reclassified": 5,
+      "offtopic_reject": 16,
       "fallback": 0,
-      "ai_calls": 2,
-      "ai_fail": 2,
-      "audited_urls": 1
+      "ai_calls": 0,
+      "ai_fail": 0,
+      "audited_urls": 0
     }
   },
   "pending_media_delivery": [],
   "news_director_policy": {
     "version": "director-v2.1",
-    "policy_version": "policy-v2.2",
+    "policy_version": "policy-v2.3",
     "rolling_window": 20,
     "targets": {
       "local": 6,
@@ -5213,73 +5056,113 @@
       "it": 5.0
     },
     "counts": {
-      "local": 3,
-      "ru_pol": 2,
-      "ru_eco": 2,
+      "local": 5,
+      "ru_pol": 1,
+      "ru_eco": 3,
       "ru_safety": 0,
-      "world": 2,
+      "world": 3,
       "it": 0
     },
     "scaled_targets": {
-      "local": 2.7,
-      "ru_pol": 1.8,
-      "ru_eco": 1.8,
-      "ru_safety": 1.35,
-      "world": 0.9,
-      "it": 0.45
+      "local": 3.6,
+      "ru_pol": 2.4,
+      "ru_eco": 2.4,
+      "ru_safety": 1.8,
+      "world": 1.2,
+      "it": 0.6
     },
     "deficits": {
-      "local": -0.3,
-      "ru_pol": -0.2,
-      "ru_eco": -0.2,
-      "ru_safety": 1.35,
-      "world": -1.1,
-      "it": 0.45
+      "local": -1.4,
+      "ru_pol": 1.4,
+      "ru_eco": -0.6,
+      "ru_safety": 1.8,
+      "world": -1.8,
+      "it": 0.6
     },
-    "distribution_error": 3.6,
+    "distribution_error": 7.6,
     "subtype_counts": {
-      "major_infrastructure": 1,
-      "geopolitical_event": 1,
-      "macro_economy": 2,
-      "political_decision": 2,
+      "major_infrastructure": 4,
+      "geopolitical_event": 2,
+      "corporate_forecast": 1,
+      "macro_economy": 1,
       "major_emergency": 1,
       "violent_crime": 1,
+      "political_decision": 1,
       "military_security": 1
     },
     "sequence": [
       "local",
+      "local",
+      "ru_eco",
       "world",
       "ru_eco",
-      "ru_pol",
       "local",
-      "local",
+      "world",
       "ru_eco",
+      "local",
+      "local",
       "ru_pol",
       "world"
     ],
     "category_sequence": [
       "sakh",
+      "sakh",
+      "ru_eco",
+      "geo",
+      "ru_eco",
+      "sakh",
       "world_ru",
       "ru_eco",
-      "ru_pol",
       "sakh_chp",
       "sakh_chp",
-      "ru_eco",
       "ru_pol",
       "world_ru"
     ],
     "source_sequence": [
       "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
+      "tass",
+      "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
       "bbc world",
       "sakh.online",
-      "sakhalinmedia.ru",
       "astv",
       "astv",
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "bbc world"
     ],
     "retrospective_anomalies": [
+      {
+        "title": "Просвещение (группа ВЭБ.РФ): Дальний Восток может опередить другие регионы России по использованию ИИ",
+        "category_key": "it",
+        "reason": "no_supported_news_stream",
+        "corrected_category": null
+      },
+      {
+        "title": "Трое пьяных, шесть без прав: на Сахалине поймали почти 100 нарушителей ПДД",
+        "category_key": "sakh",
+        "reason": "routine_traffic_statistics",
+        "corrected_category": "sakh"
+      },
+      {
+        "title": "Водитель Урала погиб в результате опрокидывания грузовика на Итурупе",
+        "category_key": "sakh_chp",
+        "reason": "importance_below_threshold",
+        "corrected_category": "sakh"
+      },
+      {
+        "title": "Жительница Южно-Сахалинска лишилась денег при попытке купить щенка в интернете",
+        "category_key": "sakh",
+        "reason": "importance_below_threshold",
+        "corrected_category": "sakh_chp"
+      },
+      {
+        "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
+        "category_key": "geo",
+        "reason": "ceremony_or_congratulation",
+        "corrected_category": null
+      },
       {
         "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
         "category_key": "geo",
@@ -5297,57 +5180,9 @@
         "category_key": "sakh",
         "reason": "ceremony_or_congratulation",
         "corrected_category": null
-      },
-      {
-        "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
-        "category_key": "ru_pol",
-        "reason": "statement_without_material_decision",
-        "corrected_category": "ru_pol"
-      },
-      {
-        "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
-        "category_key": "sakh_chp",
-        "reason": "importance_below_threshold",
-        "corrected_category": "sakh"
-      },
-      {
-        "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
-        "category_key": "sakh_chp",
-        "reason": "importance_below_threshold",
-        "corrected_category": "sakh"
-      },
-      {
-        "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
-        "category_key": "ru_incident",
-        "reason": "importance_below_threshold",
-        "corrected_category": "ru_incident"
-      },
-      {
-        "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
-        "category_key": "ru_incident",
-        "reason": "no_supported_news_stream",
-        "corrected_category": null
-      },
-      {
-        "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
-        "category_key": "sakh",
-        "reason": "routine_traffic_statistics",
-        "corrected_category": "sakh"
-      },
-      {
-        "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
-        "category_key": "sakh_chp",
-        "reason": "service_or_lost_and_found_notice",
-        "corrected_category": null
-      },
-      {
-        "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
-        "category_key": "sakh",
-        "reason": "ordinary_weather_not_release_worthy",
-        "corrected_category": "sakh"
       }
     ],
-    "valid_posts_counted": 9
+    "valid_posts_counted": 12
   },
   "expired_media_delivery": [
     {
@@ -5522,7 +5357,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-05T06:19:12+00:00",
+    "checked_at": "2026-09-05T06:47:27+00:00",
     "checked": 6,
     "passed": 6,
     "anomalies": [],
@@ -5564,27 +5399,21 @@
   "continuous_editorial_monitor": {
     "version": "editorial-monitor-v1",
     "publisher_version": "stable-v12.1",
-    "checked_at_utc": "2026-09-05T06:19:13+00:00",
-    "checked_at_sakhalin": "2026-09-05T17:19:12+11:00",
-    "status": "error",
+    "checked_at_utc": "2026-09-05T06:47:28+00:00",
+    "checked_at_sakhalin": "2026-09-05T17:47:27+11:00",
+    "status": "healthy",
     "mutations_enabled": true,
-    "issues": [
-      {
-        "type": "publisher_stale",
-        "age_hours": 4.91,
-        "limit_hours": 4.5
-      }
-    ],
+    "issues": [],
     "last_run": {
       "version": "stable-v12.1",
       "status": "ok",
-      "finished_sakhalin": "2026-09-05T12:24:33+11:00",
-      "age_hours": 4.91,
-      "published": 1
+      "finished_sakhalin": "2026-09-05T17:47:26+11:00",
+      "age_hours": 0.0,
+      "published": 0
     },
     "post_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-09-05T06:19:12+00:00",
+      "checked_at": "2026-09-05T06:47:27+00:00",
       "checked": 6,
       "passed": 6,
       "anomalies": [],
