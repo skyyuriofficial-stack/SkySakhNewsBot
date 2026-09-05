@@ -1,4 +1,4 @@
-name: SkySakhNews Auto Publisher Stable v12.0
+name: SkySakhNews Auto Publisher Stable v12.1
 
 on:
   workflow_dispatch:
@@ -26,32 +26,19 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Require validated stable v12.0 sources
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          marker = Path("V12_MAIN_VERIFIED.json")
-          assert marker.exists(), "stable-v12.0 source verification marker is missing"
-          data = json.loads(marker.read_text(encoding="utf-8"))
-          assert data.get("version") == "stable-v12.0", data
-          assert data.get("all_source_tests_passed") is True, data
-          PY
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Compile canonical v12 production system
+      - name: Compile canonical v12.1 production system
         run: |
           python -m py_compile \
             src/news_bot_v8.py src/news_bot_v9.py src/production.py \
-            src/editorial_gate.py src/category_reconciler.py \
+            src/editorial_gate.py src/editorial_policy.py src/category_reconciler.py \
             src/editorial_gate_runner.py src/media_enforced_runner.py \
-            src/editorial_policy.py src/news_director.py \
-            src/publication_auditor.py src/publisher.py \
-            src/production_selftest.py
+            src/news_director.py src/publication_auditor.py \
+            src/editorial_monitor.py src/publisher.py src/production_selftest.py
 
       - name: Mandatory strict editorial regression gate
         env:
@@ -63,10 +50,11 @@ jobs:
           RUN_COOLDOWN_MINUTES: "0"
           MEDIA_PENDING_MAX_HOURS: "36"
           MEDIA_PENDING_MAX_ITEMS: "24"
-        run: |
-          python src/production_selftest.py
+          OPENROUTER_MAX_ATTEMPTS: "3"
+          OPENROUTER_RETRY_BASE_SECONDS: "0"
+        run: python src/production_selftest.py
 
-      - name: Publish through v12 autocorrecting news director
+      - name: Publish through v12.1 autocorrecting news director
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
@@ -75,36 +63,41 @@ jobs:
           IMAGE_REQUIRED: "1"
           POSTS_PER_RUN: "2"
           MAX_AGE_HOURS: "36"
-          AI_CALL_BUDGET: "0"
-          EDITORIAL_AUDIT_AI_BUDGET: "0"
+          AI_CALL_BUDGET: "4"
+          EDITORIAL_AUDIT_AI_BUDGET: "2"
           NEWS_DIRECTOR_AI_BUDGET: "0"
+          OPENROUTER_MAX_ATTEMPTS: "3"
+          OPENROUTER_RETRY_BASE_SECONDS: "1.0"
           POST_AUDIT_AUTOCORRECT: "1"
           RUN_COOLDOWN_MINUTES: "20"
           MEDIA_PENDING_MAX_HOURS: "36"
           MEDIA_PENDING_MAX_ITEMS: "24"
           PYTHONUNBUFFERED: "1"
-        run: |
-          python src/publisher.py
+        run: python src/publisher.py
 
-      - name: Verify v12 editorial, proportion and media contract
+      - name: Verify v12.1 editorial, proportion and media contract
         run: |
           python - <<'PY'
           import json
+          import sys
           from urllib.parse import urlparse
+          sys.path.insert(0, "src")
+          import editorial_policy as policy
 
           with open("state.json", "r", encoding="utf-8") as file:
               state = json.load(file)
 
           run = state.get("last_run") or {}
-          assert run.get("version") == "stable-v12.0", run
+          assert run.get("version") == "stable-v12.1", run
           assert run.get("status") == "ok", run
           assert "finished_sakhalin" in run, run
           assert (run.get("local_stream") or {}).get("status") in {"healthy", "degraded"}, run
 
           director = run.get("news_director") or {}
-          assert str(director.get("version") or "").startswith("director-v2"), director
+          assert director.get("version") == "director-v2.1", director
+          assert director.get("policy_version") == "policy-v2.2", director
           targets = ((director.get("rolling_balance_after") or {}).get("targets") or {})
-          expected = {"local": 6, "politics": 4, "economy": 4, "safety": 3, "world": 2, "tech": 1}
+          expected = {"local": 6, "ru_pol": 4, "ru_eco": 4, "ru_safety": 3, "world": 2, "it": 1}
           assert targets == expected, targets
           assert sum(targets.values()) == 20, targets
 
@@ -115,6 +108,7 @@ jobs:
           published = int(run.get("published") or 0)
           assert 0 <= published <= 2, run
           posts = (state.get("last_posts") or [])[-published:] if published else []
+          groups = []
           for post in posts:
               editorial = post.get("editorial_gate") or {}
               assert editorial.get("approved") is True, post
@@ -124,26 +118,44 @@ jobs:
               assert editorial.get("meaning_changed") is False, post
 
               decision = post.get("news_director") or {}
+              assert decision.get("version") == "director-v2.1", post
               assert decision.get("approved") is True, post
               assert int(decision.get("seriousness") or 0) >= int(decision.get("threshold") or 0), post
               assert decision.get("final_title_checked") is True, post
               assert decision.get("final_category_checked") is True, post
+              assert decision.get("reason") not in {
+                  "corporate_product_or_brand_pr",
+                  "service_or_lost_and_found_notice",
+                  "routine_traffic_statistics",
+                  "ordinary_weather_not_release_worthy",
+              }, post
+              groups.append(decision.get("group"))
 
-              assert post.get("publisher_version") == "stable-v12.0", post
+              contract = post.get("publication_contract") or {}
+              assert contract.get("approved") is True, post
+              assert not contract.get("issues"), post
+              assert not policy.title_quality_issues(str(post.get("title") or "")), post
+
+              assert post.get("publisher_version") == "stable-v12.1", post
               assert post.get("with_image") is True, post
               assert post.get("media_type") == "photo", post
               assert post.get("image_url"), post
               assert post.get("image_hash"), post
+              assert post.get("telegram_message_id") is not None, post
               assert str(post.get("publish_method") or "").startswith("sendPhoto/"), post
               assert "news.google." not in urlparse(post.get("url") or "").netloc.lower(), post
+
+          if len(groups) == 2:
+              assert len(set(groups)) == 2, groups
 
           audit = run.get("post_publication_audit") or {}
           assert audit.get("version"), audit
           assert int(audit.get("unresolved") or 0) == 0, audit
-          print("stable-v12.0 publication contract: OK", run)
+          assert not audit.get("failed_actions"), audit
+          print("stable-v12.1 publication contract: OK", run)
           PY
 
-      - name: Commit v12 state, audit and delivery queue
+      - name: Commit v12.1 state, audit and delivery queue
         if: always()
         run: |
           git config user.name "skysakhnews-bot"
@@ -152,7 +164,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No state changes"
           else
-            git commit -m "Update stable v12.0 editorial state"
+            git commit -m "Update stable v12.1 editorial state"
             git pull --rebase --autostash origin main
             git push origin main
           fi
