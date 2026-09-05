@@ -1,0 +1,126 @@
+name: SkySakhNews v12.1 One-Shot Live Verification
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/run_v121_live_once.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skysakhnews-production-publisher
+  cancel-in-progress: false
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Regression gate
+        env:
+          IMAGE_REQUIRED: "1"
+          AI_CALL_BUDGET: "0"
+          EDITORIAL_AUDIT_AI_BUDGET: "0"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+          POST_AUDIT_AUTOCORRECT: "0"
+          RUN_COOLDOWN_MINUTES: "0"
+        run: python src/production_selftest.py
+      - name: Publish live through v12.1
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
+          IMAGE_REQUIRED: "1"
+          POSTS_PER_RUN: "2"
+          MAX_AGE_HOURS: "36"
+          AI_CALL_BUDGET: "4"
+          EDITORIAL_AUDIT_AI_BUDGET: "2"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+          OPENROUTER_MAX_ATTEMPTS: "3"
+          OPENROUTER_RETRY_BASE_SECONDS: "1.0"
+          POST_AUDIT_AUTOCORRECT: "1"
+          RUN_COOLDOWN_MINUTES: "0"
+          FORCE_RUN: "1"
+          MEDIA_PENDING_MAX_HOURS: "36"
+          MEDIA_PENDING_MAX_ITEMS: "24"
+          PYTHONUNBUFFERED: "1"
+        run: python src/publisher.py
+      - name: Immediately audit new live posts
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          POST_AUDIT_AUTOCORRECT: "1"
+          IMAGE_REQUIRED: "1"
+          AI_CALL_BUDGET: "0"
+          EDITORIAL_AUDIT_AI_BUDGET: "0"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+          PYTHONUNBUFFERED: "1"
+        run: python src/editorial_monitor.py
+      - name: Verify live result
+        run: |
+          python - <<'PY'
+          import json, sys
+          sys.path.insert(0, "src")
+          import editorial_policy as policy
+          with open("state.json", "r", encoding="utf-8") as f:
+              state = json.load(f)
+          run = state.get("last_run") or {}
+          assert run.get("version") == "stable-v12.1", run
+          assert run.get("status") == "ok", run
+          published = int(run.get("published") or 0)
+          assert 0 <= published <= 2, run
+          posts = (state.get("last_posts") or [])[-published:] if published else []
+          groups = []
+          for post in posts:
+              assert post.get("publisher_version") == "stable-v12.1", post
+              assert post.get("with_image") is True and post.get("image_url") and post.get("image_hash"), post
+              assert post.get("telegram_message_id") is not None, post
+              decision = post.get("news_director") or {}
+              assert decision.get("version") == "director-v2.1", post
+              assert decision.get("approved") is True, post
+              assert decision.get("reason") not in {
+                  "corporate_product_or_brand_pr",
+                  "service_or_lost_and_found_notice",
+                  "routine_traffic_statistics",
+                  "ordinary_weather_not_release_worthy",
+              }, post
+              contract = post.get("publication_contract") or {}
+              assert contract.get("approved") is True and not contract.get("issues"), post
+              assert not policy.title_quality_issues(str(post.get("title") or "")), post
+              groups.append(decision.get("group"))
+          if len(groups) == 2:
+              assert len(set(groups)) == 2, groups
+          with open("monitor_status.json", "r", encoding="utf-8") as f:
+              monitor = json.load(f)
+          assert monitor.get("publisher_version") == "stable-v12.1", monitor
+          assert monitor.get("status") == "healthy", monitor
+          assert int((monitor.get("post_audit") or {}).get("unresolved") or 0) == 0, monitor
+          assert not (monitor.get("post_audit") or {}).get("failed_actions"), monitor
+          print("LIVE V12.1 VERIFIED", {"published": published, "groups": groups, "titles": [p.get("title") for p in posts]})
+          PY
+      - name: Commit live state and monitor status
+        if: always()
+        run: |
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+          git add state.json monitor_status.json
+          if git diff --cached --quiet; then
+            echo "No state changes"
+          else
+            git commit -m "Record verified stable v12.1 live publication"
+            git pull --rebase --autostash origin main
+            git push origin main
+          fi
