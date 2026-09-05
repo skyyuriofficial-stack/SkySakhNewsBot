@@ -396,7 +396,7 @@ def valid_post_v99(c):
         core.b.log(f"extractive-first accepted: {c['title'][:80]}")
         return fallback
 
-    while attempts < 2 and not _AI_CIRCUIT_OPEN and _AI_CALLS < AI_CALL_BUDGET:
+    while attempts < 2 and _AI_CALLS < AI_CALL_BUDGET:
         attempts += 1
         _AI_CALLS += 1
         core.b.STATS["ai_calls"] = _AI_CALLS
@@ -414,12 +414,11 @@ def valid_post_v99(c):
             core.b.STATS["rewrite_retry"] += 1
             last_error = str(ex)[:500]
             core.b.log(f"AI generation failed: {c['title'][:70]} | {last_error}")
-            if _api_failure_is_systemic(ex):
+            # Transient provider failures are isolated to this attempt.
+            # The global release must continue to the next model/candidate.
+            if any(code in str(ex).lower() for code in ("401", "403", "invalid api key")):
                 _AI_CIRCUIT_OPEN = True
-                core.b.log(
-                    "AI circuit opened for this run; candidates without a safe "
-                    "extractive post will be skipped"
-                )
+                core.b.log("AI authentication failure; disabling further AI calls for this run")
                 break
 
     if _AI_CALLS >= AI_CALL_BUDGET:
