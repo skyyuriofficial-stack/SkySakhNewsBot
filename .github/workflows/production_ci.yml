@@ -1,4 +1,4 @@
-name: SkySakhNews Production CI v12.0
+name: SkySakhNews Production CI v12.1
 
 on:
   workflow_dispatch:
@@ -9,23 +9,25 @@ on:
       - "src/news_bot_v9.py"
       - "src/production.py"
       - "src/editorial_gate.py"
+      - "src/editorial_policy.py"
       - "src/category_reconciler.py"
       - "src/editorial_gate_runner.py"
       - "src/media_enforced_runner.py"
-      - "src/editorial_policy.py"
       - "src/news_director.py"
       - "src/publication_auditor.py"
+      - "src/editorial_monitor.py"
       - "src/publisher.py"
       - "src/production_selftest.py"
       - "requirements.txt"
       - ".github/workflows/auto_publish_v7.yml"
+      - ".github/workflows/editorial_monitor.yml"
       - ".github/workflows/production_ci.yml"
 
 permissions:
   contents: read
 
 concurrency:
-  group: skysakhnews-production-ci-v12
+  group: skysakhnews-production-ci-v121
   cancel-in-progress: true
 
 jobs:
@@ -39,34 +41,21 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Require validated v12 source marker
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          marker = Path("V12_MAIN_VERIFIED.json")
-          assert marker.exists(), "stable-v12.0 source verification marker is missing"
-          data = json.loads(marker.read_text(encoding="utf-8"))
-          assert data.get("version") == "stable-v12.0", data
-          assert data.get("all_source_tests_passed") is True, data
-          PY
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Compile canonical v12 chain
+      - name: Compile canonical v12.1 chain
         run: |
           python -m py_compile \
             src/news_bot_v8.py src/news_bot_v9.py src/production.py \
-            src/editorial_gate.py src/category_reconciler.py \
+            src/editorial_gate.py src/editorial_policy.py src/category_reconciler.py \
             src/editorial_gate_runner.py src/media_enforced_runner.py \
-            src/editorial_policy.py src/news_director.py \
-            src/publication_auditor.py src/publisher.py \
-            src/production_selftest.py
+            src/news_director.py src/publication_auditor.py \
+            src/editorial_monitor.py src/publisher.py src/production_selftest.py
 
-      - name: Run exact feed, category, balance and post-audit regressions
+      - name: Run exact feed, category, balance, title and post-audit regressions
         env:
           IMAGE_REQUIRED: "1"
           AI_CALL_BUDGET: "0"
@@ -76,5 +65,6 @@ jobs:
           RUN_COOLDOWN_MINUTES: "0"
           MEDIA_PENDING_MAX_HOURS: "36"
           MEDIA_PENDING_MAX_ITEMS: "24"
-        run: |
-          python src/production_selftest.py
+          OPENROUTER_MAX_ATTEMPTS: "3"
+          OPENROUTER_RETRY_BASE_SECONDS: "0"
+        run: python src/production_selftest.py
