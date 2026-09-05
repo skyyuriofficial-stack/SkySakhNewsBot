@@ -3,8 +3,8 @@ name: SkySakhNews Continuous Editorial Monitor v12.1
 on:
   workflow_dispatch:
   schedule:
-    # Every hour at :30. Publisher itself runs at :00 on its six scheduled cycles.
-    - cron: "30 * * * *"
+    # Twice per hour, deliberately offset from publisher cycles at :00.
+    - cron: "15,45 * * * *"
 
 permissions:
   contents: write
