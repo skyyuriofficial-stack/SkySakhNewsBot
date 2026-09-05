@@ -1,63 +1,34 @@
 {
   "version": "editorial-monitor-v1",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-05T01:11:36+00:00",
-  "checked_at_sakhalin": "2026-09-05T12:11:34+11:00",
+  "checked_at_utc": "2026-09-05T01:24:37+00:00",
+  "checked_at_sakhalin": "2026-09-05T12:24:34+11:00",
   "status": "healthy",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-05T12:11:33+11:00",
+    "finished_sakhalin": "2026-09-05T12:24:33+11:00",
     "age_hours": 0.0,
-    "published": 0
+    "published": 1
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-05T01:11:35+00:00",
+    "checked_at": "2026-09-05T01:24:35+00:00",
     "checked": 16,
-    "passed": 3,
+    "passed": 6,
     "anomalies": [
-      {
-        "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
-        "url": "https://sakhalinmedia.ru/news/2608836/",
-        "publisher_version": null,
-        "category_key": "sakh",
-        "corrected_category": null,
-        "reason": "ceremony_or_congratulation",
-        "contract_issues": [
-          "ceremony_or_congratulation"
-        ]
-      },
-      {
-        "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
-        "url": "https://www.bbc.co.uk/news/articles/c62j50n131mo?at_medium=RSS&at_campaign=rss",
-        "publisher_version": null,
-        "category_key": "world_ru",
-        "corrected_category": null,
-        "reason": "no_supported_news_stream",
-        "contract_issues": [
-          "no_supported_news_stream"
-        ]
-      },
       {
         "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
         "url": "https://sakh.online/news/18/2026-09-03/vladimir-putin-vystupil-na-plenarnom-zasedanii-vef-2026-vo-vladivostoke-524854",
         "publisher_version": null,
         "category_key": "ru_pol",
-        "corrected_category": "sakh",
-        "reason": "approved",
-        "contract_issues": []
-      },
-      {
-        "title": "Путин: за 11 лет в развитие Дальнего Востока привлекли 25 трлн рублей",
-        "url": "https://sakh.online/news/18/2026-09-03/putin-za-11-let-v-razvitie-dalnego-vostoka-privlekli-25-trln-rubley-524857",
-        "publisher_version": null,
-        "category_key": "ru_eco",
-        "corrected_category": "sakh",
-        "reason": "approved",
-        "contract_issues": []
+        "corrected_category": "ru_pol",
+        "reason": "statement_without_material_decision",
+        "contract_issues": [
+          "statement_without_material_decision"
+        ]
       },
       {
         "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
@@ -165,29 +136,16 @@
   },
   "recent_active_posts": [
     {
-      "message_id": null,
-      "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
-      "category_key": "sakh",
-      "publisher_version": null,
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": false,
-      "contract_ok": true,
-      "review_reason": "ceremony_or_congratulation",
-      "corrected_category": null,
-      "title_issues": []
-    },
-    {
       "message_id": 246,
       "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
       "category_key": "world_ru",
       "publisher_version": null,
-      "category_ok": false,
+      "category_ok": true,
       "title_ok": true,
       "media_ok": true,
       "contract_ok": true,
-      "review_reason": "no_supported_news_stream",
-      "corrected_category": null,
+      "review_reason": "approved",
+      "corrected_category": "world_ru",
       "title_issues": []
     },
     {
@@ -199,8 +157,8 @@
       "title_ok": true,
       "media_ok": true,
       "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
+      "review_reason": "statement_without_material_decision",
+      "corrected_category": "ru_pol",
       "title_issues": []
     },
     {
@@ -208,12 +166,12 @@
       "title": "Путин: за 11 лет в развитие Дальнего Востока привлекли 25 трлн рублей",
       "category_key": "ru_eco",
       "publisher_version": null,
-      "category_ok": false,
+      "category_ok": true,
       "title_ok": true,
       "media_ok": true,
       "contract_ok": true,
       "review_reason": "approved",
-      "corrected_category": "sakh",
+      "corrected_category": "ru_eco",
       "title_issues": []
     },
     {
@@ -373,6 +331,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_pol",
       "title_issues": []
+    },
+    {
+      "message_id": 265,
+      "title": "Russian drone hits Ukranian security headquarters, Zelensky says",
+      "category_key": "world_ru",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "world_ru",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -394,75 +365,73 @@
       "it": 5.0
     },
     "counts": {
-      "local": 5,
+      "local": 3,
       "ru_pol": 2,
-      "ru_eco": 1,
+      "ru_eco": 2,
       "ru_safety": 0,
-      "world": 0,
+      "world": 2,
       "it": 0
     },
     "scaled_targets": {
-      "local": 2.4,
-      "ru_pol": 1.6,
-      "ru_eco": 1.6,
-      "ru_safety": 1.2,
-      "world": 0.8,
-      "it": 0.4
+      "local": 2.7,
+      "ru_pol": 1.8,
+      "ru_eco": 1.8,
+      "ru_safety": 1.35,
+      "world": 0.9,
+      "it": 0.45
     },
     "deficits": {
-      "local": -2.6,
-      "ru_pol": -0.4,
-      "ru_eco": 0.6,
-      "ru_safety": 1.2,
-      "world": 0.8,
-      "it": 0.4
+      "local": -0.3,
+      "ru_pol": -0.2,
+      "ru_eco": -0.2,
+      "ru_safety": 1.35,
+      "world": -1.1,
+      "it": 0.45
     },
-    "distribution_error": 6.0,
+    "distribution_error": 3.6,
     "subtype_counts": {
       "major_infrastructure": 1,
-      "political_statement": 1,
+      "geopolitical_event": 1,
       "macro_economy": 2,
       "political_decision": 2,
       "major_emergency": 1,
-      "violent_crime": 1
+      "violent_crime": 1,
+      "military_security": 1
     },
     "sequence": [
       "local",
-      "local",
-      "local",
+      "world",
+      "ru_eco",
       "ru_pol",
       "local",
       "local",
       "ru_eco",
-      "ru_pol"
+      "ru_pol",
+      "world"
     ],
     "category_sequence": [
       "sakh",
-      "sakh",
-      "sakh",
+      "world_ru",
+      "ru_eco",
       "ru_pol",
       "sakh_chp",
       "sakh_chp",
       "ru_eco",
-      "ru_pol"
+      "ru_pol",
+      "world_ru"
     ],
     "source_sequence": [
       "sakhalinmedia.ru",
-      "sakh.online",
+      "bbc world",
       "sakh.online",
       "sakhalinmedia.ru",
       "astv",
       "astv",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "bbc world"
     ],
     "retrospective_anomalies": [
-      {
-        "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
-        "category_key": "geo",
-        "reason": "ceremony_or_congratulation",
-        "corrected_category": null
-      },
       {
         "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
         "category_key": "geo",
@@ -482,10 +451,10 @@
         "corrected_category": null
       },
       {
-        "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
-        "category_key": "world_ru",
-        "reason": "no_supported_news_stream",
-        "corrected_category": null
+        "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
+        "category_key": "ru_pol",
+        "reason": "statement_without_material_decision",
+        "corrected_category": "ru_pol"
       },
       {
         "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
@@ -530,6 +499,6 @@
         "corrected_category": "sakh"
       }
     ],
-    "valid_posts_counted": 8
+    "valid_posts_counted": 9
   }
 }

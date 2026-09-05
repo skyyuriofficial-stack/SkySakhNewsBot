@@ -216,7 +216,8 @@
     "https://sakhalinmedia.ru/news/2611255/",
     "https://sakhalinmedia.ru/news/2611303/",
     "https://sakhalinmedia.ru/news/2611323/",
-    "https://sakhalinmedia.ru/news/2611739/"
+    "https://sakhalinmedia.ru/news/2611739/",
+    "https://www.bbc.co.uk/news/articles/c5yep7y48x2o?at_medium=RSS&at_campaign=rss"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -436,34 +437,11 @@
     "32fa81ec0e534151b50bda8b2a3e56343fe8e4ff",
     "b6c26795f2360a0d1a77833586396d0aca183a18",
     "8533ca1a70637f674d8d9c3b4b10341f05fad555",
-    "9e93338ac7662109acc9a8bade6b1e962cd06f75"
+    "9e93338ac7662109acc9a8bade6b1e962cd06f75",
+    "d0b88474c79a85ddb77c29bf216760c7fc27fcf8"
   ],
-  "last_run_sakhalin": "2026-09-05T12:11:34+11:00",
+  "last_run_sakhalin": "2026-09-05T12:24:34+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-08-26T07:33:08+11:00",
-      "source": "BBC World",
-      "category": "🌍 Мир о России",
-      "category_key": "world_ru",
-      "title": "Глава ЦРУ прибыл в Москву для неанонсированных переговоров, сообщают СМИ США",
-      "url": "https://www.bbc.co.uk/news/articles/c87vg9x5d7do?at_medium=RSS&at_campaign=rss",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/32e3/live/0854ea30-a095-11f1-91dc-4919512f173f.jpg",
-      "image_hash": "c87fe7ae51f056ff9a9584030636ce7fb4aebd19",
-      "topic_cluster": "world_ru:chief_travels_moscow_unannounced_talks_media",
-      "published_at": "2026-08-25T19:48:14+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/stable-v9.5",
-      "grounded_evidence": true,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+independent_ai",
-        "issues": []
-      }
-    },
     {
       "time_sakhalin": "2026-08-26T10:27:19+11:00",
       "source": "SakhalinMedia.ru",
@@ -2333,7 +2311,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-09-05T01:11:34+00:00",
+        "checked_at": "2026-09-05T01:20:39+00:00",
         "reason": "ceremony_or_congratulation",
         "issues": [
           "ceremony_or_congratulation"
@@ -2391,12 +2369,8 @@
       },
       "post_audit": {
         "version": "post-audit-v1.1",
-        "approved": false,
-        "checked_at": "2026-09-05T01:11:34+00:00",
-        "reason": "no_supported_news_stream",
-        "issues": [
-          "no_supported_news_stream"
-        ]
+        "approved": true,
+        "checked_at": "2026-09-05T01:24:34+00:00"
       }
     },
     {
@@ -2453,9 +2427,11 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-09-05T01:11:34+00:00",
-        "reason": "approved",
-        "issues": []
+        "checked_at": "2026-09-05T01:24:34+00:00",
+        "reason": "statement_without_material_decision",
+        "issues": [
+          "statement_without_material_decision"
+        ]
       }
     },
     {
@@ -2511,10 +2487,8 @@
       },
       "post_audit": {
         "version": "post-audit-v1.1",
-        "approved": false,
-        "checked_at": "2026-09-05T01:11:34+00:00",
-        "reason": "approved",
-        "issues": []
+        "approved": true,
+        "checked_at": "2026-09-05T01:24:34+00:00"
       }
     },
     {
@@ -2569,7 +2543,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-09-05T01:11:34+00:00",
+        "checked_at": "2026-09-05T01:24:35+00:00",
         "reason": "importance_below_threshold",
         "issues": [
           "importance_below_threshold"
@@ -2630,7 +2604,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-09-05T01:11:34+00:00",
+        "checked_at": "2026-09-05T01:24:35+00:00",
         "reason": "approved",
         "issues": []
       }
@@ -2689,7 +2663,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-09-05T01:11:34+00:00",
+        "checked_at": "2026-09-05T01:24:35+00:00",
         "reason": "importance_below_threshold",
         "issues": [
           "importance_below_threshold"
@@ -2750,7 +2724,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-09-05T01:11:34+00:00",
+        "checked_at": "2026-09-05T01:24:35+00:00",
         "reason": "importance_below_threshold",
         "issues": [
           "importance_below_threshold"
@@ -2811,7 +2785,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-09-05T01:11:34+00:00",
+        "checked_at": "2026-09-05T01:24:35+00:00",
         "reason": "no_supported_news_stream",
         "issues": [
           "no_supported_news_stream"
@@ -2870,7 +2844,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T01:11:34+00:00"
+        "checked_at": "2026-09-05T01:24:35+00:00"
       }
     },
     {
@@ -2932,7 +2906,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-09-05T01:11:34+00:00",
+        "checked_at": "2026-09-05T01:24:35+00:00",
         "reason": "routine_traffic_statistics",
         "issues": [
           "routine_traffic_statistics"
@@ -2995,7 +2969,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-09-05T01:11:34+00:00",
+        "checked_at": "2026-09-05T01:24:35+00:00",
         "reason": "service_or_lost_and_found_notice",
         "issues": [
           "service_or_lost_and_found_notice"
@@ -3060,7 +3034,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T01:11:34+00:00"
+        "checked_at": "2026-09-05T01:24:35+00:00"
       },
       "legacy_cleanup": "edited_or_already_fixed"
     },
@@ -3118,7 +3092,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-09-05T01:11:34+00:00",
+        "checked_at": "2026-09-05T01:24:35+00:00",
         "reason": "ordinary_weather_not_release_worthy",
         "issues": [
           "ordinary_weather_not_release_worthy"
@@ -3179,7 +3153,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-09-05T01:11:35+00:00",
+        "checked_at": "2026-09-05T01:24:35+00:00",
         "reason": "approved",
         "issues": []
       }
@@ -4081,7 +4055,185 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T01:11:35+00:00"
+        "checked_at": "2026-09-05T01:24:35+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-09-05T12:23:59+11:00",
+      "source": "BBC World",
+      "category": "🌍 Мир о России",
+      "category_key": "world_ru",
+      "title": "Russian drone hits Ukranian security headquarters, Zelensky says",
+      "url": "https://www.bbc.co.uk/news/articles/c5yep7y48x2o?at_medium=RSS&at_campaign=rss",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/6455/live/4b6d29e0-a888-11f1-aed2-8d6da8d75094.jpg",
+      "image_hash": "f579ae9b488d5dab6500bb96fb13a9789fdde672",
+      "topic_cluster": "world_ru:russian_drone_ukranian_security_headquarters_zelensky",
+      "published_at": "2026-09-04T16:02:32+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.1",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "world_ru",
+        "corrected_category": "world_ru",
+        "group": "world",
+        "event_type": "military_security",
+        "subtype": "military_security",
+        "seriousness": 96,
+        "threshold": 78,
+        "selection_utility": 90.6,
+        "slot": 2,
+        "risks": [],
+        "title_original": "Russian drone hits Ukranian security headquarters, Zelensky says",
+        "title_corrected": "Russian drone hits Ukranian security headquarters, Zelensky says",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": "corrected_title"
+      },
+      "source_text_excerpt": "The unmanned aerial vehicle struck without warning in the heart of the Ukrainian capital. The unmanned aerial vehicle struck without warning in the heart of the Ukrainian capital. BBC Homepage Skip to content Accessibility Help Your account Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds More menu More menu Search BBC Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds Close menu BBC News Menu Home Climate World US & Canada UK Business Tech Science Entertainment & Arts Health More In Pictures BBC Verify Newsbeat World Africa Asia Australia Europe Latin America Middle East Russia hits Ukrainian security headquarters in drone attack, Zelensky says Image source, Reuters By Dan Sales Â and Â James Landale ,Â Diplomatic correspondent Published 4 September 2026 A Russian drone has hit the headquarters of the Security Service of Ukraine (SBU) during a strike in the heart of Kyiv, Ukrainian President Volodymyr Zelensky has said. The unmanned aerial vehicle crashed into the SBU headquarters on Friday afternoon, targeting a room used by security chief Oleksandr Poklad. It is not clear whether Poklad was in the building, but Zelensky said he had since spoken to him to order an \"appropriate, tangible response\". \"The drone was aimed directly at the office of the Head of the Security Service in that building,\" Zelensky confirmed. It suggests Russia's new drones are growing in accuracy and signals Moscow could step up strikes before possible US mediation talks this weekend.",
+      "title_original": null,
+      "footer": "МИР О РОССИИ",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Russian drone hits Ukranian security headquarters, Zelensky says",
+        "title_evidence": "Russian drone hits Ukranian security headquarters, Zelensky says",
+        "body": [
+          "Российский беспилотник нанёс удар по зданию Службы безопасности Украины (СБУ) в центре Киева, сообщил президент Украины Владимир Зеленский. По его словам, дрон без предупреждения попал в штаб-квартиру ведомства в пятницу днём и был нацелен на кабинет главы СБУ Александра Поклада.",
+          "Зеленский также заявил, что поручил Покладу подготовить «соответствующий ощутимый ответ». По мнению журналистов, это может свидетельствовать о росте точности российских дронов и о готовности Москвы активизировать удары перед возможными переговорами при посредничестве США, намеченными на эти выходные."
+        ],
+        "body_evidence": [
+          "A Russian drone has hit the headquarters of the Security Service of Ukraine (SBU) during a strike in the heart of Kyiv, Ukrainian President Volodymyr Zelensky has said.",
+          "It suggests Russia's new drones are growing in accuracy and signals Moscow could step up strikes before possible US mediation talks this weekend."
+        ],
+        "footer": "МИР О РОССИИ",
+        "category": "🌍 Мир о России",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 90,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+grounded_translation",
+          "issues": [
+            "independent_ai_unavailable:grounded_translation"
+          ]
+        },
+        "news_director": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "world_ru",
+          "corrected_category": "world_ru",
+          "group": "world",
+          "event_type": "military_security",
+          "subtype": "military_security",
+          "seriousness": 96,
+          "threshold": 78,
+          "selection_utility": 90.6,
+          "slot": 2,
+          "risks": [],
+          "title_original": "Russian drone hits Ukranian security headquarters, Zelensky says",
+          "title_corrected": "Russian drone hits Ukranian security headquarters, Zelensky says",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": "corrected_title"
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "world_ru",
+          "final_category": "world_ru",
+          "event_type": "military_security",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "issues": [],
+          "policy_version": "policy-v2.2",
+          "director_review": {
+            "version": "director-v2.1",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "world_ru",
+            "corrected_category": "world_ru",
+            "group": "world",
+            "event_type": "military_security",
+            "subtype": "military_security",
+            "seriousness": 94,
+            "threshold": 78,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Russian drone hits Ukranian security headquarters, Zelensky says",
+            "title_corrected": "Russian drone hits Ukranian security headquarters, Zelensky says",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "🌍 Мир о России\n\n<b>Russian drone hits Ukranian security headquarters, Zelensky says</b>\n\nРоссийский беспилотник нанёс удар по зданию Службы безопасности Украины (СБУ) в центре Киева, сообщил президент Украины Владимир Зеленский. По его словам, дрон без предупреждения попал в штаб-квартиру ведомства в пятницу днём и был нацелен на кабинет главы СБУ Александра Поклада.\n\nЗеленский также заявил, что поручил Покладу подготовить «соответствующий ощутимый ответ». По мнению журналистов, это может свидетельствовать о росте точности российских дронов и о готовности Москвы активизировать удары перед возможными переговорами при посредничестве США, намеченными на эти выходные.\n\nМИР О РОССИИ · <a href=\"https://www.bbc.co.uk/news/articles/c5yep7y48x2o?at_medium=RSS&amp;at_campaign=rss\">BBC World</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "world_ru",
+        "final_category": "world_ru",
+        "event_type": "military_security",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "issues": [],
+        "policy_version": "policy-v2.2",
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "world_ru",
+          "corrected_category": "world_ru",
+          "group": "world",
+          "event_type": "military_security",
+          "subtype": "military_security",
+          "seriousness": 94,
+          "threshold": 78,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Russian drone hits Ukranian security headquarters, Zelensky says",
+          "title_corrected": "Russian drone hits Ukranian security headquarters, Zelensky says",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 265,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 90,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+grounded_translation",
+        "issues": [
+          "independent_ai_unavailable:grounded_translation"
+        ]
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-09-05T01:24:35+00:00"
       }
     }
   ],
@@ -4310,10 +4462,10 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-09-05T12:09:03+11:00",
+    "started_sakhalin": "2026-09-05T12:20:35+11:00",
     "status": "ok",
     "candidates": 3,
-    "published": 0,
+    "published": 1,
     "local_candidates": 0,
     "local_stream": {
       "status": "healthy",
@@ -4341,59 +4493,60 @@
           "source": "Sakh.online HTML",
           "status": "ok",
           "entries": 20,
-          "recent": 9
+          "recent": 10
         }
       ]
     },
-    "finished_sakhalin": "2026-09-05T12:11:33+11:00",
+    "finished_sakhalin": "2026-09-05T12:24:33+11:00",
     "stats": {
       "rss_seen": 160,
       "old_skip": 72,
       "google_skip": 6,
       "duplicate_skip": 3,
-      "low_info_skip": 14,
+      "low_info_skip": 15,
       "category_skip": 32,
       "no_image_skip": 0,
-      "bad_image_skip": 11,
-      "logo_image_skip": 48,
+      "bad_image_skip": 10,
+      "logo_image_skip": 47,
       "text_card_image_skip": 0,
-      "candidates": 17,
-      "rewrite_retry": 1,
-      "editorial_skip": 3,
+      "candidates": 12,
+      "rewrite_retry": 3,
+      "editorial_skip": 2,
       "telegram_fail": 0,
-      "published": 0,
-      "ai_calls": 2,
-      "ai_budget_exhausted": 0,
+      "published": 1,
+      "ai_calls": 4,
+      "ai_budget_exhausted": 1,
       "ai_api_fail": 1,
-      "evidence_reject": 0,
-      "validation_reject": 0,
+      "evidence_reject": 2,
+      "validation_reject": 2,
       "extractive_fallback": 0,
       "extractive_first": 0,
-      "editorial_prechecked": 31,
+      "editorial_prechecked": 32,
       "editorial_gate_checked": 3,
-      "editorial_gate_pass": 0,
-      "editorial_gate_reject": 1,
+      "editorial_gate_pass": 1,
+      "editorial_gate_reject": 0,
       "editorial_gate_fallback": 0,
-      "editorial_gate_ai_calls": 1,
-      "editorial_gate_ai_fail": 1,
-      "editorial_title_reject": 1,
+      "editorial_gate_ai_calls": 2,
+      "editorial_gate_ai_fail": 2,
+      "editorial_title_reject": 0,
       "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 5,
-      "editorial_offtopic_reject": 13,
-      "openrouter_empty_content": 2,
-      "openrouter_model_fallback": 0,
-      "openrouter_attempts": 4,
-      "openrouter_retries": 2,
-      "openrouter_invalid_json": 1,
-      "openrouter_success": 1,
-      "openrouter_circuit_open": 1,
-      "media_required_skip": 1,
+      "editorial_reclassified": 6,
+      "editorial_offtopic_reject": 18,
+      "openrouter_empty_content": 3,
+      "openrouter_model_fallback": 3,
+      "openrouter_attempts": 16,
+      "openrouter_retries": 10,
+      "openrouter_invalid_json": 4,
+      "openrouter_success": 3,
+      "openrouter_circuit_open": 0,
+      "editorial_grounded_translation_fallback": 1,
+      "media_required_skip": 2,
       "media_generic_skip": 0,
-      "media_ready_candidates": 17,
+      "media_ready_candidates": 12,
       "photo_retry": 0,
-      "photo_publish": 0,
-      "photo_upload_original": 0,
+      "photo_publish": 1,
+      "photo_upload_original": 1,
       "photo_upload_reencoded": 0,
       "photo_upload_plain_caption": 0,
       "photo_remote_url": 0,
@@ -4404,20 +4557,20 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 17,
+      "director_seen": 12,
       "director_approved": 3,
-      "director_rejected": 14,
+      "director_rejected": 9,
       "director_reclassified": 0,
       "director_title_corrected": 0,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
-      "director_final_checked": 0,
-      "director_final_autocorrected": 0,
+      "director_final_checked": 1,
+      "director_final_autocorrected": 1,
       "director_final_reject": 0,
       "director_pending_retired": 0,
       "publication_contract_blocked": 0,
       "post_audit_checked": 16,
-      "post_audit_anomalies": 13,
+      "post_audit_anomalies": 11,
       "post_audit_corrected": 0,
       "post_audit_deleted": 0
     },
@@ -4444,11 +4597,11 @@
           "it": 5.0
         },
         "counts": {
-          "local": 5,
+          "local": 3,
           "ru_pol": 2,
-          "ru_eco": 1,
+          "ru_eco": 2,
           "ru_safety": 0,
-          "world": 0,
+          "world": 1,
           "it": 0
         },
         "scaled_targets": {
@@ -4460,17 +4613,17 @@
           "it": 0.4
         },
         "deficits": {
-          "local": -2.6,
+          "local": -0.6,
           "ru_pol": -0.4,
-          "ru_eco": 0.6,
+          "ru_eco": -0.4,
           "ru_safety": 1.2,
-          "world": 0.8,
+          "world": -0.2,
           "it": 0.4
         },
-        "distribution_error": 6.0,
+        "distribution_error": 3.2,
         "subtype_counts": {
           "major_infrastructure": 1,
-          "political_statement": 1,
+          "geopolitical_event": 1,
           "macro_economy": 2,
           "political_decision": 2,
           "major_emergency": 1,
@@ -4478,8 +4631,8 @@
         },
         "sequence": [
           "local",
-          "local",
-          "local",
+          "world",
+          "ru_eco",
           "ru_pol",
           "local",
           "local",
@@ -4488,8 +4641,8 @@
         ],
         "category_sequence": [
           "sakh",
-          "sakh",
-          "sakh",
+          "world_ru",
+          "ru_eco",
           "ru_pol",
           "sakh_chp",
           "sakh_chp",
@@ -4498,7 +4651,7 @@
         ],
         "source_sequence": [
           "sakhalinmedia.ru",
-          "sakh.online",
+          "bbc world",
           "sakh.online",
           "sakhalinmedia.ru",
           "astv",
@@ -4532,10 +4685,10 @@
             "corrected_category": null
           },
           {
-            "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
-            "category_key": "world_ru",
-            "reason": "no_supported_news_stream",
-            "corrected_category": null
+            "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
+            "category_key": "ru_pol",
+            "reason": "statement_without_material_decision",
+            "corrected_category": "ru_pol"
           },
           {
             "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
@@ -4582,46 +4735,46 @@
         ],
         "valid_posts_counted": 8
       },
-      "candidate_count": 17,
+      "candidate_count": 12,
       "approved_count": 3,
-      "rejected_count": 14,
+      "rejected_count": 9,
       "rejected_by_reason": {
-        "ordinary_weather_not_release_worthy": 2,
-        "importance_below_threshold": 12
+        "importance_below_threshold": 8,
+        "ordinary_weather_not_release_worthy": 1
       },
       "ai_review_requested": 0,
       "ai_review_received": 0,
       "selected_groups": [
-        "world",
-        "it"
+        "it",
+        "world"
       ],
-      "projected_distribution_error": 5.0,
+      "projected_distribution_error": 3.0,
       "projected_counts": {
-        "local": 5,
+        "local": 3,
+        "world": 2,
+        "ru_eco": 2,
         "ru_pol": 2,
-        "ru_eco": 1,
-        "world": 1,
         "it": 1
       },
       "projected_length": 10,
       "selected_preview": [
         {
           "slot": 1,
-          "title": "Russian drone hits Ukranian security headquarters, Zelensky says",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "military_security",
-          "seriousness": 96,
-          "utility": 110.4
-        },
-        {
-          "slot": 2,
           "title": "Nvidia strikes $12.9bn deal to buy AI platform Hugging Face",
           "category_key": "it",
           "group": "it",
           "event_type": "major_it",
           "seriousness": 88,
-          "utility": 91.6
+          "utility": 97.0
+        },
+        {
+          "slot": 2,
+          "title": "Russian drone hits Ukranian security headquarters, Zelensky says",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "military_security",
+          "seriousness": 96,
+          "utility": 90.6
         },
         {
           "slot": "backup",
@@ -4630,7 +4783,7 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 85,
-          "utility": 31.6
+          "utility": 24.4
         }
       ],
       "rolling_balance_after": {
@@ -4652,75 +4805,73 @@
           "it": 5.0
         },
         "counts": {
-          "local": 5,
+          "local": 3,
           "ru_pol": 2,
-          "ru_eco": 1,
+          "ru_eco": 2,
           "ru_safety": 0,
-          "world": 0,
+          "world": 2,
           "it": 0
         },
         "scaled_targets": {
-          "local": 2.4,
-          "ru_pol": 1.6,
-          "ru_eco": 1.6,
-          "ru_safety": 1.2,
-          "world": 0.8,
-          "it": 0.4
+          "local": 2.7,
+          "ru_pol": 1.8,
+          "ru_eco": 1.8,
+          "ru_safety": 1.35,
+          "world": 0.9,
+          "it": 0.45
         },
         "deficits": {
-          "local": -2.6,
-          "ru_pol": -0.4,
-          "ru_eco": 0.6,
-          "ru_safety": 1.2,
-          "world": 0.8,
-          "it": 0.4
+          "local": -0.3,
+          "ru_pol": -0.2,
+          "ru_eco": -0.2,
+          "ru_safety": 1.35,
+          "world": -1.1,
+          "it": 0.45
         },
-        "distribution_error": 6.0,
+        "distribution_error": 3.6,
         "subtype_counts": {
           "major_infrastructure": 1,
-          "political_statement": 1,
+          "geopolitical_event": 1,
           "macro_economy": 2,
           "political_decision": 2,
           "major_emergency": 1,
-          "violent_crime": 1
+          "violent_crime": 1,
+          "military_security": 1
         },
         "sequence": [
           "local",
-          "local",
-          "local",
+          "world",
+          "ru_eco",
           "ru_pol",
           "local",
           "local",
           "ru_eco",
-          "ru_pol"
+          "ru_pol",
+          "world"
         ],
         "category_sequence": [
           "sakh",
-          "sakh",
-          "sakh",
+          "world_ru",
+          "ru_eco",
           "ru_pol",
           "sakh_chp",
           "sakh_chp",
           "ru_eco",
-          "ru_pol"
+          "ru_pol",
+          "world_ru"
         ],
         "source_sequence": [
           "sakhalinmedia.ru",
-          "sakh.online",
+          "bbc world",
           "sakh.online",
           "sakhalinmedia.ru",
           "astv",
           "astv",
           "sakhalinmedia.ru",
-          "sakhalinmedia.ru"
+          "sakhalinmedia.ru",
+          "bbc world"
         ],
         "retrospective_anomalies": [
-          {
-            "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
-            "category_key": "geo",
-            "reason": "ceremony_or_congratulation",
-            "corrected_category": null
-          },
           {
             "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
             "category_key": "geo",
@@ -4740,10 +4891,10 @@
             "corrected_category": null
           },
           {
-            "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
-            "category_key": "world_ru",
-            "reason": "no_supported_news_stream",
-            "corrected_category": null
+            "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
+            "category_key": "ru_pol",
+            "reason": "statement_without_material_decision",
+            "corrected_category": "ru_pol"
           },
           {
             "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
@@ -4788,14 +4939,14 @@
             "corrected_category": "sakh"
           }
         ],
-        "valid_posts_counted": 8
+        "valid_posts_counted": 9
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-09-05T01:09:08+00:00",
+      "checked_at": "2026-09-05T01:20:40+00:00",
       "checked": 16,
-      "passed": 3,
+      "passed": 5,
       "anomalies": [
         {
           "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
@@ -4809,33 +4960,15 @@
           ]
         },
         {
-          "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
-          "url": "https://www.bbc.co.uk/news/articles/c62j50n131mo?at_medium=RSS&at_campaign=rss",
-          "publisher_version": null,
-          "category_key": "world_ru",
-          "corrected_category": null,
-          "reason": "no_supported_news_stream",
-          "contract_issues": [
-            "no_supported_news_stream"
-          ]
-        },
-        {
           "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
           "url": "https://sakh.online/news/18/2026-09-03/vladimir-putin-vystupil-na-plenarnom-zasedanii-vef-2026-vo-vladivostoke-524854",
           "publisher_version": null,
           "category_key": "ru_pol",
-          "corrected_category": "sakh",
-          "reason": "approved",
-          "contract_issues": []
-        },
-        {
-          "title": "Путин: за 11 лет в развитие Дальнего Востока привлекли 25 трлн рублей",
-          "url": "https://sakh.online/news/18/2026-09-03/putin-za-11-let-v-razvitie-dalnego-vostoka-privlekli-25-trln-rubley-524857",
-          "publisher_version": null,
-          "category_key": "ru_eco",
-          "corrected_category": "sakh",
-          "reason": "approved",
-          "contract_issues": []
+          "corrected_category": "ru_pol",
+          "reason": "statement_without_material_decision",
+          "contract_issues": [
+            "statement_without_material_decision"
+          ]
         },
         {
           "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
@@ -4950,11 +5083,11 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 17,
-      "missing_media_rejected": 1,
+      "ready_candidates": 12,
+      "missing_media_rejected": 2,
       "generic_media_rejected": 0,
       "photo_retries": 0,
-      "photo_published": 0,
+      "photo_published": 1,
       "deferred_this_run": 0,
       "pending_queue_size": 0,
       "pending_ready": 0,
@@ -4964,15 +5097,15 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 31,
+      "prechecked": 32,
       "checked": 3,
-      "passed": 0,
-      "rejected": 1,
-      "reclassified": 5,
-      "offtopic_reject": 13,
+      "passed": 1,
+      "rejected": 0,
+      "reclassified": 6,
+      "offtopic_reject": 18,
       "fallback": 0,
-      "ai_calls": 1,
-      "ai_fail": 1,
+      "ai_calls": 2,
+      "ai_fail": 2,
       "audited_urls": 1
     }
   },
@@ -5018,75 +5151,73 @@
       "it": 5.0
     },
     "counts": {
-      "local": 5,
+      "local": 3,
       "ru_pol": 2,
-      "ru_eco": 1,
+      "ru_eco": 2,
       "ru_safety": 0,
-      "world": 0,
+      "world": 2,
       "it": 0
     },
     "scaled_targets": {
-      "local": 2.4,
-      "ru_pol": 1.6,
-      "ru_eco": 1.6,
-      "ru_safety": 1.2,
-      "world": 0.8,
-      "it": 0.4
+      "local": 2.7,
+      "ru_pol": 1.8,
+      "ru_eco": 1.8,
+      "ru_safety": 1.35,
+      "world": 0.9,
+      "it": 0.45
     },
     "deficits": {
-      "local": -2.6,
-      "ru_pol": -0.4,
-      "ru_eco": 0.6,
-      "ru_safety": 1.2,
-      "world": 0.8,
-      "it": 0.4
+      "local": -0.3,
+      "ru_pol": -0.2,
+      "ru_eco": -0.2,
+      "ru_safety": 1.35,
+      "world": -1.1,
+      "it": 0.45
     },
-    "distribution_error": 6.0,
+    "distribution_error": 3.6,
     "subtype_counts": {
       "major_infrastructure": 1,
-      "political_statement": 1,
+      "geopolitical_event": 1,
       "macro_economy": 2,
       "political_decision": 2,
       "major_emergency": 1,
-      "violent_crime": 1
+      "violent_crime": 1,
+      "military_security": 1
     },
     "sequence": [
       "local",
-      "local",
-      "local",
+      "world",
+      "ru_eco",
       "ru_pol",
       "local",
       "local",
       "ru_eco",
-      "ru_pol"
+      "ru_pol",
+      "world"
     ],
     "category_sequence": [
       "sakh",
-      "sakh",
-      "sakh",
+      "world_ru",
+      "ru_eco",
       "ru_pol",
       "sakh_chp",
       "sakh_chp",
       "ru_eco",
-      "ru_pol"
+      "ru_pol",
+      "world_ru"
     ],
     "source_sequence": [
       "sakhalinmedia.ru",
-      "sakh.online",
+      "bbc world",
       "sakh.online",
       "sakhalinmedia.ru",
       "astv",
       "astv",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "bbc world"
     ],
     "retrospective_anomalies": [
-      {
-        "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
-        "category_key": "geo",
-        "reason": "ceremony_or_congratulation",
-        "corrected_category": null
-      },
       {
         "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
         "category_key": "geo",
@@ -5106,10 +5237,10 @@
         "corrected_category": null
       },
       {
-        "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
-        "category_key": "world_ru",
-        "reason": "no_supported_news_stream",
-        "corrected_category": null
+        "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
+        "category_key": "ru_pol",
+        "reason": "statement_without_material_decision",
+        "corrected_category": "ru_pol"
       },
       {
         "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
@@ -5154,7 +5285,7 @@
         "corrected_category": "sakh"
       }
     ],
-    "valid_posts_counted": 8
+    "valid_posts_counted": 9
   },
   "expired_media_delivery": [
     {
@@ -5329,49 +5460,20 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-05T01:11:35+00:00",
+    "checked_at": "2026-09-05T01:24:35+00:00",
     "checked": 16,
-    "passed": 3,
+    "passed": 6,
     "anomalies": [
-      {
-        "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
-        "url": "https://sakhalinmedia.ru/news/2608836/",
-        "publisher_version": null,
-        "category_key": "sakh",
-        "corrected_category": null,
-        "reason": "ceremony_or_congratulation",
-        "contract_issues": [
-          "ceremony_or_congratulation"
-        ]
-      },
-      {
-        "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
-        "url": "https://www.bbc.co.uk/news/articles/c62j50n131mo?at_medium=RSS&at_campaign=rss",
-        "publisher_version": null,
-        "category_key": "world_ru",
-        "corrected_category": null,
-        "reason": "no_supported_news_stream",
-        "contract_issues": [
-          "no_supported_news_stream"
-        ]
-      },
       {
         "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
         "url": "https://sakh.online/news/18/2026-09-03/vladimir-putin-vystupil-na-plenarnom-zasedanii-vef-2026-vo-vladivostoke-524854",
         "publisher_version": null,
         "category_key": "ru_pol",
-        "corrected_category": "sakh",
-        "reason": "approved",
-        "contract_issues": []
-      },
-      {
-        "title": "Путин: за 11 лет в развитие Дальнего Востока привлекли 25 трлн рублей",
-        "url": "https://sakh.online/news/18/2026-09-03/putin-za-11-let-v-razvitie-dalnego-vostoka-privlekli-25-trln-rubley-524857",
-        "publisher_version": null,
-        "category_key": "ru_eco",
-        "corrected_category": "sakh",
-        "reason": "approved",
-        "contract_issues": []
+        "corrected_category": "ru_pol",
+        "reason": "statement_without_material_decision",
+        "contract_issues": [
+          "statement_without_material_decision"
+        ]
       },
       {
         "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
@@ -5507,63 +5609,34 @@
   "continuous_editorial_monitor": {
     "version": "editorial-monitor-v1",
     "publisher_version": "stable-v12.1",
-    "checked_at_utc": "2026-09-05T01:11:36+00:00",
-    "checked_at_sakhalin": "2026-09-05T12:11:34+11:00",
+    "checked_at_utc": "2026-09-05T01:24:37+00:00",
+    "checked_at_sakhalin": "2026-09-05T12:24:34+11:00",
     "status": "healthy",
     "mutations_enabled": true,
     "issues": [],
     "last_run": {
       "version": "stable-v12.1",
       "status": "ok",
-      "finished_sakhalin": "2026-09-05T12:11:33+11:00",
+      "finished_sakhalin": "2026-09-05T12:24:33+11:00",
       "age_hours": 0.0,
-      "published": 0
+      "published": 1
     },
     "post_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-09-05T01:11:35+00:00",
+      "checked_at": "2026-09-05T01:24:35+00:00",
       "checked": 16,
-      "passed": 3,
+      "passed": 6,
       "anomalies": [
-        {
-          "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
-          "url": "https://sakhalinmedia.ru/news/2608836/",
-          "publisher_version": null,
-          "category_key": "sakh",
-          "corrected_category": null,
-          "reason": "ceremony_or_congratulation",
-          "contract_issues": [
-            "ceremony_or_congratulation"
-          ]
-        },
-        {
-          "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
-          "url": "https://www.bbc.co.uk/news/articles/c62j50n131mo?at_medium=RSS&at_campaign=rss",
-          "publisher_version": null,
-          "category_key": "world_ru",
-          "corrected_category": null,
-          "reason": "no_supported_news_stream",
-          "contract_issues": [
-            "no_supported_news_stream"
-          ]
-        },
         {
           "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
           "url": "https://sakh.online/news/18/2026-09-03/vladimir-putin-vystupil-na-plenarnom-zasedanii-vef-2026-vo-vladivostoke-524854",
           "publisher_version": null,
           "category_key": "ru_pol",
-          "corrected_category": "sakh",
-          "reason": "approved",
-          "contract_issues": []
-        },
-        {
-          "title": "Путин: за 11 лет в развитие Дальнего Востока привлекли 25 трлн рублей",
-          "url": "https://sakh.online/news/18/2026-09-03/putin-za-11-let-v-razvitie-dalnego-vostoka-privlekli-25-trln-rubley-524857",
-          "publisher_version": null,
-          "category_key": "ru_eco",
-          "corrected_category": "sakh",
-          "reason": "approved",
-          "contract_issues": []
+          "corrected_category": "ru_pol",
+          "reason": "statement_without_material_decision",
+          "contract_issues": [
+            "statement_without_material_decision"
+          ]
         },
         {
           "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
@@ -5671,29 +5744,16 @@
     },
     "recent_active_posts": [
       {
-        "message_id": null,
-        "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
-        "category_key": "sakh",
-        "publisher_version": null,
-        "category_ok": false,
-        "title_ok": true,
-        "media_ok": false,
-        "contract_ok": true,
-        "review_reason": "ceremony_or_congratulation",
-        "corrected_category": null,
-        "title_issues": []
-      },
-      {
         "message_id": 246,
         "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
         "category_key": "world_ru",
         "publisher_version": null,
-        "category_ok": false,
+        "category_ok": true,
         "title_ok": true,
         "media_ok": true,
         "contract_ok": true,
-        "review_reason": "no_supported_news_stream",
-        "corrected_category": null,
+        "review_reason": "approved",
+        "corrected_category": "world_ru",
         "title_issues": []
       },
       {
@@ -5705,8 +5765,8 @@
         "title_ok": true,
         "media_ok": true,
         "contract_ok": true,
-        "review_reason": "approved",
-        "corrected_category": "sakh",
+        "review_reason": "statement_without_material_decision",
+        "corrected_category": "ru_pol",
         "title_issues": []
       },
       {
@@ -5714,12 +5774,12 @@
         "title": "Путин: за 11 лет в развитие Дальнего Востока привлекли 25 трлн рублей",
         "category_key": "ru_eco",
         "publisher_version": null,
-        "category_ok": false,
+        "category_ok": true,
         "title_ok": true,
         "media_ok": true,
         "contract_ok": true,
         "review_reason": "approved",
-        "corrected_category": "sakh",
+        "corrected_category": "ru_eco",
         "title_issues": []
       },
       {
@@ -5879,6 +5939,19 @@
         "review_reason": "approved",
         "corrected_category": "ru_pol",
         "title_issues": []
+      },
+      {
+        "message_id": 265,
+        "title": "Russian drone hits Ukranian security headquarters, Zelensky says",
+        "category_key": "world_ru",
+        "publisher_version": "stable-v12.1",
+        "category_ok": true,
+        "title_ok": true,
+        "media_ok": true,
+        "contract_ok": true,
+        "review_reason": "approved",
+        "corrected_category": "world_ru",
+        "title_issues": []
       }
     ],
     "balance": {
@@ -5900,75 +5973,73 @@
         "it": 5.0
       },
       "counts": {
-        "local": 5,
+        "local": 3,
         "ru_pol": 2,
-        "ru_eco": 1,
+        "ru_eco": 2,
         "ru_safety": 0,
-        "world": 0,
+        "world": 2,
         "it": 0
       },
       "scaled_targets": {
-        "local": 2.4,
-        "ru_pol": 1.6,
-        "ru_eco": 1.6,
-        "ru_safety": 1.2,
-        "world": 0.8,
-        "it": 0.4
+        "local": 2.7,
+        "ru_pol": 1.8,
+        "ru_eco": 1.8,
+        "ru_safety": 1.35,
+        "world": 0.9,
+        "it": 0.45
       },
       "deficits": {
-        "local": -2.6,
-        "ru_pol": -0.4,
-        "ru_eco": 0.6,
-        "ru_safety": 1.2,
-        "world": 0.8,
-        "it": 0.4
+        "local": -0.3,
+        "ru_pol": -0.2,
+        "ru_eco": -0.2,
+        "ru_safety": 1.35,
+        "world": -1.1,
+        "it": 0.45
       },
-      "distribution_error": 6.0,
+      "distribution_error": 3.6,
       "subtype_counts": {
         "major_infrastructure": 1,
-        "political_statement": 1,
+        "geopolitical_event": 1,
         "macro_economy": 2,
         "political_decision": 2,
         "major_emergency": 1,
-        "violent_crime": 1
+        "violent_crime": 1,
+        "military_security": 1
       },
       "sequence": [
         "local",
-        "local",
-        "local",
+        "world",
+        "ru_eco",
         "ru_pol",
         "local",
         "local",
         "ru_eco",
-        "ru_pol"
+        "ru_pol",
+        "world"
       ],
       "category_sequence": [
         "sakh",
-        "sakh",
-        "sakh",
+        "world_ru",
+        "ru_eco",
         "ru_pol",
         "sakh_chp",
         "sakh_chp",
         "ru_eco",
-        "ru_pol"
+        "ru_pol",
+        "world_ru"
       ],
       "source_sequence": [
         "sakhalinmedia.ru",
-        "sakh.online",
+        "bbc world",
         "sakh.online",
         "sakhalinmedia.ru",
         "astv",
         "astv",
         "sakhalinmedia.ru",
-        "sakhalinmedia.ru"
+        "sakhalinmedia.ru",
+        "bbc world"
       ],
       "retrospective_anomalies": [
-        {
-          "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
-          "category_key": "geo",
-          "reason": "ceremony_or_congratulation",
-          "corrected_category": null
-        },
         {
           "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
           "category_key": "geo",
@@ -5988,10 +6059,10 @@
           "corrected_category": null
         },
         {
-          "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
-          "category_key": "world_ru",
-          "reason": "no_supported_news_stream",
-          "corrected_category": null
+          "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
+          "category_key": "ru_pol",
+          "reason": "statement_without_material_decision",
+          "corrected_category": "ru_pol"
         },
         {
           "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
@@ -6036,7 +6107,7 @@
           "corrected_category": "sakh"
         }
       ],
-      "valid_posts_counted": 8
+      "valid_posts_counted": 9
     }
   }
 }
