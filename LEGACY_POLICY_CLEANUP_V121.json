@@ -1,0 +1,100 @@
+{
+  "version": "legacy-policy-cleanup-v121",
+  "executed_at": "2026-09-05T01:40:47+00:00",
+  "actions": [
+    {
+      "message_id": 247,
+      "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
+      "old_category": "ru_pol",
+      "corrected_category": "ru_pol",
+      "reason": "statement_without_material_decision",
+      "title_issues": [],
+      "telegram_status": "deleted"
+    },
+    {
+      "message_id": 249,
+      "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
+      "old_category": "sakh_chp",
+      "corrected_category": "sakh",
+      "reason": "importance_below_threshold",
+      "title_issues": [],
+      "telegram_status": "deleted"
+    },
+    {
+      "message_id": 250,
+      "title": "Путин: Особый правовой режим запустят на Дальнем Востоке для обкатки технологий с 1 января",
+      "old_category": "it",
+      "corrected_category": "ru_pol",
+      "reason": "approved",
+      "title_issues": [],
+      "telegram_status": "deleted"
+    },
+    {
+      "message_id": 251,
+      "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
+      "old_category": "sakh_chp",
+      "corrected_category": "sakh",
+      "reason": "importance_below_threshold",
+      "title_issues": [],
+      "telegram_status": "deleted"
+    },
+    {
+      "message_id": 252,
+      "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
+      "old_category": "ru_incident",
+      "corrected_category": "ru_incident",
+      "reason": "importance_below_threshold",
+      "title_issues": [],
+      "telegram_status": "deleted"
+    },
+    {
+      "message_id": 253,
+      "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
+      "old_category": "ru_incident",
+      "corrected_category": null,
+      "reason": "no_supported_news_stream",
+      "title_issues": [],
+      "telegram_status": "deleted"
+    },
+    {
+      "message_id": 255,
+      "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
+      "old_category": "sakh",
+      "corrected_category": "sakh",
+      "reason": "routine_traffic_statistics",
+      "title_issues": [
+        "clickbait_title"
+      ],
+      "telegram_status": "already_absent"
+    },
+    {
+      "message_id": 256,
+      "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
+      "old_category": "sakh_chp",
+      "corrected_category": null,
+      "reason": "service_or_lost_and_found_notice",
+      "title_issues": [],
+      "telegram_status": "already_absent"
+    },
+    {
+      "message_id": 258,
+      "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
+      "old_category": "sakh",
+      "corrected_category": "sakh",
+      "reason": "ordinary_weather_not_release_worthy",
+      "title_issues": [],
+      "telegram_status": "deleted"
+    },
+    {
+      "message_id": 259,
+      "title": "Глава ВТБ: Китайских инвесторов стал интересовать российский хайтек и автопром",
+      "old_category": "geo",
+      "corrected_category": "ru_eco",
+      "reason": "approved",
+      "title_issues": [],
+      "telegram_status": "deleted"
+    }
+  ],
+  "deleted_or_absent": 10,
+  "failed": []
+}

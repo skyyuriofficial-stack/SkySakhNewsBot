@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v1",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-05T01:36:38+00:00",
-  "checked_at_sakhalin": "2026-09-05T12:36:36+11:00",
+  "checked_at_utc": "2026-09-05T01:40:49+00:00",
+  "checked_at_sakhalin": "2026-09-05T12:40:48+11:00",
   "status": "healthy",
   "mutations_enabled": true,
   "issues": [],
@@ -10,122 +10,15 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-09-05T12:24:33+11:00",
-    "age_hours": 0.2,
+    "age_hours": 0.27,
     "published": 1
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-05T01:36:37+00:00",
-    "checked": 16,
+    "checked_at": "2026-09-05T01:40:48+00:00",
+    "checked": 6,
     "passed": 6,
-    "anomalies": [
-      {
-        "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
-        "url": "https://sakh.online/news/18/2026-09-03/vladimir-putin-vystupil-na-plenarnom-zasedanii-vef-2026-vo-vladivostoke-524854",
-        "publisher_version": null,
-        "category_key": "ru_pol",
-        "corrected_category": "ru_pol",
-        "reason": "statement_without_material_decision",
-        "contract_issues": [
-          "statement_without_material_decision"
-        ]
-      },
-      {
-        "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
-        "url": "https://astv.ru/news/criminal/2026-09-03-zhitel-poronajska-pereprodal-chuzhoj-velosiped-za-1-500-rublej-i-popal-pod-ugolovnuyu-stat-yu",
-        "publisher_version": null,
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh",
-        "reason": "importance_below_threshold",
-        "contract_issues": [
-          "importance_below_threshold"
-        ]
-      },
-      {
-        "title": "Путин: Особый правовой режим запустят на Дальнем Востоке для обкатки технологий с 1 января",
-        "url": "https://sakhalinmedia.ru/news/2609589/",
-        "publisher_version": null,
-        "category_key": "it",
-        "corrected_category": "ru_pol",
-        "reason": "approved",
-        "contract_issues": []
-      },
-      {
-        "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
-        "url": "https://sakhalinmedia.ru/news/2609528/",
-        "publisher_version": null,
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh",
-        "reason": "importance_below_threshold",
-        "contract_issues": [
-          "importance_below_threshold"
-        ]
-      },
-      {
-        "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
-        "url": "https://astv.ru/news/society/2026-09-03-moshenniki-nachali-poddelyvat-golosa-uchitelej-dlya-obmana-roditelej",
-        "publisher_version": null,
-        "category_key": "ru_incident",
-        "corrected_category": "ru_incident",
-        "reason": "importance_below_threshold",
-        "contract_issues": [
-          "importance_below_threshold"
-        ]
-      },
-      {
-        "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
-        "url": "https://astv.ru/news/society/2026-09-03-vladel-cy-koshek-pozhalovalis-na-smert-pitomcev-posle-vakciny-mul-tifel",
-        "publisher_version": null,
-        "category_key": "ru_incident",
-        "corrected_category": null,
-        "reason": "no_supported_news_stream",
-        "contract_issues": [
-          "no_supported_news_stream"
-        ]
-      },
-      {
-        "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
-        "url": "https://sakhalinmedia.ru/news/2610302/",
-        "publisher_version": null,
-        "category_key": "sakh",
-        "corrected_category": "sakh",
-        "reason": "routine_traffic_statistics",
-        "contract_issues": [
-          "routine_traffic_statistics"
-        ]
-      },
-      {
-        "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
-        "url": "https://astv.ru/news/society/2026-09-04-policiya-na-sahaline-ishet-aleksandra-ledyaeva-chtoby-vernut-emu-veshi-i-dokumenty",
-        "publisher_version": null,
-        "category_key": "sakh_chp",
-        "corrected_category": null,
-        "reason": "service_or_lost_and_found_notice",
-        "contract_issues": [
-          "service_or_lost_and_found_notice"
-        ]
-      },
-      {
-        "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
-        "url": "https://sakh.online/news/18/2026-09-04/teplye-vyhodnye-i-dozhdlivaya-nedelya-prognoz-pogody-na-sahaline-i-kurilah-5-11-sentyabrya-524990",
-        "publisher_version": null,
-        "category_key": "sakh",
-        "corrected_category": "sakh",
-        "reason": "ordinary_weather_not_release_worthy",
-        "contract_issues": [
-          "ordinary_weather_not_release_worthy"
-        ]
-      },
-      {
-        "title": "Глава ВТБ: Китайских инвесторов стал интересовать российский хайтек и автопром",
-        "url": "https://sakhalinmedia.ru/news/2611184/",
-        "publisher_version": null,
-        "category_key": "geo",
-        "corrected_category": "ru_eco",
-        "reason": "approved",
-        "contract_issues": []
-      }
-    ],
+    "anomalies": [],
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
@@ -149,19 +42,6 @@
       "title_issues": []
     },
     {
-      "message_id": 247,
-      "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
-      "category_key": "ru_pol",
-      "publisher_version": null,
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "statement_without_material_decision",
-      "corrected_category": "ru_pol",
-      "title_issues": []
-    },
-    {
       "message_id": 248,
       "title": "Путин: за 11 лет в развитие Дальнего Востока привлекли 25 трлн рублей",
       "category_key": "ru_eco",
@@ -172,71 +52,6 @@
       "contract_ok": true,
       "review_reason": "approved",
       "corrected_category": "ru_eco",
-      "title_issues": []
-    },
-    {
-      "message_id": 249,
-      "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
-      "category_key": "sakh_chp",
-      "publisher_version": null,
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "importance_below_threshold",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
-    {
-      "message_id": 250,
-      "title": "Путин: Особый правовой режим запустят на Дальнем Востоке для обкатки технологий с 1 января",
-      "category_key": "it",
-      "publisher_version": null,
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_pol",
-      "title_issues": []
-    },
-    {
-      "message_id": 251,
-      "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
-      "category_key": "sakh_chp",
-      "publisher_version": null,
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "importance_below_threshold",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
-    {
-      "message_id": 252,
-      "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
-      "category_key": "ru_incident",
-      "publisher_version": null,
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "importance_below_threshold",
-      "corrected_category": "ru_incident",
-      "title_issues": []
-    },
-    {
-      "message_id": 253,
-      "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
-      "category_key": "ru_incident",
-      "publisher_version": null,
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "no_supported_news_stream",
-      "corrected_category": null,
       "title_issues": []
     },
     {
@@ -253,34 +68,6 @@
       "title_issues": []
     },
     {
-      "message_id": 255,
-      "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
-      "category_key": "sakh",
-      "publisher_version": null,
-      "category_ok": false,
-      "title_ok": false,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "routine_traffic_statistics",
-      "corrected_category": "sakh",
-      "title_issues": [
-        "clickbait_title"
-      ]
-    },
-    {
-      "message_id": 256,
-      "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
-      "category_key": "sakh_chp",
-      "publisher_version": null,
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "service_or_lost_and_found_notice",
-      "corrected_category": null,
-      "title_issues": []
-    },
-    {
       "message_id": 257,
       "title": "Суд арестовал сахалинца, обвиняемого в убийстве и незаконном лишении свободы женщины",
       "category_key": "sakh_chp",
@@ -291,32 +78,6 @@
       "contract_ok": true,
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 258,
-      "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
-      "category_key": "sakh",
-      "publisher_version": null,
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "ordinary_weather_not_release_worthy",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
-    {
-      "message_id": 259,
-      "title": "Глава ВТБ: Китайских инвесторов стал интересовать российский хайтек и автопром",
-      "category_key": "geo",
-      "publisher_version": null,
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
       "title_issues": []
     },
     {
@@ -365,73 +126,113 @@
       "it": 5.0
     },
     "counts": {
-      "local": 3,
-      "ru_pol": 2,
-      "ru_eco": 2,
+      "local": 5,
+      "ru_pol": 1,
+      "ru_eco": 3,
       "ru_safety": 0,
-      "world": 2,
+      "world": 3,
       "it": 0
     },
     "scaled_targets": {
-      "local": 2.7,
-      "ru_pol": 1.8,
-      "ru_eco": 1.8,
-      "ru_safety": 1.35,
-      "world": 0.9,
-      "it": 0.45
+      "local": 3.6,
+      "ru_pol": 2.4,
+      "ru_eco": 2.4,
+      "ru_safety": 1.8,
+      "world": 1.2,
+      "it": 0.6
     },
     "deficits": {
-      "local": -0.3,
-      "ru_pol": -0.2,
-      "ru_eco": -0.2,
-      "ru_safety": 1.35,
-      "world": -1.1,
-      "it": 0.45
+      "local": -1.4,
+      "ru_pol": 1.4,
+      "ru_eco": -0.6,
+      "ru_safety": 1.8,
+      "world": -1.8,
+      "it": 0.6
     },
-    "distribution_error": 3.6,
+    "distribution_error": 7.6,
     "subtype_counts": {
-      "major_infrastructure": 1,
-      "geopolitical_event": 1,
-      "macro_economy": 2,
-      "political_decision": 2,
+      "major_infrastructure": 4,
+      "geopolitical_event": 2,
+      "corporate_forecast": 1,
+      "macro_economy": 1,
       "major_emergency": 1,
       "violent_crime": 1,
+      "political_decision": 1,
       "military_security": 1
     },
     "sequence": [
       "local",
+      "local",
+      "ru_eco",
       "world",
       "ru_eco",
-      "ru_pol",
       "local",
-      "local",
+      "world",
       "ru_eco",
+      "local",
+      "local",
       "ru_pol",
       "world"
     ],
     "category_sequence": [
       "sakh",
+      "sakh",
+      "ru_eco",
+      "geo",
+      "ru_eco",
+      "sakh",
       "world_ru",
       "ru_eco",
-      "ru_pol",
       "sakh_chp",
       "sakh_chp",
-      "ru_eco",
       "ru_pol",
       "world_ru"
     ],
     "source_sequence": [
       "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
+      "tass",
+      "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
       "bbc world",
       "sakh.online",
-      "sakhalinmedia.ru",
       "astv",
       "astv",
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "bbc world"
     ],
     "retrospective_anomalies": [
+      {
+        "title": "Просвещение (группа ВЭБ.РФ): Дальний Восток может опередить другие регионы России по использованию ИИ",
+        "category_key": "it",
+        "reason": "no_supported_news_stream",
+        "corrected_category": null
+      },
+      {
+        "title": "Трое пьяных, шесть без прав: на Сахалине поймали почти 100 нарушителей ПДД",
+        "category_key": "sakh",
+        "reason": "routine_traffic_statistics",
+        "corrected_category": "sakh"
+      },
+      {
+        "title": "Водитель Урала погиб в результате опрокидывания грузовика на Итурупе",
+        "category_key": "sakh_chp",
+        "reason": "importance_below_threshold",
+        "corrected_category": "sakh"
+      },
+      {
+        "title": "Жительница Южно-Сахалинска лишилась денег при попытке купить щенка в интернете",
+        "category_key": "sakh",
+        "reason": "importance_below_threshold",
+        "corrected_category": "sakh_chp"
+      },
+      {
+        "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
+        "category_key": "geo",
+        "reason": "ceremony_or_congratulation",
+        "corrected_category": null
+      },
       {
         "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
         "category_key": "geo",
@@ -449,56 +250,8 @@
         "category_key": "sakh",
         "reason": "ceremony_or_congratulation",
         "corrected_category": null
-      },
-      {
-        "title": "Владимир Путин выступил на пленарном заседании ВЭФ‑2026 во Владивостоке",
-        "category_key": "ru_pol",
-        "reason": "statement_without_material_decision",
-        "corrected_category": "ru_pol"
-      },
-      {
-        "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
-        "category_key": "sakh_chp",
-        "reason": "importance_below_threshold",
-        "corrected_category": "sakh"
-      },
-      {
-        "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
-        "category_key": "sakh_chp",
-        "reason": "importance_below_threshold",
-        "corrected_category": "sakh"
-      },
-      {
-        "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
-        "category_key": "ru_incident",
-        "reason": "importance_below_threshold",
-        "corrected_category": "ru_incident"
-      },
-      {
-        "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
-        "category_key": "ru_incident",
-        "reason": "no_supported_news_stream",
-        "corrected_category": null
-      },
-      {
-        "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
-        "category_key": "sakh",
-        "reason": "routine_traffic_statistics",
-        "corrected_category": "sakh"
-      },
-      {
-        "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
-        "category_key": "sakh_chp",
-        "reason": "service_or_lost_and_found_notice",
-        "corrected_category": null
-      },
-      {
-        "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
-        "category_key": "sakh",
-        "reason": "ordinary_weather_not_release_worthy",
-        "corrected_category": "sakh"
       }
     ],
-    "valid_posts_counted": 9
+    "valid_posts_counted": 12
   }
 }
