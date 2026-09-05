@@ -1,0 +1,62 @@
+name: Apply final stable v12.1 title and IT hardening
+
+on:
+  push:
+    branches: [fix/final-russian-title-v121]
+    paths:
+      - "tools/apply_final_title_v121.py"
+      - ".github/workflows/apply_final_title_v121.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Apply patch
+        run: python tools/apply_final_title_v121.py
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Compile
+        run: |
+          python -m py_compile \
+            src/news_bot_v8.py src/news_bot_v9.py src/production.py \
+            src/editorial_gate.py src/editorial_policy.py src/category_reconciler.py \
+            src/editorial_gate_runner.py src/media_enforced_runner.py \
+            src/news_director.py src/publication_auditor.py src/editorial_monitor.py \
+            src/publisher.py src/production_selftest.py
+      - name: Full regression suite
+        env:
+          IMAGE_REQUIRED: "1"
+          AI_CALL_BUDGET: "0"
+          EDITORIAL_AUDIT_AI_BUDGET: "0"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+          POST_AUDIT_AUTOCORRECT: "0"
+          RUN_COOLDOWN_MINUTES: "0"
+          OPENROUTER_MAX_ATTEMPTS: "3"
+          OPENROUTER_RETRY_BASE_SECONDS: "0"
+        run: python src/production_selftest.py
+      - name: Verify diff
+        run: |
+          git diff --check
+          git diff --stat
+      - name: Commit tested sources
+        run: |
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+          find src -type d -name __pycache__ -prune -exec rm -rf {} +
+          git rm tools/apply_final_title_v121.py .github/workflows/apply_final_title_v121.yml
+          git add src/news_bot_v8.py src/production.py src/editorial_policy.py src/publisher.py src/production_selftest.py
+          git commit -m "Require Russian final headlines and normalize IT validation"
+          git push origin HEAD:fix/final-russian-title-v121
