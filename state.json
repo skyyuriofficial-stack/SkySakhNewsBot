@@ -2370,7 +2370,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T01:40:48+00:00"
+        "checked_at": "2026-09-05T06:19:12+00:00"
       }
     },
     {
@@ -2496,7 +2496,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T01:40:48+00:00"
+        "checked_at": "2026-09-05T06:19:12+00:00"
       }
     },
     {
@@ -2892,7 +2892,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T01:40:48+00:00"
+        "checked_at": "2026-09-05T06:19:12+00:00"
       }
     },
     {
@@ -3100,7 +3100,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T01:40:48+00:00"
+        "checked_at": "2026-09-05T06:19:12+00:00"
       },
       "legacy_cleanup": "edited_or_already_fixed"
     },
@@ -4137,7 +4137,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T01:40:48+00:00"
+        "checked_at": "2026-09-05T06:19:12+00:00"
       }
     },
     {
@@ -4295,7 +4295,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T01:40:48+00:00"
+        "checked_at": "2026-09-05T06:19:12+00:00"
       }
     }
   ],
@@ -5522,7 +5522,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-05T01:40:48+00:00",
+    "checked_at": "2026-09-05T06:19:12+00:00",
     "checked": 6,
     "passed": 6,
     "anomalies": [],
@@ -5564,21 +5564,27 @@
   "continuous_editorial_monitor": {
     "version": "editorial-monitor-v1",
     "publisher_version": "stable-v12.1",
-    "checked_at_utc": "2026-09-05T01:40:49+00:00",
-    "checked_at_sakhalin": "2026-09-05T12:40:48+11:00",
-    "status": "healthy",
+    "checked_at_utc": "2026-09-05T06:19:13+00:00",
+    "checked_at_sakhalin": "2026-09-05T17:19:12+11:00",
+    "status": "error",
     "mutations_enabled": true,
-    "issues": [],
+    "issues": [
+      {
+        "type": "publisher_stale",
+        "age_hours": 4.91,
+        "limit_hours": 4.5
+      }
+    ],
     "last_run": {
       "version": "stable-v12.1",
       "status": "ok",
       "finished_sakhalin": "2026-09-05T12:24:33+11:00",
-      "age_hours": 0.27,
+      "age_hours": 4.91,
       "published": 1
     },
     "post_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-09-05T01:40:48+00:00",
+      "checked_at": "2026-09-05T06:19:12+00:00",
       "checked": 6,
       "passed": 6,
       "anomalies": [],
