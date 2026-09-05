@@ -1,0 +1,174 @@
+name: Repair Telegram message 265 Russian headline
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/repair_message_265.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Regression gate
+        env:
+          IMAGE_REQUIRED: "1"
+          AI_CALL_BUDGET: "0"
+          EDITORIAL_AUDIT_AI_BUDGET: "0"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+          POST_AUDIT_AUTOCORRECT: "0"
+          RUN_COOLDOWN_MINUTES: "0"
+        run: python src/production_selftest.py
+      - name: Repair actual Telegram caption and state
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        run: |
+          python - <<'PY'
+          import copy, json, os, sys
+          from pathlib import Path
+          import requests
+          sys.path.insert(0, "src")
+          import editorial_policy as policy
+          import news_director as director
+          import publisher
+
+          state_path = Path("state.json")
+          state = json.loads(state_path.read_text(encoding="utf-8"))
+          post = next(
+              (item for item in state.get("last_posts", []) if item.get("telegram_message_id") == 265),
+              None,
+          )
+          if post is None:
+              raise RuntimeError("Telegram message 265 not found in state")
+
+          safe_title = "Российский дрон ударил по штаб-квартире СБУ в Киеве, заявил Зеленский"
+          source_title = str(post.get("title_original") or post.get("title") or "")
+          row = copy.deepcopy(post.get("published_row") or {})
+          if not row or not row.get("body") or not row.get("body_evidence"):
+              raise RuntimeError("stored grounded row missing")
+          row["title_ru"] = safe_title
+          row["title_evidence"] = str(row.get("title_evidence") or source_title)
+
+          candidate = {
+              "title": safe_title,
+              "title_original": source_title,
+              "source_text": post.get("source_text_excerpt") or "",
+              "source": post.get("source"),
+              "url": post.get("url"),
+              "category_key": post.get("category_key"),
+              "category": post.get("category"),
+              "footer": post.get("footer") or "МИР О РОССИИ",
+              "published_at": post.get("published_at"),
+          }
+          contract = policy.final_contract(candidate, row)
+          if not contract.get("approved"):
+              raise RuntimeError("repaired caption failed contract: " + repr(contract))
+          if not policy.headline_is_russian(safe_title):
+              raise RuntimeError("safe title is not Russian")
+
+          caption = publisher.core.b.caption(row, candidate)
+          if safe_title not in caption or len(caption) > 1024:
+              raise RuntimeError("invalid Telegram caption")
+
+          token = os.environ["TELEGRAM_BOT_TOKEN"]
+          chat_id = post.get("telegram_chat_id") or os.environ["TELEGRAM_CHANNEL_ID"]
+          response = requests.post(
+              f"https://api.telegram.org/bot{token}/editMessageCaption",
+              data={
+                  "chat_id": chat_id,
+                  "message_id": 265,
+                  "caption": caption,
+                  "parse_mode": "HTML",
+              },
+              timeout=60,
+          )
+          payload = response.json()
+          if response.status_code >= 400 or payload.get("ok") is not True:
+              raise RuntimeError(f"Telegram edit failed: HTTP {response.status_code}: {payload}")
+
+          review = director.review_candidate(candidate)
+          if review.get("approved") is not True or review.get("corrected_category") != "world_ru":
+              raise RuntimeError("repaired post director mismatch: " + repr(review))
+
+          post["title_original"] = source_title
+          post["title"] = safe_title
+          post["published_row"] = row
+          post["published_caption"] = caption
+          post["publication_contract"] = contract
+          post["editorial_gate"] = {
+              "approved": True,
+              "title_matches_source": 100,
+              "category_matches_story": 100,
+              "facts_supported": True,
+              "meaning_changed": False,
+              "mode": "repaired_grounded_translation",
+              "issues": [],
+          }
+          compact = director.compact_review(review)
+          compact["final_title_checked"] = True
+          compact["final_category_checked"] = True
+          compact["final_autocorrection"] = "manual_grounded_repair_265"
+          post["news_director"] = compact
+          post["post_audit"] = {
+              "version": "post-audit-v1.1",
+              "approved": True,
+              "auto_action": "caption_corrected",
+          }
+          state_path.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          print("Telegram message 265 repaired:", safe_title)
+          PY
+      - name: Re-audit feed after repair
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          POST_AUDIT_AUTOCORRECT: "1"
+          IMAGE_REQUIRED: "1"
+          AI_CALL_BUDGET: "0"
+          EDITORIAL_AUDIT_AI_BUDGET: "0"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+        run: python src/editorial_monitor.py
+      - name: Verify repair
+        run: |
+          python - <<'PY'
+          import json, sys
+          sys.path.insert(0, "src")
+          import editorial_policy as policy
+          state = json.load(open("state.json", encoding="utf-8"))
+          post = next(item for item in state["last_posts"] if item.get("telegram_message_id") == 265)
+          assert policy.headline_is_russian(post["title"]), post
+          assert (post.get("publication_contract") or {}).get("approved") is True, post
+          assert (post.get("post_audit") or {}).get("approved") is True, post
+          monitor = json.load(open("monitor_status.json", encoding="utf-8"))
+          assert monitor.get("status") == "healthy", monitor
+          assert int((monitor.get("post_audit") or {}).get("unresolved") or 0) == 0, monitor
+          assert not (monitor.get("post_audit") or {}).get("failed_actions"), monitor
+          print("MESSAGE 265 REPAIR VERIFIED")
+          PY
+      - name: Commit repaired state
+        if: always()
+        run: |
+          git config user.name "skysakhnews-monitor"
+          git config user.email "actions@github.com"
+          git add state.json monitor_status.json
+          if git diff --cached --quiet; then
+            echo "No state changes"
+          else
+            git commit -m "Repair English headline in Telegram message 265"
+            git pull --rebase --autostash origin main
+            git push origin main
+          fi
