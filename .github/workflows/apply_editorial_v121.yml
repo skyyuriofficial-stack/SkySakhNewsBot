@@ -1,0 +1,150 @@
+name: Apply stable v12.1 editorial hardening
+
+on:
+  push:
+    branches:
+      - fix/editorial-director-v12
+    paths:
+      - "tools/apply_editorial_v121.py"
+      - ".github/workflows/apply_editorial_v121.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apply-editorial-v121
+  cancel-in-progress: true
+
+jobs:
+  patch-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Apply v12.1 patch
+        run: python tools/apply_editorial_v121.py
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Compile complete chain
+        run: |
+          python -m py_compile \
+            src/news_bot_v8.py src/news_bot_v9.py src/production.py \
+            src/editorial_gate.py src/editorial_policy.py src/category_reconciler.py \
+            src/editorial_gate_runner.py src/media_enforced_runner.py \
+            src/news_director.py src/publication_auditor.py \
+            src/editorial_monitor.py src/publisher.py src/production_selftest.py
+
+      - name: Run all deterministic regressions
+        env:
+          IMAGE_REQUIRED: "1"
+          AI_CALL_BUDGET: "0"
+          EDITORIAL_AUDIT_AI_BUDGET: "0"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+          POST_AUDIT_AUTOCORRECT: "0"
+          RUN_COOLDOWN_MINUTES: "0"
+          MEDIA_PENDING_MAX_HOURS: "36"
+          MEDIA_PENDING_MAX_ITEMS: "24"
+        run: python src/production_selftest.py
+
+      - name: Live-source dry release audit
+        env:
+          IMAGE_REQUIRED: "1"
+          POSTS_PER_RUN: "2"
+          MAX_AGE_HOURS: "36"
+          AI_CALL_BUDGET: "0"
+          EDITORIAL_AUDIT_AI_BUDGET: "0"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+          POST_AUDIT_AUTOCORRECT: "0"
+          RUN_COOLDOWN_MINUTES: "0"
+          FORCE_RUN: "1"
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python - <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+          sys.path.insert(0, "src")
+          import publisher
+          import editorial_policy as policy
+          import news_director as director
+
+          original = json.loads(Path("state.json").read_text(encoding="utf-8"))
+          before = len(original.get("last_posts") or [])
+
+          def dry_send(candidate, caption):
+              return {"ok": True, "result": {"message_id": 999999, "chat": {"id": -1001}}}
+
+          publisher._original_send_photo = dry_send
+          publisher.media._safe_wait = lambda *_args, **_kwargs: None
+          publisher.main()
+
+          state = json.loads(Path("state.json").read_text(encoding="utf-8"))
+          run = state.get("last_run") or {}
+          assert run.get("version") == "stable-v12.1", run
+          assert run.get("status") == "ok", run
+          published = int(run.get("published") or 0)
+          assert 0 <= published <= 2, run
+          posts = (state.get("last_posts") or [])[-published:] if published else []
+          for post in posts:
+              decision = post.get("news_director") or {}
+              contract = post.get("publication_contract") or {}
+              assert decision.get("approved") is True, post
+              assert contract.get("approved") is True, post
+              assert not policy.title_quality_issues(str(post.get("title") or "")), post
+              assert decision.get("reason") not in {
+                  "corporate_product_or_brand_pr",
+                  "service_or_lost_and_found_notice",
+                  "routine_traffic_statistics",
+              }, post
+          if len(posts) == 2:
+              groups = [(post.get("news_director") or {}).get("group") for post in posts]
+              assert len(set(groups)) == 2, groups
+          report = {
+              "version": "stable-v12.1",
+              "published": published,
+              "selected": [
+                  {
+                      "title": post.get("title"),
+                      "category_key": post.get("category_key"),
+                      "group": (post.get("news_director") or {}).get("group"),
+                      "event_type": (post.get("news_director") or {}).get("event_type"),
+                      "score": (post.get("news_director") or {}).get("seriousness"),
+                  }
+                  for post in posts
+              ],
+              "director": run.get("news_director"),
+          }
+          Path("v121_live_dry_report.json").write_text(
+              json.dumps(report, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          print(json.dumps(report, ensure_ascii=False, indent=2))
+          PY
+          git checkout -- state.json
+
+      - name: Verify diff
+        run: |
+          git diff --check
+          git diff --stat
+
+      - name: Commit tested v12.1 sources and remove one-shot machinery
+        run: |
+          git config user.name "skysakhnews-bot"
+          git config user.email "actions@github.com"
+          git rm tools/apply_editorial_v121.py .github/workflows/apply_editorial_v121.yml
+          find src -type d -name __pycache__ -prune -exec rm -rf {} +
+          git add src .github/workflows/auto_publish_v7.yml .github/workflows/production_ci.yml .github/workflows/editorial_monitor.yml v121_live_dry_report.json
+          git commit -m "Harden stable v12.1 editorial policy and continuous monitor"
+          git push origin HEAD:fix/editorial-director-v12
