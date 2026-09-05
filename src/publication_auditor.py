@@ -19,7 +19,7 @@ import requests
 import editorial_policy as policy
 import news_director as director
 
-VERSION = "post-audit-v1"
+VERSION = "post-audit-v1.1"
 MAX_AUDIT_POSTS = 20
 MAX_MUTATION_AGE_HOURS = 48
 
@@ -95,7 +95,7 @@ def audit_recent_posts(
 
     posts = [
         post for post in (state.get("last_posts") or [])[-MAX_AUDIT_POSTS:]
-        if isinstance(post, dict)
+        if isinstance(post, dict) and not post.get("auto_deleted")
     ]
 
     for post in posts:
@@ -141,7 +141,10 @@ def audit_recent_posts(
         }
 
         # Never rewrite historical posts created by an older policy.
-        if not mutate or post.get("publisher_version") != "stable-v12.0":
+        if (
+            not mutate
+            or not str(post.get("publisher_version") or "").startswith("stable-v12.")
+        ):
             continue
         if not _within_mutation_window(post):
             continue
@@ -201,6 +204,16 @@ def audit_recent_posts(
                 "error": result.get("description"),
             })
 
+    resolved_keys = {
+        (item.get("url"), item.get("title"))
+        for item in corrected + deleted
+    }
+    unresolved = [
+        item for item in anomalies
+        if str(item.get("publisher_version") or "").startswith("stable-v12.")
+        and (item.get("url"), item.get("title")) not in resolved_keys
+    ]
+
     report = {
         "version": VERSION,
         "checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -210,6 +223,8 @@ def audit_recent_posts(
         "corrected": corrected[-20:],
         "deleted": deleted[-20:],
         "failed_actions": failed_actions[-20:],
+        "unresolved": len(unresolved),
+        "unresolved_items": unresolved[-20:],
         "mutations_enabled": bool(mutate),
         "legacy_posts_mutated": False,
     }

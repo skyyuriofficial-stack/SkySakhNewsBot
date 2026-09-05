@@ -1,4 +1,4 @@
-"""Regression suite for the canonical stable-v12.0 publisher.
+"""Regression suite for the canonical stable-v12.1 publisher.
 
 The suite encodes the actual Telegram-feed failures reported by the user and
 runs without Telegram or live-news network access before every production run.
@@ -368,8 +368,10 @@ def exact_proportion_and_selection_regression():
         ai_reviewer=None,
     )
     assert len(ordered) >= 2, report
-    assert {item["category_key"] for item in ordered[:2]} == {"world_ru", "geo"}, report
-    assert report["selected_groups"] == ["world", "world"], report
+    assert ordered[0]["_news_director"]["group"] == "world", report
+    assert len({item["_news_director"]["group"] for item in ordered[:2]}) == 2, report
+    assert report["selected_groups"][0] == "world", report
+    assert len(set(report["selected_groups"][:2])) == 2, report
 
 
 def source_diversity_regression():
@@ -553,13 +555,109 @@ def openrouter_resilience_regression():
                 os.environ[name] = value
 
 
+
+def current_live_defect_regressions():
+    # Product/brand press releases must not fill the economy stream.
+    for title, body in (
+        (
+            "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
+            "К новому учебному году СберИнвестиции запускают сервис, сообщает пресс-служба Сбера.",
+        ),
+        (
+            "Сбер открывает клиентам доступ к цифровому рублю",
+            "Сбер подготовил сервисы и сообщает об этом через пресс-службу Сбера.",
+        ),
+        (
+            "Сбер стремится задавать новую планку качества в развитии городской среды регионов",
+            "Старший вице-президент выступил на сессии, сообщает пресс-служба Сбера.",
+        ),
+    ):
+        review = director.review_candidate(candidate(title, body, category="ru_eco"))
+        assert review["approved"] is False, review
+        assert review["reason"] == "corporate_product_or_brand_pr", review
+
+    # UAVs are the background cause here; the headline action is regulation.
+    admin = candidate(
+        "Правительство РФ готовится к отмене проверок пострадавших от БПЛА проверок",
+        (
+            "Правительство РФ работает над снижением административной нагрузки. "
+            "Речь идет о неналоговых проверках организаций и объектов гражданской "
+            "инфраструктуры, пострадавших от атак беспилотников. Нормативный акт подготовлен."
+        ),
+        category="ru_security",
+    )
+    review = director.review_candidate(admin)
+    assert review["approved"] is True, review
+    assert review["corrected_category"] == "ru_pol", review
+    assert review["event_type"] == "political_decision", review
+    assert review["title_corrected"] == (
+        "Правительство РФ готовит отмену неналоговых проверок для "
+        "пострадавшей от БПЛА инфраструктуры"
+    ), review
+    assert not policy.title_quality_issues(review["title_corrected"]), review
+    assert any(
+        issue.startswith("repeated_title_token:проверок")
+        for issue in policy.title_quality_issues(admin["title"])
+    )
+
+    # Deleted historical posts must not distort the 30/20/20/15/10/5 mix.
+    balance = director.balance_snapshot({
+        "last_posts": [
+            {
+                "title": "Deleted bank promo",
+                "category_key": "ru_eco",
+                "auto_deleted": True,
+                "news_director": {
+                    "version": director.VERSION,
+                    "approved": True,
+                    "group": "ru_eco",
+                    "corrected_category": "ru_eco",
+                    "event_type": "macro_economy",
+                },
+            }
+        ]
+    })
+    assert balance["valid_posts_counted"] == 0, balance
+
+    # When a second stream exists, a release may not contain two items from one group.
+    local = candidate(
+        "В Южно-Сахалинске восстановили теплоснабжение после аварии",
+        "Коммунальные службы восстановили тепло жителям после повреждения сети.",
+        category="sakh_chp",
+        url="https://sakhalinmedia.ru/news/v121-local/",
+    )
+    local2 = candidate(
+        "На Итурупе водитель погиб в аварии грузовика",
+        "Мужчина погиб после опрокидывания автомобиля.",
+        category="sakh_chp",
+        url="https://sakhalinmedia.ru/news/v121-local2/",
+    )
+    economy = candidate(
+        "Банк России сохранил ключевую ставку на прежнем уровне",
+        "Совет директоров Банка России принял решение по ключевой ставке.",
+        source="TASS",
+        category="ru_eco",
+        url="https://tass.ru/ekonomika/v121-rate/",
+    )
+    ordered, report = director.direct_candidates(
+        {"last_posts": []},
+        [local, local2, economy],
+        category_map=publisher.core.b.CAT,
+        now=datetime.now(timezone.utc),
+        ai_reviewer=None,
+    )
+    assert len(ordered) >= 2, report
+    first_two_groups = [ordered[i]["_news_director"]["group"] for i in range(2)]
+    assert len(set(first_two_groups)) == 2, (first_two_groups, report)
+
+
 def version_and_media_regressions():
-    assert publisher.VERSION == "stable-v12.0"
-    assert publisher.media.VERSION == "stable-v12.0"
-    assert publisher.core.VERSION == "stable-v12.0"
+    assert publisher.VERSION == "stable-v12.1"
+    assert publisher.media.VERSION == "stable-v12.1"
+    assert publisher.core.VERSION == "stable-v12.1"
     assert publisher.core.b.IMAGE_REQUIRED is True
-    assert director.VERSION == "director-v2"
-    assert policy.VERSION == "policy-v2.1"
+    assert director.VERSION == "director-v2.1"
+    assert policy.VERSION == "policy-v2.2"
 
     good_media = {
         "image": b"x" * 12000,
@@ -580,8 +678,9 @@ def main():
     repetition_regression()
     final_contract_and_auditor_regressions()
     openrouter_resilience_regression()
+    current_live_defect_regressions()
     version_and_media_regressions()
-    print("stable-v12.0 production self-test: ALL PASS")
+    print("stable-v12.1 production self-test: ALL PASS")
 
 
 if __name__ == "__main__":

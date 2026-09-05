@@ -1,0 +1,379 @@
+{
+  "version": "stable-v12.1",
+  "published": 0,
+  "selected": [],
+  "director": {
+    "version": "director-v2.1",
+    "policy_version": "policy-v2.2",
+    "mix_policy": "rolling_20_target_optimizer",
+    "rolling_balance_before": {
+      "window": 20,
+      "targets": {
+        "local": 6,
+        "ru_pol": 4,
+        "ru_eco": 4,
+        "ru_safety": 3,
+        "world": 2,
+        "it": 1
+      },
+      "target_percent": {
+        "local": 30.0,
+        "ru_pol": 20.0,
+        "ru_eco": 20.0,
+        "ru_safety": 15.0,
+        "world": 10.0,
+        "it": 5.0
+      },
+      "counts": {
+        "local": 4,
+        "ru_pol": 2,
+        "ru_eco": 1,
+        "ru_safety": 0,
+        "world": 0,
+        "it": 0
+      },
+      "scaled_targets": {
+        "local": 2.1,
+        "ru_pol": 1.4,
+        "ru_eco": 1.4,
+        "ru_safety": 1.05,
+        "world": 0.7,
+        "it": 0.35
+      },
+      "deficits": {
+        "local": -1.9,
+        "ru_pol": -0.6,
+        "ru_eco": 0.4,
+        "ru_safety": 1.05,
+        "world": 0.7,
+        "it": 0.35
+      },
+      "distribution_error": 5.0,
+      "subtype_counts": {
+        "political_statement": 1,
+        "macro_economy": 2,
+        "political_decision": 2,
+        "major_emergency": 1,
+        "violent_crime": 1
+      },
+      "sequence": [
+        "local",
+        "local",
+        "ru_pol",
+        "local",
+        "local",
+        "ru_eco",
+        "ru_pol"
+      ],
+      "category_sequence": [
+        "sakh",
+        "sakh",
+        "ru_pol",
+        "sakh_chp",
+        "sakh_chp",
+        "ru_eco",
+        "ru_pol"
+      ],
+      "source_sequence": [
+        "sakh.online",
+        "sakh.online",
+        "sakhalinmedia.ru",
+        "astv",
+        "astv",
+        "sakhalinmedia.ru",
+        "sakhalinmedia.ru"
+      ],
+      "retrospective_anomalies": [
+        {
+          "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
+          "category_key": "sakh",
+          "reason": "ceremony_or_congratulation",
+          "corrected_category": null
+        },
+        {
+          "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
+          "category_key": "world_ru",
+          "reason": "no_supported_news_stream",
+          "corrected_category": null
+        },
+        {
+          "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
+          "category_key": "sakh_chp",
+          "reason": "importance_below_threshold",
+          "corrected_category": "sakh"
+        },
+        {
+          "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
+          "category_key": "sakh_chp",
+          "reason": "importance_below_threshold",
+          "corrected_category": "sakh"
+        },
+        {
+          "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
+          "category_key": "ru_incident",
+          "reason": "importance_below_threshold",
+          "corrected_category": "ru_incident"
+        },
+        {
+          "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
+          "category_key": "ru_incident",
+          "reason": "no_supported_news_stream",
+          "corrected_category": null
+        },
+        {
+          "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
+          "category_key": "sakh",
+          "reason": "routine_traffic_statistics",
+          "corrected_category": "sakh"
+        },
+        {
+          "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
+          "category_key": "sakh_chp",
+          "reason": "service_or_lost_and_found_notice",
+          "corrected_category": null
+        },
+        {
+          "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
+          "category_key": "sakh",
+          "reason": "ordinary_weather_not_release_worthy",
+          "corrected_category": "sakh"
+        },
+        {
+          "title": "Сбер стремится задавать новую планку качества в развитии городской среды регионов",
+          "category_key": "ru_eco",
+          "reason": "corporate_product_or_brand_pr",
+          "corrected_category": null
+        },
+        {
+          "title": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
+          "category_key": "ru_eco",
+          "reason": "corporate_product_or_brand_pr",
+          "corrected_category": null
+        },
+        {
+          "title": "Сбер открывает клиентам доступ к цифровому рублю",
+          "category_key": "ru_eco",
+          "reason": "corporate_product_or_brand_pr",
+          "corrected_category": null
+        },
+        {
+          "title": "Универсальный платёжный код появился на биометрических терминалах Сбера",
+          "category_key": "ru_eco",
+          "reason": "corporate_product_or_brand_pr",
+          "corrected_category": null
+        }
+      ],
+      "valid_posts_counted": 7
+    },
+    "candidate_count": 15,
+    "approved_count": 3,
+    "rejected_count": 12,
+    "rejected_by_reason": {
+      "ordinary_weather_not_release_worthy": 2,
+      "importance_below_threshold": 10
+    },
+    "ai_review_requested": 0,
+    "ai_review_received": 0,
+    "selected_groups": [
+      "world",
+      "it"
+    ],
+    "projected_distribution_error": 4.3,
+    "projected_counts": {
+      "local": 4,
+      "ru_pol": 2,
+      "ru_eco": 1,
+      "world": 1,
+      "it": 1
+    },
+    "projected_length": 9,
+    "selected_preview": [
+      {
+        "slot": 1,
+        "title": "Russian drone hits Ukranian security headquarters, Zelensky says",
+        "category_key": "world_ru",
+        "group": "world",
+        "event_type": "military_security",
+        "seriousness": 96,
+        "utility": 106.8
+      },
+      {
+        "slot": 2,
+        "title": "Nvidia strikes $12.9bn deal to buy AI platform Hugging Face",
+        "category_key": "it",
+        "group": "it",
+        "event_type": "major_it",
+        "seriousness": 88,
+        "utility": 89.8
+      },
+      {
+        "slot": "backup",
+        "title": "OpenAI hails ‘new era of artificial general intelligence’ with Astra model release",
+        "category_key": "it",
+        "group": "it",
+        "event_type": "major_it",
+        "seriousness": 85,
+        "utility": 42.4
+      }
+    ],
+    "rolling_balance_after": {
+      "window": 20,
+      "targets": {
+        "local": 6,
+        "ru_pol": 4,
+        "ru_eco": 4,
+        "ru_safety": 3,
+        "world": 2,
+        "it": 1
+      },
+      "target_percent": {
+        "local": 30.0,
+        "ru_pol": 20.0,
+        "ru_eco": 20.0,
+        "ru_safety": 15.0,
+        "world": 10.0,
+        "it": 5.0
+      },
+      "counts": {
+        "local": 4,
+        "ru_pol": 2,
+        "ru_eco": 1,
+        "ru_safety": 0,
+        "world": 0,
+        "it": 0
+      },
+      "scaled_targets": {
+        "local": 2.1,
+        "ru_pol": 1.4,
+        "ru_eco": 1.4,
+        "ru_safety": 1.05,
+        "world": 0.7,
+        "it": 0.35
+      },
+      "deficits": {
+        "local": -1.9,
+        "ru_pol": -0.6,
+        "ru_eco": 0.4,
+        "ru_safety": 1.05,
+        "world": 0.7,
+        "it": 0.35
+      },
+      "distribution_error": 5.0,
+      "subtype_counts": {
+        "political_statement": 1,
+        "macro_economy": 2,
+        "political_decision": 2,
+        "major_emergency": 1,
+        "violent_crime": 1
+      },
+      "sequence": [
+        "local",
+        "local",
+        "ru_pol",
+        "local",
+        "local",
+        "ru_eco",
+        "ru_pol"
+      ],
+      "category_sequence": [
+        "sakh",
+        "sakh",
+        "ru_pol",
+        "sakh_chp",
+        "sakh_chp",
+        "ru_eco",
+        "ru_pol"
+      ],
+      "source_sequence": [
+        "sakh.online",
+        "sakh.online",
+        "sakhalinmedia.ru",
+        "astv",
+        "astv",
+        "sakhalinmedia.ru",
+        "sakhalinmedia.ru"
+      ],
+      "retrospective_anomalies": [
+        {
+          "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
+          "category_key": "sakh",
+          "reason": "ceremony_or_congratulation",
+          "corrected_category": null
+        },
+        {
+          "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
+          "category_key": "world_ru",
+          "reason": "no_supported_news_stream",
+          "corrected_category": null
+        },
+        {
+          "title": "Житель Поронайска перепродал чужой велосипед за 1 500 рублей и попал под уголовную статью",
+          "category_key": "sakh_chp",
+          "reason": "importance_below_threshold",
+          "corrected_category": "sakh"
+        },
+        {
+          "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
+          "category_key": "sakh_chp",
+          "reason": "importance_below_threshold",
+          "corrected_category": "sakh"
+        },
+        {
+          "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
+          "category_key": "ru_incident",
+          "reason": "importance_below_threshold",
+          "corrected_category": "ru_incident"
+        },
+        {
+          "title": "Владельцы кошек пожаловались на смерть питомцев после вакцины \"Мультифел\"",
+          "category_key": "ru_incident",
+          "reason": "no_supported_news_stream",
+          "corrected_category": null
+        },
+        {
+          "title": "Пять пьяных, 16 без прав: какие правила нарушили водители Сахалина за сутки",
+          "category_key": "sakh",
+          "reason": "routine_traffic_statistics",
+          "corrected_category": "sakh"
+        },
+        {
+          "title": "Полиция на Сахалине ищет Александра Ледяева, чтобы вернуть ему вещи и документы",
+          "category_key": "sakh_chp",
+          "reason": "service_or_lost_and_found_notice",
+          "corrected_category": null
+        },
+        {
+          "title": "Погода 5–11 сентября на Сахалине: +26 градусов и дожди с похолоданием",
+          "category_key": "sakh",
+          "reason": "ordinary_weather_not_release_worthy",
+          "corrected_category": "sakh"
+        },
+        {
+          "title": "Сбер стремится задавать новую планку качества в развитии городской среды регионов",
+          "category_key": "ru_eco",
+          "reason": "corporate_product_or_brand_pr",
+          "corrected_category": null
+        },
+        {
+          "title": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
+          "category_key": "ru_eco",
+          "reason": "corporate_product_or_brand_pr",
+          "corrected_category": null
+        },
+        {
+          "title": "Сбер открывает клиентам доступ к цифровому рублю",
+          "category_key": "ru_eco",
+          "reason": "corporate_product_or_brand_pr",
+          "corrected_category": null
+        },
+        {
+          "title": "Универсальный платёжный код появился на биометрических терминалах Сбера",
+          "category_key": "ru_eco",
+          "reason": "corporate_product_or_brand_pr",
+          "corrected_category": null
+        }
+      ],
+      "valid_posts_counted": 7
+    }
+  }
+}

@@ -20,7 +20,7 @@ from urllib.parse import urlparse
 
 import editorial_gate as gate
 
-VERSION = "policy-v2.1"
+VERSION = "policy-v2.2"
 
 CATEGORY_GROUP = {
     "sakh": "local",
@@ -97,6 +97,34 @@ ADVERTORIAL = (
     "спецпроект", "акция действует", "скидка", "успейте купить",
     "подробнее на сайте", "открыл первый офис", "совместное исследование",
 )
+
+CORPORATE_FINANCE_BRANDS = (
+    "сбер", "сбербанк", "сберинвестиции", "втб", "т банк", "тинькофф",
+    "альфа банк", "газпромбанк", "россельхозбанк",
+)
+CORPORATE_PRODUCT_ACTIONS = (
+    "запускает", "запустил", "запустила", "появилась", "появился",
+    "открывает клиентам доступ", "представил сервис", "представила сервис",
+    "новый сервис", "новая возможность", "новая функция", "инвесткопилка",
+    "доступ к цифровому рублю", "задавать новую планку качества",
+    "стремится задавать", "мобильном приложении", "для клиентов",
+)
+CORPORATE_PR_EVIDENCE = (
+    "пресс служб", "пресс служба", "пресс-служба", "старший вице президент",
+    "старший вице-президент", "директор департамента маркетинга",
+    "сообщает пресс служба", "сообщает пресс-служба",
+)
+PUBLIC_POLICY_TITLE_EXEMPTIONS = (
+    "банк россии", "центробанк", "цб рф", "ключевая ставка", "инфляц",
+    "вступает в силу", "вступил в силу", "обязаны", "обязательн",
+    "закон", "регулятор", "госдум", "правительство",
+)
+ADMIN_REGULATION = (
+    "отмена проверок", "отмене проверок", "неналоговых проверок",
+    "административной нагрузки", "контрольно надзор", "контрольно-надзор",
+    "нормативный акт", "мораторий на проверки", "проверок пострадавших",
+)
+
 SERVICE_NOTICE = (
     "чтобы вернуть ему вещи", "чтобы вернуть ей вещи", "вернуть документы",
     "вернуть ему документы", "вернуть ей документы", "найденные вещи",
@@ -213,7 +241,7 @@ SPEECH_ONLY = (
     "said", "says", "called for", "addressed",
 )
 MACRO_ECONOMY = (
-    "центробанк", "цб рф", "ключевая ставка", "инфляц", "бюджет", "минфин",
+    "банк россии", "центробанк", "цб рф", "ключев ставк", "ключевая ставка", "инфляц", "бюджет", "минфин",
     "ввп", "рубль", "налог", "экспорт", "импорт", "рынок труда", "безработиц",
     "рынок сбережений", "трлн рублей", "инвестиц", "газификац", "тариф",
     "приватизац", "втб", "сбер", "росстат", "фнс", "central bank", "inflation",
@@ -409,6 +437,15 @@ def parse_ruble_amount(text: str) -> int:
     return int(maximum)
 
 
+def _is_corporate_product_pr(title: str, lead: str) -> bool:
+    combined = f"{title} {lead}"
+    brand = has_any(title, CORPORATE_FINANCE_BRANDS)
+    product = has_any(title, CORPORATE_PRODUCT_ACTIONS)
+    pr_evidence = has_any(combined, CORPORATE_PR_EVIDENCE)
+    public_policy = has_any(title, PUBLIC_POLICY_TITLE_EXEMPTIONS)
+    return bool(brand and product and pr_evidence and not public_policy)
+
+
 def _hard_reject(title: str, lead: str) -> Optional[str]:
     combined = f"{title} {lead}"
     if has_any(title, CALENDAR_HISTORY):
@@ -419,6 +456,8 @@ def _hard_reject(title: str, lead: str) -> Optional[str]:
         return "lifestyle_or_seo"
     if has_any(combined, ADVERTORIAL):
         return "advertorial_or_corporate_pr"
+    if _is_corporate_product_pr(title, lead):
+        return "corporate_product_or_brand_pr"
     if has_any(title, ("туристический форум",)):
         return "routine_event_without_outcome"
     if has_any(title, ROUTINE_EVENT) and not has_any(title, POLICY_ACTION + INFRA_ACTION):
@@ -449,6 +488,13 @@ def _event_type(title: str, lead: str, *, foreign: bool) -> str:
         return "violent_crime"
     if has_any(combined, FATAL) and has_any(combined, ACCIDENT_EMERGENCY + ROUTINE_CRIME):
         return "fatal_incident"
+    # The action of the headline outranks its background cause. A government
+    # decision about inspections remains policy even when the affected objects
+    # were damaged by UAVs.
+    if _is_policy(title) or (
+        has_any(title, POLICY_ACTOR) and has_any(title, ADMIN_REGULATION)
+    ):
+        return "political_decision"
     if has_any(title, SECURITY):
         return "military_security"
     if has_any(title, ACCIDENT_EMERGENCY):
@@ -600,6 +646,18 @@ def autocorrect_title(candidate: Mapping[str, Any], classification: Classificati
             reasons.append("grammar_pattern_fixed")
 
     if (
+        classification.event_type == "political_decision"
+        and has_any(title, ADMIN_REGULATION)
+        and has_any(title, ("бпла", "беспилот"))
+        and has_any(lead, ("неналоговых проверок", "административной нагрузки"))
+    ):
+        title = (
+            "Правительство РФ готовит отмену неналоговых проверок для "
+            "пострадавшей от БПЛА инфраструктуры"
+        )
+        reasons.append("administrative_policy_fact_template")
+
+    if (
         classification.event_type == "violent_crime"
         and has_any(lead, (
             "обвиняемому в убийстве", "обвиняют в убийстве",
@@ -621,6 +679,23 @@ def autocorrect_title(candidate: Mapping[str, Any], classification: Classificati
     return title, reasons
 
 
+TITLE_REPEAT_EXEMPT = {
+    "россия", "россии", "российский", "правительство", "сахалин",
+    "сахалине", "области", "районе", "городе", "года", "рублей",
+}
+
+
+def repeated_content_tokens(title: str) -> List[str]:
+    words = [
+        word for word in tokens(title)
+        if len(word) >= 6 and word not in TITLE_REPEAT_EXEMPT
+    ]
+    counts: Dict[str, int] = {}
+    for word in words:
+        counts[word] = counts.get(word, 0) + 1
+    return sorted(word for word, count in counts.items() if count > 1)
+
+
 def title_quality_issues(title: str) -> List[str]:
     value = clean(title)
     issues: List[str] = []
@@ -634,6 +709,9 @@ def title_quality_issues(title: str) -> List[str]:
         issues.append("broken_government_pattern")
     if re.search(r"\b(\w+)\s+\1\b", norm(value)):
         issues.append("duplicated_word")
+    repeated = repeated_content_tokens(value)
+    if repeated:
+        issues.append("repeated_title_token:" + repeated[0])
     if has_any(value, CLICKBAIT):
         issues.append("clickbait_title")
     if value.count('"') % 2 or value.count("«") != value.count("»"):

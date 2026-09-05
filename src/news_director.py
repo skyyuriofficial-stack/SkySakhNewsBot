@@ -25,7 +25,7 @@ from typing import Any, Callable, Dict, List, Mapping, Optional, Sequence, Tuple
 
 import editorial_policy as policy
 
-VERSION = "director-v2"
+VERSION = "director-v2.1"
 ROLLING_WINDOW = 20
 TARGET_COUNTS: Dict[str, int] = {
     "local": 6,
@@ -370,7 +370,10 @@ def _distribution_error(counts: Mapping[str, int], length: int) -> float:
 
 
 def balance_snapshot(state: Mapping[str, Any], *, window: int = ROLLING_WINDOW) -> Dict[str, Any]:
-    posts = [post for post in (state.get("last_posts") or []) if isinstance(post, dict)][-window:]
+    posts = [
+        post for post in (state.get("last_posts") or [])
+        if isinstance(post, dict) and not post.get("auto_deleted")
+    ][-window:]
     sequence: List[str] = []
     category_sequence: List[str] = []
     source_sequence: List[str] = []
@@ -650,19 +653,26 @@ def direct_candidates(
     selected: List[Dict[str, Any]] = []
     remaining = list(approved)
     while remaining and len(selected) < 2:
-        candidate_pool = remaining
+        candidate_pool = list(remaining)
         if selected:
+            first_group = str(
+                (selected[0].get("_news_director") or {}).get("group") or ""
+            )
+            group_diverse = [
+                item for item in remaining
+                if str((item.get("_news_director") or {}).get("group") or "")
+                != first_group
+            ]
+            if group_diverse:
+                candidate_pool = group_diverse
+
             selected_sources = {
                 _norm(item.get("source")) for item in selected
             }
             source_diverse = [
-                item for item in remaining
+                item for item in candidate_pool
                 if _norm(item.get("source")) not in selected_sources
             ]
-            # A two-post release from the same publisher looks like a reposted
-            # feed rather than an edited channel. Use another publisher when
-            # any fully approved alternative exists; only relax this when the
-            # entire qualified pool comes from one source.
             if source_diverse:
                 candidate_pool = source_diverse
 

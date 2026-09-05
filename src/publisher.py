@@ -11,7 +11,7 @@ import media_enforced_runner as media
 import news_director as director
 import publication_auditor
 
-VERSION = "stable-v12.0"
+VERSION = "stable-v12.1"
 
 media.VERSION = VERSION
 media.editorial.VERSION = VERSION
