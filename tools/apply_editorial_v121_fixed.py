@@ -23,3 +23,13 @@ def patch_director() -> None:
 
 base.patch_director = patch_director
 base.main()
+
+# The previous regression encoded the old behaviour that could publish two
+# stories from the same thematic group simply because that group was in deficit.
+# v12.1 keeps the rolling deficit optimizer, but a two-post release must use two
+# different groups whenever a qualified alternative exists.
+base.replace_once(
+    "src/production_selftest.py",
+    '''    assert len(ordered) >= 2, report\n    assert {item["category_key"] for item in ordered[:2]} == {"world_ru", "geo"}, report\n    assert report["selected_groups"] == ["world", "world"], report\n''',
+    '''    assert len(ordered) >= 2, report\n    assert ordered[0]["_news_director"]["group"] == "world", report\n    assert len({item["_news_director"]["group"] for item in ordered[:2]}) == 2, report\n    assert report["selected_groups"][0] == "world", report\n    assert len(set(report["selected_groups"][:2])) == 2, report\n''',
+)
