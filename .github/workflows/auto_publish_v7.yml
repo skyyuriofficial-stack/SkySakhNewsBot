@@ -64,7 +64,7 @@ jobs:
           POSTS_PER_RUN: "2"
           MAX_AGE_HOURS: "36"
           AI_CALL_BUDGET: "4"
-          EDITORIAL_AUDIT_AI_BUDGET: "2"
+          EDITORIAL_AUDIT_AI_BUDGET: "0"
           NEWS_DIRECTOR_AI_BUDGET: "0"
           OPENROUTER_MAX_ATTEMPTS: "3"
           OPENROUTER_RETRY_BASE_SECONDS: "1.0"
@@ -107,7 +107,7 @@ jobs:
 
           director = run.get("news_director") or {}
           assert director.get("version") == "director-v2.1", director
-          assert director.get("policy_version") == "policy-v2.2", director
+          assert director.get("policy_version") == "policy-v2.3", director
           targets = ((director.get("rolling_balance_after") or {}).get("targets") or {})
           expected = {"local": 6, "ru_pol": 4, "ru_eco": 4, "ru_safety": 3, "world": 2, "it": 1}
           assert targets == expected, targets
