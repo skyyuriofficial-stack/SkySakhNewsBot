@@ -1,21 +1,21 @@
 {
   "version": "editorial-monitor-v1",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-05T10:55:35+00:00",
-  "checked_at_sakhalin": "2026-09-05T21:55:33+11:00",
+  "checked_at_utc": "2026-09-05T11:43:29+00:00",
+  "checked_at_sakhalin": "2026-09-05T22:43:28+11:00",
   "status": "healthy",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-05T17:47:26+11:00",
-    "age_hours": 4.14,
-    "published": 0
+    "finished_sakhalin": "2026-09-05T22:43:27+11:00",
+    "age_hours": 0.0,
+    "published": 1
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-05T10:55:34+00:00",
+    "checked_at": "2026-09-05T11:43:28+00:00",
     "checked": 6,
     "passed": 6,
     "anomalies": [],
@@ -28,19 +28,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 246,
-      "title": "Розенберг: Завуалированная угроза Путина в адрес Британии — часть кампании России против Запада",
-      "category_key": "world_ru",
-      "publisher_version": null,
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "world_ru",
-      "title_issues": []
-    },
     {
       "message_id": 248,
       "title": "Путин: за 11 лет в развитие Дальнего Востока привлекли 25 трлн рублей",
@@ -105,6 +92,19 @@
       "review_reason": "approved",
       "corrected_category": "world_ru",
       "title_issues": []
+    },
+    {
+      "message_id": 266,
+      "title": "Инвестиции в Дальний Восток с 2014 года выросли в 4,7 раза",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -126,9 +126,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 5,
+      "local": 4,
       "ru_pol": 1,
-      "ru_eco": 3,
+      "ru_eco": 4,
       "ru_safety": 0,
       "world": 3,
       "it": 0
@@ -142,26 +142,25 @@
       "it": 0.6
     },
     "deficits": {
-      "local": -1.4,
+      "local": -0.4,
       "ru_pol": 1.4,
-      "ru_eco": -0.6,
+      "ru_eco": -1.6,
       "ru_safety": 1.8,
       "world": -1.8,
       "it": 0.6
     },
     "distribution_error": 7.6,
     "subtype_counts": {
-      "major_infrastructure": 4,
+      "major_infrastructure": 3,
       "geopolitical_event": 2,
       "corporate_forecast": 1,
-      "macro_economy": 1,
+      "macro_economy": 2,
       "major_emergency": 1,
       "violent_crime": 1,
       "political_decision": 1,
       "military_security": 1
     },
     "sequence": [
-      "local",
       "local",
       "ru_eco",
       "world",
@@ -172,10 +171,10 @@
       "local",
       "local",
       "ru_pol",
-      "world"
+      "world",
+      "ru_eco"
     ],
     "category_sequence": [
-      "sakh",
       "sakh",
       "ru_eco",
       "geo",
@@ -186,10 +185,10 @@
       "sakh_chp",
       "sakh_chp",
       "ru_pol",
-      "world_ru"
+      "world_ru",
+      "ru_eco"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "tass",
       "sakhalinmedia.ru",
@@ -200,7 +199,8 @@
       "astv",
       "astv",
       "sakhalinmedia.ru",
-      "bbc world"
+      "bbc world",
+      "sakh.online"
     ],
     "retrospective_anomalies": [
       {
