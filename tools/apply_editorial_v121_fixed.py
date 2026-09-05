@@ -24,6 +24,14 @@ def patch_director() -> None:
 base.patch_director = patch_director
 base.main()
 
+# Russian case endings vary (пресс-служба / пресс-службу / пресс-службы). Use
+# a token stem so all grammatical forms are recognized as PR provenance.
+base.replace_once(
+    "src/editorial_policy.py",
+    '''CORPORATE_PR_EVIDENCE = (\n    "пресс служба", "пресс-служба", "старший вице президент",''',
+    '''CORPORATE_PR_EVIDENCE = (\n    "пресс служб", "пресс служба", "пресс-служба", "старший вице президент",''',
+)
+
 # The previous regression encoded the old behaviour that could publish two
 # stories from the same thematic group simply because that group was in deficit.
 # v12.1 keeps the rolling deficit optimizer, but a two-post release must use two
