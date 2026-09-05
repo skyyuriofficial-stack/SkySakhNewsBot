@@ -130,21 +130,18 @@ jobs:
           PY
           git checkout -- state.json
 
-      - name: Verify diff
-        run: |
-          git diff --check
-          git diff --stat
-
-      - name: Commit tested v12.1 sources and remove one-shot machinery
+      - name: Commit tested source patch
         run: |
           git config user.name "skysakhnews-bot"
           git config user.email "actions@github.com"
-          git rm tools/apply_editorial_v121.py tools/apply_editorial_v121_fixed.py \
-            .github/workflows/apply_editorial_v121.yml \
-            .github/workflows/apply_editorial_v121_fixed.yml
           find src -type d -name __pycache__ -prune -exec rm -rf {} +
-          git add src .github/workflows/auto_publish_v7.yml \
-            .github/workflows/production_ci.yml \
-            .github/workflows/editorial_monitor.yml v121_live_dry_report.json
-          git commit -m "Harden stable v12.1 editorial policy and continuous monitor"
+          # GitHub Actions' job token cannot push workflow-file changes. Those
+          # are promoted separately through the GitHub connector after sources
+          # have passed this exact test + live dry audit.
+          git checkout -- .github/workflows/auto_publish_v7.yml .github/workflows/production_ci.yml
+          git add src/editorial_policy.py src/news_director.py \
+            src/publication_auditor.py src/publisher.py src/production_selftest.py \
+            v121_live_dry_report.json
+          git diff --cached --check
+          git commit -m "Harden stable v12.1 editorial policy"
           git push origin HEAD:fix/editorial-director-v12
