@@ -237,7 +237,18 @@ def _refresh_editorial_gate(candidate, row):
 
 def _attempt_final_autocorrection(candidate, row):
     metadata = candidate.get("_news_director") or {}
-    corrected_title = str(metadata.get("title_corrected") or candidate.get("title") or "")
+    source_title = str(metadata.get("title_corrected") or candidate.get("title") or "")
+    generated_title = str(row.get("title_ru") or "")
+
+    # Critical invariant: a foreign source title may never overwrite an already
+    # Russian translated headline. If neither candidate is Russian, fail closed.
+    if director.policy.headline_is_russian(generated_title):
+        corrected_title = generated_title
+    elif director.policy.headline_is_russian(source_title):
+        corrected_title = source_title
+    else:
+        contract = director.validate_final(candidate, row)
+        return None, contract, None
 
     title_repaired = copy.deepcopy(row)
     title_repaired["title_ru"] = corrected_title
@@ -247,16 +258,26 @@ def _attempt_final_autocorrection(candidate, row):
         core.b.STATS["director_final_autocorrected"] += 1
         return title_repaired, contract, "corrected_title"
 
-    fallback = prod._extractive_fallback(candidate)
-    if fallback:
-        fallback["title_ru"] = corrected_title
-        fallback = _refresh_editorial_gate(candidate, fallback) or fallback
-        contract = director.validate_final(candidate, fallback)
-        if contract.get("approved"):
-            core.b.STATS["director_final_autocorrected"] += 1
-            return fallback, contract, "safe_extractive_rebuild"
+    # Extractive rebuild is valid only for a Russian source.
+    if gate_is_russian_source(candidate):
+        fallback = prod._extractive_fallback(candidate)
+        if fallback:
+            fallback["title_ru"] = corrected_title
+            fallback = _refresh_editorial_gate(candidate, fallback) or fallback
+            contract = director.validate_final(candidate, fallback)
+            if contract.get("approved"):
+                core.b.STATS["director_final_autocorrected"] += 1
+                return fallback, contract, "safe_extractive_rebuild"
 
     return None, contract, None
+
+
+def gate_is_russian_source(candidate):
+    return media.editorial.gate.is_russian_text(
+        str(candidate.get("title") or "")
+        + " "
+        + str(candidate.get("source_text") or "")
+    )
 
 
 def valid_post_with_news_director(candidate):

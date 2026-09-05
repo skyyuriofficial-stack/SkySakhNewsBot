@@ -20,7 +20,7 @@ from urllib.parse import urlparse
 
 import editorial_gate as gate
 
-VERSION = "policy-v2.2"
+VERSION = "policy-v2.3"
 
 CATEGORY_GROUP = {
     "sakh": "local",
@@ -708,6 +708,42 @@ def repeated_content_tokens(title: str) -> List[str]:
     return sorted(word for word, count in counts.items() if count > 1)
 
 
+def headline_is_russian(title: str) -> bool:
+    value = str(title or "")
+    cyr = len(re.findall(r"[А-Яа-яЁё]", value))
+    latin = len(re.findall(r"[A-Za-z]", value))
+    letters = cyr + latin
+    if cyr < 8 or letters == 0:
+        return False
+    # Allow Latin brand names in IT/economy titles while requiring the actual
+    # headline grammar to be Russian.
+    return cyr / letters >= 0.52
+
+
+def _evidence_norm(value: Any) -> str:
+    return re.sub(r"\s+", " ", norm(value)).strip()
+
+
+def evidence_present(source: str, evidence: Any) -> bool:
+    ev = _evidence_norm(evidence)
+    src = _evidence_norm(source)
+    if not ev or len(ev.split()) < 4:
+        return False
+    if ev in src:
+        return True
+    ev_tokens = ev.split()
+    src_tokens = src.split()
+    if len(ev_tokens) < 5:
+        return False
+    target = set(ev_tokens)
+    window = len(ev_tokens) + 4
+    best = 0.0
+    for start in range(max(1, len(src_tokens) - window + 1)):
+        chunk = set(src_tokens[start:start + window])
+        best = max(best, len(target & chunk) / max(1, len(target)))
+    return best >= 0.90
+
+
 def title_quality_issues(title: str) -> List[str]:
     value = clean(title)
     issues: List[str] = []
@@ -715,6 +751,8 @@ def title_quality_issues(title: str) -> List[str]:
         issues.append("title_too_short")
     if len(value) > 180:
         issues.append("title_too_long")
+    if not headline_is_russian(value):
+        issues.append("title_not_russian")
     if SOURCE_SUFFIX_RE.search(value):
         issues.append("source_suffix_in_title")
     if re.search(r"\bудерживал\s+в\s+(?:сожительниц|женщин)", norm(value)):
@@ -749,19 +787,45 @@ def final_contract(candidate: Mapping[str, Any], row: Mapping[str, Any]) -> Dict
     source_text = clean_article_text(candidate.get("source_text"), limit=3000)
     if original_title and original_title != source_title:
         source_text = f"{original_title}. {source_text}"
-    title_score, title_precision, title_coverage = gate.title_source_metrics(
-        source_title,
-        source_text,
-        final_title,
-    )
+    source_is_russian = gate.is_russian_text(source_title + " " + source_text)
+    foreign_evidence_ok = False
+    if source_is_russian:
+        title_score, title_precision, title_coverage = gate.title_source_metrics(
+            source_title, source_text, final_title
+        )
+    else:
+        # Cross-language token overlap is meaningless. Ground a translated
+        # headline/body through the exact source fragments carried by the draft.
+        full_source = f"{source_title} {source_text}"
+        title_evidence_ok = evidence_present(full_source, row.get("title_evidence"))
+        body = row.get("body") if isinstance(row.get("body"), list) else []
+        body_evidence = (
+            row.get("body_evidence")
+            if isinstance(row.get("body_evidence"), list)
+            else []
+        )
+        body_evidence_ok = (
+            len(body) >= 2
+            and len(body) == len(body_evidence)
+            and all(evidence_present(full_source, value) for value in body_evidence)
+        )
+        foreign_evidence_ok = bool(
+            headline_is_russian(final_title)
+            and title_evidence_ok
+            and body_evidence_ok
+        )
+        title_score = title_precision = title_coverage = 100 if foreign_evidence_ok else 0
 
     issues = list(title_issues)
     if final_class.hard_reject_reason:
         issues.append("final_hard_reject:" + final_class.hard_reject_reason)
     if final_class.category_key != expected:
         issues.append(f"final_category_mismatch:{final_class.category_key}->{expected}")
-    if title_score < 78 or title_precision < 78 or title_coverage < 50:
-        issues.append("final_title_not_grounded")
+    if source_is_russian:
+        if title_score < 78 or title_precision < 78 or title_coverage < 50:
+            issues.append("final_title_not_grounded")
+    elif not foreign_evidence_ok:
+        issues.append("foreign_translation_evidence_missing")
 
     return {
         "approved": not issues,
@@ -771,6 +835,8 @@ def final_contract(candidate: Mapping[str, Any], row: Mapping[str, Any]) -> Dict
         "title_score": title_score,
         "title_precision": title_precision,
         "title_coverage": title_coverage,
+        "source_is_russian": source_is_russian,
+        "foreign_evidence_ok": foreign_evidence_ok,
         "issues": issues,
         "policy_version": VERSION,
     }

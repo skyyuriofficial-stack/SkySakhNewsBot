@@ -642,6 +642,105 @@ def ai_translation_and_scope_regressions():
     assert editorial._grounded_translation_safe(foreign2, unsafe) is False
 
 
+
+def final_russian_title_and_it_regressions():
+    assert policy.headline_is_russian(
+        "Nvidia покупает AI-платформу Hugging Face за 12,9 млрд долларов"
+    )
+    assert not policy.headline_is_russian(
+        "Russian drone hits Ukrainian security headquarters, Zelensky says"
+    )
+
+    assert publisher.core.b.nums("$12.9bn") == publisher.core.b.nums("12,9 млрд") == {"12.9"}
+
+    it_candidate = candidate(
+        "Nvidia strikes $12.9bn deal to buy AI platform Hugging Face",
+        "Nvidia agreed a $12.9bn deal to buy AI platform Hugging Face. The companies announced the transaction on Friday.",
+        source="Guardian Technology",
+        url="https://www.theguardian.com/technology/test-nvidia",
+        category="it",
+    )
+    it_row = {
+        "reject": False,
+        "title_ru": "Nvidia покупает AI-платформу Hugging Face за 12,9 млрд долларов",
+        "title_evidence": "Nvidia strikes $12.9bn deal to buy AI platform Hugging Face",
+        "body": [
+            "Nvidia договорилась купить платформу искусственного интеллекта Hugging Face за 12,9 млрд долларов.",
+            "Компании объявили о сделке в пятницу; условия основаны на опубликованной информации источника.",
+        ],
+        "body_evidence": [
+            "Nvidia agreed a $12.9bn deal to buy AI platform Hugging Face",
+            "The companies announced the transaction on Friday",
+        ],
+        "footer": it_candidate["footer"],
+    }
+    generated_errors = publisher.prod._validate_generated_v99(it_row, it_candidate)
+    assert "latin_ratio_high" not in generated_errors, generated_errors
+    assert not any(error.startswith("invented_numbers:") for error in generated_errors), generated_errors
+
+    world = candidate(
+        "Russian drone hits Ukrainian security headquarters, Zelensky says",
+        (
+            "A Russian drone has hit the headquarters of the Security Service of Ukraine in Kyiv, "
+            "Ukrainian President Volodymyr Zelensky has said. Officials said the building was damaged."
+        ),
+        source="BBC World",
+        url="https://www.bbc.com/news/test-final-title",
+        category="world_ru",
+    )
+    world["category"] = "🌍 Мир о России"
+    world["footer"] = "МИР О РОССИИ"
+    row = {
+        "reject": False,
+        "title_ru": "Российский дрон ударил по штаб-квартире СБУ в Киеве, заявил Зеленский",
+        "title_evidence": "Russian drone hits Ukrainian security headquarters, Zelensky says",
+        "body": [
+            "Президент Украины Владимир Зеленский заявил, что российский беспилотник ударил по штаб-квартире СБУ в Киеве.",
+            "По словам официальных лиц, здание было повреждено в результате атаки.",
+        ],
+        "body_evidence": [
+            "A Russian drone has hit the headquarters of the Security Service of Ukraine in Kyiv",
+            "Officials said the building was damaged",
+        ],
+        "footer": world["footer"],
+        "editorial_gate": {
+            "approved": True,
+            "title_matches_source": 100,
+            "category_matches_story": 100,
+            "facts_supported": True,
+            "meaning_changed": False,
+        },
+    }
+    contract = policy.final_contract(world, row)
+    assert contract["approved"] is True, contract
+    assert contract["foreign_evidence_ok"] is True, contract
+
+    bad = dict(row)
+    bad["title_ru"] = world["title"]
+    bad_contract = policy.final_contract(world, bad)
+    assert bad_contract["approved"] is False, bad_contract
+    assert "title_not_russian" in bad_contract["issues"], bad_contract
+
+    world["_news_director"] = {
+        "approved": True,
+        "title_corrected": world["title"],
+        "corrected_category": "world_ru",
+        "group": "world",
+        "event_type": "military_security",
+        "seriousness": 95,
+        "threshold": 78,
+    }
+    original_refresh = publisher._refresh_editorial_gate
+    try:
+        publisher._refresh_editorial_gate = lambda _candidate, draft: draft
+        repaired, repaired_contract, _mode = publisher._attempt_final_autocorrection(world, row)
+    finally:
+        publisher._refresh_editorial_gate = original_refresh
+    assert repaired is not None, repaired_contract
+    assert repaired["title_ru"] == row["title_ru"], repaired
+    assert policy.headline_is_russian(repaired["title_ru"]), repaired
+
+
 def current_live_defect_regressions():
     # Product/brand press releases must not fill the economy stream.
     for title, body in (
@@ -743,7 +842,7 @@ def version_and_media_regressions():
     assert publisher.core.VERSION == "stable-v12.1"
     assert publisher.core.b.IMAGE_REQUIRED is True
     assert director.VERSION == "director-v2.1"
-    assert policy.VERSION == "policy-v2.2"
+    assert policy.VERSION == "policy-v2.3"
 
     good_media = {
         "image": b"x" * 12000,
@@ -765,6 +864,7 @@ def main():
     final_contract_and_auditor_regressions()
     openrouter_resilience_regression()
     ai_translation_and_scope_regressions()
+    final_russian_title_and_it_regressions()
     current_live_defect_regressions()
     version_and_media_regressions()
     print("stable-v12.1 production self-test: ALL PASS")

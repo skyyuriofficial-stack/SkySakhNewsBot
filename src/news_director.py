@@ -255,6 +255,11 @@ def review_candidate(candidate: Mapping[str, Any]) -> Dict[str, Any]:
 
     corrected_title, corrections = policy.autocorrect_title(candidate, classification)
     title_issues = policy.title_quality_issues(corrected_title)
+    # The director reviews the source headline before translation. A legitimate
+    # foreign-language headline stays eligible here; the final publication
+    # contract later requires the Telegram headline itself to be Russian.
+    if not policy.headline_is_russian(corrected_title):
+        title_issues = [issue for issue in title_issues if issue != "title_not_russian"]
     if title_issues and classification.event_type not in {"traffic_enforcement"}:
         return {
             "approved": False,

@@ -410,7 +410,7 @@ def generate(c, error=""):
     row["category"] = c["category"]; row["footer"] = row.get("footer") or c["footer"]
     return row
 
-def nums(text): return set(re.findall(r"\d+(?:[,.]\d+)?", text or ""))
+def nums(text): return {value.replace(",", ".") for value in re.findall(r"\d+(?:[,.]\d+)?", text or "")}
 
 def validate(row, c):
     if row.get("reject") is True: return ["model_rejected"]
