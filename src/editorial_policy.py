@@ -253,6 +253,8 @@ CORPORATE_FORECAST = (
 )
 DIPLOMACY = (
     "отношени", "переговор", "санкц", "посол", "саммит", "договор", "соглашен",
+    "угроз", "кампани против", "напряженн", "конфронтац",
+    "threat", "campaign against", "tensions", "confrontation",
     "позиция токио", "позиция вашингтона", "позиция пекина", "дипломат",
     "прекращение огня", "мирный план", "пошлин", "нефть российск", "relations",
     "talks", "negotiations", "sanctions", "summit", "treaty", "agreement",
@@ -287,6 +289,7 @@ EXACT_SINGLE_MARKERS = {
 }
 
 BOILERPLATE_PATTERNS = (
+    r"Читайте последние актуальные новости(?: главных событий Сахалина)?\s+на тему\s+.*?\s+в ленте новостей на сайте\s+Sakh\.online",
     r"Читайте последние актуальные новости.*?(?=[А-ЯA-Z])",
     r"Мы будем присылать вам на почту.*$",
     r"Подпишись на самые важные новости.*$",
@@ -537,7 +540,6 @@ def classify(candidate: Mapping[str, Any]) -> Classification:
     hard = _hard_reject(title, lead)
     title_local = has_any(title, LOCAL_MARKERS)
     lead_local = has_any(lead, LOCAL_MARKERS)
-    local = title_local or (source_local and lead_local)
     foreign = has_any(title, FOREIGN_MARKERS)
     russia = (
         has_any(title, RUSSIA_MARKERS)
@@ -545,6 +547,16 @@ def classify(candidate: Mapping[str, Any]) -> Classification:
         or (source_russian and domestic_path)
     )
     event_type = _event_type(title, lead, foreign=foreign)
+    # A local publisher's boilerplate is never enough to make a federal story
+    # local. Lead-only geography is accepted only for a concrete hard event.
+    lead_local_events = {
+        "earthquake", "violent_crime", "fatal_incident", "military_security",
+        "major_emergency", "missing_person", "fraud", "air_quality_hazard",
+        "public_service_disruption", "severe_weather", "major_infrastructure",
+    }
+    local = title_local or (
+        source_local and lead_local and event_type in lead_local_events
+    )
 
     if hard:
         return Classification(

@@ -556,6 +556,92 @@ def openrouter_resilience_regression():
 
 
 
+
+def ai_translation_and_scope_regressions():
+    # Sakh.online boilerplate must not turn federal Putin/VEF stories into local news.
+    putin = candidate(
+        "Владимир Путин выступил на пленарном заседании ВЭФ-2026 во Владивостоке",
+        (
+            'Читайте последние актуальные новости главных событий Сахалина на тему '
+            '"Владимир Путин выступил на пленарном заседании ВЭФ-2026 во Владивостоке" '
+            'в ленте новостей на сайте Sakh.online. На заседании выступил Президент '
+            'Российской Федерации Владимир Путин.'
+        ),
+        source="Sakh.online",
+        url="https://sakh.online/news/18/test-putin/",
+        category="ru_pol",
+    )
+    assert policy.classify(putin).category_key == "ru_pol", policy.classify(putin).to_dict()
+
+    economy = candidate(
+        "Путин: за 11 лет в развитие Дальнего Востока привлекли 25 трлн рублей",
+        (
+            'Читайте последние актуальные новости главных событий Сахалина на тему '
+            '"Путин: за 11 лет в развитие Дальнего Востока привлекли 25 трлн рублей" '
+            'в ленте новостей на сайте Sakh.online. Президент России сообщил об инвестициях.'
+        ),
+        source="Sakh.online",
+        url="https://sakh.online/news/18/test-economy/",
+        category="ru_eco",
+    )
+    assert policy.classify(economy).category_key == "ru_eco", policy.classify(economy).to_dict()
+
+    bbc = candidate(
+        "Rosenberg: Putin threat to Britain is part of Russia campaign against West",
+        "The BBC analysis says the threat is part of a broader Russian campaign against the West.",
+        source="BBC World",
+        url="https://www.bbc.com/news/test-russia-threat",
+        category="world_ru",
+    )
+    assert policy.classify(bbc).category_key == "world_ru", policy.classify(bbc).to_dict()
+
+    # A grounded foreign translation may survive an unavailable second reviewer,
+    # but only when every paragraph carries exact source evidence and hedging is preserved.
+    foreign = candidate(
+        "Russian drone hits Ukrainian security headquarters, Zelensky says",
+        (
+            "A Russian drone hit a Ukrainian security headquarters, Zelensky says. "
+            "Officials said the building was damaged in the attack and emergency crews responded."
+        ),
+        source="BBC World",
+        url="https://www.bbc.com/news/test-drone",
+        category="world_ru",
+    )
+    row = {
+        "reject": False,
+        "title_ru": "Зеленский заявил об ударе российского дрона по штабу украинской службы безопасности",
+        "title_evidence": "Russian drone hits Ukrainian security headquarters, Zelensky says",
+        "body": [
+            "Зеленский заявил, что российский беспилотник ударил по штабу украинской службы безопасности.",
+            "По словам официальных лиц, здание было повреждено, после атаки на место прибыли экстренные службы.",
+        ],
+        "body_evidence": [
+            "A Russian drone hit a Ukrainian security headquarters, Zelensky says",
+            "Officials said the building was damaged in the attack and emergency crews responded",
+        ],
+        "footer": foreign["footer"],
+    }
+    original_budget = editorial.AI_AUDIT_BUDGET
+    try:
+        editorial.AI_AUDIT_BUDGET = 0
+        verdict = editorial._review(foreign, row)
+    finally:
+        editorial.AI_AUDIT_BUDGET = original_budget
+    assert verdict.get("approved") is True, verdict
+    assert verdict.get("mode") == "deterministic+grounded_translation", verdict
+
+    unsafe = dict(row)
+    unsafe["title_ru"] = "Российский дрон уничтожил украинский штаб"
+    unsafe["title_evidence"] = "Russian drone might hit Ukrainian security headquarters, officials say"
+    foreign2 = dict(foreign)
+    foreign2["title"] = "Russian drone might hit Ukrainian security headquarters, officials say"
+    foreign2["source_text"] = (
+        "Russian drone might hit Ukrainian security headquarters, officials say. "
+        "Officials said the building was damaged in the attack and emergency crews responded."
+    )
+    assert editorial._grounded_translation_safe(foreign2, unsafe) is False
+
+
 def current_live_defect_regressions():
     # Product/brand press releases must not fill the economy stream.
     for title, body in (
@@ -678,6 +764,7 @@ def main():
     repetition_regression()
     final_contract_and_auditor_regressions()
     openrouter_resilience_regression()
+    ai_translation_and_scope_regressions()
     current_live_defect_regressions()
     version_and_media_regressions()
     print("stable-v12.1 production self-test: ALL PASS")
