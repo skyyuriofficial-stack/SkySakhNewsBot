@@ -32,6 +32,14 @@ base.replace_once(
     '''CORPORATE_PR_EVIDENCE = (\n    "пресс служб", "пресс служба", "пресс-служба", "старший вице президент",''',
 )
 
+# Macro-policy markers must be morphological stems; otherwise "ключевую ставку"
+# does not match the nominative phrase "ключевая ставка".
+base.replace_once(
+    "src/editorial_policy.py",
+    '''MACRO_ECONOMY = (\n    "центробанк", "цб рф", "ключевая ставка", "инфляц",''',
+    '''MACRO_ECONOMY = (\n    "банк россии", "центробанк", "цб рф", "ключев ставк", "ключевая ставка", "инфляц",''',
+)
+
 # The previous regression encoded the old behaviour that could publish two
 # stories from the same thematic group simply because that group was in deficit.
 # v12.1 keeps the rolling deficit optimizer, but a two-post release must use two
