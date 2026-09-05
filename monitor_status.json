@@ -1,23 +1,23 @@
 {
   "version": "editorial-monitor-v1",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-05T01:07:58+00:00",
-  "checked_at_sakhalin": "2026-09-05T12:07:53+11:00",
+  "checked_at_utc": "2026-09-05T01:11:36+00:00",
+  "checked_at_sakhalin": "2026-09-05T12:11:34+11:00",
   "status": "healthy",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
-    "version": "stable-v12.0",
+    "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-05T11:41:37+11:00",
-    "age_hours": 0.44,
-    "published": 1
+    "finished_sakhalin": "2026-09-05T12:11:33+11:00",
+    "age_hours": 0.0,
+    "published": 0
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-05T01:07:56+00:00",
-    "checked": 20,
-    "passed": 2,
+    "checked_at": "2026-09-05T01:11:35+00:00",
+    "checked": 16,
+    "passed": 3,
     "anomalies": [
       {
         "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
@@ -153,145 +153,10 @@
         "corrected_category": "ru_eco",
         "reason": "approved",
         "contract_issues": []
-      },
-      {
-        "title": "Сбер стремится задавать новую планку качества в развитии городской среды регионов",
-        "url": "https://sakhalinmedia.ru/news/2611281/",
-        "publisher_version": "stable-v12.0",
-        "category_key": "ru_eco",
-        "corrected_category": null,
-        "reason": "corporate_product_or_brand_pr",
-        "contract_issues": [
-          "final_hard_reject:corporate_product_or_brand_pr",
-          "final_category_mismatch:None->ru_eco",
-          "director_final_category:None->ru_eco",
-          "director_final_reject:corporate_product_or_brand_pr"
-        ]
-      },
-      {
-        "title": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
-        "url": "https://sakhalinmedia.ru/news/2611255/",
-        "publisher_version": "stable-v12.0",
-        "category_key": "ru_eco",
-        "corrected_category": null,
-        "reason": "corporate_product_or_brand_pr",
-        "contract_issues": []
-      },
-      {
-        "title": "Сбер открывает клиентам доступ к цифровому рублю",
-        "url": "https://sakhalinmedia.ru/news/2611303/",
-        "publisher_version": "stable-v12.0",
-        "category_key": "ru_eco",
-        "corrected_category": null,
-        "reason": "corporate_product_or_brand_pr",
-        "contract_issues": [
-          "final_hard_reject:corporate_product_or_brand_pr",
-          "final_category_mismatch:None->ru_eco",
-          "director_final_category:None->ru_eco",
-          "director_final_reject:corporate_product_or_brand_pr"
-        ]
-      },
-      {
-        "title": "Универсальный платёжный код появился на биометрических терминалах Сбера",
-        "url": "https://sakhalinmedia.ru/news/2611323/",
-        "publisher_version": "stable-v12.0",
-        "category_key": "ru_eco",
-        "corrected_category": null,
-        "reason": "corporate_product_or_brand_pr",
-        "contract_issues": [
-          "final_hard_reject:corporate_product_or_brand_pr",
-          "final_category_mismatch:None->ru_eco",
-          "director_final_category:None->ru_eco",
-          "director_final_reject:corporate_product_or_brand_pr"
-        ]
-      },
-      {
-        "title": "Правительство РФ готовится к отмене проверок пострадавших от БПЛА проверок",
-        "url": "https://sakhalinmedia.ru/news/2611739/",
-        "publisher_version": "stable-v12.0",
-        "category_key": "ru_security",
-        "corrected_category": "ru_pol",
-        "reason": "approved",
-        "contract_issues": [
-          "repeated_title_token:проверок",
-          "final_category_mismatch:ru_pol->ru_security",
-          "director_final_category:ru_pol->ru_security"
-        ]
       }
     ],
-    "corrected": [
-      {
-        "message_id": 264,
-        "title": "Правительство РФ готовится к отмене проверок пострадавших от БПЛА проверок",
-        "url": "https://sakhalinmedia.ru/news/2611739/",
-        "publisher_version": "stable-v12.0",
-        "category_key": "ru_security",
-        "corrected_category": "ru_pol",
-        "reason": "approved",
-        "contract_issues": [
-          "repeated_title_token:проверок",
-          "final_category_mismatch:ru_pol->ru_security",
-          "director_final_category:ru_pol->ru_security"
-        ]
-      }
-    ],
-    "deleted": [
-      {
-        "message_id": 260,
-        "title": "Сбер стремится задавать новую планку качества в развитии городской среды регионов",
-        "url": "https://sakhalinmedia.ru/news/2611281/",
-        "publisher_version": "stable-v12.0",
-        "category_key": "ru_eco",
-        "corrected_category": null,
-        "reason": "corporate_product_or_brand_pr",
-        "contract_issues": [
-          "final_hard_reject:corporate_product_or_brand_pr",
-          "final_category_mismatch:None->ru_eco",
-          "director_final_category:None->ru_eco",
-          "director_final_reject:corporate_product_or_brand_pr"
-        ]
-      },
-      {
-        "message_id": 261,
-        "title": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
-        "url": "https://sakhalinmedia.ru/news/2611255/",
-        "publisher_version": "stable-v12.0",
-        "category_key": "ru_eco",
-        "corrected_category": null,
-        "reason": "corporate_product_or_brand_pr",
-        "contract_issues": []
-      },
-      {
-        "message_id": 262,
-        "title": "Сбер открывает клиентам доступ к цифровому рублю",
-        "url": "https://sakhalinmedia.ru/news/2611303/",
-        "publisher_version": "stable-v12.0",
-        "category_key": "ru_eco",
-        "corrected_category": null,
-        "reason": "corporate_product_or_brand_pr",
-        "contract_issues": [
-          "final_hard_reject:corporate_product_or_brand_pr",
-          "final_category_mismatch:None->ru_eco",
-          "director_final_category:None->ru_eco",
-          "director_final_reject:corporate_product_or_brand_pr"
-        ]
-      },
-      {
-        "message_id": 263,
-        "title": "Универсальный платёжный код появился на биометрических терминалах Сбера",
-        "url": "https://sakhalinmedia.ru/news/2611323/",
-        "publisher_version": "stable-v12.0",
-        "category_key": "ru_eco",
-        "corrected_category": null,
-        "reason": "corporate_product_or_brand_pr",
-        "contract_issues": [
-          "final_hard_reject:corporate_product_or_brand_pr",
-          "final_category_mismatch:None->ru_eco",
-          "director_final_category:None->ru_eco",
-          "director_final_reject:corporate_product_or_brand_pr"
-        ]
-      }
-    ],
+    "corrected": [],
+    "deleted": [],
     "failed_actions": [],
     "unresolved": 0,
     "unresolved_items": [],
