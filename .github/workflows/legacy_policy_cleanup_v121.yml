@@ -1,0 +1,187 @@
+name: SkySakhNews Legacy Feed Cleanup by v12.1 Policy
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/legacy_policy_cleanup_v121.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skysakhnews-feed-cleanup
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Regression gate
+        env:
+          IMAGE_REQUIRED: "1"
+          AI_CALL_BUDGET: "0"
+          EDITORIAL_AUDIT_AI_BUDGET: "0"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+          POST_AUDIT_AUTOCORRECT: "0"
+          RUN_COOLDOWN_MINUTES: "0"
+        run: python src/production_selftest.py
+      - name: Delete invalid or misclassified legacy posts
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        run: |
+          python - <<'PY'
+          import json, os, sys
+          from datetime import datetime, timezone
+          from pathlib import Path
+          import requests
+          sys.path.insert(0, "src")
+          import editorial_policy as policy
+          import news_director as director
+
+          state_path = Path("state.json")
+          state = json.loads(state_path.read_text(encoding="utf-8"))
+          token = os.environ["TELEGRAM_BOT_TOKEN"].strip()
+          channel = os.environ["TELEGRAM_CHANNEL_ID"].strip()
+          actions = []
+
+          def delete_message(message_id):
+              response = requests.post(
+                  f"https://api.telegram.org/bot{token}/deleteMessage",
+                  data={"chat_id": channel, "message_id": str(message_id)},
+                  timeout=45,
+              )
+              try:
+                  payload = response.json()
+              except Exception:
+                  payload = {"ok": False, "description": response.text[:300]}
+              if payload.get("ok") is True:
+                  return "deleted", payload
+              description = str(payload.get("description") or "").lower()
+              if "message to delete not found" in description:
+                  return "already_absent", payload
+              return "failed", payload
+
+          # Only historical pre-v12 records are normalized here. v12+ posts are
+          # handled continuously by publication_auditor/editorial_monitor.
+          for post in state.get("last_posts") or []:
+              if post.get("auto_deleted"):
+                  continue
+              if str(post.get("publisher_version") or "").startswith("stable-v12."):
+                  continue
+              message_id = post.get("telegram_message_id")
+              if message_id is None:
+                  continue
+
+              candidate = {
+                  "title": post.get("title"),
+                  "source_text": post.get("source_text_excerpt") or "",
+                  "source": post.get("source"),
+                  "url": post.get("url"),
+                  "category_key": post.get("category_key"),
+                  "category": post.get("category"),
+                  "footer": post.get("footer"),
+                  "published_at": post.get("published_at"),
+              }
+              review = director.review_candidate(candidate)
+              title_issues = policy.title_quality_issues(str(post.get("title") or ""))
+              wrong_category = (
+                  review.get("approved") is True
+                  and review.get("corrected_category") != post.get("category_key")
+              )
+              invalid = review.get("approved") is not True
+              malformed = bool(title_issues)
+
+              if not (invalid or wrong_category or malformed):
+                  continue
+
+              status, payload = delete_message(message_id)
+              action = {
+                  "message_id": message_id,
+                  "title": post.get("title"),
+                  "old_category": post.get("category_key"),
+                  "corrected_category": review.get("corrected_category"),
+                  "reason": review.get("reason"),
+                  "title_issues": title_issues,
+                  "telegram_status": status,
+              }
+              if status == "failed":
+                  action["telegram"] = payload
+              else:
+                  post["auto_deleted"] = True
+                  post["legacy_policy_cleanup"] = {
+                      "version": "legacy-policy-cleanup-v121",
+                      "deleted_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                      "reason": review.get("reason"),
+                      "corrected_category": review.get("corrected_category"),
+                      "title_issues": title_issues,
+                  }
+              actions.append(action)
+
+          failures = [item for item in actions if item["telegram_status"] == "failed"]
+          report = {
+              "version": "legacy-policy-cleanup-v121",
+              "executed_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+              "actions": actions,
+              "deleted_or_absent": sum(
+                  1 for item in actions if item["telegram_status"] in {"deleted", "already_absent"}
+              ),
+              "failed": failures,
+          }
+          state["legacy_policy_cleanup_v121"] = report
+          state_path.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          Path("LEGACY_POLICY_CLEANUP_V121.json").write_text(
+              json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+          )
+          print(json.dumps(report, ensure_ascii=False, indent=2))
+          assert not failures, failures
+          PY
+      - name: Re-audit cleaned feed
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          POST_AUDIT_AUTOCORRECT: "1"
+          IMAGE_REQUIRED: "1"
+          AI_CALL_BUDGET: "0"
+          EDITORIAL_AUDIT_AI_BUDGET: "0"
+          NEWS_DIRECTOR_AI_BUDGET: "0"
+        run: python src/editorial_monitor.py
+      - name: Verify active recent feed
+        run: |
+          python - <<'PY'
+          import json
+          state = json.load(open("state.json", encoding="utf-8"))
+          report = state.get("legacy_policy_cleanup_v121") or {}
+          assert not report.get("failed"), report
+          monitor = state.get("continuous_editorial_monitor") or {}
+          assert monitor.get("status") == "healthy", monitor
+          assert int((monitor.get("post_audit") or {}).get("unresolved") or 0) == 0, monitor
+          assert not (monitor.get("post_audit") or {}).get("failed_actions"), monitor
+          active = [p for p in state.get("last_posts", [])[-30:] if not p.get("auto_deleted")]
+          print("CLEAN ACTIVE FEED", [(p.get("telegram_message_id"), p.get("category_key"), p.get("title")) for p in active])
+          PY
+      - name: Commit cleanup and monitor state
+        if: always()
+        run: |
+          git config user.name "skysakhnews-monitor"
+          git config user.email "actions@github.com"
+          git add state.json monitor_status.json LEGACY_POLICY_CLEANUP_V121.json
+          if git diff --cached --quiet; then
+            echo "No cleanup state changes"
+          else
+            git commit -m "Clean legacy feed against stable v12.1 policy"
+            git pull --rebase --autostash origin main
+            git push origin main
+          fi
