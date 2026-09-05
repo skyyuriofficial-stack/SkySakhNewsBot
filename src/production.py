@@ -345,7 +345,11 @@ def _validate_generated_v99(row, c):
         errors.append("post_too_short")
     if len(joined) > 1650:
         errors.append("post_too_long")
-    if core.b.ratio_latin(joined) > 0.10:
+    # IT headlines legitimately retain brand/product names such as Nvidia,
+    # Hugging Face, OpenAI and ChatGPT. The prose must still be predominantly
+    # Russian, but those proper names are not translation failures.
+    latin_limit = 0.28 if c.get("category_key") == "it" else 0.10
+    if core.b.ratio_latin(joined) > latin_limit:
         errors.append("latin_ratio_high")
     if any(len(x) < 55 for x in body):
         errors.append("paragraph_too_short")
