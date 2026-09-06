@@ -11,7 +11,6 @@ import requests
 
 UA = {"User-Agent": "Mozilla/5.0 SkySakhNewsBot/1.0 (+https://t.me/SkySakhNews)"}
 
-# The digest is intentionally narrow: Russia + mobilization / reserve-force generation.
 MOBILIZATION_RE = re.compile(
     r"мобилизац|запасник|резервист|военком|повестк|военн(?:ые|ых) сбор|"
     r"барс\b|категори.{0,20}[«\"']?д[»\"']?|контрактн.{0,30}(набор|служб)|"
@@ -21,15 +20,9 @@ MOBILIZATION_RE = re.compile(
     re.I,
 )
 RUSSIA_RE = re.compile(r"росси|russia|russian|кремл|putin|путин|минобор|moscow|москва", re.I)
-OPERATIONAL_RE = re.compile(
-    r"массов.{0,20}повест|квот|сборн.{0,20}пункт|военком.{0,30}(круглосут|усилен|массов)|"
-    r"работодател.{0,30}(списк|явк)|reserve call|mobilization order",
-    re.I,
-)
 EXCLUDE_RE = re.compile(
     r"china\s*&\s*taiwan|china and taiwan|тайван|taiwan update|"
-    r"частичная мобилизация.*21 сентября(?!.*2026)|2022.*мобилизац|"
-    r"история мобилизац|как было в 2022",
+    r"2022.*мобилизац|история мобилизац|как было в 2022",
     re.I,
 )
 
@@ -39,14 +32,10 @@ DIRECT_FEEDS: List[Tuple[str, str, str, int]] = [
     ("Guardian World", "ru_media", "https://www.theguardian.com/world/rss", 84),
 ]
 
-# Known high-value pages are fetched directly so the digest does not depend on
-# Google News for its core analytical baseline.
-PINNED_ISW = [
-    ("2026-09-05", "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-5-2026/"),
-    ("2026-09-04", "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-4-2026/"),
-    ("2026-09-01", "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-1-2026/"),
-    ("2026-08-31", "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-31-2026/"),
-]
+MONTHS = {
+    1: "january", 2: "february", 3: "march", 4: "april", 5: "may", 6: "june",
+    7: "july", 8: "august", 9: "september", 10: "october", 11: "november", 12: "december",
+}
 
 
 def clean(value: Any) -> str:
@@ -72,13 +61,13 @@ def parse_entry_dt(entry: Dict[str, Any]) -> datetime | None:
     return None
 
 
-def excerpt_around(text: str, pattern: re.Pattern[str] = MOBILIZATION_RE, radius: int = 1000) -> str:
+def excerpt_around(text: str, pattern: re.Pattern[str] = MOBILIZATION_RE, radius: int = 1100) -> str:
     match = pattern.search(text or "")
     if not match:
         return clean(text)[:1800]
     start = max(0, match.start() - radius)
     end = min(len(text), match.end() + radius)
-    return clean(text[start:end])[:2200]
+    return clean(text[start:end])[:2400]
 
 
 def is_relevant(row: Dict[str, Any]) -> bool:
@@ -89,7 +78,6 @@ def is_relevant(row: Dict[str, Any]) -> bool:
     if EXCLUDE_RE.search(text):
         return False
     if group == "isw":
-        # ISW China/Taiwan products must never leak into this digest.
         if "russian offensive campaign assessment" not in title.lower():
             return False
         return bool(MOBILIZATION_RE.search(text))
@@ -97,7 +85,6 @@ def is_relevant(row: Dict[str, Any]) -> bool:
         return "1322096-8" in text or "1322096" in text or bool(MOBILIZATION_RE.search(text))
     if group == "official":
         return bool(MOBILIZATION_RE.search(text))
-    # Media items need both Russian context and an actual mobilization/force-gen marker.
     return bool(RUSSIA_RE.search(text) and MOBILIZATION_RE.search(text))
 
 
@@ -110,7 +97,7 @@ def fetch_direct_feeds() -> List[Dict[str, Any]]:
     now = datetime.now(timezone.utc)
     for source, group, url, trust in DIRECT_FEEDS:
         try:
-            response = requests.get(url, headers=UA, timeout=25)
+            response = requests.get(url, headers=UA, timeout=20)
             response.raise_for_status()
             feed = feedparser.parse(response.content)
         except Exception as exc:
@@ -136,9 +123,16 @@ def fetch_direct_feeds() -> List[Dict[str, Any]]:
     return out
 
 
-def _fetch_isw_url(day_iso: str, url: str) -> Dict[str, Any] | None:
+def _isw_url(day) -> str:
+    slug = f"russian-offensive-campaign-assessment-{MONTHS[day.month]}-{day.day}-{day.year}"
+    return f"https://understandingwar.org/research/russia-ukraine/{slug}/"
+
+
+def _fetch_isw_day(day) -> Dict[str, Any] | None:
+    day_iso = day.isoformat()
+    url = _isw_url(day)
     try:
-        response = requests.get(url, headers=UA, timeout=25, allow_redirects=True)
+        response = requests.get(url, headers=UA, timeout=20, allow_redirects=True)
         if response.status_code >= 400:
             return None
         page = response.text[:1_500_000]
@@ -162,8 +156,9 @@ def _fetch_isw_url(day_iso: str, url: str) -> Dict[str, Any] | None:
 
 def fetch_isw_daily() -> List[Dict[str, Any]]:
     out: List[Dict[str, Any]] = []
-    for day_iso, url in PINNED_ISW:
-        row = _fetch_isw_url(day_iso, url)
+    today = datetime.now(timezone.utc).date()
+    for offset in range(0, 9):
+        row = _fetch_isw_day(today - timedelta(days=offset))
         if row:
             out.append(row)
     return out
@@ -173,7 +168,7 @@ def fetch_kremlin_index() -> List[Dict[str, Any]]:
     url = "https://kremlin.ru/events/president/news/page/1"
     out: List[Dict[str, Any]] = []
     try:
-        response = requests.get(url, headers=UA, timeout=25)
+        response = requests.get(url, headers=UA, timeout=20)
         response.raise_for_status()
         page = response.text[:1_500_000]
     except Exception as exc:
@@ -213,7 +208,7 @@ def fetch_bill_pages() -> List[Dict[str, Any]]:
     out: List[Dict[str, Any]] = []
     for name, url, trust in sources:
         try:
-            response = requests.get(url, headers=UA, timeout=25, allow_redirects=True)
+            response = requests.get(url, headers=UA, timeout=20, allow_redirects=True)
             if response.status_code >= 400:
                 continue
             page = response.text[:1_200_000]
