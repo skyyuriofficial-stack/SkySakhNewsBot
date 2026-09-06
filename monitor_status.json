@@ -1,29 +1,23 @@
 {
   "version": "editorial-monitor-v1",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-06T05:56:50+00:00",
-  "checked_at_sakhalin": "2026-09-06T16:56:49+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-09-06T06:58:01+00:00",
+  "checked_at_sakhalin": "2026-09-06T17:58:00+11:00",
+  "status": "healthy",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 5.25,
-      "limit_hours": 4.5
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-06T11:41:45+11:00",
-    "age_hours": 5.25,
-    "published": 1
+    "finished_sakhalin": "2026-09-06T17:57:59+11:00",
+    "age_hours": 0.0,
+    "published": 2
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-06T05:56:50+00:00",
-    "checked": 7,
-    "passed": 7,
+    "checked_at": "2026-09-06T06:58:00+00:00",
+    "checked": 8,
+    "passed": 8,
     "anomalies": [],
     "corrected": [],
     "deleted": [],
@@ -34,19 +28,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 248,
-      "title": "Путин: за 11 лет в развитие Дальнего Востока привлекли 25 трлн рублей",
-      "category_key": "ru_eco",
-      "publisher_version": null,
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 254,
       "title": "Дым от бушующих в Якутии пожаров дошёл до Курил - очевидцы",
@@ -124,6 +105,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 268,
+      "title": "На Сахалине за сутки потушили шесть пожаров",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 269,
+      "title": "США и Иран обменялись ответными ударами по судам на фоне обострения конфликта",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "geo",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -147,9 +154,9 @@
     "counts": {
       "local": 5,
       "ru_pol": 1,
-      "ru_eco": 4,
+      "ru_eco": 3,
       "ru_safety": 0,
-      "world": 3,
+      "world": 4,
       "it": 0
     },
     "scaled_targets": {
@@ -163,25 +170,24 @@
     "deficits": {
       "local": -1.1,
       "ru_pol": 1.6,
-      "ru_eco": -1.4,
+      "ru_eco": -0.4,
       "ru_safety": 1.95,
-      "world": -1.7,
+      "world": -2.7,
       "it": 0.65
     },
     "distribution_error": 8.4,
     "subtype_counts": {
-      "major_infrastructure": 3,
-      "geopolitical_event": 2,
+      "geopolitical_event": 3,
       "corporate_forecast": 1,
+      "major_infrastructure": 1,
       "macro_economy": 2,
       "major_emergency": 2,
       "violent_crime": 1,
       "political_decision": 1,
-      "military_security": 1
+      "military_security": 1,
+      "fatal_incident": 1
     },
     "sequence": [
-      "local",
-      "ru_eco",
       "world",
       "ru_eco",
       "local",
@@ -192,11 +198,11 @@
       "ru_pol",
       "world",
       "ru_eco",
-      "local"
+      "local",
+      "local",
+      "world"
     ],
     "category_sequence": [
-      "sakh",
-      "ru_eco",
       "geo",
       "ru_eco",
       "sakh",
@@ -207,12 +213,12 @@
       "ru_pol",
       "world_ru",
       "ru_eco",
-      "sakh_chp"
+      "sakh_chp",
+      "sakh_chp",
+      "geo"
     ],
     "source_sequence": [
       "sakhalinmedia.ru",
-      "tass",
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "bbc world",
@@ -222,7 +228,9 @@
       "sakhalinmedia.ru",
       "bbc world",
       "sakh.online",
-      "astv"
+      "astv",
+      "sakh.online",
+      "bbc world"
     ],
     "retrospective_anomalies": [
       {
