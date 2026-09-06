@@ -20,6 +20,8 @@ on:
       - main
     paths:
       - ".github/workflows/mobilization_digest.yml"
+      - "src/mobilization_digest.py"
+      - "src/mobilization_digest_runner.py"
 
 permissions:
   contents: write
