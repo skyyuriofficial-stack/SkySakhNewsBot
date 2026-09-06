@@ -1,29 +1,23 @@
 {
   "version": "editorial-monitor-v1",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-06T21:20:39+00:00",
-  "checked_at_sakhalin": "2026-09-07T08:20:37+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-09-06T22:03:30+00:00",
+  "checked_at_sakhalin": "2026-09-07T09:03:28+11:00",
+  "status": "healthy",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 9.3,
-      "limit_hours": 4.5
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-06T23:02:25+11:00",
-    "age_hours": 9.3,
-    "published": 1
+    "finished_sakhalin": "2026-09-07T09:03:27+11:00",
+    "age_hours": 0.0,
+    "published": 2
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-06T21:20:38+00:00",
-    "checked": 9,
-    "passed": 9,
+    "checked_at": "2026-09-06T22:03:29+00:00",
+    "checked": 11,
+    "passed": 11,
     "anomalies": [],
     "corrected": [],
     "deleted": [],
@@ -150,6 +144,32 @@
       "review_reason": "approved",
       "corrected_category": "ru_security",
       "title_issues": []
+    },
+    {
+      "message_id": 272,
+      "title": "Пожар на стройке ЖК «Зеленая планета» в Южно-Сахалинске: горит крыша",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 273,
+      "title": "Переговоры о мире были насыщены символизмом, но фундаментальные разногласия между Россией и Украиной сохраняются",
+      "category_key": "world_ru",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "world_ru",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -171,7 +191,7 @@
       "it": 5.0
     },
     "counts": {
-      "local": 5,
+      "local": 6,
       "ru_pol": 1,
       "ru_eco": 3,
       "ru_safety": 1,
@@ -179,35 +199,34 @@
       "it": 0
     },
     "scaled_targets": {
-      "local": 4.2,
-      "ru_pol": 2.8,
-      "ru_eco": 2.8,
-      "ru_safety": 2.1,
-      "world": 1.4,
-      "it": 0.7
+      "local": 4.5,
+      "ru_pol": 3.0,
+      "ru_eco": 3.0,
+      "ru_safety": 2.25,
+      "world": 1.5,
+      "it": 0.75
     },
     "deficits": {
-      "local": -0.8,
-      "ru_pol": 1.8,
-      "ru_eco": -0.2,
-      "ru_safety": 1.1,
-      "world": -2.6,
-      "it": 0.7
+      "local": -1.5,
+      "ru_pol": 2.0,
+      "ru_eco": 0.0,
+      "ru_safety": 1.25,
+      "world": -2.5,
+      "it": 0.75
     },
-    "distribution_error": 7.2,
+    "distribution_error": 8.0,
     "subtype_counts": {
-      "geopolitical_event": 3,
       "corporate_forecast": 1,
       "major_infrastructure": 1,
+      "geopolitical_event": 3,
       "macro_economy": 2,
-      "major_emergency": 2,
+      "major_emergency": 3,
       "violent_crime": 1,
       "political_decision": 1,
       "military_security": 2,
       "fatal_incident": 1
     },
     "sequence": [
-      "world",
       "ru_eco",
       "local",
       "world",
@@ -220,10 +239,11 @@
       "local",
       "local",
       "world",
-      "ru_safety"
+      "ru_safety",
+      "local",
+      "world"
     ],
     "category_sequence": [
-      "geo",
       "ru_eco",
       "sakh",
       "world_ru",
@@ -236,12 +256,13 @@
       "sakh_chp",
       "sakh_chp",
       "geo",
-      "ru_security"
+      "ru_security",
+      "sakh_chp",
+      "world_ru"
     ],
     "source_sequence": [
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru",
       "bbc world",
       "sakh.online",
       "astv",
@@ -252,15 +273,11 @@
       "astv",
       "sakh.online",
       "bbc world",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "sakh.online",
+      "bbc world"
     ],
     "retrospective_anomalies": [
-      {
-        "title": "Водитель Урала погиб в результате опрокидывания грузовика на Итурупе",
-        "category_key": "sakh_chp",
-        "reason": "importance_below_threshold",
-        "corrected_category": "sakh"
-      },
       {
         "title": "Жительница Южно-Сахалинска лишилась денег при попытке купить щенка в интернете",
         "category_key": "sakh",
@@ -292,6 +309,6 @@
         "corrected_category": null
       }
     ],
-    "valid_posts_counted": 14
+    "valid_posts_counted": 15
   }
 }
