@@ -12,62 +12,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install requests
+        run: pip install requests==2.32.3
+
       - name: Publish verified test digest to Telegram
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
-        run: |
-          python - <<'PY'
-          import os
-          import requests
-
-          token = os.environ["TELEGRAM_BOT_TOKEN"].strip()
-          chat_id = os.environ["TELEGRAM_CHANNEL_ID"].strip()
-          text = '''🇷🇺 <b>МОБИЛИЗАЦИЯ РФ — ТЕСТОВАЯ ВЕЧЕРНЯЯ СВОДКА</b>
-
-<b>Коротко:</b> на 6 сентября 2026 года в проверенной доказательной выборке нет подтверждения запуска новой волны мобилизации, нового официального решения на массовый призыв запасников или региональных мобилизационных квот. При этом кадровое давление остаётся существенным.
-
-<b>ПОДТВЕРЖДЕНО</b> — ISW 4 сентября зафиксировал, что Владимир Путин на ВЭФ 3 сентября вновь отрицал планы мобилизации и заявил об отсутствии кадрового дефицита. Сам ISW при этом пишет, что Путин сейчас выглядит приверженным существующей системе добровольного набора; это заявление не является гарантией будущих решений.
-
-<b>СИЛЬНЫЙ СИГНАЛ, НО НЕ РЕШЕНИЕ</b> — ISW 1 сентября оценил, что добровольная система комплектования испытывает трудности с восполнением текущих потерь. Указанные ISW 42 020 потерь за август — данные украинского Генштаба, а не независимо подтверждённый подсчёт ISW.
-
-<b>КОСВЕННЫЙ СИГНАЛ</b> — 5 сентября Путин поддержал предложение допускать добровольцев с категорией годности «Д» к службе в региональных подразделениях ПВО, включая БАРС. ISW связывает обсуждение с нехваткой людей и проблемами территориальной ПВО. Это расширение кадровой базы, но не мобилизация.
-
-<b>Юридические изменения</b>
-Законопроект №1322096-8 остаётся проектом изменений КоАП. Он предусматривает ответственность за неисполнение решений губернатора или регионального оперштаба в пределах их компетенции; сам по себе текст не объявляет мобилизацию и не даёт губернатору самостоятельного права мобилизовать граждан.
-
-<b>Переговоры</b>
-Переговоры Путина с Уиткоффом и Кушнером 5 сентября длились более трёх часов. Reuters сообщил, что Кремль назвал их полезными, но признаков прорыва не было. Поэтому оснований считать, что кадровая потребность резко исчезла из-за мирного процесса, нет.
-
-<b>Текущая оценка</b>
-🟢 Новая волна уже началась — <b>нет подтверждения</b>.
-🟡 Риск новой волны в ближайшие месяцы — <b>реальный, но решение не доказано</b>.
-🟠 Кадровое давление — <b>высокое</b> по оценке ISW.
-🟠 Инфраструктурная готовность к быстрому призыву — <b>высокая</b>, но готовность не равна решению.
-🔎 Решение о крупной волне на сотни тысяч — <b>доказательств нет</b>.
-
-<b>Источники</b>
-• <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-4-2026/">ISW — 4 сентября</a>
-• <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-1-2026/">ISW — 1 сентября</a>
-• <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-5-2026/">ISW — 5 сентября</a>
-• <a href="https://base.garant.ru/411685332/">ГАРАНТ — законопроект №1322096-8</a>
-• <a href="https://www.reuters.com/world/europe/putins-envoy-dmitriev-meet-witkoff-kushner-upon-their-arrival-moscow-sources-say-2026-09-05/">Reuters — переговоры 5 сентября</a>'''
-
-          r = requests.post(
-              f"https://api.telegram.org/bot{token}/sendMessage",
-              json={
-                  "chat_id": chat_id,
-                  "text": text,
-                  "parse_mode": "HTML",
-                  "disable_web_page_preview": True,
-              },
-              timeout=30,
-          )
-          r.raise_for_status()
-          payload = r.json()
-          if not payload.get("ok"):
-              raise RuntimeError(payload)
-          result = payload.get("result") or {}
-          print("TELEGRAM_MESSAGE_ID=", result.get("message_id"))
-          print("TELEGRAM_CHAT_ID=", (result.get("chat") or {}).get("id"))
-          PY
+        run: python src/publish_mobilization_test_once.py
