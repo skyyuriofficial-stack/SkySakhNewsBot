@@ -60,11 +60,12 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
           DIGEST_MODE: ${{ github.event.inputs.mode }}
+          DIGEST_DRY_RUN: ${{ github.event_name == 'push' && '1' || '0' }}
           PYTHONUNBUFFERED: "1"
         run: python src/mobilization_digest_runner.py
 
       - name: Commit digest state
-        if: success()
+        if: success() && github.event_name != 'push'
         run: |
           git config user.name "skysakhnews-bot"
           git config user.email "actions@github.com"
