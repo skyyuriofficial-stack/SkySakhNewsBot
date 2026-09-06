@@ -12,23 +12,35 @@ import mobilization_digest_runner as runner
 import mobilization_sources
 
 
+def _quality_row(row):
+    if not isinstance(row, dict):
+        return False
+    group = str(row.get("group") or "")
+    trust = int(row.get("trust") or 0)
+    # Generic Russian media discovered through broad Google queries is not
+    # strong enough for this high-stakes digest. Keep only strong named outlets.
+    if group == "ru_media" and trust < 85:
+        return False
+    return mobilization_sources.is_relevant(row)
+
+
 def robust_collect():
     rows = []
     try:
-        rows.extend(mobilization_sources.filter_rows(runner._original_collect()))
+        rows.extend(row for row in runner._original_collect() if _quality_row(row))
     except Exception as exc:
         print(f"primary Google News collection failed: {exc}", flush=True)
 
-    # Direct sources are always added; they are not merely an emergency fallback.
-    # This guarantees that ISW/law evidence is present even if Google returns noisy results.
     try:
-        rows.extend(mobilization_sources.collect_fallback())
+        rows.extend(row for row in mobilization_sources.collect_fallback() if _quality_row(row))
     except Exception as exc:
         print(f"direct-source collection error: {exc}", flush=True)
 
     seen = set()
     unique = []
-    for row in mobilization_sources.filter_rows(rows):
+    for row in rows:
+        if not _quality_row(row):
+            continue
         url = str(row.get("url") or "").strip()
         title = digest.clean(row.get("title"))
         if not title:
