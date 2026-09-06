@@ -47,7 +47,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Compile digest
-        run: python -m py_compile src/mobilization_digest.py
+        run: |
+          python -m py_compile src/mobilization_digest.py
+          python -m py_compile src/mobilization_digest_runner.py
 
       - name: Build, fact-check and publish mobilization digest
         env:
@@ -57,7 +59,7 @@ jobs:
           OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
           DIGEST_MODE: ${{ github.event.inputs.mode }}
           PYTHONUNBUFFERED: "1"
-        run: python src/mobilization_digest.py
+        run: python src/mobilization_digest_runner.py
 
       - name: Commit digest state
         if: success()
