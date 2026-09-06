@@ -10,10 +10,26 @@ import feedparser
 import requests
 
 UA = {"User-Agent": "Mozilla/5.0 SkySakhNewsBot/1.0 (+https://t.me/SkySakhNews)"}
-KEY_RE = re.compile(
+
+# The digest is intentionally narrow: Russia + mobilization / reserve-force generation.
+MOBILIZATION_RE = re.compile(
     r"мобилизац|запасник|резервист|военком|повестк|военн(?:ые|ых) сбор|"
-    r"барс\b|категори.{0,20}[«\"']?д[»\"']?|контрактн.{0,20}(набор|служб)|"
-    r"mobiliz|reservist|conscription|manpower|recruit(?:ment|ing)|draft notice",
+    r"барс\b|категори.{0,20}[«\"']?д[»\"']?|контрактн.{0,30}(набор|служб)|"
+    r"комплектован|кадров.{0,20}(дефицит|давлен)|личн.{0,20}состав|"
+    r"mobiliz|reservist|reserve call|conscription|manpower|force generation|"
+    r"recruit(?:ment|ing)|draft notice",
+    re.I,
+)
+RUSSIA_RE = re.compile(r"росси|russia|russian|кремл|putin|путин|минобор|moscow|москва", re.I)
+OPERATIONAL_RE = re.compile(
+    r"массов.{0,20}повест|квот|сборн.{0,20}пункт|военком.{0,30}(круглосут|усилен|массов)|"
+    r"работодател.{0,30}(списк|явк)|reserve call|mobilization order",
+    re.I,
+)
+EXCLUDE_RE = re.compile(
+    r"china\s*&\s*taiwan|china and taiwan|тайван|taiwan update|"
+    r"частичная мобилизация.*21 сентября(?!.*2026)|2022.*мобилизац|"
+    r"история мобилизац|как было в 2022",
     re.I,
 )
 
@@ -21,6 +37,15 @@ DIRECT_FEEDS: List[Tuple[str, str, str, int]] = [
     ("Interfax", "ru_media", "https://www.interfax.ru/rss.asp", 88),
     ("BBC World", "bbc", "https://feeds.bbci.co.uk/news/world/rss.xml", 91),
     ("Guardian World", "ru_media", "https://www.theguardian.com/world/rss", 84),
+]
+
+# Known high-value pages are fetched directly so the digest does not depend on
+# Google News for its core analytical baseline.
+PINNED_ISW = [
+    ("2026-09-05", "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-5-2026/"),
+    ("2026-09-04", "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-4-2026/"),
+    ("2026-09-01", "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-1-2026/"),
+    ("2026-08-31", "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-31-2026/"),
 ]
 
 
@@ -47,13 +72,37 @@ def parse_entry_dt(entry: Dict[str, Any]) -> datetime | None:
     return None
 
 
-def excerpt_around(text: str, pattern: re.Pattern[str] = KEY_RE, radius: int = 850) -> str:
+def excerpt_around(text: str, pattern: re.Pattern[str] = MOBILIZATION_RE, radius: int = 1000) -> str:
     match = pattern.search(text or "")
     if not match:
-        return clean(text)[:1400]
+        return clean(text)[:1800]
     start = max(0, match.start() - radius)
     end = min(len(text), match.end() + radius)
-    return clean(text[start:end])[:1800]
+    return clean(text[start:end])[:2200]
+
+
+def is_relevant(row: Dict[str, Any]) -> bool:
+    title = clean(row.get("title"))
+    summary = clean(row.get("summary"))
+    text = f"{title} {summary}"
+    group = str(row.get("group") or "")
+    if EXCLUDE_RE.search(text):
+        return False
+    if group == "isw":
+        # ISW China/Taiwan products must never leak into this digest.
+        if "russian offensive campaign assessment" not in title.lower():
+            return False
+        return bool(MOBILIZATION_RE.search(text))
+    if group == "law":
+        return "1322096-8" in text or "1322096" in text or bool(MOBILIZATION_RE.search(text))
+    if group == "official":
+        return bool(MOBILIZATION_RE.search(text))
+    # Media items need both Russian context and an actual mobilization/force-gen marker.
+    return bool(RUSSIA_RE.search(text) and MOBILIZATION_RE.search(text))
+
+
+def filter_rows(rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    return [row for row in rows if isinstance(row, dict) and is_relevant(row)]
 
 
 def fetch_direct_feeds() -> List[Dict[str, Any]]:
@@ -67,64 +116,56 @@ def fetch_direct_feeds() -> List[Dict[str, Any]]:
         except Exception as exc:
             print(f"direct feed error {source}: {exc}", flush=True)
             continue
-        for entry in feed.entries[:80]:
+        for entry in feed.entries[:100]:
             title = clean(entry.get("title"))
             summary = clean(entry.get("summary") or entry.get("description"))
-            combined = f"{title} {summary}"
-            if not KEY_RE.search(combined):
-                continue
             dt = parse_entry_dt(entry)
             if dt and now - dt > timedelta(days=8):
                 continue
-            out.append({
+            row = {
                 "group": group,
                 "trust": trust,
                 "source": source,
                 "title": title,
-                "summary": summary[:1200],
+                "summary": summary[:1400],
                 "url": clean(entry.get("link")),
                 "published_utc": dt.isoformat() if dt else None,
-            })
+            }
+            if is_relevant(row):
+                out.append(row)
     return out
 
 
-def month_slug(month: int) -> str:
-    names = {
-        1: "january", 2: "february", 3: "march", 4: "april", 5: "may", 6: "june",
-        7: "july", 8: "august", 9: "september", 10: "october", 11: "november", 12: "december",
+def _fetch_isw_url(day_iso: str, url: str) -> Dict[str, Any] | None:
+    try:
+        response = requests.get(url, headers=UA, timeout=25, allow_redirects=True)
+        if response.status_code >= 400:
+            return None
+        page = response.text[:1_500_000]
+    except Exception as exc:
+        print(f"ISW fetch error {day_iso}: {exc}", flush=True)
+        return None
+    text = clean(page)
+    title_match = re.search(r"<title[^>]*>(.*?)</title>", page, flags=re.I | re.S)
+    title = clean(title_match.group(1) if title_match else f"Russian Offensive Campaign Assessment, {day_iso}")
+    row = {
+        "group": "isw",
+        "trust": 96,
+        "source": "Institute for the Study of War",
+        "title": title,
+        "summary": excerpt_around(text),
+        "url": response.url or url,
+        "published_utc": f"{day_iso}T00:00:00+00:00",
     }
-    return names[month]
+    return row if is_relevant(row) else None
 
 
 def fetch_isw_daily() -> List[Dict[str, Any]]:
     out: List[Dict[str, Any]] = []
-    today = datetime.now(timezone.utc).date()
-    for offset in range(0, 8):
-        day = today - timedelta(days=offset)
-        slug = f"russian-offensive-campaign-assessment-{month_slug(day.month)}-{day.day}-{day.year}"
-        url = f"https://understandingwar.org/research/russia-ukraine/{slug}/"
-        try:
-            response = requests.get(url, headers=UA, timeout=25, allow_redirects=True)
-            if response.status_code >= 400:
-                continue
-            page = response.text[:1_500_000]
-        except Exception as exc:
-            print(f"ISW fetch error {day}: {exc}", flush=True)
-            continue
-        text = clean(page)
-        if not KEY_RE.search(text):
-            continue
-        title_match = re.search(r"<title[^>]*>(.*?)</title>", page, flags=re.I | re.S)
-        title = clean(title_match.group(1) if title_match else f"Russian Offensive Campaign Assessment, {day.isoformat()}")
-        out.append({
-            "group": "isw",
-            "trust": 96,
-            "source": "Institute for the Study of War",
-            "title": title,
-            "summary": excerpt_around(text),
-            "url": response.url or url,
-            "published_utc": datetime(day.year, day.month, day.day, tzinfo=timezone.utc).isoformat(),
-        })
+    for day_iso, url in PINNED_ISW:
+        row = _fetch_isw_url(day_iso, url)
+        if row:
+            out.append(row)
     return out
 
 
@@ -145,19 +186,18 @@ def fetch_kremlin_index() -> List[Dict[str, Any]]:
         if path in seen:
             continue
         seen.add(path)
-        context = clean(page[max(0, match.start() - 900): match.end() + 900])
-        if not KEY_RE.search(context):
-            continue
-        title = context[:280]
-        out.append({
+        context = clean(page[max(0, match.start() - 1100): match.end() + 1100])
+        row = {
             "group": "official",
             "trust": 100,
             "source": "Президент России / Kremlin.ru",
-            "title": title,
-            "summary": context[:1500],
+            "title": context[:320],
+            "summary": context[:1800],
             "url": "https://kremlin.ru" + path,
             "published_utc": None,
-        })
+        }
+        if is_relevant(row):
+            out.append(row)
         if len(out) >= 8:
             break
     return out
@@ -165,16 +205,18 @@ def fetch_kremlin_index() -> List[Dict[str, Any]]:
 
 def fetch_bill_pages() -> List[Dict[str, Any]]:
     sources = [
-        ("ГАРАНТ — досье законопроекта №1322096-8", "https://base.garant.ru/414784137/", 94),
+        ("ГАРАНТ — досье законопроекта №1322096-8", "https://base.garant.ru/414784137/", 96),
+        ("ГАРАНТ — текст законопроекта №1322096-8", "https://base.garant.ru/411685332/", 96),
+        ("ГАРАНТ — пояснительная записка №1322096-8", "https://base.garant.ru/411685333/", 96),
         ("Государственная Дума — законопроект №1322096-8", "https://sozd.duma.gov.ru/bill/1322096-8", 100),
     ]
-    out = []
+    out: List[Dict[str, Any]] = []
     for name, url, trust in sources:
         try:
             response = requests.get(url, headers=UA, timeout=25, allow_redirects=True)
             if response.status_code >= 400:
                 continue
-            page = response.text[:1_000_000]
+            page = response.text[:1_200_000]
         except Exception as exc:
             print(f"bill page error {name}: {exc}", flush=True)
             continue
@@ -184,16 +226,18 @@ def fetch_bill_pages() -> List[Dict[str, Any]]:
         title_match = re.search(r"<title[^>]*>(.*?)</title>", page, flags=re.I | re.S)
         title = clean(title_match.group(1) if title_match else name)
         marker = text.find("1322096")
-        summary = clean(text[max(0, marker - 500): marker + 2200]) if marker >= 0 else text[:1800]
-        out.append({
+        summary = clean(text[max(0, marker - 700): marker + 3200]) if marker >= 0 else text[:2200]
+        row = {
             "group": "law",
             "trust": trust,
             "source": name,
             "title": title,
-            "summary": summary[:1800],
+            "summary": summary[:2600],
             "url": response.url or url,
             "published_utc": None,
-        })
+        }
+        if is_relevant(row):
+            out.append(row)
     return out
 
 
@@ -206,8 +250,8 @@ def collect_fallback() -> List[Dict[str, Any]]:
 
     seen = set()
     unique = []
-    for row in rows:
-        marker = re.sub(r"\W+", " ", clean(row.get("title")).lower()).strip()
+    for row in filter_rows(rows):
+        marker = clean(row.get("url")) or re.sub(r"\W+", " ", clean(row.get("title")).lower()).strip()
         if not marker or marker in seen:
             continue
         seen.add(marker)
