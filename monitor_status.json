@@ -1,21 +1,27 @@
 {
   "version": "editorial-monitor-v1",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-06T19:10:17+00:00",
-  "checked_at_sakhalin": "2026-09-07T06:10:15+11:00",
-  "status": "healthy",
+  "checked_at_utc": "2026-09-06T21:20:39+00:00",
+  "checked_at_sakhalin": "2026-09-07T08:20:37+11:00",
+  "status": "error",
   "mutations_enabled": true,
-  "issues": [],
+  "issues": [
+    {
+      "type": "publisher_stale",
+      "age_hours": 9.3,
+      "limit_hours": 4.5
+    }
+  ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-09-06T23:02:25+11:00",
-    "age_hours": 7.13,
+    "age_hours": 9.3,
     "published": 1
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-06T19:10:16+00:00",
+    "checked_at": "2026-09-06T21:20:38+00:00",
     "checked": 9,
     "passed": 9,
     "anomalies": [],
