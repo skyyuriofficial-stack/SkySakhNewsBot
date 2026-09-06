@@ -218,7 +218,8 @@
     "https://sakhalinmedia.ru/news/2611323/",
     "https://sakhalinmedia.ru/news/2611739/",
     "https://www.bbc.co.uk/news/articles/c5yep7y48x2o?at_medium=RSS&at_campaign=rss",
-    "https://sakh.online/news/18/2026-09-05/investitsii-v-dalniy-vostok-s-2014-goda-vyrosli-v-4-7-raza-525072"
+    "https://sakh.online/news/18/2026-09-05/investitsii-v-dalniy-vostok-s-2014-goda-vyrosli-v-4-7-raza-525072",
+    "https://astv.ru/news/criminal/2026-09-06-dumali-chto-koster-pozhar-busheval-noch-yu-v-aleksandrovske-sahalinskom"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -440,34 +441,11 @@
     "8533ca1a70637f674d8d9c3b4b10341f05fad555",
     "9e93338ac7662109acc9a8bade6b1e962cd06f75",
     "d0b88474c79a85ddb77c29bf216760c7fc27fcf8",
-    "d9694e67ade38fe0d96d6fe66cfde9c156bbc588"
+    "d9694e67ade38fe0d96d6fe66cfde9c156bbc588",
+    "f7d6782f4912f5d7181174cffd14a9a0b9baceb6"
   ],
-  "last_run_sakhalin": "2026-09-06T08:59:17+11:00",
+  "last_run_sakhalin": "2026-09-06T11:41:45+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-08-26T10:30:08+11:00",
-      "source": "Interfax",
-      "category": "🧭 Геополитика",
-      "category_key": "geo",
-      "title": "США в скором времени усилят экономическое давление на Иран",
-      "url": "https://www.interfax.ru/world/1111245",
-      "image_url": null,
-      "image_hash": null,
-      "topic_cluster": "geo:скором_времени_усилят_экономическое_давление",
-      "published_at": "2026-08-25T22:38:00+00:00",
-      "with_image": false,
-      "publish_method": "sendMessage/no-safe-image",
-      "grounded_evidence": true,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic",
-        "issues": []
-      }
-    },
     {
       "time_sakhalin": "2026-08-26T14:08:45+11:00",
       "source": "SakhalinMedia.ru",
@@ -2474,7 +2452,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T22:56:51+00:00"
+        "checked_at": "2026-09-06T00:41:46+00:00"
       }
     },
     {
@@ -2870,7 +2848,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T22:56:51+00:00"
+        "checked_at": "2026-09-06T00:41:46+00:00"
       }
     },
     {
@@ -3078,7 +3056,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T22:56:51+00:00"
+        "checked_at": "2026-09-06T00:41:46+00:00"
       },
       "legacy_cleanup": "edited_or_already_fixed"
     },
@@ -4115,7 +4093,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T22:56:52+00:00"
+        "checked_at": "2026-09-06T00:41:46+00:00"
       }
     },
     {
@@ -4273,7 +4251,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T22:56:52+00:00"
+        "checked_at": "2026-09-06T00:41:46+00:00"
       }
     },
     {
@@ -4455,7 +4433,180 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-05T22:56:52+00:00"
+        "checked_at": "2026-09-06T00:41:46+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-09-06T11:40:55+11:00",
+      "source": "ASTV",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "\"Думали, что костёр\": пожар бушевал ночью в Александровске-Сахалинском",
+      "url": "https://astv.ru/news/criminal/2026-09-06-dumali-chto-koster-pozhar-busheval-noch-yu-v-aleksandrovske-sahalinskom",
+      "image_url": "https://astv.ru/content/NewsImage/1f/ad/1fad1690-6f49-4d33-9023-f83d5b02caf8_3.jpg",
+      "image_hash": "43fe769357149159a92da8f18959b48333e54f5b",
+      "topic_cluster": "sakh_chp:думали_костёр_пожар_бушевал_ночью_александровске",
+      "published_at": "2026-09-05T13:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.1",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "sakh_chp",
+        "corrected_category": "sakh_chp",
+        "group": "local",
+        "event_type": "major_emergency",
+        "subtype": "major_emergency",
+        "seriousness": 93,
+        "threshold": 68,
+        "selection_utility": 78.6,
+        "slot": 1,
+        "risks": [],
+        "title_original": "\"Думали, что костёр\": пожар бушевал ночью в Александровске-Сахалинском",
+        "title_corrected": "\"Думали, что костёр\": пожар бушевал ночью в Александровске-Сахалинском",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Огнеборцев на место вызвали очевидцы Нежилой дом сгорел в Александровске-Сахалинском в ночь на 6 сентября. Происшествие случилось на улице Пригородной, а свидетелями стали проходившие мимо люди. Именно они и вызвали на место пожарных. Как сообщили astv.ru очевидцы, за несколько часов до случившегося недалеко от места пожара заметили дым. Он был слабый, поэтому предположили, что кто-то на дачном участке развёл костер. \"Но когда возвращались с прогулки спустя два часа, то уже заметили пламя. Предполагаем, что там действительно сначала горел костёр, поскольку за это время пожар разгорелся не сильно. Вызвали на место огнеборцев. Через 2-3 минуты они уже были на месте\", - отметила читательница. В ГУ МЧС России по Сахалинской области уточнили, что сигнал о возгорании поступил в 23:30. Пожарные прибыли через три минуты, в это время полыхал нежилой одноэтажный дом.",
+      "title_original": null,
+      "footer": "ЧП | САХАЛИН",
+      "published_row": {
+        "reject": false,
+        "title_ru": "\"Думали, что костёр\": пожар бушевал ночью в Александровске-Сахалинском",
+        "body": [
+          "Огнеборцев на место вызвали очевидцы Нежилой дом сгорел в Александровске-Сахалинском в ночь на 6 сентября.",
+          "Происшествие случилось на улице Пригородной, а свидетелями стали проходившие мимо люди."
+        ],
+        "footer": "ЧП | САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "news_director": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 93,
+          "threshold": 68,
+          "selection_utility": 78.6,
+          "slot": 1,
+          "risks": [],
+          "title_original": "\"Думали, что костёр\": пожар бушевал ночью в Александровске-Сахалинском",
+          "title_corrected": "\"Думали, что костёр\": пожар бушевал ночью в Александровске-Сахалинском",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "sakh_chp",
+          "final_category": "sakh_chp",
+          "event_type": "major_emergency",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.3",
+          "director_review": {
+            "version": "director-v2.1",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "sakh_chp",
+            "corrected_category": "sakh_chp",
+            "group": "local",
+            "event_type": "major_emergency",
+            "subtype": "major_emergency",
+            "seriousness": 90,
+            "threshold": 68,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "\"Думали, что костёр\": пожар бушевал ночью в Александровске-Сахалинском",
+            "title_corrected": "\"Думали, что костёр\": пожар бушевал ночью в Александровске-Сахалинском",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "📍 Сахалин\n\n<b>\"Думали, что костёр\": пожар бушевал ночью в Александровске-Сахалинском</b>\n\nОгнеборцев на место вызвали очевидцы Нежилой дом сгорел в Александровске-Сахалинском в ночь на 6 сентября.\n\nПроисшествие случилось на улице Пригородной, а свидетелями стали проходившие мимо люди.\n\nЧП | САХАЛИН · <a href=\"https://astv.ru/news/criminal/2026-09-06-dumali-chto-koster-pozhar-busheval-noch-yu-v-aleksandrovske-sahalinskom\">ASTV</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "major_emergency",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 90,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "\"Думали, что костёр\": пожар бушевал ночью в Александровске-Сахалинском",
+          "title_corrected": "\"Думали, что костёр\": пожар бушевал ночью в Александровске-Сахалинском",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 267,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": []
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-09-06T00:41:46+00:00"
       }
     }
   ],
@@ -4684,11 +4835,11 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-09-06T08:56:42+11:00",
+    "started_sakhalin": "2026-09-06T11:37:52+11:00",
     "status": "ok",
-    "candidates": 1,
-    "published": 0,
-    "local_candidates": 0,
+    "candidates": 2,
+    "published": 1,
+    "local_candidates": 1,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -4709,7 +4860,7 @@
           "source": "ASTV HTML",
           "status": "ok",
           "entries": 22,
-          "recent": 12
+          "recent": 13
         },
         {
           "source": "Sakh.online HTML",
@@ -4719,56 +4870,56 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-09-06T08:59:16+11:00",
+    "finished_sakhalin": "2026-09-06T11:41:45+11:00",
     "stats": {
       "rss_seen": 160,
-      "old_skip": 79,
+      "old_skip": 81,
       "google_skip": 5,
       "duplicate_skip": 1,
-      "low_info_skip": 16,
-      "category_skip": 26,
+      "low_info_skip": 15,
+      "category_skip": 23,
       "no_image_skip": 0,
-      "bad_image_skip": 15,
-      "logo_image_skip": 64,
+      "bad_image_skip": 12,
+      "logo_image_skip": 74,
       "text_card_image_skip": 0,
-      "candidates": 10,
-      "rewrite_retry": 1,
+      "candidates": 11,
+      "rewrite_retry": 2,
       "editorial_skip": 1,
       "telegram_fail": 0,
-      "published": 0,
+      "published": 1,
       "ai_calls": 2,
       "ai_budget_exhausted": 0,
-      "ai_api_fail": 1,
+      "ai_api_fail": 2,
       "evidence_reject": 0,
       "validation_reject": 0,
-      "extractive_fallback": 0,
-      "extractive_first": 0,
-      "editorial_prechecked": 31,
-      "editorial_gate_checked": 1,
-      "editorial_gate_pass": 0,
-      "editorial_gate_reject": 1,
+      "extractive_fallback": 1,
+      "extractive_first": 1,
+      "editorial_prechecked": 38,
+      "editorial_gate_checked": 2,
+      "editorial_gate_pass": 1,
+      "editorial_gate_reject": 0,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 0,
       "editorial_gate_ai_fail": 0,
-      "editorial_title_reject": 1,
+      "editorial_title_reject": 0,
       "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
       "editorial_reclassified": 5,
-      "editorial_offtopic_reject": 21,
-      "openrouter_empty_content": 1,
-      "openrouter_model_fallback": 1,
-      "openrouter_attempts": 5,
-      "openrouter_retries": 3,
+      "editorial_offtopic_reject": 26,
+      "openrouter_empty_content": 2,
+      "openrouter_model_fallback": 0,
+      "openrouter_attempts": 6,
+      "openrouter_retries": 4,
       "openrouter_invalid_json": 1,
-      "openrouter_success": 1,
+      "openrouter_success": 0,
       "openrouter_circuit_open": 0,
       "editorial_grounded_translation_fallback": 0,
-      "media_required_skip": 0,
+      "media_required_skip": 1,
       "media_generic_skip": 0,
-      "media_ready_candidates": 10,
+      "media_ready_candidates": 11,
       "photo_retry": 0,
-      "photo_publish": 0,
-      "photo_upload_original": 0,
+      "photo_publish": 1,
+      "photo_upload_original": 1,
       "photo_upload_reencoded": 0,
       "photo_upload_plain_caption": 0,
       "photo_remote_url": 0,
@@ -4779,14 +4930,14 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 10,
-      "director_approved": 1,
+      "director_seen": 11,
+      "director_approved": 2,
       "director_rejected": 9,
       "director_reclassified": 0,
       "director_title_corrected": 0,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
-      "director_final_checked": 0,
+      "director_final_checked": 1,
       "director_final_autocorrected": 0,
       "director_final_reject": 0,
       "director_pending_retired": 0,
@@ -4947,8 +5098,8 @@
         ],
         "valid_posts_counted": 12
       },
-      "candidate_count": 10,
-      "approved_count": 1,
+      "candidate_count": 11,
+      "approved_count": 2,
       "rejected_count": 9,
       "rejected_by_reason": {
         "importance_below_threshold": 8,
@@ -4957,25 +5108,35 @@
       "ai_review_requested": 0,
       "ai_review_received": 0,
       "selected_groups": [
+        "local",
         "world"
       ],
-      "projected_distribution_error": 8.4,
+      "projected_distribution_error": 9.2,
       "projected_counts": {
-        "local": 4,
+        "local": 5,
         "ru_eco": 4,
         "world": 4,
         "ru_pol": 1
       },
-      "projected_length": 13,
+      "projected_length": 14,
       "selected_preview": [
         {
           "slot": 1,
-          "title": "US hits three Iranian oil tankers after saying its warships were targeted",
+          "title": "\"Думали, что костёр\": пожар бушевал ночью в Александровске-Сахалинском",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "seriousness": 93,
+          "utility": 78.6
+        },
+        {
+          "slot": 2,
+          "title": "US and Iran trade retaliatory attacks on ships as conflict flares",
           "category_key": "geo",
           "group": "world",
-          "event_type": "military_security",
-          "seriousness": 94,
-          "utility": 79.6
+          "event_type": "geopolitical_event",
+          "seriousness": 87,
+          "utility": 72.6
         }
       ],
       "rolling_balance_after": {
@@ -4997,7 +5158,7 @@
           "it": 5.0
         },
         "counts": {
-          "local": 4,
+          "local": 5,
           "ru_pol": 1,
           "ru_eco": 4,
           "ru_safety": 0,
@@ -5005,28 +5166,28 @@
           "it": 0
         },
         "scaled_targets": {
-          "local": 3.6,
-          "ru_pol": 2.4,
-          "ru_eco": 2.4,
-          "ru_safety": 1.8,
-          "world": 1.2,
-          "it": 0.6
+          "local": 3.9,
+          "ru_pol": 2.6,
+          "ru_eco": 2.6,
+          "ru_safety": 1.95,
+          "world": 1.3,
+          "it": 0.65
         },
         "deficits": {
-          "local": -0.4,
-          "ru_pol": 1.4,
-          "ru_eco": -1.6,
-          "ru_safety": 1.8,
-          "world": -1.8,
-          "it": 0.6
+          "local": -1.1,
+          "ru_pol": 1.6,
+          "ru_eco": -1.4,
+          "ru_safety": 1.95,
+          "world": -1.7,
+          "it": 0.65
         },
-        "distribution_error": 7.6,
+        "distribution_error": 8.4,
         "subtype_counts": {
           "major_infrastructure": 3,
           "geopolitical_event": 2,
           "corporate_forecast": 1,
           "macro_economy": 2,
-          "major_emergency": 1,
+          "major_emergency": 2,
           "violent_crime": 1,
           "political_decision": 1,
           "military_security": 1
@@ -5043,7 +5204,8 @@
           "local",
           "ru_pol",
           "world",
-          "ru_eco"
+          "ru_eco",
+          "local"
         ],
         "category_sequence": [
           "sakh",
@@ -5057,7 +5219,8 @@
           "sakh_chp",
           "ru_pol",
           "world_ru",
-          "ru_eco"
+          "ru_eco",
+          "sakh_chp"
         ],
         "source_sequence": [
           "sakhalinmedia.ru",
@@ -5071,15 +5234,10 @@
           "astv",
           "sakhalinmedia.ru",
           "bbc world",
-          "sakh.online"
+          "sakh.online",
+          "astv"
         ],
         "retrospective_anomalies": [
-          {
-            "title": "Просвещение (группа ВЭБ.РФ): Дальний Восток может опередить другие регионы России по использованию ИИ",
-            "category_key": "it",
-            "reason": "no_supported_news_stream",
-            "corrected_category": null
-          },
           {
             "title": "Трое пьяных, шесть без прав: на Сахалине поймали почти 100 нарушителей ПДД",
             "category_key": "sakh",
@@ -5123,12 +5281,12 @@
             "corrected_category": null
           }
         ],
-        "valid_posts_counted": 12
+        "valid_posts_counted": 13
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-09-05T21:56:47+00:00",
+      "checked_at": "2026-09-06T00:37:55+00:00",
       "checked": 6,
       "passed": 6,
       "anomalies": [],
@@ -5149,11 +5307,11 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 10,
-      "missing_media_rejected": 0,
+      "ready_candidates": 11,
+      "missing_media_rejected": 1,
       "generic_media_rejected": 0,
       "photo_retries": 0,
-      "photo_published": 0,
+      "photo_published": 1,
       "deferred_this_run": 0,
       "pending_queue_size": 0,
       "pending_ready": 0,
@@ -5163,12 +5321,12 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 31,
-      "checked": 1,
-      "passed": 0,
-      "rejected": 1,
+      "prechecked": 38,
+      "checked": 2,
+      "passed": 1,
+      "rejected": 0,
       "reclassified": 5,
-      "offtopic_reject": 21,
+      "offtopic_reject": 26,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
@@ -5217,7 +5375,7 @@
       "it": 5.0
     },
     "counts": {
-      "local": 4,
+      "local": 5,
       "ru_pol": 1,
       "ru_eco": 4,
       "ru_safety": 0,
@@ -5225,28 +5383,28 @@
       "it": 0
     },
     "scaled_targets": {
-      "local": 3.6,
-      "ru_pol": 2.4,
-      "ru_eco": 2.4,
-      "ru_safety": 1.8,
-      "world": 1.2,
-      "it": 0.6
+      "local": 3.9,
+      "ru_pol": 2.6,
+      "ru_eco": 2.6,
+      "ru_safety": 1.95,
+      "world": 1.3,
+      "it": 0.65
     },
     "deficits": {
-      "local": -0.4,
-      "ru_pol": 1.4,
-      "ru_eco": -1.6,
-      "ru_safety": 1.8,
-      "world": -1.8,
-      "it": 0.6
+      "local": -1.1,
+      "ru_pol": 1.6,
+      "ru_eco": -1.4,
+      "ru_safety": 1.95,
+      "world": -1.7,
+      "it": 0.65
     },
-    "distribution_error": 7.6,
+    "distribution_error": 8.4,
     "subtype_counts": {
       "major_infrastructure": 3,
       "geopolitical_event": 2,
       "corporate_forecast": 1,
       "macro_economy": 2,
-      "major_emergency": 1,
+      "major_emergency": 2,
       "violent_crime": 1,
       "political_decision": 1,
       "military_security": 1
@@ -5263,7 +5421,8 @@
       "local",
       "ru_pol",
       "world",
-      "ru_eco"
+      "ru_eco",
+      "local"
     ],
     "category_sequence": [
       "sakh",
@@ -5277,7 +5436,8 @@
       "sakh_chp",
       "ru_pol",
       "world_ru",
-      "ru_eco"
+      "ru_eco",
+      "sakh_chp"
     ],
     "source_sequence": [
       "sakhalinmedia.ru",
@@ -5291,15 +5451,10 @@
       "astv",
       "sakhalinmedia.ru",
       "bbc world",
-      "sakh.online"
+      "sakh.online",
+      "astv"
     ],
     "retrospective_anomalies": [
-      {
-        "title": "Просвещение (группа ВЭБ.РФ): Дальний Восток может опередить другие регионы России по использованию ИИ",
-        "category_key": "it",
-        "reason": "no_supported_news_stream",
-        "corrected_category": null
-      },
       {
         "title": "Трое пьяных, шесть без прав: на Сахалине поймали почти 100 нарушителей ПДД",
         "category_key": "sakh",
@@ -5343,7 +5498,7 @@
         "corrected_category": null
       }
     ],
-    "valid_posts_counted": 12
+    "valid_posts_counted": 13
   },
   "expired_media_delivery": [
     {
@@ -5518,9 +5673,9 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-05T22:56:52+00:00",
-    "checked": 6,
-    "passed": 6,
+    "checked_at": "2026-09-06T00:41:46+00:00",
+    "checked": 7,
+    "passed": 7,
     "anomalies": [],
     "corrected": [],
     "deleted": [],
@@ -5560,23 +5715,23 @@
   "continuous_editorial_monitor": {
     "version": "editorial-monitor-v1",
     "publisher_version": "stable-v12.1",
-    "checked_at_utc": "2026-09-05T22:56:53+00:00",
-    "checked_at_sakhalin": "2026-09-06T09:56:51+11:00",
+    "checked_at_utc": "2026-09-06T00:41:47+00:00",
+    "checked_at_sakhalin": "2026-09-06T11:41:45+11:00",
     "status": "healthy",
     "mutations_enabled": true,
     "issues": [],
     "last_run": {
       "version": "stable-v12.1",
       "status": "ok",
-      "finished_sakhalin": "2026-09-06T08:59:16+11:00",
-      "age_hours": 0.96,
-      "published": 0
+      "finished_sakhalin": "2026-09-06T11:41:45+11:00",
+      "age_hours": 0.0,
+      "published": 1
     },
     "post_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-09-05T22:56:52+00:00",
-      "checked": 6,
-      "passed": 6,
+      "checked_at": "2026-09-06T00:41:46+00:00",
+      "checked": 7,
+      "passed": 7,
       "anomalies": [],
       "corrected": [],
       "deleted": [],
@@ -5664,6 +5819,19 @@
         "review_reason": "approved",
         "corrected_category": "ru_eco",
         "title_issues": []
+      },
+      {
+        "message_id": 267,
+        "title": "\"Думали, что костёр\": пожар бушевал ночью в Александровске-Сахалинском",
+        "category_key": "sakh_chp",
+        "publisher_version": "stable-v12.1",
+        "category_ok": true,
+        "title_ok": true,
+        "media_ok": true,
+        "contract_ok": true,
+        "review_reason": "approved",
+        "corrected_category": "sakh_chp",
+        "title_issues": []
       }
     ],
     "balance": {
@@ -5685,7 +5853,7 @@
         "it": 5.0
       },
       "counts": {
-        "local": 4,
+        "local": 5,
         "ru_pol": 1,
         "ru_eco": 4,
         "ru_safety": 0,
@@ -5693,28 +5861,28 @@
         "it": 0
       },
       "scaled_targets": {
-        "local": 3.6,
-        "ru_pol": 2.4,
-        "ru_eco": 2.4,
-        "ru_safety": 1.8,
-        "world": 1.2,
-        "it": 0.6
+        "local": 3.9,
+        "ru_pol": 2.6,
+        "ru_eco": 2.6,
+        "ru_safety": 1.95,
+        "world": 1.3,
+        "it": 0.65
       },
       "deficits": {
-        "local": -0.4,
-        "ru_pol": 1.4,
-        "ru_eco": -1.6,
-        "ru_safety": 1.8,
-        "world": -1.8,
-        "it": 0.6
+        "local": -1.1,
+        "ru_pol": 1.6,
+        "ru_eco": -1.4,
+        "ru_safety": 1.95,
+        "world": -1.7,
+        "it": 0.65
       },
-      "distribution_error": 7.6,
+      "distribution_error": 8.4,
       "subtype_counts": {
         "major_infrastructure": 3,
         "geopolitical_event": 2,
         "corporate_forecast": 1,
         "macro_economy": 2,
-        "major_emergency": 1,
+        "major_emergency": 2,
         "violent_crime": 1,
         "political_decision": 1,
         "military_security": 1
@@ -5731,7 +5899,8 @@
         "local",
         "ru_pol",
         "world",
-        "ru_eco"
+        "ru_eco",
+        "local"
       ],
       "category_sequence": [
         "sakh",
@@ -5745,7 +5914,8 @@
         "sakh_chp",
         "ru_pol",
         "world_ru",
-        "ru_eco"
+        "ru_eco",
+        "sakh_chp"
       ],
       "source_sequence": [
         "sakhalinmedia.ru",
@@ -5759,15 +5929,10 @@
         "astv",
         "sakhalinmedia.ru",
         "bbc world",
-        "sakh.online"
+        "sakh.online",
+        "astv"
       ],
       "retrospective_anomalies": [
-        {
-          "title": "Просвещение (группа ВЭБ.РФ): Дальний Восток может опередить другие регионы России по использованию ИИ",
-          "category_key": "it",
-          "reason": "no_supported_news_stream",
-          "corrected_category": null
-        },
         {
           "title": "Трое пьяных, шесть без прав: на Сахалине поймали почти 100 нарушителей ПДД",
           "category_key": "sakh",
@@ -5811,7 +5976,7 @@
           "corrected_category": null
         }
       ],
-      "valid_posts_counted": 12
+      "valid_posts_counted": 13
     }
   },
   "legacy_policy_cleanup_v121": {
