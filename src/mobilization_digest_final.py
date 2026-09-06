@@ -15,21 +15,20 @@ import mobilization_sources
 def robust_collect():
     rows = []
     try:
-        rows.extend(runner._original_collect())
+        rows.extend(mobilization_sources.filter_rows(runner._original_collect()))
     except Exception as exc:
         print(f"primary Google News collection failed: {exc}", flush=True)
-    if len(rows) < 8:
-        print(f"primary evidence count={len(rows)}; adding direct-source fallback", flush=True)
-        try:
-            rows.extend(mobilization_sources.collect_fallback())
-        except Exception as exc:
-            print(f"direct-source fallback error: {exc}", flush=True)
+
+    # Direct sources are always added; they are not merely an emergency fallback.
+    # This guarantees that ISW/law evidence is present even if Google returns noisy results.
+    try:
+        rows.extend(mobilization_sources.collect_fallback())
+    except Exception as exc:
+        print(f"direct-source collection error: {exc}", flush=True)
 
     seen = set()
     unique = []
-    for row in rows:
-        if not isinstance(row, dict):
-            continue
+    for row in mobilization_sources.filter_rows(rows):
         url = str(row.get("url") or "").strip()
         title = digest.clean(row.get("title"))
         if not title:
@@ -73,7 +72,7 @@ def fast_editor(messages, max_tokens=2400):
                 "max_tokens": max(3200, int(max_tokens)),
                 "response_format": {"type": "json_object"},
             },
-            timeout=40,
+            timeout=45,
         )
         response.raise_for_status()
         payload = response.json()
@@ -83,7 +82,7 @@ def fast_editor(messages, max_tokens=2400):
             return text.strip()
         raise RuntimeError("AI route returned no JSON content")
     except Exception as exc:
-        print(f"AI editor degraded; using evidence-only conservative fallback: {exc}", flush=True)
+        print(f"AI editor degraded; using analytical evidence fallback: {exc}", flush=True)
         return json.dumps(runner.conservative_draft(runner._evidence_cache), ensure_ascii=False)
 
 
@@ -95,14 +94,21 @@ def main():
     mode = digest.mode_now()
     evidence = digest.collect_evidence()
     if not evidence:
-        raise RuntimeError("no evidence from either primary or direct sources; fail closed")
+        raise RuntimeError("no relevant evidence from primary or direct sources; fail closed")
+
+    print("Relevant evidence:", flush=True)
+    for item in evidence[:16]:
+        print(
+            f"  [{item.get('id')}] {item.get('group')} trust={item.get('trust')} | {digest.clean(item.get('title'))[:160]}",
+            flush=True,
+        )
 
     draft = digest.parse_json(
         digest.openrouter(
             [
                 {
                     "role": "system",
-                    "content": "Ты доказательно-ориентированный редактор. Не используй знания вне предоставленного массива источников. Возвращай только JSON.",
+                    "content": "Ты доказательно-ориентированный редактор. Не используй знания вне предоставленного массива источников. Не заполняй объём ради объёма. Возвращай только JSON.",
                 },
                 {"role": "user", "content": digest.draft_prompt(evidence, mode)},
             ]
@@ -124,7 +130,7 @@ def main():
     state = digest.load_state()
     state.update(
         {
-            "version": "mobilization-digest-v1.1",
+            "version": "mobilization-digest-v1.2",
             "last_run_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "last_run_sakhalin": datetime.now(digest.TZ).isoformat(timespec="seconds"),
             "mode": mode,
