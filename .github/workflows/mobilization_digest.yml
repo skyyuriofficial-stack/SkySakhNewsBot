@@ -22,6 +22,8 @@ on:
       - ".github/workflows/mobilization_digest.yml"
       - "src/mobilization_digest.py"
       - "src/mobilization_digest_runner.py"
+      - "src/mobilization_sources.py"
+      - "src/mobilization_digest_final.py"
 
 permissions:
   contents: write
@@ -52,6 +54,8 @@ jobs:
         run: |
           python -m py_compile src/mobilization_digest.py
           python -m py_compile src/mobilization_digest_runner.py
+          python -m py_compile src/mobilization_sources.py
+          python -m py_compile src/mobilization_digest_final.py
 
       - name: Build, fact-check and publish mobilization digest
         env:
@@ -62,7 +66,7 @@ jobs:
           DIGEST_MODE: ${{ github.event.inputs.mode }}
           DIGEST_DRY_RUN: ${{ github.event_name == 'push' && '1' || '0' }}
           PYTHONUNBUFFERED: "1"
-        run: python src/mobilization_digest_runner.py
+        run: python src/mobilization_digest_final.py
 
       - name: Commit digest state
         if: success() && github.event_name != 'push'
