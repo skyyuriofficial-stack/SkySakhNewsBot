@@ -1,16 +1,11 @@
 {
   "version": "editorial-monitor-v1",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-07T06:06:10+00:00",
-  "checked_at_sakhalin": "2026-09-07T17:06:07+11:00",
+  "checked_at_utc": "2026-09-07T07:08:26+00:00",
+  "checked_at_sakhalin": "2026-09-07T18:08:24+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 5.28,
-      "limit_hours": 4.5
-    },
     {
       "type": "post_audit_unresolved",
       "count": 1,
@@ -43,15 +38,15 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-07T11:49:20+11:00",
-    "age_hours": 5.28,
+    "finished_sakhalin": "2026-09-07T18:08:24+11:00",
+    "age_hours": 0.0,
     "published": 2
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-07T06:06:09+00:00",
-    "checked": 12,
-    "passed": 11,
+    "checked_at": "2026-09-07T07:08:26+00:00",
+    "checked": 14,
+    "passed": 13,
     "anomalies": [
       {
         "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
@@ -247,6 +242,32 @@
       "review_reason": "approved",
       "corrected_category": "world_ru",
       "title_issues": []
+    },
+    {
+      "message_id": 278,
+      "title": "Сбер открыл ландшафтный парк Тайга в Хабаровске",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
+    },
+    {
+      "message_id": 279,
+      "title": "Иран предупредил о «более быстром, тяжёлом и болезненном ответе» на удары США",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "geo",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -268,34 +289,33 @@
       "it": 5.0
     },
     "counts": {
-      "local": 7,
+      "local": 6,
       "ru_pol": 1,
-      "ru_eco": 2,
+      "ru_eco": 3,
       "ru_safety": 1,
-      "world": 5,
+      "world": 6,
       "it": 0
     },
     "scaled_targets": {
-      "local": 4.8,
-      "ru_pol": 3.2,
-      "ru_eco": 3.2,
-      "ru_safety": 2.4,
-      "world": 1.6,
-      "it": 0.8
+      "local": 5.1,
+      "ru_pol": 3.4,
+      "ru_eco": 3.4,
+      "ru_safety": 2.55,
+      "world": 1.7,
+      "it": 0.85
     },
     "deficits": {
-      "local": -2.2,
-      "ru_pol": 2.2,
-      "ru_eco": 1.2,
-      "ru_safety": 1.4,
-      "world": -3.4,
-      "it": 0.8
+      "local": -0.9,
+      "ru_pol": 2.4,
+      "ru_eco": 0.4,
+      "ru_safety": 1.55,
+      "world": -4.3,
+      "it": 0.85
     },
-    "distribution_error": 11.2,
+    "distribution_error": 10.4,
     "subtype_counts": {
-      "major_infrastructure": 1,
-      "geopolitical_event": 4,
-      "macro_economy": 2,
+      "geopolitical_event": 5,
+      "macro_economy": 3,
       "major_emergency": 4,
       "violent_crime": 1,
       "political_decision": 1,
@@ -303,7 +323,6 @@
       "fatal_incident": 1
     },
     "sequence": [
-      "local",
       "world",
       "ru_eco",
       "local",
@@ -318,10 +337,11 @@
       "local",
       "world",
       "local",
+      "world",
+      "ru_eco",
       "world"
     ],
     "category_sequence": [
-      "sakh",
       "world_ru",
       "ru_eco",
       "sakh_chp",
@@ -336,10 +356,11 @@
       "sakh_chp",
       "world_ru",
       "sakh_chp",
-      "world_ru"
+      "world_ru",
+      "ru_eco",
+      "geo"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "bbc world",
       "sakh.online",
       "astv",
@@ -354,15 +375,11 @@
       "sakh.online",
       "bbc world",
       "astv",
+      "bbc world",
+      "sakhalinmedia.ru",
       "bbc world"
     ],
     "retrospective_anomalies": [
-      {
-        "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
-        "category_key": "geo",
-        "reason": "ceremony_or_congratulation",
-        "corrected_category": null
-      },
       {
         "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
         "category_key": "geo",
@@ -382,6 +399,6 @@
         "corrected_category": null
       }
     ],
-    "valid_posts_counted": 16
+    "valid_posts_counted": 17
   }
 }
