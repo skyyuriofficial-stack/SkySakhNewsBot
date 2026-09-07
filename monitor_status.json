@@ -1,46 +1,92 @@
 {
   "version": "editorial-monitor-v1",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-06T23:10:25+00:00",
-  "checked_at_sakhalin": "2026-09-07T10:10:23+11:00",
-  "status": "healthy",
+  "checked_at_utc": "2026-09-07T00:49:23+00:00",
+  "checked_at_sakhalin": "2026-09-07T11:49:20+11:00",
+  "status": "error",
   "mutations_enabled": true,
-  "issues": [],
+  "issues": [
+    {
+      "type": "post_audit_unresolved",
+      "count": 1,
+      "items": [
+        {
+          "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
+          "url": "https://www.bbc.co.uk/news/articles/c6248nvqy8po?at_medium=RSS&at_campaign=rss",
+          "publisher_version": "stable-v12.1",
+          "category_key": "world_ru",
+          "corrected_category": "world_ru",
+          "reason": "approved",
+          "contract_issues": [
+            "foreign_translation_evidence_missing"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "post_audit_action_failure",
+      "count": 1,
+      "items": [
+        {
+          "action": "editMessageCaption",
+          "message_id": 277,
+          "error": "Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message"
+        }
+      ]
+    }
+  ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-07T09:03:27+11:00",
-    "age_hours": 1.12,
+    "finished_sakhalin": "2026-09-07T11:49:20+11:00",
+    "age_hours": 0.0,
     "published": 2
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-06T23:10:24+00:00",
-    "checked": 11,
+    "checked_at": "2026-09-07T00:49:22+00:00",
+    "checked": 12,
     "passed": 11,
-    "anomalies": [],
+    "anomalies": [
+      {
+        "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
+        "url": "https://www.bbc.co.uk/news/articles/c6248nvqy8po?at_medium=RSS&at_campaign=rss",
+        "publisher_version": "stable-v12.1",
+        "category_key": "world_ru",
+        "corrected_category": "world_ru",
+        "reason": "approved",
+        "contract_issues": [
+          "foreign_translation_evidence_missing"
+        ]
+      }
+    ],
     "corrected": [],
     "deleted": [],
-    "failed_actions": [],
-    "unresolved": 0,
-    "unresolved_items": [],
+    "failed_actions": [
+      {
+        "action": "editMessageCaption",
+        "message_id": 277,
+        "error": "Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message"
+      }
+    ],
+    "unresolved": 1,
+    "unresolved_items": [
+      {
+        "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
+        "url": "https://www.bbc.co.uk/news/articles/c6248nvqy8po?at_medium=RSS&at_campaign=rss",
+        "publisher_version": "stable-v12.1",
+        "category_key": "world_ru",
+        "corrected_category": "world_ru",
+        "reason": "approved",
+        "contract_issues": [
+          "foreign_translation_evidence_missing"
+        ]
+      }
+    ],
     "mutations_enabled": true,
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 254,
-      "title": "Дым от бушующих в Якутии пожаров дошёл до Курил - очевидцы",
-      "category_key": "sakh_chp",
-      "publisher_version": null,
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 257,
       "title": "Суд арестовал сахалинца, обвиняемого в убийстве и незаконном лишении свободы женщины",
@@ -170,6 +216,32 @@
       "review_reason": "approved",
       "corrected_category": "world_ru",
       "title_issues": []
+    },
+    {
+      "message_id": 276,
+      "title": "Пострадал 6-летний ребенок: молодой бесправник на внедорожнике устроил ДТП в Южно-Сахалинске",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 277,
+      "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
+      "category_key": "world_ru",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "world_ru",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -191,43 +263,41 @@
       "it": 5.0
     },
     "counts": {
-      "local": 6,
+      "local": 7,
       "ru_pol": 1,
-      "ru_eco": 3,
+      "ru_eco": 2,
       "ru_safety": 1,
-      "world": 4,
+      "world": 5,
       "it": 0
     },
     "scaled_targets": {
-      "local": 4.5,
-      "ru_pol": 3.0,
-      "ru_eco": 3.0,
-      "ru_safety": 2.25,
-      "world": 1.5,
-      "it": 0.75
+      "local": 4.8,
+      "ru_pol": 3.2,
+      "ru_eco": 3.2,
+      "ru_safety": 2.4,
+      "world": 1.6,
+      "it": 0.8
     },
     "deficits": {
-      "local": -1.5,
-      "ru_pol": 2.0,
-      "ru_eco": 0.0,
-      "ru_safety": 1.25,
-      "world": -2.5,
-      "it": 0.75
+      "local": -2.2,
+      "ru_pol": 2.2,
+      "ru_eco": 1.2,
+      "ru_safety": 1.4,
+      "world": -3.4,
+      "it": 0.8
     },
-    "distribution_error": 8.0,
+    "distribution_error": 11.2,
     "subtype_counts": {
-      "corporate_forecast": 1,
       "major_infrastructure": 1,
-      "geopolitical_event": 3,
+      "geopolitical_event": 4,
       "macro_economy": 2,
-      "major_emergency": 3,
+      "major_emergency": 4,
       "violent_crime": 1,
       "political_decision": 1,
       "military_security": 2,
       "fatal_incident": 1
     },
     "sequence": [
-      "ru_eco",
       "local",
       "world",
       "ru_eco",
@@ -241,10 +311,11 @@
       "world",
       "ru_safety",
       "local",
+      "world",
+      "local",
       "world"
     ],
     "category_sequence": [
-      "ru_eco",
       "sakh",
       "world_ru",
       "ru_eco",
@@ -258,11 +329,12 @@
       "geo",
       "ru_security",
       "sakh_chp",
+      "world_ru",
+      "sakh_chp",
       "world_ru"
     ],
     "source_sequence": [
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru",
       "bbc world",
       "sakh.online",
       "astv",
@@ -275,15 +347,11 @@
       "bbc world",
       "sakhalinmedia.ru",
       "sakh.online",
+      "bbc world",
+      "astv",
       "bbc world"
     ],
     "retrospective_anomalies": [
-      {
-        "title": "Жительница Южно-Сахалинска лишилась денег при попытке купить щенка в интернете",
-        "category_key": "sakh",
-        "reason": "importance_below_threshold",
-        "corrected_category": "sakh_chp"
-      },
       {
         "title": "Ветерана Вячеслава Гаврилова поздравили с Днем Победы над милитаристской Японией",
         "category_key": "geo",
@@ -309,6 +377,6 @@
         "corrected_category": null
       }
     ],
-    "valid_posts_counted": 15
+    "valid_posts_counted": 16
   }
 }
