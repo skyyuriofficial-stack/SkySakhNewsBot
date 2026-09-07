@@ -1,16 +1,11 @@
 {
   "version": "editorial-monitor-v1",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-07T12:31:27+00:00",
-  "checked_at_sakhalin": "2026-09-07T23:31:24+11:00",
+  "checked_at_utc": "2026-09-07T14:04:33+00:00",
+  "checked_at_sakhalin": "2026-09-08T01:04:29+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 5.38,
-      "limit_hours": 4.5
-    },
     {
       "type": "post_audit_unresolved",
       "count": 1,
@@ -43,15 +38,15 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-07T18:08:24+11:00",
-    "age_hours": 5.38,
+    "finished_sakhalin": "2026-09-08T01:04:29+11:00",
+    "age_hours": 0.0,
     "published": 2
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-07T12:31:26+00:00",
-    "checked": 14,
-    "passed": 13,
+    "checked_at": "2026-09-07T14:04:32+00:00",
+    "checked": 15,
+    "passed": 14,
     "anomalies": [
       {
         "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
@@ -92,19 +87,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 257,
-      "title": "Суд арестовал сахалинца, обвиняемого в убийстве и незаконном лишении свободы женщины",
-      "category_key": "sakh_chp",
-      "publisher_version": null,
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 264,
       "title": "Правительство РФ готовит отмену неналоговых проверок для пострадавшей от БПЛА инфраструктуры",
@@ -273,6 +255,32 @@
       "review_reason": "approved",
       "corrected_category": "geo",
       "title_issues": []
+    },
+    {
+      "message_id": 281,
+      "title": "Главный учёный OpenAI предупредил, что никто не готов к последствиям ИИ",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
+    },
+    {
+      "message_id": 282,
+      "title": "Александр Ведяхин: Сотрудники Сбера экономят 80% времени благодаря ИИагентам",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -296,36 +304,37 @@
     "counts": {
       "local": 6,
       "ru_pol": 1,
-      "ru_eco": 3,
+      "ru_eco": 4,
       "ru_safety": 1,
       "world": 6,
-      "it": 0
+      "it": 1
     },
     "scaled_targets": {
-      "local": 5.1,
-      "ru_pol": 3.4,
-      "ru_eco": 3.4,
-      "ru_safety": 2.55,
-      "world": 1.7,
-      "it": 0.85
+      "local": 5.7,
+      "ru_pol": 3.8,
+      "ru_eco": 3.8,
+      "ru_safety": 2.85,
+      "world": 1.9,
+      "it": 0.95
     },
     "deficits": {
-      "local": -0.9,
-      "ru_pol": 2.4,
-      "ru_eco": 0.4,
-      "ru_safety": 1.55,
-      "world": -4.3,
-      "it": 0.85
+      "local": -0.3,
+      "ru_pol": 2.8,
+      "ru_eco": -0.2,
+      "ru_safety": 1.85,
+      "world": -4.1,
+      "it": -0.05
     },
-    "distribution_error": 10.4,
+    "distribution_error": 9.3,
     "subtype_counts": {
       "geopolitical_event": 5,
-      "macro_economy": 3,
+      "macro_economy": 4,
       "major_emergency": 4,
       "violent_crime": 1,
       "political_decision": 1,
       "military_security": 2,
-      "fatal_incident": 1
+      "fatal_incident": 1,
+      "major_it": 1
     },
     "sequence": [
       "world",
@@ -344,7 +353,9 @@
       "local",
       "world",
       "ru_eco",
-      "world"
+      "world",
+      "it",
+      "ru_eco"
     ],
     "category_sequence": [
       "world_ru",
@@ -363,7 +374,9 @@
       "sakh_chp",
       "world_ru",
       "ru_eco",
-      "geo"
+      "geo",
+      "it",
+      "ru_eco"
     ],
     "source_sequence": [
       "bbc world",
@@ -382,21 +395,11 @@
       "astv",
       "bbc world",
       "sakhalinmedia.ru",
-      "bbc world"
+      "bbc world",
+      "bbc technology",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [
-      {
-        "title": "В этот день, 3 сентября, в 1945 году Советская армия одержала победу над Японией",
-        "category_key": "geo",
-        "reason": "calendar_or_archive",
-        "corrected_category": null
-      },
-      {
-        "title": "В Углегорском районе обследовали более 60 км территории в поисках пропавших людей",
-        "category_key": "sakh",
-        "reason": "importance_below_threshold",
-        "corrected_category": "sakh"
-      },
       {
         "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
         "category_key": "sakh",
@@ -404,6 +407,6 @@
         "corrected_category": null
       }
     ],
-    "valid_posts_counted": 17
+    "valid_posts_counted": 19
   }
 }
