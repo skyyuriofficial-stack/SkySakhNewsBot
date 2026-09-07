@@ -1,16 +1,11 @@
 {
   "version": "editorial-monitor-v1",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-07T21:30:29+00:00",
-  "checked_at_sakhalin": "2026-09-08T08:30:25+11:00",
+  "checked_at_utc": "2026-09-07T22:40:04+00:00",
+  "checked_at_sakhalin": "2026-09-08T09:40:00+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 7.43,
-      "limit_hours": 4.5
-    },
     {
       "type": "post_audit_unresolved",
       "count": 1,
@@ -43,15 +38,15 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-08T01:04:29+11:00",
-    "age_hours": 7.43,
+    "finished_sakhalin": "2026-09-08T09:40:00+11:00",
+    "age_hours": 0.0,
     "published": 2
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-07T21:30:28+00:00",
-    "checked": 15,
-    "passed": 14,
+    "checked_at": "2026-09-07T22:40:03+00:00",
+    "checked": 17,
+    "passed": 16,
     "anomalies": [
       {
         "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
@@ -286,6 +281,32 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 283,
+      "title": "Сбер и Аурус Девелопмент подписали соглашение о намерениях по созданию одного из крупнейших технопарков России",
+      "category_key": "ru_pol",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_pol",
+      "title_issues": []
+    },
+    {
+      "message_id": 284,
+      "title": "Холодную воду отключат 8 сентября на Мира, Больничной в Южно-Сахалинске и других",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -307,42 +328,42 @@
       "it": 5.0
     },
     "counts": {
-      "local": 6,
-      "ru_pol": 1,
+      "local": 7,
+      "ru_pol": 2,
       "ru_eco": 4,
       "ru_safety": 1,
-      "world": 6,
+      "world": 5,
       "it": 1
     },
     "scaled_targets": {
-      "local": 5.7,
-      "ru_pol": 3.8,
-      "ru_eco": 3.8,
-      "ru_safety": 2.85,
-      "world": 1.9,
-      "it": 0.95
+      "local": 6.0,
+      "ru_pol": 4.0,
+      "ru_eco": 4.0,
+      "ru_safety": 3.0,
+      "world": 2.0,
+      "it": 1.0
     },
     "deficits": {
-      "local": -0.3,
-      "ru_pol": 2.8,
-      "ru_eco": -0.2,
-      "ru_safety": 1.85,
-      "world": -4.1,
-      "it": -0.05
+      "local": -1.0,
+      "ru_pol": 2.0,
+      "ru_eco": 0.0,
+      "ru_safety": 2.0,
+      "world": -3.0,
+      "it": 0.0
     },
-    "distribution_error": 9.3,
+    "distribution_error": 8.0,
     "subtype_counts": {
-      "geopolitical_event": 5,
       "macro_economy": 4,
       "major_emergency": 4,
       "violent_crime": 1,
-      "political_decision": 1,
+      "political_decision": 2,
       "military_security": 2,
       "fatal_incident": 1,
-      "major_it": 1
+      "geopolitical_event": 4,
+      "major_it": 1,
+      "public_service_disruption": 1
     },
     "sequence": [
-      "world",
       "ru_eco",
       "local",
       "local",
@@ -360,10 +381,11 @@
       "ru_eco",
       "world",
       "it",
-      "ru_eco"
+      "ru_eco",
+      "ru_pol",
+      "local"
     ],
     "category_sequence": [
-      "world_ru",
       "ru_eco",
       "sakh_chp",
       "sakh_chp",
@@ -381,10 +403,11 @@
       "ru_eco",
       "geo",
       "it",
-      "ru_eco"
+      "ru_eco",
+      "ru_pol",
+      "sakh"
     ],
     "source_sequence": [
-      "bbc world",
       "sakh.online",
       "astv",
       "astv",
@@ -402,16 +425,11 @@
       "sakhalinmedia.ru",
       "bbc world",
       "bbc technology",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
+      "sakh.online"
     ],
-    "retrospective_anomalies": [
-      {
-        "title": "В Южно-Сахалинске наградили волонтёров Победы и поисковиков знаком Доброволец Сахалинской области",
-        "category_key": "sakh",
-        "reason": "ceremony_or_congratulation",
-        "corrected_category": null
-      }
-    ],
-    "valid_posts_counted": 19
+    "retrospective_anomalies": [],
+    "valid_posts_counted": 20
   }
 }
