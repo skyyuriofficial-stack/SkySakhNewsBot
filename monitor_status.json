@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v1",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-08T09:06:10+00:00",
-  "checked_at_sakhalin": "2026-09-08T20:06:06+11:00",
+  "checked_at_utc": "2026-09-08T12:43:37+00:00",
+  "checked_at_sakhalin": "2026-09-08T23:43:33+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -38,13 +38,13 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-08T18:05:47+11:00",
-    "age_hours": 2.01,
+    "finished_sakhalin": "2026-09-08T23:43:32+11:00",
+    "age_hours": 0.0,
     "published": 2
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-08T09:06:09+00:00",
+    "checked_at": "2026-09-08T12:43:36+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -87,32 +87,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 265,
-      "title": "Российский дрон ударил по штаб-квартире СБУ в Киеве, заявил Зеленский",
-      "category_key": "world_ru",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "world_ru",
-      "title_issues": []
-    },
-    {
-      "message_id": 266,
-      "title": "Инвестиции в Дальний Восток с 2014 года выросли в 4,7 раза",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 267,
       "title": "\"Думали, что костёр\": пожар бушевал ночью в Александровске-Сахалинском",
@@ -346,6 +320,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 289,
+      "title": "Наводнение в Непале: на 8 сентября спасены почти 13,5 тысяч человек",
+      "category_key": "ru_incident",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_incident",
+      "title_issues": []
+    },
+    {
+      "message_id": 290,
+      "title": "Удар по кошелькам: депутаты и бизнес Сахалина обсудили ситуацию с ростом тарифов ЖКХ",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -367,11 +367,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 8,
+      "local": 9,
       "ru_pol": 2,
-      "ru_eco": 3,
-      "ru_safety": 1,
-      "world": 5,
+      "ru_eco": 2,
+      "ru_safety": 2,
+      "world": 4,
       "it": 1
     },
     "scaled_targets": {
@@ -383,28 +383,26 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -2.0,
+      "local": -3.0,
       "ru_pol": 2.0,
-      "ru_eco": 1.0,
-      "ru_safety": 2.0,
-      "world": -3.0,
+      "ru_eco": 2.0,
+      "ru_safety": 1.0,
+      "world": -2.0,
       "it": 0.0
     },
     "distribution_error": 10.0,
     "subtype_counts": {
-      "military_security": 2,
-      "macro_economy": 3,
       "major_emergency": 4,
-      "fatal_incident": 1,
+      "fatal_incident": 2,
       "geopolitical_event": 4,
+      "military_security": 1,
+      "macro_economy": 3,
       "major_it": 1,
       "political_decision": 3,
       "public_service_disruption": 1,
       "violent_crime": 1
     },
     "sequence": [
-      "world",
-      "ru_eco",
       "local",
       "local",
       "world",
@@ -422,11 +420,11 @@
       "ru_pol",
       "local",
       "local",
+      "local",
+      "ru_safety",
       "local"
     ],
     "category_sequence": [
-      "world_ru",
-      "ru_eco",
       "sakh_chp",
       "sakh_chp",
       "geo",
@@ -444,11 +442,11 @@
       "ru_pol",
       "sakh_chp",
       "sakh_chp",
+      "sakh",
+      "ru_incident",
       "sakh"
     ],
     "source_sequence": [
-      "bbc world",
-      "sakh.online",
       "astv",
       "sakh.online",
       "bbc world",
@@ -466,6 +464,8 @@
       "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
+      "sakh.online",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
