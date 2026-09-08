@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v1",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-07T23:46:31+00:00",
-  "checked_at_sakhalin": "2026-09-08T10:46:26+11:00",
+  "checked_at_utc": "2026-09-08T01:01:35+00:00",
+  "checked_at_sakhalin": "2026-09-08T12:01:31+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -38,15 +38,15 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-08T09:40:00+11:00",
-    "age_hours": 1.11,
+    "finished_sakhalin": "2026-09-08T12:01:31+11:00",
+    "age_hours": 0.0,
     "published": 2
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-07T23:46:29+00:00",
-    "checked": 17,
-    "passed": 16,
+    "checked_at": "2026-09-08T01:01:34+00:00",
+    "checked": 19,
+    "passed": 18,
     "anomalies": [
       {
         "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
@@ -307,6 +307,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 285,
+      "title": "Правительство утвердило Стратегию развития Дальнего Востока до 2036 года",
+      "category_key": "ru_pol",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_pol",
+      "title_issues": []
+    },
+    {
+      "message_id": 286,
+      "title": "ДТП на перекрестке в Южно-Сахалинске затруднило движение в утренний час пик",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -329,8 +355,8 @@
     },
     "counts": {
       "local": 7,
-      "ru_pol": 2,
-      "ru_eco": 4,
+      "ru_pol": 3,
+      "ru_eco": 3,
       "ru_safety": 1,
       "world": 5,
       "it": 1
@@ -345,27 +371,25 @@
     },
     "deficits": {
       "local": -1.0,
-      "ru_pol": 2.0,
-      "ru_eco": 0.0,
+      "ru_pol": 1.0,
+      "ru_eco": 1.0,
       "ru_safety": 2.0,
       "world": -3.0,
       "it": 0.0
     },
     "distribution_error": 8.0,
     "subtype_counts": {
-      "macro_economy": 4,
-      "major_emergency": 4,
       "violent_crime": 1,
-      "political_decision": 2,
+      "political_decision": 3,
       "military_security": 2,
+      "macro_economy": 3,
+      "major_emergency": 4,
       "fatal_incident": 1,
       "geopolitical_event": 4,
       "major_it": 1,
       "public_service_disruption": 1
     },
     "sequence": [
-      "ru_eco",
-      "local",
       "local",
       "ru_pol",
       "world",
@@ -383,11 +407,11 @@
       "it",
       "ru_eco",
       "ru_pol",
+      "local",
+      "ru_pol",
       "local"
     ],
     "category_sequence": [
-      "ru_eco",
-      "sakh_chp",
       "sakh_chp",
       "ru_pol",
       "world_ru",
@@ -405,11 +429,11 @@
       "it",
       "ru_eco",
       "ru_pol",
-      "sakh"
+      "sakh",
+      "ru_pol",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "sakh.online",
-      "astv",
       "astv",
       "sakhalinmedia.ru",
       "bbc world",
@@ -427,7 +451,9 @@
       "bbc technology",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "sakh.online"
+      "sakh.online",
+      "sakhalinmedia.ru",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
