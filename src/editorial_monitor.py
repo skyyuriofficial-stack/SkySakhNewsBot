@@ -19,10 +19,11 @@ import news_director as director
 import publication_auditor
 import publisher
 
-VERSION = "editorial-monitor-v1"
+VERSION = "editorial-monitor-v2"
 ROOT = Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "state.json"
 STATUS_PATH = ROOT / "monitor_status.json"
+DIGEST_STATE_PATH = ROOT / "mobilization_digest_state.json"
 
 
 def _parse_dt(value: Any) -> Optional[datetime]:
@@ -39,6 +40,16 @@ def _load_state() -> Dict[str, Any]:
     if not STATE_PATH.exists():
         return {}
     return json.loads(STATE_PATH.read_text(encoding="utf-8"))
+
+
+def _load_digest_state() -> Dict[str, Any]:
+    if not DIGEST_STATE_PATH.exists():
+        return {}
+    try:
+        value = json.loads(DIGEST_STATE_PATH.read_text(encoding="utf-8"))
+        return value if isinstance(value, dict) else {}
+    except Exception:
+        return {}
 
 
 def _save_json(path: Path, value: Any) -> None:
@@ -63,6 +74,80 @@ def _active_recent_posts(state: Dict[str, Any]):
         for post in (state.get("last_posts") or [])[-20:]
         if isinstance(post, dict) and not post.get("auto_deleted")
     ]
+
+
+def _digest_slot_record(state: Dict[str, Any], day: str, mode: str) -> Dict[str, Any]:
+    slots = state.get("slots") or {}
+    day_slots = slots.get(day) or {}
+    record = day_slots.get(mode)
+    if isinstance(record, dict):
+        return record
+
+    if (
+        state.get("status") == "ok"
+        and state.get("mode") == mode
+        and str(state.get("last_run_sakhalin") or "").startswith(day)
+        and state.get("telegram_message_id")
+    ):
+        return {
+            "status": "ok",
+            "published_at_sakhalin": state.get("last_run_sakhalin"),
+            "telegram_message_id": state.get("telegram_message_id"),
+            "legacy": True,
+        }
+    return {}
+
+
+def _digest_health(now_local: datetime) -> Dict[str, Any]:
+    state = _load_digest_state()
+    day = now_local.date().isoformat()
+    morning = _digest_slot_record(state, day, "morning")
+    evening = _digest_slot_record(state, day, "evening")
+    morning_ok = bool(morning.get("status") == "ok" and morning.get("telegram_message_id"))
+    evening_ok = bool(evening.get("status") == "ok" and evening.get("telegram_message_id"))
+
+    clock = (now_local.hour, now_local.minute)
+    morning_due = clock >= (8, 45)
+    evening_due = clock >= (19, 45)
+    missing = []
+    last_attempt = state.get("last_attempt") or {}
+
+    if morning_due and not morning_ok:
+        missing.append(
+            {
+                "type": "mobilization_digest_missing",
+                "slot": "morning",
+                "expected_by_sakhalin": f"{day}T08:45:00+11:00",
+                "last_attempt": last_attempt,
+            }
+        )
+    if evening_due and not evening_ok:
+        missing.append(
+            {
+                "type": "mobilization_digest_missing",
+                "slot": "evening",
+                "expected_by_sakhalin": f"{day}T19:45:00+11:00",
+                "last_attempt": last_attempt,
+            }
+        )
+
+    return {
+        "version": state.get("version"),
+        "day_sakhalin": day,
+        "status": "healthy" if not missing else "error",
+        "morning": {
+            "due": morning_due,
+            "published": morning_ok,
+            "record": morning,
+        },
+        "evening": {
+            "due": evening_due,
+            "published": evening_ok,
+            "record": evening,
+        },
+        "last_attempt": last_attempt,
+        "missing": missing,
+    }
 
 
 def run_monitor(*, mutate: bool = True) -> Dict[str, Any]:
@@ -165,6 +250,9 @@ def run_monitor(*, mutate: bool = True) -> Dict[str, Any]:
             "items": failed_actions[-8:],
         })
 
+    digest_health = _digest_health(now_local)
+    issues.extend(digest_health.get("missing") or [])
+
     balance = director.balance_snapshot(state)
     status = "healthy" if not issues else "error"
     report = {
@@ -182,6 +270,7 @@ def run_monitor(*, mutate: bool = True) -> Dict[str, Any]:
             "age_hours": last_run_age,
             "published": run.get("published"),
         },
+        "mobilization_digest": digest_health,
         "post_audit": audit,
         "recent_active_posts": checked_posts,
         "balance": balance,
@@ -200,6 +289,7 @@ def main() -> None:
         "status": report.get("status"),
         "publisher_version": report.get("publisher_version"),
         "issues": report.get("issues"),
+        "mobilization_digest": report.get("mobilization_digest"),
         "post_audit": {
             "checked": (report.get("post_audit") or {}).get("checked"),
             "corrected": len((report.get("post_audit") or {}).get("corrected") or []),
