@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-09T12:51:45+00:00",
-  "checked_at_sakhalin": "2026-09-09T23:51:41+11:00",
+  "checked_at_utc": "2026-09-09T15:17:43+00:00",
+  "checked_at_sakhalin": "2026-09-10T02:17:39+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -28,50 +28,22 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-09-09T23:51:40+11:00",
-    "age_hours": 0.0,
+    "age_hours": 2.43,
     "published": 2
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-09-09",
+    "day_sakhalin": "2026-09-10",
     "status": "healthy",
     "morning": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-09-09T03:54:21+00:00",
-        "published_at_sakhalin": "2026-09-09T14:54:21+11:00",
-        "telegram_message_id": 295,
-        "headline": "Риск новой волны мобилизации в РФ остается низким",
-        "evidence_count": 8,
-        "evidence_hash": "df611fd19af2a1e76b555331cc1a4418867e707c809c0b9384cc7e7cea91f9a1",
-        "source_ids": [
-          4,
-          6,
-          3,
-          5
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "evening": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-09-09T12:42:12+00:00",
-        "published_at_sakhalin": "2026-09-09T23:42:12+11:00",
-        "telegram_message_id": 297,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 8,
-        "evidence_hash": "fa902180fc8cb9f7fcc5327765c9dc9a834bbc8ccf6fe705153ea68a93e2805a",
-        "source_ids": [
-          1,
-          2,
-          3,
-          4
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "last_attempt": {
       "status": "ok",
@@ -83,7 +55,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-09T12:51:43+00:00",
+    "checked_at": "2026-09-09T15:17:41+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
