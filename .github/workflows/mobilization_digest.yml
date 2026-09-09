@@ -13,8 +13,11 @@ on:
           - morning
           - evening
   schedule:
-    # UTC; Sakhalin = UTC+11. 08:00 and 19:00 Sakhalin.
-    - cron: "0 8,21 * * *"
+    # Sakhalin UTC+11. Repeated recovery windows instead of one fragile exact run.
+    # Morning: 08:00-12:30 Sakhalin, every 30 minutes.
+    - cron: "0,30 0,1,21,22,23 * * *"
+    # Evening: 19:00-22:30 Sakhalin, every 30 minutes.
+    - cron: "0,30 8,9,10,11 * * *"
   push:
     branches:
       - main
@@ -64,12 +67,13 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
           DIGEST_MODE: ${{ github.event.inputs.mode }}
+          DIGEST_SCHEDULE: ${{ github.event.schedule }}
           DIGEST_DRY_RUN: ${{ github.event_name == 'push' && '1' || '0' }}
           PYTHONUNBUFFERED: "1"
         run: python src/mobilization_digest_final.py
 
       - name: Commit digest state
-        if: success() && github.event_name != 'push'
+        if: always() && github.event_name != 'push'
         run: |
           git config user.name "skysakhnews-bot"
           git config user.email "actions@github.com"
