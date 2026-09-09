@@ -245,7 +245,9 @@
     "https://sakh.online/news/24/2026-09-09/vnedorozhnik-stolknulsya-s-motobaykom-na-perekrestke-v-yuzhno-sahalinske-postradal-voditel-525393",
     "https://sakhalinmedia.ru/news/2615820/",
     "https://astv.ru/news/criminal/2026-09-09-prokuratura-vzyala-na-kontrol-dtp-u-zhk-gorizont",
-    "https://sakh.online/news/24/2026-09-09/voditelya-gruzovika-dostali-iz-rasplyuschennoy-kabiny-posle-zhutkoy-avarii-v-yuzhno-sahalinske-525488"
+    "https://sakh.online/news/24/2026-09-09/voditelya-gruzovika-dostali-iz-rasplyuschennoy-kabiny-posle-zhutkoy-avarii-v-yuzhno-sahalinske-525488",
+    "https://astv.ru/news/criminal/2026-09-09-neizvestnyj-stolknulsya-s-subaru-forester-i-skrylsya-s-mesta-dtp-v-yuzhno-sahalinske",
+    "https://sakhalinmedia.ru/news/2616468/"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -494,72 +496,12 @@
     "c4729467e49a3d420fd597f5507c0a148fc09c1c",
     "6f7770bdce16fe40acf3fd56a345f95e70c1304b",
     "e030469140723cc3502c42d77efcffb3048e524a",
-    "5da63b38d72cb067fcf4d91ac5c243d6d6740ac4"
+    "5da63b38d72cb067fcf4d91ac5c243d6d6740ac4",
+    "390194a2c4cfca7b801b93cabbfd2b6b5e4af65e",
+    "93465fc90e0d0929c29f5324cdaf3fd06ce6cb9b"
   ],
-  "last_run_sakhalin": "2026-09-09T23:51:40+11:00",
+  "last_run_sakhalin": "2026-09-10T09:23:58+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-08-30T12:10:17+11:00",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "title": "Пожар в заброшенном здании потушили в Корсакове",
-      "url": "https://sakhalinmedia.ru/news/2604208/",
-      "image_url": "https://sakhalinmedia.ru/f/big/6350/6349632.jpg?8ecb9f7bce023676d094629159f23248",
-      "image_hash": "31c09b8aa523ef3b9dd68d613adb6a3f21f58a15",
-      "topic_cluster": "sakh_chp:пожар_заброшенном_здании_потушили_корсакове_sakhalinmedia",
-      "published_at": "2026-08-29T22:29:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+independent_ai",
-        "issues": []
-      }
-    },
-    {
-      "time_sakhalin": "2026-08-30T12:11:27+11:00",
-      "source": "Sakh.online",
-      "category": "💻 IT / технологии",
-      "category_key": "it",
-      "title": "В Финском заливе прошли морские испытания робота «Сахалин»",
-      "url": "https://sakh.online/news/18/2026-08-30/v-finskom-zalive-proshli-morskie-ispytaniya-robota-sahalin-524250",
-      "image_url": "https://sakh.online/attachments/14b1bbae9d6df87d30da32efdf6f7ac0d5b5b297/store/crop/0/0/800/451/800/0/0/0/c1cafd979d04c1dfa56ea0bc7150bebe36b91f2f4f431f925e321b2537c0/c1cafd979d04c1dfa56ea0bc7150bebe36b91f2f4f431f925e321b2537c0.webp",
-      "image_hash": "b9a0c6774d6ea424f2c9fe4fc03b3b886a974c68",
-      "topic_cluster": "it:финском_заливе_прошли_морские_испытания_робота",
-      "published_at": "2026-08-29T13:00:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic",
-        "issues": [],
-        "reclassified_from": "sakh",
-        "reclassified_to": "it"
-      }
-    },
     {
       "time_sakhalin": "2026-08-30T19:01:53+11:00",
       "source": "SakhalinMedia.ru",
@@ -5116,7 +5058,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-09-09T21:41:52+00:00",
+        "checked_at": "2026-09-09T22:18:09+00:00",
         "reason": "approved",
         "issues": [
           "foreign_translation_evidence_missing"
@@ -5297,7 +5239,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:52+00:00"
+        "checked_at": "2026-09-09T22:18:09+00:00"
       }
     },
     {
@@ -5479,7 +5421,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:53+00:00"
+        "checked_at": "2026-09-09T22:23:58+00:00"
       }
     },
     {
@@ -5661,7 +5603,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:53+00:00"
+        "checked_at": "2026-09-09T22:23:59+00:00"
       }
     },
     {
@@ -5838,7 +5780,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:53+00:00"
+        "checked_at": "2026-09-09T22:23:59+00:00"
       }
     },
     {
@@ -6015,7 +5957,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:53+00:00"
+        "checked_at": "2026-09-09T22:23:59+00:00"
       }
     },
     {
@@ -6188,7 +6130,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:53+00:00"
+        "checked_at": "2026-09-09T22:23:59+00:00"
       }
     },
     {
@@ -6365,7 +6307,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:53+00:00"
+        "checked_at": "2026-09-09T22:23:59+00:00"
       }
     },
     {
@@ -6538,7 +6480,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:53+00:00"
+        "checked_at": "2026-09-09T22:23:59+00:00"
       }
     },
     {
@@ -6711,7 +6653,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:53+00:00"
+        "checked_at": "2026-09-09T22:23:59+00:00"
       }
     },
     {
@@ -6884,7 +6826,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:54+00:00"
+        "checked_at": "2026-09-09T22:23:59+00:00"
       }
     },
     {
@@ -7061,7 +7003,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:54+00:00"
+        "checked_at": "2026-09-09T22:24:00+00:00"
       }
     },
     {
@@ -7238,7 +7180,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:54+00:00"
+        "checked_at": "2026-09-09T22:24:00+00:00"
       }
     },
     {
@@ -7415,7 +7357,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:54+00:00"
+        "checked_at": "2026-09-09T22:24:00+00:00"
       }
     },
     {
@@ -7588,7 +7530,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:54+00:00"
+        "checked_at": "2026-09-09T22:24:00+00:00"
       }
     },
     {
@@ -7761,7 +7703,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:54+00:00"
+        "checked_at": "2026-09-09T22:24:00+00:00"
       }
     },
     {
@@ -7934,7 +7876,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:54+00:00"
+        "checked_at": "2026-09-09T22:24:00+00:00"
       }
     },
     {
@@ -8111,7 +8053,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:54+00:00"
+        "checked_at": "2026-09-09T22:24:00+00:00"
       }
     },
     {
@@ -8284,7 +8226,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:55+00:00"
+        "checked_at": "2026-09-09T22:24:00+00:00"
       }
     },
     {
@@ -8457,7 +8399,353 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-09-09T21:41:55+00:00"
+        "checked_at": "2026-09-09T22:24:00+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-09-10T09:21:34+11:00",
+      "source": "ASTV",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
+      "url": "https://astv.ru/news/criminal/2026-09-09-neizvestnyj-stolknulsya-s-subaru-forester-i-skrylsya-s-mesta-dtp-v-yuzhno-sahalinske",
+      "image_url": "https://astv.ru/content/NewsImage/dd/5e/dd5ee149-e92d-48b4-af57-f3096cadaa7c_3.jpg",
+      "image_hash": "eb79150bb3bf8ff724f6c28e74032e3faa8c86c3",
+      "topic_cluster": "sakh_chp:неизвестный_столкнулся_subaru_forester_скрылся_места",
+      "published_at": "2026-09-08T13:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.1",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "sakh_chp",
+        "corrected_category": "sakh_chp",
+        "group": "local",
+        "event_type": "major_emergency",
+        "subtype": "major_emergency",
+        "seriousness": 93,
+        "threshold": 68,
+        "selection_utility": 57.0,
+        "slot": 1,
+        "risks": [],
+        "title_original": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
+        "title_corrected": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "ГАИ ищет виновника аварии и очевидцев Госавтоинспекция Южно-Сахалинска ищет очевидцев аварии, которая произошла в период с 21:00 4 сентября до 11:00 5 сентября В областном центре в районе дома №243 по проспекту Мира неизвестный автомобиль столкнулся с Subaru Forester и скрылся. Если вы видели это ДТП, если оно попало в объектив вашего авторегистратора, откликнитесь: 789-844, +7 914 750-42-46. Мы будем присылать вам на почту самые просматриваемые новости за день",
+      "title_original": null,
+      "footer": "ЧП | САХАЛИН",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
+        "body": [
+          "ГАИ ищет виновника аварии и очевидцев Госавтоинспекция Южно-Сахалинска ищет очевидцев аварии, которая произошла в период с 21:00 4 сентября до 11:00 5 сентября В областном центре в районе дома №243 по проспекту Мира неизвестный автомобиль столкнулся с Subaru Forester и скрылся.",
+          "Если вы видели это ДТП, если оно попало в объектив вашего авторегистратора, откликнитесь: 789-844, +7 914 750-42-46."
+        ],
+        "footer": "ЧП | САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "news_director": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 93,
+          "threshold": 68,
+          "selection_utility": 57.0,
+          "slot": 1,
+          "risks": [],
+          "title_original": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
+          "title_corrected": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "sakh_chp",
+          "final_category": "sakh_chp",
+          "event_type": "major_emergency",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.3",
+          "director_review": {
+            "version": "director-v2.1",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "sakh_chp",
+            "corrected_category": "sakh_chp",
+            "group": "local",
+            "event_type": "major_emergency",
+            "subtype": "major_emergency",
+            "seriousness": 93,
+            "threshold": 68,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
+            "title_corrected": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "📍 Сахалин\n\n<b>Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске</b>\n\nГАИ ищет виновника аварии и очевидцев Госавтоинспекция Южно-Сахалинска ищет очевидцев аварии, которая произошла в период с 21:00 4 сентября до 11:00 5 сентября В областном центре в районе дома №243 по проспекту Мира неизвестный автомобиль столкнулся с Subaru Forester и скрылся.\n\nЕсли вы видели это ДТП, если оно попало в объектив вашего авторегистратора, откликнитесь: 789-844, +7 914 750-42-46.\n\nЧП | САХАЛИН · <a href=\"https://astv.ru/news/criminal/2026-09-09-neizvestnyj-stolknulsya-s-subaru-forester-i-skrylsya-s-mesta-dtp-v-yuzhno-sahalinske\">ASTV</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "major_emergency",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 93,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
+          "title_corrected": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 300,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": []
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-09-09T22:24:00+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-09-10T09:23:50+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "СК проверит перевозчика после ДТП с автобусом и самосвалом в Южно-Сахалинске",
+      "url": "https://sakhalinmedia.ru/news/2616468/",
+      "image_url": "https://primamedia.ru/f/266x136/6376/6375701.jpg",
+      "image_hash": "05e2da7241c0e3592bd7394eaf3992fef14d4b05",
+      "topic_cluster": "sakh_chp:проверит_перевозчика_после_автобусом_самосвалом_сахалинске",
+      "published_at": "2026-09-09T22:12:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.1",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "sakh_chp",
+        "corrected_category": "sakh_chp",
+        "group": "local",
+        "event_type": "major_emergency",
+        "subtype": "major_emergency",
+        "seriousness": 91,
+        "threshold": 68,
+        "selection_utility": -11.0,
+        "slot": "backup",
+        "risks": [],
+        "title_original": "СК проверит перевозчика после ДТП с автобусом и самосвалом в Южно-Сахалинске",
+        "title_corrected": "СК проверит перевозчика после ДТП с автобусом и самосвалом в Южно-Сахалинске",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Следственный отдел по Южно-Сахалинску СУ СК России по Сахалинской области начал доследственную проверку (ст. 238 УК РФ) по факту ДТП на проспекте Мира в районе ЖК Горизонт. Вчера, 9 сентября, грузовой автомобиль совершил столкновение с пассажирским автобусом. Спасатели МЧС России деблокировали водителя грузовика передали врачам скорой помощи, сообщает пресс-служба СКР. Авария произошла вечером 9 сентября",
+      "title_original": null,
+      "footer": "ЧП | САХАЛИН",
+      "published_row": {
+        "reject": false,
+        "title_ru": "СК проверит перевозчика после ДТП с автобусом и самосвалом в Южно-Сахалинске",
+        "body": [
+          "Следственный отдел по Южно-Сахалинску СУ СК России по Сахалинской области начал доследственную проверку (ст. 238 УК РФ) по факту ДТП на проспекте Мира в районе ЖК Горизонт.",
+          "Вчера, 9 сентября, грузовой автомобиль совершил столкновение с пассажирским автобусом."
+        ],
+        "footer": "ЧП | САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "news_director": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 91,
+          "threshold": 68,
+          "selection_utility": -11.0,
+          "slot": "backup",
+          "risks": [],
+          "title_original": "СК проверит перевозчика после ДТП с автобусом и самосвалом в Южно-Сахалинске",
+          "title_corrected": "СК проверит перевозчика после ДТП с автобусом и самосвалом в Южно-Сахалинске",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "sakh_chp",
+          "final_category": "sakh_chp",
+          "event_type": "major_emergency",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.3",
+          "director_review": {
+            "version": "director-v2.1",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "sakh_chp",
+            "corrected_category": "sakh_chp",
+            "group": "local",
+            "event_type": "major_emergency",
+            "subtype": "major_emergency",
+            "seriousness": 91,
+            "threshold": 68,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "СК проверит перевозчика после ДТП с автобусом и самосвалом в Южно-Сахалинске",
+            "title_corrected": "СК проверит перевозчика после ДТП с автобусом и самосвалом в Южно-Сахалинске",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "📍 Сахалин\n\n<b>СК проверит перевозчика после ДТП с автобусом и самосвалом в Южно-Сахалинске</b>\n\nСледственный отдел по Южно-Сахалинску СУ СК России по Сахалинской области начал доследственную проверку (ст. 238 УК РФ) по факту ДТП на проспекте Мира в районе ЖК Горизонт.\n\nВчера, 9 сентября, грузовой автомобиль совершил столкновение с пассажирским автобусом.\n\nЧП | САХАЛИН · <a href=\"https://sakhalinmedia.ru/news/2616468/\">SakhalinMedia.ru</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "major_emergency",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 91,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "СК проверит перевозчика после ДТП с автобусом и самосвалом в Южно-Сахалинске",
+          "title_corrected": "СК проверит перевозчика после ДТП с автобусом и самосвалом в Южно-Сахалинске",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 301,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": []
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-09-09T22:24:01+00:00"
       }
     }
   ],
@@ -8686,9 +8974,9 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-09-09T23:46:28+11:00",
+    "started_sakhalin": "2026-09-10T09:18:05+11:00",
     "status": "ok",
-    "candidates": 8,
+    "candidates": 7,
     "published": 2,
     "local_candidates": 3,
     "local_stream": {
@@ -8711,7 +8999,7 @@
           "source": "ASTV HTML",
           "status": "ok",
           "entries": 22,
-          "recent": 15
+          "recent": 14
         },
         {
           "source": "Sakh.online HTML",
@@ -8721,53 +9009,53 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-09-09T23:51:40+11:00",
+    "finished_sakhalin": "2026-09-10T09:23:58+11:00",
     "stats": {
-      "rss_seen": 152,
-      "old_skip": 48,
+      "rss_seen": 153,
+      "old_skip": 49,
       "google_skip": 16,
-      "duplicate_skip": 1,
-      "low_info_skip": 14,
-      "category_skip": 36,
+      "duplicate_skip": 2,
+      "low_info_skip": 15,
+      "category_skip": 31,
       "no_image_skip": 0,
-      "bad_image_skip": 10,
-      "logo_image_skip": 55,
+      "bad_image_skip": 15,
+      "logo_image_skip": 59,
       "text_card_image_skip": 0,
-      "candidates": 23,
-      "rewrite_retry": 4,
-      "editorial_skip": 5,
+      "candidates": 14,
+      "rewrite_retry": 2,
+      "editorial_skip": 1,
       "telegram_fail": 0,
       "published": 2,
-      "ai_calls": 4,
-      "ai_budget_exhausted": 1,
-      "ai_api_fail": 4,
+      "ai_calls": 2,
+      "ai_budget_exhausted": 0,
+      "ai_api_fail": 2,
       "evidence_reject": 0,
       "validation_reject": 0,
       "extractive_fallback": 2,
       "extractive_first": 2,
-      "editorial_prechecked": 45,
-      "editorial_gate_checked": 7,
+      "editorial_prechecked": 40,
+      "editorial_gate_checked": 3,
       "editorial_gate_pass": 2,
-      "editorial_gate_reject": 1,
+      "editorial_gate_reject": 2,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 0,
       "editorial_gate_ai_fail": 0,
       "editorial_title_reject": 1,
-      "editorial_category_reject": 1,
+      "editorial_category_reject": 2,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 6,
-      "editorial_offtopic_reject": 21,
-      "openrouter_empty_content": 7,
+      "editorial_reclassified": 4,
+      "editorial_offtopic_reject": 23,
+      "openrouter_empty_content": 2,
       "openrouter_model_fallback": 0,
-      "openrouter_attempts": 12,
-      "openrouter_retries": 8,
-      "openrouter_invalid_json": 1,
+      "openrouter_attempts": 6,
+      "openrouter_retries": 4,
+      "openrouter_invalid_json": 2,
       "openrouter_success": 0,
       "openrouter_circuit_open": 0,
       "editorial_grounded_translation_fallback": 0,
-      "media_required_skip": 0,
+      "media_required_skip": 1,
       "media_generic_skip": 0,
-      "media_ready_candidates": 23,
+      "media_ready_candidates": 14,
       "photo_retry": 0,
       "photo_publish": 2,
       "photo_upload_original": 2,
@@ -8781,9 +9069,9 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 23,
-      "director_approved": 8,
-      "director_rejected": 15,
+      "director_seen": 14,
+      "director_approved": 7,
+      "director_rejected": 7,
       "director_reclassified": 0,
       "director_title_corrected": 0,
       "director_ai_calls": 0,
@@ -8803,226 +9091,6 @@
       "policy_version": "policy-v2.3",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
-        "window": 20,
-        "targets": {
-          "local": 6,
-          "ru_pol": 4,
-          "ru_eco": 4,
-          "ru_safety": 3,
-          "world": 2,
-          "it": 1
-        },
-        "target_percent": {
-          "local": 30.0,
-          "ru_pol": 20.0,
-          "ru_eco": 20.0,
-          "ru_safety": 15.0,
-          "world": 10.0,
-          "it": 5.0
-        },
-        "counts": {
-          "local": 9,
-          "ru_pol": 2,
-          "ru_eco": 2,
-          "ru_safety": 3,
-          "world": 3,
-          "it": 1
-        },
-        "scaled_targets": {
-          "local": 6.0,
-          "ru_pol": 4.0,
-          "ru_eco": 4.0,
-          "ru_safety": 3.0,
-          "world": 2.0,
-          "it": 1.0
-        },
-        "deficits": {
-          "local": -3.0,
-          "ru_pol": 2.0,
-          "ru_eco": 2.0,
-          "ru_safety": 0.0,
-          "world": -1.0,
-          "it": 0.0
-        },
-        "distribution_error": 8.0,
-        "subtype_counts": {
-          "geopolitical_event": 3,
-          "major_emergency": 5,
-          "macro_economy": 3,
-          "major_it": 1,
-          "political_decision": 3,
-          "public_service_disruption": 1,
-          "violent_crime": 1,
-          "fatal_incident": 2,
-          "earthquake": 1
-        },
-        "sequence": [
-          "world",
-          "local",
-          "world",
-          "ru_eco",
-          "world",
-          "it",
-          "ru_eco",
-          "ru_pol",
-          "local",
-          "ru_pol",
-          "local",
-          "local",
-          "local",
-          "ru_safety",
-          "local",
-          "ru_safety",
-          "local",
-          "local",
-          "local",
-          "ru_safety"
-        ],
-        "category_sequence": [
-          "world_ru",
-          "sakh_chp",
-          "world_ru",
-          "ru_eco",
-          "geo",
-          "it",
-          "ru_eco",
-          "ru_pol",
-          "sakh",
-          "ru_pol",
-          "sakh_chp",
-          "sakh_chp",
-          "sakh",
-          "ru_incident",
-          "sakh",
-          "ru_incident",
-          "sakh_chp",
-          "sakh_quake",
-          "sakh_chp",
-          "ru_incident"
-        ],
-        "source_sequence": [
-          "bbc world",
-          "astv",
-          "bbc world",
-          "sakhalinmedia.ru",
-          "bbc world",
-          "bbc technology",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "astv",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "astv",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakhalinmedia.ru"
-        ],
-        "retrospective_anomalies": [],
-        "valid_posts_counted": 20
-      },
-      "candidate_count": 23,
-      "approved_count": 8,
-      "rejected_count": 15,
-      "rejected_by_reason": {
-        "importance_below_threshold": 14,
-        "ordinary_weather_not_release_worthy": 1
-      },
-      "ai_review_requested": 0,
-      "ai_review_received": 0,
-      "selected_groups": [
-        "world",
-        "local"
-      ],
-      "projected_distribution_error": 8.0,
-      "projected_counts": {
-        "world": 3,
-        "ru_eco": 2,
-        "it": 1,
-        "ru_pol": 2,
-        "local": 9,
-        "ru_safety": 3
-      },
-      "projected_length": 20,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "Ukrainian TV channel building hit by Russian drone as five killed in Kyiv",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "fatal_incident",
-          "seriousness": 96,
-          "utility": 96.0
-        },
-        {
-          "slot": 2,
-          "title": "Прокуратура и следком взяли на контроль ДТП у ЖК \"Горизонт\"",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "seriousness": 96,
-          "utility": 114.0
-        },
-        {
-          "slot": "backup",
-          "title": "Apple expected to unveil folding iPhone as new CEO takes center stage",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 89,
-          "utility": 125.0
-        },
-        {
-          "slot": "backup",
-          "title": "OpenAI says it cracked 90-year-old maths problem in 88 hours",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 88,
-          "utility": 124.0
-        },
-        {
-          "slot": "backup",
-          "title": "UK to force Apple and Google to block explicit images on children’s smartphones",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 87,
-          "utility": 123.0
-        },
-        {
-          "slot": "backup",
-          "title": "Somali piracy surges as the impact of the US-Iran war ripples outwards",
-          "category_key": "geo",
-          "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 88,
-          "utility": 108.0
-        },
-        {
-          "slot": "backup",
-          "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "seriousness": 93,
-          "utility": 99.0
-        },
-        {
-          "slot": "backup",
-          "title": "У ЖК \"Горизонт\" временно отключили уличное освещение после ДТП",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "seriousness": 86,
-          "utility": 74.0
-        }
-      ],
-      "rolling_balance_after": {
         "window": 20,
         "targets": {
           "local": 6,
@@ -9144,11 +9212,221 @@
         ],
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
+      },
+      "candidate_count": 14,
+      "approved_count": 7,
+      "rejected_count": 7,
+      "rejected_by_reason": {
+        "importance_below_threshold": 7
+      },
+      "ai_review_requested": 0,
+      "ai_review_received": 0,
+      "selected_groups": [
+        "local",
+        "it"
+      ],
+      "projected_distribution_error": 12.0,
+      "projected_counts": {
+        "world": 1,
+        "it": 2,
+        "ru_eco": 1,
+        "ru_pol": 2,
+        "local": 11,
+        "ru_safety": 3
+      },
+      "projected_length": 20,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "seriousness": 93,
+          "utility": 57.0
+        },
+        {
+          "slot": 2,
+          "title": "Google to fund Finnish AI with â¬13bn investment and nuclear power pact",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 89,
+          "utility": 35.0
+        },
+        {
+          "slot": "backup",
+          "title": "СК проверит перевозчика после ДТП с автобусом и самосвалом в Южно-Сахалинске",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "seriousness": 91,
+          "utility": -11.0
+        },
+        {
+          "slot": "backup",
+          "title": "Без света 10 сентября: Южно-Сахалинск и Хомутово — список адресов",
+          "category_key": "sakh",
+          "group": "local",
+          "event_type": "public_service_disruption",
+          "seriousness": 84,
+          "utility": -11.0
+        },
+        {
+          "slot": "backup",
+          "title": "UK to force Apple and Google to block explicit images on children’s smartphones",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 87,
+          "utility": -15.0
+        },
+        {
+          "slot": "backup",
+          "title": "AI (artificial intelligence) | The Guardian",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 85,
+          "utility": -17.0
+        },
+        {
+          "slot": "backup",
+          "title": "OpenAI says it cracked 90-year-old maths problem in 88 hours",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 88,
+          "utility": -32.0
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 20,
+        "targets": {
+          "local": 6,
+          "ru_pol": 4,
+          "ru_eco": 4,
+          "ru_safety": 3,
+          "world": 2,
+          "it": 1
+        },
+        "target_percent": {
+          "local": 30.0,
+          "ru_pol": 20.0,
+          "ru_eco": 20.0,
+          "ru_safety": 15.0,
+          "world": 10.0,
+          "it": 5.0
+        },
+        "counts": {
+          "local": 12,
+          "ru_pol": 2,
+          "ru_eco": 1,
+          "ru_safety": 3,
+          "world": 1,
+          "it": 1
+        },
+        "scaled_targets": {
+          "local": 6.0,
+          "ru_pol": 4.0,
+          "ru_eco": 4.0,
+          "ru_safety": 3.0,
+          "world": 2.0,
+          "it": 1.0
+        },
+        "deficits": {
+          "local": -6.0,
+          "ru_pol": 2.0,
+          "ru_eco": 3.0,
+          "ru_safety": 0.0,
+          "world": 1.0,
+          "it": 0.0
+        },
+        "distribution_error": 12.0,
+        "subtype_counts": {
+          "geopolitical_event": 1,
+          "major_it": 1,
+          "macro_economy": 2,
+          "political_decision": 3,
+          "public_service_disruption": 1,
+          "major_emergency": 8,
+          "violent_crime": 1,
+          "fatal_incident": 2,
+          "earthquake": 1
+        },
+        "sequence": [
+          "world",
+          "it",
+          "ru_eco",
+          "ru_pol",
+          "local",
+          "ru_pol",
+          "local",
+          "local",
+          "local",
+          "ru_safety",
+          "local",
+          "ru_safety",
+          "local",
+          "local",
+          "local",
+          "ru_safety",
+          "local",
+          "local",
+          "local",
+          "local"
+        ],
+        "category_sequence": [
+          "geo",
+          "it",
+          "ru_eco",
+          "ru_pol",
+          "sakh",
+          "ru_pol",
+          "sakh_chp",
+          "sakh_chp",
+          "sakh",
+          "ru_incident",
+          "sakh",
+          "ru_incident",
+          "sakh_chp",
+          "sakh_quake",
+          "sakh_chp",
+          "ru_incident",
+          "sakh_chp",
+          "sakh_chp",
+          "sakh_chp",
+          "sakh_chp"
+        ],
+        "source_sequence": [
+          "bbc world",
+          "bbc technology",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "astv",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "astv",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "astv",
+          "sakh.online",
+          "astv",
+          "sakhalinmedia.ru"
+        ],
+        "retrospective_anomalies": [],
+        "valid_posts_counted": 20
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-09-09T12:46:34+00:00",
+      "checked_at": "2026-09-09T22:18:11+00:00",
       "checked": 20,
       "passed": 19,
       "anomalies": [
@@ -9193,8 +9471,8 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 23,
-      "missing_media_rejected": 0,
+      "ready_candidates": 14,
+      "missing_media_rejected": 1,
       "generic_media_rejected": 0,
       "photo_retries": 0,
       "photo_published": 2,
@@ -9207,16 +9485,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 45,
-      "checked": 7,
+      "prechecked": 40,
+      "checked": 3,
       "passed": 2,
-      "rejected": 1,
-      "reclassified": 6,
-      "offtopic_reject": 21,
+      "rejected": 2,
+      "reclassified": 4,
+      "offtopic_reject": 23,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
-      "audited_urls": 3
+      "audited_urls": 4
     }
   },
   "pending_media_delivery": [],
@@ -9261,11 +9539,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 10,
+      "local": 12,
       "ru_pol": 2,
-      "ru_eco": 2,
+      "ru_eco": 1,
       "ru_safety": 3,
-      "world": 2,
+      "world": 1,
       "it": 1
     },
     "scaled_targets": {
@@ -9277,28 +9555,26 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -4.0,
+      "local": -6.0,
       "ru_pol": 2.0,
-      "ru_eco": 2.0,
+      "ru_eco": 3.0,
       "ru_safety": 0.0,
-      "world": 0.0,
+      "world": 1.0,
       "it": 0.0
     },
-    "distribution_error": 8.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
-      "geopolitical_event": 2,
-      "macro_economy": 3,
+      "geopolitical_event": 1,
       "major_it": 1,
+      "macro_economy": 2,
       "political_decision": 3,
       "public_service_disruption": 1,
-      "major_emergency": 6,
+      "major_emergency": 8,
       "violent_crime": 1,
       "fatal_incident": 2,
       "earthquake": 1
     },
     "sequence": [
-      "world",
-      "ru_eco",
       "world",
       "it",
       "ru_eco",
@@ -9316,11 +9592,11 @@
       "local",
       "ru_safety",
       "local",
+      "local",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "world_ru",
-      "ru_eco",
       "geo",
       "it",
       "ru_eco",
@@ -9338,11 +9614,11 @@
       "sakh_chp",
       "ru_incident",
       "sakh_chp",
+      "sakh_chp",
+      "sakh_chp",
       "sakh_chp"
     ],
     "source_sequence": [
-      "bbc world",
-      "sakhalinmedia.ru",
       "bbc world",
       "bbc technology",
       "sakhalinmedia.ru",
@@ -9360,7 +9636,9 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "astv",
-      "sakh.online"
+      "sakh.online",
+      "astv",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -9538,39 +9816,15 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-09T21:41:55+00:00",
+    "checked_at": "2026-09-09T22:24:01+00:00",
     "checked": 20,
-    "passed": 19,
-    "anomalies": [
-      {
-        "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
-        "url": "https://www.bbc.co.uk/news/articles/c6248nvqy8po?at_medium=RSS&at_campaign=rss",
-        "publisher_version": "stable-v12.1",
-        "category_key": "world_ru",
-        "corrected_category": "world_ru",
-        "reason": "approved",
-        "contract_issues": [
-          "foreign_translation_evidence_missing"
-        ]
-      }
-    ],
+    "passed": 20,
+    "anomalies": [],
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
-    "unresolved": 1,
-    "unresolved_items": [
-      {
-        "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
-        "url": "https://www.bbc.co.uk/news/articles/c6248nvqy8po?at_medium=RSS&at_campaign=rss",
-        "publisher_version": "stable-v12.1",
-        "category_key": "world_ru",
-        "corrected_category": "world_ru",
-        "reason": "approved",
-        "contract_issues": [
-          "foreign_translation_evidence_missing"
-        ]
-      }
-    ],
+    "unresolved": 0,
+    "unresolved_items": [],
     "mutations_enabled": true,
     "legacy_posts_mutated": false
   },
@@ -9604,47 +9858,36 @@
   "continuous_editorial_monitor": {
     "version": "editorial-monitor-v2",
     "publisher_version": "stable-v12.1",
-    "checked_at_utc": "2026-09-09T21:41:56+00:00",
-    "checked_at_sakhalin": "2026-09-10T08:41:52+11:00",
+    "checked_at_utc": "2026-09-09T22:24:02+00:00",
+    "checked_at_sakhalin": "2026-09-10T09:23:58+11:00",
     "status": "error",
     "mutations_enabled": true,
     "issues": [
       {
-        "type": "publisher_stale",
-        "age_hours": 8.84,
-        "limit_hours": 4.5
-      },
-      {
-        "type": "post_audit_unresolved",
-        "count": 1,
-        "items": [
-          {
-            "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
-            "url": "https://www.bbc.co.uk/news/articles/c6248nvqy8po?at_medium=RSS&at_campaign=rss",
-            "publisher_version": "stable-v12.1",
-            "category_key": "world_ru",
-            "corrected_category": "world_ru",
-            "reason": "approved",
-            "contract_issues": [
-              "foreign_translation_evidence_missing"
-            ]
-          }
-        ]
+        "type": "mobilization_digest_missing",
+        "slot": "morning",
+        "expected_by_sakhalin": "2026-09-10T08:45:00+11:00",
+        "last_attempt": {
+          "status": "ok",
+          "mode": "evening",
+          "at_utc": "2026-09-09T12:42:12+00:00",
+          "at_sakhalin": "2026-09-09T23:42:12+11:00"
+        }
       }
     ],
     "last_run": {
       "version": "stable-v12.1",
       "status": "ok",
-      "finished_sakhalin": "2026-09-09T23:51:40+11:00",
-      "age_hours": 8.84,
+      "finished_sakhalin": "2026-09-10T09:23:58+11:00",
+      "age_hours": 0.0,
       "published": 2
     },
     "mobilization_digest": {
       "version": "mobilization-digest-v1.3",
       "day_sakhalin": "2026-09-10",
-      "status": "healthy",
+      "status": "error",
       "morning": {
-        "due": false,
+        "due": true,
         "published": false,
         "record": {}
       },
@@ -9659,73 +9902,35 @@
         "at_utc": "2026-09-09T12:42:12+00:00",
         "at_sakhalin": "2026-09-09T23:42:12+11:00"
       },
-      "missing": []
+      "missing": [
+        {
+          "type": "mobilization_digest_missing",
+          "slot": "morning",
+          "expected_by_sakhalin": "2026-09-10T08:45:00+11:00",
+          "last_attempt": {
+            "status": "ok",
+            "mode": "evening",
+            "at_utc": "2026-09-09T12:42:12+00:00",
+            "at_sakhalin": "2026-09-09T23:42:12+11:00"
+          }
+        }
+      ]
     },
     "post_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-09-09T21:41:55+00:00",
+      "checked_at": "2026-09-09T22:24:01+00:00",
       "checked": 20,
-      "passed": 19,
-      "anomalies": [
-        {
-          "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
-          "url": "https://www.bbc.co.uk/news/articles/c6248nvqy8po?at_medium=RSS&at_campaign=rss",
-          "publisher_version": "stable-v12.1",
-          "category_key": "world_ru",
-          "corrected_category": "world_ru",
-          "reason": "approved",
-          "contract_issues": [
-            "foreign_translation_evidence_missing"
-          ]
-        }
-      ],
+      "passed": 20,
+      "anomalies": [],
       "corrected": [],
       "deleted": [],
       "failed_actions": [],
-      "unresolved": 1,
-      "unresolved_items": [
-        {
-          "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
-          "url": "https://www.bbc.co.uk/news/articles/c6248nvqy8po?at_medium=RSS&at_campaign=rss",
-          "publisher_version": "stable-v12.1",
-          "category_key": "world_ru",
-          "corrected_category": "world_ru",
-          "reason": "approved",
-          "contract_issues": [
-            "foreign_translation_evidence_missing"
-          ]
-        }
-      ],
+      "unresolved": 0,
+      "unresolved_items": [],
       "mutations_enabled": true,
       "legacy_posts_mutated": false
     },
     "recent_active_posts": [
-      {
-        "message_id": 277,
-        "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
-        "category_key": "world_ru",
-        "publisher_version": "stable-v12.1",
-        "category_ok": true,
-        "title_ok": true,
-        "media_ok": true,
-        "contract_ok": true,
-        "review_reason": "approved",
-        "corrected_category": "world_ru",
-        "title_issues": []
-      },
-      {
-        "message_id": 278,
-        "title": "Сбер открыл ландшафтный парк Тайга в Хабаровске",
-        "category_key": "ru_eco",
-        "publisher_version": "stable-v12.1",
-        "category_ok": true,
-        "title_ok": true,
-        "media_ok": true,
-        "contract_ok": true,
-        "review_reason": "approved",
-        "corrected_category": "ru_eco",
-        "title_issues": []
-      },
       {
         "message_id": 279,
         "title": "Иран предупредил о «более быстром, тяжёлом и болезненном ответе» на удары США",
@@ -9959,6 +10164,32 @@
         "review_reason": "approved",
         "corrected_category": "sakh_chp",
         "title_issues": []
+      },
+      {
+        "message_id": 300,
+        "title": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
+        "category_key": "sakh_chp",
+        "publisher_version": "stable-v12.1",
+        "category_ok": true,
+        "title_ok": true,
+        "media_ok": true,
+        "contract_ok": true,
+        "review_reason": "approved",
+        "corrected_category": "sakh_chp",
+        "title_issues": []
+      },
+      {
+        "message_id": 301,
+        "title": "СК проверит перевозчика после ДТП с автобусом и самосвалом в Южно-Сахалинске",
+        "category_key": "sakh_chp",
+        "publisher_version": "stable-v12.1",
+        "category_ok": true,
+        "title_ok": true,
+        "media_ok": true,
+        "contract_ok": true,
+        "review_reason": "approved",
+        "corrected_category": "sakh_chp",
+        "title_issues": []
       }
     ],
     "balance": {
@@ -9980,11 +10211,11 @@
         "it": 5.0
       },
       "counts": {
-        "local": 10,
+        "local": 12,
         "ru_pol": 2,
-        "ru_eco": 2,
+        "ru_eco": 1,
         "ru_safety": 3,
-        "world": 2,
+        "world": 1,
         "it": 1
       },
       "scaled_targets": {
@@ -9996,28 +10227,26 @@
         "it": 1.0
       },
       "deficits": {
-        "local": -4.0,
+        "local": -6.0,
         "ru_pol": 2.0,
-        "ru_eco": 2.0,
+        "ru_eco": 3.0,
         "ru_safety": 0.0,
-        "world": 0.0,
+        "world": 1.0,
         "it": 0.0
       },
-      "distribution_error": 8.0,
+      "distribution_error": 12.0,
       "subtype_counts": {
-        "geopolitical_event": 2,
-        "macro_economy": 3,
+        "geopolitical_event": 1,
         "major_it": 1,
+        "macro_economy": 2,
         "political_decision": 3,
         "public_service_disruption": 1,
-        "major_emergency": 6,
+        "major_emergency": 8,
         "violent_crime": 1,
         "fatal_incident": 2,
         "earthquake": 1
       },
       "sequence": [
-        "world",
-        "ru_eco",
         "world",
         "it",
         "ru_eco",
@@ -10035,11 +10264,11 @@
         "local",
         "ru_safety",
         "local",
+        "local",
+        "local",
         "local"
       ],
       "category_sequence": [
-        "world_ru",
-        "ru_eco",
         "geo",
         "it",
         "ru_eco",
@@ -10057,11 +10286,11 @@
         "sakh_chp",
         "ru_incident",
         "sakh_chp",
+        "sakh_chp",
+        "sakh_chp",
         "sakh_chp"
       ],
       "source_sequence": [
-        "bbc world",
-        "sakhalinmedia.ru",
         "bbc world",
         "bbc technology",
         "sakhalinmedia.ru",
@@ -10079,7 +10308,9 @@
         "sakh.online",
         "sakhalinmedia.ru",
         "astv",
-        "sakh.online"
+        "sakh.online",
+        "astv",
+        "sakhalinmedia.ru"
       ],
       "retrospective_anomalies": [],
       "valid_posts_counted": 20

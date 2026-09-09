@@ -1,47 +1,36 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-09T21:41:56+00:00",
-  "checked_at_sakhalin": "2026-09-10T08:41:52+11:00",
+  "checked_at_utc": "2026-09-09T22:24:02+00:00",
+  "checked_at_sakhalin": "2026-09-10T09:23:58+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
     {
-      "type": "publisher_stale",
-      "age_hours": 8.84,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "post_audit_unresolved",
-      "count": 1,
-      "items": [
-        {
-          "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
-          "url": "https://www.bbc.co.uk/news/articles/c6248nvqy8po?at_medium=RSS&at_campaign=rss",
-          "publisher_version": "stable-v12.1",
-          "category_key": "world_ru",
-          "corrected_category": "world_ru",
-          "reason": "approved",
-          "contract_issues": [
-            "foreign_translation_evidence_missing"
-          ]
-        }
-      ]
+      "type": "mobilization_digest_missing",
+      "slot": "morning",
+      "expected_by_sakhalin": "2026-09-10T08:45:00+11:00",
+      "last_attempt": {
+        "status": "ok",
+        "mode": "evening",
+        "at_utc": "2026-09-09T12:42:12+00:00",
+        "at_sakhalin": "2026-09-09T23:42:12+11:00"
+      }
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-09T23:51:40+11:00",
-    "age_hours": 8.84,
+    "finished_sakhalin": "2026-09-10T09:23:58+11:00",
+    "age_hours": 0.0,
     "published": 2
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-09-10",
-    "status": "healthy",
+    "status": "error",
     "morning": {
-      "due": false,
+      "due": true,
       "published": false,
       "record": {}
     },
@@ -56,73 +45,35 @@
       "at_utc": "2026-09-09T12:42:12+00:00",
       "at_sakhalin": "2026-09-09T23:42:12+11:00"
     },
-    "missing": []
+    "missing": [
+      {
+        "type": "mobilization_digest_missing",
+        "slot": "morning",
+        "expected_by_sakhalin": "2026-09-10T08:45:00+11:00",
+        "last_attempt": {
+          "status": "ok",
+          "mode": "evening",
+          "at_utc": "2026-09-09T12:42:12+00:00",
+          "at_sakhalin": "2026-09-09T23:42:12+11:00"
+        }
+      }
+    ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-09T21:41:55+00:00",
+    "checked_at": "2026-09-09T22:24:01+00:00",
     "checked": 20,
-    "passed": 19,
-    "anomalies": [
-      {
-        "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
-        "url": "https://www.bbc.co.uk/news/articles/c6248nvqy8po?at_medium=RSS&at_campaign=rss",
-        "publisher_version": "stable-v12.1",
-        "category_key": "world_ru",
-        "corrected_category": "world_ru",
-        "reason": "approved",
-        "contract_issues": [
-          "foreign_translation_evidence_missing"
-        ]
-      }
-    ],
+    "passed": 20,
+    "anomalies": [],
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
-    "unresolved": 1,
-    "unresolved_items": [
-      {
-        "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
-        "url": "https://www.bbc.co.uk/news/articles/c6248nvqy8po?at_medium=RSS&at_campaign=rss",
-        "publisher_version": "stable-v12.1",
-        "category_key": "world_ru",
-        "corrected_category": "world_ru",
-        "reason": "approved",
-        "contract_issues": [
-          "foreign_translation_evidence_missing"
-        ]
-      }
-    ],
+    "unresolved": 0,
+    "unresolved_items": [],
     "mutations_enabled": true,
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 277,
-      "title": "Зеленский ожидает продолжения войны после переговоров с посланниками Трампа",
-      "category_key": "world_ru",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "world_ru",
-      "title_issues": []
-    },
-    {
-      "message_id": 278,
-      "title": "Сбер открыл ландшафтный парк Тайга в Хабаровске",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 279,
       "title": "Иран предупредил о «более быстром, тяжёлом и болезненном ответе» на удары США",
@@ -356,6 +307,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 300,
+      "title": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 301,
+      "title": "СК проверит перевозчика после ДТП с автобусом и самосвалом в Южно-Сахалинске",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -377,11 +354,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 10,
+      "local": 12,
       "ru_pol": 2,
-      "ru_eco": 2,
+      "ru_eco": 1,
       "ru_safety": 3,
-      "world": 2,
+      "world": 1,
       "it": 1
     },
     "scaled_targets": {
@@ -393,28 +370,26 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -4.0,
+      "local": -6.0,
       "ru_pol": 2.0,
-      "ru_eco": 2.0,
+      "ru_eco": 3.0,
       "ru_safety": 0.0,
-      "world": 0.0,
+      "world": 1.0,
       "it": 0.0
     },
-    "distribution_error": 8.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
-      "geopolitical_event": 2,
-      "macro_economy": 3,
+      "geopolitical_event": 1,
       "major_it": 1,
+      "macro_economy": 2,
       "political_decision": 3,
       "public_service_disruption": 1,
-      "major_emergency": 6,
+      "major_emergency": 8,
       "violent_crime": 1,
       "fatal_incident": 2,
       "earthquake": 1
     },
     "sequence": [
-      "world",
-      "ru_eco",
       "world",
       "it",
       "ru_eco",
@@ -432,11 +407,11 @@
       "local",
       "ru_safety",
       "local",
+      "local",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "world_ru",
-      "ru_eco",
       "geo",
       "it",
       "ru_eco",
@@ -454,11 +429,11 @@
       "sakh_chp",
       "ru_incident",
       "sakh_chp",
+      "sakh_chp",
+      "sakh_chp",
       "sakh_chp"
     ],
     "source_sequence": [
-      "bbc world",
-      "sakhalinmedia.ru",
       "bbc world",
       "bbc technology",
       "sakhalinmedia.ru",
@@ -476,7 +451,9 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "astv",
-      "sakh.online"
+      "sakh.online",
+      "astv",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
