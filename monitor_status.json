@@ -1,16 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-09T06:02:23+00:00",
-  "checked_at_sakhalin": "2026-09-09T17:02:19+11:00",
+  "checked_at_utc": "2026-09-09T07:12:22+00:00",
+  "checked_at_sakhalin": "2026-09-09T18:12:18+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 4.89,
-      "limit_hours": 4.5
-    },
     {
       "type": "post_audit_unresolved",
       "count": 1,
@@ -32,9 +27,9 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-09T12:09:03+11:00",
-    "age_hours": 4.89,
-    "published": 2
+    "finished_sakhalin": "2026-09-09T18:12:18+11:00",
+    "age_hours": 0.0,
+    "published": 1
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -74,7 +69,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-09T06:02:22+00:00",
+    "checked_at": "2026-09-09T07:12:20+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -111,19 +106,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 272,
-      "title": "Пожар на стройке ЖК «Зеленая планета» в Южно-Сахалинске: горит крыша",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 273,
       "title": "Переговоры о мире были насыщены символизмом, но фундаментальные разногласия между Россией и Украиной сохраняются",
@@ -370,6 +352,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 296,
+      "title": "Мэр Хабаровска Сергей Кравчук: Важно не допускать неисправностей пожарных гидрантов",
+      "category_key": "ru_incident",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_incident",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -391,10 +386,10 @@
       "it": 5.0
     },
     "counts": {
-      "local": 10,
+      "local": 9,
       "ru_pol": 2,
       "ru_eco": 2,
-      "ru_safety": 2,
+      "ru_safety": 3,
       "world": 3,
       "it": 1
     },
@@ -407,17 +402,17 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -4.0,
+      "local": -3.0,
       "ru_pol": 2.0,
       "ru_eco": 2.0,
-      "ru_safety": 1.0,
+      "ru_safety": 0.0,
       "world": -1.0,
       "it": 0.0
     },
-    "distribution_error": 10.0,
+    "distribution_error": 8.0,
     "subtype_counts": {
-      "major_emergency": 5,
       "geopolitical_event": 3,
+      "major_emergency": 5,
       "macro_economy": 3,
       "major_it": 1,
       "political_decision": 3,
@@ -427,7 +422,6 @@
       "earthquake": 1
     },
     "sequence": [
-      "local",
       "world",
       "local",
       "world",
@@ -446,10 +440,10 @@
       "ru_safety",
       "local",
       "local",
-      "local"
+      "local",
+      "ru_safety"
     ],
     "category_sequence": [
-      "sakh_chp",
       "world_ru",
       "sakh_chp",
       "world_ru",
@@ -468,10 +462,10 @@
       "ru_incident",
       "sakh_chp",
       "sakh_quake",
-      "sakh_chp"
+      "sakh_chp",
+      "ru_incident"
     ],
     "source_sequence": [
-      "sakh.online",
       "bbc world",
       "astv",
       "bbc world",
@@ -490,7 +484,8 @@
       "sakh.online",
       "astv",
       "sakhalinmedia.ru",
-      "sakh.online"
+      "sakh.online",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
