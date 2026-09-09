@@ -14,8 +14,11 @@ on:
           - evening
   schedule:
     # Sakhalin UTC+11. Repeated recovery windows instead of one fragile exact run.
-    # Morning: 08:00-12:30 Sakhalin, every 30 minutes.
+    # Morning primary window: 08:00-12:30 Sakhalin, every 30 minutes.
     - cron: "0,30 0,1,21,22,23 * * *"
+    # Morning late watchdog: 13:00-18:00 Sakhalin, hourly. It publishes only if
+    # the morning slot is still missing, otherwise exits before source collection.
+    - cron: "0 2,3,4,5,6,7 * * *"
     # Evening: 19:00-22:30 Sakhalin, every 30 minutes.
     - cron: "0,30 8,9,10,11 * * *"
   push:
