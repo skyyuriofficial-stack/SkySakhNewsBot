@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v1",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-08T22:58:47+00:00",
-  "checked_at_sakhalin": "2026-09-09T09:58:43+11:00",
+  "checked_at_utc": "2026-09-09T01:09:07+00:00",
+  "checked_at_sakhalin": "2026-09-09T12:09:03+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -22,29 +22,18 @@
           ]
         }
       ]
-    },
-    {
-      "type": "post_audit_action_failure",
-      "count": 1,
-      "items": [
-        {
-          "action": "editMessageCaption",
-          "message_id": 277,
-          "error": "Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message"
-        }
-      ]
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-09T09:30:09+11:00",
-    "age_hours": 0.48,
+    "finished_sakhalin": "2026-09-09T12:09:03+11:00",
+    "age_hours": 0.0,
     "published": 2
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-08T22:58:46+00:00",
+    "checked_at": "2026-09-09T01:09:06+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -62,13 +51,7 @@
     ],
     "corrected": [],
     "deleted": [],
-    "failed_actions": [
-      {
-        "action": "editMessageCaption",
-        "message_id": 277,
-        "error": "Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message"
-      }
-    ],
+    "failed_actions": [],
     "unresolved": 1,
     "unresolved_items": [
       {
@@ -87,32 +70,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 269,
-      "title": "США и Иран обменялись ответными ударами по судам на фоне обострения конфликта",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "geo",
-      "title_issues": []
-    },
-    {
-      "message_id": 271,
-      "title": "Дроны вместо камер: новая идея штрафовать водителей в России вызвала вопросы",
-      "category_key": "ru_security",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_security",
-      "title_issues": []
-    },
     {
       "message_id": 272,
       "title": "Пожар на стройке ЖК «Зеленая планета» в Южно-Сахалинске: горит крыша",
@@ -346,6 +303,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 293,
+      "title": "Землетрясение магнитудой 4,8 зафиксировали на Парамушире",
+      "category_key": "sakh_quake",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_quake",
+      "title_issues": []
+    },
+    {
+      "message_id": 294,
+      "title": "49-летний мотоциклист пострадал в ДТП на перекрестке в Южно-Сахалинске",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -367,11 +350,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 8,
+      "local": 10,
       "ru_pol": 2,
       "ru_eco": 2,
-      "ru_safety": 3,
-      "world": 4,
+      "ru_safety": 2,
+      "world": 3,
       "it": 1
     },
     "scaled_targets": {
@@ -383,28 +366,26 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -2.0,
+      "local": -4.0,
       "ru_pol": 2.0,
       "ru_eco": 2.0,
-      "ru_safety": 0.0,
-      "world": -2.0,
+      "ru_safety": 1.0,
+      "world": -1.0,
       "it": 0.0
     },
-    "distribution_error": 8.0,
+    "distribution_error": 10.0,
     "subtype_counts": {
-      "geopolitical_event": 4,
-      "military_security": 1,
-      "major_emergency": 4,
+      "major_emergency": 5,
+      "geopolitical_event": 3,
       "macro_economy": 3,
       "major_it": 1,
       "political_decision": 3,
       "public_service_disruption": 1,
       "violent_crime": 1,
-      "fatal_incident": 2
+      "fatal_incident": 2,
+      "earthquake": 1
     },
     "sequence": [
-      "world",
-      "ru_safety",
       "local",
       "world",
       "local",
@@ -422,11 +403,11 @@
       "ru_safety",
       "local",
       "ru_safety",
+      "local",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "geo",
-      "ru_security",
       "sakh_chp",
       "world_ru",
       "sakh_chp",
@@ -444,11 +425,11 @@
       "ru_incident",
       "sakh",
       "ru_incident",
+      "sakh_chp",
+      "sakh_quake",
       "sakh_chp"
     ],
     "source_sequence": [
-      "bbc world",
-      "sakhalinmedia.ru",
       "sakh.online",
       "bbc world",
       "astv",
@@ -466,7 +447,9 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "sakh.online",
-      "astv"
+      "astv",
+      "sakhalinmedia.ru",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
