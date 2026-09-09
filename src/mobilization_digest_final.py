@@ -274,7 +274,10 @@ def resolved_mode():
         return forced
 
     scheduled = os.getenv("DIGEST_SCHEDULE", "").strip()
-    if scheduled == "0,30 0,1,21,22,23 * * *":
+    if scheduled in {
+        "0,30 0,1,21,22,23 * * *",
+        "0 2,3,4,5,6,7 * * *",
+    }:
         return "morning"
     if scheduled == "0,30 8,9,10,11 * * *":
         return "evening"
