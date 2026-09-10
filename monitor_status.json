@@ -1,16 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-10T21:54:21+00:00",
-  "checked_at_sakhalin": "2026-09-11T08:54:18+11:00",
+  "checked_at_utc": "2026-09-10T22:22:52+00:00",
+  "checked_at_sakhalin": "2026-09-11T09:22:49+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 9.03,
-      "limit_hours": 4.5
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -26,8 +21,8 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-10T23:52:37+11:00",
-    "age_hours": 9.03,
+    "finished_sakhalin": "2026-09-11T09:22:48+11:00",
+    "age_hours": 0.0,
     "published": 2
   },
   "mobilization_digest": {
@@ -66,7 +61,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-10T21:54:20+00:00",
+    "checked_at": "2026-09-10T22:22:51+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -79,32 +74,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 286,
-      "title": "ДТП на перекрестке в Южно-Сахалинске затруднило движение в утренний час пик",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 287,
-      "title": "Суд на Сахалине обязал хозяина алабая выплатить 200 тысяч за нападение собаки",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 288,
       "title": "Лимаренко поручил подготовить районы Сахалинской области к осенним паводкам",
@@ -338,6 +307,32 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 310,
+      "title": "Жесткое ДТП произошло в районе \"Сити Молла\" в Южно-Сахалинске",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 311,
+      "title": "Без света 11 сентября: несколько СНТ в Южно-Сахалинске — список",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -384,18 +379,16 @@
     },
     "distribution_error": 16.0,
     "subtype_counts": {
-      "major_emergency": 9,
-      "violent_crime": 1,
       "political_decision": 1,
       "fatal_incident": 2,
       "macro_economy": 3,
+      "major_emergency": 9,
       "earthquake": 1,
-      "military_security": 3
+      "military_security": 3,
+      "public_service_disruption": 1
     },
     "sequence": [
       "local",
-      "local",
-      "local",
       "ru_safety",
       "local",
       "ru_safety",
@@ -412,11 +405,11 @@
       "ru_safety",
       "local",
       "world",
-      "ru_eco"
+      "ru_eco",
+      "local",
+      "local"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "sakh_chp",
       "sakh",
       "ru_incident",
       "sakh",
@@ -434,11 +427,11 @@
       "ru_security",
       "sakh",
       "world_ru",
-      "ru_eco"
+      "ru_eco",
+      "sakh_chp",
+      "sakh"
     ],
     "source_sequence": [
-      "astv",
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -456,7 +449,9 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "bbc world",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "astv",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
