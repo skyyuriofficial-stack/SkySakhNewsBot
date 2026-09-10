@@ -1,16 +1,16 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-09T23:31:17+00:00",
-  "checked_at_sakhalin": "2026-09-10T10:31:13+11:00",
+  "checked_at_utc": "2026-09-10T00:59:38+00:00",
+  "checked_at_sakhalin": "2026-09-10T11:59:35+11:00",
   "status": "healthy",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-10T09:23:58+11:00",
-    "age_hours": 1.12,
+    "finished_sakhalin": "2026-09-10T11:59:34+11:00",
+    "age_hours": 0.0,
     "published": 2
   },
   "mobilization_digest": {
@@ -51,7 +51,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-09T23:31:15+00:00",
+    "checked_at": "2026-09-10T00:59:37+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -64,32 +64,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 279,
-      "title": "Иран предупредил о «более быстром, тяжёлом и болезненном ответе» на удары США",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "geo",
-      "title_issues": []
-    },
-    {
-      "message_id": 281,
-      "title": "Главный учёный OpenAI предупредил, что никто не готов к последствиям ИИ",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 282,
       "title": "Александр Ведяхин: Сотрудники Сбера экономят 80% времени благодаря ИИагентам",
@@ -323,6 +297,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 303,
+      "title": "Минобороны Японии запросило рекордный бюджет на разработку недорогих ракет дальностью до 3000 км",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "geo",
+      "title_issues": []
+    },
+    {
+      "message_id": 304,
+      "title": "Два ДТП с пострадавшими и 6 пьяных водителей за сутки на Сахалине",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -344,12 +344,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 12,
+      "local": 13,
       "ru_pol": 2,
       "ru_eco": 1,
       "ru_safety": 3,
       "world": 1,
-      "it": 1
+      "it": 0
     },
     "scaled_targets": {
       "local": 6.0,
@@ -360,28 +360,25 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -6.0,
+      "local": -7.0,
       "ru_pol": 2.0,
       "ru_eco": 3.0,
       "ru_safety": 0.0,
       "world": 1.0,
-      "it": 0.0
+      "it": 1.0
     },
-    "distribution_error": 12.0,
+    "distribution_error": 14.0,
     "subtype_counts": {
-      "geopolitical_event": 1,
-      "major_it": 1,
       "macro_economy": 2,
       "political_decision": 3,
       "public_service_disruption": 1,
-      "major_emergency": 8,
+      "major_emergency": 9,
       "violent_crime": 1,
       "fatal_incident": 2,
-      "earthquake": 1
+      "earthquake": 1,
+      "military_security": 1
     },
     "sequence": [
-      "world",
-      "it",
       "ru_eco",
       "ru_pol",
       "local",
@@ -399,11 +396,11 @@
       "local",
       "local",
       "local",
+      "local",
+      "world",
       "local"
     ],
     "category_sequence": [
-      "geo",
-      "it",
       "ru_eco",
       "ru_pol",
       "sakh",
@@ -421,11 +418,11 @@
       "sakh_chp",
       "sakh_chp",
       "sakh_chp",
+      "sakh_chp",
+      "geo",
       "sakh_chp"
     ],
     "source_sequence": [
-      "bbc world",
-      "bbc technology",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakh.online",
@@ -443,7 +440,9 @@
       "astv",
       "sakh.online",
       "astv",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
