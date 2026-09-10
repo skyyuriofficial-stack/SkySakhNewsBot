@@ -1,22 +1,16 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-10T06:38:45+00:00",
-  "checked_at_sakhalin": "2026-09-10T17:38:41+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-09-10T07:12:11+00:00",
+  "checked_at_sakhalin": "2026-09-10T18:12:08+11:00",
+  "status": "healthy",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 5.65,
-      "limit_hours": 4.5
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-10T11:59:34+11:00",
-    "age_hours": 5.65,
+    "finished_sakhalin": "2026-09-10T18:12:08+11:00",
+    "age_hours": 0.0,
     "published": 2
   },
   "mobilization_digest": {
@@ -57,7 +51,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-10T06:38:43+00:00",
+    "checked_at": "2026-09-10T07:12:10+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -70,32 +64,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 282,
-      "title": "Александр Ведяхин: Сотрудники Сбера экономят 80% времени благодаря ИИагентам",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
-    {
-      "message_id": 283,
-      "title": "Сбер и Аурус Девелопмент подписали соглашение о намерениях по созданию одного из крупнейших технопарков России",
-      "category_key": "ru_pol",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_pol",
-      "title_issues": []
-    },
     {
       "message_id": 284,
       "title": "Холодную воду отключат 8 сентября на Мира, Больничной в Южно-Сахалинске и других",
@@ -329,6 +297,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 305,
+      "title": "Обязательная регистрация дронов в РФ с 2026: система на базе «ЭРА-ГЛОНАСС»",
+      "category_key": "ru_security",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_security",
+      "title_issues": []
+    },
+    {
+      "message_id": 306,
+      "title": "Доходы бюджета Сахалинской области вырастут на 3,9 млрд рублей за счет Сахалина-2",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -350,10 +344,10 @@
       "it": 5.0
     },
     "counts": {
-      "local": 13,
-      "ru_pol": 2,
-      "ru_eco": 1,
-      "ru_safety": 3,
+      "local": 14,
+      "ru_pol": 1,
+      "ru_eco": 0,
+      "ru_safety": 4,
       "world": 1,
       "it": 0
     },
@@ -366,27 +360,25 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -7.0,
-      "ru_pol": 2.0,
-      "ru_eco": 3.0,
-      "ru_safety": 0.0,
+      "local": -8.0,
+      "ru_pol": 3.0,
+      "ru_eco": 4.0,
+      "ru_safety": -1.0,
       "world": 1.0,
       "it": 1.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 18.0,
     "subtype_counts": {
-      "macro_economy": 2,
-      "political_decision": 3,
       "public_service_disruption": 1,
+      "political_decision": 2,
       "major_emergency": 9,
       "violent_crime": 1,
       "fatal_incident": 2,
+      "macro_economy": 2,
       "earthquake": 1,
-      "military_security": 1
+      "military_security": 2
     },
     "sequence": [
-      "ru_eco",
-      "ru_pol",
       "local",
       "ru_pol",
       "local",
@@ -404,11 +396,11 @@
       "local",
       "local",
       "world",
+      "local",
+      "ru_safety",
       "local"
     ],
     "category_sequence": [
-      "ru_eco",
-      "ru_pol",
       "sakh",
       "ru_pol",
       "sakh_chp",
@@ -426,11 +418,11 @@
       "sakh_chp",
       "sakh_chp",
       "geo",
-      "sakh_chp"
+      "sakh_chp",
+      "ru_security",
+      "sakh"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
       "astv",
@@ -448,7 +440,9 @@
       "astv",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "sakh.online"
+      "sakh.online",
+      "sakh.online",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
