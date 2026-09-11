@@ -1,19 +1,19 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-09-10T22:57:42+00:00",
-  "last_run_sakhalin": "2026-09-11T09:57:42+11:00",
-  "mode": "morning",
+  "last_run_utc": "2026-09-11T12:35:47+00:00",
+  "last_run_sakhalin": "2026-09-11T23:35:47+11:00",
+  "mode": "evening",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 312,
-  "evidence_count": 8,
-  "evidence_hash": "4002baf0f69b734c7054b9fe7a56d98c5c0bf9ea8cb323a24019997a84f6d4db",
-  "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+  "telegram_message_id": 317,
+  "evidence_count": 9,
+  "evidence_hash": "5b397c10c7c7cb7a9ea4489479080e1df8e2e416e360d841c8238942682cacae",
+  "headline": "Официальные лица отрицают планы новой мобилизации, несмотря на сигналы о подготовке условий",
   "source_ids": [
     1,
     2,
-    3,
-    4
+    4,
+    5
   ],
   "slots": {
     "2026-09-08": {
@@ -112,13 +112,28 @@
           3,
           4
         ]
+      },
+      "evening": {
+        "status": "ok",
+        "published_at_utc": "2026-09-11T12:35:47+00:00",
+        "published_at_sakhalin": "2026-09-11T23:35:47+11:00",
+        "telegram_message_id": 317,
+        "headline": "Официальные лица отрицают планы новой мобилизации, несмотря на сигналы о подготовке условий",
+        "evidence_count": 9,
+        "evidence_hash": "5b397c10c7c7cb7a9ea4489479080e1df8e2e416e360d841c8238942682cacae",
+        "source_ids": [
+          1,
+          2,
+          4,
+          5
+        ]
       }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "morning",
-    "at_utc": "2026-09-10T22:57:42+00:00",
-    "at_sakhalin": "2026-09-11T09:57:42+11:00"
+    "mode": "evening",
+    "at_utc": "2026-09-11T12:35:47+00:00",
+    "at_sakhalin": "2026-09-11T23:35:47+11:00"
   }
 }
