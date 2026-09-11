@@ -1,16 +1,16 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-11T00:09:37+00:00",
-  "checked_at_sakhalin": "2026-09-11T11:09:33+11:00",
+  "checked_at_utc": "2026-09-11T00:58:29+00:00",
+  "checked_at_sakhalin": "2026-09-11T11:58:26+11:00",
   "status": "healthy",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-11T09:22:48+11:00",
-    "age_hours": 1.78,
+    "finished_sakhalin": "2026-09-11T11:58:26+11:00",
+    "age_hours": 0.0,
     "published": 2
   },
   "mobilization_digest": {
@@ -51,7 +51,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-11T00:09:35+00:00",
+    "checked_at": "2026-09-11T00:58:28+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -64,32 +64,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 288,
-      "title": "Лимаренко поручил подготовить районы Сахалинской области к осенним паводкам",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
-    {
-      "message_id": 289,
-      "title": "Наводнение в Непале: на 8 сентября спасены почти 13,5 тысяч человек",
-      "category_key": "ru_incident",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_incident",
-      "title_issues": []
-    },
     {
       "message_id": 290,
       "title": "Удар по кошелькам: депутаты и бизнес Сахалина обсудили ситуацию с ростом тарифов ЖКХ",
@@ -323,6 +297,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 313,
+      "title": "Пострадавшим от БПЛА жителям Новороссийска окажут поддержку в упрощенном порядке",
+      "category_key": "ru_security",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_security",
+      "title_issues": []
+    },
+    {
+      "message_id": 314,
+      "title": "Бюджет Сахалинской области увеличат на 3,9 млрд рублей",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -369,17 +369,14 @@
     },
     "distribution_error": 16.0,
     "subtype_counts": {
-      "political_decision": 1,
-      "fatal_incident": 2,
-      "macro_economy": 3,
+      "macro_economy": 4,
       "major_emergency": 9,
+      "fatal_incident": 1,
       "earthquake": 1,
-      "military_security": 3,
+      "military_security": 4,
       "public_service_disruption": 1
     },
     "sequence": [
-      "local",
-      "ru_safety",
       "local",
       "ru_safety",
       "local",
@@ -397,11 +394,11 @@
       "world",
       "ru_eco",
       "local",
+      "local",
+      "ru_safety",
       "local"
     ],
     "category_sequence": [
-      "sakh",
-      "ru_incident",
       "sakh",
       "ru_incident",
       "sakh_chp",
@@ -419,11 +416,11 @@
       "world_ru",
       "ru_eco",
       "sakh_chp",
+      "sakh",
+      "ru_security",
       "sakh"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "sakh.online",
       "sakhalinmedia.ru",
       "sakh.online",
       "astv",
@@ -441,6 +438,8 @@
       "bbc world",
       "sakhalinmedia.ru",
       "astv",
+      "sakh.online",
+      "sakhalinmedia.ru",
       "sakh.online"
     ],
     "retrospective_anomalies": [],
