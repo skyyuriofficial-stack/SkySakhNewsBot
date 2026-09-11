@@ -1,16 +1,16 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-11T04:39:08+00:00",
-  "checked_at_sakhalin": "2026-09-11T15:39:05+11:00",
+  "checked_at_utc": "2026-09-11T07:08:13+00:00",
+  "checked_at_sakhalin": "2026-09-11T18:08:09+11:00",
   "status": "healthy",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-11T11:58:26+11:00",
-    "age_hours": 3.68,
+    "finished_sakhalin": "2026-09-11T18:08:09+11:00",
+    "age_hours": 0.0,
     "published": 2
   },
   "mobilization_digest": {
@@ -51,7 +51,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-11T04:39:07+00:00",
+    "checked_at": "2026-09-11T07:08:11+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -64,32 +64,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 290,
-      "title": "Удар по кошелькам: депутаты и бизнес Сахалина обсудили ситуацию с ростом тарифов ЖКХ",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
-    {
-      "message_id": 291,
-      "title": "Синегорск без света: авария на линии, мэрия взяла ситуацию под контроль",
-      "category_key": "ru_incident",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_incident",
-      "title_issues": []
-    },
     {
       "message_id": 292,
       "title": "Шесть лет колонии и два миллиона компенсации: в Углегорске огласили приговор за смертельное ДТП",
@@ -323,6 +297,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 315,
+      "title": "Украина сообщила о пяти погибших и 67 пострадавших от российского удара по торговому центру",
+      "category_key": "world_ru",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "world_ru",
+      "title_issues": []
+    },
+    {
+      "message_id": 316,
+      "title": "Сахалинца госпитализировали после ДТП с пьяным водителем",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -347,8 +347,8 @@
       "local": 13,
       "ru_pol": 0,
       "ru_eco": 1,
-      "ru_safety": 4,
-      "world": 2,
+      "ru_safety": 3,
+      "world": 3,
       "it": 0
     },
     "scaled_targets": {
@@ -363,22 +363,20 @@
       "local": -7.0,
       "ru_pol": 4.0,
       "ru_eco": 3.0,
-      "ru_safety": -1.0,
-      "world": 0.0,
+      "ru_safety": 0.0,
+      "world": -1.0,
       "it": 1.0
     },
     "distribution_error": 16.0,
     "subtype_counts": {
-      "macro_economy": 4,
-      "major_emergency": 9,
-      "fatal_incident": 1,
+      "fatal_incident": 2,
       "earthquake": 1,
+      "major_emergency": 9,
       "military_security": 4,
+      "macro_economy": 3,
       "public_service_disruption": 1
     },
     "sequence": [
-      "local",
-      "ru_safety",
       "local",
       "local",
       "local",
@@ -396,11 +394,11 @@
       "local",
       "local",
       "ru_safety",
+      "local",
+      "world",
       "local"
     ],
     "category_sequence": [
-      "sakh",
-      "ru_incident",
       "sakh_chp",
       "sakh_quake",
       "sakh_chp",
@@ -418,11 +416,11 @@
       "sakh_chp",
       "sakh",
       "ru_security",
-      "sakh"
+      "sakh",
+      "world_ru",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "sakh.online",
       "astv",
       "sakhalinmedia.ru",
       "sakh.online",
@@ -440,7 +438,9 @@
       "astv",
       "sakh.online",
       "sakhalinmedia.ru",
-      "sakh.online"
+      "sakh.online",
+      "bbc world",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
