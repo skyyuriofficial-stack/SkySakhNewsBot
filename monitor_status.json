@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-11T22:35:19+00:00",
-  "checked_at_sakhalin": "2026-09-12T09:35:15+11:00",
+  "checked_at_utc": "2026-09-12T00:39:34+00:00",
+  "checked_at_sakhalin": "2026-09-12T11:39:30+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -11,10 +11,11 @@
       "slot": "morning",
       "expected_by_sakhalin": "2026-09-12T08:45:00+11:00",
       "last_attempt": {
-        "status": "ok",
-        "mode": "evening",
-        "at_utc": "2026-09-11T12:35:47+00:00",
-        "at_sakhalin": "2026-09-11T23:35:47+11:00"
+        "status": "error",
+        "mode": "morning",
+        "at_utc": "2026-09-11T22:58:46+00:00",
+        "at_sakhalin": "2026-09-12T09:58:46+11:00",
+        "error": "Telegram HTTP error: {\"ok\":false,\"error_code\":401,\"description\":\"Unauthorized\"}"
       }
     }
   ],
@@ -22,7 +23,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-09-12T09:24:08+11:00",
-    "age_hours": 0.19,
+    "age_hours": 2.26,
     "published": 0
   },
   "mobilization_digest": {
@@ -40,10 +41,11 @@
       "record": {}
     },
     "last_attempt": {
-      "status": "ok",
-      "mode": "evening",
-      "at_utc": "2026-09-11T12:35:47+00:00",
-      "at_sakhalin": "2026-09-11T23:35:47+11:00"
+      "status": "error",
+      "mode": "morning",
+      "at_utc": "2026-09-11T22:58:46+00:00",
+      "at_sakhalin": "2026-09-12T09:58:46+11:00",
+      "error": "Telegram HTTP error: {\"ok\":false,\"error_code\":401,\"description\":\"Unauthorized\"}"
     },
     "missing": [
       {
@@ -51,17 +53,18 @@
         "slot": "morning",
         "expected_by_sakhalin": "2026-09-12T08:45:00+11:00",
         "last_attempt": {
-          "status": "ok",
-          "mode": "evening",
-          "at_utc": "2026-09-11T12:35:47+00:00",
-          "at_sakhalin": "2026-09-11T23:35:47+11:00"
+          "status": "error",
+          "mode": "morning",
+          "at_utc": "2026-09-11T22:58:46+00:00",
+          "at_sakhalin": "2026-09-12T09:58:46+11:00",
+          "error": "Telegram HTTP error: {\"ok\":false,\"error_code\":401,\"description\":\"Unauthorized\"}"
         }
       }
     ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-11T22:35:17+00:00",
+    "checked_at": "2026-09-12T00:39:33+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
