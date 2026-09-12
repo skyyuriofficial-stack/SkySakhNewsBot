@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-12T07:16:33+00:00",
-  "checked_at_sakhalin": "2026-09-12T18:16:29+11:00",
+  "checked_at_utc": "2026-09-12T09:21:24+00:00",
+  "checked_at_sakhalin": "2026-09-12T20:21:20+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -17,13 +17,25 @@
         "at_sakhalin": "2026-09-12T17:42:14+11:00",
         "error": "Telegram HTTP error: {\"ok\":false,\"error_code\":401,\"description\":\"Unauthorized\"}"
       }
+    },
+    {
+      "type": "mobilization_digest_missing",
+      "slot": "evening",
+      "expected_by_sakhalin": "2026-09-12T19:45:00+11:00",
+      "last_attempt": {
+        "status": "error",
+        "mode": "morning",
+        "at_utc": "2026-09-12T06:42:14+00:00",
+        "at_sakhalin": "2026-09-12T17:42:14+11:00",
+        "error": "Telegram HTTP error: {\"ok\":false,\"error_code\":401,\"description\":\"Unauthorized\"}"
+      }
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-09-12T18:16:29+11:00",
-    "age_hours": 0.0,
+    "age_hours": 2.08,
     "published": 0
   },
   "mobilization_digest": {
@@ -36,7 +48,7 @@
       "record": {}
     },
     "evening": {
-      "due": false,
+      "due": true,
       "published": false,
       "record": {}
     },
@@ -59,12 +71,24 @@
           "at_sakhalin": "2026-09-12T17:42:14+11:00",
           "error": "Telegram HTTP error: {\"ok\":false,\"error_code\":401,\"description\":\"Unauthorized\"}"
         }
+      },
+      {
+        "type": "mobilization_digest_missing",
+        "slot": "evening",
+        "expected_by_sakhalin": "2026-09-12T19:45:00+11:00",
+        "last_attempt": {
+          "status": "error",
+          "mode": "morning",
+          "at_utc": "2026-09-12T06:42:14+00:00",
+          "at_sakhalin": "2026-09-12T17:42:14+11:00",
+          "error": "Telegram HTTP error: {\"ok\":false,\"error_code\":401,\"description\":\"Unauthorized\"}"
+        }
       }
     ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-12T07:16:32+00:00",
+    "checked_at": "2026-09-12T09:21:22+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
