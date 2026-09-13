@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import re
 from copy import deepcopy
-from typing import Any, Dict, List, Mapping, Sequence, Set
+from typing import Any, Dict, List, Mapping, Set
 
 import editorial_policy as policy
 
@@ -32,6 +32,10 @@ CONTACT_OR_TECH_PATTERNS = (
     r"\+7\s*\(?\d{3}\)?[\s-]*\d{3}[\s-]*\d{2}[\s-]*\d{2}",
 )
 
+MISSING_BOUNDARY_RE = re.compile(
+    r"(?<=[а-яё0-9])\s+(?=(?:По|Как|При|Предварительно|В|На|Для)\s+[А-ЯЁа-яё])"
+)
+
 GENERIC_EVENT_WORDS = {
     "после", "перед", "в", "на", "по", "для", "из", "при", "дом", "дома",
     "южно", "сахалинск", "сахалинске", "сахалин", "области", "районе", "улице",
@@ -51,8 +55,6 @@ def _stem_token(token: str) -> str:
     value = str(token or "").lower().replace("ё", "е")
     if len(value) <= 6:
         return value
-    # A conservative lexical fingerprint is enough for near-duplicate news
-    # headlines: проверит/проверку, восстановили/восстановление, etc.
     return value[:6]
 
 
@@ -96,8 +98,6 @@ def duplicate_event(a: Mapping[str, Any], b: Mapping[str, Any]) -> bool:
         str(b.get("title") or "") + " " + str(b.get("source_text") or "")[:1000],
     )
 
-    # Same category + three distinctive lexical stems is a strong duplicate
-    # signal for short news headlines even when verbs are inflected differently.
     if len(title_overlap) >= 3 and title_similarity >= 0.38:
         return True
     if len(title_overlap) >= 2 and source_similarity >= 0.50:
@@ -116,7 +116,47 @@ def _paragraph_duplicate(a: str, b: str) -> bool:
     return text_similarity(a, b) >= 0.82
 
 
+def dedupe_source_text(value: Any) -> str:
+    """Remove scraper-level repeated source sentences before generation/audit.
+
+    Source duplication is input hygiene, not by itself a publication defect. We
+    normalize it before the director/generator so it cannot create repetitive copy.
+    """
+    text = policy.clean(value)
+    if not text:
+        return ""
+    parts = [policy.clean(part) for part in re.split(r"(?<=[.!?])\s+", text) if policy.clean(part)]
+    if len(parts) < 2:
+        return text
+    kept: List[str] = []
+    for part in parts:
+        if any(_paragraph_duplicate(existing, part) for existing in kept):
+            continue
+        kept.append(part)
+    return " ".join(kept)
+
+
+def source_quality_warnings(candidate: Mapping[str, Any]) -> List[str]:
+    source_text = policy.clean(candidate.get("source_text"))
+    if not source_text:
+        return []
+    cleaned = dedupe_source_text(source_text)
+    return ["source_lead_duplicated"] if cleaned != source_text else []
+
+
+def _unsupported_identity(title: str, source_text: str) -> bool:
+    return bool(
+        re.search(r"\bсахалин(?:ец|ца|цу|цем|цы|цев|цам|цами|цах|ка|ку|ке|кой|ки)\b", title.lower())
+        and re.search(r"личност[ьи].{0,45}не\s+установ", source_text.lower())
+    )
+
+
 def content_quality_issues(candidate: Mapping[str, Any], row: Mapping[str, Any]) -> List[str]:
+    """Blocking output-quality issues only.
+
+    Source-only duplication is deliberately excluded; it is cleaned upstream by
+    ``dedupe_source_text`` and exposed as a warning via ``source_quality_warnings``.
+    """
     title = policy.clean(row.get("title_ru") or candidate.get("title"))
     source_text = policy.clean(candidate.get("source_text"))
     body = row.get("body") if isinstance(row.get("body"), list) else []
@@ -134,10 +174,7 @@ def content_quality_issues(candidate: Mapping[str, Any], row: Mapping[str, Any])
         if any(re.search(pattern, paragraph, flags=re.I) for pattern in CONTACT_OR_TECH_PATTERNS):
             issues.append("body_contains_contact_or_url")
             break
-        if re.search(
-            r"(?<=[а-яё0-9])\s+(?=(?:По|Как|При|Предварительно|В|На|Для)\s+[А-ЯЁа-яё])",
-            paragraph,
-        ):
+        if MISSING_BOUNDARY_RE.search(paragraph):
             issues.append("body_missing_sentence_boundary")
             break
 
@@ -149,19 +186,51 @@ def content_quality_issues(candidate: Mapping[str, Any], row: Mapping[str, Any])
         if "repetitive_body_paragraph" in issues:
             break
 
-    source_sentences = [
-        policy.clean(value)
-        for value in re.split(r"(?<=[.!?])\s+", source_text)
-        if len(policy.clean(value)) >= 50
-    ]
-    if len(source_sentences) >= 2 and _paragraph_duplicate(source_sentences[0], source_sentences[1]):
-        issues.append("source_lead_duplicated")
-
-    if re.search(r"\bсахалин(?:ец|ца|цу|цем|цы|цев|цам|цами|цах|ка|ку|ке|кой|ки)\b", title.lower()):
-        if re.search(r"личност[ьи].{0,45}не\s+установ", source_text.lower()):
-            issues.append("unsupported_sakhalin_resident_identity")
+    if _unsupported_identity(title, source_text):
+        issues.append("unsupported_sakhalin_resident_identity")
 
     return list(dict.fromkeys(issues))
+
+
+def repair_row(candidate: Mapping[str, Any], row: Mapping[str, Any]) -> Dict[str, Any]:
+    """Deterministically repair safe-to-fix caption defects without inventing facts."""
+    repaired = deepcopy(dict(row))
+    source_text = policy.clean(candidate.get("source_text"))
+    title = policy.clean(repaired.get("title_ru") or candidate.get("title"))
+
+    if _unsupported_identity(title, source_text):
+        replacement = "Пешехода" if re.search(r"\bпешеход", source_text.lower()) else "Человека"
+        title = re.sub(
+            r"\bСахалин(?:ец|ца|цу|цем|цы|цев|цам|цами|цах|ка|ку|ке|кой|ки)\b",
+            replacement,
+            title,
+            count=1,
+            flags=re.I,
+        )
+        repaired["title_ru"] = title
+
+    body = repaired.get("body") if isinstance(repaired.get("body"), list) else []
+    cleaned: List[str] = []
+    for raw in body:
+        paragraph = policy.clean(raw)
+        if not paragraph:
+            continue
+        low = paragraph.lower()
+        if any(re.search(pattern, low, flags=re.I | re.S) for pattern in BOILERPLATE_PATTERNS):
+            continue
+        if any(re.search(pattern, paragraph, flags=re.I) for pattern in CONTACT_OR_TECH_PATTERNS):
+            continue
+        paragraph = MISSING_BOUNDARY_RE.sub(". ", paragraph)
+        if any(_paragraph_duplicate(existing, paragraph) for existing in cleaned):
+            continue
+        cleaned.append(paragraph)
+
+    repaired["body"] = cleaned
+    repaired["hardening_repair"] = {
+        "version": "editorial-hardening-v1.1",
+        "source_warnings": source_quality_warnings(candidate),
+    }
+    return repaired
 
 
 def _reclassified(base: policy.Classification, category_key: str, group: str, *, local: bool | None = None) -> policy.Classification:
@@ -247,7 +316,8 @@ def install() -> None:
         issues.extend(content_quality_issues(candidate, row))
         contract["issues"] = list(dict.fromkeys(str(issue) for issue in issues if issue))
         contract["approved"] = not contract["issues"]
-        contract["hardening_version"] = "editorial-hardening-v1"
+        contract["hardening_version"] = "editorial-hardening-v1.1"
+        contract["source_warnings"] = source_quality_warnings(candidate)
         return contract
 
     policy.classify = hardened_classify
@@ -259,6 +329,9 @@ def install() -> None:
 __all__ = [
     "install",
     "content_quality_issues",
+    "dedupe_source_text",
     "duplicate_event",
+    "repair_row",
+    "source_quality_warnings",
     "text_similarity",
 ]
