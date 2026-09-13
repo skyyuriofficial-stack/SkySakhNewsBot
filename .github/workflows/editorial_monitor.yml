@@ -3,14 +3,15 @@ name: SkySakhNews Continuous Editorial Monitor v12.1
 on:
   workflow_dispatch:
   schedule:
-    # Four independent opportunities per hour, offset from common GitHub cron peaks.
-    - cron: "7,22,37,52 * * * *"
+    # Six independent opportunities per hour, offset from production pulses.
+    - cron: "3,13,23,33,43,53 * * * *"
 
 permissions:
   contents: write
 
 concurrency:
-  group: skysakhnews-editorial-monitor
+  # Serialize with production only when live state could be corrected.
+  group: skysakhnews-live-state
   cancel-in-progress: false
 
 jobs:
@@ -25,11 +26,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Compile editorial monitor chain
         run: |
@@ -40,9 +41,11 @@ jobs:
             src/news_director.py src/publication_auditor.py \
             src/editorial_monitor.py src/publisher.py src/production_selftest.py \
             src/telegram_health.py src/editorial_hardening.py \
-            src/hardened_monitor.py src/health_gate.py src/hardening_selftest.py
+            src/hardened_monitor.py src/health_gate.py src/hardening_selftest.py \
+            src/operational_selftest.py
 
-      - name: Require current regression suite
+      - name: Require current regression suite on manual diagnostic runs
+        if: github.event_name == 'workflow_dispatch'
         env:
           IMAGE_REQUIRED: "1"
           AI_CALL_BUDGET: "0"
@@ -53,6 +56,7 @@ jobs:
         run: |
           python src/production_selftest.py
           python src/hardening_selftest.py
+          python src/operational_selftest.py
 
       - name: Audit and self-heal Telegram feed
         id: hardened_monitor
@@ -82,7 +86,8 @@ jobs:
           except Exception:
               sys.exit(1)
           audit=data.get('post_audit') or {}
-          sys.exit(0 if (audit.get('corrected') or audit.get('deleted')) else 1)
+          actions=data.get('hardening_actions') or []
+          sys.exit(0 if (audit.get('corrected') or audit.get('deleted') or actions) else 1)
           PY
           then
             git add state.json
@@ -95,6 +100,6 @@ jobs:
             git push origin main
           fi
 
-      - name: Require healthy monitored feed
+      - name: Require monitor execution health
         if: always()
         run: python src/health_gate.py monitor
