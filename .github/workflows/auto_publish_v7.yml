@@ -3,8 +3,10 @@ name: SkySakhNews Auto Publisher Stable v12.1
 on:
   workflow_dispatch:
   schedule:
-    # UTC; Sakhalin = UTC+11: 07:00, 10:00, 13:00, 16:00, 19:00, 22:00
-    - cron: "0 2,5,8,11,20,23 * * *"
+    # Recovery cadence, deliberately away from the top of the hour.
+    # The slot guard preserves the intended Sakhalin slots 07/10/13/16/19/22
+    # while giving each missed slot repeated catch-up opportunities.
+    - cron: "17,47 0-11,20-23 * * *"
 
 permissions:
   contents: write
@@ -22,25 +24,38 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Check whether a production slot is due
+        id: schedule_guard
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+        run: python src/schedule_guard.py production
+
       - uses: actions/setup-python@v5
+        if: steps.schedule_guard.outputs.due == 'true'
         with:
           python-version: "3.11"
 
       - name: Install dependencies
+        if: steps.schedule_guard.outputs.due == 'true'
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Compile canonical v12.1 production system
+        if: steps.schedule_guard.outputs.due == 'true'
         run: |
           python -m py_compile \
             src/news_bot_v8.py src/news_bot_v9.py src/production.py \
             src/editorial_gate.py src/editorial_policy.py src/category_reconciler.py \
             src/editorial_gate_runner.py src/media_enforced_runner.py \
             src/news_director.py src/publication_auditor.py \
-            src/editorial_monitor.py src/publisher.py src/production_selftest.py
+            src/editorial_monitor.py src/publisher.py src/production_selftest.py \
+            src/telegram_health.py src/editorial_hardening.py \
+            src/hardened_publisher.py src/hardened_monitor.py \
+            src/schedule_guard.py src/health_gate.py src/hardening_selftest.py
 
       - name: Mandatory strict editorial regression gate
+        if: steps.schedule_guard.outputs.due == 'true'
         env:
           IMAGE_REQUIRED: "1"
           AI_CALL_BUDGET: "0"
@@ -52,9 +67,14 @@ jobs:
           MEDIA_PENDING_MAX_ITEMS: "24"
           OPENROUTER_MAX_ATTEMPTS: "3"
           OPENROUTER_RETRY_BASE_SECONDS: "0"
-        run: python src/production_selftest.py
+        run: |
+          python src/production_selftest.py
+          python src/hardening_selftest.py
 
-      - name: Publish through v12.1 autocorrecting news director
+      - name: Publish through hardened v12.1 news director
+        id: publisher
+        if: steps.schedule_guard.outputs.due == 'true'
+        continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
@@ -73,9 +93,12 @@ jobs:
           MEDIA_PENDING_MAX_HOURS: "36"
           MEDIA_PENDING_MAX_ITEMS: "24"
           PYTHONUNBUFFERED: "1"
-        run: python src/publisher.py
+        run: python src/hardened_publisher.py
 
       - name: Immediately audit and self-heal the published feed
+        id: monitor
+        if: always() && steps.schedule_guard.outputs.due == 'true'
+        continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
@@ -84,101 +107,24 @@ jobs:
           AI_CALL_BUDGET: "0"
           EDITORIAL_AUDIT_AI_BUDGET: "0"
           NEWS_DIRECTOR_AI_BUDGET: "0"
+          THEMATIC_MIX_ERROR_LIMIT: "8"
           PYTHONUNBUFFERED: "1"
-        run: python src/editorial_monitor.py
+        run: python src/hardened_monitor.py
 
-      - name: Verify v12.1 editorial, proportion, media and monitor contract
-        run: |
-          python - <<'PY'
-          import json
-          import sys
-          from urllib.parse import urlparse
-          sys.path.insert(0, "src")
-          import editorial_policy as policy
+      - name: Verify production, delivery and editorial health
+        if: always() && steps.schedule_guard.outputs.due == 'true'
+        run: python src/health_gate.py production
 
-          with open("state.json", "r", encoding="utf-8") as file:
-              state = json.load(file)
-
-          run = state.get("last_run") or {}
-          assert run.get("version") == "stable-v12.1", run
-          assert run.get("status") == "ok", run
-          assert "finished_sakhalin" in run, run
-          assert (run.get("local_stream") or {}).get("status") in {"healthy", "degraded"}, run
-
-          director = run.get("news_director") or {}
-          assert director.get("version") == "director-v2.1", director
-          assert director.get("policy_version") == "policy-v2.3", director
-          targets = ((director.get("rolling_balance_after") or {}).get("targets") or {})
-          expected = {"local": 6, "ru_pol": 4, "ru_eco": 4, "ru_safety": 3, "world": 2, "it": 1}
-          assert targets == expected, targets
-          assert sum(targets.values()) == 20, targets
-
-          media = run.get("media_policy") or {}
-          assert media.get("required") is True, media
-          assert media.get("text_only_allowed") is False, media
-
-          published = int(run.get("published") or 0)
-          assert 0 <= published <= 2, run
-          posts = (state.get("last_posts") or [])[-published:] if published else []
-          groups = []
-          for post in posts:
-              editorial = post.get("editorial_gate") or {}
-              assert editorial.get("approved") is True, post
-              assert int(editorial.get("title_matches_source") or 0) >= 90, post
-              assert int(editorial.get("category_matches_story") or 0) >= 90, post
-              assert editorial.get("facts_supported") is True, post
-              assert editorial.get("meaning_changed") is False, post
-
-              decision = post.get("news_director") or {}
-              assert decision.get("version") == "director-v2.1", post
-              assert decision.get("approved") is True, post
-              assert int(decision.get("seriousness") or 0) >= int(decision.get("threshold") or 0), post
-              assert decision.get("final_title_checked") is True, post
-              assert decision.get("final_category_checked") is True, post
-              assert decision.get("reason") not in {
-                  "corporate_product_or_brand_pr",
-                  "service_or_lost_and_found_notice",
-                  "routine_traffic_statistics",
-                  "ordinary_weather_not_release_worthy",
-              }, post
-              groups.append(decision.get("group"))
-
-              contract = post.get("publication_contract") or {}
-              assert contract.get("approved") is True, post
-              assert not contract.get("issues"), post
-              assert not policy.title_quality_issues(str(post.get("title") or "")), post
-
-              assert post.get("publisher_version") == "stable-v12.1", post
-              assert post.get("with_image") is True, post
-              assert post.get("media_type") == "photo", post
-              assert post.get("image_url"), post
-              assert post.get("image_hash"), post
-              assert post.get("telegram_message_id") is not None, post
-              assert str(post.get("publish_method") or "").startswith("sendPhoto/"), post
-              assert "news.google." not in urlparse(post.get("url") or "").netloc.lower(), post
-
-          if len(groups) == 2:
-              assert len(set(groups)) == 2, groups
-
-          monitor = state.get("continuous_editorial_monitor") or {}
-          assert monitor.get("publisher_version") == "stable-v12.1", monitor
-          assert monitor.get("status") == "healthy", monitor
-          audit = monitor.get("post_audit") or {}
-          assert int(audit.get("unresolved") or 0) == 0, audit
-          assert not audit.get("failed_actions"), audit
-          print("stable-v12.1 publication + immediate monitor contract: OK", run)
-          PY
-
-      - name: Commit v12.1 state, audit, monitor and delivery queue
-        if: always()
+      - name: Commit v12.1 state, audit, monitor and Telegram health
+        if: always() && steps.schedule_guard.outputs.due == 'true'
         run: |
           git config user.name "skysakhnews-bot"
           git config user.email "actions@github.com"
-          git add state.json monitor_status.json
+          git add state.json monitor_status.json telegram_health.json
           if git diff --cached --quiet; then
             echo "No state changes"
           else
-            git commit -m "Update stable v12.1 editorial and monitor state"
+            git commit -m "Update hardened v12.1 production state"
             git pull --rebase --autostash origin main
             git push origin main
           fi
