@@ -2,6 +2,12 @@ name: SkySakhNews Auto Publisher Stable v12.1
 
 on:
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Force a production cycle even if the logical slot is already covered"
+        required: false
+        default: false
+        type: boolean
   schedule:
     # Recovery pulses every 10 minutes in the active Sakhalin window.
     # schedule_guard.py preserves the logical slots 07/10/13/16/19/22 and
@@ -10,6 +16,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   # Any workflow capable of changing live state shares one serialization lock.
@@ -29,6 +36,7 @@ jobs:
         id: schedule_guard
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
+          FORCE_PRODUCTION: ${{ github.event.inputs.force == 'true' && '1' || '0' }}
         run: python src/schedule_guard.py production
 
       - uses: actions/setup-python@v5
@@ -98,7 +106,7 @@ jobs:
           PYTHONUNBUFFERED: "1"
         run: python src/hardened_publisher.py
 
-      - name: Immediately audit and self-heal the published feed
+      - name: Immediately audit the published feed
         id: monitor
         if: always() && steps.schedule_guard.outputs.due == 'true'
         continue-on-error: true
@@ -114,11 +122,7 @@ jobs:
           PYTHONUNBUFFERED: "1"
         run: python src/hardened_monitor.py
 
-      - name: Verify production and delivery execution health
-        if: always() && steps.schedule_guard.outputs.due == 'true'
-        run: python src/health_gate.py production
-
-      - name: Commit production-owned state only
+      - name: Commit production-owned state
         if: always() && steps.schedule_guard.outputs.due == 'true'
         run: |
           git config user.name "skysakhnews-bot"
@@ -131,3 +135,20 @@ jobs:
             git pull --rebase --autostash origin main
             git push origin main
           fi
+
+      - name: Trigger independent monitor after every real production attempt
+        if: always() && steps.schedule_guard.outputs.due == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail-with-body --silent --show-error \
+            -X POST \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/editorial_monitor.yml/dispatches \
+            -d '{"ref":"main","inputs":{"diagnostic":"false"}}'
+
+      - name: Verify production and delivery execution health
+        if: always() && steps.schedule_guard.outputs.due == 'true'
+        run: python src/health_gate.py production
