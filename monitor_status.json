@@ -1,16 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-13T06:46:29+00:00",
-  "checked_at_sakhalin": "2026-09-13T17:46:26+11:00",
+  "checked_at_utc": "2026-09-13T07:29:38+00:00",
+  "checked_at_sakhalin": "2026-09-13T18:29:35+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 5.72,
-      "limit_hours": 4.5
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -18,8 +13,8 @@
       "last_attempt": {
         "status": "error",
         "mode": "morning",
-        "at_utc": "2026-09-13T05:38:52+00:00",
-        "at_sakhalin": "2026-09-13T16:38:52+11:00",
+        "at_utc": "2026-09-13T06:59:38+00:00",
+        "at_sakhalin": "2026-09-13T17:59:38+11:00",
         "error": "Telegram HTTP error: {\"ok\":false,\"error_code\":401,\"description\":\"Unauthorized\"}"
       }
     }
@@ -27,8 +22,8 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-13T12:03:33+11:00",
-    "age_hours": 5.72,
+    "finished_sakhalin": "2026-09-13T18:29:35+11:00",
+    "age_hours": 0.0,
     "published": 0
   },
   "mobilization_digest": {
@@ -48,8 +43,8 @@
     "last_attempt": {
       "status": "error",
       "mode": "morning",
-      "at_utc": "2026-09-13T05:38:52+00:00",
-      "at_sakhalin": "2026-09-13T16:38:52+11:00",
+      "at_utc": "2026-09-13T06:59:38+00:00",
+      "at_sakhalin": "2026-09-13T17:59:38+11:00",
       "error": "Telegram HTTP error: {\"ok\":false,\"error_code\":401,\"description\":\"Unauthorized\"}"
     },
     "missing": [
@@ -60,8 +55,8 @@
         "last_attempt": {
           "status": "error",
           "mode": "morning",
-          "at_utc": "2026-09-13T05:38:52+00:00",
-          "at_sakhalin": "2026-09-13T16:38:52+11:00",
+          "at_utc": "2026-09-13T06:59:38+00:00",
+          "at_sakhalin": "2026-09-13T17:59:38+11:00",
           "error": "Telegram HTTP error: {\"ok\":false,\"error_code\":401,\"description\":\"Unauthorized\"}"
         }
       }
@@ -69,7 +64,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-13T06:46:28+00:00",
+    "checked_at": "2026-09-13T07:29:37+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
