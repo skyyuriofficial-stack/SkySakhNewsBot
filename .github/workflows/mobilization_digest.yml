@@ -13,14 +13,13 @@ on:
           - morning
           - evening
   schedule:
-    # Sakhalin UTC+11. Repeated recovery windows instead of one fragile exact run.
-    # Morning primary window: 08:00-12:30 Sakhalin, every 30 minutes.
-    - cron: "0,30 0,1,21,22,23 * * *"
-    # Morning late watchdog: 13:00-18:00 Sakhalin, hourly. It publishes only if
-    # the morning slot is still missing, otherwise exits before source collection.
-    - cron: "0 2,3,4,5,6,7 * * *"
-    # Evening: 19:00-22:30 Sakhalin, every 30 minutes.
-    - cron: "0,30 8,9,10,11 * * *"
+    # Sakhalin UTC+11. Offset from common cron peaks and retry repeatedly.
+    # Morning: 08:07-12:37 Sakhalin every 30 minutes.
+    - cron: "7,37 0,1,21,22,23 * * *"
+    # Morning late watchdog: 13:07-18:07 Sakhalin, hourly.
+    - cron: "7 2,3,4,5,6,7 * * *"
+    # Evening: 19:07-22:37 Sakhalin every 30 minutes.
+    - cron: "7,37 8,9,10,11 * * *"
   push:
     branches:
       - main
@@ -30,6 +29,8 @@ on:
       - "src/mobilization_digest_runner.py"
       - "src/mobilization_sources.py"
       - "src/mobilization_digest_final.py"
+      - "src/hardened_digest.py"
+      - "src/telegram_health.py"
 
 permissions:
   contents: write
@@ -62,6 +63,8 @@ jobs:
           python -m py_compile src/mobilization_digest_runner.py
           python -m py_compile src/mobilization_sources.py
           python -m py_compile src/mobilization_digest_final.py
+          python -m py_compile src/telegram_health.py
+          python -m py_compile src/hardened_digest.py
 
       - name: Build, fact-check and publish mobilization digest
         env:
@@ -73,7 +76,7 @@ jobs:
           DIGEST_SCHEDULE: ${{ github.event.schedule }}
           DIGEST_DRY_RUN: ${{ github.event_name == 'push' && '1' || '0' }}
           PYTHONUNBUFFERED: "1"
-        run: python src/mobilization_digest_final.py
+        run: python src/hardened_digest.py
 
       - name: Commit digest state
         if: always() && github.event_name != 'push'
