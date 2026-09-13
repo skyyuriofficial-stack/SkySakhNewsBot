@@ -35,8 +35,11 @@ def _load_state() -> Dict[str, Any]:
 
 def production_due(now: Optional[datetime] = None) -> Dict[str, Any]:
     now = (now or datetime.now(TZ)).astimezone(TZ)
-    if os.getenv("GITHUB_EVENT_NAME") == "workflow_dispatch":
-        return {"due": True, "slot": "manual", "reason": "workflow_dispatch"}
+    if (
+        os.getenv("GITHUB_EVENT_NAME") == "workflow_dispatch"
+        and os.getenv("FORCE_PRODUCTION", "0") == "1"
+    ):
+        return {"due": True, "slot": "manual", "reason": "forced_workflow_dispatch"}
 
     target_hour = max((hour for hour in PRODUCTION_HOURS if hour <= now.hour), default=None)
     if target_hour is None:
@@ -71,7 +74,6 @@ def production_due(now: Optional[datetime] = None) -> Dict[str, Any]:
                 "retry_after_minutes": round((BLOCKED_RETRY_COOLDOWN_MINUTES * 60 - age.total_seconds()) / 60, 1),
             }
 
-    # Do not chase an old slot into the next one. Each next target becomes the new slot.
     return {"due": True, "slot": slot, "reason": "slot_missing_or_failed"}
 
 
