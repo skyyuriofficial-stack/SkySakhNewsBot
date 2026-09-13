@@ -64,11 +64,13 @@ jobs:
                   print(f"WORKFLOW_TRIGGER {path}: {','.join(triggers)}")
           PY
 
-      - name: Commit hardening
+      - name: Commit source hardening
         run: |
           git config user.name "skysakhnews-hardening"
           git config user.email "actions@github.com"
-          git add src .github/workflows/auto_publish_v7.yml .github/workflows/editorial_monitor.yml .github/workflows/mobilization_digest.yml .github/workflows/production_ci.yml
-          git commit -m "Harden scheduling, state ownership and health semantics"
+          find src -type d -name __pycache__ -prune -exec rm -rf {} +
+          find src -type f -name '*.pyc' -delete
+          git add src
+          git commit -m "Harden state ownership, scheduling semantics and health gates"
           git pull --rebase --autostash origin main
           git push origin main
