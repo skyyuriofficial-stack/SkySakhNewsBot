@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import copy
 import json
 import os
 from datetime import datetime, timezone
@@ -10,6 +11,8 @@ import editorial_hardening
 editorial_hardening.install()
 
 import editorial_monitor
+import news_director
+import publication_auditor
 import telegram_health
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,10 +20,111 @@ STATE_PATH = ROOT / "state.json"
 STATUS_PATH = ROOT / "monitor_status.json"
 
 MIX_ERROR_LIMIT = float(os.getenv("THEMATIC_MIX_ERROR_LIMIT", "8"))
+publication_auditor.MAX_MUTATION_AGE_HOURS = 72
 
 
 def _save(path: Path, value) -> None:
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def _load_state():
+    try:
+        return json.loads(STATE_PATH.read_text(encoding="utf-8")) if STATE_PATH.exists() else {}
+    except Exception:
+        return {}
+
+
+def _delete_post(post, reason):
+    message_id = post.get("telegram_message_id")
+    chat_id = post.get("telegram_chat_id")
+    if message_id is None or chat_id is None:
+        return {"ok": False, "description": "telegram_identifiers_missing"}
+    result = publication_auditor._telegram_call(
+        "deleteMessage",
+        {"chat_id": chat_id, "message_id": message_id},
+    )
+    if result.get("ok"):
+        post["auto_deleted"] = True
+        post["post_audit"] = {
+            "version": "post-audit-hardening-v1",
+            "approved": False,
+            "checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "auto_action": "deleted_by_hardening",
+            "reason": reason,
+        }
+    return result
+
+
+def _pre_audit_cleanup(state, *, mutate: bool):
+    actions = []
+    failures = []
+    if not mutate:
+        return actions, failures
+
+    posts = [
+        post for post in (state.get("last_posts") or [])[-20:]
+        if isinstance(post, dict) and not post.get("auto_deleted")
+    ]
+
+    # First remove content that cannot be repaired safely by changing only a title/category.
+    for post in posts:
+        if post.get("auto_deleted"):
+            continue
+        candidate = publication_auditor._candidate_from_post(post)
+        row = copy.deepcopy(post.get("published_row") or {})
+        if not row:
+            continue
+        contract = news_director.validate_final(candidate, row)
+        hard = [
+            issue for issue in (contract.get("issues") or [])
+            if str(issue).startswith((
+                "body_", "source_lead_", "unsupported_sakhalin_resident_identity",
+            ))
+        ]
+        if not hard or not publication_auditor._within_mutation_window(post):
+            continue
+        result = _delete_post(post, ";".join(hard))
+        item = {
+            "message_id": post.get("telegram_message_id"),
+            "title": post.get("title"),
+            "category_key": post.get("category_key"),
+            "reason": hard,
+        }
+        if result.get("ok"):
+            actions.append({"action": "delete_contaminated_post", **item})
+        else:
+            failures.append({"action": "delete_contaminated_post", "error": result.get("description"), **item})
+
+    # Then remove the newer member of an obvious semantic duplicate pair.
+    active = [post for post in posts if not post.get("auto_deleted")]
+    for index, post in enumerate(active):
+        if post.get("auto_deleted"):
+            continue
+        candidate = publication_auditor._candidate_from_post(post)
+        for older in active[:index]:
+            if older.get("auto_deleted"):
+                continue
+            older_candidate = publication_auditor._candidate_from_post(older)
+            if not editorial_hardening.duplicate_event(candidate, older_candidate):
+                continue
+            if not publication_auditor._within_mutation_window(post):
+                break
+            result = _delete_post(post, "semantic_duplicate_of:" + str(older.get("title") or "")[:220])
+            item = {
+                "message_id": post.get("telegram_message_id"),
+                "title": post.get("title"),
+                "category_key": post.get("category_key"),
+                "duplicate_of": older.get("title"),
+            }
+            if result.get("ok"):
+                actions.append({"action": "delete_semantic_duplicate", **item})
+            else:
+                failures.append({"action": "delete_semantic_duplicate", "error": result.get("description"), **item})
+            break
+
+    if actions or failures:
+        _save(STATE_PATH, state)
+    return actions, failures
 
 
 def main() -> int:
@@ -29,8 +133,13 @@ def main() -> int:
     requested_mutation = os.getenv("POST_AUDIT_AUTOCORRECT", "1") == "1"
     mutate = bool(requested_mutation and health.get("status") == "healthy")
 
+    state = _load_state()
+    hardening_actions, hardening_failures = _pre_audit_cleanup(state, mutate=mutate)
+
     report = editorial_monitor.run_monitor(mutate=mutate)
     report["telegram_health"] = health
+    report["hardening_actions"] = hardening_actions
+    report["hardening_failed_actions"] = hardening_failures
 
     issues = list(report.get("issues") or [])
     if health.get("status") != "healthy":
@@ -39,6 +148,12 @@ def main() -> int:
             "reason": health.get("error_kind"),
             "http_status": health.get("http_status"),
             "description": health.get("description"),
+        })
+    if hardening_failures:
+        issues.append({
+            "type": "hardening_action_failure",
+            "count": len(hardening_failures),
+            "items": hardening_failures[-8:],
         })
 
     balance = report.get("balance") or {}
@@ -53,7 +168,6 @@ def main() -> int:
             "deficits": balance.get("deficits") or {},
         })
 
-    # De-duplicate issue types that may already have been emitted by the base monitor.
     deduped = []
     seen = set()
     for issue in issues:
@@ -68,10 +182,7 @@ def main() -> int:
     report["mutations_enabled"] = mutate
     report["checked_at_utc"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
-    try:
-        state = json.loads(STATE_PATH.read_text(encoding="utf-8")) if STATE_PATH.exists() else {}
-    except Exception:
-        state = {}
+    state = _load_state()
     state["continuous_editorial_monitor"] = report
     state["telegram_health"] = health
     _save(STATE_PATH, state)
@@ -81,6 +192,8 @@ def main() -> int:
         "status": report.get("status"),
         "issues": report.get("issues"),
         "telegram_health": health,
+        "hardening_actions": hardening_actions,
+        "hardening_failed_actions": hardening_failures,
         "post_audit": {
             "checked": (report.get("post_audit") or {}).get("checked"),
             "passed": (report.get("post_audit") or {}).get("passed"),
