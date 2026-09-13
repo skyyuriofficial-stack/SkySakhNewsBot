@@ -3,16 +3,17 @@ name: SkySakhNews Auto Publisher Stable v12.1
 on:
   workflow_dispatch:
   schedule:
-    # Recovery cadence, deliberately away from the top of the hour.
-    # The slot guard preserves the intended Sakhalin slots 07/10/13/16/19/22
-    # while giving each missed slot repeated catch-up opportunities.
-    - cron: "17,47 0-11,20-23 * * *"
+    # Recovery pulses every 10 minutes in the active Sakhalin window.
+    # schedule_guard.py preserves the logical slots 07/10/13/16/19/22 and
+    # prevents duplicate processing while allowing rapid catch-up after a miss.
+    - cron: "7,17,27,37,47,57 0-12,20-23 * * *"
 
 permissions:
   contents: write
 
 concurrency:
-  group: skysakhnews-production-publisher
+  # Any workflow capable of changing live state shares one serialization lock.
+  group: skysakhnews-live-state
   cancel-in-progress: false
 
 jobs:
@@ -34,12 +35,12 @@ jobs:
         if: steps.schedule_guard.outputs.due == 'true'
         with:
           python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
 
       - name: Install dependencies
         if: steps.schedule_guard.outputs.due == 'true'
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Compile canonical v12.1 production system
         if: steps.schedule_guard.outputs.due == 'true'
@@ -52,7 +53,8 @@ jobs:
             src/editorial_monitor.py src/publisher.py src/production_selftest.py \
             src/telegram_health.py src/editorial_hardening.py \
             src/hardened_publisher.py src/hardened_monitor.py \
-            src/schedule_guard.py src/health_gate.py src/hardening_selftest.py
+            src/schedule_guard.py src/health_gate.py src/hardening_selftest.py \
+            src/operational_selftest.py
 
       - name: Mandatory strict editorial regression gate
         if: steps.schedule_guard.outputs.due == 'true'
@@ -70,6 +72,7 @@ jobs:
         run: |
           python src/production_selftest.py
           python src/hardening_selftest.py
+          python src/operational_selftest.py
 
       - name: Publish through hardened v12.1 news director
         id: publisher
@@ -111,7 +114,7 @@ jobs:
           PYTHONUNBUFFERED: "1"
         run: python src/hardened_monitor.py
 
-      - name: Verify production, delivery and editorial health
+      - name: Verify production and delivery execution health
         if: always() && steps.schedule_guard.outputs.due == 'true'
         run: python src/health_gate.py production
 
