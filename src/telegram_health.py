@@ -28,6 +28,7 @@ def check_telegram(*, timeout: int = 15) -> Dict[str, Any]:
         "http_status": None,
         "description": None,
         "bot_username": None,
+        "permissions": {},
     }
 
     if not token:
@@ -102,14 +103,28 @@ def check_telegram(*, timeout: int = 15) -> Dict[str, Any]:
 
     member = payload.get("result") or {}
     member_status = str(member.get("status") or "")
-    can_post = member_status in {"creator", "administrator"}
-    if member_status == "administrator" and member.get("can_post_messages") is False:
-        can_post = False
+    is_creator = member_status == "creator"
+    is_admin = member_status == "administrator"
+    permissions = {
+        "status": member_status,
+        "can_post_messages": bool(is_creator or member.get("can_post_messages") is True),
+        "can_edit_messages": bool(is_creator or member.get("can_edit_messages") is True),
+        "can_delete_messages": bool(is_creator or member.get("can_delete_messages") is True),
+    }
+    result["permissions"] = permissions
 
-    if not can_post:
+    missing = [
+        name
+        for name in ("can_post_messages", "can_edit_messages", "can_delete_messages")
+        if not permissions[name]
+    ]
+    if not (is_creator or is_admin) or missing:
         result.update(
             error_kind="chat_permission",
-            description=f"bot membership status={member_status or 'unknown'} cannot post to channel",
+            description=(
+                f"bot membership status={member_status or 'unknown'}; "
+                f"missing permissions={','.join(missing) if missing else 'administrator'}"
+            ),
         )
         return result
 
