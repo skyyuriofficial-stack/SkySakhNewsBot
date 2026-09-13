@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from datetime import datetime
-
 import editorial_hardening
 
 editorial_hardening.install()
@@ -10,9 +8,12 @@ import editorial_policy as policy
 
 
 def main() -> int:
+    repeated_lead = (
+        "Восстановление кровли пострадавшего от пожара дома в Южно-Сахалинске начнётся уже 12 сентября."
+    )
     dirty = {
         "title": "Восстановление кровли дома в Южно-Сахалинске начнётся 12 сентября",
-        "source_text": "Восстановление кровли начнётся 12 сентября. Восстановление кровли начнётся 12 сентября.",
+        "source_text": repeated_lead + " " + repeated_lead,
         "category_key": "sakh_chp",
     }
     dirty_row = {
@@ -59,6 +60,18 @@ def main() -> int:
     })
     assert nepal.category_key != "ru_incident", nepal.to_dict()
     assert nepal.group in {"world", None}, nepal.to_dict()
+
+    fire_a = {
+        "title": "Прокуратура проверит причины пожара в доме на Тихоокеанской в Южно-Сахалинске",
+        "source_text": "Прокуратура организовала проверку после пожара в многоквартирном доме на улице Тихоокеанской.",
+        "category_key": "sakh_chp",
+    }
+    fire_b = {
+        "title": "Прокуратура начала проверку после пожара в доме на улице Тихоокеанской в Южно-Сахалинске",
+        "source_text": "После пожара в многоквартирном доме на Тихоокеанской прокуратура начала проверку причин происшествия.",
+        "category_key": "sakh_chp",
+    }
+    assert editorial_hardening.duplicate_event(fire_a, fire_b), (fire_a, fire_b)
 
     print("hardening selftest: OK")
     return 0
