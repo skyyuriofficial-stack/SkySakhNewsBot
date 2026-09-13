@@ -45,7 +45,7 @@ def _candidate_from_pending(item: Dict[str, Any]) -> Dict[str, Any]:
         "footer": footer,
         "title": item.get("title"),
         "title_original": item.get("title_original"),
-        "source_text": item.get("source_text"),
+        "source_text": editorial_hardening.dedupe_source_text(item.get("source_text")),
         "url": item.get("url"),
         "published_at": item.get("published_at"),
         "topic_cluster": item.get("topic_cluster"),
@@ -72,23 +72,24 @@ def _retire(item: Dict[str, Any], reason: str) -> Dict[str, Any]:
 def sanitize_pending_queue(state: Dict[str, Any]) -> Dict[str, int]:
     pending = [item for item in (state.get("pending_media_delivery") or []) if isinstance(item, dict)]
     if not pending:
-        return {"before": 0, "after": 0, "retired": 0, "duplicates": 0}
+        return {"before": 0, "after": 0, "retired": 0, "duplicates": 0, "repaired": 0}
 
     accepted: List[Dict[str, Any]] = []
     retired: List[Dict[str, Any]] = []
+    repaired_count = 0
 
     for item in sorted(pending, key=_pending_score, reverse=True):
         candidate = _candidate_from_pending(item)
-        row = copy.deepcopy(item.get("row") or {})
-        issues = editorial_hardening.content_quality_issues(candidate, row)
+        original_row = copy.deepcopy(item.get("row") or {})
+        row = editorial_hardening.repair_row(candidate, original_row)
 
         try:
             contract = publisher.director.validate_final(candidate, row)
         except Exception as exc:
             contract = {"approved": False, "issues": ["pending_contract_exception:" + str(exc)[:180]]}
 
-        if issues or contract.get("approved") is not True:
-            reasons = list(issues) + [str(value) for value in (contract.get("issues") or [])]
+        if contract.get("approved") is not True:
+            reasons = [str(value) for value in (contract.get("issues") or [])]
             retired.append(_retire(item, "pending_revalidation_failed:" + ";".join(dict.fromkeys(reasons))[:420]))
             continue
 
@@ -100,7 +101,14 @@ def sanitize_pending_queue(state: Dict[str, Any]) -> Dict[str, int]:
             retired.append(_retire(item, "pending_semantic_duplicate:" + str(duplicate_of.get("title") or "")[:240]))
             continue
 
-        accepted.append(item)
+        cleaned_item = copy.deepcopy(item)
+        cleaned_item["source_text"] = candidate.get("source_text")
+        cleaned_item["row"] = row
+        cleaned_item["publication_contract"] = contract
+        if row != original_row:
+            repaired_count += 1
+            cleaned_item["pending_hardening_repaired_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+        accepted.append(cleaned_item)
 
     existing_expired = [item for item in (state.get("expired_media_delivery") or []) if isinstance(item, dict)]
     state["pending_media_delivery"] = accepted[:24]
@@ -112,6 +120,7 @@ def sanitize_pending_queue(state: Dict[str, Any]) -> Dict[str, int]:
         "after": len(state.get("pending_media_delivery") or []),
         "retired": len(retired),
         "duplicates": sum(1 for item in retired if str(item.get("expired_reason") or "").startswith("pending_semantic_duplicate")),
+        "repaired": repaired_count,
     }
 
 
@@ -119,6 +128,30 @@ def install_run_diversity_guard() -> None:
     original_valid_post = publisher.core.b.valid_post
     original_delivery_success = publisher.media._delivery_success
     original_utility = publisher.director._utility
+    original_base_collect = publisher._original_collect
+    original_autocorrect = publisher._attempt_final_autocorrection
+
+    def cleaned_base_collect(state):
+        candidates = original_base_collect(state)
+        for candidate in candidates:
+            if not isinstance(candidate, dict):
+                continue
+            candidate["source_text"] = editorial_hardening.dedupe_source_text(candidate.get("source_text"))
+        return candidates
+
+    def hardened_autocorrect(candidate, row):
+        cleaned = editorial_hardening.repair_row(candidate, row)
+        try:
+            refreshed = publisher._refresh_editorial_gate(candidate, cleaned)
+            if refreshed:
+                cleaned = refreshed
+        except Exception:
+            pass
+        contract = publisher.director.validate_final(candidate, cleaned)
+        if contract.get("approved"):
+            publisher.core.b.STATS["director_final_autocorrected"] += 1
+            return cleaned, contract, "hardening_row_repair"
+        return original_autocorrect(candidate, cleaned)
 
     def balanced_utility(candidate, review, balance, selected):
         value = float(original_utility(candidate, review, balance, selected))
@@ -158,6 +191,8 @@ def install_run_diversity_guard() -> None:
         _PUBLISHED_EVENTS.append(copy.deepcopy(candidate))
         return value
 
+    publisher._original_collect = cleaned_base_collect
+    publisher._attempt_final_autocorrection = hardened_autocorrect
     publisher.director._utility = balanced_utility
     publisher.core.b.valid_post = diverse_valid_post
     publisher.media._delivery_success = tracked_delivery_success
@@ -168,7 +203,7 @@ def _record_health(state: Dict[str, Any], health: Dict[str, Any], queue_report: 
     state["pending_queue_hardening"] = {
         **queue_report,
         "checked_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "version": "pending-hardening-v1",
+        "version": "pending-hardening-v1.1",
     }
 
 
