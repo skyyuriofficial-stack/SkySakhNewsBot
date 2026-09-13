@@ -192,7 +192,7 @@ def _pre_audit_cleanup(state, *, mutate: bool):
                 failures.append({"action": "delete_semantic_duplicate", "error": result.get("description"), **item})
             break
 
-    if actions or failures:
+    if actions:
         _save(STATE_PATH, state)
     return actions, failures
 
@@ -206,7 +206,7 @@ def main() -> int:
     state = _load_state()
     hardening_actions, hardening_failures = _pre_audit_cleanup(state, mutate=mutate)
 
-    report = editorial_monitor.run_monitor(mutate=mutate)
+    report = editorial_monitor.run_monitor(mutate=mutate, persist_state=False)
     report["telegram_health"] = health
     report["hardening_actions"] = hardening_actions
     report["hardening_failed_actions"] = hardening_failures
@@ -252,10 +252,6 @@ def main() -> int:
     report["mutations_enabled"] = mutate
     report["checked_at_utc"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
-    state = _load_state()
-    state["continuous_editorial_monitor"] = report
-    state["telegram_health"] = health
-    _save(STATE_PATH, state)
     _save(STATUS_PATH, report)
 
     print(json.dumps({

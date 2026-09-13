@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import json
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, Optional
 
@@ -24,6 +24,8 @@ ROOT = Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "state.json"
 STATUS_PATH = ROOT / "monitor_status.json"
 DIGEST_STATE_PATH = ROOT / "mobilization_digest_state.json"
+PRODUCTION_HOURS = (7, 10, 13, 16, 19, 22)
+PRODUCTION_SLOT_GRACE_MINUTES = 45
 
 
 def _parse_dt(value: Any) -> Optional[datetime]:
@@ -66,6 +68,17 @@ def _last_run_age_hours(state: Dict[str, Any]) -> Optional[float]:
         return None
     age = datetime.now(timezone.utc) - finished.astimezone(timezone.utc)
     return round(age.total_seconds() / 3600.0, 2)
+
+
+def _latest_required_production_slot(now_local: datetime) -> Optional[datetime]:
+    candidates = []
+    for day_offset in (0, -1):
+        day = now_local.date() + timedelta(days=day_offset)
+        for hour in PRODUCTION_HOURS:
+            slot = datetime(day.year, day.month, day.day, hour, 0, tzinfo=now_local.tzinfo)
+            if slot + timedelta(minutes=PRODUCTION_SLOT_GRACE_MINUTES) <= now_local:
+                candidates.append(slot)
+    return max(candidates) if candidates else None
 
 
 def _active_recent_posts(state: Dict[str, Any]):
@@ -150,7 +163,7 @@ def _digest_health(now_local: datetime) -> Dict[str, Any]:
     }
 
 
-def run_monitor(*, mutate: bool = True) -> Dict[str, Any]:
+def run_monitor(*, mutate: bool = True, persist_state: bool = True) -> Dict[str, Any]:
     state = _load_state()
     now_local = datetime.now(publisher.core.b.TZ)
 
@@ -235,6 +248,33 @@ def run_monitor(*, mutate: bool = True) -> Dict[str, Any]:
             "limit_hours": freshness_limit,
         })
 
+    latest_slot = _latest_required_production_slot(now_local)
+    attempt = state.get("last_production_attempt") or {}
+    finished = _parse_dt(run.get("finished_sakhalin"))
+    attempted = _parse_dt(attempt.get("checked_at_utc"))
+    if latest_slot is not None:
+        run_covers_slot = bool(finished and finished.astimezone(now_local.tzinfo) >= latest_slot)
+        blocked_covers_slot = bool(
+            attempt.get("status") == "blocked"
+            and attempted
+            and attempted.astimezone(now_local.tzinfo) >= latest_slot
+        )
+        if not run_covers_slot:
+            if blocked_covers_slot:
+                issues.append({
+                    "type": "publisher_blocked",
+                    "slot_sakhalin": latest_slot.isoformat(timespec="minutes"),
+                    "reason": attempt.get("reason"),
+                    "attempted_at_utc": attempt.get("checked_at_utc"),
+                })
+            else:
+                issues.append({
+                    "type": "publisher_slot_missed",
+                    "slot_sakhalin": latest_slot.isoformat(timespec="minutes"),
+                    "grace_minutes": PRODUCTION_SLOT_GRACE_MINUTES,
+                    "last_finished_sakhalin": run.get("finished_sakhalin"),
+                })
+
     unresolved = int(audit.get("unresolved") or 0)
     failed_actions = list(audit.get("failed_actions") or [])
     if unresolved:
@@ -270,14 +310,19 @@ def run_monitor(*, mutate: bool = True) -> Dict[str, Any]:
             "age_hours": last_run_age,
             "published": run.get("published"),
         },
+        "last_production_attempt": state.get("last_production_attempt") or {},
         "mobilization_digest": digest_health,
         "post_audit": audit,
         "recent_active_posts": checked_posts,
         "balance": balance,
     }
 
-    state["continuous_editorial_monitor"] = report
-    _save_json(STATE_PATH, state)
+    mutated_state = bool((audit.get("corrected") or []) or (audit.get("deleted") or []))
+    if persist_state:
+        state["continuous_editorial_monitor"] = report
+        _save_json(STATE_PATH, state)
+    elif mutated_state:
+        _save_json(STATE_PATH, state)
     _save_json(STATUS_PATH, report)
     return report
 

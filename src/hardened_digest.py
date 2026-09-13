@@ -27,6 +27,8 @@ def _record_blocked(mode: str, health: dict) -> None:
 
 def main() -> int:
     mode = final.resolved_mode()
+    if __import__("os").getenv("DIGEST_DRY_RUN", "0") == "1":
+        return int(final.main() or 0)
     health = telegram_health.check_telegram()
     telegram_health.write_status(health)
     if health.get("status") != "healthy":

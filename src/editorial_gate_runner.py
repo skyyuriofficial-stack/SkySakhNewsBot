@@ -84,15 +84,17 @@ def _openrouter_model_plan():
         max_attempts = 3
     max_attempts = max(1, min(6, max_attempts))
 
+    retired = {"z-ai/glm-5.2:free"}
     plan = []
     for model in configured:
+        if model in retired:
+            continue
         if model not in plan:
             plan.append(model)
-    # Prefer the explicit free model that has proven stable in our live
-    # production runs; retain the OpenRouter free router as a second path.
-    for model in ("z-ai/glm-5.2:free", "openrouter/free"):
-        if model not in plan:
-            plan.append(model)
+    # Never silently switch to a paid model. The free router is the only
+    # implicit fallback; retired free model ids are skipped completely.
+    if "openrouter/free" not in plan:
+        plan.append("openrouter/free")
 
     while len(plan) < max_attempts:
         plan.append("openrouter/free")

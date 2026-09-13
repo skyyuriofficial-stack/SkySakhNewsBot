@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "state.json"
 TZ = timezone(timedelta(hours=11))
 PRODUCTION_HOURS = (7, 10, 13, 16, 19, 22)
+BLOCKED_RETRY_COOLDOWN_MINUTES = 15
 
 
 def _parse(value: Any) -> Optional[datetime]:
@@ -62,12 +63,12 @@ def production_due(now: Optional[datetime] = None) -> Dict[str, Any]:
         and attempted_at.astimezone(TZ) >= target
     ):
         age = now - attempted_at.astimezone(TZ)
-        if age.total_seconds() < 55 * 60:
+        if age.total_seconds() < BLOCKED_RETRY_COOLDOWN_MINUTES * 60:
             return {
                 "due": False,
                 "slot": slot,
                 "reason": "blocked_attempt_cooldown",
-                "retry_after_minutes": round((55 * 60 - age.total_seconds()) / 60, 1),
+                "retry_after_minutes": round((BLOCKED_RETRY_COOLDOWN_MINUTES * 60 - age.total_seconds()) / 60, 1),
             }
 
     # Do not chase an old slot into the next one. Each next target becomes the new slot.
