@@ -18,9 +18,18 @@ on:
       - "src/editorial_monitor.py"
       - "src/publisher.py"
       - "src/production_selftest.py"
+      - "src/telegram_health.py"
+      - "src/editorial_hardening.py"
+      - "src/hardened_publisher.py"
+      - "src/hardened_monitor.py"
+      - "src/hardened_digest.py"
+      - "src/schedule_guard.py"
+      - "src/health_gate.py"
+      - "src/hardening_selftest.py"
       - "requirements.txt"
       - ".github/workflows/auto_publish_v7.yml"
       - ".github/workflows/editorial_monitor.yml"
+      - ".github/workflows/mobilization_digest.yml"
       - ".github/workflows/production_ci.yml"
 
 permissions:
@@ -53,9 +62,12 @@ jobs:
             src/editorial_gate.py src/editorial_policy.py src/category_reconciler.py \
             src/editorial_gate_runner.py src/media_enforced_runner.py \
             src/news_director.py src/publication_auditor.py \
-            src/editorial_monitor.py src/publisher.py src/production_selftest.py
+            src/editorial_monitor.py src/publisher.py src/production_selftest.py \
+            src/telegram_health.py src/editorial_hardening.py \
+            src/hardened_publisher.py src/hardened_monitor.py src/hardened_digest.py \
+            src/schedule_guard.py src/health_gate.py src/hardening_selftest.py
 
-      - name: Run exact feed, category, balance, title and post-audit regressions
+      - name: Run exact feed, category, balance, title and hardening regressions
         env:
           IMAGE_REQUIRED: "1"
           AI_CALL_BUDGET: "0"
@@ -67,4 +79,6 @@ jobs:
           MEDIA_PENDING_MAX_ITEMS: "24"
           OPENROUTER_MAX_ATTEMPTS: "3"
           OPENROUTER_RETRY_BASE_SECONDS: "0"
-        run: python src/production_selftest.py
+        run: |
+          python src/production_selftest.py
+          python src/hardening_selftest.py
