@@ -13,6 +13,7 @@ editorial_hardening.install()
 import editorial_monitor
 import news_director
 import publication_auditor
+import publisher
 import telegram_health
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,7 +21,7 @@ STATE_PATH = ROOT / "state.json"
 STATUS_PATH = ROOT / "monitor_status.json"
 
 MIX_ERROR_LIMIT = float(os.getenv("THEMATIC_MIX_ERROR_LIMIT", "8"))
-publication_auditor.MAX_MUTATION_AGE_HOURS = 72
+publication_auditor.MAX_MUTATION_AGE_HOURS = 48
 
 
 def _save(path: Path, value) -> None:
@@ -46,13 +47,52 @@ def _delete_post(post, reason):
     if result.get("ok"):
         post["auto_deleted"] = True
         post["post_audit"] = {
-            "version": "post-audit-hardening-v1",
+            "version": "post-audit-hardening-v1.1",
             "approved": False,
             "checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "auto_action": "deleted_by_hardening",
             "reason": reason,
         }
     return result
+
+
+def _repair_post(post, candidate, row, issues):
+    message_id = post.get("telegram_message_id")
+    chat_id = post.get("telegram_chat_id")
+    if message_id is None or chat_id is None:
+        return {"ok": False, "description": "telegram_identifiers_missing"}, None, None
+
+    repaired = editorial_hardening.repair_row(candidate, row)
+    contract = news_director.validate_final(candidate, repaired)
+    if contract.get("approved") is not True:
+        return {
+            "ok": False,
+            "description": "repair_contract_failed:" + ";".join(str(x) for x in (contract.get("issues") or [])[:6]),
+        }, repaired, contract
+
+    caption = publisher.core.b.caption(repaired, candidate)
+    result = publication_auditor._telegram_call(
+        "editMessageCaption",
+        {
+            "chat_id": chat_id,
+            "message_id": message_id,
+            "caption": caption,
+            "parse_mode": "HTML",
+        },
+    )
+    if result.get("ok"):
+        post["title"] = str(repaired.get("title_ru") or post.get("title") or "")
+        post["published_row"] = repaired
+        post["published_caption"] = caption
+        post["publication_contract"] = contract
+        post["post_audit"] = {
+            "version": "post-audit-hardening-v1.1",
+            "approved": True,
+            "checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "auto_action": "caption_repaired_by_hardening",
+            "repaired_issues": list(issues),
+        }
+    return result, repaired, contract
 
 
 def _pre_audit_cleanup(state, *, mutate: bool):
@@ -66,34 +106,64 @@ def _pre_audit_cleanup(state, *, mutate: bool):
         if isinstance(post, dict) and not post.get("auto_deleted")
     ]
 
-    # First remove content that cannot be repaired safely by changing only a title/category.
+    # Repair deterministic caption defects first. Edits are preferred to deletion
+    # because they preserve the post, reactions and publication history.
     for post in posts:
         if post.get("auto_deleted"):
             continue
         candidate = publication_auditor._candidate_from_post(post)
+        candidate["source_text"] = editorial_hardening.dedupe_source_text(candidate.get("source_text"))
         row = copy.deepcopy(post.get("published_row") or {})
         if not row:
             continue
         contract = news_director.validate_final(candidate, row)
-        hard = [
+        repairable = [
             issue for issue in (contract.get("issues") or [])
             if str(issue).startswith((
-                "body_", "source_lead_", "unsupported_sakhalin_resident_identity",
+                "body_", "repetitive_body_", "unsupported_sakhalin_resident_identity",
             ))
         ]
-        if not hard or not publication_auditor._within_mutation_window(post):
+        if not repairable:
             continue
-        result = _delete_post(post, ";".join(hard))
+
+        result, repaired, repaired_contract = _repair_post(post, candidate, row, repairable)
         item = {
             "message_id": post.get("telegram_message_id"),
             "title": post.get("title"),
             "category_key": post.get("category_key"),
-            "reason": hard,
+            "reason": repairable,
         }
         if result.get("ok"):
-            actions.append({"action": "delete_contaminated_post", **item})
-        else:
-            failures.append({"action": "delete_contaminated_post", "error": result.get("description"), **item})
+            actions.append({"action": "repair_caption", **item})
+            continue
+
+        # Delete only severe, still-recent contamination that cannot be repaired.
+        severe = any(
+            issue in {
+                "body_contains_publisher_boilerplate",
+                "body_contains_contact_or_url",
+                "unsupported_sakhalin_resident_identity",
+            }
+            for issue in repairable
+        )
+        if severe and publication_auditor._within_mutation_window(post):
+            delete_result = _delete_post(post, ";".join(repairable))
+            if delete_result.get("ok"):
+                actions.append({"action": "delete_unrepairable_post", **item})
+                continue
+            failures.append({
+                "action": "delete_unrepairable_post",
+                "error": delete_result.get("description"),
+                **item,
+            })
+            continue
+
+        failures.append({
+            "action": "repair_caption",
+            "error": result.get("description"),
+            "repair_contract": (repaired_contract or {}).get("issues") or [],
+            **item,
+        })
 
     # Then remove the newer member of an obvious semantic duplicate pair.
     active = [post for post in posts if not post.get("auto_deleted")]
