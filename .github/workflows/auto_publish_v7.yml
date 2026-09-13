@@ -115,14 +115,14 @@ jobs:
         if: always() && steps.schedule_guard.outputs.due == 'true'
         run: python src/health_gate.py production
 
-      - name: Commit v12.1 state, audit, monitor and Telegram health
+      - name: Commit production-owned state only
         if: always() && steps.schedule_guard.outputs.due == 'true'
         run: |
           git config user.name "skysakhnews-bot"
           git config user.email "actions@github.com"
-          git add state.json monitor_status.json telegram_health.json
+          git add state.json
           if git diff --cached --quiet; then
-            echo "No state changes"
+            echo "No production state changes"
           else
             git commit -m "Update hardened v12.1 production state"
             git pull --rebase --autostash origin main
