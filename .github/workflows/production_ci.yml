@@ -26,6 +26,7 @@ on:
       - "src/schedule_guard.py"
       - "src/health_gate.py"
       - "src/hardening_selftest.py"
+      - "src/operational_selftest.py"
       - "requirements.txt"
       - ".github/workflows/auto_publish_v7.yml"
       - ".github/workflows/editorial_monitor.yml"
@@ -49,11 +50,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Compile canonical v12.1 chain
         run: |
@@ -65,9 +66,10 @@ jobs:
             src/editorial_monitor.py src/publisher.py src/production_selftest.py \
             src/telegram_health.py src/editorial_hardening.py \
             src/hardened_publisher.py src/hardened_monitor.py src/hardened_digest.py \
-            src/schedule_guard.py src/health_gate.py src/hardening_selftest.py
+            src/schedule_guard.py src/health_gate.py src/hardening_selftest.py \
+            src/operational_selftest.py
 
-      - name: Run exact feed, category, balance, title and hardening regressions
+      - name: Run exact feed, category, balance, title and operational regressions
         env:
           IMAGE_REQUIRED: "1"
           AI_CALL_BUDGET: "0"
@@ -82,3 +84,4 @@ jobs:
         run: |
           python src/production_selftest.py
           python src/hardening_selftest.py
+          python src/operational_selftest.py
