@@ -116,12 +116,16 @@ def _paragraph_duplicate(a: str, b: str) -> bool:
     return text_similarity(a, b) >= 0.82
 
 
-def dedupe_source_text(value: Any) -> str:
-    """Remove scraper-level repeated source sentences before generation/audit.
+def _unsafe_paragraph(paragraph: str) -> bool:
+    low = paragraph.lower()
+    return bool(
+        any(re.search(pattern, low, flags=re.I | re.S) for pattern in BOILERPLATE_PATTERNS)
+        or any(re.search(pattern, paragraph, flags=re.I) for pattern in CONTACT_OR_TECH_PATTERNS)
+    )
 
-    Source duplication is input hygiene, not by itself a publication defect. We
-    normalize it before the director/generator so it cannot create repetitive copy.
-    """
+
+def dedupe_source_text(value: Any) -> str:
+    """Remove scraper-level repeated source sentences before generation/audit."""
     text = policy.clean(value)
     if not text:
         return ""
@@ -130,6 +134,8 @@ def dedupe_source_text(value: Any) -> str:
         return text
     kept: List[str] = []
     for part in parts:
+        if _unsafe_paragraph(part):
+            continue
         if any(_paragraph_duplicate(existing, part) for existing in kept):
             continue
         kept.append(part)
@@ -141,7 +147,13 @@ def source_quality_warnings(candidate: Mapping[str, Any]) -> List[str]:
     if not source_text:
         return []
     cleaned = dedupe_source_text(source_text)
-    return ["source_lead_duplicated"] if cleaned != source_text else []
+    normalized_original = " ".join(
+        part for part in re.split(r"(?<=[.!?])\s+", source_text) if policy.clean(part)
+    )
+    warnings: List[str] = []
+    if cleaned != normalized_original:
+        warnings.append("source_text_sanitized")
+    return warnings
 
 
 def _unsupported_identity(title: str, source_text: str) -> bool:
@@ -152,11 +164,7 @@ def _unsupported_identity(title: str, source_text: str) -> bool:
 
 
 def content_quality_issues(candidate: Mapping[str, Any], row: Mapping[str, Any]) -> List[str]:
-    """Blocking output-quality issues only.
-
-    Source-only duplication is deliberately excluded; it is cleaned upstream by
-    ``dedupe_source_text`` and exposed as a warning via ``source_quality_warnings``.
-    """
+    """Blocking output-quality issues only."""
     title = policy.clean(row.get("title_ru") or candidate.get("title"))
     source_text = policy.clean(candidate.get("source_text"))
     body = row.get("body") if isinstance(row.get("body"), list) else []
@@ -167,8 +175,7 @@ def content_quality_issues(candidate: Mapping[str, Any], row: Mapping[str, Any])
         issues.append("body_too_short")
 
     for paragraph in paragraphs:
-        low = paragraph.lower()
-        if any(re.search(pattern, low, flags=re.I | re.S) for pattern in BOILERPLATE_PATTERNS):
+        if any(re.search(pattern, paragraph.lower(), flags=re.I | re.S) for pattern in BOILERPLATE_PATTERNS):
             issues.append("body_contains_publisher_boilerplate")
             break
         if any(re.search(pattern, paragraph, flags=re.I) for pattern in CONTACT_OR_TECH_PATTERNS):
@@ -213,21 +220,32 @@ def repair_row(candidate: Mapping[str, Any], row: Mapping[str, Any]) -> Dict[str
     cleaned: List[str] = []
     for raw in body:
         paragraph = policy.clean(raw)
-        if not paragraph:
-            continue
-        low = paragraph.lower()
-        if any(re.search(pattern, low, flags=re.I | re.S) for pattern in BOILERPLATE_PATTERNS):
-            continue
-        if any(re.search(pattern, paragraph, flags=re.I) for pattern in CONTACT_OR_TECH_PATTERNS):
+        if not paragraph or _unsafe_paragraph(paragraph):
             continue
         paragraph = MISSING_BOUNDARY_RE.sub(". ", paragraph)
         if any(_paragraph_duplicate(existing, paragraph) for existing in cleaned):
             continue
         cleaned.append(paragraph)
 
+    # If publisher boilerplate was removed and fewer than two useful paragraphs
+    # remain, rebuild only from unique sentences already present in the source.
+    if len(cleaned) < 2:
+        source_clean = dedupe_source_text(source_text)
+        source_sentences = [
+            MISSING_BOUNDARY_RE.sub(". ", policy.clean(part))
+            for part in re.split(r"(?<=[.!?])\s+", source_clean)
+            if len(policy.clean(part)) >= 45 and not _unsafe_paragraph(policy.clean(part))
+        ]
+        for sentence in source_sentences:
+            if any(_paragraph_duplicate(existing, sentence) for existing in cleaned):
+                continue
+            cleaned.append(sentence)
+            if len(cleaned) >= 2:
+                break
+
     repaired["body"] = cleaned
     repaired["hardening_repair"] = {
-        "version": "editorial-hardening-v1.1",
+        "version": "editorial-hardening-v1.2",
         "source_warnings": source_quality_warnings(candidate),
     }
     return repaired
@@ -316,7 +334,7 @@ def install() -> None:
         issues.extend(content_quality_issues(candidate, row))
         contract["issues"] = list(dict.fromkeys(str(issue) for issue in issues if issue))
         contract["approved"] = not contract["issues"]
-        contract["hardening_version"] = "editorial-hardening-v1.1"
+        contract["hardening_version"] = "editorial-hardening-v1.2"
         contract["source_warnings"] = source_quality_warnings(candidate)
         return contract
 
