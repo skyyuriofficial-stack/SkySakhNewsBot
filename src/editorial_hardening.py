@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import re
 from copy import deepcopy
-from typing import Any, Dict, Iterable, List, Mapping, Sequence
+from typing import Any, Dict, List, Mapping, Sequence, Set
 
 import editorial_policy as policy
 
@@ -47,12 +47,22 @@ def _norm(value: Any) -> str:
     return policy.norm(value)
 
 
-def _tokens(value: Any) -> set[str]:
-    return {
-        token
-        for token in re.findall(r"[a-zа-я0-9]+", _norm(value), flags=re.I)
-        if len(token) >= 4 and token not in GENERIC_EVENT_WORDS and not token.isdigit()
-    }
+def _stem_token(token: str) -> str:
+    value = str(token or "").lower().replace("ё", "е")
+    if len(value) <= 6:
+        return value
+    # A conservative lexical fingerprint is enough for near-duplicate news
+    # headlines: проверит/проверку, восстановили/восстановление, etc.
+    return value[:6]
+
+
+def _tokens(value: Any) -> Set[str]:
+    result: Set[str] = set()
+    for token in re.findall(r"[a-zа-я0-9]+", _norm(value), flags=re.I):
+        if len(token) < 4 or token in GENERIC_EVENT_WORDS or token.isdigit():
+            continue
+        result.add(_stem_token(token))
+    return result
 
 
 def text_similarity(a: Any, b: Any) -> float:
@@ -64,7 +74,9 @@ def text_similarity(a: Any, b: Any) -> float:
 
 
 def duplicate_event(a: Mapping[str, Any], b: Mapping[str, Any]) -> bool:
-    if str(a.get("url") or "") and str(a.get("url") or "") == str(b.get("url") or ""):
+    url_a = str(a.get("url") or "")
+    url_b = str(b.get("url") or "")
+    if url_a and url_a == url_b:
         return True
 
     cluster_a = str(a.get("topic_cluster") or "").strip()
@@ -75,16 +87,22 @@ def duplicate_event(a: Mapping[str, Any], b: Mapping[str, Any]) -> bool:
     if str(a.get("category_key") or "") != str(b.get("category_key") or ""):
         return False
 
+    title_a = _tokens(a.get("title"))
+    title_b = _tokens(b.get("title"))
+    title_overlap = title_a & title_b
     title_similarity = text_similarity(a.get("title"), b.get("title"))
     source_similarity = text_similarity(
         str(a.get("title") or "") + " " + str(a.get("source_text") or "")[:1000],
         str(b.get("title") or "") + " " + str(b.get("source_text") or "")[:1000],
     )
-    overlap = _tokens(a.get("title")) & _tokens(b.get("title"))
-    return bool(
-        (title_similarity >= 0.58 and len(overlap) >= 3)
-        or (source_similarity >= 0.62 and len(overlap) >= 2)
-    )
+
+    # Same category + three distinctive lexical stems is a strong duplicate
+    # signal for short news headlines even when verbs are inflected differently.
+    if len(title_overlap) >= 3 and title_similarity >= 0.38:
+        return True
+    if len(title_overlap) >= 2 and source_similarity >= 0.50:
+        return True
+    return bool(title_similarity >= 0.58 or source_similarity >= 0.68)
 
 
 def _paragraph_duplicate(a: str, b: str) -> bool:
