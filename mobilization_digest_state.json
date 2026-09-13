@@ -1,5 +1,5 @@
 {
-  "version": "mobilization-digest-v1.3",
+  "version": "mobilization-digest-v1.4",
   "last_run_utc": "2026-09-11T12:35:47+00:00",
   "last_run_sakhalin": "2026-09-11T23:35:47+11:00",
   "mode": "evening",
@@ -133,8 +133,20 @@
   "last_attempt": {
     "status": "error",
     "mode": "morning",
-    "at_utc": "2026-09-13T06:59:38+00:00",
-    "at_sakhalin": "2026-09-13T17:59:38+11:00",
-    "error": "Telegram HTTP error: {\"ok\":false,\"error_code\":401,\"description\":\"Unauthorized\"}"
+    "at_utc": "2026-09-13T14:37:13+00:00",
+    "at_sakhalin": "2026-09-14T01:37:13+11:00",
+    "error": "telegram_token_unauthorized",
+    "description": "Unauthorized"
+  },
+  "telegram_health": {
+    "checked_at_utc": "2026-09-13T14:37:11+00:00",
+    "status": "error",
+    "auth_ok": false,
+    "chat_ok": false,
+    "error_kind": "token_unauthorized",
+    "http_status": 401,
+    "description": "Unauthorized",
+    "bot_username": null,
+    "permissions": {}
   }
 }
