@@ -11331,8 +11331,48 @@
           "meaning_changed": false,
           "mode": "deterministic+extractive",
           "issues": []
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.2",
+          "source_warnings": []
         }
-      }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh",
+        "final_category": "sakh",
+        "event_type": "major_infrastructure",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.2",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh",
+          "corrected_category": "sakh",
+          "group": "local",
+          "event_type": "major_infrastructure",
+          "subtype": "major_infrastructure",
+          "seriousness": 88,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "В Углегорске открыли центр молодёжных инициатив РОСТ",
+          "title_corrected": "В Углегорске открыли центр молодёжных инициатив РОСТ",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-13T11:34:11+00:00"
     },
     {
       "queued_at": "2026-09-12T07:15:22+00:00",
@@ -11371,8 +11411,48 @@
           "issues": [],
           "reclassified_from": "sakh",
           "reclassified_to": "sakh_chp"
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.2",
+          "source_warnings": []
         }
-      }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "major_emergency",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.2",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 91,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Пострадавшим от пожара на Тихоокеанской в Южно-Сахалинске выплатят до 50 тысяч рублей",
+          "title_corrected": "Пострадавшим от пожара на Тихоокеанской в Южно-Сахалинске выплатят до 50 тысяч рублей",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-13T11:34:11+00:00"
     },
     {
       "queued_at": "2026-09-13T00:45:23+00:00",
@@ -11411,8 +11491,48 @@
           "issues": [],
           "reclassified_from": "sakh",
           "reclassified_to": "ru_eco"
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.2",
+          "source_warnings": []
         }
-      }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_eco",
+        "final_category": "ru_eco",
+        "event_type": "macro_economy",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.2",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 85,
+          "threshold": 74,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Ключевая ставка 14%: почему ЦБ взял паузу после десяти снижений подряд",
+          "title_corrected": "Ключевая ставка 14%: почему ЦБ взял паузу после десяти снижений подряд",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-13T11:34:11+00:00"
     },
     {
       "queued_at": "2026-09-12T07:12:25+00:00",
@@ -11451,8 +11571,48 @@
           "issues": [],
           "reclassified_from": "sakh",
           "reclassified_to": "sakh_chp"
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.2",
+          "source_warnings": []
         }
-      }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "major_emergency",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.2",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 95,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Губернатор взял на контроль восстановление дома после пожара в Южно-Сахалинске",
+          "title_corrected": "Губернатор взял на контроль восстановление дома после пожара в Южно-Сахалинске",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-13T11:34:11+00:00"
     },
     {
       "queued_at": "2026-09-12T07:13:54+00:00",
@@ -11489,8 +11649,48 @@
           "meaning_changed": false,
           "mode": "deterministic+extractive",
           "issues": []
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.2",
+          "source_warnings": []
         }
-      }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "major_emergency",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.2",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 92,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Жильцов аварийного дома в Северо-Курильске не переселили к сроку",
+          "title_corrected": "Жильцов аварийного дома в Северо-Курильске не переселили к сроку",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-13T11:34:11+00:00"
     },
     {
       "queued_at": "2026-09-12T01:09:41+00:00",
@@ -11527,8 +11727,48 @@
           "meaning_changed": false,
           "mode": "deterministic+extractive",
           "issues": []
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.2",
+          "source_warnings": []
         }
-      }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh",
+        "final_category": "sakh",
+        "event_type": "public_service_disruption",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.2",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh",
+          "corrected_category": "sakh",
+          "group": "local",
+          "event_type": "public_service_disruption",
+          "subtype": "public_service_disruption",
+          "seriousness": 80,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Часть Южно-Сахалинска останется без воды из-за ремонта сетей",
+          "title_corrected": "Часть Южно-Сахалинска останется без воды из-за ремонта сетей",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-13T11:34:11+00:00"
     },
     {
       "queued_at": "2026-09-12T01:04:03+00:00",
@@ -11565,8 +11805,48 @@
           "meaning_changed": false,
           "mode": "deterministic+extractive",
           "issues": []
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.2",
+          "source_warnings": []
         }
-      }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "major_emergency",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.2",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 91,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Крупный пожар на крыше пятиэтажки в Южно-Сахалинске ликвидирован",
+          "title_corrected": "Крупный пожар на крыше пятиэтажки в Южно-Сахалинске ликвидирован",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-13T11:34:11+00:00"
     }
   ],
   "news_director_policy": {
@@ -13422,7 +13702,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-09-13T10:40:05+00:00",
+    "checked_at_utc": "2026-09-13T11:34:11+00:00",
     "status": "error",
     "auth_ok": false,
     "chat_ok": false,
@@ -13433,17 +13713,18 @@
     "permissions": {}
   },
   "pending_queue_hardening": {
-    "before": 9,
+    "before": 7,
     "after": 7,
-    "retired": 2,
+    "retired": 0,
     "duplicates": 0,
-    "checked_at_utc": "2026-09-13T10:40:04+00:00",
-    "version": "pending-hardening-v1"
+    "repaired": 7,
+    "checked_at_utc": "2026-09-13T11:34:14+00:00",
+    "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
     "status": "blocked",
     "reason": "telegram_token_unauthorized",
-    "checked_at_utc": "2026-09-13T10:40:04+00:00",
+    "checked_at_utc": "2026-09-13T11:34:11+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 7
   }
