@@ -1,14 +1,20 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-13T10:40:10+00:00",
-  "checked_at_sakhalin": "2026-09-13T21:40:05+11:00",
+  "checked_at_utc": "2026-09-13T11:34:42+00:00",
+  "checked_at_sakhalin": "2026-09-13T22:34:37+11:00",
   "status": "error",
   "mutations_enabled": false,
   "issues": [
     {
+      "type": "publisher_blocked",
+      "slot_sakhalin": "2026-09-13T19:00+11:00",
+      "reason": "telegram_token_unauthorized",
+      "attempted_at_utc": "2026-09-13T11:34:11+00:00"
+    },
+    {
       "type": "post_audit_unresolved",
-      "count": 8,
+      "count": 5,
       "items": [
         {
           "title": "Шесть лет колонии и два миллиона компенсации: в Углегорске огласили приговор за смертельное ДТП",
@@ -19,17 +25,6 @@
           "reason": "approved",
           "contract_issues": [
             "body_missing_sentence_boundary"
-          ]
-        },
-        {
-          "title": "49-летний мотоциклист пострадал в ДТП на перекрестке в Южно-Сахалинске",
-          "url": "https://sakh.online/news/24/2026-09-09/vnedorozhnik-stolknulsya-s-motobaykom-na-perekrestke-v-yuzhno-sahalinske-postradal-voditel-525393",
-          "publisher_version": "stable-v12.1",
-          "category_key": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "reason": "approved",
-          "contract_issues": [
-            "source_lead_duplicated"
           ]
         },
         {
@@ -55,17 +50,6 @@
           ]
         },
         {
-          "title": "Новые реактивные дроны России опережают возможности украинской ПВО при ежедневных запусках",
-          "url": "https://www.bbc.co.uk/news/articles/c804d9lyj2jo?at_medium=RSS&at_campaign=rss",
-          "publisher_version": "stable-v12.1",
-          "category_key": "world_ru",
-          "corrected_category": "world_ru",
-          "reason": "approved",
-          "contract_issues": [
-            "source_lead_duplicated"
-          ]
-        },
-        {
           "title": "Жесткое ДТП произошло в районе \"Сити Молла\" в Южно-Сахалинске",
           "url": "https://astv.ru/news/criminal/2026-09-10-zhestkoe-dtp-proizoshlo-v-rajone-siti-molla-v-yuzhno-sahalinske",
           "publisher_version": "stable-v12.1",
@@ -74,17 +58,6 @@
           "reason": "approved",
           "contract_issues": [
             "body_contains_publisher_boilerplate"
-          ]
-        },
-        {
-          "title": "Украина сообщила о пяти погибших и 67 пострадавших от российского удара по торговому центру",
-          "url": "https://www.bbc.co.uk/news/articles/cpvelrmp1vmo?at_medium=RSS&at_campaign=rss",
-          "publisher_version": "stable-v12.1",
-          "category_key": "world_ru",
-          "corrected_category": "world_ru",
-          "reason": "approved",
-          "contract_issues": [
-            "source_lead_duplicated"
           ]
         },
         {
@@ -165,8 +138,15 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-09-13T18:29:35+11:00",
-    "age_hours": 3.18,
+    "age_hours": 4.09,
     "published": 0
+  },
+  "last_production_attempt": {
+    "status": "blocked",
+    "reason": "telegram_token_unauthorized",
+    "checked_at_utc": "2026-09-13T11:34:11+00:00",
+    "publisher_version": "stable-v12.1",
+    "queue_preserved": 7
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -218,9 +198,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-13T10:40:08+00:00",
+    "checked_at": "2026-09-13T11:34:40+00:00",
     "checked": 20,
-    "passed": 12,
+    "passed": 15,
     "anomalies": [
       {
         "title": "Шесть лет колонии и два миллиона компенсации: в Углегорске огласили приговор за смертельное ДТП",
@@ -231,17 +211,6 @@
         "reason": "approved",
         "contract_issues": [
           "body_missing_sentence_boundary"
-        ]
-      },
-      {
-        "title": "49-летний мотоциклист пострадал в ДТП на перекрестке в Южно-Сахалинске",
-        "url": "https://sakh.online/news/24/2026-09-09/vnedorozhnik-stolknulsya-s-motobaykom-na-perekrestke-v-yuzhno-sahalinske-postradal-voditel-525393",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "reason": "approved",
-        "contract_issues": [
-          "source_lead_duplicated"
         ]
       },
       {
@@ -267,17 +236,6 @@
         ]
       },
       {
-        "title": "Новые реактивные дроны России опережают возможности украинской ПВО при ежедневных запусках",
-        "url": "https://www.bbc.co.uk/news/articles/c804d9lyj2jo?at_medium=RSS&at_campaign=rss",
-        "publisher_version": "stable-v12.1",
-        "category_key": "world_ru",
-        "corrected_category": "world_ru",
-        "reason": "approved",
-        "contract_issues": [
-          "source_lead_duplicated"
-        ]
-      },
-      {
         "title": "Жесткое ДТП произошло в районе \"Сити Молла\" в Южно-Сахалинске",
         "url": "https://astv.ru/news/criminal/2026-09-10-zhestkoe-dtp-proizoshlo-v-rajone-siti-molla-v-yuzhno-sahalinske",
         "publisher_version": "stable-v12.1",
@@ -286,17 +244,6 @@
         "reason": "approved",
         "contract_issues": [
           "body_contains_publisher_boilerplate"
-        ]
-      },
-      {
-        "title": "Украина сообщила о пяти погибших и 67 пострадавших от российского удара по торговому центру",
-        "url": "https://www.bbc.co.uk/news/articles/cpvelrmp1vmo?at_medium=RSS&at_campaign=rss",
-        "publisher_version": "stable-v12.1",
-        "category_key": "world_ru",
-        "corrected_category": "world_ru",
-        "reason": "approved",
-        "contract_issues": [
-          "source_lead_duplicated"
         ]
       },
       {
@@ -315,7 +262,7 @@
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
-    "unresolved": 8,
+    "unresolved": 5,
     "unresolved_items": [
       {
         "title": "Шесть лет колонии и два миллиона компенсации: в Углегорске огласили приговор за смертельное ДТП",
@@ -326,17 +273,6 @@
         "reason": "approved",
         "contract_issues": [
           "body_missing_sentence_boundary"
-        ]
-      },
-      {
-        "title": "49-летний мотоциклист пострадал в ДТП на перекрестке в Южно-Сахалинске",
-        "url": "https://sakh.online/news/24/2026-09-09/vnedorozhnik-stolknulsya-s-motobaykom-na-perekrestke-v-yuzhno-sahalinske-postradal-voditel-525393",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "reason": "approved",
-        "contract_issues": [
-          "source_lead_duplicated"
         ]
       },
       {
@@ -362,17 +298,6 @@
         ]
       },
       {
-        "title": "Новые реактивные дроны России опережают возможности украинской ПВО при ежедневных запусках",
-        "url": "https://www.bbc.co.uk/news/articles/c804d9lyj2jo?at_medium=RSS&at_campaign=rss",
-        "publisher_version": "stable-v12.1",
-        "category_key": "world_ru",
-        "corrected_category": "world_ru",
-        "reason": "approved",
-        "contract_issues": [
-          "source_lead_duplicated"
-        ]
-      },
-      {
         "title": "Жесткое ДТП произошло в районе \"Сити Молла\" в Южно-Сахалинске",
         "url": "https://astv.ru/news/criminal/2026-09-10-zhestkoe-dtp-proizoshlo-v-rajone-siti-molla-v-yuzhno-sahalinske",
         "publisher_version": "stable-v12.1",
@@ -381,17 +306,6 @@
         "reason": "approved",
         "contract_issues": [
           "body_contains_publisher_boilerplate"
-        ]
-      },
-      {
-        "title": "Украина сообщила о пяти погибших и 67 пострадавших от российского удара по торговому центру",
-        "url": "https://www.bbc.co.uk/news/articles/cpvelrmp1vmo?at_medium=RSS&at_campaign=rss",
-        "publisher_version": "stable-v12.1",
-        "category_key": "world_ru",
-        "corrected_category": "world_ru",
-        "reason": "approved",
-        "contract_issues": [
-          "source_lead_duplicated"
         ]
       },
       {
@@ -793,7 +707,7 @@
     "valid_posts_counted": 20
   },
   "telegram_health": {
-    "checked_at_utc": "2026-09-13T10:40:05+00:00",
+    "checked_at_utc": "2026-09-13T11:34:37+00:00",
     "status": "error",
     "auth_ok": false,
     "chat_ok": false,
