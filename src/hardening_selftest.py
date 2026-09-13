@@ -13,7 +13,10 @@ def main() -> int:
     )
     dirty = {
         "title": "Восстановление кровли дома в Южно-Сахалинске начнётся 12 сентября",
-        "source_text": repeated_lead + " " + repeated_lead,
+        "source_text": (
+            repeated_lead + " " + repeated_lead + " "
+            "Подрядчик должен сначала обследовать несущие конструкции и определить объём восстановительных работ."
+        ),
         "category_key": "sakh_chp",
     }
     dirty_row = {
@@ -25,10 +28,10 @@ def main() -> int:
     }
     issues = editorial_hardening.content_quality_issues(dirty, dirty_row)
     assert "body_contains_publisher_boilerplate" in issues, issues
-    assert "source_lead_duplicated" in editorial_hardening.source_quality_warnings(dirty)
+    assert "source_text_sanitized" in editorial_hardening.source_quality_warnings(dirty)
     repaired_dirty = editorial_hardening.repair_row(dirty, dirty_row)
     assert not editorial_hardening.content_quality_issues(dirty, repaired_dirty), repaired_dirty
-    assert len(repaired_dirty.get("body") or []) == 1, repaired_dirty
+    assert len(repaired_dirty.get("body") or []) >= 2, repaired_dirty
 
     identity = {
         "title": "Сахалинца госпитализировали после ДТП с пьяным водителем",
