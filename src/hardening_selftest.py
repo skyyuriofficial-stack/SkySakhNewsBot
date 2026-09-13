@@ -25,7 +25,10 @@ def main() -> int:
     }
     issues = editorial_hardening.content_quality_issues(dirty, dirty_row)
     assert "body_contains_publisher_boilerplate" in issues, issues
-    assert "source_lead_duplicated" in issues, issues
+    assert "source_lead_duplicated" in editorial_hardening.source_quality_warnings(dirty)
+    repaired_dirty = editorial_hardening.repair_row(dirty, dirty_row)
+    assert not editorial_hardening.content_quality_issues(dirty, repaired_dirty), repaired_dirty
+    assert len(repaired_dirty.get("body") or []) == 1, repaired_dirty
 
     identity = {
         "title": "Сахалинца госпитализировали после ДТП с пьяным водителем",
@@ -40,6 +43,25 @@ def main() -> int:
         ],
     }
     assert "unsupported_sakhalin_resident_identity" in editorial_hardening.content_quality_issues(identity, identity_row)
+    repaired_identity = editorial_hardening.repair_row(identity, identity_row)
+    assert repaired_identity["title_ru"].startswith("Пешехода "), repaired_identity
+    assert not editorial_hardening.content_quality_issues(identity, repaired_identity), repaired_identity
+
+    malformed = {
+        "title": "Авария в Ногликах",
+        "source_text": "Авария произошла в Ногликах. По предварительным данным, пострадал человек.",
+        "category_key": "sakh_chp",
+    }
+    malformed_row = {
+        "title_ru": malformed["title"],
+        "body": [
+            "Авария произошла в Ногликах По предварительным данным, пострадал человек.",
+            "Обстоятельства происшествия устанавливаются.",
+        ],
+    }
+    assert "body_missing_sentence_boundary" in editorial_hardening.content_quality_issues(malformed, malformed_row)
+    repaired_malformed = editorial_hardening.repair_row(malformed, malformed_row)
+    assert "Ногликах. По предварительным" in repaired_malformed["body"][0], repaired_malformed
 
     sinegorsk = policy.classify({
         "title": "Синегорск остался без света после аварии на линии",
