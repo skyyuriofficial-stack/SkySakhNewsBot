@@ -8,6 +8,12 @@ on:
         required: false
         default: false
         type: boolean
+  workflow_run:
+    # Independent recovery sources if GitHub drops this workflow's own cron events.
+    workflows:
+      - "SkySakhNews Production CI v12.1"
+      - "SkySakhNews Mobilization Digest"
+    types: [completed]
   schedule:
     # Six independent opportunities per hour, offset from production pulses.
     - cron: "3,13,23,33,43,53 * * * *"
