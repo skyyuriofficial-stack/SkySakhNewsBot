@@ -16,6 +16,7 @@ on:
     types: [completed]
   schedule:
     # Six independent opportunities per hour, offset from production pulses.
+    # Keeping this declaration current also re-registers GitHub's cron after scheduler gaps.
     - cron: "3,13,23,33,43,53 * * * *"
 
 permissions:
