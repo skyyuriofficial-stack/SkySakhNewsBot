@@ -15,9 +15,14 @@ on:
       - "SkySakhNews Mobilization Digest"
     types: [completed]
   schedule:
-    # Six independent opportunities per hour, offset from production pulses.
-    # Keeping this declaration current also re-registers GitHub's cron after scheduler gaps.
-    - cron: "6,16,26,36,46,56 * * * *"
+    # Register six separate cron entries rather than one comma-list expression.
+    # This gives GitHub six independently registered scheduler opportunities per hour.
+    - cron: "6 * * * *"
+    - cron: "16 * * * *"
+    - cron: "26 * * * *"
+    - cron: "36 * * * *"
+    - cron: "46 * * * *"
+    - cron: "56 * * * *"
 
 permissions:
   contents: write
