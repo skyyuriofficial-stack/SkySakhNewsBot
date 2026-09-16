@@ -17,7 +17,7 @@ on:
   schedule:
     # Six independent opportunities per hour, offset from production pulses.
     # Keeping this declaration current also re-registers GitHub's cron after scheduler gaps.
-    - cron: "5,15,25,35,45,55 * * * *"
+    - cron: "6,16,26,36,46,56 * * * *"
 
 permissions:
   contents: write
