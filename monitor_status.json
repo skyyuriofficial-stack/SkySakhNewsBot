@@ -1,14 +1,14 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-16T14:18:33+00:00",
-  "checked_at_sakhalin": "2026-09-17T01:18:29+11:00",
+  "checked_at_utc": "2026-09-16T14:22:54+00:00",
+  "checked_at_sakhalin": "2026-09-17T01:22:51+11:00",
   "status": "error",
   "mutations_enabled": false,
   "issues": [
     {
       "type": "publisher_stale",
-      "age_hours": 78.82,
+      "age_hours": 78.89,
       "limit_hours": 10.5
     },
     {
@@ -119,7 +119,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-09-13T18:29:35+11:00",
-    "age_hours": 78.82,
+    "age_hours": 78.89,
     "published": 0
   },
   "last_production_attempt": {
@@ -155,7 +155,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-16T14:18:32+00:00",
+    "checked_at": "2026-09-16T14:22:53+00:00",
     "checked": 20,
     "passed": 15,
     "anomalies": [
@@ -664,7 +664,7 @@
     "valid_posts_counted": 20
   },
   "telegram_health": {
-    "checked_at_utc": "2026-09-16T14:18:29+00:00",
+    "checked_at_utc": "2026-09-16T14:22:51+00:00",
     "status": "error",
     "auth_ok": false,
     "chat_ok": false,
