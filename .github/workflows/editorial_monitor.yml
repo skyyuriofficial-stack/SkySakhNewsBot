@@ -61,7 +61,8 @@ jobs:
             src/news_director.py src/publication_auditor.py \
             src/editorial_monitor.py src/publisher.py src/production_selftest.py \
             src/telegram_health.py src/editorial_hardening.py \
-            src/hardened_monitor.py src/health_gate.py src/hardening_selftest.py \
+            src/hardened_monitor.py src/resilient_production.py \
+            src/health_gate.py src/hardening_selftest.py \
             src/operational_selftest.py
 
       - name: Require current regression suite on explicit diagnostic runs
@@ -107,7 +108,15 @@ jobs:
               sys.exit(1)
           audit=data.get('post_audit') or {}
           actions=data.get('hardening_actions') or []
-          sys.exit(0 if (audit.get('corrected') or audit.get('deleted') or actions) else 1)
+          queue=data.get('delivery_queue_hardening') or {}
+          queue_changed=bool(
+              int(queue.get('retired') or 0)
+              or int(queue.get('repaired') or 0)
+              or int(queue.get('duplicates') or 0)
+              or int(queue.get('insufficient_source_retired') or 0)
+              or int(queue.get('before') or 0) != int(queue.get('after') or 0)
+          )
+          sys.exit(0 if (audit.get('corrected') or audit.get('deleted') or actions or queue_changed) else 1)
           PY
           then
             git add state.json
