@@ -41,10 +41,112 @@ def _source_evidence_insufficient(item: Dict[str, Any]) -> bool:
     return bool(_GENERIC_SOURCE_TEASER_RE.search(source_text))
 
 
+def _pending_evidence(item: Dict[str, Any]) -> str:
+    row = item.get("row") if isinstance(item.get("row"), dict) else {}
+    body = row.get("body") if isinstance(row.get("body"), list) else []
+    return " ".join(
+        [
+            str(row.get("title_ru") or item.get("title") or ""),
+            *[str(value) for value in body if str(value).strip()],
+        ]
+    ).strip()
+
+
+def _published_minute(item: Dict[str, Any]) -> str:
+    value = str(item.get("published_at") or "").strip()
+    return value[:16] if len(value) >= 16 else ""
+
+
+def _pending_event_type(item: Dict[str, Any]) -> str:
+    contract = item.get("publication_contract") if isinstance(item.get("publication_contract"), dict) else {}
+    return str(contract.get("event_type") or "").strip()
+
+
+def _same_deferred_event(left: Dict[str, Any], right: Dict[str, Any]) -> bool:
+    """Conservative second-pass dedupe for cross-source outage backlog items.
+
+    The canonical detector is intentionally title/source-centric. During an
+    outage, however, two outlets can describe the same event with substantially
+    different headlines while their already-reviewed body facts still match.
+    Only treat the items as duplicates when category, event type and publication
+    minute agree, the outlets/URLs are different, and both title and full queued
+    evidence retain measurable semantic overlap.
+    """
+
+    if str(left.get("category_key") or "") != str(right.get("category_key") or ""):
+        return False
+    left_type = _pending_event_type(left)
+    right_type = _pending_event_type(right)
+    if not left_type or left_type != right_type:
+        return False
+    left_minute = _published_minute(left)
+    right_minute = _published_minute(right)
+    if not left_minute or left_minute != right_minute:
+        return False
+    if str(left.get("url") or "") == str(right.get("url") or ""):
+        return False
+    if str(left.get("source") or "").strip().lower() == str(right.get("source") or "").strip().lower():
+        return False
+
+    left_row = left.get("row") if isinstance(left.get("row"), dict) else {}
+    right_row = right.get("row") if isinstance(right.get("row"), dict) else {}
+    left_title = str(left_row.get("title_ru") or left.get("title") or "")
+    right_title = str(right_row.get("title_ru") or right.get("title") or "")
+    title_similarity = hardened.editorial_hardening.text_similarity(left_title, right_title)
+    evidence_similarity = hardened.editorial_hardening.text_similarity(
+        _pending_evidence(left), _pending_evidence(right)
+    )
+    return bool(title_similarity >= 0.10 and evidence_similarity >= 0.26)
+
+
+def _retire_deferred_duplicates(state: Dict[str, Any]) -> int:
+    pending = [
+        item
+        for item in (state.get("pending_media_delivery") or [])
+        if isinstance(item, dict)
+    ]
+    if len(pending) < 2:
+        return 0
+
+    accepted = []
+    retired = []
+    for item in pending:
+        duplicate_of = next(
+            (kept for kept in accepted if _same_deferred_event(item, kept)),
+            None,
+        )
+        if duplicate_of is None:
+            accepted.append(item)
+            continue
+        retired.append(
+            hardened._retire(
+                item,
+                "pending_semantic_duplicate_cross_source:"
+                + str(duplicate_of.get("title") or "")[:240],
+            )
+        )
+
+    if retired:
+        existing_expired = [
+            item
+            for item in (state.get("expired_media_delivery") or [])
+            if isinstance(item, dict)
+        ]
+        state["pending_media_delivery"] = accepted
+        state["expired_media_delivery"] = (existing_expired + retired)[-80:]
+    return len(retired)
+
+
 def _sanitize_delivery_queue(state: Dict[str, Any]) -> Dict[str, int]:
-    """Run canonical hardening plus a fail-closed source-evidence guard."""
+    """Run canonical hardening plus fail-closed evidence and outage dedupe guards."""
 
     report = dict(hardened.sanitize_pending_queue(state))
+    cross_source_duplicates = _retire_deferred_duplicates(state)
+    if cross_source_duplicates:
+        report["duplicates"] = int(report.get("duplicates") or 0) + cross_source_duplicates
+        report["retired"] = int(report.get("retired") or 0) + cross_source_duplicates
+        report["after"] = len(state.get("pending_media_delivery") or [])
+
     pending = [
         item
         for item in (state.get("pending_media_delivery") or [])
