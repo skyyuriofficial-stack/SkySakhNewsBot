@@ -1,0 +1,80 @@
+name: SkySakhNews Delivery Recovery
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/15 * * * *"
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: skysakhnews-delivery-recovery
+  cancel-in-progress: true
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check queue and Telegram adapter
+        id: gate
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          import sys
+          sys.path.insert(0, "src")
+          import telegram_health
+
+          try:
+              state = json.loads(Path("state.json").read_text(encoding="utf-8"))
+          except Exception:
+              state = {}
+          queue = [x for x in (state.get("pending_media_delivery") or []) if isinstance(x, dict)]
+          health = telegram_health.check_telegram()
+          healthy = health.get("status") == "healthy"
+          should_dispatch = healthy and bool(queue)
+          output = Path(os.environ["GITHUB_OUTPUT"])
+          with output.open("a", encoding="utf-8") as fh:
+              fh.write(f"healthy={'true' if healthy else 'false'}\n")
+              fh.write(f"queue_size={len(queue)}\n")
+              fh.write(f"dispatch={'true' if should_dispatch else 'false'}\n")
+          print(json.dumps({
+              "telegram_status": health.get("status"),
+              "error_kind": health.get("error_kind"),
+              "queue_size": len(queue),
+              "dispatch": should_dispatch,
+          }, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Dispatch forced recovery only when delivery is healthy and queue exists
+        if: steps.gate.outputs.dispatch == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail-with-body --silent --show-error \
+            -X POST \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/auto_publish_v7.yml/dispatches \
+            -d '{"ref":"main","inputs":{"force":true}}'
+
+      - name: Report no-op recovery check
+        if: steps.gate.outputs.dispatch != 'true'
+        run: |
+          echo "No recovery dispatch required. Telegram healthy=${{ steps.gate.outputs.healthy }}, queue=${{ steps.gate.outputs.queue_size }}"
