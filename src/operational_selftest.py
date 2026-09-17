@@ -4,6 +4,7 @@ import os
 from datetime import datetime, timedelta, timezone
 
 import editorial_gate_runner
+import hardened_digest
 import health_gate
 
 
@@ -55,6 +56,26 @@ def main() -> int:
         assert plan == ["openrouter/free", "openrouter/free", "openrouter/free"], plan
     finally:
         for key, value in (("OPENROUTER_MODEL", old_model), ("OPENROUTER_FALLBACK_MODELS", old_fallback), ("OPENROUTER_MAX_ATTEMPTS", old_attempts)):
+            if value is None:
+                os.environ.pop(key, None)
+            else:
+                os.environ[key] = value
+
+    old_digest_mode = os.environ.get("DIGEST_MODE")
+    old_digest_schedule = os.environ.get("DIGEST_SCHEDULE")
+    try:
+        os.environ["DIGEST_MODE"] = ""
+        schedule_cases = {
+            "7,37 0,1,21,22,23 * * *": "morning",
+            "7 2,3,4,5,6,7 * * *": "morning",
+            "7,37 8,9,10,11 * * *": "evening",
+        }
+        for schedule, expected in schedule_cases.items():
+            os.environ["DIGEST_SCHEDULE"] = schedule
+            actual = hardened_digest.resolved_mode()
+            assert actual == expected, (schedule, expected, actual)
+    finally:
+        for key, value in (("DIGEST_MODE", old_digest_mode), ("DIGEST_SCHEDULE", old_digest_schedule)):
             if value is None:
                 os.environ.pop(key, None)
             else:
