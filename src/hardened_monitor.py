@@ -14,6 +14,7 @@ import editorial_monitor
 import news_director
 import publication_auditor
 import publisher
+import resilient_production
 import telegram_health
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -204,10 +205,26 @@ def main() -> int:
     mutate = bool(requested_mutation and health.get("status") == "healthy")
 
     state = _load_state()
+
+    # Queue/state repairs do not mutate Telegram and remain safe while the live
+    # adapter is down. This keeps deferred content fail-closed instead of waiting
+    # for a future publisher run to sanitize it.
+    queue_report = resilient_production._sanitize_delivery_queue(state)
+    queue_changed = bool(
+        int(queue_report.get("retired") or 0)
+        or int(queue_report.get("repaired") or 0)
+        or int(queue_report.get("duplicates") or 0)
+        or int(queue_report.get("insufficient_source_retired") or 0)
+        or int(queue_report.get("before") or 0) != int(queue_report.get("after") or 0)
+    )
+    if queue_changed:
+        _save(STATE_PATH, state)
+
     hardening_actions, hardening_failures = _pre_audit_cleanup(state, mutate=mutate)
 
     report = editorial_monitor.run_monitor(mutate=mutate, persist_state=False)
     report["telegram_health"] = health
+    report["delivery_queue_hardening"] = queue_report
     report["hardening_actions"] = hardening_actions
     report["hardening_failed_actions"] = hardening_failures
 
@@ -258,6 +275,7 @@ def main() -> int:
         "status": report.get("status"),
         "issues": report.get("issues"),
         "telegram_health": health,
+        "delivery_queue_hardening": queue_report,
         "hardening_actions": hardening_actions,
         "hardening_failed_actions": hardening_failures,
         "post_audit": {
