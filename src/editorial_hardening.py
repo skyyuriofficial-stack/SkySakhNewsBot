@@ -20,7 +20,7 @@ BOILERPLATE_PATTERNS = (
     r"мы будем присылать вам на почту самые просматриваемые новости",
     r"при полном или частичном использовании материалов.*astv",
     r"копирование материалов.*astv",
-    r"подписывайтесь на.*(?:telegram|телеграм|max)",
+    r"(?:подпиш(?:ись|итесь)|подписывайтесь)\s+на.*(?:telegram|телеграм|max|новост)",
     r"читайте также",
     r"подробнее на сайте",
 )
@@ -33,7 +33,7 @@ CONTACT_OR_TECH_PATTERNS = (
 )
 
 MISSING_BOUNDARY_RE = re.compile(
-    r"(?<=[а-яё0-9])\s+(?=(?:По|Как|При|Предварительно|В|На|Для)\s+[А-ЯЁа-яё])"
+    r"(?<=[а-яё0-9])\s+(?=(?:По|Как|При|Предварительно|В|На|Для|Преступление)\s+[А-ЯЁа-яё])"
 )
 
 GENERIC_EVENT_WORDS = {
@@ -245,7 +245,7 @@ def repair_row(candidate: Mapping[str, Any], row: Mapping[str, Any]) -> Dict[str
 
     repaired["body"] = cleaned
     repaired["hardening_repair"] = {
-        "version": "editorial-hardening-v1.2",
+        "version": "editorial-hardening-v1.3",
         "source_warnings": source_quality_warnings(candidate),
     }
     return repaired
@@ -334,7 +334,7 @@ def install() -> None:
         issues.extend(content_quality_issues(candidate, row))
         contract["issues"] = list(dict.fromkeys(str(issue) for issue in issues if issue))
         contract["approved"] = not contract["issues"]
-        contract["hardening_version"] = "editorial-hardening-v1.2"
+        contract["hardening_version"] = "editorial-hardening-v1.3"
         contract["source_warnings"] = source_quality_warnings(candidate)
         return contract
 
