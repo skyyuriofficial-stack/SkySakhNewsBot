@@ -81,6 +81,23 @@ def _latest_required_production_slot(now_local: datetime) -> Optional[datetime]:
     return max(candidates) if candidates else None
 
 
+def _production_slot_for_attempt(attempted_local: datetime) -> Optional[datetime]:
+    """Map an attempt timestamp to the logical production slot it was servicing.
+
+    Recovery attempts can happen between nominal slots, so use the latest configured
+    production hour at or before the attempt, falling back to the previous day's
+    22:00 slot before the first daily slot.
+    """
+    candidates = []
+    for day_offset in (0, -1):
+        day = attempted_local.date() + timedelta(days=day_offset)
+        for hour in PRODUCTION_HOURS:
+            slot = datetime(day.year, day.month, day.day, hour, 0, tzinfo=attempted_local.tzinfo)
+            if slot <= attempted_local:
+                candidates.append(slot)
+    return max(candidates) if candidates else None
+
+
 def _active_recent_posts(state: Dict[str, Any]):
     return [
         post
@@ -252,6 +269,11 @@ def run_monitor(*, mutate: bool = True, persist_state: bool = True) -> Dict[str,
     attempt = state.get("last_production_attempt") or {}
     finished = _parse_dt(run.get("finished_sakhalin"))
     attempted = _parse_dt(attempt.get("checked_at_utc"))
+    attempt_slot = (
+        _production_slot_for_attempt(attempted.astimezone(now_local.tzinfo))
+        if attempted
+        else None
+    )
     if latest_slot is not None:
         run_covers_slot = bool(finished and finished.astimezone(now_local.tzinfo) >= latest_slot)
         blocked_covers_slot = bool(
@@ -263,7 +285,8 @@ def run_monitor(*, mutate: bool = True, persist_state: bool = True) -> Dict[str,
             if blocked_covers_slot:
                 issues.append({
                     "type": "publisher_blocked",
-                    "slot_sakhalin": latest_slot.isoformat(timespec="minutes"),
+                    "slot_sakhalin": (attempt_slot or latest_slot).isoformat(timespec="minutes"),
+                    "required_slot_sakhalin": latest_slot.isoformat(timespec="minutes"),
                     "reason": attempt.get("reason"),
                     "attempted_at_utc": attempt.get("checked_at_utc"),
                 })
