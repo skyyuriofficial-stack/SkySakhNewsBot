@@ -1,19 +1,20 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-17T08:00:48+00:00",
-  "checked_at_sakhalin": "2026-09-17T19:00:44+11:00",
+  "checked_at_utc": "2026-09-17T09:00:42+00:00",
+  "checked_at_sakhalin": "2026-09-17T20:00:37+11:00",
   "status": "error",
   "mutations_enabled": false,
   "issues": [
     {
       "type": "publisher_stale",
-      "age_hours": 96.52,
+      "age_hours": 97.52,
       "limit_hours": 4.5
     },
     {
       "type": "publisher_blocked",
-      "slot_sakhalin": "2026-09-17T16:00+11:00",
+      "slot_sakhalin": "2026-09-17T19:00+11:00",
+      "required_slot_sakhalin": "2026-09-17T19:00+11:00",
       "reason": "telegram_token_unauthorized",
       "attempted_at_utc": "2026-09-17T08:00:20+00:00"
     },
@@ -93,6 +94,19 @@
       }
     },
     {
+      "type": "mobilization_digest_missing",
+      "slot": "evening",
+      "expected_by_sakhalin": "2026-09-17T19:45:00+11:00",
+      "last_attempt": {
+        "status": "error",
+        "mode": "morning",
+        "at_utc": "2026-09-17T07:33:10+00:00",
+        "at_sakhalin": "2026-09-17T18:33:10+11:00",
+        "error": "telegram_token_unauthorized",
+        "description": "Unauthorized"
+      }
+    },
+    {
       "type": "telegram_delivery_unhealthy",
       "reason": "token_unauthorized",
       "http_status": 401,
@@ -132,7 +146,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-09-13T18:29:35+11:00",
-    "age_hours": 96.52,
+    "age_hours": 97.52,
     "published": 0
   },
   "last_production_attempt": {
@@ -152,7 +166,7 @@
       "record": {}
     },
     "evening": {
-      "due": false,
+      "due": true,
       "published": false,
       "record": {}
     },
@@ -177,12 +191,25 @@
           "error": "telegram_token_unauthorized",
           "description": "Unauthorized"
         }
+      },
+      {
+        "type": "mobilization_digest_missing",
+        "slot": "evening",
+        "expected_by_sakhalin": "2026-09-17T19:45:00+11:00",
+        "last_attempt": {
+          "status": "error",
+          "mode": "morning",
+          "at_utc": "2026-09-17T07:33:10+00:00",
+          "at_sakhalin": "2026-09-17T18:33:10+11:00",
+          "error": "telegram_token_unauthorized",
+          "description": "Unauthorized"
+        }
       }
     ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-17T08:00:47+00:00",
+    "checked_at": "2026-09-17T09:00:40+00:00",
     "checked": 20,
     "passed": 15,
     "anomalies": [
@@ -691,7 +718,7 @@
     "valid_posts_counted": 20
   },
   "telegram_health": {
-    "checked_at_utc": "2026-09-17T08:00:44+00:00",
+    "checked_at_utc": "2026-09-17T09:00:34+00:00",
     "status": "error",
     "auth_ok": false,
     "chat_ok": false,
