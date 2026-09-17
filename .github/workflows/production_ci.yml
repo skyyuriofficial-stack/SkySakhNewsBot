@@ -23,12 +23,15 @@ on:
       - "src/hardened_publisher.py"
       - "src/hardened_monitor.py"
       - "src/hardened_digest.py"
+      - "src/resilient_production.py"
+      - "src/resilient_health_gate.py"
       - "src/schedule_guard.py"
       - "src/health_gate.py"
       - "src/hardening_selftest.py"
       - "src/operational_selftest.py"
       - "requirements.txt"
       - ".github/workflows/auto_publish_v7.yml"
+      - ".github/workflows/delivery_recovery.yml"
       - ".github/workflows/editorial_monitor.yml"
       - ".github/workflows/mobilization_digest.yml"
       - ".github/workflows/production_ci.yml"
@@ -66,6 +69,7 @@ jobs:
             src/editorial_monitor.py src/publisher.py src/production_selftest.py \
             src/telegram_health.py src/editorial_hardening.py \
             src/hardened_publisher.py src/hardened_monitor.py src/hardened_digest.py \
+            src/resilient_production.py src/resilient_health_gate.py \
             src/schedule_guard.py src/health_gate.py src/hardening_selftest.py \
             src/operational_selftest.py
 
