@@ -66,6 +66,30 @@ def main() -> int:
     repaired_malformed = editorial_hardening.repair_row(malformed, malformed_row)
     assert "Ногликах. По предварительным" in repaired_malformed["body"][0], repaired_malformed
 
+    magadan = {
+        "title": "В Магадане молодой человек осуждён за мошенничество на 34 млн рублей",
+        "source_text": (
+            "Магаданский городской суд приговорил 22-летнего мужчину к 5 годам лишения свободы. "
+            "Суд приговорил 22-летнего участника организованной группы к 5 годам колонии "
+            "Преступление было совершено организованной группой: летом 2025 года они убедили "
+            "жительницу Магадана продать акции и передать деньги. "
+            "Подпишись на самые важные новости Сахалинской области в MAX!"
+        ),
+        "category_key": "ru_incident",
+    }
+    magadan_row = {
+        "title_ru": magadan["title"],
+        "body": [
+            "Магаданский городской суд приговорил 22-летнего мужчину к 5 годам лишения свободы.",
+            "Суд приговорил 22-летнего участника организованной группы к 5 годам колонии Преступление было совершено организованной группой: летом 2025 года они убедили жительницу Магадана продать акции и передать деньги.",
+        ],
+    }
+    assert "body_missing_sentence_boundary" in editorial_hardening.content_quality_issues(magadan, magadan_row)
+    repaired_magadan = editorial_hardening.repair_row(magadan, magadan_row)
+    assert "колонии. Преступление" in repaired_magadan["body"][1], repaired_magadan
+    assert "Подпишись" not in editorial_hardening.dedupe_source_text(magadan["source_text"])
+    assert not editorial_hardening.content_quality_issues(magadan, repaired_magadan), repaired_magadan
+
     sinegorsk = policy.classify({
         "title": "Синегорск остался без света после аварии на линии",
         "source_text": "Энергетики устраняют последствия аварии в Синегорске.",
