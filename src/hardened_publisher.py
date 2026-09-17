@@ -32,12 +32,18 @@ def _load_state() -> Dict[str, Any]:
 
 
 def _save_state(state: Dict[str, Any]) -> None:
-    STATE_PATH.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    STATE_PATH.write_text(
+        json.dumps(state, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
 
 
 def _candidate_from_pending(item: Dict[str, Any]) -> Dict[str, Any]:
     category_key = str(item.get("category_key") or "")
-    category, footer = publisher.core.b.CAT.get(category_key, (str(item.get("category") or ""), str(item.get("footer") or "")))
+    category, footer = publisher.core.b.CAT.get(
+        category_key,
+        (str(item.get("category") or ""), str(item.get("footer") or "")),
+    )
     return {
         "source": item.get("source"),
         "category_key": category_key,
@@ -59,7 +65,9 @@ def _pending_score(item: Dict[str, Any]) -> int:
     row = item.get("row") or {}
     body = row.get("body") if isinstance(row.get("body"), list) else []
     body_chars = sum(len(str(value or "")) for value in body)
-    return body_chars + (250 if item.get("image_url") else 0) - 20 * int(item.get("delivery_attempts") or 0)
+    return body_chars + (250 if item.get("image_url") else 0) - 20 * int(
+        item.get("delivery_attempts") or 0
+    )
 
 
 def _retire(item: Dict[str, Any], reason: str) -> Dict[str, Any]:
@@ -70,9 +78,19 @@ def _retire(item: Dict[str, Any], reason: str) -> Dict[str, Any]:
 
 
 def sanitize_pending_queue(state: Dict[str, Any]) -> Dict[str, int]:
-    pending = [item for item in (state.get("pending_media_delivery") or []) if isinstance(item, dict)]
+    pending = [
+        item
+        for item in (state.get("pending_media_delivery") or [])
+        if isinstance(item, dict)
+    ]
     if not pending:
-        return {"before": 0, "after": 0, "retired": 0, "duplicates": 0, "repaired": 0}
+        return {
+            "before": 0,
+            "after": 0,
+            "retired": 0,
+            "duplicates": 0,
+            "repaired": 0,
+        }
 
     accepted: List[Dict[str, Any]] = []
     retired: List[Dict[str, Any]] = []
@@ -86,19 +104,40 @@ def sanitize_pending_queue(state: Dict[str, Any]) -> Dict[str, int]:
         try:
             contract = publisher.director.validate_final(candidate, row)
         except Exception as exc:
-            contract = {"approved": False, "issues": ["pending_contract_exception:" + str(exc)[:180]]}
+            contract = {
+                "approved": False,
+                "issues": ["pending_contract_exception:" + str(exc)[:180]],
+            }
 
         if contract.get("approved") is not True:
             reasons = [str(value) for value in (contract.get("issues") or [])]
-            retired.append(_retire(item, "pending_revalidation_failed:" + ";".join(dict.fromkeys(reasons))[:420]))
+            retired.append(
+                _retire(
+                    item,
+                    "pending_revalidation_failed:"
+                    + ";".join(dict.fromkeys(reasons))[:420],
+                )
+            )
             continue
 
         duplicate_of = next(
-            (kept for kept in accepted if editorial_hardening.duplicate_event(candidate, _candidate_from_pending(kept))),
+            (
+                kept
+                for kept in accepted
+                if editorial_hardening.duplicate_event(
+                    candidate, _candidate_from_pending(kept)
+                )
+            ),
             None,
         )
         if duplicate_of is not None:
-            retired.append(_retire(item, "pending_semantic_duplicate:" + str(duplicate_of.get("title") or "")[:240]))
+            retired.append(
+                _retire(
+                    item,
+                    "pending_semantic_duplicate:"
+                    + str(duplicate_of.get("title") or "")[:240],
+                )
+            )
             continue
 
         cleaned_item = copy.deepcopy(item)
@@ -107,10 +146,16 @@ def sanitize_pending_queue(state: Dict[str, Any]) -> Dict[str, int]:
         cleaned_item["publication_contract"] = contract
         if row != original_row:
             repaired_count += 1
-            cleaned_item["pending_hardening_repaired_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+            cleaned_item["pending_hardening_repaired_at"] = datetime.now(
+                timezone.utc
+            ).isoformat(timespec="seconds")
         accepted.append(cleaned_item)
 
-    existing_expired = [item for item in (state.get("expired_media_delivery") or []) if isinstance(item, dict)]
+    existing_expired = [
+        item
+        for item in (state.get("expired_media_delivery") or [])
+        if isinstance(item, dict)
+    ]
     state["pending_media_delivery"] = accepted[:24]
     if retired:
         state["expired_media_delivery"] = (existing_expired + retired)[-80:]
@@ -119,7 +164,13 @@ def sanitize_pending_queue(state: Dict[str, Any]) -> Dict[str, int]:
         "before": len(pending),
         "after": len(state.get("pending_media_delivery") or []),
         "retired": len(retired),
-        "duplicates": sum(1 for item in retired if str(item.get("expired_reason") or "").startswith("pending_semantic_duplicate")),
+        "duplicates": sum(
+            1
+            for item in retired
+            if str(item.get("expired_reason") or "").startswith(
+                "pending_semantic_duplicate"
+            )
+        ),
         "repaired": repaired_count,
     }
 
@@ -136,7 +187,9 @@ def install_run_diversity_guard() -> None:
         for candidate in candidates:
             if not isinstance(candidate, dict):
                 continue
-            candidate["source_text"] = editorial_hardening.dedupe_source_text(candidate.get("source_text"))
+            candidate["source_text"] = editorial_hardening.dedupe_source_text(
+                candidate.get("source_text")
+            )
         return candidates
 
     def hardened_autocorrect(candidate, row):
@@ -172,12 +225,17 @@ def install_run_diversity_guard() -> None:
         group = str(review.get("group") or "")
         if group and group in _PUBLISHED_GROUPS:
             publisher.core.b.log(
-                f"run diversity guard skip [{group}]: " + str(candidate.get("title") or "")[:110]
+                f"run diversity guard skip [{group}]: "
+                + str(candidate.get("title") or "")[:110]
             )
             return None
-        if any(editorial_hardening.duplicate_event(candidate, old) for old in _PUBLISHED_EVENTS):
+        if any(
+            editorial_hardening.duplicate_event(candidate, old)
+            for old in _PUBLISHED_EVENTS
+        ):
             publisher.core.b.log(
-                "run semantic-duplicate guard skip: " + str(candidate.get("title") or "")[:110]
+                "run semantic-duplicate guard skip: "
+                + str(candidate.get("title") or "")[:110]
             )
             return None
         return original_valid_post(candidate)
@@ -198,13 +256,141 @@ def install_run_diversity_guard() -> None:
     publisher.media._delivery_success = tracked_delivery_success
 
 
-def _record_health(state: Dict[str, Any], health: Dict[str, Any], queue_report: Dict[str, int]) -> None:
+def _record_health(
+    state: Dict[str, Any],
+    health: Dict[str, Any],
+    queue_report: Dict[str, int],
+) -> None:
     state["telegram_health"] = health
     state["pending_queue_hardening"] = {
         **queue_report,
         "checked_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "version": "pending-hardening-v1.1",
     }
+
+
+def _install_delivery_circuit_breaker(reason: str) -> None:
+    """Keep editorial production alive while a transport credential is broken.
+
+    publisher.send_photo_with_contract() calls publisher._original_send_photo,
+    so replacing that one callable prevents all Telegram photo sends without
+    bypassing the publication contract. news_bot_v9 then falls through to the
+    media layer's persistent defer_media_publication() outbox instead of
+    discarding an approved story.
+    """
+
+    def defer_without_network(candidate, caption):
+        message = "delivery_circuit_open:" + reason
+        candidate["_delivery_error"] = message
+        raise RuntimeError(message)
+
+    publisher._original_send_photo = defer_without_network
+    publisher.POST_AUDIT_AUTOCORRECT = False
+
+    # Pending items are intentionally ordered before fresh candidates. During a
+    # long transport outage, the normal two-post run limit would otherwise spend
+    # every run re-queuing only old pending items and never refresh the outbox.
+    offline_limit = max(2, int(os.getenv("OFFLINE_POSTS_PER_RUN", "12")))
+    publisher.core.b.POSTS_PER_RUN = max(
+        int(getattr(publisher.core.b, "POSTS_PER_RUN", 2)),
+        offline_limit,
+    )
+
+
+def _blocked_attempt(
+    health: Dict[str, Any],
+    queue_size: int,
+    *,
+    collection_continues: bool,
+) -> Dict[str, Any]:
+    return {
+        "status": "blocked",
+        "reason": "telegram_" + str(health.get("error_kind") or "unhealthy"),
+        "checked_at_utc": health.get("checked_at_utc"),
+        "publisher_version": publisher.VERSION,
+        "queue_preserved": queue_size,
+        "collection_continues": collection_continues,
+        "delivery_circuit_open": True,
+        "transport": "telegram_bot_api",
+    }
+
+
+def _run_with_open_delivery_circuit(
+    health: Dict[str, Any],
+    queue_report: Dict[str, int],
+) -> int:
+    reason = "telegram_" + str(health.get("error_kind") or "unhealthy")
+    _install_delivery_circuit_breaker(reason)
+
+    state = _load_state()
+    state["last_production_attempt"] = _blocked_attempt(
+        health,
+        len(state.get("pending_media_delivery") or []),
+        collection_continues=True,
+    )
+    state["delivery_resilience"] = {
+        "mode": "editorial_outbox",
+        "transport_status": "circuit_open",
+        "transport": "telegram_bot_api",
+        "reason": reason,
+        "collection_continues": True,
+        "fresh_items_can_queue": True,
+        "checked_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    }
+    _record_health(state, health, queue_report)
+    _save_state(state)
+
+    # Run the full collector/editorial contract even though Telegram delivery is
+    # unavailable. The media layer converts every approved send into a durable
+    # pending_media_delivery record without touching Telegram.
+    publisher.main()
+
+    final_state = _load_state()
+    _record_health(final_state, health, queue_report)
+    final_state["last_production_attempt"] = _blocked_attempt(
+        health,
+        len(final_state.get("pending_media_delivery") or []),
+        collection_continues=True,
+    )
+    final_state["delivery_resilience"] = {
+        "mode": "editorial_outbox",
+        "transport_status": "circuit_open",
+        "transport": "telegram_bot_api",
+        "reason": reason,
+        "collection_continues": True,
+        "fresh_items_can_queue": True,
+        "outbox_size": len(final_state.get("pending_media_delivery") or []),
+        "checked_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    }
+    last_run = final_state.get("last_run")
+    if isinstance(last_run, dict):
+        last_run["editorial_status"] = "ok"
+        last_run["delivery_status"] = "blocked"
+        last_run["delivery_reason"] = reason
+        last_run["outbox_size"] = len(
+            final_state.get("pending_media_delivery") or []
+        )
+    _save_state(final_state)
+
+    print(
+        json.dumps(
+            {
+                "status": "editorial_completed_delivery_blocked",
+                "telegram_health": health,
+                "pending_queue": queue_report,
+                "outbox_size": len(
+                    final_state.get("pending_media_delivery") or []
+                ),
+                "collection_continues": True,
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+    )
+    # Delivery is still unhealthy, but the publisher step itself completed the
+    # editorial/outbox work. The workflow health gate remains authoritative and
+    # will keep the overall production run red until delivery is restored.
+    return 0
 
 
 def main() -> int:
@@ -216,21 +402,16 @@ def main() -> int:
     _record_health(state, health, queue_report)
 
     if health.get("status") != "healthy":
-        state["last_production_attempt"] = {
-            "status": "blocked",
-            "reason": "telegram_" + str(health.get("error_kind") or "unhealthy"),
-            "checked_at_utc": health.get("checked_at_utc"),
-            "publisher_version": publisher.VERSION,
-            "queue_preserved": len(state.get("pending_media_delivery") or []),
-        }
         _save_state(state)
-        print(json.dumps({
-            "status": "blocked_before_collection",
-            "telegram_health": health,
-            "pending_queue": queue_report,
-        }, ensure_ascii=False, indent=2))
-        return 23
+        return _run_with_open_delivery_circuit(health, queue_report)
 
+    state["delivery_resilience"] = {
+        "mode": "live_delivery",
+        "transport_status": "healthy",
+        "transport": "telegram_bot_api",
+        "collection_continues": True,
+        "checked_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    }
     _save_state(state)
     publisher.main()
     return 0
