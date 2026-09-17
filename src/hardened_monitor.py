@@ -20,6 +20,7 @@ import telegram_health
 ROOT = Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "state.json"
 STATUS_PATH = ROOT / "monitor_status.json"
+OUTBOX_PATH = ROOT / "delivery_outbox.json"
 
 MIX_ERROR_LIMIT = float(os.getenv("THEMATIC_MIX_ERROR_LIMIT", "8"))
 publication_auditor.MAX_MUTATION_AGE_HOURS = 48
@@ -34,6 +35,24 @@ def _load_state():
         return json.loads(STATE_PATH.read_text(encoding="utf-8")) if STATE_PATH.exists() else {}
     except Exception:
         return {}
+
+
+def _outbox_drift(state, health) -> bool:
+    pending = [
+        item for item in (state.get("pending_media_delivery") or [])
+        if isinstance(item, dict) and item.get("url")
+    ]
+    expected_items = [resilient_production._outbox_item(item) for item in pending]
+    try:
+        actual = json.loads(OUTBOX_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return True
+    return bool(
+        int(actual.get("count") or 0) != len(expected_items)
+        or (actual.get("items") or []) != expected_items
+        or actual.get("delivery_adapter_status") != (health.get("status") or "unknown")
+        or actual.get("delivery_adapter_error") != health.get("error_kind")
+    )
 
 
 def _delete_post(post, reason):
@@ -217,11 +236,13 @@ def main() -> int:
         or int(queue_report.get("insufficient_source_retired") or 0)
         or int(queue_report.get("before") or 0) != int(queue_report.get("after") or 0)
     )
-    if queue_changed:
+    outbox_drift = _outbox_drift(state, health)
+    if queue_changed or outbox_drift:
         # state.json is the queue source of truth; regenerate the human-readable
-        # delivery outbox in the same transaction so it can never advertise a
-        # retired or pre-hardening item.
+        # delivery outbox whenever it diverges, even if a previous monitor has
+        # already persisted the state-side repair.
         resilient_production._write_outbox(state, health)
+    if queue_changed:
         _save(STATE_PATH, state)
 
     hardening_actions, hardening_failures = _pre_audit_cleanup(state, mutate=mutate)
@@ -229,6 +250,7 @@ def main() -> int:
     report = editorial_monitor.run_monitor(mutate=mutate, persist_state=False)
     report["telegram_health"] = health
     report["delivery_queue_hardening"] = queue_report
+    report["delivery_outbox_repaired"] = outbox_drift
     report["hardening_actions"] = hardening_actions
     report["hardening_failed_actions"] = hardening_failures
 
@@ -280,6 +302,7 @@ def main() -> int:
         "issues": report.get("issues"),
         "telegram_health": health,
         "delivery_queue_hardening": queue_report,
+        "delivery_outbox_repaired": outbox_drift,
         "hardening_actions": hardening_actions,
         "hardening_failed_actions": hardening_failures,
         "post_audit": {
