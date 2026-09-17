@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import copy
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict
@@ -13,16 +14,79 @@ import telegram_health
 ROOT = Path(__file__).resolve().parents[1]
 OUTBOX_PATH = ROOT / "delivery_outbox.json"
 
+_GENERIC_SOURCE_TEASER_RE = re.compile(
+    r"^\s*читайте\s+последние\s+актуальные\s+новости\s+главных\s+событий.+"
+    r"в\s+ленте\s+новостей\s+на\s+сайте",
+    flags=re.I | re.S,
+)
+
 
 def _delivery_reason(health: Dict[str, Any]) -> str:
     return "telegram_" + str(health.get("error_kind") or "unhealthy")
+
+
+def _source_evidence_insufficient(item: Dict[str, Any]) -> bool:
+    """Reject a scraper SEO stub that cannot ground a publishable body.
+
+    Some source pages occasionally yield only a generic search/SEO sentence whose
+    headline contains dates or subjects but whose article facts were not parsed.
+    Keeping such an item in the delivery queue can make a syntactically valid
+    generated body look source-supported when the underlying article evidence is
+    actually absent. Fail closed instead of guessing from the headline.
+    """
+
+    source_text = str(item.get("source_text") or "").strip()
+    if not source_text or len(source_text) > 500:
+        return False
+    return bool(_GENERIC_SOURCE_TEASER_RE.search(source_text))
+
+
+def _sanitize_delivery_queue(state: Dict[str, Any]) -> Dict[str, int]:
+    """Run canonical hardening plus a fail-closed source-evidence guard."""
+
+    report = dict(hardened.sanitize_pending_queue(state))
+    pending = [
+        item
+        for item in (state.get("pending_media_delivery") or [])
+        if isinstance(item, dict)
+    ]
+    if not pending:
+        report["insufficient_source_retired"] = 0
+        return report
+
+    accepted = []
+    retired = []
+    for item in pending:
+        if _source_evidence_insufficient(item):
+            retired.append(
+                hardened._retire(
+                    item,
+                    "pending_revalidation_failed:source_text_insufficient_for_body",
+                )
+            )
+        else:
+            accepted.append(item)
+
+    if retired:
+        existing_expired = [
+            item
+            for item in (state.get("expired_media_delivery") or [])
+            if isinstance(item, dict)
+        ]
+        state["pending_media_delivery"] = accepted
+        state["expired_media_delivery"] = (existing_expired + retired)[-80:]
+
+    report["insufficient_source_retired"] = len(retired)
+    report["after"] = len(state.get("pending_media_delivery") or [])
+    report["retired"] = int(report.get("retired") or 0) + len(retired)
+    return report
 
 
 def _install_queue_only_delivery(health: Dict[str, Any]) -> None:
     """Keep editorial production running while the live delivery adapter is down.
 
     The lower media layer already persists a fully reviewed post when sendPhoto
-    fails and the text fallback is invoked.  Replacing sendPhoto with a fast,
+    fails and the text fallback is invoked. Replacing sendPhoto with a fast,
     deterministic failure avoids repeatedly calling a credential that is known
     to be invalid while still exercising collection, editorial review, source
     media validation, publication-contract validation and persistent queuing.
@@ -35,7 +99,7 @@ def _install_queue_only_delivery(health: Dict[str, Any]) -> None:
         raise RuntimeError(candidate["_delivery_error"])
 
     publisher.core.b.send_photo = queue_only_send_photo
-    # Existing-post repair is a live Telegram mutation.  Do not waste calls or
+    # Existing-post repair is a live Telegram mutation. Do not waste calls or
     # manufacture successful corrections while the adapter is known unhealthy.
     publisher.POST_AUDIT_AUTOCORRECT = False
 
@@ -121,7 +185,7 @@ def main() -> int:
     hardened.install_run_diversity_guard()
 
     state = hardened._load_state()
-    queue_report = hardened.sanitize_pending_queue(state)
+    queue_report = _sanitize_delivery_queue(state)
     health = telegram_health.check_telegram()
     telegram_health.write_status(health)
     hardened._record_health(state, health, queue_report)
@@ -130,14 +194,19 @@ def main() -> int:
         _install_queue_only_delivery(health)
 
     # Persist the health snapshot before collection so a hard editorial failure
-    # still leaves an inspectable record.  Telegram health never stops the
+    # still leaves an inspectable record. Telegram health never stops the
     # editorial plane here.
     hardened._save_state(state)
 
     publisher.main()
 
+    # Freshly deferred items are created inside publisher.main(), after the
+    # preflight queue sanitation above. Revalidate them before they become the
+    # durable source of truth or are emitted to delivery_outbox.json.
     state = hardened._load_state()
+    postflight_queue_report = _sanitize_delivery_queue(state)
     state["telegram_health"] = health
+    hardened._record_health(state, health, postflight_queue_report)
     _record_plane_status(state, health)
     _write_outbox(state, health)
     hardened._save_state(state)
@@ -146,6 +215,8 @@ def main() -> int:
         "status": "ok" if health.get("status") == "healthy" else "editorial_ok_delivery_blocked",
         "telegram_health": health,
         "last_run": state.get("last_run") or {},
+        "preflight_queue": queue_report,
+        "postflight_queue": postflight_queue_report,
         "outbox_count": len(state.get("pending_media_delivery") or []),
     }, ensure_ascii=False, indent=2))
     return 0
