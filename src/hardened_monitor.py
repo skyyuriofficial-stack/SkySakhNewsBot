@@ -218,6 +218,10 @@ def main() -> int:
         or int(queue_report.get("before") or 0) != int(queue_report.get("after") or 0)
     )
     if queue_changed:
+        # state.json is the queue source of truth; regenerate the human-readable
+        # delivery outbox in the same transaction so it can never advertise a
+        # retired or pre-hardening item.
+        resilient_production._write_outbox(state, health)
         _save(STATE_PATH, state)
 
     hardening_actions, hardening_failures = _pre_audit_cleanup(state, mutate=mutate)
