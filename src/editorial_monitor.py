@@ -256,8 +256,19 @@ def run_monitor(*, mutate: bool = True, persist_state: bool = True) -> Dict[str,
         })
 
     # Scheduled publisher runs every three hours between 07:00 and 22:00.
-    # At night the 22:00 run may legitimately be up to nine hours old.
-    freshness_limit = 4.5 if 7 <= now_local.hour <= 23 else 10.5
+    # The previous day's 22:00 run remains current until the 07:00 slot's
+    # configured grace window expires; otherwise the monitor reports a false
+    # stale condition between 07:00 and 07:44.
+    first_slot = datetime(
+        now_local.year,
+        now_local.month,
+        now_local.day,
+        PRODUCTION_HOURS[0],
+        0,
+        tzinfo=now_local.tzinfo,
+    )
+    first_slot_due = first_slot + timedelta(minutes=PRODUCTION_SLOT_GRACE_MINUTES)
+    freshness_limit = 10.5 if now_local < first_slot_due else 4.5
     if last_run_age is not None and last_run_age > freshness_limit:
         issues.append({
             "type": "publisher_stale",
