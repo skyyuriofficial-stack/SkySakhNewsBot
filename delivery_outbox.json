@@ -1,0 +1,51 @@
+{
+  "version": "delivery-outbox-v1",
+  "generated_at_utc": "2026-09-17T11:41:08+00:00",
+  "source_of_truth": "github_repository",
+  "live_delivery_adapter": "telegram",
+  "delivery_adapter_status": "error",
+  "delivery_adapter_error": "token_unauthorized",
+  "count": 2,
+  "items": [
+    {
+      "queued_at": "2026-09-17T11:38:56+00:00",
+      "last_attempt_at": "2026-09-17T11:38:56+00:00",
+      "delivery_attempts": 1,
+      "delivery_status": "queued",
+      "source": "Sakh.online",
+      "source_url": "https://sakh.online/news/18/2026-09-17/finansovaya-povestka-v-sahobldume-rassmatrivali-voprosy-uvelicheniya-byudzheta-na-2027-i-2028-gody-526386",
+      "category_key": "ru_eco",
+      "category": "🇷🇺 Россия / экономика",
+      "title": "Финансовая повестка: в Сахоблдуме рассматривали вопросы увеличения бюджета на 2027 и 2028 годы",
+      "body": [
+        "В Сахоблдуме рассматривали вопросы увеличения бюджета на 2027 год.",
+        "Также рассматривались вопросы увеличения бюджета на 2028 год."
+      ],
+      "image_url": "https://sakh.online/attachments/2bf1c6538e4e8194b525a709f0667927c1c1d024/store/crop/0/75/800/451/800/0/0/12/0f7abd24f65609520fda48fd67ce20554b3ed562d1355e205bcf1f6d8020/0f7abd24f65609520fda48fd67ce20554b3ed562d1355e205bcf1f6d8020.webp",
+      "image_hash": "5ed8eb1c3dd6d53ddee7d733282ab8e30a17be2f",
+      "published_at": "2026-09-16T13:00:00+00:00",
+      "publication_contract": {},
+      "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized"
+    },
+    {
+      "queued_at": "2026-09-17T11:41:08+00:00",
+      "last_attempt_at": "2026-09-17T11:41:08+00:00",
+      "delivery_attempts": 1,
+      "delivery_status": "queued",
+      "source": "SakhalinMedia.ru",
+      "source_url": "https://sakhalinmedia.ru/news/2624224/",
+      "category_key": "ru_incident",
+      "category": "🇷🇺 Россия / происшествия",
+      "title": "В Магадане молодой человек осуждён за мошенничество на 34 млн рублей",
+      "body": [
+        "Магаданский городской суд приговорил 22-летнего мужчину к 5 годам лишения свободы в колонии общего режима и одному году ограничения свободы за мошенничество в особо крупном размере, сообщает пресс-служба прокуратуры Магаданской области.",
+        "Суд приговорил 22-летнего участника организованной группы к 5 годам колонии Преступление было совершено организованной группой: летом 2025 года они убедили жительницу Магадана продать акции и передать деньги."
+      ],
+      "image_url": "https://sakhalinmedia.ru/f/big/6394/6393970.jpg?5a4cc03f865cb22b0ae0db05647b148e",
+      "image_hash": "b31000388b602e2a403b54a66b85371f51e63d28",
+      "published_at": "2026-09-17T09:05:00+00:00",
+      "publication_contract": {},
+      "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized"
+    }
+  ]
+}
