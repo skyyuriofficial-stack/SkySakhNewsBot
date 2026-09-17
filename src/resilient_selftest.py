@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import copy
 import json
 import tempfile
 from pathlib import Path
@@ -39,8 +40,9 @@ def main() -> int:
             return fake_state
 
         def save_state(state):
+            snapshot = copy.deepcopy(state)
             fake_state.clear()
-            fake_state.update(state)
+            fake_state.update(snapshot)
 
         def publisher_main():
             fake_state["last_run"] = {
