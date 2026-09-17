@@ -9,6 +9,44 @@ import resilient_production as rp
 
 
 def main() -> int:
+    fire_astv = {
+        "source": "ASTV",
+        "url": "https://astv.ru/news/criminal/example-red-tym",
+        "category_key": "sakh_chp",
+        "published_at": "2026-09-17T13:00:00+00:00",
+        "publication_contract": {"event_type": "major_emergency"},
+        "row": {
+            "title_ru": "Тело женщины обнаружили при тушении пожара в жилом доме в селе Красная Тымь",
+            "body": [
+                "Признаков насильственной смерти не обнаружено, назначена экспертиза.",
+                "Как сообщают в сахалинском следкоме, возгорание произошло 17 сентября в одной из квартир дома по улице Юбилейной.",
+            ],
+        },
+    }
+    fire_sakh_online = {
+        "source": "Sakh.online",
+        "url": "https://sakh.online/news/example-tym-fire",
+        "category_key": "sakh_chp",
+        "published_at": "2026-09-17T13:00:00+00:00",
+        "publication_contract": {"event_type": "major_emergency"},
+        "row": {
+            "title_ru": "Следователи выяснят причины гибели женщины при пожаре в селе Тымовского района",
+            "body": [
+                "При осмотре специалисты не выявили признаков насильственной смерти.",
+                "В четверг, 17 сентября, в одной из квартир дома по улице Юбилейной обнаружили тело 42-летней местной жительницы.",
+            ],
+        },
+    }
+    assert rp._same_deferred_event(fire_astv, fire_sakh_online), (
+        fire_astv,
+        fire_sakh_online,
+    )
+
+    unrelated = copy.deepcopy(fire_sakh_online)
+    unrelated["url"] = "https://sakh.online/news/unrelated-fire"
+    unrelated["published_at"] = "2026-09-17T14:00:00+00:00"
+    assert not rp._same_deferred_event(fire_astv, unrelated), unrelated
+
     fake_state = {
         "pending_media_delivery": [],
         "last_run": {},
