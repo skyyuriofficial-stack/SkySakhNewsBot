@@ -4,6 +4,7 @@ import os
 from datetime import datetime, timedelta, timezone
 
 import editorial_gate_runner
+import editorial_monitor
 import hardened_digest
 import health_gate
 import resilient_production
@@ -60,6 +61,19 @@ def main() -> int:
             "В документе приведены конкретные параметры доходов и расходов на плановый период."
         )
     })
+
+    # The 07:00 publisher slot is not overdue until its 45-minute grace period
+    # expires. At 07:35 the latest required slot must therefore still be the
+    # previous day's 22:00 slot; at 07:45 it must advance to 07:00.
+    sakhalin_tz = timezone(timedelta(hours=11))
+    before_due = datetime(2026, 9, 18, 7, 35, tzinfo=sakhalin_tz)
+    at_due = datetime(2026, 9, 18, 7, 45, tzinfo=sakhalin_tz)
+    assert editorial_monitor._latest_required_production_slot(before_due) == datetime(
+        2026, 9, 17, 22, 0, tzinfo=sakhalin_tz
+    )
+    assert editorial_monitor._latest_required_production_slot(at_due) == datetime(
+        2026, 9, 18, 7, 0, tzinfo=sakhalin_tz
+    )
 
     old_model = os.environ.get("OPENROUTER_MODEL")
     old_fallback = os.environ.get("OPENROUTER_FALLBACK_MODELS")
