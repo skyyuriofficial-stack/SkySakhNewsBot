@@ -1,22 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-17T22:27:13+00:00",
-  "checked_at_sakhalin": "2026-09-18T09:27:09+11:00",
+  "checked_at_utc": "2026-09-17T22:55:34+00:00",
+  "checked_at_sakhalin": "2026-09-18T09:55:31+11:00",
   "status": "error",
   "mutations_enabled": false,
   "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 10.77,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-09-18T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-09-17T22:41:08+11:00"
-    },
     {
       "type": "post_audit_unresolved",
       "count": 5,
@@ -131,16 +120,16 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-17T22:41:08+11:00",
-    "age_hours": 10.77,
+    "finished_sakhalin": "2026-09-18T09:55:09+11:00",
+    "age_hours": 0.01,
     "published": 0
   },
   "last_production_attempt": {
     "status": "editorial_ok_delivery_blocked",
     "reason": "telegram_token_unauthorized",
-    "checked_at_utc": "2026-09-17T11:34:08+00:00",
+    "checked_at_utc": "2026-09-17T22:49:44+00:00",
     "publisher_version": "stable-v12.1",
-    "queue_preserved": 2,
+    "queue_preserved": 4,
     "editorial_run_status": "ok"
   },
   "mobilization_digest": {
@@ -183,7 +172,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-17T22:27:12+00:00",
+    "checked_at": "2026-09-17T22:55:33+00:00",
     "checked": 20,
     "passed": 15,
     "anomalies": [
@@ -692,7 +681,7 @@
     "valid_posts_counted": 20
   },
   "telegram_health": {
-    "checked_at_utc": "2026-09-17T22:27:08+00:00",
+    "checked_at_utc": "2026-09-17T22:55:30+00:00",
     "status": "error",
     "auth_ok": false,
     "chat_ok": false,
@@ -703,8 +692,8 @@
     "permissions": {}
   },
   "delivery_queue_hardening": {
-    "before": 1,
-    "after": 1,
+    "before": 4,
+    "after": 4,
     "retired": 0,
     "duplicates": 0,
     "repaired": 0,
