@@ -6,6 +6,7 @@ from datetime import datetime, timedelta, timezone
 import editorial_gate_runner
 import hardened_digest
 import health_gate
+import resilient_production
 
 
 def main() -> int:
@@ -43,6 +44,22 @@ def main() -> int:
     bad_tg = {"status": "error", "error_kind": "token_unauthorized"}
     report = health_gate.production_report(state, healthy_monitor, bad_tg)
     assert report["execution_status"] == "error", report
+
+    # A generic source/search teaser is not article evidence. The delivery
+    # queue must fail closed rather than fabricate a body from its headline.
+    teaser_item = {
+        "source_text": (
+            "Читайте последние актуальные новости главных событий Сахалина на тему "
+            "\"Финансовая повестка\" в ленте новостей на сайте Sakh.online"
+        )
+    }
+    assert resilient_production._source_evidence_insufficient(teaser_item), teaser_item
+    assert not resilient_production._source_evidence_insufficient({
+        "source_text": (
+            "Депутаты рассмотрели поправки к областному бюджету. "
+            "В документе приведены конкретные параметры доходов и расходов на плановый период."
+        )
+    })
 
     old_model = os.environ.get("OPENROUTER_MODEL")
     old_fallback = os.environ.get("OPENROUTER_FALLBACK_MODELS")
