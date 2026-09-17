@@ -8,16 +8,13 @@ on:
         required: false
         default: false
         type: boolean
-  workflow_run:
-    # Cross-heal production when GitHub drops production cron pulses: every completed
-    # independent editorial monitor run gives the guarded publisher another chance.
-    workflows:
-      - "SkySakhNews Continuous Editorial Monitor v12.1"
-    types: [completed]
   schedule:
     # Recovery pulses every 10 minutes in the active Sakhalin window.
     # schedule_guard.py preserves the logical slots 07/10/13/16/19/22 and
     # prevents duplicate processing while allowing rapid catch-up after a miss.
+    # The editorial monitor performs its own Telegram-health-gated recovery
+    # dispatch, so do not also trigger production from monitor completion: that
+    # creates a publisher -> monitor -> publisher retry loop on blocked slots.
     - cron: "7,17,27,37,47,57 0-12,20-23 * * *"
 
 permissions:
