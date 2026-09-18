@@ -48,9 +48,9 @@ def main() -> int:
     report = health_gate.production_report(state, healthy_monitor, bad_tg)
     assert report["execution_status"] == "error", report
 
-    # Russian pet/animal-identification verbs must not be promoted to major IT
-    # merely because they start with the noun stem "чип". Semiconductor noun
-    # forms must continue to classify as IT.
+    # Core-classifier regression: Russian pet/animal-identification verbs must
+    # not be promoted to major IT merely because they start with noun stem
+    # "чип". Semiconductor noun forms must continue to classify as IT.
     pet_chipping = {
         "title": "В Сахалинской области чипировали и внесли в единую базу уже 36,8 тысячи кошек и собак",
         "source_text": (
