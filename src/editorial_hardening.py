@@ -33,7 +33,7 @@ CONTACT_OR_TECH_PATTERNS = (
 )
 
 MISSING_BOUNDARY_RE = re.compile(
-    r"(?<=[а-яё0-9])\s+(?=(?:По|Как|При|Предварительно|В|На|Для|Преступление)\s+[А-ЯЁа-яё])"
+    r"(?<=[а-яё0-9])\s+(?=(?:По|Как|При|Предварительно|В|На|Для|Преступление|Огнеборцы)\s+[А-ЯЁа-яё])"
 )
 
 GENERIC_EVENT_WORDS = {
@@ -67,6 +67,17 @@ def _tokens(value: Any) -> Set[str]:
     return result
 
 
+def _incident_anchors(value: Any) -> Set[str]:
+    """Extract strong event facts that are safe to use only as duplicate corroboration."""
+    text = _norm(value)
+    anchors: Set[str] = set()
+    for age in re.findall(r"\b(\d{1,3})[-\s]?(?:летн\w*|лет)\b", text, flags=re.I):
+        anchors.add(f"age:{age}")
+    for street in re.findall(r"\b(?:улиц\w*|ул\.?)\s+([а-яё-]{4,})", text, flags=re.I):
+        anchors.add(f"street:{_stem_token(street)}")
+    return anchors
+
+
 def text_similarity(a: Any, b: Any) -> float:
     left = _tokens(a)
     right = _tokens(b)
@@ -93,14 +104,19 @@ def duplicate_event(a: Mapping[str, Any], b: Mapping[str, Any]) -> bool:
     title_b = _tokens(b.get("title"))
     title_overlap = title_a & title_b
     title_similarity = text_similarity(a.get("title"), b.get("title"))
-    source_similarity = text_similarity(
-        str(a.get("title") or "") + " " + str(a.get("source_text") or "")[:1000],
-        str(b.get("title") or "") + " " + str(b.get("source_text") or "")[:1000],
-    )
+    combined_a = str(a.get("title") or "") + " " + str(a.get("source_text") or "")[:1000]
+    combined_b = str(b.get("title") or "") + " " + str(b.get("source_text") or "")[:1000]
+    source_similarity = text_similarity(combined_a, combined_b)
+    shared_incident_anchors = _incident_anchors(combined_a) & _incident_anchors(combined_b)
 
     if len(title_overlap) >= 3 and title_similarity >= 0.38:
         return True
     if len(title_overlap) >= 2 and source_similarity >= 0.50:
+        return True
+    # Cross-source rewrites can have modest lexical similarity while still describing
+    # the exact same incident. Require two independent hard facts (for example the
+    # same victim age and street) before using a lower lexical threshold.
+    if len(shared_incident_anchors) >= 2 and len(title_overlap) >= 2 and source_similarity >= 0.35:
         return True
     return bool(title_similarity >= 0.58 or source_similarity >= 0.68)
 
@@ -126,7 +142,7 @@ def _unsafe_paragraph(paragraph: str) -> bool:
 
 def dedupe_source_text(value: Any) -> str:
     """Remove scraper-level repeated source sentences before generation/audit."""
-    text = policy.clean(value)
+    text = MISSING_BOUNDARY_RE.sub(". ", policy.clean(value))
     if not text:
         return ""
     parts = [policy.clean(part) for part in re.split(r"(?<=[.!?])\s+", text) if policy.clean(part)]
