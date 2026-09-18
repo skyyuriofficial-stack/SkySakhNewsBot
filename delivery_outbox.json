@@ -1,16 +1,16 @@
 {
   "version": "delivery-outbox-v1",
-  "generated_at_utc": "2026-09-18T10:55:07+00:00",
+  "generated_at_utc": "2026-09-18T12:02:56+00:00",
   "source_of_truth": "github_repository",
   "live_delivery_adapter": "telegram",
   "delivery_adapter_status": "error",
   "delivery_adapter_error": "token_unauthorized",
-  "count": 9,
+  "count": 10,
   "items": [
     {
       "queued_at": "2026-09-17T11:41:08+00:00",
-      "last_attempt_at": "2026-09-18T09:47:12+00:00",
-      "delivery_attempts": 6,
+      "last_attempt_at": "2026-09-18T12:02:55+00:00",
+      "delivery_attempts": 7,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2624224/",
@@ -65,8 +65,8 @@
     },
     {
       "queued_at": "2026-09-18T03:23:40+00:00",
-      "last_attempt_at": "2026-09-18T09:44:13+00:00",
-      "delivery_attempts": 3,
+      "last_attempt_at": "2026-09-18T11:56:39+00:00",
+      "delivery_attempts": 4,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2624783/",
@@ -118,9 +118,66 @@
       "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized"
     },
     {
+      "queued_at": "2026-09-18T12:02:55+00:00",
+      "last_attempt_at": "2026-09-18T12:02:55+00:00",
+      "delivery_attempts": 1,
+      "delivery_status": "queued",
+      "source": "ASTV",
+      "source_url": "https://astv.ru/news/society/2026-09-18-predsedatel-obshestvennoj-palaty-rasskazal-kak-proshel-pervyj-den-vyborov-v-gosdumu",
+      "category_key": "sakh",
+      "category": "📍 Сахалин",
+      "title": "Председатель Общественной палаты рассказал, как прошел первый день выборов в Госдуму на Сахалине и Курилах",
+      "body": [
+        "На Сахалине и Курилах завершился первый день голосования на выборах депутатов Государственной Думы девятого созыва.",
+        "Председатель Общественной палаты Сахалинской области Владимир Иконников сообщил, что, по данным общественного наблюдения, в течение первого дня нарушений не выявили."
+      ],
+      "image_url": "https://astv.ru/content/NewsImage/77/f9/77f96a0c-abe6-4167-b3d5-b88d33bf5525_3.jpg",
+      "image_hash": "ed12570923888d703da702e5931974e2453d36aa",
+      "published_at": "2026-09-17T13:00:00+00:00",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh",
+        "final_category": "sakh",
+        "event_type": "political_statement",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh",
+          "corrected_category": "sakh",
+          "group": "local",
+          "event_type": "political_statement",
+          "subtype": "political_statement",
+          "seriousness": 68,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [
+            "low_value_or_repetitive_event_type",
+            "near_threshold"
+          ],
+          "title_original": "Председатель Общественной палаты рассказал, как прошел первый день выборов в Госдуму на Сахалине и Курилах",
+          "title_corrected": "Председатель Общественной палаты рассказал, как прошел первый день выборов в Госдуму на Сахалине и Курилах",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized"
+    },
+    {
       "queued_at": "2026-09-18T03:27:07+00:00",
-      "last_attempt_at": "2026-09-18T09:47:12+00:00",
-      "delivery_attempts": 3,
+      "last_attempt_at": "2026-09-18T12:02:55+00:00",
+      "delivery_attempts": 4,
       "delivery_status": "queued",
       "source": "ASTV",
       "source_url": "https://astv.ru/news/criminal/2026-09-18-anomal-nyj-povorot-na-v-ezde-u-gorizonta-opyat-dtp-v-postradavshej-mashine-deti",
@@ -173,8 +230,8 @@
     },
     {
       "queued_at": "2026-09-18T01:01:24+00:00",
-      "last_attempt_at": "2026-09-18T05:42:06+00:00",
-      "delivery_attempts": 3,
+      "last_attempt_at": "2026-09-18T12:02:55+00:00",
+      "delivery_attempts": 4,
       "delivery_status": "queued",
       "source": "ASTV",
       "source_url": "https://astv.ru/news/criminal/2026-09-18-neizvestnyj-stolknulsya-s-mitsubishi-eclipse-cross-i-skrylsya-s-mesta-dtp-v-yuzhno-sahalinske",
@@ -227,8 +284,8 @@
     },
     {
       "queued_at": "2026-09-18T09:47:12+00:00",
-      "last_attempt_at": "2026-09-18T09:47:12+00:00",
-      "delivery_attempts": 1,
+      "last_attempt_at": "2026-09-18T12:02:55+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "ASTV",
       "source_url": "https://astv.ru/news/society/2026-09-18-v-sahalinskoj-oblasti-chipirovali-i-vnesli-v-edinuyu-bazu-uzhe-36-8-tysyachi-koshek-i-sobak",
@@ -240,7 +297,7 @@
         "В Сахалинской области продолжается работа по учету домашних питомцев."
       ],
       "image_url": "https://astv.ru/content/NewsImage/12/b6/12b6d503-9ec3-4901-afec-1f62bb87ce94_3.jpg",
-      "image_hash": "ff21200c60160619d0f9ca0001a888b22628912a",
+      "image_hash": "3eea012b738eb2e73d043a503147f378fdce5c4d",
       "published_at": "2026-09-17T13:00:00+00:00",
       "publication_contract": {
         "approved": true,
@@ -281,8 +338,8 @@
     },
     {
       "queued_at": "2026-09-18T09:45:46+00:00",
-      "last_attempt_at": "2026-09-18T09:45:46+00:00",
-      "delivery_attempts": 1,
+      "last_attempt_at": "2026-09-18T11:58:47+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "Sakh.online",
       "source_url": "https://sakh.online/news/24/2026-09-18/nochnoy-pozhar-v-yurginskom-okruge-unes-zhizni-dvuh-chelovek-526539",
@@ -294,7 +351,7 @@
         "По предварительным данным, очаг возгорания находился в надворной постройке."
       ],
       "image_url": "https://sakh.online/attachments/1d58ab9e5dd87cb264e87daf23329e766414d023/store/crop/25/0/1254/709/800/0/0/0/dc71305e8f4eb33c6ef0b283593abe2842268d2b72f9854d1cb121d8afc7/dc71305e8f4eb33c6ef0b283593abe2842268d2b72f9854d1cb121d8afc7.webp",
-      "image_hash": "99e5f6f2a9653db8d90a8bcc9979313c8f24982f",
+      "image_hash": "df1015cc711163347314c4fd303557d087cbcc13",
       "published_at": "2026-09-17T13:00:00+00:00",
       "publication_contract": {
         "approved": true,
@@ -335,8 +392,8 @@
     },
     {
       "queued_at": "2026-09-18T05:42:06+00:00",
-      "last_attempt_at": "2026-09-18T09:47:12+00:00",
-      "delivery_attempts": 2,
+      "last_attempt_at": "2026-09-18T12:02:55+00:00",
+      "delivery_attempts": 3,
       "delivery_status": "queued",
       "source": "ASTV",
       "source_url": "https://astv.ru/news/criminal/2026-09-18-pozhar-v-kontejnere-na-45-kvadratah-tushili-v-poronajske",
@@ -389,8 +446,8 @@
     },
     {
       "queued_at": "2026-09-18T01:01:24+00:00",
-      "last_attempt_at": "2026-09-18T09:47:12+00:00",
-      "delivery_attempts": 4,
+      "last_attempt_at": "2026-09-18T12:02:55+00:00",
+      "delivery_attempts": 5,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2624648/",
@@ -443,8 +500,8 @@
     },
     {
       "queued_at": "2026-09-17T22:55:09+00:00",
-      "last_attempt_at": "2026-09-18T09:47:12+00:00",
-      "delivery_attempts": 5,
+      "last_attempt_at": "2026-09-18T12:02:55+00:00",
+      "delivery_attempts": 6,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2624640/",
