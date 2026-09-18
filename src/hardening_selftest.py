@@ -115,6 +115,31 @@ def main() -> int:
     assert repaired_eclipse["body"][1].endswith("и скрылся."), repaired_eclipse
     assert not editorial_hardening.content_quality_issues(eclipse, repaired_eclipse), repaired_eclipse
 
+    horizon = {
+        "title": "Аномальный поворот: на въезде у \"Горизонта\" опять ДТП - в пострадавшей машине дети",
+        "source_text": (
+            "Грузовичок остался без заднего моста. В Южно-Сахалинске 18 сентября произошла очередная авария "
+            "на повороте к ЖК \"Горизонт\". Не разъехались легковушка и грузовичок. По словам очевидцев, "
+            "в пострадавшем от удара Toyota Raum вместе со взрослыми были трое детей разных возрастов. "
+            "\" А грузовичок почти доехал до бывшего поста ГАИ. У него нет заднего моста\", - рассказал информатор. "
+            "Горожане уже называют этот поворот аномальным - аварии здесь происходят довольно часто."
+        ),
+        "category_key": "sakh_chp",
+    }
+    horizon_row = {
+        "title_ru": horizon["title"],
+        "body": [
+            "В Южно-Сахалинске 18 сентября произошла очередная авария на повороте к ЖК \"Горизонт\".",
+            "По словам очевидцев, в пострадавшем от удара Toyota Raum вместе со взрослыми были трое детей разных возрастов. \" А грузовичок почти доехал до бывшего поста ГАИ.",
+        ],
+    }
+    horizon_issues = editorial_hardening.content_quality_issues(horizon, horizon_row)
+    assert "body_truncated_inside_quote" in horizon_issues, horizon_issues
+    repaired_horizon = editorial_hardening.repair_row(horizon, horizon_row)
+    assert repaired_horizon["body"][1].count('"') % 2 == 0, repaired_horizon
+    assert "У него нет заднего моста\", - рассказал информатор." in repaired_horizon["body"][1], repaired_horizon
+    assert not editorial_hardening.content_quality_issues(horizon, repaired_horizon), repaired_horizon
+
     sinegorsk = policy.classify({
         "title": "Синегорск остался без света после аварии на линии",
         "source_text": "Энергетики устраняют последствия аварии в Синегорске.",
