@@ -145,8 +145,15 @@ jobs:
               str(item.get('type')) for item in (status.get('issues') or [])
               if isinstance(item,dict)
           }
-          needs=bool({'publisher_slot_missed','publisher_blocked'} & issue_types)
-          sys.exit(0 if needs and tg.get('status') == 'healthy' else 1)
+          missed_slot='publisher_slot_missed' in issue_types
+          blocked='publisher_blocked' in issue_types
+          telegram_healthy=tg.get('status') == 'healthy'
+          # A missed publisher slot is an editorial-freshness failure. Resilient
+          # production is explicitly queue-only when Telegram is unhealthy, so
+          # its catch-up must not depend on delivery credentials. A merely
+          # blocked delivery remains gated on a healthy Telegram adapter.
+          recoverable=missed_slot or (blocked and telegram_healthy)
+          sys.exit(0 if recoverable else 1)
           PY
           then
             echo "Monitor detected a recoverable missing production slot; dispatching publisher"
