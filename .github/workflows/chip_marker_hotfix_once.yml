@@ -1,0 +1,80 @@
+name: SkySakhNews Chip Marker Hotfix Once
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/chip_marker_hotfix.trigger"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skysakhnews-chip-marker-hotfix-once
+  cancel-in-progress: false
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Patch ambiguous Russian chip marker
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("src/editorial_policy.py")
+          text = path.read_text(encoding="utf-8")
+          old = '''def marker_match(text: str, marker: str) -> bool:\n    words = tokens(text)\n    marker_words = tokens(marker)\n    if not words or not marker_words:\n        return False\n    if len(marker_words) == 1 and marker_words[0] in EXACT_SINGLE_MARKERS:\n        return marker_words[0] in words\n'''
+          new = '''def marker_match(text: str, marker: str) -> bool:\n    words = tokens(text)\n    marker_words = tokens(marker)\n    if not words or not marker_words:\n        return False\n    # The IT noun stem "чип" must not match animal/RFID identification verbs\n    # such as "чипировали" or "чипирование". Keep normal noun inflections\n    # (чип, чипы, чипов...) eligible for semiconductor/technology stories.\n    if len(marker_words) == 1 and marker_words[0] == "чип":\n        return any(\n            word.startswith("чип") and not word.startswith("чипир")\n            for word in words\n        )\n    if len(marker_words) == 1 and marker_words[0] in EXACT_SINGLE_MARKERS:\n        return marker_words[0] in words\n'''
+          if old not in text:
+              raise SystemExit("marker_match anchor not found; refusing unsafe patch")
+          path.write_text(text.replace(old, new, 1), encoding="utf-8")
+          PY
+
+      - name: Verify semantic regression before commit
+        env:
+          PYTHONPATH: src
+        run: |
+          python - <<'PY'
+          import editorial_policy as policy
+          import news_director as director
+
+          pet = {
+              "title": "В Сахалинской области чипировали и внесли в единую базу уже 36,8 тысячи кошек и собак",
+              "source_text": "В Сахалинской области продолжается работа по учету домашних питомцев.",
+              "source": "ASTV",
+              "url": "https://astv.ru/news/society/pet-chipping-regression",
+              "category_key": "sakh",
+          }
+          pet_class = policy.classify(pet)
+          assert pet_class.event_type != "major_it", pet_class
+          pet_review = director.review_candidate(pet)
+          assert pet_review["approved"] is False, pet_review
+          assert pet_review["corrected_category"] == "sakh", pet_review
+
+          chips = {
+              "title": "Производитель представил новые чипы для процессоров",
+              "source_text": "Компания начала выпуск новых полупроводниковых чипов для серверных процессоров.",
+              "source": "Reuters",
+              "url": "https://www.reuters.com/technology/chip-regression",
+              "category_key": "it",
+          }
+          chips_class = policy.classify(chips)
+          assert chips_class.event_type == "major_it", chips_class
+          PY
+
+      - name: Commit hotfix and remove one-shot machinery
+        run: |
+          rm -f src/chip_marker_hotfix.trigger .github/workflows/chip_marker_hotfix_once.yml
+          git config user.name "skysakhnews-secondary-guard"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "Fix chip marker false positive for pet chipping"
+          git pull --rebase --autostash origin main
+          git push origin main
