@@ -1,0 +1,82 @@
+name: SkySakhNews One-Time Responder Classification Repair
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/repair_responder_emergency_marker_once.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skysakhnews-one-time-responder-classification-repair
+  cancel-in-progress: false
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Remove responder-only emergency trigger and add regression
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          policy = Path("src/editorial_policy.py")
+          text = policy.read_text(encoding="utf-8")
+          old = '    "эвакуац", "спасател", "мчс", "crash", "fire", "explosion", "flood",\n'
+          new = '    "эвакуац", "crash", "fire", "explosion", "flood",\n'
+          if old in text:
+              text = text.replace(old, new, 1)
+              policy.write_text(text, encoding="utf-8")
+          elif '"спасател", "мчс"' in text:
+              raise SystemExit("Responder markers still present in an unexpected ACCIDENT_EMERGENCY layout")
+
+          test_file = Path("src/production_selftest.py")
+          test_text = test_file.read_text(encoding="utf-8")
+          marker = "# responder-only-emergency-regression-v1"
+          if marker not in test_text:
+              test_text += '''\n\n# responder-only-emergency-regression-v1\n# Emergency-service personnel are provenance/actors, not proof that an emergency occurred.\ndef _test_responder_words_do_not_create_emergency():\n    import editorial_policy as _policy\n\n    benign = {\n        "title": "Сахалинские спасатели помогли ветерану ВОВ с уборкой участка",\n        "source_text": "Сотрудники управления ГО, ЧС и ПБ убрали опавшую листву и мусор у дома ветерана.",\n        "source": "ASTV",\n        "url": "https://astv.ru/news/society/example",\n        "category_key": "sakh",\n    }\n    benign_class = _policy.classify(benign)\n    assert benign_class.event_type != "major_emergency", benign_class\n    assert benign_class.category_key == "sakh", benign_class\n\n    actual_fire = dict(benign)\n    actual_fire["title"] = "Спасатели тушили пожар в жилом доме в Южно-Сахалинске"\n    actual_fire["source_text"] = "В жилом доме произошёл пожар, спасатели ликвидировали открытое горение."\n    fire_class = _policy.classify(actual_fire)\n    assert fire_class.event_type == "major_emergency", fire_class\n    assert fire_class.category_key == "sakh_chp", fire_class\n\n\n_test_responder_words_do_not_create_emergency()\n'''
+              test_file.write_text(test_text, encoding="utf-8")
+          PY
+
+      - name: Verify targeted classification regression
+        env:
+          PYTHONPATH: src
+        run: |
+          python - <<'PY'
+          import editorial_policy as policy
+          row = {
+              "title": "Сахалинские спасатели помогли ветерану ВОВ с уборкой участка",
+              "source_text": "Сотрудники управления ГО, ЧС и ПБ убрали опавшую листву и мусор у дома ветерана.",
+              "source": "ASTV",
+              "url": "https://astv.ru/news/society/example",
+              "category_key": "sakh",
+          }
+          result = policy.classify(row)
+          assert result.event_type != "major_emergency", result
+          assert result.category_key == "sakh", result
+          PY
+
+      - name: Commit repair
+        run: |
+          git config user.name "skysakhnews-secondary-guard"
+          git config user.email "actions@github.com"
+          git add src/editorial_policy.py src/production_selftest.py
+          if git diff --cached --quiet; then
+            echo "Repair already present; no competing commit required"
+            exit 0
+          fi
+          git commit -m "Fix responder-only emergency misclassification"
+          git pull --rebase --autostash origin main
+          git push origin main
