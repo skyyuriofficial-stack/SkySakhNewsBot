@@ -41,7 +41,10 @@ ACRONYM_BOUNDARY_RE = re.compile(
 )
 
 SOURCE_HEADING_PREFIX_RE = re.compile(
-    r"^ГАИ\s+ищет\s+очевидцев\s+(?=Госавтоинспекция\b)",
+    r"^(?:"
+    r"ГАИ\s+ищет\s+очевидцев\s+(?=Госавтоинспекция\b)"
+    r"|Причины\s+возгорания\s+устанавливают\s+(?=Контейнер\b)"
+    r")",
     flags=re.I,
 )
 
@@ -338,7 +341,7 @@ def repair_row(candidate: Mapping[str, Any], row: Mapping[str, Any]) -> Dict[str
 
     repaired["body"] = cleaned
     repaired["hardening_repair"] = {
-        "version": "editorial-hardening-v1.6",
+        "version": "editorial-hardening-v1.7",
         "source_warnings": source_quality_warnings(candidate),
     }
     return repaired
@@ -427,7 +430,7 @@ def install() -> None:
         issues.extend(content_quality_issues(candidate, row))
         contract["issues"] = list(dict.fromkeys(str(issue) for issue in issues if issue))
         contract["approved"] = not contract["issues"]
-        contract["hardening_version"] = "editorial-hardening-v1.6"
+        contract["hardening_version"] = "editorial-hardening-v1.7"
         contract["source_warnings"] = source_quality_warnings(candidate)
         return contract
 
