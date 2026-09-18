@@ -338,6 +338,14 @@ def marker_match(text: str, marker: str) -> bool:
     marker_words = tokens(marker)
     if not words or not marker_words:
         return False
+    # The IT noun stem "чип" must not match animal/RFID identification verbs
+    # such as "чипировали" or "чипирование". Keep normal noun inflections
+    # (чип, чипы, чипов...) eligible for semiconductor/technology stories.
+    if len(marker_words) == 1 and marker_words[0] == "чип":
+        return any(
+            word.startswith("чип") and not word.startswith("чипир")
+            for word in words
+        )
     if len(marker_words) == 1 and marker_words[0] in EXACT_SINGLE_MARKERS:
         return marker_words[0] in words
     width = len(marker_words)
