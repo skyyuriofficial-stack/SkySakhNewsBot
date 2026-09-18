@@ -166,7 +166,7 @@ FATAL = (
 ACCIDENT_EMERGENCY = (
     "дтп", "авари", "пожар", "возгорани", "обруш", "крушен", "опрокинул",
     "сошел с проезжей части", "сошёл с проезжей части", "наводнен", "подтоп",
-    "эвакуац", "спасател", "мчс", "crash", "fire", "explosion", "flood",
+    "эвакуац", "crash", "fire", "explosion", "flood",
     "collapse", "evacuated", "emergency",
 )
 SECURITY = (

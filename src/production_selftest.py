@@ -872,3 +872,30 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# responder-only-emergency-regression-v1
+# Emergency-service personnel are provenance/actors, not proof that an emergency occurred.
+def _test_responder_words_do_not_create_emergency():
+    import editorial_policy as _policy
+
+    benign = {
+        "title": "Сахалинские спасатели помогли ветерану ВОВ с уборкой участка",
+        "source_text": "Сотрудники управления ГО, ЧС и ПБ убрали опавшую листву и мусор у дома ветерана.",
+        "source": "ASTV",
+        "url": "https://astv.ru/news/society/example",
+        "category_key": "sakh",
+    }
+    benign_class = _policy.classify(benign)
+    assert benign_class.event_type != "major_emergency", benign_class
+    assert benign_class.category_key == "sakh", benign_class
+
+    actual_fire = dict(benign)
+    actual_fire["title"] = "Спасатели тушили пожар в жилом доме в Южно-Сахалинске"
+    actual_fire["source_text"] = "В жилом доме произошёл пожар, спасатели ликвидировали открытое горение."
+    fire_class = _policy.classify(actual_fire)
+    assert fire_class.event_type == "major_emergency", fire_class
+    assert fire_class.category_key == "sakh_chp", fire_class
+
+
+_test_responder_words_do_not_create_emergency()
