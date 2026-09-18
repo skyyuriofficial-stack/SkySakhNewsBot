@@ -90,6 +90,31 @@ def main() -> int:
     assert "Подпишись" not in editorial_hardening.dedupe_source_text(magadan["source_text"])
     assert not editorial_hardening.content_quality_issues(magadan, repaired_magadan), repaired_magadan
 
+    eclipse = {
+        "title": "Неизвестный столкнулся с Mitsubishi Eclipse Cross и скрылся с места ДТП в Южно-Сахалинске",
+        "source_text": (
+            "ГАИ ищет очевидцев Госавтоинспекция Южно-Сахалинска ищет очевидцев аварии, которая произошла "
+            "в областном центре 4 сентября в 06:36. В то утро неизвестный водитель на неустановленной машине "
+            "у дома №34 на улице А. Буюклы столкнулся с припаркованным автомобилем Mitsubishi Eclipse Cross и скрылся. "
+            "Если вы были очевидцем этого ДТП, откликнитесь: 789-844."
+        ),
+        "category_key": "sakh_chp",
+    }
+    eclipse_row = {
+        "title_ru": eclipse["title"],
+        "body": [
+            "ГАИ ищет очевидцев Госавтоинспекция Южно-Сахалинска ищет очевидцев аварии, которая произошла в областном центре 4 сентября в 06:36.",
+            "В то утро неизвестный водитель на неустановленной машине у дома №34 на улице А.",
+        ],
+    }
+    eclipse_issues = editorial_hardening.content_quality_issues(eclipse, eclipse_row)
+    assert "body_contains_source_heading_prefix" in eclipse_issues, eclipse_issues
+    repaired_eclipse = editorial_hardening.repair_row(eclipse, eclipse_row)
+    assert repaired_eclipse["body"][0].startswith("Госавтоинспекция Южно-Сахалинска"), repaired_eclipse
+    assert "А. Буюклы столкнулся" in repaired_eclipse["body"][1], repaired_eclipse
+    assert repaired_eclipse["body"][1].endswith("и скрылся."), repaired_eclipse
+    assert not editorial_hardening.content_quality_issues(eclipse, repaired_eclipse), repaired_eclipse
+
     sinegorsk = policy.classify({
         "title": "Синегорск остался без света после аварии на линии",
         "source_text": "Энергетики устраняют последствия аварии в Синегорске.",
