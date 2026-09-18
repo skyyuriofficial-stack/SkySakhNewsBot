@@ -90,6 +90,27 @@ def main() -> int:
     assert "Подпишись" not in editorial_hardening.dedupe_source_text(magadan["source_text"])
     assert not editorial_hardening.content_quality_issues(magadan, repaired_magadan), repaired_magadan
 
+    corporate_loans = {
+        "title": "4,8 трлн рублей реструктуризаций: объём проблемных кредитов бизнеса вырос на 60%",
+        "source_text": (
+            "Объём рискованных реструктуризаций кредитов бизнеса на конец июня 2026 года достиг 4,8 трлн рублей против 3 трлн годом ранее. "
+            "Такие данные содержатся в отчёте ЦБ Речь идёт о ссудах, которые банки переоформляют на более мягких условиях, "
+            "если у заёмщика уже возникли проблемы с выплатами или есть риск появления просрочки."
+        ),
+        "category_key": "ru_eco",
+    }
+    corporate_loans_row = {
+        "title_ru": corporate_loans["title"],
+        "body": [
+            "Объём рискованных реструктуризаций кредитов бизнеса на конец июня 2026 года достиг 4,8 трлн рублей против 3 трлн годом ранее.",
+            "Такие данные содержатся в отчёте ЦБ Речь идёт о ссудах, которые банки переоформляют на более мягких условиях, если у заёмщика уже возникли проблемы с выплатами или есть риск появления просрочки.",
+        ],
+    }
+    assert "body_missing_sentence_boundary" in editorial_hardening.content_quality_issues(corporate_loans, corporate_loans_row)
+    repaired_corporate_loans = editorial_hardening.repair_row(corporate_loans, corporate_loans_row)
+    assert "отчёте ЦБ. Речь идёт" in repaired_corporate_loans["body"][1], repaired_corporate_loans
+    assert not editorial_hardening.content_quality_issues(corporate_loans, repaired_corporate_loans), repaired_corporate_loans
+
     eclipse = {
         "title": "Неизвестный столкнулся с Mitsubishi Eclipse Cross и скрылся с места ДТП в Южно-Сахалинске",
         "source_text": (
