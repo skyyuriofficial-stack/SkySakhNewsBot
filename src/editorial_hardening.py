@@ -113,6 +113,29 @@ def _expand_truncated_from_source(paragraph: str, source_text: str) -> str:
     return paragraph
 
 
+def _expand_unbalanced_quote_from_source(paragraph: str, source_text: str) -> str:
+    """Complete a straight-quoted source fragment only when the source contains its closing quote."""
+    normalized = policy.clean(paragraph)
+    source = policy.clean(source_text)
+    if not normalized or normalized.count('"') % 2 == 0 or not source:
+        return paragraph
+    start = source.find(normalized)
+    if start < 0:
+        return paragraph
+    remainder = source[start + len(normalized):]
+    closing = remainder.find('"')
+    if closing < 0:
+        return paragraph
+    end = start + len(normalized) + closing + 1
+    expanded = source[start:end]
+    suffix = source[end:]
+    attribution = re.match(r"\s*,?\s*[-—]\s*[^.!?]{1,120}[.!?]", suffix)
+    if attribution:
+        expanded += attribution.group(0)
+    expanded = re.sub(r'"\s+([А-ЯЁ])', r'"\1', expanded)
+    return policy.clean(expanded)
+
+
 def text_similarity(a: Any, b: Any) -> float:
     left = _tokens(a)
     right = _tokens(b)
@@ -238,6 +261,9 @@ def content_quality_issues(candidate: Mapping[str, Any], row: Mapping[str, Any])
         if TRUNCATED_INITIAL_RE.search(paragraph) and _expand_truncated_from_source(paragraph, source_text) != paragraph:
             issues.append("body_truncated_at_name_initial")
             break
+        if paragraph.count('"') % 2 == 1 and _expand_unbalanced_quote_from_source(paragraph, source_text) != paragraph:
+            issues.append("body_truncated_inside_quote")
+            break
 
     for index, paragraph in enumerate(paragraphs):
         for previous in paragraphs[:index]:
@@ -279,6 +305,7 @@ def repair_row(candidate: Mapping[str, Any], row: Mapping[str, Any]) -> Dict[str
         paragraph = MISSING_BOUNDARY_RE.sub(". ", paragraph)
         paragraph = SOURCE_HEADING_PREFIX_RE.sub("", paragraph).strip()
         paragraph = _expand_truncated_from_source(paragraph, source_text)
+        paragraph = _expand_unbalanced_quote_from_source(paragraph, source_text)
         if any(_paragraph_duplicate(existing, paragraph) for existing in cleaned):
             continue
         cleaned.append(paragraph)
@@ -302,7 +329,7 @@ def repair_row(candidate: Mapping[str, Any], row: Mapping[str, Any]) -> Dict[str
 
     repaired["body"] = cleaned
     repaired["hardening_repair"] = {
-        "version": "editorial-hardening-v1.4",
+        "version": "editorial-hardening-v1.5",
         "source_warnings": source_quality_warnings(candidate),
     }
     return repaired
@@ -391,7 +418,7 @@ def install() -> None:
         issues.extend(content_quality_issues(candidate, row))
         contract["issues"] = list(dict.fromkeys(str(issue) for issue in issues if issue))
         contract["approved"] = not contract["issues"]
-        contract["hardening_version"] = "editorial-hardening-v1.4"
+        contract["hardening_version"] = "editorial-hardening-v1.5"
         contract["source_warnings"] = source_quality_warnings(candidate)
         return contract
 
