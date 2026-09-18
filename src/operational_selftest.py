@@ -5,8 +5,10 @@ from datetime import datetime, timedelta, timezone
 
 import editorial_gate_runner
 import editorial_monitor
+import editorial_policy
 import hardened_digest
 import health_gate
+import news_director
 import resilient_production
 
 
@@ -45,6 +47,35 @@ def main() -> int:
     bad_tg = {"status": "error", "error_kind": "token_unauthorized"}
     report = health_gate.production_report(state, healthy_monitor, bad_tg)
     assert report["execution_status"] == "error", report
+
+    # Russian pet/animal-identification verbs must not be promoted to major IT
+    # merely because they start with the noun stem "чип". Semiconductor noun
+    # forms must continue to classify as IT.
+    pet_chipping = {
+        "title": "В Сахалинской области чипировали и внесли в единую базу уже 36,8 тысячи кошек и собак",
+        "source_text": (
+            "Владельцам напоминают о возможности бесплатно зарегистрировать питомца. "
+            "В Сахалинской области продолжается работа по учету домашних питомцев."
+        ),
+        "source": "ASTV",
+        "url": "https://astv.ru/news/society/pet-chipping-regression",
+        "category_key": "sakh",
+    }
+    pet_class = editorial_policy.classify(pet_chipping)
+    assert pet_class.event_type != "major_it", pet_class
+    pet_review = news_director.review_candidate(pet_chipping)
+    assert pet_review["approved"] is False, pet_review
+    assert pet_review["corrected_category"] == "sakh", pet_review
+
+    semiconductor = {
+        "title": "Производитель представил новые чипы для процессоров",
+        "source_text": "Компания начала выпуск новых полупроводниковых чипов для серверных процессоров.",
+        "source": "Reuters",
+        "url": "https://www.reuters.com/technology/chip-regression",
+        "category_key": "it",
+    }
+    semiconductor_class = editorial_policy.classify(semiconductor)
+    assert semiconductor_class.event_type == "major_it", semiconductor_class
 
     # A generic source/search teaser is not article evidence. The delivery
     # queue must fail closed rather than fabricate a body from its headline.
