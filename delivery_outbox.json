@@ -1,16 +1,16 @@
 {
   "version": "delivery-outbox-v1",
-  "generated_at_utc": "2026-09-18T03:34:42+00:00",
+  "generated_at_utc": "2026-09-18T05:42:06+00:00",
   "source_of_truth": "github_repository",
   "live_delivery_adapter": "telegram",
   "delivery_adapter_status": "error",
   "delivery_adapter_error": "token_unauthorized",
-  "count": 6,
+  "count": 7,
   "items": [
     {
       "queued_at": "2026-09-17T11:41:08+00:00",
-      "last_attempt_at": "2026-09-18T03:27:06+00:00",
-      "delivery_attempts": 4,
+      "last_attempt_at": "2026-09-18T05:42:06+00:00",
+      "delivery_attempts": 5,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2624224/",
@@ -65,8 +65,8 @@
     },
     {
       "queued_at": "2026-09-18T03:23:40+00:00",
-      "last_attempt_at": "2026-09-18T03:23:40+00:00",
-      "delivery_attempts": 1,
+      "last_attempt_at": "2026-09-18T05:37:30+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2624783/",
@@ -78,7 +78,7 @@
         "Такие данные содержатся в отчёте ЦБ. Речь идёт о ссудах, которые банки переоформляют на более мягких условиях, если у заёмщика уже возникли проблемы с выплатами или есть риск появления просрочки, пишут Известия (18+)."
       ],
       "image_url": "https://sakhalinmedia.ru/f/266x136/6392/6391858.jpg?2607d8468c6e53cdb73bb24a0a7bbc51",
-      "image_hash": "67a9a184dfca7a0e3efb546cc5609164ec471a16",
+      "image_hash": "657bc503c224978d72ed986c65bc009bc2d50863",
       "published_at": "2026-09-18T01:06:00+00:00",
       "publication_contract": {
         "approved": true,
@@ -119,8 +119,8 @@
     },
     {
       "queued_at": "2026-09-18T03:27:07+00:00",
-      "last_attempt_at": "2026-09-18T03:27:07+00:00",
-      "delivery_attempts": 1,
+      "last_attempt_at": "2026-09-18T05:42:06+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "ASTV",
       "source_url": "https://astv.ru/news/criminal/2026-09-18-anomal-nyj-povorot-na-v-ezde-u-gorizonta-opyat-dtp-v-postradavshej-mashine-deti",
@@ -132,7 +132,7 @@
         "По словам очевидцев, в пострадавшем от удара Toyota Raum вместе со взрослыми были трое детей разных возрастов. \"А грузовичок почти доехал до бывшего поста ГАИ. У него нет заднего моста\", - рассказал информатор."
       ],
       "image_url": "https://astv.ru/content/NewsImage/6e/4b/6e4bf31e-b0e4-484b-b919-14180edda8fe_3.jpg",
-      "image_hash": "3565bed0aa66fb3497450dadacbe1585f5a2a9ce",
+      "image_hash": "4f185a7767a334d1c838de64fad9f83d91f412bd",
       "published_at": "2026-09-17T13:00:00+00:00",
       "publication_contract": {
         "approved": true,
@@ -173,8 +173,8 @@
     },
     {
       "queued_at": "2026-09-18T01:01:24+00:00",
-      "last_attempt_at": "2026-09-18T03:27:06+00:00",
-      "delivery_attempts": 2,
+      "last_attempt_at": "2026-09-18T05:42:06+00:00",
+      "delivery_attempts": 3,
       "delivery_status": "queued",
       "source": "ASTV",
       "source_url": "https://astv.ru/news/criminal/2026-09-18-neizvestnyj-stolknulsya-s-mitsubishi-eclipse-cross-i-skrylsya-s-mesta-dtp-v-yuzhno-sahalinske",
@@ -226,9 +226,63 @@
       "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized"
     },
     {
+      "queued_at": "2026-09-18T05:42:06+00:00",
+      "last_attempt_at": "2026-09-18T05:42:06+00:00",
+      "delivery_attempts": 1,
+      "delivery_status": "queued",
+      "source": "ASTV",
+      "source_url": "https://astv.ru/news/criminal/2026-09-18-pozhar-v-kontejnere-na-45-kvadratah-tushili-v-poronajske",
+      "category_key": "sakh_chp",
+      "category": "📍 Сахалин",
+      "title": "Пожар в контейнере на 45 квадратах тушили в Поронайске",
+      "body": [
+        "Причины возгорания устанавливают Контейнер загорелся в Поронайске 17 сентября.",
+        "Сообщение о пожаре по ул. Дружбы, 7, диспетчеру поступило 17:45, рассказали в агентстве по делам ГО, ЧС и ПБ Сахалинской области."
+      ],
+      "image_url": "https://astv.ru/content/NewsImage/d9/0e/d90ec8ed-530f-44ff-ac28-11e4ad3d5a29_3.jpg",
+      "image_hash": "b9fbbfd49534ad91e8fadec1eb176c8af6d3ca36",
+      "published_at": "2026-09-17T13:00:00+00:00",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "major_emergency",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.6",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 92,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Пожар в контейнере на 45 квадратах тушили в Поронайске",
+          "title_corrected": "Пожар в контейнере на 45 квадратах тушили в Поронайске",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized"
+    },
+    {
       "queued_at": "2026-09-18T01:01:24+00:00",
-      "last_attempt_at": "2026-09-18T03:27:07+00:00",
-      "delivery_attempts": 2,
+      "last_attempt_at": "2026-09-18T05:42:06+00:00",
+      "delivery_attempts": 3,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2624648/",
@@ -281,8 +335,8 @@
     },
     {
       "queued_at": "2026-09-17T22:55:09+00:00",
-      "last_attempt_at": "2026-09-18T03:27:07+00:00",
-      "delivery_attempts": 3,
+      "last_attempt_at": "2026-09-18T05:42:06+00:00",
+      "delivery_attempts": 4,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2624640/",
