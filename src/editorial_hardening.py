@@ -36,6 +36,10 @@ MISSING_BOUNDARY_RE = re.compile(
     r"(?<=[а-яё0-9])\s+(?=(?:По|Как|При|Предварительно|В|На|Для|Преступление|Огнеборцы)\s+[А-ЯЁа-яё])"
 )
 
+ACRONYM_BOUNDARY_RE = re.compile(
+    r"\b([А-ЯЁ]{2,6})\s+(?=(?:Речь|По|Как|При|Предварительно|В|На|Для|Преступление|Огнеборцы)\s+[А-ЯЁа-яё])"
+)
+
 SOURCE_HEADING_PREFIX_RE = re.compile(
     r"^ГАИ\s+ищет\s+очевидцев\s+(?=Госавтоинспекция\b)",
     flags=re.I,
@@ -85,9 +89,14 @@ def _incident_anchors(value: Any) -> Set[str]:
     return anchors
 
 
+def _repair_missing_boundaries(value: Any) -> str:
+    text = MISSING_BOUNDARY_RE.sub(". ", policy.clean(value))
+    return ACRONYM_BOUNDARY_RE.sub(r"\1. ", text)
+
+
 def _sentence_parts(value: Any) -> List[str]:
     """Split source prose without mistaking a personal/street initial for sentence end."""
-    text = MISSING_BOUNDARY_RE.sub(". ", policy.clean(value))
+    text = _repair_missing_boundaries(value)
     if not text:
         return []
     protected = re.sub(
@@ -252,7 +261,7 @@ def content_quality_issues(candidate: Mapping[str, Any], row: Mapping[str, Any])
         if any(re.search(pattern, paragraph, flags=re.I) for pattern in CONTACT_OR_TECH_PATTERNS):
             issues.append("body_contains_contact_or_url")
             break
-        if MISSING_BOUNDARY_RE.search(paragraph):
+        if MISSING_BOUNDARY_RE.search(paragraph) or ACRONYM_BOUNDARY_RE.search(paragraph):
             issues.append("body_missing_sentence_boundary")
             break
         if SOURCE_HEADING_PREFIX_RE.search(paragraph):
@@ -302,7 +311,7 @@ def repair_row(candidate: Mapping[str, Any], row: Mapping[str, Any]) -> Dict[str
         paragraph = policy.clean(raw)
         if not paragraph or _unsafe_paragraph(paragraph):
             continue
-        paragraph = MISSING_BOUNDARY_RE.sub(". ", paragraph)
+        paragraph = _repair_missing_boundaries(paragraph)
         paragraph = SOURCE_HEADING_PREFIX_RE.sub("", paragraph).strip()
         paragraph = _expand_truncated_from_source(paragraph, source_text)
         paragraph = _expand_unbalanced_quote_from_source(paragraph, source_text)
@@ -329,7 +338,7 @@ def repair_row(candidate: Mapping[str, Any], row: Mapping[str, Any]) -> Dict[str
 
     repaired["body"] = cleaned
     repaired["hardening_repair"] = {
-        "version": "editorial-hardening-v1.5",
+        "version": "editorial-hardening-v1.6",
         "source_warnings": source_quality_warnings(candidate),
     }
     return repaired
@@ -418,7 +427,7 @@ def install() -> None:
         issues.extend(content_quality_issues(candidate, row))
         contract["issues"] = list(dict.fromkeys(str(issue) for issue in issues if issue))
         contract["approved"] = not contract["issues"]
-        contract["hardening_version"] = "editorial-hardening-v1.5"
+        contract["hardening_version"] = "editorial-hardening-v1.6"
         contract["source_warnings"] = source_quality_warnings(candidate)
         return contract
 
