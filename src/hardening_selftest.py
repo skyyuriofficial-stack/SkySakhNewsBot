@@ -122,6 +122,40 @@ def main() -> int:
     }
     assert editorial_hardening.duplicate_event(fire_a, fire_b), (fire_a, fire_b)
 
+    tym_fire_a = {
+        "title": "Пожарные нашли тело женщины при тушении квартиры в Тымовском районе",
+        "source_text": (
+            "Трагедия произошла 17 сентября в селе Красная Тымь. Огнеборцы обнаружили тело "
+            "42-летней женщины во время тушения пожара в квартире дома на улице Юбилейной. "
+            "Следователи не нашли признаков насильственной смерти и назначили судебно-медицинскую экспертизу."
+        ),
+        "category_key": "sakh_chp",
+    }
+    tym_fire_b = {
+        "title": "Следователи выяснят причины гибели женщины при пожаре в селе Тымовского района",
+        "source_text": (
+            "17 сентября в квартире дома по улице Юбилейной обнаружили тело 42-летней местной жительницы. "
+            "Признаков насильственной смерти не выявлено. Для установления причины гибели назначили экспертизу."
+        ),
+        "category_key": "sakh_chp",
+    }
+    assert editorial_hardening.duplicate_event(tym_fire_a, tym_fire_b), (tym_fire_a, tym_fire_b)
+
+    different_fire = {
+        "title": "Следователи проверят гибель женщины при пожаре в Тымовском районе",
+        "source_text": (
+            "В другом населенном пункте при пожаре в доме на улице Центральной погибла 61-летняя женщина."
+        ),
+        "category_key": "sakh_chp",
+    }
+    assert not editorial_hardening.duplicate_event(tym_fire_a, different_fire), (tym_fire_a, different_fire)
+
+    malformed_source = (
+        "Следователи не обнаружили признаков насильственной смерти Огнеборцы обнаружили тело "
+        "42-летней женщины во время тушения пожара."
+    )
+    assert "смерти. Огнеборцы" in editorial_hardening.dedupe_source_text(malformed_source)
+
     print("hardening selftest: OK")
     return 0
 
