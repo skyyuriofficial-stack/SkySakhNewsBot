@@ -36,6 +36,13 @@ MISSING_BOUNDARY_RE = re.compile(
     r"(?<=[а-яё0-9])\s+(?=(?:По|Как|При|Предварительно|В|На|Для|Преступление|Огнеборцы)\s+[А-ЯЁа-яё])"
 )
 
+SOURCE_HEADING_PREFIX_RE = re.compile(
+    r"^ГАИ\s+ищет\s+очевидцев\s+(?=Госавтоинспекция\b)",
+    flags=re.I,
+)
+
+TRUNCATED_INITIAL_RE = re.compile(r"\b[А-ЯЁ]\.$")
+
 GENERIC_EVENT_WORDS = {
     "после", "перед", "в", "на", "по", "для", "из", "при", "дом", "дома",
     "южно", "сахалинск", "сахалинске", "сахалин", "области", "районе", "улице",
@@ -76,6 +83,34 @@ def _incident_anchors(value: Any) -> Set[str]:
     for street in re.findall(r"\b(?:улиц\w*|ул\.?)\s+([а-яё-]{4,})", text, flags=re.I):
         anchors.add(f"street:{_stem_token(street)}")
     return anchors
+
+
+def _sentence_parts(value: Any) -> List[str]:
+    """Split source prose without mistaking a personal/street initial for sentence end."""
+    text = MISSING_BOUNDARY_RE.sub(". ", policy.clean(value))
+    if not text:
+        return []
+    protected = re.sub(
+        r"\b([А-ЯЁ])\.\s+(?=[А-ЯЁ][а-яё-]{2,}\b)",
+        r"\1<INIT> ",
+        text,
+    )
+    parts = [
+        policy.clean(part.replace("<INIT>", "."))
+        for part in re.split(r"(?<=[.!?])\s+", protected)
+        if policy.clean(part)
+    ]
+    return parts
+
+
+def _expand_truncated_from_source(paragraph: str, source_text: str) -> str:
+    if not TRUNCATED_INITIAL_RE.search(paragraph):
+        return paragraph
+    normalized = policy.clean(paragraph)
+    for sentence in _sentence_parts(source_text):
+        if sentence.startswith(normalized) and len(sentence) > len(normalized) + 3:
+            return sentence
+    return paragraph
 
 
 def text_similarity(a: Any, b: Any) -> float:
@@ -142,12 +177,11 @@ def _unsafe_paragraph(paragraph: str) -> bool:
 
 def dedupe_source_text(value: Any) -> str:
     """Remove scraper-level repeated source sentences before generation/audit."""
-    text = MISSING_BOUNDARY_RE.sub(". ", policy.clean(value))
-    if not text:
+    parts = _sentence_parts(value)
+    if not parts:
         return ""
-    parts = [policy.clean(part) for part in re.split(r"(?<=[.!?])\s+", text) if policy.clean(part)]
     if len(parts) < 2:
-        return text
+        return parts[0]
     kept: List[str] = []
     for part in parts:
         if _unsafe_paragraph(part):
@@ -163,9 +197,7 @@ def source_quality_warnings(candidate: Mapping[str, Any]) -> List[str]:
     if not source_text:
         return []
     cleaned = dedupe_source_text(source_text)
-    normalized_original = " ".join(
-        part for part in re.split(r"(?<=[.!?])\s+", source_text) if policy.clean(part)
-    )
+    normalized_original = " ".join(_sentence_parts(source_text))
     warnings: List[str] = []
     if cleaned != normalized_original:
         warnings.append("source_text_sanitized")
@@ -199,6 +231,12 @@ def content_quality_issues(candidate: Mapping[str, Any], row: Mapping[str, Any])
             break
         if MISSING_BOUNDARY_RE.search(paragraph):
             issues.append("body_missing_sentence_boundary")
+            break
+        if SOURCE_HEADING_PREFIX_RE.search(paragraph):
+            issues.append("body_contains_source_heading_prefix")
+            break
+        if TRUNCATED_INITIAL_RE.search(paragraph) and _expand_truncated_from_source(paragraph, source_text) != paragraph:
+            issues.append("body_truncated_at_name_initial")
             break
 
     for index, paragraph in enumerate(paragraphs):
@@ -239,6 +277,8 @@ def repair_row(candidate: Mapping[str, Any], row: Mapping[str, Any]) -> Dict[str
         if not paragraph or _unsafe_paragraph(paragraph):
             continue
         paragraph = MISSING_BOUNDARY_RE.sub(". ", paragraph)
+        paragraph = SOURCE_HEADING_PREFIX_RE.sub("", paragraph).strip()
+        paragraph = _expand_truncated_from_source(paragraph, source_text)
         if any(_paragraph_duplicate(existing, paragraph) for existing in cleaned):
             continue
         cleaned.append(paragraph)
@@ -248,11 +288,12 @@ def repair_row(candidate: Mapping[str, Any], row: Mapping[str, Any]) -> Dict[str
     if len(cleaned) < 2:
         source_clean = dedupe_source_text(source_text)
         source_sentences = [
-            MISSING_BOUNDARY_RE.sub(". ", policy.clean(part))
-            for part in re.split(r"(?<=[.!?])\s+", source_clean)
+            policy.clean(part)
+            for part in _sentence_parts(source_clean)
             if len(policy.clean(part)) >= 45 and not _unsafe_paragraph(policy.clean(part))
         ]
         for sentence in source_sentences:
+            sentence = SOURCE_HEADING_PREFIX_RE.sub("", sentence).strip()
             if any(_paragraph_duplicate(existing, sentence) for existing in cleaned):
                 continue
             cleaned.append(sentence)
@@ -261,7 +302,7 @@ def repair_row(candidate: Mapping[str, Any], row: Mapping[str, Any]) -> Dict[str
 
     repaired["body"] = cleaned
     repaired["hardening_repair"] = {
-        "version": "editorial-hardening-v1.3",
+        "version": "editorial-hardening-v1.4",
         "source_warnings": source_quality_warnings(candidate),
     }
     return repaired
@@ -350,7 +391,7 @@ def install() -> None:
         issues.extend(content_quality_issues(candidate, row))
         contract["issues"] = list(dict.fromkeys(str(issue) for issue in issues if issue))
         contract["approved"] = not contract["issues"]
-        contract["hardening_version"] = "editorial-hardening-v1.3"
+        contract["hardening_version"] = "editorial-hardening-v1.4"
         contract["source_warnings"] = source_quality_warnings(candidate)
         return contract
 
