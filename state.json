@@ -11705,86 +11705,6 @@
         }
       },
       "pending_hardening_repaired_at": "2026-09-19T05:05:52+00:00"
-    },
-    {
-      "queued_at": "2026-09-17T22:55:09+00:00",
-      "last_attempt_at": "2026-09-19T05:05:51+00:00",
-      "delivery_attempts": 10,
-      "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized",
-      "url": "https://sakhalinmedia.ru/news/2624640/",
-      "title_hash": "cedaad5857901ba6b61d24650ef31121672efbb9",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh",
-      "footer": "САХАЛИН",
-      "title": "Дома на двух улицах Южно-Сахалинска временно останутся без воды 18 сентября",
-      "source_text": "Временное отключение водоснабжения запланировано в домах на двух улицах Южно-Сахалинска сегодня, 18 сентября. Это связано с ремонтными работами на коммунальных сетях, сообщает пресс-служба РВК-Сахалин. Водоснабжение будет отсутствовать с 10.00 до 14.00 (АДРЕСА)",
-      "published_at": "2026-09-17T22:29:00+00:00",
-      "image_url": "https://sakhalinmedia.ru/f/266x136/6384/6383842.jpg?0ebd5d432b47854be0c6ee1871ccf4f7",
-      "image_hash": "fe5372b5b165dc19c0b898a3f52ebb1f4624b068",
-      "topic_cluster": "sakh:улицах_сахалинска_временно_останутся_сентября_sakhalinmedia",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "Дома на двух улицах Южно-Сахалинска временно останутся без воды 18 сентября",
-        "body": [
-          "Временное отключение водоснабжения запланировано в домах на двух улицах Южно-Сахалинска сегодня, 18 сентября.",
-          "Это связано с ремонтными работами на коммунальных сетях, сообщает пресс-служба РВК-Сахалин."
-        ],
-        "footer": "САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": [],
-          "reclassified_from": "sakh_chp",
-          "reclassified_to": "sakh"
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh",
-        "final_category": "sakh",
-        "event_type": "public_service_disruption",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh",
-          "corrected_category": "sakh",
-          "group": "local",
-          "event_type": "public_service_disruption",
-          "subtype": "public_service_disruption",
-          "seriousness": 81,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Дома на двух улицах Южно-Сахалинска временно останутся без воды 18 сентября",
-          "title_corrected": "Дома на двух улицах Южно-Сахалинска временно останутся без воды 18 сентября",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-19T05:05:52+00:00"
     }
   ],
   "news_director_policy": {
@@ -14019,6 +13939,88 @@
       },
       "expired_at": "2026-09-19T05:05:51+00:00",
       "expired_reason": "pending_revalidation_failed:foreign_translation_evidence_missing"
+    },
+    {
+      "queued_at": "2026-09-17T22:55:09+00:00",
+      "last_attempt_at": "2026-09-19T05:05:51+00:00",
+      "delivery_attempts": 10,
+      "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized",
+      "url": "https://sakhalinmedia.ru/news/2624640/",
+      "title_hash": "cedaad5857901ba6b61d24650ef31121672efbb9",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "footer": "САХАЛИН",
+      "title": "Дома на двух улицах Южно-Сахалинска временно останутся без воды 18 сентября",
+      "source_text": "Временное отключение водоснабжения запланировано в домах на двух улицах Южно-Сахалинска сегодня, 18 сентября. Это связано с ремонтными работами на коммунальных сетях, сообщает пресс-служба РВК-Сахалин. Водоснабжение будет отсутствовать с 10.00 до 14.00 (АДРЕСА)",
+      "published_at": "2026-09-17T22:29:00+00:00",
+      "image_url": "https://sakhalinmedia.ru/f/266x136/6384/6383842.jpg?0ebd5d432b47854be0c6ee1871ccf4f7",
+      "image_hash": "fe5372b5b165dc19c0b898a3f52ebb1f4624b068",
+      "topic_cluster": "sakh:улицах_сахалинска_временно_останутся_сентября_sakhalinmedia",
+      "media_origin": "source_article_or_feed",
+      "row": {
+        "reject": false,
+        "title_ru": "Дома на двух улицах Южно-Сахалинска временно останутся без воды 18 сентября",
+        "body": [
+          "Временное отключение водоснабжения запланировано в домах на двух улицах Южно-Сахалинска сегодня, 18 сентября.",
+          "Это связано с ремонтными работами на коммунальных сетях, сообщает пресс-служба РВК-Сахалин."
+        ],
+        "footer": "САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh_chp",
+          "reclassified_to": "sakh"
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.7",
+          "source_warnings": []
+        }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh",
+        "final_category": "sakh",
+        "event_type": "public_service_disruption",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh",
+          "corrected_category": "sakh",
+          "group": "local",
+          "event_type": "public_service_disruption",
+          "subtype": "public_service_disruption",
+          "seriousness": 81,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Дома на двух улицах Южно-Сахалинска временно останутся без воды 18 сентября",
+          "title_corrected": "Дома на двух улицах Южно-Сахалинска временно останутся без воды 18 сентября",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-19T05:05:52+00:00",
+      "expired_at": "2026-09-19T06:53:10+00:00",
+      "expired_reason": "pending_event_expired:public_service_disruption_past_date"
     }
   ],
   "recent_image_hashes": [],
