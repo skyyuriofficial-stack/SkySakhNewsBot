@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-19T21:00:05+00:00",
-  "checked_at_sakhalin": "2026-09-20T08:00:01+11:00",
+  "checked_at_utc": "2026-09-19T21:47:57+00:00",
+  "checked_at_sakhalin": "2026-09-20T08:47:54+11:00",
   "status": "error",
   "mutations_enabled": false,
   "issues": [
@@ -69,6 +69,19 @@
       ]
     },
     {
+      "type": "mobilization_digest_missing",
+      "slot": "morning",
+      "expected_by_sakhalin": "2026-09-20T08:45:00+11:00",
+      "last_attempt": {
+        "status": "error",
+        "mode": "evening",
+        "at_utc": "2026-09-19T12:27:05+00:00",
+        "at_sakhalin": "2026-09-19T23:27:05+11:00",
+        "error": "telegram_token_unauthorized",
+        "description": "Unauthorized"
+      }
+    },
+    {
       "type": "telegram_delivery_unhealthy",
       "reason": "token_unauthorized",
       "http_status": 401,
@@ -108,7 +121,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-09-20T07:59:38+11:00",
-    "age_hours": 0.01,
+    "age_hours": 0.81,
     "published": 0
   },
   "last_production_attempt": {
@@ -122,9 +135,9 @@
   "mobilization_digest": {
     "version": "mobilization-digest-v1.4",
     "day_sakhalin": "2026-09-20",
-    "status": "healthy",
+    "status": "error",
     "morning": {
-      "due": false,
+      "due": true,
       "published": false,
       "record": {}
     },
@@ -141,11 +154,25 @@
       "error": "telegram_token_unauthorized",
       "description": "Unauthorized"
     },
-    "missing": []
+    "missing": [
+      {
+        "type": "mobilization_digest_missing",
+        "slot": "morning",
+        "expected_by_sakhalin": "2026-09-20T08:45:00+11:00",
+        "last_attempt": {
+          "status": "error",
+          "mode": "evening",
+          "at_utc": "2026-09-19T12:27:05+00:00",
+          "at_sakhalin": "2026-09-19T23:27:05+11:00",
+          "error": "telegram_token_unauthorized",
+          "description": "Unauthorized"
+        }
+      }
+    ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-19T21:00:04+00:00",
+    "checked_at": "2026-09-19T21:47:56+00:00",
     "checked": 20,
     "passed": 15,
     "anomalies": [
@@ -654,7 +681,7 @@
     "valid_posts_counted": 20
   },
   "telegram_health": {
-    "checked_at_utc": "2026-09-19T20:59:59+00:00",
+    "checked_at_utc": "2026-09-19T21:47:51+00:00",
     "status": "error",
     "auth_ok": false,
     "chat_ok": false,
