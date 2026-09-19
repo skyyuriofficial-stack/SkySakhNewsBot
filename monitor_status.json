@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-19T06:53:36+00:00",
-  "checked_at_sakhalin": "2026-09-19T17:53:31+11:00",
+  "checked_at_utc": "2026-09-19T07:17:10+00:00",
+  "checked_at_sakhalin": "2026-09-19T18:17:06+11:00",
   "status": "error",
   "mutations_enabled": false,
   "issues": [
@@ -75,8 +75,8 @@
       "last_attempt": {
         "status": "error",
         "mode": "morning",
-        "at_utc": "2026-09-19T06:26:05+00:00",
-        "at_sakhalin": "2026-09-19T17:26:05+11:00",
+        "at_utc": "2026-09-19T07:16:48+00:00",
+        "at_sakhalin": "2026-09-19T18:16:48+11:00",
         "error": "telegram_token_unauthorized",
         "description": "Unauthorized"
       }
@@ -121,7 +121,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-09-19T16:05:51+11:00",
-    "age_hours": 1.8,
+    "age_hours": 2.19,
     "published": 0
   },
   "last_production_attempt": {
@@ -149,8 +149,8 @@
     "last_attempt": {
       "status": "error",
       "mode": "morning",
-      "at_utc": "2026-09-19T06:26:05+00:00",
-      "at_sakhalin": "2026-09-19T17:26:05+11:00",
+      "at_utc": "2026-09-19T07:16:48+00:00",
+      "at_sakhalin": "2026-09-19T18:16:48+11:00",
       "error": "telegram_token_unauthorized",
       "description": "Unauthorized"
     },
@@ -162,8 +162,8 @@
         "last_attempt": {
           "status": "error",
           "mode": "morning",
-          "at_utc": "2026-09-19T06:26:05+00:00",
-          "at_sakhalin": "2026-09-19T17:26:05+11:00",
+          "at_utc": "2026-09-19T07:16:48+00:00",
+          "at_sakhalin": "2026-09-19T18:16:48+11:00",
           "error": "telegram_token_unauthorized",
           "description": "Unauthorized"
         }
@@ -172,7 +172,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-19T06:53:34+00:00",
+    "checked_at": "2026-09-19T07:17:09+00:00",
     "checked": 20,
     "passed": 15,
     "anomalies": [
@@ -681,7 +681,7 @@
     "valid_posts_counted": 20
   },
   "telegram_health": {
-    "checked_at_utc": "2026-09-19T06:53:31+00:00",
+    "checked_at_utc": "2026-09-19T07:17:05+00:00",
     "status": "error",
     "auth_ok": false,
     "chat_ok": false,
