@@ -3,7 +3,7 @@ from __future__ import annotations
 import copy
 import json
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict
 
@@ -19,6 +19,26 @@ _GENERIC_SOURCE_TEASER_RE = re.compile(
     r"в\s+ленте\s+новостей\s+на\s+сайте",
     flags=re.I | re.S,
 )
+
+_RU_MONTHS = {
+    "января": 1,
+    "февраля": 2,
+    "марта": 3,
+    "апреля": 4,
+    "мая": 5,
+    "июня": 6,
+    "июля": 7,
+    "августа": 8,
+    "сентября": 9,
+    "октября": 10,
+    "ноября": 11,
+    "декабря": 12,
+}
+_TIME_BOUND_DATE_RE = re.compile(
+    r"\b([0-3]?\d)\s+(января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)\b",
+    flags=re.I,
+)
+_SAKHALIN_TZ = timezone(timedelta(hours=11))
 
 
 def _delivery_reason(health: Dict[str, Any]) -> str:
@@ -60,6 +80,56 @@ def _published_minute(item: Dict[str, Any]) -> str:
 def _pending_event_type(item: Dict[str, Any]) -> str:
     contract = item.get("publication_contract") if isinstance(item.get("publication_contract"), dict) else {}
     return str(contract.get("event_type") or "").strip()
+
+
+def _time_sensitive_item_expired(item: Dict[str, Any], *, now_utc: datetime | None = None) -> bool:
+    """Expire an explicitly dated service-disruption notice after its local date.
+
+    This guard is intentionally narrow. It applies only to already-reviewed
+    ``public_service_disruption`` items and only when the queued title/body contains
+    an explicit Russian calendar date such as ``18 сентября``. It does not age out
+    general news merely because delivery has been delayed.
+    """
+
+    if _pending_event_type(item) != "public_service_disruption":
+        return False
+
+    match = _TIME_BOUND_DATE_RE.search(_pending_evidence(item))
+    if not match:
+        return False
+
+    try:
+        day = int(match.group(1))
+        month = _RU_MONTHS[match.group(2).lower()]
+    except (TypeError, ValueError, KeyError):
+        return False
+
+    published_raw = str(item.get("published_at") or "").strip()
+    try:
+        published = datetime.fromisoformat(published_raw.replace("Z", "+00:00"))
+        if published.tzinfo is None:
+            published = published.replace(tzinfo=timezone.utc)
+        published_local = published.astimezone(_SAKHALIN_TZ)
+    except (TypeError, ValueError):
+        return False
+
+    try:
+        event_date = published_local.date().replace(month=month, day=day)
+    except ValueError:
+        return False
+
+    # Handle a notice published near New Year for an event in early January.
+    if event_date < published_local.date() and (published_local.date() - event_date).days > 180:
+        try:
+            event_date = event_date.replace(year=event_date.year + 1)
+        except ValueError:
+            return False
+
+    current = now_utc or datetime.now(timezone.utc)
+    if current.tzinfo is None:
+        current = current.replace(tzinfo=timezone.utc)
+    today_sakhalin = current.astimezone(_SAKHALIN_TZ).date()
+    return event_date < today_sakhalin
 
 
 def _same_deferred_event(left: Dict[str, Any], right: Dict[str, Any]) -> bool:
@@ -138,7 +208,7 @@ def _retire_deferred_duplicates(state: Dict[str, Any]) -> int:
 
 
 def _sanitize_delivery_queue(state: Dict[str, Any]) -> Dict[str, int]:
-    """Run canonical hardening plus fail-closed evidence and outage dedupe guards."""
+    """Run canonical hardening plus fail-closed evidence, freshness and dedupe guards."""
 
     report = dict(hardened.sanitize_pending_queue(state))
     cross_source_duplicates = _retire_deferred_duplicates(state)
@@ -154,13 +224,22 @@ def _sanitize_delivery_queue(state: Dict[str, Any]) -> Dict[str, int]:
     ]
     if not pending:
         report["insufficient_source_retired"] = 0
+        report["time_sensitive_retired"] = 0
         return report
 
     accepted = []
-    retired = []
+    insufficient_retired = []
+    time_sensitive_retired = []
     for item in pending:
-        if _source_evidence_insufficient(item):
-            retired.append(
+        if _time_sensitive_item_expired(item):
+            time_sensitive_retired.append(
+                hardened._retire(
+                    item,
+                    "pending_event_expired:public_service_disruption_past_date",
+                )
+            )
+        elif _source_evidence_insufficient(item):
+            insufficient_retired.append(
                 hardened._retire(
                     item,
                     "pending_revalidation_failed:source_text_insufficient_for_body",
@@ -169,18 +248,20 @@ def _sanitize_delivery_queue(state: Dict[str, Any]) -> Dict[str, int]:
         else:
             accepted.append(item)
 
-    if retired:
+    newly_retired = time_sensitive_retired + insufficient_retired
+    if newly_retired:
         existing_expired = [
             item
             for item in (state.get("expired_media_delivery") or [])
             if isinstance(item, dict)
         ]
         state["pending_media_delivery"] = accepted
-        state["expired_media_delivery"] = (existing_expired + retired)[-80:]
+        state["expired_media_delivery"] = (existing_expired + newly_retired)[-80:]
 
-    report["insufficient_source_retired"] = len(retired)
+    report["insufficient_source_retired"] = len(insufficient_retired)
+    report["time_sensitive_retired"] = len(time_sensitive_retired)
     report["after"] = len(state.get("pending_media_delivery") or [])
-    report["retired"] = int(report.get("retired") or 0) + len(retired)
+    report["retired"] = int(report.get("retired") or 0) + len(newly_retired)
     return report
 
 
