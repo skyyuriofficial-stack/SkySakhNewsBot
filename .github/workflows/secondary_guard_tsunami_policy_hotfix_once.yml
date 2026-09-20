@@ -77,11 +77,10 @@ jobs:
           assert hazard_classification.category_key == "sakh_quake", hazard_classification.to_dict()
           PY
 
-      - name: Commit authoritative policy repair
+      - name: Commit authoritative policy repair to isolated branch
         run: |
           git config user.name "skysakhnews-secondary-guard"
           git config user.email "actions@github.com"
           git add src/editorial_policy.py
           git commit -m "Require hazard context for tsunami classification"
-          git pull --rebase origin main
-          git push origin main
+          git push --force origin HEAD:refs/heads/secondary-tsunami-policy-fix
