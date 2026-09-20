@@ -1,0 +1,87 @@
+name: SkySakhNews Secondary Guard Tsunami Policy Hotfix Once
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/secondary_guard_tsunami_policy_hotfix_once.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skysakhnews-secondary-tsunami-hotfix
+  cancel-in-progress: false
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Patch authoritative tsunami classification
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("src/editorial_policy.py")
+          text = path.read_text(encoding="utf-8")
+          old = '''QUAKE = (\n    "землетряс", "магнитуд", "эпицентр", "сейсм", "толчок", "цунами",\n    "earthquake", "magnitude", "epicentre", "epicenter", "seismic",\n)'''
+          new = '''QUAKE = (\n    "землетряс", "магнитуд", "эпицентр", "сейсм", "толчок",\n    "угроза цунами", "предупреждение о цунами", "опасность цунами",\n    "волна цунами", "цунами после землетрясения",\n    "earthquake", "magnitude", "epicentre", "epicenter", "seismic",\n)'''
+          count = text.count(old)
+          if count != 1:
+              raise SystemExit(f"expected one canonical QUAKE block, found {count}")
+          path.write_text(text.replace(old, new, 1), encoding="utf-8")
+          PY
+
+      - name: Verify proper-name and real-hazard behavior
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m py_compile src/editorial_policy.py src/news_director.py
+          python - <<'PY'
+          import editorial_policy as policy
+          import news_director
+
+          park = {
+              "source": "SakhalinMedia.ru",
+              "url": "https://sakhalinmedia.ru/news/2626436/",
+              "category_key": "sakh_quake",
+              "title": "В Южно-Сахалинске завершили благоустройство территории у скейт-парка Цунами",
+              "source_text": (
+                  "Губернатор Сахалинской области и мэр Южно-Сахалинска осмотрели "
+                  "обновленную территорию вокруг скейт-парка Цунами. Работы включали "
+                  "дренаж, освещение и асфальтирование пешеходных зон."
+              ),
+          }
+          classification = policy.classify(park)
+          assert classification.event_type != "earthquake", classification.to_dict()
+          assert classification.category_key == "sakh", classification.to_dict()
+          review = news_director.review_candidate(park)
+          assert review["approved"] is False, review
+          assert review["reason"] == "importance_below_threshold", review
+
+          hazard = {
+              "source": "SakhalinMedia.ru",
+              "url": "https://example.invalid/tsunami",
+              "category_key": "sakh_quake",
+              "title": "На Сахалине объявили угрозу цунами после землетрясения",
+              "source_text": "После сильного землетрясения объявлена угроза цунами.",
+          }
+          hazard_classification = policy.classify(hazard)
+          assert hazard_classification.event_type == "earthquake", hazard_classification.to_dict()
+          assert hazard_classification.category_key == "sakh_quake", hazard_classification.to_dict()
+          PY
+
+      - name: Commit authoritative policy repair
+        run: |
+          git config user.name "skysakhnews-secondary-guard"
+          git config user.email "actions@github.com"
+          git add src/editorial_policy.py
+          git commit -m "Require hazard context for tsunami classification"
+          git pull --rebase origin main
+          git push origin main
