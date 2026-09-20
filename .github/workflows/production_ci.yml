@@ -30,6 +30,7 @@ on:
       - "src/health_gate.py"
       - "src/hardening_selftest.py"
       - "src/operational_selftest.py"
+      - "src/usercustomize.py"
       - "requirements.txt"
       - ".github/workflows/auto_publish_v7.yml"
       - ".github/workflows/delivery_recovery.yml"
@@ -72,7 +73,7 @@ jobs:
             src/hardened_publisher.py src/hardened_monitor.py src/hardened_digest.py \
             src/resilient_production.py src/resilient_health_gate.py src/resilient_selftest.py \
             src/schedule_guard.py src/health_gate.py src/hardening_selftest.py \
-            src/operational_selftest.py
+            src/operational_selftest.py src/usercustomize.py
 
       - name: Run exact feed, category, balance, title and operational regressions
         env:
