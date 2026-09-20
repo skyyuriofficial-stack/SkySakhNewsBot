@@ -11352,84 +11352,6 @@
   },
   "pending_media_delivery": [
     {
-      "queued_at": "2026-09-20T00:17:00+00:00",
-      "last_attempt_at": "2026-09-20T00:17:00+00:00",
-      "delivery_attempts": 1,
-      "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized",
-      "url": "https://sakhalinmedia.ru/news/2626436/",
-      "title_hash": "744f5ed96ec4edfa1bc563f60a713259027fb0dd",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_quake",
-      "footer": "САХАЛИН | СЕЙСМИКА",
-      "title": "В Южно-Сахалинске завершили благоустройство территории у скейт-парка Цунами",
-      "source_text": "Губернатор Сахалинской области Валерий Лимаренко и мэр Южно-Сахалинска Сергей Надсадин осмотрели обновленную территорию вокруг скейт-парка Цунами в районе Ботанического сада. Работы по благоустройству включали устройство дренажной системы, монтаж современного светодиодного освещения и асфальтирование пешеходных зон, сообщает пресс-служба регионального правительства. Губернатор Валерий Лимаренко осмотрел объект (ФОТО) Подрядчик провел работы на площади более 6,5 тысячи квадратных метров. Помимо инженерных сетей и дорожного покрытия, на территории установили зоны отдыха в формате амфитеатров (парклетов). Выполненные мероприятия позволили интегрировать скейт-парк в единую пешеходную сеть города. Теперь от объекта проходит экотропа, ведущая к средней площадке туристического комплекса \"Горный воздух\" мимо восточного входа в Ботанический сад. Глава региона отметил, что работы на этом участке не завершены. В следующем году планируется начало строительства новой входной группы \"Горного воздуха\" со стороны Ботанического сада, инвестор для реализации проекта уже определен. \"Территория стала востребованным местом отдыха, но в следующем году нам предстоит более масштабная работа. Дорога отсюда ведет в сторону \"Горного воздуха\" и в перспективе станет альтернативным маршрутом для жителей улицы Больничной. Наша задача — развивать эту часть Южно-Сахалинска и делать ее максимально удобной для людей\", — подчеркнул Валерий Лимаренко.",
-      "published_at": "2026-09-19T22:58:00+00:00",
-      "image_url": "https://sakhalinmedia.ru/f/big/6400/6399090.jpg?56eabf4eaef9d4f60b1f63ddc234de8a",
-      "image_hash": "601197e635aa81f3ddb18b6880794c50287c7c2d",
-      "topic_cluster": "sakh_quake:сахалин_южно-сахалинск",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "В Южно-Сахалинске завершили благоустройство территории у скейт-парка Цунами",
-        "body": [
-          "Губернатор Сахалинской области Валерий Лимаренко и мэр Южно-Сахалинска Сергей Надсадин осмотрели обновленную территорию вокруг скейт-парка Цунами в районе Ботанического сада.",
-          "Работы по благоустройству включали устройство дренажной системы, монтаж современного светодиодного освещения и асфальтирование пешеходных зон, сообщает пресс-служба регионального правительства."
-        ],
-        "footer": "САХАЛИН | СЕЙСМИКА",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_quake",
-        "final_category": "sakh_quake",
-        "event_type": "earthquake",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_quake",
-          "corrected_category": "sakh_quake",
-          "group": "local",
-          "event_type": "earthquake",
-          "subtype": "earthquake",
-          "seriousness": 100,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "В Южно-Сахалинске завершили благоустройство территории у скейт-парка Цунами",
-          "title_corrected": "В Южно-Сахалинске завершили благоустройство территории у скейт-парка Цунами",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-20T00:17:00+00:00"
-    },
-    {
       "queued_at": "2026-09-19T09:32:04+00:00",
       "last_attempt_at": "2026-09-20T00:17:00+00:00",
       "delivery_attempts": 4,
@@ -14146,6 +14068,86 @@
       "pending_hardening_repaired_at": "2026-09-19T12:32:20+00:00",
       "expired_at": "2026-09-19T20:56:27+00:00",
       "expired_reason": "news_stale_before_delivery"
+    },
+    {
+      "queued_at": "2026-09-20T00:17:00+00:00",
+      "last_attempt_at": "2026-09-20T00:17:00+00:00",
+      "delivery_attempts": 1,
+      "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized",
+      "url": "https://sakhalinmedia.ru/news/2626436/",
+      "title_hash": "744f5ed96ec4edfa1bc563f60a713259027fb0dd",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_quake",
+      "footer": "САХАЛИН | СЕЙСМИКА",
+      "title": "В Южно-Сахалинске завершили благоустройство территории у скейт-парка Цунами",
+      "source_text": "Губернатор Сахалинской области Валерий Лимаренко и мэр Южно-Сахалинска Сергей Надсадин осмотрели обновленную территорию вокруг скейт-парка Цунами в районе Ботанического сада. Работы по благоустройству включали устройство дренажной системы, монтаж современного светодиодного освещения и асфальтирование пешеходных зон, сообщает пресс-служба регионального правительства. Губернатор Валерий Лимаренко осмотрел объект (ФОТО) Подрядчик провел работы на площади более 6,5 тысячи квадратных метров. Помимо инженерных сетей и дорожного покрытия, на территории установили зоны отдыха в формате амфитеатров (парклетов). Выполненные мероприятия позволили интегрировать скейт-парк в единую пешеходную сеть города. Теперь от объекта проходит экотропа, ведущая к средней площадке туристического комплекса \"Горный воздух\" мимо восточного входа в Ботанический сад. Глава региона отметил, что работы на этом участке не завершены. В следующем году планируется начало строительства новой входной группы \"Горного воздуха\" со стороны Ботанического сада, инвестор для реализации проекта уже определен. \"Территория стала востребованным местом отдыха, но в следующем году нам предстоит более масштабная работа. Дорога отсюда ведет в сторону \"Горного воздуха\" и в перспективе станет альтернативным маршрутом для жителей улицы Больничной. Наша задача — развивать эту часть Южно-Сахалинска и делать ее максимально удобной для людей\", — подчеркнул Валерий Лимаренко.",
+      "published_at": "2026-09-19T22:58:00+00:00",
+      "image_url": "https://sakhalinmedia.ru/f/big/6400/6399090.jpg?56eabf4eaef9d4f60b1f63ddc234de8a",
+      "image_hash": "601197e635aa81f3ddb18b6880794c50287c7c2d",
+      "topic_cluster": "sakh_quake:сахалин_южно-сахалинск",
+      "media_origin": "source_article_or_feed",
+      "row": {
+        "reject": false,
+        "title_ru": "В Южно-Сахалинске завершили благоустройство территории у скейт-парка Цунами",
+        "body": [
+          "Губернатор Сахалинской области Валерий Лимаренко и мэр Южно-Сахалинска Сергей Надсадин осмотрели обновленную территорию вокруг скейт-парка Цунами в районе Ботанического сада.",
+          "Работы по благоустройству включали устройство дренажной системы, монтаж современного светодиодного освещения и асфальтирование пешеходных зон, сообщает пресс-служба регионального правительства."
+        ],
+        "footer": "САХАЛИН | СЕЙСМИКА",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.7",
+          "source_warnings": []
+        }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_quake",
+        "final_category": "sakh_quake",
+        "event_type": "earthquake",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_quake",
+          "corrected_category": "sakh_quake",
+          "group": "local",
+          "event_type": "earthquake",
+          "subtype": "earthquake",
+          "seriousness": 100,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "В Южно-Сахалинске завершили благоустройство территории у скейт-парка Цунами",
+          "title_corrected": "В Южно-Сахалинске завершили благоустройство территории у скейт-парка Цунами",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-20T00:17:00+00:00",
+      "expired_at": "2026-09-20T00:39:21+00:00",
+      "expired_reason": "pending_revalidation_failed:final_category_mismatch:sakh->sakh_quake;director_final_category:sakh->sakh_quake;director_final_reject:importance_below_threshold"
     }
   ],
   "recent_image_hashes": [],
