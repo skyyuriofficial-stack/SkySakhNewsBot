@@ -20,10 +20,19 @@ def install() -> None:
     import editorial_hardening as hardening
 
     astv_boilerplate = r"на\s+сайте\s+astv\.ru\s+размещаются\s+текстовые\s+материалы"
-    if astv_boilerplate not in hardening.BOILERPLATE_PATTERNS:
+    astv_registration = (
+        r"иа\s+[\"«]?аств[\"»]?\s+зарегистрировано\s+федеральной\s+службой\s+"
+        r"по\s+надзору\s+в\s+сфере\s+связи"
+    )
+    extra_boilerplate = tuple(
+        pattern
+        for pattern in (astv_boilerplate, astv_registration)
+        if pattern not in hardening.BOILERPLATE_PATTERNS
+    )
+    if extra_boilerplate:
         hardening.BOILERPLATE_PATTERNS = (
             *hardening.BOILERPLATE_PATTERNS,
-            astv_boilerplate,
+            *extra_boilerplate,
         )
 
     source_heading = hardening.SOURCE_HEADING_PREFIX_RE
