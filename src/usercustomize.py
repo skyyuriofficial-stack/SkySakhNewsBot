@@ -9,6 +9,7 @@ Russian posts.
 from __future__ import annotations
 
 import os
+import re
 
 
 if os.getenv("TELEGRAM_BOT_TOKEN", "").strip():
@@ -46,4 +47,36 @@ try:
 except Exception:
     # usercustomize must never prevent Python startup; the normal policy remains
     # available if this optional runtime hardening cannot be installed.
+    pass
+
+
+# ASTV pages can expose a short article subheading immediately before the real
+# lead and a site-attribution sentence as if both were article prose. Extend the
+# deterministic hardening tables narrowly so queued/live captions remove these
+# source artefacts instead of publishing them. The queue sanitizer can apply the
+# same repair safely while Telegram delivery is offline.
+try:
+    import editorial_hardening as _editorial_hardening
+
+    _astv_boilerplate = r"на\s+сайте\s+astv\.ru\s+размещаются\s+текстовые\s+материалы"
+    if _astv_boilerplate not in _editorial_hardening.BOILERPLATE_PATTERNS:
+        _editorial_hardening.BOILERPLATE_PATTERNS = (
+            *_editorial_hardening.BOILERPLATE_PATTERNS,
+            _astv_boilerplate,
+        )
+
+    _source_heading = _editorial_hardening.SOURCE_HEADING_PREFIX_RE
+    _astv_power_heading = (
+        r"^Энергетики\s+запланировали\s+работы\s+на\s+сетях\s+и\s+подстанциях\s+"
+        r"(?=Специалисты\b)"
+    )
+    if _astv_power_heading not in _source_heading.pattern:
+        _editorial_hardening.SOURCE_HEADING_PREFIX_RE = re.compile(
+            rf"(?:{_source_heading.pattern})|(?:{_astv_power_heading})",
+            flags=_source_heading.flags,
+        )
+except Exception:
+    # Startup hardening is fail-open with respect to Python itself; the normal
+    # publication contract remains authoritative if this optional patch cannot
+    # be installed.
     pass
