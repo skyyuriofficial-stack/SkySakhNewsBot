@@ -11370,84 +11370,6 @@
   },
   "pending_media_delivery": [
     {
-      "queued_at": "2026-09-21T03:41:14+00:00",
-      "last_attempt_at": "2026-09-21T03:41:14+00:00",
-      "delivery_attempts": 1,
-      "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized",
-      "url": "https://astv.ru/news/society/2026-09-21-otklyucheniya-elektroenergii-22-sentyabrya-zatronut-neskol-ko-sahalinskih-gorodov-i-sel",
-      "title_hash": "dafdfe2b1bd539989dcb293883d7f77758fd4da7",
-      "source": "ASTV",
-      "category": "📍 Сахалин",
-      "category_key": "sakh",
-      "footer": "САХАЛИН",
-      "title": "Отключения электроэнергии 22 сентября затронут несколько сахалинских городов и сёл",
-      "source_text": "Энергетики запланировали работы на сетях и подстанциях Специалисты ФРС ПАО \"Сахалинэнерго\" предупреждают о работах на сетях и подстанциях, запланированных на 22 сентября. ИА \"АСТВ\" зарегистрировано Федеральной службой по надзору в сфере связи, информационных технологий и массовых коммуникаций РФ (Роскомнадзор) 02.07.2018 г. за номером ИА № ФС 77 - 73225.",
-      "published_at": "2026-09-20T13:00:00+00:00",
-      "image_url": "https://astv.ru/content/NewsImage/6a/2a/6a2a4dd4-1f97-499f-b452-624a0ce0a767_3.jpg",
-      "image_hash": "e298747a9fcf700ae84ee8ce521f32d679be3885",
-      "topic_cluster": "sakh:отключения_электроэнергии_сентября_затронут_несколько_сахалинских",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "Отключения электроэнергии 22 сентября затронут несколько сахалинских городов и сёл",
-        "body": [
-          "Специалисты ФРС ПАО \"Сахалинэнерго\" предупреждают о работах на сетях и подстанциях, запланированных на 22 сентября.",
-          "ИА \"АСТВ\" зарегистрировано Федеральной службой по надзору в сфере связи, информационных технологий и массовых коммуникаций РФ (Роскомнадзор) 02.07.2018 г."
-        ],
-        "footer": "САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh",
-        "final_category": "sakh",
-        "event_type": "public_service_disruption",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh",
-          "corrected_category": "sakh",
-          "group": "local",
-          "event_type": "public_service_disruption",
-          "subtype": "public_service_disruption",
-          "seriousness": 88,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Отключения электроэнергии 22 сентября затронут несколько сахалинских городов и сёл",
-          "title_corrected": "Отключения электроэнергии 22 сентября затронут несколько сахалинских городов и сёл",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-21T04:49:38+00:00"
-    },
-    {
       "queued_at": "2026-09-20T06:00:45+00:00",
       "last_attempt_at": "2026-09-21T03:40:41+00:00",
       "delivery_attempts": 6,
@@ -14553,6 +14475,86 @@
       },
       "expired_at": "2026-09-21T03:41:14+00:00",
       "expired_reason": "pending_revalidation_failed:foreign_translation_evidence_missing"
+    },
+    {
+      "queued_at": "2026-09-21T03:41:14+00:00",
+      "last_attempt_at": "2026-09-21T03:41:14+00:00",
+      "delivery_attempts": 1,
+      "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized",
+      "url": "https://astv.ru/news/society/2026-09-21-otklyucheniya-elektroenergii-22-sentyabrya-zatronut-neskol-ko-sahalinskih-gorodov-i-sel",
+      "title_hash": "dafdfe2b1bd539989dcb293883d7f77758fd4da7",
+      "source": "ASTV",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "footer": "САХАЛИН",
+      "title": "Отключения электроэнергии 22 сентября затронут несколько сахалинских городов и сёл",
+      "source_text": "Энергетики запланировали работы на сетях и подстанциях Специалисты ФРС ПАО \"Сахалинэнерго\" предупреждают о работах на сетях и подстанциях, запланированных на 22 сентября. ИА \"АСТВ\" зарегистрировано Федеральной службой по надзору в сфере связи, информационных технологий и массовых коммуникаций РФ (Роскомнадзор) 02.07.2018 г. за номером ИА № ФС 77 - 73225.",
+      "published_at": "2026-09-20T13:00:00+00:00",
+      "image_url": "https://astv.ru/content/NewsImage/6a/2a/6a2a4dd4-1f97-499f-b452-624a0ce0a767_3.jpg",
+      "image_hash": "e298747a9fcf700ae84ee8ce521f32d679be3885",
+      "topic_cluster": "sakh:отключения_электроэнергии_сентября_затронут_несколько_сахалинских",
+      "media_origin": "source_article_or_feed",
+      "row": {
+        "reject": false,
+        "title_ru": "Отключения электроэнергии 22 сентября затронут несколько сахалинских городов и сёл",
+        "body": [
+          "Специалисты ФРС ПАО \"Сахалинэнерго\" предупреждают о работах на сетях и подстанциях, запланированных на 22 сентября.",
+          "ИА \"АСТВ\" зарегистрировано Федеральной службой по надзору в сфере связи, информационных технологий и массовых коммуникаций РФ (Роскомнадзор) 02.07.2018 г."
+        ],
+        "footer": "САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.7",
+          "source_warnings": []
+        }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh",
+        "final_category": "sakh",
+        "event_type": "public_service_disruption",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh",
+          "corrected_category": "sakh",
+          "group": "local",
+          "event_type": "public_service_disruption",
+          "subtype": "public_service_disruption",
+          "seriousness": 88,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Отключения электроэнергии 22 сентября затронут несколько сахалинских городов и сёл",
+          "title_corrected": "Отключения электроэнергии 22 сентября затронут несколько сахалинских городов и сёл",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-21T04:49:38+00:00",
+      "expired_at": "2026-09-21T04:50:55+00:00",
+      "expired_reason": "pending_revalidation_failed:body_too_short"
     }
   ],
   "recent_image_hashes": [],
