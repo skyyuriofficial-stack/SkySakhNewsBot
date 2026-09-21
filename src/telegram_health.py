@@ -7,6 +7,9 @@ from pathlib import Path
 from typing import Any, Dict
 
 import requests
+import runtime_source_hardening
+
+runtime_source_hardening.install()
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_STATUS_PATH = ROOT / "telegram_health.json"
