@@ -1,14 +1,14 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-21T10:32:12+00:00",
-  "checked_at_sakhalin": "2026-09-21T21:32:07+11:00",
+  "checked_at_utc": "2026-09-21T10:38:39+00:00",
+  "checked_at_sakhalin": "2026-09-21T21:38:34+11:00",
   "status": "error",
   "mutations_enabled": false,
   "issues": [
     {
       "type": "post_audit_unresolved",
-      "count": 5,
+      "count": 6,
       "items": [
         {
           "title": "Шесть лет колонии и два миллиона компенсации: в Углегорске огласили приговор за смертельное ДТП",
@@ -19,6 +19,17 @@
           "reason": "approved",
           "contract_issues": [
             "body_missing_sentence_boundary"
+          ]
+        },
+        {
+          "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
+          "url": "https://sakh.online/news/24/2026-09-09/voditelya-gruzovika-dostali-iz-rasplyuschennoy-kabiny-posle-zhutkoy-avarii-v-yuzhno-sahalinske-525488",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "reason": "approved",
+          "contract_issues": [
+            "body_unbalanced_quote"
           ]
         },
         {
@@ -134,7 +145,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-09-21T21:29:05+11:00",
-    "age_hours": 0.05,
+    "age_hours": 0.16,
     "published": 0
   },
   "last_production_attempt": {
@@ -198,9 +209,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-21T10:32:10+00:00",
+    "checked_at": "2026-09-21T10:38:37+00:00",
     "checked": 20,
-    "passed": 15,
+    "passed": 14,
     "anomalies": [
       {
         "title": "Шесть лет колонии и два миллиона компенсации: в Углегорске огласили приговор за смертельное ДТП",
@@ -211,6 +222,17 @@
         "reason": "approved",
         "contract_issues": [
           "body_missing_sentence_boundary"
+        ]
+      },
+      {
+        "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
+        "url": "https://sakh.online/news/24/2026-09-09/voditelya-gruzovika-dostali-iz-rasplyuschennoy-kabiny-posle-zhutkoy-avarii-v-yuzhno-sahalinske-525488",
+        "publisher_version": "stable-v12.1",
+        "category_key": "sakh_chp",
+        "corrected_category": "sakh_chp",
+        "reason": "approved",
+        "contract_issues": [
+          "body_unbalanced_quote"
         ]
       },
       {
@@ -262,7 +284,7 @@
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
-    "unresolved": 5,
+    "unresolved": 6,
     "unresolved_items": [
       {
         "title": "Шесть лет колонии и два миллиона компенсации: в Углегорске огласили приговор за смертельное ДТП",
@@ -273,6 +295,17 @@
         "reason": "approved",
         "contract_issues": [
           "body_missing_sentence_boundary"
+        ]
+      },
+      {
+        "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
+        "url": "https://sakh.online/news/24/2026-09-09/voditelya-gruzovika-dostali-iz-rasplyuschennoy-kabiny-posle-zhutkoy-avarii-v-yuzhno-sahalinske-525488",
+        "publisher_version": "stable-v12.1",
+        "category_key": "sakh_chp",
+        "corrected_category": "sakh_chp",
+        "reason": "approved",
+        "contract_issues": [
+          "body_unbalanced_quote"
         ]
       },
       {
@@ -707,7 +740,7 @@
     "valid_posts_counted": 20
   },
   "telegram_health": {
-    "checked_at_utc": "2026-09-21T10:32:06+00:00",
+    "checked_at_utc": "2026-09-21T10:38:33+00:00",
     "status": "error",
     "auth_ok": false,
     "chat_ok": false,
@@ -719,10 +752,10 @@
   },
   "delivery_queue_hardening": {
     "before": 6,
-    "after": 6,
-    "retired": 0,
+    "after": 5,
+    "retired": 1,
     "duplicates": 0,
-    "repaired": 1,
+    "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0
   },
