@@ -24,9 +24,16 @@ def install() -> None:
         r"иа\s+[\"«]?аств[\"»]?\s+зарегистрировано\s+федеральной\s+службой\s+"
         r"по\s+надзору\s+в\s+сфере\s+связи"
     )
+    # ASTV registration boilerplate can be truncated by the source parser so
+    # only the certificate-number tail is appended to an otherwise valid news
+    # sentence (for example: "... водовода. за номером ИА № ФС 77 - 73225.").
+    # Treat that tail as presentation metadata, not article content.
+    astv_registration_number = (
+        r"за\s+номером\s+(?:иа\s+)?№?\s*фс\s*77\s*[-–—]?\s*\d{4,}"
+    )
     extra_boilerplate = tuple(
         pattern
-        for pattern in (astv_boilerplate, astv_registration)
+        for pattern in (astv_boilerplate, astv_registration, astv_registration_number)
         if pattern not in hardening.BOILERPLATE_PATTERNS
     )
     if extra_boilerplate:
