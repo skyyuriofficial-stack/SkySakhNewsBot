@@ -3,6 +3,7 @@ from __future__ import annotations
 import copy
 import json
 import os
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List
@@ -19,6 +20,10 @@ STATE_PATH = ROOT / "state.json"
 
 _PUBLISHED_GROUPS: set[str] = set()
 _PUBLISHED_EVENTS: List[Dict[str, Any]] = []
+_BODY_SPACE_BEFORE_PUNCT_RE = re.compile(r"\s+([,.;:!?])")
+_BODY_MISSING_BOUNDARY_RE = re.compile(
+    r"(?<=[а-яё0-9»\)])\s+(?=(?:Пожар|Пожарные|Огонь|Авария|Спасатели|Пострадавших|Причину|Водитель|Суд)\s)"
+)
 
 
 def _load_state() -> Dict[str, Any]:
@@ -70,6 +75,30 @@ def _pending_score(item: Dict[str, Any]) -> int:
     )
 
 
+def _normalize_pending_row(row: Dict[str, Any]) -> Dict[str, Any]:
+    """Repair only deterministic punctuation defects in an already reviewed row.
+
+    Pending items can survive a transport outage for hours. Some source extractors
+    occasionally leave a space before punctuation or drop a full stop between two
+    clearly separate sentences. Normalize those narrow cases before revalidating
+    the publication contract so the durable queue remains publish-ready.
+    """
+
+    cleaned = copy.deepcopy(row) if isinstance(row, dict) else {}
+    body = cleaned.get("body") if isinstance(cleaned.get("body"), list) else []
+    normalized = []
+    for value in body:
+        text = str(value or "").strip()
+        if not text:
+            continue
+        text = _BODY_SPACE_BEFORE_PUNCT_RE.sub(r"\1", text)
+        text = _BODY_MISSING_BOUNDARY_RE.sub(". ", text)
+        normalized.append(text)
+    if body:
+        cleaned["body"] = normalized
+    return cleaned
+
+
 def _retire(item: Dict[str, Any], reason: str) -> Dict[str, Any]:
     value = copy.deepcopy(item)
     value["expired_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
@@ -99,7 +128,8 @@ def sanitize_pending_queue(state: Dict[str, Any]) -> Dict[str, int]:
     for item in sorted(pending, key=_pending_score, reverse=True):
         candidate = _candidate_from_pending(item)
         original_row = copy.deepcopy(item.get("row") or {})
-        row = editorial_hardening.repair_row(candidate, original_row)
+        normalized_row = _normalize_pending_row(original_row)
+        row = editorial_hardening.repair_row(candidate, normalized_row)
 
         try:
             contract = publisher.director.validate_final(candidate, row)
@@ -409,6 +439,7 @@ def main() -> int:
         "mode": "live_delivery",
         "transport_status": "healthy",
         "transport": "telegram_bot_api",
+        "reason": None,
         "collection_continues": True,
         "checked_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
