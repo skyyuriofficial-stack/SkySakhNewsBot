@@ -1,16 +1,16 @@
 {
   "version": "delivery-outbox-v1",
-  "generated_at_utc": "2026-09-23T05:09:23+00:00",
+  "generated_at_utc": "2026-09-23T09:03:35+00:00",
   "source_of_truth": "github_repository",
   "live_delivery_adapter": "telegram",
   "delivery_adapter_status": "error",
   "delivery_adapter_error": "token_unauthorized",
-  "count": 18,
+  "count": 19,
   "items": [
     {
       "queued_at": "2026-09-23T00:30:36+00:00",
-      "last_attempt_at": "2026-09-23T05:05:33+00:00",
-      "delivery_attempts": 2,
+      "last_attempt_at": "2026-09-23T09:00:51+00:00",
+      "delivery_attempts": 3,
       "delivery_status": "queued",
       "source": "Sakh.online",
       "source_url": "https://sakh.online/news/18/2026-09-23/bastrykin-v-rossii-s-nachala-goda-zaveli-111-ugolovnyh-del-po-moshennichestvam-s-kvartirami-sirot-526919",
@@ -64,9 +64,63 @@
       "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized"
     },
     {
-      "queued_at": "2026-09-23T05:05:32+00:00",
-      "last_attempt_at": "2026-09-23T05:05:32+00:00",
+      "queued_at": "2026-09-23T09:03:33+00:00",
+      "last_attempt_at": "2026-09-23T09:03:33+00:00",
       "delivery_attempts": 1,
+      "delivery_status": "queued",
+      "source": "SakhalinMedia.ru",
+      "source_url": "https://sakhalinmedia.ru/news/2629858/",
+      "category_key": "sakh",
+      "category": "📍 Сахалин",
+      "title": "Сенатор Судзуки: новые санкции США не затронут поставки газа с Сахалина-2 в Японию",
+      "body": [
+        "Подписание президентом США Дональдом Трампом законопроекта об ужесточении санкций против РФ, предусматривающего введение 100-процентных пошлин для основных покупателей российских энергоносителей, не повлияет на поставки сжиженного природного газа (СПГ) с проекта Сахалин-2 в Японию.",
+        "Об этом заявил член верхней палаты парламента Японии от правящей Либерально-демократической партии Мунэо Судзуки в беседе с корреспондентом ТАСС."
+      ],
+      "image_url": "https://sakhalinmedia.ru/f/big/6407/6406323.jpg?36d336265cad319ed24c046befdf07ae",
+      "image_hash": "84306e2c13331fa61474a7903a5f5bd1422cf5fc",
+      "published_at": "2026-09-23T07:26:00+00:00",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh",
+        "final_category": "sakh",
+        "event_type": "geopolitical_event",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh",
+          "corrected_category": "sakh",
+          "group": "local",
+          "event_type": "geopolitical_event",
+          "subtype": "geopolitical_event",
+          "seriousness": 88,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Сенатор Судзуки: новые санкции США не затронут поставки газа с Сахалина-2 в Японию",
+          "title_corrected": "Сенатор Судзуки: новые санкции США не затронут поставки газа с Сахалина-2 в Японию",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized"
+    },
+    {
+      "queued_at": "2026-09-23T05:05:32+00:00",
+      "last_attempt_at": "2026-09-23T09:00:51+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2629504/",
@@ -78,7 +132,7 @@
         "По его оценке, кредитование прибавит 10—13%, а движение ключевой ставки вниз будет сопровождаться смягчением условий финансирования предприятий, сообщает пресс-служба ВТБ."
       ],
       "image_url": "https://sakhalinmedia.ru/f/big/6406/6405420.jpg?f38a1fe56d7107edbab870d0a16f6a0a",
-      "image_hash": "e34712954c702bb9ee84792b53331a5c7c64ece4",
+      "image_hash": "01b47cc65405869225e7432616fe5ea9cb6c7588",
       "published_at": "2026-09-23T01:50:00+00:00",
       "publication_contract": {
         "approved": true,
@@ -119,8 +173,8 @@
     },
     {
       "queued_at": "2026-09-23T05:09:21+00:00",
-      "last_attempt_at": "2026-09-23T05:09:21+00:00",
-      "delivery_attempts": 1,
+      "last_attempt_at": "2026-09-23T09:03:33+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2629599/",
@@ -132,7 +186,7 @@
         "В составе инспекционной группы работали специалисты контрольного управления правительства Сахалинской области и отделения Народного фронта, обеспечивающие независимую оценку."
       ],
       "image_url": "https://sakhalinmedia.ru/f/big/6406/6405660.jpeg?9ddd340e58be7190f035d835c321f6f3",
-      "image_hash": "d74c9ffce7a91454ad53c5aaecefebb8c1ab61fc",
+      "image_hash": "91af62fb09b2f9a2b6a691ad796724b89158f1c0",
       "published_at": "2026-09-23T03:49:00+00:00",
       "publication_contract": {
         "approved": true,
@@ -173,8 +227,8 @@
     },
     {
       "queued_at": "2026-09-22T03:30:28+00:00",
-      "last_attempt_at": "2026-09-23T05:09:21+00:00",
-      "delivery_attempts": 7,
+      "last_attempt_at": "2026-09-23T09:03:33+00:00",
+      "delivery_attempts": 8,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2628239/",
@@ -227,8 +281,8 @@
     },
     {
       "queued_at": "2026-09-23T00:32:55+00:00",
-      "last_attempt_at": "2026-09-23T05:09:20+00:00",
-      "delivery_attempts": 2,
+      "last_attempt_at": "2026-09-23T09:03:32+00:00",
+      "delivery_attempts": 3,
       "delivery_status": "queued",
       "source": "Sakh.online",
       "source_url": "https://sakh.online/news/24/2026-09-23/voditel-vrezalsya-v-ograzhdenie-v-yuzhno-sahalinske-i-popal-v-bolnitsu-526900",
@@ -281,8 +335,8 @@
     },
     {
       "queued_at": "2026-09-23T00:32:54+00:00",
-      "last_attempt_at": "2026-09-23T05:09:21+00:00",
-      "delivery_attempts": 2,
+      "last_attempt_at": "2026-09-23T09:03:33+00:00",
+      "delivery_attempts": 3,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2629282/",
@@ -335,8 +389,8 @@
     },
     {
       "queued_at": "2026-09-23T00:32:55+00:00",
-      "last_attempt_at": "2026-09-23T05:09:20+00:00",
-      "delivery_attempts": 2,
+      "last_attempt_at": "2026-09-23T09:03:32+00:00",
+      "delivery_attempts": 3,
       "delivery_status": "queued",
       "source": "Sakh.online",
       "source_url": "https://sakh.online/news/24/2026-09-23/za-sutki-na-sahaline-zaderzhali-4-pyanyh-voditelya-i-13-bespravnikov-526901",
@@ -389,8 +443,8 @@
     },
     {
       "queued_at": "2026-09-23T05:09:21+00:00",
-      "last_attempt_at": "2026-09-23T05:09:21+00:00",
-      "delivery_attempts": 1,
+      "last_attempt_at": "2026-09-23T09:03:33+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2629515/",
@@ -402,7 +456,7 @@
         "Это связано с ремонтными работами на коммунальных сетях, сообщает пресс-служба РВК-Сахалин."
       ],
       "image_url": "https://sakhalinmedia.ru/f/266x136/6392/6391499.jpg?91f712788f872634dc668197cc014b8e",
-      "image_hash": "e471784ee57f49a74e3bb29d4fa37f3aeb2bab22",
+      "image_hash": "fe5372b5b165dc19c0b898a3f52ebb1f4624b068",
       "published_at": "2026-09-23T02:12:00+00:00",
       "publication_contract": {
         "approved": true,
@@ -443,8 +497,8 @@
     },
     {
       "queued_at": "2026-09-22T22:10:28+00:00",
-      "last_attempt_at": "2026-09-23T05:09:21+00:00",
-      "delivery_attempts": 3,
+      "last_attempt_at": "2026-09-23T09:03:33+00:00",
+      "delivery_attempts": 4,
       "delivery_status": "queued",
       "source": "Sakh.online",
       "source_url": "https://sakh.online/news/18/2026-09-23/selo-i-rayony-yuzhno-sahalinska-ostanutsya-bez-sveta-23-sentyabrya-526863",
@@ -497,8 +551,8 @@
     },
     {
       "queued_at": "2026-09-23T05:05:33+00:00",
-      "last_attempt_at": "2026-09-23T05:05:33+00:00",
-      "delivery_attempts": 1,
+      "last_attempt_at": "2026-09-23T09:00:51+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2629540/",
@@ -510,7 +564,7 @@
         "Об этом сообщила зампред ЦБ Зульфия Кахруманова, пишет Коммерсант (18+)."
       ],
       "image_url": "https://sakhalinmedia.ru/f/big/6406/6405582.jpg?3bbd22c6ac529368ed38f588ab9ad306",
-      "image_hash": "a5328c560212009a2d22f9c7eb852fd8895404c9",
+      "image_hash": "a39593b3fc47bcce5cd3483367a0f201a43c5286",
       "published_at": "2026-09-23T03:27:00+00:00",
       "publication_contract": {
         "approved": true,
@@ -553,8 +607,8 @@
     },
     {
       "queued_at": "2026-09-23T00:32:54+00:00",
-      "last_attempt_at": "2026-09-23T05:09:20+00:00",
-      "delivery_attempts": 2,
+      "last_attempt_at": "2026-09-23T09:03:32+00:00",
+      "delivery_attempts": 3,
       "delivery_status": "queued",
       "source": "ASTV",
       "source_url": "https://astv.ru/news/society/2026-09-23-v-yuzhno-sahalinske-na-nedelyu-polnost-yu-perekroyut-proezd-na-ulice-emel-yanova",
@@ -607,8 +661,8 @@
     },
     {
       "queued_at": "2026-09-22T22:10:28+00:00",
-      "last_attempt_at": "2026-09-23T05:09:21+00:00",
-      "delivery_attempts": 3,
+      "last_attempt_at": "2026-09-23T09:03:33+00:00",
+      "delivery_attempts": 4,
       "delivery_status": "queued",
       "source": "Sakh.online",
       "source_url": "https://sakh.online/news/18/2026-09-23/holodnuyu-vodu-otklyuchat-v-neskolkih-rayonah-yuzhno-sahalinska-23-sentyabrya-526859",
@@ -661,8 +715,8 @@
     },
     {
       "queued_at": "2026-09-22T03:30:27+00:00",
-      "last_attempt_at": "2026-09-23T05:09:20+00:00",
-      "delivery_attempts": 7,
+      "last_attempt_at": "2026-09-23T09:03:33+00:00",
+      "delivery_attempts": 8,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2628208/",
@@ -715,8 +769,8 @@
     },
     {
       "queued_at": "2026-09-23T00:32:54+00:00",
-      "last_attempt_at": "2026-09-23T05:09:20+00:00",
-      "delivery_attempts": 2,
+      "last_attempt_at": "2026-09-23T09:03:32+00:00",
+      "delivery_attempts": 3,
       "delivery_status": "queued",
       "source": "Sakh.online",
       "source_url": "https://sakh.online/news/18/2026-09-23/na-sahaline-sozdali-sovet-po-razvitiyu-agrotehklassov-526904",
@@ -769,8 +823,8 @@
     },
     {
       "queued_at": "2026-09-23T00:32:54+00:00",
-      "last_attempt_at": "2026-09-23T05:09:20+00:00",
-      "delivery_attempts": 2,
+      "last_attempt_at": "2026-09-23T09:03:32+00:00",
+      "delivery_attempts": 3,
       "delivery_status": "queued",
       "source": "Sakh.online",
       "source_url": "https://sakh.online/news/24/2026-09-23/komnata-v-chastnom-dome-polyhala-v-yuzhno-sahalinske-526918",
@@ -823,8 +877,8 @@
     },
     {
       "queued_at": "2026-09-23T00:32:54+00:00",
-      "last_attempt_at": "2026-09-23T05:09:20+00:00",
-      "delivery_attempts": 2,
+      "last_attempt_at": "2026-09-23T09:03:32+00:00",
+      "delivery_attempts": 3,
       "delivery_status": "queued",
       "source": "ASTV",
       "source_url": "https://astv.ru/news/criminal/2026-09-23-devushka-na-vnedorozhnike-vyehala-na-vstrechnuyu-polosu-v-yuzhno-sahalinske-i-popala-v-dtp",
@@ -877,8 +931,8 @@
     },
     {
       "queued_at": "2026-09-22T03:30:28+00:00",
-      "last_attempt_at": "2026-09-23T05:09:21+00:00",
-      "delivery_attempts": 7,
+      "last_attempt_at": "2026-09-23T09:03:33+00:00",
+      "delivery_attempts": 8,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2628211/",
@@ -931,8 +985,8 @@
     },
     {
       "queued_at": "2026-09-22T06:54:41+00:00",
-      "last_attempt_at": "2026-09-23T05:09:21+00:00",
-      "delivery_attempts": 6,
+      "last_attempt_at": "2026-09-23T09:03:33+00:00",
+      "delivery_attempts": 7,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2628527/",
