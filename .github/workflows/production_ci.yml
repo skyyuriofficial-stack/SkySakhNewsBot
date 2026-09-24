@@ -19,6 +19,7 @@ on:
       - "src/publisher.py"
       - "src/production_selftest.py"
       - "src/telegram_health.py"
+      - "src/telegram_health_selftest.py"
       - "src/editorial_hardening.py"
       - "src/runtime_source_hardening.py"
       - "src/hardened_publisher.py"
@@ -70,7 +71,7 @@ jobs:
             src/editorial_gate_runner.py src/media_enforced_runner.py \
             src/news_director.py src/publication_auditor.py \
             src/editorial_monitor.py src/publisher.py src/production_selftest.py \
-            src/telegram_health.py src/editorial_hardening.py src/runtime_source_hardening.py \
+            src/telegram_health.py src/telegram_health_selftest.py src/editorial_hardening.py src/runtime_source_hardening.py \
             src/hardened_publisher.py src/hardened_monitor.py src/hardened_digest.py \
             src/resilient_production.py src/resilient_health_gate.py src/resilient_selftest.py \
             src/schedule_guard.py src/health_gate.py src/hardening_selftest.py \
@@ -93,3 +94,4 @@ jobs:
           python src/hardening_selftest.py
           python src/operational_selftest.py
           python src/resilient_selftest.py
+          python src/telegram_health_selftest.py
