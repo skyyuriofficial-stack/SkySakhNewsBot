@@ -132,21 +132,21 @@
   },
   "last_attempt": {
     "status": "error",
-    "mode": "morning",
-    "at_utc": "2026-09-24T07:32:24+00:00",
-    "at_sakhalin": "2026-09-24T18:32:24+11:00",
-    "error": "telegram_token_unauthorized",
-    "description": "Unauthorized"
+    "mode": "evening",
+    "at_utc": "2026-09-24T13:30:00+00:00",
+    "at_sakhalin": "2026-09-25T00:30:00+11:00",
+    "error": "telegram_chat_access",
+    "description": "Bad Request: chat not found"
   },
   "telegram_health": {
-    "checked_at_utc": "2026-09-24T07:32:24+00:00",
+    "checked_at_utc": "2026-09-24T13:29:59+00:00",
     "status": "error",
-    "auth_ok": false,
+    "auth_ok": true,
     "chat_ok": false,
-    "error_kind": "token_unauthorized",
-    "http_status": 401,
-    "description": "Unauthorized",
-    "bot_username": null,
+    "error_kind": "chat_access",
+    "http_status": 400,
+    "description": "Bad Request: chat not found",
+    "bot_username": "SkySakhNewsPublisher_bot",
     "permissions": {}
   }
 }
