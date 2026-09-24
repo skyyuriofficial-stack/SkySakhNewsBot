@@ -33,7 +33,8 @@ jobs:
         id: gate
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          # Same owner-confirmed destination as publisher and monitor.
+          TELEGRAM_CHANNEL_ID: "-1003918486965"
         run: |
           python - <<'PY'
           import json

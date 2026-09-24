@@ -93,7 +93,8 @@ jobs:
         continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          # Owner-confirmed destination; channel ID is routing configuration, not a credential.
+          TELEGRAM_CHANNEL_ID: "-1003918486965"
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
           IMAGE_REQUIRED: "1"
@@ -117,7 +118,7 @@ jobs:
         continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          TELEGRAM_CHANNEL_ID: "-1003918486965"
           POST_AUDIT_AUTOCORRECT: "1"
           IMAGE_REQUIRED: "1"
           AI_CALL_BUDGET: "0"

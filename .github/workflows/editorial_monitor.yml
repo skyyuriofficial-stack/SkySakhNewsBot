@@ -85,7 +85,8 @@ jobs:
         continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          # Same owner-confirmed destination as publisher and delivery recovery.
+          TELEGRAM_CHANNEL_ID: "-1003918486965"
           POST_AUDIT_AUTOCORRECT: "1"
           IMAGE_REQUIRED: "1"
           AI_CALL_BUDGET: "0"

@@ -111,5 +111,29 @@ class TelegramHealthTests(unittest.TestCase):
             self.assertNotIn(self.token, path.read_text())
 
 
+class WorkflowDestinationTests(unittest.TestCase):
+    """All active producers and their health gates must route to the same channel."""
+    WORKFLOWS = ("auto_publish_v7.yml", "editorial_monitor.yml", "delivery_recovery.yml", "mobilization_digest.yml")
+
+    def test_confirmed_destination_is_consistent(self):
+        root = Path(__file__).resolve().parents[1] / ".github" / "workflows"
+        for name in self.WORKFLOWS:
+            with self.subTest(workflow=name):
+                text = (root / name).read_text(encoding="utf-8")
+                destinations = [line.strip() for line in text.splitlines() if line.strip().startswith("TELEGRAM_CHANNEL_ID:")]
+                self.assertTrue(destinations)
+                self.assertTrue(all(line == 'TELEGRAM_CHANNEL_ID: "-1003918486965"' for line in destinations))
+                self.assertNotIn("secrets.TELEGRAM_CHANNEL_ID", text)
+
+    def test_credentials_stay_in_secrets(self):
+        root = Path(__file__).resolve().parents[1] / ".github" / "workflows"
+        for name in self.WORKFLOWS:
+            with self.subTest(workflow=name):
+                lines = (root / name).read_text(encoding="utf-8").splitlines()
+                tokens = [line.strip() for line in lines if line.strip().startswith("TELEGRAM_BOT_TOKEN:")]
+                self.assertTrue(tokens)
+                self.assertTrue(all(line == "TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}" for line in tokens))
+
+
 if __name__ == "__main__":
     unittest.main()
