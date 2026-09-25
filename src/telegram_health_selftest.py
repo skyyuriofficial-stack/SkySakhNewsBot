@@ -90,6 +90,14 @@ class TelegramHealthTests(unittest.TestCase):
         self.assertEqual(result["error_kind"], "bot_identity_mismatch")
         self.assertEqual(self.get.call_count, 1)
 
+    def test_numeric_private_channel_id_reaches_telegram(self):
+        os.environ["TELEGRAM_CHANNEL_ID"] = "-1003918486965"
+        self.get.side_effect = [self.me(), self.response(400, {"ok": False, "description": "Bad Request: chat not found"})]
+        result = health.check_telegram()
+        self.assertTrue(result["auth_ok"])
+        self.assertEqual(result["error_kind"], "chat_access")
+        self.assertEqual(self.get.call_count, 2)
+
     def test_chat_not_found_is_not_token_failure(self):
         self.get.side_effect = [self.me(), self.response(400, {"ok": False, "description": "Bad Request: chat not found"})]
         result = health.check_telegram()

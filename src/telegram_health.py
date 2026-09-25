@@ -16,7 +16,7 @@ runtime_source_hardening.install()
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_STATUS_PATH = ROOT / "telegram_health.json"
 EXPECTED_BOT_USERNAME = os.getenv("TELEGRAM_EXPECTED_BOT_USERNAME", "SkySakhNewsPublisher_bot").strip().lstrip("@")
-_CHAT_ID_RE = re.compile(r"^-100\\d{6,}$")
+_CHAT_ID_RE = re.compile(r"^-100\d{6,}$")
 _CHAT_USERNAME_RE = re.compile(r"^@[A-Za-z][A-Za-z0-9_]{4,31}$")
 
 
