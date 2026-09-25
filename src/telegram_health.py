@@ -77,10 +77,11 @@ def check_telegram(*, timeout: int = 15) -> Dict[str, Any]:
     result["auth_ok"] = True
     result["bot_username"] = bot.get("username")
     actual_username = str(bot.get("username") or "").strip().lstrip("@")
-    if EXPECTED_BOT_USERNAME and actual_username.lower() != EXPECTED_BOT_USERNAME.lower():
+    expected_username = os.getenv("TELEGRAM_EXPECTED_BOT_USERNAME", EXPECTED_BOT_USERNAME).strip().lstrip("@")
+    if expected_username and actual_username.lower() != expected_username.lower():
         result.update(
             error_kind="bot_identity_mismatch",
-            description=f"authenticated bot @{actual_username or 'unknown'} does not match expected @{EXPECTED_BOT_USERNAME}",
+            description=f"authenticated bot @{actual_username or 'unknown'} does not match expected @{expected_username}",
         )
         return result
     bot_id = bot.get("id")
