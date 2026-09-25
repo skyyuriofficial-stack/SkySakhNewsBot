@@ -248,6 +248,31 @@ def main() -> int:
     hardening_actions, hardening_failures = _pre_audit_cleanup(state, mutate=mutate)
 
     report = editorial_monitor.run_monitor(mutate=mutate, persist_state=False)
+
+    # Historical posts outside the 48h mutation window are editorial debt, not a
+    # reason to keep the live conveyor permanently red. Keep them visible as
+    # warnings while still blocking on current actionable defects.
+    legacy_debt = []
+    blocking_base_issues = []
+    last_posts = [p for p in (state.get("last_posts") or []) if isinstance(p, dict)]
+    for issue in (report.get("issues") or []):
+        if issue.get("type") == "post_audit_unresolved":
+            current_items = []
+            for item in (issue.get("items") or []):
+                match = next((p for p in reversed(last_posts) if p.get("url") == item.get("url")), None)
+                if match is not None and not publication_auditor._within_mutation_window(match):
+                    legacy_debt.append(item)
+                else:
+                    current_items.append(item)
+            if current_items:
+                blocking_base_issues.append({**issue, "count": len(current_items), "items": current_items})
+            continue
+        if issue.get("type") == "mobilization_digest_missing" and health.get("status") != "healthy":
+            legacy_debt.append({**issue, "derivative_of": "telegram_delivery_unhealthy"})
+            continue
+        blocking_base_issues.append(issue)
+    report["issues"] = blocking_base_issues
+    report["legacy_or_derivative_warnings"] = legacy_debt
     report["telegram_health"] = health
     report["delivery_queue_hardening"] = queue_report
     report["delivery_outbox_repaired"] = outbox_drift
@@ -255,6 +280,7 @@ def main() -> int:
     report["hardening_failed_actions"] = hardening_failures
 
     issues = list(report.get("issues") or [])
+    warnings = list(report.get("legacy_or_derivative_warnings") or [])
     if health.get("status") != "healthy":
         issues.append({
             "type": "telegram_delivery_unhealthy",
@@ -272,7 +298,7 @@ def main() -> int:
     balance = report.get("balance") or {}
     mix_error = float(balance.get("distribution_error") or 0.0)
     if mix_error >= MIX_ERROR_LIMIT:
-        issues.append({
+        warnings.append({
             "type": "thematic_mix_drift",
             "distribution_error": mix_error,
             "limit": MIX_ERROR_LIMIT,
@@ -291,6 +317,7 @@ def main() -> int:
         deduped.append(issue)
 
     report["issues"] = deduped
+    report["warnings"] = warnings
     report["status"] = "healthy" if not deduped else "error"
     report["mutations_enabled"] = mutate
     report["checked_at_utc"] = datetime.now(timezone.utc).isoformat(timespec="seconds")

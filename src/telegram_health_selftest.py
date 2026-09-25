@@ -20,7 +20,11 @@ class TelegramHealthTests(unittest.TestCase):
     def setUp(self):
         self.token = "offline-credential-for-unit-tests"
         self.chat = "@offline_test_channel"
-        self.environment = patch.dict(os.environ, {"TELEGRAM_BOT_TOKEN": self.token, "TELEGRAM_CHANNEL_ID": self.chat})
+        self.environment = patch.dict(os.environ, {
+            "TELEGRAM_BOT_TOKEN": self.token,
+            "TELEGRAM_CHANNEL_ID": self.chat,
+            "TELEGRAM_EXPECTED_BOT_USERNAME": "offline_test_bot",
+        })
         self.environment.start()
         self.addCleanup(self.environment.stop)
         self.transport = patch.object(health.requests, "get")
@@ -71,6 +75,21 @@ class TelegramHealthTests(unittest.TestCase):
         self.assertEqual(result["error_kind"], "telegram_api")
         self.assertNotIn(self.token, json.dumps(result))
 
+    def test_invalid_chat_configuration_fails_before_network(self):
+        os.environ["TELEGRAM_CHANNEL_ID"] = "https://t.me/c/3918486965/317"
+        result = health.check_telegram()
+        self.assertEqual(result["error_kind"], "chat_config_invalid")
+        self.get.assert_not_called()
+
+    def test_bot_identity_mismatch_blocks_before_chat_lookup(self):
+        os.environ["TELEGRAM_EXPECTED_BOT_USERNAME"] = "another_bot"
+        self.get.side_effect = [self.me()]
+        result = health.check_telegram()
+        self.assertTrue(result["auth_ok"])
+        self.assertFalse(result["chat_ok"])
+        self.assertEqual(result["error_kind"], "bot_identity_mismatch")
+        self.assertEqual(self.get.call_count, 1)
+
     def test_chat_not_found_is_not_token_failure(self):
         self.get.side_effect = [self.me(), self.response(400, {"ok": False, "description": "Bad Request: chat not found"})]
         result = health.check_telegram()
@@ -113,7 +132,7 @@ class TelegramHealthTests(unittest.TestCase):
 
 class WorkflowDestinationTests(unittest.TestCase):
     """All active producers and their health gates must route to the same channel."""
-    WORKFLOWS = ("auto_publish_v7.yml", "editorial_monitor.yml", "delivery_recovery.yml", "mobilization_digest.yml")
+    WORKFLOWS = ("auto_publish_v7.yml", "editorial_monitor.yml", "delivery_recovery.yml", "mobilization_digest.yml", "post_publication_monitor.yml")
 
     def test_confirmed_destination_is_consistent(self):
         root = Path(__file__).resolve().parents[1] / ".github" / "workflows"
@@ -124,6 +143,15 @@ class WorkflowDestinationTests(unittest.TestCase):
                 self.assertTrue(destinations)
                 self.assertTrue(all(line == 'TELEGRAM_CHANNEL_ID: "-1003918486965"' for line in destinations))
                 self.assertNotIn("secrets.TELEGRAM_CHANNEL_ID", text)
+
+    def test_expected_bot_identity_is_consistent(self):
+        root = Path(__file__).resolve().parents[1] / ".github" / "workflows"
+        for name in self.WORKFLOWS:
+            with self.subTest(workflow=name):
+                text = (root / name).read_text(encoding="utf-8")
+                identities = [line.strip() for line in text.splitlines() if line.strip().startswith("TELEGRAM_EXPECTED_BOT_USERNAME:")]
+                self.assertTrue(identities)
+                self.assertTrue(all(line == 'TELEGRAM_EXPECTED_BOT_USERNAME: "SkySakhNewsPublisher_bot"' for line in identities))
 
     def test_credentials_stay_in_secrets(self):
         root = Path(__file__).resolve().parents[1] / ".github" / "workflows"

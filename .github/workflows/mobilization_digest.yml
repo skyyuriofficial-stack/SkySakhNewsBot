@@ -71,6 +71,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           # Same owner-confirmed destination as news production.
           TELEGRAM_CHANNEL_ID: "-1003918486965"
+          TELEGRAM_EXPECTED_BOT_USERNAME: "SkySakhNewsPublisher_bot"
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
           DIGEST_MODE: ${{ github.event.inputs.mode }}

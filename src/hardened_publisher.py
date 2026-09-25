@@ -24,6 +24,8 @@ _BODY_SPACE_BEFORE_PUNCT_RE = re.compile(r"\s+([,.;:!?])")
 _BODY_MISSING_BOUNDARY_RE = re.compile(
     r"(?<=[а-яё0-9»\)])\s+(?=(?:Пожар|Пожарные|Огонь|Авария|Спасатели|Пострадавших|Причину|Водитель|Суд)\s)"
 )
+PENDING_MAX_ITEMS = max(4, int(os.getenv("MEDIA_PENDING_MAX_ITEMS", "12")))
+PENDING_MAX_AGE_HOURS = max(6.0, float(os.getenv("MEDIA_PENDING_MAX_HOURS", "24")))
 
 
 def _load_state() -> Dict[str, Any]:
@@ -66,12 +68,37 @@ def _candidate_from_pending(item: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
-def _pending_score(item: Dict[str, Any]) -> int:
+def _pending_timestamp(item: Dict[str, Any]) -> float:
+    for key in ("published_at", "queued_at"):
+        raw = str(item.get(key) or "").strip()
+        if not raw:
+            continue
+        try:
+            value = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+            if value.tzinfo is None:
+                value = value.replace(tzinfo=timezone.utc)
+            return value.timestamp()
+        except ValueError:
+            continue
+    return 0.0
+
+
+def _pending_age_hours(item: Dict[str, Any]) -> float | None:
+    stamp = _pending_timestamp(item)
+    if stamp <= 0:
+        return None
+    return max(0.0, (datetime.now(timezone.utc).timestamp() - stamp) / 3600.0)
+
+
+def _pending_score(item: Dict[str, Any]):
+    # Fresh news always outranks verbose old backlog. Attempts only break ties.
     row = item.get("row") or {}
     body = row.get("body") if isinstance(row.get("body"), list) else []
-    body_chars = sum(len(str(value or "")) for value in body)
-    return body_chars + (250 if item.get("image_url") else 0) - 20 * int(
-        item.get("delivery_attempts") or 0
+    body_chars = min(5000, sum(len(str(value or "")) for value in body))
+    return (
+        _pending_timestamp(item),
+        body_chars + (250 if item.get("image_url") else 0),
+        -int(item.get("delivery_attempts") or 0),
     )
 
 
@@ -124,8 +151,15 @@ def sanitize_pending_queue(state: Dict[str, Any]) -> Dict[str, int]:
     accepted: List[Dict[str, Any]] = []
     retired: List[Dict[str, Any]] = []
     repaired_count = 0
+    stale_count = 0
+    capacity_count = 0
 
     for item in sorted(pending, key=_pending_score, reverse=True):
+        age_hours = _pending_age_hours(item)
+        if age_hours is not None and age_hours > PENDING_MAX_AGE_HOURS:
+            stale_count += 1
+            retired.append(_retire(item, f"pending_delivery_expired:age_hours>{PENDING_MAX_AGE_HOURS:g}"))
+            continue
         candidate = _candidate_from_pending(item)
         original_row = copy.deepcopy(item.get("row") or {})
         normalized_row = _normalize_pending_row(original_row)
@@ -181,12 +215,18 @@ def sanitize_pending_queue(state: Dict[str, Any]) -> Dict[str, int]:
             ).isoformat(timespec="seconds")
         accepted.append(cleaned_item)
 
+    if len(accepted) > PENDING_MAX_ITEMS:
+        overflow = accepted[PENDING_MAX_ITEMS:]
+        capacity_count = len(overflow)
+        retired.extend(_retire(item, "pending_queue_capacity_limit") for item in overflow)
+        accepted = accepted[:PENDING_MAX_ITEMS]
+
     existing_expired = [
         item
         for item in (state.get("expired_media_delivery") or [])
         if isinstance(item, dict)
     ]
-    state["pending_media_delivery"] = accepted[:24]
+    state["pending_media_delivery"] = accepted
     if retired:
         state["expired_media_delivery"] = (existing_expired + retired)[-80:]
 
@@ -194,6 +234,8 @@ def sanitize_pending_queue(state: Dict[str, Any]) -> Dict[str, int]:
         "before": len(pending),
         "after": len(state.get("pending_media_delivery") or []),
         "retired": len(retired),
+        "stale_retired": stale_count,
+        "capacity_retired": capacity_count,
         "duplicates": sum(
             1
             for item in retired

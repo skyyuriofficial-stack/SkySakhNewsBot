@@ -35,6 +35,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           # Same owner-confirmed destination as publisher and monitor.
           TELEGRAM_CHANNEL_ID: "-1003918486965"
+          TELEGRAM_EXPECTED_BOT_USERNAME: "SkySakhNewsPublisher_bot"
         run: |
           python - <<'PY'
           import json

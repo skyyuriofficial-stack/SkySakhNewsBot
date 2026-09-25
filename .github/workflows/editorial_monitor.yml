@@ -16,14 +16,11 @@ on:
       - "SkySakhNews Delivery Recovery"
     types: [completed]
   schedule:
-    # Register six separate cron entries rather than one comma-list expression.
-    # This gives GitHub six independently registered scheduler opportunities per hour.
-    - cron: "6 * * * *"
-    - cron: "16 * * * *"
-    - cron: "26 * * * *"
-    - cron: "36 * * * *"
-    - cron: "46 * * * *"
-    - cron: "56 * * * *"
+    # Two independent backup heartbeats are enough because Delivery Recovery,
+    # publisher pulses and workflow_run events also trigger this monitor.
+    # This avoids hammering Telegram during a prolonged access incident.
+    - cron: "8 * * * *"
+    - cron: "38 * * * *"
 
 permissions:
   contents: write
@@ -87,6 +84,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           # Same owner-confirmed destination as publisher and delivery recovery.
           TELEGRAM_CHANNEL_ID: "-1003918486965"
+          TELEGRAM_EXPECTED_BOT_USERNAME: "SkySakhNewsPublisher_bot"
           POST_AUDIT_AUTOCORRECT: "1"
           IMAGE_REQUIRED: "1"
           AI_CALL_BUDGET: "0"

@@ -15,6 +15,9 @@ runtime_source_hardening.install()
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_STATUS_PATH = ROOT / "telegram_health.json"
+EXPECTED_BOT_USERNAME = os.getenv("TELEGRAM_EXPECTED_BOT_USERNAME", "SkySakhNewsPublisher_bot").strip().lstrip("@")
+_CHAT_ID_RE = re.compile(r"^-100\\d{6,}$")
+_CHAT_USERNAME_RE = re.compile(r"^@[A-Za-z][A-Za-z0-9_]{4,31}$")
 
 
 def _now() -> str:
@@ -51,6 +54,9 @@ def check_telegram(*, timeout: int = 15) -> Dict[str, Any]:
     if not chat:
         result.update(error_kind="chat_missing", description="TELEGRAM_CHANNEL_ID is missing")
         return result
+    if not (_CHAT_ID_RE.fullmatch(chat) or _CHAT_USERNAME_RE.fullmatch(chat)):
+        result.update(error_kind="chat_config_invalid", description="Telegram destination must be a -100... channel id or @channel username")
+        return result
     try:
         response = requests.get(f"https://api.telegram.org/bot{token}/getMe", timeout=timeout)
     except requests.RequestException as exc:
@@ -70,6 +76,13 @@ def check_telegram(*, timeout: int = 15) -> Dict[str, Any]:
     bot = payload.get("result") or {}
     result["auth_ok"] = True
     result["bot_username"] = bot.get("username")
+    actual_username = str(bot.get("username") or "").strip().lstrip("@")
+    if EXPECTED_BOT_USERNAME and actual_username.lower() != EXPECTED_BOT_USERNAME.lower():
+        result.update(
+            error_kind="bot_identity_mismatch",
+            description=f"authenticated bot @{actual_username or 'unknown'} does not match expected @{EXPECTED_BOT_USERNAME}",
+        )
+        return result
     bot_id = bot.get("id")
     try:
         response = requests.get(

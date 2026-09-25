@@ -38,6 +38,7 @@ on:
       - ".github/workflows/delivery_recovery.yml"
       - ".github/workflows/editorial_monitor.yml"
       - ".github/workflows/mobilization_digest.yml"
+      - ".github/workflows/post_publication_monitor.yml"
       - ".github/workflows/production_ci.yml"
 
 permissions:
@@ -85,8 +86,8 @@ jobs:
           NEWS_DIRECTOR_AI_BUDGET: "0"
           POST_AUDIT_AUTOCORRECT: "0"
           RUN_COOLDOWN_MINUTES: "0"
-          MEDIA_PENDING_MAX_HOURS: "36"
-          MEDIA_PENDING_MAX_ITEMS: "24"
+          MEDIA_PENDING_MAX_HOURS: "24"
+          MEDIA_PENDING_MAX_ITEMS: "12"
           OPENROUTER_MAX_ATTEMPTS: "3"
           OPENROUTER_RETRY_BASE_SECONDS: "0"
         run: |

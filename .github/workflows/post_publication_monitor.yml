@@ -2,7 +2,7 @@ name: SkySakhNews Independent Post-Publication Monitor
 
 on:
   workflow_run:
-    workflows: ["SkySakhNews Auto Publisher Stable v12.0"]
+    workflows: ["SkySakhNews Auto Publisher Stable v12.1"]
     types: [completed]
   workflow_dispatch:
 
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: skysakhnews-post-publication-monitor
+  group: skysakhnews-live-state
   cancel-in-progress: false
 
 jobs:
@@ -35,7 +35,8 @@ jobs:
       - name: Re-read and autocorrect the actual latest v12 posts
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          TELEGRAM_CHANNEL_ID: "-1003918486965"
+          TELEGRAM_EXPECTED_BOT_USERNAME: "SkySakhNewsPublisher_bot"
           POST_AUDIT_AUTOCORRECT: "1"
           PYTHONUNBUFFERED: "1"
         run: |
@@ -47,12 +48,18 @@ jobs:
 
           sys.path.insert(0, "src")
           import publication_auditor
+          import telegram_health
+
+          health = telegram_health.check_telegram()
+          if health.get("status") != "healthy":
+              print(json.dumps({"status": "blocked_no_mutation", "telegram_health": health}, ensure_ascii=False, indent=2))
+              raise SystemExit(0)
 
           path = Path("state.json")
           state = json.loads(path.read_text(encoding="utf-8"))
           run = state.get("last_run") or {}
-          if run.get("version") != "stable-v12.0":
-              print("latest run is not stable-v12.0; monitor has nothing to mutate")
+          if run.get("version") != "stable-v12.1":
+              print("latest run is not stable-v12.1; monitor has nothing to mutate")
               raise SystemExit(0)
 
           published = int(run.get("published") or 0)

@@ -38,7 +38,7 @@ def _record_blocked(mode: str, health: dict) -> None:
     now_local = datetime.now(digest.TZ)
     state["version"] = "mobilization-digest-v1.4"
     state["last_attempt"] = {
-        "status": "error",
+        "status": "blocked",
         "mode": mode,
         "at_utc": now_utc.isoformat(timespec="seconds"),
         "at_sakhalin": now_local.isoformat(timespec="seconds"),
@@ -68,7 +68,7 @@ def main() -> int:
                 "mode": mode,
                 "telegram_health": health,
             }, ensure_ascii=False, indent=2))
-            return 23
+            return 0
         return int(final.main() or 0)
     finally:
         if previous_mode is None:
