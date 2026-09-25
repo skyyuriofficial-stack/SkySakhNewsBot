@@ -1,6 +1,6 @@
 {
   "version": "delivery-outbox-v1",
-  "generated_at_utc": "2026-09-25T13:37:35+00:00",
+  "generated_at_utc": "2026-09-25T22:22:47+00:00",
   "source_of_truth": "github_repository",
   "live_delivery_adapter": "telegram",
   "delivery_adapter_status": "error",
@@ -9,8 +9,8 @@
   "items": [
     {
       "queued_at": "2026-09-25T12:13:48+00:00",
-      "last_attempt_at": "2026-09-25T12:13:48+00:00",
-      "delivery_attempts": 1,
+      "last_attempt_at": "2026-09-25T22:21:59+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2632456/",
@@ -22,7 +22,7 @@
         "Совокупная сумма выплат в связи с такими событиями по сравнению с аналогичным периодом 2025 года выросла на 50% и составила 777 млн рублей, сообщили в пресс-службе СберСтрахования."
       ],
       "image_url": "https://sakhalinmedia.ru/f/big/6414/6413741.jpg?24dd043044147f351623b359de245971",
-      "image_hash": "ad750d8506d9f82c3d8986e4930db852122d10fc",
+      "image_hash": "f1f3cac9985ef8e7d64a0ed4962073fdb8e89e88",
       "published_at": "2026-09-25T10:20:00+00:00",
       "publication_contract": {
         "approved": true,
@@ -63,8 +63,8 @@
     },
     {
       "queued_at": "2026-09-25T09:39:24+00:00",
-      "last_attempt_at": "2026-09-25T12:13:13+00:00",
-      "delivery_attempts": 2,
+      "last_attempt_at": "2026-09-25T22:20:39+00:00",
+      "delivery_attempts": 3,
       "delivery_status": "queued",
       "source": "TASS",
       "source_url": "https://tass.ru/ekonomika/28151017",
@@ -117,8 +117,8 @@
     },
     {
       "queued_at": "2026-09-25T03:53:54+00:00",
-      "last_attempt_at": "2026-09-25T12:13:59+00:00",
-      "delivery_attempts": 4,
+      "last_attempt_at": "2026-09-25T22:22:47+00:00",
+      "delivery_attempts": 5,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2631845/",
