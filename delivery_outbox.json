@@ -1,16 +1,70 @@
 {
   "version": "delivery-outbox-v1",
-  "generated_at_utc": "2026-09-25T09:32:06+00:00",
+  "generated_at_utc": "2026-09-25T09:40:09+00:00",
   "source_of_truth": "github_repository",
   "live_delivery_adapter": "telegram",
   "delivery_adapter_status": "error",
   "delivery_adapter_error": "chat_config_invalid",
-  "count": 3,
+  "count": 5,
   "items": [
     {
+      "queued_at": "2026-09-25T09:39:24+00:00",
+      "last_attempt_at": "2026-09-25T09:39:24+00:00",
+      "delivery_attempts": 1,
+      "delivery_status": "queued",
+      "source": "TASS",
+      "source_url": "https://tass.ru/ekonomika/28151017",
+      "category_key": "ru_eco",
+      "category": "🇷🇺 Россия / экономика",
+      "title": "Минфин работает над требованиями к поставщикам анализа криптоопераций",
+      "body": [
+        "Минфин работает над требованиями к поставщикам анализа криптоопераций.",
+        "Алексей Яковлев обозначил ключевые условия: компании должны относиться к российской юрисдикции, а ПО — иметь необходимую сертификацию."
+      ],
+      "image_url": "https://cdn-media.tass.ru/fit/400x300_b2b00b17/tass/m2/uploads/i/20260530/9100207.jpg",
+      "image_hash": "010678c3a64f701f0ae36f651ade906ab8038c9f",
+      "published_at": "2026-09-25T09:25:30+00:00",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_eco",
+        "final_category": "ru_eco",
+        "event_type": "macro_economy",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 83,
+          "threshold": 74,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Минфин работает над требованиями к поставщикам анализа криптоопераций",
+          "title_corrected": "Минфин работает над требованиями к поставщикам анализа криптоопераций",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "last_error": "delivery_adapter_unavailable:telegram_chat_config_invalid"
+    },
+    {
       "queued_at": "2026-09-25T03:53:54+00:00",
-      "last_attempt_at": "2026-09-25T06:40:29+00:00",
-      "delivery_attempts": 2,
+      "last_attempt_at": "2026-09-25T09:40:09+00:00",
+      "delivery_attempts": 3,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2631845/",
@@ -59,12 +113,12 @@
           "ai_review": null
         }
       },
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access"
+      "last_error": "delivery_adapter_unavailable:telegram_chat_config_invalid"
     },
     {
       "queued_at": "2026-09-24T23:14:44+00:00",
-      "last_attempt_at": "2026-09-25T06:40:29+00:00",
-      "delivery_attempts": 3,
+      "last_attempt_at": "2026-09-25T09:40:09+00:00",
+      "delivery_attempts": 4,
       "delivery_status": "queued",
       "source": "Sakh.online",
       "source_url": "https://sakh.online/news/18/2026-09-25/selo-i-neskolko-ulits-yuzhno-sahalinska-ostanutsya-bez-sveta-25-sentyabrya-527131",
@@ -113,12 +167,66 @@
           "ai_review": null
         }
       },
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access"
+      "last_error": "delivery_adapter_unavailable:telegram_chat_config_invalid"
+    },
+    {
+      "queued_at": "2026-09-25T09:40:08+00:00",
+      "last_attempt_at": "2026-09-25T09:40:08+00:00",
+      "delivery_attempts": 1,
+      "delivery_status": "queued",
+      "source": "Sakh.online",
+      "source_url": "https://sakh.online/news/24/2026-09-25/pod-kemerovom-kvadrotsikly-sbili-domashnego-samoeda-na-glazah-u-detey-527236",
+      "category_key": "ru_security",
+      "category": "🇷🇺 Россия / безопасность",
+      "title": "Под Кемеровом квадроциклы сбили домашнего самоеда на глазах у детей",
+      "body": [
+        "Спустя три дня собака умерла от полученных травм, рассказала хозяйка животного в соцсетях.",
+        "По словам женщины, водители квадроциклов ехали на большой скорости и сбили собаку прямо на глазах у детей."
+      ],
+      "image_url": "https://sakh.online/attachments/2435911e5b247bd35506c23e2656a271a1385f7e/store/crop/0/374/358/202/800/0/0/0/3a805ecc5d352bc0f1b677b41af9672c5ceab74efa0403cef3b0be4a4105/3a805ecc5d352bc0f1b677b41af9672c5ceab74efa0403cef3b0be4a4105.webp",
+      "image_hash": "1eedaec8c4f1daab50e51be1982f43081b3578b9",
+      "published_at": "2026-09-24T13:00:00+00:00",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_security",
+        "final_category": "ru_security",
+        "event_type": "military_security",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_security",
+          "corrected_category": "ru_security",
+          "group": "ru_safety",
+          "event_type": "military_security",
+          "subtype": "military_security",
+          "seriousness": 93,
+          "threshold": 76,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Под Кемеровом квадроциклы сбили домашнего самоеда на глазах у детей",
+          "title_corrected": "Под Кемеровом квадроциклы сбили домашнего самоеда на глазах у детей",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "last_error": "delivery_adapter_unavailable:telegram_chat_config_invalid"
     },
     {
       "queued_at": "2026-09-25T06:38:55+00:00",
-      "last_attempt_at": "2026-09-25T06:38:55+00:00",
-      "delivery_attempts": 1,
+      "last_attempt_at": "2026-09-25T09:40:08+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "Sakh.online",
       "source_url": "https://sakh.online/news/24/2026-09-25/pozhar-v-teplitse-na-prospekte-mira-potushili-za-50-minut-527223",
@@ -130,7 +238,7 @@
         "С огнем боролись 18 сотрудников МЧС с помощью четырех единиц техники."
       ],
       "image_url": "https://sakh.online/attachments/f2658442ce58c45620cf19a6b92d2044ebc13cd4/store/crop/10/0/789/446/800/0/0/0/c72563fd27f58ff946d6fb4c344e22de55c78de35c18e0819eb37ce8d4ac/c72563fd27f58ff946d6fb4c344e22de55c78de35c18e0819eb37ce8d4ac.webp",
-      "image_hash": "3744909df73cd791ca1a2c0bc13d837e6ffa7dab",
+      "image_hash": "ae0db402dd74147e34e0a783864d0a97ad27a639",
       "published_at": "2026-09-24T13:00:00+00:00",
       "publication_contract": {
         "approved": true,
@@ -167,7 +275,7 @@
           "ai_review": null
         }
       },
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access"
+      "last_error": "delivery_adapter_unavailable:telegram_chat_config_invalid"
     }
   ]
 }
