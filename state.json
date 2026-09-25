@@ -11661,84 +11661,6 @@
       "pending_hardening_repaired_at": "2026-09-25T06:40:30+00:00"
     },
     {
-      "queued_at": "2026-09-25T06:40:29+00:00",
-      "last_attempt_at": "2026-09-25T06:40:29+00:00",
-      "delivery_attempts": 1,
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
-      "url": "https://sakhalinmedia.ru/news/2631938/",
-      "title_hash": "fbbb51418599ca6a48a2657e1cd589fd949ca946",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "footer": "ЧП | САХАЛИН",
-      "title": "Жительницу Углегорска едва не обманули на деньги под предлогом замены домофона",
-      "source_text": "Углегорские полицейские возбудили уголовное дело по факту мошенничества, жертвой которого стала 53-летняя местная жительница. Об этом сообщает пресс-служба УМВД России по Сахалинской области. В полиции возбуждено уголовное дело 24 сентября потерпевшая обратилась в дежурную часть ОМВД России \"Углегорский\". Выяснилось, что ей позвонил неизвестный и под предлогом замены домофона попросил ее сообщить код из смс-сообщения. Женщина выпонила просьбу, благодаря чему злоумышленники получили доступ к ее учетной записи на портале \"Госуслуг\" (6+). Там они обновили персональные данные потерпевшей и оформили от ее имени доверенность на неустановленное лицо. \"Несмотря на то, что финансового ущерба удалось избежать, сам факт взлома стал основанием для возбуждения уголовного дела по ч. 1 ст. 272 УК РФ (неправомерный доступ к компьютерной информации)\", — сообщили в УМВД. Сейчас сотрудники полиции проводят следственные действия.",
-      "published_at": "2026-09-25T04:43:00+00:00",
-      "image_url": "https://sakhalinmedia.ru/f/big/6413/6412675.jpg?2cf62d593a82ae601c1719410c13e375",
-      "image_hash": "c9b4bf88e5641a7608cbe7c138fc990bb2d2800d",
-      "topic_cluster": "sakh_chp:жительницу_углегорска_обманули_деньги_предлогом_замены",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "Жительницу Углегорска едва не обманули на деньги под предлогом замены домофона",
-        "body": [
-          "Углегорские полицейские возбудили уголовное дело по факту мошенничества, жертвой которого стала 53-летняя местная жительница.",
-          "Об этом сообщает пресс-служба УМВД России по Сахалинской области."
-        ],
-        "footer": "ЧП | САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_chp",
-        "final_category": "sakh_chp",
-        "event_type": "fatal_incident",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "fatal_incident",
-          "subtype": "fatal_incident",
-          "seriousness": 96,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Жительницу Углегорска едва не обманули на деньги под предлогом замены домофона",
-          "title_corrected": "Жительницу Углегорска едва не обманули на деньги под предлогом замены домофона",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-25T06:40:30+00:00"
-    },
-    {
       "queued_at": "2026-09-25T06:38:55+00:00",
       "last_attempt_at": "2026-09-25T06:38:55+00:00",
       "delivery_attempts": 1,
@@ -15243,6 +15165,86 @@
       "pending_hardening_repaired_at": "2026-09-25T06:40:30+00:00",
       "expired_at": "2026-09-25T07:08:01+00:00",
       "expired_reason": "pending_revalidation_failed:final_hard_reject:advertorial_or_corporate_pr;final_category_mismatch:None->ru_eco;director_final_category:None->ru_eco;director_final_reject:advertorial_or_corporate_pr"
+    },
+    {
+      "queued_at": "2026-09-25T06:40:29+00:00",
+      "last_attempt_at": "2026-09-25T06:40:29+00:00",
+      "delivery_attempts": 1,
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
+      "url": "https://sakhalinmedia.ru/news/2631938/",
+      "title_hash": "fbbb51418599ca6a48a2657e1cd589fd949ca946",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "footer": "ЧП | САХАЛИН",
+      "title": "Жительницу Углегорска едва не обманули на деньги под предлогом замены домофона",
+      "source_text": "Углегорские полицейские возбудили уголовное дело по факту мошенничества, жертвой которого стала 53-летняя местная жительница. Об этом сообщает пресс-служба УМВД России по Сахалинской области. В полиции возбуждено уголовное дело 24 сентября потерпевшая обратилась в дежурную часть ОМВД России \"Углегорский\". Выяснилось, что ей позвонил неизвестный и под предлогом замены домофона попросил ее сообщить код из смс-сообщения. Женщина выпонила просьбу, благодаря чему злоумышленники получили доступ к ее учетной записи на портале \"Госуслуг\" (6+). Там они обновили персональные данные потерпевшей и оформили от ее имени доверенность на неустановленное лицо. \"Несмотря на то, что финансового ущерба удалось избежать, сам факт взлома стал основанием для возбуждения уголовного дела по ч. 1 ст. 272 УК РФ (неправомерный доступ к компьютерной информации)\", — сообщили в УМВД. Сейчас сотрудники полиции проводят следственные действия.",
+      "published_at": "2026-09-25T04:43:00+00:00",
+      "image_url": "https://sakhalinmedia.ru/f/big/6413/6412675.jpg?2cf62d593a82ae601c1719410c13e375",
+      "image_hash": "c9b4bf88e5641a7608cbe7c138fc990bb2d2800d",
+      "topic_cluster": "sakh_chp:жительницу_углегорска_обманули_деньги_предлогом_замены",
+      "media_origin": "source_article_or_feed",
+      "row": {
+        "reject": false,
+        "title_ru": "Жительницу Углегорска едва не обманули на деньги под предлогом замены домофона",
+        "body": [
+          "Углегорские полицейские возбудили уголовное дело по факту мошенничества, жертвой которого стала 53-летняя местная жительница.",
+          "Об этом сообщает пресс-служба УМВД России по Сахалинской области."
+        ],
+        "footer": "ЧП | САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.7",
+          "source_warnings": []
+        }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "fatal_incident",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "fatal_incident",
+          "subtype": "fatal_incident",
+          "seriousness": 96,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Жительницу Углегорска едва не обманули на деньги под предлогом замены домофона",
+          "title_corrected": "Жительницу Углегорска едва не обманули на деньги под предлогом замены домофона",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-25T06:40:30+00:00",
+      "expired_at": "2026-09-25T07:11:13+00:00",
+      "expired_reason": "pending_revalidation_failed:director_final_reject:importance_below_threshold"
     }
   ],
   "recent_image_hashes": [],
