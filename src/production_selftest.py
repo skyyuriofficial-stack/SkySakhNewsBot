@@ -761,6 +761,19 @@ def current_live_defect_regressions():
         assert review["approved"] is False, review
         assert review["reason"] == "corporate_product_or_brand_pr", review
 
+    brand_survey = candidate(
+        "Сбер вошёл в тройку любимых брендов россиян",
+        (
+            "В исследовании приняли участие 30 тысяч человек старше 18 лет. "
+            "Респондентов просили назвать марку или компанию, которую они считают самой любимой."
+        ),
+        category="ru_eco",
+        url="https://sakhalinmedia.ru/news/2631910/",
+    )
+    brand_review = director.review_candidate(brand_survey)
+    assert brand_review["approved"] is False, brand_review
+    assert brand_review["reason"] == "advertorial_or_corporate_pr", brand_review
+
     # UAVs are the background cause here; the headline action is regulation.
     admin = candidate(
         "Правительство РФ готовится к отмене проверок пострадавших от БПЛА проверок",

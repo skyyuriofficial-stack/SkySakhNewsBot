@@ -98,6 +98,11 @@ ADVERTORIAL = (
     "подробнее на сайте", "открыл первый офис", "совместное исследование",
 )
 
+BRAND_POPULARITY_PR = (
+    "любимый бренд", "любимых брендов", "самый любимый бренд",
+    "любимая марка", "любимых марок",
+)
+
 CORPORATE_FINANCE_BRANDS = (
     "сбер", "сбербанк", "сберинвестиции", "втб", "т банк", "тинькофф",
     "альфа банк", "газпромбанк", "россельхозбанк",
@@ -468,6 +473,8 @@ def _hard_reject(title: str, lead: str) -> Optional[str]:
     if has_any(combined, LIFESTYLE):
         return "lifestyle_or_seo"
     if has_any(combined, ADVERTORIAL):
+        return "advertorial_or_corporate_pr"
+    if has_any(combined, BRAND_POPULARITY_PR):
         return "advertorial_or_corporate_pr"
     if _is_corporate_product_pr(title, lead):
         return "corporate_product_or_brand_pr"
