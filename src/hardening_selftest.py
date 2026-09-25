@@ -4,6 +4,10 @@ import editorial_hardening
 
 editorial_hardening.install()
 
+import runtime_source_hardening
+
+runtime_source_hardening.install()
+
 import editorial_policy as policy
 
 
@@ -65,6 +69,26 @@ def main() -> int:
     assert "body_missing_sentence_boundary" in editorial_hardening.content_quality_issues(malformed, malformed_row)
     repaired_malformed = editorial_hardening.repair_row(malformed, malformed_row)
     assert "Ногликах. По предварительным" in repaired_malformed["body"][0], repaired_malformed
+
+    malformed_astv = {
+        "title": "Столкнулся с Suzuki и скрылся: в Южно-Сахалинске ищут свидетелей аварии на улице Вокзальной",
+        "source_text": (
+            "ДТП случилось днем 13 сентября в районе дома № 50 "
+            "Госавтоинспекция Южно-Сахалинска ищет аварии, которая произошла "
+            "в областном центре 13 сентября в 13:40. "
+            "В тот день у дома №50 на улице Вокзальной автомобиль столкнулся с Suzuki Solio и скрылся."
+        ),
+        "category_key": "sakh_chp",
+    }
+    malformed_astv_row = {
+        "title_ru": malformed_astv["title"],
+        "body": [
+            "ДТП случилось днем 13 сентября в районе дома № 50 Госавтоинспекция Южно-Сахалинска ищет аварии, которая произошла в областном центре 13 сентября в 13:40.",
+            "В тот день у дома №50 на улице Вокзальной автомобиль столкнулся с Suzuki Solio и скрылся.",
+        ],
+    }
+    malformed_astv_issues = editorial_hardening.content_quality_issues(malformed_astv, malformed_astv_row)
+    assert "body_malformed_source_phrase" in malformed_astv_issues, malformed_astv_issues
 
     magadan = {
         "title": "В Магадане молодой человек осуждён за мошенничество на 34 млн рублей",

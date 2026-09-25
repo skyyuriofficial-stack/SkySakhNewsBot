@@ -107,6 +107,12 @@ def install() -> None:
         issues = list(original_content_quality_issues(candidate, row))
         source_text = hardening.policy.clean(candidate.get("source_text"))
         body = row.get("body") if isinstance(row.get("body"), list) else []
+        body_text = " ".join(hardening.policy.clean(raw) for raw in body if raw)
+        # Fail closed on a known malformed ASTV lead that can survive extractive
+        # formatting as grammatically broken text ("... ищет аварии ...").
+        # Do not invent the missing noun; require a clean source/body instead.
+        if re.search(r"\bищет\s+аварии\b", body_text, flags=re.IGNORECASE):
+            issues.append("body_malformed_source_phrase")
         for raw in body:
             paragraph = hardening.policy.clean(raw)
             if not paragraph or paragraph.count("«") == paragraph.count("»"):
