@@ -11584,84 +11584,6 @@
       "pending_hardening_repaired_at": "2026-09-24T23:14:45+00:00"
     },
     {
-      "queued_at": "2026-09-24T23:14:45+00:00",
-      "last_attempt_at": "2026-09-24T23:14:45+00:00",
-      "delivery_attempts": 1,
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
-      "url": "https://astv.ru/news/criminal/2026-09-25-stolknulsya-s-suzuki-i-skrylsya-v-yuzhno-sahalinske-ishut-svidetelej-avarii-na-ulice-vokzal-noj",
-      "title_hash": "fc673be536e871bb92d3e08e0ea30330b024a103",
-      "source": "ASTV",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "footer": "ЧП | САХАЛИН",
-      "title": "Столкнулся с Suzuki и скрылся: в Южно-Сахалинске ищут свидетелей аварии на улице Вокзальной",
-      "source_text": "ДТП случилось днем 13 сентября в районе дома № 50 Госавтоинспекция Южно-Сахалинска ищет аварии, которая произошла в областном центре 13 сентября в 13:40. В тот день в районе дома №50 на улице Вокзальной неустановленный автомобиль столкнулся с Suzuki Solio и скрылся. Если вы были очевидцем этого ДТП, откликнитесь: 789-844. Южно-Сахалинск, ул. Сахалинская, 46В, кабинет №30.",
-      "published_at": "2026-09-24T13:00:00+00:00",
-      "image_url": "https://astv.ru/content/NewsImage/99/83/9983391d-6191-46c7-9d51-ea7b886b5e7f_3.jpg",
-      "image_hash": "af0e43a547a8225f6d053091389f00b74c03cb74",
-      "topic_cluster": "sakh_chp:столкнулся_suzuki_скрылся_сахалинске_свидетелей_аварии",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "Столкнулся с Suzuki и скрылся: в Южно-Сахалинске ищут свидетелей аварии на улице Вокзальной",
-        "body": [
-          "ДТП случилось днем 13 сентября в районе дома № 50 Госавтоинспекция Южно-Сахалинска ищет аварии, которая произошла в областном центре 13 сентября в 13:40.",
-          "В тот день в районе дома №50 на улице Вокзальной неустановленный автомобиль столкнулся с Suzuki Solio и скрылся."
-        ],
-        "footer": "ЧП | САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_chp",
-        "final_category": "sakh_chp",
-        "event_type": "major_emergency",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "subtype": "major_emergency",
-          "seriousness": 92,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Столкнулся с Suzuki и скрылся: в Южно-Сахалинске ищут свидетелей аварии на улице Вокзальной",
-          "title_corrected": "Столкнулся с Suzuki и скрылся: в Южно-Сахалинске ищут свидетелей аварии на улице Вокзальной",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-24T23:14:45+00:00"
-    },
-    {
       "queued_at": "2026-09-24T09:15:55+00:00",
       "last_attempt_at": "2026-09-24T23:14:44+00:00",
       "delivery_attempts": 4,
@@ -15316,6 +15238,86 @@
       "pending_hardening_repaired_at": "2026-09-24T11:56:08+00:00",
       "expired_at": "2026-09-24T20:53:24+00:00",
       "expired_reason": "news_stale_before_delivery"
+    },
+    {
+      "queued_at": "2026-09-24T23:14:45+00:00",
+      "last_attempt_at": "2026-09-24T23:14:45+00:00",
+      "delivery_attempts": 1,
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
+      "url": "https://astv.ru/news/criminal/2026-09-25-stolknulsya-s-suzuki-i-skrylsya-v-yuzhno-sahalinske-ishut-svidetelej-avarii-na-ulice-vokzal-noj",
+      "title_hash": "fc673be536e871bb92d3e08e0ea30330b024a103",
+      "source": "ASTV",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "footer": "ЧП | САХАЛИН",
+      "title": "Столкнулся с Suzuki и скрылся: в Южно-Сахалинске ищут свидетелей аварии на улице Вокзальной",
+      "source_text": "ДТП случилось днем 13 сентября в районе дома № 50 Госавтоинспекция Южно-Сахалинска ищет аварии, которая произошла в областном центре 13 сентября в 13:40. В тот день в районе дома №50 на улице Вокзальной неустановленный автомобиль столкнулся с Suzuki Solio и скрылся. Если вы были очевидцем этого ДТП, откликнитесь: 789-844. Южно-Сахалинск, ул. Сахалинская, 46В, кабинет №30.",
+      "published_at": "2026-09-24T13:00:00+00:00",
+      "image_url": "https://astv.ru/content/NewsImage/99/83/9983391d-6191-46c7-9d51-ea7b886b5e7f_3.jpg",
+      "image_hash": "af0e43a547a8225f6d053091389f00b74c03cb74",
+      "topic_cluster": "sakh_chp:столкнулся_suzuki_скрылся_сахалинске_свидетелей_аварии",
+      "media_origin": "source_article_or_feed",
+      "row": {
+        "reject": false,
+        "title_ru": "Столкнулся с Suzuki и скрылся: в Южно-Сахалинске ищут свидетелей аварии на улице Вокзальной",
+        "body": [
+          "ДТП случилось днем 13 сентября в районе дома № 50 Госавтоинспекция Южно-Сахалинска ищет аварии, которая произошла в областном центре 13 сентября в 13:40.",
+          "В тот день в районе дома №50 на улице Вокзальной неустановленный автомобиль столкнулся с Suzuki Solio и скрылся."
+        ],
+        "footer": "ЧП | САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.7",
+          "source_warnings": []
+        }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "major_emergency",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 92,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Столкнулся с Suzuki и скрылся: в Южно-Сахалинске ищут свидетелей аварии на улице Вокзальной",
+          "title_corrected": "Столкнулся с Suzuki и скрылся: в Южно-Сахалинске ищут свидетелей аварии на улице Вокзальной",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-24T23:14:45+00:00",
+      "expired_at": "2026-09-25T01:58:29+00:00",
+      "expired_reason": "pending_revalidation_failed:body_malformed_source_phrase"
     }
   ],
   "recent_image_hashes": [],
