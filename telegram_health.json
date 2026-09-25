@@ -1,11 +1,11 @@
 {
-  "checked_at_utc": "2026-09-25T09:40:09+00:00",
+  "checked_at_utc": "2026-09-25T09:40:29+00:00",
   "status": "error",
-  "auth_ok": false,
+  "auth_ok": true,
   "chat_ok": false,
-  "error_kind": "chat_config_invalid",
-  "http_status": null,
-  "description": "Telegram destination must be a -100... channel id or @channel username",
-  "bot_username": null,
+  "error_kind": "chat_access",
+  "http_status": 400,
+  "description": "Bad Request: chat not found",
+  "bot_username": "SkySakhNewsPublisher_bot",
   "permissions": {}
 }
