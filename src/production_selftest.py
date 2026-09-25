@@ -774,6 +774,22 @@ def current_live_defect_regressions():
     assert brand_review["approved"] is False, brand_review
     assert brand_review["reason"] == "advertorial_or_corporate_pr", brand_review
 
+    attempted_fraud = candidate(
+        "Жительницу Углегорска едва не обманули на деньги под предлогом замены домофона",
+        (
+            "Углегорские полицейские возбудили уголовное дело по факту мошенничества, "
+            "жертвой которого стала 53-летняя местная жительница. "
+            "Об этом сообщает пресс-служба УМВД России по Сахалинской области."
+        ),
+        category="sakh_chp",
+        url="https://sakhalinmedia.ru/news/2631938/",
+    )
+    attempted_review = director.review_candidate(attempted_fraud)
+    assert attempted_review["event_type"] == "fraud", attempted_review
+    assert attempted_review["approved"] is False, attempted_review
+    assert attempted_review["reason"] == "importance_below_threshold", attempted_review
+    assert attempted_review["seriousness"] <= 67, attempted_review
+
     # UAVs are the background cause here; the headline action is regulation.
     admin = candidate(
         "Правительство РФ готовится к отмене проверок пострадавших от БПЛА проверок",

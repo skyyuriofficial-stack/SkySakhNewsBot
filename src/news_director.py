@@ -196,6 +196,9 @@ def _score_candidate(
         elif money:
             score -= 4
             reasons.append("minor_fraud:-4")
+        if not money and _has(title, policy.ATTEMPTED_FRAUD):
+            score = min(score, 67)
+            reasons.append("attempted_fraud_no_loss_cap:67")
 
     if event == "routine_crime" and money and money < 100_000:
         score -= 8

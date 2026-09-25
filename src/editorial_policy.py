@@ -188,6 +188,10 @@ FRAUD = (
     "перевел деньги", "перевела деньги", "безопасный счет", "безопасный счёт",
     "липов инвести", "подделывать голоса", "обманули", "fraud", "scam",
 )
+ATTEMPTED_FRAUD = (
+    "едва не обманули", "чуть не обманули", "пытались обмануть",
+    "попытались обмануть",
+)
 TRAFFIC_ENFORCEMENT = (
     "гибдд", "гаи", "нарушител", "без прав", "пьяных", "профилактический рейд",
     "нарушения пдд", "штрафов",
@@ -506,6 +510,10 @@ def _event_type(title: str, lead: str, *, foreign: bool) -> str:
         return "earthquake"
     if has_any(combined, VIOLENT_CRIME):
         return "violent_crime"
+    # A fraud headline outranks generic source wording such as "жертвой
+    # мошенничества". The latter denotes a victim, not a fatality.
+    if has_any(title, FRAUD) and not has_any(title, FATAL):
+        return "fraud"
     if has_any(combined, FATAL) and has_any(combined, ACCIDENT_EMERGENCY + ROUTINE_CRIME):
         return "fatal_incident"
     # The action of the headline outranks its background cause. A government
