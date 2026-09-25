@@ -1,16 +1,70 @@
 {
   "version": "delivery-outbox-v1",
-  "generated_at_utc": "2026-09-25T09:40:30+00:00",
+  "generated_at_utc": "2026-09-25T12:14:00+00:00",
   "source_of_truth": "github_repository",
   "live_delivery_adapter": "telegram",
   "delivery_adapter_status": "error",
   "delivery_adapter_error": "chat_access",
-  "count": 5,
+  "count": 6,
   "items": [
     {
-      "queued_at": "2026-09-25T09:39:24+00:00",
-      "last_attempt_at": "2026-09-25T09:39:24+00:00",
+      "queued_at": "2026-09-25T12:13:48+00:00",
+      "last_attempt_at": "2026-09-25T12:13:48+00:00",
       "delivery_attempts": 1,
+      "delivery_status": "queued",
+      "source": "SakhalinMedia.ru",
+      "source_url": "https://sakhalinmedia.ru/news/2632456/",
+      "category_key": "ru_incident",
+      "category": "🇷🇺 Россия / происшествия",
+      "title": "Число страховых случаев из-за пожаров выросло на 28%",
+      "body": [
+        "За восемь месяцев 2026 года с бытовыми пожарами, причиной которых чаще всего становятся неисправности электрики или неосторожное обращение с электроприборами, столкнулись более 1,3 тысячи россиян.",
+        "Совокупная сумма выплат в связи с такими событиями по сравнению с аналогичным периодом 2025 года выросла на 50% и составила 777 млн рублей, сообщили в пресс-службе СберСтрахования."
+      ],
+      "image_url": "https://sakhalinmedia.ru/f/big/6414/6413741.jpg?24dd043044147f351623b359de245971",
+      "image_hash": "ad750d8506d9f82c3d8986e4930db852122d10fc",
+      "published_at": "2026-09-25T10:20:00+00:00",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_incident",
+        "final_category": "ru_incident",
+        "event_type": "major_emergency",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_incident",
+          "corrected_category": "ru_incident",
+          "group": "ru_safety",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 93,
+          "threshold": 76,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Число страховых случаев из-за пожаров выросло на 28%",
+          "title_corrected": "Число страховых случаев из-за пожаров выросло на 28%",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access"
+    },
+    {
+      "queued_at": "2026-09-25T09:39:24+00:00",
+      "last_attempt_at": "2026-09-25T12:13:13+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "TASS",
       "source_url": "https://tass.ru/ekonomika/28151017",
@@ -22,7 +76,7 @@
         "Алексей Яковлев обозначил ключевые условия: компании должны относиться к российской юрисдикции, а ПО — иметь необходимую сертификацию."
       ],
       "image_url": "https://cdn-media.tass.ru/fit/400x300_b2b00b17/tass/m2/uploads/i/20260530/9100207.jpg",
-      "image_hash": "010678c3a64f701f0ae36f651ade906ab8038c9f",
+      "image_hash": "70c77f19117289b95dbce6cce0f266a412daa425",
       "published_at": "2026-09-25T09:25:30+00:00",
       "publication_contract": {
         "approved": true,
@@ -59,12 +113,12 @@
           "ai_review": null
         }
       },
-      "last_error": "delivery_adapter_unavailable:telegram_chat_config_invalid"
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access"
     },
     {
       "queued_at": "2026-09-25T03:53:54+00:00",
-      "last_attempt_at": "2026-09-25T09:40:09+00:00",
-      "delivery_attempts": 3,
+      "last_attempt_at": "2026-09-25T12:13:59+00:00",
+      "delivery_attempts": 4,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2631845/",
@@ -113,12 +167,12 @@
           "ai_review": null
         }
       },
-      "last_error": "delivery_adapter_unavailable:telegram_chat_config_invalid"
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access"
     },
     {
       "queued_at": "2026-09-24T23:14:44+00:00",
-      "last_attempt_at": "2026-09-25T09:40:09+00:00",
-      "delivery_attempts": 4,
+      "last_attempt_at": "2026-09-25T12:13:59+00:00",
+      "delivery_attempts": 5,
       "delivery_status": "queued",
       "source": "Sakh.online",
       "source_url": "https://sakh.online/news/18/2026-09-25/selo-i-neskolko-ulits-yuzhno-sahalinska-ostanutsya-bez-sveta-25-sentyabrya-527131",
@@ -167,12 +221,12 @@
           "ai_review": null
         }
       },
-      "last_error": "delivery_adapter_unavailable:telegram_chat_config_invalid"
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access"
     },
     {
       "queued_at": "2026-09-25T09:40:08+00:00",
-      "last_attempt_at": "2026-09-25T09:40:08+00:00",
-      "delivery_attempts": 1,
+      "last_attempt_at": "2026-09-25T12:13:47+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "Sakh.online",
       "source_url": "https://sakh.online/news/24/2026-09-25/pod-kemerovom-kvadrotsikly-sbili-domashnego-samoeda-na-glazah-u-detey-527236",
@@ -184,7 +238,7 @@
         "По словам женщины, водители квадроциклов ехали на большой скорости и сбили собаку прямо на глазах у детей."
       ],
       "image_url": "https://sakh.online/attachments/2435911e5b247bd35506c23e2656a271a1385f7e/store/crop/0/374/358/202/800/0/0/0/3a805ecc5d352bc0f1b677b41af9672c5ceab74efa0403cef3b0be4a4105/3a805ecc5d352bc0f1b677b41af9672c5ceab74efa0403cef3b0be4a4105.webp",
-      "image_hash": "1eedaec8c4f1daab50e51be1982f43081b3578b9",
+      "image_hash": "e7131c2d09f3e7db112041f7d00685c821a7f90c",
       "published_at": "2026-09-24T13:00:00+00:00",
       "publication_contract": {
         "approved": true,
@@ -221,12 +275,12 @@
           "ai_review": null
         }
       },
-      "last_error": "delivery_adapter_unavailable:telegram_chat_config_invalid"
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access"
     },
     {
       "queued_at": "2026-09-25T06:38:55+00:00",
-      "last_attempt_at": "2026-09-25T09:40:08+00:00",
-      "delivery_attempts": 2,
+      "last_attempt_at": "2026-09-25T12:13:47+00:00",
+      "delivery_attempts": 3,
       "delivery_status": "queued",
       "source": "Sakh.online",
       "source_url": "https://sakh.online/news/24/2026-09-25/pozhar-v-teplitse-na-prospekte-mira-potushili-za-50-minut-527223",
@@ -275,7 +329,7 @@
           "ai_review": null
         }
       },
-      "last_error": "delivery_adapter_unavailable:telegram_chat_config_invalid"
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access"
     }
   ]
 }
