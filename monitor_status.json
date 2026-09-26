@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-26T13:21:03+00:00",
-  "checked_at_sakhalin": "2026-09-27T00:20:58+11:00",
+  "checked_at_utc": "2026-09-26T14:22:46+00:00",
+  "checked_at_sakhalin": "2026-09-27T01:22:42+11:00",
   "status": "error",
   "mutations_enabled": false,
   "issues": [
@@ -17,7 +17,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-09-26T22:54:20+11:00",
-    "age_hours": 1.45,
+    "age_hours": 2.47,
     "published": 0
   },
   "last_production_attempt": {
@@ -54,7 +54,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-26T13:21:01+00:00",
+    "checked_at": "2026-09-26T14:22:44+00:00",
     "checked": 20,
     "passed": 14,
     "anomalies": [
@@ -654,7 +654,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-09-26T13:20:57+00:00",
+    "checked_at_utc": "2026-09-26T14:22:41+00:00",
     "status": "error",
     "auth_ok": true,
     "chat_ok": false,
@@ -665,17 +665,17 @@
     "permissions": {}
   },
   "delivery_queue_hardening": {
-    "before": 5,
+    "before": 3,
     "after": 3,
-    "retired": 2,
-    "stale_retired": 2,
+    "retired": 0,
+    "stale_retired": 0,
     "capacity_retired": 0,
     "duplicates": 0,
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0
   },
-  "delivery_outbox_repaired": true,
+  "delivery_outbox_repaired": false,
   "hardening_actions": [],
   "hardening_failed_actions": [],
   "warnings": [
