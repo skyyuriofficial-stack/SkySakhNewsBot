@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-26T03:36:01+00:00",
-  "checked_at_sakhalin": "2026-09-26T14:35:56+11:00",
+  "checked_at_utc": "2026-09-26T04:26:53+00:00",
+  "checked_at_sakhalin": "2026-09-26T15:26:49+11:00",
   "status": "error",
   "mutations_enabled": false,
   "issues": [
@@ -17,7 +17,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-09-26T14:35:32+11:00",
-    "age_hours": 0.01,
+    "age_hours": 0.86,
     "published": 0
   },
   "last_production_attempt": {
@@ -45,8 +45,8 @@
     "last_attempt": {
       "status": "blocked",
       "mode": "morning",
-      "at_utc": "2026-09-25T23:54:25+00:00",
-      "at_sakhalin": "2026-09-26T10:54:25+11:00",
+      "at_utc": "2026-09-26T04:26:25+00:00",
+      "at_sakhalin": "2026-09-26T15:26:25+11:00",
       "error": "telegram_chat_access",
       "description": "Bad Request: chat not found"
     },
@@ -58,8 +58,8 @@
         "last_attempt": {
           "status": "blocked",
           "mode": "morning",
-          "at_utc": "2026-09-25T23:54:25+00:00",
-          "at_sakhalin": "2026-09-26T10:54:25+11:00",
+          "at_utc": "2026-09-26T04:26:25+00:00",
+          "at_sakhalin": "2026-09-26T15:26:25+11:00",
           "error": "telegram_chat_access",
           "description": "Bad Request: chat not found"
         }
@@ -68,7 +68,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-26T03:35:59+00:00",
+    "checked_at": "2026-09-26T04:26:52+00:00",
     "checked": 20,
     "passed": 14,
     "anomalies": [
@@ -673,8 +673,8 @@
       "last_attempt": {
         "status": "blocked",
         "mode": "morning",
-        "at_utc": "2026-09-25T23:54:25+00:00",
-        "at_sakhalin": "2026-09-26T10:54:25+11:00",
+        "at_utc": "2026-09-26T04:26:25+00:00",
+        "at_sakhalin": "2026-09-26T15:26:25+11:00",
         "error": "telegram_chat_access",
         "description": "Bad Request: chat not found"
       },
@@ -682,7 +682,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-09-26T03:35:54+00:00",
+    "checked_at_utc": "2026-09-26T04:26:47+00:00",
     "status": "error",
     "auth_ok": true,
     "chat_ok": false,
@@ -781,8 +781,8 @@
       "last_attempt": {
         "status": "blocked",
         "mode": "morning",
-        "at_utc": "2026-09-25T23:54:25+00:00",
-        "at_sakhalin": "2026-09-26T10:54:25+11:00",
+        "at_utc": "2026-09-26T04:26:25+00:00",
+        "at_sakhalin": "2026-09-26T15:26:25+11:00",
         "error": "telegram_chat_access",
         "description": "Bad Request: chat not found"
       },
