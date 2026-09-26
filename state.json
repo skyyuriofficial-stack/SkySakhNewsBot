@@ -11657,86 +11657,6 @@
         }
       },
       "pending_hardening_repaired_at": "2026-09-25T23:20:11+00:00"
-    },
-    {
-      "queued_at": "2026-09-25T03:53:54+00:00",
-      "last_attempt_at": "2026-09-25T23:20:11+00:00",
-      "delivery_attempts": 6,
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
-      "url": "https://sakhalinmedia.ru/news/2631845/",
-      "title_hash": "f8974a0786b147030a27ea55578b4ec7d38841b9",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "footer": "ЧП | САХАЛИН",
-      "title": "В Южно-Сахалинске с начала года произошло 160 пожаров",
-      "source_text": "С начала года на территории южно-сахалинского городского округа зарегистрировано 238 случаев возгорания. Подавляющее большинство из них — 160 пожаров — произошло непосредственно в городе. Проанализировав эти данные, специалисты профильных ведомств обратились к горожанам с напоминанием о необходимости строгого соблюдения правил пожарной безопасности, сообщает пресс-служба мэрии Южно-Сахалинска. Пять человек погибли при пожарах в городском округе с начала года Согласно информации территориального отдела надзорной деятельности, статистика происшествий распределена по сезонам неравномерно: в теплый период было зафиксировано 147 пожаров, а в холодный — 67. Статистика содержит и трагические цифры: с начала года огонь стал причиной гибели пяти человек. Кроме того, в результате возгораний были повреждены кровли трех многоквартирных жилых домов. Эксперты отмечают, что основной причиной пожаров в жилом фонде по-прежнему остается высокая нагрузка на изношенные электрические сети и их неправильная эксплуатация. В частном секторе к этим факторам добавляется неосторожное обращение с огнем, в том числе при использовании печного отопления. Мы призываем жителей областного центра к максимальной бдительности. Не используйте неисправные электроприборы и не перегружайте сеть мощным оборудованием. Кроме того, рекомендуем собственникам жилья страховать свое имущество — это поможет минимизировать финансовые потери в случае непредвиденных ситуаций, — подчеркнул специалист гражданской обороны управления по делам ГО и ЧС Южно-Сахалинска Сергей Гусев.",
-      "published_at": "2026-09-25T03:21:00+00:00",
-      "image_url": "https://sakhalinmedia.ru/f/big/6413/6412520.jpg?c5d1e9127ef52326ca5de15db727ae4f",
-      "image_hash": "786f9c55328dbe36a4625c3dddd90955dbb7cc1d",
-      "topic_cluster": "sakh_chp:сахалинске_начала_произошло_пожаров_sakhalinmedia",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "В Южно-Сахалинске с начала года произошло 160 пожаров",
-        "body": [
-          "С начала года на территории южно-сахалинского городского округа зарегистрировано 238 случаев возгорания.",
-          "Подавляющее большинство из них — 160 пожаров — произошло непосредственно в городе."
-        ],
-        "footer": "ЧП | САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": [],
-          "reclassified_from": "sakh",
-          "reclassified_to": "sakh_chp"
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_chp",
-        "final_category": "sakh_chp",
-        "event_type": "major_emergency",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "subtype": "major_emergency",
-          "seriousness": 91,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "В Южно-Сахалинске с начала года произошло 160 пожаров",
-          "title_corrected": "В Южно-Сахалинске с начала года произошло 160 пожаров",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-25T23:20:11+00:00"
     }
   ],
   "news_director_policy": {
@@ -15698,6 +15618,88 @@
         }
       },
       "expired_at": "2026-09-25T23:20:11+00:00",
+      "expired_reason": "pending_delivery_expired:age_hours>24"
+    },
+    {
+      "queued_at": "2026-09-25T03:53:54+00:00",
+      "last_attempt_at": "2026-09-25T23:20:11+00:00",
+      "delivery_attempts": 6,
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
+      "url": "https://sakhalinmedia.ru/news/2631845/",
+      "title_hash": "f8974a0786b147030a27ea55578b4ec7d38841b9",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "footer": "ЧП | САХАЛИН",
+      "title": "В Южно-Сахалинске с начала года произошло 160 пожаров",
+      "source_text": "С начала года на территории южно-сахалинского городского округа зарегистрировано 238 случаев возгорания. Подавляющее большинство из них — 160 пожаров — произошло непосредственно в городе. Проанализировав эти данные, специалисты профильных ведомств обратились к горожанам с напоминанием о необходимости строгого соблюдения правил пожарной безопасности, сообщает пресс-служба мэрии Южно-Сахалинска. Пять человек погибли при пожарах в городском округе с начала года Согласно информации территориального отдела надзорной деятельности, статистика происшествий распределена по сезонам неравномерно: в теплый период было зафиксировано 147 пожаров, а в холодный — 67. Статистика содержит и трагические цифры: с начала года огонь стал причиной гибели пяти человек. Кроме того, в результате возгораний были повреждены кровли трех многоквартирных жилых домов. Эксперты отмечают, что основной причиной пожаров в жилом фонде по-прежнему остается высокая нагрузка на изношенные электрические сети и их неправильная эксплуатация. В частном секторе к этим факторам добавляется неосторожное обращение с огнем, в том числе при использовании печного отопления. Мы призываем жителей областного центра к максимальной бдительности. Не используйте неисправные электроприборы и не перегружайте сеть мощным оборудованием. Кроме того, рекомендуем собственникам жилья страховать свое имущество — это поможет минимизировать финансовые потери в случае непредвиденных ситуаций, — подчеркнул специалист гражданской обороны управления по делам ГО и ЧС Южно-Сахалинска Сергей Гусев.",
+      "published_at": "2026-09-25T03:21:00+00:00",
+      "image_url": "https://sakhalinmedia.ru/f/big/6413/6412520.jpg?c5d1e9127ef52326ca5de15db727ae4f",
+      "image_hash": "786f9c55328dbe36a4625c3dddd90955dbb7cc1d",
+      "topic_cluster": "sakh_chp:сахалинске_начала_произошло_пожаров_sakhalinmedia",
+      "media_origin": "source_article_or_feed",
+      "row": {
+        "reject": false,
+        "title_ru": "В Южно-Сахалинске с начала года произошло 160 пожаров",
+        "body": [
+          "С начала года на территории южно-сахалинского городского округа зарегистрировано 238 случаев возгорания.",
+          "Подавляющее большинство из них — 160 пожаров — произошло непосредственно в городе."
+        ],
+        "footer": "ЧП | САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh",
+          "reclassified_to": "sakh_chp"
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.7",
+          "source_warnings": []
+        }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "major_emergency",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 91,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "В Южно-Сахалинске с начала года произошло 160 пожаров",
+          "title_corrected": "В Южно-Сахалинске с начала года произошло 160 пожаров",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-25T23:20:11+00:00",
+      "expired_at": "2026-09-26T03:28:10+00:00",
       "expired_reason": "pending_delivery_expired:age_hours>24"
     }
   ],
