@@ -11896,84 +11896,6 @@
         }
       },
       "pending_hardening_repaired_at": "2026-09-26T06:49:38+00:00"
-    },
-    {
-      "queued_at": "2026-09-25T09:39:24+00:00",
-      "last_attempt_at": "2026-09-26T06:46:38+00:00",
-      "delivery_attempts": 6,
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
-      "url": "https://tass.ru/ekonomika/28151017",
-      "title_hash": "4d6c942c771ba59a4c6b072713be19cbaa95428e",
-      "source": "TASS",
-      "category": "🇷🇺 Россия / экономика",
-      "category_key": "ru_eco",
-      "footer": "РОССИЯ | ЭКОНОМИКА",
-      "title": "Минфин работает над требованиями к поставщикам анализа криптоопераций",
-      "source_text": "Директор департамента финансовой политики министерства Алексей Яковлев обозначил ключевые условия этих требований - принадлежность к российской юрисдикции для компаний и наличие необходимой сертификации ПО",
-      "published_at": "2026-09-25T09:25:30+00:00",
-      "image_url": "https://cdn-media.tass.ru/fit/400x300_b2b00b17/tass/m2/uploads/i/20260530/9100207.jpg",
-      "image_hash": "70c77f19117289b95dbce6cce0f266a412daa425",
-      "topic_cluster": "ru_eco:минфин_работает_требованиями_поставщикам_анализа_криптоопераций",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "Минфин работает над требованиями к поставщикам анализа криптоопераций",
-        "body": [
-          "Минфин работает над требованиями к поставщикам анализа криптоопераций.",
-          "Алексей Яковлев обозначил ключевые условия: компании должны относиться к российской юрисдикции, а ПО — иметь необходимую сертификацию."
-        ],
-        "footer": "РОССИЯ | ЭКОНОМИКА",
-        "editorial_mode": "",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic",
-          "issues": []
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "ru_eco",
-        "final_category": "ru_eco",
-        "event_type": "macro_economy",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_eco",
-          "corrected_category": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "subtype": "macro_economy",
-          "seriousness": 83,
-          "threshold": 74,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Минфин работает над требованиями к поставщикам анализа криптоопераций",
-          "title_corrected": "Минфин работает над требованиями к поставщикам анализа криптоопераций",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-26T06:49:38+00:00"
     }
   ],
   "news_director_policy": {
@@ -16017,6 +15939,86 @@
       },
       "pending_hardening_repaired_at": "2026-09-25T23:20:11+00:00",
       "expired_at": "2026-09-26T03:28:10+00:00",
+      "expired_reason": "pending_delivery_expired:age_hours>24"
+    },
+    {
+      "queued_at": "2026-09-25T09:39:24+00:00",
+      "last_attempt_at": "2026-09-26T06:46:38+00:00",
+      "delivery_attempts": 6,
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
+      "url": "https://tass.ru/ekonomika/28151017",
+      "title_hash": "4d6c942c771ba59a4c6b072713be19cbaa95428e",
+      "source": "TASS",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "footer": "РОССИЯ | ЭКОНОМИКА",
+      "title": "Минфин работает над требованиями к поставщикам анализа криптоопераций",
+      "source_text": "Директор департамента финансовой политики министерства Алексей Яковлев обозначил ключевые условия этих требований - принадлежность к российской юрисдикции для компаний и наличие необходимой сертификации ПО",
+      "published_at": "2026-09-25T09:25:30+00:00",
+      "image_url": "https://cdn-media.tass.ru/fit/400x300_b2b00b17/tass/m2/uploads/i/20260530/9100207.jpg",
+      "image_hash": "70c77f19117289b95dbce6cce0f266a412daa425",
+      "topic_cluster": "ru_eco:минфин_работает_требованиями_поставщикам_анализа_криптоопераций",
+      "media_origin": "source_article_or_feed",
+      "row": {
+        "reject": false,
+        "title_ru": "Минфин работает над требованиями к поставщикам анализа криптоопераций",
+        "body": [
+          "Минфин работает над требованиями к поставщикам анализа криптоопераций.",
+          "Алексей Яковлев обозначил ключевые условия: компании должны относиться к российской юрисдикции, а ПО — иметь необходимую сертификацию."
+        ],
+        "footer": "РОССИЯ | ЭКОНОМИКА",
+        "editorial_mode": "",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic",
+          "issues": []
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.7",
+          "source_warnings": []
+        }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_eco",
+        "final_category": "ru_eco",
+        "event_type": "macro_economy",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 83,
+          "threshold": 74,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Минфин работает над требованиями к поставщикам анализа криптоопераций",
+          "title_corrected": "Минфин работает над требованиями к поставщикам анализа криптоопераций",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-26T06:49:38+00:00",
+      "expired_at": "2026-09-26T09:49:12+00:00",
       "expired_reason": "pending_delivery_expired:age_hours>24"
     }
   ],
