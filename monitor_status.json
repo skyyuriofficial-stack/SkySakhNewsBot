@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-26T09:49:17+00:00",
-  "checked_at_sakhalin": "2026-09-26T20:49:12+11:00",
+  "checked_at_utc": "2026-09-26T09:53:44+00:00",
+  "checked_at_sakhalin": "2026-09-26T20:53:39+11:00",
   "status": "error",
   "mutations_enabled": false,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-09-26T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-09-26T17:49:37+11:00"
-    },
     {
       "type": "telegram_delivery_unhealthy",
       "reason": "chat_access",
@@ -22,16 +16,16 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-26T17:49:37+11:00",
-    "age_hours": 2.99,
+    "finished_sakhalin": "2026-09-26T20:53:16+11:00",
+    "age_hours": 0.01,
     "published": 0
   },
   "last_production_attempt": {
     "status": "editorial_ok_delivery_blocked",
     "reason": "telegram_chat_access",
-    "checked_at_utc": "2026-09-26T06:39:40+00:00",
+    "checked_at_utc": "2026-09-26T09:49:33+00:00",
     "publisher_version": "stable-v12.1",
-    "queue_preserved": 7,
+    "queue_preserved": 6,
     "editorial_run_status": "ok"
   },
   "mobilization_digest": {
@@ -87,7 +81,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-26T09:49:15+00:00",
+    "checked_at": "2026-09-26T09:53:42+00:00",
     "checked": 20,
     "passed": 14,
     "anomalies": [
@@ -715,7 +709,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-09-26T09:49:11+00:00",
+    "checked_at_utc": "2026-09-26T09:53:38+00:00",
     "status": "error",
     "auth_ok": true,
     "chat_ok": false,
@@ -726,17 +720,17 @@
     "permissions": {}
   },
   "delivery_queue_hardening": {
-    "before": 7,
+    "before": 6,
     "after": 6,
-    "retired": 1,
-    "stale_retired": 1,
+    "retired": 0,
+    "stale_retired": 0,
     "capacity_retired": 0,
     "duplicates": 0,
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0
   },
-  "delivery_outbox_repaired": true,
+  "delivery_outbox_repaired": false,
   "hardening_actions": [],
   "hardening_failed_actions": [],
   "warnings": [
