@@ -1,22 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-27T21:16:55+00:00",
-  "checked_at_sakhalin": "2026-09-28T08:16:50+11:00",
+  "checked_at_utc": "2026-09-27T21:25:04+00:00",
+  "checked_at_sakhalin": "2026-09-28T08:25:00+11:00",
   "status": "error",
   "mutations_enabled": false,
   "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 8.92,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-09-28T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-09-27T23:21:58+11:00"
-    },
     {
       "type": "telegram_delivery_unhealthy",
       "reason": "chat_access",
@@ -27,16 +16,16 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-09-27T23:21:58+11:00",
-    "age_hours": 8.92,
+    "finished_sakhalin": "2026-09-28T08:24:36+11:00",
+    "age_hours": 0.01,
     "published": 0
   },
   "last_production_attempt": {
     "status": "editorial_ok_delivery_blocked",
     "reason": "telegram_chat_access",
-    "checked_at_utc": "2026-09-27T12:16:03+00:00",
+    "checked_at_utc": "2026-09-27T21:17:11+00:00",
     "publisher_version": "stable-v12.1",
-    "queue_preserved": 4,
+    "queue_preserved": 2,
     "editorial_run_status": "ok"
   },
   "mobilization_digest": {
@@ -65,7 +54,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-27T21:16:53+00:00",
+    "checked_at": "2026-09-27T21:25:03+00:00",
     "checked": 20,
     "passed": 14,
     "anomalies": [
@@ -665,7 +654,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-09-27T21:16:50+00:00",
+    "checked_at_utc": "2026-09-27T21:24:59+00:00",
     "status": "error",
     "auth_ok": true,
     "chat_ok": false,
@@ -676,8 +665,8 @@
     "permissions": {}
   },
   "delivery_queue_hardening": {
-    "before": 1,
-    "after": 1,
+    "before": 2,
+    "after": 2,
     "retired": 0,
     "stale_retired": 0,
     "capacity_retired": 0,
