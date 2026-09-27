@@ -1,16 +1,16 @@
 {
   "version": "delivery-outbox-v1",
-  "generated_at_utc": "2026-09-27T01:41:03+00:00",
+  "generated_at_utc": "2026-09-27T06:26:54+00:00",
   "source_of_truth": "github_repository",
   "live_delivery_adapter": "telegram",
   "delivery_adapter_status": "error",
   "delivery_adapter_error": "chat_access",
-  "count": 4,
+  "count": 3,
   "items": [
     {
       "queued_at": "2026-09-27T00:32:00+00:00",
-      "last_attempt_at": "2026-09-27T00:32:00+00:00",
-      "delivery_attempts": 1,
+      "last_attempt_at": "2026-09-27T06:25:47+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "Sakh.online",
       "source_url": "https://sakh.online/news/24/2026-09-27/molodoy-sotrudnik-mchs-pogib-v-avarii-v-anivskom-rayone-527274",
@@ -22,7 +22,7 @@
         "Авария произошла 26 сентября 2026 года в 1:45 в районе 1 км автодороги Петропавловское — Воскресенское — Анива — Соловьевка."
       ],
       "image_url": "https://sakh.online/attachments/f353ae66d8414f7feb93fc798a853d0bd1feb376/store/crop/0/194/369/208/800/0/0/0/c1ab2ce990cc8323c6cd337a9db8f9e35943d795d69281fb2f80b71e02f3/c1ab2ce990cc8323c6cd337a9db8f9e35943d795d69281fb2f80b71e02f3.webp",
-      "image_hash": "6866b0e3a778ed8c3847680e7eebbab84ae87788",
+      "image_hash": "544d3c50589741345289650d009d0421d9d171bc",
       "published_at": "2026-09-26T13:00:00+00:00",
       "publication_contract": {
         "approved": true,
@@ -63,8 +63,8 @@
     },
     {
       "queued_at": "2026-09-27T00:32:01+00:00",
-      "last_attempt_at": "2026-09-27T00:32:01+00:00",
-      "delivery_attempts": 1,
+      "last_attempt_at": "2026-09-27T06:26:54+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "Sakh.online",
       "source_url": "https://sakh.online/news/18/2026-09-27/holodnuyu-vodu-otklyuchat-na-neskolkih-ulitsah-yuzhno-sahalinska-27-sentyabrya-527268",
@@ -76,7 +76,7 @@
         "В воскресенье, 27 сентября, специалисты «РВК-Сахалин» устранят повреждения на сетях водоснабжения."
       ],
       "image_url": "https://sakh.online/attachments/bac2cb5bc5da244b2f03a2b5019fa94093e9eb14/store/crop/0/19/800/451/800/0/0/0/b33ec318b199de9107a835a0407bc2a86f6627e54d2ee10e20d8b89a7fc1/b33ec318b199de9107a835a0407bc2a86f6627e54d2ee10e20d8b89a7fc1.webp",
-      "image_hash": "cb7145dff9e95156fa23b953675bc5fef5d8dd94",
+      "image_hash": "f52e2439d2317a6f113c89814b2d6619ed21fc7e",
       "published_at": "2026-09-26T13:00:00+00:00",
       "publication_contract": {
         "approved": true,
@@ -117,8 +117,8 @@
     },
     {
       "queued_at": "2026-09-26T06:49:37+00:00",
-      "last_attempt_at": "2026-09-27T00:32:01+00:00",
-      "delivery_attempts": 5,
+      "last_attempt_at": "2026-09-27T06:26:54+00:00",
+      "delivery_attempts": 6,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2632784/",
@@ -162,60 +162,6 @@
           "risks": [],
           "title_original": "Две улицы Южно-Сахалинска останутся без воды утром 27 сентября",
           "title_corrected": "Две улицы Южно-Сахалинска останутся без воды утром 27 сентября",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access"
-    },
-    {
-      "queued_at": "2026-09-26T06:49:37+00:00",
-      "last_attempt_at": "2026-09-27T00:32:01+00:00",
-      "delivery_attempts": 5,
-      "delivery_status": "queued",
-      "source": "SakhalinMedia.ru",
-      "source_url": "https://sakhalinmedia.ru/news/2632793/",
-      "category_key": "sakh_chp",
-      "category": "📍 Сахалин",
-      "title": "Водитель скончался в больнице после ДТП в Анивском районе",
-      "body": [
-        "Авария произошла 26 сентября в 1.45 в районе 1 км автодороги Петропавловское — Воскресенское — Анива — Соловьевка, сообщает УГИБДД УМВД России по Сахалинской области.",
-        "По предварительным данным, 29-летний водитель Toyota Tank не справился с управлением, съехал в кювет и опрокинулся."
-      ],
-      "image_url": "https://sakhalinmedia.ru/f/266x136/6408/6407203.png?08fb46d0eced1669748d3a30aef687db",
-      "image_hash": "8845af5e71fa48bd92d0b4c1ab93a571133ee93f",
-      "published_at": "2026-09-26T03:28:00+00:00",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_chp",
-        "final_category": "sakh_chp",
-        "event_type": "fatal_incident",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "fatal_incident",
-          "subtype": "fatal_incident",
-          "seriousness": 99,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Водитель скончался в больнице после ДТП в Анивском районе",
-          "title_corrected": "Водитель скончался в больнице после ДТП в Анивском районе",
           "title_corrections": [],
           "title_changed": false,
           "ai_review": null
