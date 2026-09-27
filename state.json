@@ -11735,86 +11735,6 @@
         }
       },
       "pending_hardening_repaired_at": "2026-09-27T00:32:01+00:00"
-    },
-    {
-      "queued_at": "2026-09-26T03:33:04+00:00",
-      "last_attempt_at": "2026-09-27T00:30:37+00:00",
-      "delivery_attempts": 6,
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
-      "url": "https://sakhalinmedia.ru/news/2632718/",
-      "title_hash": "a5ebcce3a18196b8feb80b58a65814881ba53fbd",
-      "source": "SakhalinMedia.ru",
-      "category": "🇷🇺 Россия / политика",
-      "category_key": "ru_pol",
-      "footer": "РОССИЯ | ПОЛИТИКА",
-      "title": "В России утвердили календарь выходных и праздников на 2027 год",
-      "source_text": "Правительство РФ утвердило производственный календарь на 2027 год. Так, новогодние каникулы продлятся 11 дней — с 31 декабря 2026 года по 10 января 2027 года. Документ опубликован на сайте Госдумы. Стало известно, как россияне будут отдыхать в следующем году В 2027 году в целом при пятидневной рабочей неделе с двумя выходными днями будет 247 рабочих дней, в том числе 4 сокращенных на один час рабочих дня, и 118 выходных и нерабочих праздничных дней.",
-      "published_at": "2026-09-26T01:28:00+00:00",
-      "image_url": "https://sakhalinmedia.ru/f/big/6415/6414080.jpg?93eb388fea3766a935d0091b04598df0",
-      "image_hash": "d5f751ab81383ebd36f23e9cebce876d102bc04f",
-      "topic_cluster": "ru_pol:россии_утвердили_календарь_выходных_праздников_sakhalinmedia",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "В России утвердили календарь выходных и праздников на 2027 год",
-        "body": [
-          "Правительство РФ утвердило производственный календарь на 2027 год. Так, новогодние каникулы продлятся 11 дней — с 31 декабря 2026 года по 10 января 2027 года.",
-          "Стало известно, как россияне будут отдыхать в следующем году В 2027 году в целом при пятидневной рабочей неделе с двумя выходными днями будет 247 рабочих дней, в том числе 4 сокращенных на один час рабочих дня, и 118 выходных и нерабочих праздничных дней."
-        ],
-        "footer": "РОССИЯ | ПОЛИТИКА",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": [],
-          "reclassified_from": "sakh",
-          "reclassified_to": "ru_pol"
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "ru_pol",
-        "final_category": "ru_pol",
-        "event_type": "political_decision",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_pol",
-          "corrected_category": "ru_pol",
-          "group": "ru_pol",
-          "event_type": "political_decision",
-          "subtype": "political_decision",
-          "seriousness": 90,
-          "threshold": 75,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "В России утвердили календарь выходных и праздников на 2027 год",
-          "title_corrected": "В России утвердили календарь выходных и праздников на 2027 год",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-27T00:32:01+00:00"
     }
   ],
   "news_director_policy": {
@@ -16266,6 +16186,88 @@
         }
       },
       "expired_at": "2026-09-27T00:32:01+00:00",
+      "expired_reason": "pending_delivery_expired:age_hours>24"
+    },
+    {
+      "queued_at": "2026-09-26T03:33:04+00:00",
+      "last_attempt_at": "2026-09-27T00:30:37+00:00",
+      "delivery_attempts": 6,
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
+      "url": "https://sakhalinmedia.ru/news/2632718/",
+      "title_hash": "a5ebcce3a18196b8feb80b58a65814881ba53fbd",
+      "source": "SakhalinMedia.ru",
+      "category": "🇷🇺 Россия / политика",
+      "category_key": "ru_pol",
+      "footer": "РОССИЯ | ПОЛИТИКА",
+      "title": "В России утвердили календарь выходных и праздников на 2027 год",
+      "source_text": "Правительство РФ утвердило производственный календарь на 2027 год. Так, новогодние каникулы продлятся 11 дней — с 31 декабря 2026 года по 10 января 2027 года. Документ опубликован на сайте Госдумы. Стало известно, как россияне будут отдыхать в следующем году В 2027 году в целом при пятидневной рабочей неделе с двумя выходными днями будет 247 рабочих дней, в том числе 4 сокращенных на один час рабочих дня, и 118 выходных и нерабочих праздничных дней.",
+      "published_at": "2026-09-26T01:28:00+00:00",
+      "image_url": "https://sakhalinmedia.ru/f/big/6415/6414080.jpg?93eb388fea3766a935d0091b04598df0",
+      "image_hash": "d5f751ab81383ebd36f23e9cebce876d102bc04f",
+      "topic_cluster": "ru_pol:россии_утвердили_календарь_выходных_праздников_sakhalinmedia",
+      "media_origin": "source_article_or_feed",
+      "row": {
+        "reject": false,
+        "title_ru": "В России утвердили календарь выходных и праздников на 2027 год",
+        "body": [
+          "Правительство РФ утвердило производственный календарь на 2027 год. Так, новогодние каникулы продлятся 11 дней — с 31 декабря 2026 года по 10 января 2027 года.",
+          "Стало известно, как россияне будут отдыхать в следующем году В 2027 году в целом при пятидневной рабочей неделе с двумя выходными днями будет 247 рабочих дней, в том числе 4 сокращенных на один час рабочих дня, и 118 выходных и нерабочих праздничных дней."
+        ],
+        "footer": "РОССИЯ | ПОЛИТИКА",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh",
+          "reclassified_to": "ru_pol"
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.7",
+          "source_warnings": []
+        }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_pol",
+        "final_category": "ru_pol",
+        "event_type": "political_decision",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_pol",
+          "corrected_category": "ru_pol",
+          "group": "ru_pol",
+          "event_type": "political_decision",
+          "subtype": "political_decision",
+          "seriousness": 90,
+          "threshold": 75,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "В России утвердили календарь выходных и праздников на 2027 год",
+          "title_corrected": "В России утвердили календарь выходных и праздников на 2027 год",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-27T00:32:01+00:00",
+      "expired_at": "2026-09-27T01:41:03+00:00",
       "expired_reason": "pending_delivery_expired:age_hours>24"
     }
   ],
