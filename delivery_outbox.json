@@ -1,6 +1,6 @@
 {
   "version": "delivery-outbox-v1",
-  "generated_at_utc": "2026-09-28T14:24:07+00:00",
+  "generated_at_utc": "2026-09-28T21:18:16+00:00",
   "source_of_truth": "github_repository",
   "live_delivery_adapter": "telegram",
   "delivery_adapter_status": "error",
@@ -9,8 +9,8 @@
   "items": [
     {
       "queued_at": "2026-09-28T12:39:32+00:00",
-      "last_attempt_at": "2026-09-28T12:39:32+00:00",
-      "delivery_attempts": 1,
+      "last_attempt_at": "2026-09-28T21:18:15+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "TASS",
       "source_url": "https://tass.ru/ekonomika/28159027",
@@ -22,7 +22,7 @@
         "С помощью новых индикаторов ФНС сможет точечно выявлять риск нарушений"
       ],
       "image_url": "https://cdn-media.tass.ru/fit/400x300_b2b00b17/tass/m2/uploads/i/20260530/9100207.jpg",
-      "image_hash": "010678c3a64f701f0ae36f651ade906ab8038c9f",
+      "image_hash": "70c77f19117289b95dbce6cce0f266a412daa425",
       "published_at": "2026-09-28T12:32:17+00:00",
       "publication_contract": {
         "approved": true,
@@ -63,8 +63,8 @@
     },
     {
       "queued_at": "2026-09-28T04:52:32+00:00",
-      "last_attempt_at": "2026-09-28T12:39:32+00:00",
-      "delivery_attempts": 3,
+      "last_attempt_at": "2026-09-28T21:18:16+00:00",
+      "delivery_attempts": 4,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2633977/",
@@ -117,8 +117,8 @@
     },
     {
       "queued_at": "2026-09-28T04:52:31+00:00",
-      "last_attempt_at": "2026-09-28T12:38:21+00:00",
-      "delivery_attempts": 3,
+      "last_attempt_at": "2026-09-28T21:17:05+00:00",
+      "delivery_attempts": 4,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2633884/",
@@ -171,8 +171,8 @@
     },
     {
       "queued_at": "2026-09-27T23:59:23+00:00",
-      "last_attempt_at": "2026-09-28T12:39:32+00:00",
-      "delivery_attempts": 4,
+      "last_attempt_at": "2026-09-28T21:18:16+00:00",
+      "delivery_attempts": 5,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2633610/",
