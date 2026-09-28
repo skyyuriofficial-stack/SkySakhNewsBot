@@ -11630,84 +11630,6 @@
         }
       },
       "pending_hardening_repaired_at": "2026-09-28T21:18:16+00:00"
-    },
-    {
-      "queued_at": "2026-09-27T23:59:23+00:00",
-      "last_attempt_at": "2026-09-28T21:18:16+00:00",
-      "delivery_attempts": 5,
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
-      "url": "https://sakhalinmedia.ru/news/2633610/",
-      "title_hash": "aafc4054c14119ce2188a35411de64d929e724db",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "footer": "ЧП | САХАЛИН",
-      "title": "В Южно-Сахалинске потушили пожар на площади 1500 кв. метров в мебельном магазине",
-      "source_text": "Пожар в мебельном магазине потушили в Южно-Сахалинске за семь часов. Огонь охватил 1500 кв. метров, произошло обрушение кровли. Для тушения огня пришлось разобрать конструкции, сообщает пресс-служба ГУ МЧС России по Сахалинской области. Огонь ликвидировали в течение семи часов (ВИДЕО)",
-      "published_at": "2026-09-27T21:47:00+00:00",
-      "image_url": "https://sakhalinmedia.ru/f/big/6416/6415782.jpg?8c29bff01343b0ff10d5ea5bc92f833d",
-      "image_hash": "2dd7eda8f4f1cdd159f53952e88f9e9dfb2af4ef",
-      "topic_cluster": "sakh_chp:сахалинске_потушили_пожар_площади_метров_мебельном",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "В Южно-Сахалинске потушили пожар на площади 1500 кв. метров в мебельном магазине",
-        "body": [
-          "Пожар в мебельном магазине потушили в Южно-Сахалинске за семь часов.",
-          "Для тушения огня пришлось разобрать конструкции, сообщает пресс-служба ГУ МЧС России по Сахалинской области."
-        ],
-        "footer": "ЧП | САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_chp",
-        "final_category": "sakh_chp",
-        "event_type": "major_emergency",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "subtype": "major_emergency",
-          "seriousness": 90,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "В Южно-Сахалинске потушили пожар на площади 1500 кв. метров в мебельном магазине",
-          "title_corrected": "В Южно-Сахалинске потушили пожар на площади 1500 кв. метров в мебельном магазине",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-28T21:18:16+00:00"
     }
   ],
   "news_director_policy": {
@@ -17127,6 +17049,86 @@
         }
       },
       "expired_at": "2026-09-28T21:18:16+00:00",
+      "expired_reason": "pending_delivery_expired:age_hours>24"
+    },
+    {
+      "queued_at": "2026-09-27T23:59:23+00:00",
+      "last_attempt_at": "2026-09-28T21:18:16+00:00",
+      "delivery_attempts": 5,
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
+      "url": "https://sakhalinmedia.ru/news/2633610/",
+      "title_hash": "aafc4054c14119ce2188a35411de64d929e724db",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "footer": "ЧП | САХАЛИН",
+      "title": "В Южно-Сахалинске потушили пожар на площади 1500 кв. метров в мебельном магазине",
+      "source_text": "Пожар в мебельном магазине потушили в Южно-Сахалинске за семь часов. Огонь охватил 1500 кв. метров, произошло обрушение кровли. Для тушения огня пришлось разобрать конструкции, сообщает пресс-служба ГУ МЧС России по Сахалинской области. Огонь ликвидировали в течение семи часов (ВИДЕО)",
+      "published_at": "2026-09-27T21:47:00+00:00",
+      "image_url": "https://sakhalinmedia.ru/f/big/6416/6415782.jpg?8c29bff01343b0ff10d5ea5bc92f833d",
+      "image_hash": "2dd7eda8f4f1cdd159f53952e88f9e9dfb2af4ef",
+      "topic_cluster": "sakh_chp:сахалинске_потушили_пожар_площади_метров_мебельном",
+      "media_origin": "source_article_or_feed",
+      "row": {
+        "reject": false,
+        "title_ru": "В Южно-Сахалинске потушили пожар на площади 1500 кв. метров в мебельном магазине",
+        "body": [
+          "Пожар в мебельном магазине потушили в Южно-Сахалинске за семь часов.",
+          "Для тушения огня пришлось разобрать конструкции, сообщает пресс-служба ГУ МЧС России по Сахалинской области."
+        ],
+        "footer": "ЧП | САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.7",
+          "source_warnings": []
+        }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "major_emergency",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 90,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "В Южно-Сахалинске потушили пожар на площади 1500 кв. метров в мебельном магазине",
+          "title_corrected": "В Южно-Сахалинске потушили пожар на площади 1500 кв. метров в мебельном магазине",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-28T21:18:16+00:00",
+      "expired_at": "2026-09-28T21:52:20+00:00",
       "expired_reason": "pending_delivery_expired:age_hours>24"
     }
   ],
