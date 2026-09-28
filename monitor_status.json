@@ -1,11 +1,22 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-09-28T08:37:05+00:00",
-  "checked_at_sakhalin": "2026-09-28T19:37:01+11:00",
+  "checked_at_utc": "2026-09-28T12:33:20+00:00",
+  "checked_at_sakhalin": "2026-09-28T23:33:17+11:00",
   "status": "error",
   "mutations_enabled": false,
   "issues": [
+    {
+      "type": "publisher_stale",
+      "age_hours": 6.67,
+      "limit_hours": 4.5
+    },
+    {
+      "type": "publisher_slot_missed",
+      "slot_sakhalin": "2026-09-28T22:00+11:00",
+      "grace_minutes": 45,
+      "last_finished_sakhalin": "2026-09-28T16:52:51+11:00"
+    },
     {
       "type": "telegram_delivery_unhealthy",
       "reason": "chat_access",
@@ -17,7 +28,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-09-28T16:52:51+11:00",
-    "age_hours": 2.74,
+    "age_hours": 6.67,
     "published": 0
   },
   "last_production_attempt": {
@@ -38,7 +49,7 @@
       "record": {}
     },
     "evening": {
-      "due": false,
+      "due": true,
       "published": false,
       "record": {}
     },
@@ -63,12 +74,25 @@
           "error": "telegram_chat_access",
           "description": "Bad Request: chat not found"
         }
+      },
+      {
+        "type": "mobilization_digest_missing",
+        "slot": "evening",
+        "expected_by_sakhalin": "2026-09-28T19:45:00+11:00",
+        "last_attempt": {
+          "status": "blocked",
+          "mode": "morning",
+          "at_utc": "2026-09-28T08:36:41+00:00",
+          "at_sakhalin": "2026-09-28T19:36:41+11:00",
+          "error": "telegram_chat_access",
+          "description": "Bad Request: chat not found"
+        }
       }
     ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-09-28T08:37:04+00:00",
+    "checked_at": "2026-09-28T12:33:19+00:00",
     "checked": 20,
     "passed": 14,
     "anomalies": [
@@ -679,10 +703,24 @@
         "description": "Bad Request: chat not found"
       },
       "derivative_of": "telegram_delivery_unhealthy"
+    },
+    {
+      "type": "mobilization_digest_missing",
+      "slot": "evening",
+      "expected_by_sakhalin": "2026-09-28T19:45:00+11:00",
+      "last_attempt": {
+        "status": "blocked",
+        "mode": "morning",
+        "at_utc": "2026-09-28T08:36:41+00:00",
+        "at_sakhalin": "2026-09-28T19:36:41+11:00",
+        "error": "telegram_chat_access",
+        "description": "Bad Request: chat not found"
+      },
+      "derivative_of": "telegram_delivery_unhealthy"
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-09-28T08:37:00+00:00",
+    "checked_at_utc": "2026-09-28T12:33:16+00:00",
     "status": "error",
     "auth_ok": true,
     "chat_ok": false,
@@ -778,6 +816,20 @@
       "type": "mobilization_digest_missing",
       "slot": "morning",
       "expected_by_sakhalin": "2026-09-28T08:45:00+11:00",
+      "last_attempt": {
+        "status": "blocked",
+        "mode": "morning",
+        "at_utc": "2026-09-28T08:36:41+00:00",
+        "at_sakhalin": "2026-09-28T19:36:41+11:00",
+        "error": "telegram_chat_access",
+        "description": "Bad Request: chat not found"
+      },
+      "derivative_of": "telegram_delivery_unhealthy"
+    },
+    {
+      "type": "mobilization_digest_missing",
+      "slot": "evening",
+      "expected_by_sakhalin": "2026-09-28T19:45:00+11:00",
       "last_attempt": {
         "status": "blocked",
         "mode": "morning",
