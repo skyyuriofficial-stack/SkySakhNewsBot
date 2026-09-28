@@ -11971,84 +11971,6 @@
         }
       },
       "pending_hardening_repaired_at": "2026-09-28T04:53:47+00:00"
-    },
-    {
-      "queued_at": "2026-09-27T12:21:58+00:00",
-      "last_attempt_at": "2026-09-28T04:52:32+00:00",
-      "delivery_attempts": 4,
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
-      "url": "https://sakhalinmedia.ru/news/2633278/",
-      "title_hash": "92ba9d8e46587c788e00506d6ad0ca9c0336567e",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh",
-      "footer": "САХАЛИН",
-      "title": "Горячую воду отключат в домах и соцобъектах Южно-Сахалинска 28 сентября",
-      "source_text": "Часть Южно-Сахалинска временно останется без горячей воды завтра, 28 сентября, из-за работ на теплосетях. Об этом сообщает пресс-служба СКК. Водоснабжение будет ограничено до 15.00 (АДРЕСА) С 9.00 до 15.00 горячее водоснабжение отключат по адресам:",
-      "published_at": "2026-09-27T05:26:00+00:00",
-      "image_url": "https://sakhalinmedia.ru/f/266x136/6406/6405445.jpg?04e2fe619f7bcfa11698e7f1421fbbf8",
-      "image_hash": "bd9208ede4b6ac0b109e6dc122e8eaebf322c63f",
-      "topic_cluster": "sakh:горячую_отключат_домах_соцобъектах_сахалинска_сентября",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "Горячую воду отключат в домах и соцобъектах Южно-Сахалинска 28 сентября",
-        "body": [
-          "Часть Южно-Сахалинска временно останется без горячей воды завтра, 28 сентября, из-за работ на теплосетях.",
-          "Водоснабжение будет ограничено до 15.00 (АДРЕСА) С 9.00 до 15.00 горячее водоснабжение отключат по адресам:"
-        ],
-        "footer": "САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh",
-        "final_category": "sakh",
-        "event_type": "public_service_disruption",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh",
-          "corrected_category": "sakh",
-          "group": "local",
-          "event_type": "public_service_disruption",
-          "subtype": "public_service_disruption",
-          "seriousness": 83,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Горячую воду отключат в домах и соцобъектах Южно-Сахалинска 28 сентября",
-          "title_corrected": "Горячую воду отключат в домах и соцобъектах Южно-Сахалинска 28 сентября",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-28T04:53:47+00:00"
     }
   ],
   "news_director_policy": {
@@ -17026,6 +16948,86 @@
         }
       },
       "expired_at": "2026-09-27T21:24:36+00:00",
+      "expired_reason": "pending_delivery_expired:age_hours>24"
+    },
+    {
+      "queued_at": "2026-09-27T12:21:58+00:00",
+      "last_attempt_at": "2026-09-28T04:52:32+00:00",
+      "delivery_attempts": 4,
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
+      "url": "https://sakhalinmedia.ru/news/2633278/",
+      "title_hash": "92ba9d8e46587c788e00506d6ad0ca9c0336567e",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "footer": "САХАЛИН",
+      "title": "Горячую воду отключат в домах и соцобъектах Южно-Сахалинска 28 сентября",
+      "source_text": "Часть Южно-Сахалинска временно останется без горячей воды завтра, 28 сентября, из-за работ на теплосетях. Об этом сообщает пресс-служба СКК. Водоснабжение будет ограничено до 15.00 (АДРЕСА) С 9.00 до 15.00 горячее водоснабжение отключат по адресам:",
+      "published_at": "2026-09-27T05:26:00+00:00",
+      "image_url": "https://sakhalinmedia.ru/f/266x136/6406/6405445.jpg?04e2fe619f7bcfa11698e7f1421fbbf8",
+      "image_hash": "bd9208ede4b6ac0b109e6dc122e8eaebf322c63f",
+      "topic_cluster": "sakh:горячую_отключат_домах_соцобъектах_сахалинска_сентября",
+      "media_origin": "source_article_or_feed",
+      "row": {
+        "reject": false,
+        "title_ru": "Горячую воду отключат в домах и соцобъектах Южно-Сахалинска 28 сентября",
+        "body": [
+          "Часть Южно-Сахалинска временно останется без горячей воды завтра, 28 сентября, из-за работ на теплосетях.",
+          "Водоснабжение будет ограничено до 15.00 (АДРЕСА) С 9.00 до 15.00 горячее водоснабжение отключат по адресам:"
+        ],
+        "footer": "САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.7",
+          "source_warnings": []
+        }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh",
+        "final_category": "sakh",
+        "event_type": "public_service_disruption",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh",
+          "corrected_category": "sakh",
+          "group": "local",
+          "event_type": "public_service_disruption",
+          "subtype": "public_service_disruption",
+          "seriousness": 83,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Горячую воду отключат в домах и соцобъектах Южно-Сахалинска 28 сентября",
+          "title_corrected": "Горячую воду отключат в домах и соцобъектах Южно-Сахалинска 28 сентября",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-28T04:53:47+00:00",
+      "expired_at": "2026-09-28T05:46:36+00:00",
       "expired_reason": "pending_delivery_expired:age_hours>24"
     }
   ],
