@@ -16,11 +16,15 @@ on:
       - "SkySakhNews Delivery Recovery"
     types: [completed]
   schedule:
-    # Two independent backup heartbeats are enough because Delivery Recovery,
-    # publisher pulses and workflow_run events also trigger this monitor.
-    # This avoids hammering Telegram during a prolonged access incident.
+    # Two independent hourly backup heartbeats remain, and a targeted :48
+    # heartbeat runs immediately after each logical production slot's 45-minute
+    # grace window. The publisher's own :47 recovery pulse gets first chance;
+    # shared concurrency plus schedule_guard makes the :48 monitor a safe
+    # fallback rather than a competing publisher.
     - cron: "8 * * * *"
     - cron: "38 * * * *"
+    # Sakhalin 07:48/10:48/13:48/16:48/19:48/22:48 (UTC+11).
+    - cron: "48 2,5,8,11,20,23 * * *"
 
 permissions:
   contents: write
