@@ -11475,86 +11475,6 @@
         }
       },
       "pending_hardening_repaired_at": "2026-09-30T21:03:29+00:00"
-    },
-    {
-      "queued_at": "2026-09-29T23:43:27+00:00",
-      "last_attempt_at": "2026-09-30T21:03:28+00:00",
-      "delivery_attempts": 6,
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
-      "url": "https://sakhalinmedia.ru/news/2636023/",
-      "title_hash": "fcd9005f85b2ef916367289b9a82c3128860a7e5",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "footer": "ЧП | САХАЛИН",
-      "title": "На Сахалине задержали курьера мошенников, похитивших 3,5 млн рублей",
-      "source_text": "Сотрудники УМВД России по Сахалинской области совместно с коллегами из ОМВД России Невельский задержали 21-летнего жителя Новосибирской области. Молодой человек специально прилетел на остров, чтобы выступать в роли курьера для дистанционных мошенников, похищающих сбережения у пожилых людей, пишет МВД МЕДИА (16+). Изъятые средства вернут законным владельцам. По предварительным данным, зарубежные аферисты действовали по стандартной схеме: они звонили пенсионерам и убеждали их передать наличные деньги якобы для декларирования или помощи родственникам, попавшим в беду. Всего за два дня от действий киберпреступников и их пособника пострадали несколько жителей региона: в Углегорске 77-летний мужчина лишился одного миллиона рублей, а в Аниве 74-летняя женщина отдала более 1,7 млн рублей. Оперативники задержали приезжего с поличным в Невельске в момент передачи ему около 740 тысяч рублей очередной жертвой — 85-летней местной жительницей. Общий ущерб троим потерпевшим составил примерно 3,5 млн рублей. Сотрудники полиции изъяли у задержанного всю похищенную наличность, которая в ближайшее время будет возвращена законным владельцам. Следователь органов внутренних дел возбудил уголовные дела по всем эпизодам по признакам преступления, предусмотренного ст. 159 УК РФ (мошенничество). В настоящее время дела объединены в одно производство. Задержанный помещен в изолятор временного содержания в порядке статьи 91 УПК РФ. Оперативники также проверяют его на причастность к аналогичным преступлениям в других регионах страны.",
-      "published_at": "2026-09-29T23:11:00+00:00",
-      "image_url": "https://sakhalinmedia.ru/f/266x136/6396/6395424.jpg?a49c9931815a73fe7e5ca0be032e72ce",
-      "image_hash": "eb3bfcbf1c237920d5758ae98df9880caacda761",
-      "topic_cluster": "sakh_chp:сахалине_задержали_курьера_мошенников_похитивших_рублей",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "На Сахалине задержали курьера мошенников, похитивших 3,5 млн рублей",
-        "body": [
-          "Сотрудники УМВД России по Сахалинской области совместно с коллегами из ОМВД России Невельский задержали 21-летнего жителя Новосибирской области.",
-          "Молодой человек специально прилетел на остров, чтобы выступать в роли курьера для дистанционных мошенников, похищающих сбережения у пожилых людей, пишет МВД МЕДИА (16+)."
-        ],
-        "footer": "ЧП | САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_chp",
-        "final_category": "sakh_chp",
-        "event_type": "fraud",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "fraud",
-          "subtype": "fraud",
-          "seriousness": 86,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [
-            "low_value_or_repetitive_event_type"
-          ],
-          "title_original": "На Сахалине задержали курьера мошенников, похитивших 3,5 млн рублей",
-          "title_corrected": "На Сахалине задержали курьера мошенников, похитивших 3,5 млн рублей",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-30T21:03:29+00:00"
     }
   ],
   "news_director_policy": {
@@ -11700,86 +11620,6 @@
     "valid_posts_counted": 20
   },
   "expired_media_delivery": [
-    {
-      "queued_at": "2026-09-22T03:30:28+00:00",
-      "last_attempt_at": "2026-09-23T11:38:39+00:00",
-      "delivery_attempts": 9,
-      "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized",
-      "url": "https://sakhalinmedia.ru/news/2628239/",
-      "title_hash": "cddd7c0bbcec04ac622f0e12efcdf1595fb2fd95",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh",
-      "footer": "САХАЛИН",
-      "title": "Япония хочет продолжить закупки нефти с Сахалина, но опасается санкций США",
-      "source_text": "Япония будет продолжать периодические закупки нефти с месторождений Сахалина, однако этому может помешать ужесточение американских санкций в отношении РФ. Об этом корреспонденту ТАСС (16+) сказал Куния Асамото, руководитель отдела России и СНГ в исследовательско-аналитическом департаменте Японской организации развития внешней торговли (JETRO). Периодические закупки продолжатся, но санкции США создают риски — мнение JETRO \"В первой половине текущего года Япония импортировала из России нефть, которая добывается в рамках проекта \"Сахалин-2\" по производству сжиженного природного газа. Для продолжения этого проекта предполагаются и закупки нефти. Поэтому, как мне кажется, ее поставки с Сахалина пока будут периодически производиться и впредь\", — сказал он. Эксперт напомнил, что такие импортные закупки по договорённости между Токио и Вашингтоном выведены из-под действия американских санкций. \"Однако ситуация с импортом нефти с Сахалина будет зависеть от того, сохранится ли такое освобождение от санкций и в будущем\", — отметил специалист JETRO. В первой половине 2026 года японские компании импортировали около 1,53 миллиона баррелей нефти из России в среднем по цене $103 за баррель. Об этом свидетельствуют подсчёты ТАСС на основе статистических данных, опубликованных японским Минфином.",
-      "published_at": "2026-09-22T01:15:00+00:00",
-      "image_url": "https://sakhalinmedia.ru/f/big/6403/6402877.jpg?a5a214f4080405984518d253f4f37bba",
-      "image_hash": "55bd9d2d416c9e909ff7c2ec4e93db4a50495e2f",
-      "topic_cluster": "sakh:япония_хочет_продолжить_закупки_нефти_сахалина",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "Япония хочет продолжить закупки нефти с Сахалина, но опасается санкций США",
-        "body": [
-          "Япония будет продолжать периодические закупки нефти с месторождений Сахалина, однако этому может помешать ужесточение американских санкций в отношении РФ.",
-          "Об этом корреспонденту ТАСС (16+) сказал Куния Асамото, руководитель отдела России и СНГ в исследовательско-аналитическом департаменте Японской организации развития внешней торговли (JETRO)."
-        ],
-        "footer": "САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh",
-        "final_category": "sakh",
-        "event_type": "geopolitical_event",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh",
-          "corrected_category": "sakh",
-          "group": "local",
-          "event_type": "geopolitical_event",
-          "subtype": "geopolitical_event",
-          "seriousness": 87,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Япония хочет продолжить закупки нефти с Сахалина, но опасается санкций США",
-          "title_corrected": "Япония хочет продолжить закупки нефти с Сахалина, но опасается санкций США",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-23T11:38:40+00:00",
-      "expired_at": "2026-09-23T22:19:55+00:00",
-      "expired_reason": "news_stale_before_delivery"
-    },
     {
       "queued_at": "2026-09-22T03:30:27+00:00",
       "last_attempt_at": "2026-09-23T11:38:39+00:00",
@@ -17487,6 +17327,88 @@
       },
       "pending_hardening_repaired_at": "2026-09-30T09:00:53+00:00",
       "expired_at": "2026-09-30T13:36:22+00:00",
+      "expired_reason": "pending_delivery_expired:age_hours>24"
+    },
+    {
+      "queued_at": "2026-09-29T23:43:27+00:00",
+      "last_attempt_at": "2026-09-30T21:03:28+00:00",
+      "delivery_attempts": 6,
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
+      "url": "https://sakhalinmedia.ru/news/2636023/",
+      "title_hash": "fcd9005f85b2ef916367289b9a82c3128860a7e5",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "footer": "ЧП | САХАЛИН",
+      "title": "На Сахалине задержали курьера мошенников, похитивших 3,5 млн рублей",
+      "source_text": "Сотрудники УМВД России по Сахалинской области совместно с коллегами из ОМВД России Невельский задержали 21-летнего жителя Новосибирской области. Молодой человек специально прилетел на остров, чтобы выступать в роли курьера для дистанционных мошенников, похищающих сбережения у пожилых людей, пишет МВД МЕДИА (16+). Изъятые средства вернут законным владельцам. По предварительным данным, зарубежные аферисты действовали по стандартной схеме: они звонили пенсионерам и убеждали их передать наличные деньги якобы для декларирования или помощи родственникам, попавшим в беду. Всего за два дня от действий киберпреступников и их пособника пострадали несколько жителей региона: в Углегорске 77-летний мужчина лишился одного миллиона рублей, а в Аниве 74-летняя женщина отдала более 1,7 млн рублей. Оперативники задержали приезжего с поличным в Невельске в момент передачи ему около 740 тысяч рублей очередной жертвой — 85-летней местной жительницей. Общий ущерб троим потерпевшим составил примерно 3,5 млн рублей. Сотрудники полиции изъяли у задержанного всю похищенную наличность, которая в ближайшее время будет возвращена законным владельцам. Следователь органов внутренних дел возбудил уголовные дела по всем эпизодам по признакам преступления, предусмотренного ст. 159 УК РФ (мошенничество). В настоящее время дела объединены в одно производство. Задержанный помещен в изолятор временного содержания в порядке статьи 91 УПК РФ. Оперативники также проверяют его на причастность к аналогичным преступлениям в других регионах страны.",
+      "published_at": "2026-09-29T23:11:00+00:00",
+      "image_url": "https://sakhalinmedia.ru/f/266x136/6396/6395424.jpg?a49c9931815a73fe7e5ca0be032e72ce",
+      "image_hash": "eb3bfcbf1c237920d5758ae98df9880caacda761",
+      "topic_cluster": "sakh_chp:сахалине_задержали_курьера_мошенников_похитивших_рублей",
+      "media_origin": "source_article_or_feed",
+      "row": {
+        "reject": false,
+        "title_ru": "На Сахалине задержали курьера мошенников, похитивших 3,5 млн рублей",
+        "body": [
+          "Сотрудники УМВД России по Сахалинской области совместно с коллегами из ОМВД России Невельский задержали 21-летнего жителя Новосибирской области.",
+          "Молодой человек специально прилетел на остров, чтобы выступать в роли курьера для дистанционных мошенников, похищающих сбережения у пожилых людей, пишет МВД МЕДИА (16+)."
+        ],
+        "footer": "ЧП | САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.7",
+          "source_warnings": []
+        }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "fraud",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "fraud",
+          "subtype": "fraud",
+          "seriousness": 86,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [
+            "low_value_or_repetitive_event_type"
+          ],
+          "title_original": "На Сахалине задержали курьера мошенников, похитивших 3,5 млн рублей",
+          "title_corrected": "На Сахалине задержали курьера мошенников, похитивших 3,5 млн рублей",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-30T21:03:29+00:00",
+      "expired_at": "2026-09-30T23:35:13+00:00",
       "expired_reason": "pending_delivery_expired:age_hours>24"
     }
   ],

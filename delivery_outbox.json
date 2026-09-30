@@ -1,11 +1,11 @@
 {
   "version": "delivery-outbox-v1",
-  "generated_at_utc": "2026-09-30T21:03:29+00:00",
+  "generated_at_utc": "2026-09-30T23:35:13+00:00",
   "source_of_truth": "github_repository",
   "live_delivery_adapter": "telegram",
   "delivery_adapter_status": "error",
   "delivery_adapter_error": "chat_access",
-  "count": 2,
+  "count": 1,
   "items": [
     {
       "queued_at": "2026-09-30T02:30:15+00:00",
@@ -54,62 +54,6 @@
           "risks": [],
           "title_original": "ВТБ продолжает кредитный маневр",
           "title_corrected": "ВТБ продолжает кредитный маневр",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access"
-    },
-    {
-      "queued_at": "2026-09-29T23:43:27+00:00",
-      "last_attempt_at": "2026-09-30T21:03:28+00:00",
-      "delivery_attempts": 6,
-      "delivery_status": "queued",
-      "source": "SakhalinMedia.ru",
-      "source_url": "https://sakhalinmedia.ru/news/2636023/",
-      "category_key": "sakh_chp",
-      "category": "📍 Сахалин",
-      "title": "На Сахалине задержали курьера мошенников, похитивших 3,5 млн рублей",
-      "body": [
-        "Сотрудники УМВД России по Сахалинской области совместно с коллегами из ОМВД России Невельский задержали 21-летнего жителя Новосибирской области.",
-        "Молодой человек специально прилетел на остров, чтобы выступать в роли курьера для дистанционных мошенников, похищающих сбережения у пожилых людей, пишет МВД МЕДИА (16+)."
-      ],
-      "image_url": "https://sakhalinmedia.ru/f/266x136/6396/6395424.jpg?a49c9931815a73fe7e5ca0be032e72ce",
-      "image_hash": "eb3bfcbf1c237920d5758ae98df9880caacda761",
-      "published_at": "2026-09-29T23:11:00+00:00",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_chp",
-        "final_category": "sakh_chp",
-        "event_type": "fraud",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "fraud",
-          "subtype": "fraud",
-          "seriousness": 86,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [
-            "low_value_or_repetitive_event_type"
-          ],
-          "title_original": "На Сахалине задержали курьера мошенников, похитивших 3,5 млн рублей",
-          "title_corrected": "На Сахалине задержали курьера мошенников, похитивших 3,5 млн рублей",
           "title_corrections": [],
           "title_changed": false,
           "ai_review": null
