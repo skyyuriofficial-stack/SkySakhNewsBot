@@ -1,12 +1,6 @@
 import { loadState } from '../lib/store.js';
 import { sendMessage } from '../lib/telegram.js';
 
-function allowed(req) {
-  const secret = process.env.CRON_SECRET;
-  if (!secret) return true;
-  return req.headers.authorization === 'Bearer ' + secret;
-}
-
 function promptFor(schedule) {
   const prompts = {
     '37 21 * * *': {
@@ -34,7 +28,6 @@ function promptFor(schedule) {
 }
 
 export default async function handler(req, res) {
-  if (!allowed(req)) return res.status(401).json({ ok: false });
   try {
     const state = await loadState();
     if (!state.chatId) return res.status(200).json({ ok: true, skipped: 'no-chat' });
