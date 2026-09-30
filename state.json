@@ -11899,86 +11899,6 @@
         }
       },
       "pending_hardening_repaired_at": "2026-09-30T05:58:14+00:00"
-    },
-    {
-      "queued_at": "2026-09-29T11:21:25+00:00",
-      "last_attempt_at": "2026-09-30T05:58:13+00:00",
-      "delivery_attempts": 5,
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
-      "url": "https://sakhalinmedia.ru/news/2635312/",
-      "title_hash": "de9973da700ed2b472b5308399810865e771a368",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh",
-      "footer": "САХАЛИН",
-      "title": "Несколько домов в Южно-Сахалинске останутся без воды 30 сентября",
-      "source_text": "Временное отключение холодной воды затронет несколько домов в Южно-Сахалинске. Специалисты РВК-Сахалин устранят повреждения на сетях водоснабжения, сообщает пресс-служба компании. Водоснабжение будет отсутствовать с 10.00 до 10.30 и с 13.00 до 18.00 (АДРЕСА)",
-      "published_at": "2026-09-29T06:18:00+00:00",
-      "image_url": "https://sakhalinmedia.ru/f/266x136/6403/6402768.png?3c7bf85126a98d81df1dcb6505fbded0",
-      "image_hash": "34f860bec042bbdb0535fadac42b4af32e9f6c62",
-      "topic_cluster": "sakh:несколько_домов_сахалинске_останутся_сентября_sakhalinmedia",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "Несколько домов в Южно-Сахалинске останутся без воды 30 сентября",
-        "body": [
-          "Временное отключение холодной воды затронет несколько домов в Южно-Сахалинске.",
-          "Специалисты РВК-Сахалин устранят повреждения на сетях водоснабжения, сообщает пресс-служба компании."
-        ],
-        "footer": "САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": [],
-          "reclassified_from": "sakh_chp",
-          "reclassified_to": "sakh"
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh",
-        "final_category": "sakh",
-        "event_type": "public_service_disruption",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh",
-          "corrected_category": "sakh",
-          "group": "local",
-          "event_type": "public_service_disruption",
-          "subtype": "public_service_disruption",
-          "seriousness": 81,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Несколько домов в Южно-Сахалинске останутся без воды 30 сентября",
-          "title_corrected": "Несколько домов в Южно-Сахалинске останутся без воды 30 сентября",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-30T05:58:14+00:00"
     }
   ],
   "news_director_policy": {
@@ -12124,86 +12044,6 @@
     "valid_posts_counted": 20
   },
   "expired_media_delivery": [
-    {
-      "queued_at": "2026-09-21T23:16:55+00:00",
-      "last_attempt_at": "2026-09-23T00:32:54+00:00",
-      "delivery_attempts": 6,
-      "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized",
-      "url": "https://sakh.online/news/24/2026-09-22/sud-vzyskal-s-korsakovskogo-drsu-587-tysyach-za-dtp-iz-za-skolzkoy-dorogi-526763",
-      "title_hash": "644ca21f473c84dae07903ff3708d7e669dd0356",
-      "source": "Sakh.online",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "footer": "ЧП | САХАЛИН",
-      "title": "ДТП на трассе Корсаков — Новиково: с ДРСУ взыскали 587 тысяч рублей",
-      "source_text": "Сахалинский областной суд взыскал с «Корсаковского ДРСУ» 586 950 рублей за ДТП, причиной которого стала скользкая дорога. Подробности — в материале. Авария произошла в феврале 2024 года на автодороге Корсаков — Новиково. Женщина за рулем потеряла управление и столкнулась с припаркованным автомобилем. Подробности сообщили в пресс-службе судебной системы Сахалинской области. По ее мнению, причиной стало ненадлежащее содержание проезжей части со стороны МБУ «Корсаковское ДРСУ». В момент аварии на дороге была скользкость. Страховая компания выплатила часть ущерба. Оставшуюся сумму — 603 339 рублей — истица попросила взыскать с учреждения, а также возместить судебные расходы. Корсаковский городской суд удовлетворил требования: взыскал ущерб полностью, а судебные расходы — частично. Ответчик подал апелляционную жалобу.",
-      "published_at": "2026-09-21T13:00:00+00:00",
-      "image_url": "https://sakh.online/attachments/d9dda4ad7f5d97c7ec57232d5d4f976c488d1055/store/crop/0/59/800/451/800/0/0/0/ee3e48e877b7564cfb397525950f36b18c4cce2c649b836e7b7ceea4f2f7/ee3e48e877b7564cfb397525950f36b18c4cce2c649b836e7b7ceea4f2f7.webp",
-      "image_hash": "4bd743fd52320dc7c42c37a3b658d15473f10f08",
-      "topic_cluster": "sakh_chp:трассе_корсаков_новиково_взыскали_тысяч_рублей",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "ДТП на трассе Корсаков — Новиково: с ДРСУ взыскали 587 тысяч рублей",
-        "body": [
-          "Сахалинский областной суд взыскал с «Корсаковского ДРСУ» 586 950 рублей за ДТП, причиной которого стала скользкая дорога.",
-          "Авария произошла в феврале 2024 года на автодороге Корсаков — Новиково."
-        ],
-        "footer": "ЧП | САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_chp",
-        "final_category": "sakh_chp",
-        "event_type": "major_emergency",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "subtype": "major_emergency",
-          "seriousness": 93,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "ДТП на трассе Корсаков — Новиково: с ДРСУ взыскали 587 тысяч рублей",
-          "title_corrected": "ДТП на трассе Корсаков — Новиково: с ДРСУ взыскали 587 тысяч рублей",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-23T00:32:57+00:00",
-      "expired_at": "2026-09-23T05:05:29+00:00",
-      "expired_reason": "news_stale_before_delivery"
-    },
     {
       "queued_at": "2026-09-23T05:09:21+00:00",
       "last_attempt_at": "2026-09-23T11:38:39+00:00",
@@ -17907,6 +17747,88 @@
       },
       "pending_hardening_repaired_at": "2026-09-30T02:31:07+00:00",
       "expired_at": "2026-09-30T05:51:43+00:00",
+      "expired_reason": "pending_delivery_expired:age_hours>24"
+    },
+    {
+      "queued_at": "2026-09-29T11:21:25+00:00",
+      "last_attempt_at": "2026-09-30T05:58:13+00:00",
+      "delivery_attempts": 5,
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
+      "url": "https://sakhalinmedia.ru/news/2635312/",
+      "title_hash": "de9973da700ed2b472b5308399810865e771a368",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "footer": "САХАЛИН",
+      "title": "Несколько домов в Южно-Сахалинске останутся без воды 30 сентября",
+      "source_text": "Временное отключение холодной воды затронет несколько домов в Южно-Сахалинске. Специалисты РВК-Сахалин устранят повреждения на сетях водоснабжения, сообщает пресс-служба компании. Водоснабжение будет отсутствовать с 10.00 до 10.30 и с 13.00 до 18.00 (АДРЕСА)",
+      "published_at": "2026-09-29T06:18:00+00:00",
+      "image_url": "https://sakhalinmedia.ru/f/266x136/6403/6402768.png?3c7bf85126a98d81df1dcb6505fbded0",
+      "image_hash": "34f860bec042bbdb0535fadac42b4af32e9f6c62",
+      "topic_cluster": "sakh:несколько_домов_сахалинске_останутся_сентября_sakhalinmedia",
+      "media_origin": "source_article_or_feed",
+      "row": {
+        "reject": false,
+        "title_ru": "Несколько домов в Южно-Сахалинске останутся без воды 30 сентября",
+        "body": [
+          "Временное отключение холодной воды затронет несколько домов в Южно-Сахалинске.",
+          "Специалисты РВК-Сахалин устранят повреждения на сетях водоснабжения, сообщает пресс-служба компании."
+        ],
+        "footer": "САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh_chp",
+          "reclassified_to": "sakh"
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.7",
+          "source_warnings": []
+        }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh",
+        "final_category": "sakh",
+        "event_type": "public_service_disruption",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh",
+          "corrected_category": "sakh",
+          "group": "local",
+          "event_type": "public_service_disruption",
+          "subtype": "public_service_disruption",
+          "seriousness": 81,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Несколько домов в Южно-Сахалинске останутся без воды 30 сентября",
+          "title_corrected": "Несколько домов в Южно-Сахалинске останутся без воды 30 сентября",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-30T05:58:14+00:00",
+      "expired_at": "2026-09-30T06:37:24+00:00",
       "expired_reason": "pending_delivery_expired:age_hours>24"
     }
   ],
