@@ -2,7 +2,6 @@ import { telegram } from '../lib/telegram.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') return res.status(405).json({ ok: false });
-  if (!process.env.SETUP_KEY || req.query.key !== process.env.SETUP_KEY) return res.status(401).json({ ok: false, error: 'unauthorized' });
   try {
     const proto = req.headers['x-forwarded-proto'] || 'https';
     const host = req.headers.host;
