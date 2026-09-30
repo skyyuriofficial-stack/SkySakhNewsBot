@@ -1,16 +1,70 @@
 {
   "version": "delivery-outbox-v1",
-  "generated_at_utc": "2026-09-30T00:13:34+00:00",
+  "generated_at_utc": "2026-09-30T02:31:07+00:00",
   "source_of_truth": "github_repository",
   "live_delivery_adapter": "telegram",
   "delivery_adapter_status": "error",
   "delivery_adapter_error": "chat_access",
-  "count": 7,
+  "count": 8,
   "items": [
     {
-      "queued_at": "2026-09-29T23:43:27+00:00",
-      "last_attempt_at": "2026-09-29T23:43:27+00:00",
+      "queued_at": "2026-09-30T02:30:15+00:00",
+      "last_attempt_at": "2026-09-30T02:30:15+00:00",
       "delivery_attempts": 1,
+      "delivery_status": "queued",
+      "source": "SakhalinMedia.ru",
+      "source_url": "https://sakhalinmedia.ru/news/2636182/",
+      "category_key": "ru_eco",
+      "category": "🇷🇺 Россия / экономика",
+      "title": "ВТБ продолжает кредитный маневр",
+      "body": [
+        "Это позволяет поддерживать рост бизнеса и одновременно оптимизировать использование капитала.",
+        "Качество кредитного портфеля остается устойчивым, сообщает пресс-служба ВТБ."
+      ],
+      "image_url": "https://sakhalinmedia.ru/f/big/6422/6421836.jpg?7c821f5c7bbf51967276d64b50dedff3",
+      "image_hash": "469833e30665fc0cac82b5d1b0cc737b4336b0d8",
+      "published_at": "2026-09-30T01:20:00+00:00",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_eco",
+        "final_category": "ru_eco",
+        "event_type": "macro_economy",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 82,
+          "threshold": 74,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "ВТБ продолжает кредитный маневр",
+          "title_corrected": "ВТБ продолжает кредитный маневр",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access"
+    },
+    {
+      "queued_at": "2026-09-29T23:43:27+00:00",
+      "last_attempt_at": "2026-09-30T02:31:07+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2636023/",
@@ -22,7 +76,7 @@
         "Молодой человек специально прилетел на остров, чтобы выступать в роли курьера для дистанционных мошенников, похищающих сбережения у пожилых людей, пишет МВД МЕДИА (16+)."
       ],
       "image_url": "https://sakhalinmedia.ru/f/266x136/6396/6395424.jpg?a49c9931815a73fe7e5ca0be032e72ce",
-      "image_hash": "7e662224bf377caa8243a349878f2ff00dd11a93",
+      "image_hash": "eb3bfcbf1c237920d5758ae98df9880caacda761",
       "published_at": "2026-09-29T23:11:00+00:00",
       "publication_contract": {
         "approved": true,
@@ -65,8 +119,8 @@
     },
     {
       "queued_at": "2026-09-29T23:43:26+00:00",
-      "last_attempt_at": "2026-09-29T23:43:26+00:00",
-      "delivery_attempts": 1,
+      "last_attempt_at": "2026-09-30T02:31:06+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "Sakh.online",
       "source_url": "https://sakh.online/news/24/2026-09-30/medvedya-vesom-okolo-350-kg-likvidirovali-posle-napadeniya-na-cheloveka-v-reydovo-527545",
@@ -78,7 +132,7 @@
         "Когда специалисты прибыли на место, медведь все еще находился возле курятника."
       ],
       "image_url": "https://sakh.online/attachments/f29d6a80a63fc48e204397a04521196b84bd3859/store/crop/0/52/800/451/800/0/0/0/63f07ff23b5ac68d9012bb46f98036d022fb80713960df5b4dd917863467/63f07ff23b5ac68d9012bb46f98036d022fb80713960df5b4dd917863467.webp",
-      "image_hash": "261370b32222d1449c91383dbdac6f45e800f84d",
+      "image_hash": "f2469ccf6662da020dcbdcc08c99442f6917e933",
       "published_at": "2026-09-29T13:00:00+00:00",
       "publication_contract": {
         "approved": true,
@@ -119,8 +173,8 @@
     },
     {
       "queued_at": "2026-09-29T23:43:26+00:00",
-      "last_attempt_at": "2026-09-29T23:43:26+00:00",
-      "delivery_attempts": 1,
+      "last_attempt_at": "2026-09-30T02:31:06+00:00",
+      "delivery_attempts": 2,
       "delivery_status": "queued",
       "source": "Sakh.online",
       "source_url": "https://sakh.online/news/24/2026-09-30/pozharnye-predotvratili-vzryv-gazovyh-ballonov-v-yuzhno-sahalinske-527551",
@@ -132,7 +186,7 @@
         "Специалисты газодымозащитной службы эвакуировали из очага три газовых баллона."
       ],
       "image_url": "https://sakh.online/attachments/b74ec7c25a93ef96d5ebad1a94d3d3e6c7c2619f/store/crop/0/10/800/451/800/0/0/0/e20fc889b2c2ae8a8ad0b141674137635d9ae8c217ceb4c5d47eb24089fc/e20fc889b2c2ae8a8ad0b141674137635d9ae8c217ceb4c5d47eb24089fc.webp",
-      "image_hash": "c84a06985a6d3526502a178dfe6704a2d0af6c34",
+      "image_hash": "d5d461b8297c213c85286bf08c44431b082441b6",
       "published_at": "2026-09-29T13:00:00+00:00",
       "publication_contract": {
         "approved": true,
@@ -173,8 +227,8 @@
     },
     {
       "queued_at": "2026-09-29T11:19:21+00:00",
-      "last_attempt_at": "2026-09-29T23:41:36+00:00",
-      "delivery_attempts": 3,
+      "last_attempt_at": "2026-09-30T02:29:06+00:00",
+      "delivery_attempts": 4,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2635514/",
@@ -227,8 +281,8 @@
     },
     {
       "queued_at": "2026-09-29T11:21:24+00:00",
-      "last_attempt_at": "2026-09-29T23:43:26+00:00",
-      "delivery_attempts": 3,
+      "last_attempt_at": "2026-09-30T02:31:06+00:00",
+      "delivery_attempts": 4,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2635435/",
@@ -281,8 +335,8 @@
     },
     {
       "queued_at": "2026-09-29T11:21:25+00:00",
-      "last_attempt_at": "2026-09-29T23:43:27+00:00",
-      "delivery_attempts": 3,
+      "last_attempt_at": "2026-09-30T02:31:07+00:00",
+      "delivery_attempts": 4,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2635312/",
@@ -335,8 +389,8 @@
     },
     {
       "queued_at": "2026-09-29T06:03:24+00:00",
-      "last_attempt_at": "2026-09-29T23:43:27+00:00",
-      "delivery_attempts": 4,
+      "last_attempt_at": "2026-09-30T02:31:07+00:00",
+      "delivery_attempts": 5,
       "delivery_status": "queued",
       "source": "SakhalinMedia.ru",
       "source_url": "https://sakhalinmedia.ru/news/2635262/",
