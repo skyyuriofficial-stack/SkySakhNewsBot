@@ -77,6 +77,42 @@ def main() -> int:
     semiconductor_class = editorial_policy.classify(semiconductor)
     assert semiconductor_class.event_type == "major_it", semiconductor_class
 
+    # Generic "напал/нападение" markers must not turn a wild-animal incident
+    # into violent crime. The local emergency category remains sakh_chp.
+    bear_attack = {
+        "title": "Медведя весом около 350 кг ликвидировали после нападения на человека в Рейдово",
+        "source_text": (
+            "В Рейдово крупный медведь напал на человека возле хозяйственной постройки. "
+            "После нападения специалисты ликвидировали животное."
+        ),
+        "source": "Sakh.online",
+        "url": "https://sakh.online/news/wild-animal-attack-regression",
+        "category_key": "sakh_chp",
+    }
+    bear_class = editorial_policy.classify(bear_attack)
+    assert bear_class.event_type == "major_emergency", bear_class.to_dict()
+    assert bear_class.category_key == "sakh_chp", bear_class.to_dict()
+
+    human_attack = {
+        "title": "Мужчина напал на человека с ножом в Южно-Сахалинске",
+        "source_text": "Подозреваемый напал на человека и нанес ножевое ранение.",
+        "source": "ASTV",
+        "url": "https://astv.ru/news/criminal/human-attack-regression",
+        "category_key": "sakh_chp",
+    }
+    human_attack_class = editorial_policy.classify(human_attack)
+    assert human_attack_class.event_type == "violent_crime", human_attack_class.to_dict()
+
+    medvedev_attack = {
+        "title": "Медведев напал на человека в Южно-Сахалинске",
+        "source_text": "Мужчина по фамилии Медведев напал на человека во время конфликта.",
+        "source": "ASTV",
+        "url": "https://astv.ru/news/criminal/medvedev-surname-regression",
+        "category_key": "sakh_chp",
+    }
+    medvedev_attack_class = editorial_policy.classify(medvedev_attack)
+    assert medvedev_attack_class.event_type == "violent_crime", medvedev_attack_class.to_dict()
+
     # A generic source/search teaser is not article evidence. The delivery
     # queue must fail closed rather than fabricate a body from its headline.
     teaser_item = {

@@ -504,10 +504,38 @@ def _is_policy(title: str) -> bool:
     )
 
 
+_WILD_ANIMAL_WORD_RE = re.compile(
+    r"\b(?:медведь|медведя|медведю|медведем|медведе|медведи|медведей|медведям|медведями|медведях|"
+    r"тигр|тигра|тигру|тигром|тигре|тигры|тигров|тиграм|тиграми|тиграх|"
+    r"волк|волка|волку|волком|волке|волки|волков|волкам|волками|волках|"
+    r"кабан|кабана|кабану|кабаном|кабане|кабаны|кабанов|кабанам|кабанами|кабанах)\b",
+    flags=re.I,
+)
+_WILD_ANIMAL_ATTACK = (
+    "напал на человек", "напала на человек", "нападен на человек",
+    "атаковал человек", "атаковала человек", "покусал человек",
+    "покусала человек", "растерзал человек", "растерзала человек",
+)
+
+
+def _is_wild_animal_attack(title: str, lead: str) -> bool:
+    combined = norm(f"{title} {lead}")
+    return bool(
+        _WILD_ANIMAL_WORD_RE.search(combined)
+        and has_any(combined, _WILD_ANIMAL_ATTACK)
+    )
+
+
 def _event_type(title: str, lead: str, *, foreign: bool) -> str:
     combined = f"{title} {lead}"
     if has_any(title, QUAKE):
         return "earthquake"
+    # Generic verbs such as "напал"/"нападение" also describe animal attacks.
+    # Keep those incidents in the emergency stream instead of treating them as
+    # human violent crime. Explicit animal inflections avoid surname collisions
+    # such as "Медведев".
+    if _is_wild_animal_attack(title, lead):
+        return "major_emergency"
     if has_any(combined, VIOLENT_CRIME):
         return "violent_crime"
     # A fraud headline outranks generic source wording such as "жертвой
