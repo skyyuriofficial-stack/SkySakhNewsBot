@@ -1,22 +1,69 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "builds": [
-    {"src": "veshudei/api/telegram.js", "use": "@vercel/node"},
-    {"src": "veshudei/api/cron.js", "use": "@vercel/node"},
-    {"src": "veshudei/api/setup.js", "use": "@vercel/node"},
-    {"src": "veshudei/api/health.js", "use": "@vercel/node"}
+    {
+      "src": "veshudei/api/telegram.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "veshudei/api/cron.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "veshudei/api/setup.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "veshudei/api/health.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "veshudei/api/blobtest.js",
+      "use": "@vercel/node"
+    }
   ],
   "routes": [
-    {"src": "/api/telegram", "dest": "veshudei/api/telegram.js"},
-    {"src": "/api/cron", "dest": "veshudei/api/cron.js"},
-    {"src": "/api/setup", "dest": "veshudei/api/setup.js"},
-    {"src": "/api/health", "dest": "veshudei/api/health.js"}
+    {
+      "src": "/api/telegram",
+      "dest": "veshudei/api/telegram.js"
+    },
+    {
+      "src": "/api/cron",
+      "dest": "veshudei/api/cron.js"
+    },
+    {
+      "src": "/api/setup",
+      "dest": "veshudei/api/setup.js"
+    },
+    {
+      "src": "/api/health",
+      "dest": "veshudei/api/health.js"
+    },
+    {
+      "src": "/api/blobtest",
+      "dest": "veshudei/api/blobtest.js"
+    }
   ],
   "crons": [
-    {"path": "/api/cron", "schedule": "37 21 * * *"},
-    {"path": "/api/cron", "schedule": "45 1 * * *"},
-    {"path": "/api/cron", "schedule": "30 5 * * *"},
-    {"path": "/api/cron", "schedule": "30 9 * * *"},
-    {"path": "/api/cron", "schedule": "20 21 * * 0"}
+    {
+      "path": "/api/cron",
+      "schedule": "37 21 * * *"
+    },
+    {
+      "path": "/api/cron",
+      "schedule": "45 1 * * *"
+    },
+    {
+      "path": "/api/cron",
+      "schedule": "30 5 * * *"
+    },
+    {
+      "path": "/api/cron",
+      "schedule": "30 9 * * *"
+    },
+    {
+      "path": "/api/cron",
+      "schedule": "20 21 * * 0"
+    }
   ]
 }
