@@ -11976,84 +11976,6 @@
         }
       },
       "pending_hardening_repaired_at": "2026-09-29T23:43:28+00:00"
-    },
-    {
-      "queued_at": "2026-09-29T00:28:21+00:00",
-      "last_attempt_at": "2026-09-29T23:43:26+00:00",
-      "delivery_attempts": 5,
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
-      "url": "https://sakhalinmedia.ru/news/2634846/",
-      "title_hash": "d76a615d6a71e848a43e31fba347a044e8ce4ef5",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "footer": "ЧП | САХАЛИН",
-      "title": "Огнеборцы потушили пожар в нежилом доме в Южно-Сахалинске",
-      "source_text": "В Южно-Сахалинске на улице Западной потушили нежилой дом. Сигнал о возгорании поступил 28 сентября в 15.25, огнеборцы прибыли на место через 2 минуты, сообщили в пресс-службе ГУ МЧС России по Сахалинской области. Пожарные прибыли на место за 2 минуты В 16.09 пожар был локализован на площади 80 кв метров, а в 16.13 полностью ликвидирован. На месте работали 13 специалистов и три единицы техники. Погибших и пострадавших нет. Причины возгорания устанавливаются.",
-      "published_at": "2026-09-28T23:52:00+00:00",
-      "image_url": "https://sakhalinmedia.ru/f/big/6420/6419123.jpg?1c486d17d4fadd3e9836b9c69f81ed34",
-      "image_hash": "2dd7eda8f4f1cdd159f53952e88f9e9dfb2af4ef",
-      "topic_cluster": "sakh_chp:огнеборцы_потушили_пожар_нежилом_сахалинске_sakhalinmedia",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "Огнеборцы потушили пожар в нежилом доме в Южно-Сахалинске",
-        "body": [
-          "Сигнал о возгорании поступил 28 сентября в 15.25, огнеборцы прибыли на место через 2 минуты, сообщили в пресс-службе ГУ МЧС России по Сахалинской области.",
-          "Пожарные прибыли на место за 2 минуты В 16.09 пожар был локализован на площади 80 кв метров, а в 16.13 полностью ликвидирован."
-        ],
-        "footer": "ЧП | САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_chp",
-        "final_category": "sakh_chp",
-        "event_type": "major_emergency",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "subtype": "major_emergency",
-          "seriousness": 93,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Огнеборцы потушили пожар в нежилом доме в Южно-Сахалинске",
-          "title_corrected": "Огнеборцы потушили пожар в нежилом доме в Южно-Сахалинске",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-29T23:43:28+00:00"
     }
   ],
   "news_director_policy": {
@@ -12199,91 +12121,6 @@
     "valid_posts_counted": 20
   },
   "expired_media_delivery": [
-    {
-      "queued_at": "2026-09-22T03:30:28+00:00",
-      "last_attempt_at": "2026-09-23T00:32:55+00:00",
-      "delivery_attempts": 6,
-      "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized",
-      "url": "https://sakh.online/news/18/2026-09-22/letom-moshenniki-zvonili-ostrovityanam-ot-imeni-operatorov-i-kurierov-526802",
-      "title_hash": "c5d14255034684aef20c616fded952df8efbd627",
-      "source": "Sakh.online",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "footer": "ЧП | САХАЛИН",
-      "title": "Летом мошенники звонили островитянам от имени операторов и курьеров",
-      "source_text": "По данным экспертов сервиса «МТС Защитник», чаще всего мошенники в разговоре с островитянами притворялись операторами связи, сотрудниками социальных служб и курьерами. Всего за лето 2026 года сервис «Защитник» заблокировал почти 4 миллиона нежелательных звонков в адрес жителей Сахалинской области. По данным экспертов сервиса, практически каждый четвертый звонок совершен от имени операторов связи (24%). Также злоумышленники притворялись сотрудниками социальных служб (9%), курьерами почты, маркетплейсов и служб доставки (7%), а также работниками коммунальной сферы (6%). Аналитики отмечают, что почти половина всех звонков (47%) пришлась на август. Злоумышленники активизировались на Сахалине в конце лета, когда родители и дети постепенно возвращаются к привычному ритму и готовятся к началу учебного года. «Несмотря на некоторое снижение количества нежелательных звонков летом 2026 года по сравнению с аналогичным периодом прошлого года, проблема мошенничества по-прежнему актуальна. При этом, каждый сезон злоумышленники обновляют свои схемы и придумывают новые легенды. Поэтому мы постоянно совершенствуем алгоритмы искусственного интеллекта, направленные на распознавание таких вызовов. Кроме того, «Защитник» сигнализирует о мошеннических вызовах близким. Это позволяет создать дополнительный уровень защиты для самых уязвимых категорий - пожилых людей и детей», — отметил директор МТС в Сахалинской области Шамиль Чекмарев.",
-      "published_at": "2026-09-21T13:00:00+00:00",
-      "image_url": "https://sakh.online/attachments/e04d704c12270cdb25805319ac9655d552b3b85a/store/crop/0/37/800/451/800/0/0/0/c769b789b255701c14efa77beb53c0f094cc545957bb6cb25f33f83e6126/c769b789b255701c14efa77beb53c0f094cc545957bb6cb25f33f83e6126.webp",
-      "image_hash": "c2c926ac3d96cdff1b3bf8c5088a49af81a4ac61",
-      "topic_cluster": "sakh_chp:летом_мошенники_звонили_островитянам_имени_операторов",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "Летом мошенники звонили островитянам от имени операторов и курьеров",
-        "body": [
-          "По данным экспертов сервиса «МТС Защитник», чаще всего мошенники в разговоре с островитянами притворялись операторами связи, сотрудниками социальных служб и курьерами.",
-          "Всего за лето 2026 года сервис «Защитник» заблокировал почти 4 миллиона нежелательных звонков в адрес жителей Сахалинской области."
-        ],
-        "footer": "ЧП | САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": [],
-          "reclassified_from": "sakh",
-          "reclassified_to": "sakh_chp"
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_chp",
-        "final_category": "sakh_chp",
-        "event_type": "fraud",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "fraud",
-          "subtype": "fraud",
-          "seriousness": 72,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [
-            "low_value_or_repetitive_event_type",
-            "near_threshold"
-          ],
-          "title_original": "Летом мошенники звонили островитянам от имени операторов и курьеров",
-          "title_corrected": "Летом мошенники звонили островитянам от имени операторов и курьеров",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-23T00:32:56+00:00",
-      "expired_at": "2026-09-23T05:05:21+00:00",
-      "expired_reason": "news_stale_before_delivery"
-    },
     {
       "queued_at": "2026-09-22T12:14:17+00:00",
       "last_attempt_at": "2026-09-23T00:32:54+00:00",
@@ -18027,6 +17864,86 @@
         }
       },
       "expired_at": "2026-09-29T23:43:28+00:00",
+      "expired_reason": "pending_delivery_expired:age_hours>24"
+    },
+    {
+      "queued_at": "2026-09-29T00:28:21+00:00",
+      "last_attempt_at": "2026-09-29T23:43:26+00:00",
+      "delivery_attempts": 5,
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
+      "url": "https://sakhalinmedia.ru/news/2634846/",
+      "title_hash": "d76a615d6a71e848a43e31fba347a044e8ce4ef5",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "footer": "ЧП | САХАЛИН",
+      "title": "Огнеборцы потушили пожар в нежилом доме в Южно-Сахалинске",
+      "source_text": "В Южно-Сахалинске на улице Западной потушили нежилой дом. Сигнал о возгорании поступил 28 сентября в 15.25, огнеборцы прибыли на место через 2 минуты, сообщили в пресс-службе ГУ МЧС России по Сахалинской области. Пожарные прибыли на место за 2 минуты В 16.09 пожар был локализован на площади 80 кв метров, а в 16.13 полностью ликвидирован. На месте работали 13 специалистов и три единицы техники. Погибших и пострадавших нет. Причины возгорания устанавливаются.",
+      "published_at": "2026-09-28T23:52:00+00:00",
+      "image_url": "https://sakhalinmedia.ru/f/big/6420/6419123.jpg?1c486d17d4fadd3e9836b9c69f81ed34",
+      "image_hash": "2dd7eda8f4f1cdd159f53952e88f9e9dfb2af4ef",
+      "topic_cluster": "sakh_chp:огнеборцы_потушили_пожар_нежилом_сахалинске_sakhalinmedia",
+      "media_origin": "source_article_or_feed",
+      "row": {
+        "reject": false,
+        "title_ru": "Огнеборцы потушили пожар в нежилом доме в Южно-Сахалинске",
+        "body": [
+          "Сигнал о возгорании поступил 28 сентября в 15.25, огнеборцы прибыли на место через 2 минуты, сообщили в пресс-службе ГУ МЧС России по Сахалинской области.",
+          "Пожарные прибыли на место за 2 минуты В 16.09 пожар был локализован на площади 80 кв метров, а в 16.13 полностью ликвидирован."
+        ],
+        "footer": "ЧП | САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.7",
+          "source_warnings": []
+        }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "major_emergency",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 93,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Огнеборцы потушили пожар в нежилом доме в Южно-Сахалинске",
+          "title_corrected": "Огнеборцы потушили пожар в нежилом доме в Южно-Сахалинске",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-29T23:43:28+00:00",
+      "expired_at": "2026-09-30T00:13:34+00:00",
       "expired_reason": "pending_delivery_expired:age_hours>24"
     }
   ],
