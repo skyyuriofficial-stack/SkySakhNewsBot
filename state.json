@@ -11979,84 +11979,6 @@
         }
       },
       "pending_hardening_repaired_at": "2026-09-30T02:31:07+00:00"
-    },
-    {
-      "queued_at": "2026-09-29T06:03:24+00:00",
-      "last_attempt_at": "2026-09-30T02:31:07+00:00",
-      "delivery_attempts": 5,
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
-      "url": "https://sakhalinmedia.ru/news/2635262/",
-      "title_hash": "db6c5004070ce7d80d1352d2ff014c630b998c3a",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh",
-      "footer": "САХАЛИН",
-      "title": "Часть Южно-Сахалинска 1 октября останется без холодной воды",
-      "source_text": "В четверг 1 октября в Южно-Сахалинске временно ограничат водоснабжение в нескольких домах в связи с устранением провреждений на сетях. Работы планируют провести с 9.30 до 14.00, сообщает пресс-служба РВК-Сахалин. Водоснабжение будет ограничено с 9.30 до 14.00",
-      "published_at": "2026-09-29T05:14:00+00:00",
-      "image_url": "https://sakhalinmedia.ru/f/266x136/6416/6415257.png?75578ba37a54c8d7e3444110dcb78926",
-      "image_hash": "34f860bec042bbdb0535fadac42b4af32e9f6c62",
-      "topic_cluster": "sakh:часть_сахалинска_октября_останется_холодной_sakhalinmedia",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "Часть Южно-Сахалинска 1 октября останется без холодной воды",
-        "body": [
-          "В четверг 1 октября в Южно-Сахалинске временно ограничат водоснабжение в нескольких домах в связи с устранением провреждений на сетях.",
-          "Работы планируют провести с 9.30 до 14.00, сообщает пресс-служба РВК-Сахалин."
-        ],
-        "footer": "САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh",
-        "final_category": "sakh",
-        "event_type": "public_service_disruption",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh",
-          "corrected_category": "sakh",
-          "group": "local",
-          "event_type": "public_service_disruption",
-          "subtype": "public_service_disruption",
-          "seriousness": 83,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Часть Южно-Сахалинска 1 октября останется без холодной воды",
-          "title_corrected": "Часть Южно-Сахалинска 1 октября останется без холодной воды",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-30T02:31:07+00:00"
     }
   ],
   "news_director_policy": {
@@ -12202,86 +12124,6 @@
     "valid_posts_counted": 20
   },
   "expired_media_delivery": [
-    {
-      "queued_at": "2026-09-21T23:16:55+00:00",
-      "last_attempt_at": "2026-09-23T00:32:54+00:00",
-      "delivery_attempts": 7,
-      "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized",
-      "url": "https://astv.ru/news/criminal/2026-09-22-svidetelej-avarii-na-perekrestke-lenina-i-purkaeva-ishet-gai-yuzhno-sahalinska",
-      "title_hash": "76331be76702ba7fc6d804e52abf263c2eb8c5bc",
-      "source": "ASTV",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "footer": "ЧП | САХАЛИН",
-      "title": "Свидетелей аварии на перекрестке Ленина и Пуркаева ищет ГАИ Южно-Сахалинска",
-      "source_text": "Неизвестный автомобиль столкнулся с Toyota Land Cruiser и скрылся Неизвестный автомобиль столкнулся с Toyota Land Cruiser и скрылся Госавтоинспекция Южно-Сахалинска ищет очевидцев аварии, которая произошла в областном центре 15 сентября в 20:50. В тот вечер на круговом перекрестке улиц Ленина и Пуркаева неизвестный автомобиль столкнулся с Toyota Land Cruiser и скрылся. Если вы были очевидцем этого ДТП, если оно попало в объектив вашего авторегистратора, откликнитесь: 789-844 . Южно-Сахалинск, ул. Сахалинская, 46В, кабинет №30.",
-      "published_at": "2026-09-21T13:00:00+00:00",
-      "image_url": "https://astv.ru/content/NewsImage/d0/5a/d05a2cd5-ff8c-4bc5-8408-127e72acfa61_3.jpg",
-      "image_hash": "e5b6ff4616777c7732e609080feda4b7fe2bd708",
-      "topic_cluster": "sakh_chp:свидетелей_аварии_перекрестке_ленина_пуркаева_сахалинска",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "Свидетелей аварии на перекрестке Ленина и Пуркаева ищет ГАИ Южно-Сахалинска",
-        "body": [
-          "В тот вечер на круговом перекрестке улиц Ленина и Пуркаева неизвестный автомобиль столкнулся с Toyota Land Cruiser и скрылся.",
-          "Если вы были очевидцем этого ДТП, если оно попало в объектив вашего авторегистратора, откликнитесь: 789-844."
-        ],
-        "footer": "ЧП | САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_chp",
-        "final_category": "sakh_chp",
-        "event_type": "major_emergency",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "subtype": "major_emergency",
-          "seriousness": 91,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Свидетелей аварии на перекрестке Ленина и Пуркаева ищет ГАИ Южно-Сахалинска",
-          "title_corrected": "Свидетелей аварии на перекрестке Ленина и Пуркаева ищет ГАИ Южно-Сахалинска",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-23T00:32:57+00:00",
-      "expired_at": "2026-09-23T05:05:28+00:00",
-      "expired_reason": "news_stale_before_delivery"
-    },
     {
       "queued_at": "2026-09-21T23:16:55+00:00",
       "last_attempt_at": "2026-09-23T00:32:54+00:00",
@@ -17986,6 +17828,86 @@
       },
       "expired_at": "2026-09-30T02:31:07+00:00",
       "expired_reason": "pending_semantic_duplicate:На Сахалине задержали курьера мошенников, похитивших 3,5 млн рублей"
+    },
+    {
+      "queued_at": "2026-09-29T06:03:24+00:00",
+      "last_attempt_at": "2026-09-30T02:31:07+00:00",
+      "delivery_attempts": 5,
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
+      "url": "https://sakhalinmedia.ru/news/2635262/",
+      "title_hash": "db6c5004070ce7d80d1352d2ff014c630b998c3a",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "footer": "САХАЛИН",
+      "title": "Часть Южно-Сахалинска 1 октября останется без холодной воды",
+      "source_text": "В четверг 1 октября в Южно-Сахалинске временно ограничат водоснабжение в нескольких домах в связи с устранением провреждений на сетях. Работы планируют провести с 9.30 до 14.00, сообщает пресс-служба РВК-Сахалин. Водоснабжение будет ограничено с 9.30 до 14.00",
+      "published_at": "2026-09-29T05:14:00+00:00",
+      "image_url": "https://sakhalinmedia.ru/f/266x136/6416/6415257.png?75578ba37a54c8d7e3444110dcb78926",
+      "image_hash": "34f860bec042bbdb0535fadac42b4af32e9f6c62",
+      "topic_cluster": "sakh:часть_сахалинска_октября_останется_холодной_sakhalinmedia",
+      "media_origin": "source_article_or_feed",
+      "row": {
+        "reject": false,
+        "title_ru": "Часть Южно-Сахалинска 1 октября останется без холодной воды",
+        "body": [
+          "В четверг 1 октября в Южно-Сахалинске временно ограничат водоснабжение в нескольких домах в связи с устранением провреждений на сетях.",
+          "Работы планируют провести с 9.30 до 14.00, сообщает пресс-служба РВК-Сахалин."
+        ],
+        "footer": "САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.7",
+          "source_warnings": []
+        }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh",
+        "final_category": "sakh",
+        "event_type": "public_service_disruption",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh",
+          "corrected_category": "sakh",
+          "group": "local",
+          "event_type": "public_service_disruption",
+          "subtype": "public_service_disruption",
+          "seriousness": 83,
+          "threshold": 68,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Часть Южно-Сахалинска 1 октября останется без холодной воды",
+          "title_corrected": "Часть Южно-Сахалинска 1 октября останется без холодной воды",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-30T02:31:07+00:00",
+      "expired_at": "2026-09-30T05:51:43+00:00",
+      "expired_reason": "pending_delivery_expired:age_hours>24"
     }
   ],
   "recent_image_hashes": [],
