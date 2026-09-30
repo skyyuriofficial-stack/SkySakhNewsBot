@@ -3,8 +3,9 @@ export default async function handler(req, res) {
     ok: true,
     service: '@veshudei_bot',
     telegramTokenConfigured: Boolean(process.env.TELEGRAM_BOT_TOKEN),
-    blobConfigured: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
+    blobConfigured: Boolean(process.env.BLOB_READ_WRITE_TOKEN || process.env.VERCEL_OIDC_TOKEN),
+    blobStaticTokenConfigured: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
+    vercelOidcConfigured: Boolean(process.env.VERCEL_OIDC_TOKEN),
     time: new Date().toISOString()
   });
 }
-// redeploy 2026-09-30
