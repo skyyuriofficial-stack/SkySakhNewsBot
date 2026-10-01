@@ -1,11 +1,17 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-01T09:27:13+00:00",
-  "checked_at_sakhalin": "2026-10-01T20:27:07+11:00",
+  "checked_at_utc": "2026-10-01T13:02:33+00:00",
+  "checked_at_sakhalin": "2026-10-02T00:02:27+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
+    {
+      "type": "publisher_slot_missed",
+      "slot_sakhalin": "2026-10-01T22:00+11:00",
+      "grace_minutes": 45,
+      "last_finished_sakhalin": "2026-10-01T20:19:14+11:00"
+    },
     {
       "type": "hardening_action_failure",
       "count": 2,
@@ -43,7 +49,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-01T20:19:14+11:00",
-    "age_hours": 0.13,
+    "age_hours": 3.72,
     "published": 1
   },
   "last_production_attempt": {
@@ -56,40 +62,17 @@
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-10-01",
+    "day_sakhalin": "2026-10-02",
     "status": "healthy",
     "morning": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-01T08:46:15+00:00",
-        "published_at_sakhalin": "2026-10-01T19:46:15+11:00",
-        "telegram_message_id": 319,
-        "headline": "Политическая мобилизация усиливается, но решение о новой волне мобилизации пока не принято",
-        "evidence_count": 7,
-        "evidence_hash": "53fc59179210dcd7c0822511dfcecf020da437c0050de1b33e081aa812630a67",
-        "source_ids": []
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "evening": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-01T09:02:57+00:00",
-        "published_at_sakhalin": "2026-10-01T20:02:57+11:00",
-        "telegram_message_id": 320,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 6,
-        "evidence_hash": "31eaa5b6a0ba1dba565b47998dfe1a35212ca7c5482e37adf09bd9166b2741d4",
-        "source_ids": [
-          1,
-          2,
-          3,
-          4
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "last_attempt": {
       "status": "ok",
@@ -101,7 +84,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-01T09:27:10+00:00",
+    "checked_at": "2026-10-01T13:02:30+00:00",
     "checked": 19,
     "passed": 17,
     "anomalies": [
@@ -554,7 +537,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-01T09:27:04+00:00",
+    "checked_at_utc": "2026-10-01T13:02:24+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -571,16 +554,16 @@
   },
   "delivery_queue_hardening": {
     "before": 4,
-    "after": 4,
-    "retired": 0,
-    "stale_retired": 0,
+    "after": 2,
+    "retired": 2,
+    "stale_retired": 2,
     "capacity_retired": 0,
     "duplicates": 0,
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0
   },
-  "delivery_outbox_repaired": false,
+  "delivery_outbox_repaired": true,
   "hardening_actions": [],
   "hardening_failed_actions": [
     {
