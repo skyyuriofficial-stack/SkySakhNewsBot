@@ -1,0 +1,28 @@
+name: Veshudei Final Probe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/veshudei_final_probe.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify live Veshudei
+        run: |
+          set +e
+          base="https://sky-sakh-news-bot.vercel.app"
+          echo "=== HEALTH ==="
+          curl -L -sS --max-time 20 "$base/api/health"
+          echo
+          echo "=== WEBHOOK POST ==="
+          code=$(curl -L -sS -o /tmp/tg -w "%{http_code}" --max-time 20 -X POST -H "content-type: application/json" -d '{}' "$base/api/telegram")
+          echo "HTTP=$code"
+          cat /tmp/tg
+          echo
