@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 import requests
 import feedparser
 import news_bot_v8 as b
+import telegram_public_sources as telegram_sources
 
 VERSION = "stable-v9.5"
 
@@ -34,6 +35,10 @@ if not any(s[0] == "TASS" for s in b.SOURCES):
 
 ASTV_NEWS_URL = "https://astv.ru/news"
 SAKH_NEWS_URL = "https://sakh.online/news"
+
+TELEGRAM_PUBLIC_SOURCES = telegram_sources.PUBLIC_TELEGRAM_SOURCES
+for _key in ("telegram_source_attempt", "telegram_source_fail", "telegram_source_seen", "telegram_source_candidates"):
+    b.STATS.setdefault(_key, 0)
 
 b.CAT["ru_security"] = ("🇷🇺 Россия / безопасность", "РОССИЯ | БЕЗОПАСНОСТЬ")
 
@@ -472,6 +477,107 @@ def _local_html_candidates(state, source_name, index_url, discover, date_from_ur
     return out
 
 
+
+def _telegram_stream_classification(weight, title, text, url):
+    """Route a Telegram post by content, not by the channel brand."""
+    attempts = (
+        ("it", int(weight)),
+        ("ru", max(1, int(weight) - 2)),
+        ("world", max(1, int(weight) - 4)),
+    )
+    last_reason = "telegram_not_in_stream"
+    for src_type, candidate_weight in attempts:
+        cat, score, reason = classify(
+            src_type, candidate_weight, title, text, "", url
+        )
+        if cat:
+            return cat, score, "telegram_public:" + reason
+        last_reason = reason
+    return None, 0, last_reason
+
+
+def collect_public_telegram(state):
+    """Scan owner-required public Telegram channels on every collection pass."""
+    used_u = set(state.get("published_urls", []))
+    used_h = set(state.get("published_title_hashes", []))
+    out = []
+
+    for source in TELEGRAM_PUBLIC_SOURCES:
+        source_name = str(source.get("name") or source.get("handle") or "Telegram")
+        handle = str(source.get("handle") or "").strip().lstrip("@")
+        b.STATS["telegram_source_attempt"] += 1
+        try:
+            posts = telegram_sources.fetch_public_channel(source)
+        except Exception as ex:
+            b.STATS["telegram_source_fail"] += 1
+            b.log(f"Telegram source failed @{handle}: {ex}")
+            continue
+
+        b.STATS["telegram_source_seen"] += len(posts)
+        for post in posts:
+            url = str(post.get("url") or "")
+            if not url or url in used_u:
+                continue
+            dt = post.get("published_at")
+            if not strict_fresh(dt):
+                continue
+
+            title = b.clean(post.get("title"))
+            text = b.clean(post.get("text"))[:1800]
+            if len(title) < 24 or len(text) < 80:
+                continue
+
+            th = b.htitle(title)
+            if th in used_h:
+                continue
+
+            cat, score, reason = _telegram_stream_classification(
+                int(source.get("weight") or 90), title, text, url
+            )
+            if not cat:
+                continue
+
+            image = None
+            image_url = None
+            media_url = str(post.get("image_url") or "").strip()
+            if media_url:
+                image, image_url, image_reason = b.select_image(
+                    [{
+                        "url": media_url,
+                        "source": "telegram",
+                        "context": text[:900],
+                    }],
+                    title,
+                )
+                if not image:
+                    b.log(
+                        f"@{handle} no safe source media -> downstream media guard: "
+                        f"{title[:80]} | {image_reason}"
+                    )
+
+            category, footer = b.CAT[cat]
+            out.append({
+                "id": 20000 + len(out),
+                "source": f"{source_name} (@{handle})",
+                "category_key": cat,
+                "category": category,
+                "footer": footer,
+                "score": score + (20 if image else 0),
+                "reason": reason,
+                "title": title,
+                "source_text": text,
+                "url": url,
+                "image_url": image_url,
+                "image": image,
+                "published_at": dt.isoformat(),
+                "title_hash": th,
+                "_mandatory_source": True,
+            })
+
+    b.STATS["telegram_source_candidates"] += len(out)
+    return out
+
+
 def collect_astv_html(state):
     return _local_html_candidates(state, "ASTV", ASTV_NEWS_URL, discover_astv_urls, _astv_url_dt, 108)
 
@@ -534,7 +640,12 @@ def valid_source_stream(item):
 
 
 def collect(state):
-    items = _old_collect(state) + collect_astv_html(state) + collect_sakh_html(state)
+    items = (
+        _old_collect(state)
+        + collect_astv_html(state)
+        + collect_sakh_html(state)
+        + collect_public_telegram(state)
+    )
 
     recent_hashes = {
         p.get("image_hash") for p in state.get("last_posts", [])[-60:] if p.get("image_hash")
