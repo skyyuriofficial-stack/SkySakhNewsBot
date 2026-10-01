@@ -27,7 +27,7 @@ export function menuKeyboard() {
   return { inline_keyboard: [
     [{ text: '⚖️ Вес', callback_data: 'menu:weight' }, { text: '🍽 Еда', callback_data: 'menu:meal' }],
     [{ text: '🍺 Алкоголь', callback_data: 'menu:alcohol' }, { text: '💉 Семавик', callback_data: 'menu:semavik' }],
-    [{ text: '💊 Листата', callback_data: 'menu:orlistat' }, { text: '💧 Вода', callback_data: 'menu:water' }],
+    [{ text: '💊 Орлистат', callback_data: 'menu:orlistat' }, { text: '💧 Вода', callback_data: 'menu:water' }],
     [{ text: '🚶 Активность', callback_data: 'menu:activity' }, { text: '🩺 Самочувствие', callback_data: 'menu:symptoms' }],
     [{ text: '📊 Сегодня', callback_data: 'menu:today' }]
   ]};
