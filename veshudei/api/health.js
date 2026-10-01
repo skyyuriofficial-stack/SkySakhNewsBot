@@ -1,16 +1,24 @@
 import { get } from '@vercel/blob';
 import { telegram } from '../lib/telegram.js';
+import { providerConfigured } from '../lib/provider-secret.js';
 
 export default async function handler(req, res) {
   let blobOperational = false;
   let bot = null;
   let webhook = null;
+  let openRouterPrivate = false;
 
   try {
     const result = await get('veshudei/healthcheck.json', { access: 'private', useCache: false });
     blobOperational = Boolean(result && result.statusCode === 200);
   } catch (_) {
     blobOperational = false;
+  }
+
+  try {
+    openRouterPrivate = await providerConfigured();
+  } catch (_) {
+    openRouterPrivate = false;
   }
 
   try {
@@ -34,10 +42,11 @@ export default async function handler(req, res) {
     service: '@veshudei_bot',
     telegramTokenConfigured: Boolean(process.env.TELEGRAM_BOT_TOKEN),
     aiProviders: {
-      openrouter: Boolean(process.env.OPENROUTER_API_KEY),
+      openrouter: openRouterPrivate,
       openai: Boolean(process.env.OPENAI_API_KEY),
-      vercelGateway: Boolean(process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN)
+      vercelGateway: Boolean(process.env.AI_GATEWAY_API_KEY || process.env.ENABLE_VERCEL_AI_GATEWAY === '1')
     },
+    photoRecognitionReady: Boolean(openRouterPrivate || process.env.OPENAI_API_KEY),
     blobOperational,
     productionUrl: process.env.VERCEL_PROJECT_PRODUCTION_URL || null,
     bot,

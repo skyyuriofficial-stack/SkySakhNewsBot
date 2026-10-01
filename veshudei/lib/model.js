@@ -1,3 +1,5 @@
+import { readOpenRouterConfig, consumeProviderInbox } from './provider-secret.js';
+
 function dataUrl(bytes, mimeType) {
   return 'data:' + (mimeType || 'image/jpeg') + ';base64,' + Buffer.from(bytes).toString('base64');
 }
@@ -20,49 +22,45 @@ async function openRouterConfig() {
   if (process.env.OPENROUTER_API_KEY) {
     return {
       key: process.env.OPENROUTER_API_KEY,
-      model: process.env.OPENROUTER_MODEL || null,
-      visionModel: process.env.OPENROUTER_VISION_MODEL || null
+      model: process.env.OPENROUTER_MODEL || 'google/gemini-2.5-flash',
+      visionModel: process.env.OPENROUTER_VISION_MODEL || process.env.OPENROUTER_MODEL || 'google/gemini-2.5-flash'
     };
   }
 
-  if (openRouterCache && Date.now() - openRouterCacheAt < 5 * 60 * 1000) return openRouterCache;
+  if (openRouterCache && Date.now() - openRouterCacheAt < 10 * 60 * 1000) return openRouterCache;
 
-  try {
-    const { get } = await import('@vercel/blob');
-    const result = await get('veshudei/secrets/openrouter.json', { access: 'private', useCache: false });
-    if (!result || result.statusCode !== 200) return null;
-    const raw = await new Response(result.stream).text();
-    const cfg = JSON.parse(raw);
-    if (!cfg?.key) return null;
-    openRouterCache = {
-      key: String(cfg.key),
-      model: cfg.model ? String(cfg.model) : null,
-      visionModel: cfg.visionModel ? String(cfg.visionModel) : null
-    };
-    openRouterCacheAt = Date.now();
-    return openRouterCache;
-  } catch (_) {
-    return null;
+  let cfg = await readOpenRouterConfig();
+  if (!cfg) {
+    await consumeProviderInbox();
+    cfg = await readOpenRouterConfig();
   }
+  if (!cfg?.key) return null;
+
+  openRouterCache = cfg;
+  openRouterCacheAt = Date.now();
+  return cfg;
 }
 
 async function openRouterCall({ system, text, imageBytes, mimeType, maxTokens = 400 }) {
   const cfg = await openRouterConfig();
-  const key = cfg?.key;
-  if (!key) return null;
+  if (!cfg?.key) return null;
 
   const content = [{ type: 'text', text }];
-  if (imageBytes) content.push({ type: 'image_url', image_url: { url: dataUrl(imageBytes, mimeType) } });
+  if (imageBytes) {
+    content.push({ type: 'image_url', image_url: { url: dataUrl(imageBytes, mimeType) } });
+  }
 
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 12000);
+  const timer = setTimeout(() => controller.abort(), imageBytes ? 15000 : 8000);
   try {
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
       headers: {
-        authorization: 'Bearer ' + key,
+        authorization: 'Bearer ' + cfg.key,
         'content-type': 'application/json',
-        'HTTP-Referer': process.env.VERCEL_PROJECT_PRODUCTION_URL ? 'https://' + process.env.VERCEL_PROJECT_PRODUCTION_URL : 'https://telegram.org',
+        'HTTP-Referer': process.env.VERCEL_PROJECT_PRODUCTION_URL
+          ? 'https://' + process.env.VERCEL_PROJECT_PRODUCTION_URL
+          : 'https://telegram.org',
         'X-Title': 'Veshudei'
       },
       body: JSON.stringify({
@@ -78,7 +76,11 @@ async function openRouterCall({ system, text, imageBytes, mimeType, maxTokens = 
       }),
       signal: controller.signal
     });
-    if (!response.ok) throw new Error('OpenRouter HTTP ' + response.status);
+
+    if (!response.ok) {
+      const body = await response.text().catch(() => '');
+      throw new Error('OpenRouter HTTP ' + response.status + (body ? ': ' + body.slice(0, 180) : ''));
+    }
     const data = await response.json();
     return String(data?.choices?.[0]?.message?.content || '').trim() || null;
   } finally {
@@ -94,7 +96,7 @@ async function openAICall({ system, text, imageBytes, mimeType, maxTokens = 400 
   if (imageBytes) userContent.push({ type: 'input_image', image_url: dataUrl(imageBytes, mimeType) });
 
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 12000);
+  const timer = setTimeout(() => controller.abort(), imageBytes ? 15000 : 8000);
   try {
     const response = await fetch('https://api.openai.com/v1/responses', {
       method: 'POST',
@@ -118,11 +120,10 @@ async function openAICall({ system, text, imageBytes, mimeType, maxTokens = 400 
 }
 
 async function gatewayCall({ system, text, imageBytes, mimeType, maxTokens = 400 }) {
-  if (!process.env.AI_GATEWAY_API_KEY && !process.env.VERCEL_OIDC_TOKEN && process.env.ENABLE_VERCEL_AI_GATEWAY !== '1') {
-    return null;
-  }
+  if (!process.env.AI_GATEWAY_API_KEY && process.env.ENABLE_VERCEL_AI_GATEWAY !== '1') return null;
+
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 10000);
+  const timer = setTimeout(() => controller.abort(), 8000);
   try {
     const { generateText } = await import('ai');
     const params = {
@@ -152,16 +153,16 @@ async function gatewayCall({ system, text, imageBytes, mimeType, maxTokens = 400
 
 async function runProviders(args) {
   const errors = [];
-  for (const provider of [
+  for (const [name, fn] of [
     ['openrouter', openRouterCall],
     ['openai', openAICall],
     ['gateway', gatewayCall]
   ]) {
     try {
-      const answer = await provider[1](args);
-      if (answer) return { text: answer, provider: provider[0], errors };
+      const answer = await fn(args);
+      if (answer) return { text: answer, provider: name, errors };
     } catch (error) {
-      errors.push(provider[0] + ': ' + String(error?.message || error));
+      errors.push(name + ': ' + String(error?.message || error));
     }
   }
   return { text: null, provider: null, errors };

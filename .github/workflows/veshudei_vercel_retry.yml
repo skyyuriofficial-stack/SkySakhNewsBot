@@ -1,0 +1,48 @@
+name: Veshudei Vercel Rate-Limit Retry
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/10 * * * *"
+
+permissions:
+  contents: write
+  statuses: read
+
+concurrency:
+  group: veshudei-vercel-retry
+  cancel-in-progress: true
+
+jobs:
+  retry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 2
+
+      - name: Retry only Vercel build-rate failures
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          SHA=$(git rev-parse HEAD)
+          STATUS=$(curl -fsS             -H "Authorization: Bearer ${GH_TOKEN}"             -H "Accept: application/vnd.github+json"             "https://api.github.com/repos/${GITHUB_REPOSITORY}/commits/${SHA}/status")
+
+          STATE=$(python -c 'import json,sys; print(json.load(sys.stdin).get("state",""))' <<<"$STATUS")
+          URL=$(python -c 'import json,sys; d=json.load(sys.stdin); xs=[x for x in d.get("statuses",[]) if x.get("context")=="Vercel"]; print((xs[0].get("target_url") if xs else "") or "")' <<<"$STATUS")
+
+          if [ "$STATE" != "failure" ] || [[ "$URL" != *"build-rate-limit"* ]]; then
+            echo "No Vercel build-rate retry needed"
+            exit 0
+          fi
+
+          date -u +"%Y-%m-%dT%H:%M:%SZ" > veshudei/.redeploy
+          git config user.name "veshudei-redeploy"
+          git config user.email "actions@github.com"
+          git add veshudei/.redeploy
+          git commit -m "veshudei: retry deployment after Vercel rate limit"
+          git pull --rebase --autostash origin main
+          git push origin main

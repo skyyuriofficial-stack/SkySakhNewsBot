@@ -22,15 +22,7 @@
       "use": "@vercel/node"
     },
     {
-      "src": "veshudei/api/ocrtest.js",
-      "use": "@vercel/node"
-    },
-    {
       "src": "veshudei/api/secret-exchange.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "veshudei/api/modeltest.js",
       "use": "@vercel/node"
     }
   ],
@@ -56,16 +48,8 @@
       "dest": "veshudei/api/blobtest.js"
     },
     {
-      "src": "/api/ocrtest",
-      "dest": "veshudei/api/ocrtest.js"
-    },
-    {
       "src": "/api/secret-exchange",
       "dest": "veshudei/api/secret-exchange.js"
-    },
-    {
-      "src": "/api/modeltest",
-      "dest": "veshudei/api/modeltest.js"
     }
   ],
   "crons": [
@@ -89,5 +73,6 @@
       "path": "/api/cron",
       "schedule": "20 21 * * 0"
     }
-  ]
+  ],
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- veshudei vercel.json package.json"
 }

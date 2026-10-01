@@ -1,12 +1,5 @@
 import { sakhalinDay } from './store.js';
 import { modelVision } from './model.js';
-import { mkdir, readFile, writeFile, access } from 'node:fs/promises';
-import { join } from 'node:path';
-
-const OCR_DATA = {
-  rus: new URL('../ocr-data/rus.traineddata.gz', import.meta.url),
-  eng: new URL('../ocr-data/eng.traineddata.gz', import.meta.url)
-};
 
 function n(value) {
   const x = Number(String(value ?? '').replace(',', '.'));
@@ -29,13 +22,15 @@ function jsonFromText(text) {
 
 function normalizeNutrition(raw) {
   if (!raw || typeof raw !== 'object') return null;
+
   const portionG = n(raw.portion_g);
-  const per100 = raw.per_100g && typeof raw.per_100g === 'object' ? {
+  let per100 = raw.per_100g && typeof raw.per_100g === 'object' ? {
     kcal: n(raw.per_100g.kcal),
     protein_g: n(raw.per_100g.protein_g),
     fat_g: n(raw.per_100g.fat_g),
     carbs_g: n(raw.per_100g.carbs_g)
   } : null;
+
   let portion = raw.whole_portion && typeof raw.whole_portion === 'object' ? {
     kcal: n(raw.whole_portion.kcal),
     protein_g: n(raw.whole_portion.protein_g),
@@ -53,11 +48,24 @@ function normalizeNutrition(raw) {
     };
   }
 
+  if (portionG && portion && !per100) {
+    const f = 100 / portionG;
+    per100 = {
+      kcal: portion.kcal == null ? null : round1(portion.kcal * f),
+      protein_g: portion.protein_g == null ? null : round1(portion.protein_g * f),
+      fat_g: portion.fat_g == null ? null : round1(portion.fat_g * f),
+      carbs_g: portion.carbs_g == null ? null : round1(portion.carbs_g * f)
+    };
+  }
+
   let fatPresent = raw.fat_present;
   if (typeof fatPresent !== 'boolean') {
     const fat = portion?.fat_g ?? per100?.fat_g;
     fatPresent = fat == null ? null : fat > 0.3;
   }
+
+  let mainMeal = raw.is_main_meal;
+  if (typeof mainMeal !== 'boolean') mainMeal = null;
 
   return {
     food_name: String(raw.food_name || '').trim() || 'Еда по фото',
@@ -65,159 +73,15 @@ function normalizeNutrition(raw) {
     per_100g: per100,
     whole_portion: portion,
     fat_present: fatPresent,
-    fried_or_fatty_components: Array.isArray(raw.fried_or_fatty_components) ? raw.fried_or_fatty_components.map(String).slice(0, 5) : [],
+    fried_or_fatty_components: Array.isArray(raw.fried_or_fatty_components)
+      ? raw.fried_or_fatty_components.map(String).slice(0, 6)
+      : [],
     visible_label: Boolean(raw.visible_label),
+    is_main_meal: mainMeal,
+    meal_type: String(raw.meal_type || 'unknown').slice(0, 24),
     confidence: Math.max(0, Math.min(1, n(raw.confidence) ?? 0.5)),
     notes: String(raw.notes || '').trim()
   };
-}
-
-function numberNear(text, patterns) {
-  for (const p of patterns) {
-    const m = text.match(p);
-    if (m) {
-      const x = n(m[1]);
-      if (x != null) return x;
-    }
-  }
-  return null;
-}
-
-function parseOcr(text, caption = '') {
-  const src = String(text || '').replace(/\r/g, '\n').replace(/[ \t]+/g, ' ');
-  const lines = src.split('\n').map((x) => x.trim()).filter(Boolean);
-
-  let name = '';
-  for (const line of lines.slice(0, 8)) {
-    if (line.length >= 5 && line.length <= 100 && !/состав|энерг|пищева|белк|жир|углев|дата|штрих|barcode|ккал/i.test(line)) {
-      name = line;
-      break;
-    }
-  }
-  if (!name && caption) name = caption.replace(/^я\s*(?:поел|съел)\s*[:\-]?/i, '').trim();
-  if (!name) name = 'Еда по фото';
-
-  const portionG = numberNear(src, [
-    /(?:масса|вес|нетто|порци[яи]|1\s*\/)?\s*(\d{2,4})\s*(?:г|гр|g)\b/i,
-    /\b(\d{2,4})\s*(?:г|гр|g)\b/i
-  ]);
-
-  const kcal = numberNear(src, [
-    /(?:энерг\w*\s*ценн\w*|ккал|kcal)[^\d]{0,30}(\d{2,4}(?:[.,]\d+)?)/i,
-    /(\d{2,4}(?:[.,]\d+)?)\s*(?:ккал|kcal)/i
-  ]);
-  const protein = numberNear(src, [
-    /(?:белк\w*|\bб\b)\s*[:\-]?\s*(\d{1,3}(?:[.,]\d+)?)/i
-  ]);
-  const fat = numberNear(src, [
-    /(?:жир\w*|\bж\b)\s*[:\-]?\s*(\d{1,3}(?:[.,]\d+)?)/i
-  ]);
-  const carbs = numberNear(src, [
-    /(?:углев\w*|\bу\b)\s*[:\-]?\s*(\d{1,3}(?:[.,]\d+)?)/i
-  ]);
-
-  const hasPer100 = /(?:на\s*100\s*(?:г|гр|g)|100\s*(?:г|гр|g))/i.test(src);
-  const per100 = (kcal != null || protein != null || fat != null || carbs != null) && hasPer100
-    ? { kcal, protein_g: protein, fat_g: fat, carbs_g: carbs }
-    : null;
-
-  let whole = null;
-  if (per100 && portionG) {
-    const f = portionG / 100;
-    whole = {
-      kcal: kcal == null ? null : round1(kcal * f),
-      protein_g: protein == null ? null : round1(protein * f),
-      fat_g: fat == null ? null : round1(fat * f),
-      carbs_g: carbs == null ? null : round1(carbs * f)
-    };
-  } else if (!hasPer100 && (kcal != null || protein != null || fat != null || carbs != null)) {
-    whole = { kcal, protein_g: protein, fat_g: fat, carbs_g: carbs };
-  }
-
-  const fatWords = [];
-  if (/майонез/i.test(src)) fatWords.push('майонез');
-  if (/соус/i.test(src)) fatWords.push('соус');
-  if (/фрай|жарен|фритюр/i.test(src)) fatWords.push('жареный/фритюрный компонент');
-  if (/сыр/i.test(src)) fatWords.push('сыр');
-  if (/масло/i.test(src)) fatWords.push('масло');
-
-  const fatValue = whole?.fat_g ?? per100?.fat_g;
-  const fatPresent = fatValue != null ? fatValue > 0.3 : (fatWords.length ? true : null);
-
-  return normalizeNutrition({
-    food_name: name,
-    portion_g: portionG,
-    per_100g: per100,
-    whole_portion: whole,
-    fat_present: fatPresent,
-    fried_or_fatty_components: fatWords,
-    visible_label: Boolean(per100 || /состав|пищева|энерг/i.test(src)),
-    confidence: per100 ? 0.72 : 0.48,
-    notes: 'Распознано локально по тексту на фотографии.'
-  });
-}
-
-async function bundledLangPath() {
-  const dir = '/tmp/veshudei-tessdata';
-  await mkdir(dir, { recursive: true });
-
-  for (const lang of ['rus']) {
-    const dst = join(dir, lang + '.traineddata.gz');
-    try {
-      await access(dst);
-      continue;
-    } catch (_) {}
-
-    const data = await readFile(OCR_DATA[lang]);
-    await writeFile(dst, data);
-  }
-  return dir;
-}
-
-async function localOcr(bytes) {
-  let worker = null;
-  try {
-    let image = Buffer.from(bytes);
-    try {
-      const sharpMod = await import('sharp');
-      const sharp = sharpMod.default || sharpMod;
-      image = await sharp(image)
-        .rotate()
-        .resize({ width: 1600, withoutEnlargement: false })
-        .grayscale()
-        .normalize()
-        .sharpen()
-        .jpeg({ quality: 90 })
-        .toBuffer();
-    } catch (error) {
-      console.error('Veshudei OCR preprocess fallback:', error?.message || error);
-    }
-
-    const { createWorker } = await import('tesseract.js');
-    const langPath = await bundledLangPath();
-    worker = await createWorker('rus', 1, {
-      langPath,
-      gzip: true,
-      cacheMethod: 'none'
-    });
-    try {
-      await worker.setParameters({
-        preserve_interword_spaces: '1',
-        tessedit_pageseg_mode: '6'
-      });
-    } catch (_) {}
-
-    const timeout = new Promise((_, reject) =>
-      setTimeout(() => reject(new Error('OCR timeout')), 42000)
-    );
-    const result = await Promise.race([worker.recognize(image), timeout]);
-    return String(result?.data?.text || '').trim();
-  } catch (error) {
-    console.error('Veshudei OCR fallback:', error?.message || error);
-    return '';
-  } finally {
-    try { if (worker) await worker.terminate(); } catch (_) {}
-  }
 }
 
 function todayEvents(state) {
@@ -236,63 +100,129 @@ function orlistatStatus(state) {
     const m = String(e.value || '').replace(',', '.').match(/(\d+(?:\.\d+)?)\s*мг/i);
     const mg = m ? Number(m[1]) : 0;
     if (mg >= 60) doses += Math.max(1, Math.round(mg / 60));
-    if (mg >= 60 && e.ts && now - Date.parse(e.ts) < 90 * 60 * 1000) recentDose = true;
+    if (mg >= 60 && e.ts && now - Date.parse(e.ts) <= 45 * 60 * 1000) recentDose = true;
   }
 
   const severeSymptoms = events.some((e) =>
-    e.type === 'symptoms' && /сильн.*бол|постоянн.*бол|рвот|кров|обмор|невозможн.*пить/i.test(String(e.value || ''))
+    e.type === 'symptoms' &&
+    /сильн.*бол|постоянн.*бол|повторн.*рвот|кров|обмор|невозможн.*пить/i.test(String(e.value || ''))
   );
 
   return { doses, recentDose, severeSymptoms };
 }
 
-function fatPer100(analysis) {
-  if (analysis?.per_100g?.fat_g != null) return analysis.per_100g.fat_g;
-  if (analysis?.whole_portion?.fat_g != null && analysis?.portion_g) {
-    return analysis.whole_portion.fat_g / analysis.portion_g * 100;
+function inferMainMeal(analysis, caption = '') {
+  const c = String(caption || '').toLowerCase();
+  if (/перекус|снэк|snack/i.test(c)) return false;
+  if (/завтрак|обед|ужин|я\s*(?:поел|съел|ем)|основн.*при[её]м/i.test(c)) return true;
+  if (typeof analysis?.is_main_meal === 'boolean') return analysis.is_main_meal;
+
+  const kcal = analysis?.whole_portion?.kcal;
+  const grams = analysis?.portion_g;
+  if ((Number.isFinite(kcal) && kcal >= 220) || (Number.isFinite(grams) && grams >= 150)) return true;
+  if ((Number.isFinite(kcal) && kcal < 140) && (Number.isFinite(grams) && grams < 100)) return false;
+  return null;
+}
+
+function fatPer100(a) {
+  if (a?.per_100g?.fat_g != null) return a.per_100g.fat_g;
+  if (a?.whole_portion?.fat_g != null && a?.portion_g) {
+    return a.whole_portion.fat_g / a.portion_g * 100;
   }
   return null;
 }
 
-function fatClass(analysis) {
-  const f = fatPer100(analysis);
-  if (f == null) {
-    if (analysis?.fat_present === false) return 'практически без жира';
-    if (analysis?.fat_present === true) return 'жир в составе есть';
-    return 'жирность точно не определена';
+function fatClass(a) {
+  const total = a?.whole_portion?.fat_g;
+  const per100 = fatPer100(a);
+
+  if (a?.fat_present === false) return 'практически без жира';
+  if ((Number.isFinite(total) && total >= 20) || (Number.isFinite(per100) && per100 > 17.5)) {
+    return 'высокая жирность на порцию';
   }
-  if (f <= 3) return 'низкая жирность';
-  if (f > 17.5) return 'высокая жирность';
-  return 'умеренная жирность';
+  if ((Number.isFinite(total) && total >= 10) || (Number.isFinite(per100) && per100 > 7)) {
+    return 'умеренная жирность';
+  }
+  if ((Number.isFinite(total) && total < 5) && (per100 == null || per100 <= 3)) {
+    return 'низкая жирность';
+  }
+  if (a?.fat_present === true) return 'жир в составе есть';
+  return 'жирность точно не определена';
 }
 
-function orlistatAdvice(state, analysis) {
+function orlistatDecision(state, a, caption = '') {
   const status = orlistatStatus(state);
+  const mainMeal = inferMainMeal(a, caption);
+
   if (status.severeSymptoms) {
-    return 'Листата: из-за отмеченных выраженных ЖКТ-симптомов дозу по фото не советую; нужна медицинская оценка.';
+    return {
+      code: 'medical',
+      text: '💊 <b>Листата: решение по фото откладываю.</b> В дневнике есть выраженные ЖКТ-симптомы — сначала нужна медицинская оценка.'
+    };
   }
+
   if (status.doses >= 3) {
-    return 'Листата: НЕТ — сегодня уже зафиксированы 3 дозы по 60 мг; больше в сутки не добавлять.';
+    return {
+      code: 'max',
+      text: '💊 <b>Листата: НЕ ПРИНИМАТЬ.</b> Сегодня уже зафиксированы 3 дозы по 60 мг.'
+    };
   }
+
   if (status.recentDose) {
-    return 'Листата: повторно НЕ принимать, если предыдущие 60 мг были с этим же приёмом пищи.';
+    return {
+      code: 'already',
+      text: '💊 <b>Листата: повторно НЕ ПРИНИМАТЬ.</b> 60 мг уже отмечены менее 45 минут назад; если это та же еда, вторую дозу не добавлять.'
+    };
   }
-  if (analysis?.fat_present === false) {
-    return 'Листата: ПРОПУСТИТЬ — по распознанным данным жира в этой еде практически нет.';
+
+  if (a?.fat_present === false) {
+    return {
+      code: 'skip',
+      text: '💊 <b>Листата: ПРОПУСТИТЬ.</b> По распознанным данным жира в этом приёме пищи практически нет.'
+    };
   }
-  if (analysis?.fat_present === true) {
-    return 'Листата: ДА, если это основной приём пищи и ты сейчас ешь или закончил не более часа назад — 60 мг по инструкции; если уже принял с этой едой, повторно не принимать.';
+
+  if (mainMeal === false) {
+    return {
+      code: 'skip',
+      text: '💊 <b>Листата: ПРОПУСТИТЬ.</b> Это выглядит как перекус, а не основной приём пищи.'
+    };
   }
-  return 'Листата: по фото жира определить надёжно не удалось. По инструкции 60 мг принимают только с основным приёмом пищи, содержащим жир; если жира нет — пропускают.';
+
+  if (a?.fat_present === true && mainMeal === true) {
+    return {
+      code: 'take',
+      text: '💊 <b>Листата: ПРИНЯТЬ 60 мг.</b> Я распознал основной приём пищи, содержащий жир. Принимать во время еды или не позднее 1 часа после неё; если уже принимал с этой едой — повторно не принимать. После отметки будет ' + (status.doses + 1) + '/3 доз сегодня.'
+    };
+  }
+
+  if (a?.fat_present === true) {
+    return {
+      code: 'conditional',
+      text: '💊 <b>Листата: СКОРЕЕ ДА, если это основной приём пищи.</b> Жир в еде есть; 60 мг — во время еды или не позднее 1 часа после. Для небольшого перекуса отдельную дозу не добавляю.'
+    };
+  }
+
+  return {
+    code: 'unknown',
+    text: '💊 <b>Листата: пока НЕ РЕШАЮ.</b> По фото не удалось надёжно подтвердить жир. Если на упаковке есть строка «жиры» или состав — пришли крупнее, либо напиши значение.'
+  };
 }
 
 function fmt(value, suffix = '') {
   return value == null ? null : String(round1(value)).replace('.', ',') + suffix;
 }
 
-function buildReply(state, a, provider) {
+function escapeHtml(value) {
+  return String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+}
+
+function buildReply(state, a, provider, caption = '') {
   const lines = [];
-  const source = a.visible_label ? 'по этикетке' : (provider === 'ocr' ? 'по тексту на фото' : 'по фото');
+  const source = a.visible_label
+    ? 'по этикетке'
+    : (provider ? 'по фото' : 'по подписи/контексту');
+
   lines.push('🍽 <b>' + escapeHtml(a.food_name) + '</b>' + (a.portion_g ? ', ' + fmt(a.portion_g, ' г') : '') + '.');
 
   const p = a.whole_portion;
@@ -302,7 +232,7 @@ function buildReply(state, a, provider) {
     if (p.protein_g != null) vals.push('Б ' + fmt(p.protein_g, ' г'));
     if (p.fat_g != null) vals.push('Ж ' + fmt(p.fat_g, ' г'));
     if (p.carbs_g != null) vals.push('У ' + fmt(p.carbs_g, ' г'));
-    lines.push('На порцию ' + source + ': ' + vals.join(' · ') + '.');
+    lines.push('На всю порцию ' + source + ': ' + vals.join(' · ') + '.');
   } else if (a.per_100g && [a.per_100g.kcal, a.per_100g.protein_g, a.per_100g.fat_g, a.per_100g.carbs_g].some((x) => x != null)) {
     const x = a.per_100g;
     const vals = [];
@@ -314,89 +244,101 @@ function buildReply(state, a, provider) {
   }
 
   const cls = fatClass(a);
-  const parts = a.fried_or_fatty_components?.length ? ' (' + a.fried_or_fatty_components.join(', ') + ')' : '';
-  lines.push('Жирность: <b>' + escapeHtml(cls) + '</b>' + escapeHtml(parts) + '.');
-  lines.push(escapeHtml(orlistatAdvice(state, a)));
+  const parts = a.fried_or_fatty_components?.length
+    ? ' — ' + a.fried_or_fatty_components.join(', ')
+    : '';
+  lines.push('🧈 Жирность: <b>' + escapeHtml(cls) + '</b>' + escapeHtml(parts) + '.');
 
-  const f100 = fatPer100(a);
-  if (f100 != null && f100 > 17.5) {
-    lines.push('Следующий шаг: не добавляй к этому приёму ещё жирный соус/закуску; высокий жир повышает риск неприятных ЖКТ-эффектов орлистата.');
-  } else {
-    lines.push('Следующий шаг: эту еду считаю в дневнике; дальше без компенсационного голодания.');
+  const decision = orlistatDecision(state, a, caption);
+  lines.push(decision.text);
+
+  if (a.confidence < 0.65) {
+    lines.push('🔎 Уверенность распознавания средняя: нечитаемые цифры я не додумываю.');
   }
 
-  return lines.join('\n');
+  const totalFat = a?.whole_portion?.fat_g;
+  if (Number.isFinite(totalFat) && totalFat >= 20) {
+    lines.push('➡️ Следующий шаг: не добавляй к этому приёму ещё жирный соус/закуску; при большом количестве жира ЖКТ-эффекты орлистата встречаются чаще.');
+  } else {
+    lines.push('➡️ Следующий шаг: приём пищи занесён в дневник; дальше без компенсационного голодания.');
+  }
+
+  return { text: lines.join('\n'), decision: decision.code, mainMeal: inferMainMeal(a, caption) };
 }
 
-function escapeHtml(value) {
-  return String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+function fallbackAnalysis(caption = '') {
+  const cleaned = String(caption || '').replace(/^я\s*(?:поел|съел|ем)\s*[:\-]?/i, '').trim();
+  const fatty = /фри|жарен|фритюр|майонез|сыр|масл|сливк|сметан|бекон|колбас|бургер|пицц|соус|орех|авокад|лосос|свинин/i.test(cleaned);
+  return normalizeNutrition({
+    food_name: cleaned || 'Еда по фото',
+    portion_g: null,
+    per_100g: null,
+    whole_portion: null,
+    fat_present: fatty ? true : null,
+    fried_or_fatty_components: fatty ? ['жирный компонент по подписи'] : [],
+    visible_label: false,
+    is_main_meal: /я\s*(?:поел|съел|ем)|завтрак|обед|ужин/i.test(String(caption || '')) ? true : null,
+    meal_type: 'unknown',
+    confidence: cleaned ? 0.35 : 0.15,
+    notes: 'Vision-провайдер недоступен; использован только текст подписи.'
+  });
 }
 
 export async function analyzeFoodImage(state, file, caption = '') {
-  const context = todayEvents(state).slice(-20).map((e) => e.type + ': ' + String(e.value)).join('\n');
+  const context = todayEvents(state)
+    .slice(-20)
+    .map((e) => e.type + ': ' + String(e.value))
+    .join('\n');
+
   const system = [
     'Ты анализируешь фотографию еды для личного дневника снижения веса.',
     'Верни ТОЛЬКО валидный JSON без markdown.',
-    'Если видна этикетка, считай её главным источником и не выдумывай нечитаемые значения.',
-    'Если этикетки нет, распознай блюдо и оцени порцию/состав с разумной неопределённостью.',
-    'Отдельно отметь наличие жира и жареных/жирных компонентов.',
-    'Не ставь диагнозы.'
+    'Если видна этикетка, этикетка — главный источник: точно прочитай название, массу порции, ккал и Б/Ж/У. Нечитаемые цифры ставь null, не выдумывай.',
+    'Если этикетки нет, распознай блюдо и оцени массу и КБЖУ только когда это разумно; для оценок снижай confidence.',
+    'Отдельно укажи наличие жира, жареных/жирных компонентов и является ли это основным приёмом пищи.',
+    'Основной приём пищи: завтрак, обед, ужин либо полноценная порция; небольшой снек/напиток — не основной.',
+    'Не давай медицинских советов и не решай дозировку лекарства — это сделает приложение по правилам после распознавания.'
   ].join('\n');
-  const prompt = `Подпись пользователя: ${caption || '(нет)'}
-Дневник сегодня:
-${context || '(нет)'}
 
-JSON-схема:
-{
-  "food_name": "строка",
-  "portion_g": число или null,
-  "per_100g": {"kcal": число|null, "protein_g": число|null, "fat_g": число|null, "carbs_g": число|null} или null,
-  "whole_portion": {"kcal": число|null, "protein_g": число|null, "fat_g": число|null, "carbs_g": число|null} или null,
-  "fat_present": true|false|null,
-  "fried_or_fatty_components": ["строки"],
-  "visible_label": true|false,
-  "confidence": число 0..1,
-  "notes": "кратко"
-}`;
+  const prompt = 'Подпись пользователя: ' + (caption || '(нет)') +
+    '\nДневник сегодня:\n' + (context || '(нет)') +
+    '\n\nJSON-схема:\n' +
+    '{' +
+    '"food_name":"строка",' +
+    '"portion_g":число|null,' +
+    '"per_100g":{"kcal":число|null,"protein_g":число|null,"fat_g":число|null,"carbs_g":число|null}|null,' +
+    '"whole_portion":{"kcal":число|null,"protein_g":число|null,"fat_g":число|null,"carbs_g":число|null}|null,' +
+    '"fat_present":true|false|null,' +
+    '"fried_or_fatty_components":["строки"],' +
+    '"visible_label":true|false,' +
+    '"is_main_meal":true|false|null,' +
+    '"meal_type":"breakfast|lunch|dinner|snack|unknown",' +
+    '"confidence":число 0..1,' +
+    '"notes":"кратко"' +
+    '}';
 
   const remote = await modelVision({
     system,
     text: prompt,
     imageBytes: file.bytes,
     mimeType: file.mimeType,
-    maxTokens: 500
+    maxTokens: 520
   });
 
   let analysis = normalizeNutrition(jsonFromText(remote.text));
   let provider = remote.provider;
 
-  if (!analysis || analysis.confidence < 0.45) {
-    const ocr = await localOcr(file.bytes);
-    const ocrAnalysis = parseOcr(ocr, caption);
-    if (!analysis || (ocrAnalysis?.confidence ?? 0) > analysis.confidence) {
-      analysis = ocrAnalysis;
-      provider = 'ocr';
-    }
+  if (!analysis || analysis.confidence < 0.35) {
+    analysis = fallbackAnalysis(caption);
+    provider = provider || null;
   }
 
-  if (!analysis) {
-    analysis = normalizeNutrition({
-      food_name: caption.replace(/^я\s*(?:поел|съел)\s*[:\-]?/i, '').trim() || 'Еда по фото',
-      portion_g: null,
-      per_100g: null,
-      whole_portion: null,
-      fat_present: null,
-      visible_label: false,
-      confidence: 0.2,
-      notes: 'Не удалось надёжно распознать фотографию.'
-    });
-    provider = 'fallback';
-  }
+  const reply = buildReply(state, analysis, provider, caption);
 
   return {
     analysis,
     provider,
-    reply: buildReply(state, analysis, provider),
+    reply: reply.text,
     record: {
       name: analysis.food_name,
       portion_g: analysis.portion_g,
@@ -404,8 +346,12 @@ JSON-схема:
       per_100g: analysis.per_100g,
       fat_present: analysis.fat_present,
       fat_class: fatClass(analysis),
-      recognition_provider: provider,
+      is_main_meal: reply.mainMeal,
+      meal_type: analysis.meal_type,
+      orlistat_decision: reply.decision,
+      recognition_provider: provider || 'fallback',
       confidence: analysis.confidence
-    }
+    },
+    errors: remote.errors || []
   };
 }

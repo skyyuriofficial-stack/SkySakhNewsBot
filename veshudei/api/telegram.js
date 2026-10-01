@@ -2,6 +2,7 @@ import { loadState, saveState, logEvent, todayEvents, lastEvent } from '../lib/s
 import { sendMessage, answerCallback, menuKeyboard, downloadTelegramFile } from '../lib/telegram.js';
 import { modelText } from '../lib/model.js';
 import { analyzeFoodImage } from '../lib/food.js';
+import { waitUntil } from '@vercel/functions';
 
 export const config = { maxDuration: 60 };
 
@@ -38,20 +39,28 @@ function latestMeal(state) {
   return [...(state.events || [])].reverse().find((e) => e.type === 'meal') || null;
 }
 
-function photoResultKeyboard(record) {
-  if (record?.fat_present === true) {
+function photoResultKeyboard(state, record) {
+  const decision = record?.orlistat_decision;
+  const doses = orlistatDosesToday(state);
+
+  if (decision === 'take' && doses < 3 && !recentOrlistatDose(state, 45)) {
     return cbKeyboard([
       [{ text: '💊 Принял Листату 60 мг', callback_data: 'orlistat:60' }, { text: '🚫 Не принимал', callback_data: 'orlistat:0' }],
       [{ text: '📊 Сегодня', callback_data: 'menu:today' }, { text: '🌙 Итог дня', callback_data: 'menu:evening' }]
     ]);
   }
-  if (record?.fat_present === false) {
+
+  if (decision === 'skip' || decision === 'max' || decision === 'already') {
     return cbKeyboard([
-      [{ text: '🚫 Листату пропускаю', callback_data: 'orlistat:0' }],
+      [{ text: '🚫 Листату не принимаю', callback_data: 'orlistat:0' }],
       [{ text: '📊 Сегодня', callback_data: 'menu:today' }, { text: '🌙 Итог дня', callback_data: 'menu:evening' }]
     ]);
   }
-  return menuKeyboard();
+
+  return cbKeyboard([
+    [{ text: '💊 Листата 60 мг', callback_data: 'menu:orlistat' }, { text: '📊 Сегодня', callback_data: 'menu:today' }],
+    [{ text: '🌙 Итог дня', callback_data: 'menu:evening' }]
+  ]);
 }
 
 function quickMealAdvice(text) {
@@ -83,19 +92,37 @@ function numberedAnswer(text, n) {
   return m ? m[1].trim() : '';
 }
 
-function eveningReview(text) {
-  const food = numberedAnswer(text, 1);
-  const alcohol = numberedAnswer(text, 2);
-  const orlistat = numberedAnswer(text, 3);
-  const water = numberedAnswer(text, 4);
-  const activity = numberedAnswer(text, 5);
-  const hunger = numberedAnswer(text, 6);
-  const symptoms = numberedAnswer(text, 7);
+function eveningReview(state, text) {
+  const events = todayEvents(state);
+  const foodInput = numberedAnswer(text, 1);
+  const alcoholInput = numberedAnswer(text, 2);
+  const orlistatInput = numberedAnswer(text, 3);
+  const waterInput = numberedAnswer(text, 4);
+  const activityInput = numberedAnswer(text, 5);
+  const hungerInput = numberedAnswer(text, 6);
+  const symptomsInput = numberedAnswer(text, 7);
+
+  const meals = events.filter((e) => e.type === 'meal');
+  const alcoholEvent = events.filter((e) => e.type === 'alcohol').slice(-1)[0];
+  const waterEvent = events.filter((e) => e.type === 'water').slice(-1)[0];
+  const activityEvent = events.filter((e) => e.type === 'activity').slice(-1)[0];
+  const symptomsEvent = events.filter((e) => e.type === 'symptoms').slice(-1)[0];
+
+  const alcohol = alcoholInput || String(alcoholEvent?.value || '');
+  const water = waterInput || String(waterEvent?.value || '');
+  const activity = activityInput || String(activityEvent?.value || '');
+  const symptoms = symptomsInput || String(symptomsEvent?.value || '');
+
+  let hunger = hungerInput;
+  if (!hunger) {
+    const hm = String(text || '').match(/голод\D{0,12}(10|[0-9])(?:\s*\/\s*10)?/i);
+    if (hm) hunger = hm[1];
+  }
 
   const good = [];
   const issues = [];
 
-  if (food) good.push('еда за день зафиксирована');
+  if (foodInput || meals.length) good.push('еда за день зафиксирована');
   else issues.push('по еде недостаточно данных');
 
   if (alcohol) {
@@ -103,7 +130,8 @@ function eveningReview(text) {
     else issues.push('алкоголь был: ' + alcohol);
   }
 
-  if (orlistat) good.push('Листата зафиксирована вместе с приёмами пищи');
+  const doses = orlistatDosesToday(state);
+  if (orlistatInput || doses > 0) good.push('Листата учтена: ' + doses + '/3 доз');
 
   const wm = String(water).replace(',', '.').match(/(\d+(?:\.\d+)?)\s*л/i);
   const liters = wm ? Number(wm[1]) : NaN;
@@ -114,7 +142,7 @@ function eveningReview(text) {
     issues.push('вода не указана');
   }
 
-  const stepsMatch = String(activity).replace(/\s/g, '').match(/(\d{3,6})\s*(?:шаг|step)/i);
+  const stepsMatch = String(activity).replace(/\s/g, '').match(/(\d{3,6})(?:шаг|step)/i);
   const steps = stepsMatch ? Number(stepsMatch[1]) : NaN;
   if (activity) {
     if (/нет|не\s*было/i.test(activity)) issues.push('активности не было');
@@ -129,6 +157,8 @@ function eveningReview(text) {
   if (Number.isFinite(h)) {
     if (h >= 8) issues.push('вечерний голод высокий: ' + h + '/10');
     else good.push('вечерний голод ' + h + '/10');
+  } else {
+    issues.push('вечерний голод не указан');
   }
 
   if (symptoms) {
@@ -145,8 +175,8 @@ function eveningReview(text) {
     plan = 'Завтра: запланируй нормальный белковый ужин, чтобы не доводить вечерний голод до 8–10/10.';
   }
 
-  const goodText = good.length ? 'Удачно: ' + good.slice(0, 3).join('; ') + '.' : 'Удачно: дневник заполнен.';
-  const issueText = issues.length ? 'Перебор/недобор: ' + issues.slice(0, 3).join('; ') + '.' : 'Перебор/недобор: явных проблем по указанным данным не вижу.';
+  const goodText = good.length ? 'Удачно: ' + good.slice(0, 4).join('; ') + '.' : 'Удачно: дневник заполнен частично.';
+  const issueText = issues.length ? 'Перебор/недобор: ' + issues.slice(0, 4).join('; ') + '.' : 'Перебор/недобор: явных проблем по указанным данным не вижу.';
   return goodText + '\n' + issueText + '\n' + plan;
 }
 
@@ -454,7 +484,7 @@ async function handleText(message, state) {
   if (a.type === 'evening_checkin') {
     logEvent(state, 'evening_checkin', text);
     state.awaiting = null;
-    const answer = eveningReview(text);
+    const answer = eveningReview(state, text);
     logEvent(state, 'evening_review', answer);
     await saveState(state);
     return sendMessage(chatId, '<b>Итог дня:</b>\n' + escapeHtml(answer), menuKeyboard());
@@ -515,35 +545,67 @@ export default async function handler(req, res) {
     const state = await loadState();
     const updateId = update.update_id;
     const processed = Array.isArray(state.processedUpdateIds) ? state.processedUpdateIds : [];
+
     if (Number.isFinite(updateId) && processed.includes(updateId)) {
       return res.status(200).json({ ok: true, duplicate: true });
     }
 
+    if (Number.isFinite(updateId)) {
+      state.processedUpdateIds = [...processed, updateId].slice(-250);
+      await saveState(state);
+    }
+
     if (update.callback_query) {
       await handleCallback(update.callback_query, state);
-    } else if (update.message?.photo?.length || update.message?.document?.mime_type?.startsWith('image/')) {
+      return res.status(200).json({ ok: true });
+    }
+
+    if (update.message?.photo?.length || update.message?.document?.mime_type?.startsWith('image/')) {
       if (chatId) {
-        try { await sendMessage(chatId, '📷 Фото получил. Сам распознаю блюдо/этикетку, посчитаю жирность и проверю Листату.'); } catch (_) {}
+        try {
+          await sendMessage(chatId, '📷 Фото получил. Сам распознаю блюдо/этикетку, КБЖУ, жирность и сразу скажу по Листате.');
+        } catch (_) {}
       }
-      const analysis = await analyzeFoodPhoto(state, update.message);
-      logEvent(state, 'meal', analysis.log, { source: 'photo', food: analysis.record || null });
-      if (state.awaiting?.type !== 'evening_checkin') state.awaiting = null;
-      await saveState(state);
-      await sendMessage(chatId, analysis.reply, photoResultKeyboard(analysis.record));
-    } else if (update.message?.text) {
+
+      const message = update.message;
+      const task = (async () => {
+        try {
+          const fresh = await loadState();
+          const analysis = await analyzeFoodPhoto(fresh, message);
+          logEvent(fresh, 'meal', analysis.log, {
+            source: 'photo',
+            media_group_id: message.media_group_id || null,
+            food: analysis.record || null
+          });
+          if (fresh.awaiting?.type !== 'evening_checkin') fresh.awaiting = null;
+          await saveState(fresh);
+          await sendMessage(chatId, analysis.reply, photoResultKeyboard(fresh, analysis.record));
+        } catch (error) {
+          console.error('Veshudei background photo:', error?.message || error);
+          try {
+            await sendMessage(chatId, '⚠️ Фото сохранил в дневник, но распознавание сейчас не завершилось. Повторять запись еды вручную не нужно.');
+          } catch (_) {}
+        }
+      })();
+
+      try {
+        waitUntil(task);
+      } catch (_) {
+        await task;
+      }
+      return res.status(200).json({ ok: true, accepted: 'photo' });
+    }
+
+    if (update.message?.text) {
       await handleText(update.message, state);
     }
 
-    if (Number.isFinite(updateId)) {
-      state.processedUpdateIds = [...processed, updateId].slice(-100);
-      await saveState(state);
-    }
     return res.status(200).json({ ok: true });
   } catch (error) {
     console.error('Veshudei webhook error:', error);
     if (chatId) {
       try {
-        await sendMessage(chatId, '⚠️ Сообщение получил, но обработка этого ввода не завершилась. Сам дневник продолжает работать; попробуй отправить фото/текст ещё раз.');
+        await sendMessage(chatId, '⚠️ Сообщение получил, но обработка этого ввода не завершилась. Дневник не отключён; попробуй ещё раз.');
       } catch (_) {}
     }
     return res.status(200).json({ ok: true, error: 'handled' });
