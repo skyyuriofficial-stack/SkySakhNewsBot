@@ -373,10 +373,11 @@ def exact_proportion_and_selection_regression():
         ai_reviewer=None,
     )
     assert len(ordered) >= 2, report
-    assert ordered[0]["_news_director"]["group"] == "world", report
-    assert len({item["_news_director"]["group"] for item in ordered[:2]}) == 2, report
-    assert report["selected_groups"][0] == "world", report
-    assert len(set(report["selected_groups"][:2])) == 2, report
+    # Significance is primary: the 94-point local emergency outranks the
+    # underrepresented 88-point world story. Mix still diversifies slot 2.
+    assert ordered[0]["_news_director"]["group"] == "local", report
+    assert ordered[1]["_news_director"]["group"] == "world", report
+    assert report["selected_groups"][:2] == ["local", "world"], report
 
 
 def source_diversity_regression():
