@@ -1,22 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-01T08:58:47+00:00",
-  "checked_at_sakhalin": "2026-10-01T19:58:41+11:00",
+  "checked_at_utc": "2026-10-01T09:19:55+00:00",
+  "checked_at_sakhalin": "2026-10-01T20:19:48+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "evening",
-      "expected_by_sakhalin": "2026-10-01T19:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "morning",
-        "at_utc": "2026-10-01T08:46:15+00:00",
-        "at_sakhalin": "2026-10-01T19:46:15+11:00"
-      }
-    },
     {
       "type": "hardening_action_failure",
       "count": 2,
@@ -53,22 +42,22 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-01T19:41:56+11:00",
-    "age_hours": 0.28,
+    "finished_sakhalin": "2026-10-01T20:19:14+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-01T08:38:35+00:00",
+    "checked_at_utc": "2026-10-01T09:12:03+00:00",
     "publisher_version": "stable-v12.1",
-    "queue_preserved": 7,
+    "queue_preserved": 4,
     "editorial_run_status": "ok"
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-01",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
       "published": true,
@@ -85,32 +74,34 @@
     },
     "evening": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-01T09:02:57+00:00",
+        "published_at_sakhalin": "2026-10-01T20:02:57+11:00",
+        "telegram_message_id": 320,
+        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+        "evidence_count": 6,
+        "evidence_hash": "31eaa5b6a0ba1dba565b47998dfe1a35212ca7c5482e37adf09bd9166b2741d4",
+        "source_ids": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "morning",
-      "at_utc": "2026-10-01T08:46:15+00:00",
-      "at_sakhalin": "2026-10-01T19:46:15+11:00"
+      "mode": "evening",
+      "at_utc": "2026-10-01T09:02:57+00:00",
+      "at_sakhalin": "2026-10-01T20:02:57+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "evening",
-        "expected_by_sakhalin": "2026-10-01T19:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "morning",
-          "at_utc": "2026-10-01T08:46:15+00:00",
-          "at_sakhalin": "2026-10-01T19:46:15+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-01T08:58:44+00:00",
+    "checked_at": "2026-10-01T09:19:51+00:00",
     "checked": 19,
     "passed": 17,
     "anomalies": [
@@ -169,19 +160,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 293,
-      "title": "Землетрясение магнитудой 4,8 зафиксировали на Парамушире",
-      "category_key": "sakh_quake",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_quake",
-      "title_issues": []
-    },
     {
       "message_id": 294,
       "title": "49-летний мотоциклист пострадал в ДТП на перекрестке в Южно-Сахалинске",
@@ -415,6 +393,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 321,
+      "title": "Появились кадры нападения пьяного мужчины на 8-летнего мальчика в Южно-Сахалинске",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -461,15 +452,15 @@
     },
     "distribution_error": 16.0,
     "subtype_counts": {
-      "fatal_incident": 2,
       "earthquake": 1,
       "major_emergency": 9,
       "military_security": 4,
       "macro_economy": 3,
-      "public_service_disruption": 1
+      "public_service_disruption": 1,
+      "fatal_incident": 1,
+      "violent_crime": 1
     },
     "sequence": [
-      "local",
       "local",
       "local",
       "ru_safety",
@@ -488,10 +479,10 @@
       "ru_safety",
       "local",
       "world",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "sakh_chp",
       "sakh_quake",
       "sakh_chp",
       "ru_incident",
@@ -510,10 +501,10 @@
       "ru_security",
       "sakh",
       "world_ru",
+      "sakh_chp",
       "sakh_chp"
     ],
     "source_sequence": [
-      "astv",
       "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -532,7 +523,8 @@
       "sakhalinmedia.ru",
       "sakh.online",
       "bbc world",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -562,7 +554,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-01T08:58:38+00:00",
+    "checked_at_utc": "2026-10-01T09:19:46+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -578,8 +570,8 @@
     }
   },
   "delivery_queue_hardening": {
-    "before": 5,
-    "after": 5,
+    "before": 4,
+    "after": 4,
     "retired": 0,
     "stale_retired": 0,
     "capacity_retired": 0,
