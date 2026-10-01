@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-01T08:46:43+00:00",
-  "checked_at_sakhalin": "2026-10-01T19:46:38+11:00",
+  "checked_at_utc": "2026-10-01T08:52:55+00:00",
+  "checked_at_sakhalin": "2026-10-01T19:52:48+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -54,7 +54,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-01T19:41:56+11:00",
-    "age_hours": 0.08,
+    "age_hours": 0.18,
     "published": 1
   },
   "last_production_attempt": {
@@ -110,9 +110,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-01T08:46:41+00:00",
+    "checked_at": "2026-10-01T08:52:52+00:00",
     "checked": 20,
-    "passed": 18,
+    "passed": 17,
     "anomalies": [
       {
         "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
@@ -135,10 +135,40 @@
         "contract_issues": [
           "body_missing_sentence_boundary"
         ]
+      },
+      {
+        "title": "Сбер объединит технологии российских стартапов для развития сервисов в сфере здоровья",
+        "url": "https://sakhalinmedia.ru/news/2637484/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "ru_eco",
+        "corrected_category": null,
+        "reason": "corporate_product_or_brand_pr",
+        "contract_issues": [
+          "final_hard_reject:corporate_product_or_brand_pr",
+          "final_category_mismatch:None->ru_eco",
+          "director_final_category:None->ru_eco",
+          "director_final_reject:corporate_product_or_brand_pr"
+        ]
       }
     ],
     "corrected": [],
-    "deleted": [],
+    "deleted": [
+      {
+        "message_id": 318,
+        "title": "Сбер объединит технологии российских стартапов для развития сервисов в сфере здоровья",
+        "url": "https://sakhalinmedia.ru/news/2637484/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "ru_eco",
+        "corrected_category": null,
+        "reason": "corporate_product_or_brand_pr",
+        "contract_issues": [
+          "final_hard_reject:corporate_product_or_brand_pr",
+          "final_category_mismatch:None->ru_eco",
+          "director_final_category:None->ru_eco",
+          "director_final_reject:corporate_product_or_brand_pr"
+        ]
+      }
+    ],
     "failed_actions": [],
     "unresolved": 2,
     "unresolved_items": [
@@ -415,19 +445,6 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
-    },
-    {
-      "message_id": 318,
-      "title": "Сбер объединит технологии российских стартапов для развития сервисов в сфере здоровья",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
     }
   ],
   "balance": {
@@ -449,9 +466,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 12,
+      "local": 13,
       "ru_pol": 0,
-      "ru_eco": 2,
+      "ru_eco": 1,
       "ru_safety": 3,
       "world": 3,
       "it": 0
@@ -465,23 +482,24 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -6.0,
+      "local": -7.0,
       "ru_pol": 4.0,
-      "ru_eco": 2.0,
+      "ru_eco": 3.0,
       "ru_safety": 0.0,
       "world": -1.0,
       "it": 1.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 16.0,
     "subtype_counts": {
+      "fatal_incident": 2,
       "earthquake": 1,
       "major_emergency": 9,
       "military_security": 4,
-      "macro_economy": 4,
-      "public_service_disruption": 1,
-      "fatal_incident": 1
+      "macro_economy": 3,
+      "public_service_disruption": 1
     },
     "sequence": [
+      "local",
       "local",
       "local",
       "ru_safety",
@@ -500,10 +518,10 @@
       "ru_safety",
       "local",
       "world",
-      "local",
-      "ru_eco"
+      "local"
     ],
     "category_sequence": [
+      "sakh_chp",
       "sakh_quake",
       "sakh_chp",
       "ru_incident",
@@ -522,10 +540,10 @@
       "ru_security",
       "sakh",
       "world_ru",
-      "sakh_chp",
-      "ru_eco"
+      "sakh_chp"
     ],
     "source_sequence": [
+      "astv",
       "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -544,7 +562,6 @@
       "sakhalinmedia.ru",
       "sakh.online",
       "bbc world",
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -575,7 +592,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-01T08:46:34+00:00",
+    "checked_at_utc": "2026-10-01T08:52:45+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -592,8 +609,8 @@
   },
   "delivery_queue_hardening": {
     "before": 7,
-    "after": 7,
-    "retired": 0,
+    "after": 5,
+    "retired": 2,
     "stale_retired": 0,
     "capacity_retired": 0,
     "duplicates": 0,
@@ -601,7 +618,7 @@
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0
   },
-  "delivery_outbox_repaired": false,
+  "delivery_outbox_repaired": true,
   "hardening_actions": [],
   "hardening_failed_actions": [
     {
@@ -656,12 +673,12 @@
     },
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 14.0,
+      "distribution_error": 16.0,
       "limit": 8.0,
       "counts": {
-        "local": 12,
+        "local": 13,
         "ru_pol": 0,
-        "ru_eco": 2,
+        "ru_eco": 1,
         "ru_safety": 3,
         "world": 3,
         "it": 0
@@ -675,9 +692,9 @@
         "it": 1
       },
       "deficits": {
-        "local": -6.0,
+        "local": -7.0,
         "ru_pol": 4.0,
-        "ru_eco": 2.0,
+        "ru_eco": 3.0,
         "ru_safety": 0.0,
         "world": -1.0,
         "it": 1.0
