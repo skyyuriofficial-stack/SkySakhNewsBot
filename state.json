@@ -11481,86 +11481,6 @@
         }
       },
       "pending_hardening_repaired_at": "2026-09-30T23:45:08+00:00"
-    },
-    {
-      "queued_at": "2026-09-30T02:30:15+00:00",
-      "last_attempt_at": "2026-09-30T23:44:52+00:00",
-      "delivery_attempts": 6,
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
-      "url": "https://sakhalinmedia.ru/news/2636182/",
-      "title_hash": "bb6cf7934d94f21269e7e69f372123d93326f173",
-      "source": "SakhalinMedia.ru",
-      "category": "🇷🇺 Россия / экономика",
-      "category_key": "ru_eco",
-      "footer": "РОССИЯ | ЭКОНОМИКА",
-      "title": "ВТБ продолжает кредитный маневр",
-      "source_text": "Зампред правления ВТБ Дмитрий Пьянов на встрече с журналистами рассказал, что банк продолжает “кредитный маневр”, замещая более капиталоемкий розничный портфель кредитованием высококлассных корпоративных заемщиков. Это позволяет поддерживать рост бизнеса и одновременно оптимизировать использование капитала. Качество кредитного портфеля остается устойчивым, сообщает пресс-служба ВТБ.",
-      "published_at": "2026-09-30T01:20:00+00:00",
-      "image_url": "https://sakhalinmedia.ru/f/big/6422/6421836.jpg?7c821f5c7bbf51967276d64b50dedff3",
-      "image_hash": "85bd2cfa341b9ebd501e164fb9fb264b89de0661",
-      "topic_cluster": "ru_eco:продолжает_кредитный_маневр_sakhalinmedia",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "ВТБ продолжает кредитный маневр",
-        "body": [
-          "Это позволяет поддерживать рост бизнеса и одновременно оптимизировать использование капитала.",
-          "Качество кредитного портфеля остается устойчивым, сообщает пресс-служба ВТБ."
-        ],
-        "footer": "РОССИЯ | ЭКОНОМИКА",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": [],
-          "reclassified_from": "sakh",
-          "reclassified_to": "ru_eco"
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "ru_eco",
-        "final_category": "ru_eco",
-        "event_type": "macro_economy",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_eco",
-          "corrected_category": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "subtype": "macro_economy",
-          "seriousness": 82,
-          "threshold": 74,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "ВТБ продолжает кредитный маневр",
-          "title_corrected": "ВТБ продолжает кредитный маневр",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-30T23:45:08+00:00"
     }
   ],
   "news_director_policy": {
@@ -11706,86 +11626,6 @@
     "valid_posts_counted": 20
   },
   "expired_media_delivery": [
-    {
-      "queued_at": "2026-09-22T03:30:27+00:00",
-      "last_attempt_at": "2026-09-23T11:38:39+00:00",
-      "delivery_attempts": 9,
-      "last_error": "delivery_adapter_unavailable:telegram_token_unauthorized",
-      "url": "https://sakhalinmedia.ru/news/2628208/",
-      "title_hash": "5f78a3bd5c860aab7209a8c64d1c1a020a711f14",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "footer": "ЧП | САХАЛИН",
-      "title": "Огнеборцы потушили пожар на площади 1 га в Анивском районе",
-      "source_text": "В селе Мицулевка Анивского района потушили возгорание бесхозного строения, травы и мусора площадью 1 га. Сигнал о горении на улице Рабочая поступил в 15.17, огнеборцы прибыли на место через 9 минут, сообщили в пресс-службе ГУ МЧС России по Сахалинской области. Горели бесхозные строения, трава и мусор В 17.30 пожар был локализован, а в 18.17 открытое горение полностью ликвидировано . На месте работали девять специалистов и три единицы техники. Погибших и пострадавших нет.",
-      "published_at": "2026-09-22T00:37:00+00:00",
-      "image_url": "https://sakhalinmedia.ru/f/big/6403/6402797.jpg?d75eb5aabec3af69ac4b45e2d1816a8b",
-      "image_hash": "2dd7eda8f4f1cdd159f53952e88f9e9dfb2af4ef",
-      "topic_cluster": "sakh_chp:огнеборцы_потушили_пожар_площади_анивском_районе",
-      "media_origin": "source_article_or_feed",
-      "row": {
-        "reject": false,
-        "title_ru": "Огнеборцы потушили пожар на площади 1 га в Анивском районе",
-        "body": [
-          "В селе Мицулевка Анивского района потушили возгорание бесхозного строения, травы и мусора площадью 1 га.",
-          "Сигнал о горении на улице Рабочая поступил в 15.17, огнеборцы прибыли на место через 9 минут, сообщили в пресс-службе ГУ МЧС России по Сахалинской области."
-        ],
-        "footer": "ЧП | САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        }
-      },
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_chp",
-        "final_category": "sakh_chp",
-        "event_type": "major_emergency",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "subtype": "major_emergency",
-          "seriousness": 92,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Огнеборцы потушили пожар на площади 1 га в Анивском районе",
-          "title_corrected": "Огнеборцы потушили пожар на площади 1 га в Анивском районе",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "pending_hardening_repaired_at": "2026-09-23T11:38:40+00:00",
-      "expired_at": "2026-09-23T22:20:01+00:00",
-      "expired_reason": "news_stale_before_delivery"
-    },
     {
       "queued_at": "2026-09-22T03:30:28+00:00",
       "last_attempt_at": "2026-09-23T11:38:39+00:00",
@@ -17495,6 +17335,88 @@
       },
       "pending_hardening_repaired_at": "2026-09-30T21:03:29+00:00",
       "expired_at": "2026-09-30T23:35:13+00:00",
+      "expired_reason": "pending_delivery_expired:age_hours>24"
+    },
+    {
+      "queued_at": "2026-09-30T02:30:15+00:00",
+      "last_attempt_at": "2026-09-30T23:44:52+00:00",
+      "delivery_attempts": 6,
+      "last_error": "delivery_adapter_unavailable:telegram_chat_access",
+      "url": "https://sakhalinmedia.ru/news/2636182/",
+      "title_hash": "bb6cf7934d94f21269e7e69f372123d93326f173",
+      "source": "SakhalinMedia.ru",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "footer": "РОССИЯ | ЭКОНОМИКА",
+      "title": "ВТБ продолжает кредитный маневр",
+      "source_text": "Зампред правления ВТБ Дмитрий Пьянов на встрече с журналистами рассказал, что банк продолжает “кредитный маневр”, замещая более капиталоемкий розничный портфель кредитованием высококлассных корпоративных заемщиков. Это позволяет поддерживать рост бизнеса и одновременно оптимизировать использование капитала. Качество кредитного портфеля остается устойчивым, сообщает пресс-служба ВТБ.",
+      "published_at": "2026-09-30T01:20:00+00:00",
+      "image_url": "https://sakhalinmedia.ru/f/big/6422/6421836.jpg?7c821f5c7bbf51967276d64b50dedff3",
+      "image_hash": "85bd2cfa341b9ebd501e164fb9fb264b89de0661",
+      "topic_cluster": "ru_eco:продолжает_кредитный_маневр_sakhalinmedia",
+      "media_origin": "source_article_or_feed",
+      "row": {
+        "reject": false,
+        "title_ru": "ВТБ продолжает кредитный маневр",
+        "body": [
+          "Это позволяет поддерживать рост бизнеса и одновременно оптимизировать использование капитала.",
+          "Качество кредитного портфеля остается устойчивым, сообщает пресс-служба ВТБ."
+        ],
+        "footer": "РОССИЯ | ЭКОНОМИКА",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh",
+          "reclassified_to": "ru_eco"
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.7",
+          "source_warnings": []
+        }
+      },
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_eco",
+        "final_category": "ru_eco",
+        "event_type": "macro_economy",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.3",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.1",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 82,
+          "threshold": 74,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "ВТБ продолжает кредитный маневр",
+          "title_corrected": "ВТБ продолжает кредитный маневр",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "pending_hardening_repaired_at": "2026-09-30T23:45:08+00:00",
+      "expired_at": "2026-10-01T02:25:22+00:00",
       "expired_reason": "pending_delivery_expired:age_hours>24"
     }
   ],
