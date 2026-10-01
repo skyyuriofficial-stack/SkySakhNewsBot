@@ -11,7 +11,7 @@ function asNumber(text) {
 }
 
 function summaryText(state) {
-  const events = todayEvents(state);
+  const events = todayEvents(state).filter((e) => e.type !== 'system');
   if (!events.length) return 'Сегодня пока ничего не записано.';
   const labels = {
     weight: '⚖️ Вес', meal: '🍽 Еда', alcohol: '🍺 Алкоголь', semavik: '💉 Семавик',
@@ -151,7 +151,8 @@ async function handleText(message, state) {
     return sendMessage(chatId, 'Активность записал.', menuKeyboard());
   }
   if (a.type === 'alcohol_amount') {
-    logEvent(state, 'alcohol', (a.meta?.kind || 'алкоголь') + ': ' + text); state.awaiting = null; await saveState(state);
+    const names = { beer: 'пиво', wine: 'вино', strong: 'крепкое', other: 'другое' };
+    logEvent(state, 'alcohol', (names[a.meta?.kind] || 'алкоголь') + ': ' + text); state.awaiting = null; await saveState(state);
     return sendMessage(chatId, 'Алкоголь записал. Следующий вес пометим как потенциально искажённый водой; орлистат алкогольные калории не блокирует.', menuKeyboard());
   }
   if (a.type === 'semavik_other') {
