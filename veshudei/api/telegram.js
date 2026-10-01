@@ -15,6 +15,89 @@ function escapeHtml(value) {
   return String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 }
 
+const EVENING_PROMPT = '<b>Вечерний дневник.</b>\nОтветь одним сообщением по пунктам:\n' +
+  '1) что и примерно сколько съел за день;\n' +
+  '2) был ли алкоголь и сколько;\n' +
+  '3) сколько Листаты Мини 60 мг принял и с какими приёмами пищи;\n' +
+  '4) сколько воды выпил;\n' +
+  '5) была ли ходьба, зарядка, тренировка или сколько примерно шагов;\n' +
+  '6) насколько голоден вечером по шкале 0–10;\n' +
+  '7) были ли тошнота, боль в животе, рвота, изжога, запор или диарея.\n\n' +
+  'После ответа дам короткий разбор и один конкретный план на завтра. Компенсационного голодания не будет.';
+
+function numberedAnswer(text, n) {
+  const re = new RegExp('(?:^|\\n)\\s*' + n + '\\s*[).:\\-]\\s*([^\\n]+)', 'i');
+  const m = String(text || '').match(re);
+  return m ? m[1].trim() : '';
+}
+
+function eveningReview(text) {
+  const food = numberedAnswer(text, 1);
+  const alcohol = numberedAnswer(text, 2);
+  const orlistat = numberedAnswer(text, 3);
+  const water = numberedAnswer(text, 4);
+  const activity = numberedAnswer(text, 5);
+  const hunger = numberedAnswer(text, 6);
+  const symptoms = numberedAnswer(text, 7);
+
+  const good = [];
+  const issues = [];
+
+  if (food) good.push('еда за день зафиксирована');
+  else issues.push('по еде недостаточно данных');
+
+  if (alcohol) {
+    if (/нет|не\s*было|0\b/i.test(alcohol)) good.push('алкоголя не было');
+    else issues.push('алкоголь был: ' + alcohol);
+  }
+
+  if (orlistat) good.push('Листата зафиксирована вместе с приёмами пищи');
+
+  const wm = String(water).replace(',', '.').match(/(\d+(?:\.\d+)?)\s*л/i);
+  const liters = wm ? Number(wm[1]) : NaN;
+  if (Number.isFinite(liters)) {
+    if (liters < 1.2) issues.push('воды мало: около ' + liters + ' л');
+    else good.push('вода отмечена: около ' + liters + ' л');
+  } else if (!water) {
+    issues.push('вода не указана');
+  }
+
+  const stepsMatch = String(activity).replace(/\s/g, '').match(/(\d{3,6})\s*(?:шаг|step)/i);
+  const steps = stepsMatch ? Number(stepsMatch[1]) : NaN;
+  if (activity) {
+    if (/нет|не\s*было/i.test(activity)) issues.push('активности не было');
+    else if (Number.isFinite(steps) && steps < 4000) issues.push('активность низкая: около ' + steps + ' шагов');
+    else good.push('активность отмечена');
+  } else {
+    issues.push('активность не указана');
+  }
+
+  const hm = String(hunger).match(/\b(10|[0-9])\b/);
+  const h = hm ? Number(hm[1]) : NaN;
+  if (Number.isFinite(h)) {
+    if (h >= 8) issues.push('вечерний голод высокий: ' + h + '/10');
+    else good.push('вечерний голод ' + h + '/10');
+  }
+
+  if (symptoms) {
+    if (/нет|норм/i.test(symptoms)) good.push('ЖКТ-симптомов не отмечено');
+    else issues.push('есть симптомы: ' + symptoms);
+  }
+
+  let plan = 'Завтра: после одного основного приёма пищи сделай 25 минут спокойной ходьбы.';
+  if (alcohol && !/нет|не\s*было|0\b/i.test(alcohol)) {
+    plan = 'Завтра: без алкоголя, без компенсационного голодания — обычный режим питания.';
+  } else if (Number.isFinite(liters) && liters < 1.2) {
+    plan = 'Завтра: выпей 1,5 л воды равномерно в течение дня, если врач не ограничивал жидкость.';
+  } else if (Number.isFinite(h) && h >= 8) {
+    plan = 'Завтра: запланируй нормальный белковый ужин, чтобы не доводить вечерний голод до 8–10/10.';
+  }
+
+  const goodText = good.length ? 'Удачно: ' + good.slice(0, 3).join('; ') + '.' : 'Удачно: дневник заполнен.';
+  const issueText = issues.length ? 'Перебор/недобор: ' + issues.slice(0, 3).join('; ') + '.' : 'Перебор/недобор: явных проблем по указанным данным не вижу.';
+  return goodText + '\n' + issueText + '\n' + plan;
+}
+
 async function askCoach(state, userText) {
   const text = String(userText || '').trim();
   const t = text.toLowerCase();
@@ -144,6 +227,7 @@ async function handleCallback(q, state) {
   }
 
   if (data === 'menu:advice') return setAwaiting(state, chatId, 'advice', 'Спроси обычным текстом. Например: <b>«Вечером не ем?»</b>, <b>«Что лучше съесть?»</b> или <b>«Почему вес вырос?»</b>. Я отвечу с учётом дневника.');
+  if (data === 'menu:evening') return setAwaiting(state, chatId, 'evening_checkin', EVENING_PROMPT);
   if (data === 'menu:today') return sendMessage(chatId, summaryText(state), menuKeyboard());
   return sendMessage(chatId, 'Выбери действие:', menuKeyboard());
 }
@@ -158,6 +242,7 @@ async function handleText(message, state) {
   }
   if (text === '/menu') return sendMessage(chatId, 'Что записываем?', menuKeyboard());
   if (text === '/today') return sendMessage(chatId, summaryText(state), menuKeyboard());
+  if (text === '/evening') return setAwaiting(state, chatId, 'evening_checkin', EVENING_PROMPT);
 
   const a = state.awaiting;
   if (!a) {
@@ -177,6 +262,15 @@ async function handleText(message, state) {
     logEvent(state, 'chat_assistant', answer);
     await saveState(state);
     return sendMessage(chatId, escapeHtml(answer), menuKeyboard());
+  }
+
+  if (a.type === 'evening_checkin') {
+    logEvent(state, 'evening_checkin', text);
+    state.awaiting = null;
+    const answer = eveningReview(text);
+    logEvent(state, 'evening_review', answer);
+    await saveState(state);
+    return sendMessage(chatId, '<b>Итог дня:</b>\n' + escapeHtml(answer), menuKeyboard());
   }
 
   if (a.type === 'weight') {
