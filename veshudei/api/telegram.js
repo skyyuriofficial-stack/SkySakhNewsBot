@@ -3,7 +3,7 @@ import { sendMessage, answerCallback, menuKeyboard, downloadTelegramFile } from 
 import { modelText } from '../lib/model.js';
 import { analyzeFoodImage } from '../lib/food.js';
 
-export const config = { maxDuration: 30 };
+export const config = { maxDuration: 60 };
 
 function cbKeyboard(rows) {
   return { inline_keyboard: rows };
