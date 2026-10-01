@@ -1,5 +1,7 @@
 import { loadState, saveState, logEvent, todayEvents, lastEvent } from '../lib/store.js';
 import { sendMessage, answerCallback, menuKeyboard, downloadTelegramFile } from '../lib/telegram.js';
+import { modelText } from '../lib/model.js';
+import { analyzeFoodImage } from '../lib/food.js';
 
 
 function cbKeyboard(rows) {
@@ -107,87 +109,55 @@ function diaryContext(state) {
 }
 
 async function aiTextReply(state, userText) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 7000);
-  try {
-    const { generateText } = await import('ai');
-    const result = await generateText({
-      model: 'openai/gpt-5.6-sol',
-      system: [
-        'Ты Veshudei — автономный помощник по снижению веса в Telegram.',
-        'Отвечай по-русски, кратко и конкретно.',
-        'Сам распознавай намерение пользователя: запись еды, вопрос, вода, алкоголь, активность или итог дня.',
-        'Учитывай только реально имеющиеся записи дневника и не выдумывай факты.',
-        'Если пользователь сообщает еду — оцени структуру приёма пищи и дай один практический следующий шаг.',
-        'Не предлагай компенсационное голодание, обезвоживание или чрезмерную тренировку.',
-        'Не меняй дозы Семавика и Листаты/орлистата самостоятельно.',
-        'Если данных достаточно — не задавай лишних уточняющих вопросов.',
-        'При сильной/нарастающей боли в животе, повторной рвоте, крови, обмороке или невозможности пить рекомендуй срочную медицинскую оценку.'
-      ].join('\n'),
-      prompt: 'ДНЕВНИК:\n' + (diaryContext(state) || 'нет записей') + '\n\nСООБЩЕНИЕ:\n' + userText,
-      maxOutputTokens: 260,
-      temperature: 0.2,
-      abortSignal: controller.signal
-    });
-    const answer = String(result.text || '').trim();
-    return answer || null;
-  } catch (error) {
-    console.error('Veshudei AI text fallback:', error?.message || error);
-    return null;
-  } finally {
-    clearTimeout(timer);
-  }
+  const result = await modelText({
+    system: [
+      'Ты Veshudei — автономный помощник по снижению веса в Telegram.',
+      'Отвечай по-русски, кратко и конкретно.',
+      'Сам распознавай намерение пользователя: запись еды, вопрос, вода, алкоголь, активность или итог дня.',
+      'Учитывай только реально имеющиеся записи дневника и не выдумывай факты.',
+      'Если пользователь сообщает еду — оцени структуру приёма пищи и дай один практический следующий шаг.',
+      'Для Листаты Мини 60 мг: не используй её как компенсацию еды; ориентируйся на инструкцию — с основным приёмом пищи, содержащим жир; если жира нет, дозу пропускают; не более 3 доз по 60 мг в сутки.',
+      'Не предлагай компенсационное голодание, обезвоживание или чрезмерную тренировку.',
+      'Не меняй дозу Семавика самостоятельно.',
+      'Если данных достаточно — не задавай лишних уточняющих вопросов.',
+      'При сильной/нарастающей боли в животе, повторной рвоте, крови, обмороке или невозможности пить рекомендуй срочную медицинскую оценку.'
+    ].join('\n'),
+    text: 'ДНЕВНИК:\n' + (diaryContext(state) || 'нет записей') + '\n\nСООБЩЕНИЕ:\n' + userText,
+    maxTokens: 280
+  });
+  if (result.errors?.length) console.error('Veshudei model fallbacks:', result.errors.join(' | '));
+  return result.text || null;
 }
-
 async function analyzeFoodPhoto(state, message) {
   const photos = Array.isArray(message.photo) ? message.photo : [];
   const largest = photos[photos.length - 1];
   const caption = String(message.caption || '').trim();
 
   if (!largest?.file_id) {
-    return { log: 'Фото еды' + (caption ? ': ' + caption : ''), reply: 'Фото получил и записал.' };
+    return {
+      log: 'Фото еды' + (caption ? ': ' + caption : ''),
+      reply: '🍽 Фото получил и записал. На нём не удалось получить файл достаточного качества.',
+      record: { name: caption || 'Еда по фото', recognition_provider: 'fallback', confidence: 0.1 }
+    };
   }
 
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 9000);
   try {
     const file = await downloadTelegramFile(largest.file_id);
-    const { generateText } = await import('ai');
-    const result = await generateText({
-      model: 'openai/gpt-5.6-sol',
-      system: [
-        'Ты анализируешь фото еды для дневника снижения веса.',
-        'Если видна этикетка — прочитай название, массу порции и пищевую ценность максимально точно.',
-        'Если это готовое блюдо без этикетки — дай только разумную приблизительную оценку порции/калорий и явно обозначь её как оценку.',
-        'Не выдумывай нечитаемые цифры.',
-        'Ответ: 2–5 коротких предложений: что это; масса/порция; ккал и Б/Ж/У если можно установить; один практический совет.',
-        'Не предлагай компенсировать еду голоданием.'
-      ].join('\n'),
-      messages: [{
-        role: 'user',
-        content: [
-          { type: 'text', text: 'Контекст дневника:\n' + (diaryContext(state) || 'нет записей') + '\nПодпись к фото: ' + (caption || '(нет)') },
-          { type: 'image', image: file.bytes, mediaType: file.mimeType }
-        ]
-      }],
-      maxOutputTokens: 320,
-      temperature: 0.1,
-      abortSignal: controller.signal
-    });
-    const answer = String(result.text || '').trim();
-    if (answer) return { log: answer, reply: answer };
+    const result = await analyzeFoodImage(state, file, caption);
+    return {
+      log: result.record?.name || ('Фото еды' + (caption ? ': ' + caption : '')),
+      reply: result.reply,
+      record: result.record
+    };
   } catch (error) {
-    console.error('Veshudei photo analysis fallback:', error?.message || error);
-  } finally {
-    clearTimeout(timer);
+    console.error('Veshudei photo pipeline:', error?.message || error);
+    return {
+      log: 'Фото еды' + (caption ? ': ' + caption : ''),
+      reply: '🍽 Фото получил и сохранил как приём пищи, но распознавание сейчас не завершилось. Повторно присылать фото не обязательно — дневник запись не потеряет.',
+      record: { name: caption || 'Еда по фото', recognition_provider: 'error', confidence: 0.1 }
+    };
   }
-
-  const fallback = caption
-    ? 'Фото еды получил и записал: ' + caption + '. Автораспознавание этикетки сейчас недоступно; если на фото есть масса/ккал, пришли крупный кадр этикетки — попробую снова.'
-    : 'Фото еды получил и записал. Автораспознавание этикетки сейчас недоступно; пришли крупный кадр этикетки или название блюда.';
-  return { log: 'Фото еды' + (caption ? ': ' + caption : ''), reply: fallback };
 }
-
 async function localCoach(state, userText) {
   const text = String(userText || '').trim();
   const t = text.toLowerCase();
@@ -237,7 +207,7 @@ function summaryText(state) {
   if (!events.length) return 'Сегодня пока ничего не записано.';
   const labels = {
     weight: '⚖️ Вес', meal: '🍽 Еда', alcohol: '🍺 Алкоголь', semavik: '💉 Семавик',
-    orlistat: '💊 Орлистат', water: '💧 Вода', activity: '🚶 Активность', symptoms: '🩺 Самочувствие'
+    orlistat: '💊 Листата 60 мг', water: '💧 Вода', activity: '🚶 Активность', symptoms: '🩺 Самочувствие'
   };
   return '<b>Сегодня:</b>\n' + events.slice(-20).map((e) => (labels[e.type] || e.type) + ': ' + String(e.value)).join('\n');
 }
@@ -450,10 +420,10 @@ export default async function handler(req, res) {
     } else if (update.message?.photo?.length) {
       const chatId = update.message.chat.id;
       const analysis = await analyzeFoodPhoto(state, update.message);
-      logEvent(state, 'meal', analysis.log, { source: 'photo' });
+      logEvent(state, 'meal', analysis.log, { source: 'photo', food: analysis.record || null });
       if (state.awaiting?.type !== 'evening_checkin') state.awaiting = null;
       await saveState(state);
-      await sendMessage(chatId, '🍽 <b>По фото:</b>\n' + escapeHtml(analysis.reply), menuKeyboard());
+      await sendMessage(chatId, analysis.reply, menuKeyboard());
     } else if (update.message?.text) {
       await handleText(update.message, state);
     }
