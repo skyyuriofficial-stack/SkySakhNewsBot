@@ -14,12 +14,20 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Probe production health and webhook endpoint after runtime fix
+      - name: Repair and verify Veshudei webhook
         run: |
           set +e
           base="https://sky-sakh-news-bot.vercel.app"
 
-          echo "=== HEALTH ==="
+          echo "=== REPAIR ==="
+          code=$(curl -L -sS -o /tmp/repair -w "%{http_code}" --max-time 20 "$base/api/health?repair=1")
+          echo "HTTP=$code"
+          cat /tmp/repair
+          echo
+
+          sleep 3
+
+          echo "=== HEALTH AFTER REPAIR ==="
           code=$(curl -L -sS -o /tmp/health -w "%{http_code}" --max-time 20 "$base/api/health")
           echo "HTTP=$code"
           cat /tmp/health
@@ -29,11 +37,5 @@ jobs:
           code=$(curl -L -sS -o /tmp/tg -w "%{http_code}" --max-time 20             -X POST -H "content-type: application/json" -d '{}' "$base/api/telegram")
           echo "HTTP=$code"
           cat /tmp/tg
-          echo
-
-          echo "=== TELEGRAM FAKE MESSAGE POST ==="
-          code=$(curl -L -sS -o /tmp/tg2 -w "%{http_code}" --max-time 20             -X POST -H "content-type: application/json"             -d '{"update_id":999999992,"message":{"message_id":999999992,"date":1790845000,"chat":{"id":123456789,"type":"private"},"from":{"id":123456789,"is_bot":false,"first_name":"Probe"},"text":"/today"}}'             "$base/api/telegram")
-          echo "HTTP=$code"
-          cat /tmp/tg2
           echo
           exit 0
