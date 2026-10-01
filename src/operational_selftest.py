@@ -204,6 +204,24 @@ def main() -> int:
             else:
                 os.environ[key] = value
 
+    digest_missing_status = {
+        "mobilization_digest": {
+            "missing": [
+                {"type": "mobilization_digest_missing", "slot": "morning"},
+                {"type": "mobilization_digest_missing", "slot": "evening"},
+            ]
+        }
+    }
+    assert editorial_monitor.digest_recovery_mode(
+        digest_missing_status, {"status": "healthy"}
+    ) == "evening"
+    assert editorial_monitor.digest_recovery_mode(
+        digest_missing_status, {"status": "error", "error_kind": "chat_access"}
+    ) is None
+    assert editorial_monitor.digest_recovery_mode(
+        {"mobilization_digest": {"missing": []}}, {"status": "healthy"}
+    ) is None
+
     old_digest_mode = os.environ.get("DIGEST_MODE")
     old_digest_schedule = os.environ.get("DIGEST_SCHEDULE")
     try:

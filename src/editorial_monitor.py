@@ -12,7 +12,7 @@ import json
 import os
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Mapping, Optional
 
 import editorial_policy as policy
 import news_director as director
@@ -178,6 +178,32 @@ def _digest_health(now_local: datetime) -> Dict[str, Any]:
         "last_attempt": last_attempt,
         "missing": missing,
     }
+
+
+def digest_recovery_mode(
+    status: Mapping[str, Any],
+    telegram_health: Mapping[str, Any],
+) -> Optional[str]:
+    """Return the missing current digest slot that is safe to recover.
+
+    Delivery must be healthy. If both slots are missing after the evening
+    deadline, recover the current evening update first instead of publishing a
+    stale morning digest at night.
+    """
+    if telegram_health.get("status") != "healthy":
+        return None
+    digest_health = status.get("mobilization_digest")
+    if not isinstance(digest_health, Mapping):
+        return None
+    missing = [
+        item for item in (digest_health.get("missing") or [])
+        if isinstance(item, Mapping)
+        and item.get("type") == "mobilization_digest_missing"
+    ]
+    for slot in ("evening", "morning"):
+        if any(str(item.get("slot") or "") == slot for item in missing):
+            return slot
+    return None
 
 
 def run_monitor(*, mutate: bool = True, persist_state: bool = True) -> Dict[str, Any]:
