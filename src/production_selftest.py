@@ -98,7 +98,12 @@ def exact_feed_regressions():
         url="https://sakhalinmedia.ru/news/2608276/",
     )
     assert reconciler.suggest_category(vtb) == "ru_eco"
-    assert_review(vtb, approved=True, category="ru_eco")
+    assert_review(
+        vtb,
+        approved=False,
+        category="ru_eco",
+        reason="importance_below_threshold",
+    )
 
     assert_review(
         candidate(
