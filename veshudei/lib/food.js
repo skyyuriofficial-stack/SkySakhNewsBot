@@ -161,7 +161,7 @@ async function bundledLangPath() {
   const dir = '/tmp/veshudei-tessdata';
   await mkdir(dir, { recursive: true });
 
-  for (const lang of ['rus', 'eng']) {
+  for (const lang of ['rus']) {
     const dst = join(dir, lang + '.traineddata.gz');
     try {
       await access(dst);
@@ -195,7 +195,7 @@ async function localOcr(bytes) {
 
     const { createWorker } = await import('tesseract.js');
     const langPath = await bundledLangPath();
-    worker = await createWorker(['rus', 'eng'], 1, {
+    worker = await createWorker('rus', 1, {
       langPath,
       gzip: true,
       cacheMethod: 'none'
@@ -208,7 +208,7 @@ async function localOcr(bytes) {
     } catch (_) {}
 
     const timeout = new Promise((_, reject) =>
-      setTimeout(() => reject(new Error('OCR timeout')), 20000)
+      setTimeout(() => reject(new Error('OCR timeout')), 42000)
     );
     const result = await Promise.race([worker.recognize(image), timeout]);
     return String(result?.data?.text || '').trim();
