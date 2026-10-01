@@ -1,5 +1,6 @@
 import { loadState, saveState, logEvent, todayEvents, lastEvent } from '../lib/store.js';
 import { sendMessage, answerCallback, menuKeyboard } from '../lib/telegram.js';
+import { askCoach } from '../lib/ai.js';
 
 function cbKeyboard(rows) {
   return { inline_keyboard: rows };
@@ -10,8 +11,13 @@ function asNumber(text) {
   return m ? Number(m[0]) : NaN;
 }
 
+function escapeHtml(value) {
+  return String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+}
+
 function summaryText(state) {
-  const events = todayEvents(state).filter((e) => e.type !== 'system');
+  const allowed = new Set(['weight','meal','alcohol','semavik','orlistat','water','activity','symptoms']);
+  const events = todayEvents(state).filter((e) => allowed.has(e.type));
   if (!events.length) return 'Сегодня пока ничего не записано.';
   const labels = {
     weight: '⚖️ Вес', meal: '🍽 Еда', alcohol: '🍺 Алкоголь', semavik: '💉 Семавик',
@@ -100,6 +106,7 @@ async function handleCallback(q, state) {
     return sendMessage(chatId, 'Записал: ' + val + '.', menuKeyboard());
   }
 
+  if (data === 'menu:advice') return setAwaiting(state, chatId, 'advice', 'Спроси обычным текстом. Например: <b>«Вечером не ем?»</b>, <b>«Что лучше съесть?»</b> или <b>«Почему вес вырос?»</b>. Я отвечу с учётом дневника.');
   if (data === 'menu:today') return sendMessage(chatId, summaryText(state), menuKeyboard());
   return sendMessage(chatId, 'Выбери действие:', menuKeyboard());
 }
@@ -110,7 +117,7 @@ async function handleText(message, state) {
   if (text === '/start') {
     state.chatId = chatId; state.userId = message.from?.id || null; state.username = message.from?.username || null; state.awaiting = null;
     logEvent(state, 'system', 'start'); await saveState(state);
-    return sendMessage(chatId, '<b>Veshudei подключён.</b>\nЯ буду быстро собирать вес, питание, алкоголь, Семавик, Листату, воду, активность и самочувствие. Данные хранятся в приватном хранилище Vercel.', menuKeyboard());
+    return sendMessage(chatId, '<b>Veshudei подключён.</b>\nЯ собираю вес, питание, алкоголь, Семавик, орлистат, воду, активность и самочувствие. Можешь также просто писать мне обычные вопросы — отвечу и дам рекомендацию с учётом дневника. Данные хранятся в приватном хранилище Vercel.', menuKeyboard());
   }
   if (text === '/menu') return sendMessage(chatId, 'Что записываем?', menuKeyboard());
   if (text === '/today') return sendMessage(chatId, summaryText(state), menuKeyboard());
@@ -119,7 +126,20 @@ async function handleText(message, state) {
   if (!a) {
     const quickWeight = text.match(/^вес\s*[:=]?\s*(\d+(?:[.,]\d+)?)/i);
     if (quickWeight) { state.awaiting = { type: 'weight', meta: {}, at: new Date().toISOString() }; return handleText({ ...message, text: quickWeight[1] }, state); }
-    return sendMessage(chatId, 'Не понял формат. Нажми кнопку или используй /menu.', menuKeyboard());
+    logEvent(state, 'chat_user', text);
+    const answer = await askCoach(state, text);
+    logEvent(state, 'chat_assistant', answer);
+    await saveState(state);
+    return sendMessage(chatId, escapeHtml(answer), menuKeyboard());
+  }
+
+  if (a.type === 'advice') {
+    logEvent(state, 'chat_user', text);
+    state.awaiting = null;
+    const answer = await askCoach(state, text);
+    logEvent(state, 'chat_assistant', answer);
+    await saveState(state);
+    return sendMessage(chatId, escapeHtml(answer), menuKeyboard());
   }
 
   if (a.type === 'weight') {
