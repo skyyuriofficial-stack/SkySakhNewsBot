@@ -3,6 +3,7 @@ import { sendMessage, answerCallback, menuKeyboard, downloadTelegramFile } from 
 import { modelText } from '../lib/model.js';
 import { analyzeFoodImage } from '../lib/food.js';
 
+export const config = { maxDuration: 30 };
 
 function cbKeyboard(rows) {
   return { inline_keyboard: rows };
@@ -11,6 +12,39 @@ function cbKeyboard(rows) {
 function asNumber(text) {
   const m = String(text || '').replace(',', '.').match(/\d+(?:\.\d+)?/);
   return m ? Number(m[0]) : NaN;
+}
+
+function orlistatDosesToday(state) {
+  let doses = 0;
+  for (const e of todayEvents(state)) {
+    if (e.type !== 'orlistat') continue;
+    const m = String(e.value || '').replace(',', '.').match(/(\d+(?:\.\d+)?)\s*мг/i);
+    const mg = m ? Number(m[1]) : 0;
+    if (mg >= 60) doses += Math.max(1, Math.round(mg / 60));
+  }
+  return doses;
+}
+
+function recentOrlistatDose(state, minutes = 45) {
+  const now = Date.now();
+  return [...(state.events || [])].reverse().find((e) =>
+    e.type === 'orlistat' &&
+    /(?:^|\D)60\s*мг/i.test(String(e.value || '')) &&
+    e.ts && now - Date.parse(e.ts) <= minutes * 60 * 1000
+  ) || null;
+}
+
+function latestMeal(state) {
+  return [...(state.events || [])].reverse().find((e) => e.type === 'meal') || null;
+}
+
+function quickMealAdvice(text) {
+  const t = String(text || '').toLowerCase();
+  const fatty = /фри|жарен|фритюр|майонез|сыр|масл|сливк|сметан|бекон|колбас|бургер|пицц|соус|орех|авокад|лосос|свинин/i.test(t);
+  const lean = /обезжир|без\s*масла|овощ|фрукт|рис|греч|картофел.*вар|курин.*груд|индейк|творог\s*0|кефир\s*0/i.test(t);
+  if (fatty) return 'По описанию жир в приёме пищи, вероятно, есть. Если это основной приём пищи, для Листаты ориентируйся на обычное правило: 60 мг с едой/не позднее часа после, если сегодня ещё не было 3 доз.';
+  if (lean) return 'По описанию приём выглядит скорее нежирным, но без состава/этикетки жир точно не считаю. Если жира действительно нет, Листату по инструкции пропускают.';
+  return 'По одному тексту жирность надёжно не определяю. Если пришлёшь фото блюда или этикетки, бот сам попробует определить жирность и дать решение по Листате.';
 }
 
 function escapeHtml(value) {
@@ -131,9 +165,11 @@ async function aiTextReply(state, userText) {
 async function analyzeFoodPhoto(state, message) {
   const photos = Array.isArray(message.photo) ? message.photo : [];
   const largest = photos[photos.length - 1];
+  const documentImage = message.document?.mime_type?.startsWith('image/') ? message.document : null;
+  const fileId = largest?.file_id || documentImage?.file_id || null;
   const caption = String(message.caption || '').trim();
 
-  if (!largest?.file_id) {
+  if (!fileId) {
     return {
       log: 'Фото еды' + (caption ? ': ' + caption : ''),
       reply: '🍽 Фото получил и записал. На нём не удалось получить файл достаточного качества.',
@@ -142,7 +178,7 @@ async function analyzeFoodPhoto(state, message) {
   }
 
   try {
-    const file = await downloadTelegramFile(largest.file_id);
+    const file = await downloadTelegramFile(fileId);
     const result = await analyzeFoodImage(state, file, caption);
     return {
       log: result.record?.name || ('Фото еды' + (caption ? ': ' + caption : '')),
@@ -209,7 +245,17 @@ function summaryText(state) {
     weight: '⚖️ Вес', meal: '🍽 Еда', alcohol: '🍺 Алкоголь', semavik: '💉 Семавик',
     orlistat: '💊 Листата 60 мг', water: '💧 Вода', activity: '🚶 Активность', symptoms: '🩺 Самочувствие'
   };
-  return '<b>Сегодня:</b>\n' + events.slice(-20).map((e) => (labels[e.type] || e.type) + ': ' + String(e.value)).join('\n');
+  return '<b>Сегодня:</b>\n' + events.slice(-20).map((e) => {
+    let value = String(e.value);
+    if (e.type === 'meal' && e.food) {
+      const bits = [e.food.name || e.value];
+      if (e.food.portion_g) bits.push(String(e.food.portion_g).replace('.', ',') + ' г');
+      if (e.food.nutrition?.kcal != null) bits.push('≈' + String(Math.round(e.food.nutrition.kcal)) + ' ккал');
+      if (e.food.fat_class) bits.push(e.food.fat_class);
+      value = bits.join(' · ');
+    }
+    return (labels[e.type] || e.type) + ': ' + escapeHtml(value);
+  }).join('\n');
 }
 
 async function setAwaiting(state, chatId, type, prompt, meta = {}) {
@@ -269,9 +315,25 @@ async function handleCallback(q, state) {
   }
   if (data === 'orlistat:0' || data === 'orlistat:60') {
     const val = data.endsWith(':60') ? '60 мг' : '0 мг';
-    logEvent(state, 'orlistat', val); state.awaiting = null; await saveState(state);
-    const note = val === '60 мг' ? ' Учёл орлистат. Дозу фиксируем по конкретному препарату.' : '';
-    return sendMessage(chatId, 'Записал: ' + val + '.' + note, menuKeyboard());
+    if (val === '60 мг') {
+      const doses = orlistatDosesToday(state);
+      if (doses >= 3) {
+        state.awaiting = null; await saveState(state);
+        return sendMessage(chatId, 'Листата: сегодня уже записаны <b>3 дозы по 60 мг</b>. Четвёртую не добавляю.', menuKeyboard());
+      }
+      const recent = recentOrlistatDose(state, 45);
+      if (recent) {
+        state.awaiting = null; await saveState(state);
+        return sendMessage(chatId, 'Листата 60 мг уже записана менее 45 минут назад. Повторную дозу с тем же приёмом пищи не добавляю.', menuKeyboard());
+      }
+    }
+    const meal = latestMeal(state);
+    logEvent(state, 'orlistat', val, meal ? { meal: meal.value, meal_ts: meal.ts } : {});
+    state.awaiting = null; await saveState(state);
+    const note = val === '60 мг'
+      ? ' Записал с текущим/последним приёмом пищи. Всего сегодня: ' + orlistatDosesToday(state) + '/3 доз.'
+      : '';
+    return sendMessage(chatId, 'Записал: <b>' + val + '</b>.' + note, menuKeyboard());
   }
   if (data === 'orlistat:other') return setAwaiting(state, chatId, 'orlistat_other', 'Напиши дозу и с какой едой принимал.');
 
@@ -322,7 +384,7 @@ async function handleText(message, state) {
       const answer = await askCoach(state, 'Я только что съел: ' + value + '. Коротко оцени и дай следующий шаг.');
       logEvent(state, 'chat_assistant', answer);
       await saveState(state);
-      return sendMessage(chatId, '🍽 <b>Записал.</b>\n' + escapeHtml(answer), menuKeyboard());
+      return sendMessage(chatId, '🍽 <b>Записал.</b>\n' + escapeHtml(answer) + '\n' + escapeHtml(quickMealAdvice(value)), menuKeyboard());
     }
 
     const quickWater = text.match(/(?:выпил|вода)\s*[:\-]?\s*(\d+(?:[.,]\d+)?)\s*л/i);
@@ -381,7 +443,7 @@ async function handleText(message, state) {
   }
   if (a.type === 'meal') {
     logEvent(state, 'meal', text); state.awaiting = null; await saveState(state);
-    return sendMessage(chatId, 'Еду записал. Если принимаешь орлистат (Листата, Ксеникал или другой препарат орлистата) — фиксируй его отдельно кнопкой 💊.', menuKeyboard());
+    return sendMessage(chatId, '🍽 Еду записал. ' + escapeHtml(quickMealAdvice(text)), menuKeyboard());
   }
   if (a.type === 'water') {
     const n = asNumber(text);
@@ -412,13 +474,24 @@ async function handleText(message, state) {
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ ok: false });
+
+  const update = req.body || {};
+  const chatId = update.message?.chat?.id || update.callback_query?.message?.chat?.id || null;
+
   try {
-    const update = req.body || {};
     const state = await loadState();
+    const updateId = update.update_id;
+    const processed = Array.isArray(state.processedUpdateIds) ? state.processedUpdateIds : [];
+    if (Number.isFinite(updateId) && processed.includes(updateId)) {
+      return res.status(200).json({ ok: true, duplicate: true });
+    }
+
     if (update.callback_query) {
       await handleCallback(update.callback_query, state);
-    } else if (update.message?.photo?.length) {
-      const chatId = update.message.chat.id;
+    } else if (update.message?.photo?.length || update.message?.document?.mime_type?.startsWith('image/')) {
+      if (chatId) {
+        try { await sendMessage(chatId, '📷 Фото получил. Сам распознаю блюдо/этикетку, посчитаю жирность и проверю Листату.'); } catch (_) {}
+      }
       const analysis = await analyzeFoodPhoto(state, update.message);
       logEvent(state, 'meal', analysis.log, { source: 'photo', food: analysis.record || null });
       if (state.awaiting?.type !== 'evening_checkin') state.awaiting = null;
@@ -427,9 +500,19 @@ export default async function handler(req, res) {
     } else if (update.message?.text) {
       await handleText(update.message, state);
     }
+
+    if (Number.isFinite(updateId)) {
+      state.processedUpdateIds = [...processed, updateId].slice(-100);
+      await saveState(state);
+    }
     return res.status(200).json({ ok: true });
   } catch (error) {
-    console.error(error);
+    console.error('Veshudei webhook error:', error);
+    if (chatId) {
+      try {
+        await sendMessage(chatId, '⚠️ Сообщение получил, но обработка этого ввода не завершилась. Сам дневник продолжает работать; попробуй отправить фото/текст ещё раз.');
+      } catch (_) {}
+    }
     return res.status(200).json({ ok: true, error: 'handled' });
   }
 }
