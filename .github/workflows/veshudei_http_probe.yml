@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Probe production health endpoint
+      - name: Probe production health and Telegram webhook
         run: |
           set +e
           url="https://sky-sakh-news-bot.vercel.app/api/health"
