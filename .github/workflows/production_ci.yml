@@ -67,7 +67,7 @@ jobs:
       - name: Compile canonical v12.1 chain
         run: |
           python -m py_compile \
-            src/news_bot_v8.py src/news_bot_v9.py src/production.py \
+            src/news_bot_v8.py src/news_bot_v9.py src/telegram_public_sources.py src/production.py \
             src/editorial_gate.py src/editorial_policy.py src/category_reconciler.py \
             src/editorial_gate_runner.py src/media_enforced_runner.py \
             src/news_director.py src/publication_auditor.py \
