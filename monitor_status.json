@@ -1,11 +1,22 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-01T21:14:56+00:00",
-  "checked_at_sakhalin": "2026-10-02T08:14:50+11:00",
+  "checked_at_utc": "2026-10-01T22:43:43+00:00",
+  "checked_at_sakhalin": "2026-10-02T09:43:37+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
+    {
+      "type": "mobilization_digest_missing",
+      "slot": "morning",
+      "expected_by_sakhalin": "2026-10-02T08:45:00+11:00",
+      "last_attempt": {
+        "status": "ok",
+        "mode": "evening",
+        "at_utc": "2026-10-01T09:02:57+00:00",
+        "at_sakhalin": "2026-10-01T20:02:57+11:00"
+      }
+    },
     {
       "type": "hardening_action_failure",
       "count": 2,
@@ -43,7 +54,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-02T08:14:18+11:00",
-    "age_hours": 0.01,
+    "age_hours": 1.49,
     "published": 1
   },
   "last_production_attempt": {
@@ -57,9 +68,9 @@
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-02",
-    "status": "healthy",
+    "status": "error",
     "morning": {
-      "due": false,
+      "due": true,
       "published": false,
       "record": {}
     },
@@ -74,11 +85,23 @@
       "at_utc": "2026-10-01T09:02:57+00:00",
       "at_sakhalin": "2026-10-01T20:02:57+11:00"
     },
-    "missing": []
+    "missing": [
+      {
+        "type": "mobilization_digest_missing",
+        "slot": "morning",
+        "expected_by_sakhalin": "2026-10-02T08:45:00+11:00",
+        "last_attempt": {
+          "status": "ok",
+          "mode": "evening",
+          "at_utc": "2026-10-01T09:02:57+00:00",
+          "at_sakhalin": "2026-10-01T20:02:57+11:00"
+        }
+      }
+    ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-01T21:14:53+00:00",
+    "checked_at": "2026-10-01T22:43:40+00:00",
     "checked": 18,
     "passed": 16,
     "anomalies": [
@@ -518,7 +541,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-01T21:14:48+00:00",
+    "checked_at_utc": "2026-10-01T22:43:35+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
