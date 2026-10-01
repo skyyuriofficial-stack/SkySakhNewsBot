@@ -1,5 +1,8 @@
 import { sakhalinDay } from './store.js';
 import { modelVision } from './model.js';
+import { createRequire } from 'node:module';
+import { mkdir, copyFile, access } from 'node:fs/promises';
+import { join } from 'node:path';
 
 function n(value) {
   const x = Number(String(value ?? '').replace(',', '.'));
@@ -150,6 +153,24 @@ function parseOcr(text, caption = '') {
   });
 }
 
+async function bundledLangPath() {
+  const dir = '/tmp/veshudei-tessdata';
+  await mkdir(dir, { recursive: true });
+  const require = createRequire(import.meta.url);
+
+  for (const lang of ['rus', 'eng']) {
+    const dst = join(dir, lang + '.traineddata.gz');
+    try {
+      await access(dst);
+      continue;
+    } catch (_) {}
+
+    const src = require.resolve('@tesseract.js-data/' + lang + '/4.0.0_best_int/' + lang + '.traineddata.gz');
+    await copyFile(src, dst);
+  }
+  return dir;
+}
+
 async function localOcr(bytes) {
   let worker = null;
   try {
@@ -159,18 +180,23 @@ async function localOcr(bytes) {
       const sharp = sharpMod.default || sharpMod;
       image = await sharp(image)
         .rotate()
-        .resize({ width: 1800, withoutEnlargement: false })
+        .resize({ width: 1600, withoutEnlargement: false })
         .grayscale()
         .normalize()
         .sharpen()
-        .jpeg({ quality: 92 })
+        .jpeg({ quality: 90 })
         .toBuffer();
     } catch (error) {
       console.error('Veshudei OCR preprocess fallback:', error?.message || error);
     }
 
     const { createWorker } = await import('tesseract.js');
-    worker = await createWorker('rus+eng');
+    const langPath = await bundledLangPath();
+    worker = await createWorker(['rus', 'eng'], 1, {
+      langPath,
+      gzip: true,
+      cacheMethod: 'none'
+    });
     try {
       await worker.setParameters({
         preserve_interword_spaces: '1',
@@ -179,7 +205,7 @@ async function localOcr(bytes) {
     } catch (_) {}
 
     const timeout = new Promise((_, reject) =>
-      setTimeout(() => reject(new Error('OCR timeout')), 14000)
+      setTimeout(() => reject(new Error('OCR timeout')), 20000)
     );
     const result = await Promise.race([worker.recognize(image), timeout]);
     return String(result?.data?.text || '').trim();
