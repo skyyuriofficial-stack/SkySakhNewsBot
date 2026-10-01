@@ -29,6 +29,7 @@ export function menuKeyboard() {
     [{ text: '🍺 Алкоголь', callback_data: 'menu:alcohol' }, { text: '💉 Семавик', callback_data: 'menu:semavik' }],
     [{ text: '💊 Орлистат', callback_data: 'menu:orlistat' }, { text: '💧 Вода', callback_data: 'menu:water' }],
     [{ text: '🚶 Активность', callback_data: 'menu:activity' }, { text: '🩺 Самочувствие', callback_data: 'menu:symptoms' }],
+    [{ text: '🧠 Совет / вопрос', callback_data: 'menu:advice' }],
     [{ text: '📊 Сегодня', callback_data: 'menu:today' }]
   ]};
 }
