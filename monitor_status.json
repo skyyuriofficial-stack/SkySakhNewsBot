@@ -1,22 +1,20 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-01T08:42:34+00:00",
-  "checked_at_sakhalin": "2026-10-01T19:42:29+11:00",
+  "checked_at_utc": "2026-10-01T08:46:43+00:00",
+  "checked_at_sakhalin": "2026-10-01T19:46:38+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
     {
       "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-10-01T08:45:00+11:00",
+      "slot": "evening",
+      "expected_by_sakhalin": "2026-10-01T19:45:00+11:00",
       "last_attempt": {
-        "status": "blocked",
+        "status": "ok",
         "mode": "morning",
-        "at_utc": "2026-10-01T06:24:53+00:00",
-        "at_sakhalin": "2026-10-01T17:24:53+11:00",
-        "error": "telegram_chat_access",
-        "description": "Bad Request: chat not found"
+        "at_utc": "2026-10-01T08:46:15+00:00",
+        "at_sakhalin": "2026-10-01T19:46:15+11:00"
       }
     },
     {
@@ -56,7 +54,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-01T19:41:56+11:00",
-    "age_hours": 0.01,
+    "age_hours": 0.08,
     "published": 1
   },
   "last_production_attempt": {
@@ -68,46 +66,51 @@
     "editorial_run_status": "ok"
   },
   "mobilization_digest": {
-    "version": "mobilization-digest-v1.4",
+    "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-01",
     "status": "error",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-01T08:46:15+00:00",
+        "published_at_sakhalin": "2026-10-01T19:46:15+11:00",
+        "telegram_message_id": 319,
+        "headline": "Политическая мобилизация усиливается, но решение о новой волне мобилизации пока не принято",
+        "evidence_count": 7,
+        "evidence_hash": "53fc59179210dcd7c0822511dfcecf020da437c0050de1b33e081aa812630a67",
+        "source_ids": []
+      }
     },
     "evening": {
-      "due": false,
+      "due": true,
       "published": false,
       "record": {}
     },
     "last_attempt": {
-      "status": "blocked",
+      "status": "ok",
       "mode": "morning",
-      "at_utc": "2026-10-01T06:24:53+00:00",
-      "at_sakhalin": "2026-10-01T17:24:53+11:00",
-      "error": "telegram_chat_access",
-      "description": "Bad Request: chat not found"
+      "at_utc": "2026-10-01T08:46:15+00:00",
+      "at_sakhalin": "2026-10-01T19:46:15+11:00"
     },
     "missing": [
       {
         "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-10-01T08:45:00+11:00",
+        "slot": "evening",
+        "expected_by_sakhalin": "2026-10-01T19:45:00+11:00",
         "last_attempt": {
-          "status": "blocked",
+          "status": "ok",
           "mode": "morning",
-          "at_utc": "2026-10-01T06:24:53+00:00",
-          "at_sakhalin": "2026-10-01T17:24:53+11:00",
-          "error": "telegram_chat_access",
-          "description": "Bad Request: chat not found"
+          "at_utc": "2026-10-01T08:46:15+00:00",
+          "at_sakhalin": "2026-10-01T19:46:15+11:00"
         }
       }
     ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-01T08:42:32+00:00",
+    "checked_at": "2026-10-01T08:46:41+00:00",
     "checked": 20,
     "passed": 18,
     "anomalies": [
@@ -572,7 +575,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-01T08:42:26+00:00",
+    "checked_at_utc": "2026-10-01T08:46:34+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
