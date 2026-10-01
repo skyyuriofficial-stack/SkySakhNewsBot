@@ -38,6 +38,22 @@ function latestMeal(state) {
   return [...(state.events || [])].reverse().find((e) => e.type === 'meal') || null;
 }
 
+function photoResultKeyboard(record) {
+  if (record?.fat_present === true) {
+    return cbKeyboard([
+      [{ text: '💊 Принял Листату 60 мг', callback_data: 'orlistat:60' }, { text: '🚫 Не принимал', callback_data: 'orlistat:0' }],
+      [{ text: '📊 Сегодня', callback_data: 'menu:today' }, { text: '🌙 Итог дня', callback_data: 'menu:evening' }]
+    ]);
+  }
+  if (record?.fat_present === false) {
+    return cbKeyboard([
+      [{ text: '🚫 Листату пропускаю', callback_data: 'orlistat:0' }],
+      [{ text: '📊 Сегодня', callback_data: 'menu:today' }, { text: '🌙 Итог дня', callback_data: 'menu:evening' }]
+    ]);
+  }
+  return menuKeyboard();
+}
+
 function quickMealAdvice(text) {
   const t = String(text || '').toLowerCase();
   const fatty = /фри|жарен|фритюр|майонез|сыр|масл|сливк|сметан|бекон|колбас|бургер|пицц|соус|орех|авокад|лосос|свинин/i.test(t);
@@ -245,7 +261,7 @@ function summaryText(state) {
     weight: '⚖️ Вес', meal: '🍽 Еда', alcohol: '🍺 Алкоголь', semavik: '💉 Семавик',
     orlistat: '💊 Листата 60 мг', water: '💧 Вода', activity: '🚶 Активность', symptoms: '🩺 Самочувствие'
   };
-  return '<b>Сегодня:</b>\n' + events.slice(-20).map((e) => {
+  const rows = events.slice(-20).map((e) => {
     let value = String(e.value);
     if (e.type === 'meal' && e.food) {
       const bits = [e.food.name || e.value];
@@ -255,7 +271,24 @@ function summaryText(state) {
       value = bits.join(' · ');
     }
     return (labels[e.type] || e.type) + ': ' + escapeHtml(value);
-  }).join('\n');
+  });
+
+  const recognizedMeals = events.filter((e) => e.type === 'meal' && e.food?.nutrition);
+  const totals = recognizedMeals.reduce((acc, e) => {
+    const x = e.food.nutrition || {};
+    for (const k of ['kcal','protein_g','fat_g','carbs_g']) {
+      if (Number.isFinite(x[k])) acc[k] += x[k];
+    }
+    return acc;
+  }, { kcal: 0, protein_g: 0, fat_g: 0, carbs_g: 0 });
+
+  let footer = '';
+  if (recognizedMeals.length) {
+    footer = '\n\n<b>По распознанным фото/этикеткам:</b> ≈' + Math.round(totals.kcal) + ' ккал · Б ' +
+      totals.protein_g.toFixed(1).replace('.', ',') + ' · Ж ' + totals.fat_g.toFixed(1).replace('.', ',') +
+      ' · У ' + totals.carbs_g.toFixed(1).replace('.', ',') + ' г. Это неполный итог, если часть еды была без КБЖУ.';
+  }
+  return '<b>Сегодня:</b>\n' + rows.join('\n') + footer;
 }
 
 async function setAwaiting(state, chatId, type, prompt, meta = {}) {
@@ -496,7 +529,7 @@ export default async function handler(req, res) {
       logEvent(state, 'meal', analysis.log, { source: 'photo', food: analysis.record || null });
       if (state.awaiting?.type !== 'evening_checkin') state.awaiting = null;
       await saveState(state);
-      await sendMessage(chatId, analysis.reply, menuKeyboard());
+      await sendMessage(chatId, analysis.reply, photoResultKeyboard(analysis.record));
     } else if (update.message?.text) {
       await handleText(update.message, state);
     }
