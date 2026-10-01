@@ -8,5 +8,8 @@
   "dependencies": {
     "@vercel/blob": "latest",
     "ai": "latest"
+  },
+  "scripts": {
+    "postinstall": "node scripts/veshudei-repair-webhook.mjs"
   }
 }
