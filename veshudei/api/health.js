@@ -14,6 +14,15 @@ export default async function handler(req, res) {
   }
 
   try {
+    if (req.query?.repair === '1') {
+      const host = process.env.VERCEL_PROJECT_PRODUCTION_URL || req.headers.host;
+      const base = /^https?:\/\//i.test(host || '') ? host : 'https://' + host;
+      await telegram('setWebhook', {
+        url: base.replace(/\/$/, '') + '/api/telegram',
+        allowed_updates: ['message', 'callback_query'],
+        drop_pending_updates: false
+      });
+    }
     const me = await telegram('getMe');
     bot = { id: me?.id || null, username: me?.username || null };
     const info = await telegram('getWebhookInfo');
