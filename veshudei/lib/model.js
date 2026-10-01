@@ -127,7 +127,7 @@ async function gatewayCall({ system, text, imageBytes, mimeType, maxTokens = 400
   try {
     const { generateText } = await import('ai');
     const params = {
-      model: process.env.AI_GATEWAY_MODEL || 'openai/gpt-5.6-sol',
+      model: process.env.AI_GATEWAY_MODEL || 'google/gemini-2.5-flash',
       system,
       maxOutputTokens: maxTokens,
       temperature: 0.1,
