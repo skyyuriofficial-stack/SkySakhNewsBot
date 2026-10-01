@@ -1,15 +1,20 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-10-01T08:46:15+00:00",
-  "last_run_sakhalin": "2026-10-01T19:46:15+11:00",
-  "mode": "morning",
+  "last_run_utc": "2026-10-01T09:02:57+00:00",
+  "last_run_sakhalin": "2026-10-01T20:02:57+11:00",
+  "mode": "evening",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 319,
-  "evidence_count": 7,
-  "evidence_hash": "53fc59179210dcd7c0822511dfcecf020da437c0050de1b33e081aa812630a67",
-  "headline": "Политическая мобилизация усиливается, но решение о новой волне мобилизации пока не принято",
-  "source_ids": [],
+  "telegram_message_id": 320,
+  "evidence_count": 6,
+  "evidence_hash": "31eaa5b6a0ba1dba565b47998dfe1a35212ca7c5482e37adf09bd9166b2741d4",
+  "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+  "source_ids": [
+    1,
+    2,
+    3,
+    4
+  ],
   "slots": {
     "2026-09-08": {
       "morning": {
@@ -134,14 +139,29 @@
         "evidence_count": 7,
         "evidence_hash": "53fc59179210dcd7c0822511dfcecf020da437c0050de1b33e081aa812630a67",
         "source_ids": []
+      },
+      "evening": {
+        "status": "ok",
+        "published_at_utc": "2026-10-01T09:02:57+00:00",
+        "published_at_sakhalin": "2026-10-01T20:02:57+11:00",
+        "telegram_message_id": 320,
+        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+        "evidence_count": 6,
+        "evidence_hash": "31eaa5b6a0ba1dba565b47998dfe1a35212ca7c5482e37adf09bd9166b2741d4",
+        "source_ids": [
+          1,
+          2,
+          3,
+          4
+        ]
       }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "morning",
-    "at_utc": "2026-10-01T08:46:15+00:00",
-    "at_sakhalin": "2026-10-01T19:46:15+11:00"
+    "mode": "evening",
+    "at_utc": "2026-10-01T09:02:57+00:00",
+    "at_sakhalin": "2026-10-01T20:02:57+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-10-01T06:24:52+00:00",
