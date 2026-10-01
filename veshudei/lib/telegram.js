@@ -23,6 +23,21 @@ export function answerCallback(callbackQueryId, text = '') {
   return telegram('answerCallbackQuery', { callback_query_id: callbackQueryId, text });
 }
 
+export async function downloadTelegramFile(fileId) {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  if (!token) throw new Error('TELEGRAM_BOT_TOKEN is not configured');
+  const info = await telegram('getFile', { file_id: fileId });
+  if (!info?.file_path) throw new Error('Telegram file_path missing');
+  const response = await fetch('https://api.telegram.org/file/bot' + token + '/' + info.file_path);
+  if (!response.ok) throw new Error('Telegram file download failed: HTTP ' + response.status);
+  const bytes = new Uint8Array(await response.arrayBuffer());
+  return {
+    bytes,
+    filePath: info.file_path,
+    mimeType: info.file_path.toLowerCase().endsWith('.png') ? 'image/png' : 'image/jpeg'
+  };
+}
+
 export function menuKeyboard() {
   return { inline_keyboard: [
     [{ text: '⚖️ Вес', callback_data: 'menu:weight' }, { text: '🍽 Еда', callback_data: 'menu:meal' }],
