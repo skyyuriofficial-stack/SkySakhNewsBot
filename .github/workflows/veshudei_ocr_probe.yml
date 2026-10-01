@@ -1,0 +1,20 @@
+name: Veshudei OCR Probe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/veshudei_ocr_probe.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Probe OCR runtime
+        run: |
+          curl -L -sS --max-time 35 https://sky-sakh-news-bot.vercel.app/api/ocrtest
+          echo
