@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-01T15:37:22+00:00",
-  "checked_at_sakhalin": "2026-10-02T02:37:15+11:00",
+  "checked_at_utc": "2026-10-01T16:33:07+00:00",
+  "checked_at_sakhalin": "2026-10-02T03:33:00+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-01T22:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-01T20:19:14+11:00"
-    },
     {
       "type": "hardening_action_failure",
       "count": 2,
@@ -48,16 +42,16 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-01T20:19:14+11:00",
-    "age_hours": 6.3,
+    "finished_sakhalin": "2026-10-02T03:32:31+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-01T09:12:03+00:00",
+    "checked_at_utc": "2026-10-01T16:26:39+00:00",
     "publisher_version": "stable-v12.1",
-    "queue_preserved": 4,
+    "queue_preserved": 2,
     "editorial_run_status": "ok"
   },
   "mobilization_digest": {
@@ -84,7 +78,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-01T15:37:19+00:00",
+    "checked_at": "2026-10-01T16:33:04+00:00",
     "checked": 19,
     "passed": 17,
     "anomalies": [
@@ -143,19 +137,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 294,
-      "title": "49-летний мотоциклист пострадал в ДТП на перекрестке в Южно-Сахалинске",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 296,
       "title": "Мэр Хабаровска Сергей Кравчук: Важно не допускать неисправностей пожарных гидрантов",
@@ -389,6 +370,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 322,
+      "title": "Почти в любом сервисе с персональной лентой рекомендации подбирает цепочка из большого количества моделей. В Яндексе проверили , может ли всю цепочку заменить одна нейросеть",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -410,12 +404,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 13,
+      "local": 12,
       "ru_pol": 0,
       "ru_eco": 1,
       "ru_safety": 3,
       "world": 3,
-      "it": 0
+      "it": 1
     },
     "scaled_targets": {
       "local": 6.0,
@@ -426,25 +420,24 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -7.0,
+      "local": -6.0,
       "ru_pol": 4.0,
       "ru_eco": 3.0,
       "ru_safety": 0.0,
       "world": -1.0,
-      "it": 1.0
+      "it": 0.0
     },
-    "distribution_error": 16.0,
+    "distribution_error": 14.0,
     "subtype_counts": {
-      "earthquake": 1,
       "major_emergency": 9,
       "military_security": 4,
       "macro_economy": 3,
       "public_service_disruption": 1,
       "fatal_incident": 1,
-      "violent_crime": 1
+      "violent_crime": 1,
+      "major_it": 1
     },
     "sequence": [
-      "local",
       "local",
       "ru_safety",
       "local",
@@ -463,10 +456,10 @@
       "local",
       "world",
       "local",
-      "local"
+      "local",
+      "it"
     ],
     "category_sequence": [
-      "sakh_quake",
       "sakh_chp",
       "ru_incident",
       "sakh_chp",
@@ -485,10 +478,10 @@
       "sakh",
       "world_ru",
       "sakh_chp",
-      "sakh_chp"
+      "sakh_chp",
+      "it"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
       "astv",
@@ -507,7 +500,8 @@
       "sakh.online",
       "bbc world",
       "sakhalinmedia.ru",
-      "astv"
+      "astv",
+      "techmedia techmedia"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -537,7 +531,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-01T15:37:13+00:00",
+    "checked_at_utc": "2026-10-01T16:32:58+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -618,15 +612,15 @@
     },
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 16.0,
+      "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
-        "local": 13,
+        "local": 12,
         "ru_pol": 0,
         "ru_eco": 1,
         "ru_safety": 3,
         "world": 3,
-        "it": 0
+        "it": 1
       },
       "targets": {
         "local": 6,
@@ -637,12 +631,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -7.0,
+        "local": -6.0,
         "ru_pol": 4.0,
         "ru_eco": 3.0,
         "ru_safety": 0.0,
         "world": -1.0,
-        "it": 1.0
+        "it": 0.0
       }
     }
   ]
