@@ -1,4 +1,4 @@
-import { loadState } from '../lib/store.js';
+import { loadState, saveState } from '../lib/store.js';
 import { sendMessage, telegram } from '../lib/telegram.js';
 
 function promptFor(schedule) {
@@ -16,8 +16,9 @@ function promptFor(schedule) {
       keyboard: { inline_keyboard: [[{ text: '💧 Вода', callback_data: 'menu:water' }, { text: '🚶 Активность', callback_data: 'menu:activity' }], [{ text: '🍺 Алкоголь', callback_data: 'menu:alcohol' }]] }
     },
     '30 9 * * *': {
-      text: '<b>20:30 — итог дня.</b>\nЗакрой дневник: еда, алкоголь, лекарства, активность и самочувствие.',
-      keyboard: { inline_keyboard: [[{ text: '📊 Что записано', callback_data: 'menu:today' }, { text: '🍽 Еда', callback_data: 'menu:meal' }], [{ text: '🩺 Самочувствие', callback_data: 'menu:symptoms' }]] }
+      awaitingType: 'evening_checkin',
+      text: '<b>20:30 — вечерний дневник.</b>\nОтветь одним сообщением по пунктам:\n1) что и примерно сколько съел за день;\n2) был ли алкоголь и сколько;\n3) сколько Листаты Мини 60 мг принял и с какими приёмами пищи;\n4) сколько воды выпил;\n5) была ли ходьба, зарядка, тренировка или сколько примерно шагов;\n6) насколько голоден вечером по шкале 0–10;\n7) были ли тошнота, боль в животе, рвота, изжога, запор или диарея.\n\nПосле ответа дам короткий разбор и один конкретный план на завтра. Компенсационного голодания не будет.',
+      keyboard: { inline_keyboard: [[{ text: '📊 Что уже записано', callback_data: 'menu:today' }, { text: '🌙 Ответить позже', callback_data: 'menu:evening' }]] }
     },
     '20 21 * * 0': {
       text: '<b>Понедельник — недельный контроль.</b>\nВес, талия, алкоголь за неделю, Семавик, Листата и средняя активность. Начни с веса.',
@@ -48,6 +49,10 @@ export default async function handler(req, res) {
     if (!state.chatId) return res.status(200).json({ ok: true, skipped: 'no-chat' });
 
     const p = promptFor(schedule);
+    if (p.awaitingType) {
+      state.awaiting = { type: p.awaitingType, meta: {}, at: new Date().toISOString() };
+      await saveState(state);
+    }
     await sendMessage(state.chatId, p.text, p.keyboard);
     return res.status(200).json({ ok: true, schedule });
   } catch (error) {
