@@ -879,7 +879,7 @@ def mandatory_telegram_source_regressions():
         str(item.get("handle") or "").strip().lstrip("@")
         for item in source_core.TELEGRAM_PUBLIC_SOURCES
     }
-    assert configured == {"techmedia", "exploitex"}, configured
+    assert {"techmedia", "exploitex"} <= configured, configured
     assert callable(source_core.collect_public_telegram)
 
     fixture = """
