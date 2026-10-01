@@ -42,7 +42,7 @@ export function menuKeyboard() {
   return { inline_keyboard: [
     [{ text: '⚖️ Вес', callback_data: 'menu:weight' }, { text: '🍽 Еда', callback_data: 'menu:meal' }],
     [{ text: '🍺 Алкоголь', callback_data: 'menu:alcohol' }, { text: '💉 Семавик', callback_data: 'menu:semavik' }],
-    [{ text: '💊 Орлистат', callback_data: 'menu:orlistat' }, { text: '💧 Вода', callback_data: 'menu:water' }],
+    [{ text: '💊 Листата 60 мг', callback_data: 'menu:orlistat' }, { text: '💧 Вода', callback_data: 'menu:water' }],
     [{ text: '🚶 Активность', callback_data: 'menu:activity' }, { text: '🩺 Самочувствие', callback_data: 'menu:symptoms' }],
     [{ text: '🧠 Совет / вопрос', callback_data: 'menu:advice' }, { text: '🌙 Итог дня', callback_data: 'menu:evening' }],
     [{ text: '📊 Сегодня', callback_data: 'menu:today' }]
