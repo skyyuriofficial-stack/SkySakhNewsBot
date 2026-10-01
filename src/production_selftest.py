@@ -876,8 +876,8 @@ def version_and_media_regressions():
     assert publisher.media.VERSION == "stable-v12.1"
     assert publisher.core.VERSION == "stable-v12.1"
     assert publisher.core.b.IMAGE_REQUIRED is True
-    assert director.VERSION == "director-v2.1"
-    assert policy.VERSION == "policy-v2.3"
+    assert director.VERSION == "director-v2.2"
+    assert policy.VERSION == "policy-v2.4"
 
     good_media = {
         "image": b"x" * 12000,
