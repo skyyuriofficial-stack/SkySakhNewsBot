@@ -451,7 +451,7 @@ export default async function handler(req, res) {
       const chatId = update.message.chat.id;
       const analysis = await analyzeFoodPhoto(state, update.message);
       logEvent(state, 'meal', analysis.log, { source: 'photo' });
-      state.awaiting = null;
+      if (state.awaiting?.type !== 'evening_checkin') state.awaiting = null;
       await saveState(state);
       await sendMessage(chatId, '🍽 <b>По фото:</b>\n' + escapeHtml(analysis.reply), menuKeyboard());
     } else if (update.message?.text) {
