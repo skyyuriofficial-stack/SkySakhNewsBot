@@ -1,31 +1,70 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-01T07:42:02+00:00",
-  "checked_at_sakhalin": "2026-10-01T18:42:00+11:00",
+  "checked_at_utc": "2026-10-01T08:42:34+00:00",
+  "checked_at_sakhalin": "2026-10-01T19:42:29+11:00",
   "status": "error",
-  "mutations_enabled": false,
+  "mutations_enabled": true,
   "issues": [
     {
-      "type": "telegram_delivery_unhealthy",
-      "reason": "chat_access",
-      "http_status": 400,
-      "description": "Bad Request: chat not found"
+      "type": "mobilization_digest_missing",
+      "slot": "morning",
+      "expected_by_sakhalin": "2026-10-01T08:45:00+11:00",
+      "last_attempt": {
+        "status": "blocked",
+        "mode": "morning",
+        "at_utc": "2026-10-01T06:24:53+00:00",
+        "at_sakhalin": "2026-10-01T17:24:53+11:00",
+        "error": "telegram_chat_access",
+        "description": "Bad Request: chat not found"
+      }
+    },
+    {
+      "type": "hardening_action_failure",
+      "count": 2,
+      "items": [
+        {
+          "action": "repair_caption",
+          "error": "repair_contract_failed:body_unbalanced_quote",
+          "repair_contract": [
+            "body_unbalanced_quote"
+          ],
+          "message_id": 299,
+          "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
+          "category_key": "sakh_chp",
+          "reason": [
+            "body_unbalanced_quote"
+          ]
+        },
+        {
+          "action": "repair_caption",
+          "error": "repair_contract_failed:body_too_short",
+          "repair_contract": [
+            "body_too_short"
+          ],
+          "message_id": 300,
+          "title": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
+          "category_key": "sakh_chp",
+          "reason": [
+            "body_missing_sentence_boundary"
+          ]
+        }
+      ]
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-01T17:31:46+11:00",
-    "age_hours": 1.17,
-    "published": 0
+    "finished_sakhalin": "2026-10-01T19:41:56+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
-    "status": "editorial_ok_delivery_blocked",
-    "reason": "telegram_chat_access",
-    "checked_at_utc": "2026-10-01T06:25:45+00:00",
+    "status": "ok",
+    "reason": null,
+    "checked_at_utc": "2026-10-01T08:38:35+00:00",
     "publisher_version": "stable-v12.1",
-    "queue_preserved": 8,
+    "queue_preserved": 7,
     "editorial_run_status": "ok"
   },
   "mobilization_digest": {
@@ -68,21 +107,10 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-01T07:42:01+00:00",
+    "checked_at": "2026-10-01T08:42:32+00:00",
     "checked": 20,
-    "passed": 14,
+    "passed": 18,
     "anomalies": [
-      {
-        "title": "Шесть лет колонии и два миллиона компенсации: в Углегорске огласили приговор за смертельное ДТП",
-        "url": "https://astv.ru/news/criminal/2026-09-09-shest-let-kolonii-i-dva-milliona-kompensacii-v-uglegorske-oglasili-prigovor-za-smertel-noe-dtp",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "reason": "approved",
-        "contract_issues": [
-          "body_missing_sentence_boundary"
-        ]
-      },
       {
         "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
         "url": "https://sakh.online/news/24/2026-09-09/voditelya-gruzovika-dostali-iz-rasplyuschennoy-kabiny-posle-zhutkoy-avarii-v-yuzhno-sahalinske-525488",
@@ -103,59 +131,14 @@
         "reason": "approved",
         "contract_issues": [
           "body_missing_sentence_boundary"
-        ]
-      },
-      {
-        "title": "Доходы бюджета Сахалинской области вырастут на 3,9 млрд рублей за счет Сахалина-2",
-        "url": "https://sakhalinmedia.ru/news/2616777/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh",
-        "corrected_category": "sakh",
-        "reason": "approved",
-        "contract_issues": [
-          "body_missing_sentence_boundary"
-        ]
-      },
-      {
-        "title": "Жесткое ДТП произошло в районе \"Сити Молла\" в Южно-Сахалинске",
-        "url": "https://astv.ru/news/criminal/2026-09-10-zhestkoe-dtp-proizoshlo-v-rajone-siti-molla-v-yuzhno-sahalinske",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "reason": "approved",
-        "contract_issues": [
-          "body_contains_publisher_boilerplate"
-        ]
-      },
-      {
-        "title": "Сахалинца госпитализировали после ДТП с пьяным водителем",
-        "url": "https://sakhalinmedia.ru/news/2618284/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "reason": "approved",
-        "contract_issues": [
-          "body_missing_sentence_boundary",
-          "unsupported_sakhalin_resident_identity"
         ]
       }
     ],
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
-    "unresolved": 6,
+    "unresolved": 2,
     "unresolved_items": [
-      {
-        "title": "Шесть лет колонии и два миллиона компенсации: в Углегорске огласили приговор за смертельное ДТП",
-        "url": "https://astv.ru/news/criminal/2026-09-09-shest-let-kolonii-i-dva-milliona-kompensacii-v-uglegorske-oglasili-prigovor-za-smertel-noe-dtp",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "reason": "approved",
-        "contract_issues": [
-          "body_missing_sentence_boundary"
-        ]
-      },
       {
         "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
         "url": "https://sakh.online/news/24/2026-09-09/voditelya-gruzovika-dostali-iz-rasplyuschennoy-kabiny-posle-zhutkoy-avarii-v-yuzhno-sahalinske-525488",
@@ -177,59 +160,12 @@
         "contract_issues": [
           "body_missing_sentence_boundary"
         ]
-      },
-      {
-        "title": "Доходы бюджета Сахалинской области вырастут на 3,9 млрд рублей за счет Сахалина-2",
-        "url": "https://sakhalinmedia.ru/news/2616777/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh",
-        "corrected_category": "sakh",
-        "reason": "approved",
-        "contract_issues": [
-          "body_missing_sentence_boundary"
-        ]
-      },
-      {
-        "title": "Жесткое ДТП произошло в районе \"Сити Молла\" в Южно-Сахалинске",
-        "url": "https://astv.ru/news/criminal/2026-09-10-zhestkoe-dtp-proizoshlo-v-rajone-siti-molla-v-yuzhno-sahalinske",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "reason": "approved",
-        "contract_issues": [
-          "body_contains_publisher_boilerplate"
-        ]
-      },
-      {
-        "title": "Сахалинца госпитализировали после ДТП с пьяным водителем",
-        "url": "https://sakhalinmedia.ru/news/2618284/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "reason": "approved",
-        "contract_issues": [
-          "body_missing_sentence_boundary",
-          "unsupported_sakhalin_resident_identity"
-        ]
       }
     ],
-    "mutations_enabled": false,
+    "mutations_enabled": true,
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 292,
-      "title": "Шесть лет колонии и два миллиона компенсации: в Углегорске огласили приговор за смертельное ДТП",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 293,
       "title": "Землетрясение магнитудой 4,8 зафиксировали на Парамушире",
@@ -466,7 +402,7 @@
     },
     {
       "message_id": 316,
-      "title": "Сахалинца госпитализировали после ДТП с пьяным водителем",
+      "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
       "category_key": "sakh_chp",
       "publisher_version": "stable-v12.1",
       "category_ok": true,
@@ -475,6 +411,19 @@
       "contract_ok": true,
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 318,
+      "title": "Сбер объединит технологии российских стартапов для развития сервисов в сфере здоровья",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
       "title_issues": []
     }
   ],
@@ -497,9 +446,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 13,
+      "local": 12,
       "ru_pol": 0,
-      "ru_eco": 1,
+      "ru_eco": 2,
       "ru_safety": 3,
       "world": 3,
       "it": 0
@@ -513,24 +462,23 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -7.0,
+      "local": -6.0,
       "ru_pol": 4.0,
-      "ru_eco": 3.0,
+      "ru_eco": 2.0,
       "ru_safety": 0.0,
       "world": -1.0,
       "it": 1.0
     },
-    "distribution_error": 16.0,
+    "distribution_error": 14.0,
     "subtype_counts": {
-      "fatal_incident": 2,
       "earthquake": 1,
       "major_emergency": 9,
       "military_security": 4,
-      "macro_economy": 3,
-      "public_service_disruption": 1
+      "macro_economy": 4,
+      "public_service_disruption": 1,
+      "fatal_incident": 1
     },
     "sequence": [
-      "local",
       "local",
       "local",
       "ru_safety",
@@ -549,10 +497,10 @@
       "ru_safety",
       "local",
       "world",
-      "local"
+      "local",
+      "ru_eco"
     ],
     "category_sequence": [
-      "sakh_chp",
       "sakh_quake",
       "sakh_chp",
       "ru_incident",
@@ -571,10 +519,10 @@
       "ru_security",
       "sakh",
       "world_ru",
-      "sakh_chp"
+      "sakh_chp",
+      "ru_eco"
     ],
     "source_sequence": [
-      "astv",
       "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -593,23 +541,13 @@
       "sakhalinmedia.ru",
       "sakh.online",
       "bbc world",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [
-    {
-      "title": "Шесть лет колонии и два миллиона компенсации: в Углегорске огласили приговор за смертельное ДТП",
-      "url": "https://astv.ru/news/criminal/2026-09-09-shest-let-kolonii-i-dva-milliona-kompensacii-v-uglegorske-oglasili-prigovor-za-smertel-noe-dtp",
-      "publisher_version": "stable-v12.1",
-      "category_key": "sakh_chp",
-      "corrected_category": "sakh_chp",
-      "reason": "approved",
-      "contract_issues": [
-        "body_missing_sentence_boundary"
-      ]
-    },
     {
       "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
       "url": "https://sakh.online/news/24/2026-09-09/voditelya-gruzovika-dostali-iz-rasplyuschennoy-kabiny-posle-zhutkoy-avarii-v-yuzhno-sahalinske-525488",
@@ -631,70 +569,27 @@
       "contract_issues": [
         "body_missing_sentence_boundary"
       ]
-    },
-    {
-      "title": "Доходы бюджета Сахалинской области вырастут на 3,9 млрд рублей за счет Сахалина-2",
-      "url": "https://sakhalinmedia.ru/news/2616777/",
-      "publisher_version": "stable-v12.1",
-      "category_key": "sakh",
-      "corrected_category": "sakh",
-      "reason": "approved",
-      "contract_issues": [
-        "body_missing_sentence_boundary"
-      ]
-    },
-    {
-      "title": "Жесткое ДТП произошло в районе \"Сити Молла\" в Южно-Сахалинске",
-      "url": "https://astv.ru/news/criminal/2026-09-10-zhestkoe-dtp-proizoshlo-v-rajone-siti-molla-v-yuzhno-sahalinske",
-      "publisher_version": "stable-v12.1",
-      "category_key": "sakh_chp",
-      "corrected_category": "sakh_chp",
-      "reason": "approved",
-      "contract_issues": [
-        "body_contains_publisher_boilerplate"
-      ]
-    },
-    {
-      "title": "Сахалинца госпитализировали после ДТП с пьяным водителем",
-      "url": "https://sakhalinmedia.ru/news/2618284/",
-      "publisher_version": "stable-v12.1",
-      "category_key": "sakh_chp",
-      "corrected_category": "sakh_chp",
-      "reason": "approved",
-      "contract_issues": [
-        "body_missing_sentence_boundary",
-        "unsupported_sakhalin_resident_identity"
-      ]
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-10-01T08:45:00+11:00",
-      "last_attempt": {
-        "status": "blocked",
-        "mode": "morning",
-        "at_utc": "2026-10-01T06:24:53+00:00",
-        "at_sakhalin": "2026-10-01T17:24:53+11:00",
-        "error": "telegram_chat_access",
-        "description": "Bad Request: chat not found"
-      },
-      "derivative_of": "telegram_delivery_unhealthy"
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-01T07:41:58+00:00",
-    "status": "error",
+    "checked_at_utc": "2026-10-01T08:42:26+00:00",
+    "status": "healthy",
     "auth_ok": true,
-    "chat_ok": false,
-    "error_kind": "chat_access",
-    "http_status": 400,
-    "description": "Bad Request: chat not found",
+    "chat_ok": true,
+    "error_kind": null,
+    "http_status": 200,
+    "description": null,
     "bot_username": "SkySakhNewsPublisher_bot",
-    "permissions": {}
+    "permissions": {
+      "status": "administrator",
+      "can_post_messages": true,
+      "can_edit_messages": true,
+      "can_delete_messages": true
+    }
   },
   "delivery_queue_hardening": {
-    "before": 8,
-    "after": 8,
+    "before": 7,
+    "after": 7,
     "retired": 0,
     "stale_retired": 0,
     "capacity_retired": 0,
@@ -705,19 +600,35 @@
   },
   "delivery_outbox_repaired": false,
   "hardening_actions": [],
-  "hardening_failed_actions": [],
-  "warnings": [
+  "hardening_failed_actions": [
     {
-      "title": "Шесть лет колонии и два миллиона компенсации: в Углегорске огласили приговор за смертельное ДТП",
-      "url": "https://astv.ru/news/criminal/2026-09-09-shest-let-kolonii-i-dva-milliona-kompensacii-v-uglegorske-oglasili-prigovor-za-smertel-noe-dtp",
-      "publisher_version": "stable-v12.1",
+      "action": "repair_caption",
+      "error": "repair_contract_failed:body_unbalanced_quote",
+      "repair_contract": [
+        "body_unbalanced_quote"
+      ],
+      "message_id": 299,
+      "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
       "category_key": "sakh_chp",
-      "corrected_category": "sakh_chp",
-      "reason": "approved",
-      "contract_issues": [
-        "body_missing_sentence_boundary"
+      "reason": [
+        "body_unbalanced_quote"
       ]
     },
+    {
+      "action": "repair_caption",
+      "error": "repair_contract_failed:body_too_short",
+      "repair_contract": [
+        "body_too_short"
+      ],
+      "message_id": 300,
+      "title": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
+      "category_key": "sakh_chp",
+      "reason": [
+        "body_missing_sentence_boundary"
+      ]
+    }
+  ],
+  "warnings": [
     {
       "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
       "url": "https://sakh.online/news/24/2026-09-09/voditelya-gruzovika-dostali-iz-rasplyuschennoy-kabiny-posle-zhutkoy-avarii-v-yuzhno-sahalinske-525488",
@@ -741,61 +652,13 @@
       ]
     },
     {
-      "title": "Доходы бюджета Сахалинской области вырастут на 3,9 млрд рублей за счет Сахалина-2",
-      "url": "https://sakhalinmedia.ru/news/2616777/",
-      "publisher_version": "stable-v12.1",
-      "category_key": "sakh",
-      "corrected_category": "sakh",
-      "reason": "approved",
-      "contract_issues": [
-        "body_missing_sentence_boundary"
-      ]
-    },
-    {
-      "title": "Жесткое ДТП произошло в районе \"Сити Молла\" в Южно-Сахалинске",
-      "url": "https://astv.ru/news/criminal/2026-09-10-zhestkoe-dtp-proizoshlo-v-rajone-siti-molla-v-yuzhno-sahalinske",
-      "publisher_version": "stable-v12.1",
-      "category_key": "sakh_chp",
-      "corrected_category": "sakh_chp",
-      "reason": "approved",
-      "contract_issues": [
-        "body_contains_publisher_boilerplate"
-      ]
-    },
-    {
-      "title": "Сахалинца госпитализировали после ДТП с пьяным водителем",
-      "url": "https://sakhalinmedia.ru/news/2618284/",
-      "publisher_version": "stable-v12.1",
-      "category_key": "sakh_chp",
-      "corrected_category": "sakh_chp",
-      "reason": "approved",
-      "contract_issues": [
-        "body_missing_sentence_boundary",
-        "unsupported_sakhalin_resident_identity"
-      ]
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-10-01T08:45:00+11:00",
-      "last_attempt": {
-        "status": "blocked",
-        "mode": "morning",
-        "at_utc": "2026-10-01T06:24:53+00:00",
-        "at_sakhalin": "2026-10-01T17:24:53+11:00",
-        "error": "telegram_chat_access",
-        "description": "Bad Request: chat not found"
-      },
-      "derivative_of": "telegram_delivery_unhealthy"
-    },
-    {
       "type": "thematic_mix_drift",
-      "distribution_error": 16.0,
+      "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
-        "local": 13,
+        "local": 12,
         "ru_pol": 0,
-        "ru_eco": 1,
+        "ru_eco": 2,
         "ru_safety": 3,
         "world": 3,
         "it": 0
@@ -809,9 +672,9 @@
         "it": 1
       },
       "deficits": {
-        "local": -7.0,
+        "local": -6.0,
         "ru_pol": 4.0,
-        "ru_eco": 3.0,
+        "ru_eco": 2.0,
         "ru_safety": 0.0,
         "world": -1.0,
         "it": 1.0
