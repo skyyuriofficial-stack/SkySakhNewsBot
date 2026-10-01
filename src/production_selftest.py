@@ -18,6 +18,8 @@ import media_enforced_runner as media
 import news_director as director
 import publication_auditor
 import publisher
+import news_bot_v9 as source_core
+import telegram_public_sources
 
 
 def candidate(
@@ -871,6 +873,52 @@ def current_live_defect_regressions():
     assert len(set(first_two_groups)) == 2, (first_two_groups, report)
 
 
+
+def mandatory_telegram_source_regressions():
+    configured = {
+        str(item.get("handle") or "").strip().lstrip("@")
+        for item in source_core.TELEGRAM_PUBLIC_SOURCES
+    }
+    assert configured == {"techmedia", "exploitex"}, configured
+    assert callable(source_core.collect_public_telegram)
+
+    fixture = """
+    <div class="tgme_widget_message js-widget_message" data-post="techmedia/12345">
+      <div class="tgme_widget_message_text js-message_text">
+        OpenAI выпустила важное обновление ChatGPT для разработчиков.<br>
+        Компания изменила работу API и добавила новые инструменты для агентных задач.
+      </div>
+      <a class="tgme_widget_message_photo_wrap" style="background-image:url('https://cdn.example/tech.jpg')"></a>
+      <time datetime="2026-10-01T08:15:00+00:00"></time>
+    </div>
+    <div class="tgme_widget_message js-widget_message" data-post="exploitex/67890">
+      <div class="tgme_widget_message_text js-message_text">
+        В России обсуждают новые правила для VPN-сервисов и хостингов.<br>
+        Изменения затрагивают операторов инфраструктуры и пользователей сервисов.
+      </div>
+      <time datetime="2026-10-01T08:20:00+00:00"></time>
+    </div>
+    """
+
+    by_handle = {
+        str(item.get("handle")): item
+        for item in telegram_public_sources.PUBLIC_TELEGRAM_SOURCES
+    }
+    tech = telegram_public_sources.parse_public_channel(
+        fixture, by_handle["techmedia"]
+    )
+    exploit = telegram_public_sources.parse_public_channel(
+        fixture, by_handle["exploitex"]
+    )
+    assert len(tech) == 1, tech
+    assert len(exploit) == 1, exploit
+    assert tech[0]["url"] == "https://t.me/techmedia/12345", tech[0]
+    assert tech[0]["image_url"] == "https://cdn.example/tech.jpg", tech[0]
+    assert "OpenAI" in tech[0]["text"], tech[0]
+    assert exploit[0]["url"] == "https://t.me/exploitex/67890", exploit[0]
+    assert "VPN" in exploit[0]["text"], exploit[0]
+
+
 def version_and_media_regressions():
     assert publisher.VERSION == "stable-v12.1"
     assert publisher.media.VERSION == "stable-v12.1"
@@ -889,6 +937,7 @@ def version_and_media_regressions():
 
 
 def main():
+    mandatory_telegram_source_regressions()
     exact_feed_regressions()
     service_notice_and_violent_crime_regressions()
     scope_and_stream_regressions()
