@@ -40,9 +40,10 @@ export default async function handler(req, res) {
         drop_pending_updates: false
       });
     }
+    const schedule = String(req.headers['x-vercel-cron-schedule'] || '');
+    if (schedule === '30 8 * * *') return res.status(200).json({ ok: true, schedule, webhookRepaired: true });
     const state = await loadState();
     if (!state.chatId) return res.status(200).json({ ok: true, skipped: 'no-chat' });
-    const schedule = String(req.headers['x-vercel-cron-schedule'] || '');
     const p = promptFor(schedule);
     await sendMessage(state.chatId, p.text, p.keyboard);
     return res.status(200).json({ ok: true, schedule });
