@@ -1,8 +1,12 @@
 import { sakhalinDay } from './store.js';
 import { modelVision } from './model.js';
-import { createRequire } from 'node:module';
-import { mkdir, copyFile, access } from 'node:fs/promises';
+import { mkdir, readFile, writeFile, access } from 'node:fs/promises';
 import { join } from 'node:path';
+
+const OCR_DATA = {
+  rus: new URL('../ocr-data/rus.traineddata.gz', import.meta.url),
+  eng: new URL('../ocr-data/eng.traineddata.gz', import.meta.url)
+};
 
 function n(value) {
   const x = Number(String(value ?? '').replace(',', '.'));
@@ -156,7 +160,6 @@ function parseOcr(text, caption = '') {
 async function bundledLangPath() {
   const dir = '/tmp/veshudei-tessdata';
   await mkdir(dir, { recursive: true });
-  const require = createRequire(import.meta.url);
 
   for (const lang of ['rus', 'eng']) {
     const dst = join(dir, lang + '.traineddata.gz');
@@ -165,8 +168,8 @@ async function bundledLangPath() {
       continue;
     } catch (_) {}
 
-    const src = require.resolve('@tesseract.js-data/' + lang + '/4.0.0_best_int/' + lang + '.traineddata.gz');
-    await copyFile(src, dst);
+    const data = await readFile(OCR_DATA[lang]);
+    await writeFile(dst, data);
   }
   return dir;
 }
