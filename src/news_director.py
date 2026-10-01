@@ -25,7 +25,7 @@ from typing import Any, Callable, Dict, List, Mapping, Optional, Sequence, Tuple
 
 import editorial_policy as policy
 
-VERSION = "director-v2.1"
+VERSION = "director-v2.2"
 ROLLING_WINDOW = 20
 TARGET_COUNTS: Dict[str, int] = {
     "local": 6,
@@ -44,11 +44,18 @@ CATEGORY_GROUP = dict(policy.CATEGORY_GROUP)
 MIN_SCORE = {
     "local": 68,
     "ru_pol": 75,
-    "ru_eco": 74,
+    "ru_eco": 80,
     "ru_safety": 76,
     "world": 78,
     "it": 78,
 }
+
+# Rolling mix is a tie-breaker among comparably important stories, never a
+# substitute for newsworthiness. A category deficit cannot buy arbitrary rank.
+SIGNIFICANCE_SELECTION_BAND = 5
+MIX_GAIN_WEIGHT = 3.0
+MAX_MIX_BONUS = 6.0
+MAX_MIX_PENALTY = 2.0
 
 EVENT_BASE = {
     "earthquake": 94,
@@ -528,8 +535,13 @@ def _utility(
     before_error = _distribution_error(before_counts, before_length)
     after_error, _, _ = _projected_mix(balance, selected_groups, group)
     mix_gain = before_error - after_error
+    raw_mix_adjustment = MIX_GAIN_WEIGHT * mix_gain
+    mix_adjustment = max(
+        -MAX_MIX_PENALTY,
+        min(MAX_MIX_BONUS, raw_mix_adjustment),
+    )
 
-    utility = float(review.get("seriousness") or 0) + 18.0 * mix_gain
+    utility = float(review.get("seriousness") or 0) + mix_adjustment
 
     if selected:
         selected_sources = {_norm(item.get("source")) for item in selected}
@@ -661,7 +673,17 @@ def direct_candidates(
     selected: List[Dict[str, Any]] = []
     remaining = list(approved)
     while remaining and len(selected) < 2:
-        candidate_pool = list(remaining)
+        # Quality first: category/source diversity may choose only among stories
+        # whose seriousness is close to the strongest remaining candidate.
+        max_seriousness = max(
+            int((item.get("_news_director") or {}).get("seriousness") or 0)
+            for item in remaining
+        )
+        candidate_pool = [
+            item for item in remaining
+            if int((item.get("_news_director") or {}).get("seriousness") or 0)
+            >= max_seriousness - SIGNIFICANCE_SELECTION_BAND
+        ]
         if selected:
             first_group = str(
                 (selected[0].get("_news_director") or {}).get("group") or ""

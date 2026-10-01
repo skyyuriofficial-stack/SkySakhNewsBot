@@ -16,7 +16,7 @@ _CURRENT_SCHEDULE_MODES = {
 }
 
 
-def resolved_mode() -> str:
+def resolved_mode(*, now_local: datetime | None = None) -> str:
     forced = os.getenv("DIGEST_MODE", "").strip().lower()
     if forced in {"morning", "evening"}:
         return forced
@@ -24,11 +24,16 @@ def resolved_mode() -> str:
     scheduled = os.getenv("DIGEST_SCHEDULE", "").strip()
     current = _CURRENT_SCHEDULE_MODES.get(scheduled)
     if current:
+        local_now = now_local or datetime.now(digest.TZ)
+        # GitHub cron can be delayed substantially. Once the evening window has
+        # started, a stale morning/watchdog event must not publish a "morning"
+        # digest in place of the current evening risk update.
+        if current == "morning" and local_now.hour >= 19:
+            return "evening"
         return current
 
     # Keep the canonical implementation as the fallback for manual runs and
-    # legacy schedule strings. Current scheduled runs must be classified from
-    # github.event.schedule rather than delayed runner wall-clock time.
+    # legacy schedule strings.
     return final.resolved_mode()
 
 

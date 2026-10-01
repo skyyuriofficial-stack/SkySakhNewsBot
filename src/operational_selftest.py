@@ -77,6 +77,51 @@ def main() -> int:
     semiconductor_class = editorial_policy.classify(semiconductor)
     assert semiconductor_class.event_type == "major_it", semiconductor_class
 
+    # Corporate PR must not become "economy news" merely because ru_eco is
+    # underrepresented in the rolling mix.
+    sber_pr = {
+        "title": "Сбер объединит технологии российских стартапов для развития сервисов в сфере здоровья",
+        "source_text": (
+            "Проекты представили в рамках Московского стартап-саммита. "
+            "Об этом сообщает пресс-служба Сбера."
+        ),
+        "source": "SakhalinMedia.ru",
+        "url": "https://sakhalinmedia.ru/news/corporate-pr-regression/",
+        "category_key": "ru_eco",
+    }
+    sber_pr_class = editorial_policy.classify(sber_pr)
+    assert sber_pr_class.hard_reject_reason == "corporate_product_or_brand_pr", sber_pr_class.to_dict()
+    sber_pr_review = news_director.review_candidate(sber_pr)
+    assert sber_pr_review["approved"] is False, sber_pr_review
+
+    # Mix optimization is bounded: even a severe ru_eco deficit cannot make a
+    # materially weaker story outrank a much more important one.
+    synthetic_balance = {
+        "sequence": (
+            ["local"] * 12
+            + ["ru_safety"] * 3
+            + ["world"] * 3
+            + ["ru_eco"] * 2
+        ),
+        "source_sequence": [],
+    }
+    strong_local_utility = news_director._utility(
+        {"source": "ASTV", "category_key": "sakh_chp"},
+        {"group": "local", "seriousness": 90, "event_type": "major_emergency"},
+        synthetic_balance,
+        [],
+    )
+    threshold_eco_utility = news_director._utility(
+        {"source": "SakhalinMedia.ru", "category_key": "ru_eco"},
+        {"group": "ru_eco", "seriousness": 80, "event_type": "macro_economy"},
+        synthetic_balance,
+        [],
+    )
+    assert strong_local_utility > threshold_eco_utility, (
+        strong_local_utility,
+        threshold_eco_utility,
+    )
+
     # Generic "напал/нападение" markers must not turn a wild-animal incident
     # into violent crime. The local emergency category remains sakh_chp.
     bear_attack = {
@@ -163,6 +208,8 @@ def main() -> int:
     old_digest_schedule = os.environ.get("DIGEST_SCHEDULE")
     try:
         os.environ["DIGEST_MODE"] = ""
+        sakhalin_tz = timezone(timedelta(hours=11))
+        pre_evening = datetime(2026, 10, 1, 18, 0, tzinfo=sakhalin_tz)
         schedule_cases = {
             "7,37 0,1,21,22,23 * * *": "morning",
             "7 2,3,4,5,6,7 * * *": "morning",
@@ -170,8 +217,14 @@ def main() -> int:
         }
         for schedule, expected in schedule_cases.items():
             os.environ["DIGEST_SCHEDULE"] = schedule
-            actual = hardened_digest.resolved_mode()
+            actual = hardened_digest.resolved_mode(now_local=pre_evening)
             assert actual == expected, (schedule, expected, actual)
+
+        os.environ["DIGEST_SCHEDULE"] = "7 2,3,4,5,6,7 * * *"
+        delayed_watchdog = hardened_digest.resolved_mode(
+            now_local=datetime(2026, 10, 1, 19, 30, tzinfo=sakhalin_tz)
+        )
+        assert delayed_watchdog == "evening", delayed_watchdog
     finally:
         for key, value in (("DIGEST_MODE", old_digest_mode), ("DIGEST_SCHEDULE", old_digest_schedule)):
             if value is None:

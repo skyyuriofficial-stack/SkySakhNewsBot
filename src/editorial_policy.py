@@ -20,7 +20,7 @@ from urllib.parse import urlparse
 
 import editorial_gate as gate
 
-VERSION = "policy-v2.3"
+VERSION = "policy-v2.4"
 
 CATEGORY_GROUP = {
     "sakh": "local",
@@ -110,9 +110,12 @@ CORPORATE_FINANCE_BRANDS = (
 CORPORATE_PRODUCT_ACTIONS = (
     "запускает", "запустил", "запустила", "появилась", "появился",
     "открывает клиентам доступ", "представил сервис", "представила сервис",
+    "представил", "представила", "представили", "представило",
+    "объединит", "объединяет", "объединил", "объединила",
     "новый сервис", "новая возможность", "новая функция", "инвесткопилка",
     "доступ к цифровому рублю", "задавать новую планку качества",
     "стремится задавать", "мобильном приложении", "для клиентов",
+    "стартап", "саммит", "форум", "недел мод", "партнерств", "партнёрств",
 )
 CORPORATE_PR_EVIDENCE = (
     "пресс служб", "пресс служба", "пресс-служба", "старший вице президент",
@@ -123,6 +126,12 @@ PUBLIC_POLICY_TITLE_EXEMPTIONS = (
     "банк россии", "центробанк", "цб рф", "ключевая ставка", "инфляц",
     "вступает в силу", "вступил в силу", "обязаны", "обязательн",
     "закон", "регулятор", "госдум", "правительство",
+)
+CORPORATE_PUBLIC_IMPACT_EXEMPTIONS = (
+    "ставк по ипотек", "ставк по кредит", "ставк по вклад", "комисси",
+    "тариф", "лимит перевод", "условия ипотек", "условия кредит",
+    "массовый сбой", "сбой сервиса", "недоступ", "приостановил",
+    "ограничил", "блокировк", "закрывает отделени", "закрыл отделени",
 )
 ADMIN_REGULATION = (
     "отмена проверок", "отмене проверок", "неналоговых проверок",
@@ -462,10 +471,16 @@ def parse_ruble_amount(text: str) -> int:
 def _is_corporate_product_pr(title: str, lead: str) -> bool:
     combined = f"{title} {lead}"
     brand = has_any(title, CORPORATE_FINANCE_BRANDS)
-    product = has_any(title, CORPORATE_PRODUCT_ACTIONS)
+    product_or_event = has_any(title, CORPORATE_PRODUCT_ACTIONS)
     pr_evidence = has_any(combined, CORPORATE_PR_EVIDENCE)
-    public_policy = has_any(title, PUBLIC_POLICY_TITLE_EXEMPTIONS)
-    return bool(brand and product and pr_evidence and not public_policy)
+    public_impact = has_any(
+        title,
+        PUBLIC_POLICY_TITLE_EXEMPTIONS + CORPORATE_PUBLIC_IMPACT_EXEMPTIONS,
+    )
+    # Corporate press-release content is not news merely because the rolling
+    # economy bucket is under target. It must have a concrete public/consumer
+    # impact to enter the newsworthiness stage at all.
+    return bool(brand and product_or_event and pr_evidence and not public_impact)
 
 
 def _hard_reject(title: str, lead: str) -> Optional[str]:
