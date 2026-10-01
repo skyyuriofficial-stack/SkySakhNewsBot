@@ -153,9 +153,35 @@ function parseOcr(text, caption = '') {
 async function localOcr(bytes) {
   let worker = null;
   try {
+    let image = Buffer.from(bytes);
+    try {
+      const sharpMod = await import('sharp');
+      const sharp = sharpMod.default || sharpMod;
+      image = await sharp(image)
+        .rotate()
+        .resize({ width: 1800, withoutEnlargement: false })
+        .grayscale()
+        .normalize()
+        .sharpen()
+        .jpeg({ quality: 92 })
+        .toBuffer();
+    } catch (error) {
+      console.error('Veshudei OCR preprocess fallback:', error?.message || error);
+    }
+
     const { createWorker } = await import('tesseract.js');
     worker = await createWorker('rus+eng');
-    const result = await worker.recognize(Buffer.from(bytes));
+    try {
+      await worker.setParameters({
+        preserve_interword_spaces: '1',
+        tessedit_pageseg_mode: '6'
+      });
+    } catch (_) {}
+
+    const timeout = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('OCR timeout')), 14000)
+    );
+    const result = await Promise.race([worker.recognize(image), timeout]);
     return String(result?.data?.text || '').trim();
   } catch (error) {
     console.error('Veshudei OCR fallback:', error?.message || error);
