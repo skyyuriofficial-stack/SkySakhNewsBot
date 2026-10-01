@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Probe production health and webhook endpoint
+      - name: Probe production health and webhook endpoint after runtime fix
         run: |
           set +e
           base="https://sky-sakh-news-bot.vercel.app"
