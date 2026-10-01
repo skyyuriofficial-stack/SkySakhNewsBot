@@ -44,7 +44,7 @@ export default async function handler(req, res) {
       if (!info || info.url !== webhook) throw new Error('Webhook verification failed');
     }
     const schedule = String(req.headers['x-vercel-cron-schedule'] || '');
-    if (schedule === '30 8 * * *') return res.status(200).json({ ok: true, schedule, webhookRepaired: true });
+    if (schedule === '30 8 * * *' || schedule === '45 8 * * *') return res.status(200).json({ ok: true, schedule, webhookRepaired: true });
     const state = await loadState();
     if (!state.chatId) return res.status(200).json({ ok: true, skipped: 'no-chat' });
     const p = promptFor(schedule);
