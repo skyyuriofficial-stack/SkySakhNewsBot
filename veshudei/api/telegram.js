@@ -1,5 +1,5 @@
 import { loadState, saveState, logEvent, todayEvents, lastEvent } from '../lib/store.js';
-import { sendMessage, answerCallback, menuKeyboard } from '../lib/telegram.js';
+import { sendMessage, answerCallback, menuKeyboard, downloadTelegramFile } from '../lib/telegram.js';
 
 
 function cbKeyboard(rows) {
@@ -98,7 +98,97 @@ function eveningReview(text) {
   return goodText + '\n' + issueText + '\n' + plan;
 }
 
-async function askCoach(state, userText) {
+function diaryContext(state) {
+  return (state.events || [])
+    .filter((e) => e.type !== 'system')
+    .slice(-40)
+    .map((e) => '[' + e.day + '] ' + e.type + ': ' + String(e.value))
+    .join('\n');
+}
+
+async function aiTextReply(state, userText) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 7000);
+  try {
+    const { generateText } = await import('ai');
+    const result = await generateText({
+      model: 'openai/gpt-5.6-sol',
+      system: [
+        'Ты Veshudei — автономный помощник по снижению веса в Telegram.',
+        'Отвечай по-русски, кратко и конкретно.',
+        'Сам распознавай намерение пользователя: запись еды, вопрос, вода, алкоголь, активность или итог дня.',
+        'Учитывай только реально имеющиеся записи дневника и не выдумывай факты.',
+        'Если пользователь сообщает еду — оцени структуру приёма пищи и дай один практический следующий шаг.',
+        'Не предлагай компенсационное голодание, обезвоживание или чрезмерную тренировку.',
+        'Не меняй дозы Семавика и Листаты/орлистата самостоятельно.',
+        'Если данных достаточно — не задавай лишних уточняющих вопросов.',
+        'При сильной/нарастающей боли в животе, повторной рвоте, крови, обмороке или невозможности пить рекомендуй срочную медицинскую оценку.'
+      ].join('\n'),
+      prompt: 'ДНЕВНИК:\n' + (diaryContext(state) || 'нет записей') + '\n\nСООБЩЕНИЕ:\n' + userText,
+      maxOutputTokens: 260,
+      temperature: 0.2,
+      abortSignal: controller.signal
+    });
+    const answer = String(result.text || '').trim();
+    return answer || null;
+  } catch (error) {
+    console.error('Veshudei AI text fallback:', error?.message || error);
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function analyzeFoodPhoto(state, message) {
+  const photos = Array.isArray(message.photo) ? message.photo : [];
+  const largest = photos[photos.length - 1];
+  const caption = String(message.caption || '').trim();
+
+  if (!largest?.file_id) {
+    return { log: 'Фото еды' + (caption ? ': ' + caption : ''), reply: 'Фото получил и записал.' };
+  }
+
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 9000);
+  try {
+    const file = await downloadTelegramFile(largest.file_id);
+    const { generateText } = await import('ai');
+    const result = await generateText({
+      model: 'openai/gpt-5.6-sol',
+      system: [
+        'Ты анализируешь фото еды для дневника снижения веса.',
+        'Если видна этикетка — прочитай название, массу порции и пищевую ценность максимально точно.',
+        'Если это готовое блюдо без этикетки — дай только разумную приблизительную оценку порции/калорий и явно обозначь её как оценку.',
+        'Не выдумывай нечитаемые цифры.',
+        'Ответ: 2–5 коротких предложений: что это; масса/порция; ккал и Б/Ж/У если можно установить; один практический совет.',
+        'Не предлагай компенсировать еду голоданием.'
+      ].join('\n'),
+      messages: [{
+        role: 'user',
+        content: [
+          { type: 'text', text: 'Контекст дневника:\n' + (diaryContext(state) || 'нет записей') + '\nПодпись к фото: ' + (caption || '(нет)') },
+          { type: 'image', image: file.bytes, mediaType: file.mimeType }
+        ]
+      }],
+      maxOutputTokens: 320,
+      temperature: 0.1,
+      abortSignal: controller.signal
+    });
+    const answer = String(result.text || '').trim();
+    if (answer) return { log: answer, reply: answer };
+  } catch (error) {
+    console.error('Veshudei photo analysis fallback:', error?.message || error);
+  } finally {
+    clearTimeout(timer);
+  }
+
+  const fallback = caption
+    ? 'Фото еды получил и записал: ' + caption + '. Автораспознавание этикетки сейчас недоступно; если на фото есть масса/ккал, пришли крупный кадр этикетки — попробую снова.'
+    : 'Фото еды получил и записал. Автораспознавание этикетки сейчас недоступно; пришли крупный кадр этикетки или название блюда.';
+  return { log: 'Фото еды' + (caption ? ': ' + caption : ''), reply: fallback };
+}
+
+async function localCoach(state, userText) {
   const text = String(userText || '').trim();
   const t = text.toLowerCase();
   const events = todayEvents(state);
@@ -133,6 +223,12 @@ async function askCoach(state, userText) {
     return parts.join(' ');
   }
   return 'Понял. По сегодняшнему дневнику могу ответить про ужин, голод, алкоголь, воду, активность, вес, Семавик или Листату. Напиши вопрос обычным сообщением.';
+}
+
+async function askCoach(state, userText) {
+  const ai = await aiTextReply(state, userText);
+  if (ai) return ai;
+  return localCoach(state, userText);
 }
 
 function summaryText(state) {
@@ -248,6 +344,32 @@ async function handleText(message, state) {
   if (!a) {
     const quickWeight = text.match(/^вес\s*[:=]?\s*(\d+(?:[.,]\d+)?)/i);
     if (quickWeight) { state.awaiting = { type: 'weight', meta: {}, at: new Date().toISOString() }; return handleText({ ...message, text: quickWeight[1] }, state); }
+
+    const quickMeal = text.match(/^(?:я\s*(?:поел|съел|ел)|еда|завтрак|обед|ужин)\s*[:\-]?\s*(.+)$/i);
+    if (quickMeal?.[1]) {
+      const value = quickMeal[1].trim();
+      logEvent(state, 'meal', value);
+      const answer = await askCoach(state, 'Я только что съел: ' + value + '. Коротко оцени и дай следующий шаг.');
+      logEvent(state, 'chat_assistant', answer);
+      await saveState(state);
+      return sendMessage(chatId, '🍽 <b>Записал.</b>\n' + escapeHtml(answer), menuKeyboard());
+    }
+
+    const quickWater = text.match(/(?:выпил|вода)\s*[:\-]?\s*(\d+(?:[.,]\d+)?)\s*л/i);
+    if (quickWater) {
+      const n = Number(quickWater[1].replace(',', '.'));
+      logEvent(state, 'water', n + ' л');
+      await saveState(state);
+      return sendMessage(chatId, '💧 Записал воду: <b>' + n + ' л</b>.', menuKeyboard());
+    }
+
+    const quickSteps = text.match(/(\d{3,6})\s*(?:шаг|шагов)/i);
+    if (quickSteps) {
+      logEvent(state, 'activity', quickSteps[1] + ' шагов');
+      await saveState(state);
+      return sendMessage(chatId, '🚶 Записал активность: <b>' + quickSteps[1] + ' шагов</b>.', menuKeyboard());
+    }
+
     logEvent(state, 'chat_user', text);
     const answer = await askCoach(state, text);
     logEvent(state, 'chat_assistant', answer);
@@ -323,8 +445,18 @@ export default async function handler(req, res) {
   try {
     const update = req.body || {};
     const state = await loadState();
-    if (update.callback_query) await handleCallback(update.callback_query, state);
-    else if (update.message?.text) await handleText(update.message, state);
+    if (update.callback_query) {
+      await handleCallback(update.callback_query, state);
+    } else if (update.message?.photo?.length) {
+      const chatId = update.message.chat.id;
+      const analysis = await analyzeFoodPhoto(state, update.message);
+      logEvent(state, 'meal', analysis.log, { source: 'photo' });
+      state.awaiting = null;
+      await saveState(state);
+      await sendMessage(chatId, '🍽 <b>По фото:</b>\n' + escapeHtml(analysis.reply), menuKeyboard());
+    } else if (update.message?.text) {
+      await handleText(update.message, state);
+    }
     return res.status(200).json({ ok: true });
   } catch (error) {
     console.error(error);
