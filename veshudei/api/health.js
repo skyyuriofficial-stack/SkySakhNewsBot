@@ -33,6 +33,11 @@ export default async function handler(req, res) {
     ok: true,
     service: '@veshudei_bot',
     telegramTokenConfigured: Boolean(process.env.TELEGRAM_BOT_TOKEN),
+    aiProviders: {
+      openrouter: Boolean(process.env.OPENROUTER_API_KEY),
+      openai: Boolean(process.env.OPENAI_API_KEY),
+      vercelGateway: Boolean(process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN)
+    },
     blobOperational,
     productionUrl: process.env.VERCEL_PROJECT_PRODUCTION_URL || null,
     bot,
