@@ -15,7 +15,7 @@ function summaryText(state) {
   if (!events.length) return 'Сегодня пока ничего не записано.';
   const labels = {
     weight: '⚖️ Вес', meal: '🍽 Еда', alcohol: '🍺 Алкоголь', semavik: '💉 Семавик',
-    orlistat: '💊 Листата', water: '💧 Вода', activity: '🚶 Активность', symptoms: '🩺 Самочувствие'
+    orlistat: '💊 Орлистат', water: '💧 Вода', activity: '🚶 Активность', symptoms: '🩺 Самочувствие'
   };
   return '<b>Сегодня:</b>\n' + events.slice(-20).map((e) => (labels[e.type] || e.type) + ': ' + String(e.value)).join('\n');
 }
@@ -70,7 +70,7 @@ async function handleCallback(q, state) {
   if (data === 'semavik:other') return setAwaiting(state, chatId, 'semavik_other', 'Напиши дозу и что произошло: например <b>1.7 мг, укол сделан</b>.');
 
   if (data === 'menu:orlistat') {
-    return sendMessage(chatId, 'Листата Мини 60 мг:', cbKeyboard([
+    return sendMessage(chatId, 'Орлистат / Листата:', cbKeyboard([
       [{ text: 'Не принимал', callback_data: 'orlistat:0' }, { text: '60 мг', callback_data: 'orlistat:60' }],
       [{ text: 'Другая доза', callback_data: 'orlistat:other' }]
     ]));
@@ -78,7 +78,7 @@ async function handleCallback(q, state) {
   if (data === 'orlistat:0' || data === 'orlistat:60') {
     const val = data.endsWith(':60') ? '60 мг' : '0 мг';
     logEvent(state, 'orlistat', val); state.awaiting = null; await saveState(state);
-    const note = val === '60 мг' ? ' Учёл. Листата Мини 60 мг — с основным приёмом пищи, содержащим жир.' : '';
+    const note = val === '60 мг' ? ' Учёл орлистат. Дозу фиксируем по конкретному препарату.' : '';
     return sendMessage(chatId, 'Записал: ' + val + '.' + note, menuKeyboard());
   }
   if (data === 'orlistat:other') return setAwaiting(state, chatId, 'orlistat_other', 'Напиши дозу и с какой едой принимал.');
@@ -138,7 +138,7 @@ async function handleText(message, state) {
   }
   if (a.type === 'meal') {
     logEvent(state, 'meal', text); state.awaiting = null; await saveState(state);
-    return sendMessage(chatId, 'Еду записал. Если приём жирный и принимаешь Листату Мини — фиксируй её отдельно кнопкой 💊.', menuKeyboard());
+    return sendMessage(chatId, 'Еду записал. Если принимаешь орлистат (Листата, Ксеникал или другой препарат орлистата) — фиксируй его отдельно кнопкой 💊.', menuKeyboard());
   }
   if (a.type === 'water') {
     const n = asNumber(text);
@@ -161,7 +161,7 @@ async function handleText(message, state) {
   }
   if (a.type === 'orlistat_other') {
     logEvent(state, 'orlistat', text); state.awaiting = null; await saveState(state);
-    return sendMessage(chatId, 'Записал. Если речь о Листате Мини 60 мг, ориентируйся на инструкцию именно к этой форме и не увеличивай разовую дозу сам.', menuKeyboard());
+    return sendMessage(chatId, 'Записал. Для орлистата ориентируйся на дозировку именно твоего препарата; разные формы могут содержать разное количество мг.', menuKeyboard());
   }
   state.awaiting = null; await saveState(state);
   return sendMessage(chatId, 'Записал. Открой /menu для следующего пункта.', menuKeyboard());
