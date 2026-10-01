@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-01T20:29:04+00:00",
-  "checked_at_sakhalin": "2026-10-02T07:28:58+11:00",
+  "checked_at_utc": "2026-10-01T21:14:56+00:00",
+  "checked_at_sakhalin": "2026-10-02T08:14:50+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -42,16 +42,16 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-02T03:32:31+11:00",
-    "age_hours": 3.94,
+    "finished_sakhalin": "2026-10-02T08:14:18+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-01T16:26:39+00:00",
+    "checked_at_utc": "2026-10-01T21:11:27+00:00",
     "publisher_version": "stable-v12.1",
-    "queue_preserved": 2,
+    "queue_preserved": 1,
     "editorial_run_status": "ok"
   },
   "mobilization_digest": {
@@ -78,9 +78,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-01T20:29:01+00:00",
-    "checked": 19,
-    "passed": 17,
+    "checked_at": "2026-10-01T21:14:53+00:00",
+    "checked": 18,
+    "passed": 16,
     "anomalies": [
       {
         "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
@@ -137,19 +137,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 296,
-      "title": "Мэр Хабаровска Сергей Кравчук: Важно не допускать неисправностей пожарных гидрантов",
-      "category_key": "ru_incident",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_incident",
-      "title_issues": []
-    },
     {
       "message_id": 298,
       "title": "Прокуратура и следком взяли на контроль ДТП у ЖК \"Горизонт\"",
@@ -531,7 +518,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-01T20:28:55+00:00",
+    "checked_at_utc": "2026-10-01T21:14:48+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -547,8 +534,8 @@
     }
   },
   "delivery_queue_hardening": {
-    "before": 2,
-    "after": 2,
+    "before": 1,
+    "after": 1,
     "retired": 0,
     "stale_retired": 0,
     "capacity_retired": 0,
