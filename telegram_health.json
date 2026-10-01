@@ -1,11 +1,16 @@
 {
-  "checked_at_utc": "2026-10-01T07:41:58+00:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-01T08:41:57+00:00",
+  "status": "healthy",
   "auth_ok": true,
-  "chat_ok": false,
-  "error_kind": "chat_access",
-  "http_status": 400,
-  "description": "Bad Request: chat not found",
+  "chat_ok": true,
+  "error_kind": null,
+  "http_status": 200,
+  "description": null,
   "bot_username": "SkySakhNewsPublisher_bot",
-  "permissions": {}
+  "permissions": {
+    "status": "administrator",
+    "can_post_messages": true,
+    "can_edit_messages": true,
+    "can_delete_messages": true
+  }
 }
