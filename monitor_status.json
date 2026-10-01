@@ -1,28 +1,15 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-01T23:06:49+00:00",
-  "checked_at_sakhalin": "2026-10-02T10:06:45+11:00",
+  "checked_at_utc": "2026-10-01T23:55:38+00:00",
+  "checked_at_sakhalin": "2026-10-02T10:55:32+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
     {
       "type": "hardening_action_failure",
-      "count": 2,
+      "count": 1,
       "items": [
-        {
-          "action": "repair_caption",
-          "error": "repair_contract_failed:body_unbalanced_quote",
-          "repair_contract": [
-            "body_unbalanced_quote"
-          ],
-          "message_id": 299,
-          "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
-          "category_key": "sakh_chp",
-          "reason": [
-            "body_unbalanced_quote"
-          ]
-        },
         {
           "action": "repair_caption",
           "error": "repair_contract_failed:body_too_short",
@@ -42,16 +29,16 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-02T08:14:18+11:00",
-    "age_hours": 1.88,
-    "published": 1
+    "finished_sakhalin": "2026-10-02T10:55:06+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-01T21:11:27+00:00",
+    "checked_at_utc": "2026-10-01T23:51:22+00:00",
     "publisher_version": "stable-v12.1",
-    "queue_preserved": 1,
+    "queue_preserved": 0,
     "editorial_run_status": "ok"
   },
   "mobilization_digest": {
@@ -92,21 +79,10 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-01T23:06:47+00:00",
+    "checked_at": "2026-10-01T23:55:35+00:00",
     "checked": 18,
-    "passed": 16,
+    "passed": 17,
     "anomalies": [
-      {
-        "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
-        "url": "https://sakh.online/news/24/2026-09-09/voditelya-gruzovika-dostali-iz-rasplyuschennoy-kabiny-posle-zhutkoy-avarii-v-yuzhno-sahalinske-525488",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "reason": "approved",
-        "contract_issues": [
-          "body_unbalanced_quote"
-        ]
-      },
       {
         "title": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
         "url": "https://astv.ru/news/criminal/2026-09-09-neizvestnyj-stolknulsya-s-subaru-forester-i-skrylsya-s-mesta-dtp-v-yuzhno-sahalinske",
@@ -122,19 +98,8 @@
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
-    "unresolved": 2,
+    "unresolved": 1,
     "unresolved_items": [
-      {
-        "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
-        "url": "https://sakh.online/news/24/2026-09-09/voditelya-gruzovika-dostali-iz-rasplyuschennoy-kabiny-posle-zhutkoy-avarii-v-yuzhno-sahalinske-525488",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "reason": "approved",
-        "contract_issues": [
-          "body_unbalanced_quote"
-        ]
-      },
       {
         "title": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
         "url": "https://astv.ru/news/criminal/2026-09-09-neizvestnyj-stolknulsya-s-subaru-forester-i-skrylsya-s-mesta-dtp-v-yuzhno-sahalinske",
@@ -151,32 +116,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 298,
-      "title": "Прокуратура и следком взяли на контроль ДТП у ЖК \"Горизонт\"",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 299,
-      "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 300,
       "title": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
@@ -384,6 +323,32 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 325,
+      "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
+      "category_key": "ru_incident",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_incident",
+      "title_issues": []
+    },
+    {
+      "message_id": 326,
+      "title": "Женщина, попавшая под колеса авто в селе на Сахалине, скончалась в больнице",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -430,17 +395,15 @@
     },
     "distribution_error": 14.0,
     "subtype_counts": {
-      "major_emergency": 9,
+      "major_emergency": 8,
       "military_security": 4,
       "macro_economy": 3,
       "public_service_disruption": 1,
       "fatal_incident": 1,
-      "violent_crime": 1,
+      "violent_crime": 2,
       "major_it": 1
     },
     "sequence": [
-      "local",
-      "ru_safety",
       "local",
       "local",
       "local",
@@ -458,11 +421,11 @@
       "world",
       "local",
       "local",
-      "it"
+      "it",
+      "ru_safety",
+      "local"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "ru_incident",
       "sakh_chp",
       "sakh_chp",
       "sakh_chp",
@@ -480,11 +443,11 @@
       "world_ru",
       "sakh_chp",
       "sakh_chp",
-      "it"
+      "it",
+      "ru_incident",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "sakh.online",
-      "sakhalinmedia.ru",
       "astv",
       "sakh.online",
       "astv",
@@ -502,23 +465,14 @@
       "bbc world",
       "sakhalinmedia.ru",
       "astv",
-      "techmedia techmedia"
+      "techmedia techmedia",
+      "sakh.online",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [
-    {
-      "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
-      "url": "https://sakh.online/news/24/2026-09-09/voditelya-gruzovika-dostali-iz-rasplyuschennoy-kabiny-posle-zhutkoy-avarii-v-yuzhno-sahalinske-525488",
-      "publisher_version": "stable-v12.1",
-      "category_key": "sakh_chp",
-      "corrected_category": "sakh_chp",
-      "reason": "approved",
-      "contract_issues": [
-        "body_unbalanced_quote"
-      ]
-    },
     {
       "title": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
       "url": "https://astv.ru/news/criminal/2026-09-09-neizvestnyj-stolknulsya-s-subaru-forester-i-skrylsya-s-mesta-dtp-v-yuzhno-sahalinske",
@@ -532,7 +486,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-01T23:06:43+00:00",
+    "checked_at_utc": "2026-10-01T23:55:29+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -548,11 +502,9 @@
     }
   },
   "delivery_queue_hardening": {
-    "before": 1,
-    "after": 1,
+    "before": 0,
+    "after": 0,
     "retired": 0,
-    "stale_retired": 0,
-    "capacity_retired": 0,
     "duplicates": 0,
     "repaired": 0,
     "insufficient_source_retired": 0,
@@ -561,19 +513,6 @@
   "delivery_outbox_repaired": false,
   "hardening_actions": [],
   "hardening_failed_actions": [
-    {
-      "action": "repair_caption",
-      "error": "repair_contract_failed:body_unbalanced_quote",
-      "repair_contract": [
-        "body_unbalanced_quote"
-      ],
-      "message_id": 299,
-      "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
-      "category_key": "sakh_chp",
-      "reason": [
-        "body_unbalanced_quote"
-      ]
-    },
     {
       "action": "repair_caption",
       "error": "repair_contract_failed:body_too_short",
@@ -589,17 +528,6 @@
     }
   ],
   "warnings": [
-    {
-      "title": "Водителя грузовика достали из расплющенной кабины после жуткой аварии в Южно-Сахалинске",
-      "url": "https://sakh.online/news/24/2026-09-09/voditelya-gruzovika-dostali-iz-rasplyuschennoy-kabiny-posle-zhutkoy-avarii-v-yuzhno-sahalinske-525488",
-      "publisher_version": "stable-v12.1",
-      "category_key": "sakh_chp",
-      "corrected_category": "sakh_chp",
-      "reason": "approved",
-      "contract_issues": [
-        "body_unbalanced_quote"
-      ]
-    },
     {
       "title": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
       "url": "https://astv.ru/news/criminal/2026-09-09-neizvestnyj-stolknulsya-s-subaru-forester-i-skrylsya-s-mesta-dtp-v-yuzhno-sahalinske",
