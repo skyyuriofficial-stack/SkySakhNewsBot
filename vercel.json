@@ -28,6 +28,10 @@
     {
       "src": "veshudei/api/secret-exchange.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "veshudei/api/modeltest.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -58,6 +62,10 @@
     {
       "src": "/api/secret-exchange",
       "dest": "veshudei/api/secret-exchange.js"
+    },
+    {
+      "src": "/api/modeltest",
+      "dest": "veshudei/api/modeltest.js"
     }
   ],
   "crons": [
