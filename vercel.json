@@ -24,6 +24,10 @@
     {
       "src": "veshudei/api/ocrtest.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "veshudei/api/secret-exchange.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -50,6 +54,10 @@
     {
       "src": "/api/ocrtest",
       "dest": "veshudei/api/ocrtest.js"
+    },
+    {
+      "src": "/api/secret-exchange",
+      "dest": "veshudei/api/secret-exchange.js"
     }
   ],
   "crons": [
