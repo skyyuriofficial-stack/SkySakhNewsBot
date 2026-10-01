@@ -13,6 +13,32 @@ function recentContext(state) {
   return { diary, chat };
 }
 
+function localFallback(state, userText) {
+  const t = String(userText || '').toLowerCase();
+  const today = (state.events || []).filter((e) => e.day === new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Sakhalin', year: 'numeric', month: '2-digit', day: '2-digit'
+  }).format(new Date()));
+
+  if (/вечер.*не\s*ем|вечер.*не\s*есть|не\s*ужин|пропуст.*ужин/i.test(t)) {
+    return 'Специально не есть вечером не нужно. Если голод есть — сделай умеренный ужин с белком и овощами; если голода нет, насильно есть не требуется. Не компенсируй дневной рацион голоданием.';
+  }
+  if (/что.*съесть|что.*есть|ужин/i.test(t)) {
+    return 'Для ужина выбери простой вариант: порция белка + овощи, без попытки «доголодать» день. Если напишешь, что уже ел сегодня и насколько голоден по шкале 0–10, уточню вариант.';
+  }
+  if (/пив|алкогол|вино|водк|виски|коньяк/i.test(t)) {
+    return 'Алкоголь учитываем отдельно: орлистат его калории не блокирует. На следующий день не голодай в компенсацию — вернись к обычному режиму питания и воды.';
+  }
+  if (/листат|орлистат/i.test(t)) {
+    return 'Листату Мини 60 мг не используй для компенсации переедания. Принимай только по инструкции к препарату и не увеличивай дозу самостоятельно.';
+  }
+
+  const hasMeal = today.some((e) => e.type === 'meal');
+  const hasWater = today.some((e) => e.type === 'water');
+  if (!hasMeal) return 'Чтобы дать точный совет, сначала напиши, что и примерно сколько съел сегодня.';
+  if (!hasWater) return 'По еде запись есть. Добавь, сколько воды выпил сегодня, и я дам более точный следующий шаг.';
+  return 'По дневнику отвечу напрямую. Напиши, что именно хочешь решить сейчас: ужин, голод, алкоголь, вода, активность или вес.';
+}
+
 export async function askCoach(state, userText) {
   const { diary, chat } = recentContext(state);
   const now = new Intl.DateTimeFormat('ru-RU', {
@@ -34,17 +60,23 @@ export async function askCoach(state, userText) {
 
   const prompt = `ДНЕВНИК (последние записи):\n${diary || 'нет записей'}\n\nПОСЛЕДНИЙ ДИАЛОГ:\n${chat || 'нет'}\n\nНОВОЕ СООБЩЕНИЕ ПОЛЬЗОВАТЕЛЯ:\n${userText}`;
 
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 7000);
   try {
     const result = await generateText({
       model: 'openai/gpt-5.6-sol',
       system,
       prompt,
       maxOutputTokens: 500,
-      temperature: 0.2
+      temperature: 0.2,
+      abortSignal: controller.signal
     });
-    return String(result.text || '').trim();
+    const answer = String(result.text || '').trim();
+    return answer || localFallback(state, userText);
   } catch (error) {
     console.error('AI Gateway error', error);
-    return 'Я понял вопрос, но ИИ-ответ сейчас временно недоступен. Дневник продолжает работать. Повтори вопрос чуть позже.';
+    return localFallback(state, userText);
+  } finally {
+    clearTimeout(timer);
   }
 }
