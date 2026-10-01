@@ -1,65 +1,10 @@
 {
   "version": "delivery-outbox-v1",
-  "generated_at_utc": "2026-10-01T21:14:20+00:00",
+  "generated_at_utc": "2026-10-01T23:55:07+00:00",
   "source_of_truth": "github_repository",
   "live_delivery_adapter": "telegram",
   "delivery_adapter_status": "healthy",
   "delivery_adapter_error": null,
-  "count": 1,
-  "items": [
-    {
-      "queued_at": "2026-10-01T06:31:46+00:00",
-      "last_attempt_at": "2026-10-01T06:31:46+00:00",
-      "delivery_attempts": 1,
-      "delivery_status": "queued",
-      "source": "SakhalinMedia.ru",
-      "source_url": "https://sakhalinmedia.ru/news/2637497/",
-      "category_key": "sakh_chp",
-      "category": "📍 Сахалин",
-      "title": "Женщина, попавшая под колеса авто в селе на Сахалине, скончалась в больнице",
-      "body": [
-        "Пешеход, которого сбили вечером 30 сентября в селе Победино, скончалась в больнице.",
-        "Авария произошла в 21.20 в районе улицы Центральной, сообщили в УГИБДД УМВД России по Сахалинской области."
-      ],
-      "image_url": "https://primamedia.ru/f/266x136/6424/6423512.jpg",
-      "image_hash": "cc7d227b0d5015bbc155a51dae3443176e69c70d",
-      "published_at": "2026-10-01T03:43:00+00:00",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_chp",
-        "final_category": "sakh_chp",
-        "event_type": "violent_crime",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.4",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.2",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "violent_crime",
-          "subtype": "violent_crime",
-          "seriousness": 96,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Женщина, попавшая под колеса авто в селе на Сахалине, скончалась в больнице",
-          "title_corrected": "Женщина, попавшая под колеса авто в селе на Сахалине, скончалась в больнице",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "last_error": "delivery_adapter_unavailable:telegram_chat_access"
-    }
-  ]
+  "count": 0,
+  "items": []
 }
