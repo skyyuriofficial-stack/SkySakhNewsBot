@@ -1,0 +1,27 @@
+name: Veshudei HTTP Probe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/veshudei_http_probe.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Probe production health endpoint
+        run: |
+          set +e
+          url="https://sky-sakh-news-bot.vercel.app/api/health"
+          code=$(curl -L -sS -o /tmp/body -w "%{http_code}" --max-time 20 "$url")
+          echo "URL=$url"
+          echo "HTTP=$code"
+          echo "BODY:"
+          head -c 2000 /tmp/body || true
+          echo
+          exit 0
