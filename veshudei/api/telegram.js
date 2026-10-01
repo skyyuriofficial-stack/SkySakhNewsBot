@@ -1,6 +1,6 @@
 import { loadState, saveState, logEvent, todayEvents, lastEvent } from '../lib/store.js';
 import { sendMessage, answerCallback, menuKeyboard } from '../lib/telegram.js';
-import { askCoach } from '../lib/ai.js';
+
 
 function cbKeyboard(rows) {
   return { inline_keyboard: rows };
@@ -13,6 +13,43 @@ function asNumber(text) {
 
 function escapeHtml(value) {
   return String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+}
+
+async function askCoach(state, userText) {
+  const text = String(userText || '').trim();
+  const t = text.toLowerCase();
+  const events = todayEvents(state);
+  const meals = events.filter((e) => e.type === 'meal');
+  const alcohol = events.filter((e) => e.type === 'alcohol' && String(e.value).toLowerCase() !== 'нет');
+  const water = events.filter((e) => e.type === 'water').slice(-1)[0];
+  const activity = events.filter((e) => e.type === 'activity').slice(-1)[0];
+
+  if (/вечер.*не\s*ем|вечер.*не\s*есть|не\s*ужин|пропуст.*ужин/i.test(t)) {
+    return 'Специально не есть вечером не нужно. Если голод есть — сделай умеренный ужин с белком и овощами; если голода нет, насильно есть не требуется. Не компенсируй дневной рацион голоданием.';
+  }
+  if (/что.*съесть|что.*есть|ужин/i.test(t)) {
+    return 'На ужин выбери простой вариант: белковый продукт плюс овощи. Если голод слабый — небольшая порция; если голода нет, можно не есть насильно.';
+  }
+  if (/алкогол|пив|вино|водк|виски|коньяк/i.test(t)) {
+    return 'Алкоголь учитываем отдельно: орлистат его калории не блокирует. На следующий день не компенсируй алкоголь голоданием — вернись к обычному режиму еды и воды.';
+  }
+  if (/листат|орлистат/i.test(t)) {
+    return 'Листату Мини 60 мг не используй как компенсацию переедания. Принимай только по инструкции к препарату и не увеличивай дозу самостоятельно.';
+  }
+  if (/семавик|семаглутид/i.test(t)) {
+    return 'Дозу Семавика самостоятельно не меняй. Если появились выраженная тошнота, повторная рвота или сильная боль в животе — нужна медицинская оценка.';
+  }
+  if (/итог|разбор|сегодня|день/i.test(t)) {
+    const parts = [];
+    if (meals.length) parts.push('Еда зафиксирована — это хорошо для контроля.');
+    else parts.push('По еде данных мало.');
+    if (alcohol.length) parts.push('Алкоголь сегодня был — это отдельный источник калорий и фактор колебаний веса.');
+    if (!water) parts.push('Вода сегодня не отмечена.');
+    if (!activity) parts.push('Активность сегодня не отмечена.');
+    parts.push('План: завтра обычный режим питания без компенсационного голодания; добавь белок в основные приёмы пищи и 20–30 минут спокойной ходьбы.');
+    return parts.join(' ');
+  }
+  return 'Понял. По сегодняшнему дневнику могу ответить про ужин, голод, алкоголь, воду, активность, вес, Семавик или Листату. Напиши вопрос обычным сообщением.';
 }
 
 function summaryText(state) {
