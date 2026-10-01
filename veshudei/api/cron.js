@@ -3,11 +3,7 @@ import { sendMessage, telegram } from '../lib/telegram.js';
 
 function promptFor(schedule) {
   const prompts = {
-    '45 6 * * *': {
-      repairOnly: true,
-      text: '',
-      keyboard: null
-    },
+
     '37 21 * * *': {
       text: '<b>08:37 — утренний контроль.</b>\nВес после туалета до еды/питья. Затем отметим алкоголь накануне, аппетит, сон и самочувствие.',
       keyboard: { inline_keyboard: [[{ text: '⚖️ Ввести вес', callback_data: 'menu:weight' }, { text: '🩺 Самочувствие', callback_data: 'menu:symptoms' }], [{ text: '🍺 Алкоголь', callback_data: 'menu:alcohol' }]] }
@@ -48,7 +44,6 @@ export default async function handler(req, res) {
     if (!state.chatId) return res.status(200).json({ ok: true, skipped: 'no-chat' });
     const schedule = String(req.headers['x-vercel-cron-schedule'] || '');
     const p = promptFor(schedule);
-    if (p.repairOnly) return res.status(200).json({ ok: true, schedule, webhookRepaired: true });
     await sendMessage(state.chatId, p.text, p.keyboard);
     return res.status(200).json({ ok: true, schedule });
   } catch (error) {
