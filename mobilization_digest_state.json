@@ -1,20 +1,15 @@
 {
-  "version": "mobilization-digest-v1.4",
-  "last_run_utc": "2026-09-11T12:35:47+00:00",
-  "last_run_sakhalin": "2026-09-11T23:35:47+11:00",
-  "mode": "evening",
+  "version": "mobilization-digest-v1.3",
+  "last_run_utc": "2026-10-01T08:46:15+00:00",
+  "last_run_sakhalin": "2026-10-01T19:46:15+11:00",
+  "mode": "morning",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 317,
-  "evidence_count": 9,
-  "evidence_hash": "5b397c10c7c7cb7a9ea4489479080e1df8e2e416e360d841c8238942682cacae",
-  "headline": "Официальные лица отрицают планы новой мобилизации, несмотря на сигналы о подготовке условий",
-  "source_ids": [
-    1,
-    2,
-    4,
-    5
-  ],
+  "telegram_message_id": 319,
+  "evidence_count": 7,
+  "evidence_hash": "53fc59179210dcd7c0822511dfcecf020da437c0050de1b33e081aa812630a67",
+  "headline": "Политическая мобилизация усиливается, но решение о новой волне мобилизации пока не принято",
+  "source_ids": [],
   "slots": {
     "2026-09-08": {
       "morning": {
@@ -128,15 +123,25 @@
           5
         ]
       }
+    },
+    "2026-10-01": {
+      "morning": {
+        "status": "ok",
+        "published_at_utc": "2026-10-01T08:46:15+00:00",
+        "published_at_sakhalin": "2026-10-01T19:46:15+11:00",
+        "telegram_message_id": 319,
+        "headline": "Политическая мобилизация усиливается, но решение о новой волне мобилизации пока не принято",
+        "evidence_count": 7,
+        "evidence_hash": "53fc59179210dcd7c0822511dfcecf020da437c0050de1b33e081aa812630a67",
+        "source_ids": []
+      }
     }
   },
   "last_attempt": {
-    "status": "blocked",
+    "status": "ok",
     "mode": "morning",
-    "at_utc": "2026-10-01T06:24:53+00:00",
-    "at_sakhalin": "2026-10-01T17:24:53+11:00",
-    "error": "telegram_chat_access",
-    "description": "Bad Request: chat not found"
+    "at_utc": "2026-10-01T08:46:15+00:00",
+    "at_sakhalin": "2026-10-01T19:46:15+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-10-01T06:24:52+00:00",
