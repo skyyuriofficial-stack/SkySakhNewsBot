@@ -64,6 +64,10 @@
     {
       "path": "/api/cron",
       "schedule": "20 21 * * 0"
+    },
+    {
+      "path": "/api/cron",
+      "schedule": "45 8 * * *"
     }
   ]
 }
