@@ -12,7 +12,8 @@
     "tesseract.js": "latest",
     "sharp": "latest",
     "@tesseract.js-data/rus": "1.0.0",
-    "@tesseract.js-data/eng": "1.0.0"
+    "@tesseract.js-data/eng": "1.0.0",
+    "jose": "latest"
   },
   "scripts": {
     "postinstall": "node scripts/prepare-ocr.mjs"
