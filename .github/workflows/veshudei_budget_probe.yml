@@ -1,0 +1,17 @@
+name: Veshudei Budget Probe
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/veshudei_budget_probe.yml"
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Probe live health and budget guard
+        run: |
+          curl -L -sS --max-time 20 https://sky-sakh-news-bot.vercel.app/api/health
+          echo
