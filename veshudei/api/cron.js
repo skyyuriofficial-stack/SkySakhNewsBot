@@ -31,14 +31,17 @@ function promptFor(schedule) {
 export default async function handler(req, res) {
   try {
     const proto = req.headers['x-forwarded-proto'] || 'https';
-    const host = req.headers.host;
-    if (host) {
-      const webhook = proto + '://' + host + '/api/telegram';
+    const productionHost = process.env.VERCEL_PROJECT_PRODUCTION_URL || req.headers.host;
+    if (productionHost) {
+      const base = /^https?:\/\//i.test(productionHost) ? productionHost : proto + '://' + productionHost;
+      const webhook = base.replace(/\/$/, '') + '/api/telegram';
       await telegram('setWebhook', {
         url: webhook,
         allowed_updates: ['message', 'callback_query'],
         drop_pending_updates: false
       });
+      const info = await telegram('getWebhookInfo');
+      if (!info || info.url !== webhook) throw new Error('Webhook verification failed');
     }
     const schedule = String(req.headers['x-vercel-cron-schedule'] || '');
     if (schedule === '30 8 * * *') return res.status(200).json({ ok: true, schedule, webhookRepaired: true });
