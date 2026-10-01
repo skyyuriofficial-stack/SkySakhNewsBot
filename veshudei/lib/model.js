@@ -13,8 +13,42 @@ function extractOpenAIResponseText(data) {
   return chunks.join('\n').trim();
 }
 
+let openRouterCache = null;
+let openRouterCacheAt = 0;
+
+async function openRouterConfig() {
+  if (process.env.OPENROUTER_API_KEY) {
+    return {
+      key: process.env.OPENROUTER_API_KEY,
+      model: process.env.OPENROUTER_MODEL || null,
+      visionModel: process.env.OPENROUTER_VISION_MODEL || null
+    };
+  }
+
+  if (openRouterCache && Date.now() - openRouterCacheAt < 5 * 60 * 1000) return openRouterCache;
+
+  try {
+    const { get } = await import('@vercel/blob');
+    const result = await get('veshudei/secrets/openrouter.json', { access: 'private', useCache: false });
+    if (!result || result.statusCode !== 200) return null;
+    const raw = await new Response(result.stream).text();
+    const cfg = JSON.parse(raw);
+    if (!cfg?.key) return null;
+    openRouterCache = {
+      key: String(cfg.key),
+      model: cfg.model ? String(cfg.model) : null,
+      visionModel: cfg.visionModel ? String(cfg.visionModel) : null
+    };
+    openRouterCacheAt = Date.now();
+    return openRouterCache;
+  } catch (_) {
+    return null;
+  }
+}
+
 async function openRouterCall({ system, text, imageBytes, mimeType, maxTokens = 400 }) {
-  const key = process.env.OPENROUTER_API_KEY;
+  const cfg = await openRouterConfig();
+  const key = cfg?.key;
   if (!key) return null;
 
   const content = [{ type: 'text', text }];
@@ -32,7 +66,9 @@ async function openRouterCall({ system, text, imageBytes, mimeType, maxTokens = 
         'X-Title': 'Veshudei'
       },
       body: JSON.stringify({
-        model: process.env.OPENROUTER_VISION_MODEL || process.env.OPENROUTER_MODEL || 'google/gemini-2.5-flash',
+        model: imageBytes
+          ? (cfg.visionModel || cfg.model || 'google/gemini-2.5-flash')
+          : (cfg.model || cfg.visionModel || 'google/gemini-2.5-flash'),
         temperature: 0.1,
         max_tokens: maxTokens,
         messages: [
