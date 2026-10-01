@@ -1,12 +1,14 @@
 import { get } from '@vercel/blob';
 import { telegram } from '../lib/telegram.js';
 import { providerConfigured } from '../lib/provider-secret.js';
+import { getAIBudgetStatus } from '../lib/model.js';
 
 export default async function handler(req, res) {
   let blobOperational = false;
   let bot = null;
   let webhook = null;
   let openRouterPrivate = false;
+  let aiBudget = null;
 
   try {
     const result = await get('veshudei/healthcheck.json', { access: 'private', useCache: false });
@@ -19,6 +21,12 @@ export default async function handler(req, res) {
     openRouterPrivate = await providerConfigured();
   } catch (_) {
     openRouterPrivate = false;
+  }
+
+  try {
+    aiBudget = await getAIBudgetStatus();
+  } catch (_) {
+    aiBudget = { mode: 'free-credit-only', error: 'budget-status-unavailable' };
   }
 
   try {
@@ -46,7 +54,8 @@ export default async function handler(req, res) {
       openai: Boolean(process.env.OPENAI_API_KEY),
       vercelGateway: Boolean(process.env.AI_GATEWAY_API_KEY || process.env.ENABLE_VERCEL_AI_GATEWAY === '1')
     },
-    photoRecognitionReady: Boolean(openRouterPrivate || process.env.OPENAI_API_KEY),
+    photoRecognitionReady: Boolean(process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN || openRouterPrivate || process.env.OPENAI_API_KEY),
+    aiBudget,
     blobOperational,
     productionUrl: process.env.VERCEL_PROJECT_PRODUCTION_URL || null,
     bot,
