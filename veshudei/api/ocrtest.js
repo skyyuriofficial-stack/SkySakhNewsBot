@@ -1,18 +1,20 @@
-import { createRequire } from 'node:module';
-import { mkdir, copyFile, access } from 'node:fs/promises';
+import { mkdir, readFile, writeFile, access } from 'node:fs/promises';
 import { join } from 'node:path';
 
 export const config = { maxDuration: 30 };
 
+const OCR_DATA = {
+  rus: new URL('../ocr-data/rus.traineddata.gz', import.meta.url),
+  eng: new URL('../ocr-data/eng.traineddata.gz', import.meta.url)
+};
+
 async function langPath() {
   const dir = '/tmp/veshudei-tessdata';
   await mkdir(dir, { recursive: true });
-  const require = createRequire(import.meta.url);
   for (const lang of ['rus','eng']) {
     const dst = join(dir, lang + '.traineddata.gz');
     try { await access(dst); continue; } catch (_) {}
-    const src = require.resolve('@tesseract.js-data/' + lang + '/4.0.0_best_int/' + lang + '.traineddata.gz');
-    await copyFile(src, dst);
+    await writeFile(dst, await readFile(OCR_DATA[lang]));
   }
   return dir;
 }
