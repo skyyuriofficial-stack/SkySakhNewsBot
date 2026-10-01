@@ -20,6 +20,10 @@
     {
       "src": "veshudei/api/blobtest.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "veshudei/api/ocrtest.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -42,6 +46,10 @@
     {
       "src": "/api/blobtest",
       "dest": "veshudei/api/blobtest.js"
+    },
+    {
+      "src": "/api/ocrtest",
+      "dest": "veshudei/api/ocrtest.js"
     }
   ],
   "crons": [
