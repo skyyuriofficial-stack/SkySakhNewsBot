@@ -120,10 +120,10 @@ async function openAICall({ system, text, imageBytes, mimeType, maxTokens = 400 
 }
 
 async function gatewayCall({ system, text, imageBytes, mimeType, maxTokens = 400 }) {
-  if (!process.env.AI_GATEWAY_API_KEY && process.env.ENABLE_VERCEL_AI_GATEWAY !== '1') return null;
+  if (!process.env.AI_GATEWAY_API_KEY && !process.env.VERCEL_OIDC_TOKEN && process.env.ENABLE_VERCEL_AI_GATEWAY !== '1') return null;
 
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 8000);
+  const timer = setTimeout(() => controller.abort(), imageBytes ? 6000 : 4000);
   try {
     const { generateText } = await import('ai');
     const params = {
