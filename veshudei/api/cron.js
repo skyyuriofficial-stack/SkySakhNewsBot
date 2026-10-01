@@ -1,5 +1,6 @@
 import { loadState, saveState, todayEvents } from '../lib/store.js';
 import { sendMessage, telegram } from '../lib/telegram.js';
+import { getAIBudgetStatus } from '../lib/model.js';
 
 function promptFor(schedule) {
   const prompts = {
@@ -97,6 +98,52 @@ export default async function handler(req, res) {
     const schedule = String(req.headers['x-vercel-cron-schedule'] || '');
     const state = await loadState();
     if (!state.chatId) return res.status(200).json({ ok: true, skipped: 'no-chat' });
+
+    try {
+      const budget = await getAIBudgetStatus();
+      const balance = Number(budget?.gatewayBalanceUsd);
+      const alertKey = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Asia/Sakhalin',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+      }).format(new Date());
+
+      const alreadyAlerted = (state.events || []).some((e) =>
+        e.type === 'ai_budget_alert' && e.day === alertKey
+      );
+
+      if (Number.isFinite(balance) && balance <= 1.5 && !alreadyAlerted) {
+        state.events.push({
+          id: 'ai-budget-' + Date.now(),
+          ts: new Date().toISOString(),
+          day: alertKey,
+          type: 'ai_budget_alert',
+          value: 'AI Gateway balance=' + balance
+        });
+        await saveState(state);
+        await sendMessage(
+          state.chatId,
+          '⚠️ <b>AI Gateway: заканчивается бесплатный кредит.</b>\n' +
+          'Остаток ≈ 
+    if (p.awaitingType) {
+      state.awaiting = { type: p.awaitingType, meta: {}, at: new Date().toISOString() };
+      await saveState(state);
+    }
+    await sendMessage(state.chatId, p.text, p.keyboard);
+    return res.status(200).json({ ok: true, schedule });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ ok: false, error: String(error?.message || error) });
+  }
+}
+ + balance.toFixed(2) + '.\n' +
+          'Veshudei уже работает в режиме free-credit-only и блокирует новые AI-вызовы при остатке $1.00, чтобы не переходить на списания с карты.'
+        );
+      }
+    } catch (error) {
+      console.error('Veshudei budget monitor:', error?.message || error);
+    }
 
     const p = schedule === '30 9 * * *' ? eveningPrompt(state) : promptFor(schedule);
     if (p.awaitingType) {
