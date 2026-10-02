@@ -48,6 +48,7 @@ jobs:
 
           sys.path.insert(0, "src")
           import publication_auditor
+          import publisher
           import telegram_health
 
           health = telegram_health.check_telegram()
@@ -62,12 +63,10 @@ jobs:
               print("latest run is not stable-v12.1; monitor has nothing to mutate")
               raise SystemExit(0)
 
-          published = int(run.get("published") or 0)
-          posts = (state.get("last_posts") or [])[-published:] if published else []
-          report = publication_auditor.audit_posts(
-              posts,
-              telegram_token=os.environ.get("TELEGRAM_BOT_TOKEN", ""),
-              telegram_channel_id=os.environ.get("TELEGRAM_CHANNEL_ID", ""),
+          report = publication_auditor.audit_recent_posts(
+              state,
+              category_map=publisher.core.b.CAT,
+              render_caption=publisher.core.b.caption,
               mutate=True,
           )
           run["independent_post_publication_monitor"] = report
