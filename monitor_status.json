@@ -1,29 +1,22 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-02T06:05:46+00:00",
-  "checked_at_sakhalin": "2026-10-02T17:05:40+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-02T06:12:51+00:00",
+  "checked_at_sakhalin": "2026-10-02T17:12:45+11:00",
+  "status": "healthy",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-02T16:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-02T14:28:10+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-02T14:28:10+11:00",
-    "age_hours": 2.63,
+    "finished_sakhalin": "2026-10-02T17:12:17+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-02T03:20:15+00:00",
+    "checked_at_utc": "2026-10-02T06:06:05+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok"
@@ -66,7 +59,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-02T06:05:43+00:00",
+    "checked_at": "2026-10-02T06:12:48+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -79,32 +72,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 303,
-      "title": "Минобороны Японии запросило рекордный бюджет на разработку недорогих ракет дальностью до 3000 км",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "geo",
-      "title_issues": []
-    },
-    {
-      "message_id": 304,
-      "title": "Два ДТП с пострадавшими и 6 пьяных водителей за сутки на Сахалине",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 305,
       "title": "Обязательная регистрация дронов в РФ с 2026: система на базе «ЭРА-ГЛОНАСС»",
@@ -299,6 +266,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 329,
+      "title": "В ВТБ раскрыли портрет пользователя цифрового рубля",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
+    },
+    {
+      "message_id": 330,
+      "title": "В Южно-Сахалинске усилен контроль за контейнерными площадками из-за роста возгораний",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -320,9 +313,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 12,
+      "local": 11,
       "ru_pol": 0,
-      "ru_eco": 2,
+      "ru_eco": 3,
       "ru_safety": 3,
       "world": 3,
       "it": 0
@@ -336,26 +329,24 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -6.0,
+      "local": -5.0,
       "ru_pol": 4.0,
-      "ru_eco": 2.0,
+      "ru_eco": 1.0,
       "ru_safety": 0.0,
       "world": -1.0,
       "it": 1.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
-      "major_emergency": 8,
+      "major_emergency": 7,
       "military_security": 4,
-      "macro_economy": 4,
+      "macro_economy": 5,
       "public_service_disruption": 1,
       "fatal_incident": 1,
       "violent_crime": 2
     },
     "sequence": [
       "local",
-      "local",
-      "local",
       "world",
       "local",
       "ru_safety",
@@ -370,13 +361,13 @@
       "local",
       "local",
       "ru_safety",
+      "local",
+      "ru_eco",
       "local",
       "ru_eco",
       "local"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "sakh_chp",
       "sakh_chp",
       "geo",
       "sakh_chp",
@@ -394,11 +385,11 @@
       "ru_incident",
       "sakh_chp",
       "ru_eco",
+      "sakh_chp",
+      "ru_eco",
       "sakh_chp"
     ],
     "source_sequence": [
-      "sakh.online",
-      "astv",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakh.online",
@@ -416,14 +407,16 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "astv"
+      "astv",
+      "sakhalinmedia.ru",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-02T06:05:38+00:00",
+    "checked_at_utc": "2026-10-02T06:12:43+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -453,12 +446,12 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 14.0,
+      "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
-        "local": 12,
+        "local": 11,
         "ru_pol": 0,
-        "ru_eco": 2,
+        "ru_eco": 3,
         "ru_safety": 3,
         "world": 3,
         "it": 0
@@ -472,9 +465,9 @@
         "it": 1
       },
       "deficits": {
-        "local": -6.0,
+        "local": -5.0,
         "ru_pol": 4.0,
-        "ru_eco": 2.0,
+        "ru_eco": 1.0,
         "ru_safety": 0.0,
         "world": -1.0,
         "it": 1.0
