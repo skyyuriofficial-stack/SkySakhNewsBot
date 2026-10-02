@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+from pathlib import Path
 from datetime import datetime, timedelta, timezone
 
 import editorial_gate_runner
@@ -14,6 +15,12 @@ import resilient_production
 
 def main() -> int:
     now = datetime.now(timezone.utc)
+
+    post_monitor_workflow = Path(".github/workflows/post_publication_monitor.yml").read_text(
+        encoding="utf-8"
+    )
+    assert "publication_auditor.audit_recent_posts(" in post_monitor_workflow
+    assert "publication_auditor.audit_posts(" not in post_monitor_workflow
     status = {
         "publisher_version": "stable-v12.1",
         "checked_at_utc": now.isoformat(timespec="seconds"),
