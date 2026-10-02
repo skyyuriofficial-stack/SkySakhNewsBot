@@ -750,6 +750,38 @@ def final_russian_title_and_it_regressions():
 
 
 def current_live_defect_regressions():
+    # Internal recommendation-system explainers are IT subject matter, but not
+    # release-worthy major IT events without a concrete material event.
+    low_value_it = candidate(
+        (
+            "Почти в любом сервисе с персональной лентой рекомендации подбирает "
+            "цепочка из большого количества моделей. В Яндексе проверили , "
+            "может ли всю цепочку заменить одна нейросеть"
+        ),
+        (
+            "В умных колонках с Алисой музыку подбирает каскад из десятков алгоритмов. "
+            "Каждый из них обучают отдельно, а признаки инженеры подбирают вручную."
+        ),
+        source="TechMedia (@techmedia)",
+        url="https://t.me/techmedia/regression-low-value-it",
+        category="it",
+    )
+    low_value_review = director.review_candidate(low_value_it)
+    assert low_value_review["approved"] is False, low_value_review
+    assert low_value_review["hard_reject"] is True, low_value_review
+    assert low_value_review["reason"] == "routine_it_explainer", low_value_review
+
+    material_it = candidate(
+        "Google представила новую модель Gemini для разработчиков",
+        "Компания выпустила новую модель и открыла к ней доступ через API.",
+        source="TechMedia (@techmedia)",
+        url="https://t.me/techmedia/regression-major-it",
+        category="it",
+    )
+    material_review = director.review_candidate(material_it)
+    assert material_review["approved"] is True, material_review
+    assert material_review["event_type"] == "major_it", material_review
+
     # Product/brand press releases must not fill the economy stream.
     for title, body in (
         (
