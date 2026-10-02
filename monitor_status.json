@@ -1,29 +1,22 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-02T09:02:25+00:00",
-  "checked_at_sakhalin": "2026-10-02T20:02:22+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-02T09:10:14+00:00",
+  "checked_at_sakhalin": "2026-10-02T20:10:09+11:00",
+  "status": "healthy",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-02T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-02T17:12:17+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-02T17:12:17+11:00",
-    "age_hours": 2.84,
+    "finished_sakhalin": "2026-10-02T20:09:42+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-02T06:06:05+00:00",
+    "checked_at_utc": "2026-10-02T09:02:42+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok"
@@ -80,7 +73,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-02T09:02:24+00:00",
+    "checked_at": "2026-10-02T09:10:11+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -93,32 +86,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 305,
-      "title": "Обязательная регистрация дронов в РФ с 2026: система на базе «ЭРА-ГЛОНАСС»",
-      "category_key": "ru_security",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_security",
-      "title_issues": []
-    },
-    {
-      "message_id": 306,
-      "title": "Доходы бюджета Сахалинской области вырастут на 3,9 млрд рублей за счет Сахалина-2",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 308,
       "title": "Новые реактивные дроны России опережают возможности украинской ПВО при ежедневных запусках",
@@ -313,6 +280,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 332,
+      "title": "Инженеры — в тренде: Игорь Лагерев рассказал о бюджетных местах и взлете среднего балла ЕГЭ",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
+    },
+    {
+      "message_id": 333,
+      "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -334,12 +327,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 11,
+      "local": 10,
       "ru_pol": 0,
-      "ru_eco": 3,
+      "ru_eco": 4,
       "ru_safety": 3,
-      "world": 3,
-      "it": 0
+      "world": 2,
+      "it": 1
     },
     "scaled_targets": {
       "local": 6.0,
@@ -350,26 +343,25 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -5.0,
+      "local": -4.0,
       "ru_pol": 4.0,
-      "ru_eco": 1.0,
+      "ru_eco": 0.0,
       "ru_safety": 0.0,
-      "world": -1.0,
-      "it": 1.0
+      "world": 0.0,
+      "it": 0.0
     },
-    "distribution_error": 12.0,
+    "distribution_error": 8.0,
     "subtype_counts": {
-      "major_emergency": 7,
-      "military_security": 4,
-      "macro_economy": 5,
+      "major_emergency": 6,
+      "military_security": 3,
+      "macro_economy": 6,
       "public_service_disruption": 1,
       "fatal_incident": 1,
-      "violent_crime": 2
+      "violent_crime": 2,
+      "major_it": 1
     },
     "sequence": [
       "local",
-      "world",
-      "local",
       "ru_safety",
       "local",
       "world",
@@ -386,11 +378,11 @@
       "ru_eco",
       "local",
       "ru_eco",
-      "local"
+      "local",
+      "ru_eco",
+      "it"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "geo",
       "sakh_chp",
       "ru_security",
       "sakh",
@@ -408,11 +400,11 @@
       "ru_eco",
       "sakh_chp",
       "ru_eco",
-      "sakh_chp"
+      "sakh_chp",
+      "ru_eco",
+      "it"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "sakhalinmedia.ru",
       "sakh.online",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -430,14 +422,16 @@
       "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
-      "sakh.online"
+      "sakh.online",
+      "sakhalinmedia.ru",
+      "techmedia techmedia"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-02T09:02:20+00:00",
+    "checked_at_utc": "2026-10-02T09:10:06+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -467,15 +461,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 12.0,
+      "distribution_error": 8.0,
       "limit": 8.0,
       "counts": {
-        "local": 11,
+        "local": 10,
         "ru_pol": 0,
-        "ru_eco": 3,
+        "ru_eco": 4,
         "ru_safety": 3,
-        "world": 3,
-        "it": 0
+        "world": 2,
+        "it": 1
       },
       "targets": {
         "local": 6,
@@ -486,12 +480,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -5.0,
+        "local": -4.0,
         "ru_pol": 4.0,
-        "ru_eco": 1.0,
+        "ru_eco": 0.0,
         "ru_safety": 0.0,
-        "world": -1.0,
-        "it": 1.0
+        "world": 0.0,
+        "it": 0.0
       }
     }
   ]
