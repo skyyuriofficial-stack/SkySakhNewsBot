@@ -298,6 +298,39 @@ IT_TIPS = (
     "технологически продвинутые пенсионеры", "how to speed up", "tips to improve",
 )
 
+# IT topic markers identify subject matter, not newsworthiness. Internal
+# engineering explainers and conference-style demos must not become major_it
+# merely because they mention AI/neural networks.
+IT_LOW_VALUE_EXPLAINER = (
+    "рекомендации подбирает",
+    "как работают рекомендации",
+    "как работает рекомендатель",
+    "как устроены рекомендации",
+    "цепочка из большого количества моделей",
+    "каскад из десятков алгоритмов",
+    "каждый из них обучают отдельно",
+    "признаки, по которым они оценивают",
+    "признаки по которым они оценивают",
+    "проверили, может ли",
+    "проверили , может ли",
+    "ещё один кейс с конф",
+    "еще один кейс с конф",
+)
+
+IT_MATERIAL_EVENT = (
+    "выпустил", "выпустила", "выпустили", "запустил", "запустила", "запустили",
+    "представил", "представила", "представили", "анонсировал", "анонсировала", "анонсировали",
+    "вышел", "вышла", "выкатил", "выкатила",
+    "уязвимост", "утечк", "взлом", "кибератак", "сбой", "недоступ", "лёг", "лег",
+    "расследован", "повестк", "запрет", "заблокир", "регулирован",
+    "купит", "покупает", "приобрет", "сделк", "млрд", "миллиард",
+    "впервые", "рекорд", "прорыв",
+    "launch", "release", "roll out", "rolls out", "unveil", "announce",
+    "acquir", "deal", "billion", "breach", "hack", "vulnerab", "outage",
+    "down worldwide", "investigation", "subpoena", "ban", "regulat",
+    "first time", "record", "breakthrough",
+)
+
 SOURCE_SUFFIX_RE = re.compile(
     r"\s*(?:-|—|\|)\s*(?:SakhalinMedia(?:\.ru)?|ASTV(?:\.RU)?|SAKH\.ONLINE|Sakh\.online|Interfax|TASS|ТАСС)\s*$",
     re.I,
@@ -483,6 +516,15 @@ def _is_corporate_product_pr(title: str, lead: str) -> bool:
     return bool(brand and product_or_event and pr_evidence and not public_impact)
 
 
+def _is_low_value_it_explainer(title: str, lead: str) -> bool:
+    combined = f"{title} {lead}"
+    return bool(
+        has_any(combined, IT_CORE)
+        and has_any(combined, IT_LOW_VALUE_EXPLAINER)
+        and not has_any(title, IT_MATERIAL_EVENT)
+    )
+
+
 def _hard_reject(title: str, lead: str) -> Optional[str]:
     combined = f"{title} {lead}"
     if has_any(title, CALENDAR_HISTORY):
@@ -503,6 +545,8 @@ def _hard_reject(title: str, lead: str) -> Optional[str]:
         return "routine_event_without_outcome"
     if has_any(combined, SERVICE_NOTICE) and not has_any(combined, ACTUAL_MISSING_PERSON):
         return "service_or_lost_and_found_notice"
+    if _is_low_value_it_explainer(title, lead):
+        return "routine_it_explainer"
     if has_any(title, IT_TIPS):
         return "soft_technology_advice"
     return None
