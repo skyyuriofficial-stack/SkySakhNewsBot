@@ -1,16 +1,23 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-02T09:57:32+00:00",
-  "checked_at_sakhalin": "2026-10-02T20:57:26+11:00",
-  "status": "healthy",
+  "checked_at_utc": "2026-10-02T13:02:58+00:00",
+  "checked_at_sakhalin": "2026-10-03T00:02:54+11:00",
+  "status": "error",
   "mutations_enabled": true,
-  "issues": [],
+  "issues": [
+    {
+      "type": "publisher_slot_missed",
+      "slot_sakhalin": "2026-10-02T22:00+11:00",
+      "grace_minutes": 45,
+      "last_finished_sakhalin": "2026-10-02T20:09:42+11:00"
+    }
+  ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-02T20:09:42+11:00",
-    "age_hours": 0.8,
+    "age_hours": 3.89,
     "published": 2
   },
   "last_production_attempt": {
@@ -23,45 +30,17 @@
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-10-02",
+    "day_sakhalin": "2026-10-03",
     "status": "healthy",
     "morning": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-01T22:45:30+00:00",
-        "published_at_sakhalin": "2026-10-02T09:45:30+11:00",
-        "telegram_message_id": 324,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 7,
-        "evidence_hash": "04c0d09396e9b01f44f8cb20be0d0423397315d9662f3002033f1ed83bdb2b2b",
-        "source_ids": [
-          1,
-          2,
-          3,
-          4
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "evening": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-02T08:25:36+00:00",
-        "published_at_sakhalin": "2026-10-02T19:25:36+11:00",
-        "telegram_message_id": 331,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 8,
-        "evidence_hash": "73f07fd7d297b0dfe86721f9ec7b58d0a435d1519da7748b900ed5260d56c418",
-        "source_ids": [
-          1,
-          2,
-          3,
-          4
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "last_attempt": {
       "status": "ok",
@@ -73,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-02T09:57:29+00:00",
+    "checked_at": "2026-10-02T13:02:56+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -431,7 +410,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-02T09:57:24+00:00",
+    "checked_at_utc": "2026-10-02T13:02:52+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
