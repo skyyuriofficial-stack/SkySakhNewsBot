@@ -43,9 +43,11 @@ def production_due(now: Optional[datetime] = None) -> Dict[str, Any]:
 
     target_hour = max((hour for hour in PRODUCTION_HOURS if hour <= now.hour), default=None)
     if target_hour is None:
-        return {"due": False, "slot": "none", "reason": "before_first_daily_slot"}
-
-    target = now.replace(hour=target_hour, minute=0, second=0, microsecond=0)
+        target = (now - timedelta(days=1)).replace(
+            hour=PRODUCTION_HOURS[-1], minute=0, second=0, microsecond=0
+        )
+    else:
+        target = now.replace(hour=target_hour, minute=0, second=0, microsecond=0)
     slot = target.strftime("%Y-%m-%dT%H:%M%z")
     state = _load_state()
     last_run = state.get("last_run") or {}

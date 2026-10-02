@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import json
 import os
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from datetime import datetime, timedelta, timezone
 
 import editorial_gate_runner
@@ -11,6 +13,7 @@ import hardened_digest
 import health_gate
 import news_director
 import resilient_production
+import schedule_guard
 
 
 def main() -> int:
@@ -193,6 +196,49 @@ def main() -> int:
     assert editorial_monitor._latest_required_production_slot(at_due) == datetime(
         2026, 9, 18, 7, 0, tzinfo=sakhalin_tz
     )
+
+    # Cross-midnight publisher guard: before 07:00, the logical production
+    # slot is the previous calendar day's 22:00 slot, not "before first slot".
+    old_schedule_state_path = schedule_guard.STATE_PATH
+    old_event_name = os.environ.get("GITHUB_EVENT_NAME")
+    old_force_production = os.environ.get("FORCE_PRODUCTION")
+    try:
+        with TemporaryDirectory() as td:
+            schedule_guard.STATE_PATH = Path(td) / "state.json"
+            os.environ["GITHUB_EVENT_NAME"] = "workflow_dispatch"
+            os.environ["FORCE_PRODUCTION"] = "0"
+            cross_midnight = datetime(2026, 10, 3, 2, 15, tzinfo=sakhalin_tz)
+
+            schedule_guard.STATE_PATH.write_text(
+                json.dumps({"last_run": {}}), encoding="utf-8"
+            )
+            missing = schedule_guard.production_due(cross_midnight)
+            assert missing["due"] is True, missing
+            assert missing["slot"] == "2026-10-02T22:00+1100", missing
+            assert missing["reason"] == "slot_missing_or_failed", missing
+
+            schedule_guard.STATE_PATH.write_text(
+                json.dumps({
+                    "last_run": {
+                        "finished_sakhalin": "2026-10-02T22:01:00+11:00"
+                    }
+                }),
+                encoding="utf-8",
+            )
+            processed = schedule_guard.production_due(cross_midnight)
+            assert processed["due"] is False, processed
+            assert processed["slot"] == "2026-10-02T22:00+1100", processed
+            assert processed["reason"] == "slot_already_processed", processed
+    finally:
+        schedule_guard.STATE_PATH = old_schedule_state_path
+        if old_event_name is None:
+            os.environ.pop("GITHUB_EVENT_NAME", None)
+        else:
+            os.environ["GITHUB_EVENT_NAME"] = old_event_name
+        if old_force_production is None:
+            os.environ.pop("FORCE_PRODUCTION", None)
+        else:
+            os.environ["FORCE_PRODUCTION"] = old_force_production
 
     old_model = os.environ.get("OPENROUTER_MODEL")
     old_fallback = os.environ.get("OPENROUTER_FALLBACK_MODELS")
