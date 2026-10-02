@@ -8352,7 +8352,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-02T03:20:20+00:00"
+        "checked_at": "2026-10-02T03:35:46+00:00"
       }
     },
     {
@@ -8525,7 +8525,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-02T03:20:20+00:00"
+        "checked_at": "2026-10-02T03:35:46+00:00"
       }
     },
     {
@@ -8702,7 +8702,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-02T03:20:20+00:00"
+        "checked_at": "2026-10-02T03:35:47+00:00"
       }
     },
     {
@@ -8881,7 +8881,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-02T03:20:21+00:00"
+        "checked_at": "2026-10-02T03:35:47+00:00"
       }
     },
     {
@@ -9063,7 +9063,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-02T03:20:21+00:00"
+        "checked_at": "2026-10-02T03:35:47+00:00"
       }
     },
     {
@@ -9240,7 +9240,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-02T03:20:21+00:00"
+        "checked_at": "2026-10-02T03:35:47+00:00"
       }
     },
     {
@@ -9419,7 +9419,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-02T03:20:21+00:00"
+        "checked_at": "2026-10-02T03:35:47+00:00"
       }
     },
     {
@@ -9592,7 +9592,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-02T03:20:21+00:00"
+        "checked_at": "2026-10-02T03:35:47+00:00"
       }
     },
     {
@@ -9769,7 +9769,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-02T03:20:21+00:00"
+        "checked_at": "2026-10-02T03:35:47+00:00"
       }
     },
     {
@@ -9942,7 +9942,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-02T03:20:22+00:00"
+        "checked_at": "2026-10-02T03:35:47+00:00"
       }
     },
     {
@@ -10126,7 +10126,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-02T03:20:22+00:00"
+        "checked_at": "2026-10-02T03:35:48+00:00"
       }
     },
     {
@@ -10305,7 +10305,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-02T03:20:22+00:00"
+        "checked_at": "2026-10-02T03:35:48+00:00"
       }
     },
     {
@@ -10680,7 +10680,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-02T03:20:22+00:00"
+        "checked_at": "2026-10-02T03:35:48+00:00"
       }
     },
     {
@@ -10860,9 +10860,18 @@
       },
       "post_audit": {
         "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-02T03:20:22+00:00"
-      }
+        "approved": false,
+        "checked_at": "2026-10-02T03:35:48+00:00",
+        "reason": "routine_it_explainer",
+        "issues": [
+          "final_hard_reject:routine_it_explainer",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:routine_it_explainer"
+        ],
+        "auto_action": "deleted_invalid_v12_post"
+      },
+      "auto_deleted": true
     },
     {
       "time_sakhalin": "2026-10-02T08:14:10+11:00",
@@ -11226,7 +11235,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-02T03:20:22+00:00"
+        "checked_at": "2026-10-02T03:35:49+00:00"
       }
     },
     {
@@ -11407,7 +11416,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-02T03:20:23+00:00"
+        "checked_at": "2026-10-02T03:35:49+00:00"
       }
     },
     {
@@ -11588,6 +11597,11 @@
         "issues": [],
         "reclassified_from": "sakh",
         "reclassified_to": "ru_eco"
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-10-02T03:35:49+00:00"
       }
     },
     {
@@ -11760,6 +11774,11 @@
         "meaning_changed": false,
         "mode": "deterministic+extractive",
         "issues": []
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-10-02T03:35:49+00:00"
       }
     }
   ],
@@ -18575,39 +18594,46 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-02T03:20:23+00:00",
+    "checked_at": "2026-10-02T03:35:49+00:00",
     "checked": 18,
     "passed": 17,
     "anomalies": [
       {
-        "title": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
-        "url": "https://astv.ru/news/criminal/2026-09-09-neizvestnyj-stolknulsya-s-subaru-forester-i-skrylsya-s-mesta-dtp-v-yuzhno-sahalinske",
+        "title": "Почти в любом сервисе с персональной лентой рекомендации подбирает цепочка из большого количества моделей. В Яндексе проверили , может ли всю цепочку заменить одна нейросеть",
+        "url": "https://t.me/techmedia/23475",
         "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "reason": "approved",
+        "category_key": "it",
+        "corrected_category": null,
+        "reason": "routine_it_explainer",
         "contract_issues": [
-          "body_missing_sentence_boundary"
+          "final_hard_reject:routine_it_explainer",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:routine_it_explainer"
         ]
       }
     ],
     "corrected": [],
-    "deleted": [],
-    "failed_actions": [],
-    "unresolved": 1,
-    "unresolved_items": [
+    "deleted": [
       {
-        "title": "Неизвестный столкнулся с Subaru Forester и скрылся с места ДТП в Южно-Сахалинске",
-        "url": "https://astv.ru/news/criminal/2026-09-09-neizvestnyj-stolknulsya-s-subaru-forester-i-skrylsya-s-mesta-dtp-v-yuzhno-sahalinske",
+        "message_id": 322,
+        "title": "Почти в любом сервисе с персональной лентой рекомендации подбирает цепочка из большого количества моделей. В Яндексе проверили , может ли всю цепочку заменить одна нейросеть",
+        "url": "https://t.me/techmedia/23475",
         "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "reason": "approved",
+        "category_key": "it",
+        "corrected_category": null,
+        "reason": "routine_it_explainer",
         "contract_issues": [
-          "body_missing_sentence_boundary"
+          "final_hard_reject:routine_it_explainer",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:routine_it_explainer"
         ]
       }
     ],
+    "failed_actions": [],
+    "unresolved": 0,
+    "unresolved_items": [],
     "mutations_enabled": true,
     "legacy_posts_mutated": false
   },

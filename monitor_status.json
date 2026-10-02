@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-02T03:28:44+00:00",
-  "checked_at_sakhalin": "2026-10-02T14:28:40+11:00",
+  "checked_at_utc": "2026-10-02T03:35:51+00:00",
+  "checked_at_sakhalin": "2026-10-02T14:35:46+11:00",
   "status": "healthy",
   "mutations_enabled": true,
   "issues": [],
@@ -10,7 +10,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-02T14:28:10+11:00",
-    "age_hours": 0.01,
+    "age_hours": 0.13,
     "published": 2
   },
   "last_production_attempt": {
@@ -59,12 +59,43 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-02T03:28:42+00:00",
+    "checked_at": "2026-10-02T03:35:49+00:00",
     "checked": 18,
-    "passed": 18,
-    "anomalies": [],
+    "passed": 17,
+    "anomalies": [
+      {
+        "title": "Почти в любом сервисе с персональной лентой рекомендации подбирает цепочка из большого количества моделей. В Яндексе проверили , может ли всю цепочку заменить одна нейросеть",
+        "url": "https://t.me/techmedia/23475",
+        "publisher_version": "stable-v12.1",
+        "category_key": "it",
+        "corrected_category": null,
+        "reason": "routine_it_explainer",
+        "contract_issues": [
+          "final_hard_reject:routine_it_explainer",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:routine_it_explainer"
+        ]
+      }
+    ],
     "corrected": [],
-    "deleted": [],
+    "deleted": [
+      {
+        "message_id": 322,
+        "title": "Почти в любом сервисе с персональной лентой рекомендации подбирает цепочка из большого количества моделей. В Яндексе проверили , может ли всю цепочку заменить одна нейросеть",
+        "url": "https://t.me/techmedia/23475",
+        "publisher_version": "stable-v12.1",
+        "category_key": "it",
+        "corrected_category": null,
+        "reason": "routine_it_explainer",
+        "contract_issues": [
+          "final_hard_reject:routine_it_explainer",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:routine_it_explainer"
+        ]
+      }
+    ],
     "failed_actions": [],
     "unresolved": 0,
     "unresolved_items": [],
@@ -242,19 +273,6 @@
       "title_issues": []
     },
     {
-      "message_id": 322,
-      "title": "Почти в любом сервисе с персональной лентой рекомендации подбирает цепочка из большого количества моделей. В Яндексе проверили , может ли всю цепочку заменить одна нейросеть",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
-    {
       "message_id": 325,
       "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
       "category_key": "ru_incident",
@@ -326,12 +344,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 11,
+      "local": 12,
       "ru_pol": 0,
       "ru_eco": 2,
       "ru_safety": 3,
       "world": 3,
-      "it": 1
+      "it": 0
     },
     "scaled_targets": {
       "local": 6.0,
@@ -342,24 +360,24 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -5.0,
+      "local": -6.0,
       "ru_pol": 4.0,
       "ru_eco": 2.0,
       "ru_safety": 0.0,
       "world": -1.0,
-      "it": 0.0
+      "it": 1.0
     },
-    "distribution_error": 12.0,
+    "distribution_error": 14.0,
     "subtype_counts": {
-      "major_emergency": 7,
+      "major_emergency": 8,
       "military_security": 4,
       "macro_economy": 4,
       "public_service_disruption": 1,
       "fatal_incident": 1,
-      "violent_crime": 2,
-      "major_it": 1
+      "violent_crime": 2
     },
     "sequence": [
+      "local",
       "local",
       "local",
       "world",
@@ -375,13 +393,13 @@
       "world",
       "local",
       "local",
-      "it",
       "ru_safety",
       "local",
       "ru_eco",
       "local"
     ],
     "category_sequence": [
+      "sakh_chp",
       "sakh_chp",
       "sakh_chp",
       "geo",
@@ -397,13 +415,13 @@
       "world_ru",
       "sakh_chp",
       "sakh_chp",
-      "it",
       "ru_incident",
       "sakh_chp",
       "ru_eco",
       "sakh_chp"
     ],
     "source_sequence": [
+      "sakh.online",
       "astv",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
@@ -419,7 +437,6 @@
       "bbc world",
       "sakhalinmedia.ru",
       "astv",
-      "techmedia techmedia",
       "sakh.online",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
@@ -430,7 +447,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-02T03:28:37+00:00",
+    "checked_at_utc": "2026-10-02T03:35:44+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -460,15 +477,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 12.0,
+      "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
-        "local": 11,
+        "local": 12,
         "ru_pol": 0,
         "ru_eco": 2,
         "ru_safety": 3,
         "world": 3,
-        "it": 1
+        "it": 0
       },
       "targets": {
         "local": 6,
@@ -479,12 +496,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -5.0,
+        "local": -6.0,
         "ru_pol": 4.0,
         "ru_eco": 2.0,
         "ru_safety": 0.0,
         "world": -1.0,
-        "it": 0.0
+        "it": 1.0
       }
     }
   ]
