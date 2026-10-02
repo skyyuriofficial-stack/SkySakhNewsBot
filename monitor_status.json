@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-02T08:15:25+00:00",
-  "checked_at_sakhalin": "2026-10-02T19:15:21+11:00",
+  "checked_at_utc": "2026-10-02T08:26:04+00:00",
+  "checked_at_sakhalin": "2026-10-02T19:25:59+11:00",
   "status": "healthy",
   "mutations_enabled": true,
   "issues": [],
@@ -10,7 +10,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-02T17:12:17+11:00",
-    "age_hours": 2.05,
+    "age_hours": 2.23,
     "published": 2
   },
   "last_production_attempt": {
@@ -46,20 +46,34 @@
     },
     "evening": {
       "due": false,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-02T08:25:36+00:00",
+        "published_at_sakhalin": "2026-10-02T19:25:36+11:00",
+        "telegram_message_id": 331,
+        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+        "evidence_count": 8,
+        "evidence_hash": "73f07fd7d297b0dfe86721f9ec7b58d0a435d1519da7748b900ed5260d56c418",
+        "source_ids": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "morning",
-      "at_utc": "2026-10-01T22:45:30+00:00",
-      "at_sakhalin": "2026-10-02T09:45:30+11:00"
+      "mode": "evening",
+      "at_utc": "2026-10-02T08:25:36+00:00",
+      "at_sakhalin": "2026-10-02T19:25:36+11:00"
     },
     "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-02T08:15:23+00:00",
+    "checked_at": "2026-10-02T08:26:02+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -416,7 +430,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-02T08:15:19+00:00",
+    "checked_at_utc": "2026-10-02T08:25:56+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
