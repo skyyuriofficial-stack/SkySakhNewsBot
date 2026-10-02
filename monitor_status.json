@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-02T03:35:51+00:00",
-  "checked_at_sakhalin": "2026-10-02T14:35:46+11:00",
+  "checked_at_utc": "2026-10-02T03:36:53+00:00",
+  "checked_at_sakhalin": "2026-10-02T14:36:47+11:00",
   "status": "healthy",
   "mutations_enabled": true,
   "issues": [],
@@ -10,7 +10,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-02T14:28:10+11:00",
-    "age_hours": 0.13,
+    "age_hours": 0.15,
     "published": 2
   },
   "last_production_attempt": {
@@ -59,43 +59,12 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-02T03:35:49+00:00",
-    "checked": 18,
+    "checked_at": "2026-10-02T03:36:50+00:00",
+    "checked": 17,
     "passed": 17,
-    "anomalies": [
-      {
-        "title": "Почти в любом сервисе с персональной лентой рекомендации подбирает цепочка из большого количества моделей. В Яндексе проверили , может ли всю цепочку заменить одна нейросеть",
-        "url": "https://t.me/techmedia/23475",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": null,
-        "reason": "routine_it_explainer",
-        "contract_issues": [
-          "final_hard_reject:routine_it_explainer",
-          "final_category_mismatch:None->it",
-          "director_final_category:None->it",
-          "director_final_reject:routine_it_explainer"
-        ]
-      }
-    ],
+    "anomalies": [],
     "corrected": [],
-    "deleted": [
-      {
-        "message_id": 322,
-        "title": "Почти в любом сервисе с персональной лентой рекомендации подбирает цепочка из большого количества моделей. В Яндексе проверили , может ли всю цепочку заменить одна нейросеть",
-        "url": "https://t.me/techmedia/23475",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": null,
-        "reason": "routine_it_explainer",
-        "contract_issues": [
-          "final_hard_reject:routine_it_explainer",
-          "final_category_mismatch:None->it",
-          "director_final_category:None->it",
-          "director_final_reject:routine_it_explainer"
-        ]
-      }
-    ],
+    "deleted": [],
     "failed_actions": [],
     "unresolved": 0,
     "unresolved_items": [],
@@ -447,7 +416,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-02T03:35:44+00:00",
+    "checked_at_utc": "2026-10-02T03:36:45+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
