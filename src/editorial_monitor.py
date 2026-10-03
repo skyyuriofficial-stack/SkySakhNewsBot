@@ -98,6 +98,51 @@ def _production_slot_for_attempt(attempted_local: datetime) -> Optional[datetime
     return max(candidates) if candidates else None
 
 
+def _publisher_slot_issue(
+    run: Mapping[str, Any],
+    attempt: Mapping[str, Any],
+    latest_slot: Optional[datetime],
+    now_local: datetime,
+) -> Optional[Dict[str, Any]]:
+    """Return the current publisher-slot issue, prioritizing explicit blocks."""
+
+    if latest_slot is None:
+        return None
+
+    finished = _parse_dt(run.get("finished_sakhalin"))
+    attempted = _parse_dt(attempt.get("checked_at_utc"))
+    attempt_slot = (
+        _production_slot_for_attempt(attempted.astimezone(now_local.tzinfo))
+        if attempted
+        else None
+    )
+    run_covers_slot = bool(
+        finished and finished.astimezone(now_local.tzinfo) >= latest_slot
+    )
+    blocked_covers_slot = bool(
+        attempt.get("status") == "blocked"
+        and attempted
+        and attempted.astimezone(now_local.tzinfo) >= latest_slot
+    )
+
+    if blocked_covers_slot:
+        return {
+            "type": "publisher_blocked",
+            "slot_sakhalin": (attempt_slot or latest_slot).isoformat(timespec="minutes"),
+            "required_slot_sakhalin": latest_slot.isoformat(timespec="minutes"),
+            "reason": attempt.get("reason"),
+            "attempted_at_utc": attempt.get("checked_at_utc"),
+        }
+    if not run_covers_slot:
+        return {
+            "type": "publisher_slot_missed",
+            "slot_sakhalin": latest_slot.isoformat(timespec="minutes"),
+            "grace_minutes": PRODUCTION_SLOT_GRACE_MINUTES,
+            "last_finished_sakhalin": run.get("finished_sakhalin"),
+        }
+    return None
+
+
 def _active_recent_posts(state: Dict[str, Any]):
     return [
         post
@@ -304,36 +349,9 @@ def run_monitor(*, mutate: bool = True, persist_state: bool = True) -> Dict[str,
 
     latest_slot = _latest_required_production_slot(now_local)
     attempt = state.get("last_production_attempt") or {}
-    finished = _parse_dt(run.get("finished_sakhalin"))
-    attempted = _parse_dt(attempt.get("checked_at_utc"))
-    attempt_slot = (
-        _production_slot_for_attempt(attempted.astimezone(now_local.tzinfo))
-        if attempted
-        else None
-    )
-    if latest_slot is not None:
-        run_covers_slot = bool(finished and finished.astimezone(now_local.tzinfo) >= latest_slot)
-        blocked_covers_slot = bool(
-            attempt.get("status") == "blocked"
-            and attempted
-            and attempted.astimezone(now_local.tzinfo) >= latest_slot
-        )
-        if not run_covers_slot:
-            if blocked_covers_slot:
-                issues.append({
-                    "type": "publisher_blocked",
-                    "slot_sakhalin": (attempt_slot or latest_slot).isoformat(timespec="minutes"),
-                    "required_slot_sakhalin": latest_slot.isoformat(timespec="minutes"),
-                    "reason": attempt.get("reason"),
-                    "attempted_at_utc": attempt.get("checked_at_utc"),
-                })
-            else:
-                issues.append({
-                    "type": "publisher_slot_missed",
-                    "slot_sakhalin": latest_slot.isoformat(timespec="minutes"),
-                    "grace_minutes": PRODUCTION_SLOT_GRACE_MINUTES,
-                    "last_finished_sakhalin": run.get("finished_sakhalin"),
-                })
+    slot_issue = _publisher_slot_issue(run, attempt, latest_slot, now_local)
+    if slot_issue:
+        issues.append(slot_issue)
 
     unresolved = int(audit.get("unresolved") or 0)
     failed_actions = list(audit.get("failed_actions") or [])

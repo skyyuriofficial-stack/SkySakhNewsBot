@@ -58,6 +58,13 @@ def production_report(state=None, monitor=None, telegram=None) -> Dict[str, Any]
     if not run.get("finished_sakhalin"):
         critical.append("last_run_missing_finished_sakhalin")
 
+    attempt = state.get("last_production_attempt") or {}
+    if attempt.get("status") == "blocked":
+        warnings.append(
+            "production_attempt_blocked:"
+            + str(attempt.get("reason") or "unknown")
+        )
+
     stats = run.get("stats") or {}
     published = int(run.get("published") or 0)
     telegram_fail = int(stats.get("telegram_fail") or 0)
