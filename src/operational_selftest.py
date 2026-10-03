@@ -54,6 +54,23 @@ def main() -> int:
     assert report["execution_status"] == "healthy", report
     assert "publication_contract_blocked:1" in report["warnings"], report
 
+    blocked_health_state = {
+        **state,
+        "last_production_attempt": {
+            "status": "blocked",
+            "reason": "generation_provider_unavailable",
+        },
+    }
+    blocked_health_report = health_gate.production_report(
+        blocked_health_state, healthy_monitor, healthy_tg
+    )
+    assert blocked_health_report["execution_status"] == "healthy", blocked_health_report
+    assert blocked_health_report["service_status"] == "degraded", blocked_health_report
+    assert (
+        "production_attempt_blocked:generation_provider_unavailable"
+        in blocked_health_report["warnings"]
+    ), blocked_health_report
+
     bad_tg = {"status": "error", "error_kind": "token_unauthorized"}
     report = health_gate.production_report(state, healthy_monitor, bad_tg)
     assert report["execution_status"] == "error", report
