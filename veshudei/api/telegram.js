@@ -540,6 +540,12 @@ export default async function handler(req, res) {
 
   const update = req.body || {};
   const chatId = update.message?.chat?.id || update.callback_query?.message?.chat?.id || null;
+  console.log('[veshudei:webhook] update', {
+    updateId: update.update_id ?? null,
+    hasMessage: Boolean(update.message),
+    hasCallback: Boolean(update.callback_query),
+    hasPhoto: Boolean(update.message?.photo?.length || update.message?.document?.mime_type?.startsWith('image/'))
+  });
 
   try {
     const state = await loadState();
@@ -550,13 +556,17 @@ export default async function handler(req, res) {
       return res.status(200).json({ ok: true, duplicate: true });
     }
 
-    if (Number.isFinite(updateId)) {
-      state.processedUpdateIds = [...processed, updateId].slice(-250);
+    const markProcessed = async () => {
+      if (!Number.isFinite(updateId)) return;
+      const ids = Array.isArray(state.processedUpdateIds) ? state.processedUpdateIds : [];
+      if (ids.includes(updateId)) return;
+      state.processedUpdateIds = [...ids, updateId].slice(-250);
       await saveState(state);
-    }
+    };
 
     if (update.callback_query) {
       await handleCallback(update.callback_query, state);
+      await markProcessed();
       return res.status(200).json({ ok: true });
     }
 
@@ -593,11 +603,15 @@ export default async function handler(req, res) {
       } catch (_) {
         await task;
       }
+      await markProcessed();
       return res.status(200).json({ ok: true, accepted: 'photo' });
     }
 
     if (update.message?.text) {
       await handleText(update.message, state);
+      await markProcessed();
+    } else {
+      await markProcessed();
     }
 
     return res.status(200).json({ ok: true });
