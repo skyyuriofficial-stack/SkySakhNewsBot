@@ -28,6 +28,9 @@ def main() -> int:
         encoding="utf-8"
     )
     assert "legacy_generation_blocked" in editorial_monitor_workflow
+    assert "--connect-timeout 10 --max-time 30" in editorial_monitor_workflow
+    assert "auto_publish_v7.yml/runs?status=${run_status}" in editorial_monitor_workflow
+    assert "Publisher recovery already active/queued; no competing dispatch" in editorial_monitor_workflow
     status = {
         "publisher_version": "stable-v12.1",
         "checked_at_utc": now.isoformat(timespec="seconds"),
