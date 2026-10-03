@@ -318,22 +318,24 @@ def run_monitor(*, mutate: bool = True, persist_state: bool = True) -> Dict[str,
             and attempted
             and attempted.astimezone(now_local.tzinfo) >= latest_slot
         )
-        if not run_covers_slot:
-            if blocked_covers_slot:
-                issues.append({
-                    "type": "publisher_blocked",
-                    "slot_sakhalin": (attempt_slot or latest_slot).isoformat(timespec="minutes"),
-                    "required_slot_sakhalin": latest_slot.isoformat(timespec="minutes"),
-                    "reason": attempt.get("reason"),
-                    "attempted_at_utc": attempt.get("checked_at_utc"),
-                })
-            else:
-                issues.append({
-                    "type": "publisher_slot_missed",
-                    "slot_sakhalin": latest_slot.isoformat(timespec="minutes"),
-                    "grace_minutes": PRODUCTION_SLOT_GRACE_MINUTES,
-                    "last_finished_sakhalin": run.get("finished_sakhalin"),
-                })
+        # A complete generation-provider outage can still leave last_run with a
+        # fresh finished_sakhalin timestamp. The explicit blocked attempt must
+        # therefore take precedence over the nominal run timestamp.
+        if blocked_covers_slot:
+            issues.append({
+                "type": "publisher_blocked",
+                "slot_sakhalin": (attempt_slot or latest_slot).isoformat(timespec="minutes"),
+                "required_slot_sakhalin": latest_slot.isoformat(timespec="minutes"),
+                "reason": attempt.get("reason"),
+                "attempted_at_utc": attempt.get("checked_at_utc"),
+            })
+        elif not run_covers_slot:
+            issues.append({
+                "type": "publisher_slot_missed",
+                "slot_sakhalin": latest_slot.isoformat(timespec="minutes"),
+                "grace_minutes": PRODUCTION_SLOT_GRACE_MINUTES,
+                "last_finished_sakhalin": run.get("finished_sakhalin"),
+            })
 
     unresolved = int(audit.get("unresolved") or 0)
     failed_actions = list(audit.get("failed_actions") or [])
