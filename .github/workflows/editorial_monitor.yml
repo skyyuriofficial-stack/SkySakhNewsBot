@@ -140,6 +140,8 @@ jobs:
         run: |
           if python - <<'PY'
           import json, sys
+          sys.path.insert(0, 'src')
+          import schedule_guard
           try:
               status=json.load(open('monitor_status.json',encoding='utf-8'))
               tg=json.load(open('telegram_health.json',encoding='utf-8'))
@@ -155,30 +157,23 @@ jobs:
           telegram_healthy=tg.get('status') == 'healthy'
 
           # Compatibility recovery for a full AI outage written by the old
-          # pre-fix state recorder. The current scheduler independently applies
-          # the 15-minute cooldown, so this cannot bypass retry throttling.
+          # pre-fix state recorder. Keep one canonical predicate in
+          # schedule_guard so monitor and publisher cannot drift.
           run=state.get('last_run') or {}
-          stats=run.get('stats') or {}
-          legacy_generation_blocked=bool(
-              run.get('status') == 'ok'
-              and int(run.get('published') or 0) == 0
-              and int(stats.get('director_approved') or 0) > 0
-              and int(stats.get('ai_calls') or 0) > 0
-              and int(stats.get('ai_api_fail') or 0) >= int(stats.get('ai_calls') or 0)
-              and int(stats.get('ai_budget_exhausted') or 0) > 0
-              and int(stats.get('telegram_fail') or 0) == 0
-              and int(stats.get('publication_contract_blocked') or 0) == 0
-          )
+          legacy_generation_blocked=schedule_guard.generation_provider_unavailable(run)
 
-          # A missed publisher slot is an editorial-freshness failure. Resilient
-          # production is explicitly queue-only when Telegram is unhealthy, so
-          # its catch-up must not depend on delivery credentials. Generation
-          # outages require healthy Telegram before recovery.
-          recoverable=(
+          # The same guard that gates the publisher is authoritative here too.
+          # In particular it prevents a monitor heartbeat from dispatching a
+          # no-op publisher during the 15-minute blocked-attempt cooldown.
+          guard=schedule_guard.production_due()
+          recovery_intent=(
               missed_slot
               or (blocked and telegram_healthy)
               or (legacy_generation_blocked and telegram_healthy)
           )
+          recoverable=bool(recovery_intent and guard.get('due'))
+          if recovery_intent and not guard.get('due'):
+              print('Recovery intent held by schedule guard:', json.dumps(guard, ensure_ascii=False))
           sys.exit(0 if recoverable else 1)
           PY
           then
