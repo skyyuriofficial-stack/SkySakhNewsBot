@@ -182,8 +182,23 @@ jobs:
           sys.exit(0 if recoverable else 1)
           PY
           then
+            active=0
+            for run_status in in_progress queued waiting; do
+              count="$(curl --connect-timeout 10 --max-time 30 --fail-with-body --silent --show-error \
+                -H "Authorization: Bearer ${GH_TOKEN}" \
+                -H "Accept: application/vnd.github+json" \
+                -H "X-GitHub-Api-Version: 2022-11-28" \
+                "https://api.github.com/repos/${{ github.repository }}/actions/workflows/auto_publish_v7.yml/runs?status=${run_status}&per_page=10" \
+                | python -c 'import json,sys; print(int(json.load(sys.stdin).get("total_count") or 0))')"
+              active=$((active + count))
+            done
+            if [ "$active" -gt 0 ]; then
+              echo "Publisher recovery already active/queued; no competing dispatch"
+              exit 0
+            fi
+
             echo "Monitor detected a recoverable missing production slot; dispatching publisher"
-            curl --fail-with-body --silent --show-error \
+            curl --connect-timeout 10 --max-time 30 --fail-with-body --silent --show-error \
               -X POST \
               -H "Authorization: Bearer ${GH_TOKEN}" \
               -H "Accept: application/vnd.github+json" \
@@ -218,7 +233,7 @@ jobs:
 
           active=0
           for run_status in in_progress queued waiting; do
-            count="$(curl --fail-with-body --silent --show-error               -H "Authorization: Bearer ${GH_TOKEN}"               -H "Accept: application/vnd.github+json"               -H "X-GitHub-Api-Version: 2022-11-28"               "https://api.github.com/repos/${{ github.repository }}/actions/workflows/mobilization_digest.yml/runs?status=${run_status}&per_page=10"               | python -c 'import json,sys; print(int(json.load(sys.stdin).get("total_count") or 0))')"
+            count="$(curl --connect-timeout 10 --max-time 30 --fail-with-body --silent --show-error               -H "Authorization: Bearer ${GH_TOKEN}"               -H "Accept: application/vnd.github+json"               -H "X-GitHub-Api-Version: 2022-11-28"               "https://api.github.com/repos/${{ github.repository }}/actions/workflows/mobilization_digest.yml/runs?status=${run_status}&per_page=10"               | python -c 'import json,sys; print(int(json.load(sys.stdin).get("total_count") or 0))')"
             active=$((active + count))
           done
           if [ "$active" -gt 0 ]; then
@@ -227,7 +242,7 @@ jobs:
           fi
 
           echo "Recovering missing mobilization digest slot: $mode"
-          curl --fail-with-body --silent --show-error             -X POST             -H "Authorization: Bearer ${GH_TOKEN}"             -H "Accept: application/vnd.github+json"             -H "X-GitHub-Api-Version: 2022-11-28"             https://api.github.com/repos/${{ github.repository }}/actions/workflows/mobilization_digest.yml/dispatches             -d "{\"ref\":\"main\",\"inputs\":{\"mode\":\"$mode\"}}"
+          curl --connect-timeout 10 --max-time 30 --fail-with-body --silent --show-error             -X POST             -H "Authorization: Bearer ${GH_TOKEN}"             -H "Accept: application/vnd.github+json"             -H "X-GitHub-Api-Version: 2022-11-28"             https://api.github.com/repos/${{ github.repository }}/actions/workflows/mobilization_digest.yml/dispatches             -d "{\"ref\":\"main\",\"inputs\":{\"mode\":\"$mode\"}}"
 
       - name: Require monitor execution health
         if: always()
