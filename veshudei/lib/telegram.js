@@ -23,6 +23,41 @@ export function answerCallback(callbackQueryId, text = '') {
   return telegram('answerCallbackQuery', { callback_query_id: callbackQueryId, text });
 }
 
+export async function ensureWebhook(webhookUrl) {
+  const expected = String(webhookUrl || '').replace(/\/$/, '');
+  if (!expected) return { ok: false, repaired: false, reason: 'missing-webhook-url' };
+
+  const info = await telegram('getWebhookInfo');
+  const current = String(info?.url || '').replace(/\/$/, '');
+  const pending = Number(info?.pending_update_count || 0);
+  const hasRecentError = Boolean(info?.last_error_message) && pending > 0;
+
+  if (current !== expected || hasRecentError) {
+    await telegram('setWebhook', {
+      url: expected,
+      allowed_updates: ['message', 'callback_query'],
+      drop_pending_updates: false
+    });
+    const refreshed = await telegram('getWebhookInfo');
+    const refreshedUrl = String(refreshed?.url || '').replace(/\/$/, '');
+    return {
+      ok: refreshedUrl === expected,
+      repaired: true,
+      url: refreshedUrl,
+      pending_update_count: Number(refreshed?.pending_update_count || 0),
+      last_error_message: refreshed?.last_error_message || null
+    };
+  }
+
+  return {
+    ok: true,
+    repaired: false,
+    url: current,
+    pending_update_count: pending,
+    last_error_message: info?.last_error_message || null
+  };
+}
+
 export async function downloadTelegramFile(fileId) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   if (!token) throw new Error('TELEGRAM_BOT_TOKEN is not configured');
