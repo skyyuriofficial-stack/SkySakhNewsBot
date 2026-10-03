@@ -1,29 +1,22 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-03T06:25:35+00:00",
-  "checked_at_sakhalin": "2026-10-03T17:25:30+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-03T06:30:30+00:00",
+  "checked_at_sakhalin": "2026-10-03T17:30:26+11:00",
+  "status": "healthy",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-03T16:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-03T13:26:56+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-03T13:26:56+11:00",
-    "age_hours": 3.98,
+    "finished_sakhalin": "2026-10-03T17:29:57+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-03T02:21:52+00:00",
+    "checked_at_utc": "2026-10-03T06:25:53+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok"
@@ -66,7 +59,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-03T06:25:33+00:00",
+    "checked_at": "2026-10-03T06:30:28+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -79,19 +72,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 310,
-      "title": "Жесткое ДТП произошло в районе \"Сити Молла\" в Южно-Сахалинске",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 311,
       "title": "Без света 11 сентября: несколько СНТ в Южно-Сахалинске — список",
@@ -299,6 +279,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 337,
+      "title": "Валерий Лимаренко взял на контроль ремонт теплотрассы после аварии в Южно-Сахалинске",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -345,16 +338,15 @@
     },
     "distribution_error": 10.0,
     "subtype_counts": {
-      "macro_economy": 7,
       "military_security": 2,
-      "major_emergency": 5,
+      "macro_economy": 6,
+      "major_emergency": 6,
       "public_service_disruption": 2,
       "fatal_incident": 1,
       "violent_crime": 2,
       "major_it": 1
     },
     "sequence": [
-      "local",
       "world",
       "ru_eco",
       "local",
@@ -373,10 +365,10 @@
       "ru_eco",
       "it",
       "ru_eco",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "sakh",
       "world_ru",
       "ru_eco",
       "sakh_chp",
@@ -395,10 +387,10 @@
       "ru_eco",
       "it",
       "ru_eco",
-      "sakh"
+      "sakh",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "bbc world",
       "sakhalinmedia.ru",
       "astv",
@@ -417,14 +409,15 @@
       "sakhalinmedia.ru",
       "techmedia techmedia",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-03T06:25:28+00:00",
+    "checked_at_utc": "2026-10-03T06:30:23+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
