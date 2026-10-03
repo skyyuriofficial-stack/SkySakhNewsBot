@@ -1,6 +1,12 @@
 import { loadState, saveState, todayEvents } from '../lib/store.js';
-import { sendMessage, telegram } from '../lib/telegram.js';
+import { sendMessage, ensureWebhook } from '../lib/telegram.js';
 import { getAIBudgetStatus } from '../lib/model.js';
+
+function allowed(req) {
+  const secret = process.env.CRON_SECRET;
+  if (!secret) return true;
+  return req.headers.authorization === 'Bearer ' + secret;
+}
 
 function promptFor(schedule) {
   const prompts = {
@@ -9,8 +15,8 @@ function promptFor(schedule) {
       keyboard: { inline_keyboard: [[{ text: '⚖️ Ввести вес', callback_data: 'menu:weight' }, { text: '🩺 Самочувствие', callback_data: 'menu:symptoms' }], [{ text: '🍺 Алкоголь', callback_data: 'menu:alcohol' }]] }
     },
     '45 1 * * *': {
-      text: '<b>12:45 — контроль перед обедом.</b>\nЗапиши, что собираешься есть. Отдельно отметь орлистат, если принимаешь.',
-      keyboard: { inline_keyboard: [[{ text: '🍽 Обед', callback_data: 'menu:meal' }, { text: '💊 Орлистат', callback_data: 'menu:orlistat' }]] }
+      text: '<b>12:45 — контроль перед обедом.</b>\nЗапиши, что собираешься есть. Отдельно отметь Листату, если принимаешь.',
+      keyboard: { inline_keyboard: [[{ text: '🍽 Обед', callback_data: 'menu:meal' }, { text: '💊 Листата', callback_data: 'menu:orlistat' }]] }
     },
     '30 5 * * *': {
       text: '<b>16:30 — дневной контроль.</b>\nВода, активность и что уже съел. Если намечается алкоголь — лучше отметить заранее.',
@@ -26,9 +32,8 @@ function promptFor(schedule) {
       keyboard: { inline_keyboard: [[{ text: '⚖️ Ввести вес', callback_data: 'menu:weight' }, { text: '💉 Семавик', callback_data: 'menu:semavik' }], [{ text: '📊 Сегодня', callback_data: 'menu:today' }]] }
     }
   };
-  return prompts[schedule] || prompts['30 9 * * *'];
+  return prompts[schedule] || null;
 }
-
 
 function eveningPrompt(state) {
   const events = todayEvents(state);
@@ -41,25 +46,18 @@ function eveningPrompt(state) {
 
   const known = [];
   const missing = [];
-
   if (meals.length) known.push('🍽 еда: ' + meals.length + ' приём(а) уже в дневнике');
   else missing.push('что и примерно сколько съел за день');
-
   if (alcohol) known.push('🍺 алкоголь: ' + String(alcohol.value));
   else missing.push('был ли алкоголь и сколько');
-
   if (orlistat.length) known.push('💊 Листата: ' + orlistat.length + '/3 доз по 60 мг');
   else missing.push('сколько Листаты Мини 60 мг принял и с какими приёмами пищи');
-
   if (water) known.push('💧 вода: ' + String(water.value));
   else missing.push('сколько воды выпил');
-
   if (activity) known.push('🚶 активность: ' + String(activity.value));
   else missing.push('ходьба/зарядка/тренировка или сколько шагов');
-
   if (symptoms) known.push('🩺 самочувствие: ' + String(symptoms.value));
   else missing.push('были ли тошнота, боль в животе, рвота, изжога, запор или диарея');
-
   missing.push('насколько голоден сейчас по шкале 0–10');
 
   const knownText = known.length ? '<b>Уже знаю за сегодня:</b>\n' + known.join('\n') + '\n\n' : '';
@@ -71,89 +69,85 @@ function eveningPrompt(state) {
       'Я не буду переспрашивать то, что уже собрал автоматически.\n\n' +
       knownText + askText +
       '\n\nОтветь одним сообщением в свободной форме. После этого дам короткий разбор и один конкретный план на завтра — без компенсационного голодания.',
-    keyboard: {
-      inline_keyboard: [
-        [{ text: '📊 Что уже записано', callback_data: 'menu:today' }, { text: '🌙 Заполнить итог', callback_data: 'menu:evening' }]
-      ]
-    }
+    keyboard: { inline_keyboard: [[{ text: '📊 Что уже записано', callback_data: 'menu:today' }, { text: '🌙 Заполнить итог', callback_data: 'menu:evening' }]] }
   };
 }
 
-export default async function handler(req, res) {
+async function repairWebhook(req) {
+  const proto = req.headers['x-forwarded-proto'] || 'https';
+  const host = process.env.VERCEL_PROJECT_PRODUCTION_URL || req.headers.host;
+  if (!host) return { ok: false, repaired: false, reason: 'missing-production-url' };
+  const base = /^https?:\/\//i.test(host) ? host : proto + '://' + host;
+  return ensureWebhook(base.replace(/\/$/, '') + '/api/telegram');
+}
+
+async function maybeAlertBudget(state) {
   try {
-    const proto = req.headers['x-forwarded-proto'] || 'https';
-    const productionHost = process.env.VERCEL_PROJECT_PRODUCTION_URL || req.headers.host;
-    if (productionHost) {
-      const base = /^https?:\/\//i.test(productionHost) ? productionHost : proto + '://' + productionHost;
-      const webhook = base.replace(/\/$/, '') + '/api/telegram';
-      await telegram('setWebhook', {
-        url: webhook,
-        allowed_updates: ['message', 'callback_query'],
-        drop_pending_updates: false
-      });
-      const info = await telegram('getWebhookInfo');
-      if (!info || info.url !== webhook) throw new Error('Webhook verification failed');
+    const budget = await getAIBudgetStatus();
+    const balance = Number(budget?.gatewayBalanceUsd);
+    if (!Number.isFinite(balance) || balance > 1.5) return;
+
+    const day = new Intl.DateTimeFormat('en-CA', {
+      timeZone: 'Asia/Sakhalin',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    }).format(new Date());
+
+    const alreadyAlerted = (state.events || []).some((e) => e.type === 'ai_budget_alert' && e.day === day);
+    if (alreadyAlerted) return;
+
+    state.events.push({
+      id: 'ai-budget-' + Date.now(),
+      ts: new Date().toISOString(),
+      day,
+      type: 'ai_budget_alert',
+      value: 'AI Gateway balance=' + balance
+    });
+    await saveState(state);
+
+    await sendMessage(
+      state.chatId,
+      '⚠️ <b>AI Gateway: заканчивается бесплатный кредит.</b>\n' +
+      'Остаток ≈ $' + balance.toFixed(2) + '.\n' +
+      'Veshudei работает в режиме free-credit-only и блокирует новые AI-вызовы при остатке $1.00, чтобы не переходить на списания с карты.'
+    );
+  } catch (error) {
+    console.error('[veshudei:cron] budget monitor', error?.message || error);
+  }
+}
+
+export default async function handler(req, res) {
+  if (!allowed(req)) return res.status(401).json({ ok: false });
+
+  try {
+    try {
+      const webhook = await repairWebhook(req);
+      console.log('[veshudei:cron] webhook', webhook);
+    } catch (error) {
+      console.error('[veshudei:cron] webhook repair failed', error?.message || error);
     }
 
     const schedule = String(req.headers['x-vercel-cron-schedule'] || '');
+    if (!schedule) return res.status(200).json({ ok: true, skipped: 'no-schedule' });
+
     const state = await loadState();
-    if (!state.chatId) return res.status(200).json({ ok: true, skipped: 'no-chat' });
+    if (!state.chatId) return res.status(200).json({ ok: true, skipped: 'no-chat', schedule });
 
-    try {
-      const budget = await getAIBudgetStatus();
-      const balance = Number(budget?.gatewayBalanceUsd);
-      const alertKey = new Intl.DateTimeFormat('en-CA', {
-        timeZone: 'Asia/Sakhalin',
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit'
-      }).format(new Date());
-
-      const alreadyAlerted = (state.events || []).some((e) =>
-        e.type === 'ai_budget_alert' && e.day === alertKey
-      );
-
-      if (Number.isFinite(balance) && balance <= 1.5 && !alreadyAlerted) {
-        state.events.push({
-          id: 'ai-budget-' + Date.now(),
-          ts: new Date().toISOString(),
-          day: alertKey,
-          type: 'ai_budget_alert',
-          value: 'AI Gateway balance=' + balance
-        });
-        await saveState(state);
-        await sendMessage(
-          state.chatId,
-          '⚠️ <b>AI Gateway: заканчивается бесплатный кредит.</b>\n' +
-          'Остаток ≈ 
-    if (p.awaitingType) {
-      state.awaiting = { type: p.awaitingType, meta: {}, at: new Date().toISOString() };
-      await saveState(state);
-    }
-    await sendMessage(state.chatId, p.text, p.keyboard);
-    return res.status(200).json({ ok: true, schedule });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ ok: false, error: String(error?.message || error) });
-  }
-}
- + balance.toFixed(2) + '.\n' +
-          'Veshudei уже работает в режиме free-credit-only и блокирует новые AI-вызовы при остатке $1.00, чтобы не переходить на списания с карты.'
-        );
-      }
-    } catch (error) {
-      console.error('Veshudei budget monitor:', error?.message || error);
-    }
+    await maybeAlertBudget(state);
 
     const p = schedule === '30 9 * * *' ? eveningPrompt(state) : promptFor(schedule);
+    if (!p) return res.status(200).json({ ok: true, skipped: 'unknown-schedule', schedule });
+
     if (p.awaitingType) {
       state.awaiting = { type: p.awaitingType, meta: {}, at: new Date().toISOString() };
       await saveState(state);
     }
+
     await sendMessage(state.chatId, p.text, p.keyboard);
     return res.status(200).json({ ok: true, schedule });
   } catch (error) {
-    console.error(error);
+    console.error('[veshudei:cron] fatal', error);
     return res.status(500).json({ ok: false, error: String(error?.message || error) });
   }
 }
