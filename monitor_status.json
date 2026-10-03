@@ -1,22 +1,22 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-03T02:16:55+00:00",
-  "checked_at_sakhalin": "2026-10-03T13:16:50+11:00",
+  "checked_at_utc": "2026-10-03T02:27:26+00:00",
+  "checked_at_sakhalin": "2026-10-03T13:27:23+11:00",
   "status": "healthy",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-03T10:47:05+11:00",
-    "age_hours": 2.5,
-    "published": 0
+    "finished_sakhalin": "2026-10-03T13:26:56+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-02T23:43:36+00:00",
+    "checked_at_utc": "2026-10-03T02:21:52+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok"
@@ -59,7 +59,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-03T02:16:53+00:00",
+    "checked_at": "2026-10-03T02:27:25+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -72,19 +72,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 309,
-      "title": "Дефицит бюджета РФ — не повод для беспокойства, заявили в Кремле",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 310,
       "title": "Жесткое ДТП произошло в районе \"Сити Молла\" в Южно-Сахалинске",
@@ -292,6 +279,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 336,
+      "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -313,10 +313,10 @@
       "it": 5.0
     },
     "counts": {
-      "local": 9,
+      "local": 10,
       "ru_pol": 0,
       "ru_eco": 5,
-      "ru_safety": 3,
+      "ru_safety": 2,
       "world": 2,
       "it": 1
     },
@@ -329,25 +329,24 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -3.0,
+      "local": -4.0,
       "ru_pol": 4.0,
       "ru_eco": -1.0,
-      "ru_safety": 0.0,
+      "ru_safety": 1.0,
       "world": 0.0,
       "it": 0.0
     },
-    "distribution_error": 8.0,
+    "distribution_error": 10.0,
     "subtype_counts": {
-      "military_security": 3,
       "macro_economy": 7,
+      "military_security": 2,
       "major_emergency": 5,
-      "public_service_disruption": 1,
+      "public_service_disruption": 2,
       "fatal_incident": 1,
       "violent_crime": 2,
       "major_it": 1
     },
     "sequence": [
-      "ru_safety",
       "local",
       "world",
       "ru_eco",
@@ -366,10 +365,10 @@
       "local",
       "ru_eco",
       "it",
-      "ru_eco"
+      "ru_eco",
+      "local"
     ],
     "category_sequence": [
-      "ru_security",
       "sakh",
       "world_ru",
       "ru_eco",
@@ -388,10 +387,10 @@
       "sakh_chp",
       "ru_eco",
       "it",
-      "ru_eco"
+      "ru_eco",
+      "sakh"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakhalinmedia.ru",
       "bbc world",
       "sakhalinmedia.ru",
@@ -410,6 +409,7 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "techmedia techmedia",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -417,7 +417,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-03T02:16:48+00:00",
+    "checked_at_utc": "2026-10-03T02:27:22+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -441,19 +441,19 @@
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0
   },
-  "delivery_outbox_repaired": true,
+  "delivery_outbox_repaired": false,
   "hardening_actions": [],
   "hardening_failed_actions": [],
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 8.0,
+      "distribution_error": 10.0,
       "limit": 8.0,
       "counts": {
-        "local": 9,
+        "local": 10,
         "ru_pol": 0,
         "ru_eco": 5,
-        "ru_safety": 3,
+        "ru_safety": 2,
         "world": 2,
         "it": 1
       },
@@ -466,10 +466,10 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.0,
+        "local": -4.0,
         "ru_pol": 4.0,
         "ru_eco": -1.0,
-        "ru_safety": 0.0,
+        "ru_safety": 1.0,
         "world": 0.0,
         "it": 0.0
       }
