@@ -143,6 +143,7 @@ jobs:
           try:
               status=json.load(open('monitor_status.json',encoding='utf-8'))
               tg=json.load(open('telegram_health.json',encoding='utf-8'))
+              state=json.load(open('state.json',encoding='utf-8'))
           except Exception:
               sys.exit(1)
           issue_types={
@@ -152,11 +153,32 @@ jobs:
           missed_slot='publisher_slot_missed' in issue_types
           blocked='publisher_blocked' in issue_types
           telegram_healthy=tg.get('status') == 'healthy'
+
+          # Compatibility recovery for a full AI outage written by the old
+          # pre-fix state recorder. The current scheduler independently applies
+          # the 15-minute cooldown, so this cannot bypass retry throttling.
+          run=state.get('last_run') or {}
+          stats=run.get('stats') or {}
+          legacy_generation_blocked=bool(
+              run.get('status') == 'ok'
+              and int(run.get('published') or 0) == 0
+              and int(stats.get('director_approved') or 0) > 0
+              and int(stats.get('ai_calls') or 0) > 0
+              and int(stats.get('ai_api_fail') or 0) >= int(stats.get('ai_calls') or 0)
+              and int(stats.get('ai_budget_exhausted') or 0) > 0
+              and int(stats.get('telegram_fail') or 0) == 0
+              and int(stats.get('publication_contract_blocked') or 0) == 0
+          )
+
           # A missed publisher slot is an editorial-freshness failure. Resilient
           # production is explicitly queue-only when Telegram is unhealthy, so
-          # its catch-up must not depend on delivery credentials. A merely
-          # blocked delivery remains gated on a healthy Telegram adapter.
-          recoverable=missed_slot or (blocked and telegram_healthy)
+          # its catch-up must not depend on delivery credentials. Generation
+          # outages require healthy Telegram before recovery.
+          recoverable=(
+              missed_slot
+              or (blocked and telegram_healthy)
+              or (legacy_generation_blocked and telegram_healthy)
+          )
           sys.exit(0 if recoverable else 1)
           PY
           then
