@@ -1,35 +1,27 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-03T22:08:49+00:00",
-  "checked_at_sakhalin": "2026-10-04T09:08:44+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-03T22:54:51+00:00",
+  "checked_at_sakhalin": "2026-10-04T09:54:46+11:00",
+  "status": "healthy",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_blocked",
-      "slot_sakhalin": "2026-10-04T07:00+11:00",
-      "required_slot_sakhalin": "2026-10-04T07:00+11:00",
-      "reason": "generation_provider_unavailable",
-      "attempted_at_utc": "2026-10-03T21:58:22+00:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-04T08:58:22+11:00",
-    "age_hours": 0.17,
-    "published": 0
+    "finished_sakhalin": "2026-10-04T09:54:22+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
-    "status": "blocked",
-    "reason": "generation_provider_unavailable",
-    "checked_at_utc": "2026-10-03T21:58:22+00:00",
+    "status": "ok",
+    "reason": null,
+    "checked_at_utc": "2026-10-03T22:54:23+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 3,
+    "published": 1,
+    "director_approved": 5,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -74,7 +66,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-03T22:08:47+00:00",
+    "checked_at": "2026-10-03T22:54:49+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -87,19 +79,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 313,
-      "title": "Пострадавшим от БПЛА жителям Новороссийска окажут поддержку в упрощенном порядке",
-      "category_key": "ru_security",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_security",
-      "title_issues": []
-    },
     {
       "message_id": 314,
       "title": "Бюджет Сахалинской области увеличат на 3,9 млрд рублей",
@@ -307,6 +286,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 341,
+      "title": "Безработица на Сахалине остается ниже средней по Дальнему Востоку",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -328,9 +320,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 11,
+      "local": 12,
       "ru_pol": 0,
-      "ru_eco": 5,
+      "ru_eco": 4,
       "ru_safety": 2,
       "world": 1,
       "it": 1
@@ -344,26 +336,25 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -5.0,
+      "local": -6.0,
       "ru_pol": 4.0,
-      "ru_eco": -1.0,
+      "ru_eco": 0.0,
       "ru_safety": 1.0,
       "world": 1.0,
       "it": 0.0
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "macro_economy": 6,
       "major_emergency": 6,
       "public_service_disruption": 2,
       "military_security": 1,
+      "macro_economy": 6,
       "fatal_incident": 1,
       "violent_crime": 2,
       "major_it": 1,
       "severe_weather": 1
     },
     "sequence": [
-      "ru_eco",
       "local",
       "local",
       "ru_safety",
@@ -382,10 +373,10 @@
       "ru_eco",
       "local",
       "local",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "ru_eco",
       "sakh_chp",
       "sakh",
       "ru_security",
@@ -404,10 +395,10 @@
       "ru_eco",
       "sakh",
       "sakh_chp",
+      "sakh",
       "sakh"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "astv",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -426,6 +417,7 @@
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakh.online",
+      "sakh.online",
       "sakh.online"
     ],
     "retrospective_anomalies": [],
@@ -433,7 +425,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-03T22:08:42+00:00",
+    "checked_at_utc": "2026-10-03T22:54:44+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -466,9 +458,9 @@
       "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
-        "local": 11,
+        "local": 12,
         "ru_pol": 0,
-        "ru_eco": 5,
+        "ru_eco": 4,
         "ru_safety": 2,
         "world": 1,
         "it": 1
@@ -482,9 +474,9 @@
         "it": 1
       },
       "deficits": {
-        "local": -5.0,
+        "local": -6.0,
         "ru_pol": 4.0,
-        "ru_eco": -1.0,
+        "ru_eco": 0.0,
         "ru_safety": 1.0,
         "world": 1.0,
         "it": 0.0
