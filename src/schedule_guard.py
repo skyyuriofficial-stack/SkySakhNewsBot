@@ -33,6 +33,30 @@ def _load_state() -> Dict[str, Any]:
         return {}
 
 
+def generation_provider_unavailable(run: Dict[str, Any]) -> bool:
+    """Recognize a complete AI-generation outage from durable run statistics."""
+
+    if run.get("status") != "ok":
+        return False
+    stats = run.get("stats") if isinstance(run.get("stats"), dict) else {}
+    published = int(run.get("published") or 0)
+    director_approved = int(stats.get("director_approved") or 0)
+    ai_calls = int(stats.get("ai_calls") or 0)
+    ai_api_fail = int(stats.get("ai_api_fail") or 0)
+    ai_budget_exhausted = int(stats.get("ai_budget_exhausted") or 0)
+    telegram_fail = int(stats.get("telegram_fail") or 0)
+    contract_blocked = int(stats.get("publication_contract_blocked") or 0)
+    return bool(
+        published == 0
+        and director_approved > 0
+        and ai_calls > 0
+        and ai_api_fail >= ai_calls
+        and ai_budget_exhausted > 0
+        and telegram_fail == 0
+        and contract_blocked == 0
+    )
+
+
 def production_due(now: Optional[datetime] = None) -> Dict[str, Any]:
     now = (now or datetime.now(TZ)).astimezone(TZ)
     if (
@@ -59,13 +83,25 @@ def production_due(now: Optional[datetime] = None) -> Dict[str, Any]:
     # existed but the generation provider failed completely".
     attempt = state.get("last_production_attempt") or {}
     attempted_at = _parse(attempt.get("checked_at_utc"))
-    blocked_covers_slot = bool(
+    explicit_blocked = bool(
         attempt.get("status") == "blocked"
         and attempted_at
         and attempted_at.astimezone(TZ) >= target
     )
-    if blocked_covers_slot:
-        age = now - attempted_at.astimezone(TZ)
+    legacy_generation_blocked = bool(
+        finished
+        and finished.astimezone(TZ) >= target
+        and generation_provider_unavailable(last_run)
+    )
+    blocked_covers_slot = explicit_blocked or legacy_generation_blocked
+    blocked_at = attempted_at if explicit_blocked else (finished if legacy_generation_blocked else None)
+    blocked_reason = (
+        attempt.get("reason")
+        if explicit_blocked
+        else ("generation_provider_unavailable" if legacy_generation_blocked else None)
+    )
+    if blocked_covers_slot and blocked_at:
+        age = now - blocked_at.astimezone(TZ)
         if age.total_seconds() < BLOCKED_RETRY_COOLDOWN_MINUTES * 60:
             return {
                 "due": False,
@@ -80,7 +116,7 @@ def production_due(now: Optional[datetime] = None) -> Dict[str, Any]:
             "due": True,
             "slot": slot,
             "reason": "blocked_attempt_retry_due",
-            "blocked_reason": attempt.get("reason"),
+            "blocked_reason": blocked_reason,
         }
 
     if finished and finished.astimezone(TZ) >= target:

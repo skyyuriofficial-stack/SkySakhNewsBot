@@ -24,6 +24,10 @@ def main() -> int:
     )
     assert "publication_auditor.audit_recent_posts(" in post_monitor_workflow
     assert "publication_auditor.audit_posts(" not in post_monitor_workflow
+    editorial_monitor_workflow = Path(".github/workflows/editorial_monitor.yml").read_text(
+        encoding="utf-8"
+    )
+    assert "legacy_generation_blocked" in editorial_monitor_workflow
     status = {
         "publisher_version": "stable-v12.1",
         "checked_at_utc": now.isoformat(timespec="seconds"),
@@ -356,9 +360,32 @@ def main() -> int:
             assert retry_due["reason"] == "blocked_attempt_retry_due", retry_due
             assert retry_due["blocked_reason"] == "generation_provider_unavailable", retry_due
 
+            # Backward compatibility: a pre-fix outage recorded an "ok"
+            # attempt before publisher.main() finished. Durable last_run stats
+            # must still reopen that logical slot after the cooldown.
             schedule_guard.STATE_PATH.write_text(
                 json.dumps({
                     "last_run": generation_outage_run,
+                    "last_production_attempt": {
+                        "status": "ok",
+                        "checked_at_utc": "2026-10-03T21:08:39+00:00",
+                    },
+                }),
+                encoding="utf-8",
+            )
+            legacy_retry = schedule_guard.production_due(
+                datetime(2026, 10, 4, 8, 31, tzinfo=sakhalin_tz)
+            )
+            assert legacy_retry["due"] is True, legacy_retry
+            assert legacy_retry["reason"] == "blocked_attempt_retry_due", legacy_retry
+            assert (
+                legacy_retry["blocked_reason"] == "generation_provider_unavailable"
+            ), legacy_retry
+
+            # A genuine successful/fallback publication must still close the slot.
+            schedule_guard.STATE_PATH.write_text(
+                json.dumps({
+                    "last_run": published_fallback,
                     "last_production_attempt": {
                         "status": "ok",
                         "checked_at_utc": "2026-10-03T21:29:00+00:00",
