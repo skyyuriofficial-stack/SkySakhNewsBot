@@ -52,6 +52,37 @@ def production_due(now: Optional[datetime] = None) -> Dict[str, Any]:
     state = _load_state()
     last_run = state.get("last_run") or {}
     finished = _parse(last_run.get("finished_sakhalin"))
+
+    # A blocked attempt is authoritative for the slot it serviced even when
+    # publisher.main() wrote a nominally successful last_run timestamp. This is
+    # what distinguishes "nothing worth publishing" from "approved stories
+    # existed but the generation provider failed completely".
+    attempt = state.get("last_production_attempt") or {}
+    attempted_at = _parse(attempt.get("checked_at_utc"))
+    blocked_covers_slot = bool(
+        attempt.get("status") == "blocked"
+        and attempted_at
+        and attempted_at.astimezone(TZ) >= target
+    )
+    if blocked_covers_slot:
+        age = now - attempted_at.astimezone(TZ)
+        if age.total_seconds() < BLOCKED_RETRY_COOLDOWN_MINUTES * 60:
+            return {
+                "due": False,
+                "slot": slot,
+                "reason": "blocked_attempt_cooldown",
+                "retry_after_minutes": round(
+                    (BLOCKED_RETRY_COOLDOWN_MINUTES * 60 - age.total_seconds()) / 60,
+                    1,
+                ),
+            }
+        return {
+            "due": True,
+            "slot": slot,
+            "reason": "blocked_attempt_retry_due",
+            "blocked_reason": attempt.get("reason"),
+        }
+
     if finished and finished.astimezone(TZ) >= target:
         return {
             "due": False,
@@ -59,22 +90,6 @@ def production_due(now: Optional[datetime] = None) -> Dict[str, Any]:
             "reason": "slot_already_processed",
             "finished_sakhalin": finished.astimezone(TZ).isoformat(timespec="seconds"),
         }
-
-    attempt = state.get("last_production_attempt") or {}
-    attempted_at = _parse(attempt.get("checked_at_utc"))
-    if (
-        attempt.get("status") == "blocked"
-        and attempted_at
-        and attempted_at.astimezone(TZ) >= target
-    ):
-        age = now - attempted_at.astimezone(TZ)
-        if age.total_seconds() < BLOCKED_RETRY_COOLDOWN_MINUTES * 60:
-            return {
-                "due": False,
-                "slot": slot,
-                "reason": "blocked_attempt_cooldown",
-                "retry_after_minutes": round((BLOCKED_RETRY_COOLDOWN_MINUTES * 60 - age.total_seconds()) / 60, 1),
-            }
 
     return {"due": True, "slot": slot, "reason": "slot_missing_or_failed"}
 
