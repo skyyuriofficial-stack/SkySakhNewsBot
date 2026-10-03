@@ -240,6 +240,131 @@ def main() -> int:
         else:
             os.environ["FORCE_PRODUCTION"] = old_force_production
 
+    # A complete generation-provider outage must not close a logical slot merely
+    # because publisher.main() wrote a fresh finished_sakhalin timestamp.
+    generation_outage_run = {
+        "status": "ok",
+        "published": 0,
+        "finished_sakhalin": "2026-10-04T08:13:58+11:00",
+        "stats": {
+            "director_approved": 3,
+            "ai_calls": 4,
+            "ai_api_fail": 4,
+            "ai_budget_exhausted": 1,
+            "telegram_fail": 0,
+            "publication_contract_blocked": 0,
+        },
+    }
+    healthy_generation_transport = {"status": "healthy"}
+    assert resilient_production._generation_provider_unavailable(
+        generation_outage_run, healthy_generation_transport
+    )
+
+    contract_reject_run = {
+        **generation_outage_run,
+        "stats": {
+            **generation_outage_run["stats"],
+            "publication_contract_blocked": 1,
+        },
+    }
+    assert not resilient_production._generation_provider_unavailable(
+        contract_reject_run, healthy_generation_transport
+    )
+    partial_ai_failure = {
+        **generation_outage_run,
+        "stats": {
+            **generation_outage_run["stats"],
+            "ai_api_fail": 3,
+        },
+    }
+    assert not resilient_production._generation_provider_unavailable(
+        partial_ai_failure, healthy_generation_transport
+    )
+    published_fallback = {**generation_outage_run, "published": 1}
+    assert not resilient_production._generation_provider_unavailable(
+        published_fallback, healthy_generation_transport
+    )
+    assert not resilient_production._generation_provider_unavailable(
+        generation_outage_run, {"status": "error"}
+    )
+
+    blocked_attempt = {
+        "status": "blocked",
+        "reason": "generation_provider_unavailable",
+        "checked_at_utc": "2026-10-03T21:13:59+00:00",
+    }
+    blocked_latest_slot = datetime(2026, 10, 4, 7, 0, tzinfo=sakhalin_tz)
+    blocked_issue = editorial_monitor._publisher_slot_issue(
+        generation_outage_run,
+        blocked_attempt,
+        blocked_latest_slot,
+        datetime(2026, 10, 4, 8, 20, tzinfo=sakhalin_tz),
+    )
+    assert blocked_issue is not None, blocked_issue
+    assert blocked_issue["type"] == "publisher_blocked", blocked_issue
+    assert blocked_issue["reason"] == "generation_provider_unavailable", blocked_issue
+    processed_issue = editorial_monitor._publisher_slot_issue(
+        generation_outage_run,
+        {"status": "ok", "checked_at_utc": "2026-10-03T21:13:59+00:00"},
+        blocked_latest_slot,
+        datetime(2026, 10, 4, 8, 20, tzinfo=sakhalin_tz),
+    )
+    assert processed_issue is None, processed_issue
+
+    old_schedule_state_path = schedule_guard.STATE_PATH
+    old_event_name = os.environ.get("GITHUB_EVENT_NAME")
+    old_force_production = os.environ.get("FORCE_PRODUCTION")
+    try:
+        with TemporaryDirectory() as td:
+            schedule_guard.STATE_PATH = Path(td) / "state.json"
+            os.environ["GITHUB_EVENT_NAME"] = "workflow_dispatch"
+            os.environ["FORCE_PRODUCTION"] = "0"
+            schedule_guard.STATE_PATH.write_text(
+                json.dumps({
+                    "last_run": generation_outage_run,
+                    "last_production_attempt": blocked_attempt,
+                }),
+                encoding="utf-8",
+            )
+            cooling_down = schedule_guard.production_due(
+                datetime(2026, 10, 4, 8, 20, tzinfo=sakhalin_tz)
+            )
+            assert cooling_down["due"] is False, cooling_down
+            assert cooling_down["reason"] == "blocked_attempt_cooldown", cooling_down
+
+            retry_due = schedule_guard.production_due(
+                datetime(2026, 10, 4, 8, 30, tzinfo=sakhalin_tz)
+            )
+            assert retry_due["due"] is True, retry_due
+            assert retry_due["reason"] == "blocked_attempt_retry_due", retry_due
+            assert retry_due["blocked_reason"] == "generation_provider_unavailable", retry_due
+
+            schedule_guard.STATE_PATH.write_text(
+                json.dumps({
+                    "last_run": generation_outage_run,
+                    "last_production_attempt": {
+                        "status": "ok",
+                        "checked_at_utc": "2026-10-03T21:29:00+00:00",
+                    },
+                }),
+                encoding="utf-8",
+            )
+            recovered = schedule_guard.production_due(
+                datetime(2026, 10, 4, 8, 31, tzinfo=sakhalin_tz)
+            )
+            assert recovered["due"] is False, recovered
+            assert recovered["reason"] == "slot_already_processed", recovered
+    finally:
+        schedule_guard.STATE_PATH = old_schedule_state_path
+        if old_event_name is None:
+            os.environ.pop("GITHUB_EVENT_NAME", None)
+        else:
+            os.environ["GITHUB_EVENT_NAME"] = old_event_name
+        if old_force_production is None:
+            os.environ.pop("FORCE_PRODUCTION", None)
+        else:
+            os.environ["FORCE_PRODUCTION"] = old_force_production
+
     old_model = os.environ.get("OPENROUTER_MODEL")
     old_fallback = os.environ.get("OPENROUTER_FALLBACK_MODELS")
     old_attempts = os.environ.get("OPENROUTER_MAX_ATTEMPTS")
