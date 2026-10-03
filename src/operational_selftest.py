@@ -31,6 +31,8 @@ def main() -> int:
     assert "--connect-timeout 10 --max-time 30" in editorial_monitor_workflow
     assert "auto_publish_v7.yml/runs?status=${run_status}" in editorial_monitor_workflow
     assert "Publisher recovery already active/queued; no competing dispatch" in editorial_monitor_workflow
+    assert "guard=schedule_guard.production_due()" in editorial_monitor_workflow
+    assert "Recovery intent held by schedule guard:" in editorial_monitor_workflow
     status = {
         "publisher_version": "stable-v12.1",
         "checked_at_utc": now.isoformat(timespec="seconds"),
