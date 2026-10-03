@@ -330,6 +330,38 @@ def _write_outbox(state: Dict[str, Any], health: Dict[str, Any]) -> None:
     )
 
 
+def _generation_provider_unavailable(run: Dict[str, Any], health: Dict[str, Any]) -> bool:
+    """Return True only for a complete AI-generation outage with viable stories.
+
+    This deliberately excludes normal empty cycles and publication-contract
+    rejects. A retry is warranted only when Telegram is healthy, the director
+    approved at least one item, every attempted AI generation failed, the AI
+    failure budget was exhausted, and nothing else blocked publication.
+    """
+
+    if health.get("status") != "healthy" or run.get("status") != "ok":
+        return False
+
+    stats = run.get("stats") if isinstance(run.get("stats"), dict) else {}
+    published = int(run.get("published") or 0)
+    director_approved = int(stats.get("director_approved") or 0)
+    ai_calls = int(stats.get("ai_calls") or 0)
+    ai_api_fail = int(stats.get("ai_api_fail") or 0)
+    ai_budget_exhausted = int(stats.get("ai_budget_exhausted") or 0)
+    telegram_fail = int(stats.get("telegram_fail") or 0)
+    contract_blocked = int(stats.get("publication_contract_blocked") or 0)
+
+    return bool(
+        published == 0
+        and director_approved > 0
+        and ai_calls > 0
+        and ai_api_fail >= ai_calls
+        and ai_budget_exhausted > 0
+        and telegram_fail == 0
+        and contract_blocked == 0
+    )
+
+
 def _record_plane_status(state: Dict[str, Any], health: Dict[str, Any]) -> None:
     run = state.get("last_run") if isinstance(state.get("last_run"), dict) else {}
     pending_count = len([
@@ -337,14 +369,32 @@ def _record_plane_status(state: Dict[str, Any], health: Dict[str, Any]) -> None:
         if isinstance(item, dict)
     ])
     delivery_ok = health.get("status") == "healthy"
+    generation_blocked = _generation_provider_unavailable(run, health)
+    stats = run.get("stats") if isinstance(run.get("stats"), dict) else {}
+    checked_at_utc = datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+    if generation_blocked:
+        attempt_status = "blocked"
+        attempt_reason = "generation_provider_unavailable"
+    elif delivery_ok:
+        attempt_status = "ok"
+        attempt_reason = None
+    else:
+        attempt_status = "editorial_ok_delivery_blocked"
+        attempt_reason = _delivery_reason(health)
+
     state["service_planes"] = {
         "version": "split-plane-v1",
-        "checked_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "checked_at_utc": checked_at_utc,
         "editorial": {
             "status": "healthy" if run.get("status") == "ok" else str(run.get("status") or "unknown"),
             "finished_sakhalin": run.get("finished_sakhalin"),
             "candidates": int(run.get("candidates") or 0),
             "queued_for_delivery": pending_count,
+        },
+        "generation": {
+            "status": "blocked" if generation_blocked else "healthy",
+            "reason": "generation_provider_unavailable" if generation_blocked else None,
         },
         "delivery": {
             "status": "healthy" if delivery_ok else "blocked",
@@ -355,12 +405,19 @@ def _record_plane_status(state: Dict[str, Any], health: Dict[str, Any]) -> None:
         },
     }
     state["last_production_attempt"] = {
-        "status": "ok" if delivery_ok else "editorial_ok_delivery_blocked",
-        "reason": None if delivery_ok else _delivery_reason(health),
-        "checked_at_utc": health.get("checked_at_utc") or datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "status": attempt_status,
+        "reason": attempt_reason,
+        "checked_at_utc": checked_at_utc,
         "publisher_version": publisher.VERSION,
         "queue_preserved": pending_count,
         "editorial_run_status": run.get("status"),
+        "published": int(run.get("published") or 0),
+        "director_approved": int(stats.get("director_approved") or 0),
+        "ai_calls": int(stats.get("ai_calls") or 0),
+        "ai_api_fail": int(stats.get("ai_api_fail") or 0),
+        "ai_budget_exhausted": int(stats.get("ai_budget_exhausted") or 0),
+        "telegram_fail": int(stats.get("telegram_fail") or 0),
+        "publication_contract_blocked": int(stats.get("publication_contract_blocked") or 0),
     }
 
 
