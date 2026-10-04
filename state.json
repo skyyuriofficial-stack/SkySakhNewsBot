@@ -10224,7 +10224,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-04T11:21:35+00:00"
+        "checked_at": "2026-10-04T14:21:00+00:00"
       }
     },
     {
@@ -10779,7 +10779,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-10-04T11:21:36+00:00",
+        "checked_at": "2026-10-04T14:21:00+00:00",
         "reason": "low_scale_incident_not_release_worthy",
         "issues": [
           "director_final_reject:low_scale_incident_not_release_worthy"
@@ -10964,7 +10964,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-04T11:21:36+00:00"
+        "checked_at": "2026-10-04T14:21:00+00:00"
       }
     },
     {
@@ -11149,7 +11149,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-04T11:21:36+00:00"
+        "checked_at": "2026-10-04T14:21:00+00:00"
       }
     },
     {
@@ -11326,7 +11326,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-04T11:21:36+00:00"
+        "checked_at": "2026-10-04T14:21:00+00:00"
       }
     },
     {
@@ -11507,7 +11507,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-04T11:21:36+00:00"
+        "checked_at": "2026-10-04T14:21:01+00:00"
       }
     },
     {
@@ -11871,7 +11871,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-04T11:21:36+00:00"
+        "checked_at": "2026-10-04T14:21:01+00:00"
       }
     },
     {
@@ -12056,7 +12056,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-04T11:21:37+00:00"
+        "checked_at": "2026-10-04T14:21:01+00:00"
       }
     },
     {
@@ -12237,7 +12237,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-04T11:21:37+00:00"
+        "checked_at": "2026-10-04T14:21:01+00:00"
       }
     },
     {
@@ -12414,7 +12414,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-04T11:21:37+00:00"
+        "checked_at": "2026-10-04T14:21:01+00:00"
       }
     },
     {
@@ -12965,7 +12965,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-04T11:21:37+00:00"
+        "checked_at": "2026-10-04T14:21:01+00:00"
       }
     },
     {
@@ -13154,7 +13154,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-04T11:21:37+00:00"
+        "checked_at": "2026-10-04T14:21:01+00:00"
       }
     },
     {
@@ -13335,7 +13335,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-04T11:21:37+00:00"
+        "checked_at": "2026-10-04T14:21:01+00:00"
       }
     },
     {
@@ -13508,6 +13508,11 @@
         "meaning_changed": false,
         "mode": "deterministic+extractive",
         "issues": []
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-10-04T14:21:01+00:00"
       }
     }
   ],
@@ -14279,6 +14284,44 @@
       "ai_calls": 0,
       "ai_fail": 0,
       "audited_urls": 1
+    },
+    "independent_post_publication_monitor": {
+      "version": "post-audit-v1.1",
+      "checked_at": "2026-10-04T14:21:01+00:00",
+      "checked": 14,
+      "passed": 13,
+      "anomalies": [
+        {
+          "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
+          "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
+          "publisher_version": "stable-v12.1",
+          "category_key": "ru_incident",
+          "corrected_category": "ru_incident",
+          "reason": "low_scale_incident_not_release_worthy",
+          "contract_issues": [
+            "director_final_reject:low_scale_incident_not_release_worthy"
+          ]
+        }
+      ],
+      "corrected": [],
+      "deleted": [],
+      "failed_actions": [],
+      "unresolved": 1,
+      "unresolved_items": [
+        {
+          "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
+          "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
+          "publisher_version": "stable-v12.1",
+          "category_key": "ru_incident",
+          "corrected_category": "ru_incident",
+          "reason": "low_scale_incident_not_release_worthy",
+          "contract_issues": [
+            "director_final_reject:low_scale_incident_not_release_worthy"
+          ]
+        }
+      ],
+      "mutations_enabled": true,
+      "legacy_posts_mutated": false
     }
   },
   "pending_media_delivery": [],
@@ -20348,21 +20391,10 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-04T11:21:37+00:00",
+    "checked_at": "2026-10-04T14:21:01+00:00",
     "checked": 14,
-    "passed": 12,
+    "passed": 13,
     "anomalies": [
-      {
-        "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
-        "url": "https://sakhalinmedia.ru/news/2618284/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "reason": "low_scale_incident_not_release_worthy",
-        "contract_issues": [
-          "director_final_reject:low_scale_incident_not_release_worthy"
-        ]
-      },
       {
         "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
         "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
@@ -20378,19 +20410,8 @@
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
-    "unresolved": 2,
+    "unresolved": 1,
     "unresolved_items": [
-      {
-        "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
-        "url": "https://sakhalinmedia.ru/news/2618284/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "reason": "low_scale_incident_not_release_worthy",
-        "contract_issues": [
-          "director_final_reject:low_scale_incident_not_release_worthy"
-        ]
-      },
       {
         "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
         "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
