@@ -217,6 +217,14 @@ def _pre_audit_cleanup(state, *, mutate: bool):
     return actions, failures
 
 
+def _status_from_findings(issues, warnings) -> str:
+    if issues:
+        return "error"
+    if warnings:
+        return "degraded"
+    return "healthy"
+
+
 def main() -> int:
     health = telegram_health.check_telegram()
     telegram_health.write_status(health)
@@ -318,7 +326,7 @@ def main() -> int:
 
     report["issues"] = deduped
     report["warnings"] = warnings
-    report["status"] = "healthy" if not deduped else "error"
+    report["status"] = _status_from_findings(deduped, warnings)
     report["mutations_enabled"] = mutate
     report["checked_at_utc"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
@@ -340,7 +348,9 @@ def main() -> int:
         },
         "balance": report.get("balance"),
     }, ensure_ascii=False, indent=2))
-    return 0 if report.get("status") == "healthy" else 3
+    # A quality warning must be visible as degraded, but it must not trigger the
+    # workflow-failure recovery path reserved for actionable execution defects.
+    return 3 if report.get("status") == "error" else 0
 
 
 if __name__ == "__main__":

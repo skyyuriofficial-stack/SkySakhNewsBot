@@ -25,7 +25,7 @@ from typing import Any, Callable, Dict, List, Mapping, Optional, Sequence, Tuple
 
 import editorial_policy as policy
 
-VERSION = "director-v2.2"
+VERSION = "director-v2.3"
 ROLLING_WINDOW = 20
 TARGET_COUNTS: Dict[str, int] = {
     "local": 6,
@@ -42,7 +42,7 @@ TARGET_SHARES = {
 CATEGORY_GROUP = dict(policy.CATEGORY_GROUP)
 
 MIN_SCORE = {
-    "local": 68,
+    "local": 70,
     "ru_pol": 75,
     "ru_eco": 80,
     "ru_safety": 76,
@@ -127,6 +127,30 @@ PRESS_RELEASE_TONE = (
     "самые технологически продвинутые", "уникальный проект", "успешно реализован",
     "лидер рынка", "инновационное решение", "новый уровень комфорта",
 )
+
+# Routine local accidents and fires were previously promoted to major_emergency
+# solely because the headline contained "ДТП"/"пожар"/"авария".  Require a
+# concrete scale signal before such a story receives major-emergency priority.
+LOW_SCALE_EMERGENCY_TRIGGERS = (
+    "дтп", "авари", "пожар", "возгорани", "опрокинул",
+    "сошел с проезжей части", "сошёл с проезжей части",
+)
+MATERIAL_EMERGENCY_MARKERS = (
+    "эваку", "взрыв", "обруш", "наводнен", "подтоп",
+    "многоквартир", "жилом доме", "жилого дома",
+    "несколько пострадав", "много пострадав", "десятки пострадав",
+    "10 человек", "десять человек", "перекрыли трассу",
+    "остановлено движение",
+)
+ACTIONABLE_WEATHER_MARKERS = (
+    "предупрежд", "опасн", "мчс", "тайфун", "ураган", "угроза",
+    "лавин", "закрыт", "отменили", "ограничили движение",
+)
+LOCAL_OVERFLOW_HIGH_VALUE_EVENTS = {
+    "earthquake", "violent_crime", "fatal_incident", "military_security",
+    "major_emergency", "severe_weather", "air_quality_hazard",
+}
+LOCAL_OVERFLOW_MACRO_MIN_RUB = 1_000_000_000
 
 
 def _clean(value: Any) -> str:
@@ -220,6 +244,23 @@ def _score_candidate(
     if _has(combined, PRESS_RELEASE_TONE):
         score -= 10
         reasons.append("press_release_tone:-10")
+
+    if event == "major_emergency" and _has(title, LOW_SCALE_EMERGENCY_TRIGGERS):
+        material_emergency = bool(
+            _has(combined, MATERIAL_EMERGENCY_MARKERS)
+            or _has(combined, MULTIPLE_VICTIMS)
+            or _has(combined, policy.FATAL)
+            or _has(combined, policy.AIR_QUALITY)
+        )
+        if not material_emergency:
+            score = min(score, 69)
+            reasons.append("low_scale_emergency_cap:69")
+
+    # "Штормовой ветер" in an ordinary forecast is not, by itself, an
+    # actionable severe-weather alert.  Require an explicit public-safety signal.
+    if event == "severe_weather" and not _has(title, ACTIONABLE_WEATHER_MARKERS):
+        score = min(score, 67)
+        reasons.append("weather_without_public_safety_signal_cap:67")
 
     # Hard upper bounds prevent routine filler from becoming '93/100' merely
     # because a long article contains official words, numbers and place names.
@@ -333,6 +374,10 @@ def review_candidate(candidate: Mapping[str, Any]) -> Dict[str, Any]:
         reason = "minor_or_routine_crime"
     if event == "ordinary_weather" and score < threshold:
         reason = "ordinary_weather_not_release_worthy"
+    if event == "major_emergency" and score < threshold and "low_scale_emergency_cap:69" in score_reasons:
+        reason = "low_scale_incident_not_release_worthy"
+    if event == "severe_weather" and score < threshold and "weather_without_public_safety_signal_cap:67" in score_reasons:
+        reason = "weather_without_public_safety_impact"
     if event == "political_statement" and score < threshold:
         reason = "statement_without_material_decision"
 
@@ -595,6 +640,52 @@ def _apply_repetition_cap(
     return review
 
 
+def _local_overflow_is_material(review: Mapping[str, Any]) -> bool:
+    event = str(review.get("event_type") or "")
+    if event in LOCAL_OVERFLOW_HIGH_VALUE_EVENTS:
+        return True
+
+    score = int(review.get("seriousness") or 0)
+    policy_snapshot = review.get("policy") if isinstance(review.get("policy"), Mapping) else {}
+    evidence = policy_snapshot.get("evidence") if isinstance(policy_snapshot.get("evidence"), Mapping) else {}
+    money = int(evidence.get("money_rub") or 0)
+
+    # A saturated local stream may still admit material fiscal/infrastructure
+    # decisions, but not routine statistics or filler merely to keep publishing.
+    if event == "macro_economy" and money >= LOCAL_OVERFLOW_MACRO_MIN_RUB:
+        return True
+    if event in {"major_infrastructure", "political_decision"} and score >= 88:
+        return True
+    if event == "public_service_disruption" and score >= 90:
+        return True
+    return False
+
+
+def _apply_local_overflow_guard(
+    review: Dict[str, Any],
+    balance: Mapping[str, Any],
+) -> Dict[str, Any]:
+    if not review.get("approved") or review.get("group") != "local":
+        return review
+
+    # Enforce the 30% target only after a complete rolling window exists.  Before
+    # that, bootstrap quality is governed solely by absolute newsworthiness.
+    if int(balance.get("valid_posts_counted") or 0) < ROLLING_WINDOW:
+        return review
+
+    local_count = int((balance.get("counts") or {}).get("local", 0))
+    local_target = int(TARGET_COUNTS["local"])
+    if local_count < local_target or _local_overflow_is_material(review):
+        return review
+
+    review["approved"] = False
+    review["reason"] = "local_mix_saturated_low_priority"
+    review.setdefault("risks", []).append(
+        f"local_mix_saturated:{local_count}/{local_target}"
+    )
+    return review
+
+
 def direct_candidates(
     state: Mapping[str, Any],
     candidates: Sequence[Dict[str, Any]],
@@ -632,6 +723,7 @@ def direct_candidates(
     for review in reviews:
         review = _apply_ai_review(review, ai_results.get(review["id"]))
         review = _apply_repetition_cap(review, balance)
+        review = _apply_local_overflow_guard(review, balance)
         candidate = review.pop("_candidate")
         review["version"] = VERSION
         category_key = review.get("corrected_category")
