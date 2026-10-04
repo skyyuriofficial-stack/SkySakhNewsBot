@@ -375,11 +375,114 @@ def exact_proportion_and_selection_regression():
         ai_reviewer=None,
     )
     assert len(ordered) >= 2, report
-    # Significance is primary: the 94-point local emergency outranks the
-    # underrepresented 88-point world story. Mix still diversifies slot 2.
-    assert ordered[0]["_news_director"]["group"] == "local", report
-    assert ordered[1]["_news_director"]["group"] == "world", report
-    assert report["selected_groups"][:2] == ["local", "world"], report
+    # A routine local service-recovery item must not be promoted as a major
+    # emergency merely because its headline mentions an accident.
+    assert report["by_url"]["https://sakhalinmedia.ru/news/mix-local/"]["approved"] is False, report
+    assert report["by_url"]["https://sakhalinmedia.ru/news/mix-local/"]["reason"] == "low_scale_incident_not_release_worthy", report
+    assert report["selected_groups"][:2] == ["world", "world"], report
+
+
+def local_feed_quality_regressions():
+    weak_accident = candidate(
+        "На Сахалине пассажир грузовика пострадал в ДТП",
+        "Водитель не справился с управлением. Один пассажир получил травмы и был госпитализирован.",
+        url="https://sakhalinmedia.ru/news/regression-weak-accident/",
+        category="sakh_chp",
+    )
+    weak_accident_review = assert_review(
+        weak_accident,
+        approved=False,
+        reason="low_scale_incident_not_release_worthy",
+    )
+    assert weak_accident_review["seriousness"] <= 69, weak_accident_review
+
+    weak_weather = candidate(
+        "Штормовой ветер разгонит облака над Сахалином 4 октября",
+        "Синоптики прогнозируют переменную облачность и ветер на отдельных участках побережья.",
+        url="https://sakhalinmedia.ru/news/regression-weak-weather/",
+        category="sakh",
+    )
+    weak_weather_review = assert_review(
+        weak_weather,
+        approved=False,
+        reason="weather_without_public_safety_impact",
+    )
+    assert weak_weather_review["seriousness"] <= 67, weak_weather_review
+
+    real_warning = candidate(
+        "МЧС предупредило об опасном шторме на Сахалине",
+        "Спасатели предупреждают жителей об опасном ветре и рекомендуют ограничить поездки.",
+        url="https://sakhalinmedia.ru/news/regression-real-weather-warning/",
+        category="sakh",
+    )
+    assert_review(real_warning, approved=True, category="sakh")
+
+    category_for_group = {
+        "local": "sakh",
+        "ru_pol": "ru_pol",
+        "ru_eco": "ru_eco",
+        "ru_safety": "ru_incident",
+        "world": "geo",
+        "it": "it",
+    }
+    balanced_groups = (
+        ["local"] * 6
+        + ["ru_pol"] * 4
+        + ["ru_eco"] * 4
+        + ["ru_safety"] * 3
+        + ["world"] * 2
+        + ["it"]
+    )
+    history = []
+    for index, group in enumerate(balanced_groups):
+        history.append({
+            "title": f"Balanced synthetic post {index}",
+            "source": "Synthetic",
+            "category_key": category_for_group[group],
+            "news_director": {
+                "version": director.VERSION,
+                "approved": True,
+                "group": group,
+                "corrected_category": category_for_group[group],
+                "event_type": "general",
+                "subtype": "general",
+            },
+        })
+
+    routine_water = candidate(
+        "Часть Южно-Сахалинска останется без воды 4 октября",
+        "В нескольких домах на улицах города временно отключат холодную воду из-за плановых работ.",
+        url="https://sakhalinmedia.ru/news/regression-routine-water/",
+        category="sakh",
+    )
+    # It can be useful when the local stream is under target...
+    assert director.review_candidate(routine_water)["approved"] is True
+    # ...but must not extend a full 30% local allocation with routine utility notices.
+    ordered, report = director.direct_candidates(
+        {"last_posts": history},
+        [routine_water],
+        category_map=publisher.core.b.CAT,
+        now=datetime.now(timezone.utc),
+        ai_reviewer=None,
+    )
+    assert not ordered, report
+    assert report["by_url"][routine_water["url"]]["reason"] == "local_mix_saturated_low_priority", report
+
+    fatal_local = candidate(
+        "На Итурупе водитель погиб после опрокидывания автомобиля",
+        "Водитель погиб на месте после аварии. Обстоятельства происшествия устанавливаются.",
+        url="https://sakhalinmedia.ru/news/regression-fatal-local/",
+        category="sakh_chp",
+    )
+    ordered, report = director.direct_candidates(
+        {"last_posts": history},
+        [fatal_local],
+        category_map=publisher.core.b.CAT,
+        now=datetime.now(timezone.utc),
+        ai_reviewer=None,
+    )
+    assert ordered and ordered[0]["url"] == fatal_local["url"], report
+    assert report["by_url"][fatal_local["url"]]["approved"] is True, report
 
 
 def source_diversity_regression():
@@ -956,7 +1059,7 @@ def version_and_media_regressions():
     assert publisher.media.VERSION == "stable-v12.1"
     assert publisher.core.VERSION == "stable-v12.1"
     assert publisher.core.b.IMAGE_REQUIRED is True
-    assert director.VERSION == "director-v2.2"
+    assert director.VERSION == "director-v2.3"
     assert policy.VERSION == "policy-v2.4"
 
     good_media = {
@@ -975,6 +1078,7 @@ def main():
     scope_and_stream_regressions()
     boilerplate_and_language_regressions()
     exact_proportion_and_selection_regression()
+    local_feed_quality_regressions()
     source_diversity_regression()
     repetition_regression()
     final_contract_and_auditor_regressions()
