@@ -9,6 +9,7 @@ import runtime_source_hardening
 runtime_source_hardening.install()
 
 import editorial_policy as policy
+import hardened_monitor
 
 
 def main() -> int:
@@ -250,6 +251,10 @@ def main() -> int:
         "42-летней женщины во время тушения пожара."
     )
     assert "смерти. Огнеборцы" in editorial_hardening.dedupe_source_text(malformed_source)
+
+    assert hardened_monitor._status_from_findings([], []) == "healthy"
+    assert hardened_monitor._status_from_findings([], [{"type": "thematic_mix_drift"}]) == "degraded"
+    assert hardened_monitor._status_from_findings([{"type": "telegram_delivery_unhealthy"}], []) == "error"
 
     print("hardening selftest: OK")
     return 0
