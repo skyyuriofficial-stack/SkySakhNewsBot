@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-04T06:46:30+00:00",
-  "checked_at_sakhalin": "2026-10-04T17:46:26+11:00",
+  "checked_at_utc": "2026-10-04T06:52:33+00:00",
+  "checked_at_sakhalin": "2026-10-04T17:52:28+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -39,20 +39,20 @@
       "slot_sakhalin": "2026-10-04T16:00+11:00",
       "required_slot_sakhalin": "2026-10-04T16:00+11:00",
       "reason": "generation_provider_unavailable",
-      "attempted_at_utc": "2026-10-04T06:26:57+00:00"
+      "attempted_at_utc": "2026-10-04T06:51:56+00:00"
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-04T17:26:56+11:00",
-    "age_hours": 0.33,
+    "finished_sakhalin": "2026-10-04T17:51:54+11:00",
+    "age_hours": 0.01,
     "published": 0
   },
   "last_production_attempt": {
     "status": "blocked",
     "reason": "generation_provider_unavailable",
-    "checked_at_utc": "2026-10-04T06:26:57+00:00",
+    "checked_at_utc": "2026-10-04T06:51:56+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
@@ -102,7 +102,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-04T06:46:28+00:00",
+    "checked_at": "2026-10-04T06:52:30+00:00",
     "checked": 14,
     "passed": 12,
     "anomalies": [
@@ -502,7 +502,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-04T06:46:23+00:00",
+    "checked_at_utc": "2026-10-04T06:52:26+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
