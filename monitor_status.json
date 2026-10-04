@@ -1,25 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-04T11:21:12+00:00",
-  "checked_at_sakhalin": "2026-10-04T22:21:07+11:00",
+  "checked_at_utc": "2026-10-04T11:25:08+00:00",
+  "checked_at_sakhalin": "2026-10-04T22:25:04+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "category",
-      "message_id": 316,
-      "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "low_scale_incident_not_release_worthy",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "type": "category",
       "message_id": 325,
@@ -33,31 +19,24 @@
       "review_reason": "low_scale_incident_not_release_worthy",
       "corrected_category": "ru_incident",
       "title_issues": []
-    },
-    {
-      "type": "publisher_blocked",
-      "slot_sakhalin": "2026-10-04T19:00+11:00",
-      "required_slot_sakhalin": "2026-10-04T19:00+11:00",
-      "reason": "generation_provider_unavailable",
-      "attempted_at_utc": "2026-10-04T08:47:25+00:00"
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-04T19:47:24+11:00",
-    "age_hours": 2.56,
-    "published": 0
+    "finished_sakhalin": "2026-10-04T22:24:35+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
-    "status": "blocked",
-    "reason": "generation_provider_unavailable",
-    "checked_at_utc": "2026-10-04T08:47:25+00:00",
+    "status": "ok",
+    "reason": null,
+    "checked_at_utc": "2026-10-04T11:24:37+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 2,
+    "published": 1,
+    "director_approved": 4,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -116,21 +95,10 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-04T11:21:09+00:00",
+    "checked_at": "2026-10-04T11:25:06+00:00",
     "checked": 14,
-    "passed": 12,
+    "passed": 13,
     "anomalies": [
-      {
-        "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
-        "url": "https://sakhalinmedia.ru/news/2618284/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "reason": "low_scale_incident_not_release_worthy",
-        "contract_issues": [
-          "director_final_reject:low_scale_incident_not_release_worthy"
-        ]
-      },
       {
         "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
         "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
@@ -146,19 +114,8 @@
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
-    "unresolved": 2,
+    "unresolved": 1,
     "unresolved_items": [
-      {
-        "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
-        "url": "https://sakhalinmedia.ru/news/2618284/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "reason": "low_scale_incident_not_release_worthy",
-        "contract_issues": [
-          "director_final_reject:low_scale_incident_not_release_worthy"
-        ]
-      },
       {
         "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
         "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
@@ -175,19 +132,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 316,
-      "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "low_scale_incident_not_release_worthy",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 321,
       "title": "Появились кадры нападения пьяного мужчины на 8-летнего мальчика в Южно-Сахалинске",
@@ -356,6 +300,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_pol",
       "title_issues": []
+    },
+    {
+      "message_id": 345,
+      "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -377,9 +334,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 8,
+      "local": 9,
       "ru_pol": 1,
-      "ru_eco": 5,
+      "ru_eco": 4,
       "ru_safety": 1,
       "world": 1,
       "it": 1
@@ -393,18 +350,18 @@
       "it": 0.85
     },
     "deficits": {
-      "local": -2.9,
+      "local": -3.9,
       "ru_pol": 2.4,
-      "ru_eco": -1.6,
+      "ru_eco": -0.6,
       "ru_safety": 1.55,
       "world": 0.7,
       "it": -0.15
     },
     "distribution_error": 9.3,
     "subtype_counts": {
-      "macro_economy": 7,
-      "public_service_disruption": 2,
+      "public_service_disruption": 3,
       "military_security": 1,
+      "macro_economy": 6,
       "fatal_incident": 1,
       "violent_crime": 2,
       "major_emergency": 1,
@@ -413,7 +370,6 @@
       "political_decision": 1
     },
     "sequence": [
-      "ru_eco",
       "local",
       "ru_safety",
       "local",
@@ -429,10 +385,10 @@
       "local",
       "local",
       "local",
-      "ru_pol"
+      "ru_pol",
+      "local"
     ],
     "category_sequence": [
-      "ru_eco",
       "sakh",
       "ru_security",
       "sakh",
@@ -448,10 +404,10 @@
       "sakh",
       "sakh",
       "sakh",
-      "ru_pol"
+      "ru_pol",
+      "sakh"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
       "sakh.online",
@@ -467,7 +423,8 @@
       "sakhalinmedia.ru",
       "sakh.online",
       "sakh.online",
-      "sakh.online"
+      "sakh.online",
+      "astv"
     ],
     "retrospective_anomalies": [
       {
@@ -493,17 +450,6 @@
   },
   "legacy_or_derivative_warnings": [
     {
-      "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
-      "url": "https://sakhalinmedia.ru/news/2618284/",
-      "publisher_version": "stable-v12.1",
-      "category_key": "sakh_chp",
-      "corrected_category": "sakh_chp",
-      "reason": "low_scale_incident_not_release_worthy",
-      "contract_issues": [
-        "director_final_reject:low_scale_incident_not_release_worthy"
-      ]
-    },
-    {
       "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
       "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
       "publisher_version": "stable-v12.1",
@@ -516,7 +462,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-04T11:21:05+00:00",
+    "checked_at_utc": "2026-10-04T11:25:02+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -545,17 +491,6 @@
   "hardening_failed_actions": [],
   "warnings": [
     {
-      "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
-      "url": "https://sakhalinmedia.ru/news/2618284/",
-      "publisher_version": "stable-v12.1",
-      "category_key": "sakh_chp",
-      "corrected_category": "sakh_chp",
-      "reason": "low_scale_incident_not_release_worthy",
-      "contract_issues": [
-        "director_final_reject:low_scale_incident_not_release_worthy"
-      ]
-    },
-    {
       "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
       "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
       "publisher_version": "stable-v12.1",
@@ -571,9 +506,9 @@
       "distribution_error": 9.3,
       "limit": 8.0,
       "counts": {
-        "local": 8,
+        "local": 9,
         "ru_pol": 1,
-        "ru_eco": 5,
+        "ru_eco": 4,
         "ru_safety": 1,
         "world": 1,
         "it": 1
@@ -587,9 +522,9 @@
         "it": 1
       },
       "deficits": {
-        "local": -2.9,
+        "local": -3.9,
         "ru_pol": 2.4,
-        "ru_eco": -1.6,
+        "ru_eco": -0.6,
         "ru_safety": 1.55,
         "world": 0.7,
         "it": -0.15
