@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-04T01:57:15+00:00",
-  "checked_at_sakhalin": "2026-10-04T12:57:10+11:00",
+  "checked_at_utc": "2026-10-04T02:21:45+00:00",
+  "checked_at_sakhalin": "2026-10-04T13:21:40+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -38,19 +38,19 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-04T11:10:27+11:00",
-    "age_hours": 1.78,
+    "finished_sakhalin": "2026-10-04T13:21:18+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-04T00:10:29+00:00",
+    "checked_at_utc": "2026-10-04T02:21:19+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 5,
+    "director_approved": 4,
     "ai_calls": 4,
     "ai_api_fail": 3,
     "ai_budget_exhausted": 1,
@@ -95,7 +95,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-04T01:57:13+00:00",
+    "checked_at": "2026-10-04T02:21:42+00:00",
     "checked": 14,
     "passed": 12,
     "anomalies": [
@@ -154,19 +154,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 315,
-      "title": "Украина сообщила о пяти погибших и 67 пострадавших от российского удара по торговому центру",
-      "category_key": "world_ru",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "world_ru",
-      "title_issues": []
-    },
     {
       "message_id": 316,
       "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
@@ -335,6 +322,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 343,
+      "title": "Путин заявил о едином преференциальном режиме для Дальнего Востока с 2027 года",
+      "category_key": "ru_pol",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_pol",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -357,10 +357,10 @@
     },
     "counts": {
       "local": 8,
-      "ru_pol": 0,
+      "ru_pol": 1,
       "ru_eco": 5,
       "ru_safety": 1,
-      "world": 2,
+      "world": 1,
       "it": 1
     },
     "scaled_targets": {
@@ -373,25 +373,25 @@
     },
     "deficits": {
       "local": -2.9,
-      "ru_pol": 3.4,
+      "ru_pol": 2.4,
       "ru_eco": -1.6,
       "ru_safety": 1.55,
-      "world": -0.3,
+      "world": 0.7,
       "it": -0.15
     },
-    "distribution_error": 9.9,
+    "distribution_error": 9.3,
     "subtype_counts": {
-      "military_security": 2,
       "macro_economy": 7,
       "public_service_disruption": 2,
+      "military_security": 1,
       "fatal_incident": 1,
       "violent_crime": 2,
       "major_emergency": 1,
       "major_it": 1,
-      "political_statement": 1
+      "political_statement": 1,
+      "political_decision": 1
     },
     "sequence": [
-      "world",
       "ru_eco",
       "local",
       "ru_safety",
@@ -407,10 +407,10 @@
       "ru_eco",
       "local",
       "local",
-      "local"
+      "local",
+      "ru_pol"
     ],
     "category_sequence": [
-      "world_ru",
       "ru_eco",
       "sakh",
       "ru_security",
@@ -426,10 +426,10 @@
       "ru_eco",
       "sakh",
       "sakh",
-      "sakh"
+      "sakh",
+      "ru_pol"
     ],
     "source_sequence": [
-      "bbc world",
       "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -444,6 +444,7 @@
       "techmedia techmedia",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
+      "sakh.online",
       "sakh.online",
       "sakh.online"
     ],
@@ -494,7 +495,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-04T01:57:08+00:00",
+    "checked_at_utc": "2026-10-04T02:21:38+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -546,14 +547,14 @@
     },
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 9.9,
+      "distribution_error": 9.3,
       "limit": 8.0,
       "counts": {
         "local": 8,
-        "ru_pol": 0,
+        "ru_pol": 1,
         "ru_eco": 5,
         "ru_safety": 1,
-        "world": 2,
+        "world": 1,
         "it": 1
       },
       "targets": {
@@ -566,10 +567,10 @@
       },
       "deficits": {
         "local": -2.9,
-        "ru_pol": 3.4,
+        "ru_pol": 2.4,
         "ru_eco": -1.6,
         "ru_safety": 1.55,
-        "world": -0.3,
+        "world": 0.7,
         "it": -0.15
       }
     }
