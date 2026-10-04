@@ -1,36 +1,58 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-04T00:04:23+00:00",
-  "checked_at_sakhalin": "2026-10-04T11:04:18+11:00",
+  "checked_at_utc": "2026-10-04T00:11:00+00:00",
+  "checked_at_sakhalin": "2026-10-04T11:10:55+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
     {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-04T10:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-04T09:54:22+11:00"
+      "type": "category",
+      "message_id": 316,
+      "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": false,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "low_scale_incident_not_release_worthy",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "type": "category",
+      "message_id": 325,
+      "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
+      "category_key": "ru_incident",
+      "publisher_version": "stable-v12.1",
+      "category_ok": false,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "low_scale_incident_not_release_worthy",
+      "corrected_category": "ru_incident",
+      "title_issues": []
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-04T09:54:22+11:00",
-    "age_hours": 1.17,
+    "finished_sakhalin": "2026-10-04T11:10:27+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-03T22:54:23+00:00",
+    "checked_at_utc": "2026-10-04T00:10:29+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
     "director_approved": 5,
     "ai_calls": 4,
-    "ai_api_fail": 4,
+    "ai_api_fail": 3,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -73,32 +95,65 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-04T00:04:21+00:00",
-    "checked": 17,
-    "passed": 17,
-    "anomalies": [],
+    "checked_at": "2026-10-04T00:10:57+00:00",
+    "checked": 14,
+    "passed": 12,
+    "anomalies": [
+      {
+        "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
+        "url": "https://sakhalinmedia.ru/news/2618284/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "sakh_chp",
+        "corrected_category": "sakh_chp",
+        "reason": "low_scale_incident_not_release_worthy",
+        "contract_issues": [
+          "director_final_reject:low_scale_incident_not_release_worthy"
+        ]
+      },
+      {
+        "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
+        "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
+        "publisher_version": "stable-v12.1",
+        "category_key": "ru_incident",
+        "corrected_category": "ru_incident",
+        "reason": "low_scale_incident_not_release_worthy",
+        "contract_issues": [
+          "director_final_reject:low_scale_incident_not_release_worthy"
+        ]
+      }
+    ],
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
-    "unresolved": 0,
-    "unresolved_items": [],
+    "unresolved": 2,
+    "unresolved_items": [
+      {
+        "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
+        "url": "https://sakhalinmedia.ru/news/2618284/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "sakh_chp",
+        "corrected_category": "sakh_chp",
+        "reason": "low_scale_incident_not_release_worthy",
+        "contract_issues": [
+          "director_final_reject:low_scale_incident_not_release_worthy"
+        ]
+      },
+      {
+        "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
+        "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
+        "publisher_version": "stable-v12.1",
+        "category_key": "ru_incident",
+        "corrected_category": "ru_incident",
+        "reason": "low_scale_incident_not_release_worthy",
+        "contract_issues": [
+          "director_final_reject:low_scale_incident_not_release_worthy"
+        ]
+      }
+    ],
     "mutations_enabled": true,
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 314,
-      "title": "Бюджет Сахалинской области увеличат на 3,9 млрд рублей",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 315,
       "title": "Украина сообщила о пяти погибших и 67 пострадавших от российского удара по торговому центру",
@@ -117,11 +172,11 @@
       "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
       "category_key": "sakh_chp",
       "publisher_version": "stable-v12.1",
-      "category_ok": true,
+      "category_ok": false,
       "title_ok": true,
       "media_ok": true,
       "contract_ok": true,
-      "review_reason": "approved",
+      "review_reason": "low_scale_incident_not_release_worthy",
       "corrected_category": "sakh_chp",
       "title_issues": []
     },
@@ -143,11 +198,11 @@
       "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
       "category_key": "ru_incident",
       "publisher_version": "stable-v12.1",
-      "category_ok": true,
+      "category_ok": false,
       "title_ok": true,
       "media_ok": true,
       "contract_ok": true,
-      "review_reason": "approved",
+      "review_reason": "low_scale_incident_not_release_worthy",
       "corrected_category": "ru_incident",
       "title_issues": []
     },
@@ -204,19 +259,6 @@
       "title_issues": []
     },
     {
-      "message_id": 330,
-      "title": "В Южно-Сахалинске усилен контроль за контейнерными площадками из-за роста возгораний",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
       "message_id": 332,
       "title": "Инженеры — в тренде: Игорь Лагерев рассказал о бюджетных местах и взлете среднего балла ЕГЭ",
       "category_key": "ru_eco",
@@ -269,21 +311,8 @@
       "title_issues": []
     },
     {
-      "message_id": 337,
-      "title": "Валерий Лимаренко взял на контроль ремонт теплотрассы после аварии в Южно-Сахалинске",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 338,
-      "title": "Штормовой ветер разгонит облака над Сахалинской областью 4 октября",
+      "message_id": 341,
+      "title": "Безработица на Сахалине остается ниже средней по Дальнему Востоку",
       "category_key": "sakh",
       "publisher_version": "stable-v12.1",
       "category_ok": true,
@@ -295,8 +324,8 @@
       "title_issues": []
     },
     {
-      "message_id": 341,
-      "title": "Безработица на Сахалине остается ниже средней по Дальнему Востоку",
+      "message_id": 342,
+      "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
       "category_key": "sakh",
       "publisher_version": "stable-v12.1",
       "category_ok": true,
@@ -327,112 +356,145 @@
       "it": 5.0
     },
     "counts": {
-      "local": 12,
+      "local": 8,
       "ru_pol": 0,
-      "ru_eco": 4,
-      "ru_safety": 2,
-      "world": 1,
+      "ru_eco": 5,
+      "ru_safety": 1,
+      "world": 2,
       "it": 1
     },
     "scaled_targets": {
-      "local": 6.0,
-      "ru_pol": 4.0,
-      "ru_eco": 4.0,
-      "ru_safety": 3.0,
-      "world": 2.0,
-      "it": 1.0
+      "local": 5.1,
+      "ru_pol": 3.4,
+      "ru_eco": 3.4,
+      "ru_safety": 2.55,
+      "world": 1.7,
+      "it": 0.85
     },
     "deficits": {
-      "local": -6.0,
-      "ru_pol": 4.0,
-      "ru_eco": 0.0,
-      "ru_safety": 1.0,
-      "world": 1.0,
-      "it": 0.0
+      "local": -2.9,
+      "ru_pol": 3.4,
+      "ru_eco": -1.6,
+      "ru_safety": 1.55,
+      "world": -0.3,
+      "it": -0.15
     },
-    "distribution_error": 12.0,
+    "distribution_error": 9.9,
     "subtype_counts": {
-      "major_emergency": 6,
+      "military_security": 2,
+      "macro_economy": 7,
       "public_service_disruption": 2,
-      "military_security": 1,
-      "macro_economy": 6,
       "fatal_incident": 1,
       "violent_crime": 2,
+      "major_emergency": 1,
       "major_it": 1,
-      "severe_weather": 1
+      "political_statement": 1
     },
     "sequence": [
-      "local",
+      "world",
+      "ru_eco",
       "local",
       "ru_safety",
       "local",
       "world",
       "local",
       "local",
-      "ru_safety",
-      "local",
       "ru_eco",
       "local",
       "ru_eco",
-      "local",
       "ru_eco",
       "it",
       "ru_eco",
       "local",
       "local",
-      "local",
       "local"
     ],
     "category_sequence": [
-      "sakh_chp",
+      "world_ru",
+      "ru_eco",
       "sakh",
       "ru_security",
       "sakh",
       "world_ru",
       "sakh_chp",
       "sakh_chp",
-      "ru_incident",
-      "sakh_chp",
       "ru_eco",
       "sakh_chp",
       "ru_eco",
-      "sakh_chp",
       "ru_eco",
       "it",
       "ru_eco",
       "sakh",
-      "sakh_chp",
       "sakh",
       "sakh"
     ],
     "source_sequence": [
-      "astv",
+      "bbc world",
+      "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
       "sakh.online",
       "bbc world",
-      "sakhalinmedia.ru",
       "astv",
-      "sakh.online",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
-      "sakh.online",
       "sakhalinmedia.ru",
       "techmedia techmedia",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakh.online",
-      "sakh.online",
       "sakh.online"
     ],
-    "retrospective_anomalies": [],
-    "valid_posts_counted": 20
+    "retrospective_anomalies": [
+      {
+        "title": "Жесткое ДТП произошло в районе \"Сити Молла\" в Южно-Сахалинске",
+        "category_key": "sakh_chp",
+        "reason": "low_scale_incident_not_release_worthy",
+        "corrected_category": "sakh_chp"
+      },
+      {
+        "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
+        "category_key": "sakh_chp",
+        "reason": "low_scale_incident_not_release_worthy",
+        "corrected_category": "sakh_chp"
+      },
+      {
+        "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
+        "category_key": "ru_incident",
+        "reason": "low_scale_incident_not_release_worthy",
+        "corrected_category": "ru_incident"
+      }
+    ],
+    "valid_posts_counted": 17
   },
-  "legacy_or_derivative_warnings": [],
+  "legacy_or_derivative_warnings": [
+    {
+      "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
+      "url": "https://sakhalinmedia.ru/news/2618284/",
+      "publisher_version": "stable-v12.1",
+      "category_key": "sakh_chp",
+      "corrected_category": "sakh_chp",
+      "reason": "low_scale_incident_not_release_worthy",
+      "contract_issues": [
+        "director_final_reject:low_scale_incident_not_release_worthy"
+      ]
+    },
+    {
+      "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
+      "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
+      "publisher_version": "stable-v12.1",
+      "category_key": "ru_incident",
+      "corrected_category": "ru_incident",
+      "reason": "low_scale_incident_not_release_worthy",
+      "contract_issues": [
+        "director_final_reject:low_scale_incident_not_release_worthy"
+      ]
+    }
+  ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-04T00:04:16+00:00",
+    "checked_at_utc": "2026-10-04T00:10:53+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -461,15 +523,37 @@
   "hardening_failed_actions": [],
   "warnings": [
     {
+      "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
+      "url": "https://sakhalinmedia.ru/news/2618284/",
+      "publisher_version": "stable-v12.1",
+      "category_key": "sakh_chp",
+      "corrected_category": "sakh_chp",
+      "reason": "low_scale_incident_not_release_worthy",
+      "contract_issues": [
+        "director_final_reject:low_scale_incident_not_release_worthy"
+      ]
+    },
+    {
+      "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
+      "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
+      "publisher_version": "stable-v12.1",
+      "category_key": "ru_incident",
+      "corrected_category": "ru_incident",
+      "reason": "low_scale_incident_not_release_worthy",
+      "contract_issues": [
+        "director_final_reject:low_scale_incident_not_release_worthy"
+      ]
+    },
+    {
       "type": "thematic_mix_drift",
-      "distribution_error": 12.0,
+      "distribution_error": 9.9,
       "limit": 8.0,
       "counts": {
-        "local": 12,
+        "local": 8,
         "ru_pol": 0,
-        "ru_eco": 4,
-        "ru_safety": 2,
-        "world": 1,
+        "ru_eco": 5,
+        "ru_safety": 1,
+        "world": 2,
         "it": 1
       },
       "targets": {
@@ -481,12 +565,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -6.0,
-        "ru_pol": 4.0,
-        "ru_eco": 0.0,
-        "ru_safety": 1.0,
-        "world": 1.0,
-        "it": 0.0
+        "local": -2.9,
+        "ru_pol": 3.4,
+        "ru_eco": -1.6,
+        "ru_safety": 1.55,
+        "world": -0.3,
+        "it": -0.15
       }
     }
   ]
