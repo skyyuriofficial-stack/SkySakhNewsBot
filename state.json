@@ -10645,7 +10645,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T15:55:56+00:00"
+        "checked_at": "2026-10-05T17:05:50+00:00"
       }
     },
     {
@@ -10830,7 +10830,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T15:55:56+00:00"
+        "checked_at": "2026-10-05T17:05:50+00:00"
       }
     },
     {
@@ -11007,7 +11007,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T15:55:57+00:00"
+        "checked_at": "2026-10-05T17:05:50+00:00"
       }
     },
     {
@@ -11188,7 +11188,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T15:55:57+00:00"
+        "checked_at": "2026-10-05T17:05:50+00:00"
       }
     },
     {
@@ -11552,7 +11552,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T15:55:57+00:00"
+        "checked_at": "2026-10-05T17:05:50+00:00"
       }
     },
     {
@@ -11737,7 +11737,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T15:55:57+00:00"
+        "checked_at": "2026-10-05T17:05:51+00:00"
       }
     },
     {
@@ -11918,7 +11918,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T15:55:57+00:00"
+        "checked_at": "2026-10-05T17:05:51+00:00"
       }
     },
     {
@@ -12095,7 +12095,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T15:55:57+00:00"
+        "checked_at": "2026-10-05T17:05:51+00:00"
       }
     },
     {
@@ -12646,7 +12646,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T15:55:58+00:00"
+        "checked_at": "2026-10-05T17:05:51+00:00"
       }
     },
     {
@@ -12835,7 +12835,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T15:55:58+00:00"
+        "checked_at": "2026-10-05T17:05:51+00:00"
       }
     },
     {
@@ -13016,7 +13016,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T15:55:58+00:00"
+        "checked_at": "2026-10-05T17:05:51+00:00"
       }
     },
     {
@@ -13193,7 +13193,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T15:55:58+00:00"
+        "checked_at": "2026-10-05T17:05:51+00:00"
       }
     },
     {
@@ -13374,7 +13374,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T15:55:58+00:00"
+        "checked_at": "2026-10-05T17:05:51+00:00"
       }
     },
     {
@@ -13560,7 +13560,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T15:55:59+00:00"
+        "checked_at": "2026-10-05T17:05:52+00:00"
       }
     },
     {
@@ -13737,7 +13737,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T15:55:59+00:00"
+        "checked_at": "2026-10-05T17:05:52+00:00"
       }
     },
     {
@@ -13918,6 +13918,11 @@
         "meaning_changed": false,
         "mode": "deterministic+extractive",
         "issues": []
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-10-05T17:05:52+00:00"
       }
     },
     {
@@ -14090,6 +14095,11 @@
         "meaning_changed": false,
         "mode": "deterministic+extractive",
         "issues": []
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-10-05T17:05:52+00:00"
       }
     }
   ],
@@ -14847,6 +14857,20 @@
       "ai_calls": 0,
       "ai_fail": 0,
       "audited_urls": 4
+    },
+    "independent_post_publication_monitor": {
+      "version": "post-audit-v1.1",
+      "checked_at": "2026-10-05T17:05:52+00:00",
+      "checked": 17,
+      "passed": 17,
+      "anomalies": [],
+      "corrected": [],
+      "deleted": [],
+      "failed_actions": [],
+      "unresolved": 0,
+      "unresolved_items": [],
+      "mutations_enabled": true,
+      "legacy_posts_mutated": false
     }
   },
   "pending_media_delivery": [],
@@ -20912,39 +20936,15 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-05T15:55:59+00:00",
-    "checked": 16,
-    "passed": 15,
-    "anomalies": [
-      {
-        "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-        "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
-        "publisher_version": "stable-v12.1",
-        "category_key": "ru_incident",
-        "corrected_category": "ru_incident",
-        "reason": "low_scale_incident_not_release_worthy",
-        "contract_issues": [
-          "director_final_reject:low_scale_incident_not_release_worthy"
-        ]
-      }
-    ],
+    "checked_at": "2026-10-05T17:05:52+00:00",
+    "checked": 17,
+    "passed": 17,
+    "anomalies": [],
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
-    "unresolved": 1,
-    "unresolved_items": [
-      {
-        "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-        "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
-        "publisher_version": "stable-v12.1",
-        "category_key": "ru_incident",
-        "corrected_category": "ru_incident",
-        "reason": "low_scale_incident_not_release_worthy",
-        "contract_issues": [
-          "director_final_reject:low_scale_incident_not_release_worthy"
-        ]
-      }
-    ],
+    "unresolved": 0,
+    "unresolved_items": [],
     "mutations_enabled": true,
     "legacy_posts_mutated": false
   },
