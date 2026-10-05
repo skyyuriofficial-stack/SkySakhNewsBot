@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-05T07:38:12+00:00",
-  "checked_at_sakhalin": "2026-10-05T18:38:07+11:00",
+  "checked_at_utc": "2026-10-05T08:07:42+00:00",
+  "checked_at_sakhalin": "2026-10-05T19:07:36+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -24,24 +24,24 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-05T16:06:19+11:00",
-    "age_hours": 2.53,
-    "published": 2
+    "finished_sakhalin": "2026-10-05T19:07:05+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-05T05:06:20+00:00",
+    "checked_at_utc": "2026-10-05T08:07:06+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
-    "director_approved": 13,
-    "ai_calls": 3,
-    "ai_api_fail": 2,
-    "ai_budget_exhausted": 0,
+    "published": 1,
+    "director_approved": 7,
+    "ai_calls": 4,
+    "ai_api_fail": 4,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
-    "publication_contract_blocked": 0
+    "publication_contract_blocked": 1
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -81,9 +81,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-05T07:38:10+00:00",
-    "checked": 15,
-    "passed": 14,
+    "checked_at": "2026-10-05T08:07:39+00:00",
+    "checked": 16,
+    "passed": 15,
     "anomalies": [
       {
         "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
@@ -312,6 +312,19 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 349,
+      "title": "Спектакль по роману Толстого открыл новый театральный сезон в сахалинском Чехов-центре",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -333,10 +346,10 @@
       "it": 5.0
     },
     "counts": {
-      "local": 9,
+      "local": 10,
       "ru_pol": 1,
       "ru_eco": 4,
-      "ru_safety": 1,
+      "ru_safety": 0,
       "world": 1,
       "it": 2
     },
@@ -349,16 +362,15 @@
       "it": 0.9
     },
     "deficits": {
-      "local": -3.6,
+      "local": -4.6,
       "ru_pol": 2.6,
       "ru_eco": -0.4,
-      "ru_safety": 1.7,
+      "ru_safety": 2.7,
       "world": 0.8,
       "it": -1.1
     },
-    "distribution_error": 10.2,
+    "distribution_error": 12.2,
     "subtype_counts": {
-      "military_security": 1,
       "macro_economy": 6,
       "fatal_incident": 1,
       "violent_crime": 3,
@@ -366,10 +378,10 @@
       "major_it": 2,
       "public_service_disruption": 2,
       "political_statement": 1,
-      "political_decision": 1
+      "political_decision": 1,
+      "major_infrastructure": 1
     },
     "sequence": [
-      "ru_safety",
       "local",
       "world",
       "local",
@@ -386,10 +398,10 @@
       "ru_pol",
       "local",
       "local",
-      "it"
+      "it",
+      "local"
     ],
     "category_sequence": [
-      "ru_security",
       "sakh",
       "world_ru",
       "sakh_chp",
@@ -406,10 +418,10 @@
       "ru_pol",
       "sakh",
       "sakh_chp",
-      "it"
+      "it",
+      "sakh"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakh.online",
       "bbc world",
       "astv",
@@ -426,7 +438,8 @@
       "sakh.online",
       "astv",
       "sakhalinmedia.ru",
-      "guardian technology"
+      "guardian technology",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [
       {
@@ -458,7 +471,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-05T07:38:05+00:00",
+    "checked_at_utc": "2026-10-05T08:07:34+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -499,13 +512,13 @@
     },
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 10.2,
+      "distribution_error": 12.2,
       "limit": 8.0,
       "counts": {
-        "local": 9,
+        "local": 10,
         "ru_pol": 1,
         "ru_eco": 4,
-        "ru_safety": 1,
+        "ru_safety": 0,
         "world": 1,
         "it": 2
       },
@@ -518,10 +531,10 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.6,
+        "local": -4.6,
         "ru_pol": 2.6,
         "ru_eco": -0.4,
-        "ru_safety": 1.7,
+        "ru_safety": 2.7,
         "world": 0.8,
         "it": -1.1
       }
