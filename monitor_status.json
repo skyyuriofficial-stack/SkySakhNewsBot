@@ -1,64 +1,55 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-05T22:33:36+00:00",
-  "checked_at_sakhalin": "2026-10-06T09:33:31+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-05T22:40:11+00:00",
+  "checked_at_sakhalin": "2026-10-06T09:40:05+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 6.55,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-06T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-06T03:00:36+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-10-06T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "evening",
-        "at_utc": "2026-10-05T08:52:55+00:00",
-        "at_sakhalin": "2026-10-05T19:52:55+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-06T03:00:36+11:00",
-    "age_hours": 6.55,
-    "published": 2
+    "finished_sakhalin": "2026-10-06T09:39:37+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-05T16:00:37+00:00",
+    "checked_at_utc": "2026-10-05T22:39:38+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
-    "director_approved": 6,
-    "ai_calls": 3,
-    "ai_api_fail": 2,
-    "ai_budget_exhausted": 0,
+    "published": 1,
+    "director_approved": 5,
+    "ai_calls": 4,
+    "ai_api_fail": 4,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 1
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-06",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-05T22:36:45+00:00",
+        "published_at_sakhalin": "2026-10-06T09:36:45+11:00",
+        "telegram_message_id": 353,
+        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+        "evidence_count": 7,
+        "evidence_hash": "a561a545c5b96070240450268f44b0000e0558708e774d3e56c6e9cd79de64c1",
+        "source_ids": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
     },
     "evening": {
       "due": false,
@@ -67,27 +58,15 @@
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "evening",
-      "at_utc": "2026-10-05T08:52:55+00:00",
-      "at_sakhalin": "2026-10-05T19:52:55+11:00"
+      "mode": "morning",
+      "at_utc": "2026-10-05T22:36:45+00:00",
+      "at_sakhalin": "2026-10-06T09:36:45+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-10-06T08:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "evening",
-          "at_utc": "2026-10-05T08:52:55+00:00",
-          "at_sakhalin": "2026-10-05T19:52:55+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-05T22:33:34+00:00",
+    "checked_at": "2026-10-05T22:40:08+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -100,19 +79,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 326,
-      "title": "Женщина, попавшая под колеса авто в селе на Сахалине, скончалась в больнице",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 327,
       "title": "Путин: Сознательное охлаждение экономики помогло замедлить инфляцию в РФ",
@@ -320,6 +286,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 354,
+      "title": "Банки собираются автоматически удерживать налог с процентов по вкладам",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -343,31 +322,31 @@
     "counts": {
       "local": 10,
       "ru_pol": 1,
-      "ru_eco": 4,
+      "ru_eco": 5,
       "ru_safety": 0,
       "world": 0,
       "it": 3
     },
     "scaled_targets": {
-      "local": 5.4,
-      "ru_pol": 3.6,
-      "ru_eco": 3.6,
-      "ru_safety": 2.7,
-      "world": 1.8,
-      "it": 0.9
+      "local": 5.7,
+      "ru_pol": 3.8,
+      "ru_eco": 3.8,
+      "ru_safety": 2.85,
+      "world": 1.9,
+      "it": 0.95
     },
     "deficits": {
-      "local": -4.6,
-      "ru_pol": 2.6,
-      "ru_eco": -0.4,
-      "ru_safety": 2.7,
-      "world": 1.8,
-      "it": -2.1
+      "local": -4.3,
+      "ru_pol": 2.8,
+      "ru_eco": -1.2,
+      "ru_safety": 2.85,
+      "world": 1.9,
+      "it": -2.05
     },
-    "distribution_error": 14.2,
+    "distribution_error": 15.1,
     "subtype_counts": {
       "violent_crime": 3,
-      "macro_economy": 5,
+      "macro_economy": 6,
       "major_emergency": 1,
       "major_it": 3,
       "public_service_disruption": 3,
@@ -393,7 +372,8 @@
       "it",
       "local",
       "it",
-      "local"
+      "local",
+      "ru_eco"
     ],
     "category_sequence": [
       "sakh_chp",
@@ -413,7 +393,8 @@
       "it",
       "sakh",
       "it",
-      "sakh"
+      "sakh",
+      "ru_eco"
     ],
     "source_sequence": [
       "astv",
@@ -433,15 +414,10 @@
       "guardian technology",
       "sakhalinmedia.ru",
       "techmedia techmedia",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "astv"
     ],
     "retrospective_anomalies": [
-      {
-        "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
-        "category_key": "sakh_chp",
-        "reason": "low_scale_incident_not_release_worthy",
-        "corrected_category": "sakh_chp"
-      },
       {
         "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
         "category_key": "ru_incident",
@@ -449,11 +425,11 @@
         "corrected_category": "ru_incident"
       }
     ],
-    "valid_posts_counted": 18
+    "valid_posts_counted": 19
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-05T22:33:28+00:00",
+    "checked_at_utc": "2026-10-05T22:40:02+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -483,12 +459,12 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 14.2,
+      "distribution_error": 15.1,
       "limit": 8.0,
       "counts": {
         "local": 10,
         "ru_pol": 1,
-        "ru_eco": 4,
+        "ru_eco": 5,
         "ru_safety": 0,
         "world": 0,
         "it": 3
@@ -502,12 +478,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -4.6,
-        "ru_pol": 2.6,
-        "ru_eco": -0.4,
-        "ru_safety": 2.7,
-        "world": 1.8,
-        "it": -2.1
+        "local": -4.3,
+        "ru_pol": 2.8,
+        "ru_eco": -1.2,
+        "ru_safety": 2.85,
+        "world": 1.9,
+        "it": -2.05
       }
     }
   ]
