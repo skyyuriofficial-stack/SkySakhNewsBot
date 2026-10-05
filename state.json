@@ -282,7 +282,9 @@
     "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
     "https://sakhalinmedia.ru/news/2640612/",
     "https://www.theguardian.com/technology/2026/oct/03/openai-safety-leader-quits-warning-ai-companys-culture-is-broken",
-    "https://sakhalinmedia.ru/news/2640956/"
+    "https://sakhalinmedia.ru/news/2640956/",
+    "https://t.me/techmedia/23531",
+    "https://sakhalinmedia.ru/news/2641208/"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -568,148 +570,12 @@
     "1208f70b38bcc7ed4ebca31cf7809890a18ee139",
     "dad141067751d087e9f669f334dd92df9d5c931e",
     "e5cd501dc4d93d5065a4168992fe2db7f760c794",
-    "46b2bd780f8a17f2506563add37d18cd7d7f8261"
+    "46b2bd780f8a17f2506563add37d18cd7d7f8261",
+    "aa9fad6cbbaec22d7697c5f794bccc0f8f50daf4",
+    "bcf8ea0d6fca7aaa702f8ec606f956e788919ca8"
   ],
-  "last_run_sakhalin": "2026-10-05T19:07:06+11:00",
+  "last_run_sakhalin": "2026-10-06T03:00:37+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-09-03T23:44:46+11:00",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "title": "Медведя заметили возле трассы в селе Охотское на Сахалине",
-      "url": "https://sakhalinmedia.ru/news/2609528/",
-      "image_url": "https://sakhalinmedia.ru/f/big/6364/6363337.png?f2fc06b2fb71b0aab4ff65f4a7b8ae7b",
-      "image_hash": "9b344132608dd840f00d6d65d9a54aa9ee3b9559",
-      "topic_cluster": "sakh_chp:медведя_заметили_возле_трассы_охотское_сахалине",
-      "published_at": "2026-09-03T06:32:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v1",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "group": "local",
-        "subtype": "local_infrastructure",
-        "seriousness": 100,
-        "threshold": 62,
-        "priority_score": 111,
-        "slot": "backup",
-        "risks": [],
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true
-      },
-      "source_text_excerpt": "Очевидцы заметили медведя вблизи дороги в селе Охотское Корсаковского района. Об этом сообщили в канале MAX Рыбалка Сахалин и ДВ (18+). Хищник прогуливался у дороги 3 сентября Хищник прогуливался у трассы предположительно 3 сентября. Как отметил водитель, записавший видео с косолапым, \"медведи скоро уже в квартиры заходить будут\". Подпишись на самые важные новости Сахалинской области в MAX!",
-      "telegram_message_id": 251,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic",
-        "issues": [],
-        "reclassified_from": "sakh",
-        "reclassified_to": "sakh_chp"
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": false,
-        "checked_at": "2026-09-05T01:36:36+00:00",
-        "reason": "importance_below_threshold",
-        "issues": [
-          "importance_below_threshold"
-        ]
-      },
-      "auto_deleted": true,
-      "legacy_policy_cleanup": {
-        "version": "legacy-policy-cleanup-v121",
-        "deleted_at": "2026-09-05T01:40:45+00:00",
-        "reason": "importance_below_threshold",
-        "corrected_category": "sakh",
-        "title_issues": []
-      }
-    },
-    {
-      "time_sakhalin": "2026-09-04T09:27:49+11:00",
-      "source": "ASTV",
-      "category": "🇷🇺 Россия / происшествия",
-      "category_key": "ru_incident",
-      "title": "Мошенники начали подделывать голоса учителей для обмана родителей",
-      "url": "https://astv.ru/news/society/2026-09-03-moshenniki-nachali-poddelyvat-golosa-uchitelej-dlya-obmana-roditelej",
-      "image_url": "https://astv.ru/content/NewsImage/8c/50/8c509af9-679b-4cbb-b25a-89c83eeefedc_3.jpg",
-      "image_hash": "aba28bc09c5c59a1ae14bbc5bc5511a899b67d0b",
-      "topic_cluster": "ru_incident:мошенники_начали_подделывать_голоса_учителей_обмана",
-      "published_at": "2026-09-02T13:00:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v1",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "ru_incident",
-        "corrected_category": "ru_incident",
-        "group": "ru_safety",
-        "subtype": "fraud",
-        "seriousness": 100,
-        "threshold": 72,
-        "priority_score": 140,
-        "slot": 2,
-        "risks": [],
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true
-      },
-      "source_text_excerpt": "Схема рассчитана на период, когда родители вступают в новые школьные чаты Схема рассчитана на период, когда родители вступают в новые школьные чаты В начале учебного года мошенники стали использовать поддельные голоса учителей, чтобы выманивать деньги и персональные данные у родителей школьников. Злоумышленники могут звонить или отправлять голосовые сообщения от имени педагогов с просьбой срочно перевести деньги. Схема рассчитана на период, когда родители вступают в новые школьные чаты и активно собирают средства на нужды класса, мероприятия и подарки. Это позволяет мошенникам делать просьбы о переводах более правдоподобными, сообщили в МВД. Эксперты советуют не переводить деньги по неожиданным просьбам из сообщений и звонков, а сначала связаться с учителем или представителем родительского комитета по знакомому номеру и проверить информацию.",
-      "telegram_message_id": 252,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic",
-        "issues": [],
-        "reclassified_from": "sakh_chp",
-        "reclassified_to": "ru_incident"
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": false,
-        "checked_at": "2026-09-05T01:36:36+00:00",
-        "reason": "importance_below_threshold",
-        "issues": [
-          "importance_below_threshold"
-        ]
-      },
-      "auto_deleted": true,
-      "legacy_policy_cleanup": {
-        "version": "legacy-policy-cleanup-v121",
-        "deleted_at": "2026-09-05T01:40:45+00:00",
-        "reason": "importance_below_threshold",
-        "corrected_category": "ru_incident",
-        "title_issues": []
-      }
-    },
     {
       "time_sakhalin": "2026-09-04T09:28:25+11:00",
       "source": "ASTV",
@@ -10594,7 +10460,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-10-05T08:08:01+00:00",
+        "checked_at": "2026-10-05T15:55:56+00:00",
         "reason": "low_scale_incident_not_release_worthy",
         "issues": [
           "director_final_reject:low_scale_incident_not_release_worthy"
@@ -10779,7 +10645,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T08:08:02+00:00"
+        "checked_at": "2026-10-05T15:55:56+00:00"
       }
     },
     {
@@ -10964,7 +10830,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T08:08:02+00:00"
+        "checked_at": "2026-10-05T15:55:56+00:00"
       }
     },
     {
@@ -11141,7 +11007,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T08:08:02+00:00"
+        "checked_at": "2026-10-05T15:55:57+00:00"
       }
     },
     {
@@ -11322,7 +11188,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T08:08:02+00:00"
+        "checked_at": "2026-10-05T15:55:57+00:00"
       }
     },
     {
@@ -11686,7 +11552,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T08:08:02+00:00"
+        "checked_at": "2026-10-05T15:55:57+00:00"
       }
     },
     {
@@ -11871,7 +11737,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T08:08:02+00:00"
+        "checked_at": "2026-10-05T15:55:57+00:00"
       }
     },
     {
@@ -12052,7 +11918,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T08:08:02+00:00"
+        "checked_at": "2026-10-05T15:55:57+00:00"
       }
     },
     {
@@ -12229,7 +12095,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T08:08:02+00:00"
+        "checked_at": "2026-10-05T15:55:57+00:00"
       }
     },
     {
@@ -12780,7 +12646,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T08:08:03+00:00"
+        "checked_at": "2026-10-05T15:55:58+00:00"
       }
     },
     {
@@ -12969,7 +12835,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T08:08:03+00:00"
+        "checked_at": "2026-10-05T15:55:58+00:00"
       }
     },
     {
@@ -13150,7 +13016,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T08:08:03+00:00"
+        "checked_at": "2026-10-05T15:55:58+00:00"
       }
     },
     {
@@ -13327,7 +13193,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T08:08:03+00:00"
+        "checked_at": "2026-10-05T15:55:58+00:00"
       }
     },
     {
@@ -13508,7 +13374,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T08:08:03+00:00"
+        "checked_at": "2026-10-05T15:55:58+00:00"
       }
     },
     {
@@ -13694,7 +13560,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T08:08:03+00:00"
+        "checked_at": "2026-10-05T15:55:59+00:00"
       }
     },
     {
@@ -13871,7 +13737,359 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-05T08:08:03+00:00"
+        "checked_at": "2026-10-05T15:55:59+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-10-06T03:00:17+11:00",
+      "source": "TechMedia (@techmedia)",
+      "category": "💻 IT / технологии",
+      "category_key": "it",
+      "title": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину",
+      "url": "https://t.me/techmedia/23531",
+      "image_url": "https://cdn4.telesco.pe/file/vdEIB7Kk0wr2oq7ce13Vv1qbIwbElqB9b4_GE5fgLhfqB9AMA9idGXajJ-E_b98nQ0VUDBhDdrIelqiapju8-7AlNKKlgjIVsYkJzeA7prRD0O5df02DqHwDnMzz0jmmNE6lESLw1VrMJGXJ2YYiDZM0iNrwyNOWAVr5hcPraSCO85Z9cSL6nV1L_YgVTvOVHZ1Yn7WCxDwH7DtBWsYxnMImFSFQXxudM_PpUtfKCGMnKi5qojQZ9tHtEDm7aAIDbmL1cvokzlxrYC-sNxhGeuH3MQVF9WtIyc-DA_SyHD-IOMIID1GY4EaDs7MnR0Fsqe6ZCnUTxguvlPhOdGrTeQ.jpg",
+      "image_hash": "0b54afd259b5373642754d02a845b67240018e2a",
+      "topic_cluster": "it:claude_может_сдать_полиции_летняя_девушка",
+      "published_at": "2026-10-05T10:38:21+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.3",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "it",
+        "corrected_category": "it",
+        "group": "it",
+        "event_type": "major_it",
+        "subtype": "major_it",
+        "seriousness": 81,
+        "threshold": 78,
+        "selection_utility": 11.0,
+        "slot": "backup",
+        "risks": [
+          "near_threshold"
+        ],
+        "title_original": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину.",
+        "title_corrected": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину",
+        "title_corrections": [],
+        "title_changed": true,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину. Она делилась с нейронкой своими глубокими переживаниями и заявила, что хочет устроить стрельбу в офисе шерифа. После этого даже похвасталась новым пистолетом. Anthropic заглянула в чат и передала потенциально опасные сообщения в полицию, которая в итоге ворвалась к ней в дом и обвинила в письменной угрозе насилия . Вайбарестинг.",
+      "title_original": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину.",
+      "footer": "IT | ТЕХНОЛОГИИ",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину",
+        "body": [
+          "Она делилась с нейронкой своими глубокими переживаниями и заявила, что хочет устроить стрельбу в офисе шерифа.",
+          "Anthropic заглянула в чат и передала потенциально опасные сообщения в полицию, которая в итоге ворвалась к ней в дом и обвинила в письменной угрозе насилия ."
+        ],
+        "footer": "IT | ТЕХНОЛОГИИ",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "news_director": {
+          "version": "director-v2.3",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "it",
+          "corrected_category": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "subtype": "major_it",
+          "seriousness": 81,
+          "threshold": 78,
+          "selection_utility": 11.0,
+          "slot": "backup",
+          "risks": [
+            "near_threshold"
+          ],
+          "title_original": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину.",
+          "title_corrected": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину",
+          "title_corrections": [],
+          "title_changed": true,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "it",
+          "final_category": "it",
+          "event_type": "major_it",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.4",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.3",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "it",
+            "corrected_category": "it",
+            "group": "it",
+            "event_type": "major_it",
+            "subtype": "major_it",
+            "seriousness": 81,
+            "threshold": 78,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [
+              "near_threshold"
+            ],
+            "title_original": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину",
+            "title_corrected": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "💻 IT / технологии\n\n<b>Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину</b>\n\nОна делилась с нейронкой своими глубокими переживаниями и заявила, что хочет устроить стрельбу в офисе шерифа.\n\nAnthropic заглянула в чат и передала потенциально опасные сообщения в полицию, которая в итоге ворвалась к ней в дом и обвинила в письменной угрозе насилия .\n\nIT | ТЕХНОЛОГИИ · <a href=\"https://t.me/techmedia/23531\">TechMedia (@techmedia)</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "it",
+        "final_category": "it",
+        "event_type": "major_it",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.4",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.3",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "it",
+          "corrected_category": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "subtype": "major_it",
+          "seriousness": 81,
+          "threshold": 78,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [
+            "near_threshold"
+          ],
+          "title_original": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину",
+          "title_corrected": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 351,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": []
+      }
+    },
+    {
+      "time_sakhalin": "2026-10-06T03:00:28+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
+      "url": "https://sakhalinmedia.ru/news/2641208/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6433/6432232.jpg?388516b22b6489b57390d85b116b043b",
+      "image_hash": "a59e92c52e63d1e47742b026cd83bc480cbaed82",
+      "topic_cluster": "sakh:жители_домов_сахалинском_провели_несколько_суток",
+      "published_at": "2026-10-05T08:06:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.3",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "sakh",
+        "corrected_category": "sakh",
+        "group": "local",
+        "event_type": "public_service_disruption",
+        "subtype": "public_service_disruption",
+        "seriousness": 84,
+        "threshold": 70,
+        "selection_utility": -83.0,
+        "slot": "backup",
+        "risks": [],
+        "title_original": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
+        "title_corrected": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Мэр Южно-Сахалинска Сергей Надсадин посетил с инспекцией микрорайон Уюн на улице Жириновского. Главной темой выезда стало отсутствие водоснабжения в домах №2/1 и №7 — проблема фиксировалась все выходные. Причиной названы неполадки насосного оборудования, сообщили в пресс-службе администрации города. Водоснабжение восстановили в полном объеме вечером 5 октября (ФОТО) О проблеме с водой местные жители сообщили через социальные сети, что и послужило поводом для встречи мэра с представителями застройщика и управляющей компании. По докладу УК, в доме №2/1 ситуация нормализовалась днем 5 октября. К 17.00 водоснабжение в микрорайоне восстановили в полном объеме. Сергей Надсадин. Фото: пресс-служба администрации Южно-Сахалинска Также в ходе совещания Сергей Надсадин проверил ход строительства детского сада на 290 мест, который должны сдать в 2027 году. О текущей ситуации доложил генеральный директор подрядной организации ООО \"Стройальянс\" Андрей Комароми . Строители возвели все железобетонные конструкции и проложили наружные сети водоснабжения, канализации и теплоснабжения. Сейчас основные работы сосредоточены внутри здания. \"До конца года мы планируем закрыть тепловой контур, установить окна, выполнить гидроизоляцию кровли, начать монтаж навесного фасада и провести вертикальную планировку территории. Это позволит подготовить площадку к благоустройству, к которому приступим весной. В зимний период продолжим работу над внутренними инженерными сетями и отделкой помещений\", — рассказал Андрей Комароми.",
+      "title_original": null,
+      "footer": "САХАЛИН",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
+        "body": [
+          "Мэр Южно-Сахалинска Сергей Надсадин посетил с инспекцией микрорайон Уюн на улице Жириновского.",
+          "Главной темой выезда стало отсутствие водоснабжения в домах №2/1 и №7 — проблема фиксировалась все выходные."
+        ],
+        "footer": "САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "news_director": {
+          "version": "director-v2.3",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh",
+          "corrected_category": "sakh",
+          "group": "local",
+          "event_type": "public_service_disruption",
+          "subtype": "public_service_disruption",
+          "seriousness": 84,
+          "threshold": 70,
+          "selection_utility": -83.0,
+          "slot": "backup",
+          "risks": [],
+          "title_original": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
+          "title_corrected": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "sakh",
+          "final_category": "sakh",
+          "event_type": "public_service_disruption",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.4",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.3",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "sakh",
+            "corrected_category": "sakh",
+            "group": "local",
+            "event_type": "public_service_disruption",
+            "subtype": "public_service_disruption",
+            "seriousness": 83,
+            "threshold": 70,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
+            "title_corrected": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "📍 Сахалин\n\n<b>Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды</b>\n\nМэр Южно-Сахалинска Сергей Надсадин посетил с инспекцией микрорайон Уюн на улице Жириновского.\n\nГлавной темой выезда стало отсутствие водоснабжения в домах №2/1 и №7 — проблема фиксировалась все выходные.\n\nСАХАЛИН · <a href=\"https://sakhalinmedia.ru/news/2641208/\">SakhalinMedia.ru</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh",
+        "final_category": "sakh",
+        "event_type": "public_service_disruption",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.4",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.3",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh",
+          "corrected_category": "sakh",
+          "group": "local",
+          "event_type": "public_service_disruption",
+          "subtype": "public_service_disruption",
+          "seriousness": 83,
+          "threshold": 70,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
+          "title_corrected": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 352,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": []
       }
     }
   ],
@@ -14100,11 +14318,11 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-10-05T19:02:02+11:00",
+    "started_sakhalin": "2026-10-06T02:55:52+11:00",
     "status": "ok",
-    "candidates": 7,
-    "published": 1,
-    "local_candidates": 4,
+    "candidates": 6,
+    "published": 2,
+    "local_candidates": 2,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -14135,60 +14353,60 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-10-05T19:07:05+11:00",
+    "finished_sakhalin": "2026-10-06T03:00:36+11:00",
     "stats": {
       "rss_seen": 160,
-      "old_skip": 66,
+      "old_skip": 63,
       "google_skip": 16,
-      "duplicate_skip": 1,
-      "low_info_skip": 17,
-      "category_skip": 38,
+      "duplicate_skip": 5,
+      "low_info_skip": 18,
+      "category_skip": 35,
       "no_image_skip": 0,
       "bad_image_skip": 6,
-      "logo_image_skip": 51,
-      "text_card_image_skip": 4,
-      "candidates": 18,
-      "rewrite_retry": 4,
-      "editorial_skip": 3,
+      "logo_image_skip": 48,
+      "text_card_image_skip": 5,
+      "candidates": 16,
+      "rewrite_retry": 2,
+      "editorial_skip": 2,
       "telegram_fail": 0,
-      "published": 1,
+      "published": 2,
       "telegram_source_attempt": 2,
       "telegram_source_fail": 0,
-      "telegram_source_seen": 32,
-      "telegram_source_candidates": 13,
-      "ai_calls": 4,
-      "ai_budget_exhausted": 1,
-      "ai_api_fail": 4,
+      "telegram_source_seen": 36,
+      "telegram_source_candidates": 19,
+      "ai_calls": 3,
+      "ai_budget_exhausted": 0,
+      "ai_api_fail": 2,
       "evidence_reject": 0,
       "validation_reject": 0,
-      "extractive_fallback": 2,
-      "extractive_first": 2,
-      "editorial_prechecked": 46,
+      "extractive_fallback": 3,
+      "extractive_first": 3,
+      "editorial_prechecked": 50,
       "editorial_gate_checked": 5,
-      "editorial_gate_pass": 2,
+      "editorial_gate_pass": 3,
       "editorial_gate_reject": 1,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 0,
       "editorial_gate_ai_fail": 0,
       "editorial_title_reject": 1,
-      "editorial_category_reject": 1,
+      "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 8,
-      "editorial_offtopic_reject": 22,
-      "openrouter_empty_content": 10,
+      "editorial_reclassified": 5,
+      "editorial_offtopic_reject": 32,
+      "openrouter_empty_content": 6,
       "openrouter_model_fallback": 0,
-      "openrouter_attempts": 12,
-      "openrouter_retries": 8,
-      "openrouter_invalid_json": 1,
-      "openrouter_success": 0,
+      "openrouter_attempts": 7,
+      "openrouter_retries": 4,
+      "openrouter_invalid_json": 0,
+      "openrouter_success": 1,
       "openrouter_circuit_open": 0,
       "editorial_grounded_translation_fallback": 0,
-      "media_required_skip": 5,
+      "media_required_skip": 2,
       "media_generic_skip": 0,
-      "media_ready_candidates": 18,
+      "media_ready_candidates": 16,
       "photo_retry": 0,
-      "photo_publish": 1,
-      "photo_upload_original": 1,
+      "photo_publish": 2,
+      "photo_upload_original": 2,
       "photo_upload_reencoded": 0,
       "photo_upload_plain_caption": 0,
       "photo_remote_url": 0,
@@ -14199,19 +14417,19 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 18,
-      "director_approved": 7,
-      "director_rejected": 11,
+      "director_seen": 16,
+      "director_approved": 6,
+      "director_rejected": 10,
       "director_reclassified": 0,
-      "director_title_corrected": 1,
+      "director_title_corrected": 2,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
-      "director_final_checked": 2,
+      "director_final_checked": 3,
       "director_final_autocorrected": 0,
       "director_final_reject": 1,
       "director_pending_retired": 0,
       "publication_contract_blocked": 1,
-      "post_audit_checked": 15,
+      "post_audit_checked": 16,
       "post_audit_anomalies": 1,
       "post_audit_corrected": 0,
       "post_audit_deleted": 0
@@ -14221,224 +14439,6 @@
       "policy_version": "policy-v2.4",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
-        "window": 20,
-        "targets": {
-          "local": 6,
-          "ru_pol": 4,
-          "ru_eco": 4,
-          "ru_safety": 3,
-          "world": 2,
-          "it": 1
-        },
-        "target_percent": {
-          "local": 30.0,
-          "ru_pol": 20.0,
-          "ru_eco": 20.0,
-          "ru_safety": 15.0,
-          "world": 10.0,
-          "it": 5.0
-        },
-        "counts": {
-          "local": 9,
-          "ru_pol": 1,
-          "ru_eco": 4,
-          "ru_safety": 1,
-          "world": 1,
-          "it": 2
-        },
-        "scaled_targets": {
-          "local": 5.4,
-          "ru_pol": 3.6,
-          "ru_eco": 3.6,
-          "ru_safety": 2.7,
-          "world": 1.8,
-          "it": 0.9
-        },
-        "deficits": {
-          "local": -3.6,
-          "ru_pol": 2.6,
-          "ru_eco": -0.4,
-          "ru_safety": 1.7,
-          "world": 0.8,
-          "it": -1.1
-        },
-        "distribution_error": 10.2,
-        "subtype_counts": {
-          "military_security": 1,
-          "macro_economy": 6,
-          "fatal_incident": 1,
-          "violent_crime": 3,
-          "major_emergency": 1,
-          "major_it": 2,
-          "public_service_disruption": 2,
-          "political_statement": 1,
-          "political_decision": 1
-        },
-        "sequence": [
-          "ru_safety",
-          "local",
-          "world",
-          "local",
-          "local",
-          "ru_eco",
-          "local",
-          "ru_eco",
-          "ru_eco",
-          "it",
-          "ru_eco",
-          "local",
-          "local",
-          "local",
-          "ru_pol",
-          "local",
-          "local",
-          "it"
-        ],
-        "category_sequence": [
-          "ru_security",
-          "sakh",
-          "world_ru",
-          "sakh_chp",
-          "sakh_chp",
-          "ru_eco",
-          "sakh_chp",
-          "ru_eco",
-          "ru_eco",
-          "it",
-          "ru_eco",
-          "sakh",
-          "sakh",
-          "sakh",
-          "ru_pol",
-          "sakh",
-          "sakh_chp",
-          "it"
-        ],
-        "source_sequence": [
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "bbc world",
-          "astv",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "astv",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "techmedia techmedia",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakh.online",
-          "sakh.online",
-          "astv",
-          "sakhalinmedia.ru",
-          "guardian technology"
-        ],
-        "retrospective_anomalies": [
-          {
-            "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
-            "category_key": "sakh_chp",
-            "reason": "low_scale_incident_not_release_worthy",
-            "corrected_category": "sakh_chp"
-          },
-          {
-            "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-            "category_key": "ru_incident",
-            "reason": "low_scale_incident_not_release_worthy",
-            "corrected_category": "ru_incident"
-          }
-        ],
-        "valid_posts_counted": 18
-      },
-      "candidate_count": 18,
-      "approved_count": 7,
-      "rejected_count": 11,
-      "rejected_by_reason": {
-        "importance_below_threshold": 10,
-        "minor_or_routine_crime": 1
-      },
-      "ai_review_requested": 0,
-      "ai_review_received": 0,
-      "selected_groups": [
-        "world",
-        "it"
-      ],
-      "projected_distribution_error": 10.0,
-      "projected_counts": {
-        "ru_safety": 1,
-        "local": 9,
-        "world": 2,
-        "ru_eco": 4,
-        "it": 3,
-        "ru_pol": 1
-      },
-      "projected_length": 20,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "Kyiv bridge hit in further Russian drone attack as German chancellor makes surprise visit",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "military_security",
-          "seriousness": 94,
-          "utility": 124.7
-        },
-        {
-          "slot": 2,
-          "title": "«Титаник» превратился в «Титанигер» благодаря нейронке от Apple — счастливый обладатель айфона просто хотел расширить фотку, но что-то пошло не так",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 80,
-          "utility": 38.0
-        },
-        {
-          "slot": "backup",
-          "title": "Own a mobile phone? Then you’re paying the ‘app tax’. It’s a racket and it’s time the UK faced Apple and Google down | Chi Onwurah",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 85,
-          "utility": 6.0
-        },
-        {
-          "slot": "backup",
-          "title": "Машины всмятку: сильная авария парализовала движение на Холмском шоссе в Южно-Сахалинске",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "seriousness": 98,
-          "utility": -24.0
-        },
-        {
-          "slot": "backup",
-          "title": "Спектакль по роману Толстого открыл новый театральный сезон в сахалинском Чехов-центре",
-          "category_key": "sakh",
-          "group": "local",
-          "event_type": "major_infrastructure",
-          "seriousness": 89,
-          "utility": -33.0
-        },
-        {
-          "slot": "backup",
-          "title": "Водоснабжение в ЖК \"Уюн\" полностью восстановили",
-          "category_key": "sakh",
-          "group": "local",
-          "event_type": "public_service_disruption",
-          "seriousness": 84,
-          "utility": -38.0
-        },
-        {
-          "slot": "backup",
-          "title": "Часть Южно-Сахалинска временно осталась без воды 5 октября",
-          "category_key": "sakh",
-          "group": "local",
-          "event_type": "public_service_disruption",
-          "seriousness": 82,
-          "utility": -40.0
-        }
-      ],
-      "rolling_balance_after": {
         "window": 20,
         "targets": {
           "local": 6,
@@ -14567,13 +14567,220 @@
           }
         ],
         "valid_posts_counted": 18
+      },
+      "candidate_count": 16,
+      "approved_count": 6,
+      "rejected_count": 10,
+      "rejected_by_reason": {
+        "importance_below_threshold": 9,
+        "minor_or_routine_crime": 1
+      },
+      "ai_review_requested": 0,
+      "ai_review_received": 0,
+      "selected_groups": [
+        "world",
+        "it"
+      ],
+      "projected_distribution_error": 12.0,
+      "projected_counts": {
+        "local": 10,
+        "world": 2,
+        "ru_eco": 4,
+        "it": 3,
+        "ru_pol": 1
+      },
+      "projected_length": 20,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "Zelensky condemns 'horrific' Russian strike on boat carrying corn in Black Sea",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "fatal_incident",
+          "seriousness": 97,
+          "utility": 127.7
+        },
+        {
+          "slot": 2,
+          "title": "Own a smartphone? Then you’re paying the ‘app tax’. It’s a racket and it’s time the UK faced Apple and Google down | Chi Onwurah",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 85,
+          "utility": 43.0
+        },
+        {
+          "slot": "backup",
+          "title": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 81,
+          "utility": 11.0
+        },
+        {
+          "slot": "backup",
+          "title": "«Титаник» превратился в «Титанигер» благодаря нейронке от Apple — счастливый обладатель айфона просто хотел расширить фотку, но что-то пошло не так",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 80,
+          "utility": 10.0
+        },
+        {
+          "slot": "backup",
+          "title": "Чехов-центр открыл 96-й сезон премьерой \"Воскресения\"",
+          "category_key": "sakh",
+          "group": "local",
+          "event_type": "major_infrastructure",
+          "seriousness": 88,
+          "utility": -72.0
+        },
+        {
+          "slot": "backup",
+          "title": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
+          "category_key": "sakh",
+          "group": "local",
+          "event_type": "public_service_disruption",
+          "seriousness": 84,
+          "utility": -83.0
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 20,
+        "targets": {
+          "local": 6,
+          "ru_pol": 4,
+          "ru_eco": 4,
+          "ru_safety": 3,
+          "world": 2,
+          "it": 1
+        },
+        "target_percent": {
+          "local": 30.0,
+          "ru_pol": 20.0,
+          "ru_eco": 20.0,
+          "ru_safety": 15.0,
+          "world": 10.0,
+          "it": 5.0
+        },
+        "counts": {
+          "local": 10,
+          "ru_pol": 1,
+          "ru_eco": 4,
+          "ru_safety": 0,
+          "world": 0,
+          "it": 3
+        },
+        "scaled_targets": {
+          "local": 5.4,
+          "ru_pol": 3.6,
+          "ru_eco": 3.6,
+          "ru_safety": 2.7,
+          "world": 1.8,
+          "it": 0.9
+        },
+        "deficits": {
+          "local": -4.6,
+          "ru_pol": 2.6,
+          "ru_eco": -0.4,
+          "ru_safety": 2.7,
+          "world": 1.8,
+          "it": -2.1
+        },
+        "distribution_error": 14.2,
+        "subtype_counts": {
+          "violent_crime": 3,
+          "macro_economy": 5,
+          "major_emergency": 1,
+          "major_it": 3,
+          "public_service_disruption": 3,
+          "political_statement": 1,
+          "political_decision": 1,
+          "major_infrastructure": 1
+        },
+        "sequence": [
+          "local",
+          "local",
+          "ru_eco",
+          "local",
+          "ru_eco",
+          "ru_eco",
+          "it",
+          "ru_eco",
+          "local",
+          "local",
+          "local",
+          "ru_pol",
+          "local",
+          "local",
+          "it",
+          "local",
+          "it",
+          "local"
+        ],
+        "category_sequence": [
+          "sakh_chp",
+          "sakh_chp",
+          "ru_eco",
+          "sakh_chp",
+          "ru_eco",
+          "ru_eco",
+          "it",
+          "ru_eco",
+          "sakh",
+          "sakh",
+          "sakh",
+          "ru_pol",
+          "sakh",
+          "sakh_chp",
+          "it",
+          "sakh",
+          "it",
+          "sakh"
+        ],
+        "source_sequence": [
+          "astv",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "astv",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "techmedia techmedia",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakh.online",
+          "sakh.online",
+          "astv",
+          "sakhalinmedia.ru",
+          "guardian technology",
+          "sakhalinmedia.ru",
+          "techmedia techmedia",
+          "sakhalinmedia.ru"
+        ],
+        "retrospective_anomalies": [
+          {
+            "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
+            "category_key": "sakh_chp",
+            "reason": "low_scale_incident_not_release_worthy",
+            "corrected_category": "sakh_chp"
+          },
+          {
+            "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
+            "category_key": "ru_incident",
+            "reason": "low_scale_incident_not_release_worthy",
+            "corrected_category": "ru_incident"
+          }
+        ],
+        "valid_posts_counted": 18
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-10-05T08:02:08+00:00",
-      "checked": 15,
-      "passed": 14,
+      "checked_at": "2026-10-05T15:55:59+00:00",
+      "checked": 16,
+      "passed": 15,
       "anomalies": [
         {
           "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
@@ -14616,11 +14823,11 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 18,
-      "missing_media_rejected": 5,
+      "ready_candidates": 16,
+      "missing_media_rejected": 2,
       "generic_media_rejected": 0,
       "photo_retries": 0,
-      "photo_published": 1,
+      "photo_published": 2,
       "deferred_this_run": 0,
       "pending_queue_size": 0,
       "pending_ready": 0,
@@ -14630,54 +14837,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 46,
+      "prechecked": 50,
       "checked": 5,
-      "passed": 2,
+      "passed": 3,
       "rejected": 1,
-      "reclassified": 8,
-      "offtopic_reject": 22,
+      "reclassified": 5,
+      "offtopic_reject": 32,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
-      "audited_urls": 3
-    },
-    "independent_post_publication_monitor": {
-      "version": "post-audit-v1.1",
-      "checked_at": "2026-10-05T08:08:03+00:00",
-      "checked": 16,
-      "passed": 15,
-      "anomalies": [
-        {
-          "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-          "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
-          "publisher_version": "stable-v12.1",
-          "category_key": "ru_incident",
-          "corrected_category": "ru_incident",
-          "reason": "low_scale_incident_not_release_worthy",
-          "contract_issues": [
-            "director_final_reject:low_scale_incident_not_release_worthy"
-          ]
-        }
-      ],
-      "corrected": [],
-      "deleted": [],
-      "failed_actions": [],
-      "unresolved": 1,
-      "unresolved_items": [
-        {
-          "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-          "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
-          "publisher_version": "stable-v12.1",
-          "category_key": "ru_incident",
-          "corrected_category": "ru_incident",
-          "reason": "low_scale_incident_not_release_worthy",
-          "contract_issues": [
-            "director_final_reject:low_scale_incident_not_release_worthy"
-          ]
-        }
-      ],
-      "mutations_enabled": true,
-      "legacy_posts_mutated": false
+      "audited_urls": 4
     }
   },
   "pending_media_delivery": [],
@@ -14726,8 +14895,8 @@
       "ru_pol": 1,
       "ru_eco": 4,
       "ru_safety": 0,
-      "world": 1,
-      "it": 2
+      "world": 0,
+      "it": 3
     },
     "scaled_targets": {
       "local": 5.4,
@@ -14742,25 +14911,22 @@
       "ru_pol": 2.6,
       "ru_eco": -0.4,
       "ru_safety": 2.7,
-      "world": 0.8,
-      "it": -1.1
+      "world": 1.8,
+      "it": -2.1
     },
-    "distribution_error": 12.2,
+    "distribution_error": 14.2,
     "subtype_counts": {
-      "macro_economy": 6,
-      "fatal_incident": 1,
       "violent_crime": 3,
+      "macro_economy": 5,
       "major_emergency": 1,
-      "major_it": 2,
-      "public_service_disruption": 2,
+      "major_it": 3,
+      "public_service_disruption": 3,
       "political_statement": 1,
       "political_decision": 1,
       "major_infrastructure": 1
     },
     "sequence": [
       "local",
-      "world",
-      "local",
       "local",
       "ru_eco",
       "local",
@@ -14773,13 +14939,13 @@
       "local",
       "ru_pol",
       "local",
+      "local",
+      "it",
       "local",
       "it",
       "local"
     ],
     "category_sequence": [
-      "sakh",
-      "world_ru",
       "sakh_chp",
       "sakh_chp",
       "ru_eco",
@@ -14795,11 +14961,11 @@
       "sakh",
       "sakh_chp",
       "it",
+      "sakh",
+      "it",
       "sakh"
     ],
     "source_sequence": [
-      "sakh.online",
-      "bbc world",
       "astv",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
@@ -14815,6 +14981,8 @@
       "astv",
       "sakhalinmedia.ru",
       "guardian technology",
+      "sakhalinmedia.ru",
+      "techmedia techmedia",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [
@@ -20744,7 +20912,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-05T08:08:03+00:00",
+    "checked_at": "2026-10-05T15:55:59+00:00",
     "checked": 16,
     "passed": 15,
     "anomalies": [
@@ -21716,7 +21884,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-10-05T08:02:01+00:00",
+    "checked_at_utc": "2026-10-05T15:55:52+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -21739,31 +21907,31 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-10-05T08:07:06+00:00",
+    "checked_at_utc": "2026-10-05T16:00:37+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-05T08:07:06+00:00",
+    "checked_at_utc": "2026-10-05T16:00:37+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 7,
-    "ai_calls": 4,
-    "ai_api_fail": 4,
-    "ai_budget_exhausted": 1,
+    "published": 2,
+    "director_approved": 6,
+    "ai_calls": 3,
+    "ai_api_fail": 2,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 1
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-10-05T08:07:06+00:00",
+    "checked_at_utc": "2026-10-05T16:00:37+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-10-05T19:07:05+11:00",
-      "candidates": 7,
+      "finished_sakhalin": "2026-10-06T03:00:36+11:00",
+      "candidates": 6,
       "queued_for_delivery": 0
     },
     "generation": {
