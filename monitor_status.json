@@ -1,51 +1,30 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-05T15:54:56+00:00",
-  "checked_at_sakhalin": "2026-10-06T02:54:50+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-05T16:01:10+00:00",
+  "checked_at_sakhalin": "2026-10-06T03:01:06+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "category",
-      "message_id": 325,
-      "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-      "category_key": "ru_incident",
-      "publisher_version": "stable-v12.1",
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "low_scale_incident_not_release_worthy",
-      "corrected_category": "ru_incident",
-      "title_issues": []
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-05T22:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-05T19:07:05+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-05T19:07:05+11:00",
-    "age_hours": 7.8,
-    "published": 1
+    "finished_sakhalin": "2026-10-06T03:00:36+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-05T08:07:06+00:00",
+    "checked_at_utc": "2026-10-05T16:00:37+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 7,
-    "ai_calls": 4,
-    "ai_api_fail": 4,
-    "ai_budget_exhausted": 1,
+    "published": 2,
+    "director_approved": 6,
+    "ai_calls": 3,
+    "ai_api_fail": 2,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 1
   },
@@ -73,56 +52,19 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-05T15:54:53+00:00",
-    "checked": 16,
-    "passed": 15,
-    "anomalies": [
-      {
-        "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-        "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
-        "publisher_version": "stable-v12.1",
-        "category_key": "ru_incident",
-        "corrected_category": "ru_incident",
-        "reason": "low_scale_incident_not_release_worthy",
-        "contract_issues": [
-          "director_final_reject:low_scale_incident_not_release_worthy"
-        ]
-      }
-    ],
+    "checked_at": "2026-10-05T16:01:08+00:00",
+    "checked": 17,
+    "passed": 17,
+    "anomalies": [],
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
-    "unresolved": 1,
-    "unresolved_items": [
-      {
-        "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-        "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
-        "publisher_version": "stable-v12.1",
-        "category_key": "ru_incident",
-        "corrected_category": "ru_incident",
-        "reason": "low_scale_incident_not_release_worthy",
-        "contract_issues": [
-          "director_final_reject:low_scale_incident_not_release_worthy"
-        ]
-      }
-    ],
+    "unresolved": 0,
+    "unresolved_items": [],
     "mutations_enabled": true,
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 325,
-      "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-      "category_key": "ru_incident",
-      "publisher_version": "stable-v12.1",
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "low_scale_incident_not_release_worthy",
-      "corrected_category": "ru_incident",
-      "title_issues": []
-    },
     {
       "message_id": 326,
       "title": "Женщина, попавшая под колеса авто в селе на Сахалине, скончалась в больнице",
@@ -317,6 +259,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 351,
+      "title": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
+    },
+    {
+      "message_id": 352,
+      "title": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -342,8 +310,8 @@
       "ru_pol": 1,
       "ru_eco": 4,
       "ru_safety": 0,
-      "world": 1,
-      "it": 2
+      "world": 0,
+      "it": 3
     },
     "scaled_targets": {
       "local": 5.4,
@@ -358,25 +326,22 @@
       "ru_pol": 2.6,
       "ru_eco": -0.4,
       "ru_safety": 2.7,
-      "world": 0.8,
-      "it": -1.1
+      "world": 1.8,
+      "it": -2.1
     },
-    "distribution_error": 12.2,
+    "distribution_error": 14.2,
     "subtype_counts": {
-      "macro_economy": 6,
-      "fatal_incident": 1,
       "violent_crime": 3,
+      "macro_economy": 5,
       "major_emergency": 1,
-      "major_it": 2,
-      "public_service_disruption": 2,
+      "major_it": 3,
+      "public_service_disruption": 3,
       "political_statement": 1,
       "political_decision": 1,
       "major_infrastructure": 1
     },
     "sequence": [
       "local",
-      "world",
-      "local",
       "local",
       "ru_eco",
       "local",
@@ -389,13 +354,13 @@
       "local",
       "ru_pol",
       "local",
+      "local",
+      "it",
       "local",
       "it",
       "local"
     ],
     "category_sequence": [
-      "sakh",
-      "world_ru",
       "sakh_chp",
       "sakh_chp",
       "ru_eco",
@@ -411,11 +376,11 @@
       "sakh",
       "sakh_chp",
       "it",
+      "sakh",
+      "it",
       "sakh"
     ],
     "source_sequence": [
-      "sakh.online",
-      "bbc world",
       "astv",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
@@ -431,6 +396,8 @@
       "astv",
       "sakhalinmedia.ru",
       "guardian technology",
+      "sakhalinmedia.ru",
+      "techmedia techmedia",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [
@@ -449,21 +416,9 @@
     ],
     "valid_posts_counted": 18
   },
-  "legacy_or_derivative_warnings": [
-    {
-      "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-      "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
-      "publisher_version": "stable-v12.1",
-      "category_key": "ru_incident",
-      "corrected_category": "ru_incident",
-      "reason": "low_scale_incident_not_release_worthy",
-      "contract_issues": [
-        "director_final_reject:low_scale_incident_not_release_worthy"
-      ]
-    }
-  ],
+  "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-05T15:54:48+00:00",
+    "checked_at_utc": "2026-10-05T16:01:04+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -492,27 +447,16 @@
   "hardening_failed_actions": [],
   "warnings": [
     {
-      "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-      "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
-      "publisher_version": "stable-v12.1",
-      "category_key": "ru_incident",
-      "corrected_category": "ru_incident",
-      "reason": "low_scale_incident_not_release_worthy",
-      "contract_issues": [
-        "director_final_reject:low_scale_incident_not_release_worthy"
-      ]
-    },
-    {
       "type": "thematic_mix_drift",
-      "distribution_error": 12.2,
+      "distribution_error": 14.2,
       "limit": 8.0,
       "counts": {
         "local": 10,
         "ru_pol": 1,
         "ru_eco": 4,
         "ru_safety": 0,
-        "world": 1,
-        "it": 2
+        "world": 0,
+        "it": 3
       },
       "targets": {
         "local": 6,
@@ -527,8 +471,8 @@
         "ru_pol": 2.6,
         "ru_eco": -0.4,
         "ru_safety": 2.7,
-        "world": 0.8,
-        "it": -1.1
+        "world": 1.8,
+        "it": -2.1
       }
     }
   ]
