@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-05T09:38:16+00:00",
-  "checked_at_sakhalin": "2026-10-05T20:38:11+11:00",
+  "checked_at_utc": "2026-10-05T15:54:56+00:00",
+  "checked_at_sakhalin": "2026-10-06T02:54:50+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -19,13 +19,19 @@
       "review_reason": "low_scale_incident_not_release_worthy",
       "corrected_category": "ru_incident",
       "title_issues": []
+    },
+    {
+      "type": "publisher_slot_missed",
+      "slot_sakhalin": "2026-10-05T22:00+11:00",
+      "grace_minutes": 45,
+      "last_finished_sakhalin": "2026-10-05T19:07:05+11:00"
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-05T19:07:05+11:00",
-    "age_hours": 1.52,
+    "age_hours": 7.8,
     "published": 1
   },
   "last_production_attempt": {
@@ -45,45 +51,17 @@
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-10-05",
+    "day_sakhalin": "2026-10-06",
     "status": "healthy",
     "morning": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-04T22:30:36+00:00",
-        "published_at_sakhalin": "2026-10-05T09:30:36+11:00",
-        "telegram_message_id": 346,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 7,
-        "evidence_hash": "d36273c88ec019b72b5e00eaee1d046b303fb3e62ac2ff6b897b5aa44d1d8f44",
-        "source_ids": [
-          1,
-          2,
-          3,
-          4
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "evening": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-05T08:52:55+00:00",
-        "published_at_sakhalin": "2026-10-05T19:52:55+11:00",
-        "telegram_message_id": 350,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 7,
-        "evidence_hash": "160b8eb082d897601d4ab32b7af41788771389ad164a3d2753bd1d6a7ab0a105",
-        "source_ids": [
-          1,
-          2,
-          3,
-          4
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "last_attempt": {
       "status": "ok",
@@ -95,7 +73,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-05T09:38:14+00:00",
+    "checked_at": "2026-10-05T15:54:53+00:00",
     "checked": 16,
     "passed": 15,
     "anomalies": [
@@ -485,7 +463,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-05T09:38:09+00:00",
+    "checked_at_utc": "2026-10-05T15:54:48+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
