@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-05T05:01:15+00:00",
-  "checked_at_sakhalin": "2026-10-05T16:01:10+11:00",
+  "checked_at_utc": "2026-10-05T05:06:53+00:00",
+  "checked_at_sakhalin": "2026-10-05T16:06:49+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -19,40 +19,29 @@
       "review_reason": "low_scale_incident_not_release_worthy",
       "corrected_category": "ru_incident",
       "title_issues": []
-    },
-    {
-      "type": "publisher_stale",
-      "age_hours": 5.93,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-05T13:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-05T10:05:35+11:00"
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-05T10:05:35+11:00",
-    "age_hours": 5.93,
-    "published": 0
+    "finished_sakhalin": "2026-10-05T16:06:19+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-04T23:05:36+00:00",
+    "checked_at_utc": "2026-10-05T05:06:20+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 6,
-    "ai_calls": 4,
-    "ai_api_fail": 4,
-    "ai_budget_exhausted": 1,
+    "published": 2,
+    "director_approved": 13,
+    "ai_calls": 3,
+    "ai_api_fail": 2,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
-    "publication_contract_blocked": 1
+    "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -92,9 +81,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-05T05:01:13+00:00",
-    "checked": 14,
-    "passed": 13,
+    "checked_at": "2026-10-05T05:06:51+00:00",
+    "checked": 15,
+    "passed": 14,
     "anomalies": [
       {
         "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
@@ -129,19 +118,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 321,
-      "title": "Появились кадры нападения пьяного мужчины на 8-летнего мальчика в Южно-Сахалинске",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 325,
       "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
@@ -310,6 +286,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 347,
+      "title": "Жителя Долинска взяли под стражу после нападения на полицейских и попытки побега",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 348,
+      "title": "Руководитель безопасности OpenAI ушел, раскритиковав культуру компании",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -336,38 +338,37 @@
       "ru_eco": 4,
       "ru_safety": 1,
       "world": 1,
-      "it": 1
+      "it": 2
     },
     "scaled_targets": {
-      "local": 5.1,
-      "ru_pol": 3.4,
-      "ru_eco": 3.4,
-      "ru_safety": 2.55,
-      "world": 1.7,
-      "it": 0.85
+      "local": 5.4,
+      "ru_pol": 3.6,
+      "ru_eco": 3.6,
+      "ru_safety": 2.7,
+      "world": 1.8,
+      "it": 0.9
     },
     "deficits": {
-      "local": -3.9,
-      "ru_pol": 2.4,
-      "ru_eco": -0.6,
-      "ru_safety": 1.55,
-      "world": 0.7,
-      "it": -0.15
+      "local": -3.6,
+      "ru_pol": 2.6,
+      "ru_eco": -0.4,
+      "ru_safety": 1.7,
+      "world": 0.8,
+      "it": -1.1
     },
-    "distribution_error": 9.3,
+    "distribution_error": 10.2,
     "subtype_counts": {
-      "public_service_disruption": 3,
       "military_security": 1,
       "macro_economy": 6,
       "fatal_incident": 1,
-      "violent_crime": 2,
+      "violent_crime": 3,
       "major_emergency": 1,
-      "major_it": 1,
+      "major_it": 2,
+      "public_service_disruption": 2,
       "political_statement": 1,
       "political_decision": 1
     },
     "sequence": [
-      "local",
       "ru_safety",
       "local",
       "world",
@@ -383,10 +384,11 @@
       "local",
       "local",
       "ru_pol",
-      "local"
+      "local",
+      "local",
+      "it"
     ],
     "category_sequence": [
-      "sakh",
       "ru_security",
       "sakh",
       "world_ru",
@@ -402,10 +404,11 @@
       "sakh",
       "sakh",
       "ru_pol",
-      "sakh"
+      "sakh",
+      "sakh_chp",
+      "it"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakhalinmedia.ru",
       "sakh.online",
       "bbc world",
@@ -421,15 +424,11 @@
       "sakh.online",
       "sakh.online",
       "sakh.online",
-      "astv"
+      "astv",
+      "sakhalinmedia.ru",
+      "guardian technology"
     ],
     "retrospective_anomalies": [
-      {
-        "title": "Жесткое ДТП произошло в районе \"Сити Молла\" в Южно-Сахалинске",
-        "category_key": "sakh_chp",
-        "reason": "low_scale_incident_not_release_worthy",
-        "corrected_category": "sakh_chp"
-      },
       {
         "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
         "category_key": "sakh_chp",
@@ -443,7 +442,7 @@
         "corrected_category": "ru_incident"
       }
     ],
-    "valid_posts_counted": 17
+    "valid_posts_counted": 18
   },
   "legacy_or_derivative_warnings": [
     {
@@ -459,7 +458,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-05T05:01:08+00:00",
+    "checked_at_utc": "2026-10-05T05:06:47+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -500,7 +499,7 @@
     },
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 9.3,
+      "distribution_error": 10.2,
       "limit": 8.0,
       "counts": {
         "local": 9,
@@ -508,7 +507,7 @@
         "ru_eco": 4,
         "ru_safety": 1,
         "world": 1,
-        "it": 1
+        "it": 2
       },
       "targets": {
         "local": 6,
@@ -519,12 +518,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.9,
-        "ru_pol": 2.4,
-        "ru_eco": -0.6,
-        "ru_safety": 1.55,
-        "world": 0.7,
-        "it": -0.15
+        "local": -3.6,
+        "ru_pol": 2.6,
+        "ru_eco": -0.4,
+        "ru_safety": 1.7,
+        "world": 0.8,
+        "it": -1.1
       }
     }
   ]
