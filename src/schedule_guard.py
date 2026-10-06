@@ -44,6 +44,11 @@ def generation_provider_unavailable(run: Dict[str, Any]) -> bool:
     ai_calls = int(stats.get("ai_calls") or 0)
     ai_api_fail = int(stats.get("ai_api_fail") or 0)
     ai_budget_exhausted = int(stats.get("ai_budget_exhausted") or 0)
+    ai_circuit_open = int(
+        stats.get("ai_circuit_open")
+        or stats.get("openrouter_circuit_open")
+        or 0
+    )
     telegram_fail = int(stats.get("telegram_fail") or 0)
     contract_blocked = int(stats.get("publication_contract_blocked") or 0)
     return bool(
@@ -51,7 +56,7 @@ def generation_provider_unavailable(run: Dict[str, Any]) -> bool:
         and director_approved > 0
         and ai_calls > 0
         and ai_api_fail >= ai_calls
-        and ai_budget_exhausted > 0
+        and (ai_budget_exhausted > 0 or ai_circuit_open > 0)
         and telegram_fail == 0
         and contract_blocked == 0
     )
@@ -83,6 +88,30 @@ def production_due(now: Optional[datetime] = None) -> Dict[str, Any]:
     # existed but the generation provider failed completely".
     attempt = state.get("last_production_attempt") or {}
     attempted_at = _parse(attempt.get("checked_at_utc"))
+
+    # An exhausted OpenRouter free daily quota cannot recover via another
+    # publisher process before the provider's next UTC day. Suppress redundant
+    # recovery dispatches, including newly due logical slots, until that reset.
+    if (
+        attempt.get("status") == "blocked"
+        and attempt.get("provider_daily_quota_exhausted") is True
+        and attempted_at
+    ):
+        attempted_utc = attempted_at.astimezone(timezone.utc)
+        reset_utc = (attempted_utc + timedelta(days=1)).replace(
+            hour=0, minute=0, second=0, microsecond=0
+        )
+        now_utc = now.astimezone(timezone.utc)
+        if now_utc < reset_utc:
+            retry_seconds = max(0.0, (reset_utc - now_utc).total_seconds())
+            return {
+                "due": False,
+                "slot": slot,
+                "reason": "provider_daily_quota_exhausted",
+                "retry_after_minutes": round(retry_seconds / 60, 1),
+                "retry_after_utc": reset_utc.isoformat(timespec="seconds"),
+            }
+
     explicit_blocked = bool(
         attempt.get("status") == "blocked"
         and attempted_at
