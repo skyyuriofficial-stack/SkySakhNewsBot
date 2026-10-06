@@ -172,7 +172,6 @@ HYPERLOCAL_SERVICE_SCOPE = (
     "жилого дома",
     "жк уюн",
     "жк «",
-    "жк "",
 )
 IT_SOFT_CONSUMER_FEATURE = (
     "виртуальная примерочн",
