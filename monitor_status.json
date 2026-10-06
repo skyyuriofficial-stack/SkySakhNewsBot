@@ -1,25 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-06T21:24:56+00:00",
-  "checked_at_sakhalin": "2026-10-07T08:24:53+11:00",
+  "checked_at_utc": "2026-10-06T21:30:26+00:00",
+  "checked_at_sakhalin": "2026-10-07T08:30:22+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "category",
-      "message_id": 333,
-      "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "soft_consumer_it_feature",
-      "corrected_category": null,
-      "title_issues": []
-    },
     {
       "type": "category",
       "message_id": 336,
@@ -61,30 +47,24 @@
       "review_reason": "hyperlocal_service_disruption",
       "corrected_category": null,
       "title_issues": []
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-07T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-07T04:27:31+11:00"
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-07T04:27:31+11:00",
-    "age_hours": 3.96,
-    "published": 0
+    "finished_sakhalin": "2026-10-07T08:29:54+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
-    "status": "blocked",
-    "reason": "generation_provider_unavailable",
-    "checked_at_utc": "2026-10-06T17:27:32+00:00",
+    "status": "ok",
+    "reason": null,
+    "checked_at_utc": "2026-10-06T21:29:55+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 8,
+    "published": 1,
+    "director_approved": 10,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -115,24 +95,10 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-06T21:24:54+00:00",
+    "checked_at": "2026-10-06T21:30:24+00:00",
     "checked": 12,
-    "passed": 8,
+    "passed": 9,
     "anomalies": [
-      {
-        "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
-        "url": "https://t.me/techmedia/23488",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": null,
-        "reason": "soft_consumer_it_feature",
-        "contract_issues": [
-          "final_hard_reject:soft_consumer_it_feature",
-          "final_category_mismatch:None->it",
-          "director_final_category:None->it",
-          "director_final_reject:soft_consumer_it_feature"
-        ]
-      },
       {
         "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
         "url": "https://sakhalinmedia.ru/news/2639632/",
@@ -176,22 +142,8 @@
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
-    "unresolved": 4,
+    "unresolved": 3,
     "unresolved_items": [
-      {
-        "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
-        "url": "https://t.me/techmedia/23488",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": null,
-        "reason": "soft_consumer_it_feature",
-        "contract_issues": [
-          "final_hard_reject:soft_consumer_it_feature",
-          "final_category_mismatch:None->it",
-          "director_final_category:None->it",
-          "director_final_reject:soft_consumer_it_feature"
-        ]
-      },
       {
         "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
         "url": "https://sakhalinmedia.ru/news/2639632/",
@@ -236,19 +188,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 333,
-      "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "soft_consumer_it_feature",
-      "corrected_category": null,
-      "title_issues": []
-    },
     {
       "message_id": 334,
       "title": "Выдача кредитов наличными в России за девять месяцев достигла почти 4 трлн рублей",
@@ -391,6 +330,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 361,
+      "title": "Без света 7 октября: Лиственничное и Октябрьский в пригороде Южно-Сахалинска",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -412,7 +364,7 @@
       "it": 5.0
     },
     "counts": {
-      "local": 7,
+      "local": 8,
       "ru_pol": 1,
       "ru_eco": 5,
       "ru_safety": 0,
@@ -420,29 +372,30 @@
       "it": 1
     },
     "scaled_targets": {
-      "local": 4.2,
-      "ru_pol": 2.8,
-      "ru_eco": 2.8,
-      "ru_safety": 2.1,
-      "world": 1.4,
-      "it": 0.7
+      "local": 4.5,
+      "ru_pol": 3.0,
+      "ru_eco": 3.0,
+      "ru_safety": 2.25,
+      "world": 1.5,
+      "it": 0.75
     },
     "deficits": {
-      "local": -2.8,
-      "ru_pol": 1.8,
-      "ru_eco": -2.2,
-      "ru_safety": 2.1,
-      "world": 1.4,
-      "it": -0.3
+      "local": -3.5,
+      "ru_pol": 2.0,
+      "ru_eco": -2.0,
+      "ru_safety": 2.25,
+      "world": 1.5,
+      "it": -0.25
     },
-    "distribution_error": 10.6,
+    "distribution_error": 11.5,
     "subtype_counts": {
       "violent_crime": 4,
       "macro_economy": 6,
       "major_emergency": 1,
       "political_decision": 1,
       "major_it": 1,
-      "severe_weather": 1
+      "severe_weather": 1,
+      "public_service_disruption": 1
     },
     "sequence": [
       "local",
@@ -458,6 +411,7 @@
       "ru_eco",
       "local",
       "it",
+      "local",
       "local"
     ],
     "category_sequence": [
@@ -474,6 +428,7 @@
       "ru_eco",
       "sakh_chp",
       "it",
+      "sakh",
       "sakh"
     ],
     "source_sequence": [
@@ -490,15 +445,10 @@
       "astv",
       "sakhalinmedia.ru",
       "bbc technology",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "sakh.online"
     ],
     "retrospective_anomalies": [
-      {
-        "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
-        "category_key": "sakh_chp",
-        "reason": "low_scale_incident_not_release_worthy",
-        "corrected_category": "sakh_chp"
-      },
       {
         "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
         "category_key": "ru_incident",
@@ -530,23 +480,9 @@
         "corrected_category": null
       }
     ],
-    "valid_posts_counted": 14
+    "valid_posts_counted": 15
   },
   "legacy_or_derivative_warnings": [
-    {
-      "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
-      "url": "https://t.me/techmedia/23488",
-      "publisher_version": "stable-v12.1",
-      "category_key": "it",
-      "corrected_category": null,
-      "reason": "soft_consumer_it_feature",
-      "contract_issues": [
-        "final_hard_reject:soft_consumer_it_feature",
-        "final_category_mismatch:None->it",
-        "director_final_category:None->it",
-        "director_final_reject:soft_consumer_it_feature"
-      ]
-    },
     {
       "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
       "url": "https://sakhalinmedia.ru/news/2639632/",
@@ -588,7 +524,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-06T21:24:52+00:00",
+    "checked_at_utc": "2026-10-06T21:30:20+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -616,20 +552,6 @@
   "hardening_actions": [],
   "hardening_failed_actions": [],
   "warnings": [
-    {
-      "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
-      "url": "https://t.me/techmedia/23488",
-      "publisher_version": "stable-v12.1",
-      "category_key": "it",
-      "corrected_category": null,
-      "reason": "soft_consumer_it_feature",
-      "contract_issues": [
-        "final_hard_reject:soft_consumer_it_feature",
-        "final_category_mismatch:None->it",
-        "director_final_category:None->it",
-        "director_final_reject:soft_consumer_it_feature"
-      ]
-    },
     {
       "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
       "url": "https://sakhalinmedia.ru/news/2639632/",
@@ -671,10 +593,10 @@
     },
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 10.6,
+      "distribution_error": 11.5,
       "limit": 8.0,
       "counts": {
-        "local": 7,
+        "local": 8,
         "ru_pol": 1,
         "ru_eco": 5,
         "ru_safety": 0,
@@ -690,12 +612,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -2.8,
-        "ru_pol": 1.8,
-        "ru_eco": -2.2,
-        "ru_safety": 2.1,
-        "world": 1.4,
-        "it": -0.3
+        "local": -3.5,
+        "ru_pol": 2.0,
+        "ru_eco": -2.0,
+        "ru_safety": 2.25,
+        "world": 1.5,
+        "it": -0.25
       }
     }
   ]
