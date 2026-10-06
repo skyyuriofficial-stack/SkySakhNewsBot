@@ -25,7 +25,7 @@ from typing import Any, Callable, Dict, List, Mapping, Optional, Sequence, Tuple
 
 import editorial_policy as policy
 
-VERSION = "director-v2.3"
+VERSION = "director-v2.4"
 ROLLING_WINDOW = 20
 TARGET_COUNTS: Dict[str, int] = {
     "local": 6,
@@ -262,6 +262,13 @@ def _score_candidate(
         score = min(score, 67)
         reasons.append("weather_without_public_safety_signal_cap:67")
 
+    # Local official interviews/statements are filler unless the headline itself
+    # contains a material policy decision.  This prevents source/fact bonuses
+    # from lifting a routine "minister told..." story above the local threshold.
+    if classification.group == "local" and event == "political_statement":
+        score = min(score, 66)
+        reasons.append("local_official_statement_cap:66")
+
     # Hard upper bounds prevent routine filler from becoming '93/100' merely
     # because a long article contains official words, numbers and place names.
     caps = {
@@ -379,7 +386,11 @@ def review_candidate(candidate: Mapping[str, Any]) -> Dict[str, Any]:
     if event == "severe_weather" and score < threshold and "weather_without_public_safety_signal_cap:67" in score_reasons:
         reason = "weather_without_public_safety_impact"
     if event == "political_statement" and score < threshold:
-        reason = "statement_without_material_decision"
+        reason = (
+            "local_official_statement_without_decision"
+            if "local_official_statement_cap:66" in score_reasons
+            else "statement_without_material_decision"
+        )
 
     return {
         "approved": score >= threshold,
