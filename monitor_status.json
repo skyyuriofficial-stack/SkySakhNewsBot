@@ -1,62 +1,16 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-06T07:36:44+00:00",
-  "checked_at_sakhalin": "2026-10-06T18:36:41+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-06T07:38:00+00:00",
+  "checked_at_sakhalin": "2026-10-06T18:37:56+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "category",
-      "message_id": 356,
-      "title": "СберУниверситет объявил дату X конференции Больше чем обучение",
-      "category_key": "ru_pol",
-      "publisher_version": "stable-v12.1",
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "corporate_product_or_brand_pr",
-      "corrected_category": null,
-      "title_issues": []
-    },
-    {
-      "type": "post_audit_unresolved",
-      "count": 1,
-      "items": [
-        {
-          "title": "СберУниверситет объявил дату X конференции Больше чем обучение",
-          "url": "https://sakhalinmedia.ru/news/2641962/",
-          "publisher_version": "stable-v12.1",
-          "category_key": "ru_pol",
-          "corrected_category": null,
-          "reason": "corporate_product_or_brand_pr",
-          "contract_issues": [
-            "final_hard_reject:corporate_product_or_brand_pr",
-            "final_category_mismatch:None->ru_pol",
-            "director_final_category:None->ru_pol",
-            "director_final_reject:corporate_product_or_brand_pr"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "post_audit_action_failure",
-      "count": 1,
-      "items": [
-        {
-          "action": "deleteMessage",
-          "message_id": 356,
-          "error": "Bad Request: message to delete not found"
-        }
-      ]
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-06T18:29:07+11:00",
-    "age_hours": 0.13,
+    "age_hours": 0.15,
     "published": 1
   },
   "last_production_attempt": {
@@ -112,7 +66,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-06T07:36:43+00:00",
+    "checked_at": "2026-10-06T07:37:58+00:00",
     "checked": 17,
     "passed": 16,
     "anomalies": [
@@ -132,17 +86,10 @@
       }
     ],
     "corrected": [],
-    "deleted": [],
-    "failed_actions": [
+    "deleted": [
       {
-        "action": "deleteMessage",
         "message_id": 356,
-        "error": "Bad Request: message to delete not found"
-      }
-    ],
-    "unresolved": 1,
-    "unresolved_items": [
-      {
+        "already_absent": true,
         "title": "СберУниверситет объявил дату X конференции Больше чем обучение",
         "url": "https://sakhalinmedia.ru/news/2641962/",
         "publisher_version": "stable-v12.1",
@@ -157,6 +104,9 @@
         ]
       }
     ],
+    "failed_actions": [],
+    "unresolved": 0,
+    "unresolved_items": [],
     "mutations_enabled": true,
     "legacy_posts_mutated": false
   },
@@ -357,19 +307,6 @@
       "title_issues": []
     },
     {
-      "message_id": 356,
-      "title": "СберУниверситет объявил дату X конференции Больше чем обучение",
-      "category_key": "ru_pol",
-      "publisher_version": "stable-v12.1",
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "corporate_product_or_brand_pr",
-      "corrected_category": null,
-      "title_issues": []
-    },
-    {
       "message_id": 357,
       "title": "Тормозить и не пытался: момент массового ДТП в Южно-Сахалинске попал на видео",
       "category_key": "sakh_chp",
@@ -402,8 +339,8 @@
       "it": 5.0
     },
     "counts": {
-      "local": 10,
-      "ru_pol": 2,
+      "local": 11,
+      "ru_pol": 1,
       "ru_eco": 5,
       "ru_safety": 0,
       "world": 0,
@@ -418,25 +355,26 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -4.0,
-      "ru_pol": 2.0,
+      "local": -5.0,
+      "ru_pol": 3.0,
       "ru_eco": -1.0,
       "ru_safety": 3.0,
       "world": 2.0,
       "it": -2.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 16.0,
     "subtype_counts": {
+      "violent_crime": 3,
       "macro_economy": 6,
       "major_emergency": 2,
       "major_it": 3,
       "public_service_disruption": 3,
       "political_statement": 1,
-      "political_decision": 2,
-      "violent_crime": 2,
+      "political_decision": 1,
       "major_infrastructure": 1
     },
     "sequence": [
+      "local",
       "ru_eco",
       "local",
       "ru_eco",
@@ -455,10 +393,10 @@
       "local",
       "ru_eco",
       "local",
-      "ru_pol",
       "local"
     ],
     "category_sequence": [
+      "sakh_chp",
       "ru_eco",
       "sakh_chp",
       "ru_eco",
@@ -477,10 +415,10 @@
       "sakh",
       "ru_eco",
       "sakh_chp",
-      "ru_pol",
       "sakh_chp"
     ],
     "source_sequence": [
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
@@ -499,7 +437,6 @@
       "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru",
       "astv"
     ],
     "retrospective_anomalies": [],
@@ -507,7 +444,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-06T07:36:39+00:00",
+    "checked_at_utc": "2026-10-06T07:37:55+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -537,11 +474,11 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 14.0,
+      "distribution_error": 16.0,
       "limit": 8.0,
       "counts": {
-        "local": 10,
-        "ru_pol": 2,
+        "local": 11,
+        "ru_pol": 1,
         "ru_eco": 5,
         "ru_safety": 0,
         "world": 0,
@@ -556,8 +493,8 @@
         "it": 1
       },
       "deficits": {
-        "local": -4.0,
-        "ru_pol": 2.0,
+        "local": -5.0,
+        "ru_pol": 3.0,
         "ru_eco": -1.0,
         "ru_safety": 3.0,
         "world": 2.0,
