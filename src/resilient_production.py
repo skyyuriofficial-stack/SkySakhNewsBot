@@ -348,6 +348,11 @@ def _generation_provider_unavailable(run: Dict[str, Any], health: Dict[str, Any]
     ai_calls = int(stats.get("ai_calls") or 0)
     ai_api_fail = int(stats.get("ai_api_fail") or 0)
     ai_budget_exhausted = int(stats.get("ai_budget_exhausted") or 0)
+    ai_circuit_open = int(
+        stats.get("ai_circuit_open")
+        or stats.get("openrouter_circuit_open")
+        or 0
+    )
     telegram_fail = int(stats.get("telegram_fail") or 0)
     contract_blocked = int(stats.get("publication_contract_blocked") or 0)
 
@@ -356,7 +361,7 @@ def _generation_provider_unavailable(run: Dict[str, Any], health: Dict[str, Any]
         and director_approved > 0
         and ai_calls > 0
         and ai_api_fail >= ai_calls
-        and ai_budget_exhausted > 0
+        and (ai_budget_exhausted > 0 or ai_circuit_open > 0)
         and telegram_fail == 0
         and contract_blocked == 0
     )
@@ -416,6 +421,11 @@ def _record_plane_status(state: Dict[str, Any], health: Dict[str, Any]) -> None:
         "ai_calls": int(stats.get("ai_calls") or 0),
         "ai_api_fail": int(stats.get("ai_api_fail") or 0),
         "ai_budget_exhausted": int(stats.get("ai_budget_exhausted") or 0),
+        "ai_circuit_open": int(
+            stats.get("ai_circuit_open")
+            or stats.get("openrouter_circuit_open")
+            or 0
+        ),
         "telegram_fail": int(stats.get("telegram_fail") or 0),
         "publication_contract_blocked": int(stats.get("publication_contract_blocked") or 0),
     }
