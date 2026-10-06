@@ -1,37 +1,30 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-06T08:54:46+00:00",
-  "checked_at_sakhalin": "2026-10-06T19:54:43+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-06T09:01:43+00:00",
+  "checked_at_sakhalin": "2026-10-06T20:01:38+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-06T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-06T18:29:07+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-06T18:29:07+11:00",
-    "age_hours": 1.43,
-    "published": 1
+    "finished_sakhalin": "2026-10-06T20:01:14+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-06T07:29:08+00:00",
+    "checked_at_utc": "2026-10-06T09:01:15+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 6,
-    "ai_calls": 4,
-    "ai_api_fail": 4,
-    "ai_budget_exhausted": 1,
+    "published": 2,
+    "director_approved": 5,
+    "ai_calls": 3,
+    "ai_api_fail": 2,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
@@ -87,9 +80,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-06T08:54:44+00:00",
-    "checked": 16,
-    "passed": 16,
+    "checked_at": "2026-10-06T09:01:41+00:00",
+    "checked": 17,
+    "passed": 17,
     "anomalies": [],
     "corrected": [],
     "deleted": [],
@@ -100,19 +93,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 332,
-      "title": "Инженеры — в тренде: Игорь Лагерев рассказал о бюджетных местах и взлете среднего балла ЕГЭ",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 333,
       "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
@@ -307,6 +287,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 359,
+      "title": "Пентагон прекратил использование инструментов ИИ от Anthropic",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
+    },
+    {
+      "message_id": 360,
+      "title": "Дождь и ураган — прогноз погоды в Сахалинской области на 7 октября",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -330,10 +336,10 @@
     "counts": {
       "local": 11,
       "ru_pol": 1,
-      "ru_eco": 5,
+      "ru_eco": 4,
       "ru_safety": 0,
       "world": 0,
-      "it": 3
+      "it": 4
     },
     "scaled_targets": {
       "local": 6.0,
@@ -346,25 +352,24 @@
     "deficits": {
       "local": -5.0,
       "ru_pol": 3.0,
-      "ru_eco": -1.0,
+      "ru_eco": 0.0,
       "ru_safety": 3.0,
       "world": 2.0,
-      "it": -2.0
+      "it": -3.0
     },
     "distribution_error": 16.0,
     "subtype_counts": {
-      "violent_crime": 3,
-      "macro_economy": 6,
       "major_emergency": 2,
-      "major_it": 3,
+      "macro_economy": 5,
+      "major_it": 4,
       "public_service_disruption": 3,
       "political_statement": 1,
       "political_decision": 1,
-      "major_infrastructure": 1
+      "violent_crime": 2,
+      "major_infrastructure": 1,
+      "severe_weather": 1
     },
     "sequence": [
-      "local",
-      "ru_eco",
       "local",
       "ru_eco",
       "ru_eco",
@@ -382,13 +387,13 @@
       "local",
       "ru_eco",
       "local",
+      "local",
+      "it",
       "local"
     ],
     "category_sequence": [
       "sakh_chp",
       "ru_eco",
-      "sakh_chp",
-      "ru_eco",
       "ru_eco",
       "it",
       "ru_eco",
@@ -404,11 +409,11 @@
       "sakh",
       "ru_eco",
       "sakh_chp",
-      "sakh_chp"
+      "sakh_chp",
+      "it",
+      "sakh"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
@@ -426,14 +431,16 @@
       "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
-      "astv"
+      "astv",
+      "bbc technology",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-06T08:54:41+00:00",
+    "checked_at_utc": "2026-10-06T09:01:35+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -468,10 +475,10 @@
       "counts": {
         "local": 11,
         "ru_pol": 1,
-        "ru_eco": 5,
+        "ru_eco": 4,
         "ru_safety": 0,
         "world": 0,
-        "it": 3
+        "it": 4
       },
       "targets": {
         "local": 6,
@@ -484,10 +491,10 @@
       "deficits": {
         "local": -5.0,
         "ru_pol": 3.0,
-        "ru_eco": -1.0,
+        "ru_eco": 0.0,
         "ru_safety": 3.0,
         "world": 2.0,
-        "it": -2.0
+        "it": -3.0
       }
     }
   ]
