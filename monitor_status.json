@@ -1,74 +1,54 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-06T10:43:46+00:00",
-  "checked_at_sakhalin": "2026-10-06T21:43:41+11:00",
-  "status": "degraded",
+  "checked_at_utc": "2026-10-06T14:37:09+00:00",
+  "checked_at_sakhalin": "2026-10-07T01:37:05+11:00",
+  "status": "error",
   "mutations_enabled": true,
-  "issues": [],
+  "issues": [
+    {
+      "type": "publisher_blocked",
+      "slot_sakhalin": "2026-10-06T22:00+11:00",
+      "required_slot_sakhalin": "2026-10-06T22:00+11:00",
+      "reason": "generation_provider_unavailable",
+      "attempted_at_utc": "2026-10-06T14:36:36+00:00"
+    }
+  ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-06T20:01:14+11:00",
-    "age_hours": 1.71,
-    "published": 2
+    "finished_sakhalin": "2026-10-07T01:36:35+11:00",
+    "age_hours": 0.01,
+    "published": 0
   },
   "last_production_attempt": {
-    "status": "ok",
-    "reason": null,
-    "checked_at_utc": "2026-10-06T09:01:15+00:00",
+    "status": "blocked",
+    "reason": "generation_provider_unavailable",
+    "checked_at_utc": "2026-10-06T14:36:36+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
+    "published": 0,
     "director_approved": 5,
-    "ai_calls": 3,
-    "ai_api_fail": 2,
-    "ai_budget_exhausted": 0,
+    "ai_calls": 4,
+    "ai_api_fail": 4,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-10-06",
+    "day_sakhalin": "2026-10-07",
     "status": "healthy",
     "morning": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-05T22:36:45+00:00",
-        "published_at_sakhalin": "2026-10-06T09:36:45+11:00",
-        "telegram_message_id": 353,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 7,
-        "evidence_hash": "a561a545c5b96070240450268f44b0000e0558708e774d3e56c6e9cd79de64c1",
-        "source_ids": [
-          1,
-          2,
-          3,
-          4
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "evening": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-06T08:54:26+00:00",
-        "published_at_sakhalin": "2026-10-06T19:54:26+11:00",
-        "telegram_message_id": 358,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 6,
-        "evidence_hash": "df64aeca3aabc292fb28d877a1c089e7a8926a8d67a3f398635f56f990506165",
-        "source_ids": [
-          1,
-          2,
-          3,
-          4
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "last_attempt": {
       "status": "ok",
@@ -80,7 +60,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-06T10:43:44+00:00",
+    "checked_at": "2026-10-06T14:37:07+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -440,7 +420,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-06T10:43:39+00:00",
+    "checked_at_utc": "2026-10-06T14:37:03+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
