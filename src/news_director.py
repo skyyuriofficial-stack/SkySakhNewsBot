@@ -115,6 +115,9 @@ PUBLIC_SCALE = (
     "жителей", "населени", "тысяч человек", "муниципальн", "область",
     "регион", "несколько районов", "весь город", "всей страны",
 )
+MATERIAL_EMERGENCY_PUBLIC_SCALE = (
+    "тысяч жителей", "тысяч человек", "несколько районов", "весь город",
+)
 MULTIPLE_VICTIMS = (
     "два человека", "три человека", "несколько человек", "массов", "десятки",
     "свыше 100", "более 100", "пятеро", "шестеро",
@@ -249,7 +252,7 @@ def _score_candidate(
         material_emergency = bool(
             _has(combined, MATERIAL_EMERGENCY_MARKERS)
             or _has(combined, MULTIPLE_VICTIMS)
-            or _has(combined, PUBLIC_SCALE)
+            or _has(combined, MATERIAL_EMERGENCY_PUBLIC_SCALE)
             or _has(combined, policy.FATAL)
             or _has(combined, policy.AIR_QUALITY)
         )
