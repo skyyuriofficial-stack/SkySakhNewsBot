@@ -69,6 +69,16 @@ _OPENROUTER_CIRCUIT_OPEN = False
 _OPENROUTER_CIRCUIT_REASON = ""
 
 
+def _daily_quota_exhausted(status_code, detail):
+    if int(status_code or 0) != 429:
+        return False
+    low = str(detail or "").lower()
+    return bool(
+        "free-models-per-day" in low
+        or "openrouter_free_tier_daily" in low
+    )
+
+
 def _openrouter_model_plan():
     "Build a bounded plan without silently switching to a paid model."
     raw_primary = os.getenv("OPENROUTER_MODEL", "").strip()
@@ -140,6 +150,7 @@ def resilient_openrouter(messages, max_tokens=1100):
 
     plan = _openrouter_model_plan()
     errors = []
+    run_fatal_failure = False
 
     for attempt, model in enumerate(plan):
         core.b.STATS["openrouter_attempts"] += 1
@@ -172,8 +183,12 @@ def resilient_openrouter(messages, max_tokens=1100):
             if response.status_code >= 400:
                 detail = (response.text or "")[:300]
                 errors.append(f"{model}: HTTP {response.status_code}: {detail}")
-                if response.status_code in {401, 403}:
+                if (
+                    response.status_code in {401, 403}
+                    or _daily_quota_exhausted(response.status_code, response.text)
+                ):
                     stop_immediately = True
+                    run_fatal_failure = True
             else:
                 payload = response.json()
                 if not isinstance(payload, dict):
@@ -222,11 +237,10 @@ def resilient_openrouter(messages, max_tokens=1100):
                 time.sleep(delay)
 
     _OPENROUTER_CIRCUIT_REASON = " | ".join(errors[-4:]) or "unknown failure"
-    # Empty output, malformed JSON, 429s and provider outages are transient.
-    # Do not poison the rest of the release. Only credentials/authorization
-    # errors open the run-level circuit.
-    auth_failure = any("HTTP 401" in error or "HTTP 403" in error for error in errors)
-    if auth_failure:
+    # Empty output and malformed JSON remain retryable. Authentication failures
+    # and an explicitly exhausted free daily quota cannot recover inside this
+    # process, so stop all further provider calls for the run.
+    if run_fatal_failure:
         _OPENROUTER_CIRCUIT_OPEN = True
         core.b.STATS["openrouter_circuit_open"] = 1
     raise RuntimeError("OpenRouter failed: " + _OPENROUTER_CIRCUIT_REASON)
