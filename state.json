@@ -11467,7 +11467,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-10-06T23:45:23+00:00",
+        "checked_at": "2026-10-06T23:50:39+00:00",
         "reason": "hyperlocal_service_disruption",
         "issues": [
           "final_hard_reject:hyperlocal_service_disruption",
@@ -12025,7 +12025,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T23:45:23+00:00"
+        "checked_at": "2026-10-06T23:50:39+00:00"
       }
     },
     {
@@ -12214,7 +12214,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-10-06T23:45:23+00:00",
+        "checked_at": "2026-10-06T23:50:39+00:00",
         "reason": "local_official_statement_without_decision",
         "issues": [
           "director_final_reject:local_official_statement_without_decision"
@@ -12399,7 +12399,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T23:45:24+00:00"
+        "checked_at": "2026-10-06T23:50:39+00:00"
       }
     },
     {
@@ -12576,7 +12576,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-10-06T23:45:24+00:00",
+        "checked_at": "2026-10-06T23:50:40+00:00",
         "reason": "hyperlocal_service_disruption",
         "issues": [
           "final_hard_reject:hyperlocal_service_disruption",
@@ -12764,7 +12764,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T23:45:24+00:00"
+        "checked_at": "2026-10-06T23:50:40+00:00"
       }
     },
     {
@@ -13714,7 +13714,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T23:45:24+00:00"
+        "checked_at": "2026-10-06T23:50:40+00:00"
       }
     },
     {
@@ -13891,7 +13891,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T23:45:24+00:00"
+        "checked_at": "2026-10-06T23:50:40+00:00"
       }
     },
     {
@@ -14453,7 +14453,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T23:45:25+00:00"
+        "checked_at": "2026-10-06T23:50:40+00:00"
       }
     },
     {
@@ -14630,7 +14630,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T23:45:25+00:00"
+        "checked_at": "2026-10-06T23:50:40+00:00"
       }
     },
     {
@@ -14807,7 +14807,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T23:45:25+00:00"
+        "checked_at": "2026-10-06T23:50:40+00:00"
       }
     },
     {
@@ -14980,6 +14980,11 @@
         "meaning_changed": false,
         "mode": "deterministic+extractive",
         "issues": []
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-10-06T23:50:40+00:00"
       }
     }
   ],
@@ -15827,6 +15832,100 @@
       "ai_calls": 0,
       "ai_fail": 0,
       "audited_urls": 3
+    },
+    "independent_post_publication_monitor": {
+      "version": "post-audit-v1.1",
+      "checked_at": "2026-10-06T23:50:40+00:00",
+      "checked": 12,
+      "passed": 9,
+      "anomalies": [
+        {
+          "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
+          "url": "https://sakhalinmedia.ru/news/2639632/",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": null,
+          "reason": "hyperlocal_service_disruption",
+          "contract_issues": [
+            "final_hard_reject:hyperlocal_service_disruption",
+            "final_category_mismatch:None->sakh",
+            "director_final_category:None->sakh",
+            "director_final_reject:hyperlocal_service_disruption"
+          ]
+        },
+        {
+          "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
+          "url": "https://sakh.online/news/18/2026-10-04/ministr-olga-orlova-rasskazala-o-podderzhke-semey-sahalinskom-dolgoletii-i-novyh-merah-sotszaschity-527914",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": "sakh",
+          "reason": "local_official_statement_without_decision",
+          "contract_issues": [
+            "director_final_reject:local_official_statement_without_decision"
+          ]
+        },
+        {
+          "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
+          "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": null,
+          "reason": "hyperlocal_service_disruption",
+          "contract_issues": [
+            "final_hard_reject:hyperlocal_service_disruption",
+            "final_category_mismatch:None->sakh",
+            "director_final_category:None->sakh",
+            "director_final_reject:hyperlocal_service_disruption"
+          ]
+        }
+      ],
+      "corrected": [],
+      "deleted": [],
+      "failed_actions": [],
+      "unresolved": 3,
+      "unresolved_items": [
+        {
+          "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
+          "url": "https://sakhalinmedia.ru/news/2639632/",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": null,
+          "reason": "hyperlocal_service_disruption",
+          "contract_issues": [
+            "final_hard_reject:hyperlocal_service_disruption",
+            "final_category_mismatch:None->sakh",
+            "director_final_category:None->sakh",
+            "director_final_reject:hyperlocal_service_disruption"
+          ]
+        },
+        {
+          "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
+          "url": "https://sakh.online/news/18/2026-10-04/ministr-olga-orlova-rasskazala-o-podderzhke-semey-sahalinskom-dolgoletii-i-novyh-merah-sotszaschity-527914",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": "sakh",
+          "reason": "local_official_statement_without_decision",
+          "contract_issues": [
+            "director_final_reject:local_official_statement_without_decision"
+          ]
+        },
+        {
+          "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
+          "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": null,
+          "reason": "hyperlocal_service_disruption",
+          "contract_issues": [
+            "final_hard_reject:hyperlocal_service_disruption",
+            "final_category_mismatch:None->sakh",
+            "director_final_category:None->sakh",
+            "director_final_reject:hyperlocal_service_disruption"
+          ]
+        }
+      ],
+      "mutations_enabled": true,
+      "legacy_posts_mutated": false
     }
   },
   "pending_media_delivery": [],
@@ -21901,7 +22000,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-06T23:45:25+00:00",
+    "checked_at": "2026-10-06T23:50:40+00:00",
     "checked": 12,
     "passed": 9,
     "anomalies": [
