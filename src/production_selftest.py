@@ -608,6 +608,46 @@ def final_contract_and_auditor_regressions():
     assert not audit["corrected"] and not audit["deleted"]
 
 
+    # Telegram deleteMessage is idempotent from the state machine's point of
+    # view: if the verified target chat says the message is already absent, the
+    # repository must retire the stale post instead of remaining permanently red.
+    stale = {
+        "last_posts": [{
+            "title": "СберУниверситет объявил дату X конференции Больше чем обучение",
+            "source": "SakhalinMedia.ru",
+            "category_key": "ru_pol",
+            "url": "https://sakhalinmedia.ru/news/2641962/",
+            "source_text_excerpt": "",
+            "publisher_version": "stable-v12.1",
+            "time_sakhalin": datetime.now(timezone(timedelta(hours=11))).isoformat(),
+            "telegram_message_id": 356,
+            "telegram_chat_id": "test-chat",
+        }]
+    }
+    original_telegram_call = publication_auditor._telegram_call
+    publication_auditor._telegram_call = lambda method, data: {
+        "ok": False,
+        "description": "Bad Request: message to delete not found",
+    }
+    try:
+        reconciled = publication_auditor.audit_recent_posts(
+            stale,
+            category_map=publisher.core.b.CAT,
+            render_caption=publisher.core.b.caption,
+            mutate=True,
+        )
+    finally:
+        publication_auditor._telegram_call = original_telegram_call
+
+    assert reconciled["unresolved"] == 0, reconciled
+    assert not reconciled["failed_actions"], reconciled
+    assert len(reconciled["deleted"]) == 1, reconciled
+    assert reconciled["deleted"][0]["message_id"] == 356, reconciled
+    assert reconciled["deleted"][0]["already_absent"] is True, reconciled
+    assert stale["last_posts"][0]["auto_deleted"] is True, stale
+    assert stale["last_posts"][0]["post_audit"]["auto_action"] == "already_absent_reconciled", stale
+
+
 def openrouter_resilience_regression():
     class FakeResponse:
         def __init__(self, payload):

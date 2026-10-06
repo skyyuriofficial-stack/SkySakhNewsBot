@@ -63,6 +63,18 @@ def _telegram_call(method: str, data: Mapping[str, Any]) -> Dict[str, Any]:
     return payload
 
 
+def _delete_result_is_already_absent(result: Mapping[str, Any]) -> bool:
+    """Treat Telegram's exact 'not found' delete response as an idempotent success.
+
+    A post that is already absent from the verified target chat must not remain
+    active in repository state or keep the monitor red forever.
+    """
+    if result.get("ok"):
+        return False
+    description = str(result.get("description") or "").strip().lower()
+    return "message to delete not found" in description
+
+
 def _candidate_from_post(post: Mapping[str, Any]) -> Dict[str, Any]:
     return {
         "title": post.get("title"),
@@ -193,10 +205,19 @@ def audit_recent_posts(
             "deleteMessage",
             {"chat_id": chat_id, "message_id": message_id},
         )
-        if result.get("ok"):
-            post["post_audit"]["auto_action"] = "deleted_invalid_v12_post"
+        already_absent = _delete_result_is_already_absent(result)
+        if result.get("ok") or already_absent:
+            post["post_audit"]["auto_action"] = (
+                "already_absent_reconciled"
+                if already_absent
+                else "deleted_invalid_v12_post"
+            )
             post["auto_deleted"] = True
-            deleted.append({"message_id": message_id, **anomaly})
+            deleted.append({
+                "message_id": message_id,
+                "already_absent": already_absent,
+                **anomaly,
+            })
         else:
             failed_actions.append({
                 "action": "deleteMessage",
