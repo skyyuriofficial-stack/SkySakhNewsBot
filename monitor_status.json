@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-06T07:38:00+00:00",
-  "checked_at_sakhalin": "2026-10-06T18:37:56+11:00",
+  "checked_at_utc": "2026-10-06T07:38:44+00:00",
+  "checked_at_sakhalin": "2026-10-06T18:38:42+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
@@ -10,7 +10,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-06T18:29:07+11:00",
-    "age_hours": 0.15,
+    "age_hours": 0.16,
     "published": 1
   },
   "last_production_attempt": {
@@ -66,44 +66,12 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-06T07:37:58+00:00",
-    "checked": 17,
+    "checked_at": "2026-10-06T07:38:43+00:00",
+    "checked": 16,
     "passed": 16,
-    "anomalies": [
-      {
-        "title": "СберУниверситет объявил дату X конференции Больше чем обучение",
-        "url": "https://sakhalinmedia.ru/news/2641962/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "ru_pol",
-        "corrected_category": null,
-        "reason": "corporate_product_or_brand_pr",
-        "contract_issues": [
-          "final_hard_reject:corporate_product_or_brand_pr",
-          "final_category_mismatch:None->ru_pol",
-          "director_final_category:None->ru_pol",
-          "director_final_reject:corporate_product_or_brand_pr"
-        ]
-      }
-    ],
+    "anomalies": [],
     "corrected": [],
-    "deleted": [
-      {
-        "message_id": 356,
-        "already_absent": true,
-        "title": "СберУниверситет объявил дату X конференции Больше чем обучение",
-        "url": "https://sakhalinmedia.ru/news/2641962/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "ru_pol",
-        "corrected_category": null,
-        "reason": "corporate_product_or_brand_pr",
-        "contract_issues": [
-          "final_hard_reject:corporate_product_or_brand_pr",
-          "final_category_mismatch:None->ru_pol",
-          "director_final_category:None->ru_pol",
-          "director_final_reject:corporate_product_or_brand_pr"
-        ]
-      }
-    ],
+    "deleted": [],
     "failed_actions": [],
     "unresolved": 0,
     "unresolved_items": [],
@@ -444,7 +412,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-06T07:37:55+00:00",
+    "checked_at_utc": "2026-10-06T07:38:40+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
