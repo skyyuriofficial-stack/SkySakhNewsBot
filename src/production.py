@@ -189,8 +189,9 @@ _AI_CALLS = 0
 _AI_CIRCUIT_OPEN = False
 
 for _key in (
-    "ai_calls", "ai_budget_exhausted", "ai_api_fail", "evidence_reject",
-    "validation_reject", "extractive_fallback", "extractive_first",
+    "ai_calls", "ai_budget_exhausted", "ai_api_fail", "ai_circuit_open",
+    "ai_circuit_skip", "evidence_reject", "validation_reject",
+    "extractive_fallback", "extractive_first",
 ):
     core.b.STATS.setdefault(_key, 0)
 
@@ -381,7 +382,7 @@ def _api_failure_is_systemic(ex):
     return any(x in s for x in (
         "429", "rate limit", "rate-limit", "quota", "too many requests",
         "temporarily unavailable", "timeout", "timed out", "502", "503", "504",
-        "openrouter failed", "circuit is open",
+        "circuit is open", "empty message content",
     ))
 
 
@@ -399,6 +400,12 @@ def valid_post_v99(c):
         core.b.STATS["extractive_first"] += 1
         core.b.log(f"extractive-first accepted: {c['title'][:80]}")
         return fallback
+
+    if _AI_CIRCUIT_OPEN:
+        core.b.STATS["ai_circuit_skip"] += 1
+        core.b.STATS["editorial_skip"] += 1
+        core.b.log(f"AI circuit already open; skipping provider call: {c['title'][:70]}")
+        return None
 
     while attempts < 2 and _AI_CALLS < AI_CALL_BUDGET:
         attempts += 1
@@ -418,11 +425,13 @@ def valid_post_v99(c):
             core.b.STATS["rewrite_retry"] += 1
             last_error = str(ex)[:500]
             core.b.log(f"AI generation failed: {c['title'][:70]} | {last_error}")
-            # Transient provider failures are isolated to this attempt.
-            # The global release must continue to the next model/candidate.
-            if any(code in str(ex).lower() for code in ("401", "403", "invalid api key")):
+            if (
+                any(code in str(ex).lower() for code in ("401", "403", "invalid api key"))
+                or _api_failure_is_systemic(ex)
+            ):
                 _AI_CIRCUIT_OPEN = True
-                core.b.log("AI authentication failure; disabling further AI calls for this run")
+                core.b.STATS["ai_circuit_open"] = 1
+                core.b.log("AI provider failure is run-fatal; disabling further AI calls for this run")
                 break
 
     if _AI_CALLS >= AI_CALL_BUDGET:
