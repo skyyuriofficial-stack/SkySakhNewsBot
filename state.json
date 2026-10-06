@@ -11346,8 +11346,15 @@
       },
       "post_audit": {
         "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-06T14:57:33+00:00"
+        "approved": false,
+        "checked_at": "2026-10-06T15:07:25+00:00",
+        "reason": "soft_consumer_it_feature",
+        "issues": [
+          "final_hard_reject:soft_consumer_it_feature",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:soft_consumer_it_feature"
+        ]
       }
     },
     {
@@ -11528,7 +11535,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T14:57:33+00:00"
+        "checked_at": "2026-10-06T15:07:26+00:00"
       }
     },
     {
@@ -11704,8 +11711,15 @@
       },
       "post_audit": {
         "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-06T14:57:33+00:00"
+        "approved": false,
+        "checked_at": "2026-10-06T15:07:26+00:00",
+        "reason": "hyperlocal_service_disruption",
+        "issues": [
+          "final_hard_reject:hyperlocal_service_disruption",
+          "final_category_mismatch:None->sakh",
+          "director_final_category:None->sakh",
+          "director_final_reject:hyperlocal_service_disruption"
+        ]
       }
     },
     {
@@ -12256,7 +12270,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T14:57:33+00:00"
+        "checked_at": "2026-10-06T15:07:26+00:00"
       }
     },
     {
@@ -12444,8 +12458,12 @@
       },
       "post_audit": {
         "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-06T14:57:33+00:00"
+        "approved": false,
+        "checked_at": "2026-10-06T15:07:26+00:00",
+        "reason": "local_official_statement_without_decision",
+        "issues": [
+          "director_final_reject:local_official_statement_without_decision"
+        ]
       }
     },
     {
@@ -12626,7 +12644,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T14:57:33+00:00"
+        "checked_at": "2026-10-06T15:07:26+00:00"
       }
     },
     {
@@ -12802,8 +12820,15 @@
       },
       "post_audit": {
         "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-06T14:57:34+00:00"
+        "approved": false,
+        "checked_at": "2026-10-06T15:07:26+00:00",
+        "reason": "hyperlocal_service_disruption",
+        "issues": [
+          "final_hard_reject:hyperlocal_service_disruption",
+          "final_category_mismatch:None->sakh",
+          "director_final_category:None->sakh",
+          "director_final_reject:hyperlocal_service_disruption"
+        ]
       }
     },
     {
@@ -12984,7 +13009,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T14:57:34+00:00"
+        "checked_at": "2026-10-06T15:07:26+00:00"
       }
     },
     {
@@ -13169,9 +13194,18 @@
       },
       "post_audit": {
         "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-06T14:57:34+00:00"
-      }
+        "approved": false,
+        "checked_at": "2026-10-06T15:07:27+00:00",
+        "reason": "routine_it_personnel_change",
+        "issues": [
+          "final_hard_reject:routine_it_personnel_change",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:routine_it_personnel_change"
+        ],
+        "auto_action": "deleted_invalid_v12_post"
+      },
+      "auto_deleted": true
     },
     {
       "time_sakhalin": "2026-10-05T19:06:57+11:00",
@@ -13346,9 +13380,18 @@
       },
       "post_audit": {
         "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-06T14:57:34+00:00"
-      }
+        "approved": false,
+        "checked_at": "2026-10-06T15:07:27+00:00",
+        "reason": "routine_culture_event",
+        "issues": [
+          "final_hard_reject:routine_culture_event",
+          "final_category_mismatch:None->sakh",
+          "director_final_category:None->sakh",
+          "director_final_reject:routine_culture_event"
+        ],
+        "auto_action": "deleted_invalid_v12_post"
+      },
+      "auto_deleted": true
     },
     {
       "time_sakhalin": "2026-10-06T03:00:17+11:00",
@@ -13531,9 +13574,18 @@
       },
       "post_audit": {
         "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-06T14:57:34+00:00"
-      }
+        "approved": false,
+        "checked_at": "2026-10-06T15:07:28+00:00",
+        "reason": "sensational_it_anecdote",
+        "issues": [
+          "final_hard_reject:sensational_it_anecdote",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:sensational_it_anecdote"
+        ],
+        "auto_action": "deleted_invalid_v12_post"
+      },
+      "auto_deleted": true
     },
     {
       "time_sakhalin": "2026-10-06T03:00:28+11:00",
@@ -13708,9 +13760,18 @@
       },
       "post_audit": {
         "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-06T14:57:34+00:00"
-      }
+        "approved": false,
+        "checked_at": "2026-10-06T15:07:29+00:00",
+        "reason": "hyperlocal_service_disruption",
+        "issues": [
+          "final_hard_reject:hyperlocal_service_disruption",
+          "final_category_mismatch:None->sakh",
+          "director_final_category:None->sakh",
+          "director_final_reject:hyperlocal_service_disruption"
+        ],
+        "auto_action": "deleted_invalid_v12_post"
+      },
+      "auto_deleted": true
     },
     {
       "time_sakhalin": "2026-10-06T09:38:37+11:00",
@@ -13898,7 +13959,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T14:57:34+00:00"
+        "checked_at": "2026-10-06T15:07:30+00:00"
       }
     },
     {
@@ -14075,7 +14136,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T14:57:35+00:00"
+        "checked_at": "2026-10-06T15:07:30+00:00"
       }
     },
     {
@@ -14441,9 +14502,18 @@
       },
       "post_audit": {
         "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-06T14:57:35+00:00"
-      }
+        "approved": false,
+        "checked_at": "2026-10-06T15:07:30+00:00",
+        "reason": "tabloid_incident_video",
+        "issues": [
+          "final_hard_reject:tabloid_incident_video",
+          "final_category_mismatch:None->sakh_chp",
+          "director_final_category:None->sakh_chp",
+          "director_final_reject:tabloid_incident_video"
+        ],
+        "auto_action": "deleted_invalid_v12_post"
+      },
+      "auto_deleted": true
     },
     {
       "time_sakhalin": "2026-10-06T20:00:46+11:00",
@@ -14628,7 +14698,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T14:57:35+00:00"
+        "checked_at": "2026-10-06T15:07:31+00:00"
       }
     },
     {
@@ -14805,7 +14875,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T14:57:35+00:00"
+        "checked_at": "2026-10-06T15:07:31+00:00"
       }
     }
   ],
@@ -21577,15 +21647,274 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-06T14:57:35+00:00",
+    "checked_at": "2026-10-06T15:07:31+00:00",
     "checked": 17,
-    "passed": 17,
-    "anomalies": [],
+    "passed": 8,
+    "anomalies": [
+      {
+        "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
+        "url": "https://t.me/techmedia/23488",
+        "publisher_version": "stable-v12.1",
+        "category_key": "it",
+        "corrected_category": null,
+        "reason": "soft_consumer_it_feature",
+        "contract_issues": [
+          "final_hard_reject:soft_consumer_it_feature",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:soft_consumer_it_feature"
+        ]
+      },
+      {
+        "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
+        "url": "https://sakhalinmedia.ru/news/2639632/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "sakh",
+        "corrected_category": null,
+        "reason": "hyperlocal_service_disruption",
+        "contract_issues": [
+          "final_hard_reject:hyperlocal_service_disruption",
+          "final_category_mismatch:None->sakh",
+          "director_final_category:None->sakh",
+          "director_final_reject:hyperlocal_service_disruption"
+        ]
+      },
+      {
+        "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
+        "url": "https://sakh.online/news/18/2026-10-04/ministr-olga-orlova-rasskazala-o-podderzhke-semey-sahalinskom-dolgoletii-i-novyh-merah-sotszaschity-527914",
+        "publisher_version": "stable-v12.1",
+        "category_key": "sakh",
+        "corrected_category": "sakh",
+        "reason": "local_official_statement_without_decision",
+        "contract_issues": [
+          "director_final_reject:local_official_statement_without_decision"
+        ]
+      },
+      {
+        "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
+        "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
+        "publisher_version": "stable-v12.1",
+        "category_key": "sakh",
+        "corrected_category": null,
+        "reason": "hyperlocal_service_disruption",
+        "contract_issues": [
+          "final_hard_reject:hyperlocal_service_disruption",
+          "final_category_mismatch:None->sakh",
+          "director_final_category:None->sakh",
+          "director_final_reject:hyperlocal_service_disruption"
+        ]
+      },
+      {
+        "title": "Руководитель безопасности OpenAI ушел, раскритиковав культуру компании",
+        "url": "https://www.theguardian.com/technology/2026/oct/03/openai-safety-leader-quits-warning-ai-companys-culture-is-broken",
+        "publisher_version": "stable-v12.1",
+        "category_key": "it",
+        "corrected_category": null,
+        "reason": "routine_it_personnel_change",
+        "contract_issues": [
+          "final_hard_reject:routine_it_personnel_change",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:routine_it_personnel_change"
+        ]
+      },
+      {
+        "title": "Спектакль по роману Толстого открыл новый театральный сезон в сахалинском Чехов-центре",
+        "url": "https://sakhalinmedia.ru/news/2640956/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "sakh",
+        "corrected_category": null,
+        "reason": "routine_culture_event",
+        "contract_issues": [
+          "final_hard_reject:routine_culture_event",
+          "final_category_mismatch:None->sakh",
+          "director_final_category:None->sakh",
+          "director_final_reject:routine_culture_event"
+        ]
+      },
+      {
+        "title": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину",
+        "url": "https://t.me/techmedia/23531",
+        "publisher_version": "stable-v12.1",
+        "category_key": "it",
+        "corrected_category": null,
+        "reason": "sensational_it_anecdote",
+        "contract_issues": [
+          "final_hard_reject:sensational_it_anecdote",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:sensational_it_anecdote"
+        ]
+      },
+      {
+        "title": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
+        "url": "https://sakhalinmedia.ru/news/2641208/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "sakh",
+        "corrected_category": null,
+        "reason": "hyperlocal_service_disruption",
+        "contract_issues": [
+          "final_hard_reject:hyperlocal_service_disruption",
+          "final_category_mismatch:None->sakh",
+          "director_final_category:None->sakh",
+          "director_final_reject:hyperlocal_service_disruption"
+        ]
+      },
+      {
+        "title": "Тормозить и не пытался: момент массового ДТП в Южно-Сахалинске попал на видео",
+        "url": "https://astv.ru/news/criminal/2026-10-06-tormozit-i-ne-pytalsya-moment-massovogo-dtp-v-yuzhno-sahalinske-popal-na-video",
+        "publisher_version": "stable-v12.1",
+        "category_key": "sakh_chp",
+        "corrected_category": null,
+        "reason": "tabloid_incident_video",
+        "contract_issues": [
+          "final_hard_reject:tabloid_incident_video",
+          "final_category_mismatch:None->sakh_chp",
+          "director_final_category:None->sakh_chp",
+          "director_final_reject:tabloid_incident_video"
+        ]
+      }
+    ],
     "corrected": [],
-    "deleted": [],
+    "deleted": [
+      {
+        "message_id": 348,
+        "already_absent": false,
+        "title": "Руководитель безопасности OpenAI ушел, раскритиковав культуру компании",
+        "url": "https://www.theguardian.com/technology/2026/oct/03/openai-safety-leader-quits-warning-ai-companys-culture-is-broken",
+        "publisher_version": "stable-v12.1",
+        "category_key": "it",
+        "corrected_category": null,
+        "reason": "routine_it_personnel_change",
+        "contract_issues": [
+          "final_hard_reject:routine_it_personnel_change",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:routine_it_personnel_change"
+        ]
+      },
+      {
+        "message_id": 349,
+        "already_absent": false,
+        "title": "Спектакль по роману Толстого открыл новый театральный сезон в сахалинском Чехов-центре",
+        "url": "https://sakhalinmedia.ru/news/2640956/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "sakh",
+        "corrected_category": null,
+        "reason": "routine_culture_event",
+        "contract_issues": [
+          "final_hard_reject:routine_culture_event",
+          "final_category_mismatch:None->sakh",
+          "director_final_category:None->sakh",
+          "director_final_reject:routine_culture_event"
+        ]
+      },
+      {
+        "message_id": 351,
+        "already_absent": false,
+        "title": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину",
+        "url": "https://t.me/techmedia/23531",
+        "publisher_version": "stable-v12.1",
+        "category_key": "it",
+        "corrected_category": null,
+        "reason": "sensational_it_anecdote",
+        "contract_issues": [
+          "final_hard_reject:sensational_it_anecdote",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:sensational_it_anecdote"
+        ]
+      },
+      {
+        "message_id": 352,
+        "already_absent": false,
+        "title": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
+        "url": "https://sakhalinmedia.ru/news/2641208/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "sakh",
+        "corrected_category": null,
+        "reason": "hyperlocal_service_disruption",
+        "contract_issues": [
+          "final_hard_reject:hyperlocal_service_disruption",
+          "final_category_mismatch:None->sakh",
+          "director_final_category:None->sakh",
+          "director_final_reject:hyperlocal_service_disruption"
+        ]
+      },
+      {
+        "message_id": 357,
+        "already_absent": false,
+        "title": "Тормозить и не пытался: момент массового ДТП в Южно-Сахалинске попал на видео",
+        "url": "https://astv.ru/news/criminal/2026-10-06-tormozit-i-ne-pytalsya-moment-massovogo-dtp-v-yuzhno-sahalinske-popal-na-video",
+        "publisher_version": "stable-v12.1",
+        "category_key": "sakh_chp",
+        "corrected_category": null,
+        "reason": "tabloid_incident_video",
+        "contract_issues": [
+          "final_hard_reject:tabloid_incident_video",
+          "final_category_mismatch:None->sakh_chp",
+          "director_final_category:None->sakh_chp",
+          "director_final_reject:tabloid_incident_video"
+        ]
+      }
+    ],
     "failed_actions": [],
-    "unresolved": 0,
-    "unresolved_items": [],
+    "unresolved": 4,
+    "unresolved_items": [
+      {
+        "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
+        "url": "https://t.me/techmedia/23488",
+        "publisher_version": "stable-v12.1",
+        "category_key": "it",
+        "corrected_category": null,
+        "reason": "soft_consumer_it_feature",
+        "contract_issues": [
+          "final_hard_reject:soft_consumer_it_feature",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:soft_consumer_it_feature"
+        ]
+      },
+      {
+        "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
+        "url": "https://sakhalinmedia.ru/news/2639632/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "sakh",
+        "corrected_category": null,
+        "reason": "hyperlocal_service_disruption",
+        "contract_issues": [
+          "final_hard_reject:hyperlocal_service_disruption",
+          "final_category_mismatch:None->sakh",
+          "director_final_category:None->sakh",
+          "director_final_reject:hyperlocal_service_disruption"
+        ]
+      },
+      {
+        "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
+        "url": "https://sakh.online/news/18/2026-10-04/ministr-olga-orlova-rasskazala-o-podderzhke-semey-sahalinskom-dolgoletii-i-novyh-merah-sotszaschity-527914",
+        "publisher_version": "stable-v12.1",
+        "category_key": "sakh",
+        "corrected_category": "sakh",
+        "reason": "local_official_statement_without_decision",
+        "contract_issues": [
+          "director_final_reject:local_official_statement_without_decision"
+        ]
+      },
+      {
+        "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
+        "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
+        "publisher_version": "stable-v12.1",
+        "category_key": "sakh",
+        "corrected_category": null,
+        "reason": "hyperlocal_service_disruption",
+        "contract_issues": [
+          "final_hard_reject:hyperlocal_service_disruption",
+          "final_category_mismatch:None->sakh",
+          "director_final_category:None->sakh",
+          "director_final_reject:hyperlocal_service_disruption"
+        ]
+      }
+    ],
     "mutations_enabled": true,
     "legacy_posts_mutated": false
   },
