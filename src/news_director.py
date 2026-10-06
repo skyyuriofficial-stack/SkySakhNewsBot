@@ -249,6 +249,7 @@ def _score_candidate(
         material_emergency = bool(
             _has(combined, MATERIAL_EMERGENCY_MARKERS)
             or _has(combined, MULTIPLE_VICTIMS)
+            or _has(combined, PUBLIC_SCALE)
             or _has(combined, policy.FATAL)
             or _has(combined, policy.AIR_QUALITY)
         )
