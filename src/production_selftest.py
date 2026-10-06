@@ -885,7 +885,45 @@ def current_live_defect_regressions():
     assert material_review["approved"] is True, material_review
     assert material_review["event_type"] == "major_it", material_review
 
-    # Product/brand press releases must not fill the economy stream.
+    # Product/brand press releases must not fill the economy or politics stream.
+    corporate_conference = candidate(
+        "СберУниверситет объявил дату X конференции Больше чем обучение",
+        (
+            "СберУниверситет анонсировал конференцию об обучении и развитии. "
+            "Она пройдет 23 и 24 октября, сообщает пресс-служба Сбера."
+        ),
+        source="SakhalinMedia.ru",
+        url="https://sakhalinmedia.ru/news/2641962/",
+        category="ru_pol",
+    )
+    conference_review = director.review_candidate(corporate_conference)
+    assert conference_review["approved"] is False, conference_review
+    assert conference_review["hard_reject"] is True, conference_review
+    assert conference_review["reason"] == "corporate_product_or_brand_pr", conference_review
+    assert policy.classify(corporate_conference).category_key is None, policy.classify(corporate_conference).to_dict()
+    assert policy._is_policy(corporate_conference["title"]) is False
+
+    # Retrospective Telegram audit may have only the headline; the bad post must
+    # still fail closed and become deletable inside the 48h mutation window.
+    title_only_conference = dict(corporate_conference)
+    title_only_conference["source_text"] = ""
+    title_only_review = director.review_candidate(title_only_conference)
+    assert title_only_review["approved"] is False, title_only_review
+    assert title_only_review["reason"] == "corporate_product_or_brand_pr", title_only_review
+
+    # Nearby legitimate government action must stay in the political stream.
+    government_program = candidate(
+        "Правительство России утвердило программу развития транспорта",
+        "Правительство утвердило государственную программу развития транспортной инфраструктуры.",
+        source="Interfax",
+        url="https://www.interfax.ru/russia/policy-regression/",
+        category="ru_pol",
+    )
+    government_review = director.review_candidate(government_program)
+    assert government_review["approved"] is True, government_review
+    assert government_review["corrected_category"] == "ru_pol", government_review
+    assert government_review["event_type"] == "political_decision", government_review
+
     for title, body in (
         (
             "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
@@ -1060,7 +1098,7 @@ def version_and_media_regressions():
     assert publisher.core.VERSION == "stable-v12.1"
     assert publisher.core.b.IMAGE_REQUIRED is True
     assert director.VERSION == "director-v2.3"
-    assert policy.VERSION == "policy-v2.4"
+    assert policy.VERSION == "policy-v2.5"
 
     good_media = {
         "image": b"x" * 12000,
