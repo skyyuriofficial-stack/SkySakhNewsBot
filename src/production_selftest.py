@@ -925,6 +925,134 @@ def current_live_defect_regressions():
     assert material_review["approved"] is True, material_review
     assert material_review["event_type"] == "major_it", material_review
 
+    # Exact weak posts observed in the live Telegram feed must fail closed.
+    weak_live_cases = [
+        (
+            candidate(
+                "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
+                "",
+                url="https://sakhalinmedia.ru/news/regression-water-addresses/",
+                category="sakh",
+            ),
+            "hyperlocal_service_disruption",
+        ),
+        (
+            candidate(
+                "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
+                "",
+                url="https://sakhalinmedia.ru/news/regression-one-house-water/",
+                category="sakh",
+            ),
+            "hyperlocal_service_disruption",
+        ),
+        (
+            candidate(
+                "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
+                "",
+                url="https://sakhalinmedia.ru/news/regression-uyun-water/",
+                category="sakh",
+            ),
+            "hyperlocal_service_disruption",
+        ),
+        (
+            candidate(
+                "Спектакль по роману Толстого открыл новый театральный сезон в сахалинском Чехов-центре",
+                "",
+                url="https://sakhalinmedia.ru/news/regression-theatre/",
+                category="sakh",
+            ),
+            "routine_event_without_outcome",
+        ),
+        (
+            candidate(
+                "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
+                "",
+                source="TechMedia (@techmedia)",
+                url="https://t.me/techmedia/regression-fitting-room",
+                category="it",
+            ),
+            "soft_consumer_it_feature",
+        ),
+        (
+            candidate(
+                "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину",
+                "",
+                source="TechMedia (@techmedia)",
+                url="https://t.me/techmedia/regression-claude-anecdote",
+                category="it",
+            ),
+            "sensational_it_anecdote",
+        ),
+        (
+            candidate(
+                "Руководитель безопасности OpenAI ушел, раскритиковав культуру компании",
+                "",
+                source="Guardian Technology",
+                url="https://www.theguardian.com/technology/regression-openai-personnel",
+                category="it",
+            ),
+            "routine_it_personnel_change",
+        ),
+        (
+            candidate(
+                "Тормозить и не пытался: момент массового ДТП в Южно-Сахалинске попал на видео",
+                "",
+                source="ASTV",
+                url="https://astv.ru/news/regression-video-crash",
+                category="sakh_chp",
+            ),
+            "tabloid_incident_video",
+        ),
+    ]
+    for weak_item, expected_reason in weak_live_cases:
+        weak_review = director.review_candidate(weak_item)
+        assert weak_review["approved"] is False, (weak_item["title"], weak_review)
+        assert weak_review["hard_reject"] is True, (weak_item["title"], weak_review)
+        assert weak_review["reason"] == expected_reason, (weak_item["title"], weak_review)
+
+    local_statement = candidate(
+        "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
+        "Министр рассказала о действующих программах поддержки семей и старшего поколения.",
+        source="Sakh.online",
+        url="https://sakh.online/news/regression-minister-statement",
+        category="sakh",
+    )
+    local_statement_review = director.review_candidate(local_statement)
+    assert local_statement_review["approved"] is False, local_statement_review
+    assert local_statement_review["reason"] == "local_official_statement_without_decision", local_statement_review
+    assert local_statement_review["seriousness"] <= 66, local_statement_review
+
+    # Nearby material cases must remain publishable.
+    city_outage = candidate(
+        "Авария оставила без воды 50 тысяч жителей Южно-Сахалинска",
+        "Из-за аварии на магистральном водоводе без воды остались около 50 тысяч жителей города.",
+        source="ASTV",
+        url="https://astv.ru/news/regression-citywide-water",
+        category="sakh",
+    )
+    city_outage_review = director.review_candidate(city_outage)
+    assert city_outage_review["approved"] is True, city_outage_review
+
+    material_security_it = candidate(
+        "Пентагон прекратил использование инструментов ИИ от Anthropic",
+        "Минобороны США прекратило использование инструментов Anthropic после официального решения.",
+        source="BBC Technology",
+        url="https://www.bbc.com/news/regression-anthropic-pentagon",
+        category="it",
+    )
+    assert director.review_candidate(material_security_it)["approved"] is True
+
+    local_policy_decision = candidate(
+        "Министр здравоохранения Сахалина утвердил новую программу льготного лекарственного обеспечения",
+        "Министр утвердил программу, которая меняет порядок обеспечения льготными лекарствами.",
+        source="Sakh.online",
+        url="https://sakh.online/news/regression-minister-decision",
+        category="sakh",
+    )
+    local_policy_review = director.review_candidate(local_policy_decision)
+    assert local_policy_review["approved"] is True, local_policy_review
+    assert local_policy_review["event_type"] == "political_decision", local_policy_review
+
     # Product/brand press releases must not fill the economy or politics stream.
     corporate_conference = candidate(
         "СберУниверситет объявил дату X конференции Больше чем обучение",
@@ -1137,8 +1265,8 @@ def version_and_media_regressions():
     assert publisher.media.VERSION == "stable-v12.1"
     assert publisher.core.VERSION == "stable-v12.1"
     assert publisher.core.b.IMAGE_REQUIRED is True
-    assert director.VERSION == "director-v2.3"
-    assert policy.VERSION == "policy-v2.5"
+    assert director.VERSION == "director-v2.4"
+    assert policy.VERSION == "policy-v2.6"
 
     good_media = {
         "image": b"x" * 12000,
