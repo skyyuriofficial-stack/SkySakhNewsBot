@@ -20,7 +20,7 @@ from urllib.parse import urlparse
 
 import editorial_gate as gate
 
-VERSION = "policy-v2.4"
+VERSION = "policy-v2.5"
 
 CATEGORY_GROUP = {
     "sakh": "local",
@@ -115,7 +115,13 @@ CORPORATE_PRODUCT_ACTIONS = (
     "новый сервис", "новая возможность", "новая функция", "инвесткопилка",
     "доступ к цифровому рублю", "задавать новую планку качества",
     "стремится задавать", "мобильном приложении", "для клиентов",
-    "стартап", "саммит", "форум", "недел мод", "партнерств", "партнёрств",
+    "стартап", "саммит", "форум", "конференц", "недел мод", "партнерств", "партнёрств",
+)
+CORPORATE_EVENT_ANNOUNCEMENTS = (
+    "объявил дату", "объявила дату", "объявили дату",
+    "анонсировал", "анонсировала", "анонсировали", "анонсирует", "анонсируют",
+    "проведет конференц", "проведёт конференц",
+    "конференц пройдет", "конференц пройдёт",
 )
 CORPORATE_PR_EVIDENCE = (
     "пресс служб", "пресс служба", "пресс-служба", "старший вице президент",
@@ -511,9 +517,26 @@ def _is_corporate_product_pr(title: str, lead: str) -> bool:
         PUBLIC_POLICY_TITLE_EXEMPTIONS + CORPORATE_PUBLIC_IMPACT_EXEMPTIONS,
     )
     # Corporate press-release content is not news merely because the rolling
-    # economy bucket is under target. It must have a concrete public/consumer
-    # impact to enter the newsworthiness stage at all.
+    # economy/politics bucket is under target. It must have a concrete public or
+    # consumer impact to enter the newsworthiness stage at all.
     return bool(brand and product_or_event and pr_evidence and not public_impact)
+
+
+def _is_corporate_event_promo(title: str) -> bool:
+    """Reject self-promotional branded event announcements from the headline alone.
+
+    This must not depend on the full article lead: retrospective Telegram audits
+    retain the headline reliably even when source_text_excerpt is absent.
+    """
+    return bool(
+        has_any(title, CORPORATE_FINANCE_BRANDS)
+        and has_any(title, CORPORATE_PRODUCT_ACTIONS)
+        and has_any(title, CORPORATE_EVENT_ANNOUNCEMENTS)
+        and not has_any(
+            title,
+            PUBLIC_POLICY_TITLE_EXEMPTIONS + CORPORATE_PUBLIC_IMPACT_EXEMPTIONS,
+        )
+    )
 
 
 def _is_low_value_it_explainer(title: str, lead: str) -> bool:
@@ -537,6 +560,8 @@ def _hard_reject(title: str, lead: str) -> Optional[str]:
         return "advertorial_or_corporate_pr"
     if has_any(combined, BRAND_POPULARITY_PR):
         return "advertorial_or_corporate_pr"
+    if _is_corporate_event_promo(title):
+        return "corporate_product_or_brand_pr"
     if _is_corporate_product_pr(title, lead):
         return "corporate_product_or_brand_pr"
     if has_any(title, ("туристический форум",)):
@@ -557,6 +582,15 @@ def _is_infrastructure(title: str) -> bool:
 
 
 def _is_policy(title: str) -> bool:
+    # A corporate brand using a generic action verb ("объявил", "утвердил",
+    # "представил") is not a political actor. This exact false-positive put a
+    # SberUniversity conference announcement into the ru_pol stream.
+    if (
+        has_any(title, CORPORATE_FINANCE_BRANDS)
+        and not has_any(title, POLICY_ACTOR)
+        and not has_any(title, PUBLIC_POLICY_TITLE_EXEMPTIONS)
+    ):
+        return False
     return has_any(title, POLICY_ACTION) or (
         has_any(title, POLICY_ACTOR)
         and has_any(title, ("закон", "режим", "правило", "поручение", "bill", "law"))
