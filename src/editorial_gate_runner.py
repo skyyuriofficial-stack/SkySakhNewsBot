@@ -40,6 +40,7 @@ for key in (
     "openrouter_invalid_json",
     "openrouter_success",
     "openrouter_circuit_open",
+    "openrouter_daily_quota_exhausted",
     "editorial_grounded_translation_fallback",
 ):
     core.b.STATS.setdefault(key, 0)
@@ -183,10 +184,12 @@ def resilient_openrouter(messages, max_tokens=1100):
             if response.status_code >= 400:
                 detail = (response.text or "")[:300]
                 errors.append(f"{model}: HTTP {response.status_code}: {detail}")
-                if (
-                    response.status_code in {401, 403}
-                    or _daily_quota_exhausted(response.status_code, response.text)
-                ):
+                daily_quota_exhausted = _daily_quota_exhausted(
+                    response.status_code, response.text
+                )
+                if daily_quota_exhausted:
+                    core.b.STATS["openrouter_daily_quota_exhausted"] = 1
+                if response.status_code in {401, 403} or daily_quota_exhausted:
                     stop_immediately = True
                     run_fatal_failure = True
             else:
