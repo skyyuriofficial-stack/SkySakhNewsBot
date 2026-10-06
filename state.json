@@ -586,7 +586,7 @@
     "6ce82239ad663477ea14e553f9a60f1ad69dee84",
     "3ab0fb3a3dc4a07878c08dad9783e9b95c08b414"
   ],
-  "last_run_sakhalin": "2026-10-07T02:01:51+11:00",
+  "last_run_sakhalin": "2026-10-07T02:22:47+11:00",
   "last_posts": [
     {
       "time_sakhalin": "2026-09-04T23:37:49+11:00",
@@ -11347,7 +11347,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-10-06T15:07:25+00:00",
+        "checked_at": "2026-10-06T15:17:31+00:00",
         "reason": "soft_consumer_it_feature",
         "issues": [
           "final_hard_reject:soft_consumer_it_feature",
@@ -11535,7 +11535,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T15:07:26+00:00"
+        "checked_at": "2026-10-06T15:17:31+00:00"
       }
     },
     {
@@ -11712,7 +11712,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-10-06T15:07:26+00:00",
+        "checked_at": "2026-10-06T15:17:31+00:00",
         "reason": "hyperlocal_service_disruption",
         "issues": [
           "final_hard_reject:hyperlocal_service_disruption",
@@ -12270,7 +12270,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T15:07:26+00:00"
+        "checked_at": "2026-10-06T15:17:31+00:00"
       }
     },
     {
@@ -12459,7 +12459,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-10-06T15:07:26+00:00",
+        "checked_at": "2026-10-06T15:17:32+00:00",
         "reason": "local_official_statement_without_decision",
         "issues": [
           "director_final_reject:local_official_statement_without_decision"
@@ -12644,7 +12644,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T15:07:26+00:00"
+        "checked_at": "2026-10-06T15:17:32+00:00"
       }
     },
     {
@@ -12821,7 +12821,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-10-06T15:07:26+00:00",
+        "checked_at": "2026-10-06T15:17:32+00:00",
         "reason": "hyperlocal_service_disruption",
         "issues": [
           "final_hard_reject:hyperlocal_service_disruption",
@@ -13009,7 +13009,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T15:07:26+00:00"
+        "checked_at": "2026-10-06T15:17:32+00:00"
       }
     },
     {
@@ -13959,7 +13959,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T15:07:30+00:00"
+        "checked_at": "2026-10-06T15:17:32+00:00"
       }
     },
     {
@@ -14136,7 +14136,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T15:07:30+00:00"
+        "checked_at": "2026-10-06T15:17:32+00:00"
       }
     },
     {
@@ -14698,7 +14698,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T15:07:31+00:00"
+        "checked_at": "2026-10-06T15:17:33+00:00"
       }
     },
     {
@@ -14875,7 +14875,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-06T15:07:31+00:00"
+        "checked_at": "2026-10-06T15:17:33+00:00"
       }
     }
   ],
@@ -15104,11 +15104,11 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-10-07T01:57:29+11:00",
+    "started_sakhalin": "2026-10-07T02:17:27+11:00",
     "status": "ok",
-    "candidates": 5,
+    "candidates": 6,
     "published": 0,
-    "local_candidates": 0,
+    "local_candidates": 1,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -15139,21 +15139,21 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-10-07T02:01:51+11:00",
+    "finished_sakhalin": "2026-10-07T02:22:46+11:00",
     "stats": {
       "rss_seen": 160,
       "old_skip": 58,
       "google_skip": 16,
       "duplicate_skip": 1,
-      "low_info_skip": 16,
+      "low_info_skip": 15,
       "category_skip": 36,
       "no_image_skip": 0,
-      "bad_image_skip": 8,
-      "logo_image_skip": 35,
+      "bad_image_skip": 10,
+      "logo_image_skip": 40,
       "text_card_image_skip": 7,
       "candidates": 21,
       "rewrite_retry": 4,
-      "editorial_skip": 5,
+      "editorial_skip": 6,
       "telegram_fail": 0,
       "published": 0,
       "telegram_source_attempt": 2,
@@ -15167,8 +15167,8 @@
       "validation_reject": 0,
       "extractive_fallback": 0,
       "extractive_first": 0,
-      "editorial_prechecked": 66,
-      "editorial_gate_checked": 5,
+      "editorial_prechecked": 67,
+      "editorial_gate_checked": 6,
       "editorial_gate_pass": 0,
       "editorial_gate_reject": 1,
       "editorial_gate_fallback": 0,
@@ -15187,7 +15187,7 @@
       "openrouter_success": 0,
       "openrouter_circuit_open": 0,
       "editorial_grounded_translation_fallback": 0,
-      "media_required_skip": 8,
+      "media_required_skip": 9,
       "media_generic_skip": 0,
       "media_ready_candidates": 21,
       "photo_retry": 0,
@@ -15204,8 +15204,8 @@
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
       "director_seen": 21,
-      "director_approved": 5,
-      "director_rejected": 16,
+      "director_approved": 6,
+      "director_rejected": 15,
       "director_reclassified": 0,
       "director_title_corrected": 2,
       "director_ai_calls": 0,
@@ -15215,14 +15215,14 @@
       "director_final_reject": 0,
       "director_pending_retired": 0,
       "publication_contract_blocked": 0,
-      "post_audit_checked": 17,
-      "post_audit_anomalies": 0,
+      "post_audit_checked": 12,
+      "post_audit_anomalies": 4,
       "post_audit_corrected": 0,
       "post_audit_deleted": 0
     },
     "news_director": {
-      "version": "director-v2.3",
-      "policy_version": "policy-v2.5",
+      "version": "director-v2.4",
+      "policy_version": "policy-v2.6",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
         "window": 20,
@@ -15243,81 +15243,66 @@
           "it": 5.0
         },
         "counts": {
-          "local": 11,
+          "local": 7,
           "ru_pol": 1,
-          "ru_eco": 4,
+          "ru_eco": 5,
           "ru_safety": 0,
           "world": 0,
-          "it": 4
+          "it": 1
         },
         "scaled_targets": {
-          "local": 6.0,
-          "ru_pol": 4.0,
-          "ru_eco": 4.0,
-          "ru_safety": 3.0,
-          "world": 2.0,
-          "it": 1.0
+          "local": 4.2,
+          "ru_pol": 2.8,
+          "ru_eco": 2.8,
+          "ru_safety": 2.1,
+          "world": 1.4,
+          "it": 0.7
         },
         "deficits": {
-          "local": -5.0,
-          "ru_pol": 3.0,
-          "ru_eco": 0.0,
-          "ru_safety": 3.0,
-          "world": 2.0,
-          "it": -3.0
+          "local": -2.8,
+          "ru_pol": 1.8,
+          "ru_eco": -2.2,
+          "ru_safety": 2.1,
+          "world": 1.4,
+          "it": -0.3
         },
-        "distribution_error": 16.0,
+        "distribution_error": 10.6,
         "subtype_counts": {
-          "major_emergency": 2,
-          "macro_economy": 5,
-          "major_it": 4,
-          "public_service_disruption": 3,
-          "political_statement": 1,
+          "violent_crime": 4,
+          "macro_economy": 6,
+          "major_emergency": 1,
           "political_decision": 1,
-          "violent_crime": 2,
-          "major_infrastructure": 1,
+          "major_it": 1,
           "severe_weather": 1
         },
         "sequence": [
           "local",
-          "ru_eco",
-          "ru_eco",
-          "it",
+          "local",
           "ru_eco",
           "local",
-          "local",
+          "ru_eco",
+          "ru_eco",
+          "ru_eco",
           "local",
           "ru_pol",
           "local",
-          "local",
-          "it",
-          "local",
-          "it",
-          "local",
           "ru_eco",
-          "local",
           "local",
           "it",
           "local"
         ],
         "category_sequence": [
           "sakh_chp",
+          "sakh_chp",
+          "ru_eco",
+          "sakh_chp",
           "ru_eco",
           "ru_eco",
-          "it",
           "ru_eco",
-          "sakh",
-          "sakh",
           "sakh",
           "ru_pol",
-          "sakh",
           "sakh_chp",
-          "it",
-          "sakh",
-          "it",
-          "sakh",
           "ru_eco",
-          "sakh_chp",
           "sakh_chp",
           "it",
           "sakh"
@@ -15326,34 +15311,64 @@
           "astv",
           "sakhalinmedia.ru",
           "sakhalinmedia.ru",
-          "techmedia techmedia",
+          "astv",
+          "sakhalinmedia.ru",
           "sakhalinmedia.ru",
           "sakhalinmedia.ru",
           "sakh.online",
           "sakh.online",
-          "sakh.online",
-          "astv",
-          "sakhalinmedia.ru",
-          "guardian technology",
-          "sakhalinmedia.ru",
-          "techmedia techmedia",
           "sakhalinmedia.ru",
           "astv",
           "sakhalinmedia.ru",
-          "astv",
           "bbc technology",
           "sakhalinmedia.ru"
         ],
-        "retrospective_anomalies": [],
-        "valid_posts_counted": 20
+        "retrospective_anomalies": [
+          {
+            "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
+            "category_key": "sakh_chp",
+            "reason": "low_scale_incident_not_release_worthy",
+            "corrected_category": "sakh_chp"
+          },
+          {
+            "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
+            "category_key": "ru_incident",
+            "reason": "low_scale_incident_not_release_worthy",
+            "corrected_category": "ru_incident"
+          },
+          {
+            "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
+            "category_key": "it",
+            "reason": "soft_consumer_it_feature",
+            "corrected_category": null
+          },
+          {
+            "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
+            "category_key": "sakh",
+            "reason": "hyperlocal_service_disruption",
+            "corrected_category": null
+          },
+          {
+            "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
+            "category_key": "sakh",
+            "reason": "local_official_statement_without_decision",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
+            "category_key": "sakh",
+            "reason": "hyperlocal_service_disruption",
+            "corrected_category": null
+          }
+        ],
+        "valid_posts_counted": 14
       },
       "candidate_count": 21,
-      "approved_count": 5,
-      "rejected_count": 16,
+      "approved_count": 6,
+      "rejected_count": 15,
       "rejected_by_reason": {
-        "importance_below_threshold": 13,
-        "low_scale_incident_not_release_worthy": 2,
-        "local_mix_saturated_low_priority": 1
+        "importance_below_threshold": 12,
+        "low_scale_incident_not_release_worthy": 3
       },
       "ai_review_requested": 0,
       "ai_review_received": 0,
@@ -15361,15 +15376,15 @@
         "world",
         "it"
       ],
-      "projected_distribution_error": 16.0,
+      "projected_distribution_error": 10.4,
       "projected_counts": {
-        "ru_eco": 3,
-        "it": 5,
-        "local": 10,
+        "local": 7,
+        "ru_eco": 5,
         "ru_pol": 1,
+        "it": 2,
         "world": 1
       },
-      "projected_length": 20,
+      "projected_length": 16,
       "selected_preview": [
         {
           "slot": 1,
@@ -15378,7 +15393,7 @@
           "group": "world",
           "event_type": "geopolitical_event",
           "seriousness": 90,
-          "utility": 152.0
+          "utility": 149.3
         },
         {
           "slot": 2,
@@ -15387,7 +15402,7 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 86,
-          "utility": -36.0
+          "utility": 84.0
         },
         {
           "slot": "backup",
@@ -15396,7 +15411,7 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 82,
-          "utility": -70.0
+          "utility": 50.0
         },
         {
           "slot": "backup",
@@ -15405,7 +15420,16 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 80,
-          "utility": -72.0
+          "utility": 48.0
+        },
+        {
+          "slot": "backup",
+          "title": "В Южно-Сахалинске продолжается газификация частного сектора",
+          "category_key": "sakh",
+          "group": "local",
+          "event_type": "macro_economy",
+          "seriousness": 82,
+          "utility": 40.0
         },
         {
           "slot": "backup",
@@ -15414,7 +15438,7 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 85,
-          "utility": -85.0
+          "utility": 35.0
         }
       ],
       "rolling_balance_after": {
@@ -15436,81 +15460,66 @@
           "it": 5.0
         },
         "counts": {
-          "local": 11,
+          "local": 7,
           "ru_pol": 1,
-          "ru_eco": 4,
+          "ru_eco": 5,
           "ru_safety": 0,
           "world": 0,
-          "it": 4
+          "it": 1
         },
         "scaled_targets": {
-          "local": 6.0,
-          "ru_pol": 4.0,
-          "ru_eco": 4.0,
-          "ru_safety": 3.0,
-          "world": 2.0,
-          "it": 1.0
+          "local": 4.2,
+          "ru_pol": 2.8,
+          "ru_eco": 2.8,
+          "ru_safety": 2.1,
+          "world": 1.4,
+          "it": 0.7
         },
         "deficits": {
-          "local": -5.0,
-          "ru_pol": 3.0,
-          "ru_eco": 0.0,
-          "ru_safety": 3.0,
-          "world": 2.0,
-          "it": -3.0
+          "local": -2.8,
+          "ru_pol": 1.8,
+          "ru_eco": -2.2,
+          "ru_safety": 2.1,
+          "world": 1.4,
+          "it": -0.3
         },
-        "distribution_error": 16.0,
+        "distribution_error": 10.6,
         "subtype_counts": {
-          "major_emergency": 2,
-          "macro_economy": 5,
-          "major_it": 4,
-          "public_service_disruption": 3,
-          "political_statement": 1,
+          "violent_crime": 4,
+          "macro_economy": 6,
+          "major_emergency": 1,
           "political_decision": 1,
-          "violent_crime": 2,
-          "major_infrastructure": 1,
+          "major_it": 1,
           "severe_weather": 1
         },
         "sequence": [
           "local",
-          "ru_eco",
-          "ru_eco",
-          "it",
+          "local",
           "ru_eco",
           "local",
-          "local",
+          "ru_eco",
+          "ru_eco",
+          "ru_eco",
           "local",
           "ru_pol",
           "local",
-          "local",
-          "it",
-          "local",
-          "it",
-          "local",
           "ru_eco",
-          "local",
           "local",
           "it",
           "local"
         ],
         "category_sequence": [
           "sakh_chp",
+          "sakh_chp",
+          "ru_eco",
+          "sakh_chp",
           "ru_eco",
           "ru_eco",
-          "it",
           "ru_eco",
-          "sakh",
-          "sakh",
           "sakh",
           "ru_pol",
-          "sakh",
           "sakh_chp",
-          "it",
-          "sakh",
-          "it",
-          "sakh",
           "ru_eco",
-          "sakh_chp",
           "sakh_chp",
           "it",
           "sakh"
@@ -15519,39 +15528,178 @@
           "astv",
           "sakhalinmedia.ru",
           "sakhalinmedia.ru",
-          "techmedia techmedia",
+          "astv",
+          "sakhalinmedia.ru",
           "sakhalinmedia.ru",
           "sakhalinmedia.ru",
           "sakh.online",
           "sakh.online",
-          "sakh.online",
-          "astv",
-          "sakhalinmedia.ru",
-          "guardian technology",
-          "sakhalinmedia.ru",
-          "techmedia techmedia",
           "sakhalinmedia.ru",
           "astv",
           "sakhalinmedia.ru",
-          "astv",
           "bbc technology",
           "sakhalinmedia.ru"
         ],
-        "retrospective_anomalies": [],
-        "valid_posts_counted": 20
+        "retrospective_anomalies": [
+          {
+            "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
+            "category_key": "sakh_chp",
+            "reason": "low_scale_incident_not_release_worthy",
+            "corrected_category": "sakh_chp"
+          },
+          {
+            "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
+            "category_key": "ru_incident",
+            "reason": "low_scale_incident_not_release_worthy",
+            "corrected_category": "ru_incident"
+          },
+          {
+            "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
+            "category_key": "it",
+            "reason": "soft_consumer_it_feature",
+            "corrected_category": null
+          },
+          {
+            "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
+            "category_key": "sakh",
+            "reason": "hyperlocal_service_disruption",
+            "corrected_category": null
+          },
+          {
+            "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
+            "category_key": "sakh",
+            "reason": "local_official_statement_without_decision",
+            "corrected_category": "sakh"
+          },
+          {
+            "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
+            "category_key": "sakh",
+            "reason": "hyperlocal_service_disruption",
+            "corrected_category": null
+          }
+        ],
+        "valid_posts_counted": 14
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-10-06T14:57:35+00:00",
-      "checked": 17,
-      "passed": 17,
-      "anomalies": [],
+      "checked_at": "2026-10-06T15:17:33+00:00",
+      "checked": 12,
+      "passed": 8,
+      "anomalies": [
+        {
+          "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
+          "url": "https://t.me/techmedia/23488",
+          "publisher_version": "stable-v12.1",
+          "category_key": "it",
+          "corrected_category": null,
+          "reason": "soft_consumer_it_feature",
+          "contract_issues": [
+            "final_hard_reject:soft_consumer_it_feature",
+            "final_category_mismatch:None->it",
+            "director_final_category:None->it",
+            "director_final_reject:soft_consumer_it_feature"
+          ]
+        },
+        {
+          "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
+          "url": "https://sakhalinmedia.ru/news/2639632/",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": null,
+          "reason": "hyperlocal_service_disruption",
+          "contract_issues": [
+            "final_hard_reject:hyperlocal_service_disruption",
+            "final_category_mismatch:None->sakh",
+            "director_final_category:None->sakh",
+            "director_final_reject:hyperlocal_service_disruption"
+          ]
+        },
+        {
+          "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
+          "url": "https://sakh.online/news/18/2026-10-04/ministr-olga-orlova-rasskazala-o-podderzhke-semey-sahalinskom-dolgoletii-i-novyh-merah-sotszaschity-527914",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": "sakh",
+          "reason": "local_official_statement_without_decision",
+          "contract_issues": [
+            "director_final_reject:local_official_statement_without_decision"
+          ]
+        },
+        {
+          "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
+          "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": null,
+          "reason": "hyperlocal_service_disruption",
+          "contract_issues": [
+            "final_hard_reject:hyperlocal_service_disruption",
+            "final_category_mismatch:None->sakh",
+            "director_final_category:None->sakh",
+            "director_final_reject:hyperlocal_service_disruption"
+          ]
+        }
+      ],
       "corrected": [],
       "deleted": [],
       "failed_actions": [],
-      "unresolved": 0,
-      "unresolved_items": [],
+      "unresolved": 4,
+      "unresolved_items": [
+        {
+          "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
+          "url": "https://t.me/techmedia/23488",
+          "publisher_version": "stable-v12.1",
+          "category_key": "it",
+          "corrected_category": null,
+          "reason": "soft_consumer_it_feature",
+          "contract_issues": [
+            "final_hard_reject:soft_consumer_it_feature",
+            "final_category_mismatch:None->it",
+            "director_final_category:None->it",
+            "director_final_reject:soft_consumer_it_feature"
+          ]
+        },
+        {
+          "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
+          "url": "https://sakhalinmedia.ru/news/2639632/",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": null,
+          "reason": "hyperlocal_service_disruption",
+          "contract_issues": [
+            "final_hard_reject:hyperlocal_service_disruption",
+            "final_category_mismatch:None->sakh",
+            "director_final_category:None->sakh",
+            "director_final_reject:hyperlocal_service_disruption"
+          ]
+        },
+        {
+          "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
+          "url": "https://sakh.online/news/18/2026-10-04/ministr-olga-orlova-rasskazala-o-podderzhke-semey-sahalinskom-dolgoletii-i-novyh-merah-sotszaschity-527914",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": "sakh",
+          "reason": "local_official_statement_without_decision",
+          "contract_issues": [
+            "director_final_reject:local_official_statement_without_decision"
+          ]
+        },
+        {
+          "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
+          "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": null,
+          "reason": "hyperlocal_service_disruption",
+          "contract_issues": [
+            "final_hard_reject:hyperlocal_service_disruption",
+            "final_category_mismatch:None->sakh",
+            "director_final_category:None->sakh",
+            "director_final_reject:hyperlocal_service_disruption"
+          ]
+        }
+      ],
       "mutations_enabled": true,
       "legacy_posts_mutated": false
     },
@@ -15565,7 +15713,7 @@
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
       "ready_candidates": 21,
-      "missing_media_rejected": 8,
+      "missing_media_rejected": 9,
       "generic_media_rejected": 0,
       "photo_retries": 0,
       "photo_published": 0,
@@ -15578,8 +15726,8 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 66,
-      "checked": 5,
+      "prechecked": 67,
+      "checked": 6,
       "passed": 0,
       "rejected": 1,
       "reclassified": 2,
@@ -15592,8 +15740,8 @@
   },
   "pending_media_delivery": [],
   "news_director_policy": {
-    "version": "director-v2.3",
-    "policy_version": "policy-v2.5",
+    "version": "director-v2.4",
+    "policy_version": "policy-v2.6",
     "rolling_window": 20,
     "targets": {
       "local": 6,
@@ -15632,81 +15780,66 @@
       "it": 5.0
     },
     "counts": {
-      "local": 11,
+      "local": 7,
       "ru_pol": 1,
-      "ru_eco": 4,
+      "ru_eco": 5,
       "ru_safety": 0,
       "world": 0,
-      "it": 4
+      "it": 1
     },
     "scaled_targets": {
-      "local": 6.0,
-      "ru_pol": 4.0,
-      "ru_eco": 4.0,
-      "ru_safety": 3.0,
-      "world": 2.0,
-      "it": 1.0
+      "local": 4.2,
+      "ru_pol": 2.8,
+      "ru_eco": 2.8,
+      "ru_safety": 2.1,
+      "world": 1.4,
+      "it": 0.7
     },
     "deficits": {
-      "local": -5.0,
-      "ru_pol": 3.0,
-      "ru_eco": 0.0,
-      "ru_safety": 3.0,
-      "world": 2.0,
-      "it": -3.0
+      "local": -2.8,
+      "ru_pol": 1.8,
+      "ru_eco": -2.2,
+      "ru_safety": 2.1,
+      "world": 1.4,
+      "it": -0.3
     },
-    "distribution_error": 16.0,
+    "distribution_error": 10.6,
     "subtype_counts": {
-      "major_emergency": 2,
-      "macro_economy": 5,
-      "major_it": 4,
-      "public_service_disruption": 3,
-      "political_statement": 1,
+      "violent_crime": 4,
+      "macro_economy": 6,
+      "major_emergency": 1,
       "political_decision": 1,
-      "violent_crime": 2,
-      "major_infrastructure": 1,
+      "major_it": 1,
       "severe_weather": 1
     },
     "sequence": [
       "local",
-      "ru_eco",
-      "ru_eco",
-      "it",
+      "local",
       "ru_eco",
       "local",
-      "local",
+      "ru_eco",
+      "ru_eco",
+      "ru_eco",
       "local",
       "ru_pol",
       "local",
-      "local",
-      "it",
-      "local",
-      "it",
-      "local",
       "ru_eco",
-      "local",
       "local",
       "it",
       "local"
     ],
     "category_sequence": [
       "sakh_chp",
+      "sakh_chp",
+      "ru_eco",
+      "sakh_chp",
       "ru_eco",
       "ru_eco",
-      "it",
       "ru_eco",
-      "sakh",
-      "sakh",
       "sakh",
       "ru_pol",
-      "sakh",
       "sakh_chp",
-      "it",
-      "sakh",
-      "it",
-      "sakh",
       "ru_eco",
-      "sakh_chp",
       "sakh_chp",
       "it",
       "sakh"
@@ -15715,26 +15848,57 @@
       "astv",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "techmedia techmedia",
+      "astv",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakh.online",
       "sakh.online",
-      "sakh.online",
-      "astv",
-      "sakhalinmedia.ru",
-      "guardian technology",
-      "sakhalinmedia.ru",
-      "techmedia techmedia",
       "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
-      "astv",
       "bbc technology",
       "sakhalinmedia.ru"
     ],
-    "retrospective_anomalies": [],
-    "valid_posts_counted": 20
+    "retrospective_anomalies": [
+      {
+        "title": "Пешехода госпитализировали после ДТП с пьяным водителем",
+        "category_key": "sakh_chp",
+        "reason": "low_scale_incident_not_release_worthy",
+        "corrected_category": "sakh_chp"
+      },
+      {
+        "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
+        "category_key": "ru_incident",
+        "reason": "low_scale_incident_not_release_worthy",
+        "corrected_category": "ru_incident"
+      },
+      {
+        "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
+        "category_key": "it",
+        "reason": "soft_consumer_it_feature",
+        "corrected_category": null
+      },
+      {
+        "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
+        "category_key": "sakh",
+        "reason": "hyperlocal_service_disruption",
+        "corrected_category": null
+      },
+      {
+        "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
+        "category_key": "sakh",
+        "reason": "local_official_statement_without_decision",
+        "corrected_category": "sakh"
+      },
+      {
+        "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
+        "category_key": "sakh",
+        "reason": "hyperlocal_service_disruption",
+        "corrected_category": null
+      }
+    ],
+    "valid_posts_counted": 14
   },
   "expired_media_delivery": [
     {
@@ -21647,8 +21811,8 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-06T15:07:31+00:00",
-    "checked": 17,
+    "checked_at": "2026-10-06T15:17:33+00:00",
+    "checked": 12,
     "passed": 8,
     "anomalies": [
       {
@@ -21703,161 +21867,10 @@
           "director_final_category:None->sakh",
           "director_final_reject:hyperlocal_service_disruption"
         ]
-      },
-      {
-        "title": "Руководитель безопасности OpenAI ушел, раскритиковав культуру компании",
-        "url": "https://www.theguardian.com/technology/2026/oct/03/openai-safety-leader-quits-warning-ai-companys-culture-is-broken",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": null,
-        "reason": "routine_it_personnel_change",
-        "contract_issues": [
-          "final_hard_reject:routine_it_personnel_change",
-          "final_category_mismatch:None->it",
-          "director_final_category:None->it",
-          "director_final_reject:routine_it_personnel_change"
-        ]
-      },
-      {
-        "title": "Спектакль по роману Толстого открыл новый театральный сезон в сахалинском Чехов-центре",
-        "url": "https://sakhalinmedia.ru/news/2640956/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh",
-        "corrected_category": null,
-        "reason": "routine_culture_event",
-        "contract_issues": [
-          "final_hard_reject:routine_culture_event",
-          "final_category_mismatch:None->sakh",
-          "director_final_category:None->sakh",
-          "director_final_reject:routine_culture_event"
-        ]
-      },
-      {
-        "title": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину",
-        "url": "https://t.me/techmedia/23531",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": null,
-        "reason": "sensational_it_anecdote",
-        "contract_issues": [
-          "final_hard_reject:sensational_it_anecdote",
-          "final_category_mismatch:None->it",
-          "director_final_category:None->it",
-          "director_final_reject:sensational_it_anecdote"
-        ]
-      },
-      {
-        "title": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
-        "url": "https://sakhalinmedia.ru/news/2641208/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh",
-        "corrected_category": null,
-        "reason": "hyperlocal_service_disruption",
-        "contract_issues": [
-          "final_hard_reject:hyperlocal_service_disruption",
-          "final_category_mismatch:None->sakh",
-          "director_final_category:None->sakh",
-          "director_final_reject:hyperlocal_service_disruption"
-        ]
-      },
-      {
-        "title": "Тормозить и не пытался: момент массового ДТП в Южно-Сахалинске попал на видео",
-        "url": "https://astv.ru/news/criminal/2026-10-06-tormozit-i-ne-pytalsya-moment-massovogo-dtp-v-yuzhno-sahalinske-popal-na-video",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": null,
-        "reason": "tabloid_incident_video",
-        "contract_issues": [
-          "final_hard_reject:tabloid_incident_video",
-          "final_category_mismatch:None->sakh_chp",
-          "director_final_category:None->sakh_chp",
-          "director_final_reject:tabloid_incident_video"
-        ]
       }
     ],
     "corrected": [],
-    "deleted": [
-      {
-        "message_id": 348,
-        "already_absent": false,
-        "title": "Руководитель безопасности OpenAI ушел, раскритиковав культуру компании",
-        "url": "https://www.theguardian.com/technology/2026/oct/03/openai-safety-leader-quits-warning-ai-companys-culture-is-broken",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": null,
-        "reason": "routine_it_personnel_change",
-        "contract_issues": [
-          "final_hard_reject:routine_it_personnel_change",
-          "final_category_mismatch:None->it",
-          "director_final_category:None->it",
-          "director_final_reject:routine_it_personnel_change"
-        ]
-      },
-      {
-        "message_id": 349,
-        "already_absent": false,
-        "title": "Спектакль по роману Толстого открыл новый театральный сезон в сахалинском Чехов-центре",
-        "url": "https://sakhalinmedia.ru/news/2640956/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh",
-        "corrected_category": null,
-        "reason": "routine_culture_event",
-        "contract_issues": [
-          "final_hard_reject:routine_culture_event",
-          "final_category_mismatch:None->sakh",
-          "director_final_category:None->sakh",
-          "director_final_reject:routine_culture_event"
-        ]
-      },
-      {
-        "message_id": 351,
-        "already_absent": false,
-        "title": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину",
-        "url": "https://t.me/techmedia/23531",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": null,
-        "reason": "sensational_it_anecdote",
-        "contract_issues": [
-          "final_hard_reject:sensational_it_anecdote",
-          "final_category_mismatch:None->it",
-          "director_final_category:None->it",
-          "director_final_reject:sensational_it_anecdote"
-        ]
-      },
-      {
-        "message_id": 352,
-        "already_absent": false,
-        "title": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
-        "url": "https://sakhalinmedia.ru/news/2641208/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh",
-        "corrected_category": null,
-        "reason": "hyperlocal_service_disruption",
-        "contract_issues": [
-          "final_hard_reject:hyperlocal_service_disruption",
-          "final_category_mismatch:None->sakh",
-          "director_final_category:None->sakh",
-          "director_final_reject:hyperlocal_service_disruption"
-        ]
-      },
-      {
-        "message_id": 357,
-        "already_absent": false,
-        "title": "Тормозить и не пытался: момент массового ДТП в Южно-Сахалинске попал на видео",
-        "url": "https://astv.ru/news/criminal/2026-10-06-tormozit-i-ne-pytalsya-moment-massovogo-dtp-v-yuzhno-sahalinske-popal-na-video",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": null,
-        "reason": "tabloid_incident_video",
-        "contract_issues": [
-          "final_hard_reject:tabloid_incident_video",
-          "final_category_mismatch:None->sakh_chp",
-          "director_final_category:None->sakh_chp",
-          "director_final_reject:tabloid_incident_video"
-        ]
-      }
-    ],
+    "deleted": [],
     "failed_actions": [],
     "unresolved": 4,
     "unresolved_items": [
@@ -22854,7 +22867,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-10-06T14:57:29+00:00",
+    "checked_at_utc": "2026-10-06T15:17:25+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -22877,18 +22890,18 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-10-06T15:01:51+00:00",
+    "checked_at_utc": "2026-10-06T15:22:47+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
     "status": "blocked",
     "reason": "generation_provider_unavailable",
-    "checked_at_utc": "2026-10-06T15:01:51+00:00",
+    "checked_at_utc": "2026-10-06T15:22:47+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 0,
-    "director_approved": 5,
+    "director_approved": 6,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -22897,11 +22910,11 @@
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-10-06T15:01:51+00:00",
+    "checked_at_utc": "2026-10-06T15:22:47+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-10-07T02:01:51+11:00",
-      "candidates": 5,
+      "finished_sakhalin": "2026-10-07T02:22:46+11:00",
+      "candidates": 6,
       "queued_for_delivery": 0
     },
     "generation": {
