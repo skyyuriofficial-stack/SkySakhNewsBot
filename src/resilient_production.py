@@ -426,6 +426,9 @@ def _record_plane_status(state: Dict[str, Any], health: Dict[str, Any]) -> None:
             or stats.get("openrouter_circuit_open")
             or 0
         ),
+        "provider_daily_quota_exhausted": bool(
+            int(stats.get("openrouter_daily_quota_exhausted") or 0)
+        ),
         "telegram_fail": int(stats.get("telegram_fail") or 0),
         "publication_contract_blocked": int(stats.get("publication_contract_blocked") or 0),
     }
