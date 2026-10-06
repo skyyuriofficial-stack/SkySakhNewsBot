@@ -20,7 +20,7 @@ from urllib.parse import urlparse
 
 import editorial_gate as gate
 
-VERSION = "policy-v2.5"
+VERSION = "policy-v2.6"
 
 CATEGORY_GROUP = {
     "sakh": "local",
@@ -161,6 +161,36 @@ ROUTINE_EVENT = (
     "прошел туристический форум", "прошёл туристический форум",
     "провел выездное совещание", "провёл выездное совещание",
     "встреча с жителями", "отчетный концерт", "отчётный концерт",
+)
+ROUTINE_CULTURE_EVENT = (
+    "открыл новый театральный сезон", "открыла новый театральный сезон",
+    "спектакль по роману",
+)
+HYPERLOCAL_SERVICE_SCOPE = (
+    "список адресов",
+    "жители дома",
+    "жители домов",
+    "жилом доме",
+    "жилого дома",
+    "жк уюн",
+    "жк «",
+)
+IT_SOFT_CONSUMER_FEATURE = (
+    "виртуальная примерочн",
+    "как на вас сидит одежда",
+    "добавить в избранное",
+)
+IT_SENSATIONAL_ANECDOTE = (
+    "сдать вас полиции",
+    "личный дневник",
+    "нож в спину",
+)
+IT_ROUTINE_PERSONNEL = (
+    "руководитель безопасности",
+    "глава безопасности",
+)
+TABLOID_INCIDENT = (
+    "тормозить и не пытался",
 )
 CLICKBAIT = (
     "шок", "срочно", "ужас", "вы не поверите", "райское", "хит",
@@ -548,6 +578,34 @@ def _is_low_value_it_explainer(title: str, lead: str) -> bool:
     )
 
 
+def _is_hyperlocal_service_item(title: str) -> bool:
+    return bool(
+        has_any(title, PUBLIC_SERVICE)
+        and has_any(title, HYPERLOCAL_SERVICE_SCOPE)
+        and not has_any(title, ("тысяч жителей", "несколько районов", "весь город", "область"))
+    )
+
+
+def _is_soft_consumer_it(title: str) -> bool:
+    return bool(has_any(title, IT_CORE) and has_any(title, IT_SOFT_CONSUMER_FEATURE))
+
+
+def _is_sensational_it_anecdote(title: str) -> bool:
+    return bool(
+        has_any(title, IT_CORE)
+        and len(matched(title, IT_SENSATIONAL_ANECDOTE)) >= 2
+    )
+
+
+def _is_routine_it_personnel(title: str) -> bool:
+    return bool(
+        has_any(title, IT_CORE)
+        and has_any(title, IT_ROUTINE_PERSONNEL)
+        and has_any(title, ("ушел", "ушёл", "покинул", "уволил"))
+        and not has_any(title, ("утечк", "взлом", "кибератак", "расследован", "запрет", "блокировк"))
+    )
+
+
 def _hard_reject(title: str, lead: str) -> Optional[str]:
     combined = f"{title} {lead}"
     if has_any(title, CALENDAR_HISTORY):
@@ -564,12 +622,24 @@ def _hard_reject(title: str, lead: str) -> Optional[str]:
         return "corporate_product_or_brand_pr"
     if _is_corporate_product_pr(title, lead):
         return "corporate_product_or_brand_pr"
+    if has_any(title, ROUTINE_CULTURE_EVENT):
+        return "routine_culture_event"
     if has_any(title, ("туристический форум",)):
         return "routine_event_without_outcome"
     if has_any(title, ROUTINE_EVENT) and not has_any(title, POLICY_ACTION + INFRA_ACTION):
         return "routine_event_without_outcome"
     if has_any(combined, SERVICE_NOTICE) and not has_any(combined, ACTUAL_MISSING_PERSON):
         return "service_or_lost_and_found_notice"
+    if _is_hyperlocal_service_item(title):
+        return "hyperlocal_service_disruption"
+    if has_any(title, TABLOID_INCIDENT):
+        return "tabloid_incident_video"
+    if _is_soft_consumer_it(title):
+        return "soft_consumer_it_feature"
+    if _is_sensational_it_anecdote(title):
+        return "sensational_it_anecdote"
+    if _is_routine_it_personnel(title):
+        return "routine_it_personnel_change"
     if _is_low_value_it_explainer(title, lead):
         return "routine_it_explainer"
     if has_any(title, IT_TIPS):
