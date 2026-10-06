@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-06T15:07:34+00:00",
-  "checked_at_sakhalin": "2026-10-07T02:07:25+11:00",
+  "checked_at_utc": "2026-10-06T15:15:12+00:00",
+  "checked_at_sakhalin": "2026-10-07T02:15:08+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -74,7 +74,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-07T02:01:51+11:00",
-    "age_hours": 0.09,
+    "age_hours": 0.22,
     "published": 0
   },
   "last_production_attempt": {
@@ -116,8 +116,8 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-06T15:07:31+00:00",
-    "checked": 17,
+    "checked_at": "2026-10-06T15:15:10+00:00",
+    "checked": 12,
     "passed": 8,
     "anomalies": [
       {
@@ -172,161 +172,10 @@
           "director_final_category:None->sakh",
           "director_final_reject:hyperlocal_service_disruption"
         ]
-      },
-      {
-        "title": "Руководитель безопасности OpenAI ушел, раскритиковав культуру компании",
-        "url": "https://www.theguardian.com/technology/2026/oct/03/openai-safety-leader-quits-warning-ai-companys-culture-is-broken",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": null,
-        "reason": "routine_it_personnel_change",
-        "contract_issues": [
-          "final_hard_reject:routine_it_personnel_change",
-          "final_category_mismatch:None->it",
-          "director_final_category:None->it",
-          "director_final_reject:routine_it_personnel_change"
-        ]
-      },
-      {
-        "title": "Спектакль по роману Толстого открыл новый театральный сезон в сахалинском Чехов-центре",
-        "url": "https://sakhalinmedia.ru/news/2640956/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh",
-        "corrected_category": null,
-        "reason": "routine_culture_event",
-        "contract_issues": [
-          "final_hard_reject:routine_culture_event",
-          "final_category_mismatch:None->sakh",
-          "director_final_category:None->sakh",
-          "director_final_reject:routine_culture_event"
-        ]
-      },
-      {
-        "title": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину",
-        "url": "https://t.me/techmedia/23531",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": null,
-        "reason": "sensational_it_anecdote",
-        "contract_issues": [
-          "final_hard_reject:sensational_it_anecdote",
-          "final_category_mismatch:None->it",
-          "director_final_category:None->it",
-          "director_final_reject:sensational_it_anecdote"
-        ]
-      },
-      {
-        "title": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
-        "url": "https://sakhalinmedia.ru/news/2641208/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh",
-        "corrected_category": null,
-        "reason": "hyperlocal_service_disruption",
-        "contract_issues": [
-          "final_hard_reject:hyperlocal_service_disruption",
-          "final_category_mismatch:None->sakh",
-          "director_final_category:None->sakh",
-          "director_final_reject:hyperlocal_service_disruption"
-        ]
-      },
-      {
-        "title": "Тормозить и не пытался: момент массового ДТП в Южно-Сахалинске попал на видео",
-        "url": "https://astv.ru/news/criminal/2026-10-06-tormozit-i-ne-pytalsya-moment-massovogo-dtp-v-yuzhno-sahalinske-popal-na-video",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": null,
-        "reason": "tabloid_incident_video",
-        "contract_issues": [
-          "final_hard_reject:tabloid_incident_video",
-          "final_category_mismatch:None->sakh_chp",
-          "director_final_category:None->sakh_chp",
-          "director_final_reject:tabloid_incident_video"
-        ]
       }
     ],
     "corrected": [],
-    "deleted": [
-      {
-        "message_id": 348,
-        "already_absent": false,
-        "title": "Руководитель безопасности OpenAI ушел, раскритиковав культуру компании",
-        "url": "https://www.theguardian.com/technology/2026/oct/03/openai-safety-leader-quits-warning-ai-companys-culture-is-broken",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": null,
-        "reason": "routine_it_personnel_change",
-        "contract_issues": [
-          "final_hard_reject:routine_it_personnel_change",
-          "final_category_mismatch:None->it",
-          "director_final_category:None->it",
-          "director_final_reject:routine_it_personnel_change"
-        ]
-      },
-      {
-        "message_id": 349,
-        "already_absent": false,
-        "title": "Спектакль по роману Толстого открыл новый театральный сезон в сахалинском Чехов-центре",
-        "url": "https://sakhalinmedia.ru/news/2640956/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh",
-        "corrected_category": null,
-        "reason": "routine_culture_event",
-        "contract_issues": [
-          "final_hard_reject:routine_culture_event",
-          "final_category_mismatch:None->sakh",
-          "director_final_category:None->sakh",
-          "director_final_reject:routine_culture_event"
-        ]
-      },
-      {
-        "message_id": 351,
-        "already_absent": false,
-        "title": "Claude может сдать вас полиции — 30-летняя девушка из Флориды использовала ИИ как личный дневник , но получила нож в спину",
-        "url": "https://t.me/techmedia/23531",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": null,
-        "reason": "sensational_it_anecdote",
-        "contract_issues": [
-          "final_hard_reject:sensational_it_anecdote",
-          "final_category_mismatch:None->it",
-          "director_final_category:None->it",
-          "director_final_reject:sensational_it_anecdote"
-        ]
-      },
-      {
-        "message_id": 352,
-        "already_absent": false,
-        "title": "Жители домов в южно-сахалинском ЖК Уюн провели несколько суток без воды",
-        "url": "https://sakhalinmedia.ru/news/2641208/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh",
-        "corrected_category": null,
-        "reason": "hyperlocal_service_disruption",
-        "contract_issues": [
-          "final_hard_reject:hyperlocal_service_disruption",
-          "final_category_mismatch:None->sakh",
-          "director_final_category:None->sakh",
-          "director_final_reject:hyperlocal_service_disruption"
-        ]
-      },
-      {
-        "message_id": 357,
-        "already_absent": false,
-        "title": "Тормозить и не пытался: момент массового ДТП в Южно-Сахалинске попал на видео",
-        "url": "https://astv.ru/news/criminal/2026-10-06-tormozit-i-ne-pytalsya-moment-massovogo-dtp-v-yuzhno-sahalinske-popal-na-video",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh_chp",
-        "corrected_category": null,
-        "reason": "tabloid_incident_video",
-        "contract_issues": [
-          "final_hard_reject:tabloid_incident_video",
-          "final_category_mismatch:None->sakh_chp",
-          "director_final_category:None->sakh_chp",
-          "director_final_reject:tabloid_incident_video"
-        ]
-      }
-    ],
+    "deleted": [],
     "failed_actions": [],
     "unresolved": 4,
     "unresolved_items": [
@@ -740,7 +589,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-06T15:07:23+00:00",
+    "checked_at_utc": "2026-10-06T15:15:07+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
