@@ -1,39 +1,32 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-06T02:54:53+00:00",
-  "checked_at_sakhalin": "2026-10-06T13:54:47+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-06T03:02:09+00:00",
+  "checked_at_sakhalin": "2026-10-06T14:02:03+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-06T13:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-06T12:29:06+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-06T12:29:06+11:00",
-    "age_hours": 1.43,
+    "finished_sakhalin": "2026-10-06T14:01:32+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-06T01:29:07+00:00",
+    "checked_at_utc": "2026-10-06T03:01:33+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 9,
+    "director_approved": 6,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
-    "publication_contract_blocked": 0
+    "publication_contract_blocked": 1
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -73,7 +66,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-06T02:54:50+00:00",
+    "checked_at": "2026-10-06T03:02:06+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -86,19 +79,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 328,
-      "title": "\"Дым валил из-под крыши\": пожар тушили в торговом павильоне в Холмске",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 329,
       "title": "В ВТБ раскрыли портрет пользователя цифрового рубля",
@@ -306,6 +286,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 356,
+      "title": "СберУниверситет объявил дату X конференции Больше чем обучение",
+      "category_key": "ru_pol",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_pol",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -328,29 +321,29 @@
     },
     "counts": {
       "local": 10,
-      "ru_pol": 1,
+      "ru_pol": 2,
       "ru_eco": 5,
       "ru_safety": 0,
       "world": 0,
       "it": 3
     },
     "scaled_targets": {
-      "local": 5.7,
-      "ru_pol": 3.8,
-      "ru_eco": 3.8,
-      "ru_safety": 2.85,
-      "world": 1.9,
-      "it": 0.95
+      "local": 6.0,
+      "ru_pol": 4.0,
+      "ru_eco": 4.0,
+      "ru_safety": 3.0,
+      "world": 2.0,
+      "it": 1.0
     },
     "deficits": {
-      "local": -4.3,
-      "ru_pol": 2.8,
-      "ru_eco": -1.2,
-      "ru_safety": 2.85,
-      "world": 1.9,
-      "it": -2.05
+      "local": -4.0,
+      "ru_pol": 2.0,
+      "ru_eco": -1.0,
+      "ru_safety": 3.0,
+      "world": 2.0,
+      "it": -2.0
     },
-    "distribution_error": 15.1,
+    "distribution_error": 14.0,
     "subtype_counts": {
       "violent_crime": 3,
       "macro_economy": 6,
@@ -358,7 +351,7 @@
       "major_it": 3,
       "public_service_disruption": 3,
       "political_statement": 1,
-      "political_decision": 1,
+      "political_decision": 2,
       "major_infrastructure": 1
     },
     "sequence": [
@@ -380,7 +373,8 @@
       "it",
       "local",
       "ru_eco",
-      "local"
+      "local",
+      "ru_pol"
     ],
     "category_sequence": [
       "sakh_chp",
@@ -401,7 +395,8 @@
       "it",
       "sakh",
       "ru_eco",
-      "sakh_chp"
+      "sakh_chp",
+      "ru_pol"
     ],
     "source_sequence": [
       "sakhalinmedia.ru",
@@ -422,21 +417,15 @@
       "techmedia techmedia",
       "sakhalinmedia.ru",
       "astv",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru"
     ],
-    "retrospective_anomalies": [
-      {
-        "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-        "category_key": "ru_incident",
-        "reason": "low_scale_incident_not_release_worthy",
-        "corrected_category": "ru_incident"
-      }
-    ],
-    "valid_posts_counted": 19
+    "retrospective_anomalies": [],
+    "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-06T02:54:45+00:00",
+    "checked_at_utc": "2026-10-06T03:02:01+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -466,11 +455,11 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 15.1,
+      "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
         "local": 10,
-        "ru_pol": 1,
+        "ru_pol": 2,
         "ru_eco": 5,
         "ru_safety": 0,
         "world": 0,
@@ -485,12 +474,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -4.3,
-        "ru_pol": 2.8,
-        "ru_eco": -1.2,
-        "ru_safety": 2.85,
-        "world": 1.9,
-        "it": -2.05
+        "local": -4.0,
+        "ru_pol": 2.0,
+        "ru_eco": -1.0,
+        "ru_safety": 3.0,
+        "world": 2.0,
+        "it": -2.0
       }
     }
   ]
