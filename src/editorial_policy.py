@@ -161,6 +161,8 @@ ROUTINE_EVENT = (
     "прошел туристический форум", "прошёл туристический форум",
     "провел выездное совещание", "провёл выездное совещание",
     "встреча с жителями", "отчетный концерт", "отчётный концерт",
+)
+ROUTINE_CULTURE_EVENT = (
     "открыл новый театральный сезон", "открыла новый театральный сезон",
     "спектакль по роману",
 )
@@ -620,6 +622,8 @@ def _hard_reject(title: str, lead: str) -> Optional[str]:
         return "corporate_product_or_brand_pr"
     if _is_corporate_product_pr(title, lead):
         return "corporate_product_or_brand_pr"
+    if has_any(title, ROUTINE_CULTURE_EVENT):
+        return "routine_culture_event"
     if has_any(title, ("туристический форум",)):
         return "routine_event_without_outcome"
     if has_any(title, ROUTINE_EVENT) and not has_any(title, POLICY_ACTION + INFRA_ACTION):
