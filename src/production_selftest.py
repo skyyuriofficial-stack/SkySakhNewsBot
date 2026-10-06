@@ -19,6 +19,7 @@ import news_director as director
 import publication_auditor
 import publisher
 import resilient_production as resilient
+import schedule_guard as schedule
 import news_bot_v9 as source_core
 import telegram_public_sources
 
@@ -726,6 +727,7 @@ def openrouter_daily_quota_circuit_regression():
     saved_reason = editorial._OPENROUTER_CIRCUIT_REASON
     stat_keys = (
         "openrouter_attempts", "openrouter_retries", "openrouter_circuit_open",
+        "openrouter_daily_quota_exhausted",
     )
     saved_stats = {key: editorial.core.b.STATS.get(key, 0) for key in stat_keys}
     saved_key = os.environ.get("OPENROUTER_API_KEY")
@@ -760,6 +762,7 @@ def openrouter_daily_quota_circuit_regression():
         assert editorial.core.b.STATS["openrouter_attempts"] == 1
         assert editorial.core.b.STATS["openrouter_retries"] == 0
         assert editorial.core.b.STATS["openrouter_circuit_open"] == 1
+        assert editorial.core.b.STATS["openrouter_daily_quota_exhausted"] == 1
 
         # A second AI request in the same process must fail before network I/O.
         try:
@@ -850,6 +853,7 @@ def openrouter_daily_quota_circuit_regression():
             "ai_api_fail": 1,
             "ai_budget_exhausted": 0,
             "ai_circuit_open": 1,
+            "openrouter_daily_quota_exhausted": 1,
             "telegram_fail": 0,
             "publication_contract_blocked": 0,
         },
@@ -861,6 +865,61 @@ def openrouter_daily_quota_circuit_regression():
     published = copy.deepcopy(circuit_run)
     published["published"] = 1
     assert resilient._generation_provider_unavailable(published, health) is False
+
+    state = {"last_run": copy.deepcopy(circuit_run)}
+    resilient._record_plane_status(state, health)
+    attempt = state["last_production_attempt"]
+    assert attempt["status"] == "blocked", attempt
+    assert attempt["provider_daily_quota_exhausted"] is True, attempt
+    assert attempt["ai_circuit_open"] == 1, attempt
+
+    saved_loader = schedule._load_state
+    saved_event = os.environ.get("GITHUB_EVENT_NAME")
+    saved_force = os.environ.get("FORCE_PRODUCTION")
+    durable_state = {
+        "last_run": {
+            **copy.deepcopy(circuit_run),
+            "finished_sakhalin": "2026-10-07T02:01:51+11:00",
+        },
+        "last_production_attempt": {
+            "status": "blocked",
+            "reason": "generation_provider_unavailable",
+            "checked_at_utc": "2026-10-06T15:01:51+00:00",
+            "provider_daily_quota_exhausted": True,
+        },
+    }
+    try:
+        schedule._load_state = lambda: copy.deepcopy(durable_state)
+        os.environ["GITHUB_EVENT_NAME"] = "schedule"
+        os.environ.pop("FORCE_PRODUCTION", None)
+
+        before_reset = schedule.production_due(
+            datetime(2026, 10, 7, 7, 0, tzinfo=schedule.TZ)
+        )
+        assert before_reset["due"] is False, before_reset
+        assert before_reset["reason"] == "provider_daily_quota_exhausted", before_reset
+        assert before_reset["retry_after_utc"].startswith("2026-10-07T00:00:00"), before_reset
+
+        after_reset = schedule.production_due(
+            datetime(2026, 10, 7, 13, 0, tzinfo=schedule.TZ)
+        )
+        assert after_reset["due"] is True, after_reset
+        assert after_reset["reason"] == "slot_missing_or_failed", after_reset
+
+        legacy_run = copy.deepcopy(circuit_run)
+        legacy_run["stats"]["ai_budget_exhausted"] = 0
+        legacy_run["stats"]["ai_circuit_open"] = 1
+        assert schedule.generation_provider_unavailable(legacy_run) is True
+    finally:
+        schedule._load_state = saved_loader
+        if saved_event is None:
+            os.environ.pop("GITHUB_EVENT_NAME", None)
+        else:
+            os.environ["GITHUB_EVENT_NAME"] = saved_event
+        if saved_force is None:
+            os.environ.pop("FORCE_PRODUCTION", None)
+        else:
+            os.environ["FORCE_PRODUCTION"] = saved_force
 
 
 def ai_translation_and_scope_regressions():
