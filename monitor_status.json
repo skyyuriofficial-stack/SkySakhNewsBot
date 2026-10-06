@@ -1,29 +1,22 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-06T07:21:54+00:00",
-  "checked_at_sakhalin": "2026-10-06T18:21:50+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-06T07:29:39+00:00",
+  "checked_at_sakhalin": "2026-10-06T18:29:34+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-06T16:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-06T14:01:32+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-06T14:01:32+11:00",
-    "age_hours": 4.34,
+    "finished_sakhalin": "2026-10-06T18:29:07+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-06T03:01:33+00:00",
+    "checked_at_utc": "2026-10-06T07:29:08+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
@@ -33,7 +26,7 @@
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
-    "publication_contract_blocked": 1
+    "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -73,7 +66,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-06T07:21:52+00:00",
+    "checked_at": "2026-10-06T07:29:37+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -86,19 +79,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 329,
-      "title": "В ВТБ раскрыли портрет пользователя цифрового рубля",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 332,
       "title": "Инженеры — в тренде: Игорь Лагерев рассказал о бюджетных местах и взлете среднего балла ЕГЭ",
@@ -306,6 +286,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_pol",
       "title_issues": []
+    },
+    {
+      "message_id": 357,
+      "title": "Тормозить и не пытался: момент массового ДТП в Южно-Сахалинске попал на видео",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -352,17 +345,16 @@
     },
     "distribution_error": 14.0,
     "subtype_counts": {
-      "violent_crime": 3,
       "macro_economy": 6,
-      "major_emergency": 1,
+      "major_emergency": 2,
       "major_it": 3,
       "public_service_disruption": 3,
       "political_statement": 1,
       "political_decision": 2,
+      "violent_crime": 2,
       "major_infrastructure": 1
     },
     "sequence": [
-      "local",
       "ru_eco",
       "local",
       "ru_eco",
@@ -381,10 +373,10 @@
       "local",
       "ru_eco",
       "local",
-      "ru_pol"
+      "ru_pol",
+      "local"
     ],
     "category_sequence": [
-      "sakh_chp",
       "ru_eco",
       "sakh_chp",
       "ru_eco",
@@ -403,10 +395,10 @@
       "sakh",
       "ru_eco",
       "sakh_chp",
-      "ru_pol"
+      "ru_pol",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
@@ -425,14 +417,15 @@
       "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-06T07:21:47+00:00",
+    "checked_at_utc": "2026-10-06T07:29:32+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
