@@ -18,6 +18,7 @@ import media_enforced_runner as media
 import news_director as director
 import publication_auditor
 import publisher
+import resilient_production as resilient
 import news_bot_v9 as source_core
 import telegram_public_sources
 
@@ -707,6 +708,160 @@ def openrouter_resilience_regression():
 
 
 
+def openrouter_daily_quota_circuit_regression():
+    class QuotaResponse:
+        status_code = 429
+        headers = {}
+        text = (
+            '{"error":{"message":"Rate limit exceeded: free-models-per-day",'
+            '"metadata":{"limit_source":"openrouter_free_tier_daily"}}}'
+        )
+
+        def json(self):
+            return {"error": {"message": "free-models-per-day"}}
+
+    calls = []
+    saved_post = editorial.core.b.requests.post
+    saved_open = editorial._OPENROUTER_CIRCUIT_OPEN
+    saved_reason = editorial._OPENROUTER_CIRCUIT_REASON
+    stat_keys = (
+        "openrouter_attempts", "openrouter_retries", "openrouter_circuit_open",
+    )
+    saved_stats = {key: editorial.core.b.STATS.get(key, 0) for key in stat_keys}
+    saved_key = os.environ.get("OPENROUTER_API_KEY")
+    saved_attempts = os.environ.get("OPENROUTER_MAX_ATTEMPTS")
+    saved_delay = os.environ.get("OPENROUTER_RETRY_BASE_SECONDS")
+
+    def quota_post(url, **kwargs):
+        calls.append(kwargs)
+        return QuotaResponse()
+
+    try:
+        os.environ["OPENROUTER_API_KEY"] = "test-key"
+        os.environ["OPENROUTER_MAX_ATTEMPTS"] = "3"
+        os.environ["OPENROUTER_RETRY_BASE_SECONDS"] = "0"
+        editorial._OPENROUTER_CIRCUIT_OPEN = False
+        editorial._OPENROUTER_CIRCUIT_REASON = ""
+        for key in stat_keys:
+            editorial.core.b.STATS[key] = 0
+        editorial.core.b.requests.post = quota_post
+
+        try:
+            editorial.resilient_openrouter(
+                [{"role": "user", "content": "Return JSON"}],
+                max_tokens=128,
+            )
+            raise AssertionError("daily quota exhaustion must fail")
+        except RuntimeError as exc:
+            assert "free-models-per-day" in str(exc), exc
+
+        assert len(calls) == 1, calls
+        assert editorial._OPENROUTER_CIRCUIT_OPEN is True
+        assert editorial.core.b.STATS["openrouter_attempts"] == 1
+        assert editorial.core.b.STATS["openrouter_retries"] == 0
+        assert editorial.core.b.STATS["openrouter_circuit_open"] == 1
+
+        # A second AI request in the same process must fail before network I/O.
+        try:
+            editorial.resilient_openrouter(
+                [{"role": "user", "content": "Return JSON again"}],
+                max_tokens=128,
+            )
+            raise AssertionError("open circuit must reject the second request")
+        except RuntimeError as exc:
+            assert "circuit is open" in str(exc).lower(), exc
+        assert len(calls) == 1, calls
+    finally:
+        editorial.core.b.requests.post = saved_post
+        editorial._OPENROUTER_CIRCUIT_OPEN = saved_open
+        editorial._OPENROUTER_CIRCUIT_REASON = saved_reason
+        for key, value in saved_stats.items():
+            editorial.core.b.STATS[key] = value
+        if saved_key is None:
+            os.environ.pop("OPENROUTER_API_KEY", None)
+        else:
+            os.environ["OPENROUTER_API_KEY"] = saved_key
+        if saved_attempts is None:
+            os.environ.pop("OPENROUTER_MAX_ATTEMPTS", None)
+        else:
+            os.environ["OPENROUTER_MAX_ATTEMPTS"] = saved_attempts
+        if saved_delay is None:
+            os.environ.pop("OPENROUTER_RETRY_BASE_SECONDS", None)
+        else:
+            os.environ["OPENROUTER_RETRY_BASE_SECONDS"] = saved_delay
+
+    prod = publisher.prod
+    saved_generate = prod.core.generate_grounded
+    saved_ai_calls = prod._AI_CALLS
+    saved_ai_circuit = prod._AI_CIRCUIT_OPEN
+    saved_budget = prod.AI_CALL_BUDGET
+    outer_keys = ("ai_calls", "ai_api_fail", "ai_circuit_open", "ai_circuit_skip")
+    saved_outer_stats = {key: prod.core.b.STATS.get(key, 0) for key in outer_keys}
+    generation_calls = []
+
+    def fail_generation(item, last_error):
+        generation_calls.append(item.get("url"))
+        raise RuntimeError(
+            "OpenRouter failed: HTTP 429 free-models-per-day "
+            "limit_source=openrouter_free_tier_daily"
+        )
+
+    foreign = candidate(
+        "Fuel from South Korea being shipped to Russia as Ukraine war grinds on",
+        "Fuel from South Korea is being shipped to Russia during the war.",
+        source="Reuters",
+        url="https://www.reuters.com/world/quota-regression",
+        category="world_ru",
+    )
+
+    try:
+        prod.core.generate_grounded = fail_generation
+        prod._AI_CALLS = 0
+        prod._AI_CIRCUIT_OPEN = False
+        prod.AI_CALL_BUDGET = 4
+        for key in outer_keys:
+            prod.core.b.STATS[key] = 0
+
+        assert prod.valid_post_v99(foreign) is None
+        assert len(generation_calls) == 1, generation_calls
+        assert prod._AI_CALLS == 1
+        assert prod._AI_CIRCUIT_OPEN is True
+        assert prod.core.b.STATS["ai_circuit_open"] == 1
+
+        assert prod.valid_post_v99(foreign) is None
+        assert len(generation_calls) == 1, generation_calls
+        assert prod._AI_CALLS == 1
+        assert prod.core.b.STATS["ai_circuit_skip"] == 1
+    finally:
+        prod.core.generate_grounded = saved_generate
+        prod._AI_CALLS = saved_ai_calls
+        prod._AI_CIRCUIT_OPEN = saved_ai_circuit
+        prod.AI_CALL_BUDGET = saved_budget
+        for key, value in saved_outer_stats.items():
+            prod.core.b.STATS[key] = value
+
+    health = {"status": "healthy"}
+    circuit_run = {
+        "status": "ok",
+        "published": 0,
+        "stats": {
+            "director_approved": 2,
+            "ai_calls": 1,
+            "ai_api_fail": 1,
+            "ai_budget_exhausted": 0,
+            "ai_circuit_open": 1,
+            "telegram_fail": 0,
+            "publication_contract_blocked": 0,
+        },
+    }
+    assert resilient._generation_provider_unavailable(circuit_run, health) is True
+    no_circuit = copy.deepcopy(circuit_run)
+    no_circuit["stats"]["ai_circuit_open"] = 0
+    assert resilient._generation_provider_unavailable(no_circuit, health) is False
+    published = copy.deepcopy(circuit_run)
+    published["published"] = 1
+    assert resilient._generation_provider_unavailable(published, health) is False
+
 
 def ai_translation_and_scope_regressions():
     # Sakh.online boilerplate must not turn federal Putin/VEF stories into local news.
@@ -1289,6 +1444,7 @@ def main():
     repetition_regression()
     final_contract_and_auditor_regressions()
     openrouter_resilience_regression()
+    openrouter_daily_quota_circuit_regression()
     ai_translation_and_scope_regressions()
     final_russian_title_and_it_regressions()
     current_live_defect_regressions()
