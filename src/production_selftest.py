@@ -961,7 +961,7 @@ def current_live_defect_regressions():
                 url="https://sakhalinmedia.ru/news/regression-theatre/",
                 category="sakh",
             ),
-            "routine_event_without_outcome",
+            "routine_culture_event",
         ),
         (
             candidate(
