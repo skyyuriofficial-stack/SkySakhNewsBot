@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-07T08:33:56+00:00",
-  "checked_at_sakhalin": "2026-10-07T19:33:51+11:00",
+  "checked_at_utc": "2026-10-07T08:35:30+00:00",
+  "checked_at_sakhalin": "2026-10-07T19:35:25+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -39,7 +39,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-07T17:28:42+11:00",
-    "age_hours": 2.09,
+    "age_hours": 2.11,
     "published": 2
   },
   "last_production_attempt": {
@@ -81,20 +81,33 @@
     },
     "evening": {
       "due": false,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-07T08:35:02+00:00",
+        "published_at_sakhalin": "2026-10-07T19:35:02+11:00",
+        "telegram_message_id": 366,
+        "headline": "Нет подтверждений новой волны мобилизации в РФ",
+        "evidence_count": 3,
+        "evidence_hash": "9446be51baacf92dc5782e76b5743a8320127b83fea375702f3616192462e8fa",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "morning",
-      "at_utc": "2026-10-06T21:53:27+00:00",
-      "at_sakhalin": "2026-10-07T08:53:27+11:00"
+      "mode": "evening",
+      "at_utc": "2026-10-07T08:35:02+00:00",
+      "at_sakhalin": "2026-10-07T19:35:02+11:00"
     },
     "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-07T08:33:53+00:00",
+    "checked_at": "2026-10-07T08:35:27+00:00",
     "checked": 13,
     "passed": 11,
     "anomalies": [
@@ -494,7 +507,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-07T08:33:49+00:00",
+    "checked_at_utc": "2026-10-07T08:35:23+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
