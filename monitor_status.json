@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-07T21:56:44+00:00",
-  "checked_at_sakhalin": "2026-10-08T08:56:40+11:00",
+  "checked_at_utc": "2026-10-07T22:01:42+00:00",
+  "checked_at_sakhalin": "2026-10-08T09:01:37+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -19,41 +19,19 @@
       "review_reason": "hyperlocal_service_disruption",
       "corrected_category": null,
       "title_issues": []
-    },
-    {
-      "type": "publisher_stale",
-      "age_hours": 7.83,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-08T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-08T01:06:58+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-10-08T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "evening",
-        "at_utc": "2026-10-07T08:35:02+00:00",
-        "at_sakhalin": "2026-10-07T19:35:02+11:00"
-      }
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-08T01:06:58+11:00",
-    "age_hours": 7.83,
+    "finished_sakhalin": "2026-10-08T09:01:13+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-07T14:07:00+00:00",
+    "checked_at_utc": "2026-10-07T22:01:13+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
@@ -68,11 +46,24 @@
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-08",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-07T21:59:36+00:00",
+        "published_at_sakhalin": "2026-10-08T08:59:36+11:00",
+        "telegram_message_id": 370,
+        "headline": "Отсутствие подтверждённых данных о новой волне мобилизации в РФ",
+        "evidence_count": 4,
+        "evidence_hash": "e88bc55334776fc0ba1cd9fe2cb855e2708e952b9ed58ed6562b80248cbfd018",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     },
     "evening": {
       "due": false,
@@ -81,27 +72,15 @@
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "evening",
-      "at_utc": "2026-10-07T08:35:02+00:00",
-      "at_sakhalin": "2026-10-07T19:35:02+11:00"
+      "mode": "morning",
+      "at_utc": "2026-10-07T21:59:36+00:00",
+      "at_sakhalin": "2026-10-08T08:59:36+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-10-08T08:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "evening",
-          "at_utc": "2026-10-07T08:35:02+00:00",
-          "at_sakhalin": "2026-10-07T19:35:02+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-07T21:56:42+00:00",
+    "checked_at": "2026-10-07T22:01:39+00:00",
     "checked": 14,
     "passed": 13,
     "anomalies": [
@@ -144,19 +123,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 343,
-      "title": "Путин заявил о едином преференциальном режиме для Дальнего Востока с 2027 года",
-      "category_key": "ru_pol",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_pol",
-      "title_issues": []
-    },
     {
       "message_id": 345,
       "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
@@ -325,6 +291,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 371,
+      "title": "Ураганный ветер на севере Сахалина: школьников перевели на дистант",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -346,9 +325,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 7,
+      "local": 8,
       "ru_pol": 1,
-      "ru_eco": 4,
+      "ru_eco": 3,
       "ru_safety": 1,
       "world": 1,
       "it": 2
@@ -362,27 +341,26 @@
       "it": 0.8
     },
     "deficits": {
-      "local": -2.2,
+      "local": -3.2,
       "ru_pol": 2.2,
-      "ru_eco": -0.8,
+      "ru_eco": 0.2,
       "ru_safety": 1.4,
       "world": 0.6,
       "it": -1.2
     },
-    "distribution_error": 8.4,
+    "distribution_error": 8.8,
     "subtype_counts": {
-      "macro_economy": 5,
+      "macro_economy": 4,
       "political_decision": 1,
       "violent_crime": 2,
       "major_it": 2,
-      "severe_weather": 2,
+      "severe_weather": 3,
       "public_service_disruption": 1,
       "major_infrastructure": 1,
       "military_security": 1,
       "geopolitical_event": 1
     },
     "sequence": [
-      "ru_eco",
       "ru_eco",
       "local",
       "ru_pol",
@@ -397,10 +375,10 @@
       "world",
       "it",
       "local",
-      "ru_eco"
+      "ru_eco",
+      "local"
     ],
     "category_sequence": [
-      "ru_eco",
       "ru_eco",
       "sakh",
       "ru_pol",
@@ -415,10 +393,10 @@
       "geo",
       "it",
       "sakh",
-      "ru_eco"
+      "ru_eco",
+      "sakh"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakh.online",
       "sakh.online",
@@ -433,7 +411,8 @@
       "sakhalinmedia.ru",
       "bbc technology",
       "sakh.online",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "sakh.online"
     ],
     "retrospective_anomalies": [
       {
@@ -480,7 +459,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-07T21:56:38+00:00",
+    "checked_at_utc": "2026-10-07T22:01:35+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -524,12 +503,12 @@
     },
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 8.4,
+      "distribution_error": 8.8,
       "limit": 8.0,
       "counts": {
-        "local": 7,
+        "local": 8,
         "ru_pol": 1,
-        "ru_eco": 4,
+        "ru_eco": 3,
         "ru_safety": 1,
         "world": 1,
         "it": 2
@@ -543,9 +522,9 @@
         "it": 1
       },
       "deficits": {
-        "local": -2.2,
+        "local": -3.2,
         "ru_pol": 2.2,
-        "ru_eco": -0.8,
+        "ru_eco": 0.2,
         "ru_safety": 1.4,
         "world": 0.6,
         "it": -1.2
