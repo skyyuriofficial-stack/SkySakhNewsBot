@@ -292,7 +292,9 @@
     "https://www.bbc.co.uk/news/articles/c5j9x9pr0240o?at_medium=RSS&at_campaign=rss",
     "https://sakhalinmedia.ru/news/2642038/",
     "https://sakh.online/news/18/2026-10-07/rayony-na-okraine-yuzhno-sahalinska-ostanutsya-bez-sveta-7-oktyabrya-528164",
-    "https://sakh.online/news/18/2026-10-07/pervyy-v-oblasti-detskiy-tsentr-okean-vozmozhnostey-otkryli-v-korsakove-528201"
+    "https://sakh.online/news/18/2026-10-07/pervyy-v-oblasti-detskiy-tsentr-okean-vozmozhnostey-otkryli-v-korsakove-528201",
+    "https://sakh.online/news/18/2026-10-07/na-onlayn-platformah-vyshel-dokumentalnyy-film-igrayuschie-s-ognem-istorii-diversantov-528301",
+    "https://sakhalinmedia.ru/news/2644243/"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -588,369 +590,12 @@
     "6ce82239ad663477ea14e553f9a60f1ad69dee84",
     "3ab0fb3a3dc4a07878c08dad9783e9b95c08b414",
     "e8bbfa1076db281c2382910a9ac3a8f0008cc9f0",
-    "4e511c97c43b321192d3f5e6fb63833552526c9c"
+    "4e511c97c43b321192d3f5e6fb63833552526c9c",
+    "2048cb452c97c9ad07b285eb7b545893b11d49c1",
+    "e2b59a72c0ac0d5055027b425c5d5154b6ca095f"
   ],
-  "last_run_sakhalin": "2026-10-07T13:51:59+11:00",
+  "last_run_sakhalin": "2026-10-07T17:28:44+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-09-05T02:12:51+11:00",
-      "source": "SakhalinMedia.ru",
-      "category": "🇷🇺 Россия / экономика",
-      "category_key": "ru_eco",
-      "title": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
-      "url": "https://sakhalinmedia.ru/news/2611255/",
-      "image_url": "https://sakhalinmedia.ru/f/big/6367/6366620.jpg?16c9515d6251aa46fb646ad544fc4b97",
-      "image_hash": "3fd05c8bb315dbddabe153af8c768fdb559a434d",
-      "topic_cluster": "ru_eco:сбере_появилась_первая_россии_инвестиционная_копилка",
-      "published_at": "2026-09-04T08:15:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "ru_eco",
-        "corrected_category": "ru_eco",
-        "group": "ru_eco",
-        "event_type": "macro_economy",
-        "subtype": "macro_economy",
-        "seriousness": 85,
-        "threshold": 74,
-        "selection_utility": 61.8,
-        "slot": "backup",
-        "risks": [],
-        "title_original": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
-        "title_corrected": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "К новому учебному году СберИнвестиции запускают ИнвестКопилку для школьников. Теперь можно легко стартовать в инвестициях с 14 лет, а сервис поможет сделать этот процесс для молодых инвесторов простым и понятным за счет автоматических и регулярных отчислений. Это первый подобный продукт для подростков в возрасте от 14 лет, в основе которого находится инвестиционный инструмент, а не депозит, сообщает пресс-служба Сбера. ИнвестКопилка — счёт, на котором подросток сможет учиться инвестировать сам: ● Копилка открывается с лимитом пополнения 5 тысяч рублей в год, а увеличить его можно будет с согласования родителей. ● Пополнения от 100 рублей автоматически вкладываются в биржевой фонд с минимальным уровнем риска — \"Консервативный\" (тикер — SAFE). ● Открытие и обслуживание ИнвестКопилки бесплатные, брокерская комиссия за покупку паев фонда также отсутствует.",
-      "title_original": null,
-      "footer": "РОССИЯ | ЭКОНОМИКА",
-      "published_row": {
-        "reject": false,
-        "title_ru": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
-        "body": [
-          "К новому учебному году СберИнвестиции запускают ИнвестКопилку для школьников.",
-          "Теперь можно легко стартовать в инвестициях с 14 лет, а сервис поможет сделать этот процесс для молодых инвесторов простым и понятным за счет автоматических и регулярных отчислений."
-        ],
-        "footer": "РОССИЯ | ЭКОНОМИКА",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": [],
-          "reclassified_from": "sakh",
-          "reclassified_to": "ru_eco"
-        },
-        "news_director": {
-          "version": "director-v2",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_eco",
-          "corrected_category": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "subtype": "macro_economy",
-          "seriousness": 85,
-          "threshold": 74,
-          "selection_utility": 61.8,
-          "slot": "backup",
-          "risks": [],
-          "title_original": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
-          "title_corrected": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "ru_eco",
-          "final_category": "ru_eco",
-          "event_type": "macro_economy",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "issues": [],
-          "policy_version": "policy-v2.1",
-          "director_review": {
-            "version": "director-v2",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "ru_eco",
-            "corrected_category": "ru_eco",
-            "group": "ru_eco",
-            "event_type": "macro_economy",
-            "subtype": "macro_economy",
-            "seriousness": 83,
-            "threshold": 74,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
-            "title_corrected": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "🇷🇺 Россия / экономика\n\n<b>В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет</b>\n\nК новому учебному году СберИнвестиции запускают ИнвестКопилку для школьников.\n\nТеперь можно легко стартовать в инвестициях с 14 лет, а сервис поможет сделать этот процесс для молодых инвесторов простым и понятным за счет автоматических и регулярных отчислений.\n\nРОССИЯ | ЭКОНОМИКА · <a href=\"https://sakhalinmedia.ru/news/2611255/\">SakhalinMedia.ru</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "ru_eco",
-        "final_category": "ru_eco",
-        "event_type": "macro_economy",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "issues": [],
-        "policy_version": "policy-v2.1",
-        "director_review": {
-          "version": "director-v2",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_eco",
-          "corrected_category": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "subtype": "macro_economy",
-          "seriousness": 83,
-          "threshold": 74,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
-          "title_corrected": "В Сбере появилась первая в России инвестиционная копилка для подростков с 14 лет",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.0",
-      "telegram_message_id": 261,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": [],
-        "reclassified_from": "sakh",
-        "reclassified_to": "ru_eco"
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": false,
-        "checked_at": "2026-09-05T01:07:54+00:00",
-        "reason": "corporate_product_or_brand_pr",
-        "issues": [],
-        "auto_action": "deleted_invalid_v12_post"
-      },
-      "auto_deleted": true
-    },
-    {
-      "time_sakhalin": "2026-09-05T09:12:04+11:00",
-      "source": "SakhalinMedia.ru",
-      "category": "🇷🇺 Россия / экономика",
-      "category_key": "ru_eco",
-      "title": "Сбер открывает клиентам доступ к цифровому рублю",
-      "url": "https://sakhalinmedia.ru/news/2611303/",
-      "image_url": "https://sakhalinmedia.ru/f/big/6367/6366696.jpg?dadcb313c1c00548b9a6e66cd2158148",
-      "image_hash": "e5b675784ea38af02d5a48902e3906f8adf81871",
-      "topic_cluster": "ru_eco:открывает_клиентам_доступ_цифровому_рублю_sakhalinmedia",
-      "published_at": "2026-09-04T08:45:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "ru_eco",
-        "corrected_category": "ru_eco",
-        "group": "ru_eco",
-        "event_type": "macro_economy",
-        "subtype": "macro_economy",
-        "seriousness": 80,
-        "threshold": 74,
-        "selection_utility": 55.0,
-        "slot": "backup",
-        "risks": [],
-        "title_original": "Сбер открывает клиентам доступ к цифровому рублю",
-        "title_corrected": "Сбер открывает клиентам доступ к цифровому рублю",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "Сбер подготовил сервисы для работы с цифровым рублём в соответствии со стандартами Банка России. Новая форма национальной валюты дополняет наличные и привычные безналичные деньги — клиент сам выбирает, какой формой денег ему удобнее пользоваться, сообщает пресс-служба Сбера. С 1 сентября они смогут открыть счёт цифрового рубля в СберБанк Онлайн, переводить цифровые рубли и оплачивать ими покупки и услуги Открыть счёт цифрового рубля можно в СберБанк Онлайн (6+) через кнопку \"Оформить карту или счёт\". В привычном интерфейсе клиент сможет пройти весь путь — от открытия счёта до перевода или оплаты. На первом этапе сервис будет доступен на устройствах с операционной системой Android с версией мобильного приложения не ниже 17.11. Позднее возможность пользоваться сервисом появится и на iOS. Цифровым рублём можно оплачивать покупки и услуги как в физических торговых точках, так и на сайтах онлайн-магазинов. Для приёма оплаты цифровым рублём партнёру необходимо иметь подключённый счёт цифрового рубля и обновить интеграцию со Сбером для работы с новым способом оплаты. Привычные способы расчётов сохраняются: банковские карты, переводы по номеру телефона, наличные и обычные безналичные платежи продолжат работать как прежде. Кроме того, за консультацией можно обратиться в контактный центр Сбера. Специалисты помогут разобраться в сервисе и ответят на вопросы по операциям. Счёт цифрового рубля ведётся на платформе Банка России, а Сбер обеспечивает клиентам доступ к сервису через СберБанк Онлайн. Работа с новой формой денег организована с соблюдением требований Банка России к защите информации, надёжности операций и противодействию мошенничеству.",
-      "title_original": null,
-      "footer": "РОССИЯ | ЭКОНОМИКА",
-      "published_row": {
-        "reject": false,
-        "title_ru": "Сбер открывает клиентам доступ к цифровому рублю",
-        "body": [
-          "Сбер подготовил сервисы для работы с цифровым рублём в соответствии со стандартами Банка России.",
-          "Новая форма национальной валюты дополняет наличные и привычные безналичные деньги — клиент сам выбирает, какой формой денег ему удобнее пользоваться, сообщает пресс-служба Сбера."
-        ],
-        "footer": "РОССИЯ | ЭКОНОМИКА",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": [],
-          "reclassified_from": "sakh",
-          "reclassified_to": "ru_eco"
-        },
-        "news_director": {
-          "version": "director-v2",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_eco",
-          "corrected_category": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "subtype": "macro_economy",
-          "seriousness": 80,
-          "threshold": 74,
-          "selection_utility": 55.0,
-          "slot": "backup",
-          "risks": [],
-          "title_original": "Сбер открывает клиентам доступ к цифровому рублю",
-          "title_corrected": "Сбер открывает клиентам доступ к цифровому рублю",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "ru_eco",
-          "final_category": "ru_eco",
-          "event_type": "macro_economy",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "issues": [],
-          "policy_version": "policy-v2.1",
-          "director_review": {
-            "version": "director-v2",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "ru_eco",
-            "corrected_category": "ru_eco",
-            "group": "ru_eco",
-            "event_type": "macro_economy",
-            "subtype": "macro_economy",
-            "seriousness": 82,
-            "threshold": 74,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "Сбер открывает клиентам доступ к цифровому рублю",
-            "title_corrected": "Сбер открывает клиентам доступ к цифровому рублю",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "🇷🇺 Россия / экономика\n\n<b>Сбер открывает клиентам доступ к цифровому рублю</b>\n\nСбер подготовил сервисы для работы с цифровым рублём в соответствии со стандартами Банка России.\n\nНовая форма национальной валюты дополняет наличные и привычные безналичные деньги — клиент сам выбирает, какой формой денег ему удобнее пользоваться, сообщает пресс-служба Сбера.\n\nРОССИЯ | ЭКОНОМИКА · <a href=\"https://sakhalinmedia.ru/news/2611303/\">SakhalinMedia.ru</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "ru_eco",
-        "final_category": "ru_eco",
-        "event_type": "macro_economy",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "issues": [],
-        "policy_version": "policy-v2.1",
-        "director_review": {
-          "version": "director-v2",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_eco",
-          "corrected_category": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "subtype": "macro_economy",
-          "seriousness": 82,
-          "threshold": 74,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Сбер открывает клиентам доступ к цифровому рублю",
-          "title_corrected": "Сбер открывает клиентам доступ к цифровому рублю",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.0",
-      "telegram_message_id": 262,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": [],
-        "reclassified_from": "sakh",
-        "reclassified_to": "ru_eco"
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": false,
-        "checked_at": "2026-09-05T01:07:55+00:00",
-        "reason": "corporate_product_or_brand_pr",
-        "issues": [
-          "final_hard_reject:corporate_product_or_brand_pr",
-          "final_category_mismatch:None->ru_eco",
-          "director_final_category:None->ru_eco",
-          "director_final_reject:corporate_product_or_brand_pr"
-        ],
-        "auto_action": "deleted_invalid_v12_post"
-      },
-      "auto_deleted": true
-    },
     {
       "time_sakhalin": "2026-09-05T09:12:13+11:00",
       "source": "SakhalinMedia.ru",
@@ -11467,7 +11112,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-10-07T02:52:47+00:00",
+        "checked_at": "2026-10-07T06:21:26+00:00",
         "reason": "hyperlocal_service_disruption",
         "issues": [
           "final_hard_reject:hyperlocal_service_disruption",
@@ -12025,7 +11670,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T02:52:47+00:00"
+        "checked_at": "2026-10-07T06:21:26+00:00"
       }
     },
     {
@@ -12214,7 +11859,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-10-07T02:52:47+00:00",
+        "checked_at": "2026-10-07T06:21:26+00:00",
         "reason": "local_official_statement_without_decision",
         "issues": [
           "director_final_reject:local_official_statement_without_decision"
@@ -12399,7 +12044,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T02:52:47+00:00"
+        "checked_at": "2026-10-07T06:21:26+00:00"
       }
     },
     {
@@ -12576,7 +12221,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-10-07T02:52:47+00:00",
+        "checked_at": "2026-10-07T06:21:26+00:00",
         "reason": "hyperlocal_service_disruption",
         "issues": [
           "final_hard_reject:hyperlocal_service_disruption",
@@ -12764,7 +12409,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T02:52:47+00:00"
+        "checked_at": "2026-10-07T06:21:26+00:00"
       }
     },
     {
@@ -13714,7 +13359,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T02:52:47+00:00"
+        "checked_at": "2026-10-07T06:21:26+00:00"
       }
     },
     {
@@ -13891,7 +13536,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T02:52:48+00:00"
+        "checked_at": "2026-10-07T06:21:27+00:00"
       }
     },
     {
@@ -14453,7 +14098,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T02:52:48+00:00"
+        "checked_at": "2026-10-07T06:21:27+00:00"
       }
     },
     {
@@ -14630,7 +14275,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T02:52:48+00:00"
+        "checked_at": "2026-10-07T06:21:27+00:00"
       }
     },
     {
@@ -14807,7 +14452,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T02:52:48+00:00"
+        "checked_at": "2026-10-07T06:21:27+00:00"
       }
     },
     {
@@ -14984,7 +14629,359 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T02:52:48+00:00"
+        "checked_at": "2026-10-07T06:21:27+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-10-07T17:25:14+11:00",
+      "source": "Sakh.online",
+      "category": "🇷🇺 Россия / безопасность",
+      "category_key": "ru_security",
+      "title": "«Играющие с огнем»: как вербуют диверсантов для поджогов в России",
+      "url": "https://sakh.online/news/18/2026-10-07/na-onlayn-platformah-vyshel-dokumentalnyy-film-igrayuschie-s-ognem-istorii-diversantov-528301",
+      "image_url": "https://sakh.online/attachments/5cd3ff7a6e544d59553ccd3fc46d3eb1584602a3/store/crop/100/0/633/358/800/0/0/0/819e2d20f856f39e09c3a8f946525f95bf86212047d4a6f6f54995a513d7/819e2d20f856f39e09c3a8f946525f95bf86212047d4a6f6f54995a513d7.webp",
+      "image_hash": "c1bf2a9ff31eafc5ffcc64eb980717b23aada41d",
+      "topic_cluster": "ru_security:играющие_огнем_вербуют_диверсантов_поджогов_россии",
+      "published_at": "2026-10-06T13:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "ru_security",
+        "corrected_category": "ru_security",
+        "group": "ru_safety",
+        "event_type": "military_security",
+        "subtype": "military_security",
+        "seriousness": 98,
+        "threshold": 76,
+        "selection_utility": 178.3,
+        "slot": 1,
+        "risks": [],
+        "title_original": "«Играющие с огнем»: как вербуют диверсантов для поджогов в России",
+        "title_corrected": "«Играющие с огнем»: как вербуют диверсантов для поджогов в России",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Ни стримингах вышел фильм о том, как украинские кураторы вербуют россиян для диверсий и терактов. На российских видеосервисах — Rutube, Smotrim и rtdoc.tv — появился документальный фильм Вячеслава Гузя «Играющие с огнем. Истории диверсантов». В современном мире вербовка людей для диверсионной деятельности через интернет и мессенджеры представляет собой серьезную социальную опасность. Украинские спецслужбы и их пособники методично используют человеческие слабости: наивность, финансовые затруднения и стремление к быстрому и легкому обогащению. Подобные инциденты зафиксировали в различных уголках страны: в Оренбурге, Краснодаре, Красноярске, Чите, Сестрорецке и других регионах. Люди, соблазненные перспективой денежного вознаграждения, идут на поджоги, вредят инфраструктуре, готовят террористические акты — и в результате оказываются на скамье подсудимых, рискуя получить внушительные сроки заключения, вплоть до пожизненного. Картина «Играющие с огнем. Истории диверсантов» проливает свет на изнанку процесса вербовки и демонстрирует его трагические последствия. В фильме рассказаны истории нескольких россиян, которые поддались на уловки украинских кураторов и преступили закон. Так, житель Оренбурга Алексей замышлял повреждение железнодорожного полотна, Эдуард из Краснодара готовился устроить теракт на автозаправке, а Кирилл из Красноярска совершал поджоги релейных шкафов и вынашивал планы атаки на авиационную технику.",
+      "title_original": null,
+      "footer": "РОССИЯ | БЕЗОПАСНОСТЬ",
+      "published_row": {
+        "reject": false,
+        "title_ru": "«Играющие с огнем»: как вербуют диверсантов для поджогов в России",
+        "body": [
+          "Ни стримингах вышел фильм о том, как украинские кураторы вербуют россиян для диверсий и терактов.",
+          "В современном мире вербовка людей для диверсионной деятельности через интернет и мессенджеры представляет собой серьезную социальную опасность."
+        ],
+        "footer": "РОССИЯ | БЕЗОПАСНОСТЬ",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh_chp",
+          "reclassified_to": "ru_security"
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_security",
+          "corrected_category": "ru_security",
+          "group": "ru_safety",
+          "event_type": "military_security",
+          "subtype": "military_security",
+          "seriousness": 98,
+          "threshold": 76,
+          "selection_utility": 178.3,
+          "slot": 1,
+          "risks": [],
+          "title_original": "«Играющие с огнем»: как вербуют диверсантов для поджогов в России",
+          "title_corrected": "«Играющие с огнем»: как вербуют диверсантов для поджогов в России",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "ru_security",
+          "final_category": "ru_security",
+          "event_type": "military_security",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.6",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "ru_security",
+            "corrected_category": "ru_security",
+            "group": "ru_safety",
+            "event_type": "military_security",
+            "subtype": "military_security",
+            "seriousness": 93,
+            "threshold": 76,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "«Играющие с огнем»: как вербуют диверсантов для поджогов в России",
+            "title_corrected": "«Играющие с огнем»: как вербуют диверсантов для поджогов в России",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "🇷🇺 Россия / безопасность\n\n<b>«Играющие с огнем»: как вербуют диверсантов для поджогов в России</b>\n\nНи стримингах вышел фильм о том, как украинские кураторы вербуют россиян для диверсий и терактов.\n\nВ современном мире вербовка людей для диверсионной деятельности через интернет и мессенджеры представляет собой серьезную социальную опасность.\n\nРОССИЯ | БЕЗОПАСНОСТЬ · <a href=\"https://sakh.online/news/18/2026-10-07/na-onlayn-platformah-vyshel-dokumentalnyy-film-igrayuschie-s-ognem-istorii-diversantov-528301\">Sakh.online</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_security",
+        "final_category": "ru_security",
+        "event_type": "military_security",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.6",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_security",
+          "corrected_category": "ru_security",
+          "group": "ru_safety",
+          "event_type": "military_security",
+          "subtype": "military_security",
+          "seriousness": 93,
+          "threshold": 76,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "«Играющие с огнем»: как вербуют диверсантов для поджогов в России",
+          "title_corrected": "«Играющие с огнем»: как вербуют диверсантов для поджогов в России",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 364,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh_chp",
+        "reclassified_to": "ru_security"
+      }
+    },
+    {
+      "time_sakhalin": "2026-10-07T17:28:34+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "🧭 Геополитика",
+      "category_key": "geo",
+      "title": "Посольство США рекомендовало американцам покинуть Россию на фоне ситуации в Приангарье",
+      "url": "https://sakhalinmedia.ru/news/2644243/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6438/6437185.jpg?d5050bac039ff8162647ac1a8c4ec5bb",
+      "image_hash": "14efe33737d2add961c789d6a85db0ee32813a4f",
+      "topic_cluster": "geo:посольство_рекомендовало_американцам_покинуть_россию_ситуации",
+      "published_at": "2026-10-07T04:30:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "geo",
+        "corrected_category": "geo",
+        "group": "world",
+        "event_type": "geopolitical_event",
+        "subtype": "geopolitical_event",
+        "seriousness": 88,
+        "threshold": 78,
+        "selection_utility": 146.1,
+        "slot": "backup",
+        "risks": [],
+        "title_original": "Посольство США рекомендовало американцам покинуть Россию на фоне ситуации в Приангарье",
+        "title_corrected": "Посольство США рекомендовало американцам покинуть Россию на фоне ситуации в Приангарье",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Посольство США в России 6 октября опубликовало медицинское предупреждение в связи с ситуацией в Приангарье и гибелью сотрудницы Иркутского научно-исследовательского противочумного института Сибири и Дальнего Востока. В диппредставительстве сообщили, что продолжают внимательно следить за ситуацией. В диппредставительстве заявили, что внимательно следят за ситуацией и предупредили о возможных ограничениях на поездки. В посольстве отметили, что возможности правительства США по оказанию помощи американским гражданам в России ограничены, особенно за пределами Москвы. Сотрудники американских государственных учреждений также могут столкнуться с дополнительными ограничениями на личные и служебные поездки в отдельные регионы из-за санитарных и связанных с безопасностью рисков. В диппредставительстве напомнили, что для России по-прежнему действует рекомендация Госдепартамента США четвертого уровня \"не посещать\". Американским гражданам, которые находятся в РФ, рекомендуют немедленно покинуть страну. Тем, кто планирует поездку, настоятельно советуют отказаться от нее из-за риска неправомерного задержания и соображений безопасности. Американцам, находящимся в районе предполагаемой вспышки, рекомендуют следовать указаниям местных органов здравоохранения и избегать затронутых учреждений. При появлении температуры или респираторных симптомов им советуют своевременно обращаться за медицинской помощью. После поездки в район, где произошла вспышка, гражданам США рекомендуют следить за состоянием здоровья в течение 14 дней. Также в посольстве советуют ознакомиться с информацией Центров по контролю и профилактике заболеваний США о заболевании и обновлениями для путешественников по России.",
+      "title_original": null,
+      "footer": "МИР | ГЕОПОЛИТИКА",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Посольство США рекомендовало американцам покинуть Россию на фоне ситуации в Приангарье",
+        "body": [
+          "Посольство США в России 6 октября опубликовало медицинское предупреждение в связи с ситуацией в Приангарье и гибелью сотрудницы Иркутского научно-исследовательского противочумного института Сибири и Дальнего Востока.",
+          "В диппредставительстве сообщили, что продолжают внимательно следить за ситуацией."
+        ],
+        "footer": "МИР | ГЕОПОЛИТИКА",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh",
+          "reclassified_to": "geo"
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "geo",
+          "corrected_category": "geo",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "subtype": "geopolitical_event",
+          "seriousness": 88,
+          "threshold": 78,
+          "selection_utility": 146.1,
+          "slot": "backup",
+          "risks": [],
+          "title_original": "Посольство США рекомендовало американцам покинуть Россию на фоне ситуации в Приангарье",
+          "title_corrected": "Посольство США рекомендовало американцам покинуть Россию на фоне ситуации в Приангарье",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "geo",
+          "final_category": "geo",
+          "event_type": "geopolitical_event",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.6",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "geo",
+            "corrected_category": "geo",
+            "group": "world",
+            "event_type": "geopolitical_event",
+            "subtype": "geopolitical_event",
+            "seriousness": 87,
+            "threshold": 78,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Посольство США рекомендовало американцам покинуть Россию на фоне ситуации в Приангарье",
+            "title_corrected": "Посольство США рекомендовало американцам покинуть Россию на фоне ситуации в Приангарье",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "🧭 Геополитика\n\n<b>Посольство США рекомендовало американцам покинуть Россию на фоне ситуации в Приангарье</b>\n\nПосольство США в России 6 октября опубликовало медицинское предупреждение в связи с ситуацией в Приангарье и гибелью сотрудницы Иркутского научно-исследовательского противочумного института Сибири и Дальнего Востока.\n\nВ диппредставительстве сообщили, что продолжают внимательно следить за ситуацией.\n\nМИР | ГЕОПОЛИТИКА · <a href=\"https://sakhalinmedia.ru/news/2644243/\">SakhalinMedia.ru</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "geo",
+        "final_category": "geo",
+        "event_type": "geopolitical_event",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.6",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "geo",
+          "corrected_category": "geo",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "subtype": "geopolitical_event",
+          "seriousness": 87,
+          "threshold": 78,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Посольство США рекомендовало американцам покинуть Россию на фоне ситуации в Приангарье",
+          "title_corrected": "Посольство США рекомендовало американцам покинуть Россию на фоне ситуации в Приангарье",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 365,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh",
+        "reclassified_to": "geo"
       }
     }
   ],
@@ -15213,11 +15210,11 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-10-07T13:43:48+11:00",
+    "started_sakhalin": "2026-10-07T17:21:22+11:00",
     "status": "ok",
-    "candidates": 7,
-    "published": 0,
-    "local_candidates": 0,
+    "candidates": 14,
+    "published": 2,
+    "local_candidates": 3,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -15237,8 +15234,8 @@
         {
           "source": "ASTV HTML",
           "status": "ok",
-          "entries": 21,
-          "recent": 15
+          "entries": 22,
+          "recent": 16
         },
         {
           "source": "Sakh.online HTML",
@@ -15248,23 +15245,23 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-10-07T13:51:57+11:00",
+    "finished_sakhalin": "2026-10-07T17:28:42+11:00",
     "stats": {
       "rss_seen": 160,
-      "old_skip": 60,
+      "old_skip": 61,
       "google_skip": 13,
-      "duplicate_skip": 2,
-      "low_info_skip": 13,
+      "duplicate_skip": 0,
+      "low_info_skip": 11,
       "category_skip": 38,
       "no_image_skip": 0,
-      "bad_image_skip": 12,
-      "logo_image_skip": 32,
-      "text_card_image_skip": 4,
-      "candidates": 31,
+      "bad_image_skip": 14,
+      "logo_image_skip": 22,
+      "text_card_image_skip": 3,
+      "candidates": 29,
       "rewrite_retry": 4,
-      "editorial_skip": 7,
+      "editorial_skip": 2,
       "telegram_fail": 0,
-      "published": 0,
+      "published": 2,
       "telegram_source_attempt": 2,
       "telegram_source_fail": 0,
       "telegram_source_seen": 22,
@@ -15274,21 +15271,21 @@
       "ai_api_fail": 4,
       "evidence_reject": 0,
       "validation_reject": 0,
-      "extractive_fallback": 0,
-      "extractive_first": 0,
-      "editorial_prechecked": 54,
-      "editorial_gate_checked": 7,
-      "editorial_gate_pass": 0,
-      "editorial_gate_reject": 1,
+      "extractive_fallback": 2,
+      "extractive_first": 2,
+      "editorial_prechecked": 53,
+      "editorial_gate_checked": 4,
+      "editorial_gate_pass": 2,
+      "editorial_gate_reject": 0,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 0,
       "editorial_gate_ai_fail": 0,
-      "editorial_title_reject": 1,
-      "editorial_category_reject": 1,
+      "editorial_title_reject": 0,
+      "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 10,
-      "editorial_offtopic_reject": 19,
-      "openrouter_empty_content": 12,
+      "editorial_reclassified": 11,
+      "editorial_offtopic_reject": 18,
+      "openrouter_empty_content": 11,
       "openrouter_model_fallback": 0,
       "openrouter_attempts": 12,
       "openrouter_retries": 8,
@@ -15296,12 +15293,12 @@
       "openrouter_success": 0,
       "openrouter_circuit_open": 0,
       "editorial_grounded_translation_fallback": 0,
-      "media_required_skip": 3,
+      "media_required_skip": 6,
       "media_generic_skip": 0,
-      "media_ready_candidates": 31,
+      "media_ready_candidates": 29,
       "photo_retry": 0,
-      "photo_publish": 0,
-      "photo_upload_original": 0,
+      "photo_publish": 2,
+      "photo_upload_original": 2,
       "photo_upload_reencoded": 0,
       "photo_upload_plain_caption": 0,
       "photo_remote_url": 0,
@@ -15312,14 +15309,14 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 31,
-      "director_approved": 7,
-      "director_rejected": 24,
+      "director_seen": 29,
+      "director_approved": 14,
+      "director_rejected": 15,
       "director_reclassified": 0,
       "director_title_corrected": 3,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
-      "director_final_checked": 0,
+      "director_final_checked": 2,
       "director_final_autocorrected": 0,
       "director_final_reject": 0,
       "director_pending_retired": 0,
@@ -15471,41 +15468,68 @@
         ],
         "valid_posts_counted": 15
       },
-      "candidate_count": 31,
-      "approved_count": 7,
-      "rejected_count": 24,
+      "candidate_count": 29,
+      "approved_count": 14,
+      "rejected_count": 15,
       "rejected_by_reason": {
-        "low_scale_incident_not_release_worthy": 5,
-        "importance_below_threshold": 16,
-        "minor_or_routine_crime": 3
+        "ordinary_weather_not_release_worthy": 3,
+        "importance_below_threshold": 12
       },
       "ai_review_requested": 0,
       "ai_review_received": 0,
       "selected_groups": [
-        "world",
-        "it"
+        "ru_safety",
+        "world"
       ],
-      "projected_distribution_error": 11.3,
+      "projected_distribution_error": 9.3,
       "projected_counts": {
         "local": 8,
         "ru_eco": 5,
         "ru_pol": 1,
-        "it": 2,
+        "it": 1,
+        "ru_safety": 1,
         "world": 1
       },
       "projected_length": 17,
       "selected_preview": [
         {
           "slot": 1,
+          "title": "«Играющие с огнем»: как вербуют диверсантов для поджогов в России",
+          "category_key": "ru_security",
+          "group": "ru_safety",
+          "event_type": "military_security",
+          "seriousness": 98,
+          "utility": 178.3
+        },
+        {
+          "slot": 2,
+          "title": "Fear and disruption for Ukraine's rail passengers as Russia escalates drone attacks",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "military_security",
+          "seriousness": 96,
+          "utility": 155.3
+        },
+        {
+          "slot": "backup",
           "title": "Fuel from South Korea being shipped to Russia as Ukraine war grinds on",
           "category_key": "world_ru",
           "group": "world",
           "event_type": "geopolitical_event",
           "seriousness": 90,
-          "utility": 149.3
+          "utility": 148.1
         },
         {
-          "slot": 2,
+          "slot": "backup",
+          "title": "Посольство США рекомендовало американцам покинуть Россию на фоне ситуации в Приангарье",
+          "category_key": "geo",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "seriousness": 88,
+          "utility": 146.1
+        },
+        {
+          "slot": "backup",
           "title": "Finland orders halt to work on two Google data centres",
           "category_key": "it",
           "group": "it",
@@ -15520,7 +15544,7 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 86,
-          "utility": 54.0
+          "utility": 84.0
         },
         {
           "slot": "backup",
@@ -15529,7 +15553,7 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 85,
-          "utility": 53.0
+          "utility": 83.0
         },
         {
           "slot": "backup",
@@ -15538,7 +15562,7 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 82,
-          "utility": 50.0
+          "utility": 80.0
         },
         {
           "slot": "backup",
@@ -15547,7 +15571,7 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 81,
-          "utility": 49.0
+          "utility": 79.0
         },
         {
           "slot": "backup",
@@ -15556,7 +15580,7 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 81,
-          "utility": 49.0
+          "utility": 79.0
         }
       ],
       "rolling_balance_after": {
@@ -15578,42 +15602,43 @@
           "it": 5.0
         },
         "counts": {
-          "local": 8,
+          "local": 7,
           "ru_pol": 1,
           "ru_eco": 5,
-          "ru_safety": 0,
-          "world": 0,
+          "ru_safety": 1,
+          "world": 1,
           "it": 1
         },
         "scaled_targets": {
-          "local": 4.5,
-          "ru_pol": 3.0,
-          "ru_eco": 3.0,
-          "ru_safety": 2.25,
-          "world": 1.5,
-          "it": 0.75
+          "local": 4.8,
+          "ru_pol": 3.2,
+          "ru_eco": 3.2,
+          "ru_safety": 2.4,
+          "world": 1.6,
+          "it": 0.8
         },
         "deficits": {
-          "local": -3.5,
-          "ru_pol": 2.0,
-          "ru_eco": -2.0,
-          "ru_safety": 2.25,
-          "world": 1.5,
-          "it": -0.25
+          "local": -2.2,
+          "ru_pol": 2.2,
+          "ru_eco": -1.8,
+          "ru_safety": 1.4,
+          "world": 0.6,
+          "it": -0.2
         },
-        "distribution_error": 11.5,
+        "distribution_error": 8.4,
         "subtype_counts": {
-          "violent_crime": 3,
           "macro_economy": 6,
           "major_emergency": 1,
           "political_decision": 1,
+          "violent_crime": 2,
           "major_it": 1,
           "severe_weather": 1,
           "public_service_disruption": 1,
-          "major_infrastructure": 1
+          "major_infrastructure": 1,
+          "military_security": 1,
+          "geopolitical_event": 1
         },
         "sequence": [
-          "local",
           "ru_eco",
           "local",
           "ru_eco",
@@ -15627,10 +15652,11 @@
           "it",
           "local",
           "local",
-          "local"
+          "local",
+          "ru_safety",
+          "world"
         ],
         "category_sequence": [
-          "sakh_chp",
           "ru_eco",
           "sakh_chp",
           "ru_eco",
@@ -15644,10 +15670,11 @@
           "it",
           "sakh",
           "sakh",
-          "sakh"
+          "sakh",
+          "ru_security",
+          "geo"
         ],
         "source_sequence": [
-          "sakhalinmedia.ru",
           "sakhalinmedia.ru",
           "astv",
           "sakhalinmedia.ru",
@@ -15661,15 +15688,11 @@
           "bbc technology",
           "sakhalinmedia.ru",
           "sakh.online",
-          "sakh.online"
+          "sakh.online",
+          "sakh.online",
+          "sakhalinmedia.ru"
         ],
         "retrospective_anomalies": [
-          {
-            "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-            "category_key": "ru_incident",
-            "reason": "low_scale_incident_not_release_worthy",
-            "corrected_category": "ru_incident"
-          },
           {
             "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
             "category_key": "it",
@@ -15695,12 +15718,12 @@
             "corrected_category": null
           }
         ],
-        "valid_posts_counted": 15
+        "valid_posts_counted": 16
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-10-07T02:43:54+00:00",
+      "checked_at": "2026-10-07T06:21:27+00:00",
       "checked": 12,
       "passed": 9,
       "anomalies": [
@@ -15801,11 +15824,11 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 31,
-      "missing_media_rejected": 3,
+      "ready_candidates": 29,
+      "missing_media_rejected": 6,
       "generic_media_rejected": 0,
       "photo_retries": 0,
-      "photo_published": 0,
+      "photo_published": 2,
       "deferred_this_run": 0,
       "pending_queue_size": 0,
       "pending_ready": 0,
@@ -15815,110 +15838,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 54,
-      "checked": 7,
-      "passed": 0,
-      "rejected": 1,
-      "reclassified": 10,
-      "offtopic_reject": 19,
+      "prechecked": 53,
+      "checked": 4,
+      "passed": 2,
+      "rejected": 0,
+      "reclassified": 11,
+      "offtopic_reject": 18,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
-      "audited_urls": 1
-    },
-    "independent_post_publication_monitor": {
-      "version": "post-audit-v1.1",
-      "checked_at": "2026-10-07T02:52:48+00:00",
-      "checked": 12,
-      "passed": 9,
-      "anomalies": [
-        {
-          "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
-          "url": "https://sakhalinmedia.ru/news/2639632/",
-          "publisher_version": "stable-v12.1",
-          "category_key": "sakh",
-          "corrected_category": null,
-          "reason": "hyperlocal_service_disruption",
-          "contract_issues": [
-            "final_hard_reject:hyperlocal_service_disruption",
-            "final_category_mismatch:None->sakh",
-            "director_final_category:None->sakh",
-            "director_final_reject:hyperlocal_service_disruption"
-          ]
-        },
-        {
-          "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
-          "url": "https://sakh.online/news/18/2026-10-04/ministr-olga-orlova-rasskazala-o-podderzhke-semey-sahalinskom-dolgoletii-i-novyh-merah-sotszaschity-527914",
-          "publisher_version": "stable-v12.1",
-          "category_key": "sakh",
-          "corrected_category": "sakh",
-          "reason": "local_official_statement_without_decision",
-          "contract_issues": [
-            "director_final_reject:local_official_statement_without_decision"
-          ]
-        },
-        {
-          "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
-          "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
-          "publisher_version": "stable-v12.1",
-          "category_key": "sakh",
-          "corrected_category": null,
-          "reason": "hyperlocal_service_disruption",
-          "contract_issues": [
-            "final_hard_reject:hyperlocal_service_disruption",
-            "final_category_mismatch:None->sakh",
-            "director_final_category:None->sakh",
-            "director_final_reject:hyperlocal_service_disruption"
-          ]
-        }
-      ],
-      "corrected": [],
-      "deleted": [],
-      "failed_actions": [],
-      "unresolved": 3,
-      "unresolved_items": [
-        {
-          "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
-          "url": "https://sakhalinmedia.ru/news/2639632/",
-          "publisher_version": "stable-v12.1",
-          "category_key": "sakh",
-          "corrected_category": null,
-          "reason": "hyperlocal_service_disruption",
-          "contract_issues": [
-            "final_hard_reject:hyperlocal_service_disruption",
-            "final_category_mismatch:None->sakh",
-            "director_final_category:None->sakh",
-            "director_final_reject:hyperlocal_service_disruption"
-          ]
-        },
-        {
-          "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
-          "url": "https://sakh.online/news/18/2026-10-04/ministr-olga-orlova-rasskazala-o-podderzhke-semey-sahalinskom-dolgoletii-i-novyh-merah-sotszaschity-527914",
-          "publisher_version": "stable-v12.1",
-          "category_key": "sakh",
-          "corrected_category": "sakh",
-          "reason": "local_official_statement_without_decision",
-          "contract_issues": [
-            "director_final_reject:local_official_statement_without_decision"
-          ]
-        },
-        {
-          "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
-          "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
-          "publisher_version": "stable-v12.1",
-          "category_key": "sakh",
-          "corrected_category": null,
-          "reason": "hyperlocal_service_disruption",
-          "contract_issues": [
-            "final_hard_reject:hyperlocal_service_disruption",
-            "final_category_mismatch:None->sakh",
-            "director_final_category:None->sakh",
-            "director_final_reject:hyperlocal_service_disruption"
-          ]
-        }
-      ],
-      "mutations_enabled": true,
-      "legacy_posts_mutated": false
+      "audited_urls": 2
     }
   },
   "pending_media_delivery": [],
@@ -15963,42 +15892,43 @@
       "it": 5.0
     },
     "counts": {
-      "local": 8,
+      "local": 7,
       "ru_pol": 1,
       "ru_eco": 5,
-      "ru_safety": 0,
-      "world": 0,
+      "ru_safety": 1,
+      "world": 1,
       "it": 1
     },
     "scaled_targets": {
-      "local": 4.5,
-      "ru_pol": 3.0,
-      "ru_eco": 3.0,
-      "ru_safety": 2.25,
-      "world": 1.5,
-      "it": 0.75
+      "local": 4.8,
+      "ru_pol": 3.2,
+      "ru_eco": 3.2,
+      "ru_safety": 2.4,
+      "world": 1.6,
+      "it": 0.8
     },
     "deficits": {
-      "local": -3.5,
-      "ru_pol": 2.0,
-      "ru_eco": -2.0,
-      "ru_safety": 2.25,
-      "world": 1.5,
-      "it": -0.25
+      "local": -2.2,
+      "ru_pol": 2.2,
+      "ru_eco": -1.8,
+      "ru_safety": 1.4,
+      "world": 0.6,
+      "it": -0.2
     },
-    "distribution_error": 11.5,
+    "distribution_error": 8.4,
     "subtype_counts": {
-      "violent_crime": 3,
       "macro_economy": 6,
       "major_emergency": 1,
       "political_decision": 1,
+      "violent_crime": 2,
       "major_it": 1,
       "severe_weather": 1,
       "public_service_disruption": 1,
-      "major_infrastructure": 1
+      "major_infrastructure": 1,
+      "military_security": 1,
+      "geopolitical_event": 1
     },
     "sequence": [
-      "local",
       "ru_eco",
       "local",
       "ru_eco",
@@ -16012,10 +15942,11 @@
       "it",
       "local",
       "local",
-      "local"
+      "local",
+      "ru_safety",
+      "world"
     ],
     "category_sequence": [
-      "sakh_chp",
       "ru_eco",
       "sakh_chp",
       "ru_eco",
@@ -16029,10 +15960,11 @@
       "it",
       "sakh",
       "sakh",
-      "sakh"
+      "sakh",
+      "ru_security",
+      "geo"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
@@ -16046,15 +15978,11 @@
       "bbc technology",
       "sakhalinmedia.ru",
       "sakh.online",
-      "sakh.online"
+      "sakh.online",
+      "sakh.online",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [
-      {
-        "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-        "category_key": "ru_incident",
-        "reason": "low_scale_incident_not_release_worthy",
-        "corrected_category": "ru_incident"
-      },
       {
         "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
         "category_key": "it",
@@ -16080,7 +16008,7 @@
         "corrected_category": null
       }
     ],
-    "valid_posts_counted": 15
+    "valid_posts_counted": 16
   },
   "expired_media_delivery": [
     {
@@ -21993,7 +21921,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-07T02:52:48+00:00",
+    "checked_at": "2026-10-07T06:21:27+00:00",
     "checked": 12,
     "passed": 9,
     "anomalies": [
@@ -23021,7 +22949,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-10-07T02:43:47+00:00",
+    "checked_at_utc": "2026-10-07T06:21:21+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -23044,18 +22972,18 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-10-07T02:51:59+00:00",
+    "checked_at_utc": "2026-10-07T06:28:44+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
-    "status": "blocked",
-    "reason": "generation_provider_unavailable",
-    "checked_at_utc": "2026-10-07T02:51:59+00:00",
+    "status": "ok",
+    "reason": null,
+    "checked_at_utc": "2026-10-07T06:28:44+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 7,
+    "published": 2,
+    "director_approved": 14,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -23064,16 +22992,16 @@
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-10-07T02:51:59+00:00",
+    "checked_at_utc": "2026-10-07T06:28:44+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-10-07T13:51:57+11:00",
-      "candidates": 7,
+      "finished_sakhalin": "2026-10-07T17:28:42+11:00",
+      "candidates": 14,
       "queued_for_delivery": 0
     },
     "generation": {
-      "status": "blocked",
-      "reason": "generation_provider_unavailable"
+      "status": "healthy",
+      "reason": null
     },
     "delivery": {
       "status": "healthy",
