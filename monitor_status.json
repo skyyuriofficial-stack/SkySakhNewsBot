@@ -1,25 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-07T13:59:04+00:00",
-  "checked_at_sakhalin": "2026-10-08T00:58:58+11:00",
+  "checked_at_utc": "2026-10-07T14:07:37+00:00",
+  "checked_at_sakhalin": "2026-10-08T01:07:32+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "category",
-      "message_id": 342,
-      "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "local_official_statement_without_decision",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "type": "category",
       "message_id": 345,
@@ -33,33 +19,27 @@
       "review_reason": "hyperlocal_service_disruption",
       "corrected_category": null,
       "title_issues": []
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-07T22:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-07T20:17:41+11:00"
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-07T20:17:41+11:00",
-    "age_hours": 4.69,
-    "published": 2
+    "finished_sakhalin": "2026-10-08T01:06:58+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-07T09:17:42+00:00",
+    "checked_at_utc": "2026-10-07T14:07:00+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
-    "director_approved": 11,
+    "published": 1,
+    "director_approved": 8,
     "ai_calls": 4,
-    "ai_api_fail": 3,
-    "ai_budget_exhausted": 0,
+    "ai_api_fail": 4,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
@@ -87,21 +67,10 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-07T13:59:01+00:00",
+    "checked_at": "2026-10-07T14:07:34+00:00",
     "checked": 14,
-    "passed": 12,
+    "passed": 13,
     "anomalies": [
-      {
-        "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
-        "url": "https://sakh.online/news/18/2026-10-04/ministr-olga-orlova-rasskazala-o-podderzhke-semey-sahalinskom-dolgoletii-i-novyh-merah-sotszaschity-527914",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh",
-        "corrected_category": "sakh",
-        "reason": "local_official_statement_without_decision",
-        "contract_issues": [
-          "director_final_reject:local_official_statement_without_decision"
-        ]
-      },
       {
         "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
         "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
@@ -120,19 +89,8 @@
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
-    "unresolved": 2,
+    "unresolved": 1,
     "unresolved_items": [
-      {
-        "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
-        "url": "https://sakh.online/news/18/2026-10-04/ministr-olga-orlova-rasskazala-o-podderzhke-semey-sahalinskom-dolgoletii-i-novyh-merah-sotszaschity-527914",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh",
-        "corrected_category": "sakh",
-        "reason": "local_official_statement_without_decision",
-        "contract_issues": [
-          "director_final_reject:local_official_statement_without_decision"
-        ]
-      },
       {
         "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
         "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
@@ -152,19 +110,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 342,
-      "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "local_official_statement_without_decision",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 343,
       "title": "Путин заявил о едином преференциальном режиме для Дальнего Востока с 2027 года",
@@ -333,6 +278,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 369,
+      "title": "СберСтрахование жизни выплатило россиянам по страховым случаям 22,7 млрд рублей за 9 месяцев",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -392,7 +350,6 @@
     "sequence": [
       "ru_eco",
       "ru_eco",
-      "ru_eco",
       "local",
       "ru_pol",
       "local",
@@ -405,10 +362,10 @@
       "ru_safety",
       "world",
       "it",
-      "local"
+      "local",
+      "ru_eco"
     ],
     "category_sequence": [
-      "ru_eco",
       "ru_eco",
       "ru_eco",
       "sakh",
@@ -423,10 +380,10 @@
       "ru_security",
       "geo",
       "it",
-      "sakh"
+      "sakh",
+      "ru_eco"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakh.online",
@@ -441,7 +398,8 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "bbc technology",
-      "sakh.online"
+      "sakh.online",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [
       {
@@ -473,17 +431,6 @@
   },
   "legacy_or_derivative_warnings": [
     {
-      "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
-      "url": "https://sakh.online/news/18/2026-10-04/ministr-olga-orlova-rasskazala-o-podderzhke-semey-sahalinskom-dolgoletii-i-novyh-merah-sotszaschity-527914",
-      "publisher_version": "stable-v12.1",
-      "category_key": "sakh",
-      "corrected_category": "sakh",
-      "reason": "local_official_statement_without_decision",
-      "contract_issues": [
-        "director_final_reject:local_official_statement_without_decision"
-      ]
-    },
-    {
       "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
       "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
       "publisher_version": "stable-v12.1",
@@ -499,7 +446,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-07T13:58:56+00:00",
+    "checked_at_utc": "2026-10-07T14:07:30+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -527,17 +474,6 @@
   "hardening_actions": [],
   "hardening_failed_actions": [],
   "warnings": [
-    {
-      "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
-      "url": "https://sakh.online/news/18/2026-10-04/ministr-olga-orlova-rasskazala-o-podderzhke-semey-sahalinskom-dolgoletii-i-novyh-merah-sotszaschity-527914",
-      "publisher_version": "stable-v12.1",
-      "category_key": "sakh",
-      "corrected_category": "sakh",
-      "reason": "local_official_statement_without_decision",
-      "contract_issues": [
-        "director_final_reject:local_official_statement_without_decision"
-      ]
-    },
     {
       "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
       "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
