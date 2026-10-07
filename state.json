@@ -11504,7 +11504,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-10-07T09:11:06+00:00",
+        "checked_at": "2026-10-07T09:22:36+00:00",
         "reason": "local_official_statement_without_decision",
         "issues": [
           "director_final_reject:local_official_statement_without_decision"
@@ -11689,7 +11689,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T09:11:06+00:00"
+        "checked_at": "2026-10-07T09:22:36+00:00"
       }
     },
     {
@@ -11866,7 +11866,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-10-07T09:11:06+00:00",
+        "checked_at": "2026-10-07T09:22:36+00:00",
         "reason": "hyperlocal_service_disruption",
         "issues": [
           "final_hard_reject:hyperlocal_service_disruption",
@@ -12054,7 +12054,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T09:11:06+00:00"
+        "checked_at": "2026-10-07T09:22:36+00:00"
       }
     },
     {
@@ -13004,7 +13004,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T09:11:07+00:00"
+        "checked_at": "2026-10-07T09:22:36+00:00"
       }
     },
     {
@@ -13181,7 +13181,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T09:11:07+00:00"
+        "checked_at": "2026-10-07T09:22:36+00:00"
       }
     },
     {
@@ -13743,7 +13743,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T09:11:07+00:00"
+        "checked_at": "2026-10-07T09:22:36+00:00"
       }
     },
     {
@@ -13920,7 +13920,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T09:11:07+00:00"
+        "checked_at": "2026-10-07T09:22:36+00:00"
       }
     },
     {
@@ -14097,7 +14097,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T09:11:07+00:00"
+        "checked_at": "2026-10-07T09:22:36+00:00"
       }
     },
     {
@@ -14274,7 +14274,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T09:11:07+00:00"
+        "checked_at": "2026-10-07T09:22:36+00:00"
       }
     },
     {
@@ -14455,7 +14455,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T09:11:08+00:00"
+        "checked_at": "2026-10-07T09:22:36+00:00"
       }
     },
     {
@@ -14636,7 +14636,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T09:11:08+00:00"
+        "checked_at": "2026-10-07T09:22:36+00:00"
       }
     },
     {
@@ -14818,6 +14818,11 @@
         "issues": [
           "independent_ai_unavailable:grounded_translation"
         ]
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-10-07T09:22:37+00:00"
       }
     },
     {
@@ -14994,6 +14999,11 @@
         "issues": [],
         "reclassified_from": "sakh_chp",
         "reclassified_to": "sakh"
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-10-07T09:22:37+00:00"
       }
     }
   ],
@@ -15831,6 +15841,72 @@
       "ai_calls": 0,
       "ai_fail": 0,
       "audited_urls": 2
+    },
+    "independent_post_publication_monitor": {
+      "version": "post-audit-v1.1",
+      "checked_at": "2026-10-07T09:22:37+00:00",
+      "checked": 14,
+      "passed": 12,
+      "anomalies": [
+        {
+          "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
+          "url": "https://sakh.online/news/18/2026-10-04/ministr-olga-orlova-rasskazala-o-podderzhke-semey-sahalinskom-dolgoletii-i-novyh-merah-sotszaschity-527914",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": "sakh",
+          "reason": "local_official_statement_without_decision",
+          "contract_issues": [
+            "director_final_reject:local_official_statement_without_decision"
+          ]
+        },
+        {
+          "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
+          "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": null,
+          "reason": "hyperlocal_service_disruption",
+          "contract_issues": [
+            "final_hard_reject:hyperlocal_service_disruption",
+            "final_category_mismatch:None->sakh",
+            "director_final_category:None->sakh",
+            "director_final_reject:hyperlocal_service_disruption"
+          ]
+        }
+      ],
+      "corrected": [],
+      "deleted": [],
+      "failed_actions": [],
+      "unresolved": 2,
+      "unresolved_items": [
+        {
+          "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
+          "url": "https://sakh.online/news/18/2026-10-04/ministr-olga-orlova-rasskazala-o-podderzhke-semey-sahalinskom-dolgoletii-i-novyh-merah-sotszaschity-527914",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": "sakh",
+          "reason": "local_official_statement_without_decision",
+          "contract_issues": [
+            "director_final_reject:local_official_statement_without_decision"
+          ]
+        },
+        {
+          "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
+          "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": null,
+          "reason": "hyperlocal_service_disruption",
+          "contract_issues": [
+            "final_hard_reject:hyperlocal_service_disruption",
+            "final_category_mismatch:None->sakh",
+            "director_final_category:None->sakh",
+            "director_final_reject:hyperlocal_service_disruption"
+          ]
+        }
+      ],
+      "mutations_enabled": true,
+      "legacy_posts_mutated": false
     }
   },
   "pending_media_delivery": [],
@@ -21903,9 +21979,9 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-07T09:11:08+00:00",
-    "checked": 13,
-    "passed": 11,
+    "checked_at": "2026-10-07T09:22:37+00:00",
+    "checked": 14,
+    "passed": 12,
     "anomalies": [
       {
         "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
