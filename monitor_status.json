@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-07T09:10:37+00:00",
-  "checked_at_sakhalin": "2026-10-07T20:10:32+11:00",
+  "checked_at_utc": "2026-10-07T09:18:17+00:00",
+  "checked_at_sakhalin": "2026-10-07T20:18:12+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -33,33 +33,27 @@
       "review_reason": "hyperlocal_service_disruption",
       "corrected_category": null,
       "title_issues": []
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-07T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-07T17:28:42+11:00"
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-07T17:28:42+11:00",
-    "age_hours": 2.7,
+    "finished_sakhalin": "2026-10-07T20:17:41+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-07T06:28:44+00:00",
+    "checked_at_utc": "2026-10-07T09:17:42+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 14,
+    "director_approved": 11,
     "ai_calls": 4,
-    "ai_api_fail": 4,
-    "ai_budget_exhausted": 1,
+    "ai_api_fail": 3,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
@@ -113,9 +107,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-07T09:10:34+00:00",
-    "checked": 13,
-    "passed": 11,
+    "checked_at": "2026-10-07T09:18:14+00:00",
+    "checked": 14,
+    "passed": 12,
     "anomalies": [
       {
         "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
@@ -178,19 +172,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 341,
-      "title": "Безработица на Сахалине остается ниже средней по Дальнему Востоку",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 342,
       "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
@@ -346,6 +327,32 @@
       "review_reason": "approved",
       "corrected_category": "geo",
       "title_issues": []
+    },
+    {
+      "message_id": 367,
+      "title": "Финляндия распорядилась приостановить работы на двух дата-центрах Google",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
+    },
+    {
+      "message_id": 368,
+      "title": "Ураганный ветер ожидают на Северных Курилах 8 и 9 октября",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -369,10 +376,10 @@
     "counts": {
       "local": 7,
       "ru_pol": 1,
-      "ru_eco": 5,
+      "ru_eco": 4,
       "ru_safety": 1,
       "world": 1,
-      "it": 1
+      "it": 2
     },
     "scaled_targets": {
       "local": 4.8,
@@ -385,27 +392,24 @@
     "deficits": {
       "local": -2.2,
       "ru_pol": 2.2,
-      "ru_eco": -1.8,
+      "ru_eco": -0.8,
       "ru_safety": 1.4,
       "world": 0.6,
-      "it": -0.2
+      "it": -1.2
     },
     "distribution_error": 8.4,
     "subtype_counts": {
-      "macro_economy": 6,
-      "major_emergency": 1,
+      "macro_economy": 5,
       "political_decision": 1,
       "violent_crime": 2,
-      "major_it": 1,
-      "severe_weather": 1,
+      "major_it": 2,
+      "severe_weather": 2,
       "public_service_disruption": 1,
       "major_infrastructure": 1,
       "military_security": 1,
       "geopolitical_event": 1
     },
     "sequence": [
-      "ru_eco",
-      "local",
       "ru_eco",
       "ru_eco",
       "ru_eco",
@@ -419,11 +423,11 @@
       "local",
       "local",
       "ru_safety",
-      "world"
+      "world",
+      "it",
+      "local"
     ],
     "category_sequence": [
-      "ru_eco",
-      "sakh_chp",
       "ru_eco",
       "ru_eco",
       "ru_eco",
@@ -437,11 +441,11 @@
       "sakh",
       "sakh",
       "ru_security",
-      "geo"
+      "geo",
+      "it",
+      "sakh"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "astv",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
@@ -455,7 +459,9 @@
       "sakh.online",
       "sakh.online",
       "sakh.online",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "bbc technology",
+      "sakh.online"
     ],
     "retrospective_anomalies": [
       {
@@ -513,7 +519,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-07T09:10:30+00:00",
+    "checked_at_utc": "2026-10-07T09:18:09+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -573,10 +579,10 @@
       "counts": {
         "local": 7,
         "ru_pol": 1,
-        "ru_eco": 5,
+        "ru_eco": 4,
         "ru_safety": 1,
         "world": 1,
-        "it": 1
+        "it": 2
       },
       "targets": {
         "local": 6,
@@ -589,10 +595,10 @@
       "deficits": {
         "local": -2.2,
         "ru_pol": 2.2,
-        "ru_eco": -1.8,
+        "ru_eco": -0.8,
         "ru_safety": 1.4,
         "world": 0.6,
-        "it": -0.2
+        "it": -1.2
       }
     }
   ]
