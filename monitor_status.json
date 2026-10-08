@@ -1,32 +1,32 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-08T04:34:23+00:00",
-  "checked_at_sakhalin": "2026-10-08T15:34:20+11:00",
+  "checked_at_utc": "2026-10-08T06:17:47+00:00",
+  "checked_at_sakhalin": "2026-10-08T17:17:43+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-08T15:33:55+11:00",
+    "finished_sakhalin": "2026-10-08T17:17:11+11:00",
     "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-08T04:33:56+00:00",
+    "checked_at_utc": "2026-10-08T06:17:12+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 13,
+    "director_approved": 11,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
-    "publication_contract_blocked": 2
+    "publication_contract_blocked": 1
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -65,9 +65,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-08T04:34:21+00:00",
-    "checked": 14,
-    "passed": 14,
+    "checked_at": "2026-10-08T06:17:45+00:00",
+    "checked": 15,
+    "passed": 15,
     "anomalies": [],
     "corrected": [],
     "deleted": [],
@@ -259,6 +259,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 374,
+      "title": "ВТБ провел первую сделку с криптоактивами",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -282,30 +295,30 @@
     "counts": {
       "local": 9,
       "ru_pol": 1,
-      "ru_eco": 3,
+      "ru_eco": 4,
       "ru_safety": 1,
       "world": 1,
       "it": 2
     },
     "scaled_targets": {
-      "local": 5.1,
-      "ru_pol": 3.4,
-      "ru_eco": 3.4,
-      "ru_safety": 2.55,
-      "world": 1.7,
-      "it": 0.85
+      "local": 5.4,
+      "ru_pol": 3.6,
+      "ru_eco": 3.6,
+      "ru_safety": 2.7,
+      "world": 1.8,
+      "it": 0.9
     },
     "deficits": {
-      "local": -3.9,
-      "ru_pol": 2.4,
-      "ru_eco": 0.4,
-      "ru_safety": 1.55,
-      "world": 0.7,
-      "it": -1.15
+      "local": -3.6,
+      "ru_pol": 2.6,
+      "ru_eco": -0.4,
+      "ru_safety": 1.7,
+      "world": 0.8,
+      "it": -1.1
     },
-    "distribution_error": 10.1,
+    "distribution_error": 10.2,
     "subtype_counts": {
-      "macro_economy": 4,
+      "macro_economy": 5,
       "political_decision": 1,
       "violent_crime": 2,
       "major_it": 2,
@@ -333,7 +346,8 @@
       "ru_eco",
       "local",
       "ru_eco",
-      "local"
+      "local",
+      "ru_eco"
     ],
     "category_sequence": [
       "sakh",
@@ -352,7 +366,8 @@
       "ru_eco",
       "sakh",
       "ru_eco",
-      "sakh_chp"
+      "sakh_chp",
+      "ru_eco"
     ],
     "source_sequence": [
       "sakh.online",
@@ -371,15 +386,10 @@
       "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
-      "sakh.online"
+      "sakh.online",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [
-      {
-        "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
-        "category_key": "sakh",
-        "reason": "hyperlocal_service_disruption",
-        "corrected_category": null
-      },
       {
         "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
         "category_key": "sakh",
@@ -393,11 +403,11 @@
         "corrected_category": null
       }
     ],
-    "valid_posts_counted": 17
+    "valid_posts_counted": 18
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-08T04:34:18+00:00",
+    "checked_at_utc": "2026-10-08T06:17:41+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -427,12 +437,12 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 10.1,
+      "distribution_error": 10.2,
       "limit": 8.0,
       "counts": {
         "local": 9,
         "ru_pol": 1,
-        "ru_eco": 3,
+        "ru_eco": 4,
         "ru_safety": 1,
         "world": 1,
         "it": 2
@@ -446,12 +456,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.9,
-        "ru_pol": 2.4,
-        "ru_eco": 0.4,
-        "ru_safety": 1.55,
-        "world": 0.7,
-        "it": -1.15
+        "local": -3.6,
+        "ru_pol": 2.6,
+        "ru_eco": -0.4,
+        "ru_safety": 1.7,
+        "world": 0.8,
+        "it": -1.1
       }
     }
   ]
