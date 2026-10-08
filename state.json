@@ -11530,7 +11530,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-10-07T23:57:44+00:00",
+        "checked_at": "2026-10-08T00:09:07+00:00",
         "reason": "hyperlocal_service_disruption",
         "issues": [
           "final_hard_reject:hyperlocal_service_disruption",
@@ -11718,7 +11718,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T23:57:44+00:00"
+        "checked_at": "2026-10-08T00:09:07+00:00"
       }
     },
     {
@@ -12668,7 +12668,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T23:57:44+00:00"
+        "checked_at": "2026-10-08T00:09:08+00:00"
       }
     },
     {
@@ -12845,7 +12845,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T23:57:44+00:00"
+        "checked_at": "2026-10-08T00:09:08+00:00"
       }
     },
     {
@@ -13407,7 +13407,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T23:57:44+00:00"
+        "checked_at": "2026-10-08T00:09:08+00:00"
       }
     },
     {
@@ -13584,7 +13584,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T23:57:44+00:00"
+        "checked_at": "2026-10-08T00:09:08+00:00"
       }
     },
     {
@@ -13761,7 +13761,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T23:57:45+00:00"
+        "checked_at": "2026-10-08T00:09:08+00:00"
       }
     },
     {
@@ -13938,7 +13938,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T23:57:45+00:00"
+        "checked_at": "2026-10-08T00:09:08+00:00"
       }
     },
     {
@@ -14119,7 +14119,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T23:57:45+00:00"
+        "checked_at": "2026-10-08T00:09:08+00:00"
       }
     },
     {
@@ -14300,7 +14300,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T23:57:45+00:00"
+        "checked_at": "2026-10-08T00:09:08+00:00"
       }
     },
     {
@@ -14486,7 +14486,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T23:57:45+00:00"
+        "checked_at": "2026-10-08T00:09:09+00:00"
       }
     },
     {
@@ -14667,7 +14667,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T23:57:45+00:00"
+        "checked_at": "2026-10-08T00:09:09+00:00"
       }
     },
     {
@@ -14848,7 +14848,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T23:57:46+00:00"
+        "checked_at": "2026-10-08T00:09:09+00:00"
       }
     },
     {
@@ -15029,7 +15029,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T23:57:46+00:00"
+        "checked_at": "2026-10-08T00:09:09+00:00"
       }
     }
   ],
@@ -15808,6 +15808,50 @@
       "ai_calls": 0,
       "ai_fail": 0,
       "audited_urls": 2
+    },
+    "independent_post_publication_monitor": {
+      "version": "post-audit-v1.1",
+      "checked_at": "2026-10-08T00:09:09+00:00",
+      "checked": 14,
+      "passed": 13,
+      "anomalies": [
+        {
+          "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
+          "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": null,
+          "reason": "hyperlocal_service_disruption",
+          "contract_issues": [
+            "final_hard_reject:hyperlocal_service_disruption",
+            "final_category_mismatch:None->sakh",
+            "director_final_category:None->sakh",
+            "director_final_reject:hyperlocal_service_disruption"
+          ]
+        }
+      ],
+      "corrected": [],
+      "deleted": [],
+      "failed_actions": [],
+      "unresolved": 1,
+      "unresolved_items": [
+        {
+          "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
+          "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
+          "publisher_version": "stable-v12.1",
+          "category_key": "sakh",
+          "corrected_category": null,
+          "reason": "hyperlocal_service_disruption",
+          "contract_issues": [
+            "final_hard_reject:hyperlocal_service_disruption",
+            "final_category_mismatch:None->sakh",
+            "director_final_category:None->sakh",
+            "director_final_reject:hyperlocal_service_disruption"
+          ]
+        }
+      ],
+      "mutations_enabled": true,
+      "legacy_posts_mutated": false
     }
   },
   "pending_media_delivery": [],
@@ -21880,7 +21924,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-07T23:57:46+00:00",
+    "checked_at": "2026-10-08T00:09:09+00:00",
     "checked": 14,
     "passed": 13,
     "anomalies": [
