@@ -1,72 +1,46 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-08T11:31:00+00:00",
-  "checked_at_sakhalin": "2026-10-08T22:30:56+11:00",
+  "checked_at_utc": "2026-10-08T13:40:27+00:00",
+  "checked_at_sakhalin": "2026-10-09T00:40:22+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-08T19:54:43+11:00",
-    "age_hours": 2.6,
-    "published": 2
+    "finished_sakhalin": "2026-10-09T00:39:52+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-08T08:54:43+00:00",
+    "checked_at_utc": "2026-10-08T13:39:52+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
-    "director_approved": 7,
-    "ai_calls": 1,
-    "ai_api_fail": 0,
-    "ai_budget_exhausted": 0,
+    "published": 1,
+    "director_approved": 6,
+    "ai_calls": 4,
+    "ai_api_fail": 3,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
-    "publication_contract_blocked": 0
+    "publication_contract_blocked": 1
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-10-08",
+    "day_sakhalin": "2026-10-09",
     "status": "healthy",
     "morning": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-07T21:59:36+00:00",
-        "published_at_sakhalin": "2026-10-08T08:59:36+11:00",
-        "telegram_message_id": 370,
-        "headline": "Отсутствие подтверждённых данных о новой волне мобилизации в РФ",
-        "evidence_count": 4,
-        "evidence_hash": "e88bc55334776fc0ba1cd9fe2cb855e2708e952b9ed58ed6562b80248cbfd018",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "evening": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-08T08:51:39+00:00",
-        "published_at_sakhalin": "2026-10-08T19:51:39+11:00",
-        "telegram_message_id": 376,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 3,
-        "evidence_hash": "4050e0a6c78de0b52e1f0e69fcca271d0222c4d5f2d108a0754f7c53d715b5fa",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "last_attempt": {
       "status": "ok",
@@ -78,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-08T11:30:58+00:00",
+    "checked_at": "2026-10-08T13:40:25+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -91,19 +65,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 354,
-      "title": "Банки собираются автоматически удерживать налог с процентов по вкладам",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 355,
       "title": "Пять ударов ножом: в Томари погиб 51-летний мужчина",
@@ -311,6 +272,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 379,
+      "title": "После проверки объектов на Кунашире и Шикотане поручили устранить строительные дефекты",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -332,8 +306,8 @@
       "it": 5.0
     },
     "counts": {
-      "local": 9,
-      "ru_pol": 1,
+      "local": 10,
+      "ru_pol": 0,
       "ru_eco": 4,
       "ru_safety": 1,
       "world": 1,
@@ -348,16 +322,15 @@
       "it": 0.95
     },
     "deficits": {
-      "local": -3.3,
-      "ru_pol": 2.8,
+      "local": -4.3,
+      "ru_pol": 3.8,
       "ru_eco": -0.2,
       "ru_safety": 1.85,
       "world": 0.9,
       "it": -2.05
     },
-    "distribution_error": 11.1,
+    "distribution_error": 13.1,
     "subtype_counts": {
-      "political_decision": 1,
       "violent_crime": 2,
       "macro_economy": 4,
       "major_it": 3,
@@ -366,10 +339,10 @@
       "major_infrastructure": 1,
       "military_security": 1,
       "geopolitical_event": 1,
-      "major_emergency": 1
+      "major_emergency": 1,
+      "political_decision": 1
     },
     "sequence": [
-      "ru_pol",
       "local",
       "ru_eco",
       "local",
@@ -387,10 +360,10 @@
       "local",
       "ru_eco",
       "it",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "ru_pol",
       "sakh_chp",
       "ru_eco",
       "sakh_chp",
@@ -408,10 +381,10 @@
       "sakh_chp",
       "ru_eco",
       "it",
+      "sakh",
       "sakh"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
@@ -429,6 +402,7 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "bbc technology",
+      "astv",
       "astv"
     ],
     "retrospective_anomalies": [
@@ -443,7 +417,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-08T11:30:54+00:00",
+    "checked_at_utc": "2026-10-08T13:40:19+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -473,11 +447,11 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 11.1,
+      "distribution_error": 13.1,
       "limit": 8.0,
       "counts": {
-        "local": 9,
-        "ru_pol": 1,
+        "local": 10,
+        "ru_pol": 0,
         "ru_eco": 4,
         "ru_safety": 1,
         "world": 1,
@@ -492,8 +466,8 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.3,
-        "ru_pol": 2.8,
+        "local": -4.3,
+        "ru_pol": 3.8,
         "ru_eco": -0.2,
         "ru_safety": 1.85,
         "world": 0.9,
