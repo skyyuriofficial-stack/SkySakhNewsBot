@@ -1,14 +1,14 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-10-07T21:59:36+00:00",
-  "last_run_sakhalin": "2026-10-08T08:59:36+11:00",
-  "mode": "morning",
+  "last_run_utc": "2026-10-08T08:51:39+00:00",
+  "last_run_sakhalin": "2026-10-08T19:51:39+11:00",
+  "mode": "evening",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 370,
-  "evidence_count": 4,
-  "evidence_hash": "e88bc55334776fc0ba1cd9fe2cb855e2708e952b9ed58ed6562b80248cbfd018",
-  "headline": "Отсутствие подтверждённых данных о новой волне мобилизации в РФ",
+  "telegram_message_id": 376,
+  "evidence_count": 3,
+  "evidence_hash": "4050e0a6c78de0b52e1f0e69fcca271d0222c4d5f2d108a0754f7c53d715b5fa",
+  "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
   "source_ids": [
     1,
     2,
@@ -359,14 +359,28 @@
           2,
           3
         ]
+      },
+      "evening": {
+        "status": "ok",
+        "published_at_utc": "2026-10-08T08:51:39+00:00",
+        "published_at_sakhalin": "2026-10-08T19:51:39+11:00",
+        "telegram_message_id": 376,
+        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+        "evidence_count": 3,
+        "evidence_hash": "4050e0a6c78de0b52e1f0e69fcca271d0222c4d5f2d108a0754f7c53d715b5fa",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
       }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "morning",
-    "at_utc": "2026-10-07T21:59:36+00:00",
-    "at_sakhalin": "2026-10-08T08:59:36+11:00"
+    "mode": "evening",
+    "at_utc": "2026-10-08T08:51:39+00:00",
+    "at_sakhalin": "2026-10-08T19:51:39+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-10-01T06:24:52+00:00",
