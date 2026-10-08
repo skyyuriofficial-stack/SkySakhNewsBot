@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-07T23:57:17+00:00",
-  "checked_at_sakhalin": "2026-10-08T10:57:12+11:00",
+  "checked_at_utc": "2026-10-08T00:04:30+00:00",
+  "checked_at_sakhalin": "2026-10-08T11:04:25+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -19,35 +19,29 @@
       "review_reason": "hyperlocal_service_disruption",
       "corrected_category": null,
       "title_issues": []
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-08T10:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-08T09:01:13+11:00"
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-08T09:01:13+11:00",
-    "age_hours": 1.93,
-    "published": 1
+    "finished_sakhalin": "2026-10-08T11:03:55+11:00",
+    "age_hours": 0.01,
+    "published": 0
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-07T22:01:13+00:00",
+    "checked_at_utc": "2026-10-08T00:03:56+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 8,
+    "published": 0,
+    "director_approved": 6,
     "ai_calls": 4,
-    "ai_api_fail": 4,
+    "ai_api_fail": 3,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
-    "publication_contract_blocked": 0
+    "publication_contract_blocked": 1
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -86,7 +80,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-07T23:57:15+00:00",
+    "checked_at": "2026-10-08T00:04:28+00:00",
     "checked": 14,
     "passed": 13,
     "anomalies": [
@@ -465,7 +459,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-10-07T23:57:10+00:00",
+    "checked_at_utc": "2026-10-08T00:04:23+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
