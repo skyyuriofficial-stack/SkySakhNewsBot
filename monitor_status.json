@@ -1,53 +1,32 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-08T04:26:15+00:00",
-  "checked_at_sakhalin": "2026-10-08T15:26:10+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-08T04:34:23+00:00",
+  "checked_at_sakhalin": "2026-10-08T15:34:20+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "category",
-      "message_id": 345,
-      "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "hyperlocal_service_disruption",
-      "corrected_category": null,
-      "title_issues": []
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-08T13:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-08T11:03:55+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-08T11:03:55+11:00",
-    "age_hours": 4.37,
-    "published": 0
+    "finished_sakhalin": "2026-10-08T15:33:55+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-08T00:03:56+00:00",
+    "checked_at_utc": "2026-10-08T04:33:56+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 6,
+    "published": 2,
+    "director_approved": 13,
     "ai_calls": 4,
-    "ai_api_fail": 3,
+    "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
-    "publication_contract_blocked": 1
+    "publication_contract_blocked": 2
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -86,75 +65,19 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-08T04:26:13+00:00",
+    "checked_at": "2026-10-08T04:34:21+00:00",
     "checked": 14,
-    "passed": 13,
-    "anomalies": [
-      {
-        "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
-        "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh",
-        "corrected_category": null,
-        "reason": "hyperlocal_service_disruption",
-        "contract_issues": [
-          "final_hard_reject:hyperlocal_service_disruption",
-          "final_category_mismatch:None->sakh",
-          "director_final_category:None->sakh",
-          "director_final_reject:hyperlocal_service_disruption"
-        ]
-      }
-    ],
+    "passed": 14,
+    "anomalies": [],
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
-    "unresolved": 1,
-    "unresolved_items": [
-      {
-        "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
-        "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
-        "publisher_version": "stable-v12.1",
-        "category_key": "sakh",
-        "corrected_category": null,
-        "reason": "hyperlocal_service_disruption",
-        "contract_issues": [
-          "final_hard_reject:hyperlocal_service_disruption",
-          "final_category_mismatch:None->sakh",
-          "director_final_category:None->sakh",
-          "director_final_reject:hyperlocal_service_disruption"
-        ]
-      }
-    ],
+    "unresolved": 0,
+    "unresolved_items": [],
     "mutations_enabled": true,
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 345,
-      "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "hyperlocal_service_disruption",
-      "corrected_category": null,
-      "title_issues": []
-    },
-    {
-      "message_id": 347,
-      "title": "Жителя Долинска взяли под стражу после нападения на полицейских и попытки побега",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 354,
       "title": "Банки собираются автоматически удерживать налог с процентов по вкладам",
@@ -310,6 +233,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 372,
+      "title": "Рекорд на пороге изменений: Сбер выдал 445,5 млрд рублей ипотеки в сентябре 2026 года",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
+    },
+    {
+      "message_id": 373,
+      "title": "Сахалинец Виталий Утвенко участвовал в эвакуации мирных жителей на Донбассе",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -331,7 +280,7 @@
       "it": 5.0
     },
     "counts": {
-      "local": 8,
+      "local": 9,
       "ru_pol": 1,
       "ru_eco": 3,
       "ru_safety": 1,
@@ -339,22 +288,22 @@
       "it": 2
     },
     "scaled_targets": {
-      "local": 4.8,
-      "ru_pol": 3.2,
-      "ru_eco": 3.2,
-      "ru_safety": 2.4,
-      "world": 1.6,
-      "it": 0.8
+      "local": 5.1,
+      "ru_pol": 3.4,
+      "ru_eco": 3.4,
+      "ru_safety": 2.55,
+      "world": 1.7,
+      "it": 0.85
     },
     "deficits": {
-      "local": -3.2,
-      "ru_pol": 2.2,
-      "ru_eco": 0.2,
-      "ru_safety": 1.4,
-      "world": 0.6,
-      "it": -1.2
+      "local": -3.9,
+      "ru_pol": 2.4,
+      "ru_eco": 0.4,
+      "ru_safety": 1.55,
+      "world": 0.7,
+      "it": -1.15
     },
-    "distribution_error": 8.8,
+    "distribution_error": 10.1,
     "subtype_counts": {
       "macro_economy": 4,
       "political_decision": 1,
@@ -364,10 +313,10 @@
       "public_service_disruption": 1,
       "major_infrastructure": 1,
       "military_security": 1,
-      "geopolitical_event": 1
+      "geopolitical_event": 1,
+      "major_emergency": 1
     },
     "sequence": [
-      "ru_eco",
       "local",
       "ru_pol",
       "local",
@@ -382,10 +331,11 @@
       "it",
       "local",
       "ru_eco",
+      "local",
+      "ru_eco",
       "local"
     ],
     "category_sequence": [
-      "ru_eco",
       "sakh",
       "ru_pol",
       "sakh_chp",
@@ -400,10 +350,11 @@
       "it",
       "sakh",
       "ru_eco",
-      "sakh"
+      "sakh",
+      "ru_eco",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakh.online",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -418,15 +369,11 @@
       "bbc technology",
       "sakh.online",
       "sakhalinmedia.ru",
+      "sakh.online",
+      "sakhalinmedia.ru",
       "sakh.online"
     ],
     "retrospective_anomalies": [
-      {
-        "title": "В ChatGPT появилась виртуальная ПРИМЕРОЧНАЯ — чат-бот покажет, как на вас сидит одежда, а понравившиеся товары можно добавить в избранное",
-        "category_key": "it",
-        "reason": "soft_consumer_it_feature",
-        "corrected_category": null
-      },
       {
         "title": "В понедельник часть Южно-Сахалинска останется без воды: список адресов",
         "category_key": "sakh",
@@ -446,26 +393,11 @@
         "corrected_category": null
       }
     ],
-    "valid_posts_counted": 16
+    "valid_posts_counted": 17
   },
-  "legacy_or_derivative_warnings": [
-    {
-      "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
-      "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
-      "publisher_version": "stable-v12.1",
-      "category_key": "sakh",
-      "corrected_category": null,
-      "reason": "hyperlocal_service_disruption",
-      "contract_issues": [
-        "final_hard_reject:hyperlocal_service_disruption",
-        "final_category_mismatch:None->sakh",
-        "director_final_category:None->sakh",
-        "director_final_reject:hyperlocal_service_disruption"
-      ]
-    }
-  ],
+  "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-08T04:26:08+00:00",
+    "checked_at_utc": "2026-10-08T04:34:18+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -494,25 +426,11 @@
   "hardening_failed_actions": [],
   "warnings": [
     {
-      "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
-      "url": "https://astv.ru/news/society/2026-10-04-tret-i-sutki-bez-vody-zhiteli-doma-na-ulice-zhirinovskogo-v-yuzhno-sahalinske-b-yut-trevogu",
-      "publisher_version": "stable-v12.1",
-      "category_key": "sakh",
-      "corrected_category": null,
-      "reason": "hyperlocal_service_disruption",
-      "contract_issues": [
-        "final_hard_reject:hyperlocal_service_disruption",
-        "final_category_mismatch:None->sakh",
-        "director_final_category:None->sakh",
-        "director_final_reject:hyperlocal_service_disruption"
-      ]
-    },
-    {
       "type": "thematic_mix_drift",
-      "distribution_error": 8.8,
+      "distribution_error": 10.1,
       "limit": 8.0,
       "counts": {
-        "local": 8,
+        "local": 9,
         "ru_pol": 1,
         "ru_eco": 3,
         "ru_safety": 1,
@@ -528,12 +446,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.2,
-        "ru_pol": 2.2,
-        "ru_eco": 0.2,
-        "ru_safety": 1.4,
-        "world": 0.6,
-        "it": -1.2
+        "local": -3.9,
+        "ru_pol": 2.4,
+        "ru_eco": 0.4,
+        "ru_safety": 1.55,
+        "world": 0.7,
+        "it": -1.15
       }
     }
   ]
