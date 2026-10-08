@@ -1,55 +1,37 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-08T08:50:29+00:00",
-  "checked_at_sakhalin": "2026-10-08T19:50:23+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-08T08:55:14+00:00",
+  "checked_at_sakhalin": "2026-10-08T19:55:10+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-08T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-08T17:17:11+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "evening",
-      "expected_by_sakhalin": "2026-10-08T19:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "morning",
-        "at_utc": "2026-10-07T21:59:36+00:00",
-        "at_sakhalin": "2026-10-08T08:59:36+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-08T17:17:11+11:00",
-    "age_hours": 2.55,
+    "finished_sakhalin": "2026-10-08T19:54:43+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-08T06:17:12+00:00",
+    "checked_at_utc": "2026-10-08T08:54:43+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 11,
-    "ai_calls": 4,
-    "ai_api_fail": 4,
-    "ai_budget_exhausted": 1,
+    "director_approved": 7,
+    "ai_calls": 1,
+    "ai_api_fail": 0,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
-    "publication_contract_blocked": 1
+    "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-08",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
       "published": true,
@@ -70,34 +52,35 @@
     },
     "evening": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-08T08:51:39+00:00",
+        "published_at_sakhalin": "2026-10-08T19:51:39+11:00",
+        "telegram_message_id": 376,
+        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+        "evidence_count": 3,
+        "evidence_hash": "4050e0a6c78de0b52e1f0e69fcca271d0222c4d5f2d108a0754f7c53d715b5fa",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "morning",
-      "at_utc": "2026-10-07T21:59:36+00:00",
-      "at_sakhalin": "2026-10-08T08:59:36+11:00"
+      "mode": "evening",
+      "at_utc": "2026-10-08T08:51:39+00:00",
+      "at_sakhalin": "2026-10-08T19:51:39+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "evening",
-        "expected_by_sakhalin": "2026-10-08T19:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "morning",
-          "at_utc": "2026-10-07T21:59:36+00:00",
-          "at_sakhalin": "2026-10-08T08:59:36+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-08T08:50:26+00:00",
-    "checked": 15,
-    "passed": 15,
+    "checked_at": "2026-10-08T08:55:12+00:00",
+    "checked": 17,
+    "passed": 17,
     "anomalies": [],
     "corrected": [],
     "deleted": [],
@@ -302,6 +285,32 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 377,
+      "title": "Бум ИИ-чипов увеличит прибыль Samsung до рекордных 80 млрд долларов",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
+    },
+    {
+      "message_id": 378,
+      "title": "Четыре дома оставят без воды в Южно-Сахалинске 9 октября - адреса",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -328,39 +337,38 @@
       "ru_eco": 4,
       "ru_safety": 1,
       "world": 1,
-      "it": 2
+      "it": 3
     },
     "scaled_targets": {
-      "local": 5.4,
-      "ru_pol": 3.6,
-      "ru_eco": 3.6,
-      "ru_safety": 2.7,
-      "world": 1.8,
-      "it": 0.9
+      "local": 5.7,
+      "ru_pol": 3.8,
+      "ru_eco": 3.8,
+      "ru_safety": 2.85,
+      "world": 1.9,
+      "it": 0.95
     },
     "deficits": {
-      "local": -3.6,
-      "ru_pol": 2.6,
-      "ru_eco": -0.4,
-      "ru_safety": 1.7,
-      "world": 0.8,
-      "it": -1.1
+      "local": -3.3,
+      "ru_pol": 2.8,
+      "ru_eco": -0.2,
+      "ru_safety": 1.85,
+      "world": 0.9,
+      "it": -2.05
     },
-    "distribution_error": 10.2,
+    "distribution_error": 11.1,
     "subtype_counts": {
-      "macro_economy": 5,
       "political_decision": 1,
       "violent_crime": 2,
-      "major_it": 2,
+      "macro_economy": 4,
+      "major_it": 3,
       "severe_weather": 3,
-      "public_service_disruption": 1,
+      "public_service_disruption": 2,
       "major_infrastructure": 1,
       "military_security": 1,
       "geopolitical_event": 1,
       "major_emergency": 1
     },
     "sequence": [
-      "local",
       "ru_pol",
       "local",
       "ru_eco",
@@ -377,10 +385,11 @@
       "local",
       "ru_eco",
       "local",
-      "ru_eco"
+      "ru_eco",
+      "it",
+      "local"
     ],
     "category_sequence": [
-      "sakh",
       "ru_pol",
       "sakh_chp",
       "ru_eco",
@@ -397,10 +406,11 @@
       "sakh",
       "ru_eco",
       "sakh_chp",
-      "ru_eco"
+      "ru_eco",
+      "it",
+      "sakh"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakh.online",
       "sakhalinmedia.ru",
       "astv",
@@ -417,15 +427,11 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "sakh.online",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "bbc technology",
+      "astv"
     ],
     "retrospective_anomalies": [
-      {
-        "title": "Министр Ольга Орлова рассказала о поддержке семей, «Сахалинском долголетии» и новых мерах соцзащиты",
-        "category_key": "sakh",
-        "reason": "local_official_statement_without_decision",
-        "corrected_category": "sakh"
-      },
       {
         "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
         "category_key": "sakh",
@@ -433,11 +439,11 @@
         "corrected_category": null
       }
     ],
-    "valid_posts_counted": 18
+    "valid_posts_counted": 19
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-08T08:50:21+00:00",
+    "checked_at_utc": "2026-10-08T08:55:09+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -467,7 +473,7 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 10.2,
+      "distribution_error": 11.1,
       "limit": 8.0,
       "counts": {
         "local": 9,
@@ -475,7 +481,7 @@
         "ru_eco": 4,
         "ru_safety": 1,
         "world": 1,
-        "it": 2
+        "it": 3
       },
       "targets": {
         "local": 6,
@@ -486,12 +492,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.6,
-        "ru_pol": 2.6,
-        "ru_eco": -0.4,
-        "ru_safety": 1.7,
-        "world": 0.8,
-        "it": -1.1
+        "local": -3.3,
+        "ru_pol": 2.8,
+        "ru_eco": -0.2,
+        "ru_safety": 1.85,
+        "world": 0.9,
+        "it": -2.05
       }
     }
   ]
