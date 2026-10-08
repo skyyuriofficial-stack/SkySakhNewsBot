@@ -602,7 +602,7 @@
     "c3e837c9a5d346331d27e80d394f9dc37bd28f3c",
     "619e7157c0ad408b2f4c16943f458363c39454a0"
   ],
-  "last_run_sakhalin": "2026-10-08T09:01:13+11:00",
+  "last_run_sakhalin": "2026-10-08T11:03:56+11:00",
   "last_posts": [
     {
       "time_sakhalin": "2026-09-06T11:40:55+11:00",
@@ -11530,7 +11530,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-10-07T21:57:10+00:00",
+        "checked_at": "2026-10-07T23:57:44+00:00",
         "reason": "hyperlocal_service_disruption",
         "issues": [
           "final_hard_reject:hyperlocal_service_disruption",
@@ -11718,7 +11718,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T21:57:10+00:00"
+        "checked_at": "2026-10-07T23:57:44+00:00"
       }
     },
     {
@@ -12668,7 +12668,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T21:57:10+00:00"
+        "checked_at": "2026-10-07T23:57:44+00:00"
       }
     },
     {
@@ -12845,7 +12845,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T21:57:10+00:00"
+        "checked_at": "2026-10-07T23:57:44+00:00"
       }
     },
     {
@@ -13407,7 +13407,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T21:57:11+00:00"
+        "checked_at": "2026-10-07T23:57:44+00:00"
       }
     },
     {
@@ -13584,7 +13584,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T21:57:11+00:00"
+        "checked_at": "2026-10-07T23:57:44+00:00"
       }
     },
     {
@@ -13761,7 +13761,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T21:57:11+00:00"
+        "checked_at": "2026-10-07T23:57:45+00:00"
       }
     },
     {
@@ -13938,7 +13938,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T21:57:11+00:00"
+        "checked_at": "2026-10-07T23:57:45+00:00"
       }
     },
     {
@@ -14119,7 +14119,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T21:57:11+00:00"
+        "checked_at": "2026-10-07T23:57:45+00:00"
       }
     },
     {
@@ -14300,7 +14300,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T21:57:11+00:00"
+        "checked_at": "2026-10-07T23:57:45+00:00"
       }
     },
     {
@@ -14486,7 +14486,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T21:57:11+00:00"
+        "checked_at": "2026-10-07T23:57:45+00:00"
       }
     },
     {
@@ -14667,7 +14667,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T21:57:11+00:00"
+        "checked_at": "2026-10-07T23:57:45+00:00"
       }
     },
     {
@@ -14848,7 +14848,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-07T21:57:11+00:00"
+        "checked_at": "2026-10-07T23:57:46+00:00"
       }
     },
     {
@@ -15025,6 +15025,11 @@
         "issues": [],
         "reclassified_from": "sakh_chp",
         "reclassified_to": "sakh"
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-10-07T23:57:46+00:00"
       }
     }
   ],
@@ -15253,11 +15258,11 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-10-08T08:57:06+11:00",
+    "started_sakhalin": "2026-10-08T10:57:40+11:00",
     "status": "ok",
-    "candidates": 8,
-    "published": 1,
-    "local_candidates": 2,
+    "candidates": 6,
+    "published": 0,
+    "local_candidates": 1,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -15288,60 +15293,60 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-10-08T09:01:13+11:00",
+    "finished_sakhalin": "2026-10-08T11:03:55+11:00",
     "stats": {
-      "rss_seen": 158,
-      "old_skip": 60,
+      "rss_seen": 156,
+      "old_skip": 58,
       "google_skip": 8,
-      "duplicate_skip": 4,
-      "low_info_skip": 16,
-      "category_skip": 34,
+      "duplicate_skip": 2,
+      "low_info_skip": 13,
+      "category_skip": 36,
       "no_image_skip": 0,
-      "bad_image_skip": 9,
-      "logo_image_skip": 15,
-      "text_card_image_skip": 5,
-      "candidates": 21,
-      "rewrite_retry": 4,
-      "editorial_skip": 6,
+      "bad_image_skip": 12,
+      "logo_image_skip": 26,
+      "text_card_image_skip": 6,
+      "candidates": 23,
+      "rewrite_retry": 3,
+      "editorial_skip": 5,
       "telegram_fail": 0,
-      "published": 1,
+      "published": 0,
       "telegram_source_attempt": 2,
       "telegram_source_fail": 0,
       "telegram_source_seen": 30,
-      "telegram_source_candidates": 19,
+      "telegram_source_candidates": 20,
       "ai_calls": 4,
       "ai_budget_exhausted": 1,
-      "ai_api_fail": 4,
+      "ai_api_fail": 3,
       "evidence_reject": 0,
       "validation_reject": 0,
       "extractive_fallback": 1,
       "extractive_first": 1,
-      "editorial_prechecked": 63,
-      "editorial_gate_checked": 7,
+      "editorial_prechecked": 60,
+      "editorial_gate_checked": 6,
       "editorial_gate_pass": 1,
-      "editorial_gate_reject": 0,
+      "editorial_gate_reject": 1,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 0,
       "editorial_gate_ai_fail": 0,
-      "editorial_title_reject": 0,
+      "editorial_title_reject": 1,
       "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 8,
-      "editorial_offtopic_reject": 39,
-      "openrouter_empty_content": 0,
-      "openrouter_model_fallback": 0,
-      "openrouter_attempts": 12,
-      "openrouter_retries": 8,
-      "openrouter_invalid_json": 0,
-      "openrouter_success": 0,
+      "editorial_reclassified": 5,
+      "editorial_offtopic_reject": 34,
+      "openrouter_empty_content": 9,
+      "openrouter_model_fallback": 1,
+      "openrouter_attempts": 11,
+      "openrouter_retries": 7,
+      "openrouter_invalid_json": 1,
+      "openrouter_success": 1,
       "openrouter_circuit_open": 0,
       "editorial_grounded_translation_fallback": 0,
       "media_required_skip": 3,
       "media_generic_skip": 0,
-      "media_ready_candidates": 21,
+      "media_ready_candidates": 23,
       "photo_retry": 0,
-      "photo_publish": 1,
-      "photo_upload_original": 1,
+      "photo_publish": 0,
+      "photo_upload_original": 0,
       "photo_upload_reencoded": 0,
       "photo_upload_plain_caption": 0,
       "photo_remote_url": 0,
@@ -15352,18 +15357,18 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 21,
-      "director_approved": 8,
-      "director_rejected": 13,
+      "director_seen": 23,
+      "director_approved": 6,
+      "director_rejected": 17,
       "director_reclassified": 0,
       "director_title_corrected": 1,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
       "director_final_checked": 1,
       "director_final_autocorrected": 0,
-      "director_final_reject": 0,
+      "director_final_reject": 1,
       "director_pending_retired": 0,
-      "publication_contract_blocked": 0,
+      "publication_contract_blocked": 1,
       "post_audit_checked": 14,
       "post_audit_anomalies": 1,
       "post_audit_corrected": 0,
@@ -15392,9 +15397,9 @@
           "it": 5.0
         },
         "counts": {
-          "local": 7,
+          "local": 8,
           "ru_pol": 1,
-          "ru_eco": 4,
+          "ru_eco": 3,
           "ru_safety": 1,
           "world": 1,
           "it": 2
@@ -15408,27 +15413,26 @@
           "it": 0.8
         },
         "deficits": {
-          "local": -2.2,
+          "local": -3.2,
           "ru_pol": 2.2,
-          "ru_eco": -0.8,
+          "ru_eco": 0.2,
           "ru_safety": 1.4,
           "world": 0.6,
           "it": -1.2
         },
-        "distribution_error": 8.4,
+        "distribution_error": 8.8,
         "subtype_counts": {
-          "macro_economy": 5,
+          "macro_economy": 4,
           "political_decision": 1,
           "violent_crime": 2,
           "major_it": 2,
-          "severe_weather": 2,
+          "severe_weather": 3,
           "public_service_disruption": 1,
           "major_infrastructure": 1,
           "military_security": 1,
           "geopolitical_event": 1
         },
         "sequence": [
-          "ru_eco",
           "ru_eco",
           "local",
           "ru_pol",
@@ -15443,10 +15447,10 @@
           "world",
           "it",
           "local",
-          "ru_eco"
+          "ru_eco",
+          "local"
         ],
         "category_sequence": [
-          "ru_eco",
           "ru_eco",
           "sakh",
           "ru_pol",
@@ -15461,10 +15465,10 @@
           "geo",
           "it",
           "sakh",
-          "ru_eco"
+          "ru_eco",
+          "sakh"
         ],
         "source_sequence": [
-          "sakhalinmedia.ru",
           "sakhalinmedia.ru",
           "sakh.online",
           "sakh.online",
@@ -15479,7 +15483,8 @@
           "sakhalinmedia.ru",
           "bbc technology",
           "sakh.online",
-          "sakhalinmedia.ru"
+          "sakhalinmedia.ru",
+          "sakh.online"
         ],
         "retrospective_anomalies": [
           {
@@ -15509,26 +15514,26 @@
         ],
         "valid_posts_counted": 16
       },
-      "candidate_count": 21,
-      "approved_count": 8,
-      "rejected_count": 13,
+      "candidate_count": 23,
+      "approved_count": 6,
+      "rejected_count": 17,
       "rejected_by_reason": {
-        "importance_below_threshold": 11,
-        "low_scale_incident_not_release_worthy": 1,
-        "ordinary_weather_not_release_worthy": 1
+        "minor_or_routine_crime": 1,
+        "importance_below_threshold": 15,
+        "routine_traffic_statistics": 1
       },
       "ai_review_requested": 0,
       "ai_review_received": 0,
       "selected_groups": [
         "world",
-        "local"
+        "it"
       ],
-      "projected_distribution_error": 8.6,
+      "projected_distribution_error": 9.8,
       "projected_counts": {
-        "ru_eco": 4,
+        "ru_eco": 3,
         "local": 8,
         "ru_pol": 1,
-        "it": 2,
+        "it": 3,
         "ru_safety": 1,
         "world": 2
       },
@@ -15541,28 +15546,10 @@
           "group": "world",
           "event_type": "military_security",
           "seriousness": 97,
-          "utility": 126.5
+          "utility": 125.3
         },
         {
           "slot": 2,
-          "title": "Ураганный ветер на севере Сахалина: школьников перевели на дистант",
-          "category_key": "sakh",
-          "group": "local",
-          "event_type": "severe_weather",
-          "seriousness": 93,
-          "utility": 51.0
-        },
-        {
-          "slot": "backup",
-          "title": "МИД РФ отметил, что в ЕС корректируют внешнюю политику союза по образцу НАТО",
-          "category_key": "geo",
-          "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 87,
-          "utility": 97.0
-        },
-        {
-          "slot": "backup",
           "title": "OpenAI says teen ChatGPT use limited but research finds it an 'unacceptable risk'",
           "category_key": "it",
           "group": "it",
@@ -15577,7 +15564,7 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 85,
-          "utility": 43.0
+          "utility": 13.0
         },
         {
           "slot": "backup",
@@ -15586,7 +15573,7 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 84,
-          "utility": 42.0
+          "utility": 12.0
         },
         {
           "slot": "backup",
@@ -15595,16 +15582,16 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 80,
-          "utility": 38.0
+          "utility": 8.0
         },
         {
           "slot": "backup",
-          "title": "Без света 8 октября: Южно-Сахалинск, Хомутово и село Дальнее",
-          "category_key": "sakh",
+          "title": "Мошенник притворялся моряком для обмана сахалинок",
+          "category_key": "sakh_chp",
           "group": "local",
-          "event_type": "public_service_disruption",
-          "seriousness": 84,
-          "utility": 8.0
+          "event_type": "fraud",
+          "seriousness": 87,
+          "utility": -2.0
         }
       ],
       "rolling_balance_after": {
@@ -15746,7 +15733,7 @@
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-10-07T21:57:11+00:00",
+      "checked_at": "2026-10-07T23:57:46+00:00",
       "checked": 14,
       "passed": 13,
       "anomalies": [
@@ -15797,11 +15784,11 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 21,
+      "ready_candidates": 23,
       "missing_media_rejected": 3,
       "generic_media_rejected": 0,
       "photo_retries": 0,
-      "photo_published": 1,
+      "photo_published": 0,
       "deferred_this_run": 0,
       "pending_queue_size": 0,
       "pending_ready": 0,
@@ -15811,16 +15798,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 63,
-      "checked": 7,
+      "prechecked": 60,
+      "checked": 6,
       "passed": 1,
-      "rejected": 0,
-      "reclassified": 8,
-      "offtopic_reject": 39,
+      "rejected": 1,
+      "reclassified": 5,
+      "offtopic_reject": 34,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
-      "audited_urls": 1
+      "audited_urls": 2
     }
   },
   "pending_media_delivery": [],
@@ -21893,7 +21880,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-07T21:57:11+00:00",
+    "checked_at": "2026-10-07T23:57:46+00:00",
     "checked": 14,
     "passed": 13,
     "anomalies": [
@@ -22871,7 +22858,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-10-07T21:57:05+00:00",
+    "checked_at_utc": "2026-10-07T23:57:39+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -22894,31 +22881,31 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-10-07T22:01:13+00:00",
+    "checked_at_utc": "2026-10-08T00:03:56+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-07T22:01:13+00:00",
+    "checked_at_utc": "2026-10-08T00:03:56+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 8,
+    "published": 0,
+    "director_approved": 6,
     "ai_calls": 4,
-    "ai_api_fail": 4,
+    "ai_api_fail": 3,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
-    "publication_contract_blocked": 0
+    "publication_contract_blocked": 1
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-10-07T22:01:13+00:00",
+    "checked_at_utc": "2026-10-08T00:03:56+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-10-08T09:01:13+11:00",
-      "candidates": 8,
+      "finished_sakhalin": "2026-10-08T11:03:55+11:00",
+      "candidates": 6,
       "queued_for_delivery": 0
     },
     "generation": {
