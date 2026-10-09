@@ -1,18 +1,19 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-10-08T22:02:08+00:00",
-  "last_run_sakhalin": "2026-10-09T09:02:08+11:00",
-  "mode": "morning",
+  "last_run_utc": "2026-10-09T08:54:24+00:00",
+  "last_run_sakhalin": "2026-10-09T19:54:24+11:00",
+  "mode": "evening",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 380,
-  "evidence_count": 5,
-  "evidence_hash": "65237c92122cd227fc3d4f6ca04daf0169294a7ec4c2e5f1edb762c9ddb9900d",
-  "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+  "telegram_message_id": 386,
+  "evidence_count": 4,
+  "evidence_hash": "4f54c24f861978bbbace5179f6a87afd6ec51ee2be01874371dcdd01e0f783d2",
+  "headline": "Bill proposes penalties for ignoring wartime officials; no new mobilization order confirmed",
   "source_ids": [
     1,
     2,
-    3
+    3,
+    4
   ],
   "slots": {
     "2026-09-08": {
@@ -389,14 +390,29 @@
           2,
           3
         ]
+      },
+      "evening": {
+        "status": "ok",
+        "published_at_utc": "2026-10-09T08:54:24+00:00",
+        "published_at_sakhalin": "2026-10-09T19:54:24+11:00",
+        "telegram_message_id": 386,
+        "headline": "Bill proposes penalties for ignoring wartime officials; no new mobilization order confirmed",
+        "evidence_count": 4,
+        "evidence_hash": "4f54c24f861978bbbace5179f6a87afd6ec51ee2be01874371dcdd01e0f783d2",
+        "source_ids": [
+          1,
+          2,
+          3,
+          4
+        ]
       }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "morning",
-    "at_utc": "2026-10-08T22:02:08+00:00",
-    "at_sakhalin": "2026-10-09T09:02:08+11:00"
+    "mode": "evening",
+    "at_utc": "2026-10-09T08:54:24+00:00",
+    "at_sakhalin": "2026-10-09T19:54:24+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-10-01T06:24:52+00:00",
