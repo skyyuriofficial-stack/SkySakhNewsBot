@@ -1,30 +1,30 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-09T03:02:55+00:00",
-  "checked_at_sakhalin": "2026-10-09T14:02:52+11:00",
+  "checked_at_utc": "2026-10-09T06:25:09+00:00",
+  "checked_at_sakhalin": "2026-10-09T17:25:04+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-09T14:02:27+11:00",
+    "finished_sakhalin": "2026-10-09T17:24:33+11:00",
     "age_hours": 0.01,
-    "published": 1
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-09T03:02:27+00:00",
+    "checked_at_utc": "2026-10-09T06:24:33+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 4,
-    "ai_calls": 4,
-    "ai_api_fail": 4,
-    "ai_budget_exhausted": 1,
+    "published": 2,
+    "director_approved": 10,
+    "ai_calls": 2,
+    "ai_api_fail": 1,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
@@ -65,9 +65,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-09T03:02:54+00:00",
-    "checked": 18,
-    "passed": 18,
+    "checked_at": "2026-10-09T06:25:07+00:00",
+    "checked": 17,
+    "passed": 17,
     "anomalies": [],
     "corrected": [],
     "deleted": [],
@@ -78,32 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 359,
-      "title": "Пентагон прекратил использование инструментов ИИ от Anthropic",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
-    {
-      "message_id": 360,
-      "title": "Дождь и ураган — прогноз погоды в Сахалинской области на 7 октября",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 361,
       "title": "Без света 7 октября: Лиственничное и Октябрьский в пригороде Южно-Сахалинска",
@@ -311,6 +285,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 384,
+      "title": "В Южно-Сахалинске арестовали мужчину, обвиняемого в нападении на восьмилетнего мальчика",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -332,9 +319,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 10,
+      "local": 11,
       "ru_pol": 0,
-      "ru_eco": 5,
+      "ru_eco": 4,
       "ru_safety": 1,
       "world": 1,
       "it": 3
@@ -348,28 +335,27 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -4.0,
+      "local": -5.0,
       "ru_pol": 4.0,
-      "ru_eco": -1.0,
+      "ru_eco": 0.0,
       "ru_safety": 2.0,
       "world": 1.0,
       "it": -2.0
     },
     "distribution_error": 14.0,
     "subtype_counts": {
-      "macro_economy": 5,
-      "violent_crime": 2,
+      "violent_crime": 3,
       "major_it": 3,
       "severe_weather": 3,
       "public_service_disruption": 2,
       "major_infrastructure": 1,
       "military_security": 1,
       "geopolitical_event": 1,
+      "macro_economy": 4,
       "major_emergency": 1,
       "political_decision": 1
     },
     "sequence": [
-      "ru_eco",
       "local",
       "it",
       "local",
@@ -388,10 +374,10 @@
       "local",
       "local",
       "local",
-      "ru_eco"
+      "ru_eco",
+      "local"
     ],
     "category_sequence": [
-      "ru_eco",
       "sakh_chp",
       "it",
       "sakh",
@@ -410,10 +396,10 @@
       "sakh",
       "sakh",
       "sakh_chp",
-      "ru_eco"
+      "ru_eco",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "astv",
       "sakhalinmedia.ru",
       "bbc technology",
       "sakhalinmedia.ru",
@@ -432,14 +418,15 @@
       "astv",
       "astv",
       "astv",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-09T03:02:50+00:00",
+    "checked_at_utc": "2026-10-09T06:25:02+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -472,9 +459,9 @@
       "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
-        "local": 10,
+        "local": 11,
         "ru_pol": 0,
-        "ru_eco": 5,
+        "ru_eco": 4,
         "ru_safety": 1,
         "world": 1,
         "it": 3
@@ -488,9 +475,9 @@
         "it": 1
       },
       "deficits": {
-        "local": -4.0,
+        "local": -5.0,
         "ru_pol": 4.0,
-        "ru_eco": -1.0,
+        "ru_eco": 0.0,
         "ru_safety": 2.0,
         "world": 1.0,
         "it": -2.0
