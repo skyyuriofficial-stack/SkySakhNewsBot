@@ -1,22 +1,22 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-08T23:08:44+00:00",
-  "checked_at_sakhalin": "2026-10-09T10:08:39+11:00",
+  "checked_at_utc": "2026-10-09T00:23:48+00:00",
+  "checked_at_sakhalin": "2026-10-09T11:23:42+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-09T09:04:10+11:00",
-    "age_hours": 1.08,
+    "finished_sakhalin": "2026-10-09T11:23:17+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-08T22:04:10+00:00",
+    "checked_at_utc": "2026-10-09T00:23:17+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
@@ -65,9 +65,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-08T23:08:42+00:00",
-    "checked": 16,
-    "passed": 16,
+    "checked_at": "2026-10-09T00:23:46+00:00",
+    "checked": 17,
+    "passed": 17,
     "anomalies": [],
     "corrected": [],
     "deleted": [],
@@ -285,6 +285,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 382,
+      "title": "\"Признаю вину и раскаиваюсь\": видео задержания сахалинца, подозреваемого в похищении ребенка",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -306,7 +319,7 @@
       "it": 5.0
     },
     "counts": {
-      "local": 10,
+      "local": 11,
       "ru_pol": 0,
       "ru_eco": 4,
       "ru_safety": 1,
@@ -314,24 +327,24 @@
       "it": 3
     },
     "scaled_targets": {
-      "local": 5.7,
-      "ru_pol": 3.8,
-      "ru_eco": 3.8,
-      "ru_safety": 2.85,
-      "world": 1.9,
-      "it": 0.95
+      "local": 6.0,
+      "ru_pol": 4.0,
+      "ru_eco": 4.0,
+      "ru_safety": 3.0,
+      "world": 2.0,
+      "it": 1.0
     },
     "deficits": {
-      "local": -4.3,
-      "ru_pol": 3.8,
-      "ru_eco": -0.2,
-      "ru_safety": 1.85,
-      "world": 0.9,
-      "it": -2.05
+      "local": -5.0,
+      "ru_pol": 4.0,
+      "ru_eco": 0.0,
+      "ru_safety": 2.0,
+      "world": 1.0,
+      "it": -2.0
     },
-    "distribution_error": 13.1,
+    "distribution_error": 14.0,
     "subtype_counts": {
-      "violent_crime": 2,
+      "violent_crime": 3,
       "macro_economy": 4,
       "major_it": 3,
       "severe_weather": 3,
@@ -361,6 +374,7 @@
       "ru_eco",
       "it",
       "local",
+      "local",
       "local"
     ],
     "category_sequence": [
@@ -382,7 +396,8 @@
       "ru_eco",
       "it",
       "sakh",
-      "sakh"
+      "sakh",
+      "sakh_chp"
     ],
     "source_sequence": [
       "sakhalinmedia.ru",
@@ -403,21 +418,15 @@
       "sakhalinmedia.ru",
       "bbc technology",
       "astv",
+      "astv",
       "astv"
     ],
-    "retrospective_anomalies": [
-      {
-        "title": "Третьи сутки без воды: жители дома на улице Жириновского в Южно-Сахалинске бьют тревогу",
-        "category_key": "sakh",
-        "reason": "hyperlocal_service_disruption",
-        "corrected_category": null
-      }
-    ],
-    "valid_posts_counted": 19
+    "retrospective_anomalies": [],
+    "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-08T23:08:37+00:00",
+    "checked_at_utc": "2026-10-09T00:23:40+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -447,10 +456,10 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 13.1,
+      "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
-        "local": 10,
+        "local": 11,
         "ru_pol": 0,
         "ru_eco": 4,
         "ru_safety": 1,
@@ -466,12 +475,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -4.3,
-        "ru_pol": 3.8,
-        "ru_eco": -0.2,
-        "ru_safety": 1.85,
-        "world": 0.9,
-        "it": -2.05
+        "local": -5.0,
+        "ru_pol": 4.0,
+        "ru_eco": 0.0,
+        "ru_safety": 2.0,
+        "world": 1.0,
+        "it": -2.0
       }
     }
   ]
