@@ -1,39 +1,27 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-09T20:50:45+00:00",
-  "checked_at_sakhalin": "2026-10-10T07:50:42+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-09T20:56:23+00:00",
+  "checked_at_sakhalin": "2026-10-10T07:56:18+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 7.18,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-10T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-10T00:40:06+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-10T00:40:06+11:00",
-    "age_hours": 7.18,
-    "published": 2
+    "finished_sakhalin": "2026-10-10T07:55:46+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-09T13:40:06+00:00",
+    "checked_at_utc": "2026-10-09T20:55:46+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
-    "director_approved": 5,
+    "published": 1,
+    "director_approved": 4,
     "ai_calls": 2,
     "ai_api_fail": 2,
     "ai_budget_exhausted": 0,
@@ -64,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-09T20:50:44+00:00",
+    "checked_at": "2026-10-09T20:56:21+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -77,19 +65,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 367,
-      "title": "Финляндия распорядилась приостановить работы на двух дата-центрах Google",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 368,
       "title": "Ураганный ветер ожидают на Северных Курилах 8 и 9 октября",
@@ -297,6 +272,19 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 391,
+      "title": "OpenAI и Anthropic тайно готовятся к ИИ-катастрофе , которая оставит человечество без интернета, воды, всей финансовой системы и электричества",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -318,12 +306,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 8,
+      "local": 7,
       "ru_pol": 0,
       "ru_eco": 6,
       "ru_safety": 1,
       "world": 1,
-      "it": 4
+      "it": 5
     },
     "scaled_targets": {
       "local": 6.0,
@@ -334,19 +322,18 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -2.0,
+      "local": -1.0,
       "ru_pol": 4.0,
       "ru_eco": -2.0,
       "ru_safety": 2.0,
       "world": 1.0,
-      "it": -3.0
+      "it": -4.0
     },
     "distribution_error": 14.0,
     "subtype_counts": {
-      "major_infrastructure": 1,
       "military_security": 1,
       "geopolitical_event": 1,
-      "major_it": 4,
+      "major_it": 5,
       "severe_weather": 2,
       "macro_economy": 6,
       "major_emergency": 1,
@@ -355,7 +342,6 @@
       "violent_crime": 2
     },
     "sequence": [
-      "local",
       "ru_safety",
       "world",
       "it",
@@ -374,10 +360,10 @@
       "ru_eco",
       "it",
       "ru_eco",
+      "it",
       "it"
     ],
     "category_sequence": [
-      "sakh",
       "ru_security",
       "geo",
       "it",
@@ -396,10 +382,10 @@
       "ru_eco",
       "it",
       "ru_eco",
+      "it",
       "it"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakh.online",
       "sakhalinmedia.ru",
       "bbc technology",
@@ -418,14 +404,15 @@
       "sakhalinmedia.ru",
       "exploit exploitex",
       "sakhalinmedia.ru",
-      "exploit exploitex"
+      "exploit exploitex",
+      "techmedia techmedia"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-09T20:50:39+00:00",
+    "checked_at_utc": "2026-10-09T20:56:15+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -458,12 +445,12 @@
       "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
-        "local": 8,
+        "local": 7,
         "ru_pol": 0,
         "ru_eco": 6,
         "ru_safety": 1,
         "world": 1,
-        "it": 4
+        "it": 5
       },
       "targets": {
         "local": 6,
@@ -474,12 +461,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -2.0,
+        "local": -1.0,
         "ru_pol": 4.0,
         "ru_eco": -2.0,
         "ru_safety": 2.0,
         "world": 1.0,
-        "it": -3.0
+        "it": -4.0
       }
     }
   ]
