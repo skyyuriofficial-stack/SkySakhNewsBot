@@ -1,55 +1,37 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-09T08:54:35+00:00",
-  "checked_at_sakhalin": "2026-10-09T19:54:29+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-09T09:01:33+00:00",
+  "checked_at_sakhalin": "2026-10-09T20:01:30+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-09T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-09T17:24:33+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "evening",
-      "expected_by_sakhalin": "2026-10-09T19:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "morning",
-        "at_utc": "2026-10-08T22:02:08+00:00",
-        "at_sakhalin": "2026-10-09T09:02:08+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-09T17:24:33+11:00",
-    "age_hours": 2.5,
+    "finished_sakhalin": "2026-10-09T20:01:04+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-09T06:24:33+00:00",
+    "checked_at_utc": "2026-10-09T09:01:04+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 10,
-    "ai_calls": 2,
-    "ai_api_fail": 1,
-    "ai_budget_exhausted": 0,
+    "director_approved": 7,
+    "ai_calls": 4,
+    "ai_api_fail": 4,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-09",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
       "published": true,
@@ -70,32 +52,33 @@
     },
     "evening": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-09T08:56:46+00:00",
+        "published_at_sakhalin": "2026-10-09T19:56:46+11:00",
+        "telegram_message_id": 386,
+        "headline": "Legislative push to tighten enforcement of mobilization orders",
+        "evidence_count": 4,
+        "evidence_hash": "4f54c24f861978bbbace5179f6a87afd6ec51ee2be01874371dcdd01e0f783d2",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "morning",
-      "at_utc": "2026-10-08T22:02:08+00:00",
-      "at_sakhalin": "2026-10-09T09:02:08+11:00"
+      "mode": "evening",
+      "at_utc": "2026-10-09T08:56:46+00:00",
+      "at_sakhalin": "2026-10-09T19:56:46+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "evening",
-        "expected_by_sakhalin": "2026-10-09T19:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "morning",
-          "at_utc": "2026-10-08T22:02:08+00:00",
-          "at_sakhalin": "2026-10-09T09:02:08+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-09T08:54:33+00:00",
+    "checked_at": "2026-10-09T09:01:32+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -108,32 +91,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 361,
-      "title": "Без света 7 октября: Лиственничное и Октябрьский в пригороде Южно-Сахалинска",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
-    {
-      "message_id": 363,
-      "title": "Первый в Сахалинской области центр детского творчества открыли в Корсакове",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 364,
       "title": "«Играющие с огнем»: как вербуют диверсантов для поджогов в России",
@@ -328,6 +285,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 387,
+      "title": "Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
+    },
+    {
+      "message_id": 388,
+      "title": "В России душат поставки зарубежных ноутбуков — завоз Dell, HP и Apple уже сократился на 10% и продолжает падать, пишут Известия",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -349,9 +332,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 11,
+      "local": 10,
       "ru_pol": 0,
-      "ru_eco": 4,
+      "ru_eco": 5,
       "ru_safety": 1,
       "world": 1,
       "it": 3
@@ -365,29 +348,27 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -5.0,
+      "local": -4.0,
       "ru_pol": 4.0,
-      "ru_eco": 0.0,
+      "ru_eco": -1.0,
       "ru_safety": 2.0,
       "world": 1.0,
       "it": -2.0
     },
     "distribution_error": 14.0,
     "subtype_counts": {
-      "violent_crime": 3,
-      "major_it": 3,
       "severe_weather": 3,
       "public_service_disruption": 2,
       "major_infrastructure": 1,
       "military_security": 1,
       "geopolitical_event": 1,
-      "macro_economy": 4,
+      "major_it": 3,
+      "macro_economy": 5,
       "major_emergency": 1,
-      "political_decision": 1
+      "political_decision": 1,
+      "violent_crime": 2
     },
     "sequence": [
-      "local",
-      "it",
       "local",
       "local",
       "local",
@@ -405,11 +386,11 @@
       "local",
       "local",
       "ru_eco",
-      "local"
+      "local",
+      "ru_eco",
+      "it"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "it",
       "sakh",
       "sakh",
       "sakh",
@@ -427,12 +408,12 @@
       "sakh",
       "sakh_chp",
       "ru_eco",
-      "sakh_chp"
+      "sakh_chp",
+      "ru_eco",
+      "it"
     ],
     "source_sequence": [
       "sakhalinmedia.ru",
-      "bbc technology",
-      "sakhalinmedia.ru",
       "sakh.online",
       "sakh.online",
       "sakh.online",
@@ -449,14 +430,16 @@
       "astv",
       "astv",
       "sakhalinmedia.ru",
-      "astv"
+      "astv",
+      "sakhalinmedia.ru",
+      "exploit exploitex"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-09T08:54:27+00:00",
+    "checked_at_utc": "2026-10-09T09:01:27+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -489,9 +472,9 @@
       "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
-        "local": 11,
+        "local": 10,
         "ru_pol": 0,
-        "ru_eco": 4,
+        "ru_eco": 5,
         "ru_safety": 1,
         "world": 1,
         "it": 3
@@ -505,9 +488,9 @@
         "it": 1
       },
       "deficits": {
-        "local": -5.0,
+        "local": -4.0,
         "ru_pol": 4.0,
-        "ru_eco": 0.0,
+        "ru_eco": -1.0,
         "ru_safety": 2.0,
         "world": 1.0,
         "it": -2.0
