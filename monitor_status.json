@@ -1,72 +1,46 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-09T09:53:49+00:00",
-  "checked_at_sakhalin": "2026-10-09T20:53:44+11:00",
+  "checked_at_utc": "2026-10-09T13:40:38+00:00",
+  "checked_at_sakhalin": "2026-10-10T00:40:33+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-09T20:01:04+11:00",
-    "age_hours": 0.88,
+    "finished_sakhalin": "2026-10-10T00:40:06+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-09T09:01:04+00:00",
+    "checked_at_utc": "2026-10-09T13:40:06+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 7,
-    "ai_calls": 4,
-    "ai_api_fail": 4,
-    "ai_budget_exhausted": 1,
+    "director_approved": 5,
+    "ai_calls": 2,
+    "ai_api_fail": 2,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-10-09",
+    "day_sakhalin": "2026-10-10",
     "status": "healthy",
     "morning": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-08T22:02:08+00:00",
-        "published_at_sakhalin": "2026-10-09T09:02:08+11:00",
-        "telegram_message_id": 380,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 5,
-        "evidence_hash": "65237c92122cd227fc3d4f6ca04daf0169294a7ec4c2e5f1edb762c9ddb9900d",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "evening": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-09T08:56:46+00:00",
-        "published_at_sakhalin": "2026-10-09T19:56:46+11:00",
-        "telegram_message_id": 386,
-        "headline": "Legislative push to tighten enforcement of mobilization orders",
-        "evidence_count": 4,
-        "evidence_hash": "4f54c24f861978bbbace5179f6a87afd6ec51ee2be01874371dcdd01e0f783d2",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "last_attempt": {
       "status": "ok",
@@ -78,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-09T09:53:47+00:00",
+    "checked_at": "2026-10-09T13:40:36+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -91,32 +65,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 364,
-      "title": "«Играющие с огнем»: как вербуют диверсантов для поджогов в России",
-      "category_key": "ru_security",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_security",
-      "title_issues": []
-    },
-    {
-      "message_id": 365,
-      "title": "Посольство США рекомендовало американцам покинуть Россию на фоне ситуации в Приангарье",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "geo",
-      "title_issues": []
-    },
     {
       "message_id": 367,
       "title": "Финляндия распорядилась приостановить работы на двух дата-центрах Google",
@@ -311,6 +259,32 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 389,
+      "title": "AI-аватара инвестиционного советника запустят в рамках инвестиционных инструментов",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
+    },
+    {
+      "message_id": 390,
+      "title": "Anthropic запретили унижать Claude, потому что верят, что у нейронки есть ДУША — журналисты узнали , что создатели ИИ месяцами проводили закрытые встречи с католическими, иудейским",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -332,12 +306,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 10,
+      "local": 8,
       "ru_pol": 0,
-      "ru_eco": 5,
+      "ru_eco": 6,
       "ru_safety": 1,
       "world": 1,
-      "it": 3
+      "it": 4
     },
     "scaled_targets": {
       "local": 6.0,
@@ -348,29 +322,27 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -4.0,
+      "local": -2.0,
       "ru_pol": 4.0,
-      "ru_eco": -1.0,
+      "ru_eco": -2.0,
       "ru_safety": 2.0,
       "world": 1.0,
-      "it": -2.0
+      "it": -3.0
     },
     "distribution_error": 14.0,
     "subtype_counts": {
-      "severe_weather": 3,
-      "public_service_disruption": 2,
       "major_infrastructure": 1,
       "military_security": 1,
       "geopolitical_event": 1,
-      "major_it": 3,
-      "macro_economy": 5,
+      "major_it": 4,
+      "severe_weather": 2,
+      "macro_economy": 6,
       "major_emergency": 1,
+      "public_service_disruption": 1,
       "political_decision": 1,
       "violent_crime": 2
     },
     "sequence": [
-      "local",
-      "local",
       "local",
       "ru_safety",
       "world",
@@ -388,11 +360,11 @@
       "ru_eco",
       "local",
       "ru_eco",
+      "it",
+      "ru_eco",
       "it"
     ],
     "category_sequence": [
-      "sakh",
-      "sakh",
       "sakh",
       "ru_security",
       "geo",
@@ -410,11 +382,11 @@
       "ru_eco",
       "sakh_chp",
       "ru_eco",
+      "it",
+      "ru_eco",
       "it"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "sakh.online",
       "sakh.online",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -431,6 +403,8 @@
       "astv",
       "sakhalinmedia.ru",
       "astv",
+      "sakhalinmedia.ru",
+      "exploit exploitex",
       "sakhalinmedia.ru",
       "exploit exploitex"
     ],
@@ -439,7 +413,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-09T09:53:41+00:00",
+    "checked_at_utc": "2026-10-09T13:40:30+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -472,12 +446,12 @@
       "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
-        "local": 10,
+        "local": 8,
         "ru_pol": 0,
-        "ru_eco": 5,
+        "ru_eco": 6,
         "ru_safety": 1,
         "world": 1,
-        "it": 3
+        "it": 4
       },
       "targets": {
         "local": 6,
@@ -488,12 +462,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -4.0,
+        "local": -2.0,
         "ru_pol": 4.0,
-        "ru_eco": -1.0,
+        "ru_eco": -2.0,
         "ru_safety": 2.0,
         "world": 1.0,
-        "it": -2.0
+        "it": -3.0
       }
     }
   ]
