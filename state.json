@@ -318,7 +318,8 @@
     "https://t.me/techmedia/23626",
     "https://sakhalinmedia.ru/news/2647526/",
     "https://sakhalinmedia.ru/news/2647711/",
-    "https://astv.ru/news/society/2026-10-10-pochti-polovina-rossiyan-uzhe-pol-zuyutsya-nejrosetyami"
+    "https://astv.ru/news/society/2026-10-10-pochti-polovina-rossiyan-uzhe-pol-zuyutsya-nejrosetyami",
+    "https://sakh.online/news/18/2026-10-11/gubernator-poruchil-derzhat-na-kontrole-situatsiyu-s-podtopleniem-podvala-v-dome-v-yuzhno-sahalinske-528630"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -640,187 +641,11 @@
     "f1f748f9a8745cf7547e241a1f75d0192bc3b74a",
     "69e2160e8af61700837476d44a39e06e095a70fc",
     "ea8a9dc4ae147fc25111afdc75e6e61d8e8c11d2",
-    "0e781c0fcff6ec224801eec641999407fea73ed1"
+    "0e781c0fcff6ec224801eec641999407fea73ed1",
+    "4d0a2390129857c5ae2dc4d0e3729af62e408e60"
   ],
-  "last_run_sakhalin": "2026-10-11T08:45:00+11:00",
+  "last_run_sakhalin": "2026-10-11T10:32:17+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-09-09T09:27:50+11:00",
-      "source": "Sakh.online",
-      "category": "🇷🇺 Россия / происшествия",
-      "category_key": "ru_incident",
-      "title": "Синегорск без света: авария на линии, мэрия взяла ситуацию под контроль",
-      "url": "https://sakh.online/news/24/2026-09-09/sinegorsk-ostalsya-bez-sveta-iz-za-avarii-na-linii-9-sentyabrya-meriya-vzyala-na-kontrol-525355",
-      "image_url": "https://sakh.online/attachments/cbf9b5eb777e0b205cc01ad4cd1362e1645521f6/store/crop/0/42/800/451/800/0/0/0/fcbee549e4a8c89b4e27862f14a80383bebce1d81330883c94986fdf07a6/fcbee549e4a8c89b4e27862f14a80383bebce1d81330883c94986fdf07a6.webp",
-      "image_hash": "755007165cb78da4096246932b2bf73cc4f89aba",
-      "topic_cluster": "ru_incident:синегорск_света_авария_линии_мэрия_взяла",
-      "published_at": "2026-09-08T13:00:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.1",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "ru_incident",
-        "corrected_category": "ru_incident",
-        "group": "ru_safety",
-        "event_type": "major_emergency",
-        "subtype": "major_emergency",
-        "seriousness": 96,
-        "threshold": 76,
-        "selection_utility": 132.0,
-        "slot": 1,
-        "risks": [],
-        "title_original": "Синегорск без света: авария на линии, мэрия взяла ситуацию под контроль",
-        "title_corrected": "Синегорск без света: авария на линии, мэрия взяла ситуацию под контроль",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "В Синегорске с ночи нет электричества из-за аварии на линии. Специалисты всю ночь искали повреждение, утром на место прибыла дополнительная бригада. Мэрия держит ситуацию на контроле. Подробности — в материале. В Синегорске с ночи нет электричества. Аварийное отключение произошло из-за технического повреждения на линии. Специалисты всю ночь искали место аварии, утром на подмогу приехала дополнительная бригада. Сигналы от жителей о том, что с ночи нет света, поступили в муниципальный центр управления. Руководитель «Электросервиса» пояснил, что на линии произошло аварийное отключение из-за технического повреждения. Специалисты оперативно отреагировали на инцидент и вели непрерывный поиск места повреждения на протяжении всей ночи. На этом участке в рамках ремонтной программы демонтируют старые деревянные опоры с неизолированным проводом и устанавливают новые. Чтобы ускорить работы, сегодня в 6:00 утра на место прибыла дополнительная бригада. Сейчас специалисты ведут монтажные работы. Электричество дадут после их полного окончания.",
-      "title_original": null,
-      "footer": "РОССИЯ | ПРОИСШЕСТВИЯ",
-      "published_row": {
-        "reject": false,
-        "title_ru": "Синегорск без света: авария на линии, мэрия взяла ситуацию под контроль",
-        "body": [
-          "Специалисты всю ночь искали повреждение, утром на место прибыла дополнительная бригада.",
-          "Аварийное отключение произошло из-за технического повреждения на линии."
-        ],
-        "footer": "РОССИЯ | ПРОИСШЕСТВИЯ",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": [],
-          "reclassified_from": "sakh_chp",
-          "reclassified_to": "ru_incident"
-        },
-        "news_director": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_incident",
-          "corrected_category": "ru_incident",
-          "group": "ru_safety",
-          "event_type": "major_emergency",
-          "subtype": "major_emergency",
-          "seriousness": 96,
-          "threshold": 76,
-          "selection_utility": 132.0,
-          "slot": 1,
-          "risks": [],
-          "title_original": "Синегорск без света: авария на линии, мэрия взяла ситуацию под контроль",
-          "title_corrected": "Синегорск без света: авария на линии, мэрия взяла ситуацию под контроль",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "ru_incident",
-          "final_category": "ru_incident",
-          "event_type": "major_emergency",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.3",
-          "director_review": {
-            "version": "director-v2.1",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "ru_incident",
-            "corrected_category": "ru_incident",
-            "group": "ru_safety",
-            "event_type": "major_emergency",
-            "subtype": "major_emergency",
-            "seriousness": 89,
-            "threshold": 76,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "Синегорск без света: авария на линии, мэрия взяла ситуацию под контроль",
-            "title_corrected": "Синегорск без света: авария на линии, мэрия взяла ситуацию под контроль",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "🇷🇺 Россия / происшествия\n\n<b>Синегорск без света: авария на линии, мэрия взяла ситуацию под контроль</b>\n\nСпециалисты всю ночь искали повреждение, утром на место прибыла дополнительная бригада.\n\nАварийное отключение произошло из-за технического повреждения на линии.\n\nРОССИЯ | ПРОИСШЕСТВИЯ · <a href=\"https://sakh.online/news/24/2026-09-09/sinegorsk-ostalsya-bez-sveta-iz-za-avarii-na-linii-9-sentyabrya-meriya-vzyala-na-kontrol-525355\">Sakh.online</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "ru_incident",
-        "final_category": "ru_incident",
-        "event_type": "major_emergency",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.3",
-        "director_review": {
-          "version": "director-v2.1",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_incident",
-          "corrected_category": "ru_incident",
-          "group": "ru_safety",
-          "event_type": "major_emergency",
-          "subtype": "major_emergency",
-          "seriousness": 89,
-          "threshold": 76,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Синегорск без света: авария на линии, мэрия взяла ситуацию под контроль",
-          "title_corrected": "Синегорск без света: авария на линии, мэрия взяла ситуацию под контроль",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 291,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": [],
-        "reclassified_from": "sakh_chp",
-        "reclassified_to": "ru_incident"
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-09-11T07:03:35+00:00"
-      }
-    },
     {
       "time_sakhalin": "2026-09-09T09:30:01+11:00",
       "source": "ASTV",
@@ -11713,7 +11538,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-10T21:39:54+00:00"
+        "checked_at": "2026-10-10T23:28:44+00:00"
       }
     },
     {
@@ -11894,7 +11719,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-10T21:39:54+00:00"
+        "checked_at": "2026-10-10T23:28:44+00:00"
       }
     },
     {
@@ -12083,7 +11908,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-10T21:39:54+00:00"
+        "checked_at": "2026-10-10T23:28:44+00:00"
       }
     },
     {
@@ -12451,7 +12276,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-10T21:39:54+00:00"
+        "checked_at": "2026-10-10T23:28:44+00:00"
       }
     },
     {
@@ -12628,7 +12453,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-10T21:39:54+00:00"
+        "checked_at": "2026-10-10T23:28:44+00:00"
       }
     },
     {
@@ -12805,7 +12630,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-10T21:39:54+00:00"
+        "checked_at": "2026-10-10T23:28:44+00:00"
       }
     },
     {
@@ -13162,7 +12987,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-10T21:39:55+00:00"
+        "checked_at": "2026-10-10T23:28:44+00:00"
       }
     },
     {
@@ -13347,7 +13172,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-10T21:39:55+00:00"
+        "checked_at": "2026-10-10T23:28:45+00:00"
       }
     },
     {
@@ -13528,7 +13353,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-10T21:39:55+00:00"
+        "checked_at": "2026-10-10T23:28:45+00:00"
       }
     },
     {
@@ -13903,7 +13728,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-10T21:39:55+00:00"
+        "checked_at": "2026-10-10T23:28:45+00:00"
       }
     },
     {
@@ -14084,7 +13909,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-10T21:39:55+00:00"
+        "checked_at": "2026-10-10T23:28:45+00:00"
       }
     },
     {
@@ -14269,7 +14094,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-10T21:39:55+00:00"
+        "checked_at": "2026-10-10T23:28:45+00:00"
       }
     },
     {
@@ -14450,7 +14275,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-10T21:39:56+00:00"
+        "checked_at": "2026-10-10T23:28:45+00:00"
       }
     },
     {
@@ -14635,7 +14460,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-10T21:39:56+00:00"
+        "checked_at": "2026-10-10T23:28:46+00:00"
       }
     },
     {
@@ -14816,7 +14641,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-10T21:39:56+00:00"
+        "checked_at": "2026-10-10T23:28:46+00:00"
       }
     },
     {
@@ -14993,7 +14818,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-10T21:39:56+00:00"
+        "checked_at": "2026-10-10T23:28:46+00:00"
       }
     },
     {
@@ -15170,6 +14995,195 @@
         "issues": [],
         "reclassified_from": "sakh",
         "reclassified_to": "it"
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-10-10T23:28:46+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-10-11T10:32:09+11:00",
+      "source": "Sakh.online",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title": "Губернатор поручил держать на контроле ситуацию с подтоплением подвала в доме в Южно-Сахалинске",
+      "url": "https://sakh.online/news/18/2026-10-11/gubernator-poruchil-derzhat-na-kontrole-situatsiyu-s-podtopleniem-podvala-v-dome-v-yuzhno-sahalinske-528630",
+      "image_url": "https://sakh.online/attachments/ecad200b94d71dd14949a0492390b96acce53869/store/crop/0/28/800/451/800/0/0/0/a74868cea09d11bb15441969e91567c4d9d7125211b41437178f2a07aba9/a74868cea09d11bb15441969e91567c4d9d7125211b41437178f2a07aba9.webp",
+      "image_hash": "8a72914aa3dc3d3e686da0efd055d9d40fd21922",
+      "topic_cluster": "sakh:губернатор_поручил_держать_контроле_ситуацию_подтоплением",
+      "published_at": "2026-10-10T13:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "sakh",
+        "corrected_category": "sakh",
+        "group": "local",
+        "event_type": "political_decision",
+        "subtype": "political_decision",
+        "seriousness": 92,
+        "threshold": 70,
+        "selection_utility": 2.0,
+        "slot": "backup",
+        "risks": [],
+        "title_original": "Губернатор поручил держать на контроле ситуацию с подтоплением подвала в доме в Южно-Сахалинске",
+        "title_corrected": "Губернатор поручил держать на контроле ситуацию с подтоплением подвала в доме в Южно-Сахалинске",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "По словам жительницы Варвары Нестеренко, выйти во двор в такие дни невозможно. Три дня назад она вместе с соседями обратилась к Валерию Лимаренко — заявку уже взяли в работу. Ранее подтопление на этой территории фиксировали в августе, когда шли обильные дожди. Как пояснил мэр Южно‑Сахалинска Сергей Надсадин, вода попадает во двор с расположенной выше проезжей части. После последнего ливня на дороге установили отбойные ограждения. «С людьми проговорили, что в период экстремальных осадков подтопления не исключены. Сейчас проводим превентивные работы. Установили с жителями прямой контакт, будем чутко реагировать на любые обращения», — подчеркнул градоначальник. Он также отметил, что профильные службы обязаны держать дом на Тихоокеанской, 12 под особым контролем во время циклонов. Во время объезда губернатор Валерий Лимаренко обратил внимание на состояние двора: несмотря на то, что территория содержится в порядке и оборудована ливневой канализацией, вода все равно стекает сюда с проезжей части, в том числе — с района «Горного воздуха» во время дождей и таяния снега. Глава региона поинтересовался, какие меры принимаются, чтобы снизить объем воды, попадающей на улично‑дорожную сеть.",
+      "title_original": null,
+      "footer": "САХАЛИН",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Губернатор поручил держать на контроле ситуацию с подтоплением подвала в доме в Южно-Сахалинске",
+        "body": [
+          "По словам жительницы Варвары Нестеренко, выйти во двор в такие дни невозможно.",
+          "Три дня назад она вместе с соседями обратилась к Валерию Лимаренко — заявку уже взяли в работу."
+        ],
+        "footer": "САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh_chp",
+          "reclassified_to": "sakh"
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh",
+          "corrected_category": "sakh",
+          "group": "local",
+          "event_type": "political_decision",
+          "subtype": "political_decision",
+          "seriousness": 92,
+          "threshold": 70,
+          "selection_utility": 2.0,
+          "slot": "backup",
+          "risks": [],
+          "title_original": "Губернатор поручил держать на контроле ситуацию с подтоплением подвала в доме в Южно-Сахалинске",
+          "title_corrected": "Губернатор поручил держать на контроле ситуацию с подтоплением подвала в доме в Южно-Сахалинске",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "sakh",
+          "final_category": "sakh",
+          "event_type": "political_decision",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.6",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "sakh",
+            "corrected_category": "sakh",
+            "group": "local",
+            "event_type": "political_decision",
+            "subtype": "political_decision",
+            "seriousness": 86,
+            "threshold": 70,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Губернатор поручил держать на контроле ситуацию с подтоплением подвала в доме в Южно-Сахалинске",
+            "title_corrected": "Губернатор поручил держать на контроле ситуацию с подтоплением подвала в доме в Южно-Сахалинске",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "📍 Сахалин\n\n<b>Губернатор поручил держать на контроле ситуацию с подтоплением подвала в доме в Южно-Сахалинске</b>\n\nПо словам жительницы Варвары Нестеренко, выйти во двор в такие дни невозможно.\n\nТри дня назад она вместе с соседями обратилась к Валерию Лимаренко — заявку уже взяли в работу.\n\nСАХАЛИН · <a href=\"https://sakh.online/news/18/2026-10-11/gubernator-poruchil-derzhat-na-kontrole-situatsiyu-s-podtopleniem-podvala-v-dome-v-yuzhno-sahalinske-528630\">Sakh.online</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh",
+        "final_category": "sakh",
+        "event_type": "political_decision",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.6",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh",
+          "corrected_category": "sakh",
+          "group": "local",
+          "event_type": "political_decision",
+          "subtype": "political_decision",
+          "seriousness": 86,
+          "threshold": 70,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Губернатор поручил держать на контроле ситуацию с подтоплением подвала в доме в Южно-Сахалинске",
+          "title_corrected": "Губернатор поручил держать на контроле ситуацию с подтоплением подвала в доме в Южно-Сахалинске",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 398,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh_chp",
+        "reclassified_to": "sakh"
+      },
+      "auto_deleted": true,
+      "post_audit": {
+        "version": "post-audit-hardening-v1.1",
+        "approved": false,
+        "checked_at": "2026-10-10T23:32:20+00:00",
+        "auto_action": "deleted_by_hardening",
+        "reason": "semantic_duplicate_of:Губернатор поручил устранить подтопление подвала дома в Южно-Сахалинск"
       }
     }
   ],
@@ -15398,11 +15412,11 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-10-11T08:39:49+11:00",
+    "started_sakhalin": "2026-10-11T10:28:40+11:00",
     "status": "ok",
-    "candidates": 6,
+    "candidates": 8,
     "published": 1,
-    "local_candidates": 1,
+    "local_candidates": 3,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -15411,7 +15425,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 12
+          "recent": 14
         },
         {
           "source": "SakhalinMedia",
@@ -15423,7 +15437,7 @@
           "source": "ASTV HTML",
           "status": "ok",
           "entries": 21,
-          "recent": 13
+          "recent": 14
         },
         {
           "source": "Sakh.online HTML",
@@ -15433,27 +15447,27 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-10-11T08:45:00+11:00",
+    "finished_sakhalin": "2026-10-11T10:32:17+11:00",
     "stats": {
-      "rss_seen": 160,
-      "old_skip": 68,
-      "google_skip": 12,
+      "rss_seen": 159,
+      "old_skip": 64,
+      "google_skip": 14,
       "duplicate_skip": 2,
-      "low_info_skip": 13,
-      "category_skip": 30,
+      "low_info_skip": 11,
+      "category_skip": 33,
       "no_image_skip": 0,
-      "bad_image_skip": 13,
-      "logo_image_skip": 35,
-      "text_card_image_skip": 5,
-      "candidates": 19,
+      "bad_image_skip": 11,
+      "logo_image_skip": 32,
+      "text_card_image_skip": 2,
+      "candidates": 21,
       "rewrite_retry": 4,
-      "editorial_skip": 2,
+      "editorial_skip": 5,
       "telegram_fail": 0,
       "published": 1,
       "telegram_source_attempt": 2,
       "telegram_source_fail": 0,
-      "telegram_source_seen": 30,
-      "telegram_source_candidates": 16,
+      "telegram_source_seen": 29,
+      "telegram_source_candidates": 13,
       "ai_calls": 4,
       "ai_budget_exhausted": 1,
       "ai_api_fail": 4,
@@ -15461,8 +15475,8 @@
       "validation_reject": 0,
       "extractive_fallback": 2,
       "extractive_first": 2,
-      "editorial_prechecked": 59,
-      "editorial_gate_checked": 4,
+      "editorial_prechecked": 56,
+      "editorial_gate_checked": 7,
       "editorial_gate_pass": 2,
       "editorial_gate_reject": 0,
       "editorial_gate_fallback": 0,
@@ -15471,9 +15485,9 @@
       "editorial_title_reject": 0,
       "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 5,
-      "editorial_offtopic_reject": 34,
-      "openrouter_empty_content": 3,
+      "editorial_reclassified": 6,
+      "editorial_offtopic_reject": 33,
+      "openrouter_empty_content": 0,
       "openrouter_model_fallback": 0,
       "openrouter_attempts": 12,
       "openrouter_retries": 8,
@@ -15481,9 +15495,9 @@
       "openrouter_success": 0,
       "openrouter_circuit_open": 0,
       "editorial_grounded_translation_fallback": 0,
-      "media_required_skip": 6,
+      "media_required_skip": 2,
       "media_generic_skip": 0,
-      "media_ready_candidates": 19,
+      "media_ready_candidates": 21,
       "photo_retry": 0,
       "photo_publish": 1,
       "photo_upload_original": 1,
@@ -15497,8 +15511,8 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 19,
-      "director_approved": 6,
+      "director_seen": 21,
+      "director_approved": 8,
       "director_rejected": 13,
       "director_reclassified": 0,
       "director_title_corrected": 0,
@@ -15519,207 +15533,6 @@
       "policy_version": "policy-v2.6",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
-        "window": 20,
-        "targets": {
-          "local": 6,
-          "ru_pol": 4,
-          "ru_eco": 4,
-          "ru_safety": 3,
-          "world": 2,
-          "it": 1
-        },
-        "target_percent": {
-          "local": 30.0,
-          "ru_pol": 20.0,
-          "ru_eco": 20.0,
-          "ru_safety": 15.0,
-          "world": 10.0,
-          "it": 5.0
-        },
-        "counts": {
-          "local": 8,
-          "ru_pol": 0,
-          "ru_eco": 6,
-          "ru_safety": 0,
-          "world": 1,
-          "it": 5
-        },
-        "scaled_targets": {
-          "local": 6.0,
-          "ru_pol": 4.0,
-          "ru_eco": 4.0,
-          "ru_safety": 3.0,
-          "world": 2.0,
-          "it": 1.0
-        },
-        "deficits": {
-          "local": -2.0,
-          "ru_pol": 4.0,
-          "ru_eco": -2.0,
-          "ru_safety": 3.0,
-          "world": 1.0,
-          "it": -4.0
-        },
-        "distribution_error": 16.0,
-        "subtype_counts": {
-          "major_it": 5,
-          "severe_weather": 2,
-          "macro_economy": 6,
-          "major_emergency": 1,
-          "public_service_disruption": 1,
-          "political_decision": 2,
-          "violent_crime": 2,
-          "geopolitical_event": 1
-        },
-        "sequence": [
-          "it",
-          "local",
-          "ru_eco",
-          "local",
-          "ru_eco",
-          "local",
-          "ru_eco",
-          "it",
-          "local",
-          "local",
-          "local",
-          "ru_eco",
-          "local",
-          "ru_eco",
-          "it",
-          "ru_eco",
-          "it",
-          "it",
-          "world",
-          "local"
-        ],
-        "category_sequence": [
-          "it",
-          "sakh",
-          "ru_eco",
-          "sakh",
-          "ru_eco",
-          "sakh_chp",
-          "ru_eco",
-          "it",
-          "sakh",
-          "sakh",
-          "sakh_chp",
-          "ru_eco",
-          "sakh_chp",
-          "ru_eco",
-          "it",
-          "ru_eco",
-          "it",
-          "it",
-          "geo",
-          "sakh"
-        ],
-        "source_sequence": [
-          "bbc technology",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "bbc technology",
-          "astv",
-          "astv",
-          "astv",
-          "sakhalinmedia.ru",
-          "astv",
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "techmedia techmedia",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru"
-        ],
-        "retrospective_anomalies": [],
-        "valid_posts_counted": 20
-      },
-      "candidate_count": 19,
-      "approved_count": 6,
-      "rejected_count": 13,
-      "rejected_by_reason": {
-        "importance_below_threshold": 8,
-        "statement_without_material_decision": 1,
-        "low_scale_incident_not_release_worthy": 2,
-        "ordinary_weather_not_release_worthy": 2
-      },
-      "ai_review_requested": 0,
-      "ai_review_received": 0,
-      "selected_groups": [
-        "world",
-        "local"
-      ],
-      "projected_distribution_error": 14.0,
-      "projected_counts": {
-        "ru_eco": 6,
-        "local": 8,
-        "it": 4,
-        "world": 2
-      },
-      "projected_length": 20,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "Ukraine war: Russian glide bomb attack on Zaporizhzhia kills at least 20 people",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 89,
-          "utility": 123.0
-        },
-        {
-          "slot": 2,
-          "title": "Сахалинские пожарные ликвидировали два возгорания за утро",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "seriousness": 93,
-          "utility": 16.0
-        },
-        {
-          "slot": "backup",
-          "title": "Nobel peace laureate says US sanctions on ICC 'unacceptable'",
-          "category_key": "geo",
-          "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 87,
-          "utility": 73.0
-        },
-        {
-          "slot": "backup",
-          "title": "Почти половина россиян уже пользуются нейросетями",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 93,
-          "utility": -61.0
-        },
-        {
-          "slot": "backup",
-          "title": "Anthropic bans users from being 'cruel' to its AI systems",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 87,
-          "utility": -67.0
-        },
-        {
-          "slot": "backup",
-          "title": "AI (artificial intelligence) | The Guardian",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 87,
-          "utility": -67.0
-        }
-      ],
-      "rolling_balance_after": {
         "window": 20,
         "targets": {
           "local": 6,
@@ -15840,11 +15653,230 @@
         ],
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
+      },
+      "candidate_count": 21,
+      "approved_count": 8,
+      "rejected_count": 13,
+      "rejected_by_reason": {
+        "importance_below_threshold": 6,
+        "statement_without_material_decision": 1,
+        "low_scale_incident_not_release_worthy": 2,
+        "ordinary_weather_not_release_worthy": 4
+      },
+      "ai_review_requested": 0,
+      "ai_review_received": 0,
+      "selected_groups": [
+        "world",
+        "local"
+      ],
+      "projected_distribution_error": 14.0,
+      "projected_counts": {
+        "local": 8,
+        "ru_eco": 5,
+        "it": 5,
+        "world": 2
+      },
+      "projected_length": 20,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "Ukraine war: Russian glide bomb attack on Zaporizhzhia kills at least 20 people",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "seriousness": 89,
+          "utility": 123.0
+        },
+        {
+          "slot": 2,
+          "title": "Пожар охватил гараж возле частного дома в Южно-Сахалинске",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "seriousness": 93,
+          "utility": 16.0
+        },
+        {
+          "slot": "backup",
+          "title": "Nobel peace laureate says US sanctions on ICC 'unacceptable'",
+          "category_key": "geo",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "seriousness": 87,
+          "utility": 73.0
+        },
+        {
+          "slot": "backup",
+          "title": "Расходы на обеспечение инвалидов заложены в бюджете на 2027 год",
+          "category_key": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "seriousness": 85,
+          "utility": 11.0
+        },
+        {
+          "slot": "backup",
+          "title": "Губернатор поручил держать на контроле ситуацию с подтоплением подвала в доме в Южно-Сахалинске",
+          "category_key": "sakh",
+          "group": "local",
+          "event_type": "political_decision",
+          "seriousness": 92,
+          "utility": 2.0
+        },
+        {
+          "slot": "backup",
+          "title": "Сахалинские пожарные ликвидировали два возгорания за утро",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "seriousness": 93,
+          "utility": -11.0
+        },
+        {
+          "slot": "backup",
+          "title": "Anthropic bans users from being 'cruel' to its AI systems",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 87,
+          "utility": -67.0
+        },
+        {
+          "slot": "backup",
+          "title": "AI (artificial intelligence) | The Guardian",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 87,
+          "utility": -67.0
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 20,
+        "targets": {
+          "local": 6,
+          "ru_pol": 4,
+          "ru_eco": 4,
+          "ru_safety": 3,
+          "world": 2,
+          "it": 1
+        },
+        "target_percent": {
+          "local": 30.0,
+          "ru_pol": 20.0,
+          "ru_eco": 20.0,
+          "ru_safety": 15.0,
+          "world": 10.0,
+          "it": 5.0
+        },
+        "counts": {
+          "local": 8,
+          "ru_pol": 0,
+          "ru_eco": 6,
+          "ru_safety": 0,
+          "world": 1,
+          "it": 5
+        },
+        "scaled_targets": {
+          "local": 6.0,
+          "ru_pol": 4.0,
+          "ru_eco": 4.0,
+          "ru_safety": 3.0,
+          "world": 2.0,
+          "it": 1.0
+        },
+        "deficits": {
+          "local": -2.0,
+          "ru_pol": 4.0,
+          "ru_eco": -2.0,
+          "ru_safety": 3.0,
+          "world": 1.0,
+          "it": -4.0
+        },
+        "distribution_error": 16.0,
+        "subtype_counts": {
+          "macro_economy": 6,
+          "severe_weather": 1,
+          "major_emergency": 1,
+          "major_it": 5,
+          "public_service_disruption": 1,
+          "political_decision": 3,
+          "violent_crime": 2,
+          "geopolitical_event": 1
+        },
+        "sequence": [
+          "ru_eco",
+          "local",
+          "ru_eco",
+          "local",
+          "ru_eco",
+          "it",
+          "local",
+          "local",
+          "local",
+          "ru_eco",
+          "local",
+          "ru_eco",
+          "it",
+          "ru_eco",
+          "it",
+          "it",
+          "world",
+          "local",
+          "it",
+          "local"
+        ],
+        "category_sequence": [
+          "ru_eco",
+          "sakh",
+          "ru_eco",
+          "sakh_chp",
+          "ru_eco",
+          "it",
+          "sakh",
+          "sakh",
+          "sakh_chp",
+          "ru_eco",
+          "sakh_chp",
+          "ru_eco",
+          "it",
+          "ru_eco",
+          "it",
+          "it",
+          "geo",
+          "sakh",
+          "it",
+          "sakh"
+        ],
+        "source_sequence": [
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "bbc technology",
+          "astv",
+          "astv",
+          "astv",
+          "sakhalinmedia.ru",
+          "astv",
+          "sakhalinmedia.ru",
+          "exploit exploitex",
+          "sakhalinmedia.ru",
+          "exploit exploitex",
+          "techmedia techmedia",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "astv",
+          "sakh.online"
+        ],
+        "retrospective_anomalies": [],
+        "valid_posts_counted": 20
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-10-10T21:39:56+00:00",
+      "checked_at": "2026-10-10T23:28:46+00:00",
       "checked": 17,
       "passed": 17,
       "anomalies": [],
@@ -15865,8 +15897,8 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 19,
-      "missing_media_rejected": 6,
+      "ready_candidates": 21,
+      "missing_media_rejected": 2,
       "generic_media_rejected": 0,
       "photo_retries": 0,
       "photo_published": 1,
@@ -15879,12 +15911,12 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 59,
-      "checked": 4,
+      "prechecked": 56,
+      "checked": 7,
       "passed": 2,
       "rejected": 0,
-      "reclassified": 5,
-      "offtopic_reject": 34,
+      "reclassified": 6,
+      "offtopic_reject": 33,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
@@ -15958,17 +15990,16 @@
     },
     "distribution_error": 16.0,
     "subtype_counts": {
-      "severe_weather": 2,
       "macro_economy": 6,
+      "severe_weather": 1,
       "major_emergency": 1,
       "major_it": 5,
       "public_service_disruption": 1,
-      "political_decision": 2,
+      "political_decision": 3,
       "violent_crime": 2,
       "geopolitical_event": 1
     },
     "sequence": [
-      "local",
       "ru_eco",
       "local",
       "ru_eco",
@@ -15987,10 +16018,10 @@
       "it",
       "world",
       "local",
-      "it"
+      "it",
+      "local"
     ],
     "category_sequence": [
-      "sakh",
       "ru_eco",
       "sakh",
       "ru_eco",
@@ -16009,10 +16040,10 @@
       "it",
       "geo",
       "sakh",
-      "it"
+      "it",
+      "sakh"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -16031,7 +16062,8 @@
       "techmedia techmedia",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "astv"
+      "astv",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -21947,7 +21979,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-10T21:39:56+00:00",
+    "checked_at": "2026-10-10T23:28:46+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -22895,7 +22927,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-10-10T21:39:49+00:00",
+    "checked_at_utc": "2026-10-10T23:28:39+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -22918,18 +22950,18 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-10-10T21:45:00+00:00",
+    "checked_at_utc": "2026-10-10T23:32:17+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-10T21:45:00+00:00",
+    "checked_at_utc": "2026-10-10T23:32:17+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 6,
+    "director_approved": 8,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -22938,11 +22970,11 @@
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-10-10T21:45:00+00:00",
+    "checked_at_utc": "2026-10-10T23:32:17+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-10-11T08:45:00+11:00",
-      "candidates": 6,
+      "finished_sakhalin": "2026-10-11T10:32:17+11:00",
+      "candidates": 8,
       "queued_for_delivery": 0
     },
     "generation": {
