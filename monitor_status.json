@@ -1,27 +1,27 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-10T22:52:49+00:00",
-  "checked_at_sakhalin": "2026-10-11T09:52:44+11:00",
+  "checked_at_utc": "2026-10-10T23:32:48+00:00",
+  "checked_at_sakhalin": "2026-10-11T10:32:43+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-11T08:45:00+11:00",
-    "age_hours": 1.13,
+    "finished_sakhalin": "2026-10-11T10:32:17+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-10T21:45:00+00:00",
+    "checked_at_utc": "2026-10-10T23:32:17+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 6,
+    "director_approved": 8,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -66,9 +66,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-10T22:52:48+00:00",
-    "checked": 17,
-    "passed": 17,
+    "checked_at": "2026-10-10T23:32:46+00:00",
+    "checked": 16,
+    "passed": 16,
     "anomalies": [],
     "corrected": [],
     "deleted": [],
@@ -79,19 +79,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 372,
-      "title": "Рекорд на пороге изменений: Сбер выдал 445,5 млрд рублей ипотеки в сентябре 2026 года",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 373,
       "title": "Сахалинец Виталий Утвенко участвовал в эвакуации мирных жителей на Донбассе",
@@ -425,7 +412,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-10T22:52:41+00:00",
+    "checked_at_utc": "2026-10-10T23:32:41+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
