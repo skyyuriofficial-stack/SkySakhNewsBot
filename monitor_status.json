@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-10T07:41:38+00:00",
-  "checked_at_sakhalin": "2026-10-10T18:41:35+11:00",
+  "checked_at_utc": "2026-10-10T08:25:26+00:00",
+  "checked_at_sakhalin": "2026-10-10T19:25:20+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
@@ -10,7 +10,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-10T16:46:41+11:00",
-    "age_hours": 1.92,
+    "age_hours": 2.65,
     "published": 0
   },
   "last_production_attempt": {
@@ -53,20 +53,34 @@
     },
     "evening": {
       "due": false,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-10T08:25:01+00:00",
+        "published_at_sakhalin": "2026-10-10T19:25:01+11:00",
+        "telegram_message_id": 394,
+        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+        "evidence_count": 6,
+        "evidence_hash": "ace5dd66a715ec3c0541abc65d3985b09fe2783e273ff8cca9ee72a02b259a07",
+        "source_ids": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "morning",
-      "at_utc": "2026-10-10T00:16:47+00:00",
-      "at_sakhalin": "2026-10-10T11:16:47+11:00"
+      "mode": "evening",
+      "at_utc": "2026-10-10T08:25:01+00:00",
+      "at_sakhalin": "2026-10-10T19:25:01+11:00"
     },
     "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-10T07:41:37+00:00",
+    "checked_at": "2026-10-10T08:25:24+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -425,7 +439,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-10T07:41:33+00:00",
+    "checked_at_utc": "2026-10-10T08:25:18+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
