@@ -1,39 +1,51 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-09T21:19:42+00:00",
-  "checked_at_sakhalin": "2026-10-10T08:19:37+11:00",
-  "status": "degraded",
+  "checked_at_utc": "2026-10-10T00:11:16+00:00",
+  "checked_at_sakhalin": "2026-10-10T11:11:11+11:00",
+  "status": "error",
   "mutations_enabled": true,
-  "issues": [],
+  "issues": [
+    {
+      "type": "mobilization_digest_missing",
+      "slot": "morning",
+      "expected_by_sakhalin": "2026-10-10T08:45:00+11:00",
+      "last_attempt": {
+        "status": "ok",
+        "mode": "evening",
+        "at_utc": "2026-10-09T08:56:46+00:00",
+        "at_sakhalin": "2026-10-09T19:56:46+11:00"
+      }
+    }
+  ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-10T07:55:46+11:00",
-    "age_hours": 0.4,
+    "finished_sakhalin": "2026-10-10T11:10:42+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-09T20:55:46+00:00",
+    "checked_at_utc": "2026-10-10T00:10:42+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
     "director_approved": 4,
-    "ai_calls": 2,
-    "ai_api_fail": 2,
-    "ai_budget_exhausted": 0,
+    "ai_calls": 4,
+    "ai_api_fail": 4,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-10",
-    "status": "healthy",
+    "status": "error",
     "morning": {
-      "due": false,
+      "due": true,
       "published": false,
       "record": {}
     },
@@ -48,11 +60,23 @@
       "at_utc": "2026-10-09T08:56:46+00:00",
       "at_sakhalin": "2026-10-09T19:56:46+11:00"
     },
-    "missing": []
+    "missing": [
+      {
+        "type": "mobilization_digest_missing",
+        "slot": "morning",
+        "expected_by_sakhalin": "2026-10-10T08:45:00+11:00",
+        "last_attempt": {
+          "status": "ok",
+          "mode": "evening",
+          "at_utc": "2026-10-09T08:56:46+00:00",
+          "at_sakhalin": "2026-10-09T19:56:46+11:00"
+        }
+      }
+    ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-09T21:19:40+00:00",
+    "checked_at": "2026-10-10T00:11:15+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -65,19 +89,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 368,
-      "title": "Ураганный ветер ожидают на Северных Курилах 8 и 9 октября",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 369,
       "title": "СберСтрахование жизни выплатило россиянам по страховым случаям 22,7 млрд рублей за 9 месяцев",
@@ -285,6 +296,19 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 392,
+      "title": "Путин и Трамп обсудили поставки нефтепродуктов: США сняли санкции с дизеля",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "geo",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -309,8 +333,8 @@
       "local": 7,
       "ru_pol": 0,
       "ru_eco": 6,
-      "ru_safety": 1,
-      "world": 1,
+      "ru_safety": 0,
+      "world": 2,
       "it": 5
     },
     "scaled_targets": {
@@ -325,14 +349,13 @@
       "local": -1.0,
       "ru_pol": 4.0,
       "ru_eco": -2.0,
-      "ru_safety": 2.0,
-      "world": 1.0,
+      "ru_safety": 3.0,
+      "world": 0.0,
       "it": -4.0
     },
     "distribution_error": 14.0,
     "subtype_counts": {
-      "military_security": 1,
-      "geopolitical_event": 1,
+      "geopolitical_event": 2,
       "major_it": 5,
       "severe_weather": 2,
       "macro_economy": 6,
@@ -342,7 +365,6 @@
       "violent_crime": 2
     },
     "sequence": [
-      "ru_safety",
       "world",
       "it",
       "local",
@@ -361,10 +383,10 @@
       "it",
       "ru_eco",
       "it",
-      "it"
+      "it",
+      "world"
     ],
     "category_sequence": [
-      "ru_security",
       "geo",
       "it",
       "sakh",
@@ -383,10 +405,10 @@
       "it",
       "ru_eco",
       "it",
-      "it"
+      "it",
+      "geo"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakhalinmedia.ru",
       "bbc technology",
       "sakh.online",
@@ -405,14 +427,15 @@
       "exploit exploitex",
       "sakhalinmedia.ru",
       "exploit exploitex",
-      "techmedia techmedia"
+      "techmedia techmedia",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-09T21:19:34+00:00",
+    "checked_at_utc": "2026-10-10T00:11:08+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -448,8 +471,8 @@
         "local": 7,
         "ru_pol": 0,
         "ru_eco": 6,
-        "ru_safety": 1,
-        "world": 1,
+        "ru_safety": 0,
+        "world": 2,
         "it": 5
       },
       "targets": {
@@ -464,8 +487,8 @@
         "local": -1.0,
         "ru_pol": 4.0,
         "ru_eco": -2.0,
-        "ru_safety": 2.0,
-        "world": 1.0,
+        "ru_safety": 3.0,
+        "world": 0.0,
         "it": -4.0
       }
     }
