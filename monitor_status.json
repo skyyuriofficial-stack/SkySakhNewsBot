@@ -1,39 +1,39 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-10T21:39:26+00:00",
-  "checked_at_sakhalin": "2026-10-11T08:39:21+11:00",
+  "checked_at_utc": "2026-10-10T21:45:32+00:00",
+  "checked_at_sakhalin": "2026-10-11T08:45:27+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
     {
-      "type": "publisher_stale",
-      "age_hours": 10.15,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-11T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-10T22:30:27+11:00"
+      "type": "mobilization_digest_missing",
+      "slot": "morning",
+      "expected_by_sakhalin": "2026-10-11T08:45:00+11:00",
+      "last_attempt": {
+        "status": "ok",
+        "mode": "evening",
+        "at_utc": "2026-10-10T08:25:01+00:00",
+        "at_sakhalin": "2026-10-10T19:25:01+11:00"
+      }
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-10T22:30:27+11:00",
-    "age_hours": 10.15,
-    "published": 0
+    "finished_sakhalin": "2026-10-11T08:45:00+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-10T11:30:27+00:00",
+    "checked_at_utc": "2026-10-10T21:45:00+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 3,
+    "published": 1,
+    "director_approved": 6,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -43,9 +43,9 @@
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-11",
-    "status": "healthy",
+    "status": "error",
     "morning": {
-      "due": false,
+      "due": true,
       "published": false,
       "record": {}
     },
@@ -60,11 +60,23 @@
       "at_utc": "2026-10-10T08:25:01+00:00",
       "at_sakhalin": "2026-10-10T19:25:01+11:00"
     },
-    "missing": []
+    "missing": [
+      {
+        "type": "mobilization_digest_missing",
+        "slot": "morning",
+        "expected_by_sakhalin": "2026-10-11T08:45:00+11:00",
+        "last_attempt": {
+          "status": "ok",
+          "mode": "evening",
+          "at_utc": "2026-10-10T08:25:01+00:00",
+          "at_sakhalin": "2026-10-10T19:25:01+11:00"
+        }
+      }
+    ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-10T21:39:25+00:00",
+    "checked_at": "2026-10-10T21:45:30+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -77,19 +89,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 371,
-      "title": "Ураганный ветер на севере Сахалина: школьников перевели на дистант",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 372,
       "title": "Рекорд на пороге изменений: Сбер выдал 445,5 млрд рублей ипотеки в сентябре 2026 года",
@@ -297,6 +296,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 396,
+      "title": "Почти половина россиян уже пользуются нейросетями",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -343,17 +355,16 @@
     },
     "distribution_error": 16.0,
     "subtype_counts": {
-      "major_it": 5,
       "severe_weather": 2,
       "macro_economy": 6,
       "major_emergency": 1,
+      "major_it": 5,
       "public_service_disruption": 1,
       "political_decision": 2,
       "violent_crime": 2,
       "geopolitical_event": 1
     },
     "sequence": [
-      "it",
       "local",
       "ru_eco",
       "local",
@@ -372,10 +383,10 @@
       "it",
       "it",
       "world",
-      "local"
+      "local",
+      "it"
     ],
     "category_sequence": [
-      "it",
       "sakh",
       "ru_eco",
       "sakh",
@@ -394,10 +405,10 @@
       "it",
       "it",
       "geo",
-      "sakh"
+      "sakh",
+      "it"
     ],
     "source_sequence": [
-      "bbc technology",
       "sakh.online",
       "sakhalinmedia.ru",
       "sakh.online",
@@ -416,14 +427,15 @@
       "exploit exploitex",
       "techmedia techmedia",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-10T21:39:18+00:00",
+    "checked_at_utc": "2026-10-10T21:45:24+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
