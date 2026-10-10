@@ -1,36 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-10T09:06:04+00:00",
-  "checked_at_sakhalin": "2026-10-10T20:05:59+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-10T09:13:20+00:00",
+  "checked_at_sakhalin": "2026-10-10T20:13:17+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-10T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-10T16:46:41+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-10T16:46:41+11:00",
-    "age_hours": 3.32,
-    "published": 0
+    "finished_sakhalin": "2026-10-10T20:12:52+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-10T05:46:41+00:00",
+    "checked_at_utc": "2026-10-10T09:12:52+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 4,
+    "published": 1,
+    "director_approved": 5,
     "ai_calls": 4,
-    "ai_api_fail": 4,
+    "ai_api_fail": 3,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 1
@@ -87,7 +80,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-10T09:06:02+00:00",
+    "checked_at": "2026-10-10T09:13:19+00:00",
     "checked": 17,
     "passed": 17,
     "anomalies": [],
@@ -100,19 +93,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 369,
-      "title": "СберСтрахование жизни выплатило россиянам по страховым случаям 22,7 млрд рублей за 9 месяцев",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 371,
       "title": "Ураганный ветер на севере Сахалина: школьников перевели на дистант",
@@ -320,6 +300,19 @@
       "review_reason": "approved",
       "corrected_category": "geo",
       "title_issues": []
+    },
+    {
+      "message_id": 395,
+      "title": "Губернатор поручил устранить подтопление подвала дома в Южно-Сахалинск",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -341,11 +334,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 7,
+      "local": 8,
       "ru_pol": 0,
       "ru_eco": 6,
       "ru_safety": 0,
-      "world": 2,
+      "world": 1,
       "it": 5
     },
     "scaled_targets": {
@@ -357,70 +350,69 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -1.0,
+      "local": -2.0,
       "ru_pol": 4.0,
       "ru_eco": -2.0,
       "ru_safety": 3.0,
-      "world": 0.0,
+      "world": 1.0,
       "it": -4.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 16.0,
     "subtype_counts": {
-      "geopolitical_event": 2,
       "major_it": 5,
       "severe_weather": 2,
       "macro_economy": 6,
       "major_emergency": 1,
       "public_service_disruption": 1,
-      "political_decision": 1,
-      "violent_crime": 2
+      "political_decision": 2,
+      "violent_crime": 2,
+      "geopolitical_event": 1
     },
     "sequence": [
+      "it",
+      "local",
+      "ru_eco",
+      "local",
+      "ru_eco",
+      "local",
+      "ru_eco",
+      "it",
+      "local",
+      "local",
+      "local",
+      "ru_eco",
+      "local",
+      "ru_eco",
+      "it",
+      "ru_eco",
+      "it",
+      "it",
       "world",
-      "it",
-      "local",
-      "ru_eco",
-      "local",
-      "ru_eco",
-      "local",
-      "ru_eco",
-      "it",
-      "local",
-      "local",
-      "local",
-      "ru_eco",
-      "local",
-      "ru_eco",
-      "it",
-      "ru_eco",
-      "it",
-      "it",
-      "world"
+      "local"
     ],
     "category_sequence": [
+      "it",
+      "sakh",
+      "ru_eco",
+      "sakh",
+      "ru_eco",
+      "sakh_chp",
+      "ru_eco",
+      "it",
+      "sakh",
+      "sakh",
+      "sakh_chp",
+      "ru_eco",
+      "sakh_chp",
+      "ru_eco",
+      "it",
+      "ru_eco",
+      "it",
+      "it",
       "geo",
-      "it",
-      "sakh",
-      "ru_eco",
-      "sakh",
-      "ru_eco",
-      "sakh_chp",
-      "ru_eco",
-      "it",
-      "sakh",
-      "sakh",
-      "sakh_chp",
-      "ru_eco",
-      "sakh_chp",
-      "ru_eco",
-      "it",
-      "ru_eco",
-      "it",
-      "it",
-      "geo"
+      "sakh"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "bbc technology",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -439,6 +431,7 @@
       "sakhalinmedia.ru",
       "exploit exploitex",
       "techmedia techmedia",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -446,7 +439,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-10T09:05:57+00:00",
+    "checked_at_utc": "2026-10-10T09:13:15+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -476,14 +469,14 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 14.0,
+      "distribution_error": 16.0,
       "limit": 8.0,
       "counts": {
-        "local": 7,
+        "local": 8,
         "ru_pol": 0,
         "ru_eco": 6,
         "ru_safety": 0,
-        "world": 2,
+        "world": 1,
         "it": 5
       },
       "targets": {
@@ -495,11 +488,11 @@
         "it": 1
       },
       "deficits": {
-        "local": -1.0,
+        "local": -2.0,
         "ru_pol": 4.0,
         "ru_eco": -2.0,
         "ru_safety": 3.0,
-        "world": 0.0,
+        "world": 1.0,
         "it": -4.0
       }
     }
