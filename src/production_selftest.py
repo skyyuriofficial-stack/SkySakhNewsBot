@@ -1220,8 +1220,22 @@ def mandatory_telegram_source_regressions():
         str(item.get("handle") or "").strip().lstrip("@")
         for item in source_core.TELEGRAM_PUBLIC_SOURCES
     }
-    assert {"techmedia", "exploitex"} <= configured, configured
+    assert {"techmedia", "exploitex", "rbc_news", "tass_world"} <= configured, configured
     assert callable(source_core.collect_public_telegram)
+    world_sources = [
+        source for source in source_core.TELEGRAM_PUBLIC_SOURCES
+        if source.get("vertical") == "diplomacy"
+    ]
+    assert {source["handle"] for source in world_sources} == {
+        "rbc_news", "tass_world"
+    }
+    assert source_core._telegram_stream_classification(
+        91,
+        "Трамп и Путин договорились об изменении поставок дизеля",
+        "Россия и США обсудили соглашение об ограничениях поставок.",
+        "https://t.me/tass_world/100",
+        vertical="diplomacy",
+    )[0] != "it"
 
     fixture = """
     <div class="tgme_widget_message js-widget_message" data-post="techmedia/12345">
@@ -1258,6 +1272,43 @@ def mandatory_telegram_source_regressions():
     assert "OpenAI" in tech[0]["text"], tech[0]
     assert exploit[0]["url"] == "https://t.me/exploitex/67890", exploit[0]
     assert "VPN" in exploit[0]["text"], exploit[0]
+
+    now = datetime.now(timezone.utc)
+    strong = {
+        "url": "https://t.me/rbc_news/123456",
+        "published_at": now,
+        "title": "Трамп и Путин договорились об изменении поставок дизельного топлива",
+        "text": (
+            "Представители США и России обсудили условия соглашения о поставках "
+            "дизельного топлива. Переговоры затронули сроки действия ограничений "
+            "и порядок согласования дальнейших поставок."
+        ),
+        "image_url": "https://cdn.telegram.org/file/real-source.jpg",
+    }
+    weak = {**strong, "url": "https://t.me/rbc_news/123457",
+            "title": "Советы по выбору одежды от редакции"}
+    original_fetch = source_core.telegram_sources.fetch_public_channel
+    original_select = source_core.b.select_image
+    try:
+        source_core.telegram_sources.fetch_public_channel = (
+            lambda src: [strong, weak]
+            if src.get("handle") == "rbc_news" else []
+        )
+        source_core.b.select_image = (
+            lambda images, title: (
+                b"p" * 12000, images[0]["url"], "ok"
+            )
+        )
+        wire_rows = source_core.collect_public_telegram({
+            "published_urls": [], "published_title_hashes": [],
+        })
+    finally:
+        source_core.telegram_sources.fetch_public_channel = original_fetch
+        source_core.b.select_image = original_select
+    assert len(wire_rows) == 1, wire_rows
+    assert wire_rows[0]["source"].startswith("RBC News"), wire_rows
+    assert wire_rows[0]["category_key"] != "it", wire_rows
+    assert wire_rows[0]["image"] == b"p" * 12000, wire_rows
 
 
 
