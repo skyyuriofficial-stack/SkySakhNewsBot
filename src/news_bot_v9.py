@@ -478,13 +478,19 @@ def _local_html_candidates(state, source_name, index_url, discover, date_from_ur
 
 
 
-def _telegram_stream_classification(weight, title, text, url):
-    """Route a Telegram post by content, not by the channel brand."""
-    attempts = (
-        ("it", int(weight)),
-        ("ru", max(1, int(weight) - 2)),
-        ("world", max(1, int(weight) - 4)),
-    )
+def _telegram_stream_classification(weight, title, text, url, *, vertical=""):
+    """Route Telegram posts by content. Wire channels never force an IT slot."""
+    if vertical == "diplomacy":
+        attempts = (
+            ("world", int(weight)),
+            ("ru", max(1, int(weight) - 2)),
+        )
+    else:
+        attempts = (
+            ("it", int(weight)),
+            ("ru", max(1, int(weight) - 2)),
+            ("world", max(1, int(weight) - 4)),
+        )
     last_reason = "telegram_not_in_stream"
     for src_type, candidate_weight in attempts:
         cat, score, reason = classify(
@@ -531,8 +537,16 @@ def collect_public_telegram(state):
             if th in used_h:
                 continue
 
+            vertical = str(source.get("vertical") or "").strip()
+            if vertical == "diplomacy" and not (
+                any(marker in title.lower() for marker in TASS_WORLD_ACTIONS)
+                and any(marker in (title + " " + text[:400]).lower()
+                        for marker in TASS_WORLD_ACTORS)
+            ):
+                continue
             cat, score, reason = _telegram_stream_classification(
-                int(source.get("weight") or 90), title, text, url
+                int(source.get("weight") or 90), title, text, url,
+                vertical=vertical,
             )
             if not cat:
                 continue
