@@ -3,7 +3,7 @@ name: SkySakhNews Production CI v12.1
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [main, repair/tass-world-coverage-20261011-v2]
     paths:
       - "src/news_bot_v8.py"
       - "src/news_bot_v9.py"
@@ -77,6 +77,26 @@ jobs:
             src/resilient_production.py src/resilient_health_gate.py src/resilient_selftest.py \
             src/schedule_guard.py src/health_gate.py src/hardening_selftest.py \
             src/operational_selftest.py src/usercustomize.py
+
+      - name: Read-only TASS geopolitics source smoke test
+        timeout-minutes: 5
+        run: |
+          PYTHONPATH=src python - <<'PY'
+          import news_bot_v9 as news
+          result = news.collect_tass_world_backfill({
+              "published_urls": [],
+              "published_title_hashes": [],
+          })
+          for row in result:
+              print("TASS candidate:", row["title"][:140],
+                    "category=", row["category_key"],
+                    "source_media=", bool(row.get("image")))
+          print("TASS backfill stats:", {
+              key: news.b.STATS.get(key) for key in (
+                  "tass_world_scanned", "tass_world_screened",
+                  "tass_world_candidates")
+          })
+          PY
 
       - name: Run exact feed, category, balance, title and operational regressions
         env:
