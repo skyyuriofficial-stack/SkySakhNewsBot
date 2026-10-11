@@ -478,13 +478,19 @@ def _local_html_candidates(state, source_name, index_url, discover, date_from_ur
 
 
 
-def _telegram_stream_classification(weight, title, text, url):
-    """Route a Telegram post by content, not by the channel brand."""
-    attempts = (
-        ("it", int(weight)),
-        ("ru", max(1, int(weight) - 2)),
-        ("world", max(1, int(weight) - 4)),
-    )
+def _telegram_stream_classification(weight, title, text, url, *, vertical=""):
+    """Route Telegram posts by content. Wire channels never force an IT slot."""
+    if vertical == "diplomacy":
+        attempts = (
+            ("world", int(weight)),
+            ("ru", max(1, int(weight) - 2)),
+        )
+    else:
+        attempts = (
+            ("it", int(weight)),
+            ("ru", max(1, int(weight) - 2)),
+            ("world", max(1, int(weight) - 4)),
+        )
     last_reason = "telegram_not_in_stream"
     for src_type, candidate_weight in attempts:
         cat, score, reason = classify(
@@ -531,8 +537,16 @@ def collect_public_telegram(state):
             if th in used_h:
                 continue
 
+            vertical = str(source.get("vertical") or "").strip()
+            if vertical == "diplomacy" and not (
+                any(marker in title.lower() for marker in TASS_WORLD_ACTIONS)
+                and any(marker in (title + " " + text[:400]).lower()
+                        for marker in TASS_WORLD_ACTORS)
+            ):
+                continue
             cat, score, reason = _telegram_stream_classification(
-                int(source.get("weight") or 90), title, text, url
+                int(source.get("weight") or 90), title, text, url,
+                vertical=vertical,
             )
             if not cat:
                 continue
@@ -587,6 +601,125 @@ def collect_sakh_html(state):
 
 
 _old_collect = b.collect
+
+# The TASS general RSS feed is high-volume. The generic collector only sees
+# its first 16 entries: higher-impact diplomacy may be deeper in that feed.
+# Bound network work and retain original source, date and media verification.
+TASS_WORLD_FEED = "https://tass.ru/rss/v2.xml"
+TASS_WORLD_SCAN_DEPTH = 100
+TASS_WORLD_FETCH_LIMIT = 4
+TASS_WORLD_CANDIDATE_LIMIT = 4
+TASS_WORLD_ACTIONS = (
+    "санкц", "соглашен", "сделк", "договор", "переговор", "постав",
+    "приостанов", "прекрат", "запрет", "снял", "сняли", "отмен",
+    "удар", "атак", "пошлин", "обмен", "контакт", "размороз",
+)
+TASS_WORLD_ACTORS = (
+    "росси", "путин", "трамп", "сша", "американ", "украин",
+    "нато", "иран", "израил", "китай", "евросоюз",
+    "европ", "оон", "вашингтон", "москв", "саудов",
+)
+TASS_WORLD_PATHS = (
+    "/mezhdunarodnaya-panorama/", "/politika/", "/ekonomika/",
+)
+TASS_WORLD_ROUTINE = ("поздрав", "юбиле", "спортив", "рецепт", "погода")
+
+
+def _tass_world_title_eligible(title, url):
+    """Source-headline filter only; final editorial gates stay authoritative."""
+    parsed = urllib.parse.urlparse(url or "")
+    if parsed.scheme != "https" or parsed.netloc.lower() not in ("tass.ru", "www.tass.ru"):
+        return False
+    if not any(part in parsed.path for part in TASS_WORLD_PATHS):
+        return False
+    low = b.clean(title).lower()
+    return bool(
+        any(marker in low for marker in TASS_WORLD_ACTIONS)
+        and any(marker in low for marker in TASS_WORLD_ACTORS)
+        and not any(marker in low for marker in TASS_WORLD_ROUTINE)
+    )
+
+
+def collect_tass_world_backfill(state):
+    """Bounded deeper scan of the existing trusted Russian-language TASS feed."""
+    stats = b.STATS
+    for key in ("tass_world_scanned", "tass_world_screened", "tass_world_candidates"):
+        stats.setdefault(key, 0)
+    used_urls = set(state.get("published_urls") or [])
+    used_hashes = set(state.get("published_title_hashes") or [])
+    out = []
+    fetched = 0
+    try:
+        response = requests.get(
+            TASS_WORLD_FEED,
+            headers={"User-Agent": "Mozilla/5.0 SkySakhNewsBot/1.0"},
+            timeout=(8, 20),
+        )
+        response.raise_for_status()
+        feed = feedparser.parse(response.content)
+    except Exception as ex:
+        b.log("TASS world backfill source failed: " + str(ex)[:150])
+        return []
+
+    # The top 16 entries were already screened by the existing collector.
+    for entry in feed.entries[16:TASS_WORLD_SCAN_DEPTH]:
+        stats["tass_world_scanned"] += 1
+        if fetched >= TASS_WORLD_FETCH_LIMIT or len(out) >= TASS_WORLD_CANDIDATE_LIMIT:
+            break
+        title = b.clean(entry.get("title"))
+        url = str(entry.get("link") or "").strip()
+        dt = b.entry_dt(entry)
+        if not _tass_world_title_eligible(title, url) or not strict_fresh(dt):
+            continue
+        title_hash = b.htitle(title)
+        if url in used_urls or title_hash in used_hashes:
+            continue
+        stats["tass_world_screened"] += 1
+        fetched += 1
+        page = b.page_info(url)
+        article_title = b.clean(page.get("title")) or title
+        article_text = " ".join(
+            b.clean(value)
+            for value in (page.get("desc"), entry.get("summary"), page.get("article"))
+            if b.clean(value)
+        )[:1800]
+        if len(article_title) < 24 or len(article_text) < 140:
+            continue
+        if page.get("published") and not strict_fresh(page["published"]):
+            continue
+        direct_url = str(page.get("url") or url)
+        if not _tass_world_title_eligible(article_title, direct_url):
+            continue
+        category_key, score, reason = classify(
+            "ru", 98, article_title, article_text,
+            b.clean(entry.get("summary")), direct_url,
+        )
+        if category_key not in ("ru_pol", "ru_eco", "ru_security", "world_ru", "geo"):
+            continue
+        image, image_url, _ = b.select_image(
+            b.rss_images(entry, entry.get("summary", ""), direct_url)
+            + list(page.get("images") or []),
+            article_title,
+        )
+        category, footer = b.CAT[category_key]
+        out.append({
+            "id": 15000 + len(out),
+            "source": "TASS",
+            "category_key": category_key,
+            "category": category,
+            "footer": footer,
+            "score": score + (20 if image else 0),
+            "reason": "tass_world_backfill:" + reason,
+            "title": article_title,
+            "source_text": article_text,
+            "url": direct_url,
+            "image_url": image_url,
+            "image": image,
+            "published_at": (page.get("published") or dt).isoformat(),
+            "title_hash": b.htitle(article_title),
+        })
+    stats["tass_world_candidates"] += len(out)
+    return out
 
 
 def image_hash(item):
@@ -645,6 +778,7 @@ def collect(state):
         + collect_astv_html(state)
         + collect_sakh_html(state)
         + collect_public_telegram(state)
+        + collect_tass_world_backfill(state)
     )
 
     recent_hashes = {
