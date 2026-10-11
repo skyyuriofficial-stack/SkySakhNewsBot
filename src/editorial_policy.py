@@ -20,7 +20,7 @@ from urllib.parse import urlparse
 
 import editorial_gate as gate
 
-VERSION = "policy-v2.6"
+VERSION = "policy-v2.7"
 
 CATEGORY_GROUP = {
     "sakh": "local",
@@ -606,6 +606,33 @@ def _is_routine_it_personnel(title: str) -> bool:
     )
 
 
+def _is_branded_trust_survey(title: str) -> bool:
+    return bool(
+        has_any(title, CORPORATE_FINANCE_BRANDS)
+        and has_any(title, ("исследован", "опрос", "рейтинг"))
+        and has_any(title, ("уровень доверия", "самый высокий", "лидер по доверию"))
+        and not has_any(title, PUBLIC_POLICY_TITLE_EXEMPTIONS)
+    )
+
+
+def _is_sensational_ai_claim(title: str) -> bool:
+    if not has_any(title, ("openai", "anthropic", "claude", "нейронк", "ии")):
+        return False
+    return bool(
+        (has_any(title, ("душа", "душу")) and has_any(title, ("унижать", "унижен")))
+        or (has_any(title, ("тайно готовятся", "тайно готовит"))
+            and has_any(title, ("катастроф", "апокалипсис")))
+    )
+
+
+def _is_soft_finance_ai_promo(title: str) -> bool:
+    return bool(
+        has_any(title, ("ai-аватар", "ии-аватар", "ai аватар", "ии аватар"))
+        and has_any(title, ("инвестиционного советника", "инвестиционный советник"))
+        and not has_any(title, PUBLIC_POLICY_TITLE_EXEMPTIONS)
+    )
+
+
 def _hard_reject(title: str, lead: str) -> Optional[str]:
     combined = f"{title} {lead}"
     if has_any(title, CALENDAR_HISTORY):
@@ -618,6 +645,12 @@ def _hard_reject(title: str, lead: str) -> Optional[str]:
         return "advertorial_or_corporate_pr"
     if has_any(combined, BRAND_POPULARITY_PR):
         return "advertorial_or_corporate_pr"
+    if _is_branded_trust_survey(title):
+        return "brand_trust_ranking_pr"
+    if _is_sensational_ai_claim(title):
+        return "sensational_ai_claim"
+    if _is_soft_finance_ai_promo(title):
+        return "soft_finance_ai_promo"
     if _is_corporate_event_promo(title):
         return "corporate_product_or_brand_pr"
     if _is_corporate_product_pr(title, lead):
