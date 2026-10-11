@@ -644,7 +644,7 @@
     "0e781c0fcff6ec224801eec641999407fea73ed1",
     "4d0a2390129857c5ae2dc4d0e3729af62e408e60"
   ],
-  "last_run_sakhalin": "2026-10-11T13:13:04+11:00",
+  "last_run_sakhalin": "2026-10-11T17:19:07+11:00",
   "last_posts": [
     {
       "time_sakhalin": "2026-09-09T09:30:01+11:00",
@@ -11719,7 +11719,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-11T03:49:41+00:00"
+        "checked_at": "2026-10-11T06:13:20+00:00"
       }
     },
     {
@@ -11908,7 +11908,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-11T03:49:42+00:00"
+        "checked_at": "2026-10-11T06:13:20+00:00"
       }
     },
     {
@@ -12276,7 +12276,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-11T03:49:42+00:00"
+        "checked_at": "2026-10-11T06:13:21+00:00"
       }
     },
     {
@@ -12453,7 +12453,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-11T03:49:42+00:00"
+        "checked_at": "2026-10-11T06:13:21+00:00"
       }
     },
     {
@@ -12630,7 +12630,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-11T03:49:42+00:00"
+        "checked_at": "2026-10-11T06:13:21+00:00"
       }
     },
     {
@@ -12987,7 +12987,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-11T03:49:42+00:00"
+        "checked_at": "2026-10-11T06:13:21+00:00"
       }
     },
     {
@@ -13172,7 +13172,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-11T03:49:42+00:00"
+        "checked_at": "2026-10-11T06:13:21+00:00"
       }
     },
     {
@@ -13353,7 +13353,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-11T03:49:43+00:00"
+        "checked_at": "2026-10-11T06:13:21+00:00"
       }
     },
     {
@@ -13918,7 +13918,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-11T03:49:43+00:00"
+        "checked_at": "2026-10-11T06:13:22+00:00"
       }
     },
     {
@@ -14677,7 +14677,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-11T03:49:45+00:00"
+        "checked_at": "2026-10-11T06:13:22+00:00"
       }
     },
     {
@@ -14854,7 +14854,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-11T03:49:45+00:00"
+        "checked_at": "2026-10-11T06:13:22+00:00"
       }
     },
     {
@@ -15035,7 +15035,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-11T03:49:45+00:00"
+        "checked_at": "2026-10-11T06:13:22+00:00"
       }
     },
     {
@@ -15448,20 +15448,21 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-10-11T13:08:46+11:00",
+    "started_sakhalin": "2026-10-11T17:13:07+11:00",
     "status": "ok",
-    "candidates": 4,
+    "candidates": 3,
     "published": 0,
-    "local_candidates": 1,
+    "local_candidates": 0,
     "local_stream": {
       "status": "healthy",
-      "ok_sources": 4,
+      "ok_sources": 3,
       "sources": [
         {
           "source": "Sakhalin Google",
-          "status": "ok",
-          "entries": 20,
-          "recent": 14
+          "status": "down",
+          "entries": 0,
+          "recent": 0,
+          "error": "503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=%D0%A1%D0%B0%D1%85%D0%B0%D0%BB%D0%B8%D0%BD+OR+%D0%AE%D0%B6%D0%BD%D0%BE-%D0%A1%D0%B0%D1%85%D0%B0%"
         },
         {
           "source": "SakhalinMedia",
@@ -15472,68 +15473,68 @@
         {
           "source": "ASTV HTML",
           "status": "ok",
-          "entries": 21,
-          "recent": 8
+          "entries": 20,
+          "recent": 13
         },
         {
           "source": "Sakh.online HTML",
           "status": "ok",
           "entries": 20,
-          "recent": 7
+          "recent": 15
         }
       ]
     },
-    "finished_sakhalin": "2026-10-11T13:13:04+11:00",
+    "finished_sakhalin": "2026-10-11T17:19:07+11:00",
     "stats": {
-      "rss_seen": 159,
-      "old_skip": 68,
-      "google_skip": 13,
-      "duplicate_skip": 0,
-      "low_info_skip": 15,
-      "category_skip": 36,
+      "rss_seen": 112,
+      "old_skip": 34,
+      "google_skip": 0,
+      "duplicate_skip": 1,
+      "low_info_skip": 17,
+      "category_skip": 26,
       "no_image_skip": 0,
-      "bad_image_skip": 7,
-      "logo_image_skip": 27,
-      "text_card_image_skip": 1,
-      "candidates": 16,
-      "rewrite_retry": 3,
+      "bad_image_skip": 11,
+      "logo_image_skip": 32,
+      "text_card_image_skip": 2,
+      "candidates": 18,
+      "rewrite_retry": 4,
       "editorial_skip": 3,
       "telegram_fail": 0,
       "published": 0,
-      "telegram_source_attempt": 2,
+      "telegram_source_attempt": 4,
       "telegram_source_fail": 0,
-      "telegram_source_seen": 29,
-      "telegram_source_candidates": 12,
+      "telegram_source_seen": 65,
+      "telegram_source_candidates": 17,
       "ai_calls": 4,
       "ai_budget_exhausted": 1,
-      "ai_api_fail": 3,
+      "ai_api_fail": 4,
       "evidence_reject": 0,
       "validation_reject": 0,
-      "extractive_fallback": 1,
-      "extractive_first": 1,
-      "editorial_prechecked": 44,
-      "editorial_gate_checked": 4,
-      "editorial_gate_pass": 1,
-      "editorial_gate_reject": 1,
+      "extractive_fallback": 0,
+      "extractive_first": 0,
+      "editorial_prechecked": 59,
+      "editorial_gate_checked": 3,
+      "editorial_gate_pass": 0,
+      "editorial_gate_reject": 3,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 0,
       "editorial_gate_ai_fail": 0,
-      "editorial_title_reject": 1,
-      "editorial_category_reject": 0,
+      "editorial_title_reject": 3,
+      "editorial_category_reject": 3,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 3,
-      "editorial_offtopic_reject": 26,
-      "openrouter_empty_content": 11,
-      "openrouter_model_fallback": 1,
+      "editorial_reclassified": 9,
+      "editorial_offtopic_reject": 32,
+      "openrouter_empty_content": 12,
+      "openrouter_model_fallback": 0,
       "openrouter_attempts": 12,
       "openrouter_retries": 8,
       "openrouter_invalid_json": 0,
-      "openrouter_success": 1,
+      "openrouter_success": 0,
       "openrouter_circuit_open": 0,
       "editorial_grounded_translation_fallback": 0,
-      "media_required_skip": 2,
+      "media_required_skip": 6,
       "media_generic_skip": 0,
-      "media_ready_candidates": 16,
+      "media_ready_candidates": 18,
       "photo_retry": 0,
       "photo_publish": 0,
       "photo_upload_original": 0,
@@ -15547,26 +15548,29 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 16,
-      "director_approved": 4,
-      "director_rejected": 12,
+      "director_seen": 18,
+      "director_approved": 3,
+      "director_rejected": 15,
       "director_reclassified": 0,
       "director_title_corrected": 0,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
-      "director_final_checked": 1,
+      "director_final_checked": 0,
       "director_final_autocorrected": 0,
-      "director_final_reject": 1,
+      "director_final_reject": 0,
       "director_pending_retired": 0,
-      "publication_contract_blocked": 1,
-      "post_audit_checked": 16,
+      "publication_contract_blocked": 0,
+      "post_audit_checked": 12,
       "post_audit_anomalies": 0,
       "post_audit_corrected": 0,
-      "post_audit_deleted": 0
+      "post_audit_deleted": 0,
+      "tass_world_scanned": 84,
+      "tass_world_screened": 0,
+      "tass_world_candidates": 0
     },
     "news_director": {
       "version": "director-v2.4",
-      "policy_version": "policy-v2.6",
+      "policy_version": "policy-v2.7",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
         "window": 20,
@@ -15587,12 +15591,12 @@
           "it": 5.0
         },
         "counts": {
-          "local": 8,
+          "local": 9,
           "ru_pol": 0,
-          "ru_eco": 6,
-          "ru_safety": 0,
-          "world": 1,
-          "it": 5
+          "ru_eco": 4,
+          "ru_safety": 1,
+          "world": 2,
+          "it": 4
         },
         "scaled_targets": {
           "local": 6.0,
@@ -15603,26 +15607,32 @@
           "it": 1.0
         },
         "deficits": {
-          "local": -2.0,
+          "local": -3.0,
           "ru_pol": 4.0,
-          "ru_eco": -2.0,
-          "ru_safety": 3.0,
-          "world": 1.0,
-          "it": -4.0
+          "ru_eco": 0.0,
+          "ru_safety": 2.0,
+          "world": 0.0,
+          "it": -3.0
         },
-        "distribution_error": 16.0,
+        "distribution_error": 12.0,
         "subtype_counts": {
+          "major_infrastructure": 1,
+          "military_security": 1,
+          "geopolitical_event": 2,
+          "major_it": 4,
           "severe_weather": 2,
-          "macro_economy": 6,
+          "macro_economy": 4,
           "major_emergency": 1,
-          "major_it": 5,
           "public_service_disruption": 1,
           "political_decision": 2,
-          "violent_crime": 2,
-          "geopolitical_event": 1
+          "violent_crime": 2
         },
         "sequence": [
           "local",
+          "ru_safety",
+          "world",
+          "it",
+          "local",
           "ru_eco",
           "local",
           "ru_eco",
@@ -15634,10 +15644,6 @@
           "local",
           "ru_eco",
           "local",
-          "ru_eco",
-          "it",
-          "ru_eco",
-          "it",
           "it",
           "world",
           "local",
@@ -15645,6 +15651,10 @@
         ],
         "category_sequence": [
           "sakh",
+          "ru_security",
+          "geo",
+          "it",
+          "sakh",
           "ru_eco",
           "sakh",
           "ru_eco",
@@ -15656,16 +15666,16 @@
           "sakh_chp",
           "ru_eco",
           "sakh_chp",
-          "ru_eco",
-          "it",
-          "ru_eco",
-          "it",
           "it",
           "geo",
           "sakh",
           "it"
         ],
         "source_sequence": [
+          "sakh.online",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "bbc technology",
           "sakh.online",
           "sakhalinmedia.ru",
           "sakh.online",
@@ -15678,11 +15688,7 @@
           "astv",
           "sakhalinmedia.ru",
           "astv",
-          "sakhalinmedia.ru",
           "exploit exploitex",
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "techmedia techmedia",
           "sakhalinmedia.ru",
           "sakhalinmedia.ru",
           "astv"
@@ -15690,27 +15696,27 @@
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
       },
-      "candidate_count": 16,
-      "approved_count": 4,
-      "rejected_count": 12,
+      "candidate_count": 18,
+      "approved_count": 3,
+      "rejected_count": 15,
       "rejected_by_reason": {
-        "low_scale_incident_not_release_worthy": 2,
-        "importance_below_threshold": 8,
+        "importance_below_threshold": 11,
+        "ordinary_weather_not_release_worthy": 1,
         "statement_without_material_decision": 1,
-        "ordinary_weather_not_release_worthy": 1
+        "low_scale_incident_not_release_worthy": 2
       },
       "ai_review_requested": 0,
       "ai_review_received": 0,
       "selected_groups": [
         "world",
-        "local"
+        "it"
       ],
       "projected_distribution_error": 14.0,
       "projected_counts": {
-        "local": 8,
-        "ru_eco": 5,
+        "world": 3,
         "it": 5,
-        "world": 2
+        "local": 8,
+        "ru_eco": 4
       },
       "projected_length": 20,
       "selected_preview": [
@@ -15721,16 +15727,16 @@
           "group": "world",
           "event_type": "geopolitical_event",
           "seriousness": 89,
-          "utility": 123.0
+          "utility": 89.0
         },
         {
           "slot": 2,
-          "title": "Пожар охватил гараж возле частного дома в Южно-Сахалинске",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "seriousness": 93,
-          "utility": 16.0
+          "title": "AI (artificial intelligence) | The Guardian",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 87,
+          "utility": -35.0
         },
         {
           "slot": "backup",
@@ -15739,16 +15745,7 @@
           "group": "world",
           "event_type": "geopolitical_event",
           "seriousness": 87,
-          "utility": 73.0
-        },
-        {
-          "slot": "backup",
-          "title": "AI (artificial intelligence) | The Guardian",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 87,
-          "utility": -67.0
+          "utility": 39.0
         }
       ],
       "rolling_balance_after": {
@@ -15770,12 +15767,12 @@
           "it": 5.0
         },
         "counts": {
-          "local": 8,
+          "local": 9,
           "ru_pol": 0,
-          "ru_eco": 6,
-          "ru_safety": 0,
-          "world": 1,
-          "it": 5
+          "ru_eco": 4,
+          "ru_safety": 1,
+          "world": 2,
+          "it": 4
         },
         "scaled_targets": {
           "local": 6.0,
@@ -15786,26 +15783,32 @@
           "it": 1.0
         },
         "deficits": {
-          "local": -2.0,
+          "local": -3.0,
           "ru_pol": 4.0,
-          "ru_eco": -2.0,
-          "ru_safety": 3.0,
-          "world": 1.0,
-          "it": -4.0
+          "ru_eco": 0.0,
+          "ru_safety": 2.0,
+          "world": 0.0,
+          "it": -3.0
         },
-        "distribution_error": 16.0,
+        "distribution_error": 12.0,
         "subtype_counts": {
+          "major_infrastructure": 1,
+          "military_security": 1,
+          "geopolitical_event": 2,
+          "major_it": 4,
           "severe_weather": 2,
-          "macro_economy": 6,
+          "macro_economy": 4,
           "major_emergency": 1,
-          "major_it": 5,
           "public_service_disruption": 1,
           "political_decision": 2,
-          "violent_crime": 2,
-          "geopolitical_event": 1
+          "violent_crime": 2
         },
         "sequence": [
           "local",
+          "ru_safety",
+          "world",
+          "it",
+          "local",
           "ru_eco",
           "local",
           "ru_eco",
@@ -15817,10 +15820,6 @@
           "local",
           "ru_eco",
           "local",
-          "ru_eco",
-          "it",
-          "ru_eco",
-          "it",
           "it",
           "world",
           "local",
@@ -15828,6 +15827,10 @@
         ],
         "category_sequence": [
           "sakh",
+          "ru_security",
+          "geo",
+          "it",
+          "sakh",
           "ru_eco",
           "sakh",
           "ru_eco",
@@ -15839,16 +15842,16 @@
           "sakh_chp",
           "ru_eco",
           "sakh_chp",
-          "ru_eco",
-          "it",
-          "ru_eco",
-          "it",
           "it",
           "geo",
           "sakh",
           "it"
         ],
         "source_sequence": [
+          "sakh.online",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "bbc technology",
           "sakh.online",
           "sakhalinmedia.ru",
           "sakh.online",
@@ -15861,11 +15864,7 @@
           "astv",
           "sakhalinmedia.ru",
           "astv",
-          "sakhalinmedia.ru",
           "exploit exploitex",
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "techmedia techmedia",
           "sakhalinmedia.ru",
           "sakhalinmedia.ru",
           "astv"
@@ -15876,9 +15875,9 @@
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-10-11T02:08:53+00:00",
-      "checked": 16,
-      "passed": 16,
+      "checked_at": "2026-10-11T06:13:22+00:00",
+      "checked": 12,
+      "passed": 12,
       "anomalies": [],
       "corrected": [],
       "deleted": [],
@@ -15897,8 +15896,8 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 16,
-      "missing_media_rejected": 2,
+      "ready_candidates": 18,
+      "missing_media_rejected": 6,
       "generic_media_rejected": 0,
       "photo_retries": 0,
       "photo_published": 0,
@@ -15911,36 +15910,22 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 44,
-      "checked": 4,
-      "passed": 1,
-      "rejected": 1,
-      "reclassified": 3,
-      "offtopic_reject": 26,
+      "prechecked": 59,
+      "checked": 3,
+      "passed": 0,
+      "rejected": 3,
+      "reclassified": 9,
+      "offtopic_reject": 32,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
-      "audited_urls": 2
-    },
-    "independent_post_publication_monitor": {
-      "version": "post-audit-v1.1",
-      "checked_at": "2026-10-11T02:13:56+00:00",
-      "checked": 16,
-      "passed": 16,
-      "anomalies": [],
-      "corrected": [],
-      "deleted": [],
-      "failed_actions": [],
-      "unresolved": 0,
-      "unresolved_items": [],
-      "mutations_enabled": true,
-      "legacy_posts_mutated": false
+      "audited_urls": 3
     }
   },
   "pending_media_delivery": [],
   "news_director_policy": {
     "version": "director-v2.4",
-    "policy_version": "policy-v2.6",
+    "policy_version": "policy-v2.7",
     "rolling_window": 20,
     "targets": {
       "local": 6,
@@ -15979,12 +15964,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 8,
+      "local": 9,
       "ru_pol": 0,
-      "ru_eco": 6,
-      "ru_safety": 0,
-      "world": 1,
-      "it": 5
+      "ru_eco": 4,
+      "ru_safety": 1,
+      "world": 2,
+      "it": 4
     },
     "scaled_targets": {
       "local": 6.0,
@@ -15995,26 +15980,32 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -2.0,
+      "local": -3.0,
       "ru_pol": 4.0,
-      "ru_eco": -2.0,
-      "ru_safety": 3.0,
-      "world": 1.0,
-      "it": -4.0
+      "ru_eco": 0.0,
+      "ru_safety": 2.0,
+      "world": 0.0,
+      "it": -3.0
     },
-    "distribution_error": 16.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
+      "major_infrastructure": 1,
+      "military_security": 1,
+      "geopolitical_event": 2,
+      "major_it": 4,
       "severe_weather": 2,
-      "macro_economy": 6,
+      "macro_economy": 4,
       "major_emergency": 1,
-      "major_it": 5,
       "public_service_disruption": 1,
       "political_decision": 2,
-      "violent_crime": 2,
-      "geopolitical_event": 1
+      "violent_crime": 2
     },
     "sequence": [
       "local",
+      "ru_safety",
+      "world",
+      "it",
+      "local",
       "ru_eco",
       "local",
       "ru_eco",
@@ -16026,10 +16017,6 @@
       "local",
       "ru_eco",
       "local",
-      "ru_eco",
-      "it",
-      "ru_eco",
-      "it",
       "it",
       "world",
       "local",
@@ -16037,6 +16024,10 @@
     ],
     "category_sequence": [
       "sakh",
+      "ru_security",
+      "geo",
+      "it",
+      "sakh",
       "ru_eco",
       "sakh",
       "ru_eco",
@@ -16048,16 +16039,16 @@
       "sakh_chp",
       "ru_eco",
       "sakh_chp",
-      "ru_eco",
-      "it",
-      "ru_eco",
-      "it",
       "it",
       "geo",
       "sakh",
       "it"
     ],
     "source_sequence": [
+      "sakh.online",
+      "sakh.online",
+      "sakhalinmedia.ru",
+      "bbc technology",
       "sakh.online",
       "sakhalinmedia.ru",
       "sakh.online",
@@ -16070,11 +16061,7 @@
       "astv",
       "sakhalinmedia.ru",
       "astv",
-      "sakhalinmedia.ru",
       "exploit exploitex",
-      "sakhalinmedia.ru",
-      "exploit exploitex",
-      "techmedia techmedia",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "astv"
@@ -21993,134 +21980,12 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-11T03:49:45+00:00",
-    "checked": 16,
+    "checked_at": "2026-10-11T06:13:22+00:00",
+    "checked": 12,
     "passed": 12,
-    "anomalies": [
-      {
-        "title": "Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России",
-        "url": "https://sakhalinmedia.ru/news/2646752/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "ru_eco",
-        "corrected_category": null,
-        "reason": "brand_trust_ranking_pr",
-        "contract_issues": [
-          "final_hard_reject:brand_trust_ranking_pr",
-          "final_category_mismatch:None->ru_eco",
-          "director_final_category:None->ru_eco",
-          "director_final_reject:brand_trust_ranking_pr"
-        ]
-      },
-      {
-        "title": "AI-аватара инвестиционного советника запустят в рамках инвестиционных инструментов",
-        "url": "https://sakhalinmedia.ru/news/2647096/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "ru_eco",
-        "corrected_category": null,
-        "reason": "soft_finance_ai_promo",
-        "contract_issues": [
-          "final_hard_reject:soft_finance_ai_promo",
-          "final_category_mismatch:None->ru_eco",
-          "director_final_category:None->ru_eco",
-          "director_final_reject:soft_finance_ai_promo"
-        ]
-      },
-      {
-        "title": "Anthropic запретили унижать Claude, потому что верят, что у нейронки есть ДУША — журналисты узнали , что создатели ИИ месяцами проводили закрытые встречи с католическими, иудейским",
-        "url": "https://t.me/exploitex/37194",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": null,
-        "reason": "sensational_ai_claim",
-        "contract_issues": [
-          "final_hard_reject:sensational_ai_claim",
-          "final_category_mismatch:None->it",
-          "director_final_category:None->it",
-          "director_final_reject:sensational_ai_claim"
-        ]
-      },
-      {
-        "title": "OpenAI и Anthropic тайно готовятся к ИИ-катастрофе , которая оставит человечество без интернета, воды, всей финансовой системы и электричества",
-        "url": "https://t.me/techmedia/23626",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": null,
-        "reason": "sensational_ai_claim",
-        "contract_issues": [
-          "final_hard_reject:sensational_ai_claim",
-          "final_category_mismatch:None->it",
-          "director_final_category:None->it",
-          "director_final_reject:sensational_ai_claim"
-        ]
-      }
-    ],
+    "anomalies": [],
     "corrected": [],
-    "deleted": [
-      {
-        "message_id": 387,
-        "already_absent": false,
-        "title": "Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России",
-        "url": "https://sakhalinmedia.ru/news/2646752/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "ru_eco",
-        "corrected_category": null,
-        "reason": "brand_trust_ranking_pr",
-        "contract_issues": [
-          "final_hard_reject:brand_trust_ranking_pr",
-          "final_category_mismatch:None->ru_eco",
-          "director_final_category:None->ru_eco",
-          "director_final_reject:brand_trust_ranking_pr"
-        ]
-      },
-      {
-        "message_id": 389,
-        "already_absent": false,
-        "title": "AI-аватара инвестиционного советника запустят в рамках инвестиционных инструментов",
-        "url": "https://sakhalinmedia.ru/news/2647096/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "ru_eco",
-        "corrected_category": null,
-        "reason": "soft_finance_ai_promo",
-        "contract_issues": [
-          "final_hard_reject:soft_finance_ai_promo",
-          "final_category_mismatch:None->ru_eco",
-          "director_final_category:None->ru_eco",
-          "director_final_reject:soft_finance_ai_promo"
-        ]
-      },
-      {
-        "message_id": 390,
-        "already_absent": false,
-        "title": "Anthropic запретили унижать Claude, потому что верят, что у нейронки есть ДУША — журналисты узнали , что создатели ИИ месяцами проводили закрытые встречи с католическими, иудейским",
-        "url": "https://t.me/exploitex/37194",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": null,
-        "reason": "sensational_ai_claim",
-        "contract_issues": [
-          "final_hard_reject:sensational_ai_claim",
-          "final_category_mismatch:None->it",
-          "director_final_category:None->it",
-          "director_final_reject:sensational_ai_claim"
-        ]
-      },
-      {
-        "message_id": 391,
-        "already_absent": false,
-        "title": "OpenAI и Anthropic тайно готовятся к ИИ-катастрофе , которая оставит человечество без интернета, воды, всей финансовой системы и электричества",
-        "url": "https://t.me/techmedia/23626",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": null,
-        "reason": "sensational_ai_claim",
-        "contract_issues": [
-          "final_hard_reject:sensational_ai_claim",
-          "final_category_mismatch:None->it",
-          "director_final_category:None->it",
-          "director_final_reject:sensational_ai_claim"
-        ]
-      }
-    ],
+    "deleted": [],
     "failed_actions": [],
     "unresolved": 0,
     "unresolved_items": [],
@@ -23063,7 +22928,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-10-11T02:08:45+00:00",
+    "checked_at_utc": "2026-10-11T06:13:06+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -23086,36 +22951,36 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-10-11T02:13:04+00:00",
+    "checked_at_utc": "2026-10-11T06:19:07+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
-    "status": "ok",
-    "reason": null,
-    "checked_at_utc": "2026-10-11T02:13:04+00:00",
+    "status": "blocked",
+    "reason": "generation_provider_unavailable",
+    "checked_at_utc": "2026-10-11T06:19:07+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 0,
-    "director_approved": 4,
+    "director_approved": 3,
     "ai_calls": 4,
-    "ai_api_fail": 3,
+    "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
-    "publication_contract_blocked": 1
+    "publication_contract_blocked": 0
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-10-11T02:13:04+00:00",
+    "checked_at_utc": "2026-10-11T06:19:07+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-10-11T13:13:04+11:00",
-      "candidates": 4,
+      "finished_sakhalin": "2026-10-11T17:19:07+11:00",
+      "candidates": 3,
       "queued_for_delivery": 0
     },
     "generation": {
-      "status": "healthy",
-      "reason": null
+      "status": "blocked",
+      "reason": "generation_provider_unavailable"
     },
     "delivery": {
       "status": "healthy",
