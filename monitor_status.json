@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-11T03:48:10+00:00",
-  "checked_at_sakhalin": "2026-10-11T14:48:08+11:00",
+  "checked_at_utc": "2026-10-11T03:49:46+00:00",
+  "checked_at_sakhalin": "2026-10-11T14:49:41+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
@@ -10,7 +10,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-11T13:13:04+11:00",
-    "age_hours": 1.59,
+    "age_hours": 1.61,
     "published": 0
   },
   "last_production_attempt": {
@@ -66,12 +66,134 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-11T03:48:09+00:00",
+    "checked_at": "2026-10-11T03:49:45+00:00",
     "checked": 16,
-    "passed": 16,
-    "anomalies": [],
+    "passed": 12,
+    "anomalies": [
+      {
+        "title": "Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России",
+        "url": "https://sakhalinmedia.ru/news/2646752/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "ru_eco",
+        "corrected_category": null,
+        "reason": "brand_trust_ranking_pr",
+        "contract_issues": [
+          "final_hard_reject:brand_trust_ranking_pr",
+          "final_category_mismatch:None->ru_eco",
+          "director_final_category:None->ru_eco",
+          "director_final_reject:brand_trust_ranking_pr"
+        ]
+      },
+      {
+        "title": "AI-аватара инвестиционного советника запустят в рамках инвестиционных инструментов",
+        "url": "https://sakhalinmedia.ru/news/2647096/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "ru_eco",
+        "corrected_category": null,
+        "reason": "soft_finance_ai_promo",
+        "contract_issues": [
+          "final_hard_reject:soft_finance_ai_promo",
+          "final_category_mismatch:None->ru_eco",
+          "director_final_category:None->ru_eco",
+          "director_final_reject:soft_finance_ai_promo"
+        ]
+      },
+      {
+        "title": "Anthropic запретили унижать Claude, потому что верят, что у нейронки есть ДУША — журналисты узнали , что создатели ИИ месяцами проводили закрытые встречи с католическими, иудейским",
+        "url": "https://t.me/exploitex/37194",
+        "publisher_version": "stable-v12.1",
+        "category_key": "it",
+        "corrected_category": null,
+        "reason": "sensational_ai_claim",
+        "contract_issues": [
+          "final_hard_reject:sensational_ai_claim",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:sensational_ai_claim"
+        ]
+      },
+      {
+        "title": "OpenAI и Anthropic тайно готовятся к ИИ-катастрофе , которая оставит человечество без интернета, воды, всей финансовой системы и электричества",
+        "url": "https://t.me/techmedia/23626",
+        "publisher_version": "stable-v12.1",
+        "category_key": "it",
+        "corrected_category": null,
+        "reason": "sensational_ai_claim",
+        "contract_issues": [
+          "final_hard_reject:sensational_ai_claim",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:sensational_ai_claim"
+        ]
+      }
+    ],
     "corrected": [],
-    "deleted": [],
+    "deleted": [
+      {
+        "message_id": 387,
+        "already_absent": false,
+        "title": "Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России",
+        "url": "https://sakhalinmedia.ru/news/2646752/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "ru_eco",
+        "corrected_category": null,
+        "reason": "brand_trust_ranking_pr",
+        "contract_issues": [
+          "final_hard_reject:brand_trust_ranking_pr",
+          "final_category_mismatch:None->ru_eco",
+          "director_final_category:None->ru_eco",
+          "director_final_reject:brand_trust_ranking_pr"
+        ]
+      },
+      {
+        "message_id": 389,
+        "already_absent": false,
+        "title": "AI-аватара инвестиционного советника запустят в рамках инвестиционных инструментов",
+        "url": "https://sakhalinmedia.ru/news/2647096/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "ru_eco",
+        "corrected_category": null,
+        "reason": "soft_finance_ai_promo",
+        "contract_issues": [
+          "final_hard_reject:soft_finance_ai_promo",
+          "final_category_mismatch:None->ru_eco",
+          "director_final_category:None->ru_eco",
+          "director_final_reject:soft_finance_ai_promo"
+        ]
+      },
+      {
+        "message_id": 390,
+        "already_absent": false,
+        "title": "Anthropic запретили унижать Claude, потому что верят, что у нейронки есть ДУША — журналисты узнали , что создатели ИИ месяцами проводили закрытые встречи с католическими, иудейским",
+        "url": "https://t.me/exploitex/37194",
+        "publisher_version": "stable-v12.1",
+        "category_key": "it",
+        "corrected_category": null,
+        "reason": "sensational_ai_claim",
+        "contract_issues": [
+          "final_hard_reject:sensational_ai_claim",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:sensational_ai_claim"
+        ]
+      },
+      {
+        "message_id": 391,
+        "already_absent": false,
+        "title": "OpenAI и Anthropic тайно готовятся к ИИ-катастрофе , которая оставит человечество без интернета, воды, всей финансовой системы и электричества",
+        "url": "https://t.me/techmedia/23626",
+        "publisher_version": "stable-v12.1",
+        "category_key": "it",
+        "corrected_category": null,
+        "reason": "sensational_ai_claim",
+        "contract_issues": [
+          "final_hard_reject:sensational_ai_claim",
+          "final_category_mismatch:None->it",
+          "director_final_category:None->it",
+          "director_final_reject:sensational_ai_claim"
+        ]
+      }
+    ],
     "failed_actions": [],
     "unresolved": 0,
     "unresolved_items": [],
@@ -184,60 +306,8 @@
       "title_issues": []
     },
     {
-      "message_id": 387,
-      "title": "Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
-    {
       "message_id": 388,
       "title": "В России душат поставки зарубежных ноутбуков — завоз Dell, HP и Apple уже сократился на 10% и продолжает падать, пишут Известия",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
-    {
-      "message_id": 389,
-      "title": "AI-аватара инвестиционного советника запустят в рамках инвестиционных инструментов",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
-    {
-      "message_id": 390,
-      "title": "Anthropic запретили унижать Claude, потому что верят, что у нейронки есть ДУША — журналисты узнали , что создатели ИИ месяцами проводили закрытые встречи с католическими, иудейским",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
-    {
-      "message_id": 391,
-      "title": "OpenAI и Anthropic тайно готовятся к ИИ-катастрофе , которая оставит человечество без интернета, воды, всей финансовой системы и электричества",
       "category_key": "it",
       "publisher_version": "stable-v12.1",
       "category_ok": true,
@@ -307,12 +377,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 8,
+      "local": 9,
       "ru_pol": 0,
-      "ru_eco": 6,
-      "ru_safety": 0,
-      "world": 1,
-      "it": 5
+      "ru_eco": 4,
+      "ru_safety": 1,
+      "world": 2,
+      "it": 4
     },
     "scaled_targets": {
       "local": 6.0,
@@ -323,26 +393,32 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -2.0,
+      "local": -3.0,
       "ru_pol": 4.0,
-      "ru_eco": -2.0,
-      "ru_safety": 3.0,
-      "world": 1.0,
-      "it": -4.0
+      "ru_eco": 0.0,
+      "ru_safety": 2.0,
+      "world": 0.0,
+      "it": -3.0
     },
-    "distribution_error": 16.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
+      "major_infrastructure": 1,
+      "military_security": 1,
+      "geopolitical_event": 2,
+      "major_it": 4,
       "severe_weather": 2,
-      "macro_economy": 6,
+      "macro_economy": 4,
       "major_emergency": 1,
-      "major_it": 5,
       "public_service_disruption": 1,
       "political_decision": 2,
-      "violent_crime": 2,
-      "geopolitical_event": 1
+      "violent_crime": 2
     },
     "sequence": [
       "local",
+      "ru_safety",
+      "world",
+      "it",
+      "local",
       "ru_eco",
       "local",
       "ru_eco",
@@ -354,10 +430,6 @@
       "local",
       "ru_eco",
       "local",
-      "ru_eco",
-      "it",
-      "ru_eco",
-      "it",
       "it",
       "world",
       "local",
@@ -365,6 +437,10 @@
     ],
     "category_sequence": [
       "sakh",
+      "ru_security",
+      "geo",
+      "it",
+      "sakh",
       "ru_eco",
       "sakh",
       "ru_eco",
@@ -376,16 +452,16 @@
       "sakh_chp",
       "ru_eco",
       "sakh_chp",
-      "ru_eco",
-      "it",
-      "ru_eco",
-      "it",
       "it",
       "geo",
       "sakh",
       "it"
     ],
     "source_sequence": [
+      "sakh.online",
+      "sakh.online",
+      "sakhalinmedia.ru",
+      "bbc technology",
       "sakh.online",
       "sakhalinmedia.ru",
       "sakh.online",
@@ -398,11 +474,7 @@
       "astv",
       "sakhalinmedia.ru",
       "astv",
-      "sakhalinmedia.ru",
       "exploit exploitex",
-      "sakhalinmedia.ru",
-      "exploit exploitex",
-      "techmedia techmedia",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "astv"
@@ -412,7 +484,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-11T03:48:06+00:00",
+    "checked_at_utc": "2026-10-11T03:49:39+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -442,15 +514,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 16.0,
+      "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
-        "local": 8,
+        "local": 9,
         "ru_pol": 0,
-        "ru_eco": 6,
-        "ru_safety": 0,
-        "world": 1,
-        "it": 5
+        "ru_eco": 4,
+        "ru_safety": 1,
+        "world": 2,
+        "it": 4
       },
       "targets": {
         "local": 6,
@@ -461,12 +533,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -2.0,
+        "local": -3.0,
         "ru_pol": 4.0,
-        "ru_eco": -2.0,
-        "ru_safety": 3.0,
-        "world": 1.0,
-        "it": -4.0
+        "ru_eco": 0.0,
+        "ru_safety": 2.0,
+        "world": 0.0,
+        "it": -3.0
       }
     }
   ]
