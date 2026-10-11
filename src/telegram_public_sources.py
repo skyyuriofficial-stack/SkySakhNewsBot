@@ -24,6 +24,22 @@ PUBLIC_TELEGRAM_SOURCES = (
         "url": "https://t.me/s/exploitex",
         "weight": 90,
     },
+    # Verified public Russian-language editorial sources. Route by article
+    # content through the existing news director, not by the channel brand.
+    {
+        "name": "RBC News",
+        "handle": "rbc_news",
+        "url": "https://t.me/s/rbc_news",
+        "weight": 93,
+        "vertical": "diplomacy",
+    },
+    {
+        "name": "TASS World",
+        "handle": "tass_world",
+        "url": "https://t.me/s/tass_world",
+        "weight": 91,
+        "vertical": "diplomacy",
+    },
 )
 
 _DATA_POST_RE = re.compile(r'data-post=["\']([^"\']+/\d+)["\']', flags=re.I)
