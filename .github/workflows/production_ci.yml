@@ -98,6 +98,24 @@ jobs:
           })
           PY
 
+      - name: Read-only world Telegram source availability probe
+        timeout-minutes: 3
+        run: |
+          PYTHONPATH=src python - <<'PY'
+          import telegram_public_sources as src
+          for source in src.PUBLIC_TELEGRAM_SOURCES:
+              if source.get("vertical") != "diplomacy":
+                  continue
+              try:
+                  rows = src.fetch_public_channel(source, timeout=15, limit=18)
+                  print("World feed:", source["handle"],
+                        "messages=", len(rows),
+                        "source_images=", sum(bool(x.get("image_url")) for x in rows))
+              except Exception as exc:
+                  print("World feed unavailable:", source["handle"],
+                        type(exc).__name__, str(exc)[:120])
+          PY
+
       - name: Run exact feed, category, balance, title and operational regressions
         env:
           IMAGE_REQUIRED: "1"
