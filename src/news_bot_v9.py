@@ -593,7 +593,7 @@ _old_collect = b.collect
 # Bound network work and retain original source, date and media verification.
 TASS_WORLD_FEED = "https://tass.ru/rss/v2.xml"
 TASS_WORLD_SCAN_DEPTH = 100
-TASS_WORLD_FETCH_LIMIT = 8
+TASS_WORLD_FETCH_LIMIT = 4
 TASS_WORLD_CANDIDATE_LIMIT = 4
 TASS_WORLD_ACTIONS = (
     "санкц", "соглашен", "сделк", "договор", "переговор", "постав",
