@@ -1220,8 +1220,22 @@ def mandatory_telegram_source_regressions():
         str(item.get("handle") or "").strip().lstrip("@")
         for item in source_core.TELEGRAM_PUBLIC_SOURCES
     }
-    assert {"techmedia", "exploitex"} <= configured, configured
+    assert {"techmedia", "exploitex", "rbc_news", "tass_world"} <= configured, configured
     assert callable(source_core.collect_public_telegram)
+    world_sources = [
+        source for source in source_core.TELEGRAM_PUBLIC_SOURCES
+        if source.get("vertical") == "diplomacy"
+    ]
+    assert {source["handle"] for source in world_sources} == {
+        "rbc_news", "tass_world"
+    }
+    assert source_core._telegram_stream_classification(
+        91,
+        "Трамп и Путин договорились об изменении поставок дизеля",
+        "Россия и США обсудили соглашение об ограничениях поставок.",
+        "https://t.me/tass_world/100",
+        vertical="diplomacy",
+    )[0] != "it"
 
     fixture = """
     <div class="tgme_widget_message js-widget_message" data-post="techmedia/12345">
@@ -1259,6 +1273,144 @@ def mandatory_telegram_source_regressions():
     assert exploit[0]["url"] == "https://t.me/exploitex/67890", exploit[0]
     assert "VPN" in exploit[0]["text"], exploit[0]
 
+    now = datetime.now(timezone.utc)
+    strong = {
+        "url": "https://t.me/rbc_news/123456",
+        "published_at": now,
+        "title": "Трамп и Путин договорились об изменении поставок дизельного топлива",
+        "text": (
+            "Представители США и России обсудили условия соглашения о поставках "
+            "дизельного топлива. Переговоры затронули сроки действия ограничений "
+            "и порядок согласования дальнейших поставок."
+        ),
+        "image_url": "https://cdn.telegram.org/file/real-source.jpg",
+    }
+    weak = {**strong, "url": "https://t.me/rbc_news/123457",
+            "title": "Советы по выбору одежды от редакции"}
+    original_fetch = source_core.telegram_sources.fetch_public_channel
+    original_select = source_core.b.select_image
+    try:
+        source_core.telegram_sources.fetch_public_channel = (
+            lambda src: [strong, weak]
+            if src.get("handle") == "rbc_news" else []
+        )
+        source_core.b.select_image = (
+            lambda images, title: (
+                b"p" * 12000, images[0]["url"], "ok"
+            )
+        )
+        wire_rows = source_core.collect_public_telegram({
+            "published_urls": [], "published_title_hashes": [],
+        })
+    finally:
+        source_core.telegram_sources.fetch_public_channel = original_fetch
+        source_core.b.select_image = original_select
+    assert len(wire_rows) == 1, wire_rows
+    assert wire_rows[0]["source"].startswith("RBC News"), wire_rows
+    assert wire_rows[0]["category_key"] != "it", wire_rows
+    assert wire_rows[0]["image"] == b"p" * 12000, wire_rows
+
+
+
+def tass_world_backfill_regression():
+    # The general feed's first 16 entries do not include important diplomacy
+    # further down. The new pass must inspect a bounded deeper window without
+    # inventing source facts, relaxing image policy, or rereading early entries.
+    now = datetime.now(timezone.utc)
+    stamp = now.timetuple()
+    early_title = "Трамп и Путин договорились об условиях поставок топлива"
+    strong_title = "Трамп и Путин согласовали сделку о поставках дизеля после переговоров"
+    article_text = (
+        "На переговорах обсуждались условия международных поставок дизельного "
+        "топлива, сроки и порядок исполнения соответствующего соглашения. "
+        "Представители участников переговоров уточнили, что практические "
+        "механизмы поставок и ограничения требуют отдельного согласования."
+    )
+    def rss_entry(title, link):
+        return {
+            "title": title,
+            "link": link,
+            "published_parsed": stamp,
+            "summary": "Обсуждались условия поставок и соглашения.",
+        }
+    entries = [
+        rss_entry(
+            early_title if i == 0 else f"Спортивные новости России номер {i}",
+            f"https://tass.ru/mezhdunarodnaya-panorama/{100+i}",
+        )
+        for i in range(16)
+    ]
+    strong_url = "https://tass.ru/mezhdunarodnaya-panorama/28202579"
+    entries.extend([
+        rss_entry("Трамп поздравил политиков с праздником",
+                  "https://tass.ru/mezhdunarodnaya-panorama/201"),
+        rss_entry(strong_title, "https://evil.example/redirect"),
+        rss_entry(strong_title, strong_url),
+    ])
+
+    class FakeResponse:
+        content = b"fake rss"
+        def raise_for_status(self):
+            return None
+
+    saved = (
+        source_core.requests.get, source_core.feedparser.parse,
+        source_core.b.page_info, source_core.b.select_image,
+    )
+    fetched = []
+    seen_urls = []
+    try:
+        source_core.requests.get = lambda url, **kwargs: FakeResponse()
+        source_core.feedparser.parse = lambda content: type(
+            "Feed", (), {"entries": entries}
+        )()
+        def fake_page(url):
+            seen_urls.append(url)
+            return {
+                "title": strong_title,
+                "url": url,
+                "desc": article_text,
+                "article": article_text,
+                "published": now,
+                "images": [{"url": "https://cdn.tass.ru/real.jpg", "source": "article",
+                            "context": strong_title}],
+            }
+        source_core.b.page_info = fake_page
+        def fake_select(images, title):
+            fetched.append(title)
+            return b"x" * 12000, "https://cdn.tass.ru/real.jpg", "ok"
+        source_core.b.select_image = fake_select
+        result = source_core.collect_tass_world_backfill({
+            "published_urls": [],
+            "published_title_hashes": [],
+        })
+    finally:
+        (source_core.requests.get, source_core.feedparser.parse,
+         source_core.b.page_info, source_core.b.select_image) = saved
+
+    assert len(result) == 1, result
+    item = result[0]
+    assert item["url"] == strong_url, item
+    assert item["source"] == "TASS" and item["source_text"], item
+    assert item["image_url"] == "https://cdn.tass.ru/real.jpg", item
+    assert item["reason"].startswith("tass_world_backfill:"), item
+    assert seen_urls == [strong_url], seen_urls
+    assert fetched == [strong_title], fetched
+    assert source_core._tass_world_title_eligible(
+        "Трамп поздравил политиков с праздником",
+        "https://tass.ru/mezhdunarodnaya-panorama/201",
+    ) is False
+    assert source_core._tass_world_title_eligible(
+        strong_title, "https://evil.example/redirect",
+    ) is False
+
+    # The final editorial director, not the source adapter, remains sovereign.
+    review = director.review_candidate(item)
+    assert review["group"] != "local", review
+    assert review["approved"] is True, review
+    # Russian source sentences can use safe extractive-first with zero AI quota.
+    assert publisher.prod._extractive_fallback(item) is not None
+
 
 def version_and_media_regressions():
     assert publisher.VERSION == "stable-v12.1"
@@ -1278,6 +1430,7 @@ def version_and_media_regressions():
 
 
 def main():
+    tass_world_backfill_regression()
     mandatory_telegram_source_regressions()
     exact_feed_regressions()
     service_notice_and_violent_crime_regressions()
