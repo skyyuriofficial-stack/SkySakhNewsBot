@@ -1110,6 +1110,52 @@ def current_live_defect_regressions():
         assert review["approved"] is False, review
         assert review["reason"] == "corporate_product_or_brand_pr", review
 
+    # Exact current-feed false approvals: none constitutes a material story.
+    weak_headlines = (
+        (
+            "Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России",
+            "ru_eco", "brand_trust_ranking_pr",
+        ),
+        (
+            "Anthropic запретили унижать Claude, потому что верят, что у нейронки есть ДУША",
+            "it", "sensational_ai_claim",
+        ),
+        (
+            "OpenAI и Anthropic тайно готовятся к ИИ-катастрофе, которая оставит человечество без интернета, воды и электричества",
+            "it", "sensational_ai_claim",
+        ),
+        (
+            "AI-аватара инвестиционного советника запустят в рамках инвестиционных инструментов",
+            "ru_eco", "soft_finance_ai_promo",
+        ),
+    )
+    for title, category_key, expected_reason in weak_headlines:
+        item = candidate(title, "", category=category_key)
+        review = director.review_candidate(item)
+        assert not review["approved"] and review["hard_reject"], (title, review)
+        assert review["reason"] == expected_reason, (title, review)
+
+    # Nearby real policy, cyber incident and material product releases survive.
+    for good in (
+        candidate(
+            "Банк России утвердил новую норму по обязательным резервам",
+            "Центральный банк утвердил изменения в нормативные требования к резервированию.",
+            category="ru_eco",
+        ),
+        candidate(
+            "OpenAI выпустила новую модель для разработчиков",
+            "Компания официально представила новую модель и API для разработчиков.",
+            category="it",
+        ),
+        candidate(
+            "Anthropic раскрыла последствия масштабной утечки пользовательских данных",
+            "Компания сообщила о расследовании утечки данных пользователей.",
+            category="it",
+        ),
+    ):
+        good_review = director.review_candidate(good)
+        assert good_review["approved"] is True, good_review
+
     brand_survey = candidate(
         "Сбер вошёл в тройку любимых брендов россиян",
         (
@@ -1418,7 +1464,7 @@ def version_and_media_regressions():
     assert publisher.core.VERSION == "stable-v12.1"
     assert publisher.core.b.IMAGE_REQUIRED is True
     assert director.VERSION == "director-v2.4"
-    assert policy.VERSION == "policy-v2.6"
+    assert policy.VERSION == "policy-v2.7"
 
     good_media = {
         "image": b"x" * 12000,
