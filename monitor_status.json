@@ -1,64 +1,54 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-12T22:56:21+00:00",
-  "checked_at_sakhalin": "2026-10-13T09:56:19+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-12T23:01:27+00:00",
+  "checked_at_sakhalin": "2026-10-13T10:01:25+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 6.81,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-13T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-13T03:07:35+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-10-13T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "evening",
-        "at_utc": "2026-10-12T09:05:40+00:00",
-        "at_sakhalin": "2026-10-12T20:05:40+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-13T03:07:35+11:00",
-    "age_hours": 6.81,
-    "published": 0
+    "finished_sakhalin": "2026-10-13T10:01:00+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-12T16:07:35+00:00",
+    "checked_at_utc": "2026-10-12T23:01:00+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
+    "published": 2,
     "director_approved": 5,
-    "ai_calls": 4,
-    "ai_api_fail": 4,
-    "ai_budget_exhausted": 1,
+    "ai_calls": 0,
+    "ai_api_fail": 0,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
-    "publication_contract_blocked": 1
+    "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-13",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-12T22:59:11+00:00",
+        "published_at_sakhalin": "2026-10-13T09:59:11+11:00",
+        "telegram_message_id": 405,
+        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+        "evidence_count": 3,
+        "evidence_hash": "7587253ce66ac5feb4c016b6f47a3c76b25a8d5ff2d3ba8ca66bb7a03782fd12",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     },
     "evening": {
       "due": false,
@@ -67,27 +57,15 @@
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "evening",
-      "at_utc": "2026-10-12T09:05:40+00:00",
-      "at_sakhalin": "2026-10-12T20:05:40+11:00"
+      "mode": "morning",
+      "at_utc": "2026-10-12T22:59:11+00:00",
+      "at_sakhalin": "2026-10-13T09:59:11+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-10-13T08:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "evening",
-          "at_utc": "2026-10-12T09:05:40+00:00",
-          "at_sakhalin": "2026-10-12T20:05:40+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-12T22:56:21+00:00",
+    "checked_at": "2026-10-12T23:01:26+00:00",
     "checked": 13,
     "passed": 13,
     "anomalies": [],
@@ -100,32 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 377,
-      "title": "Бум ИИ-чипов увеличит прибыль Samsung до рекордных 80 млрд долларов",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
-    {
-      "message_id": 378,
-      "title": "Четыре дома оставят без воды в Южно-Сахалинске 9 октября - адреса",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 379,
       "title": "После проверки объектов на Кунашире и Шикотане поручили устранить строительные дефекты",
@@ -268,6 +220,32 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 406,
+      "title": "Жительницу Южно-Сахалинска подозревают в покушении на убийство знакомого",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 407,
+      "title": "Президент США Дональд Трамп заявил, что Украине нужно избрать нового главу государства, поскольку Владимир Зеленский «много раз» мог урегулировать конфликт, но не сделал этого. Кро",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "geo",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -293,8 +271,8 @@
       "ru_pol": 0,
       "ru_eco": 5,
       "ru_safety": 0,
-      "world": 2,
-      "it": 4
+      "world": 3,
+      "it": 3
     },
     "scaled_targets": {
       "local": 6.0,
@@ -309,24 +287,22 @@
       "ru_pol": 4.0,
       "ru_eco": -1.0,
       "ru_safety": 3.0,
-      "world": 0.0,
-      "it": -3.0
+      "world": -1.0,
+      "it": -2.0
     },
     "distribution_error": 14.0,
     "subtype_counts": {
-      "major_it": 4,
-      "severe_weather": 2,
       "macro_economy": 5,
+      "severe_weather": 1,
       "major_emergency": 1,
+      "major_it": 3,
       "public_service_disruption": 1,
       "political_decision": 2,
-      "violent_crime": 2,
-      "geopolitical_event": 2,
+      "violent_crime": 3,
+      "geopolitical_event": 3,
       "major_infrastructure": 1
     },
     "sequence": [
-      "it",
-      "local",
       "ru_eco",
       "local",
       "ru_eco",
@@ -344,11 +320,11 @@
       "it",
       "world",
       "local",
-      "ru_eco"
+      "ru_eco",
+      "local",
+      "world"
     ],
     "category_sequence": [
-      "it",
-      "sakh",
       "ru_eco",
       "sakh",
       "ru_eco",
@@ -366,11 +342,11 @@
       "it",
       "geo",
       "sakh",
-      "ru_eco"
+      "ru_eco",
+      "sakh_chp",
+      "geo"
     ],
     "source_sequence": [
-      "bbc technology",
-      "sakh.online",
       "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -388,14 +364,16 @@
       "astv",
       "sakh.online",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "sakh.online",
+      "rbc news rbc news"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-12T22:56:17+00:00",
+    "checked_at_utc": "2026-10-12T23:01:23+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -432,8 +410,8 @@
         "ru_pol": 0,
         "ru_eco": 5,
         "ru_safety": 0,
-        "world": 2,
-        "it": 4
+        "world": 3,
+        "it": 3
       },
       "targets": {
         "local": 6,
@@ -448,8 +426,8 @@
         "ru_pol": 4.0,
         "ru_eco": -1.0,
         "ru_safety": 3.0,
-        "world": 0.0,
-        "it": -3.0
+        "world": -1.0,
+        "it": -2.0
       }
     }
   ]
