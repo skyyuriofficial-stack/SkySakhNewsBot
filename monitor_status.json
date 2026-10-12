@@ -1,34 +1,27 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-12T06:22:58+00:00",
-  "checked_at_sakhalin": "2026-10-12T17:22:55+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-12T06:30:31+00:00",
+  "checked_at_sakhalin": "2026-10-12T17:30:27+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-12T16:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-12T13:46:00+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-12T13:46:00+11:00",
-    "age_hours": 3.62,
+    "finished_sakhalin": "2026-10-12T17:30:02+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-12T02:46:00+00:00",
+    "checked_at_utc": "2026-10-12T06:30:02+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 5,
+    "director_approved": 6,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -72,9 +65,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-12T06:22:57+00:00",
-    "checked": 12,
-    "passed": 12,
+    "checked_at": "2026-10-12T06:30:30+00:00",
+    "checked": 13,
+    "passed": 13,
     "anomalies": [],
     "corrected": [],
     "deleted": [],
@@ -240,6 +233,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 403,
+      "title": "В сентябре люди перевели в Сбер из других брокеров активов в 10 раз больше, чем вывели",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -263,9 +269,9 @@
     "counts": {
       "local": 9,
       "ru_pol": 0,
-      "ru_eco": 4,
+      "ru_eco": 5,
       "ru_safety": 0,
-      "world": 3,
+      "world": 2,
       "it": 4
     },
     "scaled_targets": {
@@ -279,25 +285,24 @@
     "deficits": {
       "local": -3.0,
       "ru_pol": 4.0,
-      "ru_eco": 0.0,
+      "ru_eco": -1.0,
       "ru_safety": 3.0,
-      "world": -1.0,
+      "world": 0.0,
       "it": -3.0
     },
     "distribution_error": 14.0,
     "subtype_counts": {
-      "geopolitical_event": 3,
       "major_it": 4,
       "severe_weather": 2,
-      "macro_economy": 4,
+      "macro_economy": 5,
       "major_emergency": 1,
       "public_service_disruption": 1,
       "political_decision": 2,
       "violent_crime": 2,
+      "geopolitical_event": 2,
       "major_infrastructure": 1
     },
     "sequence": [
-      "world",
       "it",
       "local",
       "ru_eco",
@@ -316,10 +321,10 @@
       "local",
       "it",
       "world",
-      "local"
+      "local",
+      "ru_eco"
     ],
     "category_sequence": [
-      "geo",
       "it",
       "sakh",
       "ru_eco",
@@ -338,10 +343,10 @@
       "sakh",
       "it",
       "geo",
-      "sakh"
+      "sakh",
+      "ru_eco"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "bbc technology",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -360,6 +365,7 @@
       "sakhalinmedia.ru",
       "astv",
       "sakh.online",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -367,7 +373,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-12T06:22:53+00:00",
+    "checked_at_utc": "2026-10-12T06:30:25+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -402,9 +408,9 @@
       "counts": {
         "local": 9,
         "ru_pol": 0,
-        "ru_eco": 4,
+        "ru_eco": 5,
         "ru_safety": 0,
-        "world": 3,
+        "world": 2,
         "it": 4
       },
       "targets": {
@@ -418,9 +424,9 @@
       "deficits": {
         "local": -3.0,
         "ru_pol": 4.0,
-        "ru_eco": 0.0,
+        "ru_eco": -1.0,
         "ru_safety": 3.0,
-        "world": -1.0,
+        "world": 0.0,
         "it": -3.0
       }
     }
