@@ -1,29 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-13T07:44:11+00:00",
-  "checked_at_sakhalin": "2026-10-13T18:44:07+11:00",
+  "checked_at_utc": "2026-10-13T09:23:52+00:00",
+  "checked_at_sakhalin": "2026-10-13T20:23:48+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-13T18:43:43+11:00",
+    "finished_sakhalin": "2026-10-13T20:23:23+11:00",
     "age_hours": 0.01,
-    "published": 2
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-13T07:43:43+00:00",
+    "checked_at_utc": "2026-10-13T09:23:23+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
+    "published": 1,
     "director_approved": 6,
-    "ai_calls": 2,
-    "ai_api_fail": 1,
+    "ai_calls": 3,
+    "ai_api_fail": 2,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -51,21 +51,34 @@
       }
     },
     "evening": {
-      "due": false,
-      "published": false,
-      "record": {}
+      "due": true,
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-13T09:19:51+00:00",
+        "published_at_sakhalin": "2026-10-13T20:19:51+11:00",
+        "telegram_message_id": 411,
+        "headline": "В Едином источнике нет подтверждений новой волны мобилизации в РФ",
+        "evidence_count": 3,
+        "evidence_hash": "7e58d00bb041911d816e37586691222e8fec1b140054c78733f117891b44d306",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "morning",
-      "at_utc": "2026-10-12T22:59:11+00:00",
-      "at_sakhalin": "2026-10-13T09:59:11+11:00"
+      "mode": "evening",
+      "at_utc": "2026-10-13T09:19:51+00:00",
+      "at_sakhalin": "2026-10-13T20:19:51+11:00"
     },
     "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-13T07:44:10+00:00",
+    "checked_at": "2026-10-13T09:23:50+00:00",
     "checked": 14,
     "passed": 14,
     "anomalies": [],
@@ -78,19 +91,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 383,
-      "title": "Молодые россияне стали вдвое больше вкладывать в долгосрочные сбережения в СберНПФ",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 384,
       "title": "В Южно-Сахалинске арестовали мужчину, обвиняемого в нападении на восьмилетнего мальчика",
@@ -259,6 +259,19 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 412,
+      "title": "Пьяные водители спровоцировали 37 аварий в Сахалинской области",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -305,7 +318,6 @@
     },
     "distribution_error": 16.0,
     "subtype_counts": {
-      "major_emergency": 2,
       "macro_economy": 3,
       "major_it": 4,
       "public_service_disruption": 1,
@@ -313,10 +325,10 @@
       "violent_crime": 3,
       "geopolitical_event": 3,
       "major_infrastructure": 1,
-      "fatal_incident": 1
+      "major_emergency": 1,
+      "fatal_incident": 2
     },
     "sequence": [
-      "local",
       "ru_eco",
       "it",
       "local",
@@ -335,10 +347,10 @@
       "world",
       "local",
       "local",
-      "it"
+      "it",
+      "local"
     ],
     "category_sequence": [
-      "sakh_chp",
       "ru_eco",
       "it",
       "sakh",
@@ -357,10 +369,10 @@
       "geo",
       "sakh_chp",
       "sakh_chp",
-      "it"
+      "it",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakhalinmedia.ru",
       "bbc technology",
       "astv",
@@ -379,14 +391,15 @@
       "rbc news rbc news",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "techmedia techmedia"
+      "techmedia techmedia",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-13T07:44:05+00:00",
+    "checked_at_utc": "2026-10-13T09:23:46+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
