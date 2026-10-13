@@ -1,14 +1,14 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-10-13T09:19:51+00:00",
-  "last_run_sakhalin": "2026-10-13T20:19:51+11:00",
-  "mode": "evening",
+  "last_run_utc": "2026-10-13T22:10:19+00:00",
+  "last_run_sakhalin": "2026-10-14T09:10:19+11:00",
+  "mode": "morning",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 411,
+  "telegram_message_id": 414,
   "evidence_count": 3,
-  "evidence_hash": "7e58d00bb041911d816e37586691222e8fec1b140054c78733f117891b44d306",
-  "headline": "В Едином источнике нет подтверждений новой волны мобилизации в РФ",
+  "evidence_hash": "2e6edee32e95994e205e02838fc77ed72c26c249ea904c957aaf2725dcbec0de",
+  "headline": "Legal push to enforce mobilization decisions, but no new wave confirmed",
   "source_ids": [
     1,
     2,
@@ -528,13 +528,29 @@
           3
         ]
       }
+    },
+    "2026-10-14": {
+      "morning": {
+        "status": "ok",
+        "published_at_utc": "2026-10-13T22:10:19+00:00",
+        "published_at_sakhalin": "2026-10-14T09:10:19+11:00",
+        "telegram_message_id": 414,
+        "headline": "Legal push to enforce mobilization decisions, but no new wave confirmed",
+        "evidence_count": 3,
+        "evidence_hash": "2e6edee32e95994e205e02838fc77ed72c26c249ea904c957aaf2725dcbec0de",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "evening",
-    "at_utc": "2026-10-13T09:19:51+00:00",
-    "at_sakhalin": "2026-10-13T20:19:51+11:00"
+    "mode": "morning",
+    "at_utc": "2026-10-13T22:10:19+00:00",
+    "at_sakhalin": "2026-10-14T09:10:19+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-10-01T06:24:52+00:00",
