@@ -1,27 +1,27 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-13T23:24:19+00:00",
-  "checked_at_sakhalin": "2026-10-14T10:24:15+11:00",
+  "checked_at_utc": "2026-10-13T23:47:13+00:00",
+  "checked_at_sakhalin": "2026-10-14T10:47:08+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-14T09:12:40+11:00",
-    "age_hours": 1.19,
+    "finished_sakhalin": "2026-10-14T10:46:40+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-13T22:12:40+00:00",
+    "checked_at_utc": "2026-10-13T23:46:40+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 5,
+    "director_approved": 7,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -65,9 +65,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-13T23:24:18+00:00",
-    "checked": 15,
-    "passed": 15,
+    "checked_at": "2026-10-13T23:47:11+00:00",
+    "checked": 16,
+    "passed": 16,
     "anomalies": [],
     "corrected": [],
     "deleted": [],
@@ -272,6 +272,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 416,
+      "title": "7 человек погибли и 47 травмированы по вине пьяных водителей на сахалинских дорогах с начала года",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -318,7 +331,6 @@
     },
     "distribution_error": 18.0,
     "subtype_counts": {
-      "public_service_disruption": 1,
       "political_decision": 3,
       "violent_crime": 3,
       "macro_economy": 2,
@@ -326,12 +338,11 @@
       "geopolitical_event": 3,
       "major_infrastructure": 1,
       "major_emergency": 2,
-      "fatal_incident": 2
+      "fatal_incident": 3
     },
     "sequence": [
       "local",
       "local",
-      "local",
       "ru_eco",
       "local",
       "it",
@@ -346,13 +357,13 @@
       "local",
       "local",
       "it",
+      "local",
       "local",
       "local",
       "local"
     ],
     "category_sequence": [
       "sakh",
-      "sakh",
       "sakh_chp",
       "ru_eco",
       "sakh_chp",
@@ -370,10 +381,10 @@
       "it",
       "sakh_chp",
       "sakh_chp",
-      "sakh"
+      "sakh",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "astv",
       "astv",
       "astv",
       "sakhalinmedia.ru",
@@ -392,14 +403,15 @@
       "techmedia techmedia",
       "sakhalinmedia.ru",
       "astv",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-13T23:24:13+00:00",
+    "checked_at_utc": "2026-10-13T23:47:06+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
