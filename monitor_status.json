@@ -1,39 +1,32 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-13T07:38:51+00:00",
-  "checked_at_sakhalin": "2026-10-13T18:38:47+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-13T07:44:11+00:00",
+  "checked_at_sakhalin": "2026-10-13T18:44:07+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-13T16:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-13T14:23:59+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-13T14:23:59+11:00",
-    "age_hours": 4.25,
-    "published": 1
+    "finished_sakhalin": "2026-10-13T18:43:43+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-13T03:23:59+00:00",
+    "checked_at_utc": "2026-10-13T07:43:43+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 4,
+    "published": 2,
+    "director_approved": 6,
     "ai_calls": 2,
-    "ai_api_fail": 2,
+    "ai_api_fail": 1,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
-    "publication_contract_blocked": 1
+    "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -72,9 +65,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-13T07:38:50+00:00",
-    "checked": 13,
-    "passed": 13,
+    "checked_at": "2026-10-13T07:44:10+00:00",
+    "checked": 14,
+    "passed": 14,
     "anomalies": [],
     "corrected": [],
     "deleted": [],
@@ -85,19 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 382,
-      "title": "\"Признаю вину и раскаиваюсь\": видео задержания сахалинца, подозреваемого в похищении ребенка",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 383,
       "title": "Молодые россияне стали вдвое больше вкладывать в долгосрочные сбережения в СберНПФ",
@@ -253,6 +233,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 409,
+      "title": "Южносахалинец едва не погиб на пожаре из-за непотушенной сигареты",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 410,
+      "title": "В Беларуси впервые освятили иконку, созданную НЕЙРОСЕТЬЮ — на ней изображен святой Карло Акутис, известный геймер-айтишник",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -276,10 +282,10 @@
     "counts": {
       "local": 10,
       "ru_pol": 0,
-      "ru_eco": 4,
+      "ru_eco": 3,
       "ru_safety": 0,
       "world": 3,
-      "it": 3
+      "it": 4
     },
     "scaled_targets": {
       "local": 6.0,
@@ -292,28 +298,26 @@
     "deficits": {
       "local": -4.0,
       "ru_pol": 4.0,
-      "ru_eco": 0.0,
+      "ru_eco": 1.0,
       "ru_safety": 3.0,
       "world": -1.0,
-      "it": -2.0
+      "it": -3.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 16.0,
     "subtype_counts": {
-      "severe_weather": 1,
-      "macro_economy": 4,
       "major_emergency": 2,
-      "major_it": 3,
+      "macro_economy": 3,
+      "major_it": 4,
       "public_service_disruption": 1,
       "political_decision": 2,
       "violent_crime": 3,
       "geopolitical_event": 3,
-      "major_infrastructure": 1
+      "major_infrastructure": 1,
+      "fatal_incident": 1
     },
     "sequence": [
       "local",
       "ru_eco",
-      "local",
-      "ru_eco",
       "it",
       "local",
       "local",
@@ -329,11 +333,11 @@
       "ru_eco",
       "local",
       "world",
-      "local"
+      "local",
+      "local",
+      "it"
     ],
     "category_sequence": [
-      "sakh",
-      "ru_eco",
       "sakh_chp",
       "ru_eco",
       "it",
@@ -351,11 +355,11 @@
       "ru_eco",
       "sakh_chp",
       "geo",
-      "sakh_chp"
+      "sakh_chp",
+      "sakh_chp",
+      "it"
     ],
     "source_sequence": [
-      "sakh.online",
-      "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
       "bbc technology",
@@ -373,14 +377,16 @@
       "sakhalinmedia.ru",
       "sakh.online",
       "rbc news rbc news",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
+      "techmedia techmedia"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-13T07:38:45+00:00",
+    "checked_at_utc": "2026-10-13T07:44:05+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -410,15 +416,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 14.0,
+      "distribution_error": 16.0,
       "limit": 8.0,
       "counts": {
         "local": 10,
         "ru_pol": 0,
-        "ru_eco": 4,
+        "ru_eco": 3,
         "ru_safety": 0,
         "world": 3,
-        "it": 3
+        "it": 4
       },
       "targets": {
         "local": 6,
@@ -431,10 +437,10 @@
       "deficits": {
         "local": -4.0,
         "ru_pol": 4.0,
-        "ru_eco": 0.0,
+        "ru_eco": 1.0,
         "ru_safety": 3.0,
         "world": -1.0,
-        "it": -2.0
+        "it": -3.0
       }
     }
   ]
