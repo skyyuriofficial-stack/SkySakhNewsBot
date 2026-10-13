@@ -11794,7 +11794,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-13T09:19:15+00:00"
+        "checked_at": "2026-10-13T09:24:15+00:00"
       }
     },
     {
@@ -12359,7 +12359,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-13T09:19:15+00:00"
+        "checked_at": "2026-10-13T09:24:16+00:00"
       }
     },
     {
@@ -13118,7 +13118,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-13T09:19:16+00:00"
+        "checked_at": "2026-10-13T09:24:16+00:00"
       }
     },
     {
@@ -13295,7 +13295,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-13T09:19:16+00:00"
+        "checked_at": "2026-10-13T09:24:16+00:00"
       }
     },
     {
@@ -13476,7 +13476,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-13T09:19:16+00:00"
+        "checked_at": "2026-10-13T09:24:16+00:00"
       }
     },
     {
@@ -13841,7 +13841,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-13T09:19:16+00:00"
+        "checked_at": "2026-10-13T09:24:16+00:00"
       }
     },
     {
@@ -14018,7 +14018,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-13T09:19:16+00:00"
+        "checked_at": "2026-10-13T09:24:16+00:00"
       }
     },
     {
@@ -14203,7 +14203,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-13T09:19:16+00:00"
+        "checked_at": "2026-10-13T09:24:17+00:00"
       }
     },
     {
@@ -14384,7 +14384,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-13T09:19:16+00:00"
+        "checked_at": "2026-10-13T09:24:17+00:00"
       }
     },
     {
@@ -14573,7 +14573,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-13T09:19:17+00:00"
+        "checked_at": "2026-10-13T09:24:17+00:00"
       }
     },
     {
@@ -14754,7 +14754,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-13T09:19:17+00:00"
+        "checked_at": "2026-10-13T09:24:17+00:00"
       }
     },
     {
@@ -14931,7 +14931,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-13T09:19:17+00:00"
+        "checked_at": "2026-10-13T09:24:17+00:00"
       }
     },
     {
@@ -15116,7 +15116,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-13T09:19:17+00:00"
+        "checked_at": "2026-10-13T09:24:17+00:00"
       }
     },
     {
@@ -15289,6 +15289,11 @@
         "meaning_changed": false,
         "mode": "deterministic+extractive",
         "issues": []
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-10-13T09:24:18+00:00"
       }
     }
   ],
@@ -16012,6 +16017,20 @@
       "ai_calls": 0,
       "ai_fail": 0,
       "audited_urls": 3
+    },
+    "independent_post_publication_monitor": {
+      "version": "post-audit-v1.1",
+      "checked_at": "2026-10-13T09:24:18+00:00",
+      "checked": 14,
+      "passed": 14,
+      "anomalies": [],
+      "corrected": [],
+      "deleted": [],
+      "failed_actions": [],
+      "unresolved": 0,
+      "unresolved_items": [],
+      "mutations_enabled": true,
+      "legacy_posts_mutated": false
     }
   },
   "pending_media_delivery": [],
@@ -22071,7 +22090,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-13T09:19:17+00:00",
+    "checked_at": "2026-10-13T09:24:18+00:00",
     "checked": 14,
     "passed": 14,
     "anomalies": [],
