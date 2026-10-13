@@ -1,39 +1,32 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-13T03:19:30+00:00",
-  "checked_at_sakhalin": "2026-10-13T14:19:26+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-13T03:24:26+00:00",
+  "checked_at_sakhalin": "2026-10-13T14:24:23+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-13T13:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-13T10:01:00+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-13T10:01:00+11:00",
-    "age_hours": 4.31,
-    "published": 2
+    "finished_sakhalin": "2026-10-13T14:23:59+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-12T23:01:00+00:00",
+    "checked_at_utc": "2026-10-13T03:23:59+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
-    "director_approved": 5,
-    "ai_calls": 0,
-    "ai_api_fail": 0,
+    "published": 1,
+    "director_approved": 4,
+    "ai_calls": 2,
+    "ai_api_fail": 2,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
-    "publication_contract_blocked": 0
+    "publication_contract_blocked": 1
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -72,7 +65,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-13T03:19:29+00:00",
+    "checked_at": "2026-10-13T03:24:25+00:00",
     "checked": 13,
     "passed": 13,
     "anomalies": [],
@@ -85,19 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 379,
-      "title": "После проверки объектов на Кунашире и Шикотане поручили устранить строительные дефекты",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 382,
       "title": "\"Признаю вину и раскаиваюсь\": видео задержания сахалинца, подозреваемого в похищении ребенка",
@@ -253,6 +233,19 @@
       "review_reason": "approved",
       "corrected_category": "geo",
       "title_issues": []
+    },
+    {
+      "message_id": 408,
+      "title": "Новый циклон обрушится на Сахалин 14 октября",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -274,9 +267,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 9,
+      "local": 10,
       "ru_pol": 0,
-      "ru_eco": 5,
+      "ru_eco": 4,
       "ru_safety": 0,
       "world": 3,
       "it": 3
@@ -290,18 +283,18 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -3.0,
+      "local": -4.0,
       "ru_pol": 4.0,
-      "ru_eco": -1.0,
+      "ru_eco": 0.0,
       "ru_safety": 3.0,
       "world": -1.0,
       "it": -2.0
     },
     "distribution_error": 14.0,
     "subtype_counts": {
-      "macro_economy": 5,
       "severe_weather": 1,
-      "major_emergency": 1,
+      "macro_economy": 4,
+      "major_emergency": 2,
       "major_it": 3,
       "public_service_disruption": 1,
       "political_decision": 2,
@@ -310,7 +303,6 @@
       "major_infrastructure": 1
     },
     "sequence": [
-      "ru_eco",
       "local",
       "ru_eco",
       "local",
@@ -329,10 +321,10 @@
       "local",
       "ru_eco",
       "local",
-      "world"
+      "world",
+      "local"
     ],
     "category_sequence": [
-      "ru_eco",
       "sakh",
       "ru_eco",
       "sakh_chp",
@@ -351,10 +343,10 @@
       "sakh",
       "ru_eco",
       "sakh_chp",
-      "geo"
+      "geo",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
       "sakh.online",
@@ -373,14 +365,15 @@
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakh.online",
-      "rbc news rbc news"
+      "rbc news rbc news",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-13T03:19:25+00:00",
+    "checked_at_utc": "2026-10-13T03:24:21+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -413,9 +406,9 @@
       "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
-        "local": 9,
+        "local": 10,
         "ru_pol": 0,
-        "ru_eco": 5,
+        "ru_eco": 4,
         "ru_safety": 0,
         "world": 3,
         "it": 3
@@ -429,9 +422,9 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.0,
+        "local": -4.0,
         "ru_pol": 4.0,
-        "ru_eco": -1.0,
+        "ru_eco": 0.0,
         "ru_safety": 3.0,
         "world": -1.0,
         "it": -2.0
