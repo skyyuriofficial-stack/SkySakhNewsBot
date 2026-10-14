@@ -1,52 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-14T22:14:26+00:00",
-  "checked_at_sakhalin": "2026-10-15T09:14:21+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-14T22:18:44+00:00",
+  "checked_at_sakhalin": "2026-10-15T09:18:39+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 10.36,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-15T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-14T22:53:08+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-10-15T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "evening",
-        "at_utc": "2026-10-14T11:49:14+00:00",
-        "at_sakhalin": "2026-10-14T22:49:14+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-14T22:53:08+11:00",
-    "age_hours": 10.36,
+    "finished_sakhalin": "2026-10-15T09:18:11+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-14T11:53:08+00:00",
+    "checked_at_utc": "2026-10-14T22:18:11+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 8,
-    "ai_calls": 4,
-    "ai_api_fail": 3,
+    "director_approved": 10,
+    "ai_calls": 0,
+    "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -54,11 +31,24 @@
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-15",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-14T22:16:28+00:00",
+        "published_at_sakhalin": "2026-10-15T09:16:28+11:00",
+        "telegram_message_id": 423,
+        "headline": "Legislative proposal to enforce compliance with regional mobilization orders introduced",
+        "evidence_count": 3,
+        "evidence_hash": "654aa6671fbec2842e73cd1e51f7cd441092ee6d4029499e189012a44323b2b8",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     },
     "evening": {
       "due": false,
@@ -67,27 +57,15 @@
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "evening",
-      "at_utc": "2026-10-14T11:49:14+00:00",
-      "at_sakhalin": "2026-10-14T22:49:14+11:00"
+      "mode": "morning",
+      "at_utc": "2026-10-14T22:16:28+00:00",
+      "at_sakhalin": "2026-10-15T09:16:28+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-10-15T08:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "evening",
-          "at_utc": "2026-10-14T11:49:14+00:00",
-          "at_sakhalin": "2026-10-14T22:49:14+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-14T22:14:25+00:00",
+    "checked_at": "2026-10-14T22:18:42+00:00",
     "checked": 19,
     "passed": 19,
     "anomalies": [],
@@ -100,32 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 395,
-      "title": "Губернатор поручил устранить подтопление подвала дома в Южно-Сахалинск",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
-    {
-      "message_id": 396,
-      "title": "Почти половина россиян уже пользуются нейросетями",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 400,
       "title": "Трамп: частичное перемирие РФ и Украины — остановка ударов по НПЗ",
@@ -346,6 +298,32 @@
       "review_reason": "approved",
       "corrected_category": "geo",
       "title_issues": []
+    },
+    {
+      "message_id": 424,
+      "title": "При пожаре на Больничной в Южно-Сахалинске погиб хозяин квартиры",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 425,
+      "title": "В России предложили ввести налог на сладкое",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -369,9 +347,9 @@
     "counts": {
       "local": 11,
       "ru_pol": 0,
-      "ru_eco": 1,
+      "ru_eco": 2,
       "ru_safety": 1,
-      "world": 5,
+      "world": 4,
       "it": 2
     },
     "scaled_targets": {
@@ -385,26 +363,24 @@
     "deficits": {
       "local": -5.0,
       "ru_pol": 4.0,
-      "ru_eco": 3.0,
+      "ru_eco": 2.0,
       "ru_safety": 2.0,
-      "world": -3.0,
+      "world": -2.0,
       "it": -1.0
     },
-    "distribution_error": 18.0,
+    "distribution_error": 16.0,
     "subtype_counts": {
-      "geopolitical_event": 5,
-      "political_decision": 2,
       "major_it": 2,
+      "geopolitical_event": 4,
       "major_infrastructure": 1,
-      "macro_economy": 1,
+      "macro_economy": 2,
       "violent_crime": 2,
       "major_emergency": 3,
-      "fatal_incident": 3,
+      "fatal_incident": 4,
+      "political_decision": 1,
       "military_security": 1
     },
     "sequence": [
-      "world",
-      "local",
       "it",
       "world",
       "local",
@@ -422,11 +398,11 @@
       "local",
       "local",
       "ru_safety",
-      "world"
+      "world",
+      "local",
+      "ru_eco"
     ],
     "category_sequence": [
-      "geo",
-      "sakh",
       "it",
       "geo",
       "sakh",
@@ -444,11 +420,11 @@
       "sakh_chp",
       "sakh_chp",
       "ru_security",
-      "geo"
+      "geo",
+      "sakh_chp",
+      "ru_eco"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "sakhalinmedia.ru",
       "astv",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -466,14 +442,16 @@
       "sakhalinmedia.ru",
       "sakh.online",
       "astv",
-      "tass"
+      "tass",
+      "sakh.online",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-14T22:14:19+00:00",
+    "checked_at_utc": "2026-10-14T22:18:37+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -503,14 +481,14 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 18.0,
+      "distribution_error": 16.0,
       "limit": 8.0,
       "counts": {
         "local": 11,
         "ru_pol": 0,
-        "ru_eco": 1,
+        "ru_eco": 2,
         "ru_safety": 1,
-        "world": 5,
+        "world": 4,
         "it": 2
       },
       "targets": {
@@ -524,9 +502,9 @@
       "deficits": {
         "local": -5.0,
         "ru_pol": 4.0,
-        "ru_eco": 3.0,
+        "ru_eco": 2.0,
         "ru_safety": 2.0,
-        "world": -3.0,
+        "world": -2.0,
         "it": -1.0
       }
     }
