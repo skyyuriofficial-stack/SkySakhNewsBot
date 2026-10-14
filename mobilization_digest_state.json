@@ -1,14 +1,14 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-10-14T11:49:14+00:00",
-  "last_run_sakhalin": "2026-10-14T22:49:14+11:00",
-  "mode": "evening",
+  "last_run_utc": "2026-10-14T22:16:28+00:00",
+  "last_run_sakhalin": "2026-10-15T09:16:28+11:00",
+  "mode": "morning",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 420,
+  "telegram_message_id": 423,
   "evidence_count": 3,
-  "evidence_hash": "e09a30afae61b6bfe38ad9176a8676674c28fc404671b0b7b69abe104bac7e11",
-  "headline": "Документ о наказании за неподчинение может усилить контроль, но новой мобилизации не подтверждено",
+  "evidence_hash": "654aa6671fbec2842e73cd1e51f7cd441092ee6d4029499e189012a44323b2b8",
+  "headline": "Legislative proposal to enforce compliance with regional mobilization orders introduced",
   "source_ids": [
     1,
     2,
@@ -558,13 +558,29 @@
           3
         ]
       }
+    },
+    "2026-10-15": {
+      "morning": {
+        "status": "ok",
+        "published_at_utc": "2026-10-14T22:16:28+00:00",
+        "published_at_sakhalin": "2026-10-15T09:16:28+11:00",
+        "telegram_message_id": 423,
+        "headline": "Legislative proposal to enforce compliance with regional mobilization orders introduced",
+        "evidence_count": 3,
+        "evidence_hash": "654aa6671fbec2842e73cd1e51f7cd441092ee6d4029499e189012a44323b2b8",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "evening",
-    "at_utc": "2026-10-14T11:49:14+00:00",
-    "at_sakhalin": "2026-10-14T22:49:14+11:00"
+    "mode": "morning",
+    "at_utc": "2026-10-14T22:16:28+00:00",
+    "at_sakhalin": "2026-10-15T09:16:28+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-10-01T06:24:52+00:00",
