@@ -1,34 +1,27 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-14T06:08:07+00:00",
-  "checked_at_sakhalin": "2026-10-14T17:08:03+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-14T06:14:21+00:00",
+  "checked_at_sakhalin": "2026-10-14T17:14:16+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-14T16:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-14T13:17:14+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-14T13:17:14+11:00",
-    "age_hours": 3.85,
-    "published": 2
+    "finished_sakhalin": "2026-10-14T17:13:49+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-14T02:17:14+00:00",
+    "checked_at_utc": "2026-10-14T06:13:49+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
-    "director_approved": 7,
+    "published": 1,
+    "director_approved": 6,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -72,9 +65,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-14T06:08:06+00:00",
-    "checked": 17,
-    "passed": 17,
+    "checked_at": "2026-10-14T06:14:20+00:00",
+    "checked": 18,
+    "passed": 18,
     "anomalies": [],
     "corrected": [],
     "deleted": [],
@@ -305,6 +298,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 419,
+      "title": "Водитель внедорожника предстанет перед судом после лобового ДТП с эвакуатором",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -326,9 +332,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 11,
+      "local": 12,
       "ru_pol": 0,
-      "ru_eco": 2,
+      "ru_eco": 1,
       "ru_safety": 0,
       "world": 4,
       "it": 3
@@ -342,26 +348,25 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -5.0,
+      "local": -6.0,
       "ru_pol": 4.0,
-      "ru_eco": 2.0,
+      "ru_eco": 3.0,
       "ru_safety": 3.0,
       "world": -2.0,
       "it": -2.0
     },
-    "distribution_error": 18.0,
+    "distribution_error": 20.0,
     "subtype_counts": {
-      "macro_economy": 2,
       "violent_crime": 3,
       "major_it": 3,
       "geopolitical_event": 4,
       "political_decision": 2,
       "major_infrastructure": 1,
-      "major_emergency": 2,
+      "macro_economy": 1,
+      "major_emergency": 3,
       "fatal_incident": 3
     },
     "sequence": [
-      "ru_eco",
       "local",
       "it",
       "world",
@@ -380,10 +385,10 @@
       "local",
       "local",
       "world",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "ru_eco",
       "sakh_chp",
       "it",
       "geo",
@@ -402,10 +407,10 @@
       "sakh",
       "sakh_chp",
       "geo",
+      "sakh_chp",
       "sakh_chp"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "astv",
       "exploit exploitex",
       "sakhalinmedia.ru",
@@ -424,14 +429,15 @@
       "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-14T06:08:00+00:00",
+    "checked_at_utc": "2026-10-14T06:14:14+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -461,12 +467,12 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 18.0,
+      "distribution_error": 20.0,
       "limit": 8.0,
       "counts": {
-        "local": 11,
+        "local": 12,
         "ru_pol": 0,
-        "ru_eco": 2,
+        "ru_eco": 1,
         "ru_safety": 0,
         "world": 4,
         "it": 3
@@ -480,9 +486,9 @@
         "it": 1
       },
       "deficits": {
-        "local": -5.0,
+        "local": -6.0,
         "ru_pol": 4.0,
-        "ru_eco": 2.0,
+        "ru_eco": 3.0,
         "ru_safety": 3.0,
         "world": -2.0,
         "it": -2.0
