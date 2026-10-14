@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-14T11:53:42+00:00",
-  "checked_at_sakhalin": "2026-10-14T22:53:38+11:00",
+  "checked_at_utc": "2026-10-14T13:06:36+00:00",
+  "checked_at_sakhalin": "2026-10-15T00:06:31+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
@@ -10,7 +10,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-14T22:53:08+11:00",
-    "age_hours": 0.01,
+    "age_hours": 1.22,
     "published": 2
   },
   "last_production_attempt": {
@@ -30,43 +30,17 @@
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-10-14",
+    "day_sakhalin": "2026-10-15",
     "status": "healthy",
     "morning": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-13T22:10:19+00:00",
-        "published_at_sakhalin": "2026-10-14T09:10:19+11:00",
-        "telegram_message_id": 414,
-        "headline": "Legal push to enforce mobilization decisions, but no new wave confirmed",
-        "evidence_count": 3,
-        "evidence_hash": "2e6edee32e95994e205e02838fc77ed72c26c249ea904c957aaf2725dcbec0de",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "evening": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-14T11:49:14+00:00",
-        "published_at_sakhalin": "2026-10-14T22:49:14+11:00",
-        "telegram_message_id": 420,
-        "headline": "Документ о наказании за неподчинение может усилить контроль, но новой мобилизации не подтверждено",
-        "evidence_count": 3,
-        "evidence_hash": "e09a30afae61b6bfe38ad9176a8676674c28fc404671b0b7b69abe104bac7e11",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "last_attempt": {
       "status": "ok",
@@ -78,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-14T11:53:41+00:00",
+    "checked_at": "2026-10-14T13:06:34+00:00",
     "checked": 19,
     "passed": 19,
     "anomalies": [],
@@ -464,7 +438,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-14T11:53:36+00:00",
+    "checked_at_utc": "2026-10-14T13:06:29+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
