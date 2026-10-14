@@ -1,60 +1,37 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-14T11:46:56+00:00",
-  "checked_at_sakhalin": "2026-10-14T22:46:51+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-14T11:53:42+00:00",
+  "checked_at_sakhalin": "2026-10-14T22:53:38+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 5.55,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-14T22:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-14T17:13:49+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "evening",
-      "expected_by_sakhalin": "2026-10-14T19:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "morning",
-        "at_utc": "2026-10-13T22:10:19+00:00",
-        "at_sakhalin": "2026-10-14T09:10:19+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-14T17:13:49+11:00",
-    "age_hours": 5.55,
-    "published": 1
+    "finished_sakhalin": "2026-10-14T22:53:08+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-14T06:13:49+00:00",
+    "checked_at_utc": "2026-10-14T11:53:08+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 6,
+    "published": 2,
+    "director_approved": 8,
     "ai_calls": 4,
-    "ai_api_fail": 4,
-    "ai_budget_exhausted": 1,
+    "ai_api_fail": 3,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-14",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
       "published": true,
@@ -75,34 +52,35 @@
     },
     "evening": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-14T11:49:14+00:00",
+        "published_at_sakhalin": "2026-10-14T22:49:14+11:00",
+        "telegram_message_id": 420,
+        "headline": "Документ о наказании за неподчинение может усилить контроль, но новой мобилизации не подтверждено",
+        "evidence_count": 3,
+        "evidence_hash": "e09a30afae61b6bfe38ad9176a8676674c28fc404671b0b7b69abe104bac7e11",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "morning",
-      "at_utc": "2026-10-13T22:10:19+00:00",
-      "at_sakhalin": "2026-10-14T09:10:19+11:00"
+      "mode": "evening",
+      "at_utc": "2026-10-14T11:49:14+00:00",
+      "at_sakhalin": "2026-10-14T22:49:14+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "evening",
-        "expected_by_sakhalin": "2026-10-14T19:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "morning",
-          "at_utc": "2026-10-13T22:10:19+00:00",
-          "at_sakhalin": "2026-10-14T09:10:19+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-14T11:46:54+00:00",
-    "checked": 18,
-    "passed": 18,
+    "checked_at": "2026-10-14T11:53:41+00:00",
+    "checked": 19,
+    "passed": 19,
     "anomalies": [],
     "corrected": [],
     "deleted": [],
@@ -113,19 +91,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 392,
-      "title": "Путин и Трамп обсудили поставки нефтепродуктов: США сняли санкции с дизеля",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "geo",
-      "title_issues": []
-    },
     {
       "message_id": 395,
       "title": "Губернатор поручил устранить подтопление подвала дома в Южно-Сахалинск",
@@ -346,6 +311,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 421,
+      "title": "Дата-центр Сбербанка в Саратовской области атаковали беспилотники",
+      "category_key": "ru_security",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_security",
+      "title_issues": []
+    },
+    {
+      "message_id": 422,
+      "title": "Российская сторона поднимала вопрос снятия санкций во время визита в США",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "geo",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -367,12 +358,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 12,
+      "local": 11,
       "ru_pol": 0,
       "ru_eco": 1,
-      "ru_safety": 0,
-      "world": 4,
-      "it": 3
+      "ru_safety": 1,
+      "world": 5,
+      "it": 2
     },
     "scaled_targets": {
       "local": 6.0,
@@ -383,27 +374,26 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -6.0,
+      "local": -5.0,
       "ru_pol": 4.0,
       "ru_eco": 3.0,
-      "ru_safety": 3.0,
-      "world": -2.0,
-      "it": -2.0
+      "ru_safety": 2.0,
+      "world": -3.0,
+      "it": -1.0
     },
-    "distribution_error": 20.0,
+    "distribution_error": 18.0,
     "subtype_counts": {
-      "violent_crime": 3,
-      "major_it": 3,
-      "geopolitical_event": 4,
+      "geopolitical_event": 5,
       "political_decision": 2,
+      "major_it": 2,
       "major_infrastructure": 1,
       "macro_economy": 1,
+      "violent_crime": 2,
       "major_emergency": 3,
-      "fatal_incident": 3
+      "fatal_incident": 3,
+      "military_security": 1
     },
     "sequence": [
-      "local",
-      "it",
       "world",
       "local",
       "it",
@@ -421,11 +411,11 @@
       "local",
       "world",
       "local",
-      "local"
+      "local",
+      "ru_safety",
+      "world"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "it",
       "geo",
       "sakh",
       "it",
@@ -443,11 +433,11 @@
       "sakh_chp",
       "geo",
       "sakh_chp",
-      "sakh_chp"
+      "sakh_chp",
+      "ru_security",
+      "geo"
     ],
     "source_sequence": [
-      "astv",
-      "exploit exploitex",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "astv",
@@ -465,14 +455,16 @@
       "astv",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "sakh.online"
+      "sakh.online",
+      "astv",
+      "tass"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-14T11:46:48+00:00",
+    "checked_at_utc": "2026-10-14T11:53:36+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -502,15 +494,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 20.0,
+      "distribution_error": 18.0,
       "limit": 8.0,
       "counts": {
-        "local": 12,
+        "local": 11,
         "ru_pol": 0,
         "ru_eco": 1,
-        "ru_safety": 0,
-        "world": 4,
-        "it": 3
+        "ru_safety": 1,
+        "world": 5,
+        "it": 2
       },
       "targets": {
         "local": 6,
@@ -521,12 +513,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -6.0,
+        "local": -5.0,
         "ru_pol": 4.0,
         "ru_eco": 3.0,
-        "ru_safety": 3.0,
-        "world": -2.0,
-        "it": -2.0
+        "ru_safety": 2.0,
+        "world": -3.0,
+        "it": -1.0
       }
     }
   ]
