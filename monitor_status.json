@@ -1,32 +1,32 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-14T22:33:39+00:00",
-  "checked_at_sakhalin": "2026-10-15T09:33:34+11:00",
+  "checked_at_utc": "2026-10-14T23:15:01+00:00",
+  "checked_at_sakhalin": "2026-10-15T10:14:58+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-15T09:18:11+11:00",
-    "age_hours": 0.26,
+    "finished_sakhalin": "2026-10-15T10:14:32+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-14T22:18:11+00:00",
+    "checked_at_utc": "2026-10-14T23:14:32+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 10,
-    "ai_calls": 0,
-    "ai_api_fail": 0,
-    "ai_budget_exhausted": 0,
+    "director_approved": 9,
+    "ai_calls": 4,
+    "ai_api_fail": 3,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
-    "publication_contract_blocked": 0
+    "publication_contract_blocked": 1
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -65,9 +65,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-14T22:33:38+00:00",
-    "checked": 19,
-    "passed": 19,
+    "checked_at": "2026-10-14T23:15:00+00:00",
+    "checked": 20,
+    "passed": 20,
     "anomalies": [],
     "corrected": [],
     "deleted": [],
@@ -78,19 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 400,
-      "title": "Трамп: частичное перемирие РФ и Украины — остановка ударов по НПЗ",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "geo",
-      "title_issues": []
-    },
     {
       "message_id": 402,
       "title": "В Томаринском районе отремонтировали мост через реку Новоселку",
@@ -324,6 +311,32 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 426,
+      "title": "В офисе OpenAI установили ПРОСЛУШКУ — это сделал 35-летний сотрудник Абдулрахман Альфозан, единственный работник из Саудовской Аравии",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
+    },
+    {
+      "message_id": 427,
+      "title": "СК начал проверку после гибели 57-летнего мужчины на пожаре в Южно-Сахалинске",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -345,11 +358,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 11,
+      "local": 12,
       "ru_pol": 0,
       "ru_eco": 2,
       "ru_safety": 1,
-      "world": 4,
+      "world": 3,
       "it": 2
     },
     "scaled_targets": {
@@ -361,28 +374,26 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -5.0,
+      "local": -6.0,
       "ru_pol": 4.0,
       "ru_eco": 2.0,
       "ru_safety": 2.0,
-      "world": -2.0,
+      "world": -1.0,
       "it": -1.0
     },
     "distribution_error": 16.0,
     "subtype_counts": {
-      "major_it": 2,
-      "geopolitical_event": 4,
       "major_infrastructure": 1,
       "macro_economy": 2,
       "violent_crime": 2,
+      "geopolitical_event": 3,
       "major_emergency": 3,
-      "fatal_incident": 4,
+      "fatal_incident": 5,
+      "major_it": 2,
       "political_decision": 1,
       "military_security": 1
     },
     "sequence": [
-      "it",
-      "world",
       "local",
       "ru_eco",
       "local",
@@ -400,11 +411,11 @@
       "ru_safety",
       "world",
       "local",
-      "ru_eco"
+      "ru_eco",
+      "it",
+      "local"
     ],
     "category_sequence": [
-      "it",
-      "geo",
       "sakh",
       "ru_eco",
       "sakh_chp",
@@ -422,11 +433,11 @@
       "ru_security",
       "geo",
       "sakh_chp",
-      "ru_eco"
+      "ru_eco",
+      "it",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "astv",
-      "sakh.online",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakh.online",
@@ -444,14 +455,16 @@
       "astv",
       "tass",
       "sakh.online",
-      "astv"
+      "astv",
+      "techmedia techmedia",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-14T22:33:31+00:00",
+    "checked_at_utc": "2026-10-14T23:14:56+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -484,11 +497,11 @@
       "distribution_error": 16.0,
       "limit": 8.0,
       "counts": {
-        "local": 11,
+        "local": 12,
         "ru_pol": 0,
         "ru_eco": 2,
         "ru_safety": 1,
-        "world": 4,
+        "world": 3,
         "it": 2
       },
       "targets": {
@@ -500,11 +513,11 @@
         "it": 1
       },
       "deficits": {
-        "local": -5.0,
+        "local": -6.0,
         "ru_pol": 4.0,
         "ru_eco": 2.0,
         "ru_safety": 2.0,
-        "world": -2.0,
+        "world": -1.0,
         "it": -1.0
       }
     }
