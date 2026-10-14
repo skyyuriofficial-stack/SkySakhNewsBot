@@ -1,26 +1,26 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-14T02:07:31+00:00",
-  "checked_at_sakhalin": "2026-10-14T13:07:26+11:00",
+  "checked_at_utc": "2026-10-14T02:17:48+00:00",
+  "checked_at_sakhalin": "2026-10-14T13:17:44+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-14T10:46:40+11:00",
-    "age_hours": 2.35,
-    "published": 1
+    "finished_sakhalin": "2026-10-14T13:17:14+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-13T23:46:40+00:00",
+    "checked_at_utc": "2026-10-14T02:17:14+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
+    "published": 2,
     "director_approved": 7,
     "ai_calls": 4,
     "ai_api_fail": 4,
@@ -65,9 +65,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-14T02:07:29+00:00",
-    "checked": 16,
-    "passed": 16,
+    "checked_at": "2026-10-14T02:17:47+00:00",
+    "checked": 17,
+    "passed": 17,
     "anomalies": [],
     "corrected": [],
     "deleted": [],
@@ -78,19 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 388,
-      "title": "В России душат поставки зарубежных ноутбуков — завоз Dell, HP и Apple уже сократился на 10% и продолжает падать, пишут Известия",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 392,
       "title": "Путин и Трамп обсудили поставки нефтепродуктов: США сняли санкции с дизеля",
@@ -285,6 +272,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 417,
+      "title": "Захарова: Ситуация со шпионажем японского журналиста омрачит отношения РФ с Токио",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "geo",
+      "title_issues": []
+    },
+    {
+      "message_id": 418,
+      "title": "В Долинском районе мужчина напал на полицейского и получил уголовное дело",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -306,11 +319,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 12,
+      "local": 11,
       "ru_pol": 0,
       "ru_eco": 2,
       "ru_safety": 0,
-      "world": 3,
+      "world": 4,
       "it": 3
     },
     "scaled_targets": {
@@ -322,27 +335,25 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -6.0,
+      "local": -5.0,
       "ru_pol": 4.0,
       "ru_eco": 2.0,
       "ru_safety": 3.0,
-      "world": -1.0,
+      "world": -2.0,
       "it": -2.0
     },
     "distribution_error": 18.0,
     "subtype_counts": {
-      "political_decision": 3,
-      "violent_crime": 3,
       "macro_economy": 2,
+      "violent_crime": 3,
       "major_it": 3,
-      "geopolitical_event": 3,
+      "geopolitical_event": 4,
+      "political_decision": 2,
       "major_infrastructure": 1,
       "major_emergency": 2,
       "fatal_incident": 3
     },
     "sequence": [
-      "local",
-      "local",
       "ru_eco",
       "local",
       "it",
@@ -360,11 +371,11 @@
       "local",
       "local",
       "local",
+      "local",
+      "world",
       "local"
     ],
     "category_sequence": [
-      "sakh",
-      "sakh_chp",
       "ru_eco",
       "sakh_chp",
       "it",
@@ -382,11 +393,11 @@
       "sakh_chp",
       "sakh_chp",
       "sakh",
+      "sakh_chp",
+      "geo",
       "sakh_chp"
     ],
     "source_sequence": [
-      "astv",
-      "astv",
       "sakhalinmedia.ru",
       "astv",
       "exploit exploitex",
@@ -404,14 +415,16 @@
       "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
-      "astv"
+      "astv",
+      "sakhalinmedia.ru",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-14T02:07:24+00:00",
+    "checked_at_utc": "2026-10-14T02:17:41+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -444,11 +457,11 @@
       "distribution_error": 18.0,
       "limit": 8.0,
       "counts": {
-        "local": 12,
+        "local": 11,
         "ru_pol": 0,
         "ru_eco": 2,
         "ru_safety": 0,
-        "world": 3,
+        "world": 4,
         "it": 3
       },
       "targets": {
@@ -460,11 +473,11 @@
         "it": 1
       },
       "deficits": {
-        "local": -6.0,
+        "local": -5.0,
         "ru_pol": 4.0,
         "ru_eco": 2.0,
         "ru_safety": 3.0,
-        "world": -1.0,
+        "world": -2.0,
         "it": -2.0
       }
     }
