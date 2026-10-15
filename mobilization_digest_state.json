@@ -1,14 +1,14 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-10-14T22:16:28+00:00",
-  "last_run_sakhalin": "2026-10-15T09:16:28+11:00",
-  "mode": "morning",
+  "last_run_utc": "2026-10-15T11:59:45+00:00",
+  "last_run_sakhalin": "2026-10-15T22:59:45+11:00",
+  "mode": "evening",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 423,
+  "telegram_message_id": 433,
   "evidence_count": 3,
-  "evidence_hash": "654aa6671fbec2842e73cd1e51f7cd441092ee6d4029499e189012a44323b2b8",
-  "headline": "Legislative proposal to enforce compliance with regional mobilization orders introduced",
+  "evidence_hash": "cd55606051dc946bab377d626094b6e64b27fd2e3dc2e7669ca91996b0bb2458",
+  "headline": "Нет подтверждений риска новой волны мобилизации в РФ",
   "source_ids": [
     1,
     2,
@@ -573,14 +573,28 @@
           2,
           3
         ]
+      },
+      "evening": {
+        "status": "ok",
+        "published_at_utc": "2026-10-15T11:59:45+00:00",
+        "published_at_sakhalin": "2026-10-15T22:59:45+11:00",
+        "telegram_message_id": 433,
+        "headline": "Нет подтверждений риска новой волны мобилизации в РФ",
+        "evidence_count": 3,
+        "evidence_hash": "cd55606051dc946bab377d626094b6e64b27fd2e3dc2e7669ca91996b0bb2458",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
       }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "morning",
-    "at_utc": "2026-10-14T22:16:28+00:00",
-    "at_sakhalin": "2026-10-15T09:16:28+11:00"
+    "mode": "evening",
+    "at_utc": "2026-10-15T11:59:45+00:00",
+    "at_sakhalin": "2026-10-15T22:59:45+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-10-01T06:24:52+00:00",
