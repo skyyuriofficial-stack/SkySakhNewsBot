@@ -1,14 +1,14 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-10-15T12:02:08+00:00",
-  "last_run_sakhalin": "2026-10-15T23:02:08+11:00",
-  "mode": "evening",
+  "last_run_utc": "2026-10-15T22:12:39+00:00",
+  "last_run_sakhalin": "2026-10-16T09:12:39+11:00",
+  "mode": "morning",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 433,
+  "telegram_message_id": 434,
   "evidence_count": 3,
-  "evidence_hash": "cd55606051dc946bab377d626094b6e64b27fd2e3dc2e7669ca91996b0bb2458",
-  "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+  "evidence_hash": "048f45dbd61cae8c8f7b92e2c7988ae9877d1cb30feaae48f1e0c929f75e096b",
+  "headline": "Legal tightening for wartime orders, no new mobilization wave confirmed",
   "source_ids": [
     1,
     2,
@@ -588,13 +588,29 @@
           3
         ]
       }
+    },
+    "2026-10-16": {
+      "morning": {
+        "status": "ok",
+        "published_at_utc": "2026-10-15T22:12:39+00:00",
+        "published_at_sakhalin": "2026-10-16T09:12:39+11:00",
+        "telegram_message_id": 434,
+        "headline": "Legal tightening for wartime orders, no new mobilization wave confirmed",
+        "evidence_count": 3,
+        "evidence_hash": "048f45dbd61cae8c8f7b92e2c7988ae9877d1cb30feaae48f1e0c929f75e096b",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "evening",
-    "at_utc": "2026-10-15T12:02:08+00:00",
-    "at_sakhalin": "2026-10-15T23:02:08+11:00"
+    "mode": "morning",
+    "at_utc": "2026-10-15T22:12:39+00:00",
+    "at_sakhalin": "2026-10-16T09:12:39+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-10-01T06:24:52+00:00",
