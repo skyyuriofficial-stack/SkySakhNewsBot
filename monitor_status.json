@@ -1,44 +1,32 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-15T04:04:14+00:00",
-  "checked_at_sakhalin": "2026-10-15T15:04:10+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-15T04:09:28+00:00",
+  "checked_at_sakhalin": "2026-10-15T15:09:23+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 4.83,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-15T13:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-15T10:14:32+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-15T10:14:32+11:00",
-    "age_hours": 4.83,
+    "finished_sakhalin": "2026-10-15T15:08:57+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-14T23:14:32+00:00",
+    "checked_at_utc": "2026-10-15T04:08:57+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 9,
-    "ai_calls": 4,
-    "ai_api_fail": 3,
-    "ai_budget_exhausted": 1,
+    "director_approved": 10,
+    "ai_calls": 0,
+    "ai_api_fail": 0,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
-    "publication_contract_blocked": 1
+    "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -77,7 +65,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-15T04:04:12+00:00",
+    "checked_at": "2026-10-15T04:09:26+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -90,32 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 402,
-      "title": "В Томаринском районе отремонтировали мост через реку Новоселку",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
-    {
-      "message_id": 403,
-      "title": "В сентябре люди перевели в Сбер из других брокеров активов в 10 раз больше, чем вывели",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 406,
       "title": "Жительницу Южно-Сахалинска подозревают в покушении на убийство знакомого",
@@ -349,6 +311,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 428,
+      "title": "При пожаре на даче в Макаровском районе погибли 26 кур",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 429,
+      "title": "Прогноз по рублю: ВТБ допустил ослабление до 90 руб./$ к концу следующего года",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -395,19 +383,16 @@
     },
     "distribution_error": 16.0,
     "subtype_counts": {
-      "major_infrastructure": 1,
-      "macro_economy": 2,
       "violent_crime": 2,
       "geopolitical_event": 3,
       "major_emergency": 3,
-      "fatal_incident": 5,
+      "fatal_incident": 6,
       "major_it": 2,
       "political_decision": 1,
-      "military_security": 1
+      "military_security": 1,
+      "macro_economy": 2
     },
     "sequence": [
-      "local",
-      "ru_eco",
       "local",
       "world",
       "local",
@@ -425,11 +410,11 @@
       "local",
       "ru_eco",
       "it",
-      "local"
+      "local",
+      "local",
+      "ru_eco"
     ],
     "category_sequence": [
-      "sakh",
-      "ru_eco",
       "sakh_chp",
       "geo",
       "sakh_chp",
@@ -447,11 +432,11 @@
       "sakh_chp",
       "ru_eco",
       "it",
-      "sakh_chp"
+      "sakh_chp",
+      "sakh_chp",
+      "ru_eco"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "sakhalinmedia.ru",
       "sakh.online",
       "rbc news rbc news",
       "sakhalinmedia.ru",
@@ -469,14 +454,16 @@
       "sakh.online",
       "astv",
       "techmedia techmedia",
-      "sakh.online"
+      "sakh.online",
+      "astv",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-15T04:04:08+00:00",
+    "checked_at_utc": "2026-10-15T04:09:20+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
