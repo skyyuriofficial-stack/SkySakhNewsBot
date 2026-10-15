@@ -1,52 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-15T22:10:04+00:00",
-  "checked_at_sakhalin": "2026-10-16T09:09:59+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-15T22:16:05+00:00",
+  "checked_at_sakhalin": "2026-10-16T09:16:00+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 10.22,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-16T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-15T22:56:48+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-10-16T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "evening",
-        "at_utc": "2026-10-15T12:02:08+00:00",
-        "at_sakhalin": "2026-10-15T23:02:08+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-15T22:56:48+11:00",
-    "age_hours": 10.22,
+    "finished_sakhalin": "2026-10-16T09:15:28+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-15T11:56:48+00:00",
+    "checked_at_utc": "2026-10-15T22:15:28+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 7,
+    "director_approved": 6,
     "ai_calls": 4,
-    "ai_api_fail": 4,
+    "ai_api_fail": 3,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -54,11 +31,24 @@
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-16",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-15T22:12:39+00:00",
+        "published_at_sakhalin": "2026-10-16T09:12:39+11:00",
+        "telegram_message_id": 434,
+        "headline": "Legal tightening for wartime orders, no new mobilization wave confirmed",
+        "evidence_count": 3,
+        "evidence_hash": "048f45dbd61cae8c8f7b92e2c7988ae9877d1cb30feaae48f1e0c929f75e096b",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     },
     "evening": {
       "due": false,
@@ -67,27 +57,15 @@
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "evening",
-      "at_utc": "2026-10-15T12:02:08+00:00",
-      "at_sakhalin": "2026-10-15T23:02:08+11:00"
+      "mode": "morning",
+      "at_utc": "2026-10-15T22:12:39+00:00",
+      "at_sakhalin": "2026-10-16T09:12:39+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-10-16T08:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "evening",
-          "at_utc": "2026-10-15T12:02:08+00:00",
-          "at_sakhalin": "2026-10-15T23:02:08+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-15T22:10:02+00:00",
+    "checked_at": "2026-10-15T22:16:03+00:00",
     "checked": 19,
     "passed": 19,
     "anomalies": [],
@@ -100,19 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 409,
-      "title": "Южносахалинец едва не погиб на пожаре из-за непотушенной сигареты",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 410,
       "title": "В Беларуси впервые освятили иконку, созданную НЕЙРОСЕТЬЮ — на ней изображен святой Карло Акутис, известный геймер-айтишник",
@@ -346,6 +311,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 435,
+      "title": "Американские военные подготовили новый план ударов по Ирану, который предусматривает применение так называемой матери всех бомб — GBU-43/B Massive Ordnance Air Blast (MOAB), сообщи",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "geo",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -367,11 +345,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 12,
+      "local": 11,
       "ru_pol": 0,
       "ru_eco": 3,
       "ru_safety": 1,
-      "world": 2,
+      "world": 3,
       "it": 2
     },
     "scaled_targets": {
@@ -383,26 +361,25 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -6.0,
+      "local": -5.0,
       "ru_pol": 4.0,
       "ru_eco": 1.0,
       "ru_safety": 2.0,
-      "world": 0.0,
+      "world": -1.0,
       "it": -1.0
     },
     "distribution_error": 14.0,
     "subtype_counts": {
-      "major_emergency": 3,
       "fatal_incident": 7,
       "major_it": 2,
+      "major_emergency": 2,
       "political_decision": 1,
-      "geopolitical_event": 2,
+      "geopolitical_event": 3,
       "violent_crime": 1,
       "military_security": 1,
       "macro_economy": 3
     },
     "sequence": [
-      "local",
       "local",
       "it",
       "local",
@@ -421,10 +398,10 @@
       "local",
       "ru_eco",
       "local",
-      "ru_eco"
+      "ru_eco",
+      "world"
     ],
     "category_sequence": [
-      "sakh_chp",
       "sakh_chp",
       "it",
       "sakh_chp",
@@ -443,10 +420,10 @@
       "sakh_chp",
       "ru_eco",
       "sakh_chp",
-      "ru_eco"
+      "ru_eco",
+      "geo"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "techmedia techmedia",
       "sakhalinmedia.ru",
@@ -465,14 +442,15 @@
       "astv",
       "sakhalinmedia.ru",
       "astv",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "rbc news rbc news"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-15T22:09:56+00:00",
+    "checked_at_utc": "2026-10-15T22:15:58+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -505,11 +483,11 @@
       "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
-        "local": 12,
+        "local": 11,
         "ru_pol": 0,
         "ru_eco": 3,
         "ru_safety": 1,
-        "world": 2,
+        "world": 3,
         "it": 2
       },
       "targets": {
@@ -521,11 +499,11 @@
         "it": 1
       },
       "deficits": {
-        "local": -6.0,
+        "local": -5.0,
         "ru_pol": 4.0,
         "ru_eco": 1.0,
         "ru_safety": 2.0,
-        "world": 0.0,
+        "world": -1.0,
         "it": -1.0
       }
     }
