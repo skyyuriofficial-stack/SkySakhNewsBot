@@ -342,7 +342,9 @@
     "https://t.me/techmedia/23687",
     "https://sakh.online/news/24/2026-10-15/sledkom-vzyalsya-za-delo-o-gibeli-57-letnego-muzhchiny-pri-pozhare-v-yuzhno-sahalinske-528968",
     "https://astv.ru/news/criminal/2026-10-15-pri-pozhare-na-dache-v-makarovskom-rajone-pogibli-26-kur",
-    "https://sakhalinmedia.ru/news/2652161/"
+    "https://sakhalinmedia.ru/news/2652161/",
+    "https://astv.ru/news/criminal/2026-10-15-sahalincy-vytashili-detej-iz-okna-goryashej-kvartiry-v-kotoroj-pogib-muzhchina",
+    "https://sakhalinmedia.ru/news/2652300/"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -688,379 +690,12 @@
     "a3ced5f5e8e1b753cf1628fd0b5becb38c27f328",
     "65de9888244ec7f88d04f8a14ebadb7fe03944fc",
     "424c0405b23af9b679315b1bf43e0e288a3953b0",
-    "c030976729c8a4ee54608dbe5cc2447f47c7cb6e"
+    "c030976729c8a4ee54608dbe5cc2447f47c7cb6e",
+    "0b2a614d9709b0abbb028dbb041b200911e1307b",
+    "8ef8808edab3ce3b0dada42af087c708a0ce4864"
   ],
-  "last_run_sakhalin": "2026-10-15T15:08:57+11:00",
+  "last_run_sakhalin": "2026-10-15T17:26:01+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-10-02T08:14:10+11:00",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "title": "Два ДТП с пострадавшими и 175 нарушений ПДД выявили за сутки на Сахалине",
-      "url": "https://sakhalinmedia.ru/news/2637158/",
-      "image_url": "https://sakhalinmedia.ru/f/big/6424/6423510.jpg?c22fdff5438feddf477e6f3fdbfb67bc",
-      "image_hash": "a8552ef923518b14df726eedf14ab2069e3e0f56",
-      "topic_cluster": "sakh_chp:пострадавшими_нарушений_выявили_сутки_сахалине_sakhalinmedia",
-      "published_at": "2026-10-01T00:12:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.2",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "group": "local",
-        "event_type": "major_emergency",
-        "subtype": "major_emergency",
-        "seriousness": 93,
-        "threshold": 68,
-        "selection_utility": -141.0,
-        "slot": "backup",
-        "risks": [],
-        "title_original": "Два ДТП с пострадавшими и 175 нарушений ПДД выявили за сутки на Сахалине",
-        "title_corrected": "Два ДТП с пострадавшими и 175 нарушений ПДД выявили за сутки на Сахалине",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "Профилактические мероприятия Госавтоинспекции 30 сентября прошли на дорогах Сахалинской области. За сутки инспекторы пресекли 175 нарушений ПДД, сообщает УГИБДД УМВД России по Сахалинской области. Ещё 14 автомобилистов задержали за езду без прав. В ходе профилактических мероприятий сотрудники ГАИ отстранили от управления трёх водителей, которые находились за рулем в состоянии опьянения. Ещё 14 автомобилистов задержали за управление транспортными средствами без соответствующего права либо после его лишения по решению суда. Кроме того, сотрудники ГАИ составили 25 административных материалов в отношении водителей, не оплативших ранее назначенные штрафы в установленный срок. Девять автомобилей задержали и поместили на специализированную стоянку. Также комплексы фото— и видеофиксации за сутки зарегистрировали 3546 нарушений ПДД.",
-      "title_original": null,
-      "footer": "ЧП | САХАЛИН",
-      "published_row": {
-        "reject": false,
-        "title_ru": "Два ДТП с пострадавшими и 175 нарушений ПДД выявили за сутки на Сахалине",
-        "body": [
-          "Профилактические мероприятия Госавтоинспекции 30 сентября прошли на дорогах Сахалинской области.",
-          "За сутки инспекторы пресекли 175 нарушений ПДД, сообщает УГИБДД УМВД России по Сахалинской области."
-        ],
-        "footer": "ЧП | САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "hardening_repair": {
-          "version": "editorial-hardening-v1.7",
-          "source_warnings": []
-        },
-        "news_director": {
-          "version": "director-v2.2",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "subtype": "major_emergency",
-          "seriousness": 93,
-          "threshold": 68,
-          "selection_utility": -141.0,
-          "slot": "backup",
-          "risks": [],
-          "title_original": "Два ДТП с пострадавшими и 175 нарушений ПДД выявили за сутки на Сахалине",
-          "title_corrected": "Два ДТП с пострадавшими и 175 нарушений ПДД выявили за сутки на Сахалине",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "sakh_chp",
-          "final_category": "sakh_chp",
-          "event_type": "major_emergency",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.4",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.2",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "sakh_chp",
-            "corrected_category": "sakh_chp",
-            "group": "local",
-            "event_type": "major_emergency",
-            "subtype": "major_emergency",
-            "seriousness": 91,
-            "threshold": 68,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "Два ДТП с пострадавшими и 175 нарушений ПДД выявили за сутки на Сахалине",
-            "title_corrected": "Два ДТП с пострадавшими и 175 нарушений ПДД выявили за сутки на Сахалине",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "📍 Сахалин\n\n<b>Два ДТП с пострадавшими и 175 нарушений ПДД выявили за сутки на Сахалине</b>\n\nПрофилактические мероприятия Госавтоинспекции 30 сентября прошли на дорогах Сахалинской области.\n\nЗа сутки инспекторы пресекли 175 нарушений ПДД, сообщает УГИБДД УМВД России по Сахалинской области.\n\nЧП | САХАЛИН · <a href=\"https://sakhalinmedia.ru/news/2637158/\">SakhalinMedia.ru</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_chp",
-        "final_category": "sakh_chp",
-        "event_type": "major_emergency",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.4",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.2",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "subtype": "major_emergency",
-          "seriousness": 91,
-          "threshold": 68,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Два ДТП с пострадавшими и 175 нарушений ПДД выявили за сутки на Сахалине",
-          "title_corrected": "Два ДТП с пострадавшими и 175 нарушений ПДД выявили за сутки на Сахалине",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 323,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": true,
-      "media_delivery_attempts": 3,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": []
-      },
-      "auto_deleted": true,
-      "post_audit": {
-        "version": "post-audit-hardening-v1.1",
-        "approved": false,
-        "checked_at": "2026-10-01T21:14:23+00:00",
-        "auto_action": "deleted_by_hardening",
-        "reason": "semantic_duplicate_of:Два ДТП с пострадавшими и 6 пьяных водителей за сутки на Сахалине"
-      }
-    },
-    {
-      "time_sakhalin": "2026-10-02T10:54:34+11:00",
-      "source": "Sakh.online",
-      "category": "🇷🇺 Россия / происшествия",
-      "category_key": "ru_incident",
-      "title": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-      "url": "https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768",
-      "image_url": "https://sakh.online/attachments/9970f0381f2cec08d5dd1cb9e77a2577e6ded6b9/store/crop/0/118/800/451/800/0/0/0/389f3c26f2780e1de9a3c21e5d5ef1e001a23f41552c831f32c4620a3b45/389f3c26f2780e1de9a3c21e5d5ef1e001a23f41552c831f32c4620a3b45.webp",
-      "image_hash": "ec3d9ac1a8a1c8e6c177f8589dc5b28d3dd87c17",
-      "topic_cluster": "ru_incident:пассажир_грузовика_пострадал_возле_горного_воздуха",
-      "published_at": "2026-10-01T13:00:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.2",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "sakh_chp",
-        "corrected_category": "ru_incident",
-        "group": "ru_safety",
-        "event_type": "major_emergency",
-        "subtype": "major_emergency",
-        "seriousness": 93,
-        "threshold": 76,
-        "selection_utility": 93.0,
-        "slot": 1,
-        "risks": [
-          "category_corrected:sakh_chp->ru_incident"
-        ],
-        "title_original": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-        "title_corrected": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "По предварительным данным, неустановленный водитель грузового Daewoo Novus двигался в западном направлении. Он не справился с управлением, после чего машина съехала в правый по ходу движения кювет, врезалась в опору освещения и перевернулась. В результате аварии 30-летний пассажир грузовика получил травмы. по оценке 3 пользователей 5 4 3 2 1 © 2018—2026 • Областное автономное учреждение «Издательский дом «Губернские ведомости»",
-      "title_original": null,
-      "footer": "РОССИЯ | ПРОИСШЕСТВИЯ",
-      "published_row": {
-        "reject": false,
-        "title_ru": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-        "body": [
-          "По предварительным данным, неустановленный водитель грузового Daewoo Novus двигался в западном направлении.",
-          "Он не справился с управлением, после чего машина съехала в правый по ходу движения кювет, врезалась в опору освещения и перевернулась."
-        ],
-        "footer": "РОССИЯ | ПРОИСШЕСТВИЯ",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "news_director": {
-          "version": "director-v2.2",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "ru_incident",
-          "group": "ru_safety",
-          "event_type": "major_emergency",
-          "subtype": "major_emergency",
-          "seriousness": 93,
-          "threshold": 76,
-          "selection_utility": 93.0,
-          "slot": 1,
-          "risks": [
-            "category_corrected:sakh_chp->ru_incident"
-          ],
-          "title_original": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-          "title_corrected": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "ru_incident",
-          "final_category": "ru_incident",
-          "event_type": "major_emergency",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.4",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.2",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "ru_incident",
-            "corrected_category": "ru_incident",
-            "group": "ru_safety",
-            "event_type": "major_emergency",
-            "subtype": "major_emergency",
-            "seriousness": 89,
-            "threshold": 76,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-            "title_corrected": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "🇷🇺 Россия / происшествия\n\n<b>Пассажир грузовика пострадал в ДТП возле «Горного воздуха»</b>\n\nПо предварительным данным, неустановленный водитель грузового Daewoo Novus двигался в западном направлении.\n\nОн не справился с управлением, после чего машина съехала в правый по ходу движения кювет, врезалась в опору освещения и перевернулась.\n\nРОССИЯ | ПРОИСШЕСТВИЯ · <a href=\"https://sakh.online/news/24/2026-10-02/passazhir-gruzovika-postradal-v-dtp-vozle-gornogo-vozduha-527768\">Sakh.online</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "ru_incident",
-        "final_category": "ru_incident",
-        "event_type": "major_emergency",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.4",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.2",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_incident",
-          "corrected_category": "ru_incident",
-          "group": "ru_safety",
-          "event_type": "major_emergency",
-          "subtype": "major_emergency",
-          "seriousness": 89,
-          "threshold": 76,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-          "title_corrected": "Пассажир грузовика пострадал в ДТП возле «Горного воздуха»",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 325,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": []
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": false,
-        "checked_at": "2026-10-05T15:55:56+00:00",
-        "reason": "low_scale_incident_not_release_worthy",
-        "issues": [
-          "director_final_reject:low_scale_incident_not_release_worthy"
-        ]
-      }
-    },
     {
       "time_sakhalin": "2026-10-02T10:54:58+11:00",
       "source": "SakhalinMedia.ru",
@@ -11890,7 +11525,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:43+00:00"
+        "checked_at": "2026-10-15T06:22:11+00:00"
       }
     },
     {
@@ -12079,7 +11714,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:44+00:00"
+        "checked_at": "2026-10-15T06:22:11+00:00"
       }
     },
     {
@@ -12260,7 +11895,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:44+00:00"
+        "checked_at": "2026-10-15T06:22:11+00:00"
       }
     },
     {
@@ -12437,7 +12072,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:44+00:00"
+        "checked_at": "2026-10-15T06:22:11+00:00"
       }
     },
     {
@@ -12622,7 +12257,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:44+00:00"
+        "checked_at": "2026-10-15T06:22:11+00:00"
       }
     },
     {
@@ -12799,7 +12434,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:44+00:00"
+        "checked_at": "2026-10-15T06:22:11+00:00"
       }
     },
     {
@@ -12976,7 +12611,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:44+00:00"
+        "checked_at": "2026-10-15T06:22:11+00:00"
       }
     },
     {
@@ -13157,7 +12792,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:45+00:00"
+        "checked_at": "2026-10-15T06:22:12+00:00"
       }
     },
     {
@@ -13334,7 +12969,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:45+00:00"
+        "checked_at": "2026-10-15T06:22:12+00:00"
       }
     },
     {
@@ -13515,7 +13150,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:45+00:00"
+        "checked_at": "2026-10-15T06:22:12+00:00"
       }
     },
     {
@@ -13696,7 +13331,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:45+00:00"
+        "checked_at": "2026-10-15T06:22:12+00:00"
       }
     },
     {
@@ -13873,7 +13508,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:45+00:00"
+        "checked_at": "2026-10-15T06:22:12+00:00"
       }
     },
     {
@@ -14054,7 +13689,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:45+00:00"
+        "checked_at": "2026-10-15T06:22:12+00:00"
       }
     },
     {
@@ -14240,7 +13875,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:46+00:00"
+        "checked_at": "2026-10-15T06:22:12+00:00"
       }
     },
     {
@@ -14417,7 +14052,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:46+00:00"
+        "checked_at": "2026-10-15T06:22:12+00:00"
       }
     },
     {
@@ -14606,7 +14241,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:46+00:00"
+        "checked_at": "2026-10-15T06:22:12+00:00"
       }
     },
     {
@@ -14791,7 +14426,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:46+00:00"
+        "checked_at": "2026-10-15T06:22:13+00:00"
       }
     },
     {
@@ -14968,7 +14603,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-15T04:04:46+00:00"
+        "checked_at": "2026-10-15T06:22:13+00:00"
       }
     },
     {
@@ -15141,6 +14776,11 @@
         "meaning_changed": false,
         "mode": "deterministic+extractive",
         "issues": []
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-10-15T06:22:13+00:00"
       }
     },
     {
@@ -15300,6 +14940,359 @@
       },
       "publisher_version": "stable-v12.1",
       "telegram_message_id": 429,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh",
+        "reclassified_to": "ru_eco"
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-10-15T06:22:13+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-10-15T17:25:44+11:00",
+      "source": "ASTV",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "Сахалинцы спасли детей из окна в доме, где в горящей квартире погиб мужчина",
+      "url": "https://astv.ru/news/criminal/2026-10-15-sahalincy-vytashili-detej-iz-okna-goryashej-kvartiry-v-kotoroj-pogib-muzhchina",
+      "image_url": "https://astv.ru/content/NewsImage/23/a5/23a5a9fe-3fd5-4523-af7d-6b89957046b8_3.jpg",
+      "image_hash": "a41fa40476280cf73c1327f6c4c70064799704c2",
+      "topic_cluster": "sakh_chp:сахалинцы_спасли_детей_горящей_квартире_погиб",
+      "published_at": "2026-10-14T13:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "sakh_chp",
+        "corrected_category": "sakh_chp",
+        "group": "local",
+        "event_type": "fatal_incident",
+        "subtype": "fatal_incident",
+        "seriousness": 100,
+        "threshold": 70,
+        "selection_utility": -140.0,
+        "slot": 1,
+        "risks": [],
+        "title_original": "Сахалинцы спасли детей из окна в доме, где в горящей квартире погиб мужчина",
+        "title_corrected": "Сахалинцы спасли детей из окна в доме, где в горящей квартире погиб мужчина",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Выход был заблокирован Неравнодушные южносахалинцы помогли спасти детей из дома на ул. Больничной. Ранее astv.ru сообщал, что из-за пожара в квартире там погиб 57-летний мужчина. Житель областного центра Александр рассказал, что 14 октября проезжал в том районе, как вдруг заметил машины скорой помощи, которые заезжали в один из дворов. А затем - и людей, передающих детей из окна. - Я тут же остановился и подбежал к окну, решил помочь, чем могу. На месте уже работали несколько человек, и женщина, и мужчины. Не оперативные службы, просто обычные сахалинцы. Оказалось, что внутри квартиры находятся дети, которые не могут выбраться - выход из жилья был охвачен огнем. Их решили вытащить через окно, - поделился он. Люди по цепочке передавали малышей: кто-то залез в квартиру, кто-то стоял на балконе, кто-то внизу.",
+      "title_original": null,
+      "footer": "ЧП | САХАЛИН",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Сахалинцы спасли детей из окна в доме, где в горящей квартире погиб мужчина",
+        "body": [
+          "Выход был заблокирован Неравнодушные южносахалинцы помогли спасти детей из дома на ул. Больничной.",
+          "Ранее astv.ru сообщал, что из-за пожара в квартире там погиб 57-летний мужчина."
+        ],
+        "footer": "ЧП | САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "fatal_incident",
+          "subtype": "fatal_incident",
+          "seriousness": 100,
+          "threshold": 70,
+          "selection_utility": -140.0,
+          "slot": 1,
+          "risks": [],
+          "title_original": "Сахалинцы спасли детей из окна в доме, где в горящей квартире погиб мужчина",
+          "title_corrected": "Сахалинцы спасли детей из окна в доме, где в горящей квартире погиб мужчина",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "sakh_chp",
+          "final_category": "sakh_chp",
+          "event_type": "fatal_incident",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.7",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "sakh_chp",
+            "corrected_category": "sakh_chp",
+            "group": "local",
+            "event_type": "fatal_incident",
+            "subtype": "fatal_incident",
+            "seriousness": 96,
+            "threshold": 70,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Сахалинцы спасли детей из окна в доме, где в горящей квартире погиб мужчина",
+            "title_corrected": "Сахалинцы спасли детей из окна в доме, где в горящей квартире погиб мужчина",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "📍 Сахалин\n\n<b>Сахалинцы спасли детей из окна в доме, где в горящей квартире погиб мужчина</b>\n\nВыход был заблокирован Неравнодушные южносахалинцы помогли спасти детей из дома на ул. Больничной.\n\nРанее astv.ru сообщал, что из-за пожара в квартире там погиб 57-летний мужчина.\n\nЧП | САХАЛИН · <a href=\"https://astv.ru/news/criminal/2026-10-15-sahalincy-vytashili-detej-iz-okna-goryashej-kvartiry-v-kotoroj-pogib-muzhchina\">ASTV</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "fatal_incident",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.7",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "fatal_incident",
+          "subtype": "fatal_incident",
+          "seriousness": 96,
+          "threshold": 70,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Сахалинцы спасли детей из окна в доме, где в горящей квартире погиб мужчина",
+          "title_corrected": "Сахалинцы спасли детей из окна в доме, где в горящей квартире погиб мужчина",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 430,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": []
+      }
+    },
+    {
+      "time_sakhalin": "2026-10-15T17:25:53+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "title": "Ключевая ставка: почему Банк России может сохранить её на уровне 14%",
+      "url": "https://sakhalinmedia.ru/news/2652300/",
+      "image_url": "https://sakhalinmedia.ru/f/266x136/6454/6453925.jpg?1bb7786f363134f920abbe35d1e84555",
+      "image_hash": "599530db14ea623e93dce7498081d296653fe5f8",
+      "topic_cluster": "ru_eco:ключевая_ставка_почему_россии_может_сохранить",
+      "published_at": "2026-10-15T05:59:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "ru_eco",
+        "corrected_category": "ru_eco",
+        "group": "ru_eco",
+        "event_type": "macro_economy",
+        "subtype": "macro_economy",
+        "seriousness": 86,
+        "threshold": 80,
+        "selection_utility": 141.0,
+        "slot": 2,
+        "risks": [],
+        "title_original": "Ключевая ставка: почему Банк России может сохранить её на уровне 14%",
+        "title_corrected": "Ключевая ставка: почему Банк России может сохранить её на уровне 14%",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Банк России на заседании 23 октября 2026 года, согласно консенсус-прогнозу Известий (18+), с высокой долей вероятности сохранит ключевую ставку на уровне 14%. Основными причинами такого решения регулятора называют ускорение инфляции и новые фискальные риски. Почему Минфин и ЦБ видят проинфляционные риски — прогноз на заседание регулятора Инфляция уже превысила прогноз ЦБ и составила 7,1% при целевом уровне в 4%. \"Одним из важных факторов остается сложная ситуация на внутреннем топливном рынке\", — заявил Михаил Васильев, главный аналитик Совкомбанка. \"В пользу сохранения ключевой ставки на нынешнем уровне также говорят отмечаемое в III квартале ужесточение условий на рынке труда, сохраняющиеся сложности на отдельных товарных рынках и по-прежнему высокие инфляционные ожидания\", — добавил Павел Бирюков, главный экономист Газпромбанка. Хотя эти риски были актуальны и на летних заседаниях, когда ЦБ всё же снижал ставку, теперь важным новым фактором для регулятора стали бюджетные документы. В конце сентября Минфин опубликовал обновленные оценки доходов, расходов и дефицита бюджета на 2026 год, а также план на 2027–2029 годы.",
+      "title_original": null,
+      "footer": "РОССИЯ | ЭКОНОМИКА",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Ключевая ставка: почему Банк России может сохранить её на уровне 14%",
+        "body": [
+          "Банк России на заседании 23 октября 2026 года, согласно консенсус-прогнозу Известий (18+), с высокой долей вероятности сохранит ключевую ставку на уровне 14%.",
+          "Основными причинами такого решения регулятора называют ускорение инфляции и новые фискальные риски."
+        ],
+        "footer": "РОССИЯ | ЭКОНОМИКА",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh",
+          "reclassified_to": "ru_eco"
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 86,
+          "threshold": 80,
+          "selection_utility": 141.0,
+          "slot": 2,
+          "risks": [],
+          "title_original": "Ключевая ставка: почему Банк России может сохранить её на уровне 14%",
+          "title_corrected": "Ключевая ставка: почему Банк России может сохранить её на уровне 14%",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "ru_eco",
+          "final_category": "ru_eco",
+          "event_type": "macro_economy",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.7",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "ru_eco",
+            "corrected_category": "ru_eco",
+            "group": "ru_eco",
+            "event_type": "macro_economy",
+            "subtype": "macro_economy",
+            "seriousness": 86,
+            "threshold": 80,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Ключевая ставка: почему Банк России может сохранить её на уровне 14%",
+            "title_corrected": "Ключевая ставка: почему Банк России может сохранить её на уровне 14%",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "🇷🇺 Россия / экономика\n\n<b>Ключевая ставка: почему Банк России может сохранить её на уровне 14%</b>\n\nБанк России на заседании 23 октября 2026 года, согласно консенсус-прогнозу Известий (18+), с высокой долей вероятности сохранит ключевую ставку на уровне 14%.\n\nОсновными причинами такого решения регулятора называют ускорение инфляции и новые фискальные риски.\n\nРОССИЯ | ЭКОНОМИКА · <a href=\"https://sakhalinmedia.ru/news/2652300/\">SakhalinMedia.ru</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_eco",
+        "final_category": "ru_eco",
+        "event_type": "macro_economy",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.7",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 86,
+          "threshold": 80,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Ключевая ставка: почему Банк России может сохранить её на уровне 14%",
+          "title_corrected": "Ключевая ставка: почему Банк России может сохранить её на уровне 14%",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 431,
       "telegram_chat_id": -1003918486965,
       "media_required": true,
       "media_type": "photo",
@@ -15545,11 +15538,11 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-10-15T15:04:38+11:00",
+    "started_sakhalin": "2026-10-15T17:22:06+11:00",
     "status": "ok",
-    "candidates": 10,
+    "candidates": 12,
     "published": 2,
-    "local_candidates": 4,
+    "local_candidates": 5,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -15558,7 +15551,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 18
+          "recent": 19
         },
         {
           "source": "SakhalinMedia",
@@ -15569,8 +15562,8 @@
         {
           "source": "ASTV HTML",
           "status": "ok",
-          "entries": 20,
-          "recent": 13
+          "entries": 22,
+          "recent": 15
         },
         {
           "source": "Sakh.online HTML",
@@ -15580,27 +15573,27 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-10-15T15:08:57+11:00",
+    "finished_sakhalin": "2026-10-15T17:26:01+11:00",
     "stats": {
       "rss_seen": 160,
-      "old_skip": 56,
+      "old_skip": 58,
       "google_skip": 15,
-      "duplicate_skip": 0,
-      "low_info_skip": 12,
-      "category_skip": 38,
+      "duplicate_skip": 2,
+      "low_info_skip": 16,
+      "category_skip": 36,
       "no_image_skip": 0,
-      "bad_image_skip": 14,
-      "logo_image_skip": 33,
-      "text_card_image_skip": 10,
-      "candidates": 30,
+      "bad_image_skip": 11,
+      "logo_image_skip": 24,
+      "text_card_image_skip": 4,
+      "candidates": 32,
       "rewrite_retry": 0,
       "editorial_skip": 0,
       "telegram_fail": 0,
       "published": 2,
       "telegram_source_attempt": 4,
       "telegram_source_fail": 0,
-      "telegram_source_seen": 65,
-      "telegram_source_candidates": 18,
+      "telegram_source_seen": 62,
+      "telegram_source_candidates": 21,
       "ai_calls": 0,
       "ai_budget_exhausted": 0,
       "ai_api_fail": 0,
@@ -15608,7 +15601,7 @@
       "validation_reject": 0,
       "extractive_fallback": 2,
       "extractive_first": 2,
-      "editorial_prechecked": 63,
+      "editorial_prechecked": 61,
       "editorial_gate_checked": 2,
       "editorial_gate_pass": 2,
       "editorial_gate_reject": 0,
@@ -15618,8 +15611,8 @@
       "editorial_title_reject": 0,
       "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 12,
-      "editorial_offtopic_reject": 26,
+      "editorial_reclassified": 10,
+      "editorial_offtopic_reject": 23,
       "openrouter_empty_content": 0,
       "openrouter_model_fallback": 0,
       "openrouter_attempts": 0,
@@ -15628,9 +15621,9 @@
       "openrouter_success": 0,
       "openrouter_circuit_open": 0,
       "editorial_grounded_translation_fallback": 0,
-      "media_required_skip": 7,
+      "media_required_skip": 6,
       "media_generic_skip": 0,
-      "media_ready_candidates": 30,
+      "media_ready_candidates": 32,
       "photo_retry": 0,
       "photo_publish": 2,
       "photo_upload_original": 2,
@@ -15644,8 +15637,8 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 30,
-      "director_approved": 10,
+      "director_seen": 32,
+      "director_approved": 12,
       "director_rejected": 20,
       "director_reclassified": 0,
       "director_title_corrected": 0,
@@ -15661,7 +15654,7 @@
       "post_audit_corrected": 0,
       "post_audit_deleted": 0,
       "tass_world_scanned": 84,
-      "tass_world_screened": 0,
+      "tass_world_screened": 2,
       "tass_world_candidates": 0
     },
     "news_director": {
@@ -15669,246 +15662,6 @@
       "policy_version": "policy-v2.7",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
-        "window": 20,
-        "targets": {
-          "local": 6,
-          "ru_pol": 4,
-          "ru_eco": 4,
-          "ru_safety": 3,
-          "world": 2,
-          "it": 1
-        },
-        "target_percent": {
-          "local": 30.0,
-          "ru_pol": 20.0,
-          "ru_eco": 20.0,
-          "ru_safety": 15.0,
-          "world": 10.0,
-          "it": 5.0
-        },
-        "counts": {
-          "local": 12,
-          "ru_pol": 0,
-          "ru_eco": 2,
-          "ru_safety": 1,
-          "world": 3,
-          "it": 2
-        },
-        "scaled_targets": {
-          "local": 6.0,
-          "ru_pol": 4.0,
-          "ru_eco": 4.0,
-          "ru_safety": 3.0,
-          "world": 2.0,
-          "it": 1.0
-        },
-        "deficits": {
-          "local": -6.0,
-          "ru_pol": 4.0,
-          "ru_eco": 2.0,
-          "ru_safety": 2.0,
-          "world": -1.0,
-          "it": -1.0
-        },
-        "distribution_error": 16.0,
-        "subtype_counts": {
-          "major_infrastructure": 1,
-          "macro_economy": 2,
-          "violent_crime": 2,
-          "geopolitical_event": 3,
-          "major_emergency": 3,
-          "fatal_incident": 5,
-          "major_it": 2,
-          "political_decision": 1,
-          "military_security": 1
-        },
-        "sequence": [
-          "local",
-          "ru_eco",
-          "local",
-          "world",
-          "local",
-          "local",
-          "it",
-          "local",
-          "local",
-          "local",
-          "local",
-          "world",
-          "local",
-          "local",
-          "ru_safety",
-          "world",
-          "local",
-          "ru_eco",
-          "it",
-          "local"
-        ],
-        "category_sequence": [
-          "sakh",
-          "ru_eco",
-          "sakh_chp",
-          "geo",
-          "sakh_chp",
-          "sakh_chp",
-          "it",
-          "sakh_chp",
-          "sakh_chp",
-          "sakh",
-          "sakh_chp",
-          "geo",
-          "sakh_chp",
-          "sakh_chp",
-          "ru_security",
-          "geo",
-          "sakh_chp",
-          "ru_eco",
-          "it",
-          "sakh_chp"
-        ],
-        "source_sequence": [
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "rbc news rbc news",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "techmedia techmedia",
-          "sakhalinmedia.ru",
-          "astv",
-          "sakhalinmedia.ru",
-          "astv",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "astv",
-          "tass",
-          "sakh.online",
-          "astv",
-          "techmedia techmedia",
-          "sakh.online"
-        ],
-        "retrospective_anomalies": [],
-        "valid_posts_counted": 20
-      },
-      "candidate_count": 30,
-      "approved_count": 10,
-      "rejected_count": 20,
-      "rejected_by_reason": {
-        "importance_below_threshold": 14,
-        "minor_or_routine_crime": 1,
-        "ordinary_weather_not_release_worthy": 2,
-        "local_mix_saturated_low_priority": 2,
-        "unsafe_or_malformed_headline": 1
-      },
-      "ai_review_requested": 0,
-      "ai_review_received": 0,
-      "selected_groups": [
-        "local",
-        "ru_eco"
-      ],
-      "projected_distribution_error": 16.0,
-      "projected_counts": {
-        "local": 12,
-        "world": 3,
-        "it": 2,
-        "ru_safety": 1,
-        "ru_eco": 2
-      },
-      "projected_length": 20,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "При пожаре на даче в Макаровском районе погибли 26 кур",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "event_type": "fatal_incident",
-          "seriousness": 99,
-          "utility": -141.0
-        },
-        {
-          "slot": 2,
-          "title": "Прогноз по рублю: ВТБ допустил ослабление до 90 руб./$ к концу следующего года",
-          "category_key": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "seriousness": 85,
-          "utility": 144.0
-        },
-        {
-          "slot": "backup",
-          "title": "Anthropic flags revenue surge to investors ahead of stock market debut",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 88,
-          "utility": 48.0
-        },
-        {
-          "slot": "backup",
-          "title": "Toilet paper and secret recorders: What we know about the arrest of the Saudi OpenAI engineer",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 86,
-          "utility": 46.0
-        },
-        {
-          "slot": "backup",
-          "title": "OpenAI Newsroom (@OpenAINewsroom) on X",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 85,
-          "utility": 45.0
-        },
-        {
-          "slot": "backup",
-          "title": "AI in your oven? Anthropic warns models ‘months away’ from self-replication on smart devices",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 85,
-          "utility": 45.0
-        },
-        {
-          "slot": "backup",
-          "title": "Eight states accuse OpenAI of coaching children to harm themselves in lawsuit",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 85,
-          "utility": 45.0
-        },
-        {
-          "slot": "backup",
-          "title": "Автомобилисты нашли асфальтированную лазейку, чтобы объехать ДТП в Южно-Сахалинске",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "seriousness": 95,
-          "utility": -179.0
-        },
-        {
-          "slot": "backup",
-          "title": "При пожаре на даче в Макаровском районе погибли 26 кур",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "event_type": "fatal_incident",
-          "seriousness": 96,
-          "utility": -181.0
-        },
-        {
-          "slot": "backup",
-          "title": "Доходы бюджета Сахалинской области на 2026 год увеличили почти на 29 млрд рублей",
-          "category_key": "sakh",
-          "group": "local",
-          "event_type": "macro_economy",
-          "seriousness": 91,
-          "utility": -197.0
-        }
-      ],
-      "rolling_balance_after": {
         "window": 20,
         "targets": {
           "local": 6,
@@ -16029,11 +15782,249 @@
         ],
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
+      },
+      "candidate_count": 32,
+      "approved_count": 12,
+      "rejected_count": 20,
+      "rejected_by_reason": {
+        "importance_below_threshold": 13,
+        "minor_or_routine_crime": 1,
+        "local_mix_saturated_low_priority": 2,
+        "ordinary_weather_not_release_worthy": 4
+      },
+      "ai_review_requested": 0,
+      "ai_review_received": 0,
+      "selected_groups": [
+        "local",
+        "ru_eco"
+      ],
+      "projected_distribution_error": 14.0,
+      "projected_counts": {
+        "local": 12,
+        "it": 2,
+        "world": 2,
+        "ru_safety": 1,
+        "ru_eco": 3
+      },
+      "projected_length": 20,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "Сахалинцы спасли детей из окна в доме, где в горящей квартире погиб мужчина",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "event_type": "fatal_incident",
+          "seriousness": 100,
+          "utility": -140.0
+        },
+        {
+          "slot": 2,
+          "title": "Ключевая ставка: почему Банк России может сохранить её на уровне 14%",
+          "category_key": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "seriousness": 86,
+          "utility": 141.0
+        },
+        {
+          "slot": "backup",
+          "title": "Областной бюджет на 2026 год скорректируют: доходы вырастут на 28,7 миллиарда рублей",
+          "category_key": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "seriousness": 91,
+          "utility": 121.0
+        },
+        {
+          "slot": "backup",
+          "title": "Anthropic flags revenue surge to investors ahead of stock market debut",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 88,
+          "utility": 54.0
+        },
+        {
+          "slot": "backup",
+          "title": "Toilet paper and secret recorders: What we know about the arrest of the Saudi OpenAI engineer",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 86,
+          "utility": 52.0
+        },
+        {
+          "slot": "backup",
+          "title": "OpenAI Newsroom (@OpenAINewsroom) on X",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 85,
+          "utility": 51.0
+        },
+        {
+          "slot": "backup",
+          "title": "AI in your oven? Anthropic warns models ‘months away’ from self-replication on smart devices",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 85,
+          "utility": 51.0
+        },
+        {
+          "slot": "backup",
+          "title": "Eight states accuse OpenAI of coaching children to harm themselves in lawsuit",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 85,
+          "utility": 51.0
+        },
+        {
+          "slot": "backup",
+          "title": "Бюджет Сахалинской области вырастет на 29 млрд рублей",
+          "category_key": "sakh",
+          "group": "local",
+          "event_type": "macro_economy",
+          "seriousness": 91,
+          "utility": -173.0
+        },
+        {
+          "slot": "backup",
+          "title": "Сильный дождь накроет Северные Курилы - предупреждение",
+          "category_key": "sakh",
+          "group": "local",
+          "event_type": "severe_weather",
+          "seriousness": 92,
+          "utility": -176.0
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 20,
+        "targets": {
+          "local": 6,
+          "ru_pol": 4,
+          "ru_eco": 4,
+          "ru_safety": 3,
+          "world": 2,
+          "it": 1
+        },
+        "target_percent": {
+          "local": 30.0,
+          "ru_pol": 20.0,
+          "ru_eco": 20.0,
+          "ru_safety": 15.0,
+          "world": 10.0,
+          "it": 5.0
+        },
+        "counts": {
+          "local": 12,
+          "ru_pol": 0,
+          "ru_eco": 3,
+          "ru_safety": 1,
+          "world": 2,
+          "it": 2
+        },
+        "scaled_targets": {
+          "local": 6.0,
+          "ru_pol": 4.0,
+          "ru_eco": 4.0,
+          "ru_safety": 3.0,
+          "world": 2.0,
+          "it": 1.0
+        },
+        "deficits": {
+          "local": -6.0,
+          "ru_pol": 4.0,
+          "ru_eco": 1.0,
+          "ru_safety": 2.0,
+          "world": 0.0,
+          "it": -1.0
+        },
+        "distribution_error": 14.0,
+        "subtype_counts": {
+          "major_emergency": 3,
+          "fatal_incident": 7,
+          "major_it": 2,
+          "political_decision": 1,
+          "geopolitical_event": 2,
+          "violent_crime": 1,
+          "military_security": 1,
+          "macro_economy": 3
+        },
+        "sequence": [
+          "local",
+          "local",
+          "it",
+          "local",
+          "local",
+          "local",
+          "local",
+          "world",
+          "local",
+          "local",
+          "ru_safety",
+          "world",
+          "local",
+          "ru_eco",
+          "it",
+          "local",
+          "local",
+          "ru_eco",
+          "local",
+          "ru_eco"
+        ],
+        "category_sequence": [
+          "sakh_chp",
+          "sakh_chp",
+          "it",
+          "sakh_chp",
+          "sakh_chp",
+          "sakh",
+          "sakh_chp",
+          "geo",
+          "sakh_chp",
+          "sakh_chp",
+          "ru_security",
+          "geo",
+          "sakh_chp",
+          "ru_eco",
+          "it",
+          "sakh_chp",
+          "sakh_chp",
+          "ru_eco",
+          "sakh_chp",
+          "ru_eco"
+        ],
+        "source_sequence": [
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "techmedia techmedia",
+          "sakhalinmedia.ru",
+          "astv",
+          "sakhalinmedia.ru",
+          "astv",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "astv",
+          "tass",
+          "sakh.online",
+          "astv",
+          "techmedia techmedia",
+          "sakh.online",
+          "astv",
+          "sakhalinmedia.ru",
+          "astv",
+          "sakhalinmedia.ru"
+        ],
+        "retrospective_anomalies": [],
+        "valid_posts_counted": 20
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-10-15T04:04:46+00:00",
+      "checked_at": "2026-10-15T06:22:13+00:00",
       "checked": 20,
       "passed": 20,
       "anomalies": [],
@@ -16054,8 +16045,8 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 30,
-      "missing_media_rejected": 7,
+      "ready_candidates": 32,
+      "missing_media_rejected": 6,
       "generic_media_rejected": 0,
       "photo_retries": 0,
       "photo_published": 2,
@@ -16068,12 +16059,12 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 63,
+      "prechecked": 61,
       "checked": 2,
       "passed": 2,
       "rejected": 0,
-      "reclassified": 12,
-      "offtopic_reject": 26,
+      "reclassified": 10,
+      "offtopic_reject": 23,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
@@ -16124,9 +16115,9 @@
     "counts": {
       "local": 12,
       "ru_pol": 0,
-      "ru_eco": 2,
+      "ru_eco": 3,
       "ru_safety": 1,
-      "world": 3,
+      "world": 2,
       "it": 2
     },
     "scaled_targets": {
@@ -16140,25 +16131,23 @@
     "deficits": {
       "local": -6.0,
       "ru_pol": 4.0,
-      "ru_eco": 2.0,
+      "ru_eco": 1.0,
       "ru_safety": 2.0,
-      "world": -1.0,
+      "world": 0.0,
       "it": -1.0
     },
-    "distribution_error": 16.0,
+    "distribution_error": 14.0,
     "subtype_counts": {
-      "violent_crime": 2,
-      "geopolitical_event": 3,
       "major_emergency": 3,
-      "fatal_incident": 6,
+      "fatal_incident": 7,
       "major_it": 2,
       "political_decision": 1,
+      "geopolitical_event": 2,
+      "violent_crime": 1,
       "military_security": 1,
-      "macro_economy": 2
+      "macro_economy": 3
     },
     "sequence": [
-      "local",
-      "world",
       "local",
       "local",
       "it",
@@ -16176,11 +16165,11 @@
       "it",
       "local",
       "local",
+      "ru_eco",
+      "local",
       "ru_eco"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "geo",
       "sakh_chp",
       "sakh_chp",
       "it",
@@ -16198,11 +16187,11 @@
       "it",
       "sakh_chp",
       "sakh_chp",
+      "ru_eco",
+      "sakh_chp",
       "ru_eco"
     ],
     "source_sequence": [
-      "sakh.online",
-      "rbc news rbc news",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "techmedia techmedia",
@@ -16219,6 +16208,8 @@
       "astv",
       "techmedia techmedia",
       "sakh.online",
+      "astv",
+      "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru"
     ],
@@ -22136,7 +22127,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-15T04:04:46+00:00",
+    "checked_at": "2026-10-15T06:22:13+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -23084,7 +23075,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-10-15T04:04:38+00:00",
+    "checked_at_utc": "2026-10-15T06:22:05+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -23107,18 +23098,18 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-10-15T04:08:57+00:00",
+    "checked_at_utc": "2026-10-15T06:26:01+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-15T04:08:57+00:00",
+    "checked_at_utc": "2026-10-15T06:26:01+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 10,
+    "director_approved": 12,
     "ai_calls": 0,
     "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
@@ -23127,11 +23118,11 @@
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-10-15T04:08:57+00:00",
+    "checked_at_utc": "2026-10-15T06:26:01+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-10-15T15:08:57+11:00",
-      "candidates": 10,
+      "finished_sakhalin": "2026-10-15T17:26:01+11:00",
+      "candidates": 12,
       "queued_for_delivery": 0
     },
     "generation": {
