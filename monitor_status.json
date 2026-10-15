@@ -1,34 +1,27 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-15T06:21:36+00:00",
-  "checked_at_sakhalin": "2026-10-15T17:21:32+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-15T06:26:29+00:00",
+  "checked_at_sakhalin": "2026-10-15T17:26:24+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-15T16:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-15T15:08:57+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-15T15:08:57+11:00",
-    "age_hours": 2.21,
+    "finished_sakhalin": "2026-10-15T17:26:01+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-15T04:08:57+00:00",
+    "checked_at_utc": "2026-10-15T06:26:01+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 10,
+    "director_approved": 12,
     "ai_calls": 0,
     "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
@@ -72,7 +65,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-15T06:21:34+00:00",
+    "checked_at": "2026-10-15T06:26:28+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -85,32 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 406,
-      "title": "Жительницу Южно-Сахалинска подозревают в покушении на убийство знакомого",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 407,
-      "title": "Президент США Дональд Трамп заявил, что Украине нужно избрать нового главу государства, поскольку Владимир Зеленский «много раз» мог урегулировать конфликт, но не сделал этого. Кро",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "geo",
-      "title_issues": []
-    },
     {
       "message_id": 408,
       "title": "Новый циклон обрушится на Сахалин 14 октября",
@@ -344,6 +311,32 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 430,
+      "title": "Сахалинцы спасли детей из окна в доме, где в горящей квартире погиб мужчина",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 431,
+      "title": "Ключевая ставка: почему Банк России может сохранить её на уровне 14%",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -367,9 +360,9 @@
     "counts": {
       "local": 12,
       "ru_pol": 0,
-      "ru_eco": 2,
+      "ru_eco": 3,
       "ru_safety": 1,
-      "world": 3,
+      "world": 2,
       "it": 2
     },
     "scaled_targets": {
@@ -383,25 +376,23 @@
     "deficits": {
       "local": -6.0,
       "ru_pol": 4.0,
-      "ru_eco": 2.0,
+      "ru_eco": 1.0,
       "ru_safety": 2.0,
-      "world": -1.0,
+      "world": 0.0,
       "it": -1.0
     },
-    "distribution_error": 16.0,
+    "distribution_error": 14.0,
     "subtype_counts": {
-      "violent_crime": 2,
-      "geopolitical_event": 3,
       "major_emergency": 3,
-      "fatal_incident": 6,
+      "fatal_incident": 7,
       "major_it": 2,
       "political_decision": 1,
+      "geopolitical_event": 2,
+      "violent_crime": 1,
       "military_security": 1,
-      "macro_economy": 2
+      "macro_economy": 3
     },
     "sequence": [
-      "local",
-      "world",
       "local",
       "local",
       "it",
@@ -419,11 +410,11 @@
       "it",
       "local",
       "local",
+      "ru_eco",
+      "local",
       "ru_eco"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "geo",
       "sakh_chp",
       "sakh_chp",
       "it",
@@ -441,11 +432,11 @@
       "it",
       "sakh_chp",
       "sakh_chp",
+      "ru_eco",
+      "sakh_chp",
       "ru_eco"
     ],
     "source_sequence": [
-      "sakh.online",
-      "rbc news rbc news",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "techmedia techmedia",
@@ -463,6 +454,8 @@
       "techmedia techmedia",
       "sakh.online",
       "astv",
+      "sakhalinmedia.ru",
+      "astv",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -470,7 +463,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-15T06:21:29+00:00",
+    "checked_at_utc": "2026-10-15T06:26:22+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -500,14 +493,14 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 16.0,
+      "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
         "local": 12,
         "ru_pol": 0,
-        "ru_eco": 2,
+        "ru_eco": 3,
         "ru_safety": 1,
-        "world": 3,
+        "world": 2,
         "it": 2
       },
       "targets": {
@@ -521,9 +514,9 @@
       "deficits": {
         "local": -6.0,
         "ru_pol": 4.0,
-        "ru_eco": 2.0,
+        "ru_eco": 1.0,
         "ru_safety": 2.0,
-        "world": -1.0,
+        "world": 0.0,
         "it": -1.0
       }
     }
