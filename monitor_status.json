@@ -1,28 +1,16 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-15T11:59:49+00:00",
-  "checked_at_sakhalin": "2026-10-15T22:59:44+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-15T13:19:33+00:00",
+  "checked_at_sakhalin": "2026-10-16T00:19:30+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "evening",
-      "expected_by_sakhalin": "2026-10-15T19:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "morning",
-        "at_utc": "2026-10-14T22:16:28+00:00",
-        "at_sakhalin": "2026-10-15T09:16:28+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-15T22:56:48+11:00",
-    "age_hours": 0.05,
+    "age_hours": 1.38,
     "published": 1
   },
   "last_production_attempt": {
@@ -42,54 +30,29 @@
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-10-15",
-    "status": "error",
+    "day_sakhalin": "2026-10-16",
+    "status": "healthy",
     "morning": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-14T22:16:28+00:00",
-        "published_at_sakhalin": "2026-10-15T09:16:28+11:00",
-        "telegram_message_id": 423,
-        "headline": "Legislative proposal to enforce compliance with regional mobilization orders introduced",
-        "evidence_count": 3,
-        "evidence_hash": "654aa6671fbec2842e73cd1e51f7cd441092ee6d4029499e189012a44323b2b8",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "evening": {
-      "due": true,
+      "due": false,
       "published": false,
       "record": {}
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "morning",
-      "at_utc": "2026-10-14T22:16:28+00:00",
-      "at_sakhalin": "2026-10-15T09:16:28+11:00"
+      "mode": "evening",
+      "at_utc": "2026-10-15T12:02:08+00:00",
+      "at_sakhalin": "2026-10-15T23:02:08+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "evening",
-        "expected_by_sakhalin": "2026-10-15T19:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "morning",
-          "at_utc": "2026-10-14T22:16:28+00:00",
-          "at_sakhalin": "2026-10-15T09:16:28+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-15T11:59:47+00:00",
+    "checked_at": "2026-10-15T13:19:32+00:00",
     "checked": 19,
     "passed": 19,
     "anomalies": [],
@@ -474,7 +437,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-15T11:59:41+00:00",
+    "checked_at_utc": "2026-10-15T13:19:29+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
