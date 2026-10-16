@@ -1,36 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-16T11:50:20+00:00",
-  "checked_at_sakhalin": "2026-10-16T22:50:16+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-16T11:59:09+00:00",
+  "checked_at_sakhalin": "2026-10-16T22:59:07+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-16T22:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-16T21:05:04+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-16T21:05:04+11:00",
-    "age_hours": 1.75,
+    "finished_sakhalin": "2026-10-16T22:58:38+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-16T10:05:04+00:00",
+    "checked_at_utc": "2026-10-16T11:58:38+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 6,
-    "ai_calls": 0,
-    "ai_api_fail": 0,
+    "director_approved": 5,
+    "ai_calls": 4,
+    "ai_api_fail": 3,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -81,7 +74,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-16T11:50:19+00:00",
+    "checked_at": "2026-10-16T11:59:08+00:00",
     "checked": 19,
     "passed": 19,
     "anomalies": [],
@@ -94,32 +87,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 415,
-      "title": "14 октября 1991 года в Сахалинской области ввели губернаторство",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
-    {
-      "message_id": 416,
-      "title": "7 человек погибли и 47 травмированы по вине пьяных водителей на сахалинских дорогах с начала года",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 417,
       "title": "Захарова: Ситуация со шпионажем японского журналиста омрачит отношения РФ с Токио",
@@ -340,6 +307,32 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 440,
+      "title": "Исследование ВТБ: 90% дальневосточников отламывали горбушку хлеба по дороге домой",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
+    },
+    {
+      "message_id": 441,
+      "title": "Claude стал рабовладельцем — нейросеть запрягла 161 ИИ-агента OpenAI и заставила их работать вместо себя",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -361,12 +354,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 10,
+      "local": 8,
       "ru_pol": 0,
-      "ru_eco": 4,
+      "ru_eco": 5,
       "ru_safety": 2,
       "world": 3,
-      "it": 1
+      "it": 2
     },
     "scaled_targets": {
       "local": 6.0,
@@ -377,28 +370,25 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -4.0,
+      "local": -2.0,
       "ru_pol": 4.0,
-      "ru_eco": 0.0,
+      "ru_eco": -1.0,
       "ru_safety": 1.0,
       "world": -1.0,
-      "it": 0.0
+      "it": -1.0
     },
     "distribution_error": 10.0,
     "subtype_counts": {
-      "major_emergency": 2,
-      "political_decision": 1,
       "fatal_incident": 5,
       "geopolitical_event": 3,
       "violent_crime": 1,
+      "major_emergency": 1,
       "military_security": 2,
-      "macro_economy": 4,
-      "major_it": 1,
+      "macro_economy": 5,
+      "major_it": 2,
       "earthquake": 1
     },
     "sequence": [
-      "local",
-      "local",
       "local",
       "world",
       "local",
@@ -416,11 +406,11 @@
       "world",
       "local",
       "ru_safety",
-      "ru_eco"
+      "ru_eco",
+      "ru_eco",
+      "it"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "sakh",
       "sakh_chp",
       "geo",
       "sakh_chp",
@@ -438,11 +428,11 @@
       "geo",
       "sakh_quake",
       "ru_security",
-      "ru_eco"
+      "ru_eco",
+      "ru_eco",
+      "it"
     ],
     "source_sequence": [
-      "astv",
-      "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
@@ -460,14 +450,16 @@
       "rbc news rbc news",
       "sakh.online",
       "sakh.online",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
+      "techmedia techmedia"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-16T11:50:14+00:00",
+    "checked_at_utc": "2026-10-16T11:59:05+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -500,12 +492,12 @@
       "distribution_error": 10.0,
       "limit": 8.0,
       "counts": {
-        "local": 10,
+        "local": 8,
         "ru_pol": 0,
-        "ru_eco": 4,
+        "ru_eco": 5,
         "ru_safety": 2,
         "world": 3,
-        "it": 1
+        "it": 2
       },
       "targets": {
         "local": 6,
@@ -516,12 +508,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -4.0,
+        "local": -2.0,
         "ru_pol": 4.0,
-        "ru_eco": 0.0,
+        "ru_eco": -1.0,
         "ru_safety": 1.0,
         "world": -1.0,
-        "it": 0.0
+        "it": -1.0
       }
     }
   ]
