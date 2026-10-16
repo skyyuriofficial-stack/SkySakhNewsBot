@@ -1,60 +1,37 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-16T10:00:28+00:00",
-  "checked_at_sakhalin": "2026-10-16T21:00:25+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-16T10:05:39+00:00",
+  "checked_at_sakhalin": "2026-10-16T21:05:35+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 4.56,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-16T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-16T16:27:03+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "evening",
-      "expected_by_sakhalin": "2026-10-16T19:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "morning",
-        "at_utc": "2026-10-15T22:12:39+00:00",
-        "at_sakhalin": "2026-10-16T09:12:39+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-16T16:27:03+11:00",
-    "age_hours": 4.56,
-    "published": 1
+    "finished_sakhalin": "2026-10-16T21:05:04+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-16T05:27:03+00:00",
+    "checked_at_utc": "2026-10-16T10:05:04+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
+    "published": 2,
     "director_approved": 6,
-    "ai_calls": 4,
-    "ai_api_fail": 4,
-    "ai_budget_exhausted": 1,
+    "ai_calls": 0,
+    "ai_api_fail": 0,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-16",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
       "published": true,
@@ -75,32 +52,29 @@
     },
     "evening": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-16T10:02:32+00:00",
+        "published_at_sakhalin": "2026-10-16T21:02:32+11:00",
+        "telegram_message_id": 437,
+        "headline": "Досье на проект федерального закона № 1322096-8 подготовлено Правительством РФ",
+        "evidence_count": 3,
+        "evidence_hash": "3230e443be87ecc2ae06bc6aed2f3c99a2e0302ee1b737774f55d9417350250b",
+        "source_ids": []
+      }
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "morning",
-      "at_utc": "2026-10-15T22:12:39+00:00",
-      "at_sakhalin": "2026-10-16T09:12:39+11:00"
+      "mode": "evening",
+      "at_utc": "2026-10-16T10:02:32+00:00",
+      "at_sakhalin": "2026-10-16T21:02:32+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "evening",
-        "expected_by_sakhalin": "2026-10-16T19:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "morning",
-          "at_utc": "2026-10-15T22:12:39+00:00",
-          "at_sakhalin": "2026-10-16T09:12:39+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-16T10:00:27+00:00",
+    "checked_at": "2026-10-16T10:05:38+00:00",
     "checked": 19,
     "passed": 19,
     "anomalies": [],
@@ -113,32 +87,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 412,
-      "title": "Пьяные водители спровоцировали 37 аварий в Сахалинской области",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 413,
-      "title": "Спасли девушку и сами вытаскивали друг друга: история братьев-пожарных из Корсакова",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 415,
       "title": "14 октября 1991 года в Сахалинской области ввели губернаторство",
@@ -359,6 +307,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_quake",
       "title_issues": []
+    },
+    {
+      "message_id": 438,
+      "title": "Минобороны и «Диалог Регионы» запускают систему обработки онлайн‑обращений участников СВО",
+      "category_key": "ru_security",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_security",
+      "title_issues": []
+    },
+    {
+      "message_id": 439,
+      "title": "ВТБ назвал регионы-лидеры по росту индустрии красоты",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -380,12 +354,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 11,
+      "local": 10,
       "ru_pol": 0,
-      "ru_eco": 3,
-      "ru_safety": 1,
+      "ru_eco": 4,
+      "ru_safety": 2,
       "world": 3,
-      "it": 2
+      "it": 1
     },
     "scaled_targets": {
       "local": 6.0,
@@ -396,28 +370,26 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -5.0,
+      "local": -4.0,
       "ru_pol": 4.0,
-      "ru_eco": 1.0,
-      "ru_safety": 2.0,
+      "ru_eco": 0.0,
+      "ru_safety": 1.0,
       "world": -1.0,
-      "it": -1.0
+      "it": 0.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 10.0,
     "subtype_counts": {
-      "major_it": 2,
-      "fatal_incident": 6,
       "major_emergency": 2,
       "political_decision": 1,
+      "fatal_incident": 5,
       "geopolitical_event": 3,
       "violent_crime": 1,
-      "military_security": 1,
-      "macro_economy": 3,
+      "military_security": 2,
+      "macro_economy": 4,
+      "major_it": 1,
       "earthquake": 1
     },
     "sequence": [
-      "it",
-      "local",
       "local",
       "local",
       "local",
@@ -435,11 +407,11 @@
       "local",
       "ru_eco",
       "world",
-      "local"
+      "local",
+      "ru_safety",
+      "ru_eco"
     ],
     "category_sequence": [
-      "it",
-      "sakh_chp",
       "sakh_chp",
       "sakh",
       "sakh_chp",
@@ -457,11 +429,11 @@
       "sakh_chp",
       "ru_eco",
       "geo",
-      "sakh_quake"
+      "sakh_quake",
+      "ru_security",
+      "ru_eco"
     ],
     "source_sequence": [
-      "techmedia techmedia",
-      "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
       "astv",
@@ -479,14 +451,16 @@
       "astv",
       "sakhalinmedia.ru",
       "rbc news rbc news",
-      "sakh.online"
+      "sakh.online",
+      "sakh.online",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-16T10:00:24+00:00",
+    "checked_at_utc": "2026-10-16T10:05:32+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -516,15 +490,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 14.0,
+      "distribution_error": 10.0,
       "limit": 8.0,
       "counts": {
-        "local": 11,
+        "local": 10,
         "ru_pol": 0,
-        "ru_eco": 3,
-        "ru_safety": 1,
+        "ru_eco": 4,
+        "ru_safety": 2,
         "world": 3,
-        "it": 2
+        "it": 1
       },
       "targets": {
         "local": 6,
@@ -535,12 +509,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -5.0,
+        "local": -4.0,
         "ru_pol": 4.0,
-        "ru_eco": 1.0,
-        "ru_safety": 2.0,
+        "ru_eco": 0.0,
+        "ru_safety": 1.0,
         "world": -1.0,
-        "it": -1.0
+        "it": 0.0
       }
     }
   ]
