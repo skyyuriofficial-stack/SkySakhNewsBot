@@ -1,19 +1,15 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-10-15T22:12:39+00:00",
-  "last_run_sakhalin": "2026-10-16T09:12:39+11:00",
-  "mode": "morning",
+  "last_run_utc": "2026-10-16T10:02:32+00:00",
+  "last_run_sakhalin": "2026-10-16T21:02:32+11:00",
+  "mode": "evening",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 434,
+  "telegram_message_id": 437,
   "evidence_count": 3,
-  "evidence_hash": "048f45dbd61cae8c8f7b92e2c7988ae9877d1cb30feaae48f1e0c929f75e096b",
-  "headline": "Legal tightening for wartime orders, no new mobilization wave confirmed",
-  "source_ids": [
-    1,
-    2,
-    3
-  ],
+  "evidence_hash": "3230e443be87ecc2ae06bc6aed2f3c99a2e0302ee1b737774f55d9417350250b",
+  "headline": "Досье на проект федерального закона № 1322096-8 подготовлено Правительством РФ",
+  "source_ids": [],
   "slots": {
     "2026-09-08": {
       "morning": {
@@ -603,14 +599,24 @@
           2,
           3
         ]
+      },
+      "evening": {
+        "status": "ok",
+        "published_at_utc": "2026-10-16T10:02:32+00:00",
+        "published_at_sakhalin": "2026-10-16T21:02:32+11:00",
+        "telegram_message_id": 437,
+        "headline": "Досье на проект федерального закона № 1322096-8 подготовлено Правительством РФ",
+        "evidence_count": 3,
+        "evidence_hash": "3230e443be87ecc2ae06bc6aed2f3c99a2e0302ee1b737774f55d9417350250b",
+        "source_ids": []
       }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "morning",
-    "at_utc": "2026-10-15T22:12:39+00:00",
-    "at_sakhalin": "2026-10-16T09:12:39+11:00"
+    "mode": "evening",
+    "at_utc": "2026-10-16T10:02:32+00:00",
+    "at_sakhalin": "2026-10-16T21:02:32+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-10-01T06:24:52+00:00",
