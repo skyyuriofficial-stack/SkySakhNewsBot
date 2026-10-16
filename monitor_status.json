@@ -1,37 +1,30 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-16T23:45:39+00:00",
-  "checked_at_sakhalin": "2026-10-17T10:45:34+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-16T23:49:39+00:00",
+  "checked_at_sakhalin": "2026-10-17T10:49:34+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-17T10:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-17T08:05:24+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-17T08:05:24+11:00",
-    "age_hours": 2.67,
+    "finished_sakhalin": "2026-10-17T10:49:08+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-16T21:05:25+00:00",
+    "checked_at_utc": "2026-10-16T23:49:08+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 7,
-    "ai_calls": 4,
-    "ai_api_fail": 4,
-    "ai_budget_exhausted": 1,
+    "director_approved": 3,
+    "ai_calls": 0,
+    "ai_api_fail": 0,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
@@ -73,7 +66,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-16T23:45:38+00:00",
+    "checked_at": "2026-10-16T23:49:37+00:00",
     "checked": 19,
     "passed": 19,
     "anomalies": [],
@@ -86,32 +79,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 419,
-      "title": "Водитель внедорожника предстанет перед судом после лобового ДТП с эвакуатором",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 421,
-      "title": "Дата-центр Сбербанка в Саратовской области атаковали беспилотники",
-      "category_key": "ru_security",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_security",
-      "title_issues": []
-    },
     {
       "message_id": 422,
       "title": "Российская сторона поднимала вопрос снятия санкций во время визита в США",
@@ -332,6 +299,32 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 445,
+      "title": "Постановление о цифровых валютах: ЦБ сможет запрещать отдельные операции",
+      "category_key": "ru_pol",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_pol",
+      "title_issues": []
+    },
+    {
+      "message_id": 446,
+      "title": "В России прокуроры потребовали вернуть жертвам мошенников 4,5 млрд рублей",
+      "category_key": "ru_incident",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_incident",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -353,10 +346,10 @@
       "it": 5.0
     },
     "counts": {
-      "local": 7,
-      "ru_pol": 0,
+      "local": 5,
+      "ru_pol": 1,
       "ru_eco": 5,
-      "ru_safety": 3,
+      "ru_safety": 4,
       "world": 2,
       "it": 3
     },
@@ -369,27 +362,26 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -1.0,
-      "ru_pol": 4.0,
+      "local": 1.0,
+      "ru_pol": 3.0,
       "ru_eco": -1.0,
-      "ru_safety": 0.0,
+      "ru_safety": -1.0,
       "world": 0.0,
       "it": -2.0
     },
     "distribution_error": 8.0,
     "subtype_counts": {
-      "violent_crime": 1,
-      "major_emergency": 2,
       "military_security": 2,
       "geopolitical_event": 2,
       "fatal_incident": 4,
       "macro_economy": 5,
       "major_it": 3,
-      "earthquake": 1
+      "earthquake": 1,
+      "major_emergency": 1,
+      "political_decision": 1,
+      "fraud": 1
     },
     "sequence": [
-      "local",
-      "local",
       "ru_safety",
       "world",
       "local",
@@ -407,11 +399,11 @@
       "ru_eco",
       "it",
       "ru_safety",
-      "it"
+      "it",
+      "ru_pol",
+      "ru_safety"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "sakh_chp",
       "ru_security",
       "geo",
       "sakh_chp",
@@ -429,11 +421,11 @@
       "ru_eco",
       "it",
       "ru_incident",
-      "it"
+      "it",
+      "ru_pol",
+      "ru_incident"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "sakh.online",
       "astv",
       "tass",
       "sakh.online",
@@ -451,14 +443,16 @@
       "sakhalinmedia.ru",
       "techmedia techmedia",
       "astv",
-      "techmedia techmedia"
+      "techmedia techmedia",
+      "sakhalinmedia.ru",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-16T23:45:32+00:00",
+    "checked_at_utc": "2026-10-16T23:49:31+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -491,10 +485,10 @@
       "distribution_error": 8.0,
       "limit": 8.0,
       "counts": {
-        "local": 7,
-        "ru_pol": 0,
+        "local": 5,
+        "ru_pol": 1,
         "ru_eco": 5,
-        "ru_safety": 3,
+        "ru_safety": 4,
         "world": 2,
         "it": 3
       },
@@ -507,10 +501,10 @@
         "it": 1
       },
       "deficits": {
-        "local": -1.0,
-        "ru_pol": 4.0,
+        "local": 1.0,
+        "ru_pol": 3.0,
         "ru_eco": -1.0,
-        "ru_safety": 0.0,
+        "ru_safety": -1.0,
         "world": 0.0,
         "it": -2.0
       }
