@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-16T12:19:10+00:00",
-  "checked_at_sakhalin": "2026-10-16T23:19:05+11:00",
+  "checked_at_utc": "2026-10-16T13:11:27+00:00",
+  "checked_at_sakhalin": "2026-10-17T00:11:23+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
@@ -10,7 +10,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-16T22:58:38+11:00",
-    "age_hours": 0.34,
+    "age_hours": 1.21,
     "published": 2
   },
   "last_production_attempt": {
@@ -30,39 +30,17 @@
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-10-16",
+    "day_sakhalin": "2026-10-17",
     "status": "healthy",
     "morning": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-15T22:12:39+00:00",
-        "published_at_sakhalin": "2026-10-16T09:12:39+11:00",
-        "telegram_message_id": 434,
-        "headline": "Legal tightening for wartime orders, no new mobilization wave confirmed",
-        "evidence_count": 3,
-        "evidence_hash": "048f45dbd61cae8c8f7b92e2c7988ae9877d1cb30feaae48f1e0c929f75e096b",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "evening": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-16T10:02:32+00:00",
-        "published_at_sakhalin": "2026-10-16T21:02:32+11:00",
-        "telegram_message_id": 437,
-        "headline": "Досье на проект федерального закона № 1322096-8 подготовлено Правительством РФ",
-        "evidence_count": 3,
-        "evidence_hash": "3230e443be87ecc2ae06bc6aed2f3c99a2e0302ee1b737774f55d9417350250b",
-        "source_ids": []
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "last_attempt": {
       "status": "ok",
@@ -74,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-16T12:19:08+00:00",
+    "checked_at": "2026-10-16T13:11:26+00:00",
     "checked": 19,
     "passed": 19,
     "anomalies": [],
@@ -459,7 +437,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-16T12:19:03+00:00",
+    "checked_at_utc": "2026-10-16T13:11:20+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
