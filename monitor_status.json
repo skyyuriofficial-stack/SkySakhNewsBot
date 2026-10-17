@@ -1,36 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-17T04:14:24+00:00",
-  "checked_at_sakhalin": "2026-10-17T15:14:20+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-17T04:20:30+00:00",
+  "checked_at_sakhalin": "2026-10-17T15:20:28+11:00",
+  "status": "healthy",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-17T13:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-17T10:49:08+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-17T10:49:08+11:00",
-    "age_hours": 4.42,
+    "finished_sakhalin": "2026-10-17T15:20:07+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-16T23:49:08+00:00",
+    "checked_at_utc": "2026-10-17T04:20:07+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 3,
-    "ai_calls": 0,
-    "ai_api_fail": 0,
+    "director_approved": 5,
+    "ai_calls": 2,
+    "ai_api_fail": 2,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -73,7 +66,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-17T04:14:23+00:00",
+    "checked_at": "2026-10-17T04:20:29+00:00",
     "checked": 19,
     "passed": 19,
     "anomalies": [],
@@ -86,32 +79,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 422,
-      "title": "Российская сторона поднимала вопрос снятия санкций во время визита в США",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "geo",
-      "title_issues": []
-    },
-    {
-      "message_id": 424,
-      "title": "При пожаре на Больничной в Южно-Сахалинске погиб хозяин квартиры",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 425,
       "title": "В России предложили ввести налог на сладкое",
@@ -332,6 +299,32 @@
       "review_reason": "approved",
       "corrected_category": "ru_incident",
       "title_issues": []
+    },
+    {
+      "message_id": 447,
+      "title": "На Сахалине за сутки потушили пять пожаров",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 448,
+      "title": "Георгий Карлов рассказал, какие законопроекты рассмотрели в Госдуме",
+      "category_key": "ru_pol",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_pol",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -353,11 +346,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 5,
-      "ru_pol": 1,
+      "local": 6,
+      "ru_pol": 2,
       "ru_eco": 5,
-      "ru_safety": 4,
-      "world": 2,
+      "ru_safety": 3,
+      "world": 1,
       "it": 3
     },
     "scaled_targets": {
@@ -369,28 +362,26 @@
       "it": 1.0
     },
     "deficits": {
-      "local": 1.0,
-      "ru_pol": 3.0,
+      "local": 0.0,
+      "ru_pol": 2.0,
       "ru_eco": -1.0,
-      "ru_safety": -1.0,
-      "world": 0.0,
+      "ru_safety": 0.0,
+      "world": 1.0,
       "it": -2.0
     },
-    "distribution_error": 8.0,
+    "distribution_error": 6.0,
     "subtype_counts": {
-      "military_security": 2,
-      "geopolitical_event": 2,
-      "fatal_incident": 4,
+      "fatal_incident": 5,
       "macro_economy": 5,
       "major_it": 3,
+      "geopolitical_event": 1,
       "earthquake": 1,
+      "military_security": 1,
       "major_emergency": 1,
-      "political_decision": 1,
+      "political_decision": 2,
       "fraud": 1
     },
     "sequence": [
-      "ru_safety",
-      "world",
       "local",
       "ru_eco",
       "it",
@@ -408,11 +399,11 @@
       "ru_safety",
       "it",
       "ru_pol",
-      "ru_safety"
+      "ru_safety",
+      "local",
+      "ru_pol"
     ],
     "category_sequence": [
-      "ru_security",
-      "geo",
       "sakh_chp",
       "ru_eco",
       "it",
@@ -430,11 +421,11 @@
       "ru_incident",
       "it",
       "ru_pol",
-      "ru_incident"
+      "ru_incident",
+      "sakh_chp",
+      "ru_pol"
     ],
     "source_sequence": [
-      "astv",
-      "tass",
       "sakh.online",
       "astv",
       "techmedia techmedia",
@@ -452,14 +443,16 @@
       "astv",
       "techmedia techmedia",
       "sakhalinmedia.ru",
-      "astv"
+      "astv",
+      "sakh.online",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-17T04:14:17+00:00",
+    "checked_at_utc": "2026-10-17T04:20:26+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -486,35 +479,5 @@
   "delivery_outbox_repaired": false,
   "hardening_actions": [],
   "hardening_failed_actions": [],
-  "warnings": [
-    {
-      "type": "thematic_mix_drift",
-      "distribution_error": 8.0,
-      "limit": 8.0,
-      "counts": {
-        "local": 5,
-        "ru_pol": 1,
-        "ru_eco": 5,
-        "ru_safety": 4,
-        "world": 2,
-        "it": 3
-      },
-      "targets": {
-        "local": 6,
-        "ru_pol": 4,
-        "ru_eco": 4,
-        "ru_safety": 3,
-        "world": 2,
-        "it": 1
-      },
-      "deficits": {
-        "local": 1.0,
-        "ru_pol": 3.0,
-        "ru_eco": -1.0,
-        "ru_safety": -1.0,
-        "world": 0.0,
-        "it": -2.0
-      }
-    }
-  ]
+  "warnings": []
 }
