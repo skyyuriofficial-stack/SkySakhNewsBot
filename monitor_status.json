@@ -1,55 +1,37 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-17T09:13:25+00:00",
-  "checked_at_sakhalin": "2026-10-17T20:13:20+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-17T09:19:57+00:00",
+  "checked_at_sakhalin": "2026-10-17T20:19:52+11:00",
+  "status": "healthy",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-17T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-17T16:24:44+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "evening",
-      "expected_by_sakhalin": "2026-10-17T19:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "morning",
-        "at_utc": "2026-10-16T22:49:24+00:00",
-        "at_sakhalin": "2026-10-17T09:49:24+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-17T16:24:44+11:00",
-    "age_hours": 3.81,
+    "finished_sakhalin": "2026-10-17T20:19:22+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-17T05:24:44+00:00",
+    "checked_at_utc": "2026-10-17T09:19:22+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 4,
-    "ai_calls": 4,
-    "ai_api_fail": 3,
-    "ai_budget_exhausted": 1,
+    "director_approved": 2,
+    "ai_calls": 2,
+    "ai_api_fail": 1,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-17",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
       "published": true,
@@ -71,32 +53,33 @@
     },
     "evening": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-17T09:15:29+00:00",
+        "published_at_sakhalin": "2026-10-17T20:15:29+11:00",
+        "telegram_message_id": 450,
+        "headline": "Досье на проект федерального закона № 1322096-8 об административных правонарушениях",
+        "evidence_count": 3,
+        "evidence_hash": "5aabd2a7ad29844e4d26990e44ae89c7864408c69c84277961c8b0ab92212d5b",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "morning",
-      "at_utc": "2026-10-16T22:49:24+00:00",
-      "at_sakhalin": "2026-10-17T09:49:24+11:00"
+      "mode": "evening",
+      "at_utc": "2026-10-17T09:15:29+00:00",
+      "at_sakhalin": "2026-10-17T20:15:29+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "evening",
-        "expected_by_sakhalin": "2026-10-17T19:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "morning",
-          "at_utc": "2026-10-16T22:49:24+00:00",
-          "at_sakhalin": "2026-10-17T09:49:24+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-17T09:13:23+00:00",
+    "checked_at": "2026-10-17T09:19:55+00:00",
     "checked": 19,
     "passed": 19,
     "anomalies": [],
@@ -109,19 +92,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 426,
-      "title": "В офисе OpenAI установили ПРОСЛУШКУ — это сделал 35-летний сотрудник Абдулрахман Альфозан, единственный работник из Саудовской Аравии",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 427,
       "title": "СК начал проверку после гибели 57-летнего мужчины на пожаре в Южно-Сахалинске",
@@ -355,6 +325,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 451,
+      "title": "От угольного дыма к углеродной нейтральности: как газификация изменила Сахалин при Валерии Лимаренко",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -376,9 +359,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 6,
+      "local": 7,
       "ru_pol": 2,
-      "ru_eco": 5,
+      "ru_eco": 4,
       "ru_safety": 3,
       "world": 1,
       "it": 3
@@ -392,28 +375,28 @@
       "it": 1.0
     },
     "deficits": {
-      "local": 0.0,
+      "local": -1.0,
       "ru_pol": 2.0,
-      "ru_eco": -1.0,
+      "ru_eco": 0.0,
       "ru_safety": 0.0,
       "world": 1.0,
       "it": -2.0
     },
     "distribution_error": 6.0,
     "subtype_counts": {
-      "macro_economy": 5,
       "major_it": 3,
       "fatal_incident": 4,
+      "macro_economy": 4,
       "geopolitical_event": 1,
       "earthquake": 1,
       "military_security": 1,
       "major_emergency": 1,
       "political_decision": 2,
       "fraud": 1,
-      "major_infrastructure": 1
+      "major_infrastructure": 1,
+      "air_quality_hazard": 1
     },
     "sequence": [
-      "ru_eco",
       "it",
       "local",
       "local",
@@ -432,10 +415,10 @@
       "ru_safety",
       "local",
       "ru_pol",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "ru_eco",
       "it",
       "sakh_chp",
       "sakh_chp",
@@ -454,10 +437,10 @@
       "ru_incident",
       "sakh_chp",
       "ru_pol",
-      "sakh"
+      "sakh",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "astv",
       "techmedia techmedia",
       "sakh.online",
       "astv",
@@ -476,6 +459,7 @@
       "astv",
       "sakh.online",
       "sakh.online",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -483,7 +467,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-17T09:13:18+00:00",
+    "checked_at_utc": "2026-10-17T09:19:49+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
