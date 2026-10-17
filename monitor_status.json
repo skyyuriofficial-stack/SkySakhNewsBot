@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-17T12:28:23+00:00",
-  "checked_at_sakhalin": "2026-10-17T23:28:20+11:00",
+  "checked_at_utc": "2026-10-17T13:06:50+00:00",
+  "checked_at_sakhalin": "2026-10-18T00:06:47+11:00",
   "status": "healthy",
   "mutations_enabled": true,
   "issues": [],
@@ -10,7 +10,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-17T23:21:33+11:00",
-    "age_hours": 0.11,
+    "age_hours": 0.75,
     "published": 0
   },
   "last_production_attempt": {
@@ -30,44 +30,17 @@
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-10-17",
+    "day_sakhalin": "2026-10-18",
     "status": "healthy",
     "morning": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-16T22:49:24+00:00",
-        "published_at_sakhalin": "2026-10-17T09:49:24+11:00",
-        "telegram_message_id": 444,
-        "headline": "No confirmed new mobilization wave; legislative proposal tightens enforcement",
-        "evidence_count": 4,
-        "evidence_hash": "708282bd4936a779b1f60e68fef4e72c15e1dc2cea9d9b9ab1e3b629f284c592",
-        "source_ids": [
-          1,
-          2,
-          3,
-          4
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "evening": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-17T09:15:29+00:00",
-        "published_at_sakhalin": "2026-10-17T20:15:29+11:00",
-        "telegram_message_id": 450,
-        "headline": "Досье на проект федерального закона № 1322096-8 об административных правонарушениях",
-        "evidence_count": 3,
-        "evidence_hash": "5aabd2a7ad29844e4d26990e44ae89c7864408c69c84277961c8b0ab92212d5b",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "last_attempt": {
       "status": "ok",
@@ -79,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-17T12:28:22+00:00",
+    "checked_at": "2026-10-17T13:06:49+00:00",
     "checked": 19,
     "passed": 19,
     "anomalies": [],
@@ -467,7 +440,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-17T12:28:18+00:00",
+    "checked_at_utc": "2026-10-17T13:06:44+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
