@@ -1,30 +1,30 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-17T04:20:30+00:00",
-  "checked_at_sakhalin": "2026-10-17T15:20:28+11:00",
+  "checked_at_utc": "2026-10-17T05:25:17+00:00",
+  "checked_at_sakhalin": "2026-10-17T16:25:12+11:00",
   "status": "healthy",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-17T15:20:07+11:00",
+    "finished_sakhalin": "2026-10-17T16:24:44+11:00",
     "age_hours": 0.01,
-    "published": 2
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-17T04:20:07+00:00",
+    "checked_at_utc": "2026-10-17T05:24:44+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
-    "director_approved": 5,
-    "ai_calls": 2,
-    "ai_api_fail": 2,
-    "ai_budget_exhausted": 0,
+    "published": 1,
+    "director_approved": 4,
+    "ai_calls": 4,
+    "ai_api_fail": 3,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
@@ -66,7 +66,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-17T04:20:29+00:00",
+    "checked_at": "2026-10-17T05:25:15+00:00",
     "checked": 19,
     "passed": 19,
     "anomalies": [],
@@ -79,19 +79,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 425,
-      "title": "В России предложили ввести налог на сладкое",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 426,
       "title": "В офисе OpenAI установили ПРОСЛУШКУ — это сделал 35-летний сотрудник Абдулрахман Альфозан, единственный работник из Саудовской Аравии",
@@ -325,6 +312,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_pol",
       "title_issues": []
+    },
+    {
+      "message_id": 449,
+      "title": "Погружение в XIX век: иммерсивный железнодорожный тур Сахалинский тракт открыл новый сезон",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -371,18 +371,18 @@
     },
     "distribution_error": 6.0,
     "subtype_counts": {
-      "fatal_incident": 5,
       "macro_economy": 5,
       "major_it": 3,
+      "fatal_incident": 4,
       "geopolitical_event": 1,
       "earthquake": 1,
       "military_security": 1,
       "major_emergency": 1,
       "political_decision": 2,
-      "fraud": 1
+      "fraud": 1,
+      "major_infrastructure": 1
     },
     "sequence": [
-      "local",
       "ru_eco",
       "it",
       "local",
@@ -401,10 +401,10 @@
       "ru_pol",
       "ru_safety",
       "local",
-      "ru_pol"
+      "ru_pol",
+      "local"
     ],
     "category_sequence": [
-      "sakh_chp",
       "ru_eco",
       "it",
       "sakh_chp",
@@ -423,10 +423,10 @@
       "ru_pol",
       "ru_incident",
       "sakh_chp",
-      "ru_pol"
+      "ru_pol",
+      "sakh"
     ],
     "source_sequence": [
-      "sakh.online",
       "astv",
       "techmedia techmedia",
       "sakh.online",
@@ -445,14 +445,15 @@
       "sakhalinmedia.ru",
       "astv",
       "sakh.online",
-      "sakh.online"
+      "sakh.online",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-17T04:20:26+00:00",
+    "checked_at_utc": "2026-10-17T05:25:09+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
