@@ -1,64 +1,54 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-18T21:48:29+00:00",
-  "checked_at_sakhalin": "2026-10-19T08:48:24+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-18T21:54:50+00:00",
+  "checked_at_sakhalin": "2026-10-19T08:54:46+11:00",
+  "status": "healthy",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 9.17,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-19T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-18T23:38:01+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-10-19T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "evening",
-        "at_utc": "2026-10-18T09:07:20+00:00",
-        "at_sakhalin": "2026-10-18T20:07:20+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-18T23:38:01+11:00",
-    "age_hours": 9.17,
+    "finished_sakhalin": "2026-10-19T08:54:17+11:00",
+    "age_hours": 0.01,
     "published": 0
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-18T12:38:01+00:00",
+    "checked_at_utc": "2026-10-18T21:54:17+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 0,
-    "director_approved": 2,
-    "ai_calls": 0,
-    "ai_api_fail": 0,
-    "ai_budget_exhausted": 0,
+    "director_approved": 3,
+    "ai_calls": 4,
+    "ai_api_fail": 3,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
-    "publication_contract_blocked": 2
+    "publication_contract_blocked": 1
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-19",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-18T21:51:21+00:00",
+        "published_at_sakhalin": "2026-10-19T08:51:21+11:00",
+        "telegram_message_id": 454,
+        "headline": "Внесен в Госдуму проект закона о административной ответственности",
+        "evidence_count": 3,
+        "evidence_hash": "28bb5cf050539498bbabd0873ea2062c48fe16bdfd6fcdec97f5dfaf16f91ac4",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     },
     "evening": {
       "due": false,
@@ -67,27 +57,15 @@
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "evening",
-      "at_utc": "2026-10-18T09:07:20+00:00",
-      "at_sakhalin": "2026-10-18T20:07:20+11:00"
+      "mode": "morning",
+      "at_utc": "2026-10-18T21:51:21+00:00",
+      "at_sakhalin": "2026-10-19T08:51:21+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-10-19T08:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "evening",
-          "at_utc": "2026-10-18T09:07:20+00:00",
-          "at_sakhalin": "2026-10-18T20:07:20+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-18T21:48:27+00:00",
+    "checked_at": "2026-10-18T21:54:49+00:00",
     "checked": 19,
     "passed": 19,
     "anomalies": [],
@@ -475,7 +453,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-18T21:48:21+00:00",
+    "checked_at_utc": "2026-10-18T21:54:44+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
