@@ -1,29 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-19T02:37:01+00:00",
-  "checked_at_sakhalin": "2026-10-19T13:36:57+11:00",
+  "checked_at_utc": "2026-10-19T05:03:53+00:00",
+  "checked_at_sakhalin": "2026-10-19T16:03:50+11:00",
   "status": "healthy",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-19T10:54:17+11:00",
-    "age_hours": 2.71,
-    "published": 1
+    "finished_sakhalin": "2026-10-19T16:03:22+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-18T23:54:17+00:00",
+    "checked_at_utc": "2026-10-19T05:03:22+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 2,
-    "ai_calls": 2,
-    "ai_api_fail": 1,
+    "published": 2,
+    "director_approved": 4,
+    "ai_calls": 0,
+    "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -65,7 +65,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-19T02:37:00+00:00",
+    "checked_at": "2026-10-19T05:03:52+00:00",
     "checked": 19,
     "passed": 19,
     "anomalies": [],
@@ -78,32 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 428,
-      "title": "При пожаре на даче в Макаровском районе погибли 26 кур",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 429,
-      "title": "Прогноз по рублю: ВТБ допустил ослабление до 90 руб./$ к концу следующего года",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 430,
       "title": "Сахалинцы спасли детей из окна в доме, где в горящей квартире погиб мужчина",
@@ -324,6 +298,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 456,
+      "title": "Смертельное ДТП в Южно-Сахалинске: при столкновении с внедорожником погибла пассажирка универсала",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 457,
+      "title": "Инфляция 4% под вопросом: Счетная палата усомнилась в прогнозах Минэка на 2027 год",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -345,9 +345,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 8,
+      "local": 7,
       "ru_pol": 2,
-      "ru_eco": 4,
+      "ru_eco": 5,
       "ru_safety": 3,
       "world": 1,
       "it": 2
@@ -361,17 +361,17 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -2.0,
+      "local": -1.0,
       "ru_pol": 2.0,
-      "ru_eco": 0.0,
+      "ru_eco": -1.0,
       "ru_safety": 0.0,
       "world": 1.0,
       "it": -1.0
     },
     "distribution_error": 6.0,
     "subtype_counts": {
-      "fatal_incident": 4,
-      "macro_economy": 5,
+      "macro_economy": 6,
+      "fatal_incident": 3,
       "geopolitical_event": 1,
       "earthquake": 1,
       "military_security": 1,
@@ -383,8 +383,6 @@
       "air_quality_hazard": 1
     },
     "sequence": [
-      "local",
-      "local",
       "ru_eco",
       "local",
       "ru_eco",
@@ -402,11 +400,11 @@
       "ru_pol",
       "local",
       "local",
-      "local"
+      "local",
+      "local",
+      "ru_eco"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "sakh_chp",
       "ru_eco",
       "sakh_chp",
       "ru_eco",
@@ -424,11 +422,11 @@
       "ru_pol",
       "sakh",
       "sakh_chp",
-      "sakh"
+      "sakh",
+      "sakh_chp",
+      "ru_eco"
     ],
     "source_sequence": [
-      "sakh.online",
-      "astv",
       "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
@@ -446,14 +444,16 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "sakh.online"
+      "sakh.online",
+      "astv",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-19T02:36:55+00:00",
+    "checked_at_utc": "2026-10-19T05:03:48+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
