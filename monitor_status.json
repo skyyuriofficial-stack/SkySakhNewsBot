@@ -1,50 +1,27 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-19T22:35:51+00:00",
-  "checked_at_sakhalin": "2026-10-20T09:35:47+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-19T22:42:00+00:00",
+  "checked_at_sakhalin": "2026-10-20T09:41:57+11:00",
+  "status": "healthy",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 6.61,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-20T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-20T02:59:33+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-10-20T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "evening",
-        "at_utc": "2026-10-19T10:51:49+00:00",
-        "at_sakhalin": "2026-10-19T21:51:49+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-20T02:59:33+11:00",
-    "age_hours": 6.61,
-    "published": 0
+    "finished_sakhalin": "2026-10-20T09:41:36+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-19T15:59:33+00:00",
+    "checked_at_utc": "2026-10-19T22:41:36+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 5,
+    "published": 1,
+    "director_approved": 6,
     "ai_calls": 4,
     "ai_api_fail": 3,
     "ai_budget_exhausted": 1,
@@ -54,11 +31,25 @@
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-20",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-19T22:38:16+00:00",
+        "published_at_sakhalin": "2026-10-20T09:38:16+11:00",
+        "telegram_message_id": 460,
+        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+        "evidence_count": 6,
+        "evidence_hash": "f077a6a30dec3fa9d32d7a3182fad9c3b4e8075f1994154c77d8dca76d253ec8",
+        "source_ids": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
     },
     "evening": {
       "due": false,
@@ -67,27 +58,15 @@
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "evening",
-      "at_utc": "2026-10-19T10:51:49+00:00",
-      "at_sakhalin": "2026-10-19T21:51:49+11:00"
+      "mode": "morning",
+      "at_utc": "2026-10-19T22:38:16+00:00",
+      "at_sakhalin": "2026-10-20T09:38:16+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-10-20T08:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "evening",
-          "at_utc": "2026-10-19T10:51:49+00:00",
-          "at_sakhalin": "2026-10-19T21:51:49+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-19T22:35:50+00:00",
+    "checked_at": "2026-10-19T22:41:59+00:00",
     "checked": 19,
     "passed": 19,
     "anomalies": [],
@@ -100,19 +79,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 431,
-      "title": "Ключевая ставка: почему Банк России может сохранить её на уровне 14%",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 435,
       "title": "Американские военные подготовили новый план ударов по Ирану, который предусматривает применение так называемой матери всех бомб — GBU-43/B Massive Ordnance Air Blast (MOAB), сообщи",
@@ -346,6 +312,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 461,
+      "title": "В МИД РФ отметили рост активности НАТО в Черноморском регионе",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "geo",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -367,11 +346,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 7,
+      "local": 6,
       "ru_pol": 2,
       "ru_eco": 5,
       "ru_safety": 3,
-      "world": 1,
+      "world": 2,
       "it": 2
     },
     "scaled_targets": {
@@ -383,29 +362,28 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -1.0,
+      "local": 0.0,
       "ru_pol": 2.0,
       "ru_eco": -1.0,
       "ru_safety": 0.0,
-      "world": 1.0,
+      "world": 0.0,
       "it": -1.0
     },
-    "distribution_error": 6.0,
+    "distribution_error": 4.0,
     "subtype_counts": {
-      "fatal_incident": 3,
       "macro_economy": 6,
-      "geopolitical_event": 1,
+      "geopolitical_event": 2,
       "earthquake": 1,
       "military_security": 1,
       "major_it": 2,
       "major_emergency": 1,
       "political_decision": 2,
       "fraud": 1,
+      "fatal_incident": 2,
       "major_infrastructure": 1,
       "air_quality_hazard": 1
     },
     "sequence": [
-      "local",
       "ru_eco",
       "world",
       "local",
@@ -424,10 +402,10 @@
       "local",
       "local",
       "ru_eco",
-      "ru_eco"
+      "ru_eco",
+      "world"
     ],
     "category_sequence": [
-      "sakh_chp",
       "ru_eco",
       "geo",
       "sakh_quake",
@@ -446,10 +424,10 @@
       "sakh",
       "sakh_chp",
       "ru_eco",
-      "ru_eco"
+      "ru_eco",
+      "geo"
     ],
     "source_sequence": [
-      "astv",
       "sakhalinmedia.ru",
       "rbc news rbc news",
       "sakh.online",
@@ -468,14 +446,15 @@
       "sakh.online",
       "astv",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "tass"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-19T22:35:44+00:00",
+    "checked_at_utc": "2026-10-19T22:41:55+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
