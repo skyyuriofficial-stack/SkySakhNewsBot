@@ -1,29 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-19T22:42:00+00:00",
-  "checked_at_sakhalin": "2026-10-20T09:41:57+11:00",
+  "checked_at_utc": "2026-10-19T23:39:58+00:00",
+  "checked_at_sakhalin": "2026-10-20T10:39:53+11:00",
   "status": "healthy",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-20T09:41:36+11:00",
+    "finished_sakhalin": "2026-10-20T10:39:22+11:00",
     "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-19T22:41:36+00:00",
+    "checked_at_utc": "2026-10-19T23:39:23+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 6,
+    "director_approved": 5,
     "ai_calls": 4,
-    "ai_api_fail": 3,
+    "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -66,9 +66,9 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-19T22:41:59+00:00",
-    "checked": 19,
-    "passed": 19,
+    "checked_at": "2026-10-19T23:39:56+00:00",
+    "checked": 20,
+    "passed": 20,
     "anomalies": [],
     "corrected": [],
     "deleted": [],
@@ -325,6 +325,19 @@
       "review_reason": "approved",
       "corrected_category": "geo",
       "title_issues": []
+    },
+    {
+      "message_id": 462,
+      "title": "Налог по вкладам: почему зарплата теперь решает все",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -371,10 +384,10 @@
     },
     "distribution_error": 4.0,
     "subtype_counts": {
-      "macro_economy": 6,
       "geopolitical_event": 2,
       "earthquake": 1,
       "military_security": 1,
+      "macro_economy": 6,
       "major_it": 2,
       "major_emergency": 1,
       "political_decision": 2,
@@ -384,7 +397,6 @@
       "air_quality_hazard": 1
     },
     "sequence": [
-      "ru_eco",
       "world",
       "local",
       "ru_safety",
@@ -403,10 +415,10 @@
       "local",
       "ru_eco",
       "ru_eco",
-      "world"
+      "world",
+      "ru_eco"
     ],
     "category_sequence": [
-      "ru_eco",
       "geo",
       "sakh_quake",
       "ru_security",
@@ -425,10 +437,10 @@
       "sakh_chp",
       "ru_eco",
       "ru_eco",
-      "geo"
+      "geo",
+      "ru_eco"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "rbc news rbc news",
       "sakh.online",
       "sakh.online",
@@ -447,14 +459,15 @@
       "astv",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "tass"
+      "tass",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-19T22:41:55+00:00",
+    "checked_at_utc": "2026-10-19T23:39:50+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
