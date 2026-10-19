@@ -1,37 +1,49 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-19T08:07:04+00:00",
-  "checked_at_sakhalin": "2026-10-19T19:06:59+11:00",
-  "status": "healthy",
+  "checked_at_utc": "2026-10-19T10:49:25+00:00",
+  "checked_at_sakhalin": "2026-10-19T21:49:21+11:00",
+  "status": "error",
   "mutations_enabled": true,
-  "issues": [],
+  "issues": [
+    {
+      "type": "mobilization_digest_missing",
+      "slot": "evening",
+      "expected_by_sakhalin": "2026-10-19T19:45:00+11:00",
+      "last_attempt": {
+        "status": "ok",
+        "mode": "morning",
+        "at_utc": "2026-10-18T21:51:21+00:00",
+        "at_sakhalin": "2026-10-19T08:51:21+11:00"
+      }
+    }
+  ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-19T16:03:22+11:00",
-    "age_hours": 3.06,
-    "published": 2
+    "finished_sakhalin": "2026-10-19T21:48:53+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-19T05:03:22+00:00",
+    "checked_at_utc": "2026-10-19T10:48:53+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
+    "published": 1,
     "director_approved": 4,
-    "ai_calls": 0,
-    "ai_api_fail": 0,
-    "ai_budget_exhausted": 0,
+    "ai_calls": 4,
+    "ai_api_fail": 3,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-19",
-    "status": "healthy",
+    "status": "error",
     "morning": {
       "due": true,
       "published": true,
@@ -51,7 +63,7 @@
       }
     },
     "evening": {
-      "due": false,
+      "due": true,
       "published": false,
       "record": {}
     },
@@ -61,11 +73,23 @@
       "at_utc": "2026-10-18T21:51:21+00:00",
       "at_sakhalin": "2026-10-19T08:51:21+11:00"
     },
-    "missing": []
+    "missing": [
+      {
+        "type": "mobilization_digest_missing",
+        "slot": "evening",
+        "expected_by_sakhalin": "2026-10-19T19:45:00+11:00",
+        "last_attempt": {
+          "status": "ok",
+          "mode": "morning",
+          "at_utc": "2026-10-18T21:51:21+00:00",
+          "at_sakhalin": "2026-10-19T08:51:21+11:00"
+        }
+      }
+    ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-19T08:07:03+00:00",
+    "checked_at": "2026-10-19T10:49:23+00:00",
     "checked": 19,
     "passed": 19,
     "anomalies": [],
@@ -78,19 +102,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 430,
-      "title": "Сахалинцы спасли детей из окна в доме, где в горящей квартире погиб мужчина",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 431,
       "title": "Ключевая ставка: почему Банк России может сохранить её на уровне 14%",
@@ -324,6 +335,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 458,
+      "title": "Аэрофлот первым в России установил новейшие платёжные терминалы Сбера с ИИ",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -370,8 +394,8 @@
     },
     "distribution_error": 6.0,
     "subtype_counts": {
-      "macro_economy": 6,
       "fatal_incident": 3,
+      "macro_economy": 6,
       "geopolitical_event": 1,
       "earthquake": 1,
       "military_security": 1,
@@ -383,7 +407,6 @@
       "air_quality_hazard": 1
     },
     "sequence": [
-      "ru_eco",
       "local",
       "ru_eco",
       "world",
@@ -402,10 +425,10 @@
       "local",
       "local",
       "local",
+      "ru_eco",
       "ru_eco"
     ],
     "category_sequence": [
-      "ru_eco",
       "sakh_chp",
       "ru_eco",
       "geo",
@@ -424,10 +447,10 @@
       "sakh_chp",
       "sakh",
       "sakh_chp",
+      "ru_eco",
       "ru_eco"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
       "rbc news rbc news",
@@ -446,6 +469,7 @@
       "sakhalinmedia.ru",
       "sakh.online",
       "astv",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -453,7 +477,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-19T08:06:57+00:00",
+    "checked_at_utc": "2026-10-19T10:49:18+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
