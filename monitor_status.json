@@ -1,42 +1,30 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-20T20:49:11+00:00",
-  "checked_at_sakhalin": "2026-10-21T07:49:05+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-20T20:55:13+00:00",
+  "checked_at_sakhalin": "2026-10-21T07:55:07+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 9.3,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-21T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-20T22:31:04+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-20T22:31:04+11:00",
-    "age_hours": 9.3,
-    "published": 0
+    "finished_sakhalin": "2026-10-21T07:54:37+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-20T11:31:04+00:00",
+    "checked_at_utc": "2026-10-20T20:54:37+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 4,
-    "ai_calls": 4,
-    "ai_api_fail": 3,
-    "ai_budget_exhausted": 1,
+    "published": 1,
+    "director_approved": 9,
+    "ai_calls": 2,
+    "ai_api_fail": 1,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
@@ -64,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-20T20:49:09+00:00",
+    "checked_at": "2026-10-20T20:55:11+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -77,19 +65,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 438,
-      "title": "Минобороны и «Диалог Регионы» запускают систему обработки онлайн‑обращений участников СВО",
-      "category_key": "ru_security",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_security",
-      "title_issues": []
-    },
     {
       "message_id": 439,
       "title": "ВТБ назвал регионы-лидеры по росту индустрии красоты",
@@ -336,6 +311,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 466,
+      "title": "Илон Маск и Anthropic обещают раздать акции",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -360,9 +348,9 @@
       "local": 6,
       "ru_pol": 2,
       "ru_eco": 6,
-      "ru_safety": 3,
+      "ru_safety": 2,
       "world": 1,
-      "it": 2
+      "it": 3
     },
     "scaled_targets": {
       "local": 6.0,
@@ -376,15 +364,14 @@
       "local": 0.0,
       "ru_pol": 2.0,
       "ru_eco": -2.0,
-      "ru_safety": 0.0,
+      "ru_safety": 1.0,
       "world": 1.0,
-      "it": -1.0
+      "it": -2.0
     },
-    "distribution_error": 6.0,
+    "distribution_error": 8.0,
     "subtype_counts": {
-      "military_security": 1,
       "macro_economy": 7,
-      "major_it": 2,
+      "major_it": 3,
       "major_emergency": 2,
       "political_decision": 2,
       "fraud": 1,
@@ -394,7 +381,6 @@
       "geopolitical_event": 1
     },
     "sequence": [
-      "ru_safety",
       "ru_eco",
       "ru_eco",
       "it",
@@ -413,10 +399,10 @@
       "world",
       "ru_eco",
       "local",
-      "ru_eco"
+      "ru_eco",
+      "it"
     ],
     "category_sequence": [
-      "ru_security",
       "ru_eco",
       "ru_eco",
       "it",
@@ -435,10 +421,10 @@
       "geo",
       "ru_eco",
       "sakh_chp",
-      "ru_eco"
+      "ru_eco",
+      "it"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "techmedia techmedia",
@@ -457,14 +443,15 @@
       "tass",
       "sakh.online",
       "astv",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "bbc technology"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-20T20:49:03+00:00",
+    "checked_at_utc": "2026-10-20T20:55:04+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -491,5 +478,35 @@
   "delivery_outbox_repaired": false,
   "hardening_actions": [],
   "hardening_failed_actions": [],
-  "warnings": []
+  "warnings": [
+    {
+      "type": "thematic_mix_drift",
+      "distribution_error": 8.0,
+      "limit": 8.0,
+      "counts": {
+        "local": 6,
+        "ru_pol": 2,
+        "ru_eco": 6,
+        "ru_safety": 2,
+        "world": 1,
+        "it": 3
+      },
+      "targets": {
+        "local": 6,
+        "ru_pol": 4,
+        "ru_eco": 4,
+        "ru_safety": 3,
+        "world": 2,
+        "it": 1
+      },
+      "deficits": {
+        "local": 0.0,
+        "ru_pol": 2.0,
+        "ru_eco": -2.0,
+        "ru_safety": 1.0,
+        "world": 1.0,
+        "it": -2.0
+      }
+    }
+  ]
 }
