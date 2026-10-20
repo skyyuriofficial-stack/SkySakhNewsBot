@@ -1,37 +1,30 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-20T05:56:02+00:00",
-  "checked_at_sakhalin": "2026-10-20T16:55:58+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-20T06:02:15+00:00",
+  "checked_at_sakhalin": "2026-10-20T17:02:09+11:00",
+  "status": "healthy",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-20T16:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-20T14:14:37+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-20T14:14:37+11:00",
-    "age_hours": 2.69,
-    "published": 0
+    "finished_sakhalin": "2026-10-20T17:01:44+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-20T03:14:37+00:00",
+    "checked_at_utc": "2026-10-20T06:01:44+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 4,
-    "ai_calls": 4,
-    "ai_api_fail": 3,
-    "ai_budget_exhausted": 1,
+    "published": 2,
+    "director_approved": 7,
+    "ai_calls": 2,
+    "ai_api_fail": 2,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
@@ -73,7 +66,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-20T05:56:01+00:00",
+    "checked_at": "2026-10-20T06:02:13+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -86,32 +79,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 435,
-      "title": "Американские военные подготовили новый план ударов по Ирану, который предусматривает применение так называемой матери всех бомб — GBU-43/B Massive Ordnance Air Blast (MOAB), сообщи",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "geo",
-      "title_issues": []
-    },
-    {
-      "message_id": 436,
-      "title": "Землетрясение магнитудой 6 произошло на Курилах",
-      "category_key": "sakh_quake",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_quake",
-      "title_issues": []
-    },
     {
       "message_id": 438,
       "title": "Минобороны и «Диалог Регионы» запускают систему обработки онлайн‑обращений участников СВО",
@@ -345,6 +312,32 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 463,
+      "title": "\"Скользил на крыше и врезался\": в массовой аварии у Дома торговли в Южно-Сахалинске разбитых машин оказалось больше",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 464,
+      "title": "Дополнительные доходы бюджета: какие налоговые изменения принесут 3,6 трлн рублей",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -368,9 +361,9 @@
     "counts": {
       "local": 6,
       "ru_pol": 2,
-      "ru_eco": 5,
+      "ru_eco": 6,
       "ru_safety": 3,
-      "world": 2,
+      "world": 1,
       "it": 2
     },
     "scaled_targets": {
@@ -384,28 +377,25 @@
     "deficits": {
       "local": 0.0,
       "ru_pol": 2.0,
-      "ru_eco": -1.0,
+      "ru_eco": -2.0,
       "ru_safety": 0.0,
-      "world": 0.0,
+      "world": 1.0,
       "it": -1.0
     },
-    "distribution_error": 4.0,
+    "distribution_error": 6.0,
     "subtype_counts": {
-      "geopolitical_event": 2,
-      "earthquake": 1,
       "military_security": 1,
-      "macro_economy": 6,
+      "macro_economy": 7,
       "major_it": 2,
-      "major_emergency": 1,
+      "major_emergency": 2,
       "political_decision": 2,
       "fraud": 1,
       "fatal_incident": 2,
       "major_infrastructure": 1,
-      "air_quality_hazard": 1
+      "air_quality_hazard": 1,
+      "geopolitical_event": 1
     },
     "sequence": [
-      "world",
-      "local",
       "ru_safety",
       "ru_eco",
       "ru_eco",
@@ -423,11 +413,11 @@
       "ru_eco",
       "ru_eco",
       "world",
+      "ru_eco",
+      "local",
       "ru_eco"
     ],
     "category_sequence": [
-      "geo",
-      "sakh_quake",
       "ru_security",
       "ru_eco",
       "ru_eco",
@@ -445,11 +435,11 @@
       "ru_eco",
       "ru_eco",
       "geo",
+      "ru_eco",
+      "sakh_chp",
       "ru_eco"
     ],
     "source_sequence": [
-      "rbc news rbc news",
-      "sakh.online",
       "sakh.online",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
@@ -467,14 +457,16 @@
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "tass",
-      "sakh.online"
+      "sakh.online",
+      "astv",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-20T05:55:55+00:00",
+    "checked_at_utc": "2026-10-20T06:02:07+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
