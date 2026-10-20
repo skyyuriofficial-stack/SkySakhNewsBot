@@ -1,19 +1,18 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-10-19T22:38:16+00:00",
-  "last_run_sakhalin": "2026-10-20T09:38:16+11:00",
-  "mode": "morning",
+  "last_run_utc": "2026-10-20T11:27:33+00:00",
+  "last_run_sakhalin": "2026-10-20T22:27:33+11:00",
+  "mode": "evening",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 460,
-  "evidence_count": 6,
-  "evidence_hash": "f077a6a30dec3fa9d32d7a3182fad9c3b4e8075f1994154c77d8dca76d253ec8",
-  "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+  "telegram_message_id": 465,
+  "evidence_count": 3,
+  "evidence_hash": "2e7088fce47b82f53eb54d53a1aef1c1e3386c54112523633f8f85c0deb2e0f8",
+  "headline": "Новый законопроект расширяет административную ответственность за неисполнение решений о мобилизации в субъектах РФ",
   "source_ids": [
     1,
     2,
-    3,
-    4
+    3
   ],
   "slots": {
     "2026-09-11": {
@@ -640,14 +639,28 @@
           3,
           4
         ]
+      },
+      "evening": {
+        "status": "ok",
+        "published_at_utc": "2026-10-20T11:27:33+00:00",
+        "published_at_sakhalin": "2026-10-20T22:27:33+11:00",
+        "telegram_message_id": 465,
+        "headline": "Новый законопроект расширяет административную ответственность за неисполнение решений о мобилизации в субъектах РФ",
+        "evidence_count": 3,
+        "evidence_hash": "2e7088fce47b82f53eb54d53a1aef1c1e3386c54112523633f8f85c0deb2e0f8",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
       }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "morning",
-    "at_utc": "2026-10-19T22:38:16+00:00",
-    "at_sakhalin": "2026-10-20T09:38:16+11:00"
+    "mode": "evening",
+    "at_utc": "2026-10-20T11:27:33+00:00",
+    "at_sakhalin": "2026-10-20T22:27:33+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-10-01T06:24:52+00:00",
