@@ -1,64 +1,54 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-21T22:03:02+00:00",
-  "checked_at_sakhalin": "2026-10-22T09:02:58+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-21T22:09:00+00:00",
+  "checked_at_sakhalin": "2026-10-22T09:08:56+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 9.54,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-22T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-21T23:30:30+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-10-22T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "evening",
-        "at_utc": "2026-10-21T09:41:24+00:00",
-        "at_sakhalin": "2026-10-21T20:41:24+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-21T23:30:30+11:00",
-    "age_hours": 9.54,
-    "published": 0
+    "finished_sakhalin": "2026-10-22T09:08:24+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-21T12:30:30+00:00",
+    "checked_at_utc": "2026-10-21T22:08:24+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 8,
-    "ai_calls": 4,
-    "ai_api_fail": 3,
-    "ai_budget_exhausted": 1,
+    "published": 2,
+    "director_approved": 13,
+    "ai_calls": 2,
+    "ai_api_fail": 2,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-22",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-21T22:05:23+00:00",
+        "published_at_sakhalin": "2026-10-22T09:05:23+11:00",
+        "telegram_message_id": 476,
+        "headline": "В РФ внесён законопроект о новой административной ответственности за неисполнение решений оперативных штабов",
+        "evidence_count": 3,
+        "evidence_hash": "d03cb5a4101487a181b6b9fb40194663b5c3c03e307227c509e4da44a9d68259",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     },
     "evening": {
       "due": false,
@@ -67,27 +57,15 @@
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "evening",
-      "at_utc": "2026-10-21T09:41:24+00:00",
-      "at_sakhalin": "2026-10-21T20:41:24+11:00"
+      "mode": "morning",
+      "at_utc": "2026-10-21T22:05:23+00:00",
+      "at_sakhalin": "2026-10-22T09:05:23+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-10-22T08:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "evening",
-          "at_utc": "2026-10-21T09:41:24+00:00",
-          "at_sakhalin": "2026-10-21T20:41:24+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-21T22:03:01+00:00",
+    "checked_at": "2026-10-21T22:08:59+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -100,32 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 447,
-      "title": "На Сахалине за сутки потушили пять пожаров",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 448,
-      "title": "Георгий Карлов рассказал, какие законопроекты рассмотрели в Госдуме",
-      "category_key": "ru_pol",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_pol",
-      "title_issues": []
-    },
     {
       "message_id": 449,
       "title": "Погружение в XIX век: иммерсивный железнодорожный тур Сахалинский тракт открыл новый сезон",
@@ -359,6 +311,32 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 477,
+      "title": "Олега Кожемяко утвердили на должность полпреда президента в ДФО",
+      "category_key": "ru_pol",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_pol",
+      "title_issues": []
+    },
+    {
+      "message_id": 478,
+      "title": "МИД РФ пообещал жесткий ответ на поставки японских беспилотников Украине",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "geo",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -380,11 +358,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 7,
+      "local": 6,
       "ru_pol": 1,
       "ru_eco": 7,
       "ru_safety": 0,
-      "world": 2,
+      "world": 3,
       "it": 3
     },
     "scaled_targets": {
@@ -396,72 +374,71 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -1.0,
+      "local": 0.0,
       "ru_pol": 3.0,
       "ru_eco": -3.0,
       "ru_safety": 3.0,
-      "world": 0.0,
+      "world": -1.0,
       "it": -2.0
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "fatal_incident": 2,
-      "political_decision": 1,
       "major_infrastructure": 1,
       "air_quality_hazard": 1,
       "macro_economy": 8,
+      "fatal_incident": 1,
       "geopolitical_event": 2,
       "major_emergency": 1,
       "major_it": 3,
-      "severe_weather": 1
+      "severe_weather": 1,
+      "political_decision": 1,
+      "military_security": 1
     },
     "sequence": [
       "local",
+      "local",
+      "local",
+      "local",
+      "ru_eco",
+      "ru_eco",
+      "world",
+      "ru_eco",
+      "local",
+      "ru_eco",
+      "it",
+      "world",
+      "it",
+      "ru_eco",
+      "local",
+      "ru_eco",
+      "ru_eco",
+      "it",
       "ru_pol",
-      "local",
-      "local",
-      "local",
-      "local",
-      "ru_eco",
-      "ru_eco",
-      "world",
-      "ru_eco",
-      "local",
-      "ru_eco",
-      "it",
-      "world",
-      "it",
-      "ru_eco",
-      "local",
-      "ru_eco",
-      "ru_eco",
-      "it"
+      "world"
     ],
     "category_sequence": [
+      "sakh",
       "sakh_chp",
+      "sakh",
+      "sakh_chp",
+      "ru_eco",
+      "ru_eco",
+      "geo",
+      "ru_eco",
+      "sakh_chp",
+      "ru_eco",
+      "it",
+      "geo",
+      "it",
+      "ru_eco",
+      "sakh",
+      "ru_eco",
+      "ru_eco",
+      "it",
       "ru_pol",
-      "sakh",
-      "sakh_chp",
-      "sakh",
-      "sakh_chp",
-      "ru_eco",
-      "ru_eco",
-      "geo",
-      "ru_eco",
-      "sakh_chp",
-      "ru_eco",
-      "it",
-      "geo",
-      "it",
-      "ru_eco",
-      "sakh",
-      "ru_eco",
-      "ru_eco",
-      "it"
+      "geo"
     ],
     "source_sequence": [
-      "sakh.online",
-      "sakh.online",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakh.online",
@@ -479,14 +456,16 @@
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "exploit exploitex"
+      "exploit exploitex",
+      "astv",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-21T22:02:56+00:00",
+    "checked_at_utc": "2026-10-21T22:08:54+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -519,11 +498,11 @@
       "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
-        "local": 7,
+        "local": 6,
         "ru_pol": 1,
         "ru_eco": 7,
         "ru_safety": 0,
-        "world": 2,
+        "world": 3,
         "it": 3
       },
       "targets": {
@@ -535,11 +514,11 @@
         "it": 1
       },
       "deficits": {
-        "local": -1.0,
+        "local": 0.0,
         "ru_pol": 3.0,
         "ru_eco": -3.0,
         "ru_safety": 3.0,
-        "world": 0.0,
+        "world": -1.0,
         "it": -2.0
       }
     }
