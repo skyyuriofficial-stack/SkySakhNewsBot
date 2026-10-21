@@ -1,30 +1,30 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-21T23:12:55+00:00",
-  "checked_at_sakhalin": "2026-10-22T10:12:52+11:00",
+  "checked_at_utc": "2026-10-21T23:18:36+00:00",
+  "checked_at_sakhalin": "2026-10-22T10:18:30+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-22T09:08:24+11:00",
-    "age_hours": 1.08,
+    "finished_sakhalin": "2026-10-22T10:18:02+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-21T22:08:24+00:00",
+    "checked_at_utc": "2026-10-21T23:18:02+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 13,
-    "ai_calls": 2,
-    "ai_api_fail": 2,
-    "ai_budget_exhausted": 0,
+    "director_approved": 12,
+    "ai_calls": 4,
+    "ai_api_fail": 4,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
@@ -65,7 +65,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-21T23:12:54+00:00",
+    "checked_at": "2026-10-21T23:18:34+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -78,32 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 449,
-      "title": "Погружение в XIX век: иммерсивный железнодорожный тур Сахалинский тракт открыл новый сезон",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
-    {
-      "message_id": 451,
-      "title": "От угольного дыма к углеродной нейтральности: как газификация изменила Сахалин при Валерии Лимаренко",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 455,
       "title": "Число субсидированных рейсов из Охи и Ноглик могут урезать из-за сокращения бюджета",
@@ -337,6 +311,32 @@
       "review_reason": "approved",
       "corrected_category": "geo",
       "title_issues": []
+    },
+    {
+      "message_id": 479,
+      "title": "Сахалинца заключили под стражу по обвинению в убийстве женщины",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 480,
+      "title": "Мировой интернет под угрозой прямо сейчас — обнаружены сразу две критические уязвимости с опасностью 9,2 из 10 по шкале CVSS 4.0",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -358,12 +358,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 6,
+      "local": 5,
       "ru_pol": 1,
       "ru_eco": 7,
       "ru_safety": 0,
       "world": 3,
-      "it": 3
+      "it": 4
     },
     "scaled_targets": {
       "local": 6.0,
@@ -374,31 +374,28 @@
       "it": 1.0
     },
     "deficits": {
-      "local": 0.0,
+      "local": 1.0,
       "ru_pol": 3.0,
       "ru_eco": -3.0,
       "ru_safety": 3.0,
       "world": -1.0,
-      "it": -2.0
+      "it": -3.0
     },
-    "distribution_error": 12.0,
+    "distribution_error": 14.0,
     "subtype_counts": {
-      "major_infrastructure": 1,
-      "air_quality_hazard": 1,
       "macro_economy": 8,
       "fatal_incident": 1,
       "geopolitical_event": 2,
       "major_emergency": 1,
-      "major_it": 3,
+      "major_it": 4,
       "severe_weather": 1,
       "political_decision": 1,
-      "military_security": 1
+      "military_security": 1,
+      "violent_crime": 1
     },
     "sequence": [
       "local",
       "local",
-      "local",
-      "local",
       "ru_eco",
       "ru_eco",
       "world",
@@ -414,13 +411,13 @@
       "ru_eco",
       "it",
       "ru_pol",
-      "world"
+      "world",
+      "local",
+      "it"
     ],
     "category_sequence": [
       "sakh",
       "sakh_chp",
-      "sakh",
-      "sakh_chp",
       "ru_eco",
       "ru_eco",
       "geo",
@@ -436,11 +433,11 @@
       "ru_eco",
       "it",
       "ru_pol",
-      "geo"
+      "geo",
+      "sakh_chp",
+      "it"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "sakhalinmedia.ru",
       "sakh.online",
       "astv",
       "sakhalinmedia.ru",
@@ -458,14 +455,16 @@
       "sakhalinmedia.ru",
       "exploit exploitex",
       "astv",
-      "sakh.online"
+      "sakh.online",
+      "sakh.online",
+      "techmedia techmedia"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-21T23:12:50+00:00",
+    "checked_at_utc": "2026-10-21T23:18:27+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -495,15 +494,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 12.0,
+      "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
-        "local": 6,
+        "local": 5,
         "ru_pol": 1,
         "ru_eco": 7,
         "ru_safety": 0,
         "world": 3,
-        "it": 3
+        "it": 4
       },
       "targets": {
         "local": 6,
@@ -514,12 +513,12 @@
         "it": 1
       },
       "deficits": {
-        "local": 0.0,
+        "local": 1.0,
         "ru_pol": 3.0,
         "ru_eco": -3.0,
         "ru_safety": 3.0,
         "world": -1.0,
-        "it": -2.0
+        "it": -3.0
       }
     }
   ]
