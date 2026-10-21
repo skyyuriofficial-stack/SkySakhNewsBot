@@ -1,13 +1,13 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-10-20T23:16:45+00:00",
-  "last_run_sakhalin": "2026-10-21T10:16:45+11:00",
-  "mode": "morning",
+  "last_run_utc": "2026-10-21T09:41:24+00:00",
+  "last_run_sakhalin": "2026-10-21T20:41:24+11:00",
+  "mode": "evening",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 469,
+  "telegram_message_id": 473,
   "evidence_count": 4,
-  "evidence_hash": "379b4173a8edf8b8c85fa140c559219504fe6bed4b5949b484884a57d672433c",
+  "evidence_hash": "24a93e3b9f05b1a6d55bf84399db8301b08aca744e1782f3738b92244dd04b0c",
   "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
   "source_ids": [
     1,
@@ -637,14 +637,28 @@
           2,
           3
         ]
+      },
+      "evening": {
+        "status": "ok",
+        "published_at_utc": "2026-10-21T09:41:24+00:00",
+        "published_at_sakhalin": "2026-10-21T20:41:24+11:00",
+        "telegram_message_id": 473,
+        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+        "evidence_count": 4,
+        "evidence_hash": "24a93e3b9f05b1a6d55bf84399db8301b08aca744e1782f3738b92244dd04b0c",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
       }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "morning",
-    "at_utc": "2026-10-20T23:16:45+00:00",
-    "at_sakhalin": "2026-10-21T10:16:45+11:00"
+    "mode": "evening",
+    "at_utc": "2026-10-21T09:41:24+00:00",
+    "at_sakhalin": "2026-10-21T20:41:24+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-10-01T06:24:52+00:00",
