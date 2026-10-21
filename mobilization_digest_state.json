@@ -1,47 +1,20 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-10-21T09:41:24+00:00",
-  "last_run_sakhalin": "2026-10-21T20:41:24+11:00",
-  "mode": "evening",
+  "last_run_utc": "2026-10-21T22:05:23+00:00",
+  "last_run_sakhalin": "2026-10-22T09:05:23+11:00",
+  "mode": "morning",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 473,
-  "evidence_count": 4,
-  "evidence_hash": "24a93e3b9f05b1a6d55bf84399db8301b08aca744e1782f3738b92244dd04b0c",
-  "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+  "telegram_message_id": 476,
+  "evidence_count": 3,
+  "evidence_hash": "d03cb5a4101487a181b6b9fb40194663b5c3c03e307227c509e4da44a9d68259",
+  "headline": "В РФ внесён законопроект о новой административной ответственности за неисполнение решений оперативных штабов",
   "source_ids": [
     1,
     2,
     3
   ],
   "slots": {
-    "2026-10-01": {
-      "morning": {
-        "status": "ok",
-        "published_at_utc": "2026-10-01T08:46:15+00:00",
-        "published_at_sakhalin": "2026-10-01T19:46:15+11:00",
-        "telegram_message_id": 319,
-        "headline": "Политическая мобилизация усиливается, но решение о новой волне мобилизации пока не принято",
-        "evidence_count": 7,
-        "evidence_hash": "53fc59179210dcd7c0822511dfcecf020da437c0050de1b33e081aa812630a67",
-        "source_ids": []
-      },
-      "evening": {
-        "status": "ok",
-        "published_at_utc": "2026-10-01T09:02:57+00:00",
-        "published_at_sakhalin": "2026-10-01T20:02:57+11:00",
-        "telegram_message_id": 320,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 6,
-        "evidence_hash": "31eaa5b6a0ba1dba565b47998dfe1a35212ca7c5482e37adf09bd9166b2741d4",
-        "source_ids": [
-          1,
-          2,
-          3,
-          4
-        ]
-      }
-    },
     "2026-10-02": {
       "morning": {
         "status": "ok",
@@ -652,13 +625,29 @@
           3
         ]
       }
+    },
+    "2026-10-22": {
+      "morning": {
+        "status": "ok",
+        "published_at_utc": "2026-10-21T22:05:23+00:00",
+        "published_at_sakhalin": "2026-10-22T09:05:23+11:00",
+        "telegram_message_id": 476,
+        "headline": "В РФ внесён законопроект о новой административной ответственности за неисполнение решений оперативных штабов",
+        "evidence_count": 3,
+        "evidence_hash": "d03cb5a4101487a181b6b9fb40194663b5c3c03e307227c509e4da44a9d68259",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "evening",
-    "at_utc": "2026-10-21T09:41:24+00:00",
-    "at_sakhalin": "2026-10-21T20:41:24+11:00"
+    "mode": "morning",
+    "at_utc": "2026-10-21T22:05:23+00:00",
+    "at_sakhalin": "2026-10-22T09:05:23+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-10-01T06:24:52+00:00",
