@@ -1,14 +1,14 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-10-21T22:05:23+00:00",
-  "last_run_sakhalin": "2026-10-22T09:05:23+11:00",
-  "mode": "morning",
+  "last_run_utc": "2026-10-22T10:05:11+00:00",
+  "last_run_sakhalin": "2026-10-22T21:05:11+11:00",
+  "mode": "evening",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 476,
+  "telegram_message_id": 484,
   "evidence_count": 3,
-  "evidence_hash": "d03cb5a4101487a181b6b9fb40194663b5c3c03e307227c509e4da44a9d68259",
-  "headline": "В РФ внесён законопроект о новой административной ответственности за неисполнение решений оперативных штабов",
+  "evidence_hash": "ce1251278f833e79eb892a1e5d50467ef92fd9af7a1ec32c6c7aec5499b49a9c",
+  "headline": "Нет подтвержденной новой волны мобилизации; законопроект усиливает наказание за неподчинение существующим приказам",
   "source_ids": [
     1,
     2,
@@ -640,14 +640,28 @@
           2,
           3
         ]
+      },
+      "evening": {
+        "status": "ok",
+        "published_at_utc": "2026-10-22T10:05:11+00:00",
+        "published_at_sakhalin": "2026-10-22T21:05:11+11:00",
+        "telegram_message_id": 484,
+        "headline": "Нет подтвержденной новой волны мобилизации; законопроект усиливает наказание за неподчинение существующим приказам",
+        "evidence_count": 3,
+        "evidence_hash": "ce1251278f833e79eb892a1e5d50467ef92fd9af7a1ec32c6c7aec5499b49a9c",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
       }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "morning",
-    "at_utc": "2026-10-21T22:05:23+00:00",
-    "at_sakhalin": "2026-10-22T09:05:23+11:00"
+    "mode": "evening",
+    "at_utc": "2026-10-22T10:05:11+00:00",
+    "at_sakhalin": "2026-10-22T21:05:11+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-10-01T06:24:52+00:00",
