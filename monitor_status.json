@@ -1,34 +1,22 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-22T04:08:50+00:00",
-  "checked_at_sakhalin": "2026-10-22T15:08:44+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-22T04:16:05+00:00",
+  "checked_at_sakhalin": "2026-10-22T15:16:00+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 4.85,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-22T13:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-22T10:18:02+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-22T10:18:02+11:00",
-    "age_hours": 4.85,
+    "finished_sakhalin": "2026-10-22T15:15:31+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-21T23:18:02+00:00",
+    "checked_at_utc": "2026-10-22T04:15:31+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
@@ -77,7 +65,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-22T04:08:48+00:00",
+    "checked_at": "2026-10-22T04:16:03+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -90,32 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 455,
-      "title": "Число субсидированных рейсов из Охи и Ноглик могут урезать из-за сокращения бюджета",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
-    {
-      "message_id": 456,
-      "title": "Смертельное ДТП в Южно-Сахалинске: при столкновении с внедорожником погибла пассажирка универсала",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 457,
       "title": "Инфляция 4% под вопросом: Счетная палата усомнилась в прогнозах Минэка на 2027 год",
@@ -349,6 +311,32 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 481,
+      "title": "Два человека пострадали в ДТП с выездом на встречную полосу на Сахалине",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 482,
+      "title": "Сразу две критические уязвимости в PHP поставили на колени весь интернет — компании и целые государства отключают свои сайты, чтобы не стать жертвой хакеров",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -370,12 +358,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 5,
+      "local": 4,
       "ru_pol": 1,
       "ru_eco": 7,
       "ru_safety": 0,
       "world": 3,
-      "it": 4
+      "it": 5
     },
     "scaled_targets": {
       "local": 6.0,
@@ -386,28 +374,25 @@
       "it": 1.0
     },
     "deficits": {
-      "local": 1.0,
+      "local": 2.0,
       "ru_pol": 3.0,
       "ru_eco": -3.0,
       "ru_safety": 3.0,
       "world": -1.0,
-      "it": -3.0
+      "it": -4.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 16.0,
     "subtype_counts": {
-      "macro_economy": 8,
-      "fatal_incident": 1,
+      "macro_economy": 7,
       "geopolitical_event": 2,
-      "major_emergency": 1,
-      "major_it": 4,
+      "major_emergency": 2,
+      "major_it": 5,
       "severe_weather": 1,
       "political_decision": 1,
       "military_security": 1,
       "violent_crime": 1
     },
     "sequence": [
-      "local",
-      "local",
       "ru_eco",
       "ru_eco",
       "world",
@@ -424,12 +409,12 @@
       "it",
       "ru_pol",
       "world",
+      "local",
+      "it",
       "local",
       "it"
     ],
     "category_sequence": [
-      "sakh",
-      "sakh_chp",
       "ru_eco",
       "ru_eco",
       "geo",
@@ -447,11 +432,11 @@
       "ru_pol",
       "geo",
       "sakh_chp",
+      "it",
+      "sakh_chp",
       "it"
     ],
     "source_sequence": [
-      "sakh.online",
-      "astv",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "tass",
@@ -469,14 +454,16 @@
       "astv",
       "sakh.online",
       "sakh.online",
-      "techmedia techmedia"
+      "techmedia techmedia",
+      "sakhalinmedia.ru",
+      "exploit exploitex"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-22T04:08:42+00:00",
+    "checked_at_utc": "2026-10-22T04:15:58+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -506,15 +493,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 14.0,
+      "distribution_error": 16.0,
       "limit": 8.0,
       "counts": {
-        "local": 5,
+        "local": 4,
         "ru_pol": 1,
         "ru_eco": 7,
         "ru_safety": 0,
         "world": 3,
-        "it": 4
+        "it": 5
       },
       "targets": {
         "local": 6,
@@ -525,12 +512,12 @@
         "it": 1
       },
       "deficits": {
-        "local": 1.0,
+        "local": 2.0,
         "ru_pol": 3.0,
         "ru_eco": -3.0,
         "ru_safety": 3.0,
         "world": -1.0,
-        "it": -3.0
+        "it": -4.0
       }
     }
   ]
