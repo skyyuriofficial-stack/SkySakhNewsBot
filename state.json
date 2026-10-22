@@ -382,7 +382,9 @@
     "https://t.me/techmedia/23830",
     "https://sakhalinmedia.ru/news/2658262/",
     "https://t.me/exploitex/37390",
-    "https://sakh.online/news/18/2026-10-22/vechnaya-problema-bolshe-ne-zvuchit-tak-kak-sahalinskaya-oblast-rasselyaet-avariynoe-zhilie-529714"
+    "https://sakh.online/news/18/2026-10-22/vechnaya-problema-bolshe-ne-zvuchit-tak-kak-sahalinskaya-oblast-rasselyaet-avariynoe-zhilie-529714",
+    "https://sakhalinmedia.ru/news/2658660/",
+    "https://t.me/techmedia/23840"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -768,375 +770,12 @@
     "b29b4b13aa1b5ababf042553ce41d3c35130c57e",
     "e67fbb357f8fd8b710a74076d21f01578f9779d3",
     "c723c5dfde90d01bd73fb5cba6c0e440f738e5b8",
-    "8031c5f8d748155626d0b9b3287bc2ee6ace7673"
+    "8031c5f8d748155626d0b9b3287bc2ee6ace7673",
+    "0158bae6dd9285010804821a8f87b7a58dc8c711",
+    "95b720cafadea41698aa185145ac25e769003c01"
   ],
-  "last_run_sakhalin": "2026-10-22T17:42:06+11:00",
+  "last_run_sakhalin": "2026-10-22T21:10:58+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-10-08T19:54:14+11:00",
-      "source": "BBC Technology",
-      "category": "💻 IT / технологии",
-      "category_key": "it",
-      "title": "Бум ИИ-чипов увеличит прибыль Samsung до рекордных 80 млрд долларов",
-      "url": "https://www.bbc.co.uk/news/articles/c687z8127302o?at_medium=RSS&at_campaign=rss",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/624/cpsprodpb/2882/live/c97d4d10-c2b4-11f1-a0fd-81bd2aaa775c.jpg",
-      "image_hash": "948580068cfa6612f9a404374287a020df21907b",
-      "topic_cluster": "it:pushes_samsung_profits_record",
-      "published_at": "2026-10-08T01:59:54+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "it",
-        "corrected_category": "it",
-        "group": "it",
-        "event_type": "major_it",
-        "subtype": "major_it",
-        "seriousness": 88,
-        "threshold": 78,
-        "selection_utility": 46.0,
-        "slot": 1,
-        "risks": [],
-        "title_original": "AI chip boom pushes Samsung profits to record $80bn",
-        "title_corrected": "AI chip boom pushes Samsung profits to record $80bn",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "The tech giant is also expected to get a boost from its latest folding devices that were launched in August. BBC Homepage Skip to content Accessibility Help Your account Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds More menu More menu Search BBC Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds Close menu BBC News Menu Home Climate World US & Canada UK Business Tech Science Entertainment & Arts Health More In Pictures BBC Verify Newsbeat Business New Tech Economy Artificial Intelligence Technology of Business Africa Business Paths to Success AI chip boom pushes Samsung profits to record $80bn Image source, EPA Image caption, Samsung is also one of the world's biggest smartphone makers Samsung Electronics says it expects a nine-fold surge in its quarterly profits compared with a year earlier, driven by surging demand for memory chips used in artificial intelligence (AI) data centres. The tech giant estimates that its operating profit for the three months to the end of September will jump to 107.4tn won (Â£61bn; $80bn), its fourth quarter in a row of record earnings. Samsung is one of the world's largest memory chip makers alongside local rival SK Hynix and Micron in the US, which produce chips crucial for AI firms like Nvidia.",
-      "title_original": null,
-      "footer": "IT | ТЕХНОЛОГИИ",
-      "published_row": {
-        "reject": false,
-        "title_ru": "Бум ИИ-чипов увеличит прибыль Samsung до рекордных 80 млрд долларов",
-        "title_evidence": "AI chip boom pushes Samsung profits to record $80bn",
-        "body": [
-          "Samsung Electronics ожидает девятикратный рост квартальной прибыли по сравнению с прошлым годом благодаря высокому спросу на чипы памяти для центров обработки данных искусственного интеллекта.",
-          "Компания прогнозирует, что операционная прибыль за три месяца, заканчивающихся в сентябре, составит 107,4 трлн вон (61 млрд фунтов стерлингов; 80 млрд долларов), что станет четвертым кварталом с рекордными показателями подряд.",
-          "Samsung является одним из крупнейших в мире производителей чипов памяти наряду с конкурентом SK Hynix и американской Micron, которые производят чипы, критически важные для таких ИИ-компаний, как Nvidia."
-        ],
-        "body_evidence": [
-          "expects a nine-fold surge in its quarterly profits compared with a year earlier, driven by surging demand for memory chips used in artificial intelligence (AI) data centres.",
-          "estimates that its operating profit for the three months to the end of September will jump to 107.4tn won (Â£61bn; $80bn)",
-          "Samsung is one of the world's largest memory chip makers alongside local rival SK Hynix and Micron in the US, which produce chips crucial for AI firms like Nvidia."
-        ],
-        "footer": "IT | ТЕХНОЛОГИИ",
-        "category": "💻 IT / технологии",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 90,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+grounded_translation",
-          "issues": [
-            "independent_ai_unavailable:grounded_translation"
-          ]
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "it",
-          "corrected_category": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "subtype": "major_it",
-          "seriousness": 88,
-          "threshold": 78,
-          "selection_utility": 46.0,
-          "slot": 1,
-          "risks": [],
-          "title_original": "AI chip boom pushes Samsung profits to record $80bn",
-          "title_corrected": "AI chip boom pushes Samsung profits to record $80bn",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "it",
-          "final_category": "it",
-          "event_type": "major_it",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": false,
-          "foreign_evidence_ok": true,
-          "issues": [],
-          "policy_version": "policy-v2.6",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "it",
-            "corrected_category": "it",
-            "group": "it",
-            "event_type": "major_it",
-            "subtype": "major_it",
-            "seriousness": 88,
-            "threshold": 78,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "Бум ИИ-чипов увеличит прибыль Samsung до рекордных 80 млрд долларов",
-            "title_corrected": "Бум ИИ-чипов увеличит прибыль Samsung до рекордных 80 млрд долларов",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "💻 IT / технологии\n\n<b>Бум ИИ-чипов увеличит прибыль Samsung до рекордных 80 млрд долларов</b>\n\nSamsung Electronics ожидает девятикратный рост квартальной прибыли по сравнению с прошлым годом благодаря высокому спросу на чипы памяти для центров обработки данных искусственного интеллекта.\n\nКомпания прогнозирует, что операционная прибыль за три месяца, заканчивающихся в сентябре, составит 107,4 трлн вон (61 млрд фунтов стерлингов; 80 млрд долларов), что станет четвертым кварталом с рекордными показателями подряд.\n\nSamsung является одним из крупнейших в мире производителей чипов памяти наряду с конкурентом SK Hynix и американской Micron, которые производят чипы, критически важные для таких ИИ-компаний, как Nvidia.\n\nIT | ТЕХНОЛОГИИ · <a href=\"https://www.bbc.co.uk/news/articles/c687z8127302o?at_medium=RSS&amp;at_campaign=rss\">BBC Technology</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "it",
-        "final_category": "it",
-        "event_type": "major_it",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": false,
-        "foreign_evidence_ok": true,
-        "issues": [],
-        "policy_version": "policy-v2.6",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "it",
-          "corrected_category": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "subtype": "major_it",
-          "seriousness": 88,
-          "threshold": 78,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Бум ИИ-чипов увеличит прибыль Samsung до рекордных 80 млрд долларов",
-          "title_corrected": "Бум ИИ-чипов увеличит прибыль Samsung до рекордных 80 млрд долларов",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 377,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 90,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+grounded_translation",
-        "issues": [
-          "independent_ai_unavailable:grounded_translation"
-        ]
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-12T22:56:49+00:00"
-      }
-    },
-    {
-      "time_sakhalin": "2026-10-08T19:54:35+11:00",
-      "source": "ASTV",
-      "category": "📍 Сахалин",
-      "category_key": "sakh",
-      "title": "Четыре дома оставят без воды в Южно-Сахалинске 9 октября - адреса",
-      "url": "https://astv.ru/news/society/2026-10-08-chetyre-doma-ostavyat-bez-vody-v-yuzhno-sahalinske-9-oktyabrya-adresa",
-      "image_url": "https://astv.ru/content/NewsImage/5a/64/5a641c49-3138-4574-a307-a22e0a6b2da5_3.jpg",
-      "image_hash": "44aa8a70e9ec35dc6963bb95511c308446ee1129",
-      "topic_cluster": "sakh:четыре_оставят_сахалинске_октября_адреса",
-      "published_at": "2026-10-07T13:00:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "sakh",
-        "corrected_category": "sakh",
-        "group": "local",
-        "event_type": "public_service_disruption",
-        "subtype": "public_service_disruption",
-        "seriousness": 84,
-        "threshold": 70,
-        "selection_utility": -38.0,
-        "slot": 2,
-        "risks": [],
-        "title_original": "Четыре дома оставят без воды в Южно-Сахалинске 9 октября - адреса",
-        "title_corrected": "Четыре дома оставят без воды в Южно-Сахалинске 9 октября - адреса",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "Восстановят водоснабжение после 16:00. В пятницу коммунальщики устранят повреждение на сетях водоснабжения. Об этом информирует компания \"РВК-Сахалин\". В этой связи 9 октября с 9:30 до 16:00 ограничат водоснабжение по следующим адресам: пр. Победы, 12, 12а, 14, 16. Телефоны диспетчерской службы предприятия +7 (4242) 72-32-40, +7 (4242) 49-79-25.",
-      "title_original": null,
-      "footer": "САХАЛИН",
-      "published_row": {
-        "reject": false,
-        "title_ru": "Четыре дома оставят без воды в Южно-Сахалинске 9 октября - адреса",
-        "body": [
-          "В пятницу коммунальщики устранят повреждение на сетях водоснабжения.",
-          "В этой связи 9 октября с 9:30 до 16:00 ограничат водоснабжение по следующим адресам: пр."
-        ],
-        "footer": "САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh",
-          "corrected_category": "sakh",
-          "group": "local",
-          "event_type": "public_service_disruption",
-          "subtype": "public_service_disruption",
-          "seriousness": 84,
-          "threshold": 70,
-          "selection_utility": -38.0,
-          "slot": 2,
-          "risks": [],
-          "title_original": "Четыре дома оставят без воды в Южно-Сахалинске 9 октября - адреса",
-          "title_corrected": "Четыре дома оставят без воды в Южно-Сахалинске 9 октября - адреса",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "sakh",
-          "final_category": "sakh",
-          "event_type": "public_service_disruption",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.6",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "sakh",
-            "corrected_category": "sakh",
-            "group": "local",
-            "event_type": "public_service_disruption",
-            "subtype": "public_service_disruption",
-            "seriousness": 84,
-            "threshold": 70,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "Четыре дома оставят без воды в Южно-Сахалинске 9 октября - адреса",
-            "title_corrected": "Четыре дома оставят без воды в Южно-Сахалинске 9 октября - адреса",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "📍 Сахалин\n\n<b>Четыре дома оставят без воды в Южно-Сахалинске 9 октября - адреса</b>\n\nВ пятницу коммунальщики устранят повреждение на сетях водоснабжения.\n\nВ этой связи 9 октября с 9:30 до 16:00 ограничат водоснабжение по следующим адресам: пр.\n\nСАХАЛИН · <a href=\"https://astv.ru/news/society/2026-10-08-chetyre-doma-ostavyat-bez-vody-v-yuzhno-sahalinske-9-oktyabrya-adresa\">ASTV</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh",
-        "final_category": "sakh",
-        "event_type": "public_service_disruption",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.6",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh",
-          "corrected_category": "sakh",
-          "group": "local",
-          "event_type": "public_service_disruption",
-          "subtype": "public_service_disruption",
-          "seriousness": 84,
-          "threshold": 70,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Четыре дома оставят без воды в Южно-Сахалинске 9 октября - адреса",
-          "title_corrected": "Четыре дома оставят без воды в Южно-Сахалинске 9 октября - адреса",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 378,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": []
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-12T22:56:49+00:00"
-      }
-    },
     {
       "time_sakhalin": "2026-10-09T00:39:44+11:00",
       "source": "ASTV",
@@ -11865,7 +11504,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:03+00:00"
+        "checked_at": "2026-10-22T10:03:23+00:00"
       }
     },
     {
@@ -12051,7 +11690,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:03+00:00"
+        "checked_at": "2026-10-22T10:03:23+00:00"
       }
     },
     {
@@ -12232,7 +11871,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:03+00:00"
+        "checked_at": "2026-10-22T10:03:23+00:00"
       }
     },
     {
@@ -12409,7 +12048,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:04+00:00"
+        "checked_at": "2026-10-22T10:03:23+00:00"
       }
     },
     {
@@ -12594,7 +12233,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:04+00:00"
+        "checked_at": "2026-10-22T10:03:23+00:00"
       }
     },
     {
@@ -12780,7 +12419,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:04+00:00"
+        "checked_at": "2026-10-22T10:03:24+00:00"
       }
     },
     {
@@ -12966,7 +12605,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:04+00:00"
+        "checked_at": "2026-10-22T10:03:24+00:00"
       }
     },
     {
@@ -13151,7 +12790,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:04+00:00"
+        "checked_at": "2026-10-22T10:03:24+00:00"
       }
     },
     {
@@ -13336,7 +12975,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:04+00:00"
+        "checked_at": "2026-10-22T10:03:24+00:00"
       }
     },
     {
@@ -13513,7 +13152,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:04+00:00"
+        "checked_at": "2026-10-22T10:03:24+00:00"
       }
     },
     {
@@ -13702,7 +13341,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:05+00:00"
+        "checked_at": "2026-10-22T10:03:25+00:00"
       }
     },
     {
@@ -13883,7 +13522,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:05+00:00"
+        "checked_at": "2026-10-22T10:03:25+00:00"
       }
     },
     {
@@ -14068,7 +13707,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:05+00:00"
+        "checked_at": "2026-10-22T10:03:25+00:00"
       }
     },
     {
@@ -14249,7 +13888,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:05+00:00"
+        "checked_at": "2026-10-22T10:03:25+00:00"
       }
     },
     {
@@ -14430,7 +14069,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:05+00:00"
+        "checked_at": "2026-10-22T10:03:25+00:00"
       }
     },
     {
@@ -14615,7 +14254,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:05+00:00"
+        "checked_at": "2026-10-22T10:03:25+00:00"
       }
     },
     {
@@ -14792,7 +14431,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:06+00:00"
+        "checked_at": "2026-10-22T10:03:26+00:00"
       }
     },
     {
@@ -14969,7 +14608,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:06+00:00"
+        "checked_at": "2026-10-22T10:03:26+00:00"
       }
     },
     {
@@ -15146,7 +14785,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:06+00:00"
+        "checked_at": "2026-10-22T10:03:26+00:00"
       }
     },
     {
@@ -15327,7 +14966,359 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-22T06:43:06+00:00"
+        "checked_at": "2026-10-22T10:03:26+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-10-22T21:06:29+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title": "Сотни жителей Южно-Сахалинска останутся без воды 23 октября",
+      "url": "https://sakhalinmedia.ru/news/2658660/",
+      "image_url": "https://sakhalinmedia.ru/f/266x136/6454/6453074.png?be664bc920ab82bb4ecb707ba7f50baf",
+      "image_hash": "dc7a995d20cc5f1b4bb1af457974794b70f3d861",
+      "topic_cluster": "sakh:сотни_жителей_сахалинска_останутся_октября_sakhalinmedia",
+      "published_at": "2026-10-22T06:14:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "sakh",
+        "corrected_category": "sakh",
+        "group": "local",
+        "event_type": "public_service_disruption",
+        "subtype": "public_service_disruption",
+        "seriousness": 89,
+        "threshold": 70,
+        "selection_utility": 123.0,
+        "slot": 1,
+        "risks": [],
+        "title_original": "Сотни жителей Южно-Сахалинска останутся без воды 23 октября",
+        "title_corrected": "Сотни жителей Южно-Сахалинска останутся без воды 23 октября",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Две улицы в Южно-Сахалинске останутся без воды на несколько часов. Завтра, 23 октября, специалисты РВК-Сахалин устранят повреждение на сетях водоснабжения, сообщает пресс-служба компании. Водоснабжение будет ограничено до 16.00 (АДРЕСА) В этой связи 23 октября с 9.30 до 12.00 будет ограничено водоснабжение по следующим адресам: Телефоны диспетчерской службы предприятия: +7 (4242) 72-32-40, +7 (4242) 49-79-25.",
+      "title_original": null,
+      "footer": "САХАЛИН",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Сотни жителей Южно-Сахалинска останутся без воды 23 октября",
+        "body": [
+          "Две улицы в Южно-Сахалинске останутся без воды на несколько часов.",
+          "Завтра, 23 октября, специалисты РВК-Сахалин устранят повреждение на сетях водоснабжения, сообщает пресс-служба компании."
+        ],
+        "footer": "САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh",
+          "corrected_category": "sakh",
+          "group": "local",
+          "event_type": "public_service_disruption",
+          "subtype": "public_service_disruption",
+          "seriousness": 89,
+          "threshold": 70,
+          "selection_utility": 123.0,
+          "slot": 1,
+          "risks": [],
+          "title_original": "Сотни жителей Южно-Сахалинска останутся без воды 23 октября",
+          "title_corrected": "Сотни жителей Южно-Сахалинска останутся без воды 23 октября",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "sakh",
+          "final_category": "sakh",
+          "event_type": "public_service_disruption",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.7",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "sakh",
+            "corrected_category": "sakh",
+            "group": "local",
+            "event_type": "public_service_disruption",
+            "subtype": "public_service_disruption",
+            "seriousness": 86,
+            "threshold": 70,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Сотни жителей Южно-Сахалинска останутся без воды 23 октября",
+            "title_corrected": "Сотни жителей Южно-Сахалинска останутся без воды 23 октября",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "📍 Сахалин\n\n<b>Сотни жителей Южно-Сахалинска останутся без воды 23 октября</b>\n\nДве улицы в Южно-Сахалинске останутся без воды на несколько часов.\n\nЗавтра, 23 октября, специалисты РВК-Сахалин устранят повреждение на сетях водоснабжения, сообщает пресс-служба компании.\n\nСАХАЛИН · <a href=\"https://sakhalinmedia.ru/news/2658660/\">SakhalinMedia.ru</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh",
+        "final_category": "sakh",
+        "event_type": "public_service_disruption",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.7",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh",
+          "corrected_category": "sakh",
+          "group": "local",
+          "event_type": "public_service_disruption",
+          "subtype": "public_service_disruption",
+          "seriousness": 86,
+          "threshold": 70,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Сотни жителей Южно-Сахалинска останутся без воды 23 октября",
+          "title_corrected": "Сотни жителей Южно-Сахалинска останутся без воды 23 октября",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 485,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": []
+      }
+    },
+    {
+      "time_sakhalin": "2026-10-22T21:10:50+11:00",
+      "source": "TechMedia (@techmedia)",
+      "category": "💻 IT / технологии",
+      "category_key": "it",
+      "title": "Мать оставила в завещании своего ребенка на воспитание ChatGPT — женщина из Абу-Даби передала чат-боту свои советы и ценности, чтобы тот воспитывал чадо",
+      "url": "https://t.me/techmedia/23840",
+      "image_url": "https://cdn4.telesco.pe/file/eRWqsw9ccHBVk3G96KMVNqk3ZZCsCvjdCAIJFPoBUcMvFow8w-s_g2dyRtYgj6coMIE2A54p5vAPOqG7qgEwruUXtW3en-MRKkJde904fsoGj76L0DL4NOwkFAzrfW5_niSdKAW6E0OVylvlSKJn-AXRSG627I74DakNWG-StGptZn0PZg1y3cZ5Duh-QT4k95xRYunrlOg53VZPh07w1vi_nMRyevFm5gcW27xNjp7cZ-kKTEO9b5oDJSFc5Zpcj0zwyr7C4xOpXDudrTSxs3DcWcHg7qiiqUkBOEnvvnnr7FbsbqVh7P6GBCTmQmqpSt9hs61AlFkAVnw0Gw7Jgg.jpg",
+      "image_hash": "2e43eb296be7521b3d31242be2cc29c38ed924bd",
+      "topic_cluster": "it:оставила_завещании_своего_ребенка_воспитание_chatgpt",
+      "published_at": "2026-10-22T09:06:12+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "it",
+        "corrected_category": "it",
+        "group": "it",
+        "event_type": "major_it",
+        "subtype": "major_it",
+        "seriousness": 80,
+        "threshold": 78,
+        "selection_utility": -74.0,
+        "slot": "backup",
+        "risks": [
+          "near_threshold"
+        ],
+        "title_original": "Мать оставила в завещании своего ребенка на воспитание ChatGPT — женщина из Абу-Даби передала чат-боту свои советы и ценности, чтобы тот воспитывал чадо.",
+        "title_corrected": "Мать оставила в завещании своего ребенка на воспитание ChatGPT — женщина из Абу-Даби передала чат-боту свои советы и ценности, чтобы тот воспитывал чадо",
+        "title_corrections": [],
+        "title_changed": true,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Мать оставила в завещании своего ребенка на воспитание ChatGPT — женщина из Абу-Даби передала чат-боту свои советы и ценности, чтобы тот воспитывал чадо. Согласно документу, опекуны должны будут постоянно советоваться с нейросетью, особенно при выборе образования, лечения здоровья и других важных вопросов. Опекуны же обязаны протоколировать переписку и показывать независимому эксперту, чтобы не было вопросов. «Да, ты прав. Я ошибочно сказал, что ребенка нужно отдать в гуманитарный вуз».",
+      "title_original": "Мать оставила в завещании своего ребенка на воспитание ChatGPT — женщина из Абу-Даби передала чат-боту свои советы и ценности, чтобы тот воспитывал чадо.",
+      "footer": "IT | ТЕХНОЛОГИИ",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Мать оставила в завещании своего ребенка на воспитание ChatGPT — женщина из Абу-Даби передала чат-боту свои советы и ценности, чтобы тот воспитывал чадо",
+        "body": [
+          "Согласно документу, опекуны должны будут постоянно советоваться с нейросетью, особенно при выборе образования, лечения здоровья и других важных вопросов.",
+          "Опекуны же обязаны протоколировать переписку и показывать независимому эксперту, чтобы не было вопросов."
+        ],
+        "footer": "IT | ТЕХНОЛОГИИ",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "it",
+          "corrected_category": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "subtype": "major_it",
+          "seriousness": 80,
+          "threshold": 78,
+          "selection_utility": -74.0,
+          "slot": "backup",
+          "risks": [
+            "near_threshold"
+          ],
+          "title_original": "Мать оставила в завещании своего ребенка на воспитание ChatGPT — женщина из Абу-Даби передала чат-боту свои советы и ценности, чтобы тот воспитывал чадо.",
+          "title_corrected": "Мать оставила в завещании своего ребенка на воспитание ChatGPT — женщина из Абу-Даби передала чат-боту свои советы и ценности, чтобы тот воспитывал чадо",
+          "title_corrections": [],
+          "title_changed": true,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "it",
+          "final_category": "it",
+          "event_type": "major_it",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.7",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "it",
+            "corrected_category": "it",
+            "group": "it",
+            "event_type": "major_it",
+            "subtype": "major_it",
+            "seriousness": 80,
+            "threshold": 78,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [
+              "near_threshold"
+            ],
+            "title_original": "Мать оставила в завещании своего ребенка на воспитание ChatGPT — женщина из Абу-Даби передала чат-боту свои советы и ценности, чтобы тот воспитывал чадо",
+            "title_corrected": "Мать оставила в завещании своего ребенка на воспитание ChatGPT — женщина из Абу-Даби передала чат-боту свои советы и ценности, чтобы тот воспитывал чадо",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "💻 IT / технологии\n\n<b>Мать оставила в завещании своего ребенка на воспитание ChatGPT — женщина из Абу-Даби передала чат-боту свои советы и ценности, чтобы тот воспитывал чадо</b>\n\nСогласно документу, опекуны должны будут постоянно советоваться с нейросетью, особенно при выборе образования, лечения здоровья и других важных вопросов.\n\nОпекуны же обязаны протоколировать переписку и показывать независимому эксперту, чтобы не было вопросов.\n\nIT | ТЕХНОЛОГИИ · <a href=\"https://t.me/techmedia/23840\">TechMedia (@techmedia)</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "it",
+        "final_category": "it",
+        "event_type": "major_it",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.7",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "it",
+          "corrected_category": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "subtype": "major_it",
+          "seriousness": 80,
+          "threshold": 78,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [
+            "near_threshold"
+          ],
+          "title_original": "Мать оставила в завещании своего ребенка на воспитание ChatGPT — женщина из Абу-Даби передала чат-боту свои советы и ценности, чтобы тот воспитывал чадо",
+          "title_corrected": "Мать оставила в завещании своего ребенка на воспитание ChatGPT — женщина из Абу-Даби передала чат-боту свои советы и ценности, чтобы тот воспитывал чадо",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 486,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": []
       }
     }
   ],
@@ -15556,10 +15547,10 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-10-22T17:33:10+11:00",
+    "started_sakhalin": "2026-10-22T21:03:18+11:00",
     "status": "ok",
-    "candidates": 9,
-    "published": 1,
+    "candidates": 6,
+    "published": 2,
     "local_candidates": 2,
     "local_stream": {
       "status": "healthy",
@@ -15591,60 +15582,60 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-10-22T17:42:06+11:00",
+    "finished_sakhalin": "2026-10-22T21:10:58+11:00",
     "stats": {
       "rss_seen": 160,
-      "old_skip": 62,
-      "google_skip": 14,
+      "old_skip": 60,
+      "google_skip": 15,
       "duplicate_skip": 0,
-      "low_info_skip": 13,
-      "category_skip": 38,
+      "low_info_skip": 14,
+      "category_skip": 43,
       "no_image_skip": 0,
-      "bad_image_skip": 11,
-      "logo_image_skip": 19,
-      "text_card_image_skip": 7,
-      "candidates": 30,
+      "bad_image_skip": 9,
+      "logo_image_skip": 11,
+      "text_card_image_skip": 1,
+      "candidates": 25,
       "rewrite_retry": 4,
-      "editorial_skip": 7,
+      "editorial_skip": 3,
       "telegram_fail": 0,
-      "published": 1,
+      "published": 2,
       "telegram_source_attempt": 4,
       "telegram_source_fail": 0,
-      "telegram_source_seen": 67,
-      "telegram_source_candidates": 28,
+      "telegram_source_seen": 63,
+      "telegram_source_candidates": 23,
       "ai_calls": 4,
       "ai_budget_exhausted": 1,
       "ai_api_fail": 2,
-      "evidence_reject": 2,
+      "evidence_reject": 1,
       "validation_reject": 2,
-      "extractive_fallback": 1,
-      "extractive_first": 1,
-      "editorial_prechecked": 67,
-      "editorial_gate_checked": 8,
-      "editorial_gate_pass": 1,
-      "editorial_gate_reject": 1,
+      "extractive_fallback": 2,
+      "extractive_first": 2,
+      "editorial_prechecked": 64,
+      "editorial_gate_checked": 5,
+      "editorial_gate_pass": 2,
+      "editorial_gate_reject": 0,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 0,
       "editorial_gate_ai_fail": 0,
-      "editorial_title_reject": 1,
-      "editorial_category_reject": 1,
+      "editorial_title_reject": 0,
+      "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 13,
-      "editorial_offtopic_reject": 26,
-      "openrouter_empty_content": 9,
-      "openrouter_model_fallback": 2,
-      "openrouter_attempts": 11,
-      "openrouter_retries": 7,
+      "editorial_reclassified": 8,
+      "editorial_offtopic_reject": 36,
+      "openrouter_empty_content": 7,
+      "openrouter_model_fallback": 1,
+      "openrouter_attempts": 9,
+      "openrouter_retries": 5,
       "openrouter_invalid_json": 0,
       "openrouter_success": 2,
       "openrouter_circuit_open": 0,
       "editorial_grounded_translation_fallback": 0,
-      "media_required_skip": 10,
+      "media_required_skip": 3,
       "media_generic_skip": 0,
-      "media_ready_candidates": 30,
+      "media_ready_candidates": 25,
       "photo_retry": 0,
-      "photo_publish": 1,
-      "photo_upload_original": 1,
+      "photo_publish": 2,
+      "photo_upload_original": 2,
       "photo_upload_reencoded": 0,
       "photo_upload_plain_caption": 0,
       "photo_remote_url": 0,
@@ -15655,14 +15646,14 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 30,
-      "director_approved": 9,
-      "director_rejected": 21,
+      "director_seen": 25,
+      "director_approved": 6,
+      "director_rejected": 19,
       "director_reclassified": 0,
       "director_title_corrected": 2,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
-      "director_final_checked": 1,
+      "director_final_checked": 2,
       "director_final_autocorrected": 0,
       "director_final_reject": 0,
       "director_pending_retired": 0,
@@ -15671,245 +15662,15 @@
       "post_audit_anomalies": 0,
       "post_audit_corrected": 0,
       "post_audit_deleted": 0,
-      "tass_world_scanned": 84,
-      "tass_world_screened": 1,
-      "tass_world_candidates": 1
+      "tass_world_scanned": 64,
+      "tass_world_screened": 4,
+      "tass_world_candidates": 2
     },
     "news_director": {
       "version": "director-v2.4",
       "policy_version": "policy-v2.7",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
-        "window": 20,
-        "targets": {
-          "local": 6,
-          "ru_pol": 4,
-          "ru_eco": 4,
-          "ru_safety": 3,
-          "world": 2,
-          "it": 1
-        },
-        "target_percent": {
-          "local": 30.0,
-          "ru_pol": 20.0,
-          "ru_eco": 20.0,
-          "ru_safety": 15.0,
-          "world": 10.0,
-          "it": 5.0
-        },
-        "counts": {
-          "local": 4,
-          "ru_pol": 1,
-          "ru_eco": 7,
-          "ru_safety": 0,
-          "world": 3,
-          "it": 5
-        },
-        "scaled_targets": {
-          "local": 6.0,
-          "ru_pol": 4.0,
-          "ru_eco": 4.0,
-          "ru_safety": 3.0,
-          "world": 2.0,
-          "it": 1.0
-        },
-        "deficits": {
-          "local": 2.0,
-          "ru_pol": 3.0,
-          "ru_eco": -3.0,
-          "ru_safety": 3.0,
-          "world": -1.0,
-          "it": -4.0
-        },
-        "distribution_error": 16.0,
-        "subtype_counts": {
-          "macro_economy": 7,
-          "geopolitical_event": 2,
-          "major_emergency": 2,
-          "major_it": 5,
-          "severe_weather": 1,
-          "political_decision": 1,
-          "military_security": 1,
-          "violent_crime": 1
-        },
-        "sequence": [
-          "ru_eco",
-          "ru_eco",
-          "world",
-          "ru_eco",
-          "local",
-          "ru_eco",
-          "it",
-          "world",
-          "it",
-          "ru_eco",
-          "local",
-          "ru_eco",
-          "ru_eco",
-          "it",
-          "ru_pol",
-          "world",
-          "local",
-          "it",
-          "local",
-          "it"
-        ],
-        "category_sequence": [
-          "ru_eco",
-          "ru_eco",
-          "geo",
-          "ru_eco",
-          "sakh_chp",
-          "ru_eco",
-          "it",
-          "geo",
-          "it",
-          "ru_eco",
-          "sakh",
-          "ru_eco",
-          "ru_eco",
-          "it",
-          "ru_pol",
-          "geo",
-          "sakh_chp",
-          "it",
-          "sakh_chp",
-          "it"
-        ],
-        "source_sequence": [
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "tass",
-          "sakh.online",
-          "astv",
-          "sakhalinmedia.ru",
-          "bbc technology",
-          "tass",
-          "techmedia techmedia",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "astv",
-          "sakh.online",
-          "sakh.online",
-          "techmedia techmedia",
-          "sakhalinmedia.ru",
-          "exploit exploitex"
-        ],
-        "retrospective_anomalies": [],
-        "valid_posts_counted": 20
-      },
-      "candidate_count": 30,
-      "approved_count": 9,
-      "rejected_count": 21,
-      "rejected_by_reason": {
-        "importance_below_threshold": 14,
-        "minor_or_routine_crime": 1,
-        "low_scale_incident_not_release_worthy": 4,
-        "unsafe_or_malformed_headline": 1,
-        "ordinary_weather_not_release_worthy": 1
-      },
-      "ai_review_requested": 0,
-      "ai_review_received": 0,
-      "selected_groups": [
-        "local",
-        "world"
-      ],
-      "projected_distribution_error": 14.0,
-      "projected_counts": {
-        "world": 4,
-        "ru_eco": 5,
-        "local": 5,
-        "it": 5,
-        "ru_pol": 1
-      },
-      "projected_length": 20,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "Переселение из аварийного жилья на Сахалине: итоги, цифры и планы на 2026 год",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "seriousness": 98,
-          "utility": 160.0
-        },
-        {
-          "slot": 2,
-          "title": "Missiles hit Kyiv after Russia agrees to resume Ukraine peace talks",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "military_security",
-          "seriousness": 94,
-          "utility": 57.0
-        },
-        {
-          "slot": "backup",
-          "title": "Сотни жителей Южно-Сахалинска останутся без воды 23 октября",
-          "category_key": "sakh",
-          "group": "local",
-          "event_type": "public_service_disruption",
-          "seriousness": 89,
-          "utility": 151.0
-        },
-        {
-          "slot": "backup",
-          "title": "AI firms say UK has a year to head off datacentre protests before construction is threatened",
-          "category_key": "geo",
-          "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 90,
-          "utility": 40.0
-        },
-        {
-          "slot": "backup",
-          "title": "Rosenberg: US diplomatic push offers little hope for imminent Ukraine peace",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 87,
-          "utility": 19.0
-        },
-        {
-          "slot": "backup",
-          "title": "OpenAI CEO Sam Altman wins dismissal of sister's lawsuit",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 89,
-          "utility": -65.0
-        },
-        {
-          "slot": "backup",
-          "title": "Tech Life - Beyond silicon chips - BBC Sounds",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 86,
-          "utility": -68.0
-        },
-        {
-          "slot": "backup",
-          "title": "Anthropic ищет редактора с зарплатой до ~28 млн рублей в год, который будет писать тексты для руководителей",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 81,
-          "utility": -73.0
-        },
-        {
-          "slot": "backup",
-          "title": "В России упростят ввоз иностранной техники — цены на Intel, Samsung и другие бренды могут ПОДЕШЕВЕТЬ",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 80,
-          "utility": -74.0
-        }
-      ],
-      "rolling_balance_after": {
         "window": 20,
         "targets": {
           "local": 6,
@@ -16030,11 +15791,214 @@
         ],
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
+      },
+      "candidate_count": 25,
+      "approved_count": 6,
+      "rejected_count": 19,
+      "rejected_by_reason": {
+        "importance_below_threshold": 11,
+        "low_scale_incident_not_release_worthy": 2,
+        "unsafe_or_malformed_headline": 1,
+        "ordinary_weather_not_release_worthy": 5
+      },
+      "ai_review_requested": 0,
+      "ai_review_received": 0,
+      "selected_groups": [
+        "local",
+        "world"
+      ],
+      "projected_distribution_error": 12.0,
+      "projected_counts": {
+        "ru_eco": 5,
+        "local": 6,
+        "it": 5,
+        "world": 3,
+        "ru_pol": 1
+      },
+      "projected_length": 20,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "Сотни жителей Южно-Сахалинска останутся без воды 23 октября",
+          "category_key": "sakh",
+          "group": "local",
+          "event_type": "public_service_disruption",
+          "seriousness": 89,
+          "utility": 123.0
+        },
+        {
+          "slot": 2,
+          "title": "Missiles hit Kyiv after Russia agrees to resume Ukraine peace talks",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "military_security",
+          "seriousness": 94,
+          "utility": 57.0
+        },
+        {
+          "slot": "backup",
+          "title": "На 28,7 млрд больше: как Сахалинская область перераспределила бюджет и усилила поддержку районов",
+          "category_key": "sakh",
+          "group": "local",
+          "event_type": "macro_economy",
+          "seriousness": 91,
+          "utility": 102.0
+        },
+        {
+          "slot": "backup",
+          "title": "AI firms say UK has a year to head off datacentre protests before construction is threatened",
+          "category_key": "geo",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "seriousness": 90,
+          "utility": 40.0
+        },
+        {
+          "slot": "backup",
+          "title": "Anthropic ищет редактора с зарплатой до ~28 млн рублей в год, который будет писать тексты для руководителей",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 81,
+          "utility": -73.0
+        },
+        {
+          "slot": "backup",
+          "title": "Мать оставила в завещании своего ребенка на воспитание ChatGPT — женщина из Абу-Даби передала чат-боту свои советы и ценности, чтобы тот воспитывал чадо",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 80,
+          "utility": -74.0
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 20,
+        "targets": {
+          "local": 6,
+          "ru_pol": 4,
+          "ru_eco": 4,
+          "ru_safety": 3,
+          "world": 2,
+          "it": 1
+        },
+        "target_percent": {
+          "local": 30.0,
+          "ru_pol": 20.0,
+          "ru_eco": 20.0,
+          "ru_safety": 15.0,
+          "world": 10.0,
+          "it": 5.0
+        },
+        "counts": {
+          "local": 6,
+          "ru_pol": 1,
+          "ru_eco": 5,
+          "ru_safety": 0,
+          "world": 2,
+          "it": 6
+        },
+        "scaled_targets": {
+          "local": 6.0,
+          "ru_pol": 4.0,
+          "ru_eco": 4.0,
+          "ru_safety": 3.0,
+          "world": 2.0,
+          "it": 1.0
+        },
+        "deficits": {
+          "local": 0.0,
+          "ru_pol": 3.0,
+          "ru_eco": -1.0,
+          "ru_safety": 3.0,
+          "world": 0.0,
+          "it": -5.0
+        },
+        "distribution_error": 12.0,
+        "subtype_counts": {
+          "macro_economy": 5,
+          "major_emergency": 3,
+          "major_it": 6,
+          "geopolitical_event": 1,
+          "severe_weather": 1,
+          "political_decision": 1,
+          "military_security": 1,
+          "violent_crime": 1,
+          "public_service_disruption": 1
+        },
+        "sequence": [
+          "ru_eco",
+          "local",
+          "ru_eco",
+          "it",
+          "world",
+          "it",
+          "ru_eco",
+          "local",
+          "ru_eco",
+          "ru_eco",
+          "it",
+          "ru_pol",
+          "world",
+          "local",
+          "it",
+          "local",
+          "it",
+          "local",
+          "local",
+          "it"
+        ],
+        "category_sequence": [
+          "ru_eco",
+          "sakh_chp",
+          "ru_eco",
+          "it",
+          "geo",
+          "it",
+          "ru_eco",
+          "sakh",
+          "ru_eco",
+          "ru_eco",
+          "it",
+          "ru_pol",
+          "geo",
+          "sakh_chp",
+          "it",
+          "sakh_chp",
+          "it",
+          "sakh_chp",
+          "sakh",
+          "it"
+        ],
+        "source_sequence": [
+          "sakh.online",
+          "astv",
+          "sakhalinmedia.ru",
+          "bbc technology",
+          "tass",
+          "techmedia techmedia",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "exploit exploitex",
+          "astv",
+          "sakh.online",
+          "sakh.online",
+          "techmedia techmedia",
+          "sakhalinmedia.ru",
+          "exploit exploitex",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "techmedia techmedia"
+        ],
+        "retrospective_anomalies": [],
+        "valid_posts_counted": 20
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-10-22T06:33:18+00:00",
+      "checked_at": "2026-10-22T10:03:26+00:00",
       "checked": 20,
       "passed": 20,
       "anomalies": [],
@@ -16055,11 +16019,11 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 30,
-      "missing_media_rejected": 10,
+      "ready_candidates": 25,
+      "missing_media_rejected": 3,
       "generic_media_rejected": 0,
       "photo_retries": 0,
-      "photo_published": 1,
+      "photo_published": 2,
       "deferred_this_run": 0,
       "pending_queue_size": 0,
       "pending_ready": 0,
@@ -16069,30 +16033,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 67,
-      "checked": 8,
-      "passed": 1,
-      "rejected": 1,
-      "reclassified": 13,
-      "offtopic_reject": 26,
+      "prechecked": 64,
+      "checked": 5,
+      "passed": 2,
+      "rejected": 0,
+      "reclassified": 8,
+      "offtopic_reject": 36,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
       "audited_urls": 2
-    },
-    "independent_post_publication_monitor": {
-      "version": "post-audit-v1.1",
-      "checked_at": "2026-10-22T06:43:06+00:00",
-      "checked": 20,
-      "passed": 20,
-      "anomalies": [],
-      "corrected": [],
-      "deleted": [],
-      "failed_actions": [],
-      "unresolved": 0,
-      "unresolved_items": [],
-      "mutations_enabled": true,
-      "legacy_posts_mutated": false
     }
   },
   "pending_media_delivery": [],
@@ -16137,12 +16087,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 5,
+      "local": 6,
       "ru_pol": 1,
-      "ru_eco": 6,
+      "ru_eco": 5,
       "ru_safety": 0,
-      "world": 3,
-      "it": 5
+      "world": 2,
+      "it": 6
     },
     "scaled_targets": {
       "local": 6.0,
@@ -16153,27 +16103,26 @@
       "it": 1.0
     },
     "deficits": {
-      "local": 1.0,
+      "local": 0.0,
       "ru_pol": 3.0,
-      "ru_eco": -2.0,
+      "ru_eco": -1.0,
       "ru_safety": 3.0,
-      "world": -1.0,
-      "it": -4.0
+      "world": 0.0,
+      "it": -5.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
-      "macro_economy": 6,
-      "geopolitical_event": 2,
+      "macro_economy": 5,
       "major_emergency": 3,
-      "major_it": 5,
+      "major_it": 6,
+      "geopolitical_event": 1,
       "severe_weather": 1,
       "political_decision": 1,
       "military_security": 1,
-      "violent_crime": 1
+      "violent_crime": 1,
+      "public_service_disruption": 1
     },
     "sequence": [
-      "ru_eco",
-      "world",
       "ru_eco",
       "local",
       "ru_eco",
@@ -16191,11 +16140,11 @@
       "it",
       "local",
       "it",
-      "local"
+      "local",
+      "local",
+      "it"
     ],
     "category_sequence": [
-      "ru_eco",
-      "geo",
       "ru_eco",
       "sakh_chp",
       "ru_eco",
@@ -16213,11 +16162,11 @@
       "it",
       "sakh_chp",
       "it",
-      "sakh_chp"
+      "sakh_chp",
+      "sakh",
+      "it"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "tass",
       "sakh.online",
       "astv",
       "sakhalinmedia.ru",
@@ -16235,7 +16184,9 @@
       "techmedia techmedia",
       "sakhalinmedia.ru",
       "exploit exploitex",
-      "sakh.online"
+      "sakh.online",
+      "sakhalinmedia.ru",
+      "techmedia techmedia"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -22151,7 +22102,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-22T06:43:06+00:00",
+    "checked_at": "2026-10-22T10:03:26+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -23099,7 +23050,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-10-22T06:33:09+00:00",
+    "checked_at_utc": "2026-10-22T10:03:17+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -23122,18 +23073,18 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-10-22T06:42:06+00:00",
+    "checked_at_utc": "2026-10-22T10:10:58+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-22T06:42:06+00:00",
+    "checked_at_utc": "2026-10-22T10:10:58+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 9,
+    "published": 2,
+    "director_approved": 6,
     "ai_calls": 4,
     "ai_api_fail": 2,
     "ai_budget_exhausted": 1,
@@ -23142,11 +23093,11 @@
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-10-22T06:42:06+00:00",
+    "checked_at_utc": "2026-10-22T10:10:58+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-10-22T17:42:06+11:00",
-      "candidates": 9,
+      "finished_sakhalin": "2026-10-22T21:10:58+11:00",
+      "candidates": 6,
       "queued_for_delivery": 0
     },
     "generation": {
