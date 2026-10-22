@@ -1,52 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-22T22:33:32+00:00",
-  "checked_at_sakhalin": "2026-10-23T09:33:27+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-22T22:40:48+00:00",
+  "checked_at_sakhalin": "2026-10-23T09:40:45+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 10.08,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-23T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-22T23:28:57+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-10-23T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "evening",
-        "at_utc": "2026-10-22T10:05:11+00:00",
-        "at_sakhalin": "2026-10-22T21:05:11+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-22T23:28:57+11:00",
-    "age_hours": 10.08,
+    "finished_sakhalin": "2026-10-23T09:40:16+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-22T12:28:57+00:00",
+    "checked_at_utc": "2026-10-22T22:40:16+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 6,
+    "director_approved": 8,
     "ai_calls": 4,
-    "ai_api_fail": 3,
+    "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -54,11 +31,28 @@
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-23",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-22T22:35:36+00:00",
+        "published_at_sakhalin": "2026-10-23T09:35:36+11:00",
+        "telegram_message_id": 489,
+        "headline": "Новых подтверждённых признаков массовой мобилизации в РФ нет",
+        "evidence_count": 7,
+        "evidence_hash": "200bb5b60227ac31d05d8bef96767ffc1ed4f5412868b68f45a946a0fce68352",
+        "source_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
     },
     "evening": {
       "due": false,
@@ -67,27 +61,15 @@
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "evening",
-      "at_utc": "2026-10-22T10:05:11+00:00",
-      "at_sakhalin": "2026-10-22T21:05:11+11:00"
+      "mode": "morning",
+      "at_utc": "2026-10-22T22:35:36+00:00",
+      "at_sakhalin": "2026-10-23T09:35:36+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-10-23T08:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "evening",
-          "at_utc": "2026-10-22T10:05:11+00:00",
-          "at_sakhalin": "2026-10-22T21:05:11+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-22T22:33:30+00:00",
+    "checked_at": "2026-10-22T22:40:47+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -100,32 +82,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 464,
-      "title": "Дополнительные доходы бюджета: какие налоговые изменения принесут 3,6 трлн рублей",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
-    {
-      "message_id": 466,
-      "title": "Илон Маск и Anthropic обещают раздать акции",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 467,
       "title": "Дмитриев: Трамп хочет, чтобы Зеленский стремился к урегулированию конфликта",
@@ -359,6 +315,32 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 490,
+      "title": "Путин подписал указ о назначении Кожемяко полпредом президента в ДФО",
+      "category_key": "ru_pol",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_pol",
+      "title_issues": []
+    },
+    {
+      "message_id": 491,
+      "title": "Китайская нейросеть Qwen подсовывает американцам дырявый код — исследователи из Hirundo обнаружили , что ИИ пишет менее безопасные программы для компаний из США и Гонконга, чем для",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -381,8 +363,8 @@
     },
     "counts": {
       "local": 6,
-      "ru_pol": 1,
-      "ru_eco": 4,
+      "ru_pol": 2,
+      "ru_eco": 3,
       "ru_safety": 0,
       "world": 2,
       "it": 7
@@ -397,27 +379,25 @@
     },
     "deficits": {
       "local": 0.0,
-      "ru_pol": 3.0,
-      "ru_eco": 0.0,
+      "ru_pol": 2.0,
+      "ru_eco": 1.0,
       "ru_safety": 3.0,
       "world": 0.0,
       "it": -6.0
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "macro_economy": 5,
-      "major_it": 7,
       "geopolitical_event": 1,
+      "major_it": 7,
+      "macro_economy": 4,
       "severe_weather": 1,
-      "political_decision": 1,
+      "political_decision": 2,
       "military_security": 1,
       "violent_crime": 1,
       "major_emergency": 2,
       "public_service_disruption": 1
     },
     "sequence": [
-      "ru_eco",
-      "it",
       "world",
       "it",
       "ru_eco",
@@ -435,11 +415,11 @@
       "local",
       "it",
       "local",
+      "it",
+      "ru_pol",
       "it"
     ],
     "category_sequence": [
-      "ru_eco",
-      "it",
       "geo",
       "it",
       "ru_eco",
@@ -457,11 +437,11 @@
       "sakh",
       "it",
       "sakh",
+      "it",
+      "ru_pol",
       "it"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "bbc technology",
       "tass",
       "techmedia techmedia",
       "sakhalinmedia.ru",
@@ -479,14 +459,16 @@
       "sakhalinmedia.ru",
       "techmedia techmedia",
       "sakh.online",
-      "exploit exploitex"
+      "exploit exploitex",
+      "sakhalinmedia.ru",
+      "techmedia techmedia"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-22T22:33:25+00:00",
+    "checked_at_utc": "2026-10-22T22:40:43+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -520,8 +502,8 @@
       "limit": 8.0,
       "counts": {
         "local": 6,
-        "ru_pol": 1,
-        "ru_eco": 4,
+        "ru_pol": 2,
+        "ru_eco": 3,
         "ru_safety": 0,
         "world": 2,
         "it": 7
@@ -536,8 +518,8 @@
       },
       "deficits": {
         "local": 0.0,
-        "ru_pol": 3.0,
-        "ru_eco": 0.0,
+        "ru_pol": 2.0,
+        "ru_eco": 1.0,
         "ru_safety": 3.0,
         "world": 0.0,
         "it": -6.0
