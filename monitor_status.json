@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-22T12:29:31+00:00",
-  "checked_at_sakhalin": "2026-10-22T23:29:27+11:00",
+  "checked_at_utc": "2026-10-22T13:43:12+00:00",
+  "checked_at_sakhalin": "2026-10-23T00:43:08+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
@@ -10,7 +10,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-22T23:28:57+11:00",
-    "age_hours": 0.01,
+    "age_hours": 1.24,
     "published": 2
   },
   "last_production_attempt": {
@@ -30,43 +30,17 @@
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-10-22",
+    "day_sakhalin": "2026-10-23",
     "status": "healthy",
     "morning": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-21T22:05:23+00:00",
-        "published_at_sakhalin": "2026-10-22T09:05:23+11:00",
-        "telegram_message_id": 476,
-        "headline": "В РФ внесён законопроект о новой административной ответственности за неисполнение решений оперативных штабов",
-        "evidence_count": 3,
-        "evidence_hash": "d03cb5a4101487a181b6b9fb40194663b5c3c03e307227c509e4da44a9d68259",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "evening": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-22T10:05:11+00:00",
-        "published_at_sakhalin": "2026-10-22T21:05:11+11:00",
-        "telegram_message_id": 484,
-        "headline": "Нет подтвержденной новой волны мобилизации; законопроект усиливает наказание за неподчинение существующим приказам",
-        "evidence_count": 3,
-        "evidence_hash": "ce1251278f833e79eb892a1e5d50467ef92fd9af7a1ec32c6c7aec5499b49a9c",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "last_attempt": {
       "status": "ok",
@@ -78,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-22T12:29:30+00:00",
+    "checked_at": "2026-10-22T13:43:11+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -477,7 +451,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-22T12:29:25+00:00",
+    "checked_at_utc": "2026-10-22T13:43:05+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
