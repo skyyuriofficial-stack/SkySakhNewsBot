@@ -1,27 +1,27 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-22T23:16:09+00:00",
-  "checked_at_sakhalin": "2026-10-23T10:16:05+11:00",
+  "checked_at_utc": "2026-10-22T23:20:16+00:00",
+  "checked_at_sakhalin": "2026-10-23T10:20:11+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-23T09:40:16+11:00",
-    "age_hours": 0.6,
-    "published": 2
+    "finished_sakhalin": "2026-10-23T10:19:44+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-22T22:40:16+00:00",
+    "checked_at_utc": "2026-10-22T23:19:44+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
-    "director_approved": 8,
+    "published": 1,
+    "director_approved": 7,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -69,7 +69,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-22T23:16:08+00:00",
+    "checked_at": "2026-10-22T23:20:14+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -82,19 +82,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 467,
-      "title": "Дмитриев: Трамп хочет, чтобы Зеленский стремился к урегулированию конфликта",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "geo",
-      "title_issues": []
-    },
     {
       "message_id": 468,
       "title": "Американец распечатал стреляющий пистолет на 3D-принтере , который собрал ChatGPT",
@@ -341,6 +328,19 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 492,
+      "title": "Дмитрий Медведев: Единая Россия поддержит проект федерального бюджета в первом чтении",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -364,9 +364,9 @@
     "counts": {
       "local": 6,
       "ru_pol": 2,
-      "ru_eco": 3,
+      "ru_eco": 4,
       "ru_safety": 0,
-      "world": 2,
+      "world": 1,
       "it": 7
     },
     "scaled_targets": {
@@ -380,16 +380,15 @@
     "deficits": {
       "local": 0.0,
       "ru_pol": 2.0,
-      "ru_eco": 1.0,
+      "ru_eco": 0.0,
       "ru_safety": 3.0,
-      "world": 0.0,
+      "world": 1.0,
       "it": -6.0
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "geopolitical_event": 1,
       "major_it": 7,
-      "macro_economy": 4,
+      "macro_economy": 5,
       "severe_weather": 1,
       "political_decision": 2,
       "military_security": 1,
@@ -398,7 +397,6 @@
       "public_service_disruption": 1
     },
     "sequence": [
-      "world",
       "it",
       "ru_eco",
       "local",
@@ -417,10 +415,10 @@
       "local",
       "it",
       "ru_pol",
-      "it"
+      "it",
+      "ru_eco"
     ],
     "category_sequence": [
-      "geo",
       "it",
       "ru_eco",
       "sakh",
@@ -439,10 +437,10 @@
       "sakh",
       "it",
       "ru_pol",
-      "it"
+      "it",
+      "ru_eco"
     ],
     "source_sequence": [
-      "tass",
       "techmedia techmedia",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
@@ -461,14 +459,15 @@
       "sakh.online",
       "exploit exploitex",
       "sakhalinmedia.ru",
-      "techmedia techmedia"
+      "techmedia techmedia",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-22T23:16:03+00:00",
+    "checked_at_utc": "2026-10-22T23:20:07+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -503,9 +502,9 @@
       "counts": {
         "local": 6,
         "ru_pol": 2,
-        "ru_eco": 3,
+        "ru_eco": 4,
         "ru_safety": 0,
-        "world": 2,
+        "world": 1,
         "it": 7
       },
       "targets": {
@@ -519,9 +518,9 @@
       "deficits": {
         "local": 0.0,
         "ru_pol": 2.0,
-        "ru_eco": 1.0,
+        "ru_eco": 0.0,
         "ru_safety": 3.0,
-        "world": 0.0,
+        "world": 1.0,
         "it": -6.0
       }
     }
