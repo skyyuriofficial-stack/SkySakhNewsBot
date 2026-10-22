@@ -1,29 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-22T10:22:42+00:00",
-  "checked_at_sakhalin": "2026-10-22T21:22:36+11:00",
+  "checked_at_utc": "2026-10-22T12:29:31+00:00",
+  "checked_at_sakhalin": "2026-10-22T23:29:27+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-22T21:10:58+11:00",
-    "age_hours": 0.2,
+    "finished_sakhalin": "2026-10-22T23:28:57+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-22T10:10:58+00:00",
+    "checked_at_utc": "2026-10-22T12:28:57+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
     "director_approved": 6,
     "ai_calls": 4,
-    "ai_api_fail": 2,
+    "ai_api_fail": 3,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -78,7 +78,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-22T10:22:40+00:00",
+    "checked_at": "2026-10-22T12:29:30+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -91,32 +91,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 462,
-      "title": "Налог по вкладам: почему зарплата теперь решает все",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
-    {
-      "message_id": 463,
-      "title": "\"Скользил на крыше и врезался\": в массовой аварии у Дома торговли в Южно-Сахалинске разбитых машин оказалось больше",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 464,
       "title": "Дополнительные доходы бюджета: какие налоговые изменения принесут 3,6 трлн рублей",
@@ -350,6 +324,32 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 487,
+      "title": "На 28,7 млрд больше: как Сахалинская область перераспределила бюджет и усилила поддержку районов",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
+    },
+    {
+      "message_id": 488,
+      "title": "Пока вы вайбкодите, Клод подъедает пельмени — «X5 Клуб» вместе с агентством Trend Surfers запилили виджет для Claude Code, который переводит потраченные токены в гречку, молоко, ба",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -373,10 +373,10 @@
     "counts": {
       "local": 6,
       "ru_pol": 1,
-      "ru_eco": 5,
+      "ru_eco": 4,
       "ru_safety": 0,
       "world": 2,
-      "it": 6
+      "it": 7
     },
     "scaled_targets": {
       "local": 6.0,
@@ -389,26 +389,24 @@
     "deficits": {
       "local": 0.0,
       "ru_pol": 3.0,
-      "ru_eco": -1.0,
+      "ru_eco": 0.0,
       "ru_safety": 3.0,
       "world": 0.0,
-      "it": -5.0
+      "it": -6.0
     },
     "distribution_error": 12.0,
     "subtype_counts": {
       "macro_economy": 5,
-      "major_emergency": 3,
-      "major_it": 6,
+      "major_it": 7,
       "geopolitical_event": 1,
       "severe_weather": 1,
       "political_decision": 1,
       "military_security": 1,
       "violent_crime": 1,
+      "major_emergency": 2,
       "public_service_disruption": 1
     },
     "sequence": [
-      "ru_eco",
-      "local",
       "ru_eco",
       "it",
       "world",
@@ -425,13 +423,13 @@
       "local",
       "it",
       "local",
+      "local",
+      "it",
       "local",
       "it"
     ],
     "category_sequence": [
       "ru_eco",
-      "sakh_chp",
-      "ru_eco",
       "it",
       "geo",
       "it",
@@ -448,11 +446,11 @@
       "it",
       "sakh_chp",
       "sakh",
+      "it",
+      "sakh",
       "it"
     ],
     "source_sequence": [
-      "sakh.online",
-      "astv",
       "sakhalinmedia.ru",
       "bbc technology",
       "tass",
@@ -470,14 +468,16 @@
       "exploit exploitex",
       "sakh.online",
       "sakhalinmedia.ru",
-      "techmedia techmedia"
+      "techmedia techmedia",
+      "sakh.online",
+      "exploit exploitex"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-22T10:22:32+00:00",
+    "checked_at_utc": "2026-10-22T12:29:25+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -512,10 +512,10 @@
       "counts": {
         "local": 6,
         "ru_pol": 1,
-        "ru_eco": 5,
+        "ru_eco": 4,
         "ru_safety": 0,
         "world": 2,
-        "it": 6
+        "it": 7
       },
       "targets": {
         "local": 6,
@@ -528,10 +528,10 @@
       "deficits": {
         "local": 0.0,
         "ru_pol": 3.0,
-        "ru_eco": -1.0,
+        "ru_eco": 0.0,
         "ru_safety": 3.0,
         "world": 0.0,
-        "it": -5.0
+        "it": -6.0
       }
     }
   ]
