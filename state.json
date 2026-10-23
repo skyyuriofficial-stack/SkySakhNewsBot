@@ -390,7 +390,8 @@
     "https://sakhalinmedia.ru/news/2659314/",
     "https://t.me/techmedia/23847",
     "https://sakh.online/news/18/2026-10-23/dmitriy-medvedev-edinaya-rossiya-podderzhit-proekt-federalnogo-byudzheta-v-pervom-chtenii-529755",
-    "https://astv.ru/news/society/2026-10-23-cb-sohranil-klyuchevuyu-stavku-na-urovne-14"
+    "https://astv.ru/news/society/2026-10-23-cb-sohranil-klyuchevuyu-stavku-na-urovne-14",
+    "https://astv.ru/news/society/2026-10-23-rossijskim-vuzam-dobavyat-byudzhetnye-mesta-iz-za-naplyva-olimpiadnikov"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -784,204 +785,11 @@
     "f94eb1136e1a35340f755f34ab9cebdeb018bdec",
     "bc951977e441e28d0b9b1da980f953a3ac46c7b0",
     "24aa7176e5988bccb9489fcfcbcda1f89335dddd",
-    "eb30f12e374ae1ab1964080c0aa3babf546be6cb"
+    "eb30f12e374ae1ab1964080c0aa3babf546be6cb",
+    "15eb8f372fbb30fea9b0aa7193ecc112800ab465"
   ],
-  "last_run_sakhalin": "2026-10-24T09:08:09+11:00",
+  "last_run_sakhalin": "2026-10-24T10:07:15+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-10-09T19:59:11+11:00",
-      "source": "SakhalinMedia.ru",
-      "category": "🇷🇺 Россия / экономика",
-      "category_key": "ru_eco",
-      "title": "Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России",
-      "url": "https://sakhalinmedia.ru/news/2646752/",
-      "image_url": "https://sakhalinmedia.ru/f/big/6442/6441695.jpg?5afc382397a27742726204f7f02bf2cf",
-      "image_hash": "7138526f454553c3e8bc6c183777ba6b0837e702",
-      "topic_cluster": "ru_eco:исследование_frank_уровень_доверия_сберинвестициям_самый",
-      "published_at": "2026-10-09T05:45:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "ru_eco",
-        "corrected_category": "ru_eco",
-        "group": "ru_eco",
-        "event_type": "macro_economy",
-        "subtype": "macro_economy",
-        "seriousness": 86,
-        "threshold": 80,
-        "selection_utility": 89.0,
-        "slot": 2,
-        "risks": [],
-        "title_original": "Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России",
-        "title_corrected": "Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "По данным исследования консалтинговой компании Frank RG, уровень доверия инвесторов к СберИнвестициям — самый высокий на рынке. Результаты представили в рамках форума Настоящее — будущее (18+), сообщает пресс-служба Сбера. Frank RG разработала индекс поведенческого доверия инвесторов, который служит альтернативой привычным индексам удовлетворённости и лояльности (NPS). В основе — модель организационного доверия, предложенная учёными в области менеджмента и организационного поведения в 1995 году. Индекс оценивает доверие к инвестиционной компании по трём параметрам: компетентность, доброжелательность и прозрачность. Исследование прошло в формате онлайн-опроса среди частных инвесторов с объёмом активов от 10 тысяч рублей. Среди клиентов СберИнвестиций значение индекса составило 74,7 баллов. Клиенты оценили СберИнвестиции выше по всем трём параметрам: компетентность — 78,4 балла (в целом по рынку — 63,6), доброжелательность — 69,6 (56,4), прозрачность — 76,2 (60,4).",
-      "title_original": null,
-      "footer": "РОССИЯ | ЭКОНОМИКА",
-      "published_row": {
-        "reject": false,
-        "title_ru": "Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России",
-        "body": [
-          "По данным исследования консалтинговой компании Frank RG, уровень доверия инвесторов к СберИнвестициям — самый высокий на рынке.",
-          "Результаты представили в рамках форума Настоящее — будущее (18+), сообщает пресс-служба Сбера."
-        ],
-        "footer": "РОССИЯ | ЭКОНОМИКА",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": [],
-          "reclassified_from": "sakh",
-          "reclassified_to": "ru_eco"
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_eco",
-          "corrected_category": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "subtype": "macro_economy",
-          "seriousness": 86,
-          "threshold": 80,
-          "selection_utility": 89.0,
-          "slot": 2,
-          "risks": [],
-          "title_original": "Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России",
-          "title_corrected": "Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "ru_eco",
-          "final_category": "ru_eco",
-          "event_type": "macro_economy",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.6",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "ru_eco",
-            "corrected_category": "ru_eco",
-            "group": "ru_eco",
-            "event_type": "macro_economy",
-            "subtype": "macro_economy",
-            "seriousness": 83,
-            "threshold": 80,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [
-              "near_threshold"
-            ],
-            "title_original": "Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России",
-            "title_corrected": "Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "🇷🇺 Россия / экономика\n\n<b>Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России</b>\n\nПо данным исследования консалтинговой компании Frank RG, уровень доверия инвесторов к СберИнвестициям — самый высокий на рынке.\n\nРезультаты представили в рамках форума Настоящее — будущее (18+), сообщает пресс-служба Сбера.\n\nРОССИЯ | ЭКОНОМИКА · <a href=\"https://sakhalinmedia.ru/news/2646752/\">SakhalinMedia.ru</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "ru_eco",
-        "final_category": "ru_eco",
-        "event_type": "macro_economy",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.6",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_eco",
-          "corrected_category": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "subtype": "macro_economy",
-          "seriousness": 83,
-          "threshold": 80,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [
-            "near_threshold"
-          ],
-          "title_original": "Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России",
-          "title_corrected": "Исследование Frank RG: уровень доверия к СберИнвестициям самый высокий в России",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 387,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": [],
-        "reclassified_from": "sakh",
-        "reclassified_to": "ru_eco"
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": false,
-        "checked_at": "2026-10-11T03:49:43+00:00",
-        "reason": "brand_trust_ranking_pr",
-        "issues": [
-          "final_hard_reject:brand_trust_ranking_pr",
-          "final_category_mismatch:None->ru_eco",
-          "director_final_category:None->ru_eco",
-          "director_final_reject:brand_trust_ranking_pr"
-        ],
-        "auto_action": "deleted_invalid_v12_post"
-      },
-      "auto_deleted": true
-    },
     {
       "time_sakhalin": "2026-10-09T20:00:56+11:00",
       "source": "Exploit (@exploitex)",
@@ -11897,7 +11705,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:46+00:00"
+        "checked_at": "2026-10-23T23:04:37+00:00"
       }
     },
     {
@@ -12074,7 +11882,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:46+00:00"
+        "checked_at": "2026-10-23T23:04:38+00:00"
       }
     },
     {
@@ -12263,7 +12071,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:46+00:00"
+        "checked_at": "2026-10-23T23:04:38+00:00"
       }
     },
     {
@@ -12444,7 +12252,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:47+00:00"
+        "checked_at": "2026-10-23T23:04:38+00:00"
       }
     },
     {
@@ -12629,7 +12437,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:47+00:00"
+        "checked_at": "2026-10-23T23:04:38+00:00"
       }
     },
     {
@@ -12810,7 +12618,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:47+00:00"
+        "checked_at": "2026-10-23T23:04:38+00:00"
       }
     },
     {
@@ -12991,7 +12799,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:47+00:00"
+        "checked_at": "2026-10-23T23:04:38+00:00"
       }
     },
     {
@@ -13176,7 +12984,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:47+00:00"
+        "checked_at": "2026-10-23T23:04:39+00:00"
       }
     },
     {
@@ -13353,7 +13161,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:47+00:00"
+        "checked_at": "2026-10-23T23:04:39+00:00"
       }
     },
     {
@@ -13530,7 +13338,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:48+00:00"
+        "checked_at": "2026-10-23T23:04:39+00:00"
       }
     },
     {
@@ -13707,7 +13515,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:48+00:00"
+        "checked_at": "2026-10-23T23:04:39+00:00"
       }
     },
     {
@@ -13888,7 +13696,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:48+00:00"
+        "checked_at": "2026-10-23T23:04:40+00:00"
       }
     },
     {
@@ -14065,7 +13873,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:48+00:00"
+        "checked_at": "2026-10-23T23:04:40+00:00"
       }
     },
     {
@@ -14250,7 +14058,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:48+00:00"
+        "checked_at": "2026-10-23T23:04:40+00:00"
       }
     },
     {
@@ -14427,7 +14235,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:49+00:00"
+        "checked_at": "2026-10-23T23:04:40+00:00"
       }
     },
     {
@@ -14612,7 +14420,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:49+00:00"
+        "checked_at": "2026-10-23T23:04:40+00:00"
       }
     },
     {
@@ -14793,7 +14601,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:49+00:00"
+        "checked_at": "2026-10-23T23:04:41+00:00"
       }
     },
     {
@@ -14978,7 +14786,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:49+00:00"
+        "checked_at": "2026-10-23T23:04:41+00:00"
       }
     },
     {
@@ -15167,7 +14975,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-23T22:04:50+00:00"
+        "checked_at": "2026-10-23T23:04:41+00:00"
       }
     },
     {
@@ -15327,6 +15135,187 @@
       },
       "publisher_version": "stable-v12.1",
       "telegram_message_id": 495,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh",
+        "reclassified_to": "ru_eco"
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-10-23T23:04:41+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-10-24T10:06:59+11:00",
+      "source": "ASTV",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "title": "Российским вузам добавят бюджетные места из-за наплыва олимпиадников",
+      "url": "https://astv.ru/news/society/2026-10-23-rossijskim-vuzam-dobavyat-byudzhetnye-mesta-iz-za-naplyva-olimpiadnikov",
+      "image_url": "https://astv.ru/content/NewsImage/26/0c/260cb34d-4f69-4286-bbe4-81814d150a3e_3.jpg",
+      "image_hash": "56bfae57da5c91b447d6c7c99ae203955d728f63",
+      "topic_cluster": "ru_eco:российским_вузам_добавят_бюджетные_места_наплыва",
+      "published_at": "2026-10-22T13:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "ru_eco",
+        "corrected_category": "ru_eco",
+        "group": "ru_eco",
+        "event_type": "macro_economy",
+        "subtype": "macro_economy",
+        "seriousness": 85,
+        "threshold": 80,
+        "selection_utility": 36.0,
+        "slot": 2,
+        "risks": [],
+        "title_original": "Российским вузам добавят бюджетные места из-за наплыва олимпиадников",
+        "title_corrected": "Российским вузам добавят бюджетные места из-за наплыва олимпиадников",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Необходимость изменений возникла после приемной кампании Необходимость изменений возникла после приемной кампании Ведущим российским университетам увеличат число бюджетных мест по наиболее востребованным специальностям. Об этом сообщает \"Интерфакс\". Необходимость изменений возникла после приемной кампании, когда в ряде вузов все бюджетные места по некоторым направлениям заняли победители и призеры олимпиад. Такая ситуация сложилась в 20 ведущих университетах страны. Одновременно число абитуриентов, получивших 100 баллов на ЕГЭ, выросло сразу на 40,9%.",
+      "title_original": null,
+      "footer": "РОССИЯ | ЭКОНОМИКА",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Российским вузам добавят бюджетные места из-за наплыва олимпиадников",
+        "body": [
+          "Необходимость изменений возникла после приемной кампании, когда в ряде вузов все бюджетные места по некоторым направлениям заняли победители и призеры олимпиад. Такая ситуация сложилась в 20 ведущих университетах страны.",
+          "Одновременно число абитуриентов, получивших 100 баллов на ЕГЭ, выросло сразу на 40,9%."
+        ],
+        "footer": "РОССИЯ | ЭКОНОМИКА",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh",
+          "reclassified_to": "ru_eco"
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 85,
+          "threshold": 80,
+          "selection_utility": 36.0,
+          "slot": 2,
+          "risks": [],
+          "title_original": "Российским вузам добавят бюджетные места из-за наплыва олимпиадников",
+          "title_corrected": "Российским вузам добавят бюджетные места из-за наплыва олимпиадников",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "ru_eco",
+          "final_category": "ru_eco",
+          "event_type": "macro_economy",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.7",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "ru_eco",
+            "corrected_category": "ru_eco",
+            "group": "ru_eco",
+            "event_type": "macro_economy",
+            "subtype": "macro_economy",
+            "seriousness": 85,
+            "threshold": 80,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Российским вузам добавят бюджетные места из-за наплыва олимпиадников",
+            "title_corrected": "Российским вузам добавят бюджетные места из-за наплыва олимпиадников",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "🇷🇺 Россия / экономика\n\n<b>Российским вузам добавят бюджетные места из-за наплыва олимпиадников</b>\n\nНеобходимость изменений возникла после приемной кампании, когда в ряде вузов все бюджетные места по некоторым направлениям заняли победители и призеры олимпиад. Такая ситуация сложилась в 20 ведущих университетах страны.\n\nОдновременно число абитуриентов, получивших 100 баллов на ЕГЭ, выросло сразу на 40,9%.\n\nРОССИЯ | ЭКОНОМИКА · <a href=\"https://astv.ru/news/society/2026-10-23-rossijskim-vuzam-dobavyat-byudzhetnye-mesta-iz-za-naplyva-olimpiadnikov\">ASTV</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_eco",
+        "final_category": "ru_eco",
+        "event_type": "macro_economy",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.7",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 85,
+          "threshold": 80,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Российским вузам добавят бюджетные места из-за наплыва олимпиадников",
+          "title_corrected": "Российским вузам добавят бюджетные места из-за наплыва олимпиадников",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 496,
       "telegram_chat_id": -1003918486965,
       "media_required": true,
       "media_type": "photo",
@@ -15572,9 +15561,9 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-10-24T09:04:42+11:00",
+    "started_sakhalin": "2026-10-24T10:04:32+11:00",
     "status": "ok",
-    "candidates": 10,
+    "candidates": 8,
     "published": 1,
     "local_candidates": 0,
     "local_stream": {
@@ -15585,7 +15574,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 13
+          "recent": 14
         },
         {
           "source": "SakhalinMedia",
@@ -15607,36 +15596,36 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-10-24T09:08:09+11:00",
+    "finished_sakhalin": "2026-10-24T10:07:15+11:00",
     "stats": {
-      "rss_seen": 139,
-      "old_skip": 57,
+      "rss_seen": 138,
+      "old_skip": 58,
       "google_skip": 11,
       "duplicate_skip": 1,
-      "low_info_skip": 14,
-      "category_skip": 38,
+      "low_info_skip": 13,
+      "category_skip": 37,
       "no_image_skip": 0,
       "bad_image_skip": 7,
       "logo_image_skip": 3,
-      "text_card_image_skip": 4,
-      "candidates": 15,
+      "text_card_image_skip": 6,
+      "candidates": 16,
       "rewrite_retry": 4,
-      "editorial_skip": 8,
+      "editorial_skip": 7,
       "telegram_fail": 0,
       "published": 1,
       "telegram_source_attempt": 4,
       "telegram_source_fail": 0,
-      "telegram_source_seen": 59,
+      "telegram_source_seen": 60,
       "telegram_source_candidates": 27,
       "ai_calls": 4,
       "ai_budget_exhausted": 1,
-      "ai_api_fail": 2,
-      "evidence_reject": 2,
-      "validation_reject": 2,
+      "ai_api_fail": 4,
+      "evidence_reject": 0,
+      "validation_reject": 0,
       "extractive_fallback": 1,
       "extractive_first": 1,
-      "editorial_prechecked": 50,
-      "editorial_gate_checked": 9,
+      "editorial_prechecked": 52,
+      "editorial_gate_checked": 8,
       "editorial_gate_pass": 1,
       "editorial_gate_reject": 0,
       "editorial_gate_fallback": 0,
@@ -15645,19 +15634,19 @@
       "editorial_title_reject": 0,
       "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 5,
-      "editorial_offtopic_reject": 30,
+      "editorial_reclassified": 4,
+      "editorial_offtopic_reject": 31,
       "openrouter_empty_content": 0,
       "openrouter_model_fallback": 0,
-      "openrouter_attempts": 8,
-      "openrouter_retries": 4,
+      "openrouter_attempts": 12,
+      "openrouter_retries": 8,
       "openrouter_invalid_json": 0,
-      "openrouter_success": 2,
+      "openrouter_success": 0,
       "openrouter_circuit_open": 0,
       "editorial_grounded_translation_fallback": 0,
       "media_required_skip": 5,
       "media_generic_skip": 0,
-      "media_ready_candidates": 15,
+      "media_ready_candidates": 16,
       "photo_retry": 0,
       "photo_publish": 1,
       "photo_upload_original": 1,
@@ -15671,11 +15660,11 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 15,
-      "director_approved": 10,
-      "director_rejected": 5,
+      "director_seen": 16,
+      "director_approved": 8,
+      "director_rejected": 8,
       "director_reclassified": 0,
-      "director_title_corrected": 4,
+      "director_title_corrected": 3,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
       "director_final_checked": 1,
@@ -15696,243 +15685,6 @@
       "policy_version": "policy-v2.7",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
-        "window": 20,
-        "targets": {
-          "local": 6,
-          "ru_pol": 4,
-          "ru_eco": 4,
-          "ru_safety": 3,
-          "world": 2,
-          "it": 1
-        },
-        "target_percent": {
-          "local": 30.0,
-          "ru_pol": 20.0,
-          "ru_eco": 20.0,
-          "ru_safety": 15.0,
-          "world": 10.0,
-          "it": 5.0
-        },
-        "counts": {
-          "local": 6,
-          "ru_pol": 2,
-          "ru_eco": 4,
-          "ru_safety": 0,
-          "world": 1,
-          "it": 7
-        },
-        "scaled_targets": {
-          "local": 6.0,
-          "ru_pol": 4.0,
-          "ru_eco": 4.0,
-          "ru_safety": 3.0,
-          "world": 2.0,
-          "it": 1.0
-        },
-        "deficits": {
-          "local": 0.0,
-          "ru_pol": 2.0,
-          "ru_eco": 0.0,
-          "ru_safety": 3.0,
-          "world": 1.0,
-          "it": -6.0
-        },
-        "distribution_error": 12.0,
-        "subtype_counts": {
-          "major_it": 7,
-          "macro_economy": 5,
-          "severe_weather": 1,
-          "political_decision": 2,
-          "military_security": 1,
-          "violent_crime": 1,
-          "major_emergency": 2,
-          "public_service_disruption": 1
-        },
-        "sequence": [
-          "it",
-          "ru_eco",
-          "local",
-          "ru_eco",
-          "ru_eco",
-          "it",
-          "ru_pol",
-          "world",
-          "local",
-          "it",
-          "local",
-          "it",
-          "local",
-          "local",
-          "it",
-          "local",
-          "it",
-          "ru_pol",
-          "it",
-          "ru_eco"
-        ],
-        "category_sequence": [
-          "it",
-          "ru_eco",
-          "sakh",
-          "ru_eco",
-          "ru_eco",
-          "it",
-          "ru_pol",
-          "geo",
-          "sakh_chp",
-          "it",
-          "sakh_chp",
-          "it",
-          "sakh_chp",
-          "sakh",
-          "it",
-          "sakh",
-          "it",
-          "ru_pol",
-          "it",
-          "ru_eco"
-        ],
-        "source_sequence": [
-          "techmedia techmedia",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "astv",
-          "sakh.online",
-          "sakh.online",
-          "techmedia techmedia",
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "techmedia techmedia",
-          "sakh.online",
-          "exploit exploitex",
-          "sakhalinmedia.ru",
-          "techmedia techmedia",
-          "sakh.online"
-        ],
-        "retrospective_anomalies": [],
-        "valid_posts_counted": 20
-      },
-      "candidate_count": 15,
-      "approved_count": 10,
-      "rejected_count": 5,
-      "rejected_by_reason": {
-        "importance_below_threshold": 3,
-        "ordinary_weather_not_release_worthy": 1,
-        "unsafe_or_malformed_headline": 1
-      },
-      "ai_review_requested": 0,
-      "ai_review_received": 0,
-      "selected_groups": [
-        "world",
-        "ru_eco"
-      ],
-      "projected_distribution_error": 10.0,
-      "projected_counts": {
-        "local": 6,
-        "ru_eco": 4,
-        "it": 6,
-        "ru_pol": 2,
-        "world": 2
-      },
-      "projected_length": 20,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "\"Это должно прекратиться\": Член Конгресса назвала социопатами желающих продления конфликта на Украине политиков США",
-          "category_key": "geo",
-          "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 87,
-          "utility": 121.0
-        },
-        {
-          "slot": 2,
-          "title": "ЦБ сохранил ключевую ставку на уровне 14%",
-          "category_key": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "seriousness": 86,
-          "utility": 89.0
-        },
-        {
-          "slot": "backup",
-          "title": "Трамп опроверг заявление американского посла в Турции Тома Баррака о возможности удара по Ирану в эти выходные",
-          "category_key": "geo",
-          "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 82,
-          "utility": 62.0
-        },
-        {
-          "slot": "backup",
-          "title": "Российским вузам добавят бюджетные места из-за наплыва олимпиадников",
-          "category_key": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "seriousness": 85,
-          "utility": 37.0
-        },
-        {
-          "slot": "backup",
-          "title": "AI (artificial intelligence) | The Guardian",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 89,
-          "utility": -151.0
-        },
-        {
-          "slot": "backup",
-          "title": "AI could make half of all entry-level white-collar jobs vanish, Anthropic CEO warns | Fortune",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 89,
-          "utility": -151.0
-        },
-        {
-          "slot": "backup",
-          "title": "‘Pure arrogance’: anger in Finland as Google illegally fells 250,000 trees for datacentre",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 88,
-          "utility": -152.0
-        },
-        {
-          "slot": "backup",
-          "title": "iPhone Duo за 300 тысяч рублей может треснуть в первый день продаж — владельцы складного телефона от Apple жалуются на одинаковую проблему с экраном 🫠",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 81,
-          "utility": -159.0
-        },
-        {
-          "slot": "backup",
-          "title": "В Telegram можно будет «жонглировать» нейросетями — в бета-версии для macOS нашли фичу «Agent», которая позволяет подключить разные ИИ и переключаться между ними прямо в мессенджер",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 80,
-          "utility": -160.0
-        },
-        {
-          "slot": "backup",
-          "title": "Нейросети достигли своего пика: ChatGPT смог посчитать количество кукурузы на одном побеге по одной фотографии",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 80,
-          "utility": -160.0
-        }
-      ],
-      "rolling_balance_after": {
         "window": 20,
         "targets": {
           "local": 6,
@@ -16053,11 +15805,232 @@
         ],
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
+      },
+      "candidate_count": 16,
+      "approved_count": 8,
+      "rejected_count": 8,
+      "rejected_by_reason": {
+        "importance_below_threshold": 3,
+        "low_scale_incident_not_release_worthy": 1,
+        "ordinary_weather_not_release_worthy": 2,
+        "routine_traffic_statistics": 1,
+        "unsafe_or_malformed_headline": 1
+      },
+      "ai_review_requested": 0,
+      "ai_review_received": 0,
+      "selected_groups": [
+        "world",
+        "ru_eco"
+      ],
+      "projected_distribution_error": 12.0,
+      "projected_counts": {
+        "ru_eco": 5,
+        "it": 6,
+        "ru_pol": 2,
+        "world": 2,
+        "local": 5
+      },
+      "projected_length": 20,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "\"Это должно прекратиться\": Член Конгресса назвала социопатами желающих продления конфликта на Украине политиков США",
+          "category_key": "geo",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "seriousness": 87,
+          "utility": 121.0
+        },
+        {
+          "slot": 2,
+          "title": "Российским вузам добавят бюджетные места из-за наплыва олимпиадников",
+          "category_key": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "seriousness": 85,
+          "utility": 36.0
+        },
+        {
+          "slot": "backup",
+          "title": "AI (artificial intelligence) | The Guardian",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 89,
+          "utility": -111.0
+        },
+        {
+          "slot": "backup",
+          "title": "AI could make half of all entry-level white-collar jobs vanish, Anthropic CEO warns | Fortune",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 89,
+          "utility": -111.0
+        },
+        {
+          "slot": "backup",
+          "title": "‘Pure arrogance’: anger in Finland as Google illegally fells 250,000 trees for datacentre",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 88,
+          "utility": -112.0
+        },
+        {
+          "slot": "backup",
+          "title": "iPhone Duo за 300 тысяч рублей может треснуть в первый день продаж — владельцы складного телефона от Apple жалуются на одинаковую проблему с экраном 🫠",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 81,
+          "utility": -119.0
+        },
+        {
+          "slot": "backup",
+          "title": "В Telegram можно будет «жонглировать» нейросетями — в бета-версии для macOS нашли фичу «Agent», которая позволяет подключить разные ИИ и переключаться между ними прямо в мессенджер",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 80,
+          "utility": -120.0
+        },
+        {
+          "slot": "backup",
+          "title": "Нейросети достигли своего пика: ChatGPT смог посчитать количество кукурузы на одном побеге по одной фотографии",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 80,
+          "utility": -120.0
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 20,
+        "targets": {
+          "local": 6,
+          "ru_pol": 4,
+          "ru_eco": 4,
+          "ru_safety": 3,
+          "world": 2,
+          "it": 1
+        },
+        "target_percent": {
+          "local": 30.0,
+          "ru_pol": 20.0,
+          "ru_eco": 20.0,
+          "ru_safety": 15.0,
+          "world": 10.0,
+          "it": 5.0
+        },
+        "counts": {
+          "local": 6,
+          "ru_pol": 2,
+          "ru_eco": 5,
+          "ru_safety": 0,
+          "world": 1,
+          "it": 6
+        },
+        "scaled_targets": {
+          "local": 6.0,
+          "ru_pol": 4.0,
+          "ru_eco": 4.0,
+          "ru_safety": 3.0,
+          "world": 2.0,
+          "it": 1.0
+        },
+        "deficits": {
+          "local": 0.0,
+          "ru_pol": 2.0,
+          "ru_eco": -1.0,
+          "ru_safety": 3.0,
+          "world": 1.0,
+          "it": -5.0
+        },
+        "distribution_error": 12.0,
+        "subtype_counts": {
+          "severe_weather": 1,
+          "macro_economy": 6,
+          "major_it": 6,
+          "political_decision": 2,
+          "military_security": 1,
+          "violent_crime": 1,
+          "major_emergency": 2,
+          "public_service_disruption": 1
+        },
+        "sequence": [
+          "local",
+          "ru_eco",
+          "ru_eco",
+          "it",
+          "ru_pol",
+          "world",
+          "local",
+          "it",
+          "local",
+          "it",
+          "local",
+          "local",
+          "it",
+          "local",
+          "it",
+          "ru_pol",
+          "it",
+          "ru_eco",
+          "ru_eco",
+          "ru_eco"
+        ],
+        "category_sequence": [
+          "sakh",
+          "ru_eco",
+          "ru_eco",
+          "it",
+          "ru_pol",
+          "geo",
+          "sakh_chp",
+          "it",
+          "sakh_chp",
+          "it",
+          "sakh_chp",
+          "sakh",
+          "it",
+          "sakh",
+          "it",
+          "ru_pol",
+          "it",
+          "ru_eco",
+          "ru_eco",
+          "ru_eco"
+        ],
+        "source_sequence": [
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "exploit exploitex",
+          "astv",
+          "sakh.online",
+          "sakh.online",
+          "techmedia techmedia",
+          "sakhalinmedia.ru",
+          "exploit exploitex",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "techmedia techmedia",
+          "sakh.online",
+          "exploit exploitex",
+          "sakhalinmedia.ru",
+          "techmedia techmedia",
+          "sakh.online",
+          "astv",
+          "astv"
+        ],
+        "retrospective_anomalies": [],
+        "valid_posts_counted": 20
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-10-23T22:04:50+00:00",
+      "checked_at": "2026-10-23T23:04:41+00:00",
       "checked": 20,
       "passed": 20,
       "anomalies": [],
@@ -16078,7 +16051,7 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 15,
+      "ready_candidates": 16,
       "missing_media_rejected": 5,
       "generic_media_rejected": 0,
       "photo_retries": 0,
@@ -16092,12 +16065,12 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 50,
-      "checked": 9,
+      "prechecked": 52,
+      "checked": 8,
       "passed": 1,
       "rejected": 0,
-      "reclassified": 5,
-      "offtopic_reject": 30,
+      "reclassified": 4,
+      "offtopic_reject": 31,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
@@ -16171,8 +16144,8 @@
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "macro_economy": 6,
       "severe_weather": 1,
+      "macro_economy": 6,
       "major_it": 6,
       "political_decision": 2,
       "military_security": 1,
@@ -16181,7 +16154,6 @@
       "public_service_disruption": 1
     },
     "sequence": [
-      "ru_eco",
       "local",
       "ru_eco",
       "ru_eco",
@@ -16200,10 +16172,10 @@
       "ru_pol",
       "it",
       "ru_eco",
+      "ru_eco",
       "ru_eco"
     ],
     "category_sequence": [
-      "ru_eco",
       "sakh",
       "ru_eco",
       "ru_eco",
@@ -16222,10 +16194,10 @@
       "ru_pol",
       "it",
       "ru_eco",
+      "ru_eco",
       "ru_eco"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
@@ -16244,6 +16216,7 @@
       "sakhalinmedia.ru",
       "techmedia techmedia",
       "sakh.online",
+      "astv",
       "astv"
     ],
     "retrospective_anomalies": [],
@@ -22160,7 +22133,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-23T22:04:50+00:00",
+    "checked_at": "2026-10-23T23:04:41+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -23108,7 +23081,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-10-23T22:04:41+00:00",
+    "checked_at_utc": "2026-10-23T23:04:31+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -23131,31 +23104,31 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-10-23T22:08:09+00:00",
+    "checked_at_utc": "2026-10-23T23:07:15+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-23T22:08:09+00:00",
+    "checked_at_utc": "2026-10-23T23:07:15+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 10,
+    "director_approved": 8,
     "ai_calls": 4,
-    "ai_api_fail": 2,
+    "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-10-23T22:08:09+00:00",
+    "checked_at_utc": "2026-10-23T23:07:15+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-10-24T09:08:09+11:00",
-      "candidates": 10,
+      "finished_sakhalin": "2026-10-24T10:07:15+11:00",
+      "candidates": 8,
       "queued_for_delivery": 0
     },
     "generation": {
