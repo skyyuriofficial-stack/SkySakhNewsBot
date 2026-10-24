@@ -1,42 +1,30 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-24T21:07:38+00:00",
-  "checked_at_sakhalin": "2026-10-25T08:07:32+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-24T21:12:52+00:00",
+  "checked_at_sakhalin": "2026-10-25T08:12:48+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 9.62,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-25T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-24T22:30:19+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-24T22:30:19+11:00",
-    "age_hours": 9.62,
+    "finished_sakhalin": "2026-10-25T08:12:25+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-24T11:30:19+00:00",
+    "checked_at_utc": "2026-10-24T21:12:25+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 4,
+    "director_approved": 5,
     "ai_calls": 4,
     "ai_api_fail": 3,
-    "ai_budget_exhausted": 0,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
@@ -64,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-24T21:07:36+00:00",
+    "checked_at": "2026-10-24T21:12:51+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -77,19 +65,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 474,
-      "title": "Бизнес получил от СберСтрахования почти 8 млрд рублей за три квартала 2026 года",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 475,
       "title": "В России хотят упростить ввоз иностранной электроники — Samsung, Intel и ещё 20 брендов могут стать доступнее",
@@ -336,6 +311,19 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 500,
+      "title": "Губернаторский контроль выявил проблемы c подтоплением домов в Охе",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -357,9 +345,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 6,
+      "local": 7,
       "ru_pol": 2,
-      "ru_eco": 4,
+      "ru_eco": 3,
       "ru_safety": 0,
       "world": 1,
       "it": 7
@@ -373,26 +361,25 @@
       "it": 1.0
     },
     "deficits": {
-      "local": 0.0,
+      "local": -1.0,
       "ru_pol": 2.0,
-      "ru_eco": 0.0,
+      "ru_eco": 1.0,
       "ru_safety": 3.0,
       "world": 1.0,
       "it": -6.0
     },
-    "distribution_error": 12.0,
+    "distribution_error": 14.0,
     "subtype_counts": {
-      "macro_economy": 5,
       "major_it": 7,
       "political_decision": 2,
       "military_security": 1,
       "violent_crime": 1,
-      "major_emergency": 2,
+      "major_emergency": 3,
       "public_service_disruption": 1,
+      "macro_economy": 4,
       "fatal_incident": 1
     },
     "sequence": [
-      "ru_eco",
       "it",
       "ru_pol",
       "world",
@@ -411,10 +398,10 @@
       "ru_eco",
       "ru_eco",
       "local",
-      "it"
+      "it",
+      "local"
     ],
     "category_sequence": [
-      "ru_eco",
       "it",
       "ru_pol",
       "geo",
@@ -433,10 +420,10 @@
       "ru_eco",
       "ru_eco",
       "sakh_chp",
-      "it"
+      "it",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "exploit exploitex",
       "astv",
       "sakh.online",
@@ -455,14 +442,15 @@
       "astv",
       "astv",
       "astv",
-      "guardian technology"
+      "guardian technology",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-24T21:07:29+00:00",
+    "checked_at_utc": "2026-10-24T21:12:46+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -492,12 +480,12 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 12.0,
+      "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
-        "local": 6,
+        "local": 7,
         "ru_pol": 2,
-        "ru_eco": 4,
+        "ru_eco": 3,
         "ru_safety": 0,
         "world": 1,
         "it": 7
@@ -511,9 +499,9 @@
         "it": 1
       },
       "deficits": {
-        "local": 0.0,
+        "local": -1.0,
         "ru_pol": 2.0,
-        "ru_eco": 0.0,
+        "ru_eco": 1.0,
         "ru_safety": 3.0,
         "world": 1.0,
         "it": -6.0
