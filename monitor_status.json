@@ -1,41 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-25T21:40:52+00:00",
-  "checked_at_sakhalin": "2026-10-26T08:40:46+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-25T21:44:55+00:00",
+  "checked_at_sakhalin": "2026-10-26T08:44:49+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 9.36,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-26T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-25T23:19:03+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-25T23:19:03+11:00",
-    "age_hours": 9.36,
-    "published": 1
+    "finished_sakhalin": "2026-10-26T08:44:23+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-25T12:19:03+00:00",
+    "checked_at_utc": "2026-10-25T21:44:23+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 3,
-    "ai_calls": 2,
-    "ai_api_fail": 2,
+    "published": 2,
+    "director_approved": 4,
+    "ai_calls": 0,
+    "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 1
@@ -64,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-25T21:40:50+00:00",
+    "checked_at": "2026-10-25T21:44:53+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -77,32 +65,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 479,
-      "title": "Сахалинца заключили под стражу по обвинению в убийстве женщины",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 480,
-      "title": "Мировой интернет под угрозой прямо сейчас — обнаружены сразу две критические уязвимости с опасностью 9,2 из 10 по шкале CVSS 4.0",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 481,
       "title": "Два человека пострадали в ДТП с выездом на встречную полосу на Сахалине",
@@ -336,6 +298,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 506,
+      "title": "ИИ может найти ваших предков до 10 поколения — энтузиаст создал опенсорсный скилл для Codex и Claude Code, который помогает исследовать семейную историю на территории бывшего СССР",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
+    },
+    {
+      "message_id": 507,
+      "title": "На сахалинского медбрата напали во время вызова — дело дошло до суда",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -382,17 +370,15 @@
     },
     "distribution_error": 18.0,
     "subtype_counts": {
-      "violent_crime": 2,
-      "major_it": 6,
       "major_emergency": 3,
+      "major_it": 6,
       "public_service_disruption": 1,
       "macro_economy": 4,
       "political_decision": 1,
-      "fatal_incident": 3
+      "fatal_incident": 3,
+      "violent_crime": 2
     },
     "sequence": [
-      "local",
-      "it",
       "local",
       "it",
       "local",
@@ -410,14 +396,14 @@
       "local",
       "local",
       "local",
+      "local",
+      "it",
       "local"
     ],
     "category_sequence": [
       "sakh_chp",
       "it",
       "sakh_chp",
-      "it",
-      "sakh_chp",
       "sakh",
       "it",
       "sakh",
@@ -432,11 +418,11 @@
       "sakh_chp",
       "sakh_chp",
       "sakh_chp",
+      "sakh_chp",
+      "it",
       "sakh_chp"
     ],
     "source_sequence": [
-      "sakh.online",
-      "techmedia techmedia",
       "sakhalinmedia.ru",
       "exploit exploitex",
       "sakh.online",
@@ -454,14 +440,16 @@
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "exploit exploitex",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-25T21:40:43+00:00",
+    "checked_at_utc": "2026-10-25T21:44:46+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
