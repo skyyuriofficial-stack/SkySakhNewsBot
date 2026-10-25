@@ -1,29 +1,22 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-25T12:14:35+00:00",
-  "checked_at_sakhalin": "2026-10-25T23:14:31+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-25T12:19:33+00:00",
+  "checked_at_sakhalin": "2026-10-25T23:19:27+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-25T22:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-25T20:55:24+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-25T20:55:24+11:00",
-    "age_hours": 2.32,
+    "finished_sakhalin": "2026-10-25T23:19:03+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-25T09:55:24+00:00",
+    "checked_at_utc": "2026-10-25T12:19:03+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
@@ -33,7 +26,7 @@
     "ai_api_fail": 2,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
-    "publication_contract_blocked": 0
+    "publication_contract_blocked": 1
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -84,7 +77,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-25T12:14:34+00:00",
+    "checked_at": "2026-10-25T12:19:31+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -97,19 +90,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 478,
-      "title": "МИД РФ пообещал жесткий ответ на поставки японских беспилотников Украине",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "geo",
-      "title_issues": []
-    },
     {
       "message_id": 479,
       "title": "Сахалинца заключили под стражу по обвинению в убийстве женщины",
@@ -356,6 +336,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 505,
+      "title": "Огнеборцы потушили пожар в подсобном помещении Холмска",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -377,11 +370,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 9,
+      "local": 10,
       "ru_pol": 1,
       "ru_eco": 3,
       "ru_safety": 0,
-      "world": 1,
+      "world": 0,
       "it": 6
     },
     "scaled_targets": {
@@ -393,26 +386,24 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -3.0,
+      "local": -4.0,
       "ru_pol": 3.0,
       "ru_eco": 1.0,
       "ru_safety": 3.0,
-      "world": 1.0,
+      "world": 2.0,
       "it": -5.0
     },
-    "distribution_error": 16.0,
+    "distribution_error": 18.0,
     "subtype_counts": {
-      "military_security": 1,
       "violent_crime": 2,
       "major_it": 6,
       "major_emergency": 3,
       "public_service_disruption": 1,
       "macro_economy": 4,
       "political_decision": 1,
-      "fatal_incident": 2
+      "fatal_incident": 3
     },
     "sequence": [
-      "world",
       "local",
       "it",
       "local",
@@ -429,12 +420,12 @@
       "ru_eco",
       "local",
       "it",
+      "local",
       "local",
       "local",
       "local"
     ],
     "category_sequence": [
-      "geo",
       "sakh_chp",
       "it",
       "sakh_chp",
@@ -453,10 +444,10 @@
       "it",
       "sakh_chp",
       "sakh_chp",
+      "sakh_chp",
       "sakh_chp"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakh.online",
       "techmedia techmedia",
       "sakhalinmedia.ru",
@@ -475,6 +466,7 @@
       "guardian technology",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -482,7 +474,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-25T12:14:29+00:00",
+    "checked_at_utc": "2026-10-25T12:19:25+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -512,14 +504,14 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 16.0,
+      "distribution_error": 18.0,
       "limit": 8.0,
       "counts": {
-        "local": 9,
+        "local": 10,
         "ru_pol": 1,
         "ru_eco": 3,
         "ru_safety": 0,
-        "world": 1,
+        "world": 0,
         "it": 6
       },
       "targets": {
@@ -531,11 +523,11 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.0,
+        "local": -4.0,
         "ru_pol": 3.0,
         "ru_eco": 1.0,
         "ru_safety": 3.0,
-        "world": 1.0,
+        "world": 2.0,
         "it": -5.0
       }
     }
