@@ -1,51 +1,20 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-10-25T09:58:52+00:00",
-  "last_run_sakhalin": "2026-10-25T20:58:52+11:00",
-  "mode": "evening",
+  "last_run_utc": "2026-10-25T22:32:10+00:00",
+  "last_run_sakhalin": "2026-10-26T09:32:10+11:00",
+  "mode": "morning",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 504,
+  "telegram_message_id": 508,
   "evidence_count": 3,
-  "evidence_hash": "59347b4412644b6b1b6194356aee0985feb5f66f0e78a99866a06e1b5aa7cf79",
-  "headline": "Pending law proposes penalties for ignoring wartime official orders",
+  "evidence_hash": "7a058980cf1af37d62c03a4623cb9f7a34f9a3abbc61659ba7b930b9e82631f4",
+  "headline": "Legal amendment adds penalties for non‑compliance with mobilization orders",
   "source_ids": [
     1,
-    2
+    2,
+    3
   ],
   "slots": {
-    "2026-10-05": {
-      "morning": {
-        "status": "ok",
-        "published_at_utc": "2026-10-04T22:30:36+00:00",
-        "published_at_sakhalin": "2026-10-05T09:30:36+11:00",
-        "telegram_message_id": 346,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 7,
-        "evidence_hash": "d36273c88ec019b72b5e00eaee1d046b303fb3e62ac2ff6b897b5aa44d1d8f44",
-        "source_ids": [
-          1,
-          2,
-          3,
-          4
-        ]
-      },
-      "evening": {
-        "status": "ok",
-        "published_at_utc": "2026-10-05T08:52:55+00:00",
-        "published_at_sakhalin": "2026-10-05T19:52:55+11:00",
-        "telegram_message_id": 350,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 7,
-        "evidence_hash": "160b8eb082d897601d4ab32b7af41788771389ad164a3d2753bd1d6a7ab0a105",
-        "source_ids": [
-          1,
-          2,
-          3,
-          4
-        ]
-      }
-    },
     "2026-10-06": {
       "morning": {
         "status": "ok",
@@ -651,13 +620,29 @@
           2
         ]
       }
+    },
+    "2026-10-26": {
+      "morning": {
+        "status": "ok",
+        "published_at_utc": "2026-10-25T22:32:10+00:00",
+        "published_at_sakhalin": "2026-10-26T09:32:10+11:00",
+        "telegram_message_id": 508,
+        "headline": "Legal amendment adds penalties for non‑compliance with mobilization orders",
+        "evidence_count": 3,
+        "evidence_hash": "7a058980cf1af37d62c03a4623cb9f7a34f9a3abbc61659ba7b930b9e82631f4",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "evening",
-    "at_utc": "2026-10-25T09:58:52+00:00",
-    "at_sakhalin": "2026-10-25T20:58:52+11:00"
+    "mode": "morning",
+    "at_utc": "2026-10-25T22:32:10+00:00",
+    "at_sakhalin": "2026-10-26T09:32:10+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-10-01T06:24:52+00:00",
