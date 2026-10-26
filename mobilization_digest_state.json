@@ -1,14 +1,14 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-10-25T22:32:10+00:00",
-  "last_run_sakhalin": "2026-10-26T09:32:10+11:00",
-  "mode": "morning",
+  "last_run_utc": "2026-10-26T11:29:08+00:00",
+  "last_run_sakhalin": "2026-10-26T22:29:08+11:00",
+  "mode": "evening",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 508,
-  "evidence_count": 3,
-  "evidence_hash": "7a058980cf1af37d62c03a4623cb9f7a34f9a3abbc61659ba7b930b9e82631f4",
-  "headline": "Legal amendment adds penalties for non‑compliance with mobilization orders",
+  "telegram_message_id": 511,
+  "evidence_count": 4,
+  "evidence_hash": "6d1db8789c174f3ed94dcb2307ebb97a738a584afd9c5ec17124af6d91e00a8a",
+  "headline": "Legal tightening of compliance with regional mobilization orders",
   "source_ids": [
     1,
     2,
@@ -635,14 +635,28 @@
           2,
           3
         ]
+      },
+      "evening": {
+        "status": "ok",
+        "published_at_utc": "2026-10-26T11:29:08+00:00",
+        "published_at_sakhalin": "2026-10-26T22:29:08+11:00",
+        "telegram_message_id": 511,
+        "headline": "Legal tightening of compliance with regional mobilization orders",
+        "evidence_count": 4,
+        "evidence_hash": "6d1db8789c174f3ed94dcb2307ebb97a738a584afd9c5ec17124af6d91e00a8a",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
       }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "morning",
-    "at_utc": "2026-10-25T22:32:10+00:00",
-    "at_sakhalin": "2026-10-26T09:32:10+11:00"
+    "mode": "evening",
+    "at_utc": "2026-10-26T11:29:08+00:00",
+    "at_sakhalin": "2026-10-26T22:29:08+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-10-01T06:24:52+00:00",
