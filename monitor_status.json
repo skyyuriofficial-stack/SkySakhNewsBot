@@ -1,39 +1,32 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-26T00:10:23+00:00",
-  "checked_at_sakhalin": "2026-10-26T11:10:19+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-26T00:17:23+00:00",
+  "checked_at_sakhalin": "2026-10-26T11:17:17+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-26T10:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-26T08:44:23+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-26T08:44:23+11:00",
-    "age_hours": 2.43,
+    "finished_sakhalin": "2026-10-26T11:16:47+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-25T21:44:23+00:00",
+    "checked_at_utc": "2026-10-26T00:16:47+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 4,
-    "ai_calls": 0,
-    "ai_api_fail": 0,
+    "director_approved": 6,
+    "ai_calls": 4,
+    "ai_api_fail": 1,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
-    "publication_contract_blocked": 1
+    "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -72,7 +65,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-26T00:10:22+00:00",
+    "checked_at": "2026-10-26T00:17:21+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -85,32 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 481,
-      "title": "Два человека пострадали в ДТП с выездом на встречную полосу на Сахалине",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 482,
-      "title": "Сразу две критические уязвимости в PHP поставили на колени весь интернет — компании и целые государства отключают свои сайты, чтобы не стать жертвой хакеров",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 483,
       "title": "Переселение из аварийного жилья на Сахалине: итоги, цифры и планы на 2026 год",
@@ -344,6 +311,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 509,
+      "title": "На медбрата скорой помощи на Сахалине напали на вызове - у мужчины тяжелые травмы",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 510,
+      "title": "Китайцы нашли способ разблокировать всю мощность видеокарт Nvidia — вышел анлокер, который снимает ограничение с карточек серий RTX30xx и RTX40xx ",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -390,18 +383,16 @@
     },
     "distribution_error": 18.0,
     "subtype_counts": {
-      "major_emergency": 3,
-      "major_it": 6,
+      "major_emergency": 2,
       "public_service_disruption": 1,
+      "major_it": 6,
       "macro_economy": 4,
       "political_decision": 1,
       "fatal_incident": 3,
-      "violent_crime": 2
+      "violent_crime": 3
     },
     "sequence": [
       "local",
-      "it",
-      "local",
       "local",
       "it",
       "local",
@@ -418,12 +409,12 @@
       "local",
       "local",
       "it",
-      "local"
+      "local",
+      "local",
+      "it"
     ],
     "category_sequence": [
       "sakh_chp",
-      "it",
-      "sakh_chp",
       "sakh",
       "it",
       "sakh",
@@ -440,11 +431,11 @@
       "sakh_chp",
       "sakh_chp",
       "it",
-      "sakh_chp"
+      "sakh_chp",
+      "sakh_chp",
+      "it"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "exploit exploitex",
       "sakh.online",
       "sakhalinmedia.ru",
       "techmedia techmedia",
@@ -462,14 +453,16 @@
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "exploit exploitex",
-      "sakh.online"
+      "sakh.online",
+      "astv",
+      "exploit exploitex"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-26T00:10:17+00:00",
+    "checked_at_utc": "2026-10-26T00:17:14+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
