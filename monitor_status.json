@@ -1,52 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-26T23:29:53+00:00",
-  "checked_at_sakhalin": "2026-10-27T10:29:47+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-26T23:33:54+00:00",
+  "checked_at_sakhalin": "2026-10-27T10:33:48+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 12.09,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-27T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-26T22:24:13+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-10-27T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "evening",
-        "at_utc": "2026-10-26T11:29:08+00:00",
-        "at_sakhalin": "2026-10-26T22:29:08+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-26T22:24:13+11:00",
-    "age_hours": 12.09,
-    "published": 0
+    "finished_sakhalin": "2026-10-27T10:33:25+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-26T11:24:13+00:00",
+    "checked_at_utc": "2026-10-26T23:33:25+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 2,
-    "ai_calls": 2,
-    "ai_api_fail": 1,
+    "published": 2,
+    "director_approved": 7,
+    "ai_calls": 0,
+    "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 1
@@ -54,11 +31,24 @@
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-27",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-26T23:31:54+00:00",
+        "published_at_sakhalin": "2026-10-27T10:31:54+11:00",
+        "telegram_message_id": 512,
+        "headline": "Законодательное ужесточение ответственности за неподчинение мобилизационным решениям",
+        "evidence_count": 3,
+        "evidence_hash": "3d71253877e6c99ef88739034b3b2cb019dd94bdb5cfd96ec93f6940551ad99c",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     },
     "evening": {
       "due": false,
@@ -67,27 +57,15 @@
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "evening",
-      "at_utc": "2026-10-26T11:29:08+00:00",
-      "at_sakhalin": "2026-10-26T22:29:08+11:00"
+      "mode": "morning",
+      "at_utc": "2026-10-26T23:31:54+00:00",
+      "at_sakhalin": "2026-10-27T10:31:54+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-10-27T08:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "evening",
-          "at_utc": "2026-10-26T11:29:08+00:00",
-          "at_sakhalin": "2026-10-26T22:29:08+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-26T23:29:51+00:00",
+    "checked_at": "2026-10-26T23:33:52+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -100,32 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 483,
-      "title": "Переселение из аварийного жилья на Сахалине: итоги, цифры и планы на 2026 год",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 485,
-      "title": "Сотни жителей Южно-Сахалинска останутся без воды 23 октября",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 486,
       "title": "Мать оставила в завещании своего ребенка на воспитание ChatGPT — женщина из Абу-Даби передала чат-боту свои советы и ценности, чтобы тот воспитывал чадо",
@@ -359,6 +311,32 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 513,
+      "title": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
+    },
+    {
+      "message_id": 514,
+      "title": "Концессия дала Южно-Сахалинску почти 10 млрд на воду — бюджет лишь четверть",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -380,9 +358,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 10,
+      "local": 9,
       "ru_pol": 1,
-      "ru_eco": 3,
+      "ru_eco": 4,
       "ru_safety": 0,
       "world": 0,
       "it": 6
@@ -396,26 +374,23 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -4.0,
+      "local": -3.0,
       "ru_pol": 3.0,
-      "ru_eco": 1.0,
+      "ru_eco": 0.0,
       "ru_safety": 3.0,
       "world": 2.0,
       "it": -5.0
     },
-    "distribution_error": 18.0,
+    "distribution_error": 16.0,
     "subtype_counts": {
-      "major_emergency": 2,
-      "public_service_disruption": 1,
       "major_it": 6,
-      "macro_economy": 4,
+      "macro_economy": 6,
       "political_decision": 1,
       "fatal_incident": 3,
+      "major_emergency": 1,
       "violent_crime": 3
     },
     "sequence": [
-      "local",
-      "local",
       "it",
       "local",
       "it",
@@ -433,11 +408,11 @@
       "it",
       "local",
       "local",
-      "it"
+      "it",
+      "ru_eco",
+      "local"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "sakh",
       "it",
       "sakh",
       "it",
@@ -455,11 +430,11 @@
       "it",
       "sakh_chp",
       "sakh_chp",
-      "it"
+      "it",
+      "ru_eco",
+      "sakh"
     ],
     "source_sequence": [
-      "sakh.online",
-      "sakhalinmedia.ru",
       "techmedia techmedia",
       "sakh.online",
       "exploit exploitex",
@@ -477,14 +452,16 @@
       "exploit exploitex",
       "sakh.online",
       "astv",
-      "exploit exploitex"
+      "exploit exploitex",
+      "sakhalinmedia.ru",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-26T23:29:44+00:00",
+    "checked_at_utc": "2026-10-26T23:33:46+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -514,12 +491,12 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 18.0,
+      "distribution_error": 16.0,
       "limit": 8.0,
       "counts": {
-        "local": 10,
+        "local": 9,
         "ru_pol": 1,
-        "ru_eco": 3,
+        "ru_eco": 4,
         "ru_safety": 0,
         "world": 0,
         "it": 6
@@ -533,9 +510,9 @@
         "it": 1
       },
       "deficits": {
-        "local": -4.0,
+        "local": -3.0,
         "ru_pol": 3.0,
-        "ru_eco": 1.0,
+        "ru_eco": 0.0,
         "ru_safety": 3.0,
         "world": 2.0,
         "it": -5.0
