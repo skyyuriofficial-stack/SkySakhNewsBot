@@ -1,53 +1,54 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-27T23:10:53+00:00",
-  "checked_at_sakhalin": "2026-10-28T10:10:49+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-27T23:48:23+00:00",
+  "checked_at_sakhalin": "2026-10-28T10:48:18+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-10-28T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "evening",
-        "at_utc": "2026-10-27T09:01:38+00:00",
-        "at_sakhalin": "2026-10-27T20:01:38+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-28T08:20:19+11:00",
-    "age_hours": 1.84,
-    "published": 0
+    "finished_sakhalin": "2026-10-28T10:47:46+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-27T21:20:19+00:00",
+    "checked_at_utc": "2026-10-27T23:47:47+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 10,
+    "published": 1,
+    "director_approved": 9,
     "ai_calls": 4,
-    "ai_api_fail": 4,
+    "ai_api_fail": 2,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
-    "publication_contract_blocked": 1
+    "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-10-28",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-10-27T23:12:53+00:00",
+        "published_at_sakhalin": "2026-10-28T10:12:53+11:00",
+        "telegram_message_id": 517,
+        "headline": "Законопроект о штрафах за неисполнение решений военных штабов внесен в Госдуму",
+        "evidence_count": 3,
+        "evidence_hash": "8ded88014c0cc350ac473937b8dc67a27d7b0eb8e040d3a0107e9afe9a54fa51",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     },
     "evening": {
       "due": false,
@@ -56,27 +57,15 @@
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "evening",
-      "at_utc": "2026-10-27T09:01:38+00:00",
-      "at_sakhalin": "2026-10-27T20:01:38+11:00"
+      "mode": "morning",
+      "at_utc": "2026-10-27T23:12:53+00:00",
+      "at_sakhalin": "2026-10-28T10:12:53+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-10-28T08:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "evening",
-          "at_utc": "2026-10-27T09:01:38+00:00",
-          "at_sakhalin": "2026-10-27T20:01:38+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-27T23:10:52+00:00",
+    "checked_at": "2026-10-27T23:48:21+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -89,19 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 487,
-      "title": "На 28,7 млрд больше: как Сахалинская область перераспределила бюджет и усилила поддержку районов",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 488,
       "title": "Пока вы вайбкодите, Клод подъедает пельмени — «X5 Клуб» вместе с агентством Trend Surfers запилили виджет для Claude Code, который переводит потраченные токены в гречку, молоко, ба",
@@ -348,6 +324,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_pol",
       "title_issues": []
+    },
+    {
+      "message_id": 518,
+      "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "geo",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -369,11 +358,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 9,
+      "local": 8,
       "ru_pol": 2,
       "ru_eco": 4,
       "ru_safety": 0,
-      "world": 0,
+      "world": 1,
       "it": 5
     },
     "scaled_targets": {
@@ -385,24 +374,23 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -3.0,
+      "local": -2.0,
       "ru_pol": 2.0,
       "ru_eco": 0.0,
       "ru_safety": 3.0,
-      "world": 2.0,
+      "world": 1.0,
       "it": -4.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
-      "macro_economy": 6,
       "major_it": 5,
-      "political_decision": 2,
+      "political_decision": 3,
+      "macro_economy": 5,
       "fatal_incident": 3,
       "major_emergency": 1,
       "violent_crime": 3
     },
     "sequence": [
-      "local",
       "it",
       "ru_pol",
       "it",
@@ -421,10 +409,10 @@
       "it",
       "ru_eco",
       "local",
-      "ru_pol"
+      "ru_pol",
+      "world"
     ],
     "category_sequence": [
-      "sakh",
       "it",
       "ru_pol",
       "it",
@@ -443,10 +431,10 @@
       "it",
       "ru_eco",
       "sakh",
-      "ru_pol"
+      "ru_pol",
+      "geo"
     ],
     "source_sequence": [
-      "sakh.online",
       "exploit exploitex",
       "sakhalinmedia.ru",
       "techmedia techmedia",
@@ -465,14 +453,15 @@
       "exploit exploitex",
       "sakhalinmedia.ru",
       "sakh.online",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-27T23:10:47+00:00",
+    "checked_at_utc": "2026-10-27T23:48:15+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -502,14 +491,14 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 14.0,
+      "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
-        "local": 9,
+        "local": 8,
         "ru_pol": 2,
         "ru_eco": 4,
         "ru_safety": 0,
-        "world": 0,
+        "world": 1,
         "it": 5
       },
       "targets": {
@@ -521,11 +510,11 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.0,
+        "local": -2.0,
         "ru_pol": 2.0,
         "ru_eco": 0.0,
         "ru_safety": 3.0,
-        "world": 2.0,
+        "world": 1.0,
         "it": -4.0
       }
     }
