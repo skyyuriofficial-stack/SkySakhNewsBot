@@ -1,34 +1,27 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-28T14:24:07+00:00",
-  "checked_at_sakhalin": "2026-10-29T01:24:03+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-28T14:33:46+00:00",
+  "checked_at_sakhalin": "2026-10-29T01:33:43+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-28T22:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-28T20:07:34+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-28T20:07:34+11:00",
-    "age_hours": 5.28,
-    "published": 0
+    "finished_sakhalin": "2026-10-29T01:33:18+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-28T09:07:34+00:00",
+    "checked_at_utc": "2026-10-28T14:33:18+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 4,
+    "published": 1,
+    "director_approved": 5,
     "ai_calls": 4,
     "ai_api_fail": 3,
     "ai_budget_exhausted": 1,
@@ -59,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-28T14:24:06+00:00",
+    "checked_at": "2026-10-28T14:33:45+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -72,19 +65,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 488,
-      "title": "Пока вы вайбкодите, Клод подъедает пельмени — «X5 Клуб» вместе с агентством Trend Surfers запилили виджет для Claude Code, который переводит потраченные токены в гречку, молоко, ба",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 490,
       "title": "Путин подписал указ о назначении Кожемяко полпредом президента в ДФО",
@@ -331,6 +311,19 @@
       "review_reason": "approved",
       "corrected_category": "geo",
       "title_issues": []
+    },
+    {
+      "message_id": 520,
+      "title": "На Сахалине 255 участков под многоквартирные дома попали в зоны затопления и подтопления",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -352,12 +345,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 8,
+      "local": 9,
       "ru_pol": 2,
       "ru_eco": 4,
       "ru_safety": 0,
       "world": 1,
-      "it": 5
+      "it": 4
     },
     "scaled_targets": {
       "local": 6.0,
@@ -368,24 +361,23 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -2.0,
+      "local": -3.0,
       "ru_pol": 2.0,
       "ru_eco": 0.0,
       "ru_safety": 3.0,
       "world": 1.0,
-      "it": -4.0
+      "it": -3.0
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "major_it": 5,
       "political_decision": 3,
+      "major_it": 4,
       "macro_economy": 5,
       "fatal_incident": 3,
-      "major_emergency": 1,
+      "major_emergency": 2,
       "violent_crime": 3
     },
     "sequence": [
-      "it",
       "ru_pol",
       "it",
       "ru_eco",
@@ -404,10 +396,10 @@
       "ru_eco",
       "local",
       "ru_pol",
-      "world"
+      "world",
+      "local"
     ],
     "category_sequence": [
-      "it",
       "ru_pol",
       "it",
       "ru_eco",
@@ -426,10 +418,10 @@
       "ru_eco",
       "sakh",
       "ru_pol",
-      "geo"
+      "geo",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "exploit exploitex",
       "sakhalinmedia.ru",
       "techmedia techmedia",
       "sakh.online",
@@ -448,14 +440,15 @@
       "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
-      "sakh.online"
+      "sakh.online",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-28T14:24:01+00:00",
+    "checked_at_utc": "2026-10-28T14:33:41+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -488,12 +481,12 @@
       "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
-        "local": 8,
+        "local": 9,
         "ru_pol": 2,
         "ru_eco": 4,
         "ru_safety": 0,
         "world": 1,
-        "it": 5
+        "it": 4
       },
       "targets": {
         "local": 6,
@@ -504,12 +497,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -2.0,
+        "local": -3.0,
         "ru_pol": 2.0,
         "ru_eco": 0.0,
         "ru_safety": 3.0,
         "world": 1.0,
-        "it": -4.0
+        "it": -3.0
       }
     }
   ]
