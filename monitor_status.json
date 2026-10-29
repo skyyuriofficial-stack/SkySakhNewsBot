@@ -1,27 +1,27 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-29T23:32:24+00:00",
-  "checked_at_sakhalin": "2026-10-30T10:32:19+11:00",
+  "checked_at_utc": "2026-10-29T23:58:19+00:00",
+  "checked_at_sakhalin": "2026-10-30T10:58:13+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-30T09:19:52+11:00",
-    "age_hours": 1.21,
+    "finished_sakhalin": "2026-10-30T10:57:44+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-29T22:19:52+00:00",
+    "checked_at_utc": "2026-10-29T23:57:44+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 10,
+    "director_approved": 11,
     "ai_calls": 4,
     "ai_api_fail": 3,
     "ai_budget_exhausted": 1,
@@ -65,7 +65,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-29T23:32:23+00:00",
+    "checked_at": "2026-10-29T23:58:17+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -78,19 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 492,
-      "title": "Дмитрий Медведев: Единая Россия поддержит проект федерального бюджета в первом чтении",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 495,
       "title": "ЦБ сохранил ключевую ставку на уровне 14%",
@@ -337,6 +324,19 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 526,
+      "title": "Цены на товары из интернета не вырастут из-за НДС — объяснение Минфина",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -393,7 +393,6 @@
     "sequence": [
       "ru_eco",
       "ru_eco",
-      "ru_eco",
       "local",
       "it",
       "local",
@@ -410,10 +409,10 @@
       "world",
       "local",
       "local",
-      "it"
+      "it",
+      "ru_eco"
     ],
     "category_sequence": [
-      "ru_eco",
       "ru_eco",
       "ru_eco",
       "sakh_chp",
@@ -432,10 +431,10 @@
       "geo",
       "sakh_chp",
       "sakh_chp",
-      "it"
+      "it",
+      "ru_eco"
     ],
     "source_sequence": [
-      "sakh.online",
       "astv",
       "astv",
       "astv",
@@ -454,14 +453,15 @@
       "sakh.online",
       "astv",
       "sakhalinmedia.ru",
-      "exploit exploitex"
+      "exploit exploitex",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-29T23:32:17+00:00",
+    "checked_at_utc": "2026-10-29T23:58:11+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
