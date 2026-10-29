@@ -1,36 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-29T08:57:52+00:00",
-  "checked_at_sakhalin": "2026-10-29T19:57:47+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-29T09:05:37+00:00",
+  "checked_at_sakhalin": "2026-10-29T20:05:34+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-29T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-29T16:42:47+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-29T16:42:47+11:00",
-    "age_hours": 3.25,
-    "published": 0
+    "finished_sakhalin": "2026-10-29T20:05:08+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-29T05:42:47+00:00",
+    "checked_at_utc": "2026-10-29T09:05:08+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 4,
+    "published": 1,
+    "director_approved": 6,
     "ai_calls": 4,
-    "ai_api_fail": 1,
+    "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -85,7 +78,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-29T08:57:50+00:00",
+    "checked_at": "2026-10-29T09:05:36+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -98,19 +91,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 490,
-      "title": "Путин подписал указ о назначении Кожемяко полпредом президента в ДФО",
-      "category_key": "ru_pol",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_pol",
-      "title_issues": []
-    },
     {
       "message_id": 491,
       "title": "Китайская нейросеть Qwen подсовывает американцам дырявый код — исследователи из Hirundo обнаружили , что ИИ пишет менее безопасные программы для компаний из США и Гонконга, чем для",
@@ -357,6 +337,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 523,
+      "title": "На Сахалине почти 150 участков под МКД находится в зонах подтопления: что с ними делать",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -378,8 +371,8 @@
       "it": 5.0
     },
     "counts": {
-      "local": 9,
-      "ru_pol": 2,
+      "local": 10,
+      "ru_pol": 1,
       "ru_eco": 4,
       "ru_safety": 0,
       "world": 1,
@@ -394,24 +387,23 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -3.0,
-      "ru_pol": 2.0,
+      "local": -4.0,
+      "ru_pol": 3.0,
       "ru_eco": 0.0,
       "ru_safety": 3.0,
       "world": 1.0,
       "it": -3.0
     },
-    "distribution_error": 12.0,
+    "distribution_error": 14.0,
     "subtype_counts": {
-      "political_decision": 3,
       "major_it": 4,
       "macro_economy": 5,
       "fatal_incident": 3,
-      "major_emergency": 2,
-      "violent_crime": 3
+      "major_emergency": 3,
+      "violent_crime": 3,
+      "political_decision": 2
     },
     "sequence": [
-      "ru_pol",
       "it",
       "ru_eco",
       "ru_eco",
@@ -430,10 +422,10 @@
       "local",
       "ru_pol",
       "world",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "ru_pol",
       "it",
       "ru_eco",
       "ru_eco",
@@ -452,10 +444,10 @@
       "sakh",
       "ru_pol",
       "geo",
+      "sakh_chp",
       "sakh_chp"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "techmedia techmedia",
       "sakh.online",
       "astv",
@@ -474,14 +466,15 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "sakh.online",
-      "astv"
+      "astv",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-29T08:57:44+00:00",
+    "checked_at_utc": "2026-10-29T09:05:32+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -511,11 +504,11 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 12.0,
+      "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
-        "local": 9,
-        "ru_pol": 2,
+        "local": 10,
+        "ru_pol": 1,
         "ru_eco": 4,
         "ru_safety": 0,
         "world": 1,
@@ -530,8 +523,8 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.0,
-        "ru_pol": 2.0,
+        "local": -4.0,
+        "ru_pol": 3.0,
         "ru_eco": 0.0,
         "ru_safety": 3.0,
         "world": 1.0,
