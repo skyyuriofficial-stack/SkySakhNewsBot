@@ -1,50 +1,20 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-10-28T08:18:53+00:00",
-  "last_run_sakhalin": "2026-10-28T19:18:53+11:00",
-  "mode": "evening",
+  "last_run_utc": "2026-10-29T00:07:04+00:00",
+  "last_run_sakhalin": "2026-10-29T11:07:04+11:00",
+  "mode": "morning",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 519,
-  "evidence_count": 3,
-  "evidence_hash": "52d1897db2f15f9028cd870a8d0060d7c1c44b7fe63533d095ac174b1220de9a",
-  "headline": "Законопроект об ответственности перед штабами: риски мобилизации без прямых доказательств",
+  "telegram_message_id": 521,
+  "evidence_count": 4,
+  "evidence_hash": "33128eec74b2357dee3f89e41071a197342d15dd9f591c5fb31266d5581c9c5b",
+  "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
   "source_ids": [
     1,
     2,
     3
   ],
   "slots": {
-    "2026-10-08": {
-      "morning": {
-        "status": "ok",
-        "published_at_utc": "2026-10-07T21:59:36+00:00",
-        "published_at_sakhalin": "2026-10-08T08:59:36+11:00",
-        "telegram_message_id": 370,
-        "headline": "Отсутствие подтверждённых данных о новой волне мобилизации в РФ",
-        "evidence_count": 4,
-        "evidence_hash": "e88bc55334776fc0ba1cd9fe2cb855e2708e952b9ed58ed6562b80248cbfd018",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      },
-      "evening": {
-        "status": "ok",
-        "published_at_utc": "2026-10-08T08:51:39+00:00",
-        "published_at_sakhalin": "2026-10-08T19:51:39+11:00",
-        "telegram_message_id": 376,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 3,
-        "evidence_hash": "4050e0a6c78de0b52e1f0e69fcca271d0222c4d5f2d108a0754f7c53d715b5fa",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      }
-    },
     "2026-10-09": {
       "morning": {
         "status": "ok",
@@ -648,13 +618,29 @@
           3
         ]
       }
+    },
+    "2026-10-29": {
+      "morning": {
+        "status": "ok",
+        "published_at_utc": "2026-10-29T00:07:04+00:00",
+        "published_at_sakhalin": "2026-10-29T11:07:04+11:00",
+        "telegram_message_id": 521,
+        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+        "evidence_count": 4,
+        "evidence_hash": "33128eec74b2357dee3f89e41071a197342d15dd9f591c5fb31266d5581c9c5b",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "evening",
-    "at_utc": "2026-10-28T08:18:53+00:00",
-    "at_sakhalin": "2026-10-28T19:18:53+11:00"
+    "mode": "morning",
+    "at_utc": "2026-10-29T00:07:04+00:00",
+    "at_sakhalin": "2026-10-29T11:07:04+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-10-01T06:24:52+00:00",
