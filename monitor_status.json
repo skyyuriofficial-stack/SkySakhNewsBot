@@ -1,36 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-30T06:55:44+00:00",
-  "checked_at_sakhalin": "2026-10-30T17:55:40+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-30T07:04:24+00:00",
+  "checked_at_sakhalin": "2026-10-30T18:04:20+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-30T16:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-30T15:24:23+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-30T15:24:23+11:00",
-    "age_hours": 2.52,
+    "finished_sakhalin": "2026-10-30T18:03:52+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-30T04:24:23+00:00",
+    "checked_at_utc": "2026-10-30T07:03:52+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 10,
+    "director_approved": 8,
     "ai_calls": 4,
-    "ai_api_fail": 4,
+    "ai_api_fail": 1,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -72,7 +65,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-30T06:55:43+00:00",
+    "checked_at": "2026-10-30T07:04:22+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -85,19 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 496,
-      "title": "Российским вузам добавят бюджетные места из-за наплыва олимпиадников",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 497,
       "title": "В Холмске ликвидировали пожар в пустующей четырехэтажке",
@@ -344,6 +324,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 528,
+      "title": "Метель обрушится на несколько районов Сахалина",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -365,9 +358,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 11,
+      "local": 12,
       "ru_pol": 1,
-      "ru_eco": 3,
+      "ru_eco": 2,
       "ru_safety": 0,
       "world": 1,
       "it": 4
@@ -381,24 +374,23 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -5.0,
+      "local": -6.0,
       "ru_pol": 3.0,
-      "ru_eco": 1.0,
+      "ru_eco": 2.0,
       "ru_safety": 3.0,
       "world": 1.0,
       "it": -3.0
     },
-    "distribution_error": 16.0,
+    "distribution_error": 18.0,
     "subtype_counts": {
-      "macro_economy": 4,
       "fatal_incident": 3,
       "major_it": 4,
-      "major_emergency": 4,
+      "major_emergency": 5,
       "violent_crime": 3,
+      "macro_economy": 3,
       "political_decision": 2
     },
     "sequence": [
-      "ru_eco",
       "local",
       "it",
       "local",
@@ -417,10 +409,10 @@
       "local",
       "it",
       "ru_eco",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "ru_eco",
       "sakh_chp",
       "it",
       "sakh_chp",
@@ -439,10 +431,10 @@
       "sakh_chp",
       "it",
       "ru_eco",
+      "sakh_chp",
       "sakh_chp"
     ],
     "source_sequence": [
-      "astv",
       "astv",
       "guardian technology",
       "sakhalinmedia.ru",
@@ -461,14 +453,15 @@
       "sakhalinmedia.ru",
       "exploit exploitex",
       "sakh.online",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-30T06:55:38+00:00",
+    "checked_at_utc": "2026-10-30T07:04:17+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -498,12 +491,12 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 16.0,
+      "distribution_error": 18.0,
       "limit": 8.0,
       "counts": {
-        "local": 11,
+        "local": 12,
         "ru_pol": 1,
-        "ru_eco": 3,
+        "ru_eco": 2,
         "ru_safety": 0,
         "world": 1,
         "it": 4
@@ -517,9 +510,9 @@
         "it": 1
       },
       "deficits": {
-        "local": -5.0,
+        "local": -6.0,
         "ru_pol": 3.0,
-        "ru_eco": 1.0,
+        "ru_eco": 2.0,
         "ru_safety": 3.0,
         "world": 1.0,
         "it": -3.0
