@@ -1,39 +1,61 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-30T14:01:27+00:00",
-  "checked_at_sakhalin": "2026-10-31T01:01:22+11:00",
+  "checked_at_utc": "2026-10-30T14:10:45+00:00",
+  "checked_at_sakhalin": "2026-10-31T01:10:39+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
     {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-30T22:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-30T20:08:31+11:00"
+      "type": "post_audit_unresolved",
+      "count": 1,
+      "items": [
+        {
+          "title": "Владелец Google Alphabet потерял 500 млрд долларов рыночной стоимости из-за разочарования прибылью Уолл-Стрита",
+          "url": "https://www.theguardian.com/technology/2026/oct/28/google-alphabet-q3-earnings-report",
+          "publisher_version": "stable-v12.1",
+          "category_key": "it",
+          "corrected_category": "it",
+          "reason": "approved",
+          "contract_issues": [
+            "foreign_translation_evidence_missing"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "post_audit_action_failure",
+      "count": 1,
+      "items": [
+        {
+          "action": "editMessageCaption",
+          "message_id": 530,
+          "error": "Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message"
+        }
+      ]
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-30T20:08:31+11:00",
-    "age_hours": 4.88,
-    "published": 0
+    "finished_sakhalin": "2026-10-31T01:10:11+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-30T09:08:31+00:00",
+    "checked_at_utc": "2026-10-30T14:10:11+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 4,
-    "ai_calls": 4,
-    "ai_api_fail": 3,
-    "ai_budget_exhausted": 1,
+    "published": 1,
+    "director_approved": 5,
+    "ai_calls": 3,
+    "ai_api_fail": 2,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
-    "publication_contract_blocked": 0
+    "publication_contract_blocked": 1
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -59,32 +81,49 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-30T14:01:26+00:00",
+    "checked_at": "2026-10-30T14:10:43+00:00",
     "checked": 20,
-    "passed": 20,
-    "anomalies": [],
+    "passed": 19,
+    "anomalies": [
+      {
+        "title": "Владелец Google Alphabet потерял 500 млрд долларов рыночной стоимости из-за разочарования прибылью Уолл-Стрита",
+        "url": "https://www.theguardian.com/technology/2026/oct/28/google-alphabet-q3-earnings-report",
+        "publisher_version": "stable-v12.1",
+        "category_key": "it",
+        "corrected_category": "it",
+        "reason": "approved",
+        "contract_issues": [
+          "foreign_translation_evidence_missing"
+        ]
+      }
+    ],
     "corrected": [],
     "deleted": [],
-    "failed_actions": [],
-    "unresolved": 0,
-    "unresolved_items": [],
+    "failed_actions": [
+      {
+        "action": "editMessageCaption",
+        "message_id": 530,
+        "error": "Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message"
+      }
+    ],
+    "unresolved": 1,
+    "unresolved_items": [
+      {
+        "title": "Владелец Google Alphabet потерял 500 млрд долларов рыночной стоимости из-за разочарования прибылью Уолл-Стрита",
+        "url": "https://www.theguardian.com/technology/2026/oct/28/google-alphabet-q3-earnings-report",
+        "publisher_version": "stable-v12.1",
+        "category_key": "it",
+        "corrected_category": "it",
+        "reason": "approved",
+        "contract_issues": [
+          "foreign_translation_evidence_missing"
+        ]
+      }
+    ],
     "mutations_enabled": true,
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 497,
-      "title": "В Холмске ликвидировали пожар в пустующей четырехэтажке",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 499,
       "title": "Визит в строящийся дата-центр Microsoft в Ньюпорт-Империал-Парк",
@@ -331,6 +370,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 530,
+      "title": "Владелец Google Alphabet потерял 500 млрд долларов рыночной стоимости из-за разочарования прибылью Уолл-Стрита",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -352,12 +404,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 12,
+      "local": 11,
       "ru_pol": 1,
       "ru_eco": 2,
       "ru_safety": 0,
       "world": 1,
-      "it": 4
+      "it": 5
     },
     "scaled_targets": {
       "local": 6.0,
@@ -368,24 +420,23 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -6.0,
+      "local": -5.0,
       "ru_pol": 3.0,
       "ru_eco": 2.0,
       "ru_safety": 3.0,
       "world": 1.0,
-      "it": -3.0
+      "it": -4.0
     },
     "distribution_error": 18.0,
     "subtype_counts": {
-      "fatal_incident": 3,
-      "major_it": 4,
+      "major_it": 5,
       "major_emergency": 5,
       "violent_crime": 3,
+      "fatal_incident": 2,
       "macro_economy": 3,
       "political_decision": 2
     },
     "sequence": [
-      "local",
       "it",
       "local",
       "local",
@@ -404,10 +455,10 @@
       "it",
       "ru_eco",
       "local",
-      "local"
+      "local",
+      "it"
     ],
     "category_sequence": [
-      "sakh_chp",
       "it",
       "sakh_chp",
       "sakh_chp",
@@ -426,10 +477,10 @@
       "it",
       "ru_eco",
       "sakh_chp",
-      "sakh_chp"
+      "sakh_chp",
+      "it"
     ],
     "source_sequence": [
-      "astv",
       "guardian technology",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
@@ -448,14 +499,15 @@
       "exploit exploitex",
       "sakh.online",
       "sakhalinmedia.ru",
-      "astv"
+      "astv",
+      "guardian technology"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-30T14:01:19+00:00",
+    "checked_at_utc": "2026-10-30T14:10:35+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -488,12 +540,12 @@
       "distribution_error": 18.0,
       "limit": 8.0,
       "counts": {
-        "local": 12,
+        "local": 11,
         "ru_pol": 1,
         "ru_eco": 2,
         "ru_safety": 0,
         "world": 1,
-        "it": 4
+        "it": 5
       },
       "targets": {
         "local": 6,
@@ -504,12 +556,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -6.0,
+        "local": -5.0,
         "ru_pol": 3.0,
         "ru_eco": 2.0,
         "ru_safety": 3.0,
         "world": 1.0,
-        "it": -3.0
+        "it": -4.0
       }
     }
   ]
