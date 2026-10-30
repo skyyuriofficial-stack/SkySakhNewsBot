@@ -1,35 +1,27 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-30T02:58:43+00:00",
-  "checked_at_sakhalin": "2026-10-30T13:58:38+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-10-30T04:24:52+00:00",
+  "checked_at_sakhalin": "2026-10-30T15:24:48+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_blocked",
-      "slot_sakhalin": "2026-10-30T13:00+11:00",
-      "required_slot_sakhalin": "2026-10-30T13:00+11:00",
-      "reason": "generation_provider_unavailable",
-      "attempted_at_utc": "2026-10-30T02:58:08+00:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-30T13:58:08+11:00",
+    "finished_sakhalin": "2026-10-30T15:24:23+11:00",
     "age_hours": 0.01,
-    "published": 0
+    "published": 1
   },
   "last_production_attempt": {
-    "status": "blocked",
-    "reason": "generation_provider_unavailable",
-    "checked_at_utc": "2026-10-30T02:58:08+00:00",
+    "status": "ok",
+    "reason": null,
+    "checked_at_utc": "2026-10-30T04:24:23+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 8,
+    "published": 1,
+    "director_approved": 10,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -73,7 +65,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-30T02:58:42+00:00",
+    "checked_at": "2026-10-30T04:24:51+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -86,19 +78,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 495,
-      "title": "ЦБ сохранил ключевую ставку на уровне 14%",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 496,
       "title": "Российским вузам добавят бюджетные места из-за наплыва олимпиадников",
@@ -345,6 +324,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 527,
+      "title": "Три человека пострадали в ДТП на трассе в Углегорском районе",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -366,9 +358,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 10,
+      "local": 11,
       "ru_pol": 1,
-      "ru_eco": 4,
+      "ru_eco": 3,
       "ru_safety": 0,
       "world": 1,
       "it": 4
@@ -382,24 +374,23 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -4.0,
+      "local": -5.0,
       "ru_pol": 3.0,
-      "ru_eco": 0.0,
+      "ru_eco": 1.0,
       "ru_safety": 3.0,
       "world": 1.0,
       "it": -3.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 16.0,
     "subtype_counts": {
-      "macro_economy": 5,
+      "macro_economy": 4,
       "fatal_incident": 3,
       "major_it": 4,
-      "major_emergency": 3,
+      "major_emergency": 4,
       "violent_crime": 3,
       "political_decision": 2
     },
     "sequence": [
-      "ru_eco",
       "ru_eco",
       "local",
       "it",
@@ -418,10 +409,10 @@
       "local",
       "local",
       "it",
-      "ru_eco"
+      "ru_eco",
+      "local"
     ],
     "category_sequence": [
-      "ru_eco",
       "ru_eco",
       "sakh_chp",
       "it",
@@ -440,10 +431,10 @@
       "sakh_chp",
       "sakh_chp",
       "it",
-      "ru_eco"
+      "ru_eco",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "astv",
       "astv",
       "astv",
       "guardian technology",
@@ -462,14 +453,15 @@
       "astv",
       "sakhalinmedia.ru",
       "exploit exploitex",
-      "sakh.online"
+      "sakh.online",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-30T02:58:35+00:00",
+    "checked_at_utc": "2026-10-30T04:24:46+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -499,12 +491,12 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 14.0,
+      "distribution_error": 16.0,
       "limit": 8.0,
       "counts": {
-        "local": 10,
+        "local": 11,
         "ru_pol": 1,
-        "ru_eco": 4,
+        "ru_eco": 3,
         "ru_safety": 0,
         "world": 1,
         "it": 4
@@ -518,9 +510,9 @@
         "it": 1
       },
       "deficits": {
-        "local": -4.0,
+        "local": -5.0,
         "ru_pol": 3.0,
-        "ru_eco": 0.0,
+        "ru_eco": 1.0,
         "ru_safety": 3.0,
         "world": 1.0,
         "it": -3.0
