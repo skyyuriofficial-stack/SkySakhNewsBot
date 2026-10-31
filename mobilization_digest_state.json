@@ -1,14 +1,14 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-10-30T21:48:21+00:00",
-  "last_run_sakhalin": "2026-10-31T08:48:21+11:00",
-  "mode": "morning",
+  "last_run_utc": "2026-10-31T08:22:31+00:00",
+  "last_run_sakhalin": "2026-10-31T19:22:31+11:00",
+  "mode": "evening",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 531,
+  "telegram_message_id": 536,
   "evidence_count": 3,
   "evidence_hash": "13d64ba804e975b094d6ef417b4f9f61dd15862b68ac3649420784f49bb8f77d",
-  "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+  "headline": "В РФ внесён законопроект о новой мобилизации",
   "source_ids": [
     1,
     2,
@@ -631,14 +631,28 @@
           2,
           3
         ]
+      },
+      "evening": {
+        "status": "ok",
+        "published_at_utc": "2026-10-31T08:22:31+00:00",
+        "published_at_sakhalin": "2026-10-31T19:22:31+11:00",
+        "telegram_message_id": 536,
+        "headline": "В РФ внесён законопроект о новой мобилизации",
+        "evidence_count": 3,
+        "evidence_hash": "13d64ba804e975b094d6ef417b4f9f61dd15862b68ac3649420784f49bb8f77d",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
       }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "morning",
-    "at_utc": "2026-10-30T21:48:21+00:00",
-    "at_sakhalin": "2026-10-31T08:48:21+11:00"
+    "mode": "evening",
+    "at_utc": "2026-10-31T08:22:31+00:00",
+    "at_sakhalin": "2026-10-31T19:22:31+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-10-01T06:24:52+00:00",
