@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-31T12:13:17+00:00",
-  "checked_at_sakhalin": "2026-10-31T23:13:13+11:00",
+  "checked_at_utc": "2026-10-31T12:20:34+00:00",
+  "checked_at_sakhalin": "2026-10-31T23:20:27+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-31T22:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-31T19:53:37+11:00"
-    },
     {
       "type": "post_audit_unresolved",
       "count": 1,
@@ -44,21 +38,21 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-31T19:53:37+11:00",
-    "age_hours": 3.33,
-    "published": 2
+    "finished_sakhalin": "2026-10-31T23:20:01+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-31T08:53:37+00:00",
+    "checked_at_utc": "2026-10-31T12:20:01+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
-    "director_approved": 8,
+    "published": 1,
+    "director_approved": 6,
     "ai_calls": 4,
-    "ai_api_fail": 2,
+    "ai_api_fail": 3,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -113,7 +107,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-31T12:13:16+00:00",
+    "checked_at": "2026-10-31T12:20:32+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -156,19 +150,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 507,
-      "title": "На сахалинского медбрата напали во время вызова — дело дошло до суда",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 509,
       "title": "На медбрата скорой помощи на Сахалине напали на вызове - у мужчины тяжелые травмы",
@@ -415,6 +396,19 @@
       "review_reason": "approved",
       "corrected_category": "geo",
       "title_issues": []
+    },
+    {
+      "message_id": 539,
+      "title": "МЧС предупреждает: Сахалин накроет ураган со снегом 1 ноября",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -461,16 +455,16 @@
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "violent_crime": 2,
+      "violent_crime": 1,
       "major_it": 3,
       "macro_economy": 5,
       "political_decision": 3,
       "major_emergency": 4,
       "fatal_incident": 2,
-      "geopolitical_event": 1
+      "geopolitical_event": 1,
+      "severe_weather": 1
     },
     "sequence": [
-      "local",
       "local",
       "it",
       "ru_eco",
@@ -489,10 +483,10 @@
       "ru_eco",
       "local",
       "ru_pol",
-      "world"
+      "world",
+      "local"
     ],
     "category_sequence": [
-      "sakh_chp",
       "sakh_chp",
       "it",
       "ru_eco",
@@ -511,10 +505,10 @@
       "ru_eco",
       "sakh",
       "ru_pol",
-      "geo"
+      "geo",
+      "sakh"
     ],
     "source_sequence": [
-      "sakh.online",
       "astv",
       "exploit exploitex",
       "sakhalinmedia.ru",
@@ -533,14 +527,15 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-31T12:13:11+00:00",
+    "checked_at_utc": "2026-10-31T12:20:25+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
