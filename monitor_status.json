@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-31T12:20:34+00:00",
-  "checked_at_sakhalin": "2026-10-31T23:20:27+11:00",
+  "checked_at_utc": "2026-10-31T14:28:38+00:00",
+  "checked_at_sakhalin": "2026-11-01T01:28:32+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -39,7 +39,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-10-31T23:20:01+11:00",
-    "age_hours": 0.01,
+    "age_hours": 2.14,
     "published": 1
   },
   "last_production_attempt": {
@@ -59,43 +59,17 @@
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-10-31",
+    "day_sakhalin": "2026-11-01",
     "status": "healthy",
     "morning": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-30T21:48:21+00:00",
-        "published_at_sakhalin": "2026-10-31T08:48:21+11:00",
-        "telegram_message_id": 531,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 3,
-        "evidence_hash": "13d64ba804e975b094d6ef417b4f9f61dd15862b68ac3649420784f49bb8f77d",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "evening": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-10-31T08:22:31+00:00",
-        "published_at_sakhalin": "2026-10-31T19:22:31+11:00",
-        "telegram_message_id": 536,
-        "headline": "В РФ внесён законопроект о новой мобилизации",
-        "evidence_count": 3,
-        "evidence_hash": "13d64ba804e975b094d6ef417b4f9f61dd15862b68ac3649420784f49bb8f77d",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "last_attempt": {
       "status": "ok",
@@ -107,7 +81,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-31T12:20:32+00:00",
+    "checked_at": "2026-10-31T14:28:36+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -535,7 +509,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-31T12:20:25+00:00",
+    "checked_at_utc": "2026-10-31T14:28:29+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
