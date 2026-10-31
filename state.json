@@ -416,7 +416,9 @@
     "https://sakhalinmedia.ru/news/2668301/",
     "https://sakh.online/news/24/2026-10-31/v-torgovom-tsentre-yuzhno-sahalinska-muzhchina-pri-pozhare-poluchil-ozhog-dyhatelnyh-putey-530511",
     "https://sakh.online/news/18/2026-10-31/chistaya-pribyl-vtb-za-devyat-mesyatsev-vyrosla-na-7-530514",
-    "https://sakhalinmedia.ru/news/2668356/"
+    "https://sakhalinmedia.ru/news/2668356/",
+    "https://sakhalinmedia.ru/news/2668139/",
+    "https://sakhalinmedia.ru/news/2668332/"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -836,376 +838,12 @@
     "b196210f2e599a9b9e04871142ff315a4cabf800",
     "3c358954206636efc35ba6538a1f17a9684be7a1",
     "165484048e5274a240f32e3efd3bb2aea58b5422",
-    "611037e883170cac8387aa4e01ad214b57e73212"
+    "611037e883170cac8387aa4e01ad214b57e73212",
+    "bff50a78d0bba3d3cd61a4f53467c3682209dffb",
+    "65edee97b1c8ece0870d9272c2af0d463cf36f68"
   ],
-  "last_run_sakhalin": "2026-10-31T17:24:33+11:00",
+  "last_run_sakhalin": "2026-10-31T19:53:37+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-10-15T09:17:54+11:00",
-      "source": "Sakh.online",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "title": "При пожаре на Больничной в Южно-Сахалинске погиб хозяин квартиры",
-      "url": "https://sakh.online/news/24/2026-10-15/muzhchina-pogib-pri-pozhare-v-pyatietazhke-v-yuzhno-sahalinske-528959",
-      "image_url": "https://sakh.online/attachments/6886dc7118003762b94d0d50a4ec1e52f0d9183e/store/crop/0/134/800/451/800/0/0/0/b93c6a472ab18376357462cac42f00fad9f4f3376898367ceb48a0b59615/b93c6a472ab18376357462cac42f00fad9f4f3376898367ceb48a0b59615.webp",
-      "image_hash": "9e77d04bec493a765269c84804891c5a4fecc043",
-      "topic_cluster": "sakh_chp:пожаре_больничной_сахалинске_погиб_хозяин_квартиры",
-      "published_at": "2026-10-14T13:00:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "group": "local",
-        "event_type": "fatal_incident",
-        "subtype": "fatal_incident",
-        "seriousness": 99,
-        "threshold": 70,
-        "selection_utility": -101.0,
-        "slot": 1,
-        "risks": [],
-        "title_original": "При пожаре на Больничной в Южно-Сахалинске погиб хозяин квартиры",
-        "title_corrected": "При пожаре на Больничной в Южно-Сахалинске погиб хозяин квартиры",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "При пожаре в пятиэтажном доме на Больничной улице в Южно-Сахалинске погиб 57-летний хозяин квартиры. Спасли семь человек, включая двух детей. Вечером 14 октября в пятиэтажке на Больничной улице в Южно-Сахалинске загорелась квартира. Огонь охватил диван и личные вещи на втором этаже. Подробности сообщили в пресс-службе ГУ МЧС России по Сахалинской области. Пожарные бросили силы на спасение людей. Возле дивана газодымозащитники нашли маломобильного мужчину — его вынесли из горящей квартиры и передали медикам. Но 57-летний хозяин квартиры погиб. Из соседней квартиры и с верхних этажей спасли семь человек, двое из них — дети. Еще 20 жильцов выбрались сами. К 18:50 пожар на 20 квадратных метрах потушили. Работали 19 человек и пять единиц техники.",
-      "title_original": null,
-      "footer": "ЧП | САХАЛИН",
-      "published_row": {
-        "reject": false,
-        "title_ru": "При пожаре на Больничной в Южно-Сахалинске погиб хозяин квартиры",
-        "body": [
-          "Вечером 14 октября в пятиэтажке на Больничной улице в Южно-Сахалинске загорелась квартира.",
-          "Подробности сообщили в пресс-службе ГУ МЧС России по Сахалинской области."
-        ],
-        "footer": "ЧП | САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "fatal_incident",
-          "subtype": "fatal_incident",
-          "seriousness": 99,
-          "threshold": 70,
-          "selection_utility": -101.0,
-          "slot": 1,
-          "risks": [],
-          "title_original": "При пожаре на Больничной в Южно-Сахалинске погиб хозяин квартиры",
-          "title_corrected": "При пожаре на Больничной в Южно-Сахалинске погиб хозяин квартиры",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "sakh_chp",
-          "final_category": "sakh_chp",
-          "event_type": "fatal_incident",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.7",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "sakh_chp",
-            "corrected_category": "sakh_chp",
-            "group": "local",
-            "event_type": "fatal_incident",
-            "subtype": "fatal_incident",
-            "seriousness": 96,
-            "threshold": 70,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "При пожаре на Больничной в Южно-Сахалинске погиб хозяин квартиры",
-            "title_corrected": "При пожаре на Больничной в Южно-Сахалинске погиб хозяин квартиры",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "📍 Сахалин\n\n<b>При пожаре на Больничной в Южно-Сахалинске погиб хозяин квартиры</b>\n\nВечером 14 октября в пятиэтажке на Больничной улице в Южно-Сахалинске загорелась квартира.\n\nПодробности сообщили в пресс-службе ГУ МЧС России по Сахалинской области.\n\nЧП | САХАЛИН · <a href=\"https://sakh.online/news/24/2026-10-15/muzhchina-pogib-pri-pozhare-v-pyatietazhke-v-yuzhno-sahalinske-528959\">Sakh.online</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_chp",
-        "final_category": "sakh_chp",
-        "event_type": "fatal_incident",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.7",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "fatal_incident",
-          "subtype": "fatal_incident",
-          "seriousness": 96,
-          "threshold": 70,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "При пожаре на Больничной в Южно-Сахалинске погиб хозяин квартиры",
-          "title_corrected": "При пожаре на Больничной в Южно-Сахалинске погиб хозяин квартиры",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 424,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": []
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-17T04:14:49+00:00"
-      }
-    },
-    {
-      "time_sakhalin": "2026-10-15T09:18:03+11:00",
-      "source": "ASTV",
-      "category": "🇷🇺 Россия / экономика",
-      "category_key": "ru_eco",
-      "title": "В России предложили ввести налог на сладкое",
-      "url": "https://astv.ru/news/society/2026-10-14-v-rossii-predlozhili-vvesti-nalog-na-sladkoe",
-      "image_url": "https://astv.ru/content/NewsImage/18/73/1873d2ae-f366-48a7-853e-7a2feb043b63_3.jpg",
-      "image_hash": "04c9c744f48ba2a01f16ddfc01203cb4faa1b985",
-      "topic_cluster": "ru_eco:россии_предложили_ввести_налог_сладкое",
-      "published_at": "2026-10-13T13:00:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "ru_eco",
-        "corrected_category": "ru_eco",
-        "group": "ru_eco",
-        "event_type": "macro_economy",
-        "subtype": "macro_economy",
-        "seriousness": 83,
-        "threshold": 80,
-        "selection_utility": 173.0,
-        "slot": 2,
-        "risks": [
-          "near_threshold"
-        ],
-        "title_original": "В России предложили ввести налог на сладкое",
-        "title_corrected": "В России предложили ввести налог на сладкое",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "Сахар сейчас облагается льготным НДС по ставке 10% В России предложили повысить налоги на сахар и ввести акцизы на конфеты. Об этом сообщает РБК. Инициатива вошла в число предложений, которые обсуждают перед форумом \"Деловой России\". Сахар сейчас облагается льготным НДС по ставке 10%. Бизнес предложил отменить эту льготу. Также рассматривается введение акцизов на шоколадные и обычные конфеты. Для нового сбора обсуждают несколько вариантов. Пока речь идет только о предложениях бизнеса. Решение о введении новых налогов власти не принимали.",
-      "title_original": null,
-      "footer": "РОССИЯ | ЭКОНОМИКА",
-      "published_row": {
-        "reject": false,
-        "title_ru": "В России предложили ввести налог на сладкое",
-        "body": [
-          "Сахар сейчас облагается льготным НДС по ставке 10% В России предложили повысить налоги на сахар и ввести акцизы на конфеты.",
-          "Инициатива вошла в число предложений, которые обсуждают перед форумом \"Деловой России\"."
-        ],
-        "footer": "РОССИЯ | ЭКОНОМИКА",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": [],
-          "reclassified_from": "sakh",
-          "reclassified_to": "ru_eco"
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_eco",
-          "corrected_category": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "subtype": "macro_economy",
-          "seriousness": 83,
-          "threshold": 80,
-          "selection_utility": 173.0,
-          "slot": 2,
-          "risks": [
-            "near_threshold"
-          ],
-          "title_original": "В России предложили ввести налог на сладкое",
-          "title_corrected": "В России предложили ввести налог на сладкое",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "ru_eco",
-          "final_category": "ru_eco",
-          "event_type": "macro_economy",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.7",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "ru_eco",
-            "corrected_category": "ru_eco",
-            "group": "ru_eco",
-            "event_type": "macro_economy",
-            "subtype": "macro_economy",
-            "seriousness": 83,
-            "threshold": 80,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [
-              "near_threshold"
-            ],
-            "title_original": "В России предложили ввести налог на сладкое",
-            "title_corrected": "В России предложили ввести налог на сладкое",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "🇷🇺 Россия / экономика\n\n<b>В России предложили ввести налог на сладкое</b>\n\nСахар сейчас облагается льготным НДС по ставке 10% В России предложили повысить налоги на сахар и ввести акцизы на конфеты.\n\nИнициатива вошла в число предложений, которые обсуждают перед форумом \"Деловой России\".\n\nРОССИЯ | ЭКОНОМИКА · <a href=\"https://astv.ru/news/society/2026-10-14-v-rossii-predlozhili-vvesti-nalog-na-sladkoe\">ASTV</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "ru_eco",
-        "final_category": "ru_eco",
-        "event_type": "macro_economy",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.7",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_eco",
-          "corrected_category": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "subtype": "macro_economy",
-          "seriousness": 83,
-          "threshold": 80,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [
-            "near_threshold"
-          ],
-          "title_original": "В России предложили ввести налог на сладкое",
-          "title_corrected": "В России предложили ввести налог на сладкое",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 425,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": [],
-        "reclassified_from": "sakh",
-        "reclassified_to": "ru_eco"
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-17T05:13:20+00:00"
-      }
-    },
     {
       "time_sakhalin": "2026-10-15T10:14:15+11:00",
       "source": "TechMedia (@techmedia)",
@@ -11914,7 +11552,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-31T06:13:13+00:00"
+        "checked_at": "2026-10-31T08:48:13+00:00"
       }
     },
     {
@@ -12099,7 +11737,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-31T06:13:13+00:00"
+        "checked_at": "2026-10-31T08:48:13+00:00"
       }
     },
     {
@@ -12276,7 +11914,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-31T06:13:13+00:00"
+        "checked_at": "2026-10-31T08:48:13+00:00"
       }
     },
     {
@@ -12453,7 +12091,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-31T06:13:13+00:00"
+        "checked_at": "2026-10-31T08:48:13+00:00"
       }
     },
     {
@@ -12645,7 +12283,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-31T06:13:13+00:00"
+        "checked_at": "2026-10-31T08:48:13+00:00"
       }
     },
     {
@@ -12830,7 +12468,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-31T06:13:13+00:00"
+        "checked_at": "2026-10-31T08:48:13+00:00"
       }
     },
     {
@@ -13007,7 +12645,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-31T06:13:13+00:00"
+        "checked_at": "2026-10-31T08:48:13+00:00"
       }
     },
     {
@@ -13188,7 +12826,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-31T06:13:13+00:00"
+        "checked_at": "2026-10-31T08:48:13+00:00"
       }
     },
     {
@@ -13369,7 +13007,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-31T06:13:13+00:00"
+        "checked_at": "2026-10-31T08:48:13+00:00"
       }
     },
     {
@@ -13550,7 +13188,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-31T06:13:14+00:00"
+        "checked_at": "2026-10-31T08:48:13+00:00"
       }
     },
     {
@@ -13731,7 +13369,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-31T06:13:14+00:00"
+        "checked_at": "2026-10-31T08:48:14+00:00"
       }
     },
     {
@@ -13916,7 +13554,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-31T06:13:14+00:00"
+        "checked_at": "2026-10-31T08:48:14+00:00"
       }
     },
     {
@@ -14105,7 +13743,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-31T06:13:14+00:00"
+        "checked_at": "2026-10-31T08:48:14+00:00"
       }
     },
     {
@@ -14282,7 +13920,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-31T06:13:14+00:00"
+        "checked_at": "2026-10-31T08:48:14+00:00"
       }
     },
     {
@@ -14459,7 +14097,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-31T06:13:14+00:00"
+        "checked_at": "2026-10-31T08:48:14+00:00"
       }
     },
     {
@@ -14645,7 +14283,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-10-31T06:13:14+00:00",
+        "checked_at": "2026-10-31T08:48:14+00:00",
         "reason": "approved",
         "issues": [
           "foreign_translation_evidence_missing"
@@ -14826,7 +14464,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-31T06:13:15+00:00"
+        "checked_at": "2026-10-31T08:48:15+00:00"
       }
     },
     {
@@ -15003,7 +14641,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-10-31T06:13:15+00:00"
+        "checked_at": "2026-10-31T08:48:15+00:00"
       }
     },
     {
@@ -15180,6 +14818,11 @@
         "issues": [],
         "reclassified_from": "sakh",
         "reclassified_to": "ru_eco"
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-10-31T08:48:15+00:00"
       }
     },
     {
@@ -15352,6 +14995,363 @@
         "meaning_changed": false,
         "mode": "deterministic+extractive",
         "issues": []
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-10-31T08:48:15+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-10-31T19:52:19+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "🇷🇺 Россия / политика",
+      "category_key": "ru_pol",
+      "title": "Комиссия ВКП одобрила методику по повышению минимальной заработной платы в СНГ",
+      "url": "https://sakhalinmedia.ru/news/2668139/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6480/6479895.jpg?7c3e41d0c14f720d8be36ccf7d0834e1",
+      "image_hash": "64fa23cd106c331a6dbf437c25aa1b74c2e49696",
+      "topic_cluster": "ru_pol:комиссия_одобрила_методику_повышению_минимальной_заработной",
+      "published_at": "2026-10-31T07:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "ru_pol",
+        "corrected_category": "ru_pol",
+        "group": "ru_pol",
+        "event_type": "political_decision",
+        "subtype": "political_decision",
+        "seriousness": 88,
+        "threshold": 75,
+        "selection_utility": 171.0,
+        "slot": 2,
+        "risks": [],
+        "title_original": "Комиссия ВКП одобрила методику по повышению минимальной заработной платы в СНГ",
+        "title_corrected": "Комиссия ВКП одобрила методику по повышению минимальной заработной платы в СНГ",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "29 октября в Москве (Россия) состоялось заседание (0+) Комиссии Всеобщей конфедерации профсоюзов (ВКП) по защите социально-экономических интересов трудящихся и правовым вопросам. Участники заседания единогласно поддержали предложения по новым целям солидарной кампании, направленной на повышение минимальной заработной платы в странах СНГ до уровня не ниже минимального потребительского бюджета работника. \"Сегодня нам необходим более высокий, чем прожиточный минимум, ориентир для формирования зарплат работников в СНГ. ВКП считает, что для этого пора использовать другое понятие — минимальный потребительский бюджет, который учитывает реальные расходы работника и его семьи\", — подчеркнула заместитель генерального секретаря ВКП Маргарита Усова. Комиссия утвердила ранее разработанный рабочей группой проект методики расчёта минимального потребительского бюджета работника стран СНГ. Как сообщила заместитель председателя временной рабочей группы Исполкома ВКП Наталья Чернышева: \"В основу методики вошли подходы, применяемые в Казахстане, Беларуси и Узбекистане. Наш документ предусматривает расчёт стоимости продовольственных корзин трудоспособных мужчин и женщин, определение расходов на непродовольственные товары и услуги, а также учёт природно-климатических условий и налоговой нагрузки в каждой конкретной стране. При расчётах учитываются и затраты на содержание хотя бы одного иждивенца, например ребёнка\". Для достижения новой цели ВКП подготовила предложения по совершенствованию законодательства в сфере труда. В частности, на комиссии было предложено инициировать разработку нового модельного закона Межпарламентской Ассамблеи СНГ \"О минимальной заработной плате в СНГ\".",
+      "title_original": null,
+      "footer": "РОССИЯ | ПОЛИТИКА",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Комиссия ВКП одобрила методику по повышению минимальной заработной платы в СНГ",
+        "body": [
+          "29 октября в Москве (Россия) состоялось заседание (0+) Комиссии Всеобщей конфедерации профсоюзов (ВКП) по защите социально-экономических интересов трудящихся и правовым вопросам.",
+          "Участники заседания единогласно поддержали предложения по новым целям солидарной кампании, направленной на повышение минимальной заработной платы в странах СНГ до уровня не ниже минимального потребительского бюджета работника."
+        ],
+        "footer": "РОССИЯ | ПОЛИТИКА",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh",
+          "reclassified_to": "ru_pol"
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_pol",
+          "corrected_category": "ru_pol",
+          "group": "ru_pol",
+          "event_type": "political_decision",
+          "subtype": "political_decision",
+          "seriousness": 88,
+          "threshold": 75,
+          "selection_utility": 171.0,
+          "slot": 2,
+          "risks": [],
+          "title_original": "Комиссия ВКП одобрила методику по повышению минимальной заработной платы в СНГ",
+          "title_corrected": "Комиссия ВКП одобрила методику по повышению минимальной заработной платы в СНГ",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "ru_pol",
+          "final_category": "ru_pol",
+          "event_type": "political_decision",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.7",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "ru_pol",
+            "corrected_category": "ru_pol",
+            "group": "ru_pol",
+            "event_type": "political_decision",
+            "subtype": "political_decision",
+            "seriousness": 88,
+            "threshold": 75,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Комиссия ВКП одобрила методику по повышению минимальной заработной платы в СНГ",
+            "title_corrected": "Комиссия ВКП одобрила методику по повышению минимальной заработной платы в СНГ",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "🇷🇺 Россия / политика\n\n<b>Комиссия ВКП одобрила методику по повышению минимальной заработной платы в СНГ</b>\n\n29 октября в Москве (Россия) состоялось заседание (0+) Комиссии Всеобщей конфедерации профсоюзов (ВКП) по защите социально-экономических интересов трудящихся и правовым вопросам.\n\nУчастники заседания единогласно поддержали предложения по новым целям солидарной кампании, направленной на повышение минимальной заработной платы в странах СНГ до уровня не ниже минимального потребительского бюджета работника.\n\nРОССИЯ | ПОЛИТИКА · <a href=\"https://sakhalinmedia.ru/news/2668139/\">SakhalinMedia.ru</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_pol",
+        "final_category": "ru_pol",
+        "event_type": "political_decision",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.7",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_pol",
+          "corrected_category": "ru_pol",
+          "group": "ru_pol",
+          "event_type": "political_decision",
+          "subtype": "political_decision",
+          "seriousness": 88,
+          "threshold": 75,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Комиссия ВКП одобрила методику по повышению минимальной заработной платы в СНГ",
+          "title_corrected": "Комиссия ВКП одобрила методику по повышению минимальной заработной платы в СНГ",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 537,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh",
+        "reclassified_to": "ru_pol"
+      }
+    },
+    {
+      "time_sakhalin": "2026-10-31T19:53:29+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "🧭 Геополитика",
+      "category_key": "geo",
+      "title": "МИД РФ ведет переговоры об упрощении поездок со странами Азии, Африки и Латинской Америки",
+      "url": "https://sakhalinmedia.ru/news/2668332/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6481/6480151.jpg?e25c248f8bdfa5f5e3cd54555d6fb67b",
+      "image_hash": "8a74e5896684b69119d66e1b16975cad94168bf4",
+      "topic_cluster": "geo:ведет_переговоры_упрощении_поездок_странами_африки",
+      "published_at": "2026-10-31T08:30:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "geo",
+        "corrected_category": "geo",
+        "group": "world",
+        "event_type": "geopolitical_event",
+        "subtype": "geopolitical_event",
+        "seriousness": 87,
+        "threshold": 78,
+        "selection_utility": 80.0,
+        "slot": "backup",
+        "risks": [],
+        "title_original": "МИД РФ ведет переговоры об упрощении поездок со странами Азии, Африки и Латинской Америки",
+        "title_corrected": "МИД РФ ведет переговоры об упрощении поездок со странами Азии, Африки и Латинской Америки",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Россия ведет активный диалог с рядом государств Азии, Африки, Ближнего Востока и Латинской Америки об упрощении порядка взаимных поездок граждан. Об этом в интервью ТАСС (16+) заявил директор Консульского департамента МИД РФ Алексей Климов. Глава Консульского департамента Алексей Климов заявил, что новые соглашения будут публиковаться по мере их вступления в силу. По словам дипломата, работа по развитию сотрудничества с дружественными государствами в этой сфере ведется на постоянной основе. \"Диалог о выработке соответствующих договоренностей продолжается с рядом стран Азии, Африки, Ближнего Востока и Латинской Америки\", — отметил Алексей Климов, добавив, что по мере вступления в силу новых межгосударственных соглашений соответствующая информация будет своевременно и официально доводиться до сведения российских граждан.",
+      "title_original": null,
+      "footer": "МИР | ГЕОПОЛИТИКА",
+      "published_row": {
+        "reject": false,
+        "title_ru": "МИД РФ ведет переговоры об упрощении поездок со странами Азии, Африки и Латинской Америки",
+        "body": [
+          "Россия ведет активный диалог с рядом государств Азии, Африки, Ближнего Востока и Латинской Америки об упрощении порядка взаимных поездок граждан.",
+          "Об этом в интервью ТАСС (16+) заявил директор Консульского департамента МИД РФ Алексей Климов."
+        ],
+        "footer": "МИР | ГЕОПОЛИТИКА",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh_chp",
+          "reclassified_to": "geo"
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "geo",
+          "corrected_category": "geo",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "subtype": "geopolitical_event",
+          "seriousness": 87,
+          "threshold": 78,
+          "selection_utility": 80.0,
+          "slot": "backup",
+          "risks": [],
+          "title_original": "МИД РФ ведет переговоры об упрощении поездок со странами Азии, Африки и Латинской Америки",
+          "title_corrected": "МИД РФ ведет переговоры об упрощении поездок со странами Азии, Африки и Латинской Америки",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "geo",
+          "final_category": "geo",
+          "event_type": "geopolitical_event",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.7",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "geo",
+            "corrected_category": "geo",
+            "group": "world",
+            "event_type": "geopolitical_event",
+            "subtype": "geopolitical_event",
+            "seriousness": 87,
+            "threshold": 78,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "МИД РФ ведет переговоры об упрощении поездок со странами Азии, Африки и Латинской Америки",
+            "title_corrected": "МИД РФ ведет переговоры об упрощении поездок со странами Азии, Африки и Латинской Америки",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "🧭 Геополитика\n\n<b>МИД РФ ведет переговоры об упрощении поездок со странами Азии, Африки и Латинской Америки</b>\n\nРоссия ведет активный диалог с рядом государств Азии, Африки, Ближнего Востока и Латинской Америки об упрощении порядка взаимных поездок граждан.\n\nОб этом в интервью ТАСС (16+) заявил директор Консульского департамента МИД РФ Алексей Климов.\n\nМИР | ГЕОПОЛИТИКА · <a href=\"https://sakhalinmedia.ru/news/2668332/\">SakhalinMedia.ru</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "geo",
+        "final_category": "geo",
+        "event_type": "geopolitical_event",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.7",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "geo",
+          "corrected_category": "geo",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "subtype": "geopolitical_event",
+          "seriousness": 87,
+          "threshold": 78,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "МИД РФ ведет переговоры об упрощении поездок со странами Азии, Африки и Латинской Америки",
+          "title_corrected": "МИД РФ ведет переговоры об упрощении поездок со странами Азии, Африки и Латинской Америки",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 538,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh_chp",
+        "reclassified_to": "geo"
       }
     }
   ],
@@ -15580,7 +15580,7 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-10-31T17:12:49+11:00",
+    "started_sakhalin": "2026-10-31T19:47:50+11:00",
     "status": "ok",
     "candidates": 8,
     "published": 2,
@@ -15612,25 +15612,25 @@
           "source": "Sakh.online HTML",
           "status": "ok",
           "entries": 20,
-          "recent": 13
+          "recent": 15
         }
       ]
     },
-    "finished_sakhalin": "2026-10-31T17:24:33+11:00",
+    "finished_sakhalin": "2026-10-31T19:53:37+11:00",
     "stats": {
-      "rss_seen": 153,
-      "old_skip": 53,
+      "rss_seen": 154,
+      "old_skip": 55,
       "google_skip": 13,
       "duplicate_skip": 1,
-      "low_info_skip": 13,
+      "low_info_skip": 17,
       "category_skip": 43,
       "no_image_skip": 0,
-      "bad_image_skip": 9,
-      "logo_image_skip": 18,
+      "bad_image_skip": 7,
+      "logo_image_skip": 17,
       "text_card_image_skip": 8,
-      "candidates": 20,
+      "candidates": 18,
       "rewrite_retry": 4,
-      "editorial_skip": 6,
+      "editorial_skip": 4,
       "telegram_fail": 0,
       "published": 2,
       "telegram_source_attempt": 4,
@@ -15639,13 +15639,13 @@
       "telegram_source_candidates": 21,
       "ai_calls": 4,
       "ai_budget_exhausted": 1,
-      "ai_api_fail": 4,
-      "evidence_reject": 0,
-      "validation_reject": 0,
+      "ai_api_fail": 2,
+      "evidence_reject": 2,
+      "validation_reject": 2,
       "extractive_fallback": 2,
       "extractive_first": 2,
-      "editorial_prechecked": 51,
-      "editorial_gate_checked": 8,
+      "editorial_prechecked": 50,
+      "editorial_gate_checked": 6,
       "editorial_gate_pass": 2,
       "editorial_gate_reject": 0,
       "editorial_gate_fallback": 0,
@@ -15655,18 +15655,18 @@
       "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
       "editorial_reclassified": 8,
-      "editorial_offtopic_reject": 21,
-      "openrouter_empty_content": 12,
-      "openrouter_model_fallback": 0,
+      "editorial_offtopic_reject": 23,
+      "openrouter_empty_content": 10,
+      "openrouter_model_fallback": 2,
       "openrouter_attempts": 12,
       "openrouter_retries": 8,
       "openrouter_invalid_json": 0,
-      "openrouter_success": 0,
+      "openrouter_success": 2,
       "openrouter_circuit_open": 0,
       "editorial_grounded_translation_fallback": 0,
-      "media_required_skip": 10,
+      "media_required_skip": 9,
       "media_generic_skip": 0,
-      "media_ready_candidates": 20,
+      "media_ready_candidates": 18,
       "photo_retry": 0,
       "photo_publish": 2,
       "photo_upload_original": 2,
@@ -15680,9 +15680,9 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 20,
+      "director_seen": 18,
       "director_approved": 8,
-      "director_rejected": 12,
+      "director_rejected": 10,
       "director_reclassified": 0,
       "director_title_corrected": 1,
       "director_ai_calls": 0,
@@ -15705,225 +15705,6 @@
       "policy_version": "policy-v2.7",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
-        "window": 20,
-        "targets": {
-          "local": 6,
-          "ru_pol": 4,
-          "ru_eco": 4,
-          "ru_safety": 3,
-          "world": 2,
-          "it": 1
-        },
-        "target_percent": {
-          "local": 30.0,
-          "ru_pol": 20.0,
-          "ru_eco": 20.0,
-          "ru_safety": 15.0,
-          "world": 10.0,
-          "it": 5.0
-        },
-        "counts": {
-          "local": 12,
-          "ru_pol": 1,
-          "ru_eco": 2,
-          "ru_safety": 0,
-          "world": 1,
-          "it": 4
-        },
-        "scaled_targets": {
-          "local": 6.0,
-          "ru_pol": 4.0,
-          "ru_eco": 4.0,
-          "ru_safety": 3.0,
-          "world": 2.0,
-          "it": 1.0
-        },
-        "deficits": {
-          "local": -6.0,
-          "ru_pol": 3.0,
-          "ru_eco": 2.0,
-          "ru_safety": 3.0,
-          "world": 1.0,
-          "it": -3.0
-        },
-        "distribution_error": 18.0,
-        "subtype_counts": {
-          "violent_crime": 3,
-          "fatal_incident": 4,
-          "major_it": 4,
-          "macro_economy": 3,
-          "political_decision": 2,
-          "major_emergency": 4
-        },
-        "sequence": [
-          "local",
-          "local",
-          "local",
-          "it",
-          "local",
-          "local",
-          "it",
-          "ru_eco",
-          "local",
-          "ru_pol",
-          "world",
-          "local",
-          "local",
-          "it",
-          "ru_eco",
-          "local",
-          "local",
-          "it",
-          "local",
-          "local"
-        ],
-        "category_sequence": [
-          "sakh_chp",
-          "sakh_chp",
-          "sakh_chp",
-          "it",
-          "sakh_chp",
-          "sakh_chp",
-          "it",
-          "ru_eco",
-          "sakh",
-          "ru_pol",
-          "geo",
-          "sakh_chp",
-          "sakh_chp",
-          "it",
-          "ru_eco",
-          "sakh_chp",
-          "sakh_chp",
-          "it",
-          "sakh_chp",
-          "sakh_chp"
-        ],
-        "source_sequence": [
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "sakh.online",
-          "astv",
-          "exploit exploitex",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "astv",
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "astv",
-          "guardian technology",
-          "sakhalinmedia.ru",
-          "sakh.online"
-        ],
-        "retrospective_anomalies": [],
-        "valid_posts_counted": 20
-      },
-      "candidate_count": 20,
-      "approved_count": 8,
-      "rejected_count": 12,
-      "rejected_by_reason": {
-        "local_mix_saturated_low_priority": 3,
-        "importance_below_threshold": 6,
-        "ordinary_weather_not_release_worthy": 2,
-        "weather_without_public_safety_impact": 1
-      },
-      "ai_review_requested": 0,
-      "ai_review_received": 0,
-      "selected_groups": [
-        "ru_safety",
-        "ru_eco"
-      ],
-      "projected_distribution_error": 14.0,
-      "projected_counts": {
-        "local": 10,
-        "it": 4,
-        "ru_eco": 3,
-        "ru_pol": 1,
-        "world": 1,
-        "ru_safety": 1
-      },
-      "projected_length": 20,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "ТАСС: в 12 регионах России с начала суток объявляли тревогу из-за БПЛА и ракет",
-          "category_key": "ru_security",
-          "group": "ru_safety",
-          "event_type": "military_security",
-          "seriousness": 100,
-          "utility": 190.0
-        },
-        {
-          "slot": 2,
-          "title": "Чистая прибыль ВТБ за девять месяцев выросла на 7%",
-          "category_key": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "seriousness": 86,
-          "utility": 141.0
-        },
-        {
-          "slot": "backup",
-          "title": "US approves sale of 500 Patriot missiles to Ukraine",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "military_security",
-          "seriousness": 98,
-          "utility": 132.0
-        },
-        {
-          "slot": "backup",
-          "title": "Oleshky ceasefire: Hundreds evacuated from Russian-occupied town in Ukraine",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "major_emergency",
-          "seriousness": 90,
-          "utility": 124.0
-        },
-        {
-          "slot": "backup",
-          "title": "G20 'family photo' cancelled after protests over presence of Russian minister",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 88,
-          "utility": 122.0
-        },
-        {
-          "slot": "backup",
-          "title": "Новенький Mitsubishi Pajero будет стоить от 3,2 млн рублей — в Японии уже объявили официальные цены",
-          "category_key": "geo",
-          "group": "world",
-          "event_type": "political_decision",
-          "seriousness": 86,
-          "utility": 120.0
-        },
-        {
-          "slot": "backup",
-          "title": "Google value plunges by $500bn as its own AI search hits ad sales",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 87,
-          "utility": -27.0
-        },
-        {
-          "slot": "backup",
-          "title": "На Сахалине стартовало строительство курорта Долина Айна с инвестициями в 57 млрд рублей",
-          "category_key": "sakh",
-          "group": "local",
-          "event_type": "macro_economy",
-          "seriousness": 86,
-          "utility": -162.0
-        }
-      ],
-      "rolling_balance_after": {
         "window": 20,
         "targets": {
           "local": 6,
@@ -16042,11 +15823,230 @@
         ],
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
+      },
+      "candidate_count": 18,
+      "approved_count": 8,
+      "rejected_count": 10,
+      "rejected_by_reason": {
+        "local_mix_saturated_low_priority": 3,
+        "importance_below_threshold": 4,
+        "ordinary_weather_not_release_worthy": 2,
+        "weather_without_public_safety_impact": 1
+      },
+      "ai_review_requested": 0,
+      "ai_review_received": 0,
+      "selected_groups": [
+        "world",
+        "ru_pol"
+      ],
+      "projected_distribution_error": 12.0,
+      "projected_counts": {
+        "local": 10,
+        "it": 3,
+        "ru_eco": 3,
+        "ru_pol": 2,
+        "world": 2
+      },
+      "projected_length": 20,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "US approves sale of 500 Patriot missiles to Ukraine",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "military_security",
+          "seriousness": 98,
+          "utility": 132.0
+        },
+        {
+          "slot": 2,
+          "title": "Комиссия ВКП одобрила методику по повышению минимальной заработной платы в СНГ",
+          "category_key": "ru_pol",
+          "group": "ru_pol",
+          "event_type": "political_decision",
+          "seriousness": 88,
+          "utility": 171.0
+        },
+        {
+          "slot": "backup",
+          "title": "Oleshky ceasefire: Hundreds evacuated from Russian-occupied town in Ukraine",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "major_emergency",
+          "seriousness": 90,
+          "utility": 90.0
+        },
+        {
+          "slot": "backup",
+          "title": "Новенький Mitsubishi Pajero будет стоить от 3,2 млн рублей — в Японии уже объявили официальные цены",
+          "category_key": "geo",
+          "group": "world",
+          "event_type": "political_decision",
+          "seriousness": 86,
+          "utility": 90.0
+        },
+        {
+          "slot": "backup",
+          "title": "G20 'family photo' cancelled after protests over presence of Russian minister",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "seriousness": 88,
+          "utility": 88.0
+        },
+        {
+          "slot": "backup",
+          "title": "МИД РФ ведет переговоры об упрощении поездок со странами Азии, Африки и Латинской Америки",
+          "category_key": "geo",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "seriousness": 87,
+          "utility": 80.0
+        },
+        {
+          "slot": "backup",
+          "title": "Google value plunges by $500bn as its own AI search hits ad sales",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 87,
+          "utility": -27.0
+        },
+        {
+          "slot": "backup",
+          "title": "МЧС предупреждает: Сахалин накроет ураган со снегом 1 ноября",
+          "category_key": "sakh",
+          "group": "local",
+          "event_type": "severe_weather",
+          "seriousness": 93,
+          "utility": -101.0
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 20,
+        "targets": {
+          "local": 6,
+          "ru_pol": 4,
+          "ru_eco": 4,
+          "ru_safety": 3,
+          "world": 2,
+          "it": 1
+        },
+        "target_percent": {
+          "local": 30.0,
+          "ru_pol": 20.0,
+          "ru_eco": 20.0,
+          "ru_safety": 15.0,
+          "world": 10.0,
+          "it": 5.0
+        },
+        "counts": {
+          "local": 10,
+          "ru_pol": 2,
+          "ru_eco": 3,
+          "ru_safety": 0,
+          "world": 2,
+          "it": 3
+        },
+        "scaled_targets": {
+          "local": 6.0,
+          "ru_pol": 4.0,
+          "ru_eco": 4.0,
+          "ru_safety": 3.0,
+          "world": 2.0,
+          "it": 1.0
+        },
+        "deficits": {
+          "local": -4.0,
+          "ru_pol": 2.0,
+          "ru_eco": 1.0,
+          "ru_safety": 3.0,
+          "world": 0.0,
+          "it": -2.0
+        },
+        "distribution_error": 12.0,
+        "subtype_counts": {
+          "violent_crime": 2,
+          "major_it": 3,
+          "macro_economy": 5,
+          "political_decision": 3,
+          "major_emergency": 4,
+          "fatal_incident": 2,
+          "geopolitical_event": 1
+        },
+        "sequence": [
+          "local",
+          "local",
+          "it",
+          "ru_eco",
+          "local",
+          "ru_pol",
+          "world",
+          "local",
+          "local",
+          "it",
+          "ru_eco",
+          "local",
+          "local",
+          "it",
+          "local",
+          "local",
+          "ru_eco",
+          "local",
+          "ru_pol",
+          "world"
+        ],
+        "category_sequence": [
+          "sakh_chp",
+          "sakh_chp",
+          "it",
+          "ru_eco",
+          "sakh",
+          "ru_pol",
+          "geo",
+          "sakh_chp",
+          "sakh_chp",
+          "it",
+          "ru_eco",
+          "sakh_chp",
+          "sakh_chp",
+          "it",
+          "sakh_chp",
+          "sakh_chp",
+          "ru_eco",
+          "sakh",
+          "ru_pol",
+          "geo"
+        ],
+        "source_sequence": [
+          "sakh.online",
+          "astv",
+          "exploit exploitex",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "astv",
+          "sakhalinmedia.ru",
+          "exploit exploitex",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "astv",
+          "guardian technology",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru"
+        ],
+        "retrospective_anomalies": [],
+        "valid_posts_counted": 20
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-10-31T06:13:15+00:00",
+      "checked_at": "2026-10-31T08:48:15+00:00",
       "checked": 20,
       "passed": 19,
       "anomalies": [
@@ -16097,8 +16097,8 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 20,
-      "missing_media_rejected": 10,
+      "ready_candidates": 18,
+      "missing_media_rejected": 9,
       "generic_media_rejected": 0,
       "photo_retries": 0,
       "photo_published": 2,
@@ -16111,12 +16111,12 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 51,
-      "checked": 8,
+      "prechecked": 50,
+      "checked": 6,
       "passed": 2,
       "rejected": 0,
       "reclassified": 8,
-      "offtopic_reject": 21,
+      "offtopic_reject": 23,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
@@ -16165,12 +16165,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 11,
-      "ru_pol": 1,
+      "local": 10,
+      "ru_pol": 2,
       "ru_eco": 3,
       "ru_safety": 0,
-      "world": 1,
-      "it": 4
+      "world": 2,
+      "it": 3
     },
     "scaled_targets": {
       "local": 6.0,
@@ -16181,25 +16181,24 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -5.0,
-      "ru_pol": 3.0,
+      "local": -4.0,
+      "ru_pol": 2.0,
       "ru_eco": 1.0,
       "ru_safety": 3.0,
-      "world": 1.0,
-      "it": -3.0
+      "world": 0.0,
+      "it": -2.0
     },
-    "distribution_error": 16.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
-      "fatal_incident": 3,
-      "major_it": 4,
       "violent_crime": 2,
+      "major_it": 3,
       "macro_economy": 5,
-      "political_decision": 2,
-      "major_emergency": 4
+      "political_decision": 3,
+      "major_emergency": 4,
+      "fatal_incident": 2,
+      "geopolitical_event": 1
     },
     "sequence": [
-      "local",
-      "it",
       "local",
       "local",
       "it",
@@ -16217,11 +16216,11 @@
       "local",
       "local",
       "ru_eco",
-      "local"
+      "local",
+      "ru_pol",
+      "world"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "it",
       "sakh_chp",
       "sakh_chp",
       "it",
@@ -16239,11 +16238,11 @@
       "sakh_chp",
       "sakh_chp",
       "ru_eco",
-      "sakh"
+      "sakh",
+      "ru_pol",
+      "geo"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "exploit exploitex",
       "sakh.online",
       "astv",
       "exploit exploitex",
@@ -16261,6 +16260,8 @@
       "sakhalinmedia.ru",
       "sakh.online",
       "sakh.online",
+      "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -22177,7 +22178,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-31T06:13:15+00:00",
+    "checked_at": "2026-10-31T08:48:15+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -23155,7 +23156,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-10-31T06:12:48+00:00",
+    "checked_at_utc": "2026-10-31T08:47:49+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -23178,30 +23179,30 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-10-31T06:24:33+00:00",
+    "checked_at_utc": "2026-10-31T08:53:37+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-31T06:24:33+00:00",
+    "checked_at_utc": "2026-10-31T08:53:37+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
     "director_approved": 8,
     "ai_calls": 4,
-    "ai_api_fail": 4,
+    "ai_api_fail": 2,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-10-31T06:24:33+00:00",
+    "checked_at_utc": "2026-10-31T08:53:37+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-10-31T17:24:33+11:00",
+      "finished_sakhalin": "2026-10-31T19:53:37+11:00",
       "candidates": 8,
       "queued_for_delivery": 0
     },
