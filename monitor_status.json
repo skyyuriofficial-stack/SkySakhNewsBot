@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-31T08:47:31+00:00",
-  "checked_at_sakhalin": "2026-10-31T19:47:26+11:00",
+  "checked_at_utc": "2026-10-31T08:54:10+00:00",
+  "checked_at_sakhalin": "2026-10-31T19:54:03+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-10-31T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-10-31T17:24:33+11:00"
-    },
     {
       "type": "post_audit_unresolved",
       "count": 1,
@@ -44,21 +38,21 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-10-31T17:24:33+11:00",
-    "age_hours": 2.38,
+    "finished_sakhalin": "2026-10-31T19:53:37+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-10-31T06:24:33+00:00",
+    "checked_at_utc": "2026-10-31T08:53:37+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
     "director_approved": 8,
     "ai_calls": 4,
-    "ai_api_fail": 4,
+    "ai_api_fail": 2,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -113,7 +107,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-31T08:47:30+00:00",
+    "checked_at": "2026-10-31T08:54:08+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -156,32 +150,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 505,
-      "title": "Огнеборцы потушили пожар в подсобном помещении Холмска",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 506,
-      "title": "ИИ может найти ваших предков до 10 поколения — энтузиаст создал опенсорсный скилл для Codex и Claude Code, который помогает исследовать семейную историю на территории бывшего СССР",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 507,
       "title": "На сахалинского медбрата напали во время вызова — дело дошло до суда",
@@ -415,6 +383,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 537,
+      "title": "Комиссия ВКП одобрила методику по повышению минимальной заработной платы в СНГ",
+      "category_key": "ru_pol",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_pol",
+      "title_issues": []
+    },
+    {
+      "message_id": 538,
+      "title": "МИД РФ ведет переговоры об упрощении поездок со странами Азии, Африки и Латинской Америки",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "geo",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -436,12 +430,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 11,
-      "ru_pol": 1,
+      "local": 10,
+      "ru_pol": 2,
       "ru_eco": 3,
       "ru_safety": 0,
-      "world": 1,
-      "it": 4
+      "world": 2,
+      "it": 3
     },
     "scaled_targets": {
       "local": 6.0,
@@ -452,25 +446,24 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -5.0,
-      "ru_pol": 3.0,
+      "local": -4.0,
+      "ru_pol": 2.0,
       "ru_eco": 1.0,
       "ru_safety": 3.0,
-      "world": 1.0,
-      "it": -3.0
+      "world": 0.0,
+      "it": -2.0
     },
-    "distribution_error": 16.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
-      "fatal_incident": 3,
-      "major_it": 4,
       "violent_crime": 2,
+      "major_it": 3,
       "macro_economy": 5,
-      "political_decision": 2,
-      "major_emergency": 4
+      "political_decision": 3,
+      "major_emergency": 4,
+      "fatal_incident": 2,
+      "geopolitical_event": 1
     },
     "sequence": [
-      "local",
-      "it",
       "local",
       "local",
       "it",
@@ -488,11 +481,11 @@
       "local",
       "local",
       "ru_eco",
-      "local"
+      "local",
+      "ru_pol",
+      "world"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "it",
       "sakh_chp",
       "sakh_chp",
       "it",
@@ -510,11 +503,11 @@
       "sakh_chp",
       "sakh_chp",
       "ru_eco",
-      "sakh"
+      "sakh",
+      "ru_pol",
+      "geo"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "exploit exploitex",
       "sakh.online",
       "astv",
       "exploit exploitex",
@@ -532,6 +525,8 @@
       "sakhalinmedia.ru",
       "sakh.online",
       "sakh.online",
+      "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -539,7 +534,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-31T08:47:24+00:00",
+    "checked_at_utc": "2026-10-31T08:54:00+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -569,15 +564,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 16.0,
+      "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
-        "local": 11,
-        "ru_pol": 1,
+        "local": 10,
+        "ru_pol": 2,
         "ru_eco": 3,
         "ru_safety": 0,
-        "world": 1,
-        "it": 4
+        "world": 2,
+        "it": 3
       },
       "targets": {
         "local": 6,
@@ -588,12 +583,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -5.0,
-        "ru_pol": 3.0,
+        "local": -4.0,
+        "ru_pol": 2.0,
         "ru_eco": 1.0,
         "ru_safety": 3.0,
-        "world": 1.0,
-        "it": -3.0
+        "world": 0.0,
+        "it": -2.0
       }
     }
   ]
