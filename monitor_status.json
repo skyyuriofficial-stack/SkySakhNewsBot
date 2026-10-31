@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-10-31T21:31:09+00:00",
-  "checked_at_sakhalin": "2026-11-01T08:31:03+11:00",
+  "checked_at_utc": "2026-10-31T22:14:20+00:00",
+  "checked_at_sakhalin": "2026-11-01T09:14:15+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -33,13 +33,24 @@
           "error": "Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message"
         }
       ]
+    },
+    {
+      "type": "mobilization_digest_missing",
+      "slot": "morning",
+      "expected_by_sakhalin": "2026-11-01T08:45:00+11:00",
+      "last_attempt": {
+        "status": "ok",
+        "mode": "evening",
+        "at_utc": "2026-10-31T08:22:31+00:00",
+        "at_sakhalin": "2026-10-31T19:22:31+11:00"
+      }
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-01T08:30:32+11:00",
-    "age_hours": 0.01,
+    "age_hours": 0.73,
     "published": 0
   },
   "last_production_attempt": {
@@ -60,9 +71,9 @@
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-11-01",
-    "status": "healthy",
+    "status": "error",
     "morning": {
-      "due": false,
+      "due": true,
       "published": false,
       "record": {}
     },
@@ -77,11 +88,23 @@
       "at_utc": "2026-10-31T08:22:31+00:00",
       "at_sakhalin": "2026-10-31T19:22:31+11:00"
     },
-    "missing": []
+    "missing": [
+      {
+        "type": "mobilization_digest_missing",
+        "slot": "morning",
+        "expected_by_sakhalin": "2026-11-01T08:45:00+11:00",
+        "last_attempt": {
+          "status": "ok",
+          "mode": "evening",
+          "at_utc": "2026-10-31T08:22:31+00:00",
+          "at_sakhalin": "2026-10-31T19:22:31+11:00"
+        }
+      }
+    ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-10-31T21:31:07+00:00",
+    "checked_at": "2026-10-31T22:14:19+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -509,7 +532,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-10-31T21:31:00+00:00",
+    "checked_at_utc": "2026-10-31T22:14:12+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
