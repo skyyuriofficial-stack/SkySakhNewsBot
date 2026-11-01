@@ -1,11 +1,17 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-01T07:30:52+00:00",
-  "checked_at_sakhalin": "2026-11-01T18:30:49+11:00",
+  "checked_at_utc": "2026-11-01T09:08:27+00:00",
+  "checked_at_sakhalin": "2026-11-01T20:08:22+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
+    {
+      "type": "publisher_slot_missed",
+      "slot_sakhalin": "2026-11-01T19:00+11:00",
+      "grace_minutes": 45,
+      "last_finished_sakhalin": "2026-11-01T18:30:23+11:00"
+    },
     {
       "type": "post_audit_unresolved",
       "count": 1,
@@ -39,7 +45,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-01T18:30:23+11:00",
-    "age_hours": 0.01,
+    "age_hours": 1.63,
     "published": 0
   },
   "last_production_attempt": {
@@ -80,21 +86,34 @@
       }
     },
     "evening": {
-      "due": false,
-      "published": false,
-      "record": {}
+      "due": true,
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-11-01T09:08:03+00:00",
+        "published_at_sakhalin": "2026-11-01T20:08:03+11:00",
+        "telegram_message_id": 541,
+        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+        "evidence_count": 3,
+        "evidence_hash": "7a26885d6faac5b4de0ec929dded52a8407f745592643f449a7ca99ee63a0686",
+        "source_ids": [
+          1,
+          2,
+          3
+        ]
+      }
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "morning",
-      "at_utc": "2026-10-31T22:16:28+00:00",
-      "at_sakhalin": "2026-11-01T09:16:28+11:00"
+      "mode": "evening",
+      "at_utc": "2026-11-01T09:08:03+00:00",
+      "at_sakhalin": "2026-11-01T20:08:03+11:00"
     },
     "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-01T07:30:51+00:00",
+    "checked_at": "2026-11-01T09:08:26+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -522,7 +541,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-01T07:30:47+00:00",
+    "checked_at_utc": "2026-11-01T09:08:20+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
