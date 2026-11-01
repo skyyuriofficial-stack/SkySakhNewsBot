@@ -1,16 +1,28 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-01T20:51:04+00:00",
-  "checked_at_sakhalin": "2026-11-02T07:51:00+11:00",
-  "status": "degraded",
+  "checked_at_utc": "2026-11-01T22:47:04+00:00",
+  "checked_at_sakhalin": "2026-11-02T09:46:58+11:00",
+  "status": "error",
   "mutations_enabled": true,
-  "issues": [],
+  "issues": [
+    {
+      "type": "mobilization_digest_missing",
+      "slot": "morning",
+      "expected_by_sakhalin": "2026-11-02T08:45:00+11:00",
+      "last_attempt": {
+        "status": "ok",
+        "mode": "evening",
+        "at_utc": "2026-11-01T09:08:03+00:00",
+        "at_sakhalin": "2026-11-01T20:08:03+11:00"
+      }
+    }
+  ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-02T07:50:34+11:00",
-    "age_hours": 0.01,
+    "age_hours": 1.94,
     "published": 1
   },
   "last_production_attempt": {
@@ -31,9 +43,9 @@
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-11-02",
-    "status": "healthy",
+    "status": "error",
     "morning": {
-      "due": false,
+      "due": true,
       "published": false,
       "record": {}
     },
@@ -48,11 +60,23 @@
       "at_utc": "2026-11-01T09:08:03+00:00",
       "at_sakhalin": "2026-11-01T20:08:03+11:00"
     },
-    "missing": []
+    "missing": [
+      {
+        "type": "mobilization_digest_missing",
+        "slot": "morning",
+        "expected_by_sakhalin": "2026-11-02T08:45:00+11:00",
+        "last_attempt": {
+          "status": "ok",
+          "mode": "evening",
+          "at_utc": "2026-11-01T09:08:03+00:00",
+          "at_sakhalin": "2026-11-01T20:08:03+11:00"
+        }
+      }
+    ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-01T20:51:03+00:00",
+    "checked_at": "2026-11-01T22:47:02+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -485,7 +509,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-01T20:50:58+00:00",
+    "checked_at_utc": "2026-11-01T22:46:55+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
