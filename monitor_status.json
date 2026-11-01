@@ -1,41 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-01T20:46:44+00:00",
-  "checked_at_sakhalin": "2026-11-02T07:46:39+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-01T20:51:04+00:00",
+  "checked_at_sakhalin": "2026-11-02T07:51:00+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 6.19,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-02T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-02T01:35:25+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-02T01:35:25+11:00",
-    "age_hours": 6.19,
-    "published": 0
+    "finished_sakhalin": "2026-11-02T07:50:34+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-01T14:35:25+00:00",
+    "checked_at_utc": "2026-11-01T20:50:34+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
+    "published": 1,
     "director_approved": 1,
-    "ai_calls": 2,
-    "ai_api_fail": 2,
+    "ai_calls": 1,
+    "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -64,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-01T20:46:42+00:00",
+    "checked_at": "2026-11-01T20:51:03+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -101,19 +89,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 509,
-      "title": "На медбрата скорой помощи на Сахалине напали на вызове - у мужчины тяжелые травмы",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 510,
       "title": "Китайцы нашли способ разблокировать всю мощность видеокарт Nvidia — вышел анлокер, который снимает ограничение с карточек серий RTX30xx и RTX40xx ",
@@ -360,6 +335,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 542,
+      "title": "NVIDIA прекращает поддержку Windows 10 — все последующие игровые драйвера перестанут поддерживаться с ноября",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -381,12 +369,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 10,
+      "local": 9,
       "ru_pol": 2,
       "ru_eco": 3,
       "ru_safety": 0,
       "world": 2,
-      "it": 3
+      "it": 4
     },
     "scaled_targets": {
       "local": 6.0,
@@ -397,17 +385,16 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -4.0,
+      "local": -3.0,
       "ru_pol": 2.0,
       "ru_eco": 1.0,
       "ru_safety": 3.0,
       "world": 0.0,
-      "it": -2.0
+      "it": -3.0
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "violent_crime": 1,
-      "major_it": 3,
+      "major_it": 4,
       "macro_economy": 5,
       "political_decision": 3,
       "major_emergency": 4,
@@ -416,7 +403,6 @@
       "severe_weather": 1
     },
     "sequence": [
-      "local",
       "it",
       "ru_eco",
       "local",
@@ -435,10 +421,10 @@
       "local",
       "ru_pol",
       "world",
-      "local"
+      "local",
+      "it"
     ],
     "category_sequence": [
-      "sakh_chp",
       "it",
       "ru_eco",
       "sakh",
@@ -457,10 +443,10 @@
       "sakh",
       "ru_pol",
       "geo",
-      "sakh"
+      "sakh",
+      "it"
     ],
     "source_sequence": [
-      "astv",
       "exploit exploitex",
       "sakhalinmedia.ru",
       "sakh.online",
@@ -479,7 +465,8 @@
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "sakh.online"
+      "sakh.online",
+      "techmedia techmedia"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -498,7 +485,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-01T20:46:37+00:00",
+    "checked_at_utc": "2026-11-01T20:50:58+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -542,12 +529,12 @@
       "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
-        "local": 10,
+        "local": 9,
         "ru_pol": 2,
         "ru_eco": 3,
         "ru_safety": 0,
         "world": 2,
-        "it": 3
+        "it": 4
       },
       "targets": {
         "local": 6,
@@ -558,12 +545,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -4.0,
+        "local": -3.0,
         "ru_pol": 2.0,
         "ru_eco": 1.0,
         "ru_safety": 3.0,
         "world": 0.0,
-        "it": -2.0
+        "it": -3.0
       }
     }
   ]
