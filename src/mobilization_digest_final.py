@@ -161,7 +161,10 @@ def _civil_society_claim(item):
     title = digest.clean(item.get("title"))
     body = digest.clean(item.get("summary"))
     low = (title + " " + body).lower()
-    if "фейков" in low or "поддельн" in low:
+    # The Telegram public preview may contain unrelated quoted/adjacent
+    # fragments in the article body. Only a headline explicitly identifying
+    # a fake summons may be described as a debunking notice.
+    if re.search(r"фейков|поддельн", title, re.I):
         return (
             f"По сообщению проекта «Идите лесом»: {title}. "
             "Оценка подлинности повесток принадлежит проекту; "
@@ -254,7 +257,8 @@ def safe_fallback_draft(evidence):
             (row for row in recent_civil
              if re.search(r"запасник.{0,100}повестк|повестк.{0,120}запасник",
                           _evidence_text(row), re.I)
-             and not re.search(r"фейков|поддельн", _evidence_text(row), re.I)),
+             and not re.search(r"фейков|поддельн",
+                               digest.clean(row.get("title")), re.I)),
             recent_civil[0],
         )
         items.append({
@@ -266,7 +270,8 @@ def safe_fallback_draft(evidence):
         fake = next(
             (row for row in recent_civil
              if row is not substantive
-             and re.search(r"фейков|поддельн", _evidence_text(row), re.I)),
+             and re.search(r"фейков|поддельн",
+                           digest.clean(row.get("title")), re.I)),
             None,
         )
         if fake:
