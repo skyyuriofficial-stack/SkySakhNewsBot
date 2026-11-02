@@ -61,7 +61,7 @@ def direct_civil_claim(item):
     if re.search(r"призыв\w* по мобилизац|повестк\w* (?:на|по) мобилизац", low):
         purposes.append("призыв по мобилизации — формулировка источника")
     if purposes:
-        purpose = "В сообщении указано: " + "; ".join(purposes) + "."
+        purpose = "В тексте обсуждаются категории: " + "; ".join(purposes) + "."
     fake = bool(re.search(r"фейков|поддельн", norm(title)))
     prefix = "Предупреждение проекта" if fake else "Сообщение проекта"
     return (
@@ -161,11 +161,42 @@ def merge_evidence(rows, snapshots, limit=42):
     return out
 
 
+def supported_basis(basis, by_id, axis):
+    if not isinstance(basis, dict) or len(clean(basis.get("reasoning"))) < 60:
+        return False
+    refs = basis.get("source_ids") or []
+    excerpt = clean(basis.get("evidence_excerpt"))
+    if not refs or len(excerpt) < 30:
+        return False
+    if any(not str(i).isdigit() or int(i) not in by_id for i in refs):
+        return False
+    # Statutory powers alone are not evidence of manpower shortages or actual
+    # readiness. Require a dated, current observational source and exact text.
+    now = datetime.now(timezone.utc)
+    patterns = {
+        "near_term": r"мобилизац|комплектован|кадров|повестк|mobiliz|manpower|recruit",
+        "staffing": r"потер|набор|комплектован|кадров|loss|manpower|recruit",
+        "infrastructure": r"военком|сборн.{0,20}пункт|повестк|разверт|развёрт|deployment|draft notice",
+    }
+    for raw in refs:
+        row = by_id[int(raw)]
+        if row.get("group") == "law" or row.get("evidence_kind") == "historical_reference":
+            continue
+        try:
+            stamp = datetime.fromisoformat(str(row.get("published_utc") or "").replace("Z", "+00:00"))
+            if stamp.tzinfo is None or not (-7200 <= (now-stamp).total_seconds() <= 8*86400):
+                continue
+        except (ValueError, TypeError):
+            continue
+        if excerpt in clean(row.get("summary")) and re.search(patterns[axis], excerpt, re.I):
+            return True
+    return False
+
+
 def enrich_draft(draft, evidence):
     """Attach source-specific reasoning and reject conclusions from silence."""
     draft = copy.deepcopy(draft)
-    if draft.get("depth_version") == VERSION:
-        return draft
+    # A model-supplied version flag is never permission to skip checks.
     law = [r for r in evidence if r.get("group") == "law"]
     civil = [r for r in evidence if r.get("group") == "civil_society"]
     isw = [r for r in evidence if r.get("group") == "isw"]
@@ -175,13 +206,13 @@ def enrich_draft(draft, evidence):
         "Это не вступивший в силу штраф по новой статье.",
         "Это санкции из текста проекта; вступление новой статьи в силу отдельно не подтверждено."
     )
-    if any(r.get("evidence_kind") == "historical_reference" for r in law):
+    if any(r.get("evidence_kind") == "historical_reference" for r in law) and "Текущая стадия отдельно не подтверждена" not in legal:
         legal += " Текущая стадия отдельно не подтверждена; приведённая контрольная дата не заменяет проверку карточки Госдумы и официального опубликования."
     roles = {r.get("legal_role") for r in law}
-    if "bill_text" in roles:
+    if "bill_text" in roles and "Анализ: предмет проекта" not in legal:
         legal += " Анализ: предмет проекта — ответственность за неисполнение конкретного решения уполномоченного органа; сам проект не устанавливает факт призыва, численность или сроки новой волны."
     rationale = next((r for r in law if r.get("legal_role") == "bill_rationale" and r.get("retrieved_text")), None)
-    if rationale:
+    if rationale and "Цель по пояснительной записке:" not in legal:
         legal += " Цель по пояснительной записке: " + sentence_excerpt(rationale["summary"], 310)
     quotes = []
     for row in law:
@@ -222,8 +253,7 @@ def enrich_draft(draft, evidence):
     for axis, default in limits.items():
         b = basis.get(axis) if isinstance(basis, dict) else None
         refs = b.get("source_ids", []) if isinstance(b, dict) else []
-        valid = bool(refs) and all(str(i).isdigit() and int(i) in by_id for i in refs)
-        valid = valid and len(clean(b.get("reasoning"))) >= 60 if isinstance(b, dict) else False
+        valid = supported_basis(b, by_id, axis)
         if not valid:
             assessment[axis] = default
     if norm(assessment.get("started")).startswith(("не подтверждено", "нет —", "нет -")):
@@ -252,7 +282,7 @@ def depth_issues(draft, evidence):
         text = clean((draft.get("assessment") or {}).get(axis)).upper()
         if re.match(r"^(НИЗК|УМЕРЕН|ПОВЫШЕН|ВЫСОК|СРЕДН)", text):
             b = (draft.get("assessment_basis") or {}).get(axis) or {}
-            if not b.get("source_ids") or len(clean(b.get("reasoning"))) < 60:
+            if not supported_basis(b, by_id, axis):
                 issues.append("unsupported_axis_rating:" + axis)
     return issues
 
@@ -340,7 +370,7 @@ def install(digest, final, sources, runner):
         context = old_prompt(evidence, mode)
         return context + "\n\nДополнительные обязательные условия: не считай историческую контрольную дату текущей стадией. " \
             "Документы одного законопроекта — один сюжет. Объясни предмет, адресатов, исключения, санкции, стадию, срок вступления в силу (если подтверждён), цель по пояснительной записке и связь с мобилизацией. " \
-            "Для каждого уровня риска добавь assessment_basis: ключ оси, source_ids и reasoning с причинной связью и альтернативным объяснением. " \
+            "Для каждого уровня риска добавь assessment_basis: ключ оси, source_ids, evidence_excerpt (точный фрагмент текущего сообщения) и reasoning с причинной связью и альтернативным объяснением. Исторический закон не доказывает оперативную готовность или кадровый дефицит. " \
             "При недостатке данных вместо уровня используй НЕДОСТАТОЧНО ДАННЫХ. Не выводи цель повестки по слову 'запасник'. " \
             "Цитаты только из literal_quote; retrieved_at не является датой принятия акта.\n" + __import__('json').dumps([
                 {k: r.get(k) for k in ('id', 'legal_role', 'evidence_kind', 'retrieved_at', 'literal_quote', 'current_stage_verified', 'event_family')}

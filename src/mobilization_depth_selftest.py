@@ -71,6 +71,24 @@ class DepthTests(unittest.TestCase):
             self.assertIs(row['current_stage_verified'], False)
             self.assertIn(row['literal_quote'], row['retrieved_text'])
 
+    def test_model_flag_cannot_bypass_risk_check(self):
+        d = {'depth_version': q.VERSION, 'assessment': {'near_term': 'НИЗКИЙ — указа нет'}}
+        out = q.enrich_draft(d, [])
+        self.assertTrue(out['assessment']['near_term'].startswith('НЕДОСТАТОЧНО'))
+
+    def test_old_law_does_not_prove_current_staffing(self):
+        row = {'id': 1, 'group': 'law', 'summary': 'Закон о мобилизационной подготовке и комплектовании войск', 'published_utc': '2026-10-27T00:00:00+00:00'}
+        basis = {'source_ids': [1], 'reasoning': 'Подробное объяснение с причинной связью, которое однако не подкреплено текущим кадровым наблюдением.', 'evidence_excerpt': row['summary']}
+        self.assertFalse(q.supported_basis(basis, {1: row}, 'staffing'))
+
+    def test_sber_inflections_and_real_exceptions(self):
+        import editorial_policy as policy
+        for title in ('В Сбере рассказали, как копить на отпуск', 'Клиенты Сбера рассказали о накоплениях', 'Сбер рассказал, как избежать банкротства'):
+            self.assertTrue(policy._is_sber_routine_promotion(title), title)
+        for title in ('Сбер объявил дефолт по обязательствам', 'У Сбера произошёл масштабный сбой платежей'):
+            self.assertFalse(policy._is_sber_routine_promotion(title), title)
+        self.assertTrue(policy._is_foreign_vehicle_recall('Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема'))
+
     def test_production_fallback_integration(self):
         import mobilization_digest as digest
         import mobilization_digest_final as final

@@ -637,7 +637,7 @@ def _is_soft_finance_ai_promo(title: str) -> bool:
 # excludes a genuinely material failure of the bank itself: a default, loss
 # of licence, systemic outage or serious security/solvency incident.
 _SBER_BRAND_RE = re.compile(
-    r"\bсбер(?:банк\w*|страховани\w*|инвестици\w*|нпф\w*|университет\w*)?\b",
+    r"\bсбер(?:банк\w*|страховани\w*|инвестици\w*|нпф\w*|университет\w*|а|у|ом|е)?\b",
     re.I,
 )
 _SBER_MATERIAL_BANK_EVENTS = (
@@ -662,10 +662,15 @@ _FOREIGN_AUTO_PRODUCTS = (
 
 
 def _is_sber_routine_promotion(title: str) -> bool:
-    return bool(
-        _SBER_BRAND_RE.search(title)
-        and not has_any(title, _SBER_MATERIAL_BANK_EVENTS)
-    )
+    if not _SBER_BRAND_RE.search(title):
+        return False
+    # Mentioning default/bankruptcy inside financial advice is not an event
+    # affecting the bank itself; inflected brand names must obey the same rule.
+    advice = bool(re.search(
+        r"как.{0,60}(?:избеж|защит|подготов)|совет.{0,50}(?:дефолт|банкрот)|"
+        r"признаки.{0,25}(?:дефолт|банкрот)", title, re.I
+    ))
+    return advice or not has_any(title, _SBER_MATERIAL_BANK_EVENTS)
 
 
 def _is_foreign_vehicle_recall(title: str) -> bool:
