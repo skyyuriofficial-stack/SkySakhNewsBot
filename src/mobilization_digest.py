@@ -418,7 +418,9 @@ def format_message(draft: Dict[str, Any], evidence: List[Dict[str, Any]], mode: 
                 {**item, "text": clean(item.get("text"))[:205]}
                 for item in (draft.get("items") or [])[:3]
             ],
-            "legal": clean(draft.get("legal"))[:790],
+            # Preserve the complete legal distinction (bill vs enacted law,
+            # presidential authority and decree) when trimming for Telegram.
+            "legal": clean(draft.get("legal")),
             "practice": clean(draft.get("practice"))[:290],
             "isw": clean(draft.get("isw"))[:150],
             "source_ids": (draft.get("source_ids") or [])[:5],
