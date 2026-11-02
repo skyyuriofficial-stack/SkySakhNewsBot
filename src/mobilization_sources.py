@@ -8,6 +8,7 @@ from typing import Any, Dict, List, Tuple
 
 import feedparser
 import requests
+import telegram_public_sources
 
 UA = {"User-Agent": "Mozilla/5.0 SkySakhNewsBot/1.0 (+https://t.me/SkySakhNews)"}
 
@@ -83,6 +84,11 @@ def is_relevant(row: Dict[str, Any]) -> bool:
         return bool(MOBILIZATION_RE.search(text))
     if group == "law":
         return "1322096-8" in text or "1322096" in text or bool(MOBILIZATION_RE.search(text))
+    if group == "civil_society":
+        return bool(
+            str(row.get("url") or "").startswith("https://t.me/iditelesom_help/")
+            and MOBILIZATION_RE.search(text)
+        )
     if group == "official":
         return bool(MOBILIZATION_RE.search(text))
     return bool(RUSSIA_RE.search(text) and MOBILIZATION_RE.search(text))
@@ -236,11 +242,127 @@ def fetch_bill_pages() -> List[Dict[str, Any]]:
     return out
 
 
+def verified_legal_reference_rows() -> List[Dict[str, Any]]:
+    """Dated legal baselines verified against the named official/legal sources.
+
+    These are historical milestones, NOT a claim that today's bill stage was
+    checked. A newer stage must replace the milestone after source verification.
+    """
+    return [
+        {
+            "group": "law", "trust": 100,
+            "source": "Госдума — карточка законопроекта №1322096-8",
+            "title": "№1322096-8: 27 октября 2026 принят в первом чтении",
+            "summary": (
+                "Историческая контрольная дата: 27.10.2026 Госдума приняла "
+                "проект №1322096-8 в первом чтении, постановление 177-9 ГД. "
+                "Поправки предложено представить до 10.11.2026. "
+                "Это стадия законопроекта, а не вступивший в силу федеральный "
+                "закон и не решение об объявлении мобилизации. "
+                "Актуальную последующую стадию необходимо сверять отдельно."
+            ),
+            "url": "https://sozd.duma.gov.ru/bill/1322096-8",
+            "published_utc": "2026-10-27T00:00:00+00:00",
+            "legal_role": "first_reading_baseline",
+        },
+        {
+            "group": "law", "trust": 99,
+            "source": "ГАРАНТ — текст законопроекта №1322096-8",
+            "title": "Проект статьи 19.5.5 КоАП: решения губернаторов и оперштабов",
+            "summary": (
+                "Проект №1322096-8 предлагает новую статью 19.5.5 КоАП РФ "
+                "за неисполнение решений губернатора либо созданного по решению "
+                "Президента регионального оперативного штаба, принятых в пределах "
+                "его компетенции, кроме случаев статьи 20.5.1 КоАП и уголовно "
+                "наказуемых деяний. Проектные санкции: гражданам 3–5 тыс. руб.; "
+                "должностным лицам 30–50 тыс. руб. либо дисквалификация 1–3 года; "
+                "юридическим лицам 300 тыс.–1 млн руб. либо приостановление "
+                "деятельности до 90 суток; срок давности 3 года. "
+                "Норма пока описывается как предложенная, не действующая."
+            ),
+            "url": "https://base.garant.ru/411685332/",
+            "published_utc": "2026-08-20T00:00:00+00:00",
+            "legal_role": "bill_text",
+        },
+        {
+            "group": "law", "trust": 98,
+            "source": "Федеральный закон №31-ФЗ, статья 4",
+            "title": "31-ФЗ: полномочия Президента объявлять общую или частичную мобилизацию",
+            "summary": (
+                "Статья 4 Федерального закона от 26.02.1997 №31-ФЗ "
+                "«О мобилизационной подготовке и мобилизации в РФ»: "
+                "полномочие объявлять общую или частичную мобилизацию "
+                "принадлежит Президенту Российской Федерации. "
+                "Региональный губернатор самостоятельно не объявляет "
+                "общую или частичную мобилизацию."
+            ),
+            "url": "https://www.consultant.ru/document/cons_doc_LAW_13454/d3ebcd75ea7e860fa6718349b0f6ef1705dc1634/",
+            "published_utc": None,
+            "legal_role": "presidential_powers",
+        },
+        {
+            "group": "law", "trust": 98,
+            "source": "Указ Президента РФ №757 от 19 октября 2022",
+            "title": "Указ №757: полномочия региональных оперштабов и уровни реагирования",
+            "summary": (
+                "Указ Президента от 19.10.2022 №757 устанавливает региональные "
+                "уровни реагирования, определяет роль губернаторов и региональных "
+                "оперативных штабов; решения штабов в установленной компетенции "
+                "обязательны. Это ранее введённый механизм, а не новый указ "
+                "о мобилизации. Проект №1322096-8 предлагает отдельную "
+                "административную ответственность за неисполнение решений."
+            ),
+            "url": "https://publication.pravo.gov.ru/Document/View/0001202210190003",
+            "published_utc": None,
+            "legal_role": "regional_framework",
+        },
+    ]
+
+
+def fetch_iditelesom_recent() -> List[Dict[str, Any]]:
+    """First-party public statements, attributed as claims, never as state acts."""
+    source = {
+        "name": "Идите лесом",
+        "handle": "iditelesom_help",
+        "url": "https://t.me/s/iditelesom_help",
+    }
+    try:
+        posts = telegram_public_sources.fetch_public_channel(
+            source, timeout=18, limit=22
+        )
+    except Exception as exc:
+        print("Идите лесом public source unavailable:", str(exc)[:170], flush=True)
+        return []
+    now = datetime.now(timezone.utc)
+    out: List[Dict[str, Any]] = []
+    for post in posts:
+        dt = post.get("published_at")
+        if not isinstance(dt, datetime):
+            continue
+        age = now - dt.astimezone(timezone.utc)
+        if not (-timedelta(hours=2) <= age <= timedelta(days=7)):
+            continue
+        row = {
+            "group": "civil_society",
+            "trust": 84,
+            "source": "Идите лесом — сообщение проекта",
+            "title": clean(post.get("title"))[:260],
+            "summary": clean(post.get("text"))[:2200],
+            "url": str(post.get("url") or ""),
+            "published_utc": dt.astimezone(timezone.utc).isoformat(),
+        }
+        if is_relevant(row):
+            out.append(row)
+    return out[:12]
+
+
 def collect_fallback() -> List[Dict[str, Any]]:
     rows: List[Dict[str, Any]] = []
     rows.extend(fetch_isw_daily())
     rows.extend(fetch_kremlin_index())
     rows.extend(fetch_bill_pages())
+    rows.extend(verified_legal_reference_rows())
+    rows.extend(fetch_iditelesom_recent())
     rows.extend(fetch_direct_feeds())
 
     seen = set()
