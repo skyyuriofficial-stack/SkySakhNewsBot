@@ -76,14 +76,17 @@ def is_relevant(row: Dict[str, Any]) -> bool:
     summary = clean(row.get("summary"))
     text = f"{title} {summary}"
     group = str(row.get("group") or "")
+    # Legal frameworks from 2022 are explicitly historical references. The
+    # generic anti-retrospective news filter must not discard Presidential
+    # Decree 757, which explains the authority of regional HQs in the bill.
+    if group == "law":
+        return "1322096-8" in text or "1322096" in text or bool(MOBILIZATION_RE.search(text))
     if EXCLUDE_RE.search(text):
         return False
     if group == "isw":
         if "russian offensive campaign assessment" not in title.lower():
             return False
         return bool(MOBILIZATION_RE.search(text))
-    if group == "law":
-        return "1322096-8" in text or "1322096" in text or bool(MOBILIZATION_RE.search(text))
     if group == "civil_society":
         return bool(
             str(row.get("url") or "").startswith("https://t.me/iditelesom_help/")
