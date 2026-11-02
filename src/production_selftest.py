@@ -1458,13 +1458,68 @@ def tass_world_backfill_regression():
     assert publisher.prod._extractive_fallback(item) is not None
 
 
+def hard_reject_sber_and_foreign_auto_regressions():
+    # User-provided Telegram incidents.  Yacht was source media, but a picture
+    # of a vacation does not turn the Sber insurance promotion into economy news.
+    weak = (
+        (
+            "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
+            "Многие начинают копить на летний отпуск уже осенью и выбирают финансовый инструмент.",
+            "ru_eco", "sber_routine_promotion",
+        ),
+        (
+            "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
+            "Сиденья Sienna Hybrid могут не удерживаться в фиксированном положении.",
+            "geo", "foreign_vehicle_recall_out_of_scope",
+        ),
+        (
+            "СберНПФ: молодежь стала чаще копить на пенсию",
+            "Пресс-служба банка рассказала об исследовании накоплений.",
+            "ru_eco", "sber_routine_promotion",
+        ),
+        (
+            "СберУниверситет анонсировал конференцию о цифровом обучении",
+            "Сбер сообщил дату конференции.",
+            "ru_pol", "corporate_product_or_brand_pr",
+        ),
+        (
+            "СберИнвестиции представили новый накопительный продукт",
+            "Сбер представил продукт для клиентов.",
+            "ru_eco", "sber_routine_promotion",
+        ),
+    )
+    for title, body, category, reason in weak:
+        candidate_row = candidate(title, body, category=category)
+        result = director.review_candidate(candidate_row)
+        assert result["approved"] is False, result
+        assert result["hard_reject"] is True, result
+        assert result["reason"] == reason, result
+
+    # Do not suppress a real banking incident simply because Sber is named.
+    for title in (
+        "Сбербанк объявил дефолт по облигациям",
+        "В Сбербанке произошёл массовый сбой платежей",
+        "Сбербанк сообщил об утечке данных клиентов",
+    ):
+        assert not policy._is_sber_routine_promotion(title), title
+    assert policy._is_foreign_vehicle_recall(
+        "Toyota отзывает автомобили из-за неисправных сидений"
+    )
+    assert not policy._is_foreign_vehicle_recall(
+        "Toyota прекратила поставки в Россию из-за санкций США"
+    )
+    assert not policy._is_foreign_vehicle_recall(
+        "США ввели новые санкции против автомобильной промышленности"
+    )
+
+
 def version_and_media_regressions():
     assert publisher.VERSION == "stable-v12.1"
     assert publisher.media.VERSION == "stable-v12.1"
     assert publisher.core.VERSION == "stable-v12.1"
     assert publisher.core.b.IMAGE_REQUIRED is True
     assert director.VERSION == "director-v2.4"
-    assert policy.VERSION == "policy-v2.7"
+    assert policy.VERSION == "policy-v2.8"
 
     good_media = {
         "image": b"x" * 12000,
@@ -1478,6 +1533,7 @@ def version_and_media_regressions():
 def main():
     tass_world_backfill_regression()
     mandatory_telegram_source_regressions()
+    hard_reject_sber_and_foreign_auto_regressions()
     exact_feed_regressions()
     service_notice_and_violent_crime_regressions()
     scope_and_stream_regressions()
