@@ -29,6 +29,7 @@ on:
       - "src/mobilization_digest_runner.py"
       - "src/mobilization_sources.py"
       - "src/mobilization_digest_final.py"
+      - "src/mobilization_quality_selftest.py"
       - "src/hardened_digest.py"
       - "src/telegram_health.py"
 
@@ -63,8 +64,12 @@ jobs:
           python -m py_compile src/mobilization_digest_runner.py
           python -m py_compile src/mobilization_sources.py
           python -m py_compile src/mobilization_digest_final.py
+          python -m py_compile src/mobilization_quality_selftest.py
           python -m py_compile src/telegram_health.py
           python -m py_compile src/hardened_digest.py
+
+      - name: Reject weak or misleading mobilization digests (offline regressions)
+        run: python src/mobilization_quality_selftest.py
 
       - name: Build, fact-check and publish mobilization digest
         env:

@@ -12,6 +12,15 @@ import telegram_public_sources
 
 UA = {"User-Agent": "Mozilla/5.0 SkySakhNewsBot/1.0 (+https://t.me/SkySakhNews)"}
 
+# Record reachability separately from substantive first-party evidence. An
+# inaccessible channel must never be reported as "no relevant posts".
+IDITELESOM_STATUS: Dict[str, Any] = {
+    "state": "not_checked",
+    "checked_at_utc": None,
+    "sampled": 0,
+    "relevant": 0,
+}
+
 MOBILIZATION_RE = re.compile(
     r"мобилизац|запасник|резервист|военком|повестк|военн(?:ые|ых) сбор|"
     r"барс\b|категори.{0,20}[«\"']?д[»\"']?|контрактн.{0,30}(набор|служб)|"
@@ -329,21 +338,31 @@ def fetch_iditelesom_recent() -> List[Dict[str, Any]]:
         "handle": "iditelesom_help",
         "url": "https://t.me/s/iditelesom_help",
     }
+    now = datetime.now(timezone.utc)
+    IDITELESOM_STATUS.update({
+        "state": "unavailable",
+        "checked_at_utc": now.isoformat(timespec="seconds"),
+        "sampled": 0,
+        "relevant": 0,
+    })
     try:
         posts = telegram_public_sources.fetch_public_channel(
             source, timeout=18, limit=22
         )
     except Exception as exc:
-        print("Идите лесом public source unavailable:", str(exc)[:170], flush=True)
+        print("Идите лесом public source unavailable:", type(exc).__name__, flush=True)
         return []
-    now = datetime.now(timezone.utc)
+    IDITELESOM_STATUS.update({
+        "state": "reachable",
+        "sampled": len(posts),
+    })
     out: List[Dict[str, Any]] = []
     for post in posts:
         dt = post.get("published_at")
         if not isinstance(dt, datetime):
             continue
         age = now - dt.astimezone(timezone.utc)
-        if not (-timedelta(hours=2) <= age <= timedelta(days=7)):
+        if not (-timedelta(hours=2) <= age <= timedelta(days=14)):
             continue
         row = {
             "group": "civil_society",
@@ -356,6 +375,7 @@ def fetch_iditelesom_recent() -> List[Dict[str, Any]]:
         }
         if is_relevant(row):
             out.append(row)
+    IDITELESOM_STATUS["relevant"] = len(out)
     return out[:12]
 
 
