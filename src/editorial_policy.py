@@ -678,8 +678,6 @@ def _is_foreign_vehicle_recall(title: str) -> bool:
 
 def _hard_reject(title: str, lead: str) -> Optional[str]:
     combined = f"{title} {lead}"
-    if _is_sber_routine_promotion(title):
-        return "sber_routine_promotion"
     if _is_foreign_vehicle_recall(title):
         return "foreign_vehicle_recall_out_of_scope"
     if has_any(title, CALENDAR_HISTORY):
@@ -702,6 +700,10 @@ def _hard_reject(title: str, lead: str) -> Optional[str]:
         return "corporate_product_or_brand_pr"
     if _is_corporate_product_pr(title, lead):
         return "corporate_product_or_brand_pr"
+    # Preserve established specific PR rejection reasons for existing audit
+    # evidence, and cover previously missed Sber-branded lifestyle promotions.
+    if _is_sber_routine_promotion(title):
+        return "sber_routine_promotion"
     if has_any(title, ROUTINE_CULTURE_EVENT):
         return "routine_culture_event"
     if has_any(title, ("туристический форум",)):
