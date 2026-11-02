@@ -1,16 +1,45 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-02T00:29:32+00:00",
-  "checked_at_sakhalin": "2026-11-02T11:29:29+11:00",
-  "status": "degraded",
+  "checked_at_utc": "2026-11-02T00:31:07+00:00",
+  "checked_at_sakhalin": "2026-11-02T11:31:04+11:00",
+  "status": "error",
   "mutations_enabled": true,
-  "issues": [],
+  "issues": [
+    {
+      "type": "category",
+      "message_id": 513,
+      "title": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": false,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "sber_routine_promotion",
+      "corrected_category": null,
+      "title_issues": []
+    },
+    {
+      "type": "category",
+      "message_id": 518,
+      "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": false,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "foreign_vehicle_recall_out_of_scope",
+      "corrected_category": null,
+      "title_issues": []
+    }
+  ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-02T10:34:44+11:00",
-    "age_hours": 0.91,
+    "age_hours": 0.94,
     "published": 0
   },
   "last_production_attempt": {
@@ -65,10 +94,38 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-02T00:29:31+00:00",
+    "checked_at": "2026-11-02T00:31:06+00:00",
     "checked": 20,
-    "passed": 19,
+    "passed": 17,
     "anomalies": [
+      {
+        "title": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
+        "url": "https://sakhalinmedia.ru/news/2661814/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "ru_eco",
+        "corrected_category": null,
+        "reason": "sber_routine_promotion",
+        "contract_issues": [
+          "final_hard_reject:sber_routine_promotion",
+          "final_category_mismatch:None->ru_eco",
+          "director_final_category:None->ru_eco",
+          "director_final_reject:sber_routine_promotion"
+        ]
+      },
+      {
+        "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
+        "url": "https://sakh.online/news/18/2026-10-28/toyota-otzyvaet-v-ssha-bolshe-228-tysyach-sienna-hybrid-iz-za-spinok-sideniy-530121",
+        "publisher_version": "stable-v12.1",
+        "category_key": "geo",
+        "corrected_category": null,
+        "reason": "foreign_vehicle_recall_out_of_scope",
+        "contract_issues": [
+          "final_hard_reject:foreign_vehicle_recall_out_of_scope",
+          "final_category_mismatch:None->geo",
+          "director_final_category:None->geo",
+          "director_final_reject:foreign_vehicle_recall_out_of_scope"
+        ]
+      },
       {
         "title": "Владелец Google Alphabet потерял 500 млрд долларов рыночной стоимости из-за разочарования прибылью Уолл-Стрита",
         "url": "https://www.theguardian.com/technology/2026/oct/28/google-alphabet-q3-earnings-report",
@@ -84,8 +141,36 @@
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
-    "unresolved": 1,
+    "unresolved": 3,
     "unresolved_items": [
+      {
+        "title": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
+        "url": "https://sakhalinmedia.ru/news/2661814/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "ru_eco",
+        "corrected_category": null,
+        "reason": "sber_routine_promotion",
+        "contract_issues": [
+          "final_hard_reject:sber_routine_promotion",
+          "final_category_mismatch:None->ru_eco",
+          "director_final_category:None->ru_eco",
+          "director_final_reject:sber_routine_promotion"
+        ]
+      },
+      {
+        "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
+        "url": "https://sakh.online/news/18/2026-10-28/toyota-otzyvaet-v-ssha-bolshe-228-tysyach-sienna-hybrid-iz-za-spinok-sideniy-530121",
+        "publisher_version": "stable-v12.1",
+        "category_key": "geo",
+        "corrected_category": null,
+        "reason": "foreign_vehicle_recall_out_of_scope",
+        "contract_issues": [
+          "final_hard_reject:foreign_vehicle_recall_out_of_scope",
+          "final_category_mismatch:None->geo",
+          "director_final_category:None->geo",
+          "director_final_reject:foreign_vehicle_recall_out_of_scope"
+        ]
+      },
       {
         "title": "Владелец Google Alphabet потерял 500 млрд долларов рыночной стоимости из-за разочарования прибылью Уолл-Стрита",
         "url": "https://www.theguardian.com/technology/2026/oct/28/google-alphabet-q3-earnings-report",
@@ -120,12 +205,12 @@
       "title": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
       "category_key": "ru_eco",
       "publisher_version": "stable-v12.1",
-      "category_ok": true,
+      "category_ok": false,
       "title_ok": true,
       "media_ok": true,
       "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
+      "review_reason": "sber_routine_promotion",
+      "corrected_category": null,
       "title_issues": []
     },
     {
@@ -159,12 +244,12 @@
       "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
       "category_key": "geo",
       "publisher_version": "stable-v12.1",
-      "category_ok": true,
+      "category_ok": false,
       "title_ok": true,
       "media_ok": true,
       "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "geo",
+      "review_reason": "foreign_vehicle_recall_out_of_scope",
+      "corrected_category": null,
       "title_issues": []
     },
     {
@@ -486,6 +571,34 @@
   },
   "legacy_or_derivative_warnings": [
     {
+      "title": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
+      "url": "https://sakhalinmedia.ru/news/2661814/",
+      "publisher_version": "stable-v12.1",
+      "category_key": "ru_eco",
+      "corrected_category": null,
+      "reason": "sber_routine_promotion",
+      "contract_issues": [
+        "final_hard_reject:sber_routine_promotion",
+        "final_category_mismatch:None->ru_eco",
+        "director_final_category:None->ru_eco",
+        "director_final_reject:sber_routine_promotion"
+      ]
+    },
+    {
+      "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
+      "url": "https://sakh.online/news/18/2026-10-28/toyota-otzyvaet-v-ssha-bolshe-228-tysyach-sienna-hybrid-iz-za-spinok-sideniy-530121",
+      "publisher_version": "stable-v12.1",
+      "category_key": "geo",
+      "corrected_category": null,
+      "reason": "foreign_vehicle_recall_out_of_scope",
+      "contract_issues": [
+        "final_hard_reject:foreign_vehicle_recall_out_of_scope",
+        "final_category_mismatch:None->geo",
+        "director_final_category:None->geo",
+        "director_final_reject:foreign_vehicle_recall_out_of_scope"
+      ]
+    },
+    {
       "title": "Владелец Google Alphabet потерял 500 млрд долларов рыночной стоимости из-за разочарования прибылью Уолл-Стрита",
       "url": "https://www.theguardian.com/technology/2026/oct/28/google-alphabet-q3-earnings-report",
       "publisher_version": "stable-v12.1",
@@ -498,7 +611,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-02T00:29:27+00:00",
+    "checked_at_utc": "2026-11-02T00:31:02+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -526,6 +639,34 @@
   "hardening_actions": [],
   "hardening_failed_actions": [],
   "warnings": [
+    {
+      "title": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
+      "url": "https://sakhalinmedia.ru/news/2661814/",
+      "publisher_version": "stable-v12.1",
+      "category_key": "ru_eco",
+      "corrected_category": null,
+      "reason": "sber_routine_promotion",
+      "contract_issues": [
+        "final_hard_reject:sber_routine_promotion",
+        "final_category_mismatch:None->ru_eco",
+        "director_final_category:None->ru_eco",
+        "director_final_reject:sber_routine_promotion"
+      ]
+    },
+    {
+      "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
+      "url": "https://sakh.online/news/18/2026-10-28/toyota-otzyvaet-v-ssha-bolshe-228-tysyach-sienna-hybrid-iz-za-spinok-sideniy-530121",
+      "publisher_version": "stable-v12.1",
+      "category_key": "geo",
+      "corrected_category": null,
+      "reason": "foreign_vehicle_recall_out_of_scope",
+      "contract_issues": [
+        "final_hard_reject:foreign_vehicle_recall_out_of_scope",
+        "final_category_mismatch:None->geo",
+        "director_final_category:None->geo",
+        "director_final_reject:foreign_vehicle_recall_out_of_scope"
+      ]
+    },
     {
       "title": "Владелец Google Alphabet потерял 500 млрд долларов рыночной стоимости из-за разочарования прибылью Уолл-Стрита",
       "url": "https://www.theguardian.com/technology/2026/oct/28/google-alphabet-q3-earnings-report",
