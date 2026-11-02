@@ -112,6 +112,23 @@ def check_analytical_draft(rows):
             assert required in msg, (required, msg)
         assert "https://t.me/iditelesom_help/123456" in msg
         assert len(msg) <= 4000, len(msg)
+        assert not final._rendered_digest_issues(msg, rows), msg
+
+        # Force the recursive Telegram 4000-char compression path; it must
+        # trim optional prose, never truncate law No. 31-FZ or Decree 757.
+        inflated = copy.deepcopy(draft)
+        inflated["items"] = [
+            {**item, "text": (item.get("text") or "") * 3}
+            for item in (draft["items"] * 3)[:6]
+        ]
+        inflated["practice"] = draft["practice"] * 3
+        inflated["isw"] = draft["isw"] * 3
+        compressed = digest.format_message(inflated, rows, "evening")
+        assert len(compressed) <= 4000, len(compressed)
+        assert not final._rendered_digest_issues(compressed, rows), compressed
+        broken = compressed.replace("31-ФЗ", "????")
+        assert any("31-ФЗ" in issue for issue in
+                   final._rendered_digest_issues(broken, rows))
 
         weak = copy.deepcopy(draft)
         weak["legal"] = "Досье, текст и пояснительная записка к законопроекту."
@@ -141,6 +158,7 @@ def check_civil_source_failure_is_not_reported_empty():
         msg = digest.format_message(draft, rows, "evening")
         assert "https://t.me/s/iditelesom_help" in msg, msg
         assert "Идите лесом" in msg
+        assert not final._rendered_digest_issues(msg, rows), msg
     finally:
         sources.IDITELESOM_STATUS.clear()
         sources.IDITELESOM_STATUS.update(old_status)
