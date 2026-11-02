@@ -3,9 +3,13 @@ name: SkySakhNews Production CI v12.1
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [main, repair/mobilization-substantive-gate-20261102]
     paths:
       - "src/news_bot_v8.py"
+      - "src/mobilization_digest.py"
+      - "src/mobilization_digest_final.py"
+      - "src/mobilization_sources.py"
+      - "src/mobilization_quality_selftest.py"
       - "src/news_bot_v9.py"
       - "src/production.py"
       - "src/editorial_gate.py"
@@ -121,6 +125,7 @@ jobs:
           OPENROUTER_MAX_ATTEMPTS: "3"
           OPENROUTER_RETRY_BASE_SECONDS: "0"
         run: |
+          python src/mobilization_quality_selftest.py
           python src/production_selftest.py
           python src/hardening_selftest.py
           python src/operational_selftest.py
