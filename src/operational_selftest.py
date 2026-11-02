@@ -10,13 +10,113 @@ import editorial_gate_runner
 import editorial_monitor
 import editorial_policy
 import hardened_digest
+import mobilization_digest as mobdigest
+import mobilization_digest_final as mobfinal
+import mobilization_digest_runner as mobrunner
+import mobilization_sources as mobsources
 import health_gate
 import news_director
 import resilient_production
 import schedule_guard
 
 
+def mobilization_depth_regression() -> None:
+    legal = mobsources.verified_legal_reference_rows()
+    today = datetime.now(timezone.utc)
+    observed = {
+        "group": "civil_society",
+        "trust": 84,
+        "source": "Идите лесом — сообщение проекта",
+        "title": "Запасникам сразу из пяти регионов России пришли повестки для уточнения данных",
+        "summary": (
+            "29 октября сообщили о повестках запасникам из Ставропольского "
+            "края, Башкортостана, Марий Эл, Оренбургской и Саратовской областей. "
+            "Назначено уточнение военно-учётных данных, а не мобилизация."
+        ),
+        "url": "https://t.me/iditelesom_help/999",
+        "published_utc": today.isoformat(),
+    }
+    fake = {
+        **observed,
+        "title": "В Краснодаре рассылают фейковые повестки по мобилизации",
+        "summary": (
+            "По сообщению проекта, в Краснодаре появились поддельные "
+            "повестки, отправленные обычной электронной почтой."
+        ),
+        "url": "https://t.me/iditelesom_help/1000",
+    }
+    evidence = [
+        {**item, "id": index}
+        for index, item in enumerate(legal + [observed, fake], 1)
+    ]
+    assert all(mobsources.is_relevant(row) for row in evidence)
+    draft = mobfinal.safe_fallback_draft(evidence)
+    assert not mobrunner.validate_draft(draft, evidence), (
+        draft, mobrunner.validate_draft(draft, evidence)
+    )
+    assert "19.5.5" in draft["legal"] and "31-ФЗ" in draft["legal"]
+    assert "757" in draft["legal"]
+    assert "27.10.2026" in draft["legal"]
+    assert "Идите лесом" in draft["practice"]
+    assert any(
+        "Ставропольский край" in item["text"]
+        for item in draft["items"]
+    ), draft
+    assert any(
+        "фейков" in item["text"].lower()
+        for item in draft["items"]
+    ), draft
+    assert "НИЗКИЙ" not in draft["assessment"]["near_term"]
+    wire = mobdigest.format_message(draft, evidence, "morning")
+    assert "<b>Юридические изменения</b>" in wire
+    assert "19.5.5" in wire and "300 тыс." in wire
+    assert "https://t.me/iditelesom_help/999" in wire, wire
+    assert "https://sozd.duma.gov.ru/bill/1322096-8" in wire
+    assert "https://base.garant.ru/411685332/" in wire
+    assert len(wire) <= 4000 and wire.endswith("</a>"), (len(wire), wire[-100:])
+
+    shallow = {
+        **draft,
+        "items": [
+            {"status": "ПОДТВЕРЖДЕНО", "text": "Законопроект обсуждается.",
+             "source_ids": [1]},
+            {"status": "ПОДТВЕРЖДЕНО", "text": "Идёт рассмотрение законопроекта.",
+             "source_ids": [2]},
+        ],
+        "legal": "Есть законопроект.",
+        "practice": "Повесток не обнаружено.",
+        "assessment": {**draft["assessment"], "near_term": "НИЗКИЙ"},
+        "source_ids": [1, 2],
+    }
+    shallow_issues = mobrunner.validate_draft(shallow, evidence)
+    assert "legal_analysis_missing_statute_or_decree" in shallow_issues
+    assert "recent_civil_society_evidence_omitted" in shallow_issues
+    assert "duplicate_bill_as_multiple_news" in shallow_issues
+    assert "unsupported_low_mobilization_risk_from_absence_of_evidence" in shallow_issues
+
+    original = mobsources.telegram_public_sources.fetch_public_channel
+    try:
+        mobsources.telegram_public_sources.fetch_public_channel = lambda src, **kw: [
+            {
+                "title": observed["title"], "text": observed["summary"],
+                "url": observed["url"], "published_at": today,
+            },
+            {
+                "title": "Объявлен список футбольных матчей",
+                "text": "Спортивные расписания и объявления о футболе",
+                "url": "https://t.me/iditelesom_help/1001", "published_at": today,
+            },
+        ]
+        rows = mobsources.fetch_iditelesom_recent()
+        assert len(rows) == 1, rows
+        assert rows[0]["group"] == "civil_society", rows
+        assert rows[0]["source"] == "Идите лесом — сообщение проекта", rows
+    finally:
+        mobsources.telegram_public_sources.fetch_public_channel = original
+
+
 def main() -> int:
+    mobilization_depth_regression()
     now = datetime.now(timezone.utc)
 
     post_monitor_workflow = Path(".github/workflows/post_publication_monitor.yml").read_text(

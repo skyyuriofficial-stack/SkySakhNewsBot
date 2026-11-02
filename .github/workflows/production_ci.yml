@@ -32,6 +32,10 @@ on:
       - "src/health_gate.py"
       - "src/hardening_selftest.py"
       - "src/operational_selftest.py"
+      - "src/mobilization_digest.py"
+      - "src/mobilization_digest_final.py"
+      - "src/mobilization_digest_runner.py"
+      - "src/mobilization_sources.py"
       - "src/usercustomize.py"
       - "requirements.txt"
       - ".github/workflows/auto_publish_v7.yml"
@@ -76,7 +80,33 @@ jobs:
             src/hardened_publisher.py src/hardened_monitor.py src/hardened_digest.py \
             src/resilient_production.py src/resilient_health_gate.py src/resilient_selftest.py \
             src/schedule_guard.py src/health_gate.py src/hardening_selftest.py \
-            src/operational_selftest.py src/usercustomize.py
+            src/operational_selftest.py src/usercustomize.py \
+            src/mobilization_digest.py src/mobilization_digest_final.py \
+            src/mobilization_digest_runner.py src/mobilization_sources.py
+
+      - name: Read-only mobilization evidence smoke
+        timeout-minutes: 3
+        run: |
+          PYTHONPATH=src python - <<'PY'
+          import mobilization_sources as sources
+          import mobilization_digest_final as final
+          import mobilization_digest_runner as runner
+          import mobilization_digest as digest
+          legal = sources.verified_legal_reference_rows()
+          civil = sources.fetch_iditelesom_recent()
+          rows = legal + civil
+          for i, row in enumerate(rows, 1):
+              row["id"] = i
+          draft = final.safe_fallback_draft(rows)
+          errors = runner.validate_draft(draft, rows)
+          message = digest.format_message(draft, rows, "morning")
+          print("Legal sources:", len(legal))
+          print("Recent Идите лесом posts:", len(civil))
+          print("Evidence-bound draft errors:", errors)
+          print("Digest HTML length:", len(message))
+          assert len(legal) == 4 and not errors and len(message) <= 4000
+          assert all(row["url"].startswith("https://t.me/iditelesom_help/") for row in civil)
+          PY
 
       - name: Run exact feed, category, balance, title and operational regressions
         env:

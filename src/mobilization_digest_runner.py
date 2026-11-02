@@ -241,6 +241,77 @@ def validate_draft(draft, evidence):
     if invented:
         issues.append("invented_numbers:" + ",".join(invented))
 
+    by_id = {
+        int(row["id"]): row for row in evidence
+        if isinstance(row, dict) and row.get("id") is not None
+    }
+    roles = {
+        str(row.get("legal_role"))
+        for row in evidence if isinstance(row, dict) and row.get("legal_role")
+    }
+    if {"first_reading_baseline", "bill_text", "presidential_powers",
+        "regional_framework"} <= roles:
+        legal_block = digest.clean(draft.get("legal"))
+        if not all(token in legal_block for token in ("19.5.5", "31-ФЗ", "757")):
+            issues.append("legal_analysis_missing_statute_or_decree")
+        if not any(token in legal_block for token in ("27.10.2026", "27 октября")):
+            issues.append("legal_first_reading_date_missing")
+        if not ("тыс" in legal_block and "млн" in legal_block):
+            issues.append("bill_proposed_sanctions_missing")
+
+    civil_ids = {
+        idx for idx, row in by_id.items()
+        if row.get("group") == "civil_society"
+        and str(row.get("url") or "").startswith("https://t.me/iditelesom_help/")
+    }
+    if civil_ids:
+        civil_item_ids = set()
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            for raw in item.get("source_ids") or []:
+                try:
+                    idx = int(raw)
+                except (TypeError, ValueError):
+                    continue
+                if idx in civil_ids:
+                    civil_item_ids.add(idx)
+                    if item.get("status") == "ПОДТВЕРЖДЕНО":
+                        issues.append("civil_society_claim_labeled_as_official_fact")
+        practice_text = digest.clean(draft.get("practice"))
+        if not civil_item_ids or "Идите лесом" not in (
+            practice_text + " ".join(
+                digest.clean(item.get("text"))
+                for item in items if isinstance(item, dict)
+            )
+        ):
+            issues.append("recent_civil_society_evidence_omitted")
+
+    bill_only_items = 0
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        refs = []
+        for raw in item.get("source_ids") or []:
+            try:
+                idx = int(raw)
+            except (ValueError, TypeError):
+                continue
+            if idx in by_id:
+                refs.append(by_id[idx])
+        if refs and all(
+            row.get("group") == "law"
+            and "1322096" in (
+                str(row.get("title") or "") + str(row.get("summary") or "")
+            ) for row in refs
+        ):
+            bill_only_items += 1
+    if bill_only_items > 1:
+        issues.append("duplicate_bill_as_multiple_news")
+    near_term = digest.clean((draft.get("assessment") or {}).get("near_term")).upper()
+    if near_term.startswith("НИЗКИЙ"):
+        issues.append("unsupported_low_mobilization_risk_from_absence_of_evidence")
+
     bad_phrases = ["консервативный режим", "свежий найденный материал", "его нельзя трактовать шире первоисточника"]
     full_text = generated.lower()
     for phrase in bad_phrases:
