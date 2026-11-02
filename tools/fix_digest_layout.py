@@ -33,9 +33,21 @@ change('for row in law:\n        quote = clean(row.get("literal_quote"))',
        'for row in sorted(law, key=lambda r: {"presidential_powers": 0, "bill_text": 1, "bill_rationale": 2}.get(r.get("legal_role"), 3)):\n        quote = clean(row.get("literal_quote"))')
 change('parts.append("«" + esc(quote.get("text")) + "» " + refs([quote.get("source_id")]))',
        'parts.append("Фрагмент нормы: «" + esc(quote.get("text")) + "» " + refs([quote.get("source_id")]))')
-# Link the coverage caveat to the actual civil messages just discussed.
 change('esc(practice) + " " + refs(sections.get("practice", [])[:2])',
        'esc(practice) + " " + refs([i for _, values in stories[:story_count] for i in values if by_id.get(i, {}).get("group") == "civil_society"] or sections.get("practice", [])[:2])')
+change('    legal = clean(draft.get("legal"))\n', r'''    legal = clean(draft.get("legal"))
+    legal = legal.replace(
+        "Предлагаемые, ещё НЕ действующие санкции:",
+        "Санкции по проекту (вступление в силу отдельно не подтверждено):"
+    )
+    # Inline quotations inherited from a cached template are not live-document
+    # quotations. Only the independently verified legal_quotes are rendered.
+    legal = re.sub(
+        r"Из текста проекта:\s*«[^»]+»\s*[—-]\s*это описание состава правонарушения, а не мобилизационный призыв\.",
+        "Предлагаемый состав правонарушения не является решением о призыве.",
+        legal,
+    )
+''')
 ast.parse(s)
 p.write_text(s, encoding='utf-8')
 
