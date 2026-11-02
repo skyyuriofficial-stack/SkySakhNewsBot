@@ -3,7 +3,7 @@ name: SkySakhNews Production CI v12.1
 on:
   workflow_dispatch:
   push:
-    branches: [main, repair/digest-push-dryrun-noop-20261102]
+    branches: [main]
     paths:
       - "src/news_bot_v8.py"
       - "src/news_bot_v9.py"
