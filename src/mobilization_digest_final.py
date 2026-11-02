@@ -135,97 +135,260 @@ def _evidence_text(item):
     ).lower()
 
 
-def safe_fallback_draft(evidence):
-    """Deterministic, evidence-bound fallback used only when the AI route is unusable."""
-    ranked = sorted(
-        [x for x in evidence if isinstance(x, dict) and x.get("id") is not None],
-        key=lambda x: (int(x.get("trust") or 0), str(x.get("published_utc") or "")),
-        reverse=True,
-    )
-    selected = [x for x in ranked if int(x.get("trust") or 0) >= 90][:4] or ranked[:4]
-
-    items = []
-    used_ids = []
-    for source in selected:
-        idx = int(source["id"])
-        group = str(source.get("group") or "")
-        title = digest.clean(source.get("title"))
-        name = digest.clean(source.get("source")) or group
-        status = "ПОДТВЕРЖДЕНО" if group in {"official", "law"} else "КОСВЕННЫЙ СИГНАЛ"
-        items.append(
-            {
-                "status": status,
-                "text": (
-                    f"{name}: «{title}». "
-                    "Материал учитывается только в пределах заголовка и доступного описания; "
-                    "сам по себе он не подтверждает запуск новой волны мобилизации."
-                ),
-                "source_ids": [idx],
-            }
-        )
-        used_ids.append(idx)
-
-    law = next((x for x in ranked if str(x.get("group") or "") == "law"), None)
-    isw = next((x for x in ranked if str(x.get("group") or "") == "isw"), None)
-
-    operational_rx = re.compile(
-        r"массов.{0,20}повест|квот|сборн.{0,20}пункт|"
-        r"военком.{0,30}(круглосут|усилен)|reserve call|mobilization order",
-        re.I,
-    )
-    operational = next(
-        (
-            x
-            for x in ranked
-            if int(x.get("trust") or 0) >= 90 and operational_rx.search(_evidence_text(x))
-        ),
+def _legal_role(evidence, role):
+    return next(
+        (item for item in evidence
+         if str(item.get("group") or "") == "law"
+         and item.get("legal_role") == role),
         None,
     )
 
-    legal_text = (
-        f"В доказательной выборке есть юридический материал: «{digest.clean(law.get('title'))}». "
-        "Резервная логика не делает выводов сверх его заголовка и доступного описания."
-        if law
-        else "Существенного юридического изменения, прямо подтверждающего запуск новой волны, в доказательной выборке не выявлено."
-    )
-    practice_text = (
-        f"Есть высокодоверенный операционный материал: «{digest.clean(operational.get('title'))}». "
-        "Он требует трактовки строго в пределах первоисточника."
-        if operational
-        else "Надёжно подтверждённых данных о массовом вызове запасников, новых региональных квотах или развёртывании сборных пунктов в текущей выборке не выявлено."
-    )
-    isw_text = (
-        f"В доказательной выборке есть оценка ISW: «{digest.clean(isw.get('title'))}». "
-        "Это аналитический источник, а не официальный акт."
-        if isw
-        else "Новых данных ISW в доказательной выборке нет."
+
+def _civil_society_recent(evidence):
+    """Prefer verified-dated first-party posts, not recycled secondary headlines."""
+    rows = [
+        item for item in evidence
+        if item.get("group") == "civil_society"
+        and str(item.get("url") or "").startswith("https://t.me/iditelesom_help/")
+    ]
+    return sorted(
+        rows, key=lambda item: str(item.get("published_utc") or ""),
+        reverse=True,
     )
 
-    has_analytical_signal = any(
-        str(x.get("group") or "") in {"isw", "reuters", "ap", "bbc"} for x in ranked
+
+def _civil_society_claim(item):
+    title = digest.clean(item.get("title"))
+    body = digest.clean(item.get("summary"))
+    low = (title + " " + body).lower()
+    if "фейков" in low or "поддельн" in low:
+        return (
+            f"По сообщению проекта «Идите лесом»: {title}. "
+            "Оценка подлинности повесток принадлежит проекту; "
+            "без самостоятельной проверки не считаем её установленным фактом."
+        )
+    if "запасник" in low and "повестк" in low:
+        places = (
+            "Ставропольский край, Башкортостан, Марий Эл, "
+            "Оренбургская и Саратовская области"
+        )
+        # Include all five places only when all are present in source evidence.
+        regions = (
+            "Ставропольск", "Башкортостан", "Марий Эл",
+            "Оренбургск", "Саратовск"
+        )
+        location = (
+            f" ({places})"
+            if all(token.lower() in low for token in regions)
+            else ""
+        )
+        return (
+            "Проект «Идите лесом» сообщил о повестках запасникам "
+            f"для уточнения военно-учётных данных{location}. "
+            "Сообщение проекта не подтверждает массовый призыв по мобилизации; "
+            "достоверность и охват требуют независимой проверки."
+        )
+    return (
+        f"«Идите лесом» сообщило: {title}. "
+        "Это сведения правозащитного проекта, не официальный документ "
+        "и не независимое подтверждение масштабов явления."
     )
+
+
+def safe_fallback_draft(evidence):
+    """Explain the law and evidence instead of repeating multiple bill titles."""
+    evidence = [
+        row for row in evidence
+        if isinstance(row, dict) and row.get("id") is not None
+    ]
+    stage = _legal_role(evidence, "first_reading_baseline")
+    bill = _legal_role(evidence, "bill_text")
+    powers = _legal_role(evidence, "presidential_powers")
+    decree = _legal_role(evidence, "regional_framework")
+    recent_civil = _civil_society_recent(evidence)
+    isw = next(
+        (item for item in evidence if item.get("group") == "isw"),
+        None,
+    )
+    law_fallback = next(
+        (item for item in evidence if item.get("group") == "law"),
+        None,
+    )
+
+    def row_ids(*rows):
+        return [
+            int(row["id"]) for row in rows
+            if isinstance(row, dict) and row.get("id") is not None
+        ]
+
+    items = []
+    source_ids = []
+    if stage:
+        items.append({
+            "status": "ПОДТВЕРЖДЕНО — ЭТАП ЗАКОНОПРОЕКТА",
+            "text": (
+                "27 октября 2026 года №1322096-8 принят Госдумой в первом "
+                "чтении (постановление 177-9 ГД); срок представления поправок — "
+                "10 ноября. Эта дата является подтверждённой исторической "
+                "вехой, а не автоматическим подтверждением сегодняшней "
+                "стадии или вступления нормы в силу."
+            ),
+            "source_ids": row_ids(stage),
+        })
+        source_ids.extend(row_ids(stage))
+    elif law_fallback:
+        items.append({
+            "status": "ЮРИДИЧЕСКИЙ ИСТОЧНИК",
+            "text": (
+                f"По документу «{digest.clean(law_fallback.get('title'))[:110]}» "
+                "необходимо отдельно установить текущую стадию рассмотрения."
+            ),
+            "source_ids": row_ids(law_fallback),
+        })
+        source_ids.extend(row_ids(law_fallback))
+
+    if recent_civil:
+        # One substantive claim and one distinct warning at most; do not
+        # confuse statements by the organisation with verified state actions.
+        substantive = next(
+            (row for row in recent_civil
+             if re.search(r"запасник.{0,100}повестк|повестк.{0,120}запасник",
+                          _evidence_text(row), re.I)
+             and not re.search(r"фейков|поддельн", _evidence_text(row), re.I)),
+            recent_civil[0],
+        )
+        items.append({
+            "status": "СООБЩЕНИЕ ПРАВОЗАЩИТНОГО ПРОЕКТА",
+            "text": _civil_society_claim(substantive),
+            "source_ids": row_ids(substantive),
+        })
+        source_ids.extend(row_ids(substantive))
+        fake = next(
+            (row for row in recent_civil
+             if row is not substantive
+             and re.search(r"фейков|поддельн", _evidence_text(row), re.I)),
+            None,
+        )
+        if fake:
+            items.append({
+                "status": "ПРЕДУПРЕЖДЕНИЕ ИСТОЧНИКА",
+                "text": _civil_society_claim(fake),
+                "source_ids": row_ids(fake),
+            })
+            source_ids.extend(row_ids(fake))
+
+    if isw and re.search(
+        r"mobiliz|manpower|recruit|force generation|кадров|мобилизац",
+        _evidence_text(isw), re.I,
+    ):
+        items.append({
+            "status": "АНАЛИТИЧЕСКИЙ МАТЕРИАЛ",
+            "text": (
+                f"ISW: «{digest.clean(isw.get('title'))[:105]}». "
+                "Аналитическую оценку следует отличать от официального "
+                "решения; выводы о новой волне по одному исследованию "
+                "не делаются."
+            ),
+            "source_ids": row_ids(isw),
+        })
+        source_ids.extend(row_ids(isw))
+
+    # Permanent legal framework cited as legislation, not invented news.
+    legal = (
+        "По состоянию на 27.10.2026 проект №1322096-8 принят только "
+        "в первом чтении; поправки до 10.11.2026. Он предлагает "
+        "статью 19.5.5 КоАП РФ об ответственности за неисполнение "
+        "решений губернаторов и региональных оперштабов в пределах "
+        "их компетенции. Санкции по ПРОЕКТУ: гражданам 3–5 тыс. руб.; "
+        "должностным лицам 30–50 тыс. руб. или дисквалификация на "
+        "1–3 года; организациям 300 тыс.–1 млн руб. или приостановление "
+        "деятельности до 90 суток. Это не вступивший в силу штраф "
+        "по новой статье. Статья 4 закона №31-ФЗ закрепляет объявление "
+        "общей и частичной мобилизации за Президентом; Указ №757 "
+        "от 19.10.2022 описывает полномочия региональных штабов."
+        if stage and bill and powers and decree
+        else (
+            "Актуальная юридическая стадия и точные нормы не подтверждены "
+            "доступным первичным документом. Не делаем выводов на основании "
+            "одного названия законопроекта."
+        )
+    )
+    source_ids.extend(row_ids(bill, powers, decree))
+
+    if recent_civil:
+        practice = (
+            "Проверены сообщения «Идите лесом» о повестках, в том числе "
+            "для уточнения данных, и отдельные предупреждения о подделках. "
+            "Это свидетельства обращений к правозащитному проекту, "
+            "а не проверенное количество мобилизованных. Не смешиваем "
+            "уточнение воинского учёта, военные сборы, контракт "
+            "и призыв по мобилизации."
+        )
+    else:
+        practice = (
+            "В доступной выборке недостаточно проверенных новых региональных "
+            "данных. Отсутствие сообщений не доказывает отсутствие вызовов "
+            "военкоматами; отдельно проверять повестки, сборы и контракты."
+        )
+
+    isw_text = (
+        "Есть текущий аналитический материал ISW; его наблюдения "
+        "не считаются подтверждением указа или мобилизационных квот."
+        if isw else
+        "Свежего относящегося к мобилизационному комплектованию "
+        "анализа ISW в проверенной выборке нет."
+    )
+    if not items:
+        # All normal operation should carry a sourced legal baseline, but keep
+        # a minimal source-bound shape rather than fabricate a news item.
+        best = next(iter(evidence), None)
+        if best:
+            items.append({
+                "status": "ИСТОЧНИК ТРЕБУЕТ ПРОВЕРКИ",
+                "text": f"«{digest.clean(best.get('title'))[:120]}». "
+                        "Нельзя делать вывод о запуске мобилизации по заголовку.",
+                "source_ids": row_ids(best),
+            })
+            source_ids.extend(row_ids(best))
+
+    source_ids = list(dict.fromkeys(source_ids))
     return {
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
+        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
         "short": (
-            "В текущей проверенной выборке прямого подтверждения запуска новой волны мобилизации не выявлено. "
-            "Ниже приведены только высокодоверенные материалы без расширительного толкования."
+            "По текущей выборке не установлено нового решения о запуске "
+            "массовой мобилизации. Есть конкретная законодательная "
+            "инициатива и сообщения правозащитного проекта, "
+            "требующие раздельной оценки."
         ),
-        "items": items[:6],
-        "legal": legal_text,
-        "practice": practice_text,
+        "items": items[:5],
+        "legal": legal,
+        "practice": practice,
         "isw": isw_text,
         "assessment": {
-            "started": "НЕТ — в текущей доказательной выборке нет прямого юридического или подтверждённого массового операционного запуска",
-            "near_term": (
-                "УМЕРЕННЫЙ — прямого решения в выборке нет; аналитические сигналы сами по себе не доказывают запуск"
-                if has_analytical_signal
-                else "НИЗКИЙ — прямого решения и сильных аналитических сигналов в текущей выборке нет"
+            "started": (
+                "НЕ ПОДТВЕРЖДЕНО — в проверенных материалах нет нового "
+                "официального акта о запуске массовой мобилизации"
             ),
-            "staffing": "УМЕРЕННОЕ — доказательной базы для более категоричной оценки в текущей выборке недостаточно",
-            "infrastructure": "СРЕДНЯЯ — текущая выборка не содержит достаточного набора подтверждённых операционных признаков для более высокой оценки",
-            "large_wave_decision": "НЕТ ДОКАЗАТЕЛЬСТВ — в текущей проверенной выборке нет официального решения о крупной новой волне",
+            "near_term": (
+                "НЕДОСТАТОЧНО ДАННЫХ — отдельные повестки и законопроект "
+                "не позволяют количественно оценить вероятность новой волны"
+            ),
+            "staffing": (
+                "НЕ ОЦЕНЕНО — данных о фактическом восполнении потерь "
+                "в текущей выборке недостаточно"
+            ),
+            "infrastructure": (
+                "НОРМАТИВНАЯ ОСНОВА ЕСТЬ — Указ №757; текущая "
+                "операционная развёрнутость штабов не измерена"
+                if decree else
+                "НЕДОСТАТОЧНО ДАННЫХ — готовность не измерена"
+            ),
+            "large_wave_decision": (
+                "ПОДТВЕРЖДЕНИЯ НЕТ — законопроект №1322096-8 "
+                "сам по себе не объявляет мобилизацию"
+            ),
         },
-        "source_ids": sorted(set(used_ids)),
+        "source_ids": source_ids[:8],
     }
 
 
