@@ -1485,7 +1485,7 @@ def hard_reject_sber_and_foreign_auto_regressions():
         (
             "СберИнвестиции представили новый накопительный продукт",
             "Сбер представил продукт для клиентов.",
-            "ru_eco", "corporate_product_or_brand_pr",
+            "ru_eco", "sber_routine_promotion",
         ),
     )
     for title, body, category, reason in weak:
