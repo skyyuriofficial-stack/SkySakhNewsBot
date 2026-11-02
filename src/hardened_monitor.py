@@ -217,6 +217,35 @@ def _pre_audit_cleanup(state, *, mutate: bool):
     return actions, failures
 
 
+POST_BOUND_ISSUE_TYPES = frozenset({"category", "title", "media", "contract"})
+
+
+def _historical_post_issue(issue, last_posts):
+    """Demote only proven out-of-window, non-actionable per-post findings.
+
+    Unknown or current posts and all health/action failures remain blocking.
+    The original error and identifiers stay visible in warnings.
+    """
+    if issue.get("type") not in POST_BOUND_ISSUE_TYPES:
+        return None
+    message_id = issue.get("message_id")
+    if message_id is None:
+        return None
+    post = next((
+        row for row in reversed(last_posts)
+        if row.get("telegram_message_id") == message_id
+        and not row.get("auto_deleted")
+    ), None)
+    if post is None or publication_auditor._within_mutation_window(post):
+        return None
+    return {
+        **issue,
+        "type": "historical_post_debt",
+        "original_type": issue.get("type"),
+        "non_actionable_reason": "telegram_mutation_window_expired",
+    }
+
+
 def _status_from_findings(issues, warnings) -> str:
     if issues:
         return "error"
@@ -274,6 +303,10 @@ def main() -> int:
                     current_items.append(item)
             if current_items:
                 blocking_base_issues.append({**issue, "count": len(current_items), "items": current_items})
+            continue
+        aged_post_issue = _historical_post_issue(issue, last_posts)
+        if aged_post_issue is not None:
+            legacy_debt.append(aged_post_issue)
             continue
         if issue.get("type") == "mobilization_digest_missing" and health.get("status") != "healthy":
             legacy_debt.append({**issue, "derivative_of": "telegram_delivery_unhealthy"})

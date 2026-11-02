@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import editorial_hardening
+from datetime import datetime, timedelta, timezone
 
 editorial_hardening.install()
 
@@ -251,6 +252,43 @@ def main() -> int:
         "42-летней женщины во время тушения пожара."
     )
     assert "смерти. Огнеборцы" in editorial_hardening.dedupe_source_text(malformed_source)
+
+    # Reproduce the two 2026-11-02 live post findings: both are older
+    # than Telegram's editable/deletable window and must remain visible as
+    # editorial debt, without making an unrelated live delivery probe red.
+    aged = (datetime.now(timezone.utc) - timedelta(days=5)).isoformat()
+    fresh = (datetime.now(timezone.utc) - timedelta(hours=1)).isoformat()
+    posts = [
+        {"telegram_message_id": 513, "time_sakhalin": aged, "auto_deleted": False},
+        {"telegram_message_id": 518, "time_sakhalin": aged, "auto_deleted": False},
+        {"telegram_message_id": 601, "time_sakhalin": fresh, "auto_deleted": False},
+    ]
+    for msg_id, reason in (
+        (513, "sber_routine_promotion"),
+        (518, "foreign_vehicle_recall_out_of_scope"),
+    ):
+        issue = {
+            "type": "category", "message_id": msg_id,
+            "review_reason": reason,
+        }
+        debt = hardened_monitor._historical_post_issue(issue, posts)
+        assert debt is not None, issue
+        assert debt["type"] == "historical_post_debt", debt
+        assert debt["original_type"] == "category", debt
+        assert debt["review_reason"] == reason, debt
+    current = {"type": "category", "message_id": 601}
+    assert hardened_monitor._historical_post_issue(current, posts) is None
+    assert hardened_monitor._historical_post_issue(
+        {"type": "category", "message_id": 999}, posts
+    ) is None
+    assert hardened_monitor._historical_post_issue(
+        {"type": "telegram_delivery_unhealthy", "message_id": 513},
+        posts,
+    ) is None
+    assert hardened_monitor._status_from_findings(
+        [{"type": "telegram_delivery_unhealthy"}],
+        [{"type": "historical_post_debt"}],
+    ) == "error"
 
     assert hardened_monitor._status_from_findings([], []) == "healthy"
     assert hardened_monitor._status_from_findings([], [{"type": "thematic_mix_drift"}]) == "degraded"
