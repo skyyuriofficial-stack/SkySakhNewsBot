@@ -38,6 +38,28 @@ def robust_collect():
     except Exception as exc:
         print(f"direct-source collection error: {exc}", flush=True)
 
+    # Prefer specifically sourced legal facts over repetitive raw GARANT page
+    # titles.  Legal status, bill text, presidential powers and decree remain
+    # separately citeable; three URLs for one bill are not three independent acts.
+    have_verified_baseline = any(row.get("legal_role") for row in rows)
+    if have_verified_baseline:
+        rows = [
+            row for row in rows
+            if not (
+                str(row.get("group") or "") == "law"
+                and not row.get("legal_role")
+                and any(token in str(row.get("url") or "")
+                        for token in ("/414784137/", "/411685333/"))
+            )
+        ]
+    rows.sort(
+        key=lambda row: (
+            bool(row.get("legal_role")),
+            int(row.get("trust") or 0),
+            str(row.get("published_utc") or ""),
+        ),
+        reverse=True,
+    )
     seen = set()
     unique = []
     for row in rows:
