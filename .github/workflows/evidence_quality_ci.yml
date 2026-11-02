@@ -1,0 +1,59 @@
+name: Evidence and editorial quality CI
+on:
+  push:
+    branches: [main, fix/digest-evidence-depth-20261102]
+    paths:
+      - 'src/mobilization_*.py'
+      - 'src/hardened_digest.py'
+      - 'src/editorial_policy.py'
+      - 'src/production_selftest.py'
+      - '.github/workflows/evidence_quality_ci.yml'
+      - '.github/workflows/mobilization_digest.yml'
+  pull_request:
+    paths:
+      - 'src/mobilization_*.py'
+      - 'src/hardened_digest.py'
+      - 'src/editorial_policy.py'
+      - '.github/workflows/evidence_quality_ci.yml'
+      - '.github/workflows/mobilization_digest.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: evidence-quality-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      IMAGE_REQUIRED: '1'
+      AI_CALL_BUDGET: '0'
+      EDITORIAL_AUDIT_AI_BUDGET: '0'
+      NEWS_DIRECTOR_AI_BUDGET: '0'
+      POST_AUDIT_AUTOCORRECT: '0'
+      DIGEST_DRY_RUN: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r requirements.txt
+      - name: Compile digest
+        run: python -m py_compile src/mobilization_depth.py src/hardened_digest.py src/mobilization_depth_selftest.py src/mobilization_live_preview.py
+      - name: Source integrity and full fallback preview
+        run: |
+          python src/mobilization_quality_selftest.py
+          python src/mobilization_depth_selftest.py
+      - name: Existing production editorial regressions
+        run: python src/production_selftest.py
+      - name: Live primary-document and civil-source preview without Telegram
+        if: github.event_name != 'pull_request'
+        run: python src/mobilization_live_preview.py
+      - uses: actions/upload-artifact@v4
+        if: always() && github.event_name != 'pull_request'
+        with:
+          name: mobilization-evidence-preview
+          path: mobilization_depth_preview.json
+          if-no-files-found: warn

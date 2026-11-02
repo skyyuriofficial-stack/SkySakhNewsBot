@@ -25,15 +25,10 @@ def resolved_mode(*, now_local: datetime | None = None) -> str:
     current = _CURRENT_SCHEDULE_MODES.get(scheduled)
     if current:
         local_now = now_local or datetime.now(digest.TZ)
-        # GitHub cron can be delayed substantially. Once the evening window has
-        # started, a stale morning/watchdog event must not publish a "morning"
-        # digest in place of the current evening risk update.
+        # A delayed morning trigger must not replace the evening update.
         if current == "morning" and local_now.hour >= 19:
             return "evening"
         return current
-
-    # Keep the canonical implementation as the fallback for manual runs and
-    # legacy schedule strings.
     return final.resolved_mode()
 
 
@@ -55,10 +50,13 @@ def _record_blocked(mode: str, health: dict) -> None:
 
 
 def main() -> int:
+    # Install once at execution, not at import: read-only tools and other
+    # production entrypoints retain their own independent behaviour.
+    import mobilization_depth
+    import mobilization_sources
+    import mobilization_digest_runner
+    mobilization_depth.install(digest, final, mobilization_sources, mobilization_digest_runner)
     mode = resolved_mode()
-
-    # Force the already-resolved slot into the downstream module. This avoids
-    # reclassifying a delayed scheduled run from the runner's current clock.
     previous_mode = os.environ.get("DIGEST_MODE")
     os.environ["DIGEST_MODE"] = mode
     try:
