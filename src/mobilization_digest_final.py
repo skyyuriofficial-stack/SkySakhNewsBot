@@ -14,6 +14,92 @@ import mobilization_digest_runner as runner
 import mobilization_sources
 
 
+REQUIRED_LEGAL_ROLES = (
+    "first_reading_baseline",
+    "bill_text",
+    "presidential_powers",
+    "regional_framework",
+)
+
+
+def _require_substantive_evidence(evidence):
+    """Prevent a three-GARANT-headline digest from appearing operationally healthy."""
+    roles = {
+        str(row.get("legal_role")) for row in evidence
+        if isinstance(row, dict) and row.get("group") == "law"
+    }
+    missing = sorted(set(REQUIRED_LEGAL_ROLES) - roles)
+    if missing:
+        raise RuntimeError(
+            "digest_evidence_incomplete: missing independently described "
+            "legal roles: " + ",".join(missing)
+        )
+    if len({str(row.get("url") or "") for row in evidence if row.get("legal_role")}) < 4:
+        raise RuntimeError("digest_evidence_incomplete: legal references not distinct")
+
+
+def _substantive_draft_issues(draft, evidence):
+    """Fail closed on an empty legal synopsis or an uncited daily risk verdict."""
+    issues = []
+    legal = digest.clean(draft.get("legal"))
+    if len(legal) < 440:
+        issues.append("legal_explanation_too_shallow")
+    if not all(marker in legal for marker in (
+        "19.5.5", "31-ФЗ", "757", "3–5", "30–50", "300",
+    )):
+        issues.append("legal_statutes_and_proposed_sanctions_missing")
+    legal_ids = {
+        int(row["id"]) for row in evidence
+        if row.get("legal_role") in REQUIRED_LEGAL_ROLES
+        and row.get("id") is not None
+    }
+    present_ids = set()
+    for raw in draft.get("source_ids") or []:
+        try:
+            present_ids.add(int(raw))
+        except (TypeError, ValueError):
+            pass
+    if not legal_ids <= present_ids:
+        issues.append("legal_sources_not_all_cited")
+    civil_ids = {
+        int(row["id"]) for row in evidence
+        if row.get("group") == "civil_society"
+        and str(row.get("url") or "").startswith("https://t.me/iditelesom_help/")
+    }
+    if civil_ids:
+        item_ids = set()
+        for item in draft.get("items") or []:
+            for raw in item.get("source_ids") or []:
+                try:
+                    item_ids.add(int(raw))
+                except (TypeError, ValueError):
+                    pass
+        if not (item_ids & civil_ids):
+            issues.append("iditelesom_first_party_claim_not_analyzed")
+    return issues
+
+
+def _rendered_digest_issues(message, evidence):
+    """A valid internal draft must remain complete after Telegram length fitting."""
+    issues = []
+    if len(message) > 4000:
+        issues.append("rendered_digest_too_long")
+    for token in ("19.5.5", "31-ФЗ", "757", "3–5", "30–50"):
+        if token not in message:
+            issues.append("rendered_legal_detail_missing:" + token)
+    required_legal_links = {
+        str(row.get("url") or "")
+        for row in evidence
+        if row.get("legal_role") in REQUIRED_LEGAL_ROLES
+    }
+    for url in sorted(required_legal_links):
+        if not url or url not in message:
+            issues.append("rendered_legal_source_missing:" + url[:100])
+    if "iditelesom_help" not in message:
+        issues.append("rendered_civil_source_missing")
+    return issues
+
+
 def _quality_row(row):
     if not isinstance(row, dict):
         return False
@@ -81,7 +167,22 @@ def robust_collect():
         key=lambda x: (int(x.get("trust") or 0), str(x.get("published_utc") or "")),
         reverse=True,
     )
-    unique = unique[:digest.MAX_EVIDENCE]
+    # Preserve distinct statutes and one dated first-party civil-society
+    # observation even if a large burst of 100-trust government headlines
+    # saturates the 42-item evidence budget.
+    pinned = []
+    for role in REQUIRED_LEGAL_ROLES:
+        hit = next((row for row in unique if row.get("legal_role") == role), None)
+        if hit is not None:
+            pinned.append(hit)
+    civil = next((
+        row for row in unique if row.get("group") == "civil_society"
+        and str(row.get("url") or "").startswith("https://t.me/iditelesom_help/")
+    ), None)
+    if civil is not None and civil not in pinned:
+        pinned.append(civil)
+    remaining = [row for row in unique if row not in pinned]
+    unique = (pinned + remaining)[:digest.MAX_EVIDENCE]
     for idx, item in enumerate(unique, start=1):
         item["id"] = idx
     runner._evidence_cache = unique
@@ -300,17 +401,21 @@ def safe_fallback_draft(evidence):
 
     # Permanent legal framework cited as legislation, not invented news.
     legal = (
-        "По состоянию на 27.10.2026 проект №1322096-8 принят только "
-        "в первом чтении; поправки до 10.11.2026. Он предлагает "
-        "статью 19.5.5 КоАП РФ об ответственности за неисполнение "
-        "решений губернаторов и региональных оперштабов в пределах "
-        "их компетенции. Санкции по ПРОЕКТУ: гражданам 3–5 тыс. руб.; "
-        "должностным лицам 30–50 тыс. руб. или дисквалификация на "
-        "1–3 года; организациям 300 тыс.–1 млн руб. или приостановление "
-        "деятельности до 90 суток. Это не вступивший в силу штраф "
-        "по новой статье. Статья 4 закона №31-ФЗ закрепляет объявление "
-        "общей и частичной мобилизации за Президентом; Указ №757 "
-        "от 19.10.2022 описывает полномочия региональных штабов."
+        "Законопроект №1322096-8: 27.10.2026 Госдума приняла его в первом "
+        "чтении (постановление №177-9 ГД), поправки предусмотрены до 10.11; "
+        "последующую стадию нужно проверять отдельно. "
+        "Предлагаемая ст. 19.5.5 КоАП РФ предусматривает ответственность "
+        "за неисполнение принятых в пределах компетенции решений губернаторов "
+        "и региональных оперштабов. Из текста проекта: «Неисполнение решения "
+        "высшего должностного лица субъекта Российской Федерации» — "
+        "это описание состава правонарушения, а не мобилизационный призыв. "
+        "Предлагаемые, ещё НЕ действующие санкции: гражданам 3–5 тыс. руб.; "
+        "должностным лицам 30–50 тыс. руб. либо дисквалификация на 1–3 года; "
+        "юрлицам 300 тыс.–1 млн руб. либо приостановление до 90 суток. "
+        "Отдельно действует ст. 4 Федерального закона №31-ФЗ: общую или "
+        "частичную мобилизацию объявляет Президент. Указ №757 от 19.10.2022 "
+        "определяет региональные уровни реагирования и компетенцию штабов; "
+        "он не является новым указом об объявлении мобилизации."
         if stage and bill and powers and decree
         else (
             "Актуальная юридическая стадия и точные нормы не подтверждены "
@@ -322,18 +427,34 @@ def safe_fallback_draft(evidence):
 
     if recent_civil:
         practice = (
-            "Проверены сообщения «Идите лесом» о повестках, в том числе "
-            "для уточнения данных, и отдельные предупреждения о подделках. "
-            "Это свидетельства обращений к правозащитному проекту, "
-            "а не проверенное количество мобилизованных. Не смешиваем "
-            "уточнение воинского учёта, военные сборы, контракт "
-            "и призыв по мобилизации."
+            "«Идите лесом»: учтены датированные сообщения из первичного "
+            "публичного канала о повестках и/или порядке их проверки. "
+            "Это сообщения проекта, а не независимая статистика мобилизации. "
+            "Повестка для уточнения учёта, сборы, контракт и призыв по "
+            "мобилизации — юридически различные процедуры."
         )
     else:
+        source_status = mobilization_sources.IDITELESOM_STATUS
+        if source_status.get("state") == "reachable":
+            observation = (
+                "Публичный канал «Идите лесом» доступен; среди последних "
+                "доступных сообщений за 14 дней не отобрано релевантного "
+                "датированного свидетельства. "
+            )
+        elif source_status.get("state") == "unavailable":
+            observation = (
+                "Публичный канал «Идите лесом» на этом запуске недоступен: "
+                "отсутствие сообщения не является отрицательным результатом проверки. "
+            )
+        else:
+            observation = (
+                "Публичный канал «Идите лесом» на этом запуске не проверен. "
+            )
         practice = (
-            "В доступной выборке недостаточно проверенных новых региональных "
-            "данных. Отсутствие сообщений не доказывает отсутствие вызовов "
-            "военкоматами; отдельно проверять повестки, сборы и контракты."
+            observation
+            + "Нет подтверждённых новых региональных квот или массового "
+              "вызова запасников в собранной выборке. "
+              "Не смешивать учёт, сборы, контракт и мобилизацию."
         )
 
     isw_text = (
@@ -356,7 +477,13 @@ def safe_fallback_draft(evidence):
             })
             source_ids.extend(row_ids(best))
 
-    source_ids = list(dict.fromkeys(source_ids))
+    # Source order is deliberate: four different legal references plus the
+    # first-party Idite Lesom post must fit even if Telegram has to trim copy.
+    ordered_sources = row_ids(stage, bill, powers, decree)
+    if recent_civil:
+        ordered_sources.extend(row_ids(recent_civil[0]))
+    ordered_sources.extend(source_ids)
+    source_ids = list(dict.fromkeys(ordered_sources))
     return {
         "headline": "Юридический статус и повестки: что подтверждено, а что нет",
         "short": (
@@ -646,6 +773,7 @@ def main():
     evidence = digest.collect_evidence()
     if not evidence:
         raise RuntimeError("no relevant evidence from primary or direct sources; fail closed")
+    _require_substantive_evidence(evidence)
 
     print("Relevant evidence:", flush=True)
     for item in evidence[:16]:
@@ -670,10 +798,16 @@ def main():
         print("draft validation issues:", issues, flush=True)
     draft = digest.verify_draft(draft, evidence)
 
-    final_issues = digest.validate_draft(draft, evidence)
+    final_issues = (
+        digest.validate_draft(draft, evidence)
+        + _substantive_draft_issues(draft, evidence)
+    )
     if final_issues:
         fallback = safe_fallback_draft(evidence)
-        fallback_issues = digest.validate_draft(fallback, evidence)
+        fallback_issues = (
+            digest.validate_draft(fallback, evidence)
+            + _substantive_draft_issues(fallback, evidence)
+        )
         if fallback_issues:
             raise RuntimeError(
                 "final digest validation failed: "
@@ -688,6 +822,12 @@ def main():
         draft = fallback
 
     message = digest.format_message(draft, evidence, mode)
+    rendered_issues = _rendered_digest_issues(message, evidence)
+    if rendered_issues:
+        raise RuntimeError(
+            "rendered mobilization digest lost required evidence: "
+            + "; ".join(rendered_issues)
+        )
     result = digest.send_telegram(message)
     telegram_result = result.get("result") or {}
 

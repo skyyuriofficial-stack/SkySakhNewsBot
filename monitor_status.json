@@ -1,45 +1,16 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-02T00:46:23+00:00",
-  "checked_at_sakhalin": "2026-11-02T11:46:20+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-02T01:24:06+00:00",
+  "checked_at_sakhalin": "2026-11-02T12:24:03+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "category",
-      "message_id": 513,
-      "title": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "sber_routine_promotion",
-      "corrected_category": null,
-      "title_issues": []
-    },
-    {
-      "type": "category",
-      "message_id": 518,
-      "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "foreign_vehicle_recall_out_of_scope",
-      "corrected_category": null,
-      "title_issues": []
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-02T10:34:44+11:00",
-    "age_hours": 1.19,
+    "age_hours": 1.82,
     "published": 0
   },
   "last_production_attempt": {
@@ -94,7 +65,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-02T00:46:22+00:00",
+    "checked_at": "2026-11-02T01:24:05+00:00",
     "checked": 20,
     "passed": 17,
     "anomalies": [
@@ -571,6 +542,38 @@
   },
   "legacy_or_derivative_warnings": [
     {
+      "type": "historical_post_debt",
+      "message_id": 513,
+      "title": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": false,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "sber_routine_promotion",
+      "corrected_category": null,
+      "title_issues": [],
+      "original_type": "category",
+      "non_actionable_reason": "telegram_mutation_window_expired"
+    },
+    {
+      "type": "historical_post_debt",
+      "message_id": 518,
+      "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": false,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "foreign_vehicle_recall_out_of_scope",
+      "corrected_category": null,
+      "title_issues": [],
+      "original_type": "category",
+      "non_actionable_reason": "telegram_mutation_window_expired"
+    },
+    {
       "title": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
       "url": "https://sakhalinmedia.ru/news/2661814/",
       "publisher_version": "stable-v12.1",
@@ -611,7 +614,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-02T00:46:18+00:00",
+    "checked_at_utc": "2026-11-02T01:24:01+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -639,6 +642,38 @@
   "hardening_actions": [],
   "hardening_failed_actions": [],
   "warnings": [
+    {
+      "type": "historical_post_debt",
+      "message_id": 513,
+      "title": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": false,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "sber_routine_promotion",
+      "corrected_category": null,
+      "title_issues": [],
+      "original_type": "category",
+      "non_actionable_reason": "telegram_mutation_window_expired"
+    },
+    {
+      "type": "historical_post_debt",
+      "message_id": 518,
+      "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": false,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "foreign_vehicle_recall_out_of_scope",
+      "corrected_category": null,
+      "title_issues": [],
+      "original_type": "category",
+      "non_actionable_reason": "telegram_mutation_window_expired"
+    },
     {
       "title": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
       "url": "https://sakhalinmedia.ru/news/2661814/",

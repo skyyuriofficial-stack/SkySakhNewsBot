@@ -386,15 +386,27 @@ def format_message(draft: Dict[str, Any], evidence: List[Dict[str, Any]], mode: 
             if len(source_ids) >= 5:
                 break
     parts += ["", "<b>Источники</b>"]
+    linked_urls = set()
     for idx in source_ids[:6]:
         source = by_id[idx]
         url = html.escape(source["url"], quote=True)
+        linked_urls.add(str(source.get("url") or ""))
         name = html.escape(clean(source["source"])[:56])
         short_title = clean(source["title"])[:75].rstrip(" .,:;")
         if len(clean(source["title"])) > 75:
             short_title += "…"
         title = html.escape(short_title)
         parts.append(f"• <a href=\"{url}\">{name}: {title}</a>")
+
+    # Attribution must never disappear when no first-party post was selected.
+    # Link to the monitored channel explicitly, without pretending its most
+    # recent post independently confirms a mobilization event.
+    if not any(url.startswith("https://t.me/iditelesom_help/")
+               for url in linked_urls):
+        parts.append(
+            '• <a href="https://t.me/s/iditelesom_help">'
+            '«Идите лесом» — мониторинг, не подтверждение события</a>'
+        )
 
     message = "\n".join(parts).strip()
     if len(message) > 4000:
@@ -403,12 +415,15 @@ def format_message(draft: Dict[str, Any], evidence: List[Dict[str, Any]], mode: 
         shrunk = {
             **draft,
             "items": [
-                {**item, "text": clean(item.get("text"))[:205]}
-                for item in (draft.get("items") or [])[:3]
+                {**item, "text": clean(item.get("text"))[:170]}
+                for item in (draft.get("items") or [])[:2]
             ],
-            "legal": clean(draft.get("legal"))[:790],
-            "practice": clean(draft.get("practice"))[:290],
-            "isw": clean(draft.get("isw"))[:150],
+            "short": clean(draft.get("short"))[:180],
+            # Preserve the complete legal distinction (bill vs enacted law,
+            # presidential authority and decree) when trimming for Telegram.
+            "legal": clean(draft.get("legal")),
+            "practice": clean(draft.get("practice"))[:205],
+            "isw": clean(draft.get("isw"))[:100],
             "source_ids": (draft.get("source_ids") or [])[:5],
         }
         if shrunk != draft:
