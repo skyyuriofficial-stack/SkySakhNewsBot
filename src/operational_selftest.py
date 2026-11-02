@@ -115,7 +115,128 @@ def mobilization_depth_regression() -> None:
         mobsources.telegram_public_sources.fetch_public_channel = original
 
 
+def mobilization_live_integrity_regression() -> None:
+    # The historical source collector returned a shallow GARANT landing
+    # snippet before the verified bill text and URL-deduplication suppressed
+    # the actual legal description. Preserve the full proposed 19.5.5 text.
+    original = {
+        "isw": mobsources.fetch_isw_daily,
+        "kremlin": mobsources.fetch_kremlin_index,
+        "bills": mobsources.fetch_bill_pages,
+        "civil": mobsources.fetch_iditelesom_recent,
+        "feeds": mobsources.fetch_direct_feeds,
+    }
+    verified = mobsources.verified_legal_reference_rows()
+    duplicate = {
+        "group": "law",
+        "trust": 96,
+        "source": "ГАРАНТ — старый краткий фрагмент страницы",
+        "title": "Проект федерального закона №1322096-8",
+        "summary": "Законопроект №1322096-8 о КоАП внесён в Думу.",
+        "url": "https://base.garant.ru/411685332/",
+        "published_utc": None,
+    }
+    try:
+        mobsources.fetch_isw_daily = lambda: []
+        mobsources.fetch_kremlin_index = lambda: []
+        mobsources.fetch_bill_pages = lambda: [duplicate]
+        mobsources.fetch_iditelesom_recent = lambda: []
+        mobsources.fetch_direct_feeds = lambda: []
+        merged = mobsources.collect_fallback()
+    finally:
+        mobsources.fetch_isw_daily = original["isw"]
+        mobsources.fetch_kremlin_index = original["kremlin"]
+        mobsources.fetch_bill_pages = original["bills"]
+        mobsources.fetch_iditelesom_recent = original["civil"]
+        mobsources.fetch_direct_feeds = original["feeds"]
+
+    matched = [
+        row for row in merged
+        if row.get("url") == "https://base.garant.ru/411685332/"
+    ]
+    assert len(matched) == 1, matched
+    assert matched[0].get("legal_role") == "bill_text", matched
+    assert "300 тыс" in matched[0].get("summary", ""), matched
+    assert "19.5.5" in matched[0].get("summary", ""), matched
+
+    # Live preview once leaked "fake summons" tokens into an unrelated
+    # source summary. A fake-summons alert must cite the real fake-summons
+    # headline, not a neighbouring post about a help-line.
+    now = datetime.now(timezone.utc).isoformat()
+    calls = {
+        "group": "civil_society", "trust": 84,
+        "source": "Идите лесом — сообщение проекта",
+        "title": "Запасникам пришли повестки для уточнения воинского учёта",
+        "summary": "Повестки запасникам для уточнения данных в регионах.",
+        "url": "https://t.me/iditelesom_help/8213",
+        "published_utc": now,
+    }
+    unrelated = {
+        **calls, "title": "Наша линия помощи верифицирована",
+        "summary": "Линия помощи действует. В соседнем посте сообщали о фейковых повестках.",
+        "url": "https://t.me/iditelesom_help/8219",
+    }
+    fake = {
+        **calls,
+        "title": "В Краснодаре рассылают фейковые повестки по мобилизации",
+        "summary": "По данным проекта в Краснодаре появились поддельные повестки.",
+        "url": "https://t.me/iditelesom_help/8220",
+    }
+    evidence = [
+        {**row, "id": i}
+        for i, row in enumerate(verified + [calls, unrelated, fake], 1)
+    ]
+    draft = mobfinal.safe_fallback_draft(evidence)
+    id_unrelated = next(row["id"] for row in evidence
+                        if row.get("url") == unrelated["url"])
+    id_fake = next(row["id"] for row in evidence
+                   if row.get("url") == fake["url"])
+    fake_items = [
+        item for item in draft.get("items", [])
+        if item.get("status") == "ПРЕДУПРЕЖДЕНИЕ ИСТОЧНИКА"
+    ]
+    assert len(fake_items) == 1, (fake_items, draft)
+    assert fake_items[0]["source_ids"] == [id_fake], fake_items
+    assert id_unrelated not in fake_items[0]["source_ids"], fake_items
+    assert "Краснодаре" in fake_items[0]["text"], fake_items
+    assert not mobrunner.validate_draft(draft, evidence), draft
+
+    # Already published morning digest (message 543) must not rerun on a
+    # code push, even though dry-run is always allowed for safe verification.
+    saved_loader = mobdigest.load_state
+    saved_env = {
+        name: os.environ.get(name)
+        for name in ("GITHUB_EVENT_NAME", "DIGEST_DRY_RUN")
+    }
+    day = datetime.now(mobdigest.TZ).date().isoformat()
+    status = {
+        "slots": {
+            day: {
+                "morning": {"status": "ok", "telegram_message_id": 543}
+            }
+        }
+    }
+    try:
+        os.environ["GITHUB_EVENT_NAME"] = "push"
+        os.environ["DIGEST_DRY_RUN"] = "0"
+        mobdigest.load_state = lambda: status
+        assert mobfinal._should_execute("morning") is False
+        assert mobfinal._should_execute("evening") is True
+        status = {"slots": {}}
+        assert mobfinal._should_execute("morning") is True
+        os.environ["DIGEST_DRY_RUN"] = "1"
+        assert mobfinal._should_execute("morning") is True
+    finally:
+        mobdigest.load_state = saved_loader
+        for name, value in saved_env.items():
+            if value is None:
+                os.environ.pop(name, None)
+            else:
+                os.environ[name] = value
+
+
 def main() -> int:
+    mobilization_live_integrity_regression()
     mobilization_depth_regression()
     now = datetime.now(timezone.utc)
 
