@@ -226,6 +226,14 @@ def mobilization_live_integrity_regression() -> None:
         assert mobfinal._should_execute("morning") is True
         os.environ["DIGEST_DRY_RUN"] = "1"
         assert mobfinal._should_execute("morning") is True
+        # Actual workflow push sets DIGEST_DRY_RUN=1. A completed slot must
+        # still no-op to avoid repeated network collection and two AI attempts.
+        status = {"slots": {
+            day: {"morning": {"status": "ok", "telegram_message_id": 543}}
+        }}
+        assert mobfinal._should_execute("morning") is False
+        os.environ["GITHUB_EVENT_NAME"] = "workflow_dispatch"
+        assert mobfinal._should_execute("morning") is True
     finally:
         mobdigest.load_state = saved_loader
         for name, value in saved_env.items():
