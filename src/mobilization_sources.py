@@ -363,8 +363,11 @@ def collect_fallback() -> List[Dict[str, Any]]:
     rows: List[Dict[str, Any]] = []
     rows.extend(fetch_isw_daily())
     rows.extend(fetch_kremlin_index())
-    rows.extend(fetch_bill_pages())
+    # URL de-duplication below keeps the FIRST record. Keep our dated,
+    # source-verified legislative text ahead of the raw GARANT landing page,
+    # whose headline/snippet alone does not contain the proposed penalties.
     rows.extend(verified_legal_reference_rows())
+    rows.extend(fetch_bill_pages())
     rows.extend(fetch_iditelesom_recent())
     rows.extend(fetch_direct_feeds())
 
