@@ -415,14 +415,15 @@ def format_message(draft: Dict[str, Any], evidence: List[Dict[str, Any]], mode: 
         shrunk = {
             **draft,
             "items": [
-                {**item, "text": clean(item.get("text"))[:205]}
-                for item in (draft.get("items") or [])[:3]
+                {**item, "text": clean(item.get("text"))[:170]}
+                for item in (draft.get("items") or [])[:2]
             ],
+            "short": clean(draft.get("short"))[:180],
             # Preserve the complete legal distinction (bill vs enacted law,
             # presidential authority and decree) when trimming for Telegram.
             "legal": clean(draft.get("legal")),
-            "practice": clean(draft.get("practice"))[:290],
-            "isw": clean(draft.get("isw"))[:150],
+            "practice": clean(draft.get("practice"))[:205],
+            "isw": clean(draft.get("isw"))[:100],
             "source_ids": (draft.get("source_ids") or [])[:5],
         }
         if shrunk != draft:
