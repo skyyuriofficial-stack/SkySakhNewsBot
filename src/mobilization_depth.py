@@ -302,11 +302,15 @@ def visible_units(text):
 
 
 def format_message(draft, evidence, mode):
-    """Inline citations; legal provisions are never silently cut mid-sentence."""
+    """Fit by dropping repetitive presentation, never by cutting legal clauses.
+
+    The complete evidence/draft remains available in the digest state. The
+    single Telegram overview keeps at least the first non-legal story, every
+    legal clause, and links to any omitted secondary stories.
+    """
     by_id = {int(r["id"]): r for r in evidence}
     def refs(values):
-        links = []
-        seen = set()
+        links, seen = [], set()
         for value in values:
             try:
                 idx = int(value)
@@ -314,36 +318,55 @@ def format_message(draft, evidence, mode):
                 continue
             row = by_id.get(idx)
             url = str((row or {}).get("url") or "")
-            if idx in seen or urlsplit(url).scheme not in {"https", "http"}:
+            if url in seen or urlsplit(url).scheme not in {"https", "http"}:
                 continue
-            seen.add(idx)
+            seen.add(url)
             links.append(f'<a href="{html.escape(url, quote=True)}">[{idx}]</a>')
         return " ".join(links)
     esc = lambda v: html.escape(clean(v))
     sections = draft.get("section_sources") or {}
     label = "УТРЕННЯЯ" if mode == "morning" else "ВЕЧЕРНЯЯ"
-    parts = [f"🇷🇺 <b>МОБИЛИЗАЦИЯ РФ — {label} СВОДКА</b>", f"<b>{esc(draft.get('headline'))}</b>", esc(draft.get("short"))]
-    for item in (draft.get("items") or [])[:4]:
+    stories = []
+    for item in (draft.get("items") or [])[:6]:
         item_ids = [int(i) for i in item.get("source_ids", []) if str(i).isdigit()]
         if item_ids and all(by_id.get(i, {}).get("group") == "law" for i in item_ids):
             continue
-        parts.append(esc(sentence_excerpt(item.get("text"), 420)) + " " + refs(item_ids))
-    parts += ["<b>Право: что меняется и что это означает</b>", esc(draft.get("legal")) + " " + refs(sections.get("legal", []))]
-    for q in (draft.get("legal_quotes") or [])[:2]:
-        parts.append("«" + esc(q.get("text")) + "» " + refs([q.get("source_id")]))
-    parts += ["<b>Практика и качество данных</b>", esc(draft.get("practice")) + " " + refs(sections.get("practice", [])[:2])]
-    if sections.get("isw"):
-        parts.append(esc(sentence_excerpt(draft.get("isw"), 300)) + " " + refs(sections["isw"][:2]))
-    else:
-        parts.append("Актуального релевантного материала ISW в этой выборке нет; это пробел данных.")
-    parts += ["<b>Оценка по отдельным признакам</b>"]
+        stories.append((item, item_ids))
     labels = {"started": "Запуск", "near_term": "Ближайшие месяцы", "staffing": "Кадры", "infrastructure": "Готовность", "large_wave_decision": "Крупная волна"}
-    for axis, label in labels.items():
-        parts.append(f"<b>{label}:</b> {esc((draft.get('assessment') or {}).get(axis))}")
-    message = "\n\n".join(p for p in parts if p).strip()
-    if visible_units(message) > 4000:
-        raise ValueError("digest exceeds Telegram visible limit; preserve legal meaning")
-    return message
+
+    def render(story_count, compact):
+        parts = [f"🇷🇺 <b>МОБИЛИЗАЦИЯ РФ — {label} СВОДКА</b>", f"<b>{esc(draft.get('headline'))}</b>"]
+        if not compact:
+            parts.append(esc(draft.get("short")))
+        for item, item_ids in stories[:story_count]:
+            # Keep the full attributed summary, including its limitations.
+            parts.append(esc(item.get("text")) + " " + refs(item_ids))
+        rest = [idx for _, item_ids in stories[story_count:] for idx in item_ids]
+        if rest:
+            parts.append("Другие сообщения в выборке: " + refs(rest))
+        parts += ["<b>Право: содержание и последствия</b>", esc(draft.get("legal")) + " " + refs(sections.get("legal", []))]
+        for quote in (draft.get("legal_quotes") or [])[:2]:
+            parts.append("«" + esc(quote.get("text")) + "» " + refs([quote.get("source_id")]))
+        if compact and sections.get("practice"):
+            practice = "«Идите лесом»: сообщения проекта, не независимое подтверждение массовости. Учёт, сборы, контракт и мобилизация различаются."
+        else:
+            practice = clean(draft.get("practice"))
+        parts += ["<b>Практика и покрытие источников</b>", esc(practice) + " " + refs(sections.get("practice", [])[:2])]
+        if sections.get("isw"):
+            parts.append(esc(sentence_excerpt(draft.get("isw"), 300)) + " " + refs(sections["isw"][:2]))
+        else:
+            parts.append("Свежих данных ISW в выборке нет; это пробел покрытия, а не оценка риска.")
+        parts.append("<b>Раздельная оценка</b>")
+        for axis, axis_label in labels.items():
+            parts.append(f"<b>{axis_label}:</b> {esc((draft.get('assessment') or {}).get(axis))}")
+        return "\n\n".join(p for p in parts if p).strip()
+
+    candidates = [(min(3, len(stories)), False), (min(2, len(stories)), True), (min(1, len(stories)), True)]
+    for count, compact in candidates:
+        message = render(count, compact)
+        if visible_units(message) <= 4000:
+            return message
+    raise ValueError("digest cannot fit without losing a legal clause or primary attributed story")
 
 
 def install(digest, final, sources, runner):

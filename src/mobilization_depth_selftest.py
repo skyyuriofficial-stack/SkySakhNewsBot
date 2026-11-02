@@ -89,6 +89,24 @@ class DepthTests(unittest.TestCase):
             self.assertFalse(policy._is_sber_routine_promotion(title), title)
         self.assertTrue(policy._is_foreign_vehicle_recall('Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема'))
 
+    def test_long_live_layout_preserves_law_and_attribution(self):
+        legal = ('Полная юридическая норма: проект не равен действующему закону. ' * 20).strip()
+        evidence = [{'id': i, 'url': f'https://example.org/{i}', 'group': 'civil_society'} for i in range(1, 5)]
+        draft = {
+            'headline': 'Проверка юридического статуса и региональной практики',
+            'short': 'Повторяющийся вводный текст. ' * 12,
+            'legal': legal,
+            'items': [{'text': 'Сообщение проекта: ' + ('Региональный факт, требующий проверки. ' * 12), 'source_ids': [i]} for i in range(1, 5)],
+            'practice': 'Оговорка об ограниченности наблюдений. ' * 10,
+            'section_sources': {'legal': [], 'practice': [1, 2]},
+            'assessment': {key: 'НЕДОСТАТОЧНО ДАННЫХ — вывод ограничен имеющимися свидетельствами.' for key in ('started', 'near_term', 'staffing', 'infrastructure', 'large_wave_decision')},
+        }
+        out = q.format_message(draft, evidence, 'morning')
+        self.assertLessEqual(q.visible_units(out), 4000)
+        self.assertIn(legal, out)
+        self.assertIn(draft['items'][0]['text'], out)
+        self.assertIn('https://example.org/4', out)
+
     def test_production_fallback_integration(self):
         import mobilization_digest as digest
         import mobilization_digest_final as final
