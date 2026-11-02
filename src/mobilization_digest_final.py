@@ -501,19 +501,22 @@ def _already_published(state, day, mode):
 def _should_execute(mode):
     if os.getenv("DIGEST_DRY_RUN", "0") == "1":
         return True
-    event = os.getenv("GITHUB_EVENT_NAME", "").strip()
-    if event in {"workflow_dispatch", "push"} or not event:
-        return True
 
+    # Preserve a completed Telegram slot before interpreting push/manual
+    # workflow events. A code push is not permission to regenerate and
+    # fabricate a fresh last_run timestamp for an already published digest.
     now_local = datetime.now(digest.TZ)
-    if event == "schedule" and now_local.hour < 8:
-        print("Digest schedule check: before 08:00 Sakhalin, nothing is due", flush=True)
-        return False
-
     day = now_local.date().isoformat()
     state = digest.load_state()
     if _already_published(state, day, mode):
-        print(f"Digest schedule check: {day} {mode} already published", flush=True)
+        print(f"Digest slot already published: {day} {mode}; no-op", flush=True)
+        return False
+
+    event = os.getenv("GITHUB_EVENT_NAME", "").strip()
+    if event in {"workflow_dispatch", "push"} or not event:
+        return True
+    if event == "schedule" and now_local.hour < 8:
+        print("Digest schedule check: before 08:00 Sakhalin, nothing is due", flush=True)
         return False
     return True
 
