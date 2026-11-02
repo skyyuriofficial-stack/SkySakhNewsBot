@@ -228,6 +228,16 @@ def draft_prompt(evidence: List[Dict[str, Any]], mode: str) -> str:
 
 Не более 6 items. Предпочитай official/law/ISW/Reuters/AP/BBC. Если существенных новых подтвержденных данных нет — short должен прямо это сказать, а items должны быть короткими, без искусственного раздувания.
 
+ЮРИДИЧЕСКАЯ ЧАСТЬ ОБЯЗАТЕЛЬНА, если в EVIDENCE есть legal_role:
+- first_reading_baseline: дата и постановление 177-9 ГД — только исторически подтвержденная стадия на 27.10.2026; не объявляй проект действующим законом и не утверждай, что это последняя стадия без свежей официальной проверки;
+- bill_text: точно объясни предложенную ст. 19.5.5 КоАП и санкции для граждан, должностных лиц и организаций, подчеркни, что это проект;
+- presidential_powers: ст. 4 Федерального закона 31-ФЗ — объявление мобилизации относится к полномочиям Президента;
+- regional_framework: Указ №757 от 19.10.2022 — региональные штабы и уровни реагирования уже существуют; не выдавай этот старый акт за новую мобилизацию.
+Не повторяй 3 разных страницы ГАРАНТ как 3 самостоятельных новых события.
+
+Если есть группа civil_society / «Идите лесом», включи содержательное конкретное сообщение с датой, регионами и ссылкой, ясно атрибутируя сведения проекту. Раздели повестки для уточнения воинского учета, военные сборы, контракт и мобилизацию; не выдавай заявления проекта за независимо доказанный государственный факт.
+Не выставляй «НИЗКИЙ» или иной уровень вероятности только на основании того, что в выборке нет указа. При недостатке данных пиши «НЕДОСТАТОЧНО ДАННЫХ».
+
 EVIDENCE:
 {json.dumps(compact, ensure_ascii=False)}
 """.strip()
@@ -376,22 +386,34 @@ def format_message(draft: Dict[str, Any], evidence: List[Dict[str, Any]], mode: 
             if len(source_ids) >= 5:
                 break
     parts += ["", "<b>Источники</b>"]
-    for idx in source_ids[:5]:
+    for idx in source_ids[:6]:
         source = by_id[idx]
         url = html.escape(source["url"], quote=True)
-        name = html.escape(clean(source["source"]))
-        title = html.escape(clean(source["title"])[:120])
+        name = html.escape(clean(source["source"])[:56])
+        short_title = clean(source["title"])[:75].rstrip(" .,:;")
+        if len(clean(source["title"])) > 75:
+            short_title += "…"
+        title = html.escape(short_title)
         parts.append(f"• <a href=\"{url}\">{name}: {title}</a>")
 
     message = "\n".join(parts).strip()
     if len(message) > 4000:
-        # Preserve the assessment and sources; first shrink item prose.
-        short_items = draft.copy()
-        short_items["items"] = [
-            {**item, "text": clean(item.get("text"))[:220]}
-            for item in (draft.get("items") or [])[:4]
-        ]
-        return format_message(short_items, evidence, mode) if len(short_items["items"]) < len(draft.get("items") or []) else message[:3990]
+        # Never truncate raw Telegram HTML in the middle of a closing tag or
+        # citation URL: condense structured sections, then rebuild HTML.
+        shrunk = {
+            **draft,
+            "items": [
+                {**item, "text": clean(item.get("text"))[:205]}
+                for item in (draft.get("items") or [])[:3]
+            ],
+            "legal": clean(draft.get("legal"))[:790],
+            "practice": clean(draft.get("practice"))[:290],
+            "isw": clean(draft.get("isw"))[:150],
+            "source_ids": (draft.get("source_ids") or [])[:5],
+        }
+        if shrunk != draft:
+            return format_message(shrunk, evidence, mode)
+        raise ValueError("mobilization digest cannot fit Telegram without cutting HTML")
     return message
 
 
