@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-02T09:07:25+00:00",
-  "checked_at_sakhalin": "2026-11-02T20:07:20+11:00",
+  "checked_at_utc": "2026-11-02T09:13:02+00:00",
+  "checked_at_sakhalin": "2026-11-02T20:12:56+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-02T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-02T17:47:26+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "evening",
@@ -27,21 +21,21 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-02T17:47:26+11:00",
-    "age_hours": 2.33,
-    "published": 0
+    "finished_sakhalin": "2026-11-02T20:12:22+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-02T06:47:26+00:00",
+    "checked_at_utc": "2026-11-02T09:12:22+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 1,
-    "ai_calls": 2,
-    "ai_api_fail": 2,
+    "published": 1,
+    "director_approved": 3,
+    "ai_calls": 0,
+    "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -95,7 +89,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-02T09:07:24+00:00",
+    "checked_at": "2026-11-02T09:13:00+00:00",
     "checked": 20,
     "passed": 17,
     "anomalies": [
@@ -188,19 +182,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 510,
-      "title": "Китайцы нашли способ разблокировать всю мощность видеокарт Nvidia — вышел анлокер, который снимает ограничение с карточек серий RTX30xx и RTX40xx ",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 513,
       "title": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
@@ -447,6 +428,19 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 544,
+      "title": "В Сахалинской области сформировали 133 аварийных бригады для отопительного сезона",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -468,12 +462,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 9,
+      "local": 10,
       "ru_pol": 2,
       "ru_eco": 3,
       "ru_safety": 0,
       "world": 2,
-      "it": 4
+      "it": 3
     },
     "scaled_targets": {
       "local": 6.0,
@@ -484,25 +478,24 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -3.0,
+      "local": -4.0,
       "ru_pol": 2.0,
       "ru_eco": 1.0,
       "ru_safety": 3.0,
       "world": 0.0,
-      "it": -3.0
+      "it": -2.0
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "major_it": 4,
       "macro_economy": 5,
       "political_decision": 3,
-      "major_emergency": 4,
+      "major_emergency": 5,
+      "major_it": 3,
       "fatal_incident": 2,
       "geopolitical_event": 1,
       "severe_weather": 1
     },
     "sequence": [
-      "it",
       "ru_eco",
       "local",
       "ru_pol",
@@ -521,10 +514,10 @@
       "ru_pol",
       "world",
       "local",
-      "it"
+      "it",
+      "local"
     ],
     "category_sequence": [
-      "it",
       "ru_eco",
       "sakh",
       "ru_pol",
@@ -543,10 +536,10 @@
       "ru_pol",
       "geo",
       "sakh",
-      "it"
+      "it",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "exploit exploitex",
       "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -565,7 +558,8 @@
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakh.online",
-      "techmedia techmedia"
+      "techmedia techmedia",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -644,7 +638,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-02T09:07:18+00:00",
+    "checked_at_utc": "2026-11-02T09:12:53+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -748,12 +742,12 @@
       "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
-        "local": 9,
+        "local": 10,
         "ru_pol": 2,
         "ru_eco": 3,
         "ru_safety": 0,
         "world": 2,
-        "it": 4
+        "it": 3
       },
       "targets": {
         "local": 6,
@@ -764,12 +758,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.0,
+        "local": -4.0,
         "ru_pol": 2.0,
         "ru_eco": 1.0,
         "ru_safety": 3.0,
         "world": 0.0,
-        "it": -3.0
+        "it": -2.0
       }
     }
   ]
