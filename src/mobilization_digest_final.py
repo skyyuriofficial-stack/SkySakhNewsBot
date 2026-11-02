@@ -79,6 +79,27 @@ def _substantive_draft_issues(draft, evidence):
     return issues
 
 
+def _rendered_digest_issues(message, evidence):
+    """A valid internal draft must remain complete after Telegram length fitting."""
+    issues = []
+    if len(message) > 4000:
+        issues.append("rendered_digest_too_long")
+    for token in ("19.5.5", "31-ФЗ", "757", "3–5", "30–50"):
+        if token not in message:
+            issues.append("rendered_legal_detail_missing:" + token)
+    required_legal_links = {
+        str(row.get("url") or "")
+        for row in evidence
+        if row.get("legal_role") in REQUIRED_LEGAL_ROLES
+    }
+    for url in sorted(required_legal_links):
+        if not url or url not in message:
+            issues.append("rendered_legal_source_missing:" + url[:100])
+    if "iditelesom_help" not in message:
+        issues.append("rendered_civil_source_missing")
+    return issues
+
+
 def _quality_row(row):
     if not isinstance(row, dict):
         return False
@@ -801,6 +822,12 @@ def main():
         draft = fallback
 
     message = digest.format_message(draft, evidence, mode)
+    rendered_issues = _rendered_digest_issues(message, evidence)
+    if rendered_issues:
+        raise RuntimeError(
+            "rendered mobilization digest lost required evidence: "
+            + "; ".join(rendered_issues)
+        )
     result = digest.send_telegram(message)
     telegram_result = result.get("result") or {}
 
