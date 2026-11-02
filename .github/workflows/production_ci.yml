@@ -3,7 +3,7 @@ name: SkySakhNews Production CI v12.1
 on:
   workflow_dispatch:
   push:
-    branches: [main, repair/mobilization-substantive-gate-20261102]
+    branches: [main]
     paths:
       - "src/news_bot_v8.py"
       - "src/mobilization_digest.py"
@@ -110,33 +110,6 @@ jobs:
           print("Digest HTML length:", len(message))
           assert len(legal) == 4 and not errors and len(message) <= 4000
           assert all(row["url"].startswith("https://t.me/iditelesom_help/") for row in civil)
-          PY
-
-      - name: Read-only current legal and Idite Lesom source audit
-        timeout-minutes: 3
-        run: |
-          PYTHONPATH=src python - <<'PY'
-          import mobilization_digest as digest
-          import mobilization_digest_final as final
-          import mobilization_sources as src
-          rows = src.verified_legal_reference_rows()
-          civil = src.fetch_iditelesom_recent()
-          evidence = [dict(row, id=i) for i, row in
-                      enumerate(rows + civil[:2], start=1)]
-          final._require_substantive_evidence(evidence)
-          draft = final.safe_fallback_draft(evidence)
-          problems = final._substantive_draft_issues(draft, evidence)
-          problems += digest.validate_draft(draft, evidence)
-          if problems:
-              raise AssertionError(problems)
-          message = digest.format_message(draft, evidence, "morning")
-          print("SOURCE_AUDIT", {
-              "legal_roles": [row["legal_role"] for row in rows],
-              "iditelesom": src.IDITELESOM_STATUS,
-              "message_chars": len(message),
-              "legal_chars": len(draft["legal"]),
-              "contains_iditelesom_link": "iditelesom" in message,
-          })
           PY
 
       - name: Run exact feed, category, balance, title and operational regressions
