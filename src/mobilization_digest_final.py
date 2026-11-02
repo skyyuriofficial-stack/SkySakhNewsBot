@@ -499,20 +499,23 @@ def _already_published(state, day, mode):
 
 
 def _should_execute(mode):
-    if os.getenv("DIGEST_DRY_RUN", "0") == "1":
-        return True
+    event = os.getenv("GITHUB_EVENT_NAME", "").strip()
+    dry_run = os.getenv("DIGEST_DRY_RUN", "0") == "1"
 
-    # Preserve a completed Telegram slot before interpreting push/manual
-    # workflow events. A code push is not permission to regenerate and
-    # fabricate a fresh last_run timestamp for an already published digest.
+    # Push preview runs are dry-run by workflow configuration, but an existing
+    # Telegram delivery must suppress even preview/LLM work on subsequent code
+    # pushes. Only a deliberately requested non-push dry run may override it.
     now_local = datetime.now(digest.TZ)
     day = now_local.date().isoformat()
     state = digest.load_state()
     if _already_published(state, day, mode):
+        if dry_run and event != "push":
+            return True
         print(f"Digest slot already published: {day} {mode}; no-op", flush=True)
         return False
 
-    event = os.getenv("GITHUB_EVENT_NAME", "").strip()
+    if dry_run:
+        return True
     if event in {"workflow_dispatch", "push"} or not event:
         return True
     if event == "schedule" and now_local.hour < 8:
