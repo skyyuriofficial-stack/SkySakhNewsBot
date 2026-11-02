@@ -386,15 +386,27 @@ def format_message(draft: Dict[str, Any], evidence: List[Dict[str, Any]], mode: 
             if len(source_ids) >= 5:
                 break
     parts += ["", "<b>Источники</b>"]
+    linked_urls = set()
     for idx in source_ids[:6]:
         source = by_id[idx]
         url = html.escape(source["url"], quote=True)
+        linked_urls.add(str(source.get("url") or ""))
         name = html.escape(clean(source["source"])[:56])
         short_title = clean(source["title"])[:75].rstrip(" .,:;")
         if len(clean(source["title"])) > 75:
             short_title += "…"
         title = html.escape(short_title)
         parts.append(f"• <a href=\"{url}\">{name}: {title}</a>")
+
+    # Attribution must never disappear when no first-party post was selected.
+    # Link to the monitored channel explicitly, without pretending its most
+    # recent post independently confirms a mobilization event.
+    if not any(url.startswith("https://t.me/iditelesom_help/")
+               for url in linked_urls):
+        parts.append(
+            '• <a href="https://t.me/s/iditelesom_help">'
+            '«Идите лесом» — мониторинг, не подтверждение события</a>'
+        )
 
     message = "\n".join(parts).strip()
     if len(message) > 4000:
