@@ -215,6 +215,17 @@ def enrich_draft(draft, evidence):
     ids = lambda rows: [int(r["id"]) for r in rows]
     legal = clean(draft.get("legal"))
     legal = legal.replace(
+        "Предлагаемые, ещё НЕ действующие санкции:",
+        "Санкции по проекту (вступление в силу отдельно не подтверждено):"
+    )
+    # Inline quotations inherited from a cached template are not live-document
+    # quotations. Only the independently verified legal_quotes are rendered.
+    legal = re.sub(
+        r"Из текста проекта:\s*«[^»]+»\s*[—-]\s*это описание состава правонарушения, а не мобилизационный призыв\.",
+        "Предлагаемый состав правонарушения не является решением о призыве.",
+        legal,
+    )
+    legal = legal.replace(
         "Это не вступивший в силу штраф по новой статье.",
         "Это санкции из текста проекта; вступление новой статьи в силу отдельно не подтверждено."
     )
