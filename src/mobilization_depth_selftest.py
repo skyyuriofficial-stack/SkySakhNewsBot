@@ -107,6 +107,14 @@ class DepthTests(unittest.TestCase):
         self.assertIn(draft['items'][0]['text'], out)
         self.assertIn('https://example.org/4', out)
 
+    def test_quote_does_not_repeat_legal_heading(self):
+        text = 'Неисполнение решения. Неисполнение решения губернатора, за исключением случаев, предусмотренных статьей 20.5.1 настоящего Кодекса, влечет штраф.'
+        quote = q.source_quote(text, 'bill_text')
+        self.assertEqual(quote, 'за исключением случаев, предусмотренных статьей 20.5.1 настоящего Кодекса')
+        self.assertIn(quote, text)
+        self.assertEqual(q.source_quote('Неполный заголовок нормы', 'bill_text'), '')
+        self.assertEqual(q.source_quote('Президент объявляет общую или частичную мобилизацию с уведомлением палат.', 'presidential_powers'), 'объявляет общую или частичную мобилизацию')
+
     def test_production_fallback_integration(self):
         import mobilization_digest as digest
         import mobilization_digest_final as final

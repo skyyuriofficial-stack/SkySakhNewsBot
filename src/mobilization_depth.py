@@ -48,7 +48,7 @@ def direct_civil_claim(item):
     title, body = clean(item.get("title")), clean(item.get("summary"))
     stamp = str(item.get("published_utc") or "")[:10]
     date_label = (stamp + ": ") if re.fullmatch(r"\d{4}-\d{2}-\d{2}", stamp) else "дата не установлена: "
-    text = body or title
+    text = re.sub(r"^З\s+апасник", "Запасник", body or title)
     purpose = "Цель вызова отдельно не установлена."
     purposes = []
     low = norm(text)
@@ -98,6 +98,18 @@ def literal_quote(text, pattern, max_words=22):
     return quote
 
 
+def source_quote(text, role):
+    """Short complete syntactic fragments, not the first N header words."""
+    patterns = {
+        "presidential_powers": r"объявляет общую или частичную мобилизацию",
+        "bill_text": r"за исключением случаев, предусмотренных статьей 20\.5\.1 (?:настоящего Кодекса|КоАП)",
+        "bill_rationale": r"в целях установления административной ответственности за неисполнение решений",
+        "regional_framework": r"являются обязательными для исполнения гражданами, организациями",
+    }
+    match = re.search(patterns.get(role, r"(?!)"), clean(text), re.I)
+    return match.group(0) if match else ""
+
+
 def fetch_legal_snapshots(get, strip_html):
     """Whitelisted parallel reads. Retrieval time is not a law's effective date."""
     def one(spec):
@@ -116,7 +128,7 @@ def fetch_legal_snapshots(get, strip_html):
                     return None
                 quote = ""
             else:
-                quote = literal_quote(text, pattern)
+                quote = source_quote(text, role)
             return {
                 "group": "law", "trust": 100 if role in {"stage_snapshot", "regional_framework"} else 98,
                 "source": name, "title": name, "url": url,
@@ -213,9 +225,9 @@ def enrich_draft(draft, evidence):
         legal += " Анализ: предмет проекта — ответственность за неисполнение конкретного решения уполномоченного органа; сам проект не устанавливает факт призыва, численность или сроки новой волны."
     rationale = next((r for r in law if r.get("legal_role") == "bill_rationale" and r.get("retrieved_text")), None)
     if rationale and "Цель по пояснительной записке:" not in legal:
-        legal += " Цель по пояснительной записке: " + sentence_excerpt(rationale["summary"], 310)
+        legal += " Цель по пояснительной записке: установить федеральную ответственность за неисполнение решений региональных властей и оперштабов в пределах их компетенции."
     quotes = []
-    for row in law:
+    for row in sorted(law, key=lambda r: {"presidential_powers": 0, "bill_text": 1, "bill_rationale": 2}.get(r.get("legal_role"), 3)):
         quote = clean(row.get("literal_quote"))
         if quote and quote in clean(row.get("retrieved_text")) and len(quote.split()) <= 25:
             quotes.append({"text": quote, "source_id": int(row["id"])})
@@ -346,12 +358,12 @@ def format_message(draft, evidence, mode):
             parts.append("Другие сообщения в выборке: " + refs(rest))
         parts += ["<b>Право: содержание и последствия</b>", esc(draft.get("legal")) + " " + refs(sections.get("legal", []))]
         for quote in (draft.get("legal_quotes") or [])[:2]:
-            parts.append("«" + esc(quote.get("text")) + "» " + refs([quote.get("source_id")]))
+            parts.append("Фрагмент нормы: «" + esc(quote.get("text")) + "» " + refs([quote.get("source_id")]))
         if compact and sections.get("practice"):
             practice = "«Идите лесом»: сообщения проекта, не независимое подтверждение массовости. Учёт, сборы, контракт и мобилизация различаются."
         else:
             practice = clean(draft.get("practice"))
-        parts += ["<b>Практика и покрытие источников</b>", esc(practice) + " " + refs(sections.get("practice", [])[:2])]
+        parts += ["<b>Практика и покрытие источников</b>", esc(practice) + " " + refs([i for _, values in stories[:story_count] for i in values if by_id.get(i, {}).get("group") == "civil_society"] or sections.get("practice", [])[:2])]
         if sections.get("isw"):
             parts.append(esc(sentence_excerpt(draft.get("isw"), 300)) + " " + refs(sections["isw"][:2]))
         else:
