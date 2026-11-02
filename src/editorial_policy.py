@@ -20,7 +20,7 @@ from urllib.parse import urlparse
 
 import editorial_gate as gate
 
-VERSION = "policy-v2.7"
+VERSION = "policy-v2.8"
 
 CATEGORY_GROUP = {
     "sakh": "local",
@@ -633,8 +633,55 @@ def _is_soft_finance_ai_promo(title: str) -> bool:
     )
 
 
+# Bank-branded routine promotions cannot fill economy/politics slots.  This
+# excludes a genuinely material failure of the bank itself: a default, loss
+# of licence, systemic outage or serious security/solvency incident.
+_SBER_BRAND_RE = re.compile(
+    r"\bсбер(?:банк\w*|страховани\w*|инвестици\w*|нпф\w*|университет\w*)?\b",
+    re.I,
+)
+_SBER_MATERIAL_BANK_EVENTS = (
+    "дефолт", "банкрот", "санаци", "отозвал лицензи", "отзыв лицензии",
+    "лицензия отозвана", "массовый сбой", "масштабный сбой",
+    "утечк", "взлом", "кибератак", "хищени", "арест активов",
+    "системный кризис", "принудительная ликвидация",
+)
+_FOREIGN_AUTO_BRANDS = (
+    "toyota", "тойота", "honda", "хонда", "ford", "форд",
+    "hyundai", "kia", "volkswagen", "bmw", "mercedes",
+    "nissan", "sienna", "tesla", "тесла",
+)
+_FOREIGN_AUTO_RECALL = (
+    "отзыв", "отзывает", "отзывают", "отзовет", "отзовёт",
+    "recall", "recalled",
+)
+_FOREIGN_AUTO_PRODUCTS = (
+    "автомобил", "машин", "минивэн", "sienna", "кроссовер",
+    "седан", "внедорожник", "vehicles", "cars", "minivans",
+)
+
+
+def _is_sber_routine_promotion(title: str) -> bool:
+    return bool(
+        _SBER_BRAND_RE.search(title)
+        and not has_any(title, _SBER_MATERIAL_BANK_EVENTS)
+    )
+
+
+def _is_foreign_vehicle_recall(title: str) -> bool:
+    return bool(
+        has_any(title, _FOREIGN_AUTO_BRANDS)
+        and has_any(title, _FOREIGN_AUTO_RECALL)
+        and has_any(title, _FOREIGN_AUTO_PRODUCTS)
+    )
+
+
 def _hard_reject(title: str, lead: str) -> Optional[str]:
     combined = f"{title} {lead}"
+    if _is_sber_routine_promotion(title):
+        return "sber_routine_promotion"
+    if _is_foreign_vehicle_recall(title):
+        return "foreign_vehicle_recall_out_of_scope"
     if has_any(title, CALENDAR_HISTORY):
         return "calendar_or_archive"
     if has_any(title, CEREMONY):
