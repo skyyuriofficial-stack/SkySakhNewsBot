@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-03T06:35:45+00:00",
-  "checked_at_sakhalin": "2026-11-03T17:35:40+11:00",
+  "checked_at_utc": "2026-11-03T06:40:16+00:00",
+  "checked_at_sakhalin": "2026-11-03T17:40:11+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-03T16:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-03T13:30:50+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -27,19 +21,19 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-03T13:30:50+11:00",
-    "age_hours": 4.08,
-    "published": 0
+    "finished_sakhalin": "2026-11-03T17:39:45+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-03T02:30:50+00:00",
+    "checked_at_utc": "2026-11-03T06:39:45+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 4,
+    "published": 1,
+    "director_approved": 5,
     "ai_calls": 4,
     "ai_api_fail": 2,
     "ai_budget_exhausted": 1,
@@ -82,7 +76,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-03T06:35:43+00:00",
+    "checked_at": "2026-11-03T06:40:14+00:00",
     "checked": 20,
     "passed": 18,
     "anomalies": [
@@ -147,19 +141,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 514,
-      "title": "Концессия дала Южно-Сахалинску почти 10 млрд на воду — бюджет лишь четверть",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 515,
       "title": "Путин поручил регионам проработать развитие каршеринга с семейными автомобилями и детскими креслами",
@@ -406,6 +387,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 546,
+      "title": "Владимир Путин подписал Указ о праздновании 95-летия образования ЕАО",
+      "category_key": "ru_pol",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_pol",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -427,8 +421,8 @@
       "it": 5.0
     },
     "counts": {
-      "local": 11,
-      "ru_pol": 2,
+      "local": 10,
+      "ru_pol": 3,
       "ru_eco": 2,
       "ru_safety": 0,
       "world": 2,
@@ -443,26 +437,25 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -5.0,
-      "ru_pol": 2.0,
+      "local": -4.0,
+      "ru_pol": 1.0,
       "ru_eco": 2.0,
       "ru_safety": 3.0,
       "world": 0.0,
       "it": -2.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
-      "macro_economy": 4,
-      "political_decision": 3,
+      "political_decision": 4,
       "major_emergency": 5,
       "major_it": 3,
+      "macro_economy": 3,
       "fatal_incident": 2,
       "geopolitical_event": 1,
       "severe_weather": 1,
       "violent_crime": 1
     },
     "sequence": [
-      "local",
       "ru_pol",
       "world",
       "local",
@@ -481,10 +474,10 @@
       "local",
       "it",
       "local",
-      "local"
+      "local",
+      "ru_pol"
     ],
     "category_sequence": [
-      "sakh",
       "ru_pol",
       "geo",
       "sakh_chp",
@@ -503,10 +496,10 @@
       "sakh",
       "it",
       "sakh_chp",
-      "sakh_chp"
+      "sakh_chp",
+      "ru_pol"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakhalinmedia.ru",
       "sakh.online",
       "astv",
@@ -524,6 +517,7 @@
       "sakhalinmedia.ru",
       "sakh.online",
       "techmedia techmedia",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru"
     ],
@@ -574,7 +568,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-03T06:35:37+00:00",
+    "checked_at_utc": "2026-11-03T06:40:08+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -645,11 +639,11 @@
     },
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 14.0,
+      "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
-        "local": 11,
-        "ru_pol": 2,
+        "local": 10,
+        "ru_pol": 3,
         "ru_eco": 2,
         "ru_safety": 0,
         "world": 2,
@@ -664,8 +658,8 @@
         "it": 1
       },
       "deficits": {
-        "local": -5.0,
-        "ru_pol": 2.0,
+        "local": -4.0,
+        "ru_pol": 1.0,
         "ru_eco": 2.0,
         "ru_safety": 3.0,
         "world": 0.0,
