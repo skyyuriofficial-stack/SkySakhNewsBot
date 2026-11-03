@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-03T09:30:33+00:00",
-  "checked_at_sakhalin": "2026-11-03T20:30:27+11:00",
+  "checked_at_utc": "2026-11-03T09:37:04+00:00",
+  "checked_at_sakhalin": "2026-11-03T20:36:59+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-03T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-03T17:39:45+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -38,19 +32,19 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-03T17:39:45+11:00",
-    "age_hours": 2.85,
+    "finished_sakhalin": "2026-11-03T20:36:34+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-03T06:39:45+00:00",
+    "checked_at_utc": "2026-11-03T09:36:34+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 5,
+    "director_approved": 4,
     "ai_calls": 4,
     "ai_api_fail": 2,
     "ai_budget_exhausted": 1,
@@ -104,7 +98,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-03T09:30:31+00:00",
+    "checked_at": "2026-11-03T09:37:03+00:00",
     "checked": 20,
     "passed": 18,
     "anomalies": [
@@ -169,19 +163,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 515,
-      "title": "Путин поручил регионам проработать развитие каршеринга с семейными автомобилями и детскими креслами",
-      "category_key": "ru_pol",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_pol",
-      "title_issues": []
-    },
     {
       "message_id": 518,
       "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
@@ -428,6 +409,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_pol",
       "title_issues": []
+    },
+    {
+      "message_id": 547,
+      "title": "Аналитика ВТБ: россияне чаще всего открывают вклады в начале недели",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -450,8 +444,8 @@
     },
     "counts": {
       "local": 10,
-      "ru_pol": 3,
-      "ru_eco": 2,
+      "ru_pol": 2,
+      "ru_eco": 3,
       "ru_safety": 0,
       "world": 2,
       "it": 3
@@ -466,25 +460,24 @@
     },
     "deficits": {
       "local": -4.0,
-      "ru_pol": 1.0,
-      "ru_eco": 2.0,
+      "ru_pol": 2.0,
+      "ru_eco": 1.0,
       "ru_safety": 3.0,
       "world": 0.0,
       "it": -2.0
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "political_decision": 4,
+      "political_decision": 3,
       "major_emergency": 5,
       "major_it": 3,
-      "macro_economy": 3,
+      "macro_economy": 4,
       "fatal_incident": 2,
       "geopolitical_event": 1,
       "severe_weather": 1,
       "violent_crime": 1
     },
     "sequence": [
-      "ru_pol",
       "world",
       "local",
       "local",
@@ -503,10 +496,10 @@
       "it",
       "local",
       "local",
-      "ru_pol"
+      "ru_pol",
+      "ru_eco"
     ],
     "category_sequence": [
-      "ru_pol",
       "geo",
       "sakh_chp",
       "sakh_chp",
@@ -525,10 +518,10 @@
       "it",
       "sakh_chp",
       "sakh_chp",
-      "ru_pol"
+      "ru_pol",
+      "ru_eco"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakh.online",
       "astv",
       "sakhalinmedia.ru",
@@ -545,6 +538,7 @@
       "sakhalinmedia.ru",
       "sakh.online",
       "techmedia techmedia",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru"
@@ -596,7 +590,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-03T09:30:24+00:00",
+    "checked_at_utc": "2026-11-03T09:36:57+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -671,8 +665,8 @@
       "limit": 8.0,
       "counts": {
         "local": 10,
-        "ru_pol": 3,
-        "ru_eco": 2,
+        "ru_pol": 2,
+        "ru_eco": 3,
         "ru_safety": 0,
         "world": 2,
         "it": 3
@@ -687,8 +681,8 @@
       },
       "deficits": {
         "local": -4.0,
-        "ru_pol": 1.0,
-        "ru_eco": 2.0,
+        "ru_pol": 2.0,
+        "ru_eco": 1.0,
         "ru_safety": 3.0,
         "world": 0.0,
         "it": -2.0
