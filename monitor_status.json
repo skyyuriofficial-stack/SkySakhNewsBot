@@ -1,39 +1,23 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-03T09:57:25+00:00",
-  "checked_at_sakhalin": "2026-11-03T20:57:20+11:00",
+  "checked_at_utc": "2026-11-03T13:01:55+00:00",
+  "checked_at_sakhalin": "2026-11-04T00:01:49+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
     {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-11-03T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "morning",
-        "at_utc": "2026-11-01T22:48:53+00:00",
-        "at_sakhalin": "2026-11-02T09:48:53+11:00"
-      }
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "evening",
-      "expected_by_sakhalin": "2026-11-03T19:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "morning",
-        "at_utc": "2026-11-01T22:48:53+00:00",
-        "at_sakhalin": "2026-11-02T09:48:53+11:00"
-      }
+      "type": "publisher_slot_missed",
+      "slot_sakhalin": "2026-11-03T22:00+11:00",
+      "grace_minutes": 45,
+      "last_finished_sakhalin": "2026-11-03T20:36:34+11:00"
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-03T20:36:34+11:00",
-    "age_hours": 0.35,
+    "age_hours": 3.42,
     "published": 1
   },
   "last_production_attempt": {
@@ -53,15 +37,15 @@
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-11-03",
-    "status": "error",
+    "day_sakhalin": "2026-11-04",
+    "status": "healthy",
     "morning": {
-      "due": true,
+      "due": false,
       "published": false,
       "record": {}
     },
     "evening": {
-      "due": true,
+      "due": false,
       "published": false,
       "record": {}
     },
@@ -71,34 +55,11 @@
       "at_utc": "2026-11-01T22:48:53+00:00",
       "at_sakhalin": "2026-11-02T09:48:53+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-11-03T08:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "morning",
-          "at_utc": "2026-11-01T22:48:53+00:00",
-          "at_sakhalin": "2026-11-02T09:48:53+11:00"
-        }
-      },
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "evening",
-        "expected_by_sakhalin": "2026-11-03T19:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "morning",
-          "at_utc": "2026-11-01T22:48:53+00:00",
-          "at_sakhalin": "2026-11-02T09:48:53+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-03T09:57:23+00:00",
+    "checked_at": "2026-11-03T13:01:53+00:00",
     "checked": 20,
     "passed": 18,
     "anomalies": [
@@ -590,7 +551,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-03T09:57:17+00:00",
+    "checked_at_utc": "2026-11-03T13:01:46+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
