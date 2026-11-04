@@ -1,67 +1,44 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-04T11:29:43+00:00",
-  "checked_at_sakhalin": "2026-11-04T22:29:37+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-04T15:25:59+00:00",
+  "checked_at_sakhalin": "2026-11-05T02:25:55+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-11-04T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "morning",
-        "at_utc": "2026-11-01T22:48:53+00:00",
-        "at_sakhalin": "2026-11-02T09:48:53+11:00"
-      }
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "evening",
-      "expected_by_sakhalin": "2026-11-04T19:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "morning",
-        "at_utc": "2026-11-01T22:48:53+00:00",
-        "at_sakhalin": "2026-11-02T09:48:53+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-04T19:02:17+11:00",
-    "age_hours": 3.46,
-    "published": 0
+    "finished_sakhalin": "2026-11-05T02:25:27+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-04T08:02:17+00:00",
+    "checked_at_utc": "2026-11-04T15:25:28+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 4,
+    "published": 2,
+    "director_approved": 9,
     "ai_calls": 4,
-    "ai_api_fail": 3,
-    "ai_budget_exhausted": 1,
+    "ai_api_fail": 2,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-11-04",
-    "status": "error",
+    "day_sakhalin": "2026-11-05",
+    "status": "healthy",
     "morning": {
-      "due": true,
+      "due": false,
       "published": false,
       "record": {}
     },
     "evening": {
-      "due": true,
+      "due": false,
       "published": false,
       "record": {}
     },
@@ -71,51 +48,14 @@
       "at_utc": "2026-11-01T22:48:53+00:00",
       "at_sakhalin": "2026-11-02T09:48:53+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-11-04T08:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "morning",
-          "at_utc": "2026-11-01T22:48:53+00:00",
-          "at_sakhalin": "2026-11-02T09:48:53+11:00"
-        }
-      },
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "evening",
-        "expected_by_sakhalin": "2026-11-04T19:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "morning",
-          "at_utc": "2026-11-01T22:48:53+00:00",
-          "at_sakhalin": "2026-11-02T09:48:53+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-04T11:29:41+00:00",
+    "checked_at": "2026-11-04T15:25:58+00:00",
     "checked": 20,
-    "passed": 18,
+    "passed": 19,
     "anomalies": [
-      {
-        "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
-        "url": "https://sakh.online/news/18/2026-10-28/toyota-otzyvaet-v-ssha-bolshe-228-tysyach-sienna-hybrid-iz-za-spinok-sideniy-530121",
-        "publisher_version": "stable-v12.1",
-        "category_key": "geo",
-        "corrected_category": null,
-        "reason": "foreign_vehicle_recall_out_of_scope",
-        "contract_issues": [
-          "final_hard_reject:foreign_vehicle_recall_out_of_scope",
-          "final_category_mismatch:None->geo",
-          "director_final_category:None->geo",
-          "director_final_reject:foreign_vehicle_recall_out_of_scope"
-        ]
-      },
       {
         "title": "Владелец Google Alphabet потерял 500 млрд долларов рыночной стоимости из-за разочарования прибылью Уолл-Стрита",
         "url": "https://www.theguardian.com/technology/2026/oct/28/google-alphabet-q3-earnings-report",
@@ -131,22 +71,8 @@
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
-    "unresolved": 2,
+    "unresolved": 1,
     "unresolved_items": [
-      {
-        "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
-        "url": "https://sakh.online/news/18/2026-10-28/toyota-otzyvaet-v-ssha-bolshe-228-tysyach-sienna-hybrid-iz-za-spinok-sideniy-530121",
-        "publisher_version": "stable-v12.1",
-        "category_key": "geo",
-        "corrected_category": null,
-        "reason": "foreign_vehicle_recall_out_of_scope",
-        "contract_issues": [
-          "final_hard_reject:foreign_vehicle_recall_out_of_scope",
-          "final_category_mismatch:None->geo",
-          "director_final_category:None->geo",
-          "director_final_reject:foreign_vehicle_recall_out_of_scope"
-        ]
-      },
       {
         "title": "Владелец Google Alphabet потерял 500 млрд долларов рыночной стоимости из-за разочарования прибылью Уолл-Стрита",
         "url": "https://www.theguardian.com/technology/2026/oct/28/google-alphabet-q3-earnings-report",
@@ -163,32 +89,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 518,
-      "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "foreign_vehicle_recall_out_of_scope",
-      "corrected_category": null,
-      "title_issues": []
-    },
-    {
-      "message_id": 520,
-      "title": "На Сахалине 255 участков под многоквартирные дома попали в зоны затопления и подтопления",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 523,
       "title": "На Сахалине почти 150 участков под МКД находится в зонах подтопления: что с ними делать",
@@ -422,6 +322,32 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 548,
+      "title": "Профессии будущего: российским школьникам рассказали о беспилотных технологиях",
+      "category_key": "ru_security",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_security",
+      "title_issues": []
+    },
+    {
+      "message_id": 549,
+      "title": "Как «синее цунами» изменит политику Трампа и переговоры по Украине ",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "geo",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -443,10 +369,10 @@
       "it": 5.0
     },
     "counts": {
-      "local": 10,
+      "local": 9,
       "ru_pol": 2,
       "ru_eco": 3,
-      "ru_safety": 0,
+      "ru_safety": 1,
       "world": 2,
       "it": 3
     },
@@ -459,27 +385,26 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -4.0,
+      "local": -3.0,
       "ru_pol": 2.0,
       "ru_eco": 1.0,
-      "ru_safety": 3.0,
+      "ru_safety": 2.0,
       "world": 0.0,
       "it": -2.0
     },
-    "distribution_error": 12.0,
+    "distribution_error": 10.0,
     "subtype_counts": {
-      "political_decision": 3,
-      "major_emergency": 5,
+      "major_emergency": 4,
       "major_it": 3,
       "macro_economy": 4,
       "fatal_incident": 2,
-      "geopolitical_event": 1,
+      "political_decision": 2,
+      "geopolitical_event": 2,
       "severe_weather": 1,
-      "violent_crime": 1
+      "violent_crime": 1,
+      "military_security": 1
     },
     "sequence": [
-      "world",
-      "local",
       "local",
       "it",
       "ru_eco",
@@ -497,11 +422,11 @@
       "local",
       "local",
       "ru_pol",
-      "ru_eco"
+      "ru_eco",
+      "ru_safety",
+      "world"
     ],
     "category_sequence": [
-      "geo",
-      "sakh_chp",
       "sakh_chp",
       "it",
       "ru_eco",
@@ -519,11 +444,11 @@
       "sakh_chp",
       "sakh_chp",
       "ru_pol",
-      "ru_eco"
+      "ru_eco",
+      "ru_security",
+      "geo"
     ],
     "source_sequence": [
-      "sakh.online",
-      "astv",
       "sakhalinmedia.ru",
       "exploit exploitex",
       "sakh.online",
@@ -541,42 +466,14 @@
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "astv",
+      "rbc news rbc news"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [
-    {
-      "type": "historical_post_debt",
-      "message_id": 518,
-      "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "foreign_vehicle_recall_out_of_scope",
-      "corrected_category": null,
-      "title_issues": [],
-      "original_type": "category",
-      "non_actionable_reason": "telegram_mutation_window_expired"
-    },
-    {
-      "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
-      "url": "https://sakh.online/news/18/2026-10-28/toyota-otzyvaet-v-ssha-bolshe-228-tysyach-sienna-hybrid-iz-za-spinok-sideniy-530121",
-      "publisher_version": "stable-v12.1",
-      "category_key": "geo",
-      "corrected_category": null,
-      "reason": "foreign_vehicle_recall_out_of_scope",
-      "contract_issues": [
-        "final_hard_reject:foreign_vehicle_recall_out_of_scope",
-        "final_category_mismatch:None->geo",
-        "director_final_category:None->geo",
-        "director_final_reject:foreign_vehicle_recall_out_of_scope"
-      ]
-    },
     {
       "title": "Владелец Google Alphabet потерял 500 млрд долларов рыночной стоимости из-за разочарования прибылью Уолл-Стрита",
       "url": "https://www.theguardian.com/technology/2026/oct/28/google-alphabet-q3-earnings-report",
@@ -590,7 +487,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-04T11:29:34+00:00",
+    "checked_at_utc": "2026-11-04T15:25:52+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -619,36 +516,6 @@
   "hardening_failed_actions": [],
   "warnings": [
     {
-      "type": "historical_post_debt",
-      "message_id": 518,
-      "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": false,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "foreign_vehicle_recall_out_of_scope",
-      "corrected_category": null,
-      "title_issues": [],
-      "original_type": "category",
-      "non_actionable_reason": "telegram_mutation_window_expired"
-    },
-    {
-      "title": "Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема",
-      "url": "https://sakh.online/news/18/2026-10-28/toyota-otzyvaet-v-ssha-bolshe-228-tysyach-sienna-hybrid-iz-za-spinok-sideniy-530121",
-      "publisher_version": "stable-v12.1",
-      "category_key": "geo",
-      "corrected_category": null,
-      "reason": "foreign_vehicle_recall_out_of_scope",
-      "contract_issues": [
-        "final_hard_reject:foreign_vehicle_recall_out_of_scope",
-        "final_category_mismatch:None->geo",
-        "director_final_category:None->geo",
-        "director_final_reject:foreign_vehicle_recall_out_of_scope"
-      ]
-    },
-    {
       "title": "Владелец Google Alphabet потерял 500 млрд долларов рыночной стоимости из-за разочарования прибылью Уолл-Стрита",
       "url": "https://www.theguardian.com/technology/2026/oct/28/google-alphabet-q3-earnings-report",
       "publisher_version": "stable-v12.1",
@@ -661,13 +528,13 @@
     },
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 12.0,
+      "distribution_error": 10.0,
       "limit": 8.0,
       "counts": {
-        "local": 10,
+        "local": 9,
         "ru_pol": 2,
         "ru_eco": 3,
-        "ru_safety": 0,
+        "ru_safety": 1,
         "world": 2,
         "it": 3
       },
@@ -680,10 +547,10 @@
         "it": 1
       },
       "deficits": {
-        "local": -4.0,
+        "local": -3.0,
         "ru_pol": 2.0,
         "ru_eco": 1.0,
-        "ru_safety": 3.0,
+        "ru_safety": 2.0,
         "world": 0.0,
         "it": -2.0
       }
