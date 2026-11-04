@@ -1,23 +1,28 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-04T01:15:09+00:00",
-  "checked_at_sakhalin": "2026-11-04T12:15:05+11:00",
+  "checked_at_utc": "2026-11-04T02:00:48+00:00",
+  "checked_at_sakhalin": "2026-11-04T13:00:42+11:00",
   "status": "error",
-  "mutations_enabled": false,
+  "mutations_enabled": true,
   "issues": [
     {
-      "type": "telegram_delivery_unhealthy",
-      "reason": "transport",
-      "http_status": null,
-      "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)"
+      "type": "mobilization_digest_missing",
+      "slot": "morning",
+      "expected_by_sakhalin": "2026-11-04T08:45:00+11:00",
+      "last_attempt": {
+        "status": "ok",
+        "mode": "morning",
+        "at_utc": "2026-11-01T22:48:53+00:00",
+        "at_sakhalin": "2026-11-02T09:48:53+11:00"
+      }
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-04T11:37:48+11:00",
-    "age_hours": 0.62,
+    "age_hours": 1.38,
     "published": 0
   },
   "last_production_attempt": {
@@ -71,7 +76,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-04T01:15:08+00:00",
+    "checked_at": "2026-11-04T02:00:46+00:00",
     "checked": 20,
     "passed": 18,
     "anomalies": [
@@ -132,7 +137,7 @@
         ]
       }
     ],
-    "mutations_enabled": false,
+    "mutations_enabled": true,
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
@@ -560,30 +565,23 @@
       "contract_issues": [
         "foreign_translation_evidence_missing"
       ]
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-11-04T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "morning",
-        "at_utc": "2026-11-01T22:48:53+00:00",
-        "at_sakhalin": "2026-11-02T09:48:53+11:00"
-      },
-      "derivative_of": "telegram_delivery_unhealthy"
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-04T01:14:50+00:00",
-    "status": "error",
-    "auth_ok": false,
-    "chat_ok": false,
-    "error_kind": "transport",
-    "http_status": null,
-    "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)",
-    "bot_username": null,
-    "permissions": {}
+    "checked_at_utc": "2026-11-04T02:00:39+00:00",
+    "status": "healthy",
+    "auth_ok": true,
+    "chat_ok": true,
+    "error_kind": null,
+    "http_status": 200,
+    "description": null,
+    "bot_username": "SkySakhNewsPublisher_bot",
+    "permissions": {
+      "status": "administrator",
+      "can_post_messages": true,
+      "can_edit_messages": true,
+      "can_delete_messages": true
+    }
   },
   "delivery_queue_hardening": {
     "before": 0,
@@ -638,18 +636,6 @@
       "contract_issues": [
         "foreign_translation_evidence_missing"
       ]
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-11-04T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "morning",
-        "at_utc": "2026-11-01T22:48:53+00:00",
-        "at_sakhalin": "2026-11-02T09:48:53+11:00"
-      },
-      "derivative_of": "telegram_delivery_unhealthy"
     },
     {
       "type": "thematic_mix_drift",
