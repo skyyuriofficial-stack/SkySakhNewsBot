@@ -1,22 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-04T22:35:53+00:00",
-  "checked_at_sakhalin": "2026-11-05T09:35:47+11:00",
+  "checked_at_utc": "2026-11-04T22:40:53+00:00",
+  "checked_at_sakhalin": "2026-11-05T09:40:50+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 7.17,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-05T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-05T02:25:27+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -32,24 +21,24 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-05T02:25:27+11:00",
-    "age_hours": 7.17,
+    "finished_sakhalin": "2026-11-05T09:40:22+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-04T15:25:28+00:00",
+    "checked_at_utc": "2026-11-04T22:40:22+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 9,
+    "director_approved": 8,
     "ai_calls": 4,
     "ai_api_fail": 2,
-    "ai_budget_exhausted": 0,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
-    "publication_contract_blocked": 0
+    "publication_contract_blocked": 1
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -87,7 +76,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-04T22:35:51+00:00",
+    "checked_at": "2026-11-04T22:40:52+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -124,32 +113,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 523,
-      "title": "На Сахалине почти 150 участков под МКД находится в зонах подтопления: что с ними делать",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 525,
-      "title": "Нейросети теперь можно проверить на логику по-новому — студенты ШАДа и исследователи Яндекса опубликовали бенчмарк MTGBench, который помогает оценить, как разные модели справляются",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 526,
       "title": "Цены на товары из интернета не вырастут из-за НДС — объяснение Минфина",
@@ -383,6 +346,32 @@
       "review_reason": "approved",
       "corrected_category": "geo",
       "title_issues": []
+    },
+    {
+      "message_id": 550,
+      "title": "У пользователей Trust Wallet массово воруют крипту через порно сайты — пострадавшие потеряли уже 5.57 млн долларов из-за уязвимости в iOS 18",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
+    },
+    {
+      "message_id": 551,
+      "title": "Водитель Toyota Caldina устроил серьезное ДТП в Южно-Сахалинске, выскочив на красный",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -429,9 +418,9 @@
     },
     "distribution_error": 10.0,
     "subtype_counts": {
+      "macro_economy": 4,
       "major_emergency": 4,
       "major_it": 3,
-      "macro_economy": 4,
       "fatal_incident": 2,
       "political_decision": 2,
       "geopolitical_event": 2,
@@ -440,8 +429,6 @@
       "military_security": 1
     },
     "sequence": [
-      "local",
-      "it",
       "ru_eco",
       "local",
       "local",
@@ -459,11 +446,11 @@
       "ru_pol",
       "ru_eco",
       "ru_safety",
-      "world"
+      "world",
+      "it",
+      "local"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "it",
       "ru_eco",
       "sakh_chp",
       "sakh_chp",
@@ -481,11 +468,11 @@
       "ru_pol",
       "ru_eco",
       "ru_security",
-      "geo"
+      "geo",
+      "it",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "exploit exploitex",
       "sakh.online",
       "sakhalinmedia.ru",
       "astv",
@@ -503,7 +490,9 @@
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "astv",
-      "rbc news rbc news"
+      "rbc news rbc news",
+      "exploit exploitex",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -522,7 +511,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-04T22:35:44+00:00",
+    "checked_at_utc": "2026-11-04T22:40:48+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
