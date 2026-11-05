@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-05T07:17:58+00:00",
-  "checked_at_sakhalin": "2026-11-05T18:17:53+11:00",
+  "checked_at_utc": "2026-11-05T07:24:02+00:00",
+  "checked_at_sakhalin": "2026-11-05T18:23:56+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-05T16:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-05T13:51:41+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -27,21 +21,21 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-05T13:51:41+11:00",
-    "age_hours": 4.44,
-    "published": 1
+    "finished_sakhalin": "2026-11-05T18:23:22+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-05T02:51:41+00:00",
+    "checked_at_utc": "2026-11-05T07:23:22+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 6,
+    "published": 2,
+    "director_approved": 4,
     "ai_calls": 4,
-    "ai_api_fail": 2,
+    "ai_api_fail": 3,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -82,69 +76,19 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-05T07:17:56+00:00",
+    "checked_at": "2026-11-05T07:24:00+00:00",
     "checked": 20,
-    "passed": 19,
-    "anomalies": [
-      {
-        "title": "Владелец Google Alphabet потерял 500 млрд долларов рыночной стоимости из-за разочарования прибылью Уолл-Стрита",
-        "url": "https://www.theguardian.com/technology/2026/oct/28/google-alphabet-q3-earnings-report",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": "it",
-        "reason": "approved",
-        "contract_issues": [
-          "foreign_translation_evidence_missing"
-        ]
-      }
-    ],
+    "passed": 20,
+    "anomalies": [],
     "corrected": [],
     "deleted": [],
     "failed_actions": [],
-    "unresolved": 1,
-    "unresolved_items": [
-      {
-        "title": "Владелец Google Alphabet потерял 500 млрд долларов рыночной стоимости из-за разочарования прибылью Уолл-Стрита",
-        "url": "https://www.theguardian.com/technology/2026/oct/28/google-alphabet-q3-earnings-report",
-        "publisher_version": "stable-v12.1",
-        "category_key": "it",
-        "corrected_category": "it",
-        "reason": "approved",
-        "contract_issues": [
-          "foreign_translation_evidence_missing"
-        ]
-      }
-    ],
+    "unresolved": 0,
+    "unresolved_items": [],
     "mutations_enabled": true,
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 528,
-      "title": "Метель обрушится на несколько районов Сахалина",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 530,
-      "title": "Владелец Google Alphabet потерял 500 млрд долларов рыночной стоимости из-за разочарования прибылью Уолл-Стрита",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 532,
       "title": "В торговом центре Южно-Сахалинска при задымлении пострадал мужчина",
@@ -378,6 +322,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 554,
+      "title": "Семь из десяти клиентов ВТБ Мои Инвестиции с ИИС – из регионов",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
+    },
+    {
+      "message_id": 555,
+      "title": "Три моста отремонтировали на трассах Сахалина в этом году",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -401,10 +371,10 @@
     "counts": {
       "local": 9,
       "ru_pol": 2,
-      "ru_eco": 2,
+      "ru_eco": 3,
       "ru_safety": 1,
       "world": 3,
-      "it": 3
+      "it": 2
     },
     "scaled_targets": {
       "local": 6.0,
@@ -417,26 +387,25 @@
     "deficits": {
       "local": -3.0,
       "ru_pol": 2.0,
-      "ru_eco": 2.0,
+      "ru_eco": 1.0,
       "ru_safety": 2.0,
       "world": -1.0,
-      "it": -2.0
+      "it": -1.0
     },
-    "distribution_error": 12.0,
+    "distribution_error": 10.0,
     "subtype_counts": {
-      "major_emergency": 4,
-      "major_it": 3,
       "fatal_incident": 2,
-      "macro_economy": 3,
+      "macro_economy": 4,
       "political_decision": 2,
       "geopolitical_event": 3,
       "severe_weather": 1,
+      "major_it": 2,
+      "major_emergency": 3,
       "violent_crime": 1,
-      "military_security": 1
+      "military_security": 1,
+      "major_infrastructure": 1
     },
     "sequence": [
-      "local",
-      "it",
       "local",
       "local",
       "ru_eco",
@@ -454,11 +423,11 @@
       "it",
       "local",
       "world",
+      "local",
+      "ru_eco",
       "local"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "it",
       "sakh_chp",
       "sakh_chp",
       "ru_eco",
@@ -476,11 +445,11 @@
       "it",
       "sakh_chp",
       "geo",
-      "sakh_chp"
+      "sakh_chp",
+      "ru_eco",
+      "sakh"
     ],
     "source_sequence": [
-      "astv",
-      "guardian technology",
       "sakhalinmedia.ru",
       "sakh.online",
       "sakh.online",
@@ -498,26 +467,16 @@
       "exploit exploitex",
       "astv",
       "sakh.online",
-      "astv"
+      "astv",
+      "sakhalinmedia.ru",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
-  "legacy_or_derivative_warnings": [
-    {
-      "title": "Владелец Google Alphabet потерял 500 млрд долларов рыночной стоимости из-за разочарования прибылью Уолл-Стрита",
-      "url": "https://www.theguardian.com/technology/2026/oct/28/google-alphabet-q3-earnings-report",
-      "publisher_version": "stable-v12.1",
-      "category_key": "it",
-      "corrected_category": "it",
-      "reason": "approved",
-      "contract_issues": [
-        "foreign_translation_evidence_missing"
-      ]
-    }
-  ],
+  "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-05T07:17:51+00:00",
+    "checked_at_utc": "2026-11-05T07:23:53+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -546,27 +505,16 @@
   "hardening_failed_actions": [],
   "warnings": [
     {
-      "title": "Владелец Google Alphabet потерял 500 млрд долларов рыночной стоимости из-за разочарования прибылью Уолл-Стрита",
-      "url": "https://www.theguardian.com/technology/2026/oct/28/google-alphabet-q3-earnings-report",
-      "publisher_version": "stable-v12.1",
-      "category_key": "it",
-      "corrected_category": "it",
-      "reason": "approved",
-      "contract_issues": [
-        "foreign_translation_evidence_missing"
-      ]
-    },
-    {
       "type": "thematic_mix_drift",
-      "distribution_error": 12.0,
+      "distribution_error": 10.0,
       "limit": 8.0,
       "counts": {
         "local": 9,
         "ru_pol": 2,
-        "ru_eco": 2,
+        "ru_eco": 3,
         "ru_safety": 1,
         "world": 3,
-        "it": 3
+        "it": 2
       },
       "targets": {
         "local": 6,
@@ -579,10 +527,10 @@
       "deficits": {
         "local": -3.0,
         "ru_pol": 2.0,
-        "ru_eco": 2.0,
+        "ru_eco": 1.0,
         "ru_safety": 2.0,
         "world": -1.0,
-        "it": -2.0
+        "it": -1.0
       }
     }
   ]
