@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-05T02:46:46+00:00",
-  "checked_at_sakhalin": "2026-11-05T13:46:41+11:00",
+  "checked_at_utc": "2026-11-05T02:52:14+00:00",
+  "checked_at_sakhalin": "2026-11-05T13:52:09+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-05T13:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-05T11:34:45+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -27,24 +21,24 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-05T11:34:45+11:00",
-    "age_hours": 2.2,
+    "finished_sakhalin": "2026-11-05T13:51:41+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-05T00:34:45+00:00",
+    "checked_at_utc": "2026-11-05T02:51:41+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 5,
+    "director_approved": 6,
     "ai_calls": 4,
     "ai_api_fail": 2,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
-    "publication_contract_blocked": 1
+    "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -82,7 +76,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-05T02:46:45+00:00",
+    "checked_at": "2026-11-05T02:52:13+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -119,19 +113,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 527,
-      "title": "Три человека пострадали в ДТП на трассе в Углегорском районе",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 528,
       "title": "Метель обрушится на несколько районов Сахалина",
@@ -378,6 +359,19 @@
       "review_reason": "approved",
       "corrected_category": "geo",
       "title_issues": []
+    },
+    {
+      "message_id": 553,
+      "title": "175 эвакуированных: в Южно-Сахалинске прошли крупные пожарные учения",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -436,7 +430,6 @@
     },
     "sequence": [
       "local",
-      "local",
       "it",
       "local",
       "local",
@@ -454,10 +447,10 @@
       "world",
       "it",
       "local",
-      "world"
+      "world",
+      "local"
     ],
     "category_sequence": [
-      "sakh_chp",
       "sakh_chp",
       "it",
       "sakh_chp",
@@ -476,10 +469,10 @@
       "geo",
       "it",
       "sakh_chp",
-      "geo"
+      "geo",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "astv",
       "guardian technology",
       "sakhalinmedia.ru",
@@ -498,7 +491,8 @@
       "rbc news rbc news",
       "exploit exploitex",
       "astv",
-      "sakh.online"
+      "sakh.online",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -517,7 +511,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-05T02:46:39+00:00",
+    "checked_at_utc": "2026-11-05T02:52:07+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
