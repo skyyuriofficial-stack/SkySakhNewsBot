@@ -1,22 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-05T22:13:23+00:00",
-  "checked_at_sakhalin": "2026-11-06T09:13:20+11:00",
+  "checked_at_utc": "2026-11-05T22:17:43+00:00",
+  "checked_at_sakhalin": "2026-11-06T09:17:37+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 9.98,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-06T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-05T23:14:38+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -32,21 +21,21 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-05T23:14:38+11:00",
-    "age_hours": 9.98,
-    "published": 0
+    "finished_sakhalin": "2026-11-06T09:17:07+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-05T12:14:38+00:00",
+    "checked_at_utc": "2026-11-05T22:17:07+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 1,
-    "ai_calls": 2,
-    "ai_api_fail": 1,
+    "published": 2,
+    "director_approved": 2,
+    "ai_calls": 0,
+    "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -87,7 +76,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-05T22:13:22+00:00",
+    "checked_at": "2026-11-05T22:17:41+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -100,32 +89,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 532,
-      "title": "В торговом центре Южно-Сахалинска при задымлении пострадал мужчина",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 533,
-      "title": "Пожар в ТЦ Южно-Сахалинска: мужчина получил ожог дыхательных путей",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 534,
       "title": "Чистая прибыль ВТБ за девять месяцев выросла на 7%",
@@ -359,6 +322,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 556,
+      "title": "ВТБ подсчитал: рыночная ипотека превысила 50% выдач в октябре",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
+    },
+    {
+      "message_id": 557,
+      "title": "OpenAI взломала ядро Linux почти тысячей способов — компания потратила на это $1 213 430",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -380,12 +369,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 9,
+      "local": 7,
       "ru_pol": 2,
-      "ru_eco": 3,
+      "ru_eco": 4,
       "ru_safety": 1,
       "world": 3,
-      "it": 2
+      "it": 3
     },
     "scaled_targets": {
       "local": 6.0,
@@ -396,29 +385,26 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -3.0,
+      "local": -1.0,
       "ru_pol": 2.0,
-      "ru_eco": 1.0,
+      "ru_eco": 0.0,
       "ru_safety": 2.0,
       "world": -1.0,
-      "it": -1.0
+      "it": -2.0
     },
-    "distribution_error": 10.0,
+    "distribution_error": 8.0,
     "subtype_counts": {
-      "fatal_incident": 2,
-      "macro_economy": 4,
+      "macro_economy": 5,
       "political_decision": 2,
       "geopolitical_event": 3,
       "severe_weather": 1,
-      "major_it": 2,
+      "major_it": 3,
       "major_emergency": 3,
       "violent_crime": 1,
       "military_security": 1,
       "major_infrastructure": 1
     },
     "sequence": [
-      "local",
-      "local",
       "ru_eco",
       "local",
       "ru_pol",
@@ -436,11 +422,11 @@
       "world",
       "local",
       "ru_eco",
-      "local"
+      "local",
+      "ru_eco",
+      "it"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "sakh_chp",
       "ru_eco",
       "sakh",
       "ru_pol",
@@ -458,11 +444,11 @@
       "geo",
       "sakh_chp",
       "ru_eco",
-      "sakh"
+      "sakh",
+      "ru_eco",
+      "it"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "sakh.online",
       "sakh.online",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
@@ -480,14 +466,16 @@
       "sakh.online",
       "astv",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
+      "exploit exploitex"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-05T22:13:17+00:00",
+    "checked_at_utc": "2026-11-05T22:17:34+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -517,15 +505,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 10.0,
+      "distribution_error": 8.0,
       "limit": 8.0,
       "counts": {
-        "local": 9,
+        "local": 7,
         "ru_pol": 2,
-        "ru_eco": 3,
+        "ru_eco": 4,
         "ru_safety": 1,
         "world": 3,
-        "it": 2
+        "it": 3
       },
       "targets": {
         "local": 6,
@@ -536,12 +524,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.0,
+        "local": -1.0,
         "ru_pol": 2.0,
-        "ru_eco": 1.0,
+        "ru_eco": 0.0,
         "ru_safety": 2.0,
         "world": -1.0,
-        "it": -1.0
+        "it": -2.0
       }
     }
   ]
