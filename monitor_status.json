@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-05T00:29:52+00:00",
-  "checked_at_sakhalin": "2026-11-05T11:29:47+11:00",
+  "checked_at_utc": "2026-11-05T00:35:20+00:00",
+  "checked_at_sakhalin": "2026-11-05T11:35:16+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-05T10:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-05T09:40:22+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -27,19 +21,19 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-05T09:40:22+11:00",
-    "age_hours": 1.83,
-    "published": 2
+    "finished_sakhalin": "2026-11-05T11:34:45+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-04T22:40:22+00:00",
+    "checked_at_utc": "2026-11-05T00:34:45+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
-    "director_approved": 8,
+    "published": 1,
+    "director_approved": 5,
     "ai_calls": 4,
     "ai_api_fail": 2,
     "ai_budget_exhausted": 1,
@@ -82,7 +76,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-05T00:29:51+00:00",
+    "checked_at": "2026-11-05T00:35:18+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -119,19 +113,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 526,
-      "title": "Цены на товары из интернета не вырастут из-за НДС — объяснение Минфина",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 527,
       "title": "Три человека пострадали в ДТП на трассе в Углегорском районе",
@@ -378,6 +359,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 552,
+      "title": "Война с Ираном стоила республиканцам Конгресса — вице-президент США Вэнс",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "geo",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -401,9 +395,9 @@
     "counts": {
       "local": 9,
       "ru_pol": 2,
-      "ru_eco": 3,
+      "ru_eco": 2,
       "ru_safety": 1,
-      "world": 2,
+      "world": 3,
       "it": 3
     },
     "scaled_targets": {
@@ -417,25 +411,24 @@
     "deficits": {
       "local": -3.0,
       "ru_pol": 2.0,
-      "ru_eco": 1.0,
+      "ru_eco": 2.0,
       "ru_safety": 2.0,
-      "world": 0.0,
+      "world": -1.0,
       "it": -2.0
     },
-    "distribution_error": 10.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
-      "macro_economy": 4,
       "major_emergency": 4,
       "major_it": 3,
       "fatal_incident": 2,
+      "macro_economy": 3,
       "political_decision": 2,
-      "geopolitical_event": 2,
+      "geopolitical_event": 3,
       "severe_weather": 1,
       "violent_crime": 1,
       "military_security": 1
     },
     "sequence": [
-      "ru_eco",
       "local",
       "local",
       "it",
@@ -454,10 +447,10 @@
       "ru_safety",
       "world",
       "it",
-      "local"
+      "local",
+      "world"
     ],
     "category_sequence": [
-      "ru_eco",
       "sakh_chp",
       "sakh_chp",
       "it",
@@ -476,10 +469,10 @@
       "ru_security",
       "geo",
       "it",
-      "sakh_chp"
+      "sakh_chp",
+      "geo"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakhalinmedia.ru",
       "astv",
       "guardian technology",
@@ -498,7 +491,8 @@
       "astv",
       "rbc news rbc news",
       "exploit exploitex",
-      "astv"
+      "astv",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -517,7 +511,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-05T00:29:44+00:00",
+    "checked_at_utc": "2026-11-05T00:35:13+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -558,14 +552,14 @@
     },
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 10.0,
+      "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
         "local": 9,
         "ru_pol": 2,
-        "ru_eco": 3,
+        "ru_eco": 2,
         "ru_safety": 1,
-        "world": 2,
+        "world": 3,
         "it": 3
       },
       "targets": {
@@ -579,9 +573,9 @@
       "deficits": {
         "local": -3.0,
         "ru_pol": 2.0,
-        "ru_eco": 1.0,
+        "ru_eco": 2.0,
         "ru_safety": 2.0,
-        "world": 0.0,
+        "world": -1.0,
         "it": -2.0
       }
     }
