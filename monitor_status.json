@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-06T02:46:58+00:00",
-  "checked_at_sakhalin": "2026-11-06T13:46:54+11:00",
+  "checked_at_utc": "2026-11-06T02:50:42+00:00",
+  "checked_at_sakhalin": "2026-11-06T13:50:35+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-06T13:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-06T12:00:10+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -29,24 +23,24 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-06T12:00:10+11:00",
-    "age_hours": 1.78,
+    "finished_sakhalin": "2026-11-06T13:50:03+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-06T01:00:10+00:00",
+    "checked_at_utc": "2026-11-06T02:50:03+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 3,
+    "director_approved": 1,
     "ai_calls": 0,
     "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
-    "publication_contract_blocked": 1
+    "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.4",
@@ -88,7 +82,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-06T02:46:57+00:00",
+    "checked_at": "2026-11-06T02:50:40+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -101,19 +95,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 535,
-      "title": "На Сахалине стартовало строительство курорта Долина Айна с инвестициями в 57 млрд рублей",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 537,
       "title": "Комиссия ВКП одобрила методику по повышению минимальной заработной платы в СНГ",
@@ -360,6 +341,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 559,
+      "title": "Пожар в Ногликах: из дома эвакуировали шесть человек",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -406,19 +400,18 @@
     },
     "distribution_error": 10.0,
     "subtype_counts": {
-      "macro_economy": 4,
       "political_decision": 2,
       "geopolitical_event": 3,
       "severe_weather": 1,
       "major_it": 3,
-      "major_emergency": 3,
+      "major_emergency": 4,
       "violent_crime": 1,
+      "macro_economy": 3,
       "military_security": 1,
       "major_infrastructure": 1,
       "public_service_disruption": 1
     },
     "sequence": [
-      "local",
       "ru_pol",
       "world",
       "local",
@@ -437,10 +430,10 @@
       "local",
       "ru_eco",
       "it",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "sakh",
       "ru_pol",
       "geo",
       "sakh",
@@ -459,10 +452,10 @@
       "sakh",
       "ru_eco",
       "it",
-      "sakh"
+      "sakh",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakh.online",
@@ -481,6 +474,7 @@
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "exploit exploitex",
+      "sakh.online",
       "sakh.online"
     ],
     "retrospective_anomalies": [],
@@ -488,7 +482,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-06T02:46:51+00:00",
+    "checked_at_utc": "2026-11-06T02:50:32+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
