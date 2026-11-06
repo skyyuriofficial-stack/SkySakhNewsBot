@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-06T09:16:59+00:00",
-  "checked_at_sakhalin": "2026-11-06T20:16:55+11:00",
+  "checked_at_utc": "2026-11-06T09:23:13+00:00",
+  "checked_at_sakhalin": "2026-11-06T20:23:07+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-06T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-06T18:55:16+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -42,21 +36,21 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-06T18:55:16+11:00",
-    "age_hours": 1.36,
+    "finished_sakhalin": "2026-11-06T20:22:42+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-06T07:55:16+00:00",
+    "checked_at_utc": "2026-11-06T09:22:42+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
     "director_approved": 2,
-    "ai_calls": 0,
-    "ai_api_fail": 0,
+    "ai_calls": 2,
+    "ai_api_fail": 1,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -114,7 +108,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-06T09:16:58+00:00",
+    "checked_at": "2026-11-06T09:23:11+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -127,19 +121,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 538,
-      "title": "МИД РФ ведет переговоры об упрощении поездок со странами Азии, Африки и Латинской Америки",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "geo",
-      "title_issues": []
-    },
     {
       "message_id": 539,
       "title": "МЧС предупреждает: Сахалин накроет ураган со снегом 1 ноября",
@@ -386,6 +367,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 561,
+      "title": "Сильный снег и ураганный ветер ожидают в десяти районах Сахалина",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -407,11 +401,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 9,
+      "local": 10,
       "ru_pol": 1,
       "ru_eco": 3,
       "ru_safety": 1,
-      "world": 3,
+      "world": 2,
       "it": 3
     },
     "scaled_targets": {
@@ -423,28 +417,27 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -3.0,
+      "local": -4.0,
       "ru_pol": 3.0,
       "ru_eco": 1.0,
       "ru_safety": 2.0,
-      "world": -1.0,
+      "world": 0.0,
       "it": -2.0
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "geopolitical_event": 3,
-      "severe_weather": 2,
+      "severe_weather": 3,
       "major_it": 3,
       "major_emergency": 4,
       "violent_crime": 1,
       "political_decision": 1,
       "macro_economy": 3,
       "military_security": 1,
+      "geopolitical_event": 2,
       "major_infrastructure": 1,
       "public_service_disruption": 1
     },
     "sequence": [
-      "world",
       "local",
       "it",
       "local",
@@ -463,10 +456,10 @@
       "it",
       "local",
       "local",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "geo",
       "sakh",
       "it",
       "sakh_chp",
@@ -485,10 +478,10 @@
       "it",
       "sakh",
       "sakh_chp",
+      "sakh",
       "sakh"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakh.online",
       "techmedia techmedia",
       "sakhalinmedia.ru",
@@ -507,14 +500,15 @@
       "exploit exploitex",
       "sakh.online",
       "sakh.online",
-      "sakh.online"
+      "sakh.online",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-06T09:16:53+00:00",
+    "checked_at_utc": "2026-11-06T09:23:05+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -547,11 +541,11 @@
       "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
-        "local": 9,
+        "local": 10,
         "ru_pol": 1,
         "ru_eco": 3,
         "ru_safety": 1,
-        "world": 3,
+        "world": 2,
         "it": 3
       },
       "targets": {
@@ -563,11 +557,11 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.0,
+        "local": -4.0,
         "ru_pol": 3.0,
         "ru_eco": 1.0,
         "ru_safety": 2.0,
-        "world": -1.0,
+        "world": 0.0,
         "it": -2.0
       }
     }
