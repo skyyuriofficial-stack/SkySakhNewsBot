@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-06T01:09:09+00:00",
-  "checked_at_sakhalin": "2026-11-06T12:09:04+11:00",
+  "checked_at_utc": "2026-11-06T01:27:09+00:00",
+  "checked_at_sakhalin": "2026-11-06T12:27:03+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -11,10 +11,12 @@
       "slot": "morning",
       "expected_by_sakhalin": "2026-11-06T08:45:00+11:00",
       "last_attempt": {
-        "status": "ok",
+        "status": "blocked",
         "mode": "morning",
-        "at_utc": "2026-11-01T22:48:53+00:00",
-        "at_sakhalin": "2026-11-02T09:48:53+11:00"
+        "at_utc": "2026-11-06T01:26:28+00:00",
+        "at_sakhalin": "2026-11-06T12:26:28+11:00",
+        "error": "telegram_transport",
+        "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)"
       }
     }
   ],
@@ -22,7 +24,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-06T12:00:10+11:00",
-    "age_hours": 0.15,
+    "age_hours": 0.45,
     "published": 1
   },
   "last_production_attempt": {
@@ -41,7 +43,7 @@
     "publication_contract_blocked": 1
   },
   "mobilization_digest": {
-    "version": "mobilization-digest-v1.3",
+    "version": "mobilization-digest-v1.4",
     "day_sakhalin": "2026-11-06",
     "status": "error",
     "morning": {
@@ -55,10 +57,12 @@
       "record": {}
     },
     "last_attempt": {
-      "status": "ok",
+      "status": "blocked",
       "mode": "morning",
-      "at_utc": "2026-11-01T22:48:53+00:00",
-      "at_sakhalin": "2026-11-02T09:48:53+11:00"
+      "at_utc": "2026-11-06T01:26:28+00:00",
+      "at_sakhalin": "2026-11-06T12:26:28+11:00",
+      "error": "telegram_transport",
+      "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)"
     },
     "missing": [
       {
@@ -66,17 +70,19 @@
         "slot": "morning",
         "expected_by_sakhalin": "2026-11-06T08:45:00+11:00",
         "last_attempt": {
-          "status": "ok",
+          "status": "blocked",
           "mode": "morning",
-          "at_utc": "2026-11-01T22:48:53+00:00",
-          "at_sakhalin": "2026-11-02T09:48:53+11:00"
+          "at_utc": "2026-11-06T01:26:28+00:00",
+          "at_sakhalin": "2026-11-06T12:26:28+11:00",
+          "error": "telegram_transport",
+          "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)"
         }
       }
     ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-06T01:09:07+00:00",
+    "checked_at": "2026-11-06T01:27:07+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -476,7 +482,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-06T01:09:02+00:00",
+    "checked_at_utc": "2026-11-06T01:26:48+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
