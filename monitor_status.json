@@ -1,114 +1,58 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-06T11:25:23+00:00",
-  "checked_at_sakhalin": "2026-11-06T22:25:18+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-06T15:35:43+00:00",
+  "checked_at_sakhalin": "2026-11-07T02:35:40+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-11-06T08:45:00+11:00",
-      "last_attempt": {
-        "status": "blocked",
-        "mode": "morning",
-        "at_utc": "2026-11-06T01:26:28+00:00",
-        "at_sakhalin": "2026-11-06T12:26:28+11:00",
-        "error": "telegram_transport",
-        "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)"
-      }
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "evening",
-      "expected_by_sakhalin": "2026-11-06T19:45:00+11:00",
-      "last_attempt": {
-        "status": "blocked",
-        "mode": "morning",
-        "at_utc": "2026-11-06T01:26:28+00:00",
-        "at_sakhalin": "2026-11-06T12:26:28+11:00",
-        "error": "telegram_transport",
-        "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-06T20:22:42+11:00",
-    "age_hours": 2.04,
-    "published": 1
+    "finished_sakhalin": "2026-11-07T02:35:14+11:00",
+    "age_hours": 0.01,
+    "published": 0
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-06T09:22:42+00:00",
+    "checked_at_utc": "2026-11-06T15:35:14+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 2,
+    "published": 0,
+    "director_approved": 1,
     "ai_calls": 2,
-    "ai_api_fail": 1,
+    "ai_api_fail": 2,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "mobilization_digest": {
-    "version": "mobilization-digest-v1.4",
-    "day_sakhalin": "2026-11-06",
-    "status": "error",
+    "version": "mobilization-digest-v1.3",
+    "day_sakhalin": "2026-11-07",
+    "status": "healthy",
     "morning": {
-      "due": true,
+      "due": false,
       "published": false,
       "record": {}
     },
     "evening": {
-      "due": true,
+      "due": false,
       "published": false,
       "record": {}
     },
     "last_attempt": {
-      "status": "blocked",
-      "mode": "morning",
-      "at_utc": "2026-11-06T01:26:28+00:00",
-      "at_sakhalin": "2026-11-06T12:26:28+11:00",
-      "error": "telegram_transport",
-      "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)"
+      "status": "ok",
+      "mode": "evening",
+      "at_utc": "2026-11-06T11:26:25+00:00",
+      "at_sakhalin": "2026-11-06T22:26:25+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-11-06T08:45:00+11:00",
-        "last_attempt": {
-          "status": "blocked",
-          "mode": "morning",
-          "at_utc": "2026-11-06T01:26:28+00:00",
-          "at_sakhalin": "2026-11-06T12:26:28+11:00",
-          "error": "telegram_transport",
-          "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)"
-        }
-      },
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "evening",
-        "expected_by_sakhalin": "2026-11-06T19:45:00+11:00",
-        "last_attempt": {
-          "status": "blocked",
-          "mode": "morning",
-          "at_utc": "2026-11-06T01:26:28+00:00",
-          "at_sakhalin": "2026-11-06T12:26:28+11:00",
-          "error": "telegram_transport",
-          "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-06T11:25:22+00:00",
+    "checked_at": "2026-11-06T15:35:42+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -508,7 +452,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-06T11:25:16+00:00",
+    "checked_at_utc": "2026-11-06T15:35:38+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
