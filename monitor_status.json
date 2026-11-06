@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-05T22:17:43+00:00",
-  "checked_at_sakhalin": "2026-11-06T09:17:37+11:00",
+  "checked_at_utc": "2026-11-06T01:00:39+00:00",
+  "checked_at_sakhalin": "2026-11-06T12:00:36+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -21,24 +21,24 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-06T09:17:07+11:00",
+    "finished_sakhalin": "2026-11-06T12:00:10+11:00",
     "age_hours": 0.01,
-    "published": 2
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-05T22:17:07+00:00",
+    "checked_at_utc": "2026-11-06T01:00:10+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
-    "director_approved": 2,
+    "published": 1,
+    "director_approved": 3,
     "ai_calls": 0,
     "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
-    "publication_contract_blocked": 0
+    "publication_contract_blocked": 1
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -76,7 +76,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-05T22:17:41+00:00",
+    "checked_at": "2026-11-06T01:00:38+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -89,19 +89,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 534,
-      "title": "Чистая прибыль ВТБ за девять месяцев выросла на 7%",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 535,
       "title": "На Сахалине стартовало строительство курорта Долина Айна с инвестициями в 57 млрд рублей",
@@ -348,6 +335,19 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 558,
+      "title": "Без света 6 ноября: Авиационная, Мира, Набережная и другие улицы Южно-Сахалинска",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -369,9 +369,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 7,
+      "local": 8,
       "ru_pol": 2,
-      "ru_eco": 4,
+      "ru_eco": 3,
       "ru_safety": 1,
       "world": 3,
       "it": 3
@@ -385,16 +385,16 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -1.0,
+      "local": -2.0,
       "ru_pol": 2.0,
-      "ru_eco": 0.0,
+      "ru_eco": 1.0,
       "ru_safety": 2.0,
       "world": -1.0,
       "it": -2.0
     },
-    "distribution_error": 8.0,
+    "distribution_error": 10.0,
     "subtype_counts": {
-      "macro_economy": 5,
+      "macro_economy": 4,
       "political_decision": 2,
       "geopolitical_event": 3,
       "severe_weather": 1,
@@ -402,10 +402,10 @@
       "major_emergency": 3,
       "violent_crime": 1,
       "military_security": 1,
-      "major_infrastructure": 1
+      "major_infrastructure": 1,
+      "public_service_disruption": 1
     },
     "sequence": [
-      "ru_eco",
       "local",
       "ru_pol",
       "world",
@@ -424,10 +424,10 @@
       "ru_eco",
       "local",
       "ru_eco",
-      "it"
+      "it",
+      "local"
     ],
     "category_sequence": [
-      "ru_eco",
       "sakh",
       "ru_pol",
       "geo",
@@ -446,10 +446,10 @@
       "ru_eco",
       "sakh",
       "ru_eco",
-      "it"
+      "it",
+      "sakh"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
@@ -468,14 +468,15 @@
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "exploit exploitex"
+      "exploit exploitex",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-05T22:17:34+00:00",
+    "checked_at_utc": "2026-11-06T01:00:34+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -505,12 +506,12 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 8.0,
+      "distribution_error": 10.0,
       "limit": 8.0,
       "counts": {
-        "local": 7,
+        "local": 8,
         "ru_pol": 2,
-        "ru_eco": 4,
+        "ru_eco": 3,
         "ru_safety": 1,
         "world": 3,
         "it": 3
@@ -524,9 +525,9 @@
         "it": 1
       },
       "deficits": {
-        "local": -1.0,
+        "local": -2.0,
         "ru_pol": 2.0,
-        "ru_eco": 0.0,
+        "ru_eco": 1.0,
         "ru_safety": 2.0,
         "world": -1.0,
         "it": -2.0
