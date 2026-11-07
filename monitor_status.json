@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-07T23:17:41+00:00",
-  "checked_at_sakhalin": "2026-11-08T10:17:38+11:00",
+  "checked_at_utc": "2026-11-07T23:40:25+00:00",
+  "checked_at_sakhalin": "2026-11-08T10:40:19+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -21,22 +21,22 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-08T07:53:33+11:00",
-    "age_hours": 2.4,
-    "published": 0
+    "finished_sakhalin": "2026-11-08T10:39:53+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-07T20:53:33+00:00",
+    "checked_at_utc": "2026-11-07T23:39:53+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 2,
+    "published": 2,
+    "director_approved": 3,
     "ai_calls": 4,
     "ai_api_fail": 2,
-    "ai_budget_exhausted": 1,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
@@ -76,7 +76,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-07T23:17:40+00:00",
+    "checked_at": "2026-11-07T23:40:23+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -89,32 +89,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 545,
-      "title": "Ударил по лицу: подростка в Макарове подозревают в нападении на полицейского",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 546,
-      "title": "Владимир Путин подписал Указ о праздновании 95-летия образования ЕАО",
-      "category_key": "ru_pol",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_pol",
-      "title_issues": []
-    },
     {
       "message_id": 547,
       "title": "Аналитика ВТБ: россияне чаще всего открывают вклады в начале недели",
@@ -348,6 +322,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 567,
+      "title": "Активисты разгромили строящийся数据中心 Microsoft в Амстердаме",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
+    },
+    {
+      "message_id": 568,
+      "title": "В селе Холмского района ввели режим ЧС из-за метели",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -370,11 +370,11 @@
     },
     "counts": {
       "local": 9,
-      "ru_pol": 1,
+      "ru_pol": 0,
       "ru_eco": 4,
       "ru_safety": 1,
       "world": 2,
-      "it": 3
+      "it": 4
     },
     "scaled_targets": {
       "local": 6.0,
@@ -386,28 +386,25 @@
     },
     "deficits": {
       "local": -3.0,
-      "ru_pol": 3.0,
+      "ru_pol": 4.0,
       "ru_eco": 0.0,
       "ru_safety": 2.0,
       "world": 0.0,
-      "it": -2.0
+      "it": -3.0
     },
-    "distribution_error": 10.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
-      "violent_crime": 1,
-      "political_decision": 1,
       "macro_economy": 4,
       "military_security": 1,
       "geopolitical_event": 2,
-      "major_it": 3,
+      "major_it": 4,
       "major_emergency": 3,
       "major_infrastructure": 1,
       "public_service_disruption": 1,
-      "severe_weather": 3
+      "severe_weather": 3,
+      "political_decision": 1
     },
     "sequence": [
-      "local",
-      "ru_pol",
       "ru_eco",
       "ru_safety",
       "world",
@@ -425,11 +422,11 @@
       "local",
       "ru_eco",
       "it",
+      "local",
+      "it",
       "local"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "ru_pol",
       "ru_eco",
       "ru_security",
       "geo",
@@ -447,11 +444,11 @@
       "sakh",
       "ru_eco",
       "it",
+      "sakh",
+      "it",
       "sakh"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "astv",
       "rbc news rbc news",
@@ -469,6 +466,8 @@
       "sakhalinmedia.ru",
       "sakh.online",
       "techmedia techmedia",
+      "sakhalinmedia.ru",
+      "guardian technology",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -476,7 +475,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-07T23:17:36+00:00",
+    "checked_at_utc": "2026-11-07T23:40:16+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -506,15 +505,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 10.0,
+      "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
         "local": 9,
-        "ru_pol": 1,
+        "ru_pol": 0,
         "ru_eco": 4,
         "ru_safety": 1,
         "world": 2,
-        "it": 3
+        "it": 4
       },
       "targets": {
         "local": 6,
@@ -526,11 +525,11 @@
       },
       "deficits": {
         "local": -3.0,
-        "ru_pol": 3.0,
+        "ru_pol": 4.0,
         "ru_eco": 0.0,
         "ru_safety": 2.0,
         "world": 0.0,
-        "it": -2.0
+        "it": -3.0
       }
     }
   ]
