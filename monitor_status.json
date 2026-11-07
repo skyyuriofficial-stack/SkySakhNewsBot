@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-07T10:37:53+00:00",
-  "checked_at_sakhalin": "2026-11-07T21:37:49+11:00",
+  "checked_at_utc": "2026-11-07T12:15:10+00:00",
+  "checked_at_sakhalin": "2026-11-07T23:15:06+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -21,14 +21,14 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-07T20:22:15+11:00",
-    "age_hours": 1.26,
+    "finished_sakhalin": "2026-11-07T23:14:33+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-07T09:22:15+00:00",
+    "checked_at_utc": "2026-11-07T12:14:33+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
@@ -93,7 +93,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-07T10:37:52+00:00",
+    "checked_at": "2026-11-07T12:15:08+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -106,19 +106,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 544,
-      "title": "В Сахалинской области сформировали 133 аварийных бригады для отопительного сезона",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 545,
       "title": "Ударил по лицу: подростка в Макарове подозревают в нападении на полицейского",
@@ -365,6 +352,19 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 566,
+      "title": "Метели и ураганный ветер продолжатся на Сахалине и Курилах 8 ноября",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -411,19 +411,18 @@
     },
     "distribution_error": 10.0,
     "subtype_counts": {
-      "major_emergency": 4,
       "violent_crime": 1,
       "political_decision": 1,
       "macro_economy": 4,
       "military_security": 1,
       "geopolitical_event": 2,
       "major_it": 3,
+      "major_emergency": 3,
       "major_infrastructure": 1,
       "public_service_disruption": 1,
-      "severe_weather": 2
+      "severe_weather": 3
     },
     "sequence": [
-      "local",
       "local",
       "ru_pol",
       "ru_eco",
@@ -442,10 +441,10 @@
       "local",
       "local",
       "ru_eco",
-      "it"
+      "it",
+      "local"
     ],
     "category_sequence": [
-      "sakh_chp",
       "sakh_chp",
       "ru_pol",
       "ru_eco",
@@ -464,10 +463,10 @@
       "sakh",
       "sakh",
       "ru_eco",
-      "it"
+      "it",
+      "sakh"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
@@ -486,14 +485,15 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "sakh.online",
-      "techmedia techmedia"
+      "techmedia techmedia",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-07T10:37:47+00:00",
+    "checked_at_utc": "2026-11-07T12:15:03+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
