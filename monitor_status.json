@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-07T09:17:32+00:00",
-  "checked_at_sakhalin": "2026-11-07T20:17:26+11:00",
+  "checked_at_utc": "2026-11-07T09:22:50+00:00",
+  "checked_at_sakhalin": "2026-11-07T20:22:47+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-07T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-07T16:53:45+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -27,22 +21,22 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-07T16:53:45+11:00",
-    "age_hours": 3.4,
-    "published": 0
+    "finished_sakhalin": "2026-11-07T20:22:15+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-07T05:53:45+00:00",
+    "checked_at_utc": "2026-11-07T09:22:15+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 3,
-    "ai_calls": 4,
-    "ai_api_fail": 3,
-    "ai_budget_exhausted": 1,
+    "published": 1,
+    "director_approved": 2,
+    "ai_calls": 2,
+    "ai_api_fail": 2,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
@@ -99,7 +93,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-07T09:17:30+00:00",
+    "checked_at": "2026-11-07T09:22:49+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -112,19 +106,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 542,
-      "title": "NVIDIA прекращает поддержку Windows 10 — все последующие игровые драйвера перестанут поддерживаться с ноября",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 544,
       "title": "В Сахалинской области сформировали 133 аварийных бригады для отопительного сезона",
@@ -371,6 +352,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 565,
+      "title": "Агент ФБР украл крипты на (!) 2,5 миллиона долларов , а потом попросил ChatGPT помочь ему сбежать",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -417,19 +411,18 @@
     },
     "distribution_error": 10.0,
     "subtype_counts": {
-      "major_it": 3,
       "major_emergency": 4,
       "violent_crime": 1,
       "political_decision": 1,
       "macro_economy": 4,
       "military_security": 1,
       "geopolitical_event": 2,
+      "major_it": 3,
       "major_infrastructure": 1,
       "public_service_disruption": 1,
       "severe_weather": 2
     },
     "sequence": [
-      "it",
       "local",
       "local",
       "ru_pol",
@@ -448,10 +441,10 @@
       "local",
       "local",
       "local",
-      "ru_eco"
+      "ru_eco",
+      "it"
     ],
     "category_sequence": [
-      "it",
       "sakh_chp",
       "sakh_chp",
       "ru_pol",
@@ -470,10 +463,10 @@
       "sakh_chp",
       "sakh",
       "sakh",
-      "ru_eco"
+      "ru_eco",
+      "it"
     ],
     "source_sequence": [
-      "techmedia techmedia",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
@@ -492,14 +485,15 @@
       "sakh.online",
       "sakh.online",
       "sakhalinmedia.ru",
-      "sakh.online"
+      "sakh.online",
+      "techmedia techmedia"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-07T09:17:23+00:00",
+    "checked_at_utc": "2026-11-07T09:22:45+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
