@@ -1,28 +1,23 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-08T02:45:18+00:00",
-  "checked_at_sakhalin": "2026-11-08T13:45:12+11:00",
+  "checked_at_utc": "2026-11-08T06:36:27+00:00",
+  "checked_at_sakhalin": "2026-11-08T17:36:21+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
     {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-11-08T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "evening",
-        "at_utc": "2026-11-07T08:42:09+00:00",
-        "at_sakhalin": "2026-11-07T19:42:09+11:00"
-      }
+      "type": "publisher_slot_missed",
+      "slot_sakhalin": "2026-11-08T16:00+11:00",
+      "grace_minutes": 45,
+      "last_finished_sakhalin": "2026-11-08T13:44:45+11:00"
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-08T13:44:45+11:00",
-    "age_hours": 0.01,
+    "age_hours": 3.86,
     "published": 0
   },
   "last_production_attempt": {
@@ -43,11 +38,30 @@
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-11-08",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-11-08T06:35:59+00:00",
+        "published_at_sakhalin": "2026-11-08T17:35:59+11:00",
+        "telegram_message_id": 569,
+        "headline": "Нет признаков новой волны мобилизации; ключевое изменение — проект ответственности за неисполнение решений оперштабов",
+        "evidence_count": 9,
+        "evidence_hash": "5f00c3b84f2d539ca443edf3c255cdd134b8ae2dcb27d58da3fb71e21c131edc",
+        "source_ids": [
+          1,
+          2,
+          4,
+          5,
+          7,
+          8,
+          9,
+          3,
+          6
+        ]
+      }
     },
     "evening": {
       "due": false,
@@ -56,27 +70,15 @@
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "evening",
-      "at_utc": "2026-11-07T08:42:09+00:00",
-      "at_sakhalin": "2026-11-07T19:42:09+11:00"
+      "mode": "morning",
+      "at_utc": "2026-11-08T06:35:59+00:00",
+      "at_sakhalin": "2026-11-08T17:35:59+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-11-08T08:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "evening",
-          "at_utc": "2026-11-07T08:42:09+00:00",
-          "at_sakhalin": "2026-11-07T19:42:09+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-08T02:45:16+00:00",
+    "checked_at": "2026-11-08T06:36:25+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -475,7 +477,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-08T02:45:09+00:00",
+    "checked_at_utc": "2026-11-08T06:36:18+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
