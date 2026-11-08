@@ -1,22 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-08T23:04:26+00:00",
-  "checked_at_sakhalin": "2026-11-09T10:04:20+11:00",
+  "checked_at_utc": "2026-11-08T23:08:04+00:00",
+  "checked_at_sakhalin": "2026-11-09T10:08:01+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 9.16,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-09T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-09T00:54:47+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -32,21 +21,21 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-09T00:54:47+11:00",
-    "age_hours": 9.16,
-    "published": 0
+    "finished_sakhalin": "2026-11-09T10:07:40+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-08T13:54:47+00:00",
+    "checked_at_utc": "2026-11-08T23:07:40+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 3,
+    "published": 1,
+    "director_approved": 6,
     "ai_calls": 4,
-    "ai_api_fail": 4,
+    "ai_api_fail": 0,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 1
@@ -87,7 +76,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-08T23:04:24+00:00",
+    "checked_at": "2026-11-08T23:08:03+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -100,19 +89,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 547,
-      "title": "Аналитика ВТБ: россияне чаще всего открывают вклады в начале недели",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 548,
       "title": "Профессии будущего: российским школьникам рассказали о беспилотных технологиях",
@@ -359,6 +335,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 570,
+      "title": "Память ChatGPT может собрать о вас цифровое досье — предупреждает МВД РФ",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -382,10 +371,10 @@
     "counts": {
       "local": 9,
       "ru_pol": 0,
-      "ru_eco": 4,
+      "ru_eco": 3,
       "ru_safety": 1,
       "world": 2,
-      "it": 4
+      "it": 5
     },
     "scaled_targets": {
       "local": 6.0,
@@ -398,25 +387,24 @@
     "deficits": {
       "local": -3.0,
       "ru_pol": 4.0,
-      "ru_eco": 0.0,
+      "ru_eco": 1.0,
       "ru_safety": 2.0,
       "world": 0.0,
-      "it": -3.0
+      "it": -4.0
     },
-    "distribution_error": 12.0,
+    "distribution_error": 14.0,
     "subtype_counts": {
-      "macro_economy": 4,
       "military_security": 1,
       "geopolitical_event": 2,
-      "major_it": 4,
+      "major_it": 5,
       "major_emergency": 3,
+      "macro_economy": 3,
       "major_infrastructure": 1,
       "public_service_disruption": 1,
       "severe_weather": 3,
       "political_decision": 1
     },
     "sequence": [
-      "ru_eco",
       "ru_safety",
       "world",
       "it",
@@ -435,10 +423,10 @@
       "it",
       "local",
       "it",
-      "local"
+      "local",
+      "it"
     ],
     "category_sequence": [
-      "ru_eco",
       "ru_security",
       "geo",
       "it",
@@ -457,10 +445,10 @@
       "it",
       "sakh",
       "it",
-      "sakh"
+      "sakh",
+      "it"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "astv",
       "rbc news rbc news",
       "exploit exploitex",
@@ -479,14 +467,15 @@
       "techmedia techmedia",
       "sakhalinmedia.ru",
       "guardian technology",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "exploit exploitex"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-08T23:04:17+00:00",
+    "checked_at_utc": "2026-11-08T23:07:59+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -516,15 +505,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 12.0,
+      "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
         "local": 9,
         "ru_pol": 0,
-        "ru_eco": 4,
+        "ru_eco": 3,
         "ru_safety": 1,
         "world": 2,
-        "it": 4
+        "it": 5
       },
       "targets": {
         "local": 6,
@@ -537,10 +526,10 @@
       "deficits": {
         "local": -3.0,
         "ru_pol": 4.0,
-        "ru_eco": 0.0,
+        "ru_eco": 1.0,
         "ru_safety": 2.0,
         "world": 0.0,
-        "it": -3.0
+        "it": -4.0
       }
     }
   ]
