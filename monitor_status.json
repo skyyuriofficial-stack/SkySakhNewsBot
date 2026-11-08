@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-08T02:37:07+00:00",
-  "checked_at_sakhalin": "2026-11-08T13:37:01+11:00",
+  "checked_at_utc": "2026-11-08T02:45:18+00:00",
+  "checked_at_sakhalin": "2026-11-08T13:45:12+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -21,24 +21,24 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-08T10:39:53+11:00",
-    "age_hours": 2.95,
-    "published": 2
+    "finished_sakhalin": "2026-11-08T13:44:45+11:00",
+    "age_hours": 0.01,
+    "published": 0
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-07T23:39:53+00:00",
+    "checked_at_utc": "2026-11-08T02:44:45+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
-    "director_approved": 3,
-    "ai_calls": 4,
-    "ai_api_fail": 2,
+    "published": 0,
+    "director_approved": 1,
+    "ai_calls": 2,
+    "ai_api_fail": 1,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
-    "publication_contract_blocked": 0
+    "publication_contract_blocked": 1
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -76,7 +76,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-08T02:37:05+00:00",
+    "checked_at": "2026-11-08T02:45:16+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -475,7 +475,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-08T02:36:57+00:00",
+    "checked_at_utc": "2026-11-08T02:45:09+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
