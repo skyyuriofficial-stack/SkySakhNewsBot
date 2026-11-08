@@ -1,54 +1,26 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-11-07T08:42:09+00:00",
-  "last_run_sakhalin": "2026-11-07T19:42:09+11:00",
-  "mode": "evening",
+  "last_run_utc": "2026-11-08T06:35:59+00:00",
+  "last_run_sakhalin": "2026-11-08T17:35:59+11:00",
+  "mode": "morning",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 564,
-  "evidence_count": 7,
-  "evidence_hash": "88b12500c5011e53150c9add8d3790c02012a9532afd7a6e912095ad156bf96a",
-  "headline": "Юридический статус и повестки: что подтверждено, а что нет",
+  "telegram_message_id": 569,
+  "evidence_count": 9,
+  "evidence_hash": "5f00c3b84f2d539ca443edf3c255cdd134b8ae2dcb27d58da3fb71e21c131edc",
+  "headline": "Нет признаков новой волны мобилизации; ключевое изменение — проект ответственности за неисполнение решений оперштабов",
   "source_ids": [
-    3,
     1,
     2,
-    6,
-    7,
     4,
-    5
+    5,
+    7,
+    8,
+    9,
+    3,
+    6
   ],
   "slots": {
-    "2026-10-15": {
-      "morning": {
-        "status": "ok",
-        "published_at_utc": "2026-10-14T22:16:28+00:00",
-        "published_at_sakhalin": "2026-10-15T09:16:28+11:00",
-        "telegram_message_id": 423,
-        "headline": "Legislative proposal to enforce compliance with regional mobilization orders introduced",
-        "evidence_count": 3,
-        "evidence_hash": "654aa6671fbec2842e73cd1e51f7cd441092ee6d4029499e189012a44323b2b8",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      },
-      "evening": {
-        "status": "ok",
-        "published_at_utc": "2026-10-15T12:02:08+00:00",
-        "published_at_sakhalin": "2026-10-15T23:02:08+11:00",
-        "telegram_message_id": 433,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 3,
-        "evidence_hash": "cd55606051dc946bab377d626094b6e64b27fd2e3dc2e7669ca91996b0bb2458",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      }
-    },
     "2026-10-16": {
       "morning": {
         "status": "ok",
@@ -614,13 +586,35 @@
           5
         ]
       }
+    },
+    "2026-11-08": {
+      "morning": {
+        "status": "ok",
+        "published_at_utc": "2026-11-08T06:35:59+00:00",
+        "published_at_sakhalin": "2026-11-08T17:35:59+11:00",
+        "telegram_message_id": 569,
+        "headline": "Нет признаков новой волны мобилизации; ключевое изменение — проект ответственности за неисполнение решений оперштабов",
+        "evidence_count": 9,
+        "evidence_hash": "5f00c3b84f2d539ca443edf3c255cdd134b8ae2dcb27d58da3fb71e21c131edc",
+        "source_ids": [
+          1,
+          2,
+          4,
+          5,
+          7,
+          8,
+          9,
+          3,
+          6
+        ]
+      }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "evening",
-    "at_utc": "2026-11-07T08:42:09+00:00",
-    "at_sakhalin": "2026-11-07T19:42:09+11:00"
+    "mode": "morning",
+    "at_utc": "2026-11-08T06:35:59+00:00",
+    "at_sakhalin": "2026-11-08T17:35:59+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-11-06T01:26:13+00:00",
