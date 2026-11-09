@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-09T06:06:22+00:00",
-  "checked_at_sakhalin": "2026-11-09T17:06:17+11:00",
+  "checked_at_utc": "2026-11-09T06:11:21+00:00",
+  "checked_at_sakhalin": "2026-11-09T17:11:16+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-09T16:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-09T14:00:36+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -27,22 +21,22 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-09T14:00:36+11:00",
-    "age_hours": 3.1,
-    "published": 1
+    "finished_sakhalin": "2026-11-09T17:10:52+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-09T03:00:36+00:00",
+    "checked_at_utc": "2026-11-09T06:10:52+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
+    "published": 2,
     "director_approved": 5,
-    "ai_calls": 4,
-    "ai_api_fail": 2,
-    "ai_budget_exhausted": 1,
+    "ai_calls": 1,
+    "ai_api_fail": 0,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
@@ -82,7 +76,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-09T06:06:20+00:00",
+    "checked_at": "2026-11-09T06:11:19+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -95,32 +89,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 549,
-      "title": "Как «синее цунами» изменит политику Трампа и переговоры по Украине ",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "geo",
-      "title_issues": []
-    },
-    {
-      "message_id": 550,
-      "title": "У пользователей Trust Wallet массово воруют крипту через порно сайты — пострадавшие потеряли уже 5.57 млн долларов из-за уязвимости в iOS 18",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 551,
       "title": "Водитель Toyota Caldina устроил серьезное ДТП в Южно-Сахалинске, выскочив на красный",
@@ -354,6 +322,32 @@
       "review_reason": "approved",
       "corrected_category": "ru_incident",
       "title_issues": []
+    },
+    {
+      "message_id": 572,
+      "title": "12 ударов ножом нанесла разъяренная сахалинка сожителю - мужчина умер",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 573,
+      "title": "США предлагают выкуп в 20 млн долларов за информацию об ядерномprogramм Ирана",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "geo",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -375,12 +369,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 9,
+      "local": 10,
       "ru_pol": 0,
       "ru_eco": 3,
       "ru_safety": 1,
       "world": 2,
-      "it": 5
+      "it": 4
     },
     "scaled_targets": {
       "local": 6.0,
@@ -391,27 +385,26 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -3.0,
+      "local": -4.0,
       "ru_pol": 4.0,
       "ru_eco": 1.0,
       "ru_safety": 2.0,
       "world": 0.0,
-      "it": -4.0
+      "it": -3.0
     },
     "distribution_error": 14.0,
     "subtype_counts": {
-      "geopolitical_event": 2,
-      "major_it": 5,
       "major_emergency": 4,
+      "geopolitical_event": 2,
       "macro_economy": 3,
       "major_infrastructure": 1,
+      "major_it": 4,
       "public_service_disruption": 1,
       "severe_weather": 3,
-      "political_decision": 1
+      "political_decision": 1,
+      "violent_crime": 1
     },
     "sequence": [
-      "world",
-      "it",
       "local",
       "world",
       "local",
@@ -429,11 +422,11 @@
       "it",
       "local",
       "it",
-      "ru_safety"
+      "ru_safety",
+      "local",
+      "world"
     ],
     "category_sequence": [
-      "geo",
-      "it",
       "sakh_chp",
       "geo",
       "sakh_chp",
@@ -451,11 +444,11 @@
       "it",
       "sakh",
       "it",
-      "ru_incident"
+      "ru_incident",
+      "sakh_chp",
+      "geo"
     ],
     "source_sequence": [
-      "rbc news rbc news",
-      "exploit exploitex",
       "astv",
       "sakh.online",
       "astv",
@@ -473,14 +466,16 @@
       "guardian technology",
       "sakhalinmedia.ru",
       "exploit exploitex",
-      "sakh.online"
+      "sakh.online",
+      "astv",
+      "bbc world"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-09T06:06:14+00:00",
+    "checked_at_utc": "2026-11-09T06:11:13+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -513,12 +508,12 @@
       "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
-        "local": 9,
+        "local": 10,
         "ru_pol": 0,
         "ru_eco": 3,
         "ru_safety": 1,
         "world": 2,
-        "it": 5
+        "it": 4
       },
       "targets": {
         "local": 6,
@@ -529,12 +524,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.0,
+        "local": -4.0,
         "ru_pol": 4.0,
         "ru_eco": 1.0,
         "ru_safety": 2.0,
         "world": 0.0,
-        "it": -4.0
+        "it": -3.0
       }
     }
   ]
