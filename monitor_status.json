@@ -1,41 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-10T20:58:41+00:00",
-  "checked_at_sakhalin": "2026-11-11T07:58:35+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-10T21:03:54+00:00",
+  "checked_at_sakhalin": "2026-11-11T08:03:49+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 9.01,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-11T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-10T22:58:22+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-10T22:58:22+11:00",
-    "age_hours": 9.01,
-    "published": 0
+    "finished_sakhalin": "2026-11-11T08:03:21+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-10T11:58:22+00:00",
+    "checked_at_utc": "2026-11-10T21:03:21+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 17,
+    "published": 1,
+    "director_approved": 15,
     "ai_calls": 4,
-    "ai_api_fail": 4,
+    "ai_api_fail": 2,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 2
@@ -64,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-10T20:58:39+00:00",
+    "checked_at": "2026-11-10T21:03:52+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -77,19 +65,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 553,
-      "title": "175 эвакуированных: в Южно-Сахалинске прошли крупные пожарные учения",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 554,
       "title": "Семь из десяти клиентов ВТБ Мои Инвестиции с ИИС – из регионов",
@@ -336,6 +311,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 578,
+      "title": "Apple готовит iPhone Air 2 после провала продаж первой модели — новинку обещают сделать ТОНЬШЕ, автономнее и добавить вторую камеру",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -357,12 +345,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 10,
+      "local": 9,
       "ru_pol": 0,
       "ru_eco": 4,
       "ru_safety": 1,
       "world": 1,
-      "it": 4
+      "it": 5
     },
     "scaled_targets": {
       "local": 6.0,
@@ -373,27 +361,26 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -4.0,
+      "local": -3.0,
       "ru_pol": 4.0,
       "ru_eco": 0.0,
       "ru_safety": 2.0,
       "world": 1.0,
-      "it": -3.0
+      "it": -4.0
     },
     "distribution_error": 14.0,
     "subtype_counts": {
-      "major_emergency": 3,
       "macro_economy": 4,
       "major_infrastructure": 1,
-      "major_it": 4,
+      "major_it": 5,
       "public_service_disruption": 1,
+      "major_emergency": 2,
       "severe_weather": 3,
       "political_decision": 1,
       "violent_crime": 2,
       "geopolitical_event": 1
     },
     "sequence": [
-      "local",
       "ru_eco",
       "local",
       "ru_eco",
@@ -412,10 +399,10 @@
       "local",
       "world",
       "local",
-      "ru_eco"
+      "ru_eco",
+      "it"
     ],
     "category_sequence": [
-      "sakh_chp",
       "ru_eco",
       "sakh",
       "ru_eco",
@@ -434,10 +421,10 @@
       "sakh_chp",
       "geo",
       "sakh_chp",
-      "ru_eco"
+      "ru_eco",
+      "it"
     ],
     "source_sequence": [
-      "astv",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
@@ -456,14 +443,15 @@
       "astv",
       "bbc world",
       "sakh.online",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "exploit exploitex"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-10T20:58:32+00:00",
+    "checked_at_utc": "2026-11-10T21:03:47+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -496,12 +484,12 @@
       "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
-        "local": 10,
+        "local": 9,
         "ru_pol": 0,
         "ru_eco": 4,
         "ru_safety": 1,
         "world": 1,
-        "it": 4
+        "it": 5
       },
       "targets": {
         "local": 6,
@@ -512,12 +500,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -4.0,
+        "local": -3.0,
         "ru_pol": 4.0,
         "ru_eco": 0.0,
         "ru_safety": 2.0,
         "world": 1.0,
-        "it": -3.0
+        "it": -4.0
       }
     }
   ]
