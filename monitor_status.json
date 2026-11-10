@@ -1,16 +1,28 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-10T08:25:12+00:00",
-  "checked_at_sakhalin": "2026-11-10T19:25:08+11:00",
-  "status": "degraded",
+  "checked_at_utc": "2026-11-10T09:41:19+00:00",
+  "checked_at_sakhalin": "2026-11-10T20:41:14+11:00",
+  "status": "error",
   "mutations_enabled": true,
-  "issues": [],
+  "issues": [
+    {
+      "type": "mobilization_digest_missing",
+      "slot": "evening",
+      "expected_by_sakhalin": "2026-11-10T19:45:00+11:00",
+      "last_attempt": {
+        "status": "ok",
+        "mode": "morning",
+        "at_utc": "2026-11-10T00:22:22+00:00",
+        "at_sakhalin": "2026-11-10T11:22:22+11:00"
+      }
+    }
+  ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-10T19:24:45+11:00",
-    "age_hours": 0.01,
+    "age_hours": 1.28,
     "published": 1
   },
   "last_production_attempt": {
@@ -31,7 +43,7 @@
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-11-10",
-    "status": "healthy",
+    "status": "error",
     "morning": {
       "due": true,
       "published": true,
@@ -55,7 +67,7 @@
       }
     },
     "evening": {
-      "due": false,
+      "due": true,
       "published": false,
       "record": {}
     },
@@ -65,11 +77,23 @@
       "at_utc": "2026-11-10T00:22:22+00:00",
       "at_sakhalin": "2026-11-10T11:22:22+11:00"
     },
-    "missing": []
+    "missing": [
+      {
+        "type": "mobilization_digest_missing",
+        "slot": "evening",
+        "expected_by_sakhalin": "2026-11-10T19:45:00+11:00",
+        "last_attempt": {
+          "status": "ok",
+          "mode": "morning",
+          "at_utc": "2026-11-10T00:22:22+00:00",
+          "at_sakhalin": "2026-11-10T11:22:22+11:00"
+        }
+      }
+    ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-10T08:25:10+00:00",
+    "checked_at": "2026-11-10T09:41:17+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -468,7 +492,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-10T08:25:06+00:00",
+    "checked_at_utc": "2026-11-10T09:41:12+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
