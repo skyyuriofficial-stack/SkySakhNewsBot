@@ -1,28 +1,23 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-11T01:11:38+00:00",
-  "checked_at_sakhalin": "2026-11-11T12:11:34+11:00",
+  "checked_at_utc": "2026-11-11T01:27:02+00:00",
+  "checked_at_sakhalin": "2026-11-11T12:26:59+11:00",
   "status": "error",
-  "mutations_enabled": true,
+  "mutations_enabled": false,
   "issues": [
     {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-11-11T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "morning",
-        "at_utc": "2026-11-10T00:22:22+00:00",
-        "at_sakhalin": "2026-11-10T11:22:22+11:00"
-      }
+      "type": "telegram_delivery_unhealthy",
+      "reason": "transport",
+      "http_status": null,
+      "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)"
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-11T11:41:05+11:00",
-    "age_hours": 0.51,
+    "age_hours": 0.77,
     "published": 1
   },
   "last_production_attempt": {
@@ -41,7 +36,7 @@
     "publication_contract_blocked": 0
   },
   "mobilization_digest": {
-    "version": "mobilization-digest-v1.3",
+    "version": "mobilization-digest-v1.4",
     "day_sakhalin": "2026-11-11",
     "status": "error",
     "morning": {
@@ -55,10 +50,12 @@
       "record": {}
     },
     "last_attempt": {
-      "status": "ok",
+      "status": "blocked",
       "mode": "morning",
-      "at_utc": "2026-11-10T00:22:22+00:00",
-      "at_sakhalin": "2026-11-10T11:22:22+11:00"
+      "at_utc": "2026-11-11T01:11:54+00:00",
+      "at_sakhalin": "2026-11-11T12:11:54+11:00",
+      "error": "telegram_telegram_api",
+      "description": "Too Many Requests: retry after 5"
     },
     "missing": [
       {
@@ -66,17 +63,19 @@
         "slot": "morning",
         "expected_by_sakhalin": "2026-11-11T08:45:00+11:00",
         "last_attempt": {
-          "status": "ok",
+          "status": "blocked",
           "mode": "morning",
-          "at_utc": "2026-11-10T00:22:22+00:00",
-          "at_sakhalin": "2026-11-10T11:22:22+11:00"
+          "at_utc": "2026-11-11T01:11:54+00:00",
+          "at_sakhalin": "2026-11-11T12:11:54+11:00",
+          "error": "telegram_telegram_api",
+          "description": "Too Many Requests: retry after 5"
         }
       }
     ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-11T01:11:36+00:00",
+    "checked_at": "2026-11-11T01:27:01+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -85,7 +84,7 @@
     "failed_actions": [],
     "unresolved": 0,
     "unresolved_items": [],
-    "mutations_enabled": true,
+    "mutations_enabled": false,
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
@@ -473,22 +472,32 @@
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
-  "legacy_or_derivative_warnings": [],
-  "telegram_health": {
-    "checked_at_utc": "2026-11-11T01:11:31+00:00",
-    "status": "healthy",
-    "auth_ok": true,
-    "chat_ok": true,
-    "error_kind": null,
-    "http_status": 200,
-    "description": null,
-    "bot_username": "SkySakhNewsPublisher_bot",
-    "permissions": {
-      "status": "administrator",
-      "can_post_messages": true,
-      "can_edit_messages": true,
-      "can_delete_messages": true
+  "legacy_or_derivative_warnings": [
+    {
+      "type": "mobilization_digest_missing",
+      "slot": "morning",
+      "expected_by_sakhalin": "2026-11-11T08:45:00+11:00",
+      "last_attempt": {
+        "status": "blocked",
+        "mode": "morning",
+        "at_utc": "2026-11-11T01:11:54+00:00",
+        "at_sakhalin": "2026-11-11T12:11:54+11:00",
+        "error": "telegram_telegram_api",
+        "description": "Too Many Requests: retry after 5"
+      },
+      "derivative_of": "telegram_delivery_unhealthy"
     }
+  ],
+  "telegram_health": {
+    "checked_at_utc": "2026-11-11T01:26:43+00:00",
+    "status": "error",
+    "auth_ok": false,
+    "chat_ok": false,
+    "error_kind": "transport",
+    "http_status": null,
+    "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)",
+    "bot_username": null,
+    "permissions": {}
   },
   "delivery_queue_hardening": {
     "before": 0,
@@ -499,10 +508,24 @@
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0
   },
-  "delivery_outbox_repaired": false,
+  "delivery_outbox_repaired": true,
   "hardening_actions": [],
   "hardening_failed_actions": [],
   "warnings": [
+    {
+      "type": "mobilization_digest_missing",
+      "slot": "morning",
+      "expected_by_sakhalin": "2026-11-11T08:45:00+11:00",
+      "last_attempt": {
+        "status": "blocked",
+        "mode": "morning",
+        "at_utc": "2026-11-11T01:11:54+00:00",
+        "at_sakhalin": "2026-11-11T12:11:54+11:00",
+        "error": "telegram_telegram_api",
+        "description": "Too Many Requests: retry after 5"
+      },
+      "derivative_of": "telegram_delivery_unhealthy"
+    },
     {
       "type": "thematic_mix_drift",
       "distribution_error": 16.0,
