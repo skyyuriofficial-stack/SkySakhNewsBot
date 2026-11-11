@@ -1,16 +1,17 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-11T09:17:03+00:00",
-  "checked_at_sakhalin": "2026-11-11T20:16:59+11:00",
+  "checked_at_utc": "2026-11-11T09:24:00+00:00",
+  "checked_at_sakhalin": "2026-11-11T20:23:56+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
     {
-      "type": "publisher_slot_missed",
+      "type": "publisher_blocked",
       "slot_sakhalin": "2026-11-11T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-11T18:11:27+11:00"
+      "required_slot_sakhalin": "2026-11-11T19:00+11:00",
+      "reason": "generation_provider_unavailable",
+      "attempted_at_utc": "2026-11-11T09:23:30+00:00"
     },
     {
       "type": "mobilization_digest_missing",
@@ -27,19 +28,19 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-11T18:11:27+11:00",
-    "age_hours": 2.09,
-    "published": 1
+    "finished_sakhalin": "2026-11-11T20:23:30+11:00",
+    "age_hours": 0.01,
+    "published": 0
   },
   "last_production_attempt": {
-    "status": "ok",
-    "reason": null,
-    "checked_at_utc": "2026-11-11T07:11:27+00:00",
+    "status": "blocked",
+    "reason": "generation_provider_unavailable",
+    "checked_at_utc": "2026-11-11T09:23:30+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 13,
+    "published": 0,
+    "director_approved": 11,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -98,7 +99,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-11T09:17:02+00:00",
+    "checked_at": "2026-11-11T09:23:59+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -496,7 +497,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-11T09:16:57+00:00",
+    "checked_at_utc": "2026-11-11T09:23:54+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
