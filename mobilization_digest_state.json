@@ -1,5 +1,5 @@
 {
-  "version": "mobilization-digest-v1.3",
+  "version": "mobilization-digest-v1.4",
   "last_run_utc": "2026-11-10T00:22:22+00:00",
   "last_run_sakhalin": "2026-11-10T11:22:22+11:00",
   "mode": "morning",
@@ -592,19 +592,21 @@
     }
   },
   "last_attempt": {
-    "status": "ok",
+    "status": "blocked",
     "mode": "morning",
-    "at_utc": "2026-11-10T00:22:22+00:00",
-    "at_sakhalin": "2026-11-10T11:22:22+11:00"
+    "at_utc": "2026-11-11T01:11:54+00:00",
+    "at_sakhalin": "2026-11-11T12:11:54+11:00",
+    "error": "telegram_telegram_api",
+    "description": "Too Many Requests: retry after 5"
   },
   "telegram_health": {
-    "checked_at_utc": "2026-11-06T01:26:13+00:00",
+    "checked_at_utc": "2026-11-11T01:11:54+00:00",
     "status": "error",
     "auth_ok": false,
     "chat_ok": false,
-    "error_kind": "transport",
-    "http_status": null,
-    "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)",
+    "error_kind": "telegram_api",
+    "http_status": 429,
+    "description": "Too Many Requests: retry after 5",
     "bot_username": null,
     "permissions": {}
   }
