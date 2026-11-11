@@ -1,10 +1,10 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-11T15:10:22+00:00",
-  "checked_at_sakhalin": "2026-11-12T02:10:17+11:00",
+  "checked_at_utc": "2026-11-11T16:03:45+00:00",
+  "checked_at_sakhalin": "2026-11-12T03:03:41+11:00",
   "status": "error",
-  "mutations_enabled": false,
+  "mutations_enabled": true,
   "issues": [
     {
       "type": "publisher_blocked",
@@ -12,19 +12,13 @@
       "required_slot_sakhalin": "2026-11-11T22:00+11:00",
       "reason": "generation_provider_unavailable",
       "attempted_at_utc": "2026-11-11T15:09:45+00:00"
-    },
-    {
-      "type": "telegram_delivery_unhealthy",
-      "reason": "transport",
-      "http_status": 200,
-      "description": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-12T02:09:45+11:00",
-    "age_hours": 0.01,
+    "age_hours": 0.9,
     "published": 0
   },
   "last_production_attempt": {
@@ -66,7 +60,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-11T15:10:20+00:00",
+    "checked_at": "2026-11-11T16:03:44+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -75,7 +69,7 @@
     "failed_actions": [],
     "unresolved": 0,
     "unresolved_items": [],
-    "mutations_enabled": false,
+    "mutations_enabled": true,
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
@@ -464,15 +458,20 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-11T15:10:14+00:00",
-    "status": "error",
+    "checked_at_utc": "2026-11-11T16:03:38+00:00",
+    "status": "healthy",
     "auth_ok": true,
-    "chat_ok": false,
-    "error_kind": "transport",
+    "chat_ok": true,
+    "error_kind": null,
     "http_status": 200,
-    "description": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
+    "description": null,
     "bot_username": "SkySakhNewsPublisher_bot",
-    "permissions": {}
+    "permissions": {
+      "status": "administrator",
+      "can_post_messages": true,
+      "can_edit_messages": true,
+      "can_delete_messages": true
+    }
   },
   "delivery_queue_hardening": {
     "before": 0,
