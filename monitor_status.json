@@ -1,22 +1,26 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-11T08:18:01+00:00",
-  "checked_at_sakhalin": "2026-11-11T19:17:56+11:00",
+  "checked_at_utc": "2026-11-11T09:17:03+00:00",
+  "checked_at_sakhalin": "2026-11-11T20:16:59+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
     {
+      "type": "publisher_slot_missed",
+      "slot_sakhalin": "2026-11-11T19:00+11:00",
+      "grace_minutes": 45,
+      "last_finished_sakhalin": "2026-11-11T18:11:27+11:00"
+    },
+    {
       "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-11-11T08:45:00+11:00",
+      "slot": "evening",
+      "expected_by_sakhalin": "2026-11-11T19:45:00+11:00",
       "last_attempt": {
-        "status": "blocked",
+        "status": "ok",
         "mode": "morning",
-        "at_utc": "2026-11-11T01:11:54+00:00",
-        "at_sakhalin": "2026-11-11T12:11:54+11:00",
-        "error": "telegram_telegram_api",
-        "description": "Too Many Requests: retry after 5"
+        "at_utc": "2026-11-11T08:21:04+00:00",
+        "at_sakhalin": "2026-11-11T19:21:04+11:00"
       }
     }
   ],
@@ -24,7 +28,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-11T18:11:27+11:00",
-    "age_hours": 1.11,
+    "age_hours": 2.09,
     "published": 1
   },
   "last_production_attempt": {
@@ -43,46 +47,58 @@
     "publication_contract_blocked": 0
   },
   "mobilization_digest": {
-    "version": "mobilization-digest-v1.4",
+    "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-11-11",
     "status": "error",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-11-11T08:21:04+00:00",
+        "published_at_sakhalin": "2026-11-11T19:21:04+11:00",
+        "telegram_message_id": 581,
+        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
+        "evidence_count": 9,
+        "evidence_hash": "0713919cab3c669453142637095fbc7ea4bbb7bf73df41c9195e57e00bd84f18",
+        "source_ids": [
+          2,
+          3,
+          1,
+          5,
+          6,
+          4
+        ]
+      }
     },
     "evening": {
-      "due": false,
+      "due": true,
       "published": false,
       "record": {}
     },
     "last_attempt": {
-      "status": "blocked",
+      "status": "ok",
       "mode": "morning",
-      "at_utc": "2026-11-11T01:11:54+00:00",
-      "at_sakhalin": "2026-11-11T12:11:54+11:00",
-      "error": "telegram_telegram_api",
-      "description": "Too Many Requests: retry after 5"
+      "at_utc": "2026-11-11T08:21:04+00:00",
+      "at_sakhalin": "2026-11-11T19:21:04+11:00"
     },
     "missing": [
       {
         "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-11-11T08:45:00+11:00",
+        "slot": "evening",
+        "expected_by_sakhalin": "2026-11-11T19:45:00+11:00",
         "last_attempt": {
-          "status": "blocked",
+          "status": "ok",
           "mode": "morning",
-          "at_utc": "2026-11-11T01:11:54+00:00",
-          "at_sakhalin": "2026-11-11T12:11:54+11:00",
-          "error": "telegram_telegram_api",
-          "description": "Too Many Requests: retry after 5"
+          "at_utc": "2026-11-11T08:21:04+00:00",
+          "at_sakhalin": "2026-11-11T19:21:04+11:00"
         }
       }
     ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-11T08:17:59+00:00",
+    "checked_at": "2026-11-11T09:17:02+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -480,7 +496,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-11T08:17:53+00:00",
+    "checked_at_utc": "2026-11-11T09:16:57+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
