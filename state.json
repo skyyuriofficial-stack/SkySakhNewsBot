@@ -451,7 +451,8 @@
     "https://sakh.online/news/24/2026-11-09/zhitelnitsu-tomari-budut-sudit-za-ubiystvo-sozhitelya-kuhonnym-nozhom-531133",
     "https://sakhalinmedia.ru/news/2677166/",
     "https://t.me/exploitex/37769",
-    "https://astv.ru/news/criminal/2026-11-11-starshij-brat-zarezal-mladshego-posle-ssory-v-ohe"
+    "https://astv.ru/news/criminal/2026-11-11-starshij-brat-zarezal-mladshego-posle-ssory-v-ohe",
+    "https://sakhalinmedia.ru/news/2678112/"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -906,187 +907,11 @@
     "41fcd89f1bf685e6f822e717257d1f41c9268f49",
     "dbeeb668bb974146dfcb8b66130f08286a77dd77",
     "0a22d1e76c695ec9fbc7681a42f9be1ae1d6f999",
-    "c37fab1c30f2871ecc5fa6702cd4b2217e9a386a"
+    "c37fab1c30f2871ecc5fa6702cd4b2217e9a386a",
+    "16ade02840b50af0d55d5438265e817358f4a9ae"
   ],
-  "last_run_sakhalin": "2026-11-11T11:41:05+11:00",
+  "last_run_sakhalin": "2026-11-11T18:11:27+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-10-21T17:44:05+11:00",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh",
-      "title": "Местами снег, дождь и ураган — прогноз погоды в Сахалинской области на 22 октября",
-      "url": "https://sakhalinmedia.ru/news/2657491/",
-      "image_url": "https://sakhalinmedia.ru/f/big/6465/6464528.jpg?601327814b86c8daaefe5bdf67fc8aae",
-      "image_hash": "9fbd0462687638323dd7290484e53297bf81a19d",
-      "topic_cluster": "sakh:местами_дождь_ураган_прогноз_погоды_сахалинской",
-      "published_at": "2026-10-21T06:00:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "sakh",
-        "corrected_category": "sakh",
-        "group": "local",
-        "event_type": "severe_weather",
-        "subtype": "severe_weather",
-        "seriousness": 88,
-        "threshold": 70,
-        "selection_utility": 63.0,
-        "slot": "backup",
-        "risks": [],
-        "title_original": "Местами снег, дождь и ураган — прогноз погоды в Сахалинской области на 22 октября",
-        "title_corrected": "Местами снег, дождь и ураган — прогноз погоды в Сахалинской области на 22 октября",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "Прогноз погоды на территории Сахалинской области на четверг, 22 октября, подготовлен по данным ФГБУ Сахалинское УГМС. В некоторых районах области ожидается снег. Во всех районах области ожидаются осадки. В северных и центральных районах небольшой и умеренный снег, на севере без существенных осадков. Ветер северо-западный 7-12 м/с, с утра 12-17 м/с. Температура ночью от -3°С до +2°С; днем от +1°С до +6°С. В южных районах ночью дождь, местами сильный; днем небольшой и умеренный дождь. Ветер северо-западный 7-12 м/с, на побережьях 15-20 м/с. На Курильских островах дождь, с утра на севере очень сильный дождь. Ветер на юге западной четверти 19-24 м/с, местами 25-30 м/с; на севере гряды ночью юго-восточный 23-28 м/с, вечером 22 октября северо-западный 33-35 м/с (УРАГАН). Температура ночь от +5°С до +10°С, днем от +7°С до +12°С. В Южно-Сахалинске 22 октября ночью дождь, днем небольшой. Ветер северо-западный 8-13 м/с.",
-      "title_original": null,
-      "footer": "САХАЛИН",
-      "published_row": {
-        "reject": false,
-        "title_ru": "Местами снег, дождь и ураган — прогноз погоды в Сахалинской области на 22 октября",
-        "body": [
-          "Прогноз погоды на территории Сахалинской области на четверг, 22 октября, подготовлен по данным ФГБУ Сахалинское УГМС.",
-          "В некоторых районах области ожидается снег. Во всех районах области ожидаются осадки."
-        ],
-        "footer": "САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh",
-          "corrected_category": "sakh",
-          "group": "local",
-          "event_type": "severe_weather",
-          "subtype": "severe_weather",
-          "seriousness": 88,
-          "threshold": 70,
-          "selection_utility": 63.0,
-          "slot": "backup",
-          "risks": [],
-          "title_original": "Местами снег, дождь и ураган — прогноз погоды в Сахалинской области на 22 октября",
-          "title_corrected": "Местами снег, дождь и ураган — прогноз погоды в Сахалинской области на 22 октября",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "sakh",
-          "final_category": "sakh",
-          "event_type": "severe_weather",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.7",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "sakh",
-            "corrected_category": "sakh",
-            "group": "local",
-            "event_type": "severe_weather",
-            "subtype": "severe_weather",
-            "seriousness": 85,
-            "threshold": 70,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "Местами снег, дождь и ураган — прогноз погоды в Сахалинской области на 22 октября",
-            "title_corrected": "Местами снег, дождь и ураган — прогноз погоды в Сахалинской области на 22 октября",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "📍 Сахалин\n\n<b>Местами снег, дождь и ураган — прогноз погоды в Сахалинской области на 22 октября</b>\n\nПрогноз погоды на территории Сахалинской области на четверг, 22 октября, подготовлен по данным ФГБУ Сахалинское УГМС.\n\nВ некоторых районах области ожидается снег. Во всех районах области ожидаются осадки.\n\nСАХАЛИН · <a href=\"https://sakhalinmedia.ru/news/2657491/\">SakhalinMedia.ru</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh",
-        "final_category": "sakh",
-        "event_type": "severe_weather",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.7",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh",
-          "corrected_category": "sakh",
-          "group": "local",
-          "event_type": "severe_weather",
-          "subtype": "severe_weather",
-          "seriousness": 85,
-          "threshold": 70,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Местами снег, дождь и ураган — прогноз погоды в Сахалинской области на 22 октября",
-          "title_corrected": "Местами снег, дождь и ураган — прогноз погоды в Сахалинской области на 22 октября",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 471,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": []
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-24T04:04:44+00:00"
-      }
-    },
     {
       "time_sakhalin": "2026-10-21T17:44:14+11:00",
       "source": "SakhalinMedia.ru",
@@ -11990,7 +11815,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:55+00:00"
+        "checked_at": "2026-11-11T07:05:20+00:00"
       }
     },
     {
@@ -12171,7 +11996,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:55+00:00"
+        "checked_at": "2026-11-11T07:05:20+00:00"
       }
     },
     {
@@ -12348,7 +12173,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:55+00:00"
+        "checked_at": "2026-11-11T07:05:20+00:00"
       }
     },
     {
@@ -12525,7 +12350,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:55+00:00"
+        "checked_at": "2026-11-11T07:05:20+00:00"
       }
     },
     {
@@ -12702,7 +12527,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:55+00:00"
+        "checked_at": "2026-11-11T07:05:20+00:00"
       }
     },
     {
@@ -12883,7 +12708,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:55+00:00"
+        "checked_at": "2026-11-11T07:05:20+00:00"
       }
     },
     {
@@ -13060,7 +12885,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:56+00:00"
+        "checked_at": "2026-11-11T07:05:20+00:00"
       }
     },
     {
@@ -13245,7 +13070,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:56+00:00"
+        "checked_at": "2026-11-11T07:05:21+00:00"
       }
     },
     {
@@ -13426,7 +13251,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:56+00:00"
+        "checked_at": "2026-11-11T07:05:21+00:00"
       }
     },
     {
@@ -13603,7 +13428,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:56+00:00"
+        "checked_at": "2026-11-11T07:05:21+00:00"
       }
     },
     {
@@ -13789,7 +13614,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:56+00:00"
+        "checked_at": "2026-11-11T07:05:21+00:00"
       }
     },
     {
@@ -13966,7 +13791,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:56+00:00"
+        "checked_at": "2026-11-11T07:05:21+00:00"
       }
     },
     {
@@ -14151,7 +13976,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:56+00:00"
+        "checked_at": "2026-11-11T07:05:21+00:00"
       }
     },
     {
@@ -14332,7 +14157,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:56+00:00"
+        "checked_at": "2026-11-11T07:05:21+00:00"
       }
     },
     {
@@ -14509,7 +14334,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:56+00:00"
+        "checked_at": "2026-11-11T07:05:21+00:00"
       }
     },
     {
@@ -14699,7 +14524,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:57+00:00"
+        "checked_at": "2026-11-11T07:05:21+00:00"
       }
     },
     {
@@ -14876,7 +14701,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:57+00:00"
+        "checked_at": "2026-11-11T07:05:22+00:00"
       }
     },
     {
@@ -15061,7 +14886,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:57+00:00"
+        "checked_at": "2026-11-11T07:05:22+00:00"
       }
     },
     {
@@ -15238,7 +15063,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:57+00:00"
+        "checked_at": "2026-11-11T07:05:22+00:00"
       }
     },
     {
@@ -15419,7 +15244,179 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-11T00:41:57+00:00"
+        "checked_at": "2026-11-11T07:05:22+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-11-11T18:08:10+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "Поронаец покусал полицейских при задержании и не признал свою вину в суде",
+      "url": "https://sakhalinmedia.ru/news/2678112/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6498/6497232.jpg.webp?v=1794368458",
+      "image_hash": "6596aa2249cf371e3611d7b22dedc530498492be",
+      "topic_cluster": "sakh_chp:поронаец_покусал_полицейских_задержании_признал_sakhalinmedia",
+      "published_at": "2026-11-11T03:51:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "sakh_chp",
+        "corrected_category": "sakh_chp",
+        "group": "local",
+        "event_type": "violent_crime",
+        "subtype": "violent_crime",
+        "seriousness": 100,
+        "threshold": 70,
+        "selection_utility": -60.0,
+        "slot": 1,
+        "risks": [],
+        "title_original": "Поронаец покусал полицейских при задержании и не признал свою вину в суде",
+        "title_corrected": "Поронаец покусал полицейских при задержании и не признал свою вину в суде",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Сахалинский областной суд оставил без изменения приговор в отношении жителя Поронайска, осужденного за нападение на полицейского. Инцидент произошел в июне 2025 года, когда мужчина, будучи не согласным с законными действиями стражей порядка, умышленно укусил двух из них за плечо и предплечье. Медицинская экспертиза установила, что физический вред здоровью полицейских причинен не был, сообщает пресс-служба судов региона. Ему назначили условный срок несмотря на аппеляцию. В ходе судебного разбирательства подсудимый свою вину категорически не признал. Тем не менее, Поронайский городской суд счел доказательства достаточными и квалифицировал действия мужчины по ч. 1 ст. 318 УК РФ. Ему было назначено наказание в виде одного года лишения свободы условно с испытательным сроком также на один год. Не согласившись с решением суда первой инстанции, осужденный подал апелляционную жалобу. Рассмотрев материалы дела, Сахалинский областной суд не нашел оснований для отмены или смягчения наказания, оставив жалобу без удовлетворения, а приговор — без изменений. На данный момент решение суда вступило в законную силу. Ранее, 9 ноября, в следкоме сообщили о возбуждении уголовного дела в отношении жителя областного центра. Он подозревается в нападении на сотрудника полиции: по версии следствия, мужчина также укусил полицейского и ударил .",
+      "title_original": null,
+      "footer": "ЧП | САХАЛИН",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Поронаец покусал полицейских при задержании и не признал свою вину в суде",
+        "body": [
+          "Сахалинский областной суд оставил без изменения приговор в отношении жителя Поронайска, осужденного за нападение на полицейского.",
+          "Инцидент произошел в июне 2025 года, когда мужчина, будучи не согласным с законными действиями стражей порядка, умышленно укусил двух из них за плечо и предплечье."
+        ],
+        "footer": "ЧП | САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "violent_crime",
+          "subtype": "violent_crime",
+          "seriousness": 100,
+          "threshold": 70,
+          "selection_utility": -60.0,
+          "slot": 1,
+          "risks": [],
+          "title_original": "Поронаец покусал полицейских при задержании и не признал свою вину в суде",
+          "title_corrected": "Поронаец покусал полицейских при задержании и не признал свою вину в суде",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "sakh_chp",
+          "final_category": "sakh_chp",
+          "event_type": "violent_crime",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.8",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "sakh_chp",
+            "corrected_category": "sakh_chp",
+            "group": "local",
+            "event_type": "violent_crime",
+            "subtype": "violent_crime",
+            "seriousness": 95,
+            "threshold": 70,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Поронаец покусал полицейских при задержании и не признал свою вину в суде",
+            "title_corrected": "Поронаец покусал полицейских при задержании и не признал свою вину в суде",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "📍 Сахалин\n\n<b>Поронаец покусал полицейских при задержании и не признал свою вину в суде</b>\n\nСахалинский областной суд оставил без изменения приговор в отношении жителя Поронайска, осужденного за нападение на полицейского.\n\nИнцидент произошел в июне 2025 года, когда мужчина, будучи не согласным с законными действиями стражей порядка, умышленно укусил двух из них за плечо и предплечье.\n\nЧП | САХАЛИН · <a href=\"https://sakhalinmedia.ru/news/2678112/\">SakhalinMedia.ru</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "violent_crime",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.8",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "violent_crime",
+          "subtype": "violent_crime",
+          "seriousness": 95,
+          "threshold": 70,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Поронаец покусал полицейских при задержании и не признал свою вину в суде",
+          "title_corrected": "Поронаец покусал полицейских при задержании и не признал свою вину в суде",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 580,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": []
       }
     }
   ],
@@ -15648,11 +15645,11 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-11-11T11:35:34+11:00",
+    "started_sakhalin": "2026-11-11T18:05:15+11:00",
     "status": "ok",
-    "candidates": 15,
+    "candidates": 13,
     "published": 1,
-    "local_candidates": 2,
+    "local_candidates": 1,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -15661,7 +15658,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 18
+          "recent": 17
         },
         {
           "source": "SakhalinMedia",
@@ -15673,7 +15670,7 @@
           "source": "ASTV HTML",
           "status": "ok",
           "entries": 22,
-          "recent": 15
+          "recent": 14
         },
         {
           "source": "Sakh.online HTML",
@@ -15683,27 +15680,27 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-11-11T11:41:05+11:00",
+    "finished_sakhalin": "2026-11-11T18:11:27+11:00",
     "stats": {
       "rss_seen": 160,
-      "old_skip": 56,
+      "old_skip": 58,
       "google_skip": 15,
-      "duplicate_skip": 0,
-      "low_info_skip": 10,
+      "duplicate_skip": 1,
+      "low_info_skip": 12,
       "category_skip": 34,
       "no_image_skip": 0,
-      "bad_image_skip": 13,
-      "logo_image_skip": 23,
-      "text_card_image_skip": 6,
-      "candidates": 35,
+      "bad_image_skip": 8,
+      "logo_image_skip": 15,
+      "text_card_image_skip": 4,
+      "candidates": 36,
       "rewrite_retry": 4,
-      "editorial_skip": 13,
+      "editorial_skip": 12,
       "telegram_fail": 0,
       "published": 1,
       "telegram_source_attempt": 4,
       "telegram_source_fail": 0,
       "telegram_source_seen": 66,
-      "telegram_source_candidates": 30,
+      "telegram_source_candidates": 23,
       "ai_calls": 4,
       "ai_budget_exhausted": 1,
       "ai_api_fail": 4,
@@ -15711,18 +15708,18 @@
       "validation_reject": 0,
       "extractive_fallback": 1,
       "extractive_first": 1,
-      "editorial_prechecked": 82,
-      "editorial_gate_checked": 14,
+      "editorial_prechecked": 71,
+      "editorial_gate_checked": 13,
       "editorial_gate_pass": 1,
-      "editorial_gate_reject": 2,
+      "editorial_gate_reject": 0,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 0,
       "editorial_gate_ai_fail": 0,
-      "editorial_title_reject": 2,
-      "editorial_category_reject": 2,
+      "editorial_title_reject": 0,
+      "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 21,
-      "editorial_offtopic_reject": 29,
+      "editorial_reclassified": 11,
+      "editorial_offtopic_reject": 24,
       "openrouter_empty_content": 12,
       "openrouter_model_fallback": 0,
       "openrouter_attempts": 12,
@@ -15731,9 +15728,9 @@
       "openrouter_success": 0,
       "openrouter_circuit_open": 0,
       "editorial_grounded_translation_fallback": 0,
-      "media_required_skip": 16,
+      "media_required_skip": 11,
       "media_generic_skip": 0,
-      "media_ready_candidates": 35,
+      "media_ready_candidates": 36,
       "photo_retry": 0,
       "photo_publish": 1,
       "photo_upload_original": 1,
@@ -15747,11 +15744,11 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 35,
-      "director_approved": 15,
-      "director_rejected": 20,
+      "director_seen": 36,
+      "director_approved": 13,
+      "director_rejected": 23,
       "director_reclassified": 0,
-      "director_title_corrected": 4,
+      "director_title_corrected": 2,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
       "director_final_checked": 1,
@@ -15763,8 +15760,8 @@
       "post_audit_anomalies": 0,
       "post_audit_corrected": 0,
       "post_audit_deleted": 0,
-      "tass_world_scanned": 84,
-      "tass_world_screened": 3,
+      "tass_world_scanned": 83,
+      "tass_world_screened": 0,
       "tass_world_candidates": 0
     },
     "news_director": {
@@ -15772,245 +15769,6 @@
       "policy_version": "policy-v2.8",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
-        "window": 20,
-        "targets": {
-          "local": 6,
-          "ru_pol": 4,
-          "ru_eco": 4,
-          "ru_safety": 3,
-          "world": 2,
-          "it": 1
-        },
-        "target_percent": {
-          "local": 30.0,
-          "ru_pol": 20.0,
-          "ru_eco": 20.0,
-          "ru_safety": 15.0,
-          "world": 10.0,
-          "it": 5.0
-        },
-        "counts": {
-          "local": 9,
-          "ru_pol": 0,
-          "ru_eco": 4,
-          "ru_safety": 1,
-          "world": 1,
-          "it": 5
-        },
-        "scaled_targets": {
-          "local": 6.0,
-          "ru_pol": 4.0,
-          "ru_eco": 4.0,
-          "ru_safety": 3.0,
-          "world": 2.0,
-          "it": 1.0
-        },
-        "deficits": {
-          "local": -3.0,
-          "ru_pol": 4.0,
-          "ru_eco": 0.0,
-          "ru_safety": 2.0,
-          "world": 1.0,
-          "it": -4.0
-        },
-        "distribution_error": 14.0,
-        "subtype_counts": {
-          "macro_economy": 4,
-          "major_infrastructure": 1,
-          "major_it": 5,
-          "public_service_disruption": 1,
-          "major_emergency": 2,
-          "severe_weather": 3,
-          "political_decision": 1,
-          "violent_crime": 2,
-          "geopolitical_event": 1
-        },
-        "sequence": [
-          "ru_eco",
-          "local",
-          "ru_eco",
-          "it",
-          "local",
-          "local",
-          "local",
-          "local",
-          "ru_eco",
-          "it",
-          "local",
-          "it",
-          "local",
-          "it",
-          "ru_safety",
-          "local",
-          "world",
-          "local",
-          "ru_eco",
-          "it"
-        ],
-        "category_sequence": [
-          "ru_eco",
-          "sakh",
-          "ru_eco",
-          "it",
-          "sakh",
-          "sakh_chp",
-          "sakh",
-          "sakh",
-          "ru_eco",
-          "it",
-          "sakh",
-          "it",
-          "sakh",
-          "it",
-          "ru_incident",
-          "sakh_chp",
-          "geo",
-          "sakh_chp",
-          "ru_eco",
-          "it"
-        ],
-        "source_sequence": [
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "sakh.online",
-          "sakh.online",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "techmedia techmedia",
-          "sakhalinmedia.ru",
-          "guardian technology",
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "sakh.online",
-          "astv",
-          "bbc world",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "exploit exploitex"
-        ],
-        "retrospective_anomalies": [],
-        "valid_posts_counted": 20
-      },
-      "candidate_count": 35,
-      "approved_count": 15,
-      "rejected_count": 20,
-      "rejected_by_reason": {
-        "importance_below_threshold": 16,
-        "routine_traffic_statistics": 1,
-        "ordinary_weather_not_release_worthy": 2,
-        "local_mix_saturated_low_priority": 1
-      },
-      "ai_review_requested": 0,
-      "ai_review_received": 0,
-      "selected_groups": [
-        "local",
-        "world"
-      ],
-      "projected_distribution_error": 14.0,
-      "projected_counts": {
-        "ru_eco": 3,
-        "it": 5,
-        "local": 9,
-        "ru_safety": 1,
-        "world": 2
-      },
-      "projected_length": 20,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "Старший брат зарезал младшего после ссоры в Охе",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "event_type": "violent_crime",
-          "seriousness": 100,
-          "utility": -22.0
-        },
-        {
-          "slot": 2,
-          "title": "First day of Ukraine peace talks constructive, Zelensky says",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 87,
-          "utility": 118.0
-        },
-        {
-          "slot": "backup",
-          "title": "◻️ ◻️ ◻️ ◻️ В Абу-Даби завершился первый день трехсторонних переговоров России, Украины и США. Встреча продлилась около четырех часов, в ней участвовали 19 человек. Консультации пр",
-          "category_key": "geo",
-          "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 83,
-          "utility": 79.0
-        },
-        {
-          "slot": "backup",
-          "title": "Бастрыкин поручил проверить состояние разрушающихся фасадов МКД в Холмске",
-          "category_key": "sakh",
-          "group": "local",
-          "event_type": "political_decision",
-          "seriousness": 92,
-          "utility": -46.0
-        },
-        {
-          "slot": "backup",
-          "title": "Jensen Huang’s image has been shattered. Could he be pushed out at Nvidia",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 89,
-          "utility": -73.0
-        },
-        {
-          "slot": "backup",
-          "title": "Jensen Huang’s image has been shattered. Could he be pushed out at Nvidia",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 89,
-          "utility": -73.0
-        },
-        {
-          "slot": "backup",
-          "title": "Nvidia shares tumble over investigation into Huang's affair with alleged Chinese spy",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 88,
-          "utility": -74.0
-        },
-        {
-          "slot": "backup",
-          "title": "Zoe Kleinman: Nvidia CEO's affair will cause ripples across US and beyond",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 88,
-          "utility": -74.0
-        },
-        {
-          "slot": "backup",
-          "title": "Nvidia’s board needs to do some succession planning – sharpish | Nils Pratley",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 88,
-          "utility": -74.0
-        },
-        {
-          "slot": "backup",
-          "title": "Australia considers criminal penalties for rogue AI in wake of OpenAI hack",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 86,
-          "utility": -76.0
-        }
-      ],
-      "rolling_balance_after": {
         "window": 20,
         "targets": {
           "local": 6,
@@ -16132,11 +15890,250 @@
         ],
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
+      },
+      "candidate_count": 36,
+      "approved_count": 13,
+      "rejected_count": 23,
+      "rejected_by_reason": {
+        "minor_or_routine_crime": 1,
+        "importance_below_threshold": 18,
+        "weather_without_public_safety_impact": 1,
+        "ordinary_weather_not_release_worthy": 2,
+        "low_scale_incident_not_release_worthy": 1
+      },
+      "ai_review_requested": 0,
+      "ai_review_received": 0,
+      "selected_groups": [
+        "local",
+        "world"
+      ],
+      "projected_distribution_error": 16.0,
+      "projected_counts": {
+        "it": 5,
+        "local": 10,
+        "ru_eco": 2,
+        "ru_safety": 1,
+        "world": 2
+      },
+      "projected_length": 20,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "Поронаец покусал полицейских при задержании и не признал свою вину в суде",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "event_type": "violent_crime",
+          "seriousness": 100,
+          "utility": -60.0
+        },
+        {
+          "slot": 2,
+          "title": "Ukraine captures first Indonesian prisoner of war amid surge in Russian recruitment",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "seriousness": 90,
+          "utility": 121.0
+        },
+        {
+          "slot": "backup",
+          "title": "First day of Ukraine peace talks constructive, Zelensky says",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "seriousness": 87,
+          "utility": 85.0
+        },
+        {
+          "slot": "backup",
+          "title": "Медведчук: переговоры в ОАЭ обнажили разные подходы к безопасности у США и ЕС",
+          "category_key": "geo",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "seriousness": 87,
+          "utility": 85.0
+        },
+        {
+          "slot": "backup",
+          "title": "Jensen Huang’s image has been shattered. Could he be pushed out at Nvidia",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 89,
+          "utility": -71.0
+        },
+        {
+          "slot": "backup",
+          "title": "Jensen Huang’s image has been shattered. Could he be pushed out at Nvidia",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 89,
+          "utility": -71.0
+        },
+        {
+          "slot": "backup",
+          "title": "Nvidia shares tumble over investigation into Huang's affair with alleged Chinese spy",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 88,
+          "utility": -72.0
+        },
+        {
+          "slot": "backup",
+          "title": "Zoe Kleinman: Nvidia CEO's affair will cause ripples across US and beyond",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 88,
+          "utility": -72.0
+        },
+        {
+          "slot": "backup",
+          "title": "Australia considers criminal penalties for rogue AI in wake of OpenAI hack",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 86,
+          "utility": -74.0
+        },
+        {
+          "slot": "backup",
+          "title": "Australia to introduce mandatory reporting after OpenAI hack to combat artificial intelligence ‘going rogue’",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 86,
+          "utility": -74.0
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 20,
+        "targets": {
+          "local": 6,
+          "ru_pol": 4,
+          "ru_eco": 4,
+          "ru_safety": 3,
+          "world": 2,
+          "it": 1
+        },
+        "target_percent": {
+          "local": 30.0,
+          "ru_pol": 20.0,
+          "ru_eco": 20.0,
+          "ru_safety": 15.0,
+          "world": 10.0,
+          "it": 5.0
+        },
+        "counts": {
+          "local": 10,
+          "ru_pol": 0,
+          "ru_eco": 3,
+          "ru_safety": 1,
+          "world": 1,
+          "it": 5
+        },
+        "scaled_targets": {
+          "local": 6.0,
+          "ru_pol": 4.0,
+          "ru_eco": 4.0,
+          "ru_safety": 3.0,
+          "world": 2.0,
+          "it": 1.0
+        },
+        "deficits": {
+          "local": -4.0,
+          "ru_pol": 4.0,
+          "ru_eco": 1.0,
+          "ru_safety": 2.0,
+          "world": 1.0,
+          "it": -4.0
+        },
+        "distribution_error": 16.0,
+        "subtype_counts": {
+          "macro_economy": 3,
+          "major_it": 5,
+          "public_service_disruption": 1,
+          "major_emergency": 2,
+          "severe_weather": 3,
+          "political_decision": 1,
+          "violent_crime": 4,
+          "geopolitical_event": 1
+        },
+        "sequence": [
+          "ru_eco",
+          "it",
+          "local",
+          "local",
+          "local",
+          "local",
+          "ru_eco",
+          "it",
+          "local",
+          "it",
+          "local",
+          "it",
+          "ru_safety",
+          "local",
+          "world",
+          "local",
+          "ru_eco",
+          "it",
+          "local",
+          "local"
+        ],
+        "category_sequence": [
+          "ru_eco",
+          "it",
+          "sakh",
+          "sakh_chp",
+          "sakh",
+          "sakh",
+          "ru_eco",
+          "it",
+          "sakh",
+          "it",
+          "sakh",
+          "it",
+          "ru_incident",
+          "sakh_chp",
+          "geo",
+          "sakh_chp",
+          "ru_eco",
+          "it",
+          "sakh_chp",
+          "sakh_chp"
+        ],
+        "source_sequence": [
+          "sakhalinmedia.ru",
+          "exploit exploitex",
+          "sakh.online",
+          "sakh.online",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "techmedia techmedia",
+          "sakhalinmedia.ru",
+          "guardian technology",
+          "sakhalinmedia.ru",
+          "exploit exploitex",
+          "sakh.online",
+          "astv",
+          "bbc world",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "exploit exploitex",
+          "astv",
+          "sakhalinmedia.ru"
+        ],
+        "retrospective_anomalies": [],
+        "valid_posts_counted": 20
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-11-11T00:35:42+00:00",
+      "checked_at": "2026-11-11T07:05:22+00:00",
       "checked": 20,
       "passed": 20,
       "anomalies": [],
@@ -16157,8 +16154,8 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 35,
-      "missing_media_rejected": 16,
+      "ready_candidates": 36,
+      "missing_media_rejected": 11,
       "generic_media_rejected": 0,
       "photo_retries": 0,
       "photo_published": 1,
@@ -16171,30 +16168,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 82,
-      "checked": 14,
+      "prechecked": 71,
+      "checked": 13,
       "passed": 1,
-      "rejected": 2,
-      "reclassified": 21,
-      "offtopic_reject": 29,
+      "rejected": 0,
+      "reclassified": 11,
+      "offtopic_reject": 24,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
-      "audited_urls": 3
-    },
-    "independent_post_publication_monitor": {
-      "version": "post-audit-v1.1",
-      "checked_at": "2026-11-11T00:41:57+00:00",
-      "checked": 20,
-      "passed": 20,
-      "anomalies": [],
-      "corrected": [],
-      "deleted": [],
-      "failed_actions": [],
-      "unresolved": 0,
-      "unresolved_items": [],
-      "mutations_enabled": true,
-      "legacy_posts_mutated": false
+      "audited_urls": 1
     }
   },
   "pending_media_delivery": [],
@@ -16264,18 +16247,16 @@
     },
     "distribution_error": 16.0,
     "subtype_counts": {
-      "major_infrastructure": 1,
       "macro_economy": 3,
       "major_it": 5,
       "public_service_disruption": 1,
       "major_emergency": 2,
       "severe_weather": 3,
       "political_decision": 1,
-      "violent_crime": 3,
+      "violent_crime": 4,
       "geopolitical_event": 1
     },
     "sequence": [
-      "local",
       "ru_eco",
       "it",
       "local",
@@ -16294,10 +16275,10 @@
       "local",
       "ru_eco",
       "it",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "sakh",
       "ru_eco",
       "it",
       "sakh",
@@ -16316,10 +16297,10 @@
       "sakh_chp",
       "ru_eco",
       "it",
+      "sakh_chp",
       "sakh_chp"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "exploit exploitex",
       "sakh.online",
@@ -16338,7 +16319,8 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "exploit exploitex",
-      "astv"
+      "astv",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -22254,7 +22236,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-11T00:41:57+00:00",
+    "checked_at": "2026-11-11T07:05:22+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -23202,7 +23184,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-11-11T00:35:33+00:00",
+    "checked_at_utc": "2026-11-11T07:05:14+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -23225,18 +23207,18 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-11-11T00:41:05+00:00",
+    "checked_at_utc": "2026-11-11T07:11:27+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-11T00:41:05+00:00",
+    "checked_at_utc": "2026-11-11T07:11:27+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 15,
+    "director_approved": 13,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -23245,11 +23227,11 @@
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-11-11T00:41:05+00:00",
+    "checked_at_utc": "2026-11-11T07:11:27+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-11-11T11:41:05+11:00",
-      "candidates": 15,
+      "finished_sakhalin": "2026-11-11T18:11:27+11:00",
+      "candidates": 13,
       "queued_for_delivery": 0
     },
     "generation": {
