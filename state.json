@@ -457,7 +457,9 @@
     "https://sakhalinmedia.ru/news/2679264/",
     "https://sakh.online/news/24/2026-11-12/zemletryasenie-magnitudoy-5-3-proizoshlo-u-severnyh-kuril-531513",
     "https://sakhalinmedia.ru/news/2679769/",
-    "https://t.me/techmedia/24191"
+    "https://t.me/techmedia/24191",
+    "https://sakhalinmedia.ru/news/2680130/",
+    "https://t.me/exploitex/37826"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -918,372 +920,12 @@
     "a42e020f167e8c205a495f0aee6d3978ee987b3c",
     "92d3771217d131512f4ce1336341fc4da94559e0",
     "8942b2a4619fdbf28538b32d62840444f3201b48",
-    "af6b55030ac3adff385becfdeb8736877e3cec5d"
+    "af6b55030ac3adff385becfdeb8736877e3cec5d",
+    "f92874c27bfcd493bac8e67deb3c5b9547af13c5",
+    "aa07bc8d5aa56eedee4441ba60ee006c2baabe3c"
   ],
-  "last_run_sakhalin": "2026-11-13T00:13:31+11:00",
+  "last_run_sakhalin": "2026-11-13T08:05:49+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-10-22T10:15:29+11:00",
-      "source": "Sakh.online",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "title": "Сахалинца заключили под стражу по обвинению в убийстве женщины",
-      "url": "https://sakh.online/news/24/2026-10-22/podrostka-podozrevayut-v-ubiystve-znakomogo-nozhom-v-yuzhno-sahalinske-529619",
-      "image_url": "https://sakh.online/attachments/111b9749c623316217f5c98b4d9afe0981791c8b/store/crop/0/0/587/800/800/0/0/0/481bdaa9987d35ae091cebe41a95c3598655722c7b8c4235e93b32b39934/481bdaa9987d35ae091cebe41a95c3598655722c7b8c4235e93b32b39934.webp",
-      "image_hash": "b438d41c9c69f61ef628506796c57deaa6bf0392",
-      "topic_cluster": "sakh_chp:подростка_подозревают_убийстве_знакомого_ссоры_сахалинске",
-      "published_at": "2026-10-21T13:00:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "group": "local",
-        "event_type": "violent_crime",
-        "subtype": "violent_crime",
-        "seriousness": 98,
-        "threshold": 70,
-        "selection_utility": 91.0,
-        "slot": 1,
-        "risks": [
-          "violent_crime_fact_template"
-        ],
-        "title_original": "Подростка подозревают в убийстве знакомого в пылу ссоры в Южно-Сахалинске",
-        "title_corrected": "Сахалинца заключили под стражу по обвинению в убийстве женщины",
-        "title_corrections": [
-          "violent_crime_fact_template"
-        ],
-        "title_changed": true,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "17-летнего островитянина уже заключили под стражу. Следственный комитет завел уголовное дело на 17-летнего жителя Южно-Сахалинска. Его обвиняют в убийстве знакомого в состоянии опьянения. Подробности опубликовали в пресс-службе ведомства. По версии следствия, 17 октября в селе Ключи подросток, находясь под градусом, поссорился со своим 18-летним знакомым. В ходе внезапно возникшего конфликта обвиняемый нанес собеседнику один удар ножом в грудную клетку. Знакомые доставили раненого в медицинское учреждение, однако от полученной раны он скончался. Суд избрал для подростка меру пресечения в виде заключения под стражу. В случае, если его вину признают, парню грозит от 6 до 15 лет лишения свободы. Кроме того, следователи дадут правовую оценку действиям органов профилактики и условиям воспитания подростка. по оценке 5 пользователей 5 4 3 2 1 © 2018—2026 • Областное автономное учреждение «Издательский дом «Губернские ведомости»",
-      "title_original": "Подростка подозревают в убийстве знакомого в пылу ссоры в Южно-Сахалинске",
-      "footer": "ЧП | САХАЛИН",
-      "published_row": {
-        "reject": false,
-        "title_ru": "Сахалинца заключили под стражу по обвинению в убийстве женщины",
-        "body": [
-          "Следственный комитет завел уголовное дело на 17-летнего жителя Южно-Сахалинска.",
-          "По версии следствия, 17 октября в селе Ключи подросток, находясь под градусом, поссорился со своим 18-летним знакомым."
-        ],
-        "footer": "ЧП | САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "violent_crime",
-          "subtype": "violent_crime",
-          "seriousness": 98,
-          "threshold": 70,
-          "selection_utility": 91.0,
-          "slot": 1,
-          "risks": [
-            "violent_crime_fact_template"
-          ],
-          "title_original": "Подростка подозревают в убийстве знакомого в пылу ссоры в Южно-Сахалинске",
-          "title_corrected": "Сахалинца заключили под стражу по обвинению в убийстве женщины",
-          "title_corrections": [
-            "violent_crime_fact_template"
-          ],
-          "title_changed": true,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "sakh_chp",
-          "final_category": "sakh_chp",
-          "event_type": "violent_crime",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.7",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "sakh_chp",
-            "corrected_category": "sakh_chp",
-            "group": "local",
-            "event_type": "violent_crime",
-            "subtype": "violent_crime",
-            "seriousness": 96,
-            "threshold": 70,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "Сахалинца заключили под стражу по обвинению в убийстве женщины",
-            "title_corrected": "Сахалинца заключили под стражу по обвинению в убийстве женщины",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "📍 Сахалин\n\n<b>Сахалинца заключили под стражу по обвинению в убийстве женщины</b>\n\nСледственный комитет завел уголовное дело на 17-летнего жителя Южно-Сахалинска.\n\nПо версии следствия, 17 октября в селе Ключи подросток, находясь под градусом, поссорился со своим 18-летним знакомым.\n\nЧП | САХАЛИН · <a href=\"https://sakh.online/news/24/2026-10-22/podrostka-podozrevayut-v-ubiystve-znakomogo-nozhom-v-yuzhno-sahalinske-529619\">Sakh.online</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_chp",
-        "final_category": "sakh_chp",
-        "event_type": "violent_crime",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.7",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "violent_crime",
-          "subtype": "violent_crime",
-          "seriousness": 96,
-          "threshold": 70,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Сахалинца заключили под стражу по обвинению в убийстве женщины",
-          "title_corrected": "Сахалинца заключили под стражу по обвинению в убийстве женщины",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 479,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": []
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-25T21:41:17+00:00"
-      }
-    },
-    {
-      "time_sakhalin": "2026-10-22T10:17:54+11:00",
-      "source": "TechMedia (@techmedia)",
-      "category": "💻 IT / технологии",
-      "category_key": "it",
-      "title": "Мировой интернет под угрозой прямо сейчас — обнаружены сразу две критические уязвимости с опасностью 9,2 из 10 по шкале CVSS 4.0",
-      "url": "https://t.me/techmedia/23830",
-      "image_url": "https://cdn4.telesco.pe/file/p0lAtQJ04gr5xu09JQVdIeNkMvojPqy8mQc-ytUef5LNx8iIiajLbZhSyiXNbC-SRPeb2B92RQkdyTXl7y09SM3bdg5G-1GlGWUbSlHrPc3Tl-JI-QXvZC3HRiS07JeAiw1UfAbodq89-ykYOGJCi-bdy7KDjP3BV9Aqyy4XQk0p0E8YSvJemx6F4iogX2yLGQeGYoWYnLWSVoZ1QKnTZNWVPBN2IQpAr62jhUG1apAcU6VQkR2qMrJ8rtVC9MOCZFRevtZ2tbJLrqGDq3rLC_m7SPVmEq6j8pZNAAsuAtjTx2ucOI7jssjdBlBrfmvHYBWTMY6wkN6Nh2rvjrxIiA.jpg",
-      "image_hash": "bb627c325d2eae41c4ecfee6ba95d24bd715b340",
-      "topic_cluster": "it:мировой_интернет_угрозой_прямо_сейчас_обнаружены",
-      "published_at": "2026-10-21T13:58:11+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "it",
-        "corrected_category": "it",
-        "group": "it",
-        "event_type": "major_it",
-        "subtype": "major_it",
-        "seriousness": 84,
-        "threshold": 78,
-        "selection_utility": 2.0,
-        "slot": "backup",
-        "risks": [],
-        "title_original": "Мировой интернет под угрозой прямо сейчас — обнаружены сразу две критические уязвимости с опасностью 9,2 из 10 по шкале CVSS 4.0.",
-        "title_corrected": "Мировой интернет под угрозой прямо сейчас — обнаружены сразу две критические уязвимости с опасностью 9,2 из 10 по шкале CVSS 4.0",
-        "title_corrections": [],
-        "title_changed": true,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "❗️ Мировой интернет под угрозой прямо сейчас — обнаружены сразу две критические уязвимости с опасностью 9,2 из 10 по шкале CVSS 4.0. Речь об уязвимостях PHP — языка программирования, на котором работает огромная часть интернета, включая WordPress. Ошибки позволяют удалённо выполнять вредоносный код на уязвимых серверах, взламывать сайты и получать доступ к их данным. Первые попытки атак уже были: государственным ведомствам Нидерландов и Финляндии пришлось отключить сайты в качестве меры предосторожности. Помимо этого, 4chan ограничил доступ к сайту «только для чтения», а Rule34 отрубился впервые за 14 лет . И это лишь малая часть. Патч с фиксом выйдет с минуты на минуту, но владельцам сайтов необходимо обновить PHP вручную. Если быстро установить его невозможно, то спецы советуют изолировать сайт от интернета .",
-      "title_original": "Мировой интернет под угрозой прямо сейчас — обнаружены сразу две критические уязвимости с опасностью 9,2 из 10 по шкале CVSS 4.0.",
-      "footer": "IT | ТЕХНОЛОГИИ",
-      "published_row": {
-        "reject": false,
-        "title_ru": "Мировой интернет под угрозой прямо сейчас — обнаружены сразу две критические уязвимости с опасностью 9,2 из 10 по шкале CVSS 4.0",
-        "body": [
-          "Речь об уязвимостях PHP — языка программирования, на котором работает огромная часть интернета, включая WordPress.",
-          "Ошибки позволяют удалённо выполнять вредоносный код на уязвимых серверах, взламывать сайты и получать доступ к их данным."
-        ],
-        "footer": "IT | ТЕХНОЛОГИИ",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "it",
-          "corrected_category": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "subtype": "major_it",
-          "seriousness": 84,
-          "threshold": 78,
-          "selection_utility": 2.0,
-          "slot": "backup",
-          "risks": [],
-          "title_original": "Мировой интернет под угрозой прямо сейчас — обнаружены сразу две критические уязвимости с опасностью 9,2 из 10 по шкале CVSS 4.0.",
-          "title_corrected": "Мировой интернет под угрозой прямо сейчас — обнаружены сразу две критические уязвимости с опасностью 9,2 из 10 по шкале CVSS 4.0",
-          "title_corrections": [],
-          "title_changed": true,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "it",
-          "final_category": "it",
-          "event_type": "major_it",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.7",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "it",
-            "corrected_category": "it",
-            "group": "it",
-            "event_type": "major_it",
-            "subtype": "major_it",
-            "seriousness": 83,
-            "threshold": 78,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "Мировой интернет под угрозой прямо сейчас — обнаружены сразу две критические уязвимости с опасностью 9,2 из 10 по шкале CVSS 4.0",
-            "title_corrected": "Мировой интернет под угрозой прямо сейчас — обнаружены сразу две критические уязвимости с опасностью 9,2 из 10 по шкале CVSS 4.0",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "💻 IT / технологии\n\n<b>Мировой интернет под угрозой прямо сейчас — обнаружены сразу две критические уязвимости с опасностью 9,2 из 10 по шкале CVSS 4.0</b>\n\nРечь об уязвимостях PHP — языка программирования, на котором работает огромная часть интернета, включая WordPress.\n\nОшибки позволяют удалённо выполнять вредоносный код на уязвимых серверах, взламывать сайты и получать доступ к их данным.\n\nIT | ТЕХНОЛОГИИ · <a href=\"https://t.me/techmedia/23830\">TechMedia (@techmedia)</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "it",
-        "final_category": "it",
-        "event_type": "major_it",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.7",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "it",
-          "corrected_category": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "subtype": "major_it",
-          "seriousness": 83,
-          "threshold": 78,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Мировой интернет под угрозой прямо сейчас — обнаружены сразу две критические уязвимости с опасностью 9,2 из 10 по шкале CVSS 4.0",
-          "title_corrected": "Мировой интернет под угрозой прямо сейчас — обнаружены сразу две критические уязвимости с опасностью 9,2 из 10 по шкале CVSS 4.0",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 480,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": []
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-25T21:41:18+00:00"
-      }
-    },
     {
       "time_sakhalin": "2026-10-22T15:12:47+11:00",
       "source": "SakhalinMedia.ru",
@@ -11978,7 +11620,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:36+00:00"
+        "checked_at": "2026-11-12T21:02:41+00:00"
       }
     },
     {
@@ -12163,7 +11805,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:36+00:00"
+        "checked_at": "2026-11-12T21:02:42+00:00"
       }
     },
     {
@@ -12344,7 +11986,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:36+00:00"
+        "checked_at": "2026-11-12T21:02:42+00:00"
       }
     },
     {
@@ -12521,7 +12163,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:36+00:00"
+        "checked_at": "2026-11-12T21:02:42+00:00"
       }
     },
     {
@@ -12707,7 +12349,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:36+00:00"
+        "checked_at": "2026-11-12T21:02:42+00:00"
       }
     },
     {
@@ -12884,7 +12526,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:36+00:00"
+        "checked_at": "2026-11-12T21:02:42+00:00"
       }
     },
     {
@@ -13069,7 +12711,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:36+00:00"
+        "checked_at": "2026-11-12T21:02:42+00:00"
       }
     },
     {
@@ -13250,7 +12892,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:37+00:00"
+        "checked_at": "2026-11-12T21:02:42+00:00"
       }
     },
     {
@@ -13427,7 +13069,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:37+00:00"
+        "checked_at": "2026-11-12T21:02:43+00:00"
       }
     },
     {
@@ -13617,7 +13259,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:37+00:00"
+        "checked_at": "2026-11-12T21:02:43+00:00"
       }
     },
     {
@@ -13794,7 +13436,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:37+00:00"
+        "checked_at": "2026-11-12T21:02:43+00:00"
       }
     },
     {
@@ -13979,7 +13621,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:37+00:00"
+        "checked_at": "2026-11-12T21:02:43+00:00"
       }
     },
     {
@@ -14156,7 +13798,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:37+00:00"
+        "checked_at": "2026-11-12T21:02:43+00:00"
       }
     },
     {
@@ -14337,7 +13979,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:37+00:00"
+        "checked_at": "2026-11-12T21:02:43+00:00"
       }
     },
     {
@@ -14514,7 +14156,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:37+00:00"
+        "checked_at": "2026-11-12T21:02:43+00:00"
       }
     },
     {
@@ -14695,7 +14337,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:38+00:00"
+        "checked_at": "2026-11-12T21:02:44+00:00"
       }
     },
     {
@@ -14880,7 +14522,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:38+00:00"
+        "checked_at": "2026-11-12T21:02:44+00:00"
       }
     },
     {
@@ -15057,7 +14699,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:38+00:00"
+        "checked_at": "2026-11-12T21:02:44+00:00"
       }
     },
     {
@@ -15238,7 +14880,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:38+00:00"
+        "checked_at": "2026-11-12T21:02:44+00:00"
       }
     },
     {
@@ -15423,7 +15065,359 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-12T17:31:38+00:00"
+        "checked_at": "2026-11-12T21:02:44+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-11-13T08:05:23+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "title": "Эксперт рассказал, как собрать вечный инвестиционный портфель",
+      "url": "https://sakhalinmedia.ru/news/2680130/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6502/6501212.jpg?5e0b59396b3275c404db5c16dd24e3fd",
+      "image_hash": "9e0aaa46212bd279f3ae67d6cbe6832549a275eb",
+      "topic_cluster": "ru_eco:эксперт_рассказал_собрать_вечный_инвестиционный_портфель",
+      "published_at": "2026-11-12T14:05:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "ru_eco",
+        "corrected_category": "ru_eco",
+        "group": "ru_eco",
+        "event_type": "macro_economy",
+        "subtype": "macro_economy",
+        "seriousness": 86,
+        "threshold": 80,
+        "selection_utility": 145.0,
+        "slot": 2,
+        "risks": [],
+        "title_original": "Эксперт рассказал, как собрать вечный инвестиционный портфель",
+        "title_corrected": "Эксперт рассказал, как собрать вечный инвестиционный портфель",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "За сравнительно короткий период российские инвесторы пережили пандемию, перестройку финансового рынка в 2022 году, резкие колебания валютных курсов и повышение ключевой ставки до 21%. В таких условиях возникает закономерный вопрос: можно ли выстроить инвестиционную стратегию, которая не потребует каждый раз угадывать следующий поворот рынка? Об этом в преддверии первой конференции Сбера по страхованию Страхование 2030. Технологии будущего (6+) рассказал директор по инвестициям СберСтрахования жизни Александр Тихомиров. По словам Александра, \"вечный\" портфель не значит \"неизменный\". Однажды заданные пропорции однажды могут заметно ослабить баланс портфеля. Поэтому он считает правильным сочетать стратегическое распределение с тактическими корректировками. Первое отвечает за долгосрочную структуру, второе — за реакцию на текущие условия. Как отмечает эксперт, для российского рынка подходит структура, в которой 30% портфеля приходится на акции, 30% — на золото, 30% — на облигации, а 10% — на инструменты денежного рынка. Но важно понимать, что это — не универсальная формула для каждого инвестора, а основа стратегии управления. Главным результатом инвестиций должна стать не максимальная доходность. Диверсифицированный портфель может уступать активу, который резко вырос, зато снижает зависимость от ставки на единственного победителя. В долгосрочном инвестировании важнее не безошибочно предсказать будущее, а выстроить систему, которая не потребует начинать все заново при каждом изменении рынка.",
+      "title_original": null,
+      "footer": "РОССИЯ | ЭКОНОМИКА",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Эксперт рассказал, как собрать вечный инвестиционный портфель",
+        "body": [
+          "За сравнительно короткий период российские инвесторы пережили пандемию, перестройку финансового рынка в 2022 году, резкие колебания валютных курсов и повышение ключевой ставки до 21%.",
+          "В таких условиях возникает закономерный вопрос: можно ли выстроить инвестиционную стратегию, которая не потребует каждый раз угадывать следующий поворот рынка?"
+        ],
+        "footer": "РОССИЯ | ЭКОНОМИКА",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh",
+          "reclassified_to": "ru_eco"
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 86,
+          "threshold": 80,
+          "selection_utility": 145.0,
+          "slot": 2,
+          "risks": [],
+          "title_original": "Эксперт рассказал, как собрать вечный инвестиционный портфель",
+          "title_corrected": "Эксперт рассказал, как собрать вечный инвестиционный портфель",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "ru_eco",
+          "final_category": "ru_eco",
+          "event_type": "macro_economy",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.8",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "ru_eco",
+            "corrected_category": "ru_eco",
+            "group": "ru_eco",
+            "event_type": "macro_economy",
+            "subtype": "macro_economy",
+            "seriousness": 84,
+            "threshold": 80,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [
+              "near_threshold"
+            ],
+            "title_original": "Эксперт рассказал, как собрать вечный инвестиционный портфель",
+            "title_corrected": "Эксперт рассказал, как собрать вечный инвестиционный портфель",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "🇷🇺 Россия / экономика\n\n<b>Эксперт рассказал, как собрать вечный инвестиционный портфель</b>\n\nЗа сравнительно короткий период российские инвесторы пережили пандемию, перестройку финансового рынка в 2022 году, резкие колебания валютных курсов и повышение ключевой ставки до 21%.\n\nВ таких условиях возникает закономерный вопрос: можно ли выстроить инвестиционную стратегию, которая не потребует каждый раз угадывать следующий поворот рынка?\n\nРОССИЯ | ЭКОНОМИКА · <a href=\"https://sakhalinmedia.ru/news/2680130/\">SakhalinMedia.ru</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_eco",
+        "final_category": "ru_eco",
+        "event_type": "macro_economy",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.8",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 84,
+          "threshold": 80,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [
+            "near_threshold"
+          ],
+          "title_original": "Эксперт рассказал, как собрать вечный инвестиционный портфель",
+          "title_corrected": "Эксперт рассказал, как собрать вечный инвестиционный портфель",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 588,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh",
+        "reclassified_to": "ru_eco"
+      }
+    },
+    {
+      "time_sakhalin": "2026-11-13T08:05:41+11:00",
+      "source": "Exploit (@exploitex)",
+      "category": "💻 IT / технологии",
+      "category_key": "it",
+      "title": "Оверклокерша превратила видеокарту Nvidia с 8 ГБ в монстра с 80 ГБ памяти — для этого понадобилась платка за 600 рублей",
+      "url": "https://t.me/exploitex/37826",
+      "image_url": "https://cdn4.telesco.pe/file/dFDIsBhAYjV2F7maIKp91QMSb_oWX4tLKGEEngOKt-eLs3xDAyzTpAIMlIEPMsZ3FfWamiDmgbIbwgf8iWTQtUkLq6K0fMSRrAkpwuFteM2lGuIutG64ya_iHxLILoSG7tcOqFo0J6nEdJDgbki603wd0IhB99uFbu8bMvNx3ZzfDqXApIBvacUiJduBOZEKcgf4qMkERgklsWcZ8Nk7fRFJ2rQt3d3acBg_ghMreL3n6rvELfdGNd-dXYFAZF8LGFFLgAdKybrc0cxB1xlOGW0y3JNafG_u6uOPK1p5CBmLTmocZ-sD0Bk96o-JME6j54pMBfMxA5Ld3XQpOOt_Mw.jpg",
+      "image_hash": "70e88a2fbca35c4c7b5214beae6511169ad36869",
+      "topic_cluster": "it:оверклокерша_превратила_видеокарту_nvidia_монстра_памяти",
+      "published_at": "2026-11-12T16:49:31+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "it",
+        "corrected_category": "it",
+        "group": "it",
+        "event_type": "major_it",
+        "subtype": "major_it",
+        "seriousness": 84,
+        "threshold": 78,
+        "selection_utility": -76.0,
+        "slot": "backup",
+        "risks": [],
+        "title_original": "Оверклокерша превратила видеокарту Nvidia с 8 ГБ в монстра с 80 ГБ памяти — для этого понадобилась платка за 600 рублей.",
+        "title_corrected": "Оверклокерша превратила видеокарту Nvidia с 8 ГБ в монстра с 80 ГБ памяти — для этого понадобилась платка за 600 рублей",
+        "title_corrections": [],
+        "title_changed": true,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Оверклокерша превратила видеокарту Nvidia с 8 ГБ в монстра с 80 ГБ памяти — для этого понадобилась платка за 600 рублей. Кейт Ленд выяснила, что у майнинговой карты CMP 170HX на самом деле распаяно около 80 ГБ памяти HBM, но Nvidia программно ограничила доступ к большей её части. С помощью самодельного устройства для кратковременных скачков напряжения ей удалось обойти защиту и разблокировать почти весь потенциал чипа. В итоге карта показала производительность на 18% выше серверной A100. По наблюдениям Кейт, 80 ГБ удалось открыть на девяти из десяти проверенных экземпляров. Почитать гайд можно — здесь .",
+      "title_original": "Оверклокерша превратила видеокарту Nvidia с 8 ГБ в монстра с 80 ГБ памяти — для этого понадобилась платка за 600 рублей.",
+      "footer": "IT | ТЕХНОЛОГИИ",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Оверклокерша превратила видеокарту Nvidia с 8 ГБ в монстра с 80 ГБ памяти — для этого понадобилась платка за 600 рублей",
+        "body": [
+          "Кейт Ленд выяснила, что у майнинговой карты CMP 170HX на самом деле распаяно около 80 ГБ памяти HBM, но Nvidia программно ограничила доступ к большей её части.",
+          "С помощью самодельного устройства для кратковременных скачков напряжения ей удалось обойти защиту и разблокировать почти весь потенциал чипа."
+        ],
+        "footer": "IT | ТЕХНОЛОГИИ",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "it",
+          "corrected_category": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "subtype": "major_it",
+          "seriousness": 84,
+          "threshold": 78,
+          "selection_utility": -76.0,
+          "slot": "backup",
+          "risks": [],
+          "title_original": "Оверклокерша превратила видеокарту Nvidia с 8 ГБ в монстра с 80 ГБ памяти — для этого понадобилась платка за 600 рублей.",
+          "title_corrected": "Оверклокерша превратила видеокарту Nvidia с 8 ГБ в монстра с 80 ГБ памяти — для этого понадобилась платка за 600 рублей",
+          "title_corrections": [],
+          "title_changed": true,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "it",
+          "final_category": "it",
+          "event_type": "major_it",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.8",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "it",
+            "corrected_category": "it",
+            "group": "it",
+            "event_type": "major_it",
+            "subtype": "major_it",
+            "seriousness": 84,
+            "threshold": 78,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Оверклокерша превратила видеокарту Nvidia с 8 ГБ в монстра с 80 ГБ памяти — для этого понадобилась платка за 600 рублей",
+            "title_corrected": "Оверклокерша превратила видеокарту Nvidia с 8 ГБ в монстра с 80 ГБ памяти — для этого понадобилась платка за 600 рублей",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "💻 IT / технологии\n\n<b>Оверклокерша превратила видеокарту Nvidia с 8 ГБ в монстра с 80 ГБ памяти — для этого понадобилась платка за 600 рублей</b>\n\nКейт Ленд выяснила, что у майнинговой карты CMP 170HX на самом деле распаяно около 80 ГБ памяти HBM, но Nvidia программно ограничила доступ к большей её части.\n\nС помощью самодельного устройства для кратковременных скачков напряжения ей удалось обойти защиту и разблокировать почти весь потенциал чипа.\n\nIT | ТЕХНОЛОГИИ · <a href=\"https://t.me/exploitex/37826\">Exploit (@exploitex)</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "it",
+        "final_category": "it",
+        "event_type": "major_it",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.8",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "it",
+          "corrected_category": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "subtype": "major_it",
+          "seriousness": 84,
+          "threshold": 78,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Оверклокерша превратила видеокарту Nvidia с 8 ГБ в монстра с 80 ГБ памяти — для этого понадобилась платка за 600 рублей",
+          "title_corrected": "Оверклокерша превратила видеокарту Nvidia с 8 ГБ в монстра с 80 ГБ памяти — для этого понадобилась платка за 600 рублей",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 589,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": []
       }
     }
   ],
@@ -15652,10 +15646,10 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-11-13T00:10:17+11:00",
+    "started_sakhalin": "2026-11-13T08:02:37+11:00",
     "status": "ok",
-    "candidates": 8,
-    "published": 1,
+    "candidates": 9,
+    "published": 2,
     "local_candidates": 0,
     "local_stream": {
       "status": "healthy",
@@ -15665,7 +15659,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 18
+          "recent": 14
         },
         {
           "source": "SakhalinMedia",
@@ -15687,46 +15681,46 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-11-13T00:13:31+11:00",
+    "finished_sakhalin": "2026-11-13T08:05:49+11:00",
     "stats": {
       "rss_seen": 160,
-      "old_skip": 64,
-      "google_skip": 15,
-      "duplicate_skip": 2,
+      "old_skip": 63,
+      "google_skip": 12,
+      "duplicate_skip": 1,
       "low_info_skip": 17,
-      "category_skip": 33,
+      "category_skip": 32,
       "no_image_skip": 0,
-      "bad_image_skip": 10,
-      "logo_image_skip": 12,
-      "text_card_image_skip": 4,
-      "candidates": 21,
+      "bad_image_skip": 12,
+      "logo_image_skip": 7,
+      "text_card_image_skip": 7,
+      "candidates": 17,
       "rewrite_retry": 4,
-      "editorial_skip": 6,
+      "editorial_skip": 5,
       "telegram_fail": 0,
-      "published": 1,
+      "published": 2,
       "telegram_source_attempt": 4,
       "telegram_source_fail": 0,
-      "telegram_source_seen": 64,
-      "telegram_source_candidates": 28,
+      "telegram_source_seen": 69,
+      "telegram_source_candidates": 38,
       "ai_calls": 4,
       "ai_budget_exhausted": 1,
       "ai_api_fail": 4,
       "evidence_reject": 0,
       "validation_reject": 0,
-      "extractive_fallback": 1,
-      "extractive_first": 1,
-      "editorial_prechecked": 56,
+      "extractive_fallback": 2,
+      "extractive_first": 2,
+      "editorial_prechecked": 73,
       "editorial_gate_checked": 7,
-      "editorial_gate_pass": 1,
-      "editorial_gate_reject": 1,
+      "editorial_gate_pass": 2,
+      "editorial_gate_reject": 0,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 0,
       "editorial_gate_ai_fail": 0,
-      "editorial_title_reject": 1,
-      "editorial_category_reject": 1,
+      "editorial_title_reject": 0,
+      "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 5,
-      "editorial_offtopic_reject": 29,
+      "editorial_reclassified": 8,
+      "editorial_offtopic_reject": 44,
       "openrouter_empty_content": 0,
       "openrouter_model_fallback": 0,
       "openrouter_attempts": 12,
@@ -15735,12 +15729,12 @@
       "openrouter_success": 0,
       "openrouter_circuit_open": 0,
       "editorial_grounded_translation_fallback": 0,
-      "media_required_skip": 5,
+      "media_required_skip": 12,
       "media_generic_skip": 0,
-      "media_ready_candidates": 21,
+      "media_ready_candidates": 17,
       "photo_retry": 0,
-      "photo_publish": 1,
-      "photo_upload_original": 1,
+      "photo_publish": 2,
+      "photo_upload_original": 2,
       "photo_upload_reencoded": 0,
       "photo_upload_plain_caption": 0,
       "photo_remote_url": 0,
@@ -15751,14 +15745,14 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 21,
-      "director_approved": 8,
-      "director_rejected": 13,
+      "director_seen": 17,
+      "director_approved": 9,
+      "director_rejected": 8,
       "director_reclassified": 0,
       "director_title_corrected": 4,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
-      "director_final_checked": 1,
+      "director_final_checked": 2,
       "director_final_autocorrected": 0,
       "director_final_reject": 0,
       "director_pending_retired": 0,
@@ -15767,7 +15761,7 @@
       "post_audit_anomalies": 0,
       "post_audit_corrected": 0,
       "post_audit_deleted": 0,
-      "tass_world_scanned": 22,
+      "tass_world_scanned": 44,
       "tass_world_screened": 4,
       "tass_world_candidates": 0
     },
@@ -15776,227 +15770,6 @@
       "policy_version": "policy-v2.8",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
-        "window": 20,
-        "targets": {
-          "local": 6,
-          "ru_pol": 4,
-          "ru_eco": 4,
-          "ru_safety": 3,
-          "world": 2,
-          "it": 1
-        },
-        "target_percent": {
-          "local": 30.0,
-          "ru_pol": 20.0,
-          "ru_eco": 20.0,
-          "ru_safety": 15.0,
-          "world": 10.0,
-          "it": 5.0
-        },
-        "counts": {
-          "local": 10,
-          "ru_pol": 1,
-          "ru_eco": 2,
-          "ru_safety": 1,
-          "world": 2,
-          "it": 4
-        },
-        "scaled_targets": {
-          "local": 6.0,
-          "ru_pol": 4.0,
-          "ru_eco": 4.0,
-          "ru_safety": 3.0,
-          "world": 2.0,
-          "it": 1.0
-        },
-        "deficits": {
-          "local": -4.0,
-          "ru_pol": 3.0,
-          "ru_eco": 2.0,
-          "ru_safety": 2.0,
-          "world": 0.0,
-          "it": -3.0
-        },
-        "distribution_error": 14.0,
-        "subtype_counts": {
-          "severe_weather": 3,
-          "macro_economy": 2,
-          "major_it": 4,
-          "political_decision": 3,
-          "major_emergency": 1,
-          "violent_crime": 5,
-          "geopolitical_event": 1,
-          "earthquake": 1
-        },
-        "sequence": [
-          "local",
-          "local",
-          "ru_eco",
-          "it",
-          "local",
-          "it",
-          "local",
-          "it",
-          "ru_safety",
-          "local",
-          "world",
-          "local",
-          "ru_eco",
-          "it",
-          "local",
-          "local",
-          "local",
-          "world",
-          "local",
-          "ru_pol"
-        ],
-        "category_sequence": [
-          "sakh",
-          "sakh",
-          "ru_eco",
-          "it",
-          "sakh",
-          "it",
-          "sakh",
-          "it",
-          "ru_incident",
-          "sakh_chp",
-          "geo",
-          "sakh_chp",
-          "ru_eco",
-          "it",
-          "sakh_chp",
-          "sakh_chp",
-          "sakh_chp",
-          "geo",
-          "sakh_quake",
-          "ru_pol"
-        ],
-        "source_sequence": [
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "techmedia techmedia",
-          "sakhalinmedia.ru",
-          "guardian technology",
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "sakh.online",
-          "astv",
-          "bbc world",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "astv",
-          "sakhalinmedia.ru",
-          "astv",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakhalinmedia.ru"
-        ],
-        "retrospective_anomalies": [],
-        "valid_posts_counted": 20
-      },
-      "candidate_count": 21,
-      "approved_count": 8,
-      "rejected_count": 13,
-      "rejected_by_reason": {
-        "ordinary_weather_not_release_worthy": 1,
-        "importance_below_threshold": 10,
-        "local_mix_saturated_low_priority": 1,
-        "unsafe_or_malformed_headline": 1
-      },
-      "ai_review_requested": 0,
-      "ai_review_received": 0,
-      "selected_groups": [
-        "world",
-        "it"
-      ],
-      "projected_distribution_error": 14.0,
-      "projected_counts": {
-        "ru_eco": 2,
-        "it": 5,
-        "local": 8,
-        "ru_safety": 1,
-        "world": 3,
-        "ru_pol": 1
-      },
-      "projected_length": 20,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "Ukraine captures first Indonesian prisoner of war amid surge in Russian recruitment",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 90,
-          "utility": 90.0
-        },
-        {
-          "slot": 2,
-          "title": "Nvidia board reportedly meets to decide CEO Jensen Huang’s future as chip giant’s share price plunges – follow live",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 89,
-          "utility": -28.0
-        },
-        {
-          "slot": "backup",
-          "title": "US Treasury Secretary Scott Bessent relocated after alleged Iranian threats",
-          "category_key": "geo",
-          "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 87,
-          "utility": 57.0
-        },
-        {
-          "slot": "backup",
-          "title": "◻️ ◻️ ◻️ ◻️ ◻️ Уиткофф прибыл в Москву вместе с Кушнером для переговоров с Путиным об урегулировании на Украине. Это уже десятый визит спецпосланника президента США в Россию с февр",
-          "category_key": "geo",
-          "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 83,
-          "utility": 53.0
-        },
-        {
-          "slot": "backup",
-          "title": "Jensen Huang: What we know as pressure builds on embattled Nvidia CEO",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 85,
-          "utility": -65.0
-        },
-        {
-          "slot": "backup",
-          "title": "Who could replace Jensen Huang as Nvidia's chief executive",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 85,
-          "utility": -65.0
-        },
-        {
-          "slot": "backup",
-          "title": "Тима Кука пророчат на кресло нового СЕО Nvidia — букмекеры ставят на это 10%",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 82,
-          "utility": -68.0
-        },
-        {
-          "slot": "backup",
-          "title": "Дженсена Хуанга собираются УВОЛИТЬ из собственной NVIDIA — совет директоров готовится избавиться от основателя компании",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 80,
-          "utility": -70.0
-        }
-      ],
-      "rolling_balance_after": {
         "window": 20,
         "targets": {
           "local": 6,
@@ -16117,11 +15890,239 @@
         ],
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
+      },
+      "candidate_count": 17,
+      "approved_count": 9,
+      "rejected_count": 8,
+      "rejected_by_reason": {
+        "importance_below_threshold": 7,
+        "unsafe_or_malformed_headline": 1
+      },
+      "ai_review_requested": 0,
+      "ai_review_received": 0,
+      "selected_groups": [
+        "world",
+        "ru_eco"
+      ],
+      "projected_distribution_error": 14.0,
+      "projected_counts": {
+        "it": 5,
+        "local": 8,
+        "ru_safety": 1,
+        "world": 3,
+        "ru_eco": 2,
+        "ru_pol": 1
+      },
+      "projected_length": 20,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "Russian warship hit by Ukrainian drone in Gulf of Finland",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "military_security",
+          "seriousness": 94,
+          "utility": 94.0
+        },
+        {
+          "slot": 2,
+          "title": "Эксперт рассказал, как собрать вечный инвестиционный портфель",
+          "category_key": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "seriousness": 86,
+          "utility": 145.0
+        },
+        {
+          "slot": "backup",
+          "title": "From washing dishes at Denny’s to rockstar of AI: the rise and fall of Nvidia’s Jensen Huang",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 87,
+          "utility": -73.0
+        },
+        {
+          "slot": "backup",
+          "title": "From washing dishes at Denny’s to rockstar of AI: the rise and fall of Nvidia’s Jensen Huang",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 87,
+          "utility": -73.0
+        },
+        {
+          "slot": "backup",
+          "title": "Who is Nvidia's interim CEO Colette Kress - and who could take over permanently",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 85,
+          "utility": -75.0
+        },
+        {
+          "slot": "backup",
+          "title": "Jensen Huang: What we know as Nvidia CEO resigns after adultery admission",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 85,
+          "utility": -75.0
+        },
+        {
+          "slot": "backup",
+          "title": "Оверклокерша превратила видеокарту Nvidia с 8 ГБ в монстра с 80 ГБ памяти — для этого понадобилась платка за 600 рублей",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 84,
+          "utility": -76.0
+        },
+        {
+          "slot": "backup",
+          "title": "У Дженсена Хуанга нашли ТРЕТЬЮ любовницу — она тоже работает в Nvidia, сообщает Reuters",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 80,
+          "utility": -80.0
+        },
+        {
+          "slot": "backup",
+          "title": "Интернет на сегодня — всё . Сбои фиксируют у Claude, Steam, Xbox, Twitter, Microsoft и других сервисов",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 80,
+          "utility": -87.0
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 20,
+        "targets": {
+          "local": 6,
+          "ru_pol": 4,
+          "ru_eco": 4,
+          "ru_safety": 3,
+          "world": 2,
+          "it": 1
+        },
+        "target_percent": {
+          "local": 30.0,
+          "ru_pol": 20.0,
+          "ru_eco": 20.0,
+          "ru_safety": 15.0,
+          "world": 10.0,
+          "it": 5.0
+        },
+        "counts": {
+          "local": 8,
+          "ru_pol": 1,
+          "ru_eco": 2,
+          "ru_safety": 1,
+          "world": 2,
+          "it": 6
+        },
+        "scaled_targets": {
+          "local": 6.0,
+          "ru_pol": 4.0,
+          "ru_eco": 4.0,
+          "ru_safety": 3.0,
+          "world": 2.0,
+          "it": 1.0
+        },
+        "deficits": {
+          "local": -2.0,
+          "ru_pol": 3.0,
+          "ru_eco": 2.0,
+          "ru_safety": 2.0,
+          "world": 0.0,
+          "it": -5.0
+        },
+        "distribution_error": 14.0,
+        "subtype_counts": {
+          "major_it": 6,
+          "severe_weather": 1,
+          "political_decision": 3,
+          "major_emergency": 1,
+          "violent_crime": 5,
+          "geopolitical_event": 1,
+          "macro_economy": 2,
+          "earthquake": 1
+        },
+        "sequence": [
+          "it",
+          "local",
+          "it",
+          "local",
+          "it",
+          "ru_safety",
+          "local",
+          "world",
+          "local",
+          "ru_eco",
+          "it",
+          "local",
+          "local",
+          "local",
+          "world",
+          "local",
+          "ru_pol",
+          "it",
+          "ru_eco",
+          "it"
+        ],
+        "category_sequence": [
+          "it",
+          "sakh",
+          "it",
+          "sakh",
+          "it",
+          "ru_incident",
+          "sakh_chp",
+          "geo",
+          "sakh_chp",
+          "ru_eco",
+          "it",
+          "sakh_chp",
+          "sakh_chp",
+          "sakh_chp",
+          "geo",
+          "sakh_quake",
+          "ru_pol",
+          "it",
+          "ru_eco",
+          "it"
+        ],
+        "source_sequence": [
+          "techmedia techmedia",
+          "sakhalinmedia.ru",
+          "guardian technology",
+          "sakhalinmedia.ru",
+          "exploit exploitex",
+          "sakh.online",
+          "astv",
+          "bbc world",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "exploit exploitex",
+          "astv",
+          "sakhalinmedia.ru",
+          "astv",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "techmedia techmedia",
+          "sakhalinmedia.ru",
+          "exploit exploitex"
+        ],
+        "retrospective_anomalies": [],
+        "valid_posts_counted": 20
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-11-12T13:10:25+00:00",
+      "checked_at": "2026-11-12T21:02:44+00:00",
       "checked": 20,
       "passed": 20,
       "anomalies": [],
@@ -16142,11 +16143,11 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 21,
-      "missing_media_rejected": 5,
+      "ready_candidates": 17,
+      "missing_media_rejected": 12,
       "generic_media_rejected": 0,
       "photo_retries": 0,
-      "photo_published": 1,
+      "photo_published": 2,
       "deferred_this_run": 0,
       "pending_queue_size": 0,
       "pending_ready": 0,
@@ -16156,30 +16157,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 56,
+      "prechecked": 73,
       "checked": 7,
-      "passed": 1,
-      "rejected": 1,
-      "reclassified": 5,
-      "offtopic_reject": 29,
+      "passed": 2,
+      "rejected": 0,
+      "reclassified": 8,
+      "offtopic_reject": 44,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
       "audited_urls": 2
-    },
-    "independent_post_publication_monitor": {
-      "version": "post-audit-v1.1",
-      "checked_at": "2026-11-12T17:31:38+00:00",
-      "checked": 20,
-      "passed": 20,
-      "anomalies": [],
-      "corrected": [],
-      "deleted": [],
-      "failed_actions": [],
-      "unresolved": 0,
-      "unresolved_items": [],
-      "mutations_enabled": true,
-      "legacy_posts_mutated": false
     }
   },
   "pending_media_delivery": [],
@@ -16224,12 +16211,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 9,
+      "local": 8,
       "ru_pol": 1,
       "ru_eco": 2,
       "ru_safety": 1,
       "world": 2,
-      "it": 5
+      "it": 6
     },
     "scaled_targets": {
       "local": 6.0,
@@ -16240,27 +16227,25 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -3.0,
+      "local": -2.0,
       "ru_pol": 3.0,
       "ru_eco": 2.0,
       "ru_safety": 2.0,
       "world": 0.0,
-      "it": -4.0
+      "it": -5.0
     },
     "distribution_error": 14.0,
     "subtype_counts": {
-      "severe_weather": 2,
-      "macro_economy": 2,
-      "major_it": 5,
+      "major_it": 6,
+      "severe_weather": 1,
       "political_decision": 3,
       "major_emergency": 1,
       "violent_crime": 5,
       "geopolitical_event": 1,
+      "macro_economy": 2,
       "earthquake": 1
     },
     "sequence": [
-      "local",
-      "ru_eco",
       "it",
       "local",
       "it",
@@ -16278,11 +16263,11 @@
       "world",
       "local",
       "ru_pol",
+      "it",
+      "ru_eco",
       "it"
     ],
     "category_sequence": [
-      "sakh",
-      "ru_eco",
       "it",
       "sakh",
       "it",
@@ -16300,11 +16285,11 @@
       "geo",
       "sakh_quake",
       "ru_pol",
+      "it",
+      "ru_eco",
       "it"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "sakh.online",
       "techmedia techmedia",
       "sakhalinmedia.ru",
       "guardian technology",
@@ -16322,7 +16307,9 @@
       "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
-      "techmedia techmedia"
+      "techmedia techmedia",
+      "sakhalinmedia.ru",
+      "exploit exploitex"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -22238,7 +22225,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-12T17:31:38+00:00",
+    "checked_at": "2026-11-12T21:02:44+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -23186,7 +23173,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-11-12T13:10:16+00:00",
+    "checked_at_utc": "2026-11-12T21:02:36+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -23209,18 +23196,18 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-11-12T13:13:31+00:00",
+    "checked_at_utc": "2026-11-12T21:05:49+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-12T13:13:31+00:00",
+    "checked_at_utc": "2026-11-12T21:05:49+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 8,
+    "published": 2,
+    "director_approved": 9,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -23229,11 +23216,11 @@
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-11-12T13:13:31+00:00",
+    "checked_at_utc": "2026-11-12T21:05:49+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-11-13T00:13:31+11:00",
-      "candidates": 8,
+      "finished_sakhalin": "2026-11-13T08:05:49+11:00",
+      "candidates": 9,
       "queued_for_delivery": 0
     },
     "generation": {
