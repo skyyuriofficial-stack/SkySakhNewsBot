@@ -1,22 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-13T22:31:11+00:00",
-  "checked_at_sakhalin": "2026-11-14T09:31:07+11:00",
+  "checked_at_utc": "2026-11-13T22:40:01+00:00",
+  "checked_at_sakhalin": "2026-11-14T09:39:57+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 6.64,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-14T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-14T02:52:49+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -32,21 +21,21 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-14T02:52:49+11:00",
-    "age_hours": 6.64,
-    "published": 1
+    "finished_sakhalin": "2026-11-14T09:39:27+11:00",
+    "age_hours": 0.01,
+    "published": 0
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-13T15:52:49+00:00",
+    "checked_at_utc": "2026-11-13T22:39:28+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 17,
+    "published": 0,
+    "director_approved": 14,
     "ai_calls": 4,
-    "ai_api_fail": 4,
+    "ai_api_fail": 3,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -87,7 +76,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-13T22:31:09+00:00",
+    "checked_at": "2026-11-13T22:40:00+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -484,7 +473,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-13T22:31:04+00:00",
+    "checked_at_utc": "2026-11-13T22:39:54+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
