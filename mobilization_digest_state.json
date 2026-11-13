@@ -1,52 +1,24 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-11-11T09:26:17+00:00",
-  "last_run_sakhalin": "2026-11-11T20:26:17+11:00",
+  "last_run_utc": "2026-11-13T09:57:16+00:00",
+  "last_run_sakhalin": "2026-11-13T20:57:16+11:00",
   "mode": "evening",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 582,
-  "evidence_count": 10,
-  "evidence_hash": "36cdaf31b819649966066eddbceb63d8a08128bd33cd1736d86b93353a4a1c5f",
+  "telegram_message_id": 594,
+  "evidence_count": 9,
+  "evidence_hash": "82c676f3d783c7b678defe678c4abee76d94fb4fd8192faaa498a5aef9915741",
   "headline": "Юридический статус и повестки: что подтверждено, а что нет",
   "source_ids": [
-    2,
     3,
     1,
-    5,
+    2,
     6,
-    4
+    7,
+    4,
+    5
   ],
   "slots": {
-    "2026-10-19": {
-      "morning": {
-        "status": "ok",
-        "published_at_utc": "2026-10-18T21:51:21+00:00",
-        "published_at_sakhalin": "2026-10-19T08:51:21+11:00",
-        "telegram_message_id": 454,
-        "headline": "Внесен в Госдуму проект закона о административной ответственности",
-        "evidence_count": 3,
-        "evidence_hash": "28bb5cf050539498bbabd0873ea2062c48fe16bdfd6fcdec97f5dfaf16f91ac4",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      },
-      "evening": {
-        "status": "ok",
-        "published_at_utc": "2026-10-19T10:51:49+00:00",
-        "published_at_sakhalin": "2026-10-19T21:51:49+11:00",
-        "telegram_message_id": 459,
-        "headline": "Вечерняя сводка: законопроект о новой мобилизации не подтверждён",
-        "evidence_count": 2,
-        "evidence_hash": "57bc599cc23f8775586918f43d6fc0be4fce1e1e5d83130069eddc990080f792",
-        "source_ids": [
-          1,
-          2
-        ]
-      }
-    },
     "2026-10-20": {
       "morning": {
         "status": "ok",
@@ -594,13 +566,33 @@
           4
         ]
       }
+    },
+    "2026-11-13": {
+      "evening": {
+        "status": "ok",
+        "published_at_utc": "2026-11-13T09:57:16+00:00",
+        "published_at_sakhalin": "2026-11-13T20:57:16+11:00",
+        "telegram_message_id": 594,
+        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
+        "evidence_count": 9,
+        "evidence_hash": "82c676f3d783c7b678defe678c4abee76d94fb4fd8192faaa498a5aef9915741",
+        "source_ids": [
+          3,
+          1,
+          2,
+          6,
+          7,
+          4,
+          5
+        ]
+      }
     }
   },
   "last_attempt": {
     "status": "ok",
     "mode": "evening",
-    "at_utc": "2026-11-11T09:26:17+00:00",
-    "at_sakhalin": "2026-11-11T20:26:17+11:00"
+    "at_utc": "2026-11-13T09:57:16+00:00",
+    "at_sakhalin": "2026-11-13T20:57:16+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-11-11T01:11:54+00:00",
