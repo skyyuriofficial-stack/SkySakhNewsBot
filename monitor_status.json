@@ -1,34 +1,26 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-13T12:32:49+00:00",
-  "checked_at_sakhalin": "2026-11-13T23:32:44+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-13T15:53:21+00:00",
+  "checked_at_sakhalin": "2026-11-14T02:53:18+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_blocked",
-      "slot_sakhalin": "2026-11-13T22:00+11:00",
-      "required_slot_sakhalin": "2026-11-13T22:00+11:00",
-      "reason": "generation_provider_unavailable",
-      "attempted_at_utc": "2026-11-13T12:32:10+00:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-13T23:32:10+11:00",
+    "finished_sakhalin": "2026-11-14T02:52:49+11:00",
     "age_hours": 0.01,
-    "published": 0
+    "published": 1
   },
   "last_production_attempt": {
-    "status": "blocked",
-    "reason": "generation_provider_unavailable",
-    "checked_at_utc": "2026-11-13T12:32:10+00:00",
+    "status": "ok",
+    "reason": null,
+    "checked_at_utc": "2026-11-13T15:52:49+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
+    "published": 1,
     "director_approved": 17,
     "ai_calls": 4,
     "ai_api_fail": 4,
@@ -38,51 +30,17 @@
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-11-13",
+    "day_sakhalin": "2026-11-14",
     "status": "healthy",
     "morning": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-11-13T10:07:20+00:00",
-        "published_at_sakhalin": "2026-11-13T21:07:20+11:00",
-        "telegram_message_id": 595,
-        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
-        "evidence_count": 9,
-        "evidence_hash": "e6e927b2c837f4852fdadc2ef9edd78635f7ac12a831784a47abb290ac16bdfe",
-        "source_ids": [
-          3,
-          1,
-          2,
-          6,
-          7,
-          4,
-          5
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "evening": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-11-13T09:57:16+00:00",
-        "published_at_sakhalin": "2026-11-13T20:57:16+11:00",
-        "telegram_message_id": 594,
-        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
-        "evidence_count": 9,
-        "evidence_hash": "82c676f3d783c7b678defe678c4abee76d94fb4fd8192faaa498a5aef9915741",
-        "source_ids": [
-          3,
-          1,
-          2,
-          6,
-          7,
-          4,
-          5
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "last_attempt": {
       "status": "ok",
@@ -94,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-13T12:32:47+00:00",
+    "checked_at": "2026-11-13T15:53:20+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -107,19 +65,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 570,
-      "title": "Память ChatGPT может собрать о вас цифровое досье — предупреждает МВД РФ",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 571,
       "title": "Восьмилетний ребенок пострадал при ночном пожаре в Охе",
@@ -366,6 +311,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 596,
+      "title": "GitHub НЕ ВЗЛОМАЛИ — из-за сбоев у Claude, Телеграм-СМИ не смогли фактчекнуть простейшую новость, поэтому смешали в кучу факты, домыслы и кликбейт",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -412,16 +370,15 @@
     },
     "distribution_error": 10.0,
     "subtype_counts": {
-      "major_it": 4,
       "major_emergency": 1,
       "violent_crime": 7,
       "geopolitical_event": 1,
       "macro_economy": 4,
+      "major_it": 4,
       "political_decision": 2,
       "earthquake": 1
     },
     "sequence": [
-      "it",
       "ru_safety",
       "local",
       "world",
@@ -440,10 +397,10 @@
       "local",
       "ru_eco",
       "local",
-      "ru_eco"
+      "ru_eco",
+      "it"
     ],
     "category_sequence": [
-      "it",
       "ru_incident",
       "sakh_chp",
       "geo",
@@ -462,10 +419,10 @@
       "sakh_chp",
       "ru_eco",
       "sakh_chp",
-      "ru_eco"
+      "ru_eco",
+      "it"
     ],
     "source_sequence": [
-      "exploit exploitex",
       "sakh.online",
       "astv",
       "bbc world",
@@ -484,14 +441,15 @@
       "astv",
       "sakhalinmedia.ru",
       "sakh.online",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "exploit exploitex"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-13T12:32:41+00:00",
+    "checked_at_utc": "2026-11-13T15:53:16+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
