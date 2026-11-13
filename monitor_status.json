@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-13T09:54:46+00:00",
-  "checked_at_sakhalin": "2026-11-13T20:54:43+11:00",
+  "checked_at_utc": "2026-11-13T10:04:23+00:00",
+  "checked_at_sakhalin": "2026-11-13T21:04:18+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -13,19 +13,8 @@
       "last_attempt": {
         "status": "ok",
         "mode": "evening",
-        "at_utc": "2026-11-11T09:26:17+00:00",
-        "at_sakhalin": "2026-11-11T20:26:17+11:00"
-      }
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "evening",
-      "expected_by_sakhalin": "2026-11-13T19:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "evening",
-        "at_utc": "2026-11-11T09:26:17+00:00",
-        "at_sakhalin": "2026-11-11T20:26:17+11:00"
+        "at_utc": "2026-11-13T09:57:16+00:00",
+        "at_sakhalin": "2026-11-13T20:57:16+11:00"
       }
     }
   ],
@@ -33,7 +22,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-13T20:33:55+11:00",
-    "age_hours": 0.35,
+    "age_hours": 0.51,
     "published": 1
   },
   "last_production_attempt": {
@@ -62,14 +51,31 @@
     },
     "evening": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-11-13T09:57:16+00:00",
+        "published_at_sakhalin": "2026-11-13T20:57:16+11:00",
+        "telegram_message_id": 594,
+        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
+        "evidence_count": 9,
+        "evidence_hash": "82c676f3d783c7b678defe678c4abee76d94fb4fd8192faaa498a5aef9915741",
+        "source_ids": [
+          3,
+          1,
+          2,
+          6,
+          7,
+          4,
+          5
+        ]
+      }
     },
     "last_attempt": {
       "status": "ok",
       "mode": "evening",
-      "at_utc": "2026-11-11T09:26:17+00:00",
-      "at_sakhalin": "2026-11-11T20:26:17+11:00"
+      "at_utc": "2026-11-13T09:57:16+00:00",
+      "at_sakhalin": "2026-11-13T20:57:16+11:00"
     },
     "missing": [
       {
@@ -79,26 +85,15 @@
         "last_attempt": {
           "status": "ok",
           "mode": "evening",
-          "at_utc": "2026-11-11T09:26:17+00:00",
-          "at_sakhalin": "2026-11-11T20:26:17+11:00"
-        }
-      },
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "evening",
-        "expected_by_sakhalin": "2026-11-13T19:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "evening",
-          "at_utc": "2026-11-11T09:26:17+00:00",
-          "at_sakhalin": "2026-11-11T20:26:17+11:00"
+          "at_utc": "2026-11-13T09:57:16+00:00",
+          "at_sakhalin": "2026-11-13T20:57:16+11:00"
         }
       }
     ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-13T09:54:45+00:00",
+    "checked_at": "2026-11-13T10:04:21+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -495,7 +490,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-13T09:54:41+00:00",
+    "checked_at_utc": "2026-11-13T10:04:16+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
