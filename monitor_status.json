@@ -1,22 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-13T09:28:22+00:00",
-  "checked_at_sakhalin": "2026-11-13T20:28:18+11:00",
+  "checked_at_utc": "2026-11-13T09:34:30+00:00",
+  "checked_at_sakhalin": "2026-11-13T20:34:26+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 4.97,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-13T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-13T15:30:27+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -43,19 +32,19 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-13T15:30:27+11:00",
-    "age_hours": 4.97,
-    "published": 2
+    "finished_sakhalin": "2026-11-13T20:33:55+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-13T04:30:27+00:00",
+    "checked_at_utc": "2026-11-13T09:33:55+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
-    "director_approved": 17,
+    "published": 1,
+    "director_approved": 15,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -109,7 +98,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-13T09:28:21+00:00",
+    "checked_at": "2026-11-13T09:34:29+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -122,19 +111,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 568,
-      "title": "В селе Холмского района ввели режим ЧС из-за метели",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 570,
       "title": "Память ChatGPT может собрать о вас цифровое досье — предупреждает МВД РФ",
@@ -381,6 +357,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 593,
+      "title": "Исследование ВТБ и Литрес: 75% россиян считают, что чтение помогает справиться с хандрой",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -402,9 +391,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 9,
+      "local": 8,
       "ru_pol": 1,
-      "ru_eco": 3,
+      "ru_eco": 4,
       "ru_safety": 1,
       "world": 2,
       "it": 4
@@ -418,25 +407,24 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -3.0,
+      "local": -2.0,
       "ru_pol": 3.0,
-      "ru_eco": 1.0,
+      "ru_eco": 0.0,
       "ru_safety": 2.0,
       "world": 0.0,
       "it": -3.0
     },
-    "distribution_error": 12.0,
+    "distribution_error": 10.0,
     "subtype_counts": {
-      "political_decision": 3,
       "major_it": 4,
       "major_emergency": 1,
       "violent_crime": 7,
       "geopolitical_event": 1,
-      "macro_economy": 3,
+      "macro_economy": 4,
+      "political_decision": 2,
       "earthquake": 1
     },
     "sequence": [
-      "local",
       "it",
       "ru_safety",
       "local",
@@ -455,10 +443,10 @@
       "it",
       "local",
       "ru_eco",
-      "local"
+      "local",
+      "ru_eco"
     ],
     "category_sequence": [
-      "sakh",
       "it",
       "ru_incident",
       "sakh_chp",
@@ -477,10 +465,10 @@
       "it",
       "sakh_chp",
       "ru_eco",
-      "sakh_chp"
+      "sakh_chp",
+      "ru_eco"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "exploit exploitex",
       "sakh.online",
       "astv",
@@ -499,14 +487,15 @@
       "exploit exploitex",
       "astv",
       "sakhalinmedia.ru",
-      "sakh.online"
+      "sakh.online",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-13T09:28:16+00:00",
+    "checked_at_utc": "2026-11-13T09:34:23+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -536,12 +525,12 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 12.0,
+      "distribution_error": 10.0,
       "limit": 8.0,
       "counts": {
-        "local": 9,
+        "local": 8,
         "ru_pol": 1,
-        "ru_eco": 3,
+        "ru_eco": 4,
         "ru_safety": 1,
         "world": 2,
         "it": 4
@@ -555,9 +544,9 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.0,
+        "local": -2.0,
         "ru_pol": 3.0,
-        "ru_eco": 1.0,
+        "ru_eco": 0.0,
         "ru_safety": 2.0,
         "world": 0.0,
         "it": -3.0
