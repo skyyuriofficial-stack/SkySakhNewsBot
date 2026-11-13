@@ -1,14 +1,19 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-13T07:50:05+00:00",
-  "checked_at_sakhalin": "2026-11-13T18:49:59+11:00",
+  "checked_at_utc": "2026-11-13T09:28:22+00:00",
+  "checked_at_sakhalin": "2026-11-13T20:28:18+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
     {
+      "type": "publisher_stale",
+      "age_hours": 4.97,
+      "limit_hours": 4.5
+    },
+    {
       "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-13T16:00+11:00",
+      "slot_sakhalin": "2026-11-13T19:00+11:00",
       "grace_minutes": 45,
       "last_finished_sakhalin": "2026-11-13T15:30:27+11:00"
     },
@@ -22,13 +27,24 @@
         "at_utc": "2026-11-11T09:26:17+00:00",
         "at_sakhalin": "2026-11-11T20:26:17+11:00"
       }
+    },
+    {
+      "type": "mobilization_digest_missing",
+      "slot": "evening",
+      "expected_by_sakhalin": "2026-11-13T19:45:00+11:00",
+      "last_attempt": {
+        "status": "ok",
+        "mode": "evening",
+        "at_utc": "2026-11-11T09:26:17+00:00",
+        "at_sakhalin": "2026-11-11T20:26:17+11:00"
+      }
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-13T15:30:27+11:00",
-    "age_hours": 3.33,
+    "age_hours": 4.97,
     "published": 2
   },
   "last_production_attempt": {
@@ -56,7 +72,7 @@
       "record": {}
     },
     "evening": {
-      "due": false,
+      "due": true,
       "published": false,
       "record": {}
     },
@@ -77,12 +93,23 @@
           "at_utc": "2026-11-11T09:26:17+00:00",
           "at_sakhalin": "2026-11-11T20:26:17+11:00"
         }
+      },
+      {
+        "type": "mobilization_digest_missing",
+        "slot": "evening",
+        "expected_by_sakhalin": "2026-11-13T19:45:00+11:00",
+        "last_attempt": {
+          "status": "ok",
+          "mode": "evening",
+          "at_utc": "2026-11-11T09:26:17+00:00",
+          "at_sakhalin": "2026-11-11T20:26:17+11:00"
+        }
       }
     ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-13T07:50:03+00:00",
+    "checked_at": "2026-11-13T09:28:21+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -479,7 +506,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-13T07:49:56+00:00",
+    "checked_at_utc": "2026-11-13T09:28:16+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
