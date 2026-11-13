@@ -1,22 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-13T04:23:23+00:00",
-  "checked_at_sakhalin": "2026-11-13T15:23:19+11:00",
+  "checked_at_utc": "2026-11-13T04:31:01+00:00",
+  "checked_at_sakhalin": "2026-11-13T15:30:56+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 4.54,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-13T13:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-13T10:50:51+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -32,19 +21,19 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-13T10:50:51+11:00",
-    "age_hours": 4.54,
-    "published": 1
+    "finished_sakhalin": "2026-11-13T15:30:27+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-12T23:50:51+00:00",
+    "checked_at_utc": "2026-11-13T04:30:27+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 10,
+    "published": 2,
+    "director_approved": 17,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -87,7 +76,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-13T04:23:22+00:00",
+    "checked_at": "2026-11-13T04:30:59+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -100,32 +89,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 566,
-      "title": "Метели и ураганный ветер продолжатся на Сахалине и Курилах 8 ноября",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
-    {
-      "message_id": 567,
-      "title": "Активисты разгромили строящийся数据中心 Microsoft в Амстердаме",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 568,
       "title": "В селе Холмского района ввели режим ЧС из-за метели",
@@ -359,6 +322,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 591,
+      "title": "Володин предложил проверить обоснованность тарифов ЖКУ и цен на жилье",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
+    },
+    {
+      "message_id": 592,
+      "title": "Медведь напал на женщину с собаками на Сахалине: два питомца погибли, защищая хозяйку",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -382,10 +371,10 @@
     "counts": {
       "local": 9,
       "ru_pol": 1,
-      "ru_eco": 2,
+      "ru_eco": 3,
       "ru_safety": 1,
       "world": 2,
-      "it": 5
+      "it": 4
     },
     "scaled_targets": {
       "local": 6.0,
@@ -398,25 +387,22 @@
     "deficits": {
       "local": -3.0,
       "ru_pol": 3.0,
-      "ru_eco": 2.0,
+      "ru_eco": 1.0,
       "ru_safety": 2.0,
       "world": 0.0,
-      "it": -4.0
+      "it": -3.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
-      "severe_weather": 1,
-      "major_it": 5,
       "political_decision": 3,
+      "major_it": 4,
       "major_emergency": 1,
-      "violent_crime": 6,
+      "violent_crime": 7,
       "geopolitical_event": 1,
-      "macro_economy": 2,
+      "macro_economy": 3,
       "earthquake": 1
     },
     "sequence": [
-      "local",
-      "it",
       "local",
       "it",
       "ru_safety",
@@ -434,11 +420,11 @@
       "it",
       "ru_eco",
       "it",
+      "local",
+      "ru_eco",
       "local"
     ],
     "category_sequence": [
-      "sakh",
-      "it",
       "sakh",
       "it",
       "ru_incident",
@@ -456,11 +442,11 @@
       "it",
       "ru_eco",
       "it",
+      "sakh_chp",
+      "ru_eco",
       "sakh_chp"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "guardian technology",
       "sakhalinmedia.ru",
       "exploit exploitex",
       "sakh.online",
@@ -478,14 +464,16 @@
       "techmedia techmedia",
       "sakhalinmedia.ru",
       "exploit exploitex",
-      "astv"
+      "astv",
+      "sakhalinmedia.ru",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-13T04:23:17+00:00",
+    "checked_at_utc": "2026-11-13T04:30:53+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -515,15 +503,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 14.0,
+      "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
         "local": 9,
         "ru_pol": 1,
-        "ru_eco": 2,
+        "ru_eco": 3,
         "ru_safety": 1,
         "world": 2,
-        "it": 5
+        "it": 4
       },
       "targets": {
         "local": 6,
@@ -536,10 +524,10 @@
       "deficits": {
         "local": -3.0,
         "ru_pol": 3.0,
-        "ru_eco": 2.0,
+        "ru_eco": 1.0,
         "ru_safety": 2.0,
         "world": 0.0,
-        "it": -4.0
+        "it": -3.0
       }
     }
   ]
