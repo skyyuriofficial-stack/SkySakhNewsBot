@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-13T23:48:46+00:00",
-  "checked_at_sakhalin": "2026-11-14T10:48:42+11:00",
+  "checked_at_utc": "2026-11-14T00:01:19+00:00",
+  "checked_at_sakhalin": "2026-11-14T11:01:13+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-14T10:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-14T09:39:27+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -27,21 +21,21 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-14T09:39:27+11:00",
-    "age_hours": 1.16,
-    "published": 0
+    "finished_sakhalin": "2026-11-14T11:00:44+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-13T22:39:28+00:00",
+    "checked_at_utc": "2026-11-14T00:00:44+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 14,
+    "published": 1,
+    "director_approved": 16,
     "ai_calls": 4,
-    "ai_api_fail": 3,
+    "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -82,7 +76,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-13T23:48:45+00:00",
+    "checked_at": "2026-11-14T00:01:17+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -95,19 +89,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 571,
-      "title": "Восьмилетний ребенок пострадал при ночном пожаре в Охе",
-      "category_key": "ru_incident",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_incident",
-      "title_issues": []
-    },
     {
       "message_id": 572,
       "title": "12 ударов ножом нанесла разъяренная сахалинка сожителю - мужчина умер",
@@ -354,6 +335,19 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 597,
+      "title": "Тысячи жителей Сахалина оказались обесточены из-за аварии на сетях",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -375,10 +369,10 @@
       "it": 5.0
     },
     "counts": {
-      "local": 8,
+      "local": 9,
       "ru_pol": 1,
       "ru_eco": 4,
-      "ru_safety": 1,
+      "ru_safety": 0,
       "world": 2,
       "it": 4
     },
@@ -391,25 +385,24 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -2.0,
+      "local": -3.0,
       "ru_pol": 3.0,
       "ru_eco": 0.0,
-      "ru_safety": 2.0,
+      "ru_safety": 3.0,
       "world": 0.0,
       "it": -3.0
     },
-    "distribution_error": 10.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
-      "major_emergency": 1,
       "violent_crime": 7,
       "geopolitical_event": 1,
       "macro_economy": 4,
       "major_it": 4,
       "political_decision": 2,
-      "earthquake": 1
+      "earthquake": 1,
+      "major_emergency": 1
     },
     "sequence": [
-      "ru_safety",
       "local",
       "world",
       "local",
@@ -428,10 +421,10 @@
       "ru_eco",
       "local",
       "ru_eco",
-      "it"
+      "it",
+      "local"
     ],
     "category_sequence": [
-      "ru_incident",
       "sakh_chp",
       "geo",
       "sakh_chp",
@@ -450,10 +443,10 @@
       "ru_eco",
       "sakh_chp",
       "ru_eco",
-      "it"
+      "it",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "sakh.online",
       "astv",
       "bbc world",
       "sakh.online",
@@ -472,14 +465,15 @@
       "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
-      "exploit exploitex"
+      "exploit exploitex",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-13T23:48:39+00:00",
+    "checked_at_utc": "2026-11-14T00:01:10+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -509,13 +503,13 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 10.0,
+      "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
-        "local": 8,
+        "local": 9,
         "ru_pol": 1,
         "ru_eco": 4,
-        "ru_safety": 1,
+        "ru_safety": 0,
         "world": 2,
         "it": 4
       },
@@ -528,10 +522,10 @@
         "it": 1
       },
       "deficits": {
-        "local": -2.0,
+        "local": -3.0,
         "ru_pol": 3.0,
         "ru_eco": 0.0,
-        "ru_safety": 2.0,
+        "ru_safety": 3.0,
         "world": 0.0,
         "it": -3.0
       }
