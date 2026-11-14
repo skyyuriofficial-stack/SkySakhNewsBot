@@ -466,7 +466,8 @@
     "https://sakhalinmedia.ru/news/2680926/",
     "https://t.me/exploitex/37842",
     "https://astv.ru/news/society/2026-11-14-tysyachi-zhitelej-sahalina-lishilis-elektrichestva-iz-za-avarii-na-setyah",
-    "https://www.bbc.co.uk/news/articles/c5gm3gnwl42eo?at_medium=RSS&at_campaign=rss"
+    "https://www.bbc.co.uk/news/articles/c5gm3gnwl42eo?at_medium=RSS&at_campaign=rss",
+    "https://astv.ru/news/criminal/2026-11-15-sem-chelovek-evakuirovali-vo-vremya-pozhara-v-mnogoetazhke-v-yuzhno-sahalinske"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -936,191 +937,11 @@
     "8bb7b2df59e5d01eecf28c987d56d69b1900ebb5",
     "c21cedf24817cb3a407d38be620c40a115b0ff87",
     "6244d38a4e1eaa0340101962258ffc480ca63298",
-    "97e5b3189d886d7e25357d0d94c1960e23ee332f"
+    "97e5b3189d886d7e25357d0d94c1960e23ee332f",
+    "2ef03624be76906cc253e0236201f5ed4535ee9d"
   ],
-  "last_run_sakhalin": "2026-11-15T08:34:40+11:00",
+  "last_run_sakhalin": "2026-11-15T10:08:27+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-10-23T09:39:37+11:00",
-      "source": "SakhalinMedia.ru",
-      "category": "🇷🇺 Россия / политика",
-      "category_key": "ru_pol",
-      "title": "Путин подписал указ о назначении Кожемяко полпредом президента в ДФО",
-      "url": "https://sakhalinmedia.ru/news/2659314/",
-      "image_url": "https://sakhalinmedia.ru/f/big/6468/6467649.jpg?6f205e62c3b20b81fdebccd4363ec001",
-      "image_hash": "1e87dbfb60923be80402addbf7cca9b807b562aa",
-      "topic_cluster": "ru_pol:путин_подписал_назначении_кожемяко_полпредом_президента",
-      "published_at": "2026-10-22T22:12:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "ru_pol",
-        "corrected_category": "ru_pol",
-        "group": "ru_pol",
-        "event_type": "political_decision",
-        "subtype": "political_decision",
-        "seriousness": 89,
-        "threshold": 75,
-        "selection_utility": 176.0,
-        "slot": 2,
-        "risks": [],
-        "title_original": "Путин подписал указ о назначении Кожемяко полпредом президента в ДФО",
-        "title_corrected": "Путин подписал указ о назначении Кожемяко полпредом президента в ДФО",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "Президент России Владимир Путин подписал указ о назначении Олега Кожемяко на должность заместителя председателя правительства РФ — полномочного представителя президента РФ в ДФО. Соответствующий документ, опубликованный 22 октября, также освобождает его от занимаемой должности губернатора Приморского края. Указ вступает в силу с момента подписания. Соответствующий указ президент России подписал 22 октября. На посту полпреда в ДФО Олег Кожемяко сменил Юрия Трутнева , который совмещал должности вице-премьера и полномочного представителя с 2013 года. В свою очередь, Юрий Трутнев назначен помощником Президента Российской Федерации. Олег Кожемяко возглавлял Приморский край с 2018 года. До этого он имел богатый управленческий опыт, руководя Корякским автономным округом, Амурской и Сахалинской областями. Политологи оценили управленческий опыт Олега Кожемяко и обозначили ключевые задачи в ДФО. В связи с досрочным прекращением полномочий главы Приморья временно исполнять обязанности губернатора до избрания нового руководителя будет экс-мэр Владивостока Константин Шестаков .",
-      "title_original": null,
-      "footer": "РОССИЯ | ПОЛИТИКА",
-      "published_row": {
-        "reject": false,
-        "title_ru": "Путин подписал указ о назначении Кожемяко полпредом президента в ДФО",
-        "body": [
-          "Соответствующий документ, опубликованный 22 октября, также освобождает его от занимаемой должности губернатора Приморского края.",
-          "На посту полпреда в ДФО Олег Кожемяко сменил Юрия Трутнева , который совмещал должности вице-премьера и полномочного представителя с 2013 года."
-        ],
-        "footer": "РОССИЯ | ПОЛИТИКА",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": [],
-          "reclassified_from": "sakh",
-          "reclassified_to": "ru_pol"
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_pol",
-          "corrected_category": "ru_pol",
-          "group": "ru_pol",
-          "event_type": "political_decision",
-          "subtype": "political_decision",
-          "seriousness": 89,
-          "threshold": 75,
-          "selection_utility": 176.0,
-          "slot": 2,
-          "risks": [],
-          "title_original": "Путин подписал указ о назначении Кожемяко полпредом президента в ДФО",
-          "title_corrected": "Путин подписал указ о назначении Кожемяко полпредом президента в ДФО",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "ru_pol",
-          "final_category": "ru_pol",
-          "event_type": "political_decision",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.7",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "ru_pol",
-            "corrected_category": "ru_pol",
-            "group": "ru_pol",
-            "event_type": "political_decision",
-            "subtype": "political_decision",
-            "seriousness": 88,
-            "threshold": 75,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "Путин подписал указ о назначении Кожемяко полпредом президента в ДФО",
-            "title_corrected": "Путин подписал указ о назначении Кожемяко полпредом президента в ДФО",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "🇷🇺 Россия / политика\n\n<b>Путин подписал указ о назначении Кожемяко полпредом президента в ДФО</b>\n\nСоответствующий документ, опубликованный 22 октября, также освобождает его от занимаемой должности губернатора Приморского края.\n\nНа посту полпреда в ДФО Олег Кожемяко сменил Юрия Трутнева , который совмещал должности вице-премьера и полномочного представителя с 2013 года.\n\nРОССИЯ | ПОЛИТИКА · <a href=\"https://sakhalinmedia.ru/news/2659314/\">SakhalinMedia.ru</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "ru_pol",
-        "final_category": "ru_pol",
-        "event_type": "political_decision",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.7",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_pol",
-          "corrected_category": "ru_pol",
-          "group": "ru_pol",
-          "event_type": "political_decision",
-          "subtype": "political_decision",
-          "seriousness": 88,
-          "threshold": 75,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Путин подписал указ о назначении Кожемяко полпредом президента в ДФО",
-          "title_corrected": "Путин подписал указ о назначении Кожемяко полпредом президента в ДФО",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 490,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": [],
-        "reclassified_from": "sakh",
-        "reclassified_to": "ru_pol"
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-29T08:58:22+00:00"
-      }
-    },
     {
       "time_sakhalin": "2026-10-23T09:40:08+11:00",
       "source": "TechMedia (@techmedia)",
@@ -12014,7 +11835,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:37+00:00"
+        "checked_at": "2026-11-14T22:58:15+00:00"
       }
     },
     {
@@ -12191,7 +12012,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:37+00:00"
+        "checked_at": "2026-11-14T22:58:15+00:00"
       }
     },
     {
@@ -12376,7 +12197,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:37+00:00"
+        "checked_at": "2026-11-14T22:58:16+00:00"
       }
     },
     {
@@ -12553,7 +12374,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:38+00:00"
+        "checked_at": "2026-11-14T22:58:16+00:00"
       }
     },
     {
@@ -12734,7 +12555,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:38+00:00"
+        "checked_at": "2026-11-14T22:58:16+00:00"
       }
     },
     {
@@ -12911,7 +12732,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:38+00:00"
+        "checked_at": "2026-11-14T22:58:16+00:00"
       }
     },
     {
@@ -13092,7 +12913,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:38+00:00"
+        "checked_at": "2026-11-14T22:58:16+00:00"
       }
     },
     {
@@ -13277,7 +13098,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:38+00:00"
+        "checked_at": "2026-11-14T22:58:17+00:00"
       }
     },
     {
@@ -13454,7 +13275,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:38+00:00"
+        "checked_at": "2026-11-14T22:58:17+00:00"
       }
     },
     {
@@ -13635,7 +13456,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:38+00:00"
+        "checked_at": "2026-11-14T22:58:17+00:00"
       }
     },
     {
@@ -13820,7 +13641,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:38+00:00"
+        "checked_at": "2026-11-14T22:58:17+00:00"
       }
     },
     {
@@ -14005,7 +13826,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:38+00:00"
+        "checked_at": "2026-11-14T22:58:17+00:00"
       }
     },
     {
@@ -14182,7 +14003,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:39+00:00"
+        "checked_at": "2026-11-14T22:58:17+00:00"
       }
     },
     {
@@ -14363,7 +14184,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:39+00:00"
+        "checked_at": "2026-11-14T22:58:18+00:00"
       }
     },
     {
@@ -14548,7 +14369,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:39+00:00"
+        "checked_at": "2026-11-14T22:58:18+00:00"
       }
     },
     {
@@ -14725,7 +14546,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:39+00:00"
+        "checked_at": "2026-11-14T22:58:18+00:00"
       }
     },
     {
@@ -14910,7 +14731,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:39+00:00"
+        "checked_at": "2026-11-14T22:58:18+00:00"
       }
     },
     {
@@ -15087,7 +14908,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:39+00:00"
+        "checked_at": "2026-11-14T22:58:18+00:00"
       }
     },
     {
@@ -15264,7 +15085,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-14T21:23:39+00:00"
+        "checked_at": "2026-11-14T22:58:19+00:00"
       }
     },
     {
@@ -15450,11 +15271,183 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-11-14T21:23:40+00:00",
+        "checked_at": "2026-11-14T22:58:19+00:00",
         "reason": "approved",
         "issues": [
           "foreign_translation_evidence_missing"
         ]
+      }
+    },
+    {
+      "time_sakhalin": "2026-11-15T10:00:38+11:00",
+      "source": "ASTV",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "Семь человек эвакуировали во время пожара в многоэтажке в Южно-Сахалинске",
+      "url": "https://astv.ru/news/criminal/2026-11-15-sem-chelovek-evakuirovali-vo-vremya-pozhara-v-mnogoetazhke-v-yuzhno-sahalinske",
+      "image_url": "https://astv.ru/content/NewsImage/46/b2/46b2ea91-8c6f-49fe-a7b6-26292f1060b1_3.jpg",
+      "image_hash": "68c26c1e9f14bbb2651435d14ae6cd9acb4f3c12",
+      "topic_cluster": "sakh_chp:человек_эвакуировали_время_пожара_многоэтажке_сахалинске",
+      "published_at": "2026-11-14T13:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "sakh_chp",
+        "corrected_category": "sakh_chp",
+        "group": "local",
+        "event_type": "major_emergency",
+        "subtype": "major_emergency",
+        "seriousness": 93,
+        "threshold": 70,
+        "selection_utility": 13.0,
+        "slot": 1,
+        "risks": [],
+        "title_original": "Семь человек эвакуировали во время пожара в многоэтажке в Южно-Сахалинске",
+        "title_corrected": "Семь человек эвакуировали во время пожара в многоэтажке в Южно-Сахалинске",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Появились подробности происшествия на улице Пуркаева Чуть более десяти минут потребовалось пожарным, чтобы потушить пламя в многоэтажке на улице Пуркаева. Очаг располагался на крыльце подъезда, однако задымление распространилось по всем этажам - из-за этого эвакуировали 7 человек. Подробности происшествия , которое случилось днем 14 ноября, рассказали в ГУ МЧС России по Сахалинской области. Сигнал поступил в 12:14. Огнеборцы были на месте через 6 минут. В это время мусор открытым пламенем горел на крыльце подъезда. \"В 12:33 ликвидировано открытое горение на 5 квадратных метрах. На месте работали 11 сотрудников и 3 единицы техники ведомства. Люди не пострадали\", - отметили в ведомстве.",
+      "title_original": null,
+      "footer": "ЧП | САХАЛИН",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Семь человек эвакуировали во время пожара в многоэтажке в Южно-Сахалинске",
+        "body": [
+          "Появились подробности происшествия на улице Пуркаева Чуть более десяти минут потребовалось пожарным, чтобы потушить пламя в многоэтажке на улице Пуркаева.",
+          "Очаг располагался на крыльце подъезда, однако задымление распространилось по всем этажам - из-за этого эвакуировали 7 человек."
+        ],
+        "footer": "ЧП | САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 93,
+          "threshold": 70,
+          "selection_utility": 13.0,
+          "slot": 1,
+          "risks": [],
+          "title_original": "Семь человек эвакуировали во время пожара в многоэтажке в Южно-Сахалинске",
+          "title_corrected": "Семь человек эвакуировали во время пожара в многоэтажке в Южно-Сахалинске",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "sakh_chp",
+          "final_category": "sakh_chp",
+          "event_type": "major_emergency",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.8",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "sakh_chp",
+            "corrected_category": "sakh_chp",
+            "group": "local",
+            "event_type": "major_emergency",
+            "subtype": "major_emergency",
+            "seriousness": 90,
+            "threshold": 70,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Семь человек эвакуировали во время пожара в многоэтажке в Южно-Сахалинске",
+            "title_corrected": "Семь человек эвакуировали во время пожара в многоэтажке в Южно-Сахалинске",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "📍 Сахалин\n\n<b>Семь человек эвакуировали во время пожара в многоэтажке в Южно-Сахалинске</b>\n\nПоявились подробности происшествия на улице Пуркаева Чуть более десяти минут потребовалось пожарным, чтобы потушить пламя в многоэтажке на улице Пуркаева.\n\nОчаг располагался на крыльце подъезда, однако задымление распространилось по всем этажам - из-за этого эвакуировали 7 человек.\n\nЧП | САХАЛИН · <a href=\"https://astv.ru/news/criminal/2026-11-15-sem-chelovek-evakuirovali-vo-vremya-pozhara-v-mnogoetazhke-v-yuzhno-sahalinske\">ASTV</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "major_emergency",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.8",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "subtype": "major_emergency",
+          "seriousness": 90,
+          "threshold": 70,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Семь человек эвакуировали во время пожара в многоэтажке в Южно-Сахалинске",
+          "title_corrected": "Семь человек эвакуировали во время пожара в многоэтажке в Южно-Сахалинске",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 600,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": []
       }
     }
   ],
@@ -15683,11 +15676,11 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-11-15T08:23:33+11:00",
+    "started_sakhalin": "2026-11-15T09:58:11+11:00",
     "status": "ok",
-    "candidates": 10,
-    "published": 0,
-    "local_candidates": 0,
+    "candidates": 11,
+    "published": 1,
+    "local_candidates": 1,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -15714,41 +15707,41 @@
           "source": "Sakh.online HTML",
           "status": "ok",
           "entries": 20,
-          "recent": 8
+          "recent": 10
         }
       ]
     },
-    "finished_sakhalin": "2026-11-15T08:34:40+11:00",
+    "finished_sakhalin": "2026-11-15T10:08:27+11:00",
     "stats": {
-      "rss_seen": 158,
-      "old_skip": 69,
+      "rss_seen": 142,
+      "old_skip": 70,
       "google_skip": 5,
       "duplicate_skip": 0,
-      "low_info_skip": 16,
-      "category_skip": 31,
+      "low_info_skip": 15,
+      "category_skip": 28,
       "no_image_skip": 0,
-      "bad_image_skip": 10,
-      "logo_image_skip": 15,
+      "bad_image_skip": 11,
+      "logo_image_skip": 8,
       "text_card_image_skip": 5,
-      "candidates": 22,
+      "candidates": 23,
       "rewrite_retry": 4,
       "editorial_skip": 10,
       "telegram_fail": 0,
-      "published": 0,
+      "published": 1,
       "telegram_source_attempt": 4,
       "telegram_source_fail": 0,
-      "telegram_source_seen": 65,
-      "telegram_source_candidates": 28,
+      "telegram_source_seen": 68,
+      "telegram_source_candidates": 29,
       "ai_calls": 4,
       "ai_budget_exhausted": 1,
       "ai_api_fail": 4,
       "evidence_reject": 0,
       "validation_reject": 0,
-      "extractive_fallback": 0,
-      "extractive_first": 0,
-      "editorial_prechecked": 68,
-      "editorial_gate_checked": 10,
-      "editorial_gate_pass": 0,
+      "extractive_fallback": 1,
+      "extractive_first": 1,
+      "editorial_prechecked": 58,
+      "editorial_gate_checked": 11,
+      "editorial_gate_pass": 1,
       "editorial_gate_reject": 0,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 0,
@@ -15756,9 +15749,9 @@
       "editorial_title_reject": 0,
       "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 6,
-      "editorial_offtopic_reject": 36,
-      "openrouter_empty_content": 6,
+      "editorial_reclassified": 5,
+      "editorial_offtopic_reject": 25,
+      "openrouter_empty_content": 8,
       "openrouter_model_fallback": 0,
       "openrouter_attempts": 12,
       "openrouter_retries": 8,
@@ -15768,10 +15761,10 @@
       "editorial_grounded_translation_fallback": 0,
       "media_required_skip": 10,
       "media_generic_skip": 0,
-      "media_ready_candidates": 22,
+      "media_ready_candidates": 23,
       "photo_retry": 0,
-      "photo_publish": 0,
-      "photo_upload_original": 0,
+      "photo_publish": 1,
+      "photo_upload_original": 1,
       "photo_upload_reencoded": 0,
       "photo_upload_plain_caption": 0,
       "photo_remote_url": 0,
@@ -15782,14 +15775,14 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 22,
-      "director_approved": 10,
+      "director_seen": 23,
+      "director_approved": 11,
       "director_rejected": 12,
       "director_reclassified": 0,
       "director_title_corrected": 3,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
-      "director_final_checked": 0,
+      "director_final_checked": 1,
       "director_final_autocorrected": 0,
       "director_final_reject": 0,
       "director_pending_retired": 0,
@@ -15928,25 +15921,24 @@
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
       },
-      "candidate_count": 22,
-      "approved_count": 10,
+      "candidate_count": 23,
+      "approved_count": 11,
       "rejected_count": 12,
       "rejected_by_reason": {
-        "ordinary_weather_not_release_worthy": 1,
-        "importance_below_threshold": 10,
-        "low_scale_incident_not_release_worthy": 1
+        "low_scale_incident_not_release_worthy": 1,
+        "importance_below_threshold": 11
       },
       "ai_review_requested": 0,
       "ai_review_received": 0,
       "selected_groups": [
-        "world",
-        "it"
+        "local",
+        "world"
       ],
       "projected_distribution_error": 12.0,
       "projected_counts": {
         "ru_eco": 4,
-        "it": 5,
-        "local": 7,
+        "it": 4,
+        "local": 8,
         "world": 3,
         "ru_pol": 1
       },
@@ -15954,39 +15946,30 @@
       "selected_preview": [
         {
           "slot": 1,
+          "title": "Семь человек эвакуировали во время пожара в многоэтажке в Южно-Сахалинске",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "event_type": "major_emergency",
+          "seriousness": 93,
+          "utility": 13.0
+        },
+        {
+          "slot": 2,
           "title": "Трамп заявил советникам, что США, возможно, не будут наносить удары по Ирану, пока не посчитают, что Тегеран или хуситы прибегают к провокационным действиям. Об этом сообщает Reute",
           "category_key": "geo",
           "group": "world",
           "event_type": "geopolitical_event",
           "seriousness": 82,
-          "utility": 42.0
+          "utility": 45.0
         },
         {
-          "slot": 2,
+          "slot": "backup",
           "title": "How a sex scandal at Nvidia is putting pressure on the White House",
           "category_key": "it",
           "group": "it",
           "event_type": "major_it",
           "seriousness": 87,
-          "utility": -30.0
-        },
-        {
-          "slot": "backup",
-          "title": "Microsoft outage: company scrambles to fix global issue that took down Outlook and Teams",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 87,
-          "utility": -63.0
-        },
-        {
-          "slot": "backup",
-          "title": "Telegram экстренно отрубил HTML-виджеты — в новой фиче нашли к ак минимум три уязвимости, которые исследователи обозначили критическими",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 80,
-          "utility": -70.0
+          "utility": -33.0
         },
         {
           "slot": "backup",
@@ -15995,7 +15978,7 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 87,
-          "utility": -81.0
+          "utility": -33.0
         },
         {
           "slot": "backup",
@@ -16004,7 +15987,7 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 87,
-          "utility": -81.0
+          "utility": -33.0
         },
         {
           "slot": "backup",
@@ -16013,7 +15996,7 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 87,
-          "utility": -81.0
+          "utility": -33.0
         },
         {
           "slot": "backup",
@@ -16022,7 +16005,16 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 87,
-          "utility": -81.0
+          "utility": -33.0
+        },
+        {
+          "slot": "backup",
+          "title": "Microsoft outage: company scrambles to fix global issue that took down Outlook and Teams",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 87,
+          "utility": -33.0
         },
         {
           "slot": "backup",
@@ -16031,7 +16023,7 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 86,
-          "utility": -82.0
+          "utility": -34.0
         },
         {
           "slot": "backup",
@@ -16040,7 +16032,7 @@
           "group": "it",
           "event_type": "major_it",
           "seriousness": 85,
-          "utility": -83.0
+          "utility": -35.0
         }
       ],
       "rolling_balance_after": {
@@ -16062,11 +16054,11 @@
           "it": 5.0
         },
         "counts": {
-          "local": 8,
+          "local": 9,
           "ru_pol": 1,
           "ru_eco": 4,
           "ru_safety": 0,
-          "world": 3,
+          "world": 2,
           "it": 4
         },
         "scaled_targets": {
@@ -16078,26 +16070,24 @@
           "it": 1.0
         },
         "deficits": {
-          "local": -2.0,
+          "local": -3.0,
           "ru_pol": 3.0,
           "ru_eco": 0.0,
           "ru_safety": 3.0,
-          "world": -1.0,
+          "world": 0.0,
           "it": -3.0
         },
         "distribution_error": 12.0,
         "subtype_counts": {
-          "geopolitical_event": 1,
           "violent_crime": 6,
           "macro_economy": 4,
           "major_it": 4,
           "political_decision": 2,
           "earthquake": 1,
-          "major_emergency": 1,
+          "major_emergency": 2,
           "fatal_incident": 1
         },
         "sequence": [
-          "world",
           "local",
           "ru_eco",
           "it",
@@ -16116,10 +16106,10 @@
           "ru_eco",
           "it",
           "local",
-          "world"
+          "world",
+          "local"
         ],
         "category_sequence": [
-          "geo",
           "sakh_chp",
           "ru_eco",
           "it",
@@ -16138,10 +16128,10 @@
           "ru_eco",
           "it",
           "sakh_chp",
-          "world_ru"
+          "world_ru",
+          "sakh_chp"
         ],
         "source_sequence": [
-          "bbc world",
           "sakh.online",
           "sakhalinmedia.ru",
           "exploit exploitex",
@@ -16160,7 +16150,8 @@
           "sakhalinmedia.ru",
           "exploit exploitex",
           "astv",
-          "bbc world"
+          "bbc world",
+          "astv"
         ],
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
@@ -16168,7 +16159,7 @@
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-11-14T21:23:40+00:00",
+      "checked_at": "2026-11-14T22:58:19+00:00",
       "checked": 20,
       "passed": 19,
       "anomalies": [
@@ -16219,11 +16210,11 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 22,
+      "ready_candidates": 23,
       "missing_media_rejected": 10,
       "generic_media_rejected": 0,
       "photo_retries": 0,
-      "photo_published": 0,
+      "photo_published": 1,
       "deferred_this_run": 0,
       "pending_queue_size": 0,
       "pending_ready": 0,
@@ -16233,16 +16224,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 68,
-      "checked": 10,
-      "passed": 0,
+      "prechecked": 58,
+      "checked": 11,
+      "passed": 1,
       "rejected": 0,
-      "reclassified": 6,
-      "offtopic_reject": 36,
+      "reclassified": 5,
+      "offtopic_reject": 25,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
-      "audited_urls": 0
+      "audited_urls": 1
     }
   },
   "pending_media_delivery": [],
@@ -16287,11 +16278,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 8,
+      "local": 9,
       "ru_pol": 1,
       "ru_eco": 4,
       "ru_safety": 0,
-      "world": 3,
+      "world": 2,
       "it": 4
     },
     "scaled_targets": {
@@ -16303,26 +16294,24 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -2.0,
+      "local": -3.0,
       "ru_pol": 3.0,
       "ru_eco": 0.0,
       "ru_safety": 3.0,
-      "world": -1.0,
+      "world": 0.0,
       "it": -3.0
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "geopolitical_event": 1,
       "violent_crime": 6,
       "macro_economy": 4,
       "major_it": 4,
       "political_decision": 2,
       "earthquake": 1,
-      "major_emergency": 1,
+      "major_emergency": 2,
       "fatal_incident": 1
     },
     "sequence": [
-      "world",
       "local",
       "ru_eco",
       "it",
@@ -16341,10 +16330,10 @@
       "ru_eco",
       "it",
       "local",
-      "world"
+      "world",
+      "local"
     ],
     "category_sequence": [
-      "geo",
       "sakh_chp",
       "ru_eco",
       "it",
@@ -16363,10 +16352,10 @@
       "ru_eco",
       "it",
       "sakh_chp",
-      "world_ru"
+      "world_ru",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "bbc world",
       "sakh.online",
       "sakhalinmedia.ru",
       "exploit exploitex",
@@ -16385,7 +16374,8 @@
       "sakhalinmedia.ru",
       "exploit exploitex",
       "astv",
-      "bbc world"
+      "bbc world",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -22263,7 +22253,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-14T21:23:40+00:00",
+    "checked_at": "2026-11-14T22:58:19+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -23241,7 +23231,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-11-14T21:23:32+00:00",
+    "checked_at_utc": "2026-11-14T22:58:10+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -23264,18 +23254,18 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-11-14T21:34:40+00:00",
+    "checked_at_utc": "2026-11-14T23:08:27+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
-    "status": "blocked",
-    "reason": "generation_provider_unavailable",
-    "checked_at_utc": "2026-11-14T21:34:40+00:00",
+    "status": "ok",
+    "reason": null,
+    "checked_at_utc": "2026-11-14T23:08:27+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 10,
+    "published": 1,
+    "director_approved": 11,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -23284,16 +23274,16 @@
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-11-14T21:34:40+00:00",
+    "checked_at_utc": "2026-11-14T23:08:27+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-11-15T08:34:40+11:00",
-      "candidates": 10,
+      "finished_sakhalin": "2026-11-15T10:08:27+11:00",
+      "candidates": 11,
       "queued_for_delivery": 0
     },
     "generation": {
-      "status": "blocked",
-      "reason": "generation_provider_unavailable"
+      "status": "healthy",
+      "reason": null
     },
     "delivery": {
       "status": "healthy",
