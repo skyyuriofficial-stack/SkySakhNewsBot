@@ -1,18 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-14T22:57:43+00:00",
-  "checked_at_sakhalin": "2026-11-15T09:57:39+11:00",
+  "checked_at_utc": "2026-11-14T23:09:05+00:00",
+  "checked_at_sakhalin": "2026-11-15T10:08:59+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_blocked",
-      "slot_sakhalin": "2026-11-15T07:00+11:00",
-      "required_slot_sakhalin": "2026-11-15T07:00+11:00",
-      "reason": "generation_provider_unavailable",
-      "attempted_at_utc": "2026-11-14T21:34:40+00:00"
-    },
     {
       "type": "post_audit_unresolved",
       "count": 1,
@@ -58,19 +51,19 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-15T08:34:40+11:00",
-    "age_hours": 1.38,
-    "published": 0
+    "finished_sakhalin": "2026-11-15T10:08:27+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
-    "status": "blocked",
-    "reason": "generation_provider_unavailable",
-    "checked_at_utc": "2026-11-14T21:34:40+00:00",
+    "status": "ok",
+    "reason": null,
+    "checked_at_utc": "2026-11-14T23:08:27+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 10,
+    "published": 1,
+    "director_approved": 11,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -117,7 +110,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-14T22:57:42+00:00",
+    "checked_at": "2026-11-14T23:09:03+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -160,19 +153,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 573,
-      "title": "США предлагают выкуп в 20 млн долларов за информацию об ядерномprogramм Ирана",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "geo",
-      "title_issues": []
-    },
     {
       "message_id": 574,
       "title": "Жительницу Томари будут судить за убийство сожителя кухонным ножом",
@@ -419,6 +399,19 @@
       "review_reason": "approved",
       "corrected_category": "world_ru",
       "title_issues": []
+    },
+    {
+      "message_id": 600,
+      "title": "Семь человек эвакуировали во время пожара в многоэтажке в Южно-Сахалинске",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -440,11 +433,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 8,
+      "local": 9,
       "ru_pol": 1,
       "ru_eco": 4,
       "ru_safety": 0,
-      "world": 3,
+      "world": 2,
       "it": 4
     },
     "scaled_targets": {
@@ -456,26 +449,24 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -2.0,
+      "local": -3.0,
       "ru_pol": 3.0,
       "ru_eco": 0.0,
       "ru_safety": 3.0,
-      "world": -1.0,
+      "world": 0.0,
       "it": -3.0
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "geopolitical_event": 1,
       "violent_crime": 6,
       "macro_economy": 4,
       "major_it": 4,
       "political_decision": 2,
       "earthquake": 1,
-      "major_emergency": 1,
+      "major_emergency": 2,
       "fatal_incident": 1
     },
     "sequence": [
-      "world",
       "local",
       "ru_eco",
       "it",
@@ -494,10 +485,10 @@
       "ru_eco",
       "it",
       "local",
-      "world"
+      "world",
+      "local"
     ],
     "category_sequence": [
-      "geo",
       "sakh_chp",
       "ru_eco",
       "it",
@@ -516,10 +507,10 @@
       "ru_eco",
       "it",
       "sakh_chp",
-      "world_ru"
+      "world_ru",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "bbc world",
       "sakh.online",
       "sakhalinmedia.ru",
       "exploit exploitex",
@@ -538,14 +529,15 @@
       "sakhalinmedia.ru",
       "exploit exploitex",
       "astv",
-      "bbc world"
+      "bbc world",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-14T22:57:36+00:00",
+    "checked_at_utc": "2026-11-14T23:08:56+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -578,11 +570,11 @@
       "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
-        "local": 8,
+        "local": 9,
         "ru_pol": 1,
         "ru_eco": 4,
         "ru_safety": 0,
-        "world": 3,
+        "world": 2,
         "it": 4
       },
       "targets": {
@@ -594,11 +586,11 @@
         "it": 1
       },
       "deficits": {
-        "local": -2.0,
+        "local": -3.0,
         "ru_pol": 3.0,
         "ru_eco": 0.0,
         "ru_safety": 3.0,
-        "world": -1.0,
+        "world": 0.0,
         "it": -3.0
       }
     }
