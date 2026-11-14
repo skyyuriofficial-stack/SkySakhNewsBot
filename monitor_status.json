@@ -1,16 +1,38 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-14T03:05:20+00:00",
-  "checked_at_sakhalin": "2026-11-14T14:05:16+11:00",
+  "checked_at_utc": "2026-11-14T03:11:02+00:00",
+  "checked_at_sakhalin": "2026-11-14T14:10:56+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
     {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-14T13:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-14T11:00:44+11:00"
+      "type": "post_audit_unresolved",
+      "count": 1,
+      "items": [
+        {
+          "title": "Помощник прокремлевского ex-премьера Украины тяжело ранен в Москве при взрыве автомобиля",
+          "url": "https://www.bbc.co.uk/news/articles/c5gm3gnwl42eo?at_medium=RSS&at_campaign=rss",
+          "publisher_version": "stable-v12.1",
+          "category_key": "world_ru",
+          "corrected_category": "world_ru",
+          "reason": "approved",
+          "contract_issues": [
+            "foreign_translation_evidence_missing"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "post_audit_action_failure",
+      "count": 1,
+      "items": [
+        {
+          "action": "editMessageCaption",
+          "message_id": 598,
+          "error": "Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message"
+        }
+      ]
     },
     {
       "type": "mobilization_digest_missing",
@@ -29,21 +51,21 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-14T11:00:44+11:00",
-    "age_hours": 3.08,
+    "finished_sakhalin": "2026-11-14T14:10:28+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-14T00:00:44+00:00",
+    "checked_at_utc": "2026-11-14T03:10:28+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 16,
+    "director_approved": 14,
     "ai_calls": 4,
-    "ai_api_fail": 4,
+    "ai_api_fail": 3,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -88,32 +110,49 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-14T03:05:19+00:00",
+    "checked_at": "2026-11-14T03:11:00+00:00",
     "checked": 20,
-    "passed": 20,
-    "anomalies": [],
+    "passed": 19,
+    "anomalies": [
+      {
+        "title": "Помощник прокремлевского ex-премьера Украины тяжело ранен в Москве при взрыве автомобиля",
+        "url": "https://www.bbc.co.uk/news/articles/c5gm3gnwl42eo?at_medium=RSS&at_campaign=rss",
+        "publisher_version": "stable-v12.1",
+        "category_key": "world_ru",
+        "corrected_category": "world_ru",
+        "reason": "approved",
+        "contract_issues": [
+          "foreign_translation_evidence_missing"
+        ]
+      }
+    ],
     "corrected": [],
     "deleted": [],
-    "failed_actions": [],
-    "unresolved": 0,
-    "unresolved_items": [],
+    "failed_actions": [
+      {
+        "action": "editMessageCaption",
+        "message_id": 598,
+        "error": "Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message"
+      }
+    ],
+    "unresolved": 1,
+    "unresolved_items": [
+      {
+        "title": "Помощник прокремлевского ex-премьера Украины тяжело ранен в Москве при взрыве автомобиля",
+        "url": "https://www.bbc.co.uk/news/articles/c5gm3gnwl42eo?at_medium=RSS&at_campaign=rss",
+        "publisher_version": "stable-v12.1",
+        "category_key": "world_ru",
+        "corrected_category": "world_ru",
+        "reason": "approved",
+        "contract_issues": [
+          "foreign_translation_evidence_missing"
+        ]
+      }
+    ],
     "mutations_enabled": true,
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 572,
-      "title": "12 ударов ножом нанесла разъяренная сахалинка сожителю - мужчина умер",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 573,
       "title": "США предлагают выкуп в 20 млн долларов за информацию об ядерномprogramм Ирана",
@@ -360,6 +399,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 598,
+      "title": "Помощник прокремлевского ex-премьера Украины тяжело ранен в Москве при взрыве автомобиля",
+      "category_key": "world_ru",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "world_ru",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -381,11 +433,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 9,
+      "local": 8,
       "ru_pol": 1,
       "ru_eco": 4,
       "ru_safety": 0,
-      "world": 2,
+      "world": 3,
       "it": 4
     },
     "scaled_targets": {
@@ -397,25 +449,25 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -3.0,
+      "local": -2.0,
       "ru_pol": 3.0,
       "ru_eco": 0.0,
       "ru_safety": 3.0,
-      "world": 0.0,
+      "world": -1.0,
       "it": -3.0
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "violent_crime": 7,
       "geopolitical_event": 1,
+      "violent_crime": 6,
       "macro_economy": 4,
       "major_it": 4,
       "political_decision": 2,
       "earthquake": 1,
-      "major_emergency": 1
+      "major_emergency": 1,
+      "fatal_incident": 1
     },
     "sequence": [
-      "local",
       "world",
       "local",
       "ru_eco",
@@ -434,10 +486,10 @@
       "local",
       "ru_eco",
       "it",
-      "local"
+      "local",
+      "world"
     ],
     "category_sequence": [
-      "sakh_chp",
       "geo",
       "sakh_chp",
       "ru_eco",
@@ -456,10 +508,10 @@
       "sakh_chp",
       "ru_eco",
       "it",
-      "sakh_chp"
+      "sakh_chp",
+      "world_ru"
     ],
     "source_sequence": [
-      "astv",
       "bbc world",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -478,14 +530,15 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "exploit exploitex",
-      "astv"
+      "astv",
+      "bbc world"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-14T03:05:14+00:00",
+    "checked_at_utc": "2026-11-14T03:10:53+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -509,7 +562,7 @@
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0
   },
-  "delivery_outbox_repaired": true,
+  "delivery_outbox_repaired": false,
   "hardening_actions": [],
   "hardening_failed_actions": [],
   "warnings": [
@@ -518,11 +571,11 @@
       "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
-        "local": 9,
+        "local": 8,
         "ru_pol": 1,
         "ru_eco": 4,
         "ru_safety": 0,
-        "world": 2,
+        "world": 3,
         "it": 4
       },
       "targets": {
@@ -534,11 +587,11 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.0,
+        "local": -2.0,
         "ru_pol": 3.0,
         "ru_eco": 0.0,
         "ru_safety": 3.0,
-        "world": 0.0,
+        "world": -1.0,
         "it": -3.0
       }
     }
