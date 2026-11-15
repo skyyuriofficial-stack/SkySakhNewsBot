@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-15T09:13:03+00:00",
-  "checked_at_sakhalin": "2026-11-15T20:13:00+11:00",
+  "checked_at_utc": "2026-11-15T09:21:30+00:00",
+  "checked_at_sakhalin": "2026-11-15T20:21:25+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-15T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-15T18:52:04+11:00"
-    },
     {
       "type": "post_audit_unresolved",
       "count": 1,
@@ -70,21 +64,21 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-15T18:52:04+11:00",
-    "age_hours": 1.35,
+    "finished_sakhalin": "2026-11-15T20:20:58+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-15T07:52:04+00:00",
+    "checked_at_utc": "2026-11-15T09:20:58+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 7,
+    "director_approved": 5,
     "ai_calls": 4,
-    "ai_api_fail": 3,
+    "ai_api_fail": 2,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -142,7 +136,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-15T09:13:02+00:00",
+    "checked_at": "2026-11-15T09:21:28+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -185,19 +179,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 577,
-      "title": "ВКП определила новую цель по минимальной заработной плате в СНГ: потребительский бюджет, а не прожиточный минимум",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 578,
       "title": "Apple готовит iPhone Air 2 после провала продаж первой модели — новинку обещают сделать ТОНЬШЕ, автономнее и добавить вторую камеру",
@@ -444,6 +425,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 602,
+      "title": "СК начал проверку после нападения собаки на 9-летнего ребенка в Охе",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -465,9 +459,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 9,
+      "local": 10,
       "ru_pol": 1,
-      "ru_eco": 4,
+      "ru_eco": 3,
       "ru_safety": 0,
       "world": 2,
       "it": 4
@@ -481,26 +475,25 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -3.0,
+      "local": -4.0,
       "ru_pol": 3.0,
-      "ru_eco": 0.0,
+      "ru_eco": 1.0,
       "ru_safety": 3.0,
       "world": 0.0,
       "it": -3.0
     },
-    "distribution_error": 12.0,
+    "distribution_error": 14.0,
     "subtype_counts": {
-      "macro_economy": 4,
       "major_it": 4,
-      "violent_crime": 5,
+      "violent_crime": 6,
       "political_decision": 2,
       "earthquake": 1,
+      "macro_economy": 3,
       "major_emergency": 2,
       "fatal_incident": 1,
       "severe_weather": 1
     },
     "sequence": [
-      "ru_eco",
       "it",
       "local",
       "local",
@@ -519,10 +512,10 @@
       "local",
       "world",
       "local",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "ru_eco",
       "it",
       "sakh_chp",
       "sakh_chp",
@@ -541,10 +534,10 @@
       "sakh_chp",
       "world_ru",
       "sakh_chp",
-      "sakh"
+      "sakh",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "exploit exploitex",
       "astv",
       "sakhalinmedia.ru",
@@ -563,6 +556,7 @@
       "astv",
       "bbc world",
       "astv",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -570,7 +564,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-15T09:12:58+00:00",
+    "checked_at_utc": "2026-11-15T09:21:23+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -600,12 +594,12 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 12.0,
+      "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
-        "local": 9,
+        "local": 10,
         "ru_pol": 1,
-        "ru_eco": 4,
+        "ru_eco": 3,
         "ru_safety": 0,
         "world": 2,
         "it": 4
@@ -619,9 +613,9 @@
         "it": 1
       },
       "deficits": {
-        "local": -3.0,
+        "local": -4.0,
         "ru_pol": 3.0,
-        "ru_eco": 0.0,
+        "ru_eco": 1.0,
         "ru_safety": 3.0,
         "world": 0.0,
         "it": -3.0
