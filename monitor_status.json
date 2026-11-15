@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-15T07:44:15+00:00",
-  "checked_at_sakhalin": "2026-11-15T18:44:10+11:00",
+  "checked_at_utc": "2026-11-15T07:52:38+00:00",
+  "checked_at_sakhalin": "2026-11-15T18:52:33+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-15T16:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-15T15:05:00+11:00"
-    },
     {
       "type": "post_audit_unresolved",
       "count": 1,
@@ -57,21 +51,21 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-15T15:05:00+11:00",
-    "age_hours": 3.65,
-    "published": 0
+    "finished_sakhalin": "2026-11-15T18:52:04+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
-    "status": "blocked",
-    "reason": "generation_provider_unavailable",
-    "checked_at_utc": "2026-11-15T04:05:00+00:00",
+    "status": "ok",
+    "reason": null,
+    "checked_at_utc": "2026-11-15T07:52:04+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
+    "published": 1,
     "director_approved": 7,
     "ai_calls": 4,
-    "ai_api_fail": 4,
+    "ai_api_fail": 3,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -116,7 +110,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-15T07:44:14+00:00",
+    "checked_at": "2026-11-15T07:52:37+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -159,19 +153,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 574,
-      "title": "Жительницу Томари будут судить за убийство сожителя кухонным ножом",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 577,
       "title": "ВКП определила новую цель по минимальной заработной плате в СНГ: потребительский бюджет, а не прожиточный минимум",
@@ -418,6 +399,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 601,
+      "title": "Снег и ураганный ветер — прогноз погоды в Сахалинской области на неделю",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -464,16 +458,16 @@
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "violent_crime": 6,
       "macro_economy": 4,
       "major_it": 4,
+      "violent_crime": 5,
       "political_decision": 2,
       "earthquake": 1,
       "major_emergency": 2,
-      "fatal_incident": 1
+      "fatal_incident": 1,
+      "severe_weather": 1
     },
     "sequence": [
-      "local",
       "ru_eco",
       "it",
       "local",
@@ -492,10 +486,10 @@
       "it",
       "local",
       "world",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "sakh_chp",
       "ru_eco",
       "it",
       "sakh_chp",
@@ -514,10 +508,10 @@
       "it",
       "sakh_chp",
       "world_ru",
-      "sakh_chp"
+      "sakh_chp",
+      "sakh"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakhalinmedia.ru",
       "exploit exploitex",
       "astv",
@@ -536,14 +530,15 @@
       "exploit exploitex",
       "astv",
       "bbc world",
-      "astv"
+      "astv",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-15T07:44:08+00:00",
+    "checked_at_utc": "2026-11-15T07:52:31+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
