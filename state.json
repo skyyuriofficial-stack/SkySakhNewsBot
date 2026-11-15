@@ -469,7 +469,8 @@
     "https://www.bbc.co.uk/news/articles/c5gm3gnwl42eo?at_medium=RSS&at_campaign=rss",
     "https://astv.ru/news/criminal/2026-11-15-sem-chelovek-evakuirovali-vo-vremya-pozhara-v-mnogoetazhke-v-yuzhno-sahalinske",
     "https://sakhalinmedia.ru/news/2682311/",
-    "https://sakhalinmedia.ru/news/2682252/"
+    "https://sakhalinmedia.ru/news/2682252/",
+    "https://t.me/exploitex/37875"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -942,191 +943,11 @@
     "97e5b3189d886d7e25357d0d94c1960e23ee332f",
     "2ef03624be76906cc253e0236201f5ed4535ee9d",
     "444485207e5304ab5e9cb49214676fc4f4d7f095",
-    "6ce0902e4f7cfdc7ab5cb402ecbc64f90d54952f"
+    "6ce0902e4f7cfdc7ab5cb402ecbc64f90d54952f",
+    "ef98c8996f26c0d5fc2363f6fba3054df7725d86"
   ],
-  "last_run_sakhalin": "2026-11-15T20:20:58+11:00",
+  "last_run_sakhalin": "2026-11-15T22:58:59+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-10-24T09:07:48+11:00",
-      "source": "ASTV",
-      "category": "🇷🇺 Россия / экономика",
-      "category_key": "ru_eco",
-      "title": "ЦБ сохранил ключевую ставку на уровне 14%",
-      "url": "https://astv.ru/news/society/2026-10-23-cb-sohranil-klyuchevuyu-stavku-na-urovne-14",
-      "image_url": "https://astv.ru/content/NewsImage/c9/94/c9943418-5d55-46df-9d78-be6e88ff3a34_3.jpg",
-      "image_hash": "822dfefae31099e99a8bd7fb64b6620c3ed22ed8",
-      "topic_cluster": "ru_eco:сохранил_ключевую_ставку_уровне",
-      "published_at": "2026-10-22T13:00:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "ru_eco",
-        "corrected_category": "ru_eco",
-        "group": "ru_eco",
-        "event_type": "macro_economy",
-        "subtype": "macro_economy",
-        "seriousness": 86,
-        "threshold": 80,
-        "selection_utility": 89.0,
-        "slot": 2,
-        "risks": [],
-        "title_original": "ЦБ сохранил ключевую ставку на уровне 14%",
-        "title_corrected": "ЦБ сохранил ключевую ставку на уровне 14%",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "Регулятор ожидает инфляцию по итогам года в пределах 7,1–7,6% Регулятор ожидает инфляцию по итогам года в пределах 7,1–7,6% Совет директоров Банка России 23 октября сохранил ключевую ставку на уровне 14% годовых. В ЦБ объяснили решение повышенным ценовым давлением и высокими инфляционными ожиданиями. По оценке регулятора, годовая инфляция на 19 октября составляла 6,8%, а по итогам 2026 года может сложиться в диапазоне 7,1–7,6%. При этом устойчивый рост цен, по оценке Банка России, остается на уровне 5–6% в годовом выражении.",
-      "title_original": null,
-      "footer": "РОССИЯ | ЭКОНОМИКА",
-      "published_row": {
-        "reject": false,
-        "title_ru": "ЦБ сохранил ключевую ставку на уровне 14%",
-        "body": [
-          "В ЦБ объяснили решение повышенным ценовым давлением и высокими инфляционными ожиданиями.",
-          "По оценке регулятора, годовая инфляция на 19 октября составляла 6,8%, а по итогам 2026 года может сложиться в диапазоне 7,1–7,6%."
-        ],
-        "footer": "РОССИЯ | ЭКОНОМИКА",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": [],
-          "reclassified_from": "sakh",
-          "reclassified_to": "ru_eco"
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_eco",
-          "corrected_category": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "subtype": "macro_economy",
-          "seriousness": 86,
-          "threshold": 80,
-          "selection_utility": 89.0,
-          "slot": 2,
-          "risks": [],
-          "title_original": "ЦБ сохранил ключевую ставку на уровне 14%",
-          "title_corrected": "ЦБ сохранил ключевую ставку на уровне 14%",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "ru_eco",
-          "final_category": "ru_eco",
-          "event_type": "macro_economy",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.7",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "ru_eco",
-            "corrected_category": "ru_eco",
-            "group": "ru_eco",
-            "event_type": "macro_economy",
-            "subtype": "macro_economy",
-            "seriousness": 86,
-            "threshold": 80,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "ЦБ сохранил ключевую ставку на уровне 14%",
-            "title_corrected": "ЦБ сохранил ключевую ставку на уровне 14%",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "🇷🇺 Россия / экономика\n\n<b>ЦБ сохранил ключевую ставку на уровне 14%</b>\n\nВ ЦБ объяснили решение повышенным ценовым давлением и высокими инфляционными ожиданиями.\n\nПо оценке регулятора, годовая инфляция на 19 октября составляла 6,8%, а по итогам 2026 года может сложиться в диапазоне 7,1–7,6%.\n\nРОССИЯ | ЭКОНОМИКА · <a href=\"https://astv.ru/news/society/2026-10-23-cb-sohranil-klyuchevuyu-stavku-na-urovne-14\">ASTV</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "ru_eco",
-        "final_category": "ru_eco",
-        "event_type": "macro_economy",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.7",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_eco",
-          "corrected_category": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "subtype": "macro_economy",
-          "seriousness": 86,
-          "threshold": 80,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "ЦБ сохранил ключевую ставку на уровне 14%",
-          "title_corrected": "ЦБ сохранил ключевую ставку на уровне 14%",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 495,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": [],
-        "reclassified_from": "sakh",
-        "reclassified_to": "ru_eco"
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-10-30T04:19:14+00:00"
-      }
-    },
     {
       "time_sakhalin": "2026-10-24T10:06:59+11:00",
       "source": "ASTV",
@@ -12004,7 +11825,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:27+00:00"
+        "checked_at": "2026-11-15T11:53:26+00:00"
       }
     },
     {
@@ -12185,7 +12006,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:27+00:00"
+        "checked_at": "2026-11-15T11:53:26+00:00"
       }
     },
     {
@@ -12362,7 +12183,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:27+00:00"
+        "checked_at": "2026-11-15T11:53:26+00:00"
       }
     },
     {
@@ -12543,7 +12364,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:27+00:00"
+        "checked_at": "2026-11-15T11:53:27+00:00"
       }
     },
     {
@@ -12728,7 +12549,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:28+00:00"
+        "checked_at": "2026-11-15T11:53:27+00:00"
       }
     },
     {
@@ -12905,7 +12726,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:28+00:00"
+        "checked_at": "2026-11-15T11:53:27+00:00"
       }
     },
     {
@@ -13086,7 +12907,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:28+00:00"
+        "checked_at": "2026-11-15T11:53:27+00:00"
       }
     },
     {
@@ -13271,7 +13092,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:28+00:00"
+        "checked_at": "2026-11-15T11:53:27+00:00"
       }
     },
     {
@@ -13456,7 +13277,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:28+00:00"
+        "checked_at": "2026-11-15T11:53:27+00:00"
       }
     },
     {
@@ -13633,7 +13454,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:28+00:00"
+        "checked_at": "2026-11-15T11:53:28+00:00"
       }
     },
     {
@@ -13814,7 +13635,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:28+00:00"
+        "checked_at": "2026-11-15T11:53:28+00:00"
       }
     },
     {
@@ -13999,7 +13820,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:29+00:00"
+        "checked_at": "2026-11-15T11:53:28+00:00"
       }
     },
     {
@@ -14176,7 +13997,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:29+00:00"
+        "checked_at": "2026-11-15T11:53:28+00:00"
       }
     },
     {
@@ -14361,7 +14182,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:29+00:00"
+        "checked_at": "2026-11-15T11:53:28+00:00"
       }
     },
     {
@@ -14538,7 +14359,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:29+00:00"
+        "checked_at": "2026-11-15T11:53:29+00:00"
       }
     },
     {
@@ -14715,7 +14536,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:29+00:00"
+        "checked_at": "2026-11-15T11:53:29+00:00"
       }
     },
     {
@@ -14901,7 +14722,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-11-15T09:13:29+00:00",
+        "checked_at": "2026-11-15T11:53:29+00:00",
         "reason": "approved",
         "issues": [
           "foreign_translation_evidence_missing"
@@ -15082,7 +14903,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:30+00:00"
+        "checked_at": "2026-11-15T11:53:29+00:00"
       }
     },
     {
@@ -15259,7 +15080,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-15T09:13:30+00:00"
+        "checked_at": "2026-11-15T11:53:30+00:00"
       }
     },
     {
@@ -15436,6 +15257,191 @@
         "issues": [],
         "reclassified_from": "sakh",
         "reclassified_to": "sakh_chp"
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-11-15T11:53:30+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-11-15T22:58:51+11:00",
+      "source": "Exploit (@exploitex)",
+      "category": "💻 IT / технологии",
+      "category_key": "it",
+      "title": "Nvidia специально провоцировала дефицит видеокарт и памяти — журналисты обвинили бывшую контору Хуанга в искусственном поддержании кризиса",
+      "url": "https://t.me/exploitex/37875",
+      "image_url": "https://cdn4.telesco.pe/file/L2gk8USI-785nR096h8MHiKy_aOjPqhySiZWxa6DwSfoa1JKHQhXqxiUaSt0UV7kJl_vnMdGNrECUqdSajgWAJ-P30ha-b-rUC0l6E3by_g31T9U-5tzs24VjCpv8tDUW0gVag-GKqF4eUckEL41PXD-IU05VzPwjEuYcH2zlSjKnA4MJkFSTMqoxypkFWR00zU-Fx0_XdVFPap3ka1TR_yR2vqwWan58xldN6H4rJrxngYsokVvLKJ8W7dejdFlLENPthf_dFtkUSjmknbV-vz90IdTxnAH6qSTnie_JSdYjGiOMNjBy2crggvE4c0XUBow19iWKLZe5g8mZhz8AQ.jpg",
+      "image_hash": "bbc1677dc539c0742d6af5f973a30e8df8288e6f",
+      "topic_cluster": "it:nvidia_специально_провоцировала_дефицит_видеокарт_памяти",
+      "published_at": "2026-11-15T11:11:42+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "it",
+        "corrected_category": "it",
+        "group": "it",
+        "event_type": "major_it",
+        "subtype": "major_it",
+        "seriousness": 80,
+        "threshold": 78,
+        "selection_utility": -64.0,
+        "slot": "backup",
+        "risks": [
+          "near_threshold"
+        ],
+        "title_original": "Nvidia специально провоцировала дефицит видеокарт и памяти — журналисты обвинили бывшую контору Хуанга в искусственном поддержании кризиса.",
+        "title_corrected": "Nvidia специально провоцировала дефицит видеокарт и памяти — журналисты обвинили бывшую контору Хуанга в искусственном поддержании кризиса",
+        "title_corrections": [],
+        "title_changed": true,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Nvidia специально провоцировала дефицит видеокарт и памяти — журналисты обвинили бывшую контору Хуанга в искусственном поддержании кризиса. Схема простая: куртка инвестировал в ИИ-стартапы деньги, но с одним условием — на них можно будет купить только GPU Nvidia. В итоге деньги ходили по кругу, возвращаясь в контору, а мировой кризис только подогревался. Сам себе инвестор, сам себе рынок сбыта.",
+      "title_original": "Nvidia специально провоцировала дефицит видеокарт и памяти — журналисты обвинили бывшую контору Хуанга в искусственном поддержании кризиса.",
+      "footer": "IT | ТЕХНОЛОГИИ",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Nvidia специально провоцировала дефицит видеокарт и памяти — журналисты обвинили бывшую контору Хуанга в искусственном поддержании кризиса",
+        "body": [
+          "Схема простая: куртка инвестировал в ИИ-стартапы деньги, но с одним условием — на них можно будет купить только GPU Nvidia.",
+          "В итоге деньги ходили по кругу, возвращаясь в контору, а мировой кризис только подогревался."
+        ],
+        "footer": "IT | ТЕХНОЛОГИИ",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "it",
+          "corrected_category": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "subtype": "major_it",
+          "seriousness": 80,
+          "threshold": 78,
+          "selection_utility": -64.0,
+          "slot": "backup",
+          "risks": [
+            "near_threshold"
+          ],
+          "title_original": "Nvidia специально провоцировала дефицит видеокарт и памяти — журналисты обвинили бывшую контору Хуанга в искусственном поддержании кризиса.",
+          "title_corrected": "Nvidia специально провоцировала дефицит видеокарт и памяти — журналисты обвинили бывшую контору Хуанга в искусственном поддержании кризиса",
+          "title_corrections": [],
+          "title_changed": true,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "it",
+          "final_category": "it",
+          "event_type": "major_it",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.8",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "it",
+            "corrected_category": "it",
+            "group": "it",
+            "event_type": "major_it",
+            "subtype": "major_it",
+            "seriousness": 80,
+            "threshold": 78,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [
+              "near_threshold"
+            ],
+            "title_original": "Nvidia специально провоцировала дефицит видеокарт и памяти — журналисты обвинили бывшую контору Хуанга в искусственном поддержании кризиса",
+            "title_corrected": "Nvidia специально провоцировала дефицит видеокарт и памяти — журналисты обвинили бывшую контору Хуанга в искусственном поддержании кризиса",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "💻 IT / технологии\n\n<b>Nvidia специально провоцировала дефицит видеокарт и памяти — журналисты обвинили бывшую контору Хуанга в искусственном поддержании кризиса</b>\n\nСхема простая: куртка инвестировал в ИИ-стартапы деньги, но с одним условием — на них можно будет купить только GPU Nvidia.\n\nВ итоге деньги ходили по кругу, возвращаясь в контору, а мировой кризис только подогревался.\n\nIT | ТЕХНОЛОГИИ · <a href=\"https://t.me/exploitex/37875\">Exploit (@exploitex)</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "it",
+        "final_category": "it",
+        "event_type": "major_it",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.8",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "it",
+          "corrected_category": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "subtype": "major_it",
+          "seriousness": 80,
+          "threshold": 78,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [
+            "near_threshold"
+          ],
+          "title_original": "Nvidia специально провоцировала дефицит видеокарт и памяти — журналисты обвинили бывшую контору Хуанга в искусственном поддержании кризиса",
+          "title_corrected": "Nvidia специально провоцировала дефицит видеокарт и памяти — журналисты обвинили бывшую контору Хуанга в искусственном поддержании кризиса",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 603,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": []
       }
     }
   ],
@@ -15664,11 +15670,11 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-11-15T20:13:23+11:00",
+    "started_sakhalin": "2026-11-15T22:53:22+11:00",
     "status": "ok",
-    "candidates": 5,
+    "candidates": 4,
     "published": 1,
-    "local_candidates": 1,
+    "local_candidates": 0,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -15699,27 +15705,27 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-11-15T20:20:58+11:00",
+    "finished_sakhalin": "2026-11-15T22:58:59+11:00",
     "stats": {
-      "rss_seen": 160,
-      "old_skip": 79,
-      "google_skip": 7,
-      "duplicate_skip": 1,
-      "low_info_skip": 18,
-      "category_skip": 24,
+      "rss_seen": 128,
+      "old_skip": 77,
+      "google_skip": 8,
+      "duplicate_skip": 0,
+      "low_info_skip": 15,
+      "category_skip": 19,
       "no_image_skip": 0,
-      "bad_image_skip": 11,
-      "logo_image_skip": 15,
+      "bad_image_skip": 2,
+      "logo_image_skip": 3,
       "text_card_image_skip": 3,
-      "candidates": 22,
+      "candidates": 17,
       "rewrite_retry": 4,
-      "editorial_skip": 4,
+      "editorial_skip": 3,
       "telegram_fail": 0,
       "published": 1,
       "telegram_source_attempt": 4,
       "telegram_source_fail": 0,
-      "telegram_source_seen": 69,
-      "telegram_source_candidates": 27,
+      "telegram_source_seen": 72,
+      "telegram_source_candidates": 26,
       "ai_calls": 4,
       "ai_budget_exhausted": 1,
       "ai_api_fail": 2,
@@ -15727,8 +15733,8 @@
       "validation_reject": 2,
       "extractive_fallback": 1,
       "extractive_first": 1,
-      "editorial_prechecked": 64,
-      "editorial_gate_checked": 5,
+      "editorial_prechecked": 50,
+      "editorial_gate_checked": 4,
       "editorial_gate_pass": 1,
       "editorial_gate_reject": 2,
       "editorial_gate_fallback": 0,
@@ -15737,19 +15743,19 @@
       "editorial_title_reject": 1,
       "editorial_category_reject": 2,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 12,
-      "editorial_offtopic_reject": 30,
+      "editorial_reclassified": 8,
+      "editorial_offtopic_reject": 24,
       "openrouter_empty_content": 2,
-      "openrouter_model_fallback": 0,
-      "openrouter_attempts": 8,
-      "openrouter_retries": 4,
+      "openrouter_model_fallback": 1,
+      "openrouter_attempts": 9,
+      "openrouter_retries": 5,
       "openrouter_invalid_json": 0,
       "openrouter_success": 2,
       "openrouter_circuit_open": 0,
       "editorial_grounded_translation_fallback": 0,
-      "media_required_skip": 10,
+      "media_required_skip": 7,
       "media_generic_skip": 0,
-      "media_ready_candidates": 22,
+      "media_ready_candidates": 17,
       "photo_retry": 0,
       "photo_publish": 1,
       "photo_upload_original": 1,
@@ -15763,11 +15769,11 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 22,
-      "director_approved": 5,
-      "director_rejected": 17,
+      "director_seen": 17,
+      "director_approved": 4,
+      "director_rejected": 13,
       "director_reclassified": 0,
-      "director_title_corrected": 0,
+      "director_title_corrected": 1,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
       "director_final_checked": 1,
@@ -15779,7 +15785,7 @@
       "post_audit_anomalies": 1,
       "post_audit_corrected": 0,
       "post_audit_deleted": 0,
-      "tass_world_scanned": 25,
+      "tass_world_scanned": 62,
       "tass_world_screened": 4,
       "tass_world_candidates": 1
     },
@@ -15788,198 +15794,6 @@
       "policy_version": "policy-v2.8",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
-        "window": 20,
-        "targets": {
-          "local": 6,
-          "ru_pol": 4,
-          "ru_eco": 4,
-          "ru_safety": 3,
-          "world": 2,
-          "it": 1
-        },
-        "target_percent": {
-          "local": 30.0,
-          "ru_pol": 20.0,
-          "ru_eco": 20.0,
-          "ru_safety": 15.0,
-          "world": 10.0,
-          "it": 5.0
-        },
-        "counts": {
-          "local": 9,
-          "ru_pol": 1,
-          "ru_eco": 4,
-          "ru_safety": 0,
-          "world": 2,
-          "it": 4
-        },
-        "scaled_targets": {
-          "local": 6.0,
-          "ru_pol": 4.0,
-          "ru_eco": 4.0,
-          "ru_safety": 3.0,
-          "world": 2.0,
-          "it": 1.0
-        },
-        "deficits": {
-          "local": -3.0,
-          "ru_pol": 3.0,
-          "ru_eco": 0.0,
-          "ru_safety": 3.0,
-          "world": 0.0,
-          "it": -3.0
-        },
-        "distribution_error": 12.0,
-        "subtype_counts": {
-          "macro_economy": 4,
-          "major_it": 4,
-          "violent_crime": 5,
-          "political_decision": 2,
-          "earthquake": 1,
-          "major_emergency": 2,
-          "fatal_incident": 1,
-          "severe_weather": 1
-        },
-        "sequence": [
-          "ru_eco",
-          "it",
-          "local",
-          "local",
-          "local",
-          "world",
-          "local",
-          "ru_pol",
-          "it",
-          "ru_eco",
-          "it",
-          "local",
-          "ru_eco",
-          "local",
-          "ru_eco",
-          "it",
-          "local",
-          "world",
-          "local",
-          "local"
-        ],
-        "category_sequence": [
-          "ru_eco",
-          "it",
-          "sakh_chp",
-          "sakh_chp",
-          "sakh_chp",
-          "geo",
-          "sakh_quake",
-          "ru_pol",
-          "it",
-          "ru_eco",
-          "it",
-          "sakh_chp",
-          "ru_eco",
-          "sakh_chp",
-          "ru_eco",
-          "it",
-          "sakh_chp",
-          "world_ru",
-          "sakh_chp",
-          "sakh"
-        ],
-        "source_sequence": [
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "astv",
-          "sakhalinmedia.ru",
-          "astv",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "techmedia techmedia",
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "astv",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "astv",
-          "bbc world",
-          "astv",
-          "sakhalinmedia.ru"
-        ],
-        "retrospective_anomalies": [],
-        "valid_posts_counted": 20
-      },
-      "candidate_count": 22,
-      "approved_count": 5,
-      "rejected_count": 17,
-      "rejected_by_reason": {
-        "importance_below_threshold": 16,
-        "ordinary_weather_not_release_worthy": 1
-      },
-      "ai_review_requested": 0,
-      "ai_review_received": 0,
-      "selected_groups": [
-        "ru_safety",
-        "it"
-      ],
-      "projected_distribution_error": 12.0,
-      "projected_counts": {
-        "local": 9,
-        "world": 2,
-        "ru_pol": 1,
-        "it": 4,
-        "ru_eco": 3,
-        "ru_safety": 1
-      },
-      "projected_length": 20,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "В Охе бездомная собака напала на 9-летнего мальчика",
-          "category_key": "ru_incident",
-          "group": "ru_safety",
-          "event_type": "violent_crime",
-          "seriousness": 95,
-          "utility": 179.0
-        },
-        {
-          "slot": 2,
-          "title": "Microsoft outage 'stark reminder' of how much we rely on tech",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 87,
-          "utility": -35.0
-        },
-        {
-          "slot": "backup",
-          "title": "СК начал проверку после нападения собаки на 9-летнего ребенка в Охе",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "event_type": "violent_crime",
-          "seriousness": 100,
-          "utility": -41.0
-        },
-        {
-          "slot": "backup",
-          "title": "Nvidia: How the Jensen Huang scandal exposed a headache for business-friendly Singapore",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 87,
-          "utility": -81.0
-        },
-        {
-          "slot": "backup",
-          "title": "Microsoft says services fully restored after day-long global outage",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 87,
-          "utility": -81.0
-        }
-      ],
-      "rolling_balance_after": {
         "window": 20,
         "targets": {
           "local": 6,
@@ -16100,11 +15914,194 @@
         ],
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
+      },
+      "candidate_count": 17,
+      "approved_count": 4,
+      "rejected_count": 13,
+      "rejected_by_reason": {
+        "importance_below_threshold": 12,
+        "ordinary_weather_not_release_worthy": 1
+      },
+      "ai_review_requested": 0,
+      "ai_review_received": 0,
+      "selected_groups": [
+        "ru_safety",
+        "it"
+      ],
+      "projected_distribution_error": 12.0,
+      "projected_counts": {
+        "local": 9,
+        "world": 2,
+        "ru_pol": 1,
+        "it": 4,
+        "ru_eco": 3,
+        "ru_safety": 1
+      },
+      "projected_length": 20,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "В Охе бездомная собака напала на 9-летнего мальчика",
+          "category_key": "ru_incident",
+          "group": "ru_safety",
+          "event_type": "violent_crime",
+          "seriousness": 95,
+          "utility": 185.0
+        },
+        {
+          "slot": 2,
+          "title": "Italy fines Meta $887m for accessing Android users’ photos and videos",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 88,
+          "utility": -29.0
+        },
+        {
+          "slot": "backup",
+          "title": "Microsoft says services fully restored after day-long global outage",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 87,
+          "utility": -57.0
+        },
+        {
+          "slot": "backup",
+          "title": "Nvidia специально провоцировала дефицит видеокарт и памяти — журналисты обвинили бывшую контору Хуанга в искусственном поддержании кризиса",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 80,
+          "utility": -64.0
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 20,
+        "targets": {
+          "local": 6,
+          "ru_pol": 4,
+          "ru_eco": 4,
+          "ru_safety": 3,
+          "world": 2,
+          "it": 1
+        },
+        "target_percent": {
+          "local": 30.0,
+          "ru_pol": 20.0,
+          "ru_eco": 20.0,
+          "ru_safety": 15.0,
+          "world": 10.0,
+          "it": 5.0
+        },
+        "counts": {
+          "local": 10,
+          "ru_pol": 1,
+          "ru_eco": 3,
+          "ru_safety": 0,
+          "world": 2,
+          "it": 4
+        },
+        "scaled_targets": {
+          "local": 6.0,
+          "ru_pol": 4.0,
+          "ru_eco": 4.0,
+          "ru_safety": 3.0,
+          "world": 2.0,
+          "it": 1.0
+        },
+        "deficits": {
+          "local": -4.0,
+          "ru_pol": 3.0,
+          "ru_eco": 1.0,
+          "ru_safety": 3.0,
+          "world": 0.0,
+          "it": -3.0
+        },
+        "distribution_error": 14.0,
+        "subtype_counts": {
+          "violent_crime": 6,
+          "political_decision": 2,
+          "earthquake": 1,
+          "major_it": 4,
+          "macro_economy": 3,
+          "major_emergency": 2,
+          "fatal_incident": 1,
+          "severe_weather": 1
+        },
+        "sequence": [
+          "local",
+          "local",
+          "local",
+          "world",
+          "local",
+          "ru_pol",
+          "it",
+          "ru_eco",
+          "it",
+          "local",
+          "ru_eco",
+          "local",
+          "ru_eco",
+          "it",
+          "local",
+          "world",
+          "local",
+          "local",
+          "local",
+          "it"
+        ],
+        "category_sequence": [
+          "sakh_chp",
+          "sakh_chp",
+          "sakh_chp",
+          "geo",
+          "sakh_quake",
+          "ru_pol",
+          "it",
+          "ru_eco",
+          "it",
+          "sakh_chp",
+          "ru_eco",
+          "sakh_chp",
+          "ru_eco",
+          "it",
+          "sakh_chp",
+          "world_ru",
+          "sakh_chp",
+          "sakh",
+          "sakh_chp",
+          "it"
+        ],
+        "source_sequence": [
+          "astv",
+          "sakhalinmedia.ru",
+          "astv",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "techmedia techmedia",
+          "sakhalinmedia.ru",
+          "exploit exploitex",
+          "astv",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "exploit exploitex",
+          "astv",
+          "bbc world",
+          "astv",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "exploit exploitex"
+        ],
+        "retrospective_anomalies": [],
+        "valid_posts_counted": 20
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-11-15T09:13:30+00:00",
+      "checked_at": "2026-11-15T11:53:30+00:00",
       "checked": 20,
       "passed": 19,
       "anomalies": [
@@ -16155,8 +16152,8 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 22,
-      "missing_media_rejected": 10,
+      "ready_candidates": 17,
+      "missing_media_rejected": 7,
       "generic_media_rejected": 0,
       "photo_retries": 0,
       "photo_published": 1,
@@ -16169,12 +16166,12 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 64,
-      "checked": 5,
+      "prechecked": 50,
+      "checked": 4,
       "passed": 1,
       "rejected": 2,
-      "reclassified": 12,
-      "offtopic_reject": 30,
+      "reclassified": 8,
+      "offtopic_reject": 24,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
@@ -16248,17 +16245,16 @@
     },
     "distribution_error": 14.0,
     "subtype_counts": {
-      "major_it": 4,
       "violent_crime": 6,
       "political_decision": 2,
       "earthquake": 1,
+      "major_it": 4,
       "macro_economy": 3,
       "major_emergency": 2,
       "fatal_incident": 1,
       "severe_weather": 1
     },
     "sequence": [
-      "it",
       "local",
       "local",
       "local",
@@ -16277,10 +16273,10 @@
       "world",
       "local",
       "local",
-      "local"
+      "local",
+      "it"
     ],
     "category_sequence": [
-      "it",
       "sakh_chp",
       "sakh_chp",
       "sakh_chp",
@@ -16299,10 +16295,10 @@
       "world_ru",
       "sakh_chp",
       "sakh",
-      "sakh_chp"
+      "sakh_chp",
+      "it"
     ],
     "source_sequence": [
-      "exploit exploitex",
       "astv",
       "sakhalinmedia.ru",
       "astv",
@@ -16321,7 +16317,8 @@
       "bbc world",
       "astv",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "exploit exploitex"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -22199,7 +22196,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-15T09:13:30+00:00",
+    "checked_at": "2026-11-15T11:53:30+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -23177,7 +23174,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-11-15T09:13:23+00:00",
+    "checked_at_utc": "2026-11-15T11:53:22+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -23200,18 +23197,18 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-11-15T09:20:58+00:00",
+    "checked_at_utc": "2026-11-15T11:58:59+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-15T09:20:58+00:00",
+    "checked_at_utc": "2026-11-15T11:58:59+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 5,
+    "director_approved": 4,
     "ai_calls": 4,
     "ai_api_fail": 2,
     "ai_budget_exhausted": 1,
@@ -23220,11 +23217,11 @@
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-11-15T09:20:58+00:00",
+    "checked_at_utc": "2026-11-15T11:58:59+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-11-15T20:20:58+11:00",
-      "candidates": 5,
+      "finished_sakhalin": "2026-11-15T22:58:59+11:00",
+      "candidates": 4,
       "queued_for_delivery": 0
     },
     "generation": {
