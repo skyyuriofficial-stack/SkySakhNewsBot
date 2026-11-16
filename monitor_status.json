@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-16T21:26:47+00:00",
-  "checked_at_sakhalin": "2026-11-17T08:26:41+11:00",
+  "checked_at_utc": "2026-11-16T22:27:49+00:00",
+  "checked_at_sakhalin": "2026-11-17T09:27:46+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -12,13 +12,24 @@
       "required_slot_sakhalin": "2026-11-17T07:00+11:00",
       "reason": "generation_provider_unavailable",
       "attempted_at_utc": "2026-11-16T21:26:16+00:00"
+    },
+    {
+      "type": "mobilization_digest_missing",
+      "slot": "morning",
+      "expected_by_sakhalin": "2026-11-17T08:45:00+11:00",
+      "last_attempt": {
+        "status": "ok",
+        "mode": "evening",
+        "at_utc": "2026-11-16T10:15:44+00:00",
+        "at_sakhalin": "2026-11-16T21:15:44+11:00"
+      }
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-17T08:26:16+11:00",
-    "age_hours": 0.01,
+    "age_hours": 1.03,
     "published": 0
   },
   "last_production_attempt": {
@@ -39,9 +50,9 @@
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-11-17",
-    "status": "healthy",
+    "status": "error",
     "morning": {
-      "due": false,
+      "due": true,
       "published": false,
       "record": {}
     },
@@ -56,11 +67,23 @@
       "at_utc": "2026-11-16T10:15:44+00:00",
       "at_sakhalin": "2026-11-16T21:15:44+11:00"
     },
-    "missing": []
+    "missing": [
+      {
+        "type": "mobilization_digest_missing",
+        "slot": "morning",
+        "expected_by_sakhalin": "2026-11-17T08:45:00+11:00",
+        "last_attempt": {
+          "status": "ok",
+          "mode": "evening",
+          "at_utc": "2026-11-16T10:15:44+00:00",
+          "at_sakhalin": "2026-11-16T21:15:44+11:00"
+        }
+      }
+    ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-16T21:26:45+00:00",
+    "checked_at": "2026-11-16T22:27:48+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -492,7 +515,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-16T21:26:39+00:00",
+    "checked_at_utc": "2026-11-16T22:27:44+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
