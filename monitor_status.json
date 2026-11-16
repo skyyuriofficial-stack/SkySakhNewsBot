@@ -1,18 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-16T22:27:49+00:00",
-  "checked_at_sakhalin": "2026-11-17T09:27:46+11:00",
+  "checked_at_utc": "2026-11-16T22:44:50+00:00",
+  "checked_at_sakhalin": "2026-11-17T09:44:44+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_blocked",
-      "slot_sakhalin": "2026-11-17T07:00+11:00",
-      "required_slot_sakhalin": "2026-11-17T07:00+11:00",
-      "reason": "generation_provider_unavailable",
-      "attempted_at_utc": "2026-11-16T21:26:16+00:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "morning",
@@ -28,19 +21,19 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-17T08:26:16+11:00",
-    "age_hours": 1.03,
-    "published": 0
+    "finished_sakhalin": "2026-11-17T09:44:17+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
-    "status": "blocked",
-    "reason": "generation_provider_unavailable",
-    "checked_at_utc": "2026-11-16T21:26:16+00:00",
+    "status": "ok",
+    "reason": null,
+    "checked_at_utc": "2026-11-16T22:44:17+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 7,
+    "published": 1,
+    "director_approved": 10,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -83,7 +76,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-16T22:27:48+00:00",
+    "checked_at": "2026-11-16T22:44:48+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -120,19 +113,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 587,
-      "title": "Тима Кука пророчат на кресло нового СЕО Nvidia — букмекеры ставят на это 10%",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 588,
       "title": "Эксперт рассказал, как собрать вечный инвестиционный портфель",
@@ -379,6 +359,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 612,
+      "title": "В России впервые утвердили ГОСТ на борщ и другие русские блюда",
+      "category_key": "ru_pol",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_pol",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -401,11 +394,11 @@
     },
     "counts": {
       "local": 9,
-      "ru_pol": 0,
+      "ru_pol": 1,
       "ru_eco": 5,
       "ru_safety": 1,
       "world": 1,
-      "it": 4
+      "it": 3
     },
     "scaled_targets": {
       "local": 6.0,
@@ -417,23 +410,23 @@
     },
     "deficits": {
       "local": -3.0,
-      "ru_pol": 4.0,
+      "ru_pol": 3.0,
       "ru_eco": -1.0,
       "ru_safety": 2.0,
       "world": 1.0,
-      "it": -3.0
+      "it": -2.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
-      "major_it": 4,
       "macro_economy": 5,
+      "major_it": 3,
       "violent_crime": 5,
       "major_emergency": 2,
       "fatal_incident": 3,
-      "severe_weather": 1
+      "severe_weather": 1,
+      "political_decision": 1
     },
     "sequence": [
-      "it",
       "ru_eco",
       "it",
       "local",
@@ -452,10 +445,10 @@
       "local",
       "local",
       "ru_eco",
-      "ru_eco"
+      "ru_eco",
+      "ru_pol"
     ],
     "category_sequence": [
-      "it",
       "ru_eco",
       "it",
       "sakh_chp",
@@ -474,10 +467,10 @@
       "sakh_chp",
       "sakh_chp",
       "ru_eco",
-      "ru_eco"
+      "ru_eco",
+      "ru_pol"
     ],
     "source_sequence": [
-      "techmedia techmedia",
       "sakhalinmedia.ru",
       "exploit exploitex",
       "astv",
@@ -496,7 +489,8 @@
       "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -515,7 +509,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-16T22:27:44+00:00",
+    "checked_at_utc": "2026-11-16T22:44:41+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -556,15 +550,15 @@
     },
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 14.0,
+      "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
         "local": 9,
-        "ru_pol": 0,
+        "ru_pol": 1,
         "ru_eco": 5,
         "ru_safety": 1,
         "world": 1,
-        "it": 4
+        "it": 3
       },
       "targets": {
         "local": 6,
@@ -576,11 +570,11 @@
       },
       "deficits": {
         "local": -3.0,
-        "ru_pol": 4.0,
+        "ru_pol": 3.0,
         "ru_eco": -1.0,
         "ru_safety": 2.0,
         "world": 1.0,
-        "it": -3.0
+        "it": -2.0
       }
     }
   ]
