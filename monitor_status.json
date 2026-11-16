@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-16T09:29:35+00:00",
-  "checked_at_sakhalin": "2026-11-16T20:29:31+11:00",
+  "checked_at_utc": "2026-11-16T09:36:49+00:00",
+  "checked_at_sakhalin": "2026-11-16T20:36:45+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-16T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-16T16:27:16+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "evening",
@@ -27,22 +21,22 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-16T16:27:16+11:00",
-    "age_hours": 4.04,
-    "published": 2
+    "finished_sakhalin": "2026-11-16T20:36:10+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-16T05:27:16+00:00",
+    "checked_at_utc": "2026-11-16T09:36:10+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
+    "published": 1,
     "director_approved": 7,
-    "ai_calls": 0,
-    "ai_api_fail": 0,
-    "ai_budget_exhausted": 0,
+    "ai_calls": 4,
+    "ai_api_fail": 4,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
@@ -100,7 +94,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-16T09:29:34+00:00",
+    "checked_at": "2026-11-16T09:36:48+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -137,19 +131,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 586,
-      "title": "В Госдуму внесли законопроект об упрощении процедур госзакупок",
-      "category_key": "ru_pol",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_pol",
-      "title_issues": []
-    },
     {
       "message_id": 587,
       "title": "Тима Кука пророчат на кресло нового СЕО Nvidia — букмекеры ставят на это 10%",
@@ -396,6 +377,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 610,
+      "title": "Закрыли кредиты, увеличили доходы от городских предприятий - дума Иркутска приняла бюджет на 2027 год",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -418,8 +412,8 @@
     },
     "counts": {
       "local": 9,
-      "ru_pol": 1,
-      "ru_eco": 4,
+      "ru_pol": 0,
+      "ru_eco": 5,
       "ru_safety": 1,
       "world": 1,
       "it": 4
@@ -434,24 +428,22 @@
     },
     "deficits": {
       "local": -3.0,
-      "ru_pol": 3.0,
-      "ru_eco": 0.0,
+      "ru_pol": 4.0,
+      "ru_eco": -1.0,
       "ru_safety": 2.0,
       "world": 1.0,
       "it": -3.0
     },
-    "distribution_error": 12.0,
+    "distribution_error": 14.0,
     "subtype_counts": {
-      "political_decision": 1,
       "major_it": 4,
-      "macro_economy": 4,
+      "macro_economy": 5,
       "violent_crime": 5,
       "major_emergency": 2,
       "fatal_incident": 3,
       "severe_weather": 1
     },
     "sequence": [
-      "ru_pol",
       "it",
       "ru_eco",
       "it",
@@ -470,10 +462,10 @@
       "local",
       "local",
       "local",
+      "ru_eco",
       "ru_eco"
     ],
     "category_sequence": [
-      "ru_pol",
       "it",
       "ru_eco",
       "it",
@@ -492,10 +484,10 @@
       "sakh_chp",
       "sakh_chp",
       "sakh_chp",
+      "ru_eco",
       "ru_eco"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "techmedia techmedia",
       "sakhalinmedia.ru",
       "exploit exploitex",
@@ -514,6 +506,7 @@
       "astv",
       "sakhalinmedia.ru",
       "astv",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -533,7 +526,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-16T09:29:29+00:00",
+    "checked_at_utc": "2026-11-16T09:36:43+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -574,12 +567,12 @@
     },
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 12.0,
+      "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
         "local": 9,
-        "ru_pol": 1,
-        "ru_eco": 4,
+        "ru_pol": 0,
+        "ru_eco": 5,
         "ru_safety": 1,
         "world": 1,
         "it": 4
@@ -594,8 +587,8 @@
       },
       "deficits": {
         "local": -3.0,
-        "ru_pol": 3.0,
-        "ru_eco": 0.0,
+        "ru_pol": 4.0,
+        "ru_eco": -1.0,
         "ru_safety": 2.0,
         "world": 1.0,
         "it": -3.0
