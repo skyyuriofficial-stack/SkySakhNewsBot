@@ -1,54 +1,24 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-11-16T10:15:44+00:00",
-  "last_run_sakhalin": "2026-11-16T21:15:44+11:00",
-  "mode": "evening",
+  "last_run_utc": "2026-11-16T22:53:47+00:00",
+  "last_run_sakhalin": "2026-11-17T09:53:47+11:00",
+  "mode": "morning",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 611,
-  "evidence_count": 7,
-  "evidence_hash": "8510e0c28a02828a3e0bbfcfcb2d67c6c3e5742779b5491454ee14ee0646deb8",
+  "telegram_message_id": 613,
+  "evidence_count": 8,
+  "evidence_hash": "89705fa256761813170f602661f4afff8e4d5bfe6cb38c8be92c1c825f963bcd",
   "headline": "Юридический статус и повестки: что подтверждено, а что нет",
   "source_ids": [
+    2,
     3,
     1,
-    2,
+    5,
     6,
-    7,
-    4,
-    5
+    8,
+    4
   ],
   "slots": {
-    "2026-10-21": {
-      "morning": {
-        "status": "ok",
-        "published_at_utc": "2026-10-20T23:16:45+00:00",
-        "published_at_sakhalin": "2026-10-21T10:16:45+11:00",
-        "telegram_message_id": 469,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 4,
-        "evidence_hash": "379b4173a8edf8b8c85fa140c559219504fe6bed4b5949b484884a57d672433c",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      },
-      "evening": {
-        "status": "ok",
-        "published_at_utc": "2026-10-21T09:41:24+00:00",
-        "published_at_sakhalin": "2026-10-21T20:41:24+11:00",
-        "telegram_message_id": 473,
-        "headline": "Прямого подтверждения запуска новой волны в проверенной выборке нет",
-        "evidence_count": 4,
-        "evidence_hash": "24a93e3b9f05b1a6d55bf84399db8301b08aca744e1782f3738b92244dd04b0c",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      }
-    },
     "2026-10-22": {
       "morning": {
         "status": "ok",
@@ -612,13 +582,33 @@
           5
         ]
       }
+    },
+    "2026-11-17": {
+      "morning": {
+        "status": "ok",
+        "published_at_utc": "2026-11-16T22:53:47+00:00",
+        "published_at_sakhalin": "2026-11-17T09:53:47+11:00",
+        "telegram_message_id": 613,
+        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
+        "evidence_count": 8,
+        "evidence_hash": "89705fa256761813170f602661f4afff8e4d5bfe6cb38c8be92c1c825f963bcd",
+        "source_ids": [
+          2,
+          3,
+          1,
+          5,
+          6,
+          8,
+          4
+        ]
+      }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "evening",
-    "at_utc": "2026-11-16T10:15:44+00:00",
-    "at_sakhalin": "2026-11-16T21:15:44+11:00"
+    "mode": "morning",
+    "at_utc": "2026-11-16T22:53:47+00:00",
+    "at_sakhalin": "2026-11-17T09:53:47+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-11-14T01:21:35+00:00",
