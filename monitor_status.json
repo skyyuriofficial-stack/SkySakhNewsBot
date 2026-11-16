@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-16T00:25:30+00:00",
-  "checked_at_sakhalin": "2026-11-16T11:25:24+11:00",
+  "checked_at_utc": "2026-11-16T00:53:38+00:00",
+  "checked_at_sakhalin": "2026-11-16T11:53:32+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -33,26 +33,13 @@
           "error": "Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message"
         }
       ]
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-11-16T08:45:00+11:00",
-      "last_attempt": {
-        "status": "blocked",
-        "mode": "morning",
-        "at_utc": "2026-11-14T01:21:50+00:00",
-        "at_sakhalin": "2026-11-14T12:21:50+11:00",
-        "error": "telegram_transport",
-        "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)"
-      }
     }
   ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-16T11:02:36+11:00",
-    "age_hours": 0.38,
+    "age_hours": 0.85,
     "published": 1
   },
   "last_production_attempt": {
@@ -71,13 +58,31 @@
     "publication_contract_blocked": 0
   },
   "mobilization_digest": {
-    "version": "mobilization-digest-v1.4",
+    "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-11-16",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-11-16T00:29:11+00:00",
+        "published_at_sakhalin": "2026-11-16T11:29:11+11:00",
+        "telegram_message_id": 606,
+        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
+        "evidence_count": 8,
+        "evidence_hash": "2da45abb6d6809d0ef07828c9ae3cb776eb7ad2ddc520b31bfcbabe19c6cacc5",
+        "source_ids": [
+          3,
+          1,
+          2,
+          6,
+          7,
+          8,
+          4,
+          5
+        ]
+      }
     },
     "evening": {
       "due": false,
@@ -85,32 +90,16 @@
       "record": {}
     },
     "last_attempt": {
-      "status": "blocked",
+      "status": "ok",
       "mode": "morning",
-      "at_utc": "2026-11-14T01:21:50+00:00",
-      "at_sakhalin": "2026-11-14T12:21:50+11:00",
-      "error": "telegram_transport",
-      "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)"
+      "at_utc": "2026-11-16T00:29:11+00:00",
+      "at_sakhalin": "2026-11-16T11:29:11+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-11-16T08:45:00+11:00",
-        "last_attempt": {
-          "status": "blocked",
-          "mode": "morning",
-          "at_utc": "2026-11-14T01:21:50+00:00",
-          "at_sakhalin": "2026-11-14T12:21:50+11:00",
-          "error": "telegram_transport",
-          "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-16T00:25:28+00:00",
+    "checked_at": "2026-11-16T00:53:36+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -538,7 +527,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-16T00:25:20+00:00",
+    "checked_at_utc": "2026-11-16T00:53:29+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
