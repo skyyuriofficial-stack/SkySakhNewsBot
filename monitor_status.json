@@ -1,17 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-16T02:59:25+00:00",
-  "checked_at_sakhalin": "2026-11-16T13:59:19+11:00",
+  "checked_at_utc": "2026-11-16T03:08:19+00:00",
+  "checked_at_sakhalin": "2026-11-16T14:08:15+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-16T13:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-16T11:02:36+11:00"
-    },
     {
       "type": "post_audit_unresolved",
       "count": 1,
@@ -44,19 +38,19 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-16T11:02:36+11:00",
-    "age_hours": 2.95,
+    "finished_sakhalin": "2026-11-16T14:07:37+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-16T00:02:36+00:00",
+    "checked_at_utc": "2026-11-16T03:07:37+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 6,
+    "director_approved": 5,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -105,7 +99,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-16T02:59:24+00:00",
+    "checked_at": "2026-11-16T03:08:18+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -148,19 +142,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 583,
-      "title": "\"Убийственная жалость или нехватка лососей\": что показал медвежий сезон-2026 на Сахалине",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 584,
       "title": "МИД: Россия готова к диалогу с японскими компаниями при соблюдении ими законов РФ",
@@ -407,6 +388,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 607,
+      "title": "На Сахалине ребенок умер после операции под наркозом",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -453,17 +447,16 @@
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "violent_crime": 6,
       "political_decision": 2,
       "earthquake": 1,
       "major_it": 4,
       "macro_economy": 3,
+      "violent_crime": 5,
       "major_emergency": 2,
-      "fatal_incident": 1,
+      "fatal_incident": 2,
       "severe_weather": 1
     },
     "sequence": [
-      "local",
       "world",
       "local",
       "ru_pol",
@@ -482,10 +475,10 @@
       "local",
       "it",
       "ru_safety",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "sakh_chp",
       "geo",
       "sakh_quake",
       "ru_pol",
@@ -504,10 +497,10 @@
       "sakh_chp",
       "it",
       "ru_incident",
+      "sakh_chp",
       "sakh_chp"
     ],
     "source_sequence": [
-      "astv",
       "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -526,14 +519,15 @@
       "sakhalinmedia.ru",
       "exploit exploitex",
       "astv",
-      "astv"
+      "astv",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-16T02:59:17+00:00",
+    "checked_at_utc": "2026-11-16T03:08:13+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
