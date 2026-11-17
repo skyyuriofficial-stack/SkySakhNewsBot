@@ -1,55 +1,25 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-11-17T11:39:56+00:00",
-  "last_run_sakhalin": "2026-11-17T22:39:56+11:00",
-  "mode": "evening",
+  "last_run_utc": "2026-11-17T22:14:30+00:00",
+  "last_run_sakhalin": "2026-11-18T09:14:30+11:00",
+  "mode": "morning",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 617,
+  "telegram_message_id": 618,
   "evidence_count": 10,
-  "evidence_hash": "9b7880d3b901d8079053c1dc9ad02ee21421d63da18e5d9042c7184891b00040",
+  "evidence_hash": "73c27f0baf78c74381b03b3200474a06d6a017656d047b5e24e741625c97d444",
   "headline": "Юридический статус и повестки: что подтверждено, а что нет",
   "source_ids": [
     3,
     1,
-    2,
+    5,
     6,
     7,
-    9,
-    4,
-    5
+    10,
+    2,
+    4
   ],
   "slots": {
-    "2026-10-22": {
-      "morning": {
-        "status": "ok",
-        "published_at_utc": "2026-10-21T22:05:23+00:00",
-        "published_at_sakhalin": "2026-10-22T09:05:23+11:00",
-        "telegram_message_id": 476,
-        "headline": "В РФ внесён законопроект о новой административной ответственности за неисполнение решений оперативных штабов",
-        "evidence_count": 3,
-        "evidence_hash": "d03cb5a4101487a181b6b9fb40194663b5c3c03e307227c509e4da44a9d68259",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      },
-      "evening": {
-        "status": "ok",
-        "published_at_utc": "2026-10-22T10:05:11+00:00",
-        "published_at_sakhalin": "2026-10-22T21:05:11+11:00",
-        "telegram_message_id": 484,
-        "headline": "Нет подтвержденной новой волны мобилизации; законопроект усиливает наказание за неподчинение существующим приказам",
-        "evidence_count": 3,
-        "evidence_hash": "ce1251278f833e79eb892a1e5d50467ef92fd9af7a1ec32c6c7aec5499b49a9c",
-        "source_ids": [
-          1,
-          2,
-          3
-        ]
-      }
-    },
     "2026-10-23": {
       "morning": {
         "status": "ok",
@@ -622,13 +592,34 @@
           5
         ]
       }
+    },
+    "2026-11-18": {
+      "morning": {
+        "status": "ok",
+        "published_at_utc": "2026-11-17T22:14:30+00:00",
+        "published_at_sakhalin": "2026-11-18T09:14:30+11:00",
+        "telegram_message_id": 618,
+        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
+        "evidence_count": 10,
+        "evidence_hash": "73c27f0baf78c74381b03b3200474a06d6a017656d047b5e24e741625c97d444",
+        "source_ids": [
+          3,
+          1,
+          5,
+          6,
+          7,
+          10,
+          2,
+          4
+        ]
+      }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "evening",
-    "at_utc": "2026-11-17T11:39:56+00:00",
-    "at_sakhalin": "2026-11-17T22:39:56+11:00"
+    "mode": "morning",
+    "at_utc": "2026-11-17T22:14:30+00:00",
+    "at_sakhalin": "2026-11-18T09:14:30+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-11-14T01:21:35+00:00",
