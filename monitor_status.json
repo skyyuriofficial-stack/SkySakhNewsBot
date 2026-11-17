@@ -1,50 +1,27 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-17T22:12:15+00:00",
-  "checked_at_sakhalin": "2026-11-18T09:12:09+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-17T22:16:52+00:00",
+  "checked_at_sakhalin": "2026-11-18T09:16:48+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 10.65,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-18T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-17T22:33:10+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-11-18T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "evening",
-        "at_utc": "2026-11-17T11:39:56+00:00",
-        "at_sakhalin": "2026-11-17T22:39:56+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-17T22:33:10+11:00",
-    "age_hours": 10.65,
-    "published": 1
+    "finished_sakhalin": "2026-11-18T09:16:15+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-17T11:33:10+00:00",
+    "checked_at_utc": "2026-11-17T22:16:15+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 14,
+    "published": 2,
+    "director_approved": 13,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -54,11 +31,29 @@
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-11-18",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-11-17T22:14:30+00:00",
+        "published_at_sakhalin": "2026-11-18T09:14:30+11:00",
+        "telegram_message_id": 618,
+        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
+        "evidence_count": 10,
+        "evidence_hash": "73c27f0baf78c74381b03b3200474a06d6a017656d047b5e24e741625c97d444",
+        "source_ids": [
+          3,
+          1,
+          5,
+          6,
+          7,
+          10,
+          2,
+          4
+        ]
+      }
     },
     "evening": {
       "due": false,
@@ -67,27 +62,15 @@
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "evening",
-      "at_utc": "2026-11-17T11:39:56+00:00",
-      "at_sakhalin": "2026-11-17T22:39:56+11:00"
+      "mode": "morning",
+      "at_utc": "2026-11-17T22:14:30+00:00",
+      "at_sakhalin": "2026-11-18T09:14:30+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-11-18T08:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "evening",
-          "at_utc": "2026-11-17T11:39:56+00:00",
-          "at_sakhalin": "2026-11-17T22:39:56+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-17T22:12:13+00:00",
+    "checked_at": "2026-11-17T22:16:51+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -124,32 +107,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 591,
-      "title": "Володин предложил проверить обоснованность тарифов ЖКУ и цен на жилье",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
-    {
-      "message_id": 592,
-      "title": "Медведь напал на женщину с собаками на Сахалине: два питомца погибли, защищая хозяйку",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 593,
       "title": "Исследование ВТБ и Литрес: 75% россиян считают, что чтение помогает справиться с хандрой",
@@ -383,6 +340,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 619,
+      "title": "Молодая женщина умерла на Сахалине после зверского избиения",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
+    },
+    {
+      "message_id": 620,
+      "title": "Бизнес может потерять более 500 млн рублей выручки в день из-за кибератаки",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -406,10 +389,10 @@
     "counts": {
       "local": 11,
       "ru_pol": 1,
-      "ru_eco": 4,
+      "ru_eco": 3,
       "ru_safety": 1,
       "world": 1,
-      "it": 2
+      "it": 3
     },
     "scaled_targets": {
       "local": 6.0,
@@ -422,24 +405,22 @@
     "deficits": {
       "local": -5.0,
       "ru_pol": 3.0,
-      "ru_eco": 0.0,
+      "ru_eco": 1.0,
       "ru_safety": 2.0,
       "world": 1.0,
-      "it": -1.0
+      "it": -2.0
     },
-    "distribution_error": 12.0,
+    "distribution_error": 14.0,
     "subtype_counts": {
-      "macro_economy": 6,
-      "violent_crime": 4,
-      "major_it": 2,
+      "macro_economy": 5,
+      "major_it": 3,
       "major_emergency": 3,
-      "fatal_incident": 3,
+      "fatal_incident": 4,
       "severe_weather": 1,
+      "violent_crime": 3,
       "political_decision": 1
     },
     "sequence": [
-      "ru_eco",
-      "local",
       "ru_eco",
       "it",
       "local",
@@ -457,11 +438,11 @@
       "ru_pol",
       "local",
       "local",
-      "local"
+      "local",
+      "local",
+      "it"
     ],
     "category_sequence": [
-      "ru_eco",
-      "sakh_chp",
       "ru_eco",
       "it",
       "sakh_chp",
@@ -479,11 +460,11 @@
       "ru_pol",
       "sakh_chp",
       "sakh",
-      "sakh"
+      "sakh",
+      "sakh_chp",
+      "it"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "sakh.online",
       "sakhalinmedia.ru",
       "exploit exploitex",
       "astv",
@@ -501,7 +482,9 @@
       "astv",
       "sakh.online",
       "sakhalinmedia.ru",
-      "astv"
+      "astv",
+      "astv",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -520,7 +503,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-17T22:12:07+00:00",
+    "checked_at_utc": "2026-11-17T22:16:45+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -561,15 +544,15 @@
     },
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 12.0,
+      "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
         "local": 11,
         "ru_pol": 1,
-        "ru_eco": 4,
+        "ru_eco": 3,
         "ru_safety": 1,
         "world": 1,
-        "it": 2
+        "it": 3
       },
       "targets": {
         "local": 6,
@@ -582,10 +565,10 @@
       "deficits": {
         "local": -5.0,
         "ru_pol": 3.0,
-        "ru_eco": 0.0,
+        "ru_eco": 1.0,
         "ru_safety": 2.0,
         "world": 1.0,
-        "it": -1.0
+        "it": -2.0
       }
     }
   ]
