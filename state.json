@@ -480,7 +480,9 @@
     "https://astv.ru/news/society/2026-11-16-v-rossii-vpervye-utverdili-gost-na-borsh-i-drugie-russkie-blyuda",
     "https://sakh.online/news/18/2026-11-17/v-tymovskom-rayone-za-odin-vecher-proizoshli-dva-pozhara-531752",
     "https://sakhalinmedia.ru/news/2684700/",
-    "https://astv.ru/news/society/2026-11-17-dohody-byudzheta-sahalina-v-2027-godu-ozhidayutsya-na-urovne-200-5-mlrd-rublej"
+    "https://astv.ru/news/society/2026-11-17-dohody-byudzheta-sahalina-v-2027-godu-ozhidayutsya-na-urovne-200-5-mlrd-rublej",
+    "https://astv.ru/news/criminal/2026-11-18-molodaya-zhenshina-umerla-na-sahaline-posle-zverskogo-izbieniya",
+    "https://sakhalinmedia.ru/news/2685177/"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -964,394 +966,12 @@
     "13d0d17d7a2c55bdfffcdad9b4bc9f7d495c56ed",
     "f706039f153d9b6f2bb6dc82e286cffadf9d78f9",
     "90224f8aaf8cb46cf35b582ec2848228da2a6a33",
-    "de8419d439ac874ef58390effe3b2167c6539065"
+    "de8419d439ac874ef58390effe3b2167c6539065",
+    "620d4b16e20acaf36dbdc4b106440d3b0f2fc4ed",
+    "cf626b8ca9ef839a04085c630ea7c9f364ef45b7"
   ],
-  "last_run_sakhalin": "2026-11-17T22:33:10+11:00",
+  "last_run_sakhalin": "2026-11-18T09:16:15+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-10-26T11:16:39+11:00",
-      "source": "Exploit (@exploitex)",
-      "category": "💻 IT / технологии",
-      "category_key": "it",
-      "title": "Китайцы нашли способ разблокировать всю мощность видеокарт Nvidia — вышел анлокер, который снимает ограничение с карточек серий RTX30xx и RTX40xx ",
-      "url": "https://t.me/exploitex/37468",
-      "image_url": "https://cdn4.telesco.pe/file/TecEuK9tRza6HnX9wcDnBRDwfietQ69Gqb3k8H_elDGOKDV1W_TebWDJ93F_mn4qn15hRBHwGp0odO-gly6yQ_cAoLDRjHTVCn81uNQYMZOioQylOw2YXY1H-hZbCZt1ZDOGU2aJw1kdKXIY1bKSmkCjPybTcGIg8nduQPNRBQ6YoU35SXoLA23osrr9x6pk-_TZL5KgMOcRpxag-Xwsrc_dlWCsopoS02kBJL4j78QyosN71DDSXA55QCqHzG0KX78WqqPmGbQHAiTvszuPDx8-Pgk7moTaVz4EFezgcWPImArY3lCSevKECNUZ9wT489SDw1l5NlYrh4pwnWuP4Q.jpg",
-      "image_hash": "1b3629bb3fe232ba628392b1745235e305e4f4bb",
-      "topic_cluster": "it:китайцы_нашли_способ_разблокировать_мощность_видеокарт",
-      "published_at": "2026-10-24T21:01:01+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "it",
-        "corrected_category": "it",
-        "group": "it",
-        "event_type": "major_it",
-        "subtype": "major_it",
-        "seriousness": 78,
-        "threshold": 78,
-        "selection_utility": -116.0,
-        "slot": "backup",
-        "risks": [
-          "near_threshold"
-        ],
-        "title_original": "Китайцы нашли способ разблокировать всю мощность видеокарт Nvidia — вышел анлокер, который снимает ограничение с карточек серий RTX30xx и RTX40xx .",
-        "title_corrected": "Китайцы нашли способ разблокировать всю мощность видеокарт Nvidia — вышел анлокер, который снимает ограничение с карточек серий RTX30xx и RTX40xx ",
-        "title_corrections": [],
-        "title_changed": true,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "Китайцы нашли способ разблокировать всю мощность видеокарт Nvidia — вышел анлокер, который снимает ограничение с карточек серий RTX30xx и RTX40xx . — Nvidia программно блокирует скорость некоторых матричных вычислений, которые используют нейросети; — По слухам, это сделано потому, что жадный дядя Хуанг не хочет, чтобы на дешёвых игровых чипах можно было эффективно запускать и тренировать ИИ; — Анлокер запускается до драйвера видеокарты и снимает это ограничение — итоговая мощность в терафлопсах увеличивается почти ВДВОЕ ; — Это даёт мощный буст для тренировки нейросетей и дообучения: если делаете свои LoRA — это подарок для вас ; — А еще почти на 60% ускоряет генерацию картинок и видео на локальных моделях ; — Минус только один: в генерации текстов с помощью LLM анлокер почти не поможет — там слишком сильный упор идёт на пропускную способность памяти видеокарты, ОЗУ и процессора. Запускаем нейросети вдвое быстрее — здесь .",
-      "title_original": "Китайцы нашли способ разблокировать всю мощность видеокарт Nvidia — вышел анлокер, который снимает ограничение с карточек серий RTX30xx и RTX40xx .",
-      "footer": "IT | ТЕХНОЛОГИИ",
-      "published_row": {
-        "reject": false,
-        "title_ru": "Китайцы нашли способ разблокировать всю мощность видеокарт Nvidia — вышел анлокер, который снимает ограничение с карточек серий RTX30xx и RTX40xx ",
-        "title_evidence": "Китайцы нашли способ разблокировать всю мощность видеокарт Nvidia — вышел анлокер, который снимает ограничение с карточек серий RTX30xx и RTX4 outsxx",
-        "body": [
-          "Nvidia программно блокирует скорость некоторых матричных вычислений, которые используют нейросети.",
-          "Анлокер запускается до драйвера видеокарты и снимает это ограничение — итоговая мощность в терафлопсах увеличивается почти вдвое.",
-          "Это даёт мощный буст для тренировки нейросетей и дообучения: если делаете свои LoRA — это подарок для вас .",
-          "А еще почти на 60% ускоряет генерацию картинок и видео на локальных моделях.",
-          "Минус только один: в генерации текстов с помощью LLM анлокер почти не поможет — там слишком сильный упор идёт на пропускную способность памяти видеокарты, ОЗУ и процессора."
-        ],
-        "body_evidence": [
-          "Nvidia программно блокирует скорость некоторых матричных вычислений, которые используют нейросети.",
-          "Анлокер запускается до драйвера видеокарты и снимает это ограничение — итоговая мощность в терафлопсах увеличивается почти вдвое.",
-          "Это даёт мощный буст для тренировки нейросетей и дообучения: если делаете свои LoRA — это подарок для вас .",
-          "А еще почти на 60% ускоряет генерацию картинок и видео на локальных моделях.",
-          "Минус только один: в генерации текстов с помощью LLM анлокер почти не поможет — там слишком сильный упор идёт на пропускную способность памяти видеокарты, ОЗУ и процессора."
-        ],
-        "footer": "IT | ТЕХНОЛОГИIES",
-        "category": "💻 IT / технологии",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic",
-          "issues": []
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "it",
-          "corrected_category": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "subtype": "major_it",
-          "seriousness": 78,
-          "threshold": 78,
-          "selection_utility": -116.0,
-          "slot": "backup",
-          "risks": [
-            "near_threshold"
-          ],
-          "title_original": "Китайцы нашли способ разблокировать всю мощность видеокарт Nvidia — вышел анлокер, который снимает ограничение с карточек серий RTX30xx и RTX40xx .",
-          "title_corrected": "Китайцы нашли способ разблокировать всю мощность видеокарт Nvidia — вышел анлокер, который снимает ограничение с карточек серий RTX30xx и RTX40xx ",
-          "title_corrections": [],
-          "title_changed": true,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "it",
-          "final_category": "it",
-          "event_type": "major_it",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.7",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "it",
-            "corrected_category": "it",
-            "group": "it",
-            "event_type": "major_it",
-            "subtype": "major_it",
-            "seriousness": 83,
-            "threshold": 78,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "Китайцы нашли способ разблокировать всю мощность видеокарт Nvidia — вышел анлокер, который снимает ограничение с карточек серий RTX30xx и RTX40xx",
-            "title_corrected": "Китайцы нашли способ разблокировать всю мощность видеокарт Nvidia — вышел анлокер, который снимает ограничение с карточек серий RTX30xx и RTX40xx",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "💻 IT / технологии\n\n<b>Китайцы нашли способ разблокировать всю мощность видеокарт Nvidia — вышел анлокер, который снимает ограничение с карточек серий RTX30xx и RTX40xx</b>\n\nNvidia программно блокирует скорость некоторых матричных вычислений, которые используют нейросети.\n\nАнлокер запускается до драйвера видеокарты и снимает это ограничение — итоговая мощность в терафлопсах увеличивается почти вдвое.\n\nЭто даёт мощный буст для тренировки нейросетей и дообучения: если делаете свои LoRA — это подарок для вас .\n\nА еще почти на 60% ускоряет генерацию картинок и видео на локальных моделях.\n\nМинус только один: в генерации текстов с помощью LLM анлокер почти не поможет — там слишком сильный упор идёт на пропускную способность памяти видеокарты, ОЗУ и процессора.\n\nIT | ТЕХНОЛОГИИ · <a href=\"https://t.me/exploitex/37468\">Exploit (@exploitex)</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "it",
-        "final_category": "it",
-        "event_type": "major_it",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.7",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "it",
-          "corrected_category": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "subtype": "major_it",
-          "seriousness": 83,
-          "threshold": 78,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Китайцы нашли способ разблокировать всю мощность видеокарт Nvidia — вышел анлокер, который снимает ограничение с карточек серий RTX30xx и RTX40xx",
-          "title_corrected": "Китайцы нашли способ разблокировать всю мощность видеокарт Nvidia — вышел анлокер, который снимает ограничение с карточек серий RTX30xx и RTX40xx",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 510,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic",
-        "issues": []
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-11-02T09:08:03+00:00"
-      }
-    },
-    {
-      "time_sakhalin": "2026-10-27T10:33:09+11:00",
-      "source": "SakhalinMedia.ru",
-      "category": "🇷🇺 Россия / экономика",
-      "category_key": "ru_eco",
-      "title": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
-      "url": "https://sakhalinmedia.ru/news/2661814/",
-      "image_url": "https://sakhalinmedia.ru/f/big/6472/6471734.jpg?4cb03f74f80facd21d5e5c9e42b23d80",
-      "image_hash": "402a2f7a0435f8df414d80b79bb63654d5edecf8",
-      "topic_cluster": "ru_eco:сберстрахование_жизни_граждане_рассказали_копят_летний",
-      "published_at": "2026-10-26T12:00:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "ru_eco",
-        "corrected_category": "ru_eco",
-        "group": "ru_eco",
-        "event_type": "macro_economy",
-        "subtype": "macro_economy",
-        "seriousness": 86,
-        "threshold": 80,
-        "selection_utility": 120.0,
-        "slot": 2,
-        "risks": [],
-        "title_original": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
-        "title_corrected": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "Многие начинают копить на летний отпуск лучше уже осенью, чтобы распределить расходы на несколько месяцев и избежать существенной нагрузки на бюджет. Для этого они заранее рассчитывают стоимость поездки, определяют комфортную сумму ежемесячных накоплений и выбрают подходящий финансовый инструмент. Об этом рассказал Александр Тихомиров, директор по инвестициям СберСтрахования жизни, эксперт СберИнвестиций. По словам эксперта, при планировании путешествия респондентам важно учитывать не только стоимость перелёта и проживания, но и дополнительные расходы, предусмотрев резерв в размере 10–15%. Чтобы регулярно пополнять отпускной бюджет, можно настроить автоматические переводы на отдельный счёт в день зарплаты. Для таких накоплений чаще всего используют вклады и накопительные счета. Также многие рассматривают программы накопительного страхования жизни (НСЖ). При этом важно учитывать сроки и условия программы. Вопросы формирования накоплений и финансовой защиты также будут обсуждаться на конференции Сбера \"Страхование 2030. Технологии будущего\" (6+), которая состоится 17 ноября в Москве.",
-      "title_original": null,
-      "footer": "РОССИЯ | ЭКОНОМИКА",
-      "published_row": {
-        "reject": false,
-        "title_ru": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
-        "body": [
-          "Многие начинают копить на летний отпуск лучше уже осенью, чтобы распределить расходы на несколько месяцев и избежать существенной нагрузки на бюджет.",
-          "Для этого они заранее рассчитывают стоимость поездки, определяют комфортную сумму ежемесячных накоплений и выбрают подходящий финансовый инструмент."
-        ],
-        "footer": "РОССИЯ | ЭКОНОМИКА",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": [],
-          "reclassified_from": "sakh",
-          "reclassified_to": "ru_eco"
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_eco",
-          "corrected_category": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "subtype": "macro_economy",
-          "seriousness": 86,
-          "threshold": 80,
-          "selection_utility": 120.0,
-          "slot": 2,
-          "risks": [],
-          "title_original": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
-          "title_corrected": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "ru_eco",
-          "final_category": "ru_eco",
-          "event_type": "macro_economy",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.7",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "ru_eco",
-            "corrected_category": "ru_eco",
-            "group": "ru_eco",
-            "event_type": "macro_economy",
-            "subtype": "macro_economy",
-            "seriousness": 82,
-            "threshold": 80,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [
-              "near_threshold"
-            ],
-            "title_original": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
-            "title_corrected": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "🇷🇺 Россия / экономика\n\n<b>СберСтрахование жизни: граждане рассказали, как копят на летний отпуск</b>\n\nМногие начинают копить на летний отпуск лучше уже осенью, чтобы распределить расходы на несколько месяцев и избежать существенной нагрузки на бюджет.\n\nДля этого они заранее рассчитывают стоимость поездки, определяют комфортную сумму ежемесячных накоплений и выбрают подходящий финансовый инструмент.\n\nРОССИЯ | ЭКОНОМИКА · <a href=\"https://sakhalinmedia.ru/news/2661814/\">SakhalinMedia.ru</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "ru_eco",
-        "final_category": "ru_eco",
-        "event_type": "macro_economy",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.7",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_eco",
-          "corrected_category": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "subtype": "macro_economy",
-          "seriousness": 82,
-          "threshold": 80,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [
-            "near_threshold"
-          ],
-          "title_original": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
-          "title_corrected": "СберСтрахование жизни: граждане рассказали, как копят на летний отпуск",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 513,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": [],
-        "reclassified_from": "sakh",
-        "reclassified_to": "ru_eco"
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": false,
-        "checked_at": "2026-11-03T01:44:03+00:00",
-        "reason": "sber_routine_promotion",
-        "issues": [
-          "final_hard_reject:sber_routine_promotion",
-          "final_category_mismatch:None->ru_eco",
-          "director_final_category:None->ru_eco",
-          "director_final_reject:sber_routine_promotion"
-        ]
-      }
-    },
     {
       "time_sakhalin": "2026-10-27T10:33:17+11:00",
       "source": "Sakh.online",
@@ -12037,7 +11657,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:17+00:00"
+        "checked_at": "2026-11-17T22:12:42+00:00"
       }
     },
     {
@@ -12214,7 +11834,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:17+00:00"
+        "checked_at": "2026-11-17T22:12:42+00:00"
       }
     },
     {
@@ -12399,7 +12019,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:17+00:00"
+        "checked_at": "2026-11-17T22:12:42+00:00"
       }
     },
     {
@@ -12576,7 +12196,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:17+00:00"
+        "checked_at": "2026-11-17T22:12:42+00:00"
       }
     },
     {
@@ -12753,7 +12373,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:18+00:00"
+        "checked_at": "2026-11-17T22:12:42+00:00"
       }
     },
     {
@@ -12939,7 +12559,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": false,
-        "checked_at": "2026-11-17T19:58:18+00:00",
+        "checked_at": "2026-11-17T22:12:42+00:00",
         "reason": "approved",
         "issues": [
           "foreign_translation_evidence_missing"
@@ -13120,7 +12740,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:18+00:00"
+        "checked_at": "2026-11-17T22:12:42+00:00"
       }
     },
     {
@@ -13297,7 +12917,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:18+00:00"
+        "checked_at": "2026-11-17T22:12:43+00:00"
       }
     },
     {
@@ -13478,7 +13098,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:18+00:00"
+        "checked_at": "2026-11-17T22:12:43+00:00"
       }
     },
     {
@@ -13663,7 +13283,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:18+00:00"
+        "checked_at": "2026-11-17T22:12:43+00:00"
       }
     },
     {
@@ -13844,7 +13464,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:18+00:00"
+        "checked_at": "2026-11-17T22:12:43+00:00"
       }
     },
     {
@@ -14021,7 +13641,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:19+00:00"
+        "checked_at": "2026-11-17T22:12:43+00:00"
       }
     },
     {
@@ -14202,7 +13822,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:19+00:00"
+        "checked_at": "2026-11-17T22:12:43+00:00"
       }
     },
     {
@@ -14379,7 +13999,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:19+00:00"
+        "checked_at": "2026-11-17T22:12:43+00:00"
       }
     },
     {
@@ -14560,7 +14180,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:19+00:00"
+        "checked_at": "2026-11-17T22:12:44+00:00"
       }
     },
     {
@@ -14741,7 +14361,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:19+00:00"
+        "checked_at": "2026-11-17T22:12:44+00:00"
       }
     },
     {
@@ -14922,7 +14542,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:19+00:00"
+        "checked_at": "2026-11-17T22:12:44+00:00"
       }
     },
     {
@@ -15099,7 +14719,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:20+00:00"
+        "checked_at": "2026-11-17T22:12:44+00:00"
       }
     },
     {
@@ -15276,7 +14896,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:20+00:00"
+        "checked_at": "2026-11-17T22:12:44+00:00"
       }
     },
     {
@@ -15453,7 +15073,359 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-17T19:58:20+00:00"
+        "checked_at": "2026-11-17T22:12:44+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-11-18T09:15:34+11:00",
+      "source": "ASTV",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "Молодая женщина умерла на Сахалине после зверского избиения",
+      "url": "https://astv.ru/news/criminal/2026-11-18-molodaya-zhenshina-umerla-na-sahaline-posle-zverskogo-izbieniya",
+      "image_url": "https://astv.ru/content/NewsImage/6d/1a/6d1aa341-61c8-41b9-bfb8-0a14ffda7554_3.jpg",
+      "image_hash": "ac3dcecfe956a12529d9615f481a5cb3d918801d",
+      "topic_cluster": "sakh_chp:молодая_женщина_умерла_сахалине_после_зверского",
+      "published_at": "2026-11-17T13:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "sakh_chp",
+        "corrected_category": "sakh_chp",
+        "group": "local",
+        "event_type": "fatal_incident",
+        "subtype": "fatal_incident",
+        "seriousness": 100,
+        "threshold": 70,
+        "selection_utility": -109.0,
+        "slot": 1,
+        "risks": [],
+        "title_original": "Молодая женщина умерла на Сахалине после зверского избиения",
+        "title_corrected": "Молодая женщина умерла на Сахалине после зверского избиения",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": "hardening_row_repair"
+      },
+      "source_text_excerpt": "Трагедия произошла в Охе. По подозрению в совершении преступления задержали сожителя Трагедия произошла в Охе. По подозрению в совершении преступления задержали сожителя \"Подозреваемый нанес не менее 5 ударов руками и ногой в область головы. На следующий день фигурант уголовного дела обнаружил, что от полученных травм женщина скончалась\", - отметили в ведомстве. Мужчину задержали. Решается вопрос об избрании меры пресечения. Уголовное дело возбудили по ч. 4 ст. 111 УК РФ. Следователи собирают и закрепляют доказательства.",
+      "title_original": null,
+      "footer": "ЧП | САХАЛИН",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Молодая женщина умерла на Сахалине после зверского избиения",
+        "body": [
+          "По подозрению в совершении преступления задержали сожителя Трагедия произошла в Охе.",
+          "По подозрению в совершении преступления задержали сожителя \"Подозреваемый нанес не менее 5 ударов руками и ногой в область головы. На следующий день фигурант уголовного дела обнаружил, что от полученных травм женщина скончалась\", - отметили в ведомстве."
+        ],
+        "footer": "ЧП | САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "hardening_repair": {
+          "version": "editorial-hardening-v1.7",
+          "source_warnings": []
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "fatal_incident",
+          "subtype": "fatal_incident",
+          "seriousness": 100,
+          "threshold": 70,
+          "selection_utility": -109.0,
+          "slot": 1,
+          "risks": [],
+          "title_original": "Молодая женщина умерла на Сахалине после зверского избиения",
+          "title_corrected": "Молодая женщина умерла на Сахалине после зверского избиения",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": "hardening_row_repair"
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "sakh_chp",
+          "final_category": "sakh_chp",
+          "event_type": "fatal_incident",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.8",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "sakh_chp",
+            "corrected_category": "sakh_chp",
+            "group": "local",
+            "event_type": "fatal_incident",
+            "subtype": "fatal_incident",
+            "seriousness": 100,
+            "threshold": 70,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Молодая женщина умерла на Сахалине после зверского избиения",
+            "title_corrected": "Молодая женщина умерла на Сахалине после зверского избиения",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "📍 Сахалин\n\n<b>Молодая женщина умерла на Сахалине после зверского избиения</b>\n\nПо подозрению в совершении преступления задержали сожителя Трагедия произошла в Охе.\n\nПо подозрению в совершении преступления задержали сожителя \"Подозреваемый нанес не менее 5 ударов руками и ногой в область головы. На следующий день фигурант уголовного дела обнаружил, что от полученных травм женщина скончалась\", - отметили в ведомстве.\n\nЧП | САХАЛИН · <a href=\"https://astv.ru/news/criminal/2026-11-18-molodaya-zhenshina-umerla-na-sahaline-posle-zverskogo-izbieniya\">ASTV</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "fatal_incident",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.8",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "fatal_incident",
+          "subtype": "fatal_incident",
+          "seriousness": 100,
+          "threshold": 70,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Молодая женщина умерла на Сахалине после зверского избиения",
+          "title_corrected": "Молодая женщина умерла на Сахалине после зверского избиения",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 619,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": []
+      }
+    },
+    {
+      "time_sakhalin": "2026-11-18T09:16:07+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "💻 IT / технологии",
+      "category_key": "it",
+      "title": "Бизнес может потерять более 500 млн рублей выручки в день из-за кибератаки",
+      "url": "https://sakhalinmedia.ru/news/2685177/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6511/6510728.jpg.webp?v=1794926387",
+      "image_hash": "1e5d00d0a7a6f89b57a05809d321e3735e35dac0",
+      "topic_cluster": "it:бизнес_может_потерять_более_рублей_выручки",
+      "published_at": "2026-11-17T14:15:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "it",
+        "corrected_category": "it",
+        "group": "it",
+        "event_type": "major_it",
+        "subtype": "major_it",
+        "seriousness": 88,
+        "threshold": 78,
+        "selection_utility": 46.0,
+        "slot": "backup",
+        "risks": [],
+        "title_original": "Бизнес может потерять более 500 млн рублей выручки в день из-за кибератаки",
+        "title_corrected": "Бизнес может потерять более 500 млн рублей выручки в день из-за кибератаки",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_text_excerpt": "Потери бизнеса за день простоя в результате кибератаки в среднем составляют 0,2–0,3% годовой выручки. Для крупной компании это может означать более 500 млн рублей недополученных доходов за сутки, рассказала директор корпоративного страхования СберСтрахования Зара Геворкян на страховой конференции Сбера Страхование 2030. Технологии будущего для людей (18+). Для организаций малого и среднего бизнеса полная остановка деятельности из-за взлома может обернуться потерей до 1,5 млн рублей выручкив день, для среднего бизнеса — до 6 млн рублей. Однако финансовые последствия кибератаки не заканчиваются после восстановления информационных систем. В течение следующих 3–12 месяцев компания может столкнуться с оттоком клиентов, расторжением контрактов и дополнительными расходами на привлечение новых покупателей и партнёров. По оценке страховой компании, такие отложенные эффекты способны увеличить итоговый ущерб ещё на 15–40% сверх прямых потерь. При оценке ущерба от кибератаки важно учитывать не только стоимость простоя и расходы на восстановление инфраструктуры. Даже после возвращения к нормальной работе компания может продолжать терять клиентов и партнёров, сталкиваться с расторжением контрактов и ростом затрат на привлечение новых покупателей. Поэтому последствия инцидента могут сказываться на финансовых результатах бизнеса ещё долгое время после того, как технические проблемы устранены. Именно поэтому компаниям важно заранее продумывать комплексную защиту от цифровых рисков, включая инструменты финансовой устойчивости.",
+      "title_original": null,
+      "footer": "IT | ТЕХНОЛОГИИ",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Бизнес может потерять более 500 млн рублей выручки в день из-за кибератаки",
+        "body": [
+          "Потери бизнеса за день простоя в результате кибератаки в среднем составляют 0,2–0,3% годовой выручки.",
+          "Для крупной компании это может означать более 500 млн рублей недополученных доходов за сутки, рассказала директор корпоративного страхования СберСтрахования Зара Геворкян на страховой конференции Сбера Страхование 2030."
+        ],
+        "footer": "IT | ТЕХНОЛОГИИ",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh",
+          "reclassified_to": "it"
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "it",
+          "corrected_category": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "subtype": "major_it",
+          "seriousness": 88,
+          "threshold": 78,
+          "selection_utility": 46.0,
+          "slot": "backup",
+          "risks": [],
+          "title_original": "Бизнес может потерять более 500 млн рублей выручки в день из-за кибератаки",
+          "title_corrected": "Бизнес может потерять более 500 млн рублей выручки в день из-за кибератаки",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "it",
+          "final_category": "it",
+          "event_type": "major_it",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.8",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "it",
+            "corrected_category": "it",
+            "group": "it",
+            "event_type": "major_it",
+            "subtype": "major_it",
+            "seriousness": 88,
+            "threshold": 78,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Бизнес может потерять более 500 млн рублей выручки в день из-за кибератаки",
+            "title_corrected": "Бизнес может потерять более 500 млн рублей выручки в день из-за кибератаки",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "💻 IT / технологии\n\n<b>Бизнес может потерять более 500 млн рублей выручки в день из-за кибератаки</b>\n\nПотери бизнеса за день простоя в результате кибератаки в среднем составляют 0,2–0,3% годовой выручки.\n\nДля крупной компании это может означать более 500 млн рублей недополученных доходов за сутки, рассказала директор корпоративного страхования СберСтрахования Зара Геворкян на страховой конференции Сбера Страхование 2030.\n\nIT | ТЕХНОЛОГИИ · <a href=\"https://sakhalinmedia.ru/news/2685177/\">SakhalinMedia.ru</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "it",
+        "final_category": "it",
+        "event_type": "major_it",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.8",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "it",
+          "corrected_category": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "subtype": "major_it",
+          "seriousness": 88,
+          "threshold": 78,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Бизнес может потерять более 500 млн рублей выручки в день из-за кибератаки",
+          "title_corrected": "Бизнес может потерять более 500 млн рублей выручки в день из-за кибератаки",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 620,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh",
+        "reclassified_to": "it"
       }
     }
   ],
@@ -15682,11 +15654,11 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-11-17T22:24:20+11:00",
+    "started_sakhalin": "2026-11-18T09:12:38+11:00",
     "status": "ok",
-    "candidates": 14,
-    "published": 1,
-    "local_candidates": 2,
+    "candidates": 13,
+    "published": 2,
+    "local_candidates": 1,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -15695,7 +15667,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 20
+          "recent": 18
         },
         {
           "source": "SakhalinMedia",
@@ -15717,60 +15689,60 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-11-17T22:33:10+11:00",
+    "finished_sakhalin": "2026-11-18T09:16:15+11:00",
     "stats": {
-      "rss_seen": 160,
-      "old_skip": 51,
+      "rss_seen": 157,
+      "old_skip": 46,
       "google_skip": 16,
-      "duplicate_skip": 4,
-      "low_info_skip": 15,
-      "category_skip": 33,
+      "duplicate_skip": 1,
+      "low_info_skip": 16,
+      "category_skip": 38,
       "no_image_skip": 0,
-      "bad_image_skip": 11,
-      "logo_image_skip": 21,
-      "text_card_image_skip": 2,
-      "candidates": 26,
+      "bad_image_skip": 12,
+      "logo_image_skip": 29,
+      "text_card_image_skip": 5,
+      "candidates": 21,
       "rewrite_retry": 4,
-      "editorial_skip": 12,
+      "editorial_skip": 3,
       "telegram_fail": 0,
-      "published": 1,
+      "published": 2,
       "telegram_source_attempt": 4,
       "telegram_source_fail": 0,
-      "telegram_source_seen": 64,
-      "telegram_source_candidates": 22,
+      "telegram_source_seen": 68,
+      "telegram_source_candidates": 30,
       "ai_calls": 4,
       "ai_budget_exhausted": 1,
       "ai_api_fail": 4,
       "evidence_reject": 0,
       "validation_reject": 0,
-      "extractive_fallback": 1,
-      "extractive_first": 1,
-      "editorial_prechecked": 68,
-      "editorial_gate_checked": 13,
-      "editorial_gate_pass": 1,
-      "editorial_gate_reject": 0,
+      "extractive_fallback": 2,
+      "extractive_first": 2,
+      "editorial_prechecked": 77,
+      "editorial_gate_checked": 5,
+      "editorial_gate_pass": 2,
+      "editorial_gate_reject": 1,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 0,
       "editorial_gate_ai_fail": 0,
-      "editorial_title_reject": 0,
-      "editorial_category_reject": 0,
+      "editorial_title_reject": 1,
+      "editorial_category_reject": 1,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 9,
-      "editorial_offtopic_reject": 37,
-      "openrouter_empty_content": 4,
+      "editorial_reclassified": 6,
+      "editorial_offtopic_reject": 46,
+      "openrouter_empty_content": 0,
       "openrouter_model_fallback": 0,
       "openrouter_attempts": 12,
       "openrouter_retries": 8,
-      "openrouter_invalid_json": 1,
+      "openrouter_invalid_json": 0,
       "openrouter_success": 0,
       "openrouter_circuit_open": 0,
       "editorial_grounded_translation_fallback": 0,
-      "media_required_skip": 5,
+      "media_required_skip": 9,
       "media_generic_skip": 0,
-      "media_ready_candidates": 26,
+      "media_ready_candidates": 21,
       "photo_retry": 0,
-      "photo_publish": 1,
-      "photo_upload_original": 1,
+      "photo_publish": 2,
+      "photo_upload_original": 2,
       "photo_upload_reencoded": 0,
       "photo_upload_plain_caption": 0,
       "photo_remote_url": 0,
@@ -15781,15 +15753,15 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 26,
-      "director_approved": 14,
-      "director_rejected": 12,
+      "director_seen": 21,
+      "director_approved": 13,
+      "director_rejected": 8,
       "director_reclassified": 0,
-      "director_title_corrected": 1,
+      "director_title_corrected": 3,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
-      "director_final_checked": 1,
-      "director_final_autocorrected": 0,
+      "director_final_checked": 2,
+      "director_final_autocorrected": 1,
       "director_final_reject": 0,
       "director_pending_retired": 0,
       "publication_contract_blocked": 0,
@@ -15797,252 +15769,15 @@
       "post_audit_anomalies": 1,
       "post_audit_corrected": 0,
       "post_audit_deleted": 0,
-      "tass_world_scanned": 83,
-      "tass_world_screened": 3,
-      "tass_world_candidates": 1
+      "tass_world_scanned": 70,
+      "tass_world_screened": 4,
+      "tass_world_candidates": 3
     },
     "news_director": {
       "version": "director-v2.4",
       "policy_version": "policy-v2.8",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
-        "window": 20,
-        "targets": {
-          "local": 6,
-          "ru_pol": 4,
-          "ru_eco": 4,
-          "ru_safety": 3,
-          "world": 2,
-          "it": 1
-        },
-        "target_percent": {
-          "local": 30.0,
-          "ru_pol": 20.0,
-          "ru_eco": 20.0,
-          "ru_safety": 15.0,
-          "world": 10.0,
-          "it": 5.0
-        },
-        "counts": {
-          "local": 11,
-          "ru_pol": 1,
-          "ru_eco": 4,
-          "ru_safety": 1,
-          "world": 1,
-          "it": 2
-        },
-        "scaled_targets": {
-          "local": 6.0,
-          "ru_pol": 4.0,
-          "ru_eco": 4.0,
-          "ru_safety": 3.0,
-          "world": 2.0,
-          "it": 1.0
-        },
-        "deficits": {
-          "local": -5.0,
-          "ru_pol": 3.0,
-          "ru_eco": 0.0,
-          "ru_safety": 2.0,
-          "world": 1.0,
-          "it": -1.0
-        },
-        "distribution_error": 12.0,
-        "subtype_counts": {
-          "violent_crime": 5,
-          "macro_economy": 5,
-          "major_it": 2,
-          "major_emergency": 3,
-          "fatal_incident": 3,
-          "severe_weather": 1,
-          "political_decision": 1
-        },
-        "sequence": [
-          "local",
-          "ru_eco",
-          "local",
-          "ru_eco",
-          "it",
-          "local",
-          "world",
-          "local",
-          "local",
-          "local",
-          "it",
-          "ru_safety",
-          "local",
-          "local",
-          "local",
-          "ru_eco",
-          "ru_eco",
-          "ru_pol",
-          "local",
-          "local"
-        ],
-        "category_sequence": [
-          "sakh_chp",
-          "ru_eco",
-          "sakh_chp",
-          "ru_eco",
-          "it",
-          "sakh_chp",
-          "world_ru",
-          "sakh_chp",
-          "sakh",
-          "sakh_chp",
-          "it",
-          "ru_incident",
-          "sakh_chp",
-          "sakh_chp",
-          "sakh_chp",
-          "ru_eco",
-          "ru_eco",
-          "ru_pol",
-          "sakh_chp",
-          "sakh"
-        ],
-        "source_sequence": [
-          "astv",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "astv",
-          "bbc world",
-          "astv",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "exploit exploitex",
-          "astv",
-          "astv",
-          "sakhalinmedia.ru",
-          "astv",
-          "sakhalinmedia.ru",
-          "sakhalinmedia.ru",
-          "astv",
-          "sakh.online",
-          "sakhalinmedia.ru"
-        ],
-        "retrospective_anomalies": [],
-        "valid_posts_counted": 20
-      },
-      "candidate_count": 26,
-      "approved_count": 14,
-      "rejected_count": 12,
-      "rejected_by_reason": {
-        "importance_below_threshold": 10,
-        "ordinary_weather_not_release_worthy": 1,
-        "local_mix_saturated_low_priority": 1
-      },
-      "ai_review_requested": 0,
-      "ai_review_received": 0,
-      "selected_groups": [
-        "world",
-        "it"
-      ],
-      "projected_distribution_error": 12.0,
-      "projected_counts": {
-        "local": 10,
-        "ru_eco": 3,
-        "it": 3,
-        "world": 2,
-        "ru_safety": 1,
-        "ru_pol": 1
-      },
-      "projected_length": 20,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "Komyshuvakha: Ukraine accuses Russia of targeting rescue operation after strikes that killed 57",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "fatal_incident",
-          "seriousness": 100,
-          "utility": 134.0
-        },
-        {
-          "slot": 2,
-          "title": "Intel sued by investors after PC sales slump hits share price",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 88,
-          "utility": 46.0
-        },
-        {
-          "slot": "backup",
-          "title": "Песков: ВС РФ наносят удары по ВПК Украины",
-          "category_key": "geo",
-          "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 87,
-          "utility": 99.0
-        },
-        {
-          "slot": "backup",
-          "title": "Crimean Bridge partly collapses as Zelensky hails 'unprecedented' attack by Ukraine",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "major_emergency",
-          "seriousness": 90,
-          "utility": 84.0
-        },
-        {
-          "slot": "backup",
-          "title": "Megaspeed, the company linked to the downfall of Nvidia boss, says it’s a ‘legitimate and lawful business’",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 87,
-          "utility": 17.0
-        },
-        {
-          "slot": "backup",
-          "title": "Microsoft identifies months-old bug as a root cause of global outage",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 87,
-          "utility": 17.0
-        },
-        {
-          "slot": "backup",
-          "title": "California sues OpenAI over safety concerns after rogue agent hacking",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 86,
-          "utility": 16.0
-        },
-        {
-          "slot": "backup",
-          "title": "Пополнить российский Apple ID прямо сейчас можно со скидкой 22% — МТС Оплата решила немного снизить расходы владельцев айфонов",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 84,
-          "utility": 14.0
-        },
-        {
-          "slot": "backup",
-          "title": "OpenAI sued by California over Hugging Face attack",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 87,
-          "utility": -1.0
-        },
-        {
-          "slot": "backup",
-          "title": "Suspected China spy linked to Nvidia's ex-boss left in 2025, Megaspeed says",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 86,
-          "utility": -2.0
-        }
-      ],
-      "rolling_balance_after": {
         "window": 20,
         "targets": {
           "local": 6,
@@ -16162,11 +15897,247 @@
         ],
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
+      },
+      "candidate_count": 21,
+      "approved_count": 13,
+      "rejected_count": 8,
+      "rejected_by_reason": {
+        "importance_below_threshold": 7,
+        "ordinary_weather_not_release_worthy": 1
+      },
+      "ai_review_requested": 0,
+      "ai_review_received": 0,
+      "selected_groups": [
+        "local",
+        "world"
+      ],
+      "projected_distribution_error": 12.0,
+      "projected_counts": {
+        "ru_eco": 3,
+        "it": 2,
+        "local": 11,
+        "world": 2,
+        "ru_safety": 1,
+        "ru_pol": 1
+      },
+      "projected_length": 20,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "Молодая женщина умерла на Сахалине после зверского избиения",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "event_type": "fatal_incident",
+          "seriousness": 100,
+          "utility": -109.0
+        },
+        {
+          "slot": 2,
+          "title": "Trump in Manila ahead of talks with Putin and Xi in China",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "seriousness": 91,
+          "utility": 122.0
+        },
+        {
+          "slot": "backup",
+          "title": "Putin's Crimean Bridge partly collapses as Zelensky hails 'unprecedented' attack by Ukraine",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "major_emergency",
+          "seriousness": 90,
+          "utility": 82.0
+        },
+        {
+          "slot": "backup",
+          "title": "США не фиксируют угроз в свой адрес на фоне сообщений о возможности атаки Ирана в Вашингтоне. Об этом заявила представитель Белого дома Лорен Бис. Ранее CNN со ссылкой на источники",
+          "category_key": "geo",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "seriousness": 82,
+          "utility": 78.0
+        },
+        {
+          "slot": "backup",
+          "title": "Бизнес может потерять более 500 млн рублей выручки в день из-за кибератаки",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 88,
+          "utility": 46.0
+        },
+        {
+          "slot": "backup",
+          "title": "OpenAI sued by California over Hugging Face attack",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 87,
+          "utility": 45.0
+        },
+        {
+          "slot": "backup",
+          "title": "New Nvidia boss says 'ambition has never been greater' after Jensen Huang's exit",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 86,
+          "utility": 44.0
+        },
+        {
+          "slot": "backup",
+          "title": "Microsoft | The Guardian",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 86,
+          "utility": 44.0
+        },
+        {
+          "slot": "backup",
+          "title": "California sues OpenAI over safety concerns after rogue agent hacking",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 86,
+          "utility": 44.0
+        },
+        {
+          "slot": "backup",
+          "title": "Nvidia dismisses campaign to bring back Jensen Huang as Trump backs effort",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 85,
+          "utility": 43.0
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 20,
+        "targets": {
+          "local": 6,
+          "ru_pol": 4,
+          "ru_eco": 4,
+          "ru_safety": 3,
+          "world": 2,
+          "it": 1
+        },
+        "target_percent": {
+          "local": 30.0,
+          "ru_pol": 20.0,
+          "ru_eco": 20.0,
+          "ru_safety": 15.0,
+          "world": 10.0,
+          "it": 5.0
+        },
+        "counts": {
+          "local": 11,
+          "ru_pol": 1,
+          "ru_eco": 3,
+          "ru_safety": 1,
+          "world": 1,
+          "it": 3
+        },
+        "scaled_targets": {
+          "local": 6.0,
+          "ru_pol": 4.0,
+          "ru_eco": 4.0,
+          "ru_safety": 3.0,
+          "world": 2.0,
+          "it": 1.0
+        },
+        "deficits": {
+          "local": -5.0,
+          "ru_pol": 3.0,
+          "ru_eco": 1.0,
+          "ru_safety": 2.0,
+          "world": 1.0,
+          "it": -2.0
+        },
+        "distribution_error": 14.0,
+        "subtype_counts": {
+          "macro_economy": 5,
+          "major_it": 3,
+          "major_emergency": 3,
+          "fatal_incident": 4,
+          "severe_weather": 1,
+          "violent_crime": 3,
+          "political_decision": 1
+        },
+        "sequence": [
+          "ru_eco",
+          "it",
+          "local",
+          "world",
+          "local",
+          "local",
+          "local",
+          "it",
+          "ru_safety",
+          "local",
+          "local",
+          "local",
+          "ru_eco",
+          "ru_eco",
+          "ru_pol",
+          "local",
+          "local",
+          "local",
+          "local",
+          "it"
+        ],
+        "category_sequence": [
+          "ru_eco",
+          "it",
+          "sakh_chp",
+          "world_ru",
+          "sakh_chp",
+          "sakh",
+          "sakh_chp",
+          "it",
+          "ru_incident",
+          "sakh_chp",
+          "sakh_chp",
+          "sakh_chp",
+          "ru_eco",
+          "ru_eco",
+          "ru_pol",
+          "sakh_chp",
+          "sakh",
+          "sakh",
+          "sakh_chp",
+          "it"
+        ],
+        "source_sequence": [
+          "sakhalinmedia.ru",
+          "exploit exploitex",
+          "astv",
+          "bbc world",
+          "astv",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "exploit exploitex",
+          "astv",
+          "astv",
+          "sakhalinmedia.ru",
+          "astv",
+          "sakhalinmedia.ru",
+          "sakhalinmedia.ru",
+          "astv",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "astv",
+          "astv",
+          "sakhalinmedia.ru"
+        ],
+        "retrospective_anomalies": [],
+        "valid_posts_counted": 20
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-11-17T11:24:28+00:00",
+      "checked_at": "2026-11-17T22:12:44+00:00",
       "checked": 20,
       "passed": 19,
       "anomalies": [
@@ -16211,11 +16182,11 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 26,
-      "missing_media_rejected": 5,
+      "ready_candidates": 21,
+      "missing_media_rejected": 9,
       "generic_media_rejected": 0,
       "photo_retries": 0,
-      "photo_published": 1,
+      "photo_published": 2,
       "deferred_this_run": 0,
       "pending_queue_size": 0,
       "pending_ready": 0,
@@ -16225,54 +16196,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 68,
-      "checked": 13,
-      "passed": 1,
-      "rejected": 0,
-      "reclassified": 9,
-      "offtopic_reject": 37,
+      "prechecked": 77,
+      "checked": 5,
+      "passed": 2,
+      "rejected": 1,
+      "reclassified": 6,
+      "offtopic_reject": 46,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
-      "audited_urls": 1
-    },
-    "independent_post_publication_monitor": {
-      "version": "post-audit-v1.1",
-      "checked_at": "2026-11-17T19:58:20+00:00",
-      "checked": 20,
-      "passed": 19,
-      "anomalies": [
-        {
-          "title": "Помощник прокремлевского ex-премьера Украины тяжело ранен в Москве при взрыве автомобиля",
-          "url": "https://www.bbc.co.uk/news/articles/c5gm3gnwl42eo?at_medium=RSS&at_campaign=rss",
-          "publisher_version": "stable-v12.1",
-          "category_key": "world_ru",
-          "corrected_category": "world_ru",
-          "reason": "approved",
-          "contract_issues": [
-            "foreign_translation_evidence_missing"
-          ]
-        }
-      ],
-      "corrected": [],
-      "deleted": [],
-      "failed_actions": [],
-      "unresolved": 1,
-      "unresolved_items": [
-        {
-          "title": "Помощник прокремлевского ex-премьера Украины тяжело ранен в Москве при взрыве автомобиля",
-          "url": "https://www.bbc.co.uk/news/articles/c5gm3gnwl42eo?at_medium=RSS&at_campaign=rss",
-          "publisher_version": "stable-v12.1",
-          "category_key": "world_ru",
-          "corrected_category": "world_ru",
-          "reason": "approved",
-          "contract_issues": [
-            "foreign_translation_evidence_missing"
-          ]
-        }
-      ],
-      "mutations_enabled": true,
-      "legacy_posts_mutated": false
+      "audited_urls": 3
     }
   },
   "pending_media_delivery": [],
@@ -16319,10 +16252,10 @@
     "counts": {
       "local": 11,
       "ru_pol": 1,
-      "ru_eco": 4,
+      "ru_eco": 3,
       "ru_safety": 1,
       "world": 1,
-      "it": 2
+      "it": 3
     },
     "scaled_targets": {
       "local": 6.0,
@@ -16335,24 +16268,22 @@
     "deficits": {
       "local": -5.0,
       "ru_pol": 3.0,
-      "ru_eco": 0.0,
+      "ru_eco": 1.0,
       "ru_safety": 2.0,
       "world": 1.0,
-      "it": -1.0
+      "it": -2.0
     },
-    "distribution_error": 12.0,
+    "distribution_error": 14.0,
     "subtype_counts": {
-      "macro_economy": 6,
-      "violent_crime": 4,
-      "major_it": 2,
+      "macro_economy": 5,
+      "major_it": 3,
       "major_emergency": 3,
-      "fatal_incident": 3,
+      "fatal_incident": 4,
       "severe_weather": 1,
+      "violent_crime": 3,
       "political_decision": 1
     },
     "sequence": [
-      "ru_eco",
-      "local",
       "ru_eco",
       "it",
       "local",
@@ -16370,11 +16301,11 @@
       "ru_pol",
       "local",
       "local",
-      "local"
+      "local",
+      "local",
+      "it"
     ],
     "category_sequence": [
-      "ru_eco",
-      "sakh_chp",
       "ru_eco",
       "it",
       "sakh_chp",
@@ -16392,11 +16323,11 @@
       "ru_pol",
       "sakh_chp",
       "sakh",
-      "sakh"
+      "sakh",
+      "sakh_chp",
+      "it"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "sakh.online",
       "sakhalinmedia.ru",
       "exploit exploitex",
       "astv",
@@ -16414,7 +16345,9 @@
       "astv",
       "sakh.online",
       "sakhalinmedia.ru",
-      "astv"
+      "astv",
+      "astv",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -22292,7 +22225,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-17T19:58:20+00:00",
+    "checked_at": "2026-11-17T22:12:44+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -23264,7 +23197,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-11-17T11:24:19+00:00",
+    "checked_at_utc": "2026-11-17T22:12:37+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -23287,18 +23220,18 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-11-17T11:33:10+00:00",
+    "checked_at_utc": "2026-11-17T22:16:15+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-17T11:33:10+00:00",
+    "checked_at_utc": "2026-11-17T22:16:15+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 14,
+    "published": 2,
+    "director_approved": 13,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -23307,11 +23240,11 @@
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-11-17T11:33:10+00:00",
+    "checked_at_utc": "2026-11-17T22:16:15+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-11-17T22:33:10+11:00",
-      "candidates": 14,
+      "finished_sakhalin": "2026-11-18T09:16:15+11:00",
+      "candidates": 13,
       "queued_for_delivery": 0
     },
     "generation": {
