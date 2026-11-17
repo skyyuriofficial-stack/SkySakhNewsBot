@@ -1,22 +1,11 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-17T09:56:49+00:00",
-  "checked_at_sakhalin": "2026-11-17T20:56:43+11:00",
+  "checked_at_utc": "2026-11-17T10:17:08+00:00",
+  "checked_at_sakhalin": "2026-11-17T21:17:05+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 5.1,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-17T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-17T15:51:01+11:00"
-    },
     {
       "type": "mobilization_digest_missing",
       "slot": "evening",
@@ -32,24 +21,24 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-17T15:51:01+11:00",
-    "age_hours": 5.1,
-    "published": 0
+    "finished_sakhalin": "2026-11-17T21:16:42+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-17T04:51:01+00:00",
+    "checked_at_utc": "2026-11-17T10:16:42+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 10,
+    "published": 1,
+    "director_approved": 12,
     "ai_calls": 4,
-    "ai_api_fail": 3,
+    "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
-    "publication_contract_blocked": 1
+    "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -104,7 +93,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-17T09:56:47+00:00",
+    "checked_at": "2026-11-17T10:17:07+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -141,19 +130,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 589,
-      "title": "Оверклокерша превратила видеокарту Nvidia с 8 ГБ в монстра с 80 ГБ памяти — для этого понадобилась платка за 600 рублей",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 590,
       "title": "\"Били ножом по шее и голове\": в Холмске расследуют дело об убийстве в квартире на Комсомольской",
@@ -400,6 +376,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 615,
+      "title": "Бюджет Сахалинской области на трехлетку готовится к рассмотрению в региональной Думе",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -421,12 +410,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 10,
+      "local": 11,
       "ru_pol": 1,
       "ru_eco": 4,
       "ru_safety": 1,
       "world": 1,
-      "it": 3
+      "it": 2
     },
     "scaled_targets": {
       "local": 6.0,
@@ -437,25 +426,24 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -4.0,
+      "local": -5.0,
       "ru_pol": 3.0,
       "ru_eco": 0.0,
       "ru_safety": 2.0,
       "world": 1.0,
-      "it": -2.0
+      "it": -1.0
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "major_it": 3,
       "violent_crime": 5,
-      "macro_economy": 4,
+      "macro_economy": 5,
+      "major_it": 2,
       "major_emergency": 3,
       "fatal_incident": 3,
       "severe_weather": 1,
       "political_decision": 1
     },
     "sequence": [
-      "it",
       "local",
       "ru_eco",
       "local",
@@ -474,10 +462,10 @@
       "ru_eco",
       "ru_eco",
       "ru_pol",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "it",
       "sakh_chp",
       "ru_eco",
       "sakh_chp",
@@ -496,10 +484,10 @@
       "ru_eco",
       "ru_eco",
       "ru_pol",
-      "sakh_chp"
+      "sakh_chp",
+      "sakh"
     ],
     "source_sequence": [
-      "exploit exploitex",
       "astv",
       "sakhalinmedia.ru",
       "sakh.online",
@@ -518,7 +506,8 @@
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "astv",
-      "sakh.online"
+      "sakh.online",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -537,7 +526,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-17T09:56:41+00:00",
+    "checked_at_utc": "2026-11-17T10:17:03+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -581,12 +570,12 @@
       "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
-        "local": 10,
+        "local": 11,
         "ru_pol": 1,
         "ru_eco": 4,
         "ru_safety": 1,
         "world": 1,
-        "it": 3
+        "it": 2
       },
       "targets": {
         "local": 6,
@@ -597,12 +586,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -4.0,
+        "local": -5.0,
         "ru_pol": 3.0,
         "ru_eco": 0.0,
         "ru_safety": 2.0,
         "world": 1.0,
-        "it": -2.0
+        "it": -1.0
       }
     }
   ]
