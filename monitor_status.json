@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-17T10:37:07+00:00",
-  "checked_at_sakhalin": "2026-11-17T21:37:04+11:00",
+  "checked_at_utc": "2026-11-17T11:33:42+00:00",
+  "checked_at_sakhalin": "2026-11-17T22:33:37+11:00",
   "status": "error",
   "mutations_enabled": true,
   "issues": [
@@ -21,19 +21,19 @@
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-17T21:16:42+11:00",
-    "age_hours": 0.34,
+    "finished_sakhalin": "2026-11-17T22:33:10+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-17T10:16:42+00:00",
+    "checked_at_utc": "2026-11-17T11:33:10+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 12,
+    "director_approved": 14,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -93,7 +93,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-17T10:37:06+00:00",
+    "checked_at": "2026-11-17T11:33:40+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -130,19 +130,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 590,
-      "title": "\"Били ножом по шее и голове\": в Холмске расследуют дело об убийстве в квартире на Комсомольской",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 591,
       "title": "Володин предложил проверить обоснованность тарифов ЖКУ и цен на жилье",
@@ -389,6 +376,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 616,
+      "title": "Доходы бюджета Сахалина в 2027 году ожидаются на уровне 200,5 млрд рублей",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -435,8 +435,8 @@
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "violent_crime": 5,
-      "macro_economy": 5,
+      "macro_economy": 6,
+      "violent_crime": 4,
       "major_it": 2,
       "major_emergency": 3,
       "fatal_incident": 3,
@@ -444,7 +444,6 @@
       "political_decision": 1
     },
     "sequence": [
-      "local",
       "ru_eco",
       "local",
       "ru_eco",
@@ -463,10 +462,10 @@
       "ru_eco",
       "ru_pol",
       "local",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "sakh_chp",
       "ru_eco",
       "sakh_chp",
       "ru_eco",
@@ -485,10 +484,10 @@
       "ru_eco",
       "ru_pol",
       "sakh_chp",
+      "sakh",
       "sakh"
     ],
     "source_sequence": [
-      "astv",
       "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -507,7 +506,8 @@
       "sakhalinmedia.ru",
       "astv",
       "sakh.online",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -526,7 +526,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-17T10:37:02+00:00",
+    "checked_at_utc": "2026-11-17T11:33:35+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
