@@ -378,7 +378,11 @@ def save_state_with_news_director(state):
             source = _CANDIDATE_BY_URL.get(url) or {}
             if source:
                 post["source_text_excerpt"] = source.get("source_text_excerpt", "")
-                post["title_original"] = source.get("title_original") or None
+                # Preserve the actual source headline even when the director
+                # left it unchanged; post['title'] is the translated headline.
+                post["title_original"] = (
+                    source.get("title_original") or source.get("title") or None
+                )
                 post["footer"] = core.b.CAT.get(post.get("category_key"), ("", ""))[1]
             if url in _ROW_BY_URL:
                 post["published_row"] = copy.deepcopy(_ROW_BY_URL[url])

@@ -1531,6 +1531,9 @@ def version_and_media_regressions():
 
 
 def main():
+    from publication_auditor_selftest import run_regressions
+
+    run_regressions()
     tass_world_backfill_regression()
     mandatory_telegram_source_regressions()
     hard_reject_sber_and_foreign_auto_regressions()

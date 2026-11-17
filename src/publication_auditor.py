@@ -19,7 +19,7 @@ import requests
 import editorial_policy as policy
 import news_director as director
 
-VERSION = "post-audit-v1.1"
+VERSION = "post-audit-v1.2"
 MAX_AUDIT_POSTS = 20
 MAX_MUTATION_AGE_HOURS = 48
 
@@ -76,9 +76,17 @@ def _delete_result_is_already_absent(result: Mapping[str, Any]) -> bool:
 
 
 def _candidate_from_post(post: Mapping[str, Any]) -> Dict[str, Any]:
+    # Older v12 records kept an unchanged source headline only in the director
+    # review. The published title is already translated, and the page excerpt
+    # can have a different headline from the RSS feed. Never recover source
+    # text from the draft's own evidence fields: that would be circular proof.
+    review = post.get("news_director")
+    original_title = post.get("title_original")
+    if not original_title and isinstance(review, Mapping):
+        original_title = review.get("title_original")
     return {
         "title": post.get("title"),
-        "title_original": post.get("title_original"),
+        "title_original": original_title,
         "source_text": post.get("source_text_excerpt") or "",
         "source": post.get("source"),
         "url": post.get("url"),
@@ -115,15 +123,8 @@ def audit_recent_posts(
         candidate = _candidate_from_post(post)
         row = copy.deepcopy(post.get("published_row") or {})
         review = director.review_candidate(candidate)
-        contract = (
-            director.validate_final(candidate, row)
-            if row
-            else {
-                "approved": bool(review.get("approved"))
-                and review.get("corrected_category") == post.get("category_key"),
-                "issues": [] if review.get("approved") else [str(review.get("reason"))],
-            }
-        )
+        # An absent draft cannot bypass the translation-evidence contract.
+        contract = director.validate_final(candidate, row)
 
         if review.get("approved") and contract.get("approved"):
             passed += 1
@@ -172,6 +173,10 @@ def audit_recent_posts(
             repaired["category"], repaired["footer"] = category_map[corrected_category]
             repaired_title = str(review.get("title_corrected") or repaired.get("title") or "")
             row["title_ru"] = repaired_title
+            # Caption edits cannot manufacture missing source evidence. Keep
+            # the anomaly unresolved unless the proposed repair really passes.
+            if not director.validate_final(repaired, row).get("approved"):
+                continue
             caption = render_caption(row, repaired)
             result = _telegram_call(
                 "editMessageCaption",
