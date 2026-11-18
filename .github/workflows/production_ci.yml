@@ -91,6 +91,10 @@ jobs:
             src/mobilization_digest_runner.py src/mobilization_sources.py \
             src/mobilization_depth.py src/mobilization_depth_selftest.py
 
+      - name: Reader-friendly current-source Telegram preview (no delivery)
+        timeout-minutes: 4
+        run: PYTHONPATH=src python src/mobilization_live_preview.py
+
       - name: Read-only mobilization evidence smoke
         timeout-minutes: 3
         run: |
