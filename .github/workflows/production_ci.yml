@@ -3,7 +3,7 @@ name: SkySakhNews Production CI v12.1
 on:
   workflow_dispatch:
   push:
-    branches: [main, repair/mobilization-readable-brief-20261118]
+    branches: [main]
     paths:
       - "src/news_bot_v8.py"
       - "src/mobilization_digest.py"
@@ -90,10 +90,6 @@ jobs:
             src/mobilization_digest.py src/mobilization_digest_final.py \
             src/mobilization_digest_runner.py src/mobilization_sources.py \
             src/mobilization_depth.py src/mobilization_depth_selftest.py
-
-      - name: Reader-friendly current-source Telegram preview (no delivery)
-        timeout-minutes: 4
-        run: PYTHONPATH=src python src/mobilization_live_preview.py
 
       - name: Read-only mobilization evidence smoke
         timeout-minutes: 3
