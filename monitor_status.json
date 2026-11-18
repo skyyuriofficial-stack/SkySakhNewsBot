@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-18T03:49:55+00:00",
-  "checked_at_sakhalin": "2026-11-18T14:49:48+11:00",
+  "checked_at_utc": "2026-11-18T03:50:12+00:00",
+  "checked_at_sakhalin": "2026-11-18T14:50:09+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
@@ -70,44 +70,12 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-18T03:49:53+00:00",
+    "checked_at": "2026-11-18T03:50:11+00:00",
     "checked": 20,
-    "passed": 19,
-    "anomalies": [
-      {
-        "title": "В России впервые утвердили ГОСТ на борщ и другие русские блюда",
-        "url": "https://astv.ru/news/society/2026-11-16-v-rossii-vpervye-utverdili-gost-na-borsh-i-drugie-russkie-blyuda",
-        "publisher_version": "stable-v12.1",
-        "category_key": "ru_pol",
-        "corrected_category": null,
-        "reason": "culinary_standard_without_public_impact",
-        "contract_issues": [
-          "final_hard_reject:culinary_standard_without_public_impact",
-          "final_category_mismatch:None->ru_pol",
-          "director_final_category:None->ru_pol",
-          "director_final_reject:culinary_standard_without_public_impact"
-        ]
-      }
-    ],
+    "passed": 20,
+    "anomalies": [],
     "corrected": [],
-    "deleted": [
-      {
-        "message_id": 612,
-        "already_absent": false,
-        "title": "В России впервые утвердили ГОСТ на борщ и другие русские блюда",
-        "url": "https://astv.ru/news/society/2026-11-16-v-rossii-vpervye-utverdili-gost-na-borsh-i-drugie-russkie-blyuda",
-        "publisher_version": "stable-v12.1",
-        "category_key": "ru_pol",
-        "corrected_category": null,
-        "reason": "culinary_standard_without_public_impact",
-        "contract_issues": [
-          "final_hard_reject:culinary_standard_without_public_impact",
-          "final_category_mismatch:None->ru_pol",
-          "director_final_category:None->ru_pol",
-          "director_final_reject:culinary_standard_without_public_impact"
-        ]
-      }
-    ],
+    "deleted": [],
     "failed_actions": [],
     "unresolved": 0,
     "unresolved_items": [],
@@ -498,7 +466,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-18T03:49:46+00:00",
+    "checked_at_utc": "2026-11-18T03:50:07+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
