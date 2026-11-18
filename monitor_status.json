@@ -1,29 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-18T01:30:16+00:00",
-  "checked_at_sakhalin": "2026-11-18T12:30:13+11:00",
+  "checked_at_utc": "2026-11-18T02:29:34+00:00",
+  "checked_at_sakhalin": "2026-11-18T13:29:28+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-18T12:24:09+11:00",
-    "age_hours": 0.1,
+    "finished_sakhalin": "2026-11-18T13:29:02+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-18T01:24:09+00:00",
+    "checked_at_utc": "2026-11-18T02:29:02+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 13,
+    "director_approved": 12,
     "ai_calls": 4,
-    "ai_api_fail": 4,
+    "ai_api_fail": 2,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -70,7 +70,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-18T01:30:15+00:00",
+    "checked_at": "2026-11-18T02:29:32+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
@@ -107,19 +107,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 596,
-      "title": "GitHub НЕ ВЗЛОМАЛИ — из-за сбоев у Claude, Телеграм-СМИ не смогли фактчекнуть простейшую новость, поэтому смешали в кучу факты, домыслы и кликбейт",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 597,
       "title": "Тысячи жителей Сахалина оказались обесточены из-за аварии на сетях",
@@ -366,6 +353,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 622,
+      "title": "Выборы депутатов Госдумы на Сахалине обошлись областному бюджету почти в 50 млн рублей",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -387,12 +387,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 12,
+      "local": 13,
       "ru_pol": 1,
       "ru_eco": 2,
       "ru_safety": 1,
       "world": 1,
-      "it": 3
+      "it": 2
     },
     "scaled_targets": {
       "local": 6.0,
@@ -403,25 +403,24 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -6.0,
+      "local": -7.0,
       "ru_pol": 3.0,
       "ru_eco": 2.0,
       "ru_safety": 2.0,
       "world": 1.0,
-      "it": -2.0
+      "it": -1.0
     },
     "distribution_error": 16.0,
     "subtype_counts": {
-      "major_it": 3,
       "major_emergency": 3,
       "fatal_incident": 4,
       "severe_weather": 1,
       "violent_crime": 4,
-      "macro_economy": 4,
+      "major_it": 2,
+      "macro_economy": 5,
       "political_decision": 1
     },
     "sequence": [
-      "it",
       "local",
       "world",
       "local",
@@ -440,10 +439,10 @@
       "local",
       "local",
       "it",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "it",
       "sakh_chp",
       "world_ru",
       "sakh_chp",
@@ -462,10 +461,10 @@
       "sakh",
       "sakh_chp",
       "it",
-      "sakh_chp"
+      "sakh_chp",
+      "sakh"
     ],
     "source_sequence": [
-      "exploit exploitex",
       "astv",
       "bbc world",
       "astv",
@@ -484,7 +483,8 @@
       "astv",
       "astv",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -503,7 +503,7 @@
     }
   ],
   "telegram_health": {
-    "checked_at_utc": "2026-11-18T01:30:11+00:00",
+    "checked_at_utc": "2026-11-18T02:29:25+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -547,12 +547,12 @@
       "distribution_error": 16.0,
       "limit": 8.0,
       "counts": {
-        "local": 12,
+        "local": 13,
         "ru_pol": 1,
         "ru_eco": 2,
         "ru_safety": 1,
         "world": 1,
-        "it": 3
+        "it": 2
       },
       "targets": {
         "local": 6,
@@ -563,12 +563,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -6.0,
+        "local": -7.0,
         "ru_pol": 3.0,
         "ru_eco": 2.0,
         "ru_safety": 2.0,
         "world": 1.0,
-        "it": -2.0
+        "it": -1.0
       }
     }
   ]
