@@ -9,7 +9,7 @@ import copy
 import html
 import re
 from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
 from urllib.parse import urlsplit
 
@@ -324,72 +324,271 @@ def visible_units(text):
     return len("".join(parser.parts).encode("utf-16-le")) // 2
 
 
-def format_message(draft, evidence, mode):
-    """Fit by dropping repetitive presentation, never by cutting legal clauses.
+def _plain_language_legal(draft, evidence):
+    """Explain the *conditional* effect of the bill, never assert it is in force."""
+    full = clean(draft.get("legal"))
+    roles = {str(r.get("legal_role") or "") for r in evidence if r.get("group") == "law"}
+    tokens = ("19.5.5", "31-ФЗ", "757", "3–5", "30–50", "300")
+    if not set(("first_reading_baseline", "bill_text", "presidential_powers",
+                "regional_framework")).issubset(roles):
+        return None
+    if not all(token in full for token in tokens):
+        return None
+    stage = next((r for r in evidence if r.get("legal_role") == "first_reading_baseline"), {})
+    if not ("27.10.2026" in clean(stage.get("summary"))
+            or "27 октября 2026" in clean(stage.get("summary"))):
+        return None
+    return {
+        "possible": (
+            "Проект №1322096-8 предлагает отдельные штрафы за неисполнение "
+            "решений губернаторов и региональных оперштабов в пределах их "
+            "полномочий. Если норму примут и она вступит в силу: "
+            "для граждан — 3–5 тыс. ₽, должностных лиц — 30–50 тыс. ₽ "
+            "(либо дисквалификация), организаций — 300 тыс.–1 млн ₽ "
+            "(либо приостановление деятельности). "
+            "Это НЕ штраф за любую повестку и НЕ решение о новой мобилизации."
+        ),
+        "current": (
+            "27.10.2026 Госдума приняла проект в первом чтении. "
+            "Это подтверждённая историческая стадия; актуальный статус и "
+            "вступление в силу по данной выборке не установлены. "
+            "По ст. 4 закона №31-ФЗ мобилизацию объявляет Президент. "
+            "Указ №757 от 2022 года регулирует региональные штабы, "
+            "но сам по себе не объявляет новую волну."
+        ),
+        "easing": (
+            "В изученных материалах нет подтверждённого нового послабления "
+            "для запасников по повесткам, сборам или выезду. "
+            "Это ограничение выборки, а не утверждение, что послаблений вообще не было."
+        ),
+    }
 
-    The complete evidence/draft remains available in the digest state. The
-    single Telegram overview keeps at least the first non-legal story, every
-    legal clause, and links to any omitted secondary stories.
+
+def _practical_note(row):
+    """Short, attributed description of actual source topics, without inferred calls."""
+    title = clean(row.get("title"))
+    body = clean(row.get("summary"))
+    low = norm(title + " " + body)
+    topics = []
+    if "уточнен" in low and ("данн" in low or "учет" in low):
+        topics.append("уточнение данных")
+    if re.search(r"военн\w* сбор", low):
+        topics.append("военные сборы")
+    if "мобилизационн" in low and "предписани" in low:
+        topics.append("мобилизационные предписания")
+    if re.search(r"контрактн\w* служб|служб\w* по контракт|заключени\w* контракт", low):
+        topics.append("контрактная служба")
+    if "выезд" in low or "выезда" in low:
+        topics.append("выезд из России")
+    stamp = str(row.get("published_utc") or "")[:10]
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", stamp):
+        y, m, d = stamp.split("-")
+        when = f"{d}.{m}.{y}"
+    else:
+        when = "дата не установлена"
+    if topics:
+        subject = ", ".join(topics[:5])
+        return (
+            f"«Идите лесом», {when}: проект рассказывает об обращениях "
+            f"по вопросам: {subject}. "
+            "Это сообщения об обращениях, а не статистика призыва "
+            "или подтверждение новой волны."
+        )
+    return (
+        f"«Идите лесом», {when}: «{sentence_excerpt(title, 120)}». "
+        "Это сообщение проекта; его охват независимо не установлен."
+    )
+
+
+def format_message(draft, evidence, mode):
+    """Readable evidence-bound Telegram brief with explicit change/impact logic.
+
+    No auto-publishing, provider inference or invented risk levels. Names of
+    sources replace opaque numeric references, and the original four legal
+    primary URLs remain attached to the rendered publication.
     """
     by_id = {int(r["id"]): r for r in evidence}
-    def refs(values):
-        links, seen = [], set()
-        for value in values:
-            try:
-                idx = int(value)
-            except (ValueError, TypeError):
-                continue
-            row = by_id.get(idx)
-            url = str((row or {}).get("url") or "")
-            if url in seen or urlsplit(url).scheme not in {"https", "http"}:
-                continue
-            seen.add(url)
-            links.append(f'<a href="{html.escape(url, quote=True)}">[{idx}]</a>')
-        return " ".join(links)
-    esc = lambda v: html.escape(clean(v))
+    legal = _plain_language_legal(draft, evidence)
     sections = draft.get("section_sources") or {}
-    label = "УТРЕННЯЯ" if mode == "morning" else "ВЕЧЕРНЯЯ"
-    stories = []
-    for item in (draft.get("items") or [])[:6]:
-        item_ids = [int(i) for i in item.get("source_ids", []) if str(i).isdigit()]
-        if item_ids and all(by_id.get(i, {}).get("group") == "law" for i in item_ids):
-            continue
-        stories.append((item, item_ids))
-    labels = {"started": "Запуск", "near_term": "Ближайшие месяцы", "staffing": "Кадры", "infrastructure": "Готовность", "large_wave_decision": "Крупная волна"}
+    esc = lambda value: html.escape(clean(value))
+    linked = set()
 
-    def render(story_count, compact):
-        parts = [f"🇷🇺 <b>МОБИЛИЗАЦИЯ РФ — {label} СВОДКА</b>", f"<b>{esc(draft.get('headline'))}</b>"]
+    def link(url, label):
+        url = str(url or "")
+        if urlsplit(url).scheme not in {"https", "http"}:
+            return ""
+        linked.add(url)
+        return f'<a href="{html.escape(url, quote=True)}">{esc(label)}</a>'
+
+    def first_role(role):
+        return next((row for row in evidence if row.get("legal_role") == role), None)
+
+    civil = next((
+        row for row in evidence
+        if row.get("group") == "civil_society"
+        and str(row.get("url") or "").startswith("https://t.me/iditelesom_help/")
+    ), None)
+    isw = next((row for row in evidence if row.get("group") == "isw"), None)
+
+    local_now = datetime.now(timezone.utc).astimezone(timezone(timedelta(hours=11)))
+    when = local_now.strftime("%d.%m.%Y")
+    label = "УТРО" if mode == "morning" else "ВЕЧЕР"
+    assessment = draft.get("assessment") or {}
+    started = norm(assessment.get("started"))
+    unconfirmed = (
+        not started
+        or any(x in started for x in ("не установлен", "не подтвержден", "нет доказательств", "в выборке нет"))
+    )
+
+    heading = f"🇷🇺 <b>МОБИЛИЗАЦИЯ РФ · {label} · {when}</b>"
+    if unconfirmed:
+        main = (
+            "В проверенных материалах нет подтверждения нового решения о "
+            "массовой мобилизации. Это не означает, что повестки не приходят "
+            "или что будущий риск равен нулю."
+        )
+    else:
+        main = sentence_excerpt(assessment.get("started"), 220) or sentence_excerpt(
+            draft.get("short"), 220
+        )
+
+    def render(*, compact=False, extra_stories=1):
+        linked.clear()
+        parts = [heading]
+        # When no complete legal basis exists, retain the source-provided
+        # headline visibly, escaped. Never silently discard source context.
+        if legal is None and clean(draft.get("headline")):
+            parts.append("<b>" + esc(draft.get("headline")) + "</b>")
+        parts += ["<b>Главное</b>", esc(main)]
+        if legal is not None:
+            parts += [
+                "<b>⚠️ Что может стать строже — ПОКА ПРОЕКТ</b>",
+                esc(legal["possible"]),
+                "<b>Что действует сейчас</b>",
+                esc(legal["current"]),
+                "<b>Что стало легче?</b>",
+                esc(legal["easing"]),
+            ]
+        else:
+            parts += [
+                "<b>Право: что известно</b>",
+                esc(draft.get("legal")),
+                "Текущую стадию документов и последствия без дополнительных "
+                "проверенных данных не определяем.",
+            ]
+
+        if civil:
+            parts += [
+                "<b>Повестки: что происходит на практике</b>",
+                esc(_practical_note(civil)),
+            ]
+        else:
+            parts += [
+                "<b>Повестки: что происходит на практике</b>",
+                "Свежих конкретных сообщений проекта «Идите лесом» в доступной "
+                "выборке нет. Это пробел наблюдения, а не доказательство отсутствия вызовов.",
+            ]
+
+        # One additional distinct non-legal event is allowed only if it adds
+        # independent information and fits the user-facing overview.
+        extras = []
+        for item in draft.get("items") or []:
+            ids = [int(i) for i in item.get("source_ids", []) if str(i).isdigit()]
+            if not ids:
+                continue
+            rows = [by_id.get(i, {}) for i in ids]
+            if rows and all(r.get("group") == "law" for r in rows):
+                continue
+            if civil and any(r.get("url") == civil.get("url") for r in rows):
+                continue
+            if civil and any(r.get("group") == "civil_society" for r in rows):
+                continue
+            extras.append((item, rows))
+        for item, rows in extras[:extra_stories]:
+            # A non-legal generic evidence record has no safe replacement
+            # synopsis: preserve the actual primary story in full.
+            title = (
+                clean(item.get("text")) if legal is None
+                else sentence_excerpt(item.get("text"), 165 if compact else 230)
+            )
+            if title:
+                parts += ["<b>Ещё одно подтверждённое сообщение</b>", esc(title)]
+
+        near = norm(assessment.get("near_term"))
+        near_unknown = not near or "недостаточно данных" in near or "не оцен" in near
+        if near_unknown:
+            risk = (
+                "НЕДОСТАТОЧНО ДАННЫХ — вероятность на ближайшие "
+                "месяцы нельзя оценить без сравнимых данных о наборе, потерях и вызовах."
+            )
+        else:
+            risk = sentence_excerpt(assessment.get("near_term"), 170)
+
+        parts += [
+            "<b>Оценка риска</b>",
+            esc("Новая волна: не подтверждена в проверенной выборке."
+                if unconfirmed else sentence_excerpt(assessment.get("started"), 140)),
+            esc(risk),
+        ]
+        if isw:
+            parts.append(
+                "ISW: " + esc(sentence_excerpt(draft.get("isw"), 105)) + " "
+                + link(isw.get("url"), "материал ISW")
+            )
+        else:
+            parts.append("ISW: свежей подходящей оценки в выборке нет; это не оценка риска.")
+
         if not compact:
-            parts.append(esc(draft.get("short")))
-        for item, item_ids in stories[:story_count]:
-            # Keep the full attributed summary, including its limitations.
-            parts.append(esc(item.get("text")) + " " + refs(item_ids))
-        rest = [idx for _, item_ids in stories[story_count:] for idx in item_ids]
-        if rest:
-            parts.append("Другие сообщения в выборке: " + refs(rest))
-        parts += ["<b>Право: содержание и последствия</b>", esc(draft.get("legal")) + " " + refs(sections.get("legal", []))]
-        for quote in (draft.get("legal_quotes") or [])[:2]:
-            parts.append("Фрагмент нормы: «" + esc(quote.get("text")) + "» " + refs([quote.get("source_id")]))
-        if compact and sections.get("practice"):
-            practice = "«Идите лесом»: сообщения проекта, не независимое подтверждение массовости. Учёт, сборы, контракт и мобилизация различаются."
-        else:
-            practice = clean(draft.get("practice"))
-        parts += ["<b>Практика и покрытие источников</b>", esc(practice) + " " + refs([i for _, values in stories[:story_count] for i in values if by_id.get(i, {}).get("group") == "civil_society"] or sections.get("practice", [])[:2])]
-        if sections.get("isw"):
-            parts.append(esc(sentence_excerpt(draft.get("isw"), 300)) + " " + refs(sections["isw"][:2]))
-        else:
-            parts.append("Свежих данных ISW в выборке нет; это пробел покрытия, а не оценка риска.")
-        parts.append("<b>Раздельная оценка</b>")
-        for axis, axis_label in labels.items():
-            parts.append(f"<b>{axis_label}:</b> {esc((draft.get('assessment') or {}).get(axis))}")
-        return "\n\n".join(p for p in parts if p).strip()
+            parts += [
+                "<b>Что важно проверить дальше</b>",
+                "Стадию законопроекта, новые юридические решения, "
+                "подтверждённые массовые вызовы запасников и кадровую динамику.",
+            ]
 
-    candidates = [(min(3, len(stories)), False), (min(2, len(stories)), True), (min(1, len(stories)), True)]
-    for count, compact in candidates:
-        message = render(count, compact)
-        if visible_units(message) <= 4000:
+        # Clearly named source documents, not [1] [2] [10] throughout copy.
+        sources = [
+            ("first_reading_baseline", "Госдума · законопроект"),
+            ("bill_text", "Текст ст. 19.5.5"),
+            ("presidential_powers", "31-ФЗ · ст. 4"),
+            ("regional_framework", "Указ №757"),
+        ]
+        links = []
+        for role, name in sources:
+            row = first_role(role)
+            if row:
+                links.append(link(row.get("url"), name))
+        rationale = first_role("bill_rationale")
+        if rationale and not compact:
+            links.append(link(rationale.get("url"), "Пояснительная записка"))
+        if civil:
+            links.append(link(civil.get("url"), "«Идите лесом» · сообщение"))
+        else:
+            links.append(link("https://t.me/s/iditelesom_help", "«Идите лесом» · канал"))
+        if extra_stories and extras:
+            for row in extras[0][1][:1]:
+                if row and row.get("url"):
+                    links.append(link(row.get("url"), "Доп. сообщение"))
+        # Preserve links to any omitted non-legal reports; they are short
+        # named hyperlinks and do not justify repeating long paragraphs.
+        for item in (draft.get("items") or [])[:6]:
+            for raw in item.get("source_ids", []):
+                if not str(raw).isdigit():
+                    continue
+                row = by_id.get(int(raw))
+                if row and row.get("group") != "law":
+                    url = str(row.get("url") or "")
+                    if url and url not in linked:
+                        links.append(link(url, "Другой материал"))
+        parts += ["<b>Проверить первоисточники</b>", " · ".join(v for v in links if v)]
+
+        return "\n\n".join(v for v in parts if v).strip()
+
+    for compact, extra_stories in ((False, 1), (True, 1), (True, 0)):
+        message = render(compact=compact, extra_stories=extra_stories)
+        if visible_units(message) <= 4000 and len(message) <= 4000:
             return message
-    raise ValueError("digest cannot fit without losing a legal clause or primary attributed story")
+
+    raise ValueError("readable digest cannot fit without losing legal facts or source links")
 
 
 def install(digest, final, sources, runner):
