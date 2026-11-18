@@ -89,6 +89,73 @@ class DepthTests(unittest.TestCase):
             self.assertFalse(policy._is_sber_routine_promotion(title), title)
         self.assertTrue(policy._is_foreign_vehicle_recall('Toyota объявила отзыв 228 тысяч минивэнов в США — в чем проблема'))
 
+    def test_reader_first_digest_with_conditional_impacts(self):
+        import mobilization_sources as sources
+        import mobilization_digest_final as final
+        import mobilization_digest as digest
+        evidence = sources.verified_legal_reference_rows() + [{
+            'group': 'civil_society',
+            'trust': 84,
+            'source': 'Идите лесом',
+            'title': 'Запасникам: выезд, повестки и мобилизационное предписание',
+            'summary': (
+                'В проект обращаются запасники и родственники. Многие спрашивают '
+                'про уточнение учётных данных, военные сборы, мобилизационные '
+                'предписания, выезд из России и неявку в военкомат.'
+            ),
+            'url': 'https://t.me/iditelesom_help/8304',
+            'published_utc': '2026-11-13T12:00:00+00:00',
+        }]
+        evidence = q.merge_evidence(evidence, [])
+        draft = q.enrich_draft(final.safe_fallback_draft(evidence), evidence)
+        text = q.format_message(draft, evidence, 'morning')
+        for required in (
+            '<b>Главное</b>',
+            'Что может стать строже',
+            'Что действует сейчас',
+            'Что стало легче?',
+            'Повестки: что происходит на практике',
+            'Оценка риска',
+            'Проверить первоисточники',
+            '3–5 тыс.',
+            '30–50 тыс.',
+            '300 тыс.',
+            '31-ФЗ',
+            '757',
+            '27.10.2026',
+            'https://t.me/iditelesom_help/8304',
+            'https://sozd.duma.gov.ru/bill/1322096-8',
+        ):
+            self.assertIn(required, text, required)
+        self.assertIn('Если норму примут', text)
+        self.assertIn('актуальный статус', text)
+        self.assertNotIn('<b>Раздельная оценка</b>', text)
+        self.assertNotIn('<b>Право: содержание и последствия</b>', text)
+        self.assertNotIn('[10]', text)
+        self.assertNotIn('Фрагмент нормы:', text)
+        self.assertLessEqual(q.visible_units(text), 4000)
+        self.assertLessEqual(len(text), 4000)
+        self.assertEqual(final._rendered_digest_issues(text, evidence), [])
+
+    def test_no_unverified_improvement_and_no_fabricated_stage(self):
+        draft = {
+            'headline': 'Сведения о повестках',
+            'short': 'Сведения требуют проверки',
+            'legal': 'Текст нормы только из непроверенного заголовка',
+            'practice': 'Не хватает данных',
+            'assessment': {'started': 'НЕ УСТАНОВЛЕН ПО ВЫБОРКЕ',
+                           'near_term': 'НЕДОСТАТОЧНО ДАННЫХ'},
+        }
+        evidence = [{'id': 1, 'group': 'law', 'legal_role': 'stage_snapshot',
+                     'summary': '1322096-8 — стадия требует проверки',
+                     'url': 'https://example.org/1'}]
+        self.assertIsNone(q._plain_language_legal(draft, evidence))
+        text = q.format_message(draft, evidence, 'evening')
+        self.assertIn('Текущую стадию документов', text)
+        self.assertNotIn('27.10.2026', text)
+        self.assertIn('недостаточно', text.lower())
+        self.assertLessEqual(q.visible_units(text), 4000)
+
     def test_long_live_layout_preserves_law_and_attribution(self):
         legal = ('Полная юридическая норма: проект не равен действующему закону. ' * 20).strip()
         evidence = [{'id': i, 'url': f'https://example.org/{i}', 'group': 'civil_society'} for i in range(1, 5)]
