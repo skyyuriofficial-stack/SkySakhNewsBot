@@ -171,7 +171,7 @@ class DepthTests(unittest.TestCase):
         out = q.format_message(draft, evidence, 'morning')
         self.assertLessEqual(q.visible_units(out), 4000)
         self.assertIn(legal, out)
-        self.assertIn(draft['items'][0]['text'], out)
+        self.assertIn(q.clean(draft['items'][0]['text']), out)
         self.assertIn('https://example.org/4', out)
 
     def test_quote_does_not_repeat_legal_heading(self):
