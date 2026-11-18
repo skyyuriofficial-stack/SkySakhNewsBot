@@ -518,8 +518,8 @@ def format_message(draft, evidence, mode):
         near_unknown = not near or "недостаточно данных" in near or "не оцен" in near
         if near_unknown:
             risk = (
-                "Недостаточно данных, чтобы оценить вероятность на ближайшие "
-                "месяцы: нужны сравнимые сведения о наборе, потерях и вызовах."
+                "НЕДОСТАТОЧНО ДАННЫХ — вероятность на ближайшие "
+                "месяцы нельзя оценить без сравнимых данных о наборе, потерях и вызовах."
             )
         else:
             risk = sentence_excerpt(assessment.get("near_term"), 170)
