@@ -376,7 +376,7 @@ def _practical_note(row):
         topics.append("военные сборы")
     if "мобилизационн" in low and "предписани" in low:
         topics.append("мобилизационные предписания")
-    if re.search(r"контрактн\w* служб|служб\w* по контракт", low):
+    if re.search(r"контрактн\w* служб|служб\w* по контракт|заключени\w* контракт", low):
         topics.append("службу по контракту")
     if "выезд" in low or "выезда" in low:
         topics.append("выезд из России")
@@ -454,11 +454,12 @@ def format_message(draft, evidence, mode):
 
     def render(*, compact=False, extra_stories=1):
         linked.clear()
-        parts = [
-            heading,
-            "<b>Главное</b>",
-            esc(main),
-        ]
+        parts = [heading]
+        # When no complete legal basis exists, retain the source-provided
+        # headline visibly, escaped. Never silently discard source context.
+        if legal is None and clean(draft.get("headline")):
+            parts.append("<b>" + esc(draft.get("headline")) + "</b>")
+        parts += ["<b>Главное</b>", esc(main)]
         if legal is not None:
             parts += [
                 "<b>⚠️ Что может стать строже — ПОКА ПРОЕКТ</b>",
@@ -504,7 +505,12 @@ def format_message(draft, evidence, mode):
                 continue
             extras.append((item, rows))
         for item, rows in extras[:extra_stories]:
-            title = sentence_excerpt(item.get("text"), 165 if compact else 230)
+            # A non-legal generic evidence record has no safe replacement
+            # synopsis: preserve the actual primary story in full.
+            title = (
+                clean(item.get("text")) if legal is None
+                else sentence_excerpt(item.get("text"), 165 if compact else 230)
+            )
             if title:
                 parts += ["<b>Ещё одно подтверждённое сообщение</b>", esc(title)]
 
@@ -512,8 +518,8 @@ def format_message(draft, evidence, mode):
         near_unknown = not near or "недостаточно данных" in near or "не оцен" in near
         if near_unknown:
             risk = (
-                "Вероятность на ближайшие месяцы по этой выборке не оценить: "
-                "нужны сравнимые данные о наборе, потерях и фактических вызовах."
+                "Недостаточно данных, чтобы оценить вероятность на ближайшие "
+                "месяцы: нужны сравнимые сведения о наборе, потерях и вызовах."
             )
         else:
             risk = sentence_excerpt(assessment.get("near_term"), 170)
