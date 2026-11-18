@@ -135,7 +135,7 @@ def collect_with_news_director(state):
         str(candidate.get("url") or ""): {
             "title": str(candidate.get("title") or ""),
             "title_original": str(candidate.get("title_original") or ""),
-            "source_text_excerpt": str(candidate.get("source_text") or "")[:2600],
+            "source_text_excerpt": str(candidate.get("source_text") or ""),
             "source": str(candidate.get("source") or ""),
             "published_at": str(candidate.get("published_at") or ""),
             "category_key": str(candidate.get("category_key") or ""),
@@ -377,6 +377,7 @@ def save_state_with_news_director(state):
                 post["news_director"] = copy.deepcopy(metadata)
             source = _CANDIDATE_BY_URL.get(url) or {}
             if source:
+                post["source_title"] = source["title"]
                 post["source_text_excerpt"] = source.get("source_text_excerpt", "")
                 post["title_original"] = source.get("title_original") or None
                 post["footer"] = core.b.CAT.get(post.get("category_key"), ("", ""))[1]

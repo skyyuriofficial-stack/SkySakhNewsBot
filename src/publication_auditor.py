@@ -76,8 +76,12 @@ def _delete_result_is_already_absent(result: Mapping[str, Any]) -> bool:
 
 
 def _candidate_from_post(post: Mapping[str, Any]) -> Dict[str, Any]:
+    # Older posts retain the supplier headline in the intake director review.
+    # The published translation is a claim to verify, never its own evidence.
+    intake = post.get("news_director") or {}
+    source_title = post.get("source_title") or intake.get("title_corrected") or post.get("title")
     return {
-        "title": post.get("title"),
+        "title": source_title,
         "title_original": post.get("title_original"),
         "source_text": post.get("source_text_excerpt") or "",
         "source": post.get("source"),
@@ -106,9 +110,9 @@ def audit_recent_posts(
     failed_actions = []
 
     posts = [
-        post for post in (state.get("last_posts") or [])[-MAX_AUDIT_POSTS:]
+        post for post in (state.get("last_posts") or [])
         if isinstance(post, dict) and not post.get("auto_deleted")
-    ]
+    ][-MAX_AUDIT_POSTS:]
 
     for post in posts:
         checked += 1
@@ -171,7 +175,12 @@ def audit_recent_posts(
             repaired["category_key"] = corrected_category
             repaired["category"], repaired["footer"] = category_map[corrected_category]
             repaired_title = str(review.get("title_corrected") or repaired.get("title") or "")
-            row["title_ru"] = repaired_title
+            if policy.headline_is_russian(repaired_title):
+                row["title_ru"] = repaired_title
+            repaired_contract = director.validate_final(repaired, row)
+            if not repaired_contract.get("approved"):
+                continue
+            repaired_title = row["title_ru"]
             caption = render_caption(row, repaired)
             result = _telegram_call(
                 "editMessageCaption",
@@ -190,8 +199,9 @@ def audit_recent_posts(
                     "footer": repaired["footer"],
                     "published_caption": caption,
                     "published_row": row,
+                    "publication_contract": repaired_contract,
                 })
-                post["post_audit"]["auto_action"] = "caption_corrected"
+                post["post_audit"].update(approved=True, issues=[], auto_action="caption_corrected")
                 corrected.append({"message_id": message_id, **anomaly})
             else:
                 failed_actions.append({

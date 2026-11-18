@@ -100,6 +100,54 @@ def _rendered_digest_issues(message, evidence):
     return issues
 
 
+def _reader_issues(message, evidence):
+    """Check the outgoing HTML even if another entry point replaced its formatter."""
+    from html.parser import HTMLParser
+
+    class Reader(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.links = {}
+            self.href = None
+            self.bold = False
+            self.headings = []
+
+        def handle_starttag(self, tag, attrs):
+            if tag == "a":
+                self.href = dict(attrs).get("href")
+            if tag == "b":
+                self.bold = True
+
+        def handle_endtag(self, tag):
+            if tag == "a":
+                self.href = None
+            if tag == "b":
+                self.bold = False
+
+        def handle_data(self, data):
+            if self.href:
+                self.links[self.href] = self.links.get(self.href, "") + data
+            if self.bold:
+                self.headings.append(data.casefold())
+
+    reader = Reader()
+    reader.feed(message)
+    required = ("главное", "что может стать строже", "что действует сейчас",
+                "что стало легче", "повестки", "оценка риска")
+    issues = ["reader_section_missing:" + label for label in required
+              if not any(label in heading for heading in reader.headings)]
+    for row in evidence:
+        if row.get("legal_role") in REQUIRED_LEGAL_ROLES:
+            label = reader.links.get(row.get("url"), "")
+            if not re.search(r"[а-яёa-z]", label, re.I):
+                issues.append("unnamed_legal_source:" + str(row.get("legal_role")))
+    civil_urls = {row["url"] for row in evidence if row.get("group") == "civil_society"
+                  and str(row.get("url") or "").startswith("https://t.me/iditelesom_help/")}
+    if civil_urls and not any("идите лесом" in reader.links.get(url, "").casefold() for url in civil_urls):
+        issues.append("attributed_civil_report_missing")
+    return issues
+
+
 def _quality_row(row):
     if not isinstance(row, dict):
         return False
@@ -822,7 +870,7 @@ def main():
         draft = fallback
 
     message = digest.format_message(draft, evidence, mode)
-    rendered_issues = _rendered_digest_issues(message, evidence)
+    rendered_issues = _rendered_digest_issues(message, evidence) + _reader_issues(message, evidence)
     if rendered_issues:
         raise RuntimeError(
             "rendered mobilization digest lost required evidence: "

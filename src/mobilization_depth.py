@@ -346,7 +346,7 @@ def _plain_language_legal(draft, evidence):
             "для граждан — 3–5 тыс. ₽, должностных лиц — 30–50 тыс. ₽ "
             "(либо дисквалификация), организаций — 300 тыс.–1 млн ₽ "
             "(либо приостановление деятельности). "
-            "Это НЕ штраф за любую повестку и НЕ решение о новой мобилизации."
+            "Штраф по проекту связан с нарушением конкретного решения штаба или главы региона."
         ),
         "current": (
             "27.10.2026 Госдума приняла проект в первом чтении. "
@@ -358,8 +358,7 @@ def _plain_language_legal(draft, evidence):
         ),
         "easing": (
             "В изученных материалах нет подтверждённого нового послабления "
-            "для запасников по повесткам, сборам или выезду. "
-            "Это ограничение выборки, а не утверждение, что послаблений вообще не было."
+            "для запасников по повесткам, сборам или выезду."
         ),
     }
 
@@ -423,11 +422,11 @@ def format_message(draft, evidence, mode):
     def first_role(role):
         return next((row for row in evidence if row.get("legal_role") == role), None)
 
-    civil = next((
+    civil = max((
         row for row in evidence
         if row.get("group") == "civil_society"
         and str(row.get("url") or "").startswith("https://t.me/iditelesom_help/")
-    ), None)
+    ), key=lambda row: str(row.get("published_utc") or ""), default=None)
     isw = next((row for row in evidence if row.get("group") == "isw"), None)
 
     local_now = datetime.now(timezone.utc).astimezone(timezone(timedelta(hours=11)))
@@ -444,8 +443,7 @@ def format_message(draft, evidence, mode):
     if unconfirmed:
         main = (
             "В проверенных материалах нет подтверждения нового решения о "
-            "массовой мобилизации. Это не означает, что повестки не приходят "
-            "или что будущий риск равен нулю."
+            "массовой мобилизации."
         )
     else:
         main = sentence_excerpt(assessment.get("started"), 220) or sentence_excerpt(
@@ -476,6 +474,14 @@ def format_message(draft, evidence, mode):
                 "Текущую стадию документов и последствия без дополнительных "
                 "проверенных данных не определяем.",
             ]
+
+        for quote in draft.get("legal_quotes") or []:
+            row = by_id.get(quote.get("source_id"), {})
+            excerpt = clean(quote.get("text"))
+            if (excerpt and excerpt == row.get("literal_quote")
+                    and excerpt in clean(row.get("retrieved_text")) and row.get("url")):
+                parts.append("«" + esc(excerpt) + "» — " + link(row["url"], row["source"]))
+                break
 
         if civil:
             parts += [
@@ -526,8 +532,6 @@ def format_message(draft, evidence, mode):
 
         parts += [
             "<b>Оценка риска</b>",
-            esc("Новая волна: не подтверждена в проверенной выборке."
-                if unconfirmed else sentence_excerpt(assessment.get("started"), 140)),
             esc(risk),
         ]
         if isw:
@@ -538,12 +542,6 @@ def format_message(draft, evidence, mode):
         else:
             parts.append("ISW: свежей подходящей оценки в выборке нет; это не оценка риска.")
 
-        if not compact:
-            parts += [
-                "<b>Что важно проверить дальше</b>",
-                "Стадию законопроекта, новые юридические решения, "
-                "подтверждённые массовые вызовы запасников и кадровую динамику.",
-            ]
 
         # Clearly named source documents, not [1] [2] [10] throughout copy.
         sources = [
