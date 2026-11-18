@@ -1,23 +1,23 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-11-17T22:14:30+00:00",
-  "last_run_sakhalin": "2026-11-18T09:14:30+11:00",
-  "mode": "morning",
+  "last_run_utc": "2026-11-18T08:56:03+00:00",
+  "last_run_sakhalin": "2026-11-18T19:56:03+11:00",
+  "mode": "evening",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 618,
+  "telegram_message_id": 624,
   "evidence_count": 10,
-  "evidence_hash": "73c27f0baf78c74381b03b3200474a06d6a017656d047b5e24e741625c97d444",
+  "evidence_hash": "062046a6450c2b8eb334b4b57239b29bb951caa630ceb1df6c3b7196afca1580",
   "headline": "Юридический статус и повестки: что подтверждено, а что нет",
   "source_ids": [
     3,
     1,
-    5,
+    2,
     6,
     7,
     10,
-    2,
-    4
+    4,
+    5
   ],
   "slots": {
     "2026-10-23": {
@@ -612,14 +612,33 @@
           2,
           4
         ]
+      },
+      "evening": {
+        "status": "ok",
+        "published_at_utc": "2026-11-18T08:56:03+00:00",
+        "published_at_sakhalin": "2026-11-18T19:56:03+11:00",
+        "telegram_message_id": 624,
+        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
+        "evidence_count": 10,
+        "evidence_hash": "062046a6450c2b8eb334b4b57239b29bb951caa630ceb1df6c3b7196afca1580",
+        "source_ids": [
+          3,
+          1,
+          2,
+          6,
+          7,
+          10,
+          4,
+          5
+        ]
       }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "morning",
-    "at_utc": "2026-11-17T22:14:30+00:00",
-    "at_sakhalin": "2026-11-18T09:14:30+11:00"
+    "mode": "evening",
+    "at_utc": "2026-11-18T08:56:03+00:00",
+    "at_sakhalin": "2026-11-18T19:56:03+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-11-14T01:21:35+00:00",
@@ -631,5 +650,9 @@
     "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)",
     "bot_username": null,
     "permissions": {}
+  },
+  "last_civil_report": {
+    "url": "https://t.me/iditelesom_help/8321",
+    "text_hash": "8d7e3781bb8f4d8f1782c5f4b8e4d514c9e6c8211c0f0fc055947220aaf23fbc"
   }
 }
