@@ -9,7 +9,7 @@ import copy
 import html
 import re
 from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
 from urllib.parse import urlsplit
 
@@ -430,9 +430,7 @@ def format_message(draft, evidence, mode):
     ), None)
     isw = next((row for row in evidence if row.get("group") == "isw"), None)
 
-    local_now = datetime.now(timezone.utc).astimezone(
-        __import__("datetime").timezone(__import__("datetime").timedelta(hours=11))
-    )
+    local_now = datetime.now(timezone.utc).astimezone(timezone(timedelta(hours=11)))
     when = local_now.strftime("%d.%m.%Y")
     label = "УТРО" if mode == "morning" else "ВЕЧЕР"
     assessment = draft.get("assessment") or {}
@@ -502,7 +500,7 @@ def format_message(draft, evidence, mode):
                 continue
             if civil and any(r.get("url") == civil.get("url") for r in rows):
                 continue
-            if any(r.get("group") == "civil_society" for r in rows):
+            if civil and any(r.get("group") == "civil_society" for r in rows):
                 continue
             extras.append((item, rows))
         for item, rows in extras[:extra_stories]:
@@ -564,17 +562,17 @@ def format_message(draft, evidence, mode):
             for row in extras[0][1][:1]:
                 if row and row.get("url"):
                     links.append(link(row.get("url"), "Доп. сообщение"))
-        if not compact:
-            for item, ids in [
-                (item, [int(i) for i in item.get("source_ids", []) if str(i).isdigit()])
-                for item in (draft.get("items") or [])[:6]
-            ]:
-                for idx in ids:
-                    row = by_id.get(idx)
-                    if row and row.get("group") not in {"law", "civil_society", "isw"}:
-                        url = str(row.get("url") or "")
-                        if url and url not in linked:
-                            links.append(link(url, "Другой материал"))
+        # Preserve links to any omitted non-legal reports; they are short
+        # named hyperlinks and do not justify repeating long paragraphs.
+        for item in (draft.get("items") or [])[:6]:
+            for raw in item.get("source_ids", []):
+                if not str(raw).isdigit():
+                    continue
+                row = by_id.get(int(raw))
+                if row and row.get("group") != "law":
+                    url = str(row.get("url") or "")
+                    if url and url not in linked:
+                        links.append(link(url, "Другой материал"))
         parts += ["<b>Проверить первоисточники</b>", " · ".join(v for v in links if v)]
 
         return "\n\n".join(v for v in parts if v).strip()
