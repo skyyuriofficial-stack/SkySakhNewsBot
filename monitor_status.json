@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-18T03:59:19+00:00",
-  "checked_at_sakhalin": "2026-11-18T14:59:15+11:00",
+  "checked_at_utc": "2026-11-18T04:10:18+00:00",
+  "checked_at_sakhalin": "2026-11-18T15:10:13+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
@@ -10,7 +10,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-18T13:29:02+11:00",
-    "age_hours": 1.5,
+    "age_hours": 1.69,
     "published": 1
   },
   "last_production_attempt": {
@@ -70,38 +70,12 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-18T03:59:18+00:00",
+    "checked_at": "2026-11-18T04:10:16+00:00",
     "checked": 20,
-    "passed": 19,
-    "anomalies": [
-      {
-        "title": "ВТБ: рынок ипотеки на ИЖС вырастет на треть",
-        "url": "https://sakhalinmedia.ru/news/2682969/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "ru_eco",
-        "corrected_category": "ru_eco",
-        "reason": "importance_below_threshold",
-        "contract_issues": [
-          "director_final_reject:importance_below_threshold"
-        ]
-      }
-    ],
+    "passed": 20,
+    "anomalies": [],
     "corrected": [],
-    "deleted": [
-      {
-        "message_id": 609,
-        "already_absent": false,
-        "title": "ВТБ: рынок ипотеки на ИЖС вырастет на треть",
-        "url": "https://sakhalinmedia.ru/news/2682969/",
-        "publisher_version": "stable-v12.1",
-        "category_key": "ru_eco",
-        "corrected_category": "ru_eco",
-        "reason": "importance_below_threshold",
-        "contract_issues": [
-          "director_final_reject:importance_below_threshold"
-        ]
-      }
-    ],
+    "deleted": [],
     "failed_actions": [],
     "unresolved": 0,
     "unresolved_items": [],
@@ -492,7 +466,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-18T03:59:13+00:00",
+    "checked_at_utc": "2026-11-18T04:10:10+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
