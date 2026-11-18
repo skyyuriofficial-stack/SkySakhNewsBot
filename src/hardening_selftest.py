@@ -14,6 +14,19 @@ import hardened_monitor
 
 
 def main() -> int:
+    for title, reason in (
+        ("СберСтрахование рассказало, как накопить на отпуск", "sber_routine_promotion"),
+        ("Пополнить российский Apple ID прямо сейчас можно со скидкой 22%", "advertorial_or_corporate_pr"),
+    ):
+        item = {"title": title, "source": "ASTV",
+                "source_text": "Представители компании рассказали о предложении для жителей Синегорска."}
+        assert policy.classify(item).hard_reject_reason == reason, item
+
+    outlook = {"title": "ВТБ: рынок ипотеки на ИЖС вырастет на треть", "source": "ASTV"}
+    assert policy.classify(outlook).event_type == "corporate_forecast"
+    decision = {"title": "Банк России снизил ключевую ставку", "source": "РБК"}
+    assert policy.classify(decision).event_type == "macro_economy"
+
     repeated_lead = (
         "Восстановление кровли пострадавшего от пожара дома в Южно-Сахалинске начнётся уже 12 сентября."
     )

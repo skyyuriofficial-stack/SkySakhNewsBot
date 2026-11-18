@@ -827,7 +827,11 @@ def _event_type(title: str, lead: str, *, foreign: bool) -> str:
     if _is_policy(title):
         return "political_decision"
     if has_any(title, MACRO_ECONOMY):
-        return "corporate_forecast" if has_any(title, CORPORATE_FORECAST) else "macro_economy"
+        bank_outlook = re.search(
+            r"^втб\s*:\s*.*\b(?:рынок|объ[её]м|спрос)\b.{0,90}\b(?:вырастет|снизится|сократится)\b",
+            title, re.I,
+        )
+        return "corporate_forecast" if bank_outlook or has_any(title, CORPORATE_FORECAST) else "macro_economy"
     if foreign and (has_any(title, DIPLOMACY) or has_any(title, MAJOR_WORLD) or has_any(title, SECURITY)):
         return "geopolitical_event"
     if has_any(title, IT_CORE):
