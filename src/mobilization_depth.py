@@ -377,7 +377,7 @@ def _practical_note(row):
     if "мобилизационн" in low and "предписани" in low:
         topics.append("мобилизационные предписания")
     if re.search(r"контрактн\w* служб|служб\w* по контракт|заключени\w* контракт", low):
-        topics.append("службу по контракту")
+        topics.append("контрактная служба"
     if "выезд" in low or "выезда" in low:
         topics.append("выезд из России")
     stamp = str(row.get("published_utc") or "")[:10]
