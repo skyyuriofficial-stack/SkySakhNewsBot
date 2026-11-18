@@ -1,16 +1,23 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-18T22:16:07+00:00",
-  "checked_at_sakhalin": "2026-11-19T09:16:03+11:00",
-  "status": "degraded",
-  "mutations_enabled": true,
-  "issues": [],
+  "checked_at_utc": "2026-11-18T23:36:19+00:00",
+  "checked_at_sakhalin": "2026-11-19T10:36:15+11:00",
+  "status": "error",
+  "mutations_enabled": false,
+  "issues": [
+    {
+      "type": "telegram_delivery_unhealthy",
+      "reason": "transport",
+      "http_status": 200,
+      "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)"
+    }
+  ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-19T08:56:46+11:00",
-    "age_hours": 0.32,
+    "age_hours": 1.66,
     "published": 2
   },
   "last_production_attempt": {
@@ -71,7 +78,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-18T22:16:06+00:00",
+    "checked_at": "2026-11-18T23:36:18+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -80,7 +87,7 @@
     "failed_actions": [],
     "unresolved": 0,
     "unresolved_items": [],
-    "mutations_enabled": true,
+    "mutations_enabled": false,
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
@@ -468,20 +475,15 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-18T22:16:01+00:00",
-    "status": "healthy",
+    "checked_at_utc": "2026-11-18T23:35:59+00:00",
+    "status": "error",
     "auth_ok": true,
-    "chat_ok": true,
-    "error_kind": null,
+    "chat_ok": false,
+    "error_kind": "transport",
     "http_status": 200,
-    "description": null,
+    "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)",
     "bot_username": "SkySakhNewsPublisher_bot",
-    "permissions": {
-      "status": "administrator",
-      "can_post_messages": true,
-      "can_edit_messages": true,
-      "can_delete_messages": true
-    }
+    "permissions": {}
   },
   "delivery_queue_hardening": {
     "before": 0,
@@ -492,7 +494,7 @@
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0
   },
-  "delivery_outbox_repaired": false,
+  "delivery_outbox_repaired": true,
   "hardening_actions": [],
   "hardening_failed_actions": [],
   "warnings": [
