@@ -146,9 +146,9 @@ def _publisher_slot_issue(
 def _active_recent_posts(state: Dict[str, Any]):
     return [
         post
-        for post in (state.get("last_posts") or [])[-20:]
+        for post in (state.get("last_posts") or [])
         if isinstance(post, dict) and not post.get("auto_deleted")
-    ]
+    ][-publication_auditor.MAX_AUDIT_POSTS:]
 
 
 def _digest_slot_record(state: Dict[str, Any], day: str, mode: str) -> Dict[str, Any]:
@@ -289,7 +289,7 @@ def run_monitor(*, mutate: bool = True, persist_state: bool = True) -> Dict[str,
             and review.get("corrected_category") == post.get("category_key")
         )
         row = post.get("published_row") or {}
-        contract = post.get("publication_contract") or {}
+        contract = post.get("post_audit") or {}
         contract_ok = bool(contract.get("approved")) if row else True
 
         item = {

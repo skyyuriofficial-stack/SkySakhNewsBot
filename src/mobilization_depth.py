@@ -346,7 +346,7 @@ def _plain_language_legal(draft, evidence):
             "для граждан — 3–5 тыс. ₽, должностных лиц — 30–50 тыс. ₽ "
             "(либо дисквалификация), организаций — 300 тыс.–1 млн ₽ "
             "(либо приостановление деятельности). "
-            "Это НЕ штраф за любую повестку и НЕ решение о новой мобилизации."
+            "Штраф по проекту связан с нарушением конкретного решения штаба или главы региона."
         ),
         "current": (
             "27.10.2026 Госдума приняла проект в первом чтении. "
@@ -358,8 +358,7 @@ def _plain_language_legal(draft, evidence):
         ),
         "easing": (
             "В изученных материалах нет подтверждённого нового послабления "
-            "для запасников по повесткам, сборам или выезду. "
-            "Это ограничение выборки, а не утверждение, что послаблений вообще не было."
+            "для запасников по повесткам, сборам или выезду."
         ),
     }
 
@@ -423,11 +422,21 @@ def format_message(draft, evidence, mode):
     def first_role(role):
         return next((row for row in evidence if row.get("legal_role") == role), None)
 
-    civil = next((
+    civil = max((
         row for row in evidence
         if row.get("group") == "civil_society"
         and str(row.get("url") or "").startswith("https://t.me/iditelesom_help/")
-    ), None)
+    ), key=lambda row: str(row.get("published_utc") or ""), default=None)
+    # Compare the actual dated source text. Discovering an older report for
+    # the first time does not make it a new development.
+    import hashlib
+    civil_key = None
+    if civil:
+        fingerprint = hashlib.sha256(
+            clean(str(civil.get("title") or "") + " " + str(civil.get("summary") or "")).encode("utf-8")
+        ).hexdigest()
+        civil_key = {"url": civil["url"], "text_hash": fingerprint}
+    draft["rendered_civil_report"] = civil_key
     isw = next((row for row in evidence if row.get("group") == "isw"), None)
 
     local_now = datetime.now(timezone.utc).astimezone(timezone(timedelta(hours=11)))
@@ -444,8 +453,7 @@ def format_message(draft, evidence, mode):
     if unconfirmed:
         main = (
             "В проверенных материалах нет подтверждения нового решения о "
-            "массовой мобилизации. Это не означает, что повестки не приходят "
-            "или что будущий риск равен нулю."
+            "массовой мобилизации."
         )
     else:
         main = sentence_excerpt(assessment.get("started"), 220) or sentence_excerpt(
@@ -477,17 +485,34 @@ def format_message(draft, evidence, mode):
                 "проверенных данных не определяем.",
             ]
 
+        for quote in draft.get("legal_quotes") or []:
+            row = by_id.get(quote.get("source_id"), {})
+            excerpt = clean(quote.get("text"))
+            if (excerpt and excerpt == row.get("literal_quote")
+                    and excerpt in clean(row.get("retrieved_text")) and row.get("url")):
+                quote_line = "«" + esc(excerpt) + "» — " + link(row["url"], row["source"])
+                if legal is None:
+                    parts.append(quote_line)
+                else:
+                    # Attach the quotation to the legal explanation, before easing.
+                    parts.insert(parts.index("<b>Что стало легче?</b>"), quote_line)
+                break
+
         if civil:
             parts += [
                 "<b>Повестки: что происходит на практике</b>",
-                esc(_practical_note(civil)),
+                ("Этот материал уже разбирали в прошлом выпуске. "
+                 if civil_key == draft.get("previous_civil_report") else "")
+                + esc(_practical_note(civil)),
             ]
         else:
-            parts += [
-                "<b>Повестки: что происходит на практике</b>",
-                "Свежих конкретных сообщений проекта «Идите лесом» в доступной "
-                "выборке нет. Это пробел наблюдения, а не доказательство отсутствия вызовов.",
-            ]
+            import mobilization_sources
+            status = mobilization_sources.IDITELESOM_STATUS
+            if status.get("state") != "reachable" or not status.get("sampled"):
+                note = "Прочитать свежие сообщения «Идите лесом» не удалось. Сведений от проекта за этот выпуск нет."
+            else:
+                note = "Среди просмотренных сообщений «Идите лесом» за последние 14 дней новых подходящих сведений о повестках не нашли."
+            parts += ["<b>Повестки: что происходит на практике</b>", note]
 
         # One additional distinct non-legal event is allowed only if it adds
         # independent information and fits the user-facing overview.
@@ -526,8 +551,6 @@ def format_message(draft, evidence, mode):
 
         parts += [
             "<b>Оценка риска</b>",
-            esc("Новая волна: не подтверждена в проверенной выборке."
-                if unconfirmed else sentence_excerpt(assessment.get("started"), 140)),
             esc(risk),
         ]
         if isw:
@@ -538,12 +561,6 @@ def format_message(draft, evidence, mode):
         else:
             parts.append("ISW: свежей подходящей оценки в выборке нет; это не оценка риска.")
 
-        if not compact:
-            parts += [
-                "<b>Что важно проверить дальше</b>",
-                "Стадию законопроекта, новые юридические решения, "
-                "подтверждённые массовые вызовы запасников и кадровую динамику.",
-            ]
 
         # Clearly named source documents, not [1] [2] [10] throughout copy.
         sources = [

@@ -68,7 +68,7 @@ WORLD_MEDIA = (
     "bbc", "reuters", "guardian", "associated press", "ap news",
 )
 LOCAL_MEDIA = ("sakhalinmedia", "astv", "sakh.online", "sakh online")
-RUSSIAN_MEDIA = ("interfax", "интерфакс", "tass", "тасс")
+RUSSIAN_MEDIA = ("interfax", "интерфакс", "tass", "тасс", "rbc news")
 DOMESTIC_PATHS = (
     "/russia/", "/moscow/", "/business/", "/economy/", "/politics/",
     "/politika/", "/ekonomika/",
@@ -695,6 +695,11 @@ def _hard_reject(title: str, lead: str) -> Optional[str]:
         return "advertorial_or_corporate_pr"
     if has_any(combined, BRAND_POPULARITY_PR):
         return "advertorial_or_corporate_pr"
+    if re.search(r"пополн\w*.*(?:apple id|кошел[её]к|баланс).{0,80}со скидкой", title, re.I):
+        return "advertorial_or_corporate_pr"
+    if re.search(r"гост.{0,35}(?:на борщ|на блюда|на русские блюда)", title, re.I):
+        if not has_any(combined, ("запрет", "отравлен", "угроза здоровью", "обязательн")):
+            return "culinary_standard_without_public_impact"
     if _is_branded_trust_survey(title):
         return "brand_trust_ranking_pr"
     if _is_sensational_ai_claim(title):

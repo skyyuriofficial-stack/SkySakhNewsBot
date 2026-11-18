@@ -136,6 +136,15 @@ class DepthTests(unittest.TestCase):
         self.assertLessEqual(q.visible_units(text), 4000)
         self.assertLessEqual(len(text), 4000)
         self.assertEqual(final._rendered_digest_issues(text, evidence), [])
+        self.assertEqual(final._reader_issues(text, evidence), [])
+        draft["previous_civil_report"] = draft["rendered_civil_report"]
+        repeated = q.format_message(draft, evidence, "evening")
+        self.assertIn("уже разбирали в прошлом выпуске", repeated)
+        self.assertNotIn("уже разбирали в прошлом выпуске", text)
+        old_layout = text.replace("Что действует сейчас", "Право: содержание и последствия")
+        self.assertTrue(final._reader_issues(old_layout, evidence))
+        footnotes = text.replace("«Идите лесом» · сообщение", "[10]")
+        self.assertIn("attributed_civil_report_missing", final._reader_issues(footnotes, evidence))
 
     def test_no_unverified_improvement_and_no_fabricated_stage(self):
         draft = {

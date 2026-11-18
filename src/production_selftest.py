@@ -455,6 +455,17 @@ def local_feed_quality_regressions():
         url="https://sakhalinmedia.ru/news/regression-routine-water/",
         category="sakh",
     )
+    # An ambiguous approved item goes through the actual batch veto path.
+    borderline = dict(real_warning, category_key="it")
+    batches = []
+    def veto(reviews):
+        batches.append(director.ai_review_prompt(reviews))
+        return {r["id"]: {"newsworthy": False, "importance": 30} for r in reviews}
+    reviewed, decision = director.direct_candidates(
+        {}, [borderline], category_map=publisher.core.b.CAT, ai_reviewer=veto)
+    assert not reviewed and len(batches) == 1 and '"excerpt"' in batches[0], decision
+    assert decision["by_url"][borderline["url"]]["reason"] == "independent_editor_veto"
+    assert not director.normalize_ai_reviews({"reviews": [{"id": "bad"}]})
     # It can be useful when the local stream is under target...
     assert director.review_candidate(routine_water)["approved"] is True
     # ...but must not extend a full 30% local allocation with routine utility notices.
@@ -483,6 +494,16 @@ def local_feed_quality_regressions():
     )
     assert ordered and ordered[0]["url"] == fatal_local["url"], report
     assert report["by_url"][fatal_local["url"]]["approved"] is True, report
+
+
+    over_target = history[:6] + history[7:] + history[:1]
+    ordered, report = director.direct_candidates(
+        {"last_posts": over_target},
+        [fatal_local, real_warning], category_map=publisher.core.b.CAT)
+    assert fatal_local not in ordered and real_warning in ordered, report
+    for title in ("Пополнить российский Apple ID прямо сейчас можно со скидкой 22%",
+                  "В России впервые утвердили ГОСТ на борщ и другие русские блюда"):
+        assert not director.review_candidate(candidate(title, title))["approved"], title
 
 
 def source_diversity_regression():
@@ -865,6 +886,24 @@ def final_russian_title_and_it_regressions():
     contract = policy.final_contract(world, row)
     assert contract["approved"] is True, contract
     assert contract["foreign_evidence_ok"] is True, contract
+
+    # Recreate the stored publisher record, including pre-source_title history.
+    saved = {"title": row["title_ru"], "source_text_excerpt": world["source_text"],
+             "category_key": "world_ru", "source": world["source"], "url": world["url"],
+             "published_row": row, "news_director": {"title_corrected": world["title"]},
+             "publisher_version": publisher.VERSION}
+    for source_title in (None, world["title"]):
+        saved["source_title"] = source_title
+        report = publication_auditor.audit_recent_posts(
+            {"last_posts": [saved]}, category_map=publisher.core.b.CAT,
+            render_caption=publisher.core.b.caption, mutate=False)
+        assert report["passed"] == 1, report
+    corrupted = copy.deepcopy(saved)
+    corrupted["published_row"]["body_evidence"][0] = "Unsigned material absent from this source."
+    report = publication_auditor.audit_recent_posts(
+        {"last_posts": [corrupted]}, category_map=publisher.core.b.CAT,
+        render_caption=publisher.core.b.caption, mutate=False)
+    assert report["unresolved"] == 1, report
 
     bad = dict(row)
     bad["title_ru"] = world["title"]
@@ -1333,11 +1372,14 @@ def mandatory_telegram_source_regressions():
     }
     weak = {**strong, "url": "https://t.me/rbc_news/123457",
             "title": "Советы по выбору одежды от редакции"}
+    federal = {**strong, "url": "https://t.me/rbc_news/123458",
+               "title": "Правительство России утвердило федеральный бюджет",
+               "text": "Правительство России утвердило федеральный бюджет. Решение определяет расходы на следующий год."}
     original_fetch = source_core.telegram_sources.fetch_public_channel
     original_select = source_core.b.select_image
     try:
         source_core.telegram_sources.fetch_public_channel = (
-            lambda src: [strong, weak]
+            lambda src: [strong, weak, federal]
             if src.get("handle") == "rbc_news" else []
         )
         source_core.b.select_image = (
@@ -1351,7 +1393,8 @@ def mandatory_telegram_source_regressions():
     finally:
         source_core.telegram_sources.fetch_public_channel = original_fetch
         source_core.b.select_image = original_select
-    assert len(wire_rows) == 1, wire_rows
+    assert {r["url"] for r in wire_rows} == {strong["url"], federal["url"]}, wire_rows
+    assert wire_rows[1]["category_key"] in {"ru_eco", "ru_pol"}, wire_rows
     assert wire_rows[0]["source"].startswith("RBC News"), wire_rows
     assert wire_rows[0]["category_key"] != "it", wire_rows
     assert wire_rows[0]["image"] == b"p" * 12000, wire_rows

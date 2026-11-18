@@ -19,6 +19,9 @@ def main():
     if issues:
         raise AssertionError(issues)
     text = digest.format_message(draft, evidence, 'morning')
+    issues += final._rendered_digest_issues(text, evidence) + final._reader_issues(text, evidence)
+    if issues:
+        raise AssertionError(issues)
     report = {
         'mode': 'read_only_live_preview',
         'telegram_sent': False,

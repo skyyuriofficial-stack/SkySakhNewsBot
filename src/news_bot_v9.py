@@ -543,11 +543,22 @@ def collect_public_telegram(state):
                 and any(marker in (title + " " + text[:400]).lower()
                         for marker in TASS_WORLD_ACTORS)
             ):
-                continue
-            cat, score, reason = _telegram_stream_classification(
-                int(source.get("weight") or 90), title, text, url,
-                vertical=vertical,
-            )
+                if handle != "rbc_news":
+                    continue
+                # RBC also covers domestic decisions. Screen them with the same
+                # policy the director will use again after source/media checks.
+                import editorial_policy
+                decision = editorial_policy.classify({
+                    "title": title, "source_text": text, "url": url, "source": source_name,
+                })
+                if decision.category_key not in {"ru_pol", "ru_eco", "ru_security"}:
+                    continue
+                cat, score, reason = decision.category_key, int(source["weight"]), "rbc_federal"
+            else:
+                cat, score, reason = _telegram_stream_classification(
+                    int(source.get("weight") or 90), title, text, url,
+                    vertical=vertical,
+                )
             if not cat:
                 continue
 
