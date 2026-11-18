@@ -427,6 +427,16 @@ def format_message(draft, evidence, mode):
         if row.get("group") == "civil_society"
         and str(row.get("url") or "").startswith("https://t.me/iditelesom_help/")
     ), key=lambda row: str(row.get("published_utc") or ""), default=None)
+    # Compare the actual dated source text. Discovering an older report for
+    # the first time does not make it a new development.
+    import hashlib
+    civil_key = None
+    if civil:
+        fingerprint = hashlib.sha256(
+            clean(str(civil.get("title") or "") + " " + str(civil.get("summary") or "")).encode("utf-8")
+        ).hexdigest()
+        civil_key = {"url": civil["url"], "text_hash": fingerprint}
+    draft["rendered_civil_report"] = civil_key
     isw = next((row for row in evidence if row.get("group") == "isw"), None)
 
     local_now = datetime.now(timezone.utc).astimezone(timezone(timedelta(hours=11)))
@@ -480,20 +490,29 @@ def format_message(draft, evidence, mode):
             excerpt = clean(quote.get("text"))
             if (excerpt and excerpt == row.get("literal_quote")
                     and excerpt in clean(row.get("retrieved_text")) and row.get("url")):
-                parts.append("«" + esc(excerpt) + "» — " + link(row["url"], row["source"]))
+                quote_line = "«" + esc(excerpt) + "» — " + link(row["url"], row["source"])
+                if legal is None:
+                    parts.append(quote_line)
+                else:
+                    # Attach the quotation to the legal explanation, before easing.
+                    parts.insert(parts.index("<b>Что стало легче?</b>"), quote_line)
                 break
 
         if civil:
             parts += [
                 "<b>Повестки: что происходит на практике</b>",
-                esc(_practical_note(civil)),
+                ("Этот материал уже разбирали в прошлом выпуске. "
+                 if civil_key == draft.get("previous_civil_report") else "")
+                + esc(_practical_note(civil)),
             ]
         else:
-            parts += [
-                "<b>Повестки: что происходит на практике</b>",
-                "Свежих конкретных сообщений проекта «Идите лесом» в доступной "
-                "выборке нет. Это пробел наблюдения, а не доказательство отсутствия вызовов.",
-            ]
+            import mobilization_sources
+            status = mobilization_sources.IDITELESOM_STATUS
+            if status.get("state") != "reachable" or not status.get("sampled"):
+                note = "Прочитать свежие сообщения «Идите лесом» не удалось. Сведений от проекта за этот выпуск нет."
+            else:
+                note = "Среди просмотренных сообщений «Идите лесом» за последние 14 дней новых подходящих сведений о повестках не нашли."
+            parts += ["<b>Повестки: что происходит на практике</b>", note]
 
         # One additional distinct non-legal event is allowed only if it adds
         # independent information and fits the user-facing overview.

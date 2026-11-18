@@ -768,6 +768,9 @@ def _record_success(mode, evidence, draft, telegram_result):
     )
 
     if telegram_result.get("message_id"):
+        # Keep publication-to-publication comparisons independent of row ids,
+        # network retrieval times and dry runs. Store only the report shown.
+        state["last_civil_report"] = draft.get("rendered_civil_report")
         slots = state.setdefault("slots", {})
         day_slots = slots.setdefault(now_local.date().isoformat(), {})
         day_slots[mode] = {
@@ -869,6 +872,7 @@ def main():
         )
         draft = fallback
 
+    draft["previous_civil_report"] = digest.load_state().get("last_civil_report")
     message = digest.format_message(draft, evidence, mode)
     rendered_issues = _rendered_digest_issues(message, evidence) + _reader_issues(message, evidence)
     if rendered_issues:
