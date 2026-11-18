@@ -382,6 +382,9 @@ def install() -> None:
 
     def hardened_classify(candidate: Mapping[str, Any]) -> policy.Classification:
         base = _ORIGINAL_CLASSIFY(candidate)
+        # Geography may recover an unclassified story, never an editorial veto.
+        if base.hard_reject_reason and base.hard_reject_reason != "no_supported_news_stream":
+            return base
         title = policy.strip_source_suffix(candidate.get("title"))
         lead = policy.clean_article_text(candidate.get("source_text"), limit=1800)
         combined = f"{title} {lead}"
