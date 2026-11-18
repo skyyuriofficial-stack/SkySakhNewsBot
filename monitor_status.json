@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-18T02:48:32+00:00",
-  "checked_at_sakhalin": "2026-11-18T13:48:28+11:00",
+  "checked_at_utc": "2026-11-18T03:49:55+00:00",
+  "checked_at_sakhalin": "2026-11-18T14:49:48+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
@@ -10,7 +10,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-18T13:29:02+11:00",
-    "age_hours": 0.33,
+    "age_hours": 1.35,
     "published": 1
   },
   "last_production_attempt": {
@@ -70,43 +70,64 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-18T02:48:31+00:00",
+    "checked_at": "2026-11-18T03:49:53+00:00",
     "checked": 20,
     "passed": 19,
     "anomalies": [
       {
-        "title": "Помощник прокремлевского ex-премьера Украины тяжело ранен в Москве при взрыве автомобиля",
-        "url": "https://www.bbc.co.uk/news/articles/c5gm3gnwl42eo?at_medium=RSS&at_campaign=rss",
+        "title": "В России впервые утвердили ГОСТ на борщ и другие русские блюда",
+        "url": "https://astv.ru/news/society/2026-11-16-v-rossii-vpervye-utverdili-gost-na-borsh-i-drugie-russkie-blyuda",
         "publisher_version": "stable-v12.1",
-        "category_key": "world_ru",
-        "corrected_category": "world_ru",
-        "reason": "approved",
+        "category_key": "ru_pol",
+        "corrected_category": null,
+        "reason": "culinary_standard_without_public_impact",
         "contract_issues": [
-          "foreign_translation_evidence_missing"
+          "final_hard_reject:culinary_standard_without_public_impact",
+          "final_category_mismatch:None->ru_pol",
+          "director_final_category:None->ru_pol",
+          "director_final_reject:culinary_standard_without_public_impact"
         ]
       }
     ],
     "corrected": [],
-    "deleted": [],
-    "failed_actions": [],
-    "unresolved": 1,
-    "unresolved_items": [
+    "deleted": [
       {
-        "title": "Помощник прокремлевского ex-премьера Украины тяжело ранен в Москве при взрыве автомобиля",
-        "url": "https://www.bbc.co.uk/news/articles/c5gm3gnwl42eo?at_medium=RSS&at_campaign=rss",
+        "message_id": 612,
+        "already_absent": false,
+        "title": "В России впервые утвердили ГОСТ на борщ и другие русские блюда",
+        "url": "https://astv.ru/news/society/2026-11-16-v-rossii-vpervye-utverdili-gost-na-borsh-i-drugie-russkie-blyuda",
         "publisher_version": "stable-v12.1",
-        "category_key": "world_ru",
-        "corrected_category": "world_ru",
-        "reason": "approved",
+        "category_key": "ru_pol",
+        "corrected_category": null,
+        "reason": "culinary_standard_without_public_impact",
         "contract_issues": [
-          "foreign_translation_evidence_missing"
+          "final_hard_reject:culinary_standard_without_public_impact",
+          "final_category_mismatch:None->ru_pol",
+          "director_final_category:None->ru_pol",
+          "director_final_reject:culinary_standard_without_public_impact"
         ]
       }
     ],
+    "failed_actions": [],
+    "unresolved": 0,
+    "unresolved_items": [],
     "mutations_enabled": true,
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
+    {
+      "message_id": 596,
+      "title": "GitHub НЕ ВЗЛОМАЛИ — из-за сбоев у Claude, Телеграм-СМИ не смогли фактчекнуть простейшую новость, поэтому смешали в кучу факты, домыслы и кликбейт",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
+    },
     {
       "message_id": 597,
       "title": "Тысячи жителей Сахалина оказались обесточены из-за аварии на сетях",
@@ -264,19 +285,6 @@
       "title_issues": []
     },
     {
-      "message_id": 612,
-      "title": "В России впервые утвердили ГОСТ на борщ и другие русские блюда",
-      "category_key": "ru_pol",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_pol",
-      "title_issues": []
-    },
-    {
       "message_id": 614,
       "title": "В Тымовском районе за один вечер произошли два пожара",
       "category_key": "sakh_chp",
@@ -388,11 +396,11 @@
     },
     "counts": {
       "local": 13,
-      "ru_pol": 1,
+      "ru_pol": 0,
       "ru_eco": 2,
       "ru_safety": 1,
       "world": 1,
-      "it": 2
+      "it": 3
     },
     "scaled_targets": {
       "local": 6.0,
@@ -404,23 +412,23 @@
     },
     "deficits": {
       "local": -7.0,
-      "ru_pol": 3.0,
+      "ru_pol": 4.0,
       "ru_eco": 2.0,
       "ru_safety": 2.0,
       "world": 1.0,
-      "it": -1.0
+      "it": -2.0
     },
-    "distribution_error": 16.0,
+    "distribution_error": 18.0,
     "subtype_counts": {
+      "major_it": 3,
       "major_emergency": 3,
       "fatal_incident": 4,
       "severe_weather": 1,
       "violent_crime": 4,
-      "major_it": 2,
-      "macro_economy": 5,
-      "political_decision": 1
+      "macro_economy": 5
     },
     "sequence": [
+      "it",
       "local",
       "world",
       "local",
@@ -433,7 +441,6 @@
       "local",
       "ru_eco",
       "ru_eco",
-      "ru_pol",
       "local",
       "local",
       "local",
@@ -443,6 +450,7 @@
       "local"
     ],
     "category_sequence": [
+      "it",
       "sakh_chp",
       "world_ru",
       "sakh_chp",
@@ -455,7 +463,6 @@
       "sakh_chp",
       "ru_eco",
       "ru_eco",
-      "ru_pol",
       "sakh_chp",
       "sakh",
       "sakh",
@@ -465,6 +472,7 @@
       "sakh"
     ],
     "source_sequence": [
+      "exploit exploitex",
       "astv",
       "bbc world",
       "astv",
@@ -477,7 +485,6 @@
       "astv",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "astv",
       "sakh.online",
       "sakhalinmedia.ru",
       "astv",
@@ -489,21 +496,9 @@
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
-  "legacy_or_derivative_warnings": [
-    {
-      "title": "Помощник прокремлевского ex-премьера Украины тяжело ранен в Москве при взрыве автомобиля",
-      "url": "https://www.bbc.co.uk/news/articles/c5gm3gnwl42eo?at_medium=RSS&at_campaign=rss",
-      "publisher_version": "stable-v12.1",
-      "category_key": "world_ru",
-      "corrected_category": "world_ru",
-      "reason": "approved",
-      "contract_issues": [
-        "foreign_translation_evidence_missing"
-      ]
-    }
-  ],
+  "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-18T02:48:26+00:00",
+    "checked_at_utc": "2026-11-18T03:49:46+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -532,27 +527,16 @@
   "hardening_failed_actions": [],
   "warnings": [
     {
-      "title": "Помощник прокремлевского ex-премьера Украины тяжело ранен в Москве при взрыве автомобиля",
-      "url": "https://www.bbc.co.uk/news/articles/c5gm3gnwl42eo?at_medium=RSS&at_campaign=rss",
-      "publisher_version": "stable-v12.1",
-      "category_key": "world_ru",
-      "corrected_category": "world_ru",
-      "reason": "approved",
-      "contract_issues": [
-        "foreign_translation_evidence_missing"
-      ]
-    },
-    {
       "type": "thematic_mix_drift",
-      "distribution_error": 16.0,
+      "distribution_error": 18.0,
       "limit": 8.0,
       "counts": {
         "local": 13,
-        "ru_pol": 1,
+        "ru_pol": 0,
         "ru_eco": 2,
         "ru_safety": 1,
         "world": 1,
-        "it": 2
+        "it": 3
       },
       "targets": {
         "local": 6,
@@ -564,11 +548,11 @@
       },
       "deficits": {
         "local": -7.0,
-        "ru_pol": 3.0,
+        "ru_pol": 4.0,
         "ru_eco": 2.0,
         "ru_safety": 2.0,
         "world": 1.0,
-        "it": -1.0
+        "it": -2.0
       }
     }
   ]
