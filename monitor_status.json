@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-18T03:50:12+00:00",
-  "checked_at_sakhalin": "2026-11-18T14:50:09+11:00",
+  "checked_at_utc": "2026-11-18T03:59:19+00:00",
+  "checked_at_sakhalin": "2026-11-18T14:59:15+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
@@ -10,7 +10,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-18T13:29:02+11:00",
-    "age_hours": 1.35,
+    "age_hours": 1.5,
     "published": 1
   },
   "last_production_attempt": {
@@ -70,12 +70,38 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-18T03:50:11+00:00",
+    "checked_at": "2026-11-18T03:59:18+00:00",
     "checked": 20,
-    "passed": 20,
-    "anomalies": [],
+    "passed": 19,
+    "anomalies": [
+      {
+        "title": "ВТБ: рынок ипотеки на ИЖС вырастет на треть",
+        "url": "https://sakhalinmedia.ru/news/2682969/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "ru_eco",
+        "corrected_category": "ru_eco",
+        "reason": "importance_below_threshold",
+        "contract_issues": [
+          "director_final_reject:importance_below_threshold"
+        ]
+      }
+    ],
     "corrected": [],
-    "deleted": [],
+    "deleted": [
+      {
+        "message_id": 609,
+        "already_absent": false,
+        "title": "ВТБ: рынок ипотеки на ИЖС вырастет на треть",
+        "url": "https://sakhalinmedia.ru/news/2682969/",
+        "publisher_version": "stable-v12.1",
+        "category_key": "ru_eco",
+        "corrected_category": "ru_eco",
+        "reason": "importance_below_threshold",
+        "contract_issues": [
+          "director_final_reject:importance_below_threshold"
+        ]
+      }
+    ],
     "failed_actions": [],
     "unresolved": 0,
     "unresolved_items": [],
@@ -83,6 +109,19 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
+    {
+      "message_id": 593,
+      "title": "Исследование ВТБ и Литрес: 75% россиян считают, что чтение помогает справиться с хандрой",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
+    },
     {
       "message_id": 596,
       "title": "GitHub НЕ ВЗЛОМАЛИ — из-за сбоев у Claude, Телеграм-СМИ не смогли фактчекнуть простейшую новость, поэтому смешали в кучу факты, домыслы и кликбейт",
@@ -224,19 +263,6 @@
       "contract_ok": true,
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 609,
-      "title": "ВТБ: рынок ипотеки на ИЖС вырастет на треть",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
       "title_issues": []
     },
     {
@@ -388,14 +414,15 @@
     },
     "distribution_error": 18.0,
     "subtype_counts": {
+      "macro_economy": 5,
       "major_it": 3,
       "major_emergency": 3,
       "fatal_incident": 4,
       "severe_weather": 1,
-      "violent_crime": 4,
-      "macro_economy": 5
+      "violent_crime": 4
     },
     "sequence": [
+      "ru_eco",
       "it",
       "local",
       "world",
@@ -408,7 +435,6 @@
       "local",
       "local",
       "ru_eco",
-      "ru_eco",
       "local",
       "local",
       "local",
@@ -418,6 +444,7 @@
       "local"
     ],
     "category_sequence": [
+      "ru_eco",
       "it",
       "sakh_chp",
       "world_ru",
@@ -430,7 +457,6 @@
       "sakh_chp",
       "sakh_chp",
       "ru_eco",
-      "ru_eco",
       "sakh_chp",
       "sakh",
       "sakh",
@@ -440,6 +466,7 @@
       "sakh"
     ],
     "source_sequence": [
+      "sakhalinmedia.ru",
       "exploit exploitex",
       "astv",
       "bbc world",
@@ -451,7 +478,6 @@
       "astv",
       "sakhalinmedia.ru",
       "astv",
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -466,7 +492,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-18T03:50:07+00:00",
+    "checked_at_utc": "2026-11-18T03:59:13+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
