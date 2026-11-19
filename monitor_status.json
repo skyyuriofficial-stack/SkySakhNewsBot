@@ -1,33 +1,26 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-18T23:36:19+00:00",
-  "checked_at_sakhalin": "2026-11-19T10:36:15+11:00",
-  "status": "error",
-  "mutations_enabled": false,
-  "issues": [
-    {
-      "type": "telegram_delivery_unhealthy",
-      "reason": "transport",
-      "http_status": 200,
-      "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)"
-    }
-  ],
+  "checked_at_utc": "2026-11-19T01:58:24+00:00",
+  "checked_at_sakhalin": "2026-11-19T12:58:20+11:00",
+  "status": "degraded",
+  "mutations_enabled": true,
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-19T08:56:46+11:00",
-    "age_hours": 1.66,
-    "published": 2
+    "finished_sakhalin": "2026-11-19T12:57:53+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-18T21:56:46+00:00",
+    "checked_at_utc": "2026-11-19T01:57:53+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
+    "published": 1,
     "director_approved": 10,
     "ai_calls": 4,
     "ai_api_fail": 3,
@@ -78,7 +71,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-18T23:36:18+00:00",
+    "checked_at": "2026-11-19T01:58:23+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -87,23 +80,10 @@
     "failed_actions": [],
     "unresolved": 0,
     "unresolved_items": [],
-    "mutations_enabled": false,
+    "mutations_enabled": true,
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 600,
-      "title": "Семь человек эвакуировали во время пожара в многоэтажке в Южно-Сахалинске",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 601,
       "title": "Снег и ураганный ветер — прогноз погоды в Сахалинской области на неделю",
@@ -350,6 +330,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 629,
+      "title": "Создатель Claude Anthropic готовится к выходу на биржу с оценкой более $1,4 трлн",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -371,12 +364,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 14,
+      "local": 13,
       "ru_pol": 0,
       "ru_eco": 2,
       "ru_safety": 1,
       "world": 1,
-      "it": 2
+      "it": 3
     },
     "scaled_targets": {
       "local": 6.0,
@@ -387,25 +380,24 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -8.0,
+      "local": -7.0,
       "ru_pol": 4.0,
       "ru_eco": 2.0,
       "ru_safety": 2.0,
       "world": 1.0,
-      "it": -1.0
+      "it": -2.0
     },
     "distribution_error": 18.0,
     "subtype_counts": {
-      "major_emergency": 4,
       "severe_weather": 1,
       "violent_crime": 4,
-      "major_it": 2,
+      "major_it": 3,
       "fatal_incident": 3,
       "macro_economy": 5,
+      "major_emergency": 3,
       "geopolitical_event": 1
     },
     "sequence": [
-      "local",
       "local",
       "local",
       "it",
@@ -424,10 +416,10 @@
       "local",
       "ru_eco",
       "world",
-      "local"
+      "local",
+      "it"
     ],
     "category_sequence": [
-      "sakh_chp",
       "sakh",
       "sakh_chp",
       "it",
@@ -446,10 +438,10 @@
       "sakh_chp",
       "ru_eco",
       "world_ru",
-      "sakh_chp"
+      "sakh_chp",
+      "it"
     ],
     "source_sequence": [
-      "astv",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "exploit exploitex",
@@ -468,22 +460,28 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "bbc world",
-      "astv"
+      "astv",
+      "bbc technology"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-18T23:35:59+00:00",
-    "status": "error",
+    "checked_at_utc": "2026-11-19T01:58:18+00:00",
+    "status": "healthy",
     "auth_ok": true,
-    "chat_ok": false,
-    "error_kind": "transport",
+    "chat_ok": true,
+    "error_kind": null,
     "http_status": 200,
-    "description": "HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)",
+    "description": null,
     "bot_username": "SkySakhNewsPublisher_bot",
-    "permissions": {}
+    "permissions": {
+      "status": "administrator",
+      "can_post_messages": true,
+      "can_edit_messages": true,
+      "can_delete_messages": true
+    }
   },
   "delivery_queue_hardening": {
     "before": 0,
@@ -494,7 +492,7 @@
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0
   },
-  "delivery_outbox_repaired": true,
+  "delivery_outbox_repaired": false,
   "hardening_actions": [],
   "hardening_failed_actions": [],
   "warnings": [
@@ -503,12 +501,12 @@
       "distribution_error": 18.0,
       "limit": 8.0,
       "counts": {
-        "local": 14,
+        "local": 13,
         "ru_pol": 0,
         "ru_eco": 2,
         "ru_safety": 1,
         "world": 1,
-        "it": 2
+        "it": 3
       },
       "targets": {
         "local": 6,
@@ -519,12 +517,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -8.0,
+        "local": -7.0,
         "ru_pol": 4.0,
         "ru_eco": 2.0,
         "ru_safety": 2.0,
         "world": 1.0,
-        "it": -1.0
+        "it": -2.0
       }
     }
   ]
