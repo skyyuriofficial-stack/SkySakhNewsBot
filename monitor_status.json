@@ -1,38 +1,30 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-19T04:30:38+00:00",
-  "checked_at_sakhalin": "2026-11-19T15:30:34+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-19T04:39:56+00:00",
+  "checked_at_sakhalin": "2026-11-19T15:39:51+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_blocked",
-      "slot_sakhalin": "2026-11-19T13:00+11:00",
-      "required_slot_sakhalin": "2026-11-19T13:00+11:00",
-      "reason": "generation_provider_unavailable",
-      "attempted_at_utc": "2026-11-19T03:55:02+00:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-19T14:55:02+11:00",
-    "age_hours": 0.59,
-    "published": 0
+    "finished_sakhalin": "2026-11-19T15:39:20+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
-    "status": "blocked",
-    "reason": "generation_provider_unavailable",
-    "checked_at_utc": "2026-11-19T03:55:02+00:00",
+    "status": "ok",
+    "reason": null,
+    "checked_at_utc": "2026-11-19T04:39:20+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
+    "published": 2,
     "director_approved": 8,
     "ai_calls": 4,
-    "ai_api_fail": 4,
-    "ai_budget_exhausted": 1,
+    "ai_api_fail": 2,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
@@ -79,7 +71,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-19T04:30:37+00:00",
+    "checked_at": "2026-11-19T04:39:54+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -92,32 +84,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 601,
-      "title": "Снег и ураганный ветер — прогноз погоды в Сахалинской области на неделю",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
-    {
-      "message_id": 602,
-      "title": "СК начал проверку после нападения собаки на 9-летнего ребенка в Охе",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 603,
       "title": "Nvidia специально провоцировала дефицит видеокарт и памяти — журналисты обвинили бывшую контору Хуанга в искусственном поддержании кризиса",
@@ -351,6 +317,32 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 630,
+      "title": "Насколько важны Nvidia и Дженсен Хуанг для экономики США",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
+    },
+    {
+      "message_id": 631,
+      "title": "В старой газовой трубе под Харьковом Украина ведёт подземную войну",
+      "category_key": "world_ru",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "world_ru",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -372,12 +364,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 13,
+      "local": 11,
       "ru_pol": 0,
       "ru_eco": 2,
       "ru_safety": 1,
-      "world": 1,
-      "it": 3
+      "world": 2,
+      "it": 4
     },
     "scaled_targets": {
       "local": 6.0,
@@ -388,26 +380,23 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -7.0,
+      "local": -5.0,
       "ru_pol": 4.0,
       "ru_eco": 2.0,
       "ru_safety": 2.0,
-      "world": 1.0,
-      "it": -2.0
+      "world": 0.0,
+      "it": -3.0
     },
-    "distribution_error": 18.0,
+    "distribution_error": 16.0,
     "subtype_counts": {
-      "severe_weather": 1,
-      "violent_crime": 4,
-      "major_it": 3,
+      "major_it": 4,
+      "violent_crime": 3,
       "fatal_incident": 3,
       "macro_economy": 5,
       "major_emergency": 3,
-      "geopolitical_event": 1
+      "geopolitical_event": 2
     },
     "sequence": [
-      "local",
-      "local",
       "it",
       "ru_safety",
       "local",
@@ -425,11 +414,11 @@
       "ru_eco",
       "world",
       "local",
-      "it"
+      "it",
+      "it",
+      "world"
     ],
     "category_sequence": [
-      "sakh",
-      "sakh_chp",
       "it",
       "ru_incident",
       "sakh_chp",
@@ -447,11 +436,11 @@
       "ru_eco",
       "world_ru",
       "sakh_chp",
-      "it"
+      "it",
+      "it",
+      "world_ru"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "sakhalinmedia.ru",
       "exploit exploitex",
       "astv",
       "astv",
@@ -469,14 +458,16 @@
       "sakhalinmedia.ru",
       "bbc world",
       "astv",
-      "bbc technology"
+      "bbc technology",
+      "bbc technology",
+      "bbc world"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-19T04:30:32+00:00",
+    "checked_at_utc": "2026-11-19T04:39:49+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -506,15 +497,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 18.0,
+      "distribution_error": 16.0,
       "limit": 8.0,
       "counts": {
-        "local": 13,
+        "local": 11,
         "ru_pol": 0,
         "ru_eco": 2,
         "ru_safety": 1,
-        "world": 1,
-        "it": 3
+        "world": 2,
+        "it": 4
       },
       "targets": {
         "local": 6,
@@ -525,12 +516,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -7.0,
+        "local": -5.0,
         "ru_pol": 4.0,
         "ru_eco": 2.0,
         "ru_safety": 2.0,
-        "world": 1.0,
-        "it": -2.0
+        "world": 0.0,
+        "it": -3.0
       }
     }
   ]
