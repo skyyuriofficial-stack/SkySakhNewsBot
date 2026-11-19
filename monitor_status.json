@@ -1,36 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-19T12:52:24+00:00",
-  "checked_at_sakhalin": "2026-11-19T23:52:20+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-19T12:57:30+00:00",
+  "checked_at_sakhalin": "2026-11-19T23:57:23+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-19T22:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-19T20:47:04+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-19T20:47:04+11:00",
-    "age_hours": 3.09,
-    "published": 2
+    "finished_sakhalin": "2026-11-19T23:56:52+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-19T09:47:04+00:00",
+    "checked_at_utc": "2026-11-19T12:56:52+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
-    "director_approved": 12,
+    "published": 1,
+    "director_approved": 8,
     "ai_calls": 4,
-    "ai_api_fail": 3,
+    "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -97,7 +90,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-19T12:52:23+00:00",
+    "checked_at": "2026-11-19T12:57:28+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -110,19 +103,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 605,
-      "title": "Жительницу Тымовского задержали по делу об убийстве мужчины",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 607,
       "title": "На Сахалине ребенок умер после операции под наркозом",
@@ -369,6 +349,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 635,
+      "title": "Anthropic провела крупнейшее IPO в истории — компания привлекла $81,3 млрд и обошла даже SpaceX Илона Маска. Общий объём сделки составил $107,3 млрд",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -390,12 +383,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 12,
+      "local": 11,
       "ru_pol": 0,
       "ru_eco": 2,
       "ru_safety": 0,
       "world": 2,
-      "it": 4
+      "it": 5
     },
     "scaled_targets": {
       "local": 6.0,
@@ -406,26 +399,25 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -6.0,
+      "local": -5.0,
       "ru_pol": 4.0,
       "ru_eco": 2.0,
       "ru_safety": 3.0,
       "world": 0.0,
-      "it": -3.0
+      "it": -4.0
     },
     "distribution_error": 18.0,
     "subtype_counts": {
-      "violent_crime": 2,
       "fatal_incident": 3,
       "macro_economy": 5,
       "major_emergency": 4,
-      "major_it": 4,
+      "major_it": 5,
+      "violent_crime": 1,
       "geopolitical_event": 2
     },
     "sequence": [
       "local",
       "local",
-      "local",
       "ru_eco",
       "local",
       "local",
@@ -442,12 +434,12 @@
       "it",
       "world",
       "it",
-      "local"
+      "local",
+      "it"
     ],
     "category_sequence": [
       "sakh_chp",
       "sakh_chp",
-      "sakh_chp",
       "ru_eco",
       "sakh_chp",
       "sakh",
@@ -464,10 +456,10 @@
       "it",
       "world_ru",
       "it",
-      "sakh_chp"
+      "sakh_chp",
+      "it"
     ],
     "source_sequence": [
-      "astv",
       "sakhalinmedia.ru",
       "astv",
       "sakhalinmedia.ru",
@@ -486,14 +478,15 @@
       "bbc technology",
       "bbc world",
       "bbc technology",
-      "sakh.online"
+      "sakh.online",
+      "techmedia techmedia"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-19T12:52:19+00:00",
+    "checked_at_utc": "2026-11-19T12:57:20+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -526,12 +519,12 @@
       "distribution_error": 18.0,
       "limit": 8.0,
       "counts": {
-        "local": 12,
+        "local": 11,
         "ru_pol": 0,
         "ru_eco": 2,
         "ru_safety": 0,
         "world": 2,
-        "it": 4
+        "it": 5
       },
       "targets": {
         "local": 6,
@@ -542,12 +535,12 @@
         "it": 1
       },
       "deficits": {
-        "local": -6.0,
+        "local": -5.0,
         "ru_pol": 4.0,
         "ru_eco": 2.0,
         "ru_safety": 3.0,
         "world": 0.0,
-        "it": -3.0
+        "it": -4.0
       }
     }
   ]
