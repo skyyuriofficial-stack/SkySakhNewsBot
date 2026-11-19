@@ -1,37 +1,49 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-19T04:39:56+00:00",
-  "checked_at_sakhalin": "2026-11-19T15:39:51+11:00",
-  "status": "degraded",
+  "checked_at_utc": "2026-11-19T09:47:47+00:00",
+  "checked_at_sakhalin": "2026-11-19T20:47:41+11:00",
+  "status": "error",
   "mutations_enabled": true,
-  "issues": [],
+  "issues": [
+    {
+      "type": "mobilization_digest_missing",
+      "slot": "evening",
+      "expected_by_sakhalin": "2026-11-19T19:45:00+11:00",
+      "last_attempt": {
+        "status": "ok",
+        "mode": "morning",
+        "at_utc": "2026-11-18T21:53:41+00:00",
+        "at_sakhalin": "2026-11-19T08:53:41+11:00"
+      }
+    }
+  ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-19T15:39:20+11:00",
+    "finished_sakhalin": "2026-11-19T20:47:04+11:00",
     "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-19T04:39:20+00:00",
+    "checked_at_utc": "2026-11-19T09:47:04+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 8,
+    "director_approved": 12,
     "ai_calls": 4,
-    "ai_api_fail": 2,
-    "ai_budget_exhausted": 0,
+    "ai_api_fail": 3,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-11-19",
-    "status": "healthy",
+    "status": "error",
     "morning": {
       "due": true,
       "published": true,
@@ -57,7 +69,7 @@
       }
     },
     "evening": {
-      "due": false,
+      "due": true,
       "published": false,
       "record": {}
     },
@@ -67,11 +79,23 @@
       "at_utc": "2026-11-18T21:53:41+00:00",
       "at_sakhalin": "2026-11-19T08:53:41+11:00"
     },
-    "missing": []
+    "missing": [
+      {
+        "type": "mobilization_digest_missing",
+        "slot": "evening",
+        "expected_by_sakhalin": "2026-11-19T19:45:00+11:00",
+        "last_attempt": {
+          "status": "ok",
+          "mode": "morning",
+          "at_utc": "2026-11-18T21:53:41+00:00",
+          "at_sakhalin": "2026-11-19T08:53:41+11:00"
+        }
+      }
+    ]
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-19T04:39:54+00:00",
+    "checked_at": "2026-11-19T09:47:45+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -84,32 +108,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 603,
-      "title": "Nvidia специально провоцировала дефицит видеокарт и памяти — журналисты обвинили бывшую контору Хуанга в искусственном поддержании кризиса",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
-    {
-      "message_id": 604,
-      "title": "Врачи спасли руку шестилетнему россиянину после нападения собак",
-      "category_key": "ru_incident",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_incident",
-      "title_issues": []
-    },
     {
       "message_id": 605,
       "title": "Жительницу Тымовского задержали по делу об убийстве мужчины",
@@ -343,6 +341,32 @@
       "review_reason": "approved",
       "corrected_category": "world_ru",
       "title_issues": []
+    },
+    {
+      "message_id": 632,
+      "title": "Simon Jack: Сможет ли рекордное IPO Anthropic не дать лопнуть пузырю ИИ",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
+    },
+    {
+      "message_id": 633,
+      "title": "В МЧС России на Сахалине составили топ-5 самых страшных пожаров 2026 года",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -364,10 +388,10 @@
       "it": 5.0
     },
     "counts": {
-      "local": 11,
+      "local": 12,
       "ru_pol": 0,
       "ru_eco": 2,
-      "ru_safety": 1,
+      "ru_safety": 0,
       "world": 2,
       "it": 4
     },
@@ -380,25 +404,23 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -5.0,
+      "local": -6.0,
       "ru_pol": 4.0,
       "ru_eco": 2.0,
-      "ru_safety": 2.0,
+      "ru_safety": 3.0,
       "world": 0.0,
       "it": -3.0
     },
-    "distribution_error": 16.0,
+    "distribution_error": 18.0,
     "subtype_counts": {
-      "major_it": 4,
-      "violent_crime": 3,
+      "violent_crime": 2,
       "fatal_incident": 3,
       "macro_economy": 5,
-      "major_emergency": 3,
+      "major_emergency": 4,
+      "major_it": 4,
       "geopolitical_event": 2
     },
     "sequence": [
-      "it",
-      "ru_safety",
       "local",
       "local",
       "local",
@@ -416,11 +438,11 @@
       "local",
       "it",
       "it",
-      "world"
+      "world",
+      "it",
+      "local"
     ],
     "category_sequence": [
-      "it",
-      "ru_incident",
       "sakh_chp",
       "sakh_chp",
       "sakh_chp",
@@ -438,11 +460,11 @@
       "sakh_chp",
       "it",
       "it",
-      "world_ru"
+      "world_ru",
+      "it",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "exploit exploitex",
-      "astv",
       "astv",
       "sakhalinmedia.ru",
       "astv",
@@ -460,14 +482,16 @@
       "astv",
       "bbc technology",
       "bbc technology",
-      "bbc world"
+      "bbc world",
+      "bbc technology",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-19T04:39:49+00:00",
+    "checked_at_utc": "2026-11-19T09:47:38+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -497,13 +521,13 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 16.0,
+      "distribution_error": 18.0,
       "limit": 8.0,
       "counts": {
-        "local": 11,
+        "local": 12,
         "ru_pol": 0,
         "ru_eco": 2,
-        "ru_safety": 1,
+        "ru_safety": 0,
         "world": 2,
         "it": 4
       },
@@ -516,10 +540,10 @@
         "it": 1
       },
       "deficits": {
-        "local": -5.0,
+        "local": -6.0,
         "ru_pol": 4.0,
         "ru_eco": 2.0,
-        "ru_safety": 2.0,
+        "ru_safety": 3.0,
         "world": 0.0,
         "it": -3.0
       }
