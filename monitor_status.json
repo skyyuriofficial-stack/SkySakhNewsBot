@@ -1,32 +1,32 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-19T22:23:59+00:00",
-  "checked_at_sakhalin": "2026-11-20T09:23:54+11:00",
+  "checked_at_utc": "2026-11-20T01:51:45+00:00",
+  "checked_at_sakhalin": "2026-11-20T12:51:39+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-20T08:28:41+11:00",
-    "age_hours": 0.92,
+    "finished_sakhalin": "2026-11-20T12:51:08+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-19T21:28:41+00:00",
+    "checked_at_utc": "2026-11-20T01:51:08+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 6,
+    "director_approved": 8,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
-    "publication_contract_blocked": 0
+    "publication_contract_blocked": 1
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -71,7 +71,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-19T22:23:57+00:00",
+    "checked_at": "2026-11-20T01:51:43+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -84,19 +84,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 608,
-      "title": "Погибли сестра и племянник ветерана СВО - подробности смертельного пожара в Поронайске",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 610,
       "title": "Закрыли кредиты, увеличили доходы от городских предприятий - дума Иркутска приняла бюджет на 2027 год",
@@ -343,6 +330,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_incident",
       "title_issues": []
+    },
+    {
+      "message_id": 638,
+      "title": "Тело пенсионерки с термическими ожогами обнаружено при тушении пожара в Южно-Сахалинске",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -389,15 +389,14 @@
     },
     "distribution_error": 16.0,
     "subtype_counts": {
-      "fatal_incident": 2,
       "macro_economy": 5,
-      "major_emergency": 4,
+      "major_emergency": 5,
+      "fatal_incident": 1,
       "major_it": 5,
       "violent_crime": 2,
       "geopolitical_event": 2
     },
     "sequence": [
-      "local",
       "ru_eco",
       "local",
       "local",
@@ -416,10 +415,10 @@
       "it",
       "local",
       "it",
-      "ru_safety"
+      "ru_safety",
+      "local"
     ],
     "category_sequence": [
-      "sakh_chp",
       "ru_eco",
       "sakh_chp",
       "sakh",
@@ -438,10 +437,10 @@
       "it",
       "sakh_chp",
       "it",
-      "ru_incident"
+      "ru_incident",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "astv",
       "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
@@ -460,14 +459,15 @@
       "bbc technology",
       "sakh.online",
       "techmedia techmedia",
-      "astv"
+      "astv",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-19T22:23:52+00:00",
+    "checked_at_utc": "2026-11-20T01:51:37+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
