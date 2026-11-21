@@ -1,13 +1,13 @@
 {
   "version": "mobilization-digest-v1.3",
-  "last_run_utc": "2026-11-21T00:35:24+00:00",
-  "last_run_sakhalin": "2026-11-21T11:35:24+11:00",
-  "mode": "morning",
+  "last_run_utc": "2026-11-21T09:39:27+00:00",
+  "last_run_sakhalin": "2026-11-21T20:39:27+11:00",
+  "mode": "evening",
   "status": "ok",
   "dry_run": false,
-  "telegram_message_id": 644,
+  "telegram_message_id": 653,
   "evidence_count": 15,
-  "evidence_hash": "30e143eedd5d9ae559398546fb380899ed6c7f8de266945742131e5a6dff4459",
+  "evidence_hash": "0915110ef6924636a5254b84d7f30429ae469a25cc13c1df1fc09a80660832f5",
   "headline": "Юридический статус и повестки: что подтверждено, а что нет",
   "source_ids": [
     4,
@@ -642,14 +642,33 @@
           5,
           6
         ]
+      },
+      "evening": {
+        "status": "ok",
+        "published_at_utc": "2026-11-21T09:39:27+00:00",
+        "published_at_sakhalin": "2026-11-21T20:39:27+11:00",
+        "telegram_message_id": 653,
+        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
+        "evidence_count": 15,
+        "evidence_hash": "0915110ef6924636a5254b84d7f30429ae469a25cc13c1df1fc09a80660832f5",
+        "source_ids": [
+          4,
+          1,
+          3,
+          7,
+          8,
+          2,
+          5,
+          6
+        ]
       }
     }
   },
   "last_attempt": {
     "status": "ok",
-    "mode": "morning",
-    "at_utc": "2026-11-21T00:35:24+00:00",
-    "at_sakhalin": "2026-11-21T11:35:24+11:00"
+    "mode": "evening",
+    "at_utc": "2026-11-21T09:39:27+00:00",
+    "at_sakhalin": "2026-11-21T20:39:27+11:00"
   },
   "telegram_health": {
     "checked_at_utc": "2026-11-14T01:21:35+00:00",
