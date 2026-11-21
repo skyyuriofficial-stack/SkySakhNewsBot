@@ -1,29 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-21T07:50:45+00:00",
-  "checked_at_sakhalin": "2026-11-21T18:50:41+11:00",
+  "checked_at_utc": "2026-11-21T08:39:11+00:00",
+  "checked_at_sakhalin": "2026-11-21T19:39:06+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-21T18:50:06+11:00",
+    "finished_sakhalin": "2026-11-21T19:38:32+11:00",
     "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-21T07:50:06+00:00",
+    "checked_at_utc": "2026-11-21T08:38:32+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 11,
-    "ai_calls": 4,
-    "ai_api_fail": 3,
+    "director_approved": 6,
+    "ai_calls": 1,
+    "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -70,7 +70,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-21T07:50:43+00:00",
+    "checked_at": "2026-11-21T08:39:09+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -83,19 +83,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 627,
-      "title": "Трамп обменялся рукопожатием с Путиным и Си перед историческими переговорами в Китае",
-      "category_key": "world_ru",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "world_ru",
-      "title_issues": []
-    },
     {
       "message_id": 628,
       "title": "Ливень и мокрый снег обрушились на Сахалин: автобусы остановили, часть школ перевели на дистант",
@@ -342,6 +329,19 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 652,
+      "title": "Историческое IPO Anthropic: главные итоги и что дальше для AI-индустрии",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -367,8 +367,8 @@
       "ru_pol": 0,
       "ru_eco": 3,
       "ru_safety": 1,
-      "world": 5,
-      "it": 6
+      "world": 4,
+      "it": 7
     },
     "scaled_targets": {
       "local": 6.0,
@@ -383,20 +383,19 @@
       "ru_pol": 4.0,
       "ru_eco": 1.0,
       "ru_safety": 2.0,
-      "world": -3.0,
-      "it": -5.0
+      "world": -2.0,
+      "it": -6.0
     },
     "distribution_error": 16.0,
     "subtype_counts": {
-      "geopolitical_event": 4,
       "major_emergency": 3,
-      "major_it": 6,
+      "major_it": 7,
+      "geopolitical_event": 3,
       "violent_crime": 3,
       "macro_economy": 3,
       "public_service_disruption": 1
     },
     "sequence": [
-      "world",
       "local",
       "it",
       "it",
@@ -415,10 +414,10 @@
       "local",
       "world",
       "local",
+      "it",
       "it"
     ],
     "category_sequence": [
-      "world_ru",
       "sakh_chp",
       "it",
       "it",
@@ -437,10 +436,10 @@
       "sakh_chp",
       "geo",
       "sakh",
+      "it",
       "it"
     ],
     "source_sequence": [
-      "bbc world",
       "astv",
       "bbc technology",
       "bbc technology",
@@ -459,14 +458,15 @@
       "sakh.online",
       "tass world tass world",
       "sakh.online",
-      "bbc technology"
+      "bbc technology",
+      "guardian technology"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-21T07:50:38+00:00",
+    "checked_at_utc": "2026-11-21T08:39:04+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -503,8 +503,8 @@
         "ru_pol": 0,
         "ru_eco": 3,
         "ru_safety": 1,
-        "world": 5,
-        "it": 6
+        "world": 4,
+        "it": 7
       },
       "targets": {
         "local": 6,
@@ -519,8 +519,8 @@
         "ru_pol": 4.0,
         "ru_eco": 1.0,
         "ru_safety": 2.0,
-        "world": -3.0,
-        "it": -5.0
+        "world": -2.0,
+        "it": -6.0
       }
     }
   ]
