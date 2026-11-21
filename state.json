@@ -509,7 +509,9 @@
     "https://www.bbc.co.uk/news/articles/c3x29ggenz12o?at_medium=RSS&at_campaign=rss",
     "https://sakhalinmedia.ru/news/2689161/",
     "https://www.theguardian.com/technology/2026/nov/20/anthropic-ipo-historic-stock-market-debut-key-takeaways-what-next-for-ai",
-    "https://www.bbc.co.uk/news/articles/c6808ym10vzgo?at_medium=RSS&at_campaign=rss"
+    "https://www.bbc.co.uk/news/articles/c6808ym10vzgo?at_medium=RSS&at_campaign=rss",
+    "https://sakh.online/news/24/2026-11-22/topor-v-reke-pomog-raskryt-ubiystvo-25-letney-davnosti-na-sahaline-532208",
+    "https://t.me/exploitex/38053"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -1022,368 +1024,12 @@
     "fc399cb0475aae27ba95ec09d26ceca201817483",
     "e4985f67c9eb36e975c518f50238c7a58e552b23",
     "ef198ee54de2f8bce9475d6fd14a32b6d2de5963",
-    "a7f363183c30de7f6896aee049421111aa2496b2"
+    "a7f363183c30de7f6896aee049421111aa2496b2",
+    "5bb271627e3c93e0bb18a1b5362fc52ce0e9bc35",
+    "a3404494019b8b7b29267ab1a9589b2898cff5d5"
   ],
-  "last_run_sakhalin": "2026-11-22T08:12:06+11:00",
+  "last_run_sakhalin": "2026-11-22T10:09:06+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-11-05T13:50:02+11:00",
-      "source": "ASTV",
-      "category": "📍 Сахалин",
-      "category_key": "sakh_chp",
-      "title": "175 эвакуированных: в Южно-Сахалинске прошли крупные пожарные учения",
-      "url": "https://astv.ru/news/society/2026-11-05-175-evakuirovannyh-v-yuzhno-sahalinske-proshli-krupnye-pozharnye-ucheniya",
-      "image_url": "https://astv.ru/content/NewsImage/25/08/25087906-e226-4377-9497-6c6088faf978_3.jpg",
-      "image_hash": "fa88ea9b53ff8313f4daef91c2562f506d418ee0",
-      "topic_cluster": "sakh_chp:эвакуированных_сахалинске_прошли_крупные_пожарные_учения",
-      "published_at": "2026-11-04T13:00:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "sakh_chp",
-        "corrected_category": "sakh_chp",
-        "group": "local",
-        "event_type": "major_emergency",
-        "subtype": "major_emergency",
-        "seriousness": 96,
-        "threshold": 70,
-        "selection_utility": -24.0,
-        "slot": 1,
-        "risks": [],
-        "title_original": "175 эвакуированных: в Южно-Сахалинске прошли крупные пожарные учения",
-        "title_corrected": "175 эвакуированных: в Южно-Сахалинске прошли крупные пожарные учения",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "По легенде учений в здании \"СахалинНИПИ нефтегаза\" оказались заблокированы одиннадцать человек. По легенде учений в здании \"СахалинНИПИ нефтегаза\" оказались заблокированы одиннадцать человек 175 человек эвакуированы, одиннадцать пострадавших оказались в дымовой ловушке, а огонь охватил сразу несколько этажей. По такому сценарию в административном здании \"СахалинНИПИ нефти и газа\" сегодня, 5 ноября, прошли тренировочные пожарно-тактические учения. \"По замыслу, причиной возгорания стало короткое замыкание в архиве на цокольном этаже. Через лифтовые шахты пламя распространилось на помещения четвертого этажа, а плотное задымление значительно осложнило обстановку\", - рассказывают в Главном управлении МЧС России по Сахалинской области. До прибытия пожарных здание самостоятельно покинули 175 сотрудников. Однако десять человек, согласно легенде, оказались в опасности: пятеро были заблокированы в задымленных помещениях цокольного этажа, пять человек не могли самостоятельно спуститься с четвертого этажа, а еще один человек ожидал помощи на крыше здания.",
-      "title_original": null,
-      "footer": "ЧП | САХАЛИН",
-      "published_row": {
-        "reject": false,
-        "title_ru": "175 эвакуированных: в Южно-Сахалинске прошли крупные пожарные учения",
-        "body": [
-          "По легенде учений в здании \"СахалинНИПИ нефтегаза\" оказались заблокированы одиннадцать человек.",
-          "По такому сценарию в административном здании \"СахалинНИПИ нефти и газа\" сегодня, 5 ноября, прошли тренировочные пожарно-тактические учения."
-        ],
-        "footer": "ЧП | САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "subtype": "major_emergency",
-          "seriousness": 96,
-          "threshold": 70,
-          "selection_utility": -24.0,
-          "slot": 1,
-          "risks": [],
-          "title_original": "175 эвакуированных: в Южно-Сахалинске прошли крупные пожарные учения",
-          "title_corrected": "175 эвакуированных: в Южно-Сахалинске прошли крупные пожарные учения",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "sakh_chp",
-          "final_category": "sakh_chp",
-          "event_type": "major_emergency",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.8",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "sakh_chp",
-            "corrected_category": "sakh_chp",
-            "group": "local",
-            "event_type": "major_emergency",
-            "subtype": "major_emergency",
-            "seriousness": 91,
-            "threshold": 70,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "175 эвакуированных: в Южно-Сахалинске прошли крупные пожарные учения",
-            "title_corrected": "175 эвакуированных: в Южно-Сахалинске прошли крупные пожарные учения",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "📍 Сахалин\n\n<b>175 эвакуированных: в Южно-Сахалинске прошли крупные пожарные учения</b>\n\nПо легенде учений в здании \"СахалинНИПИ нефтегаза\" оказались заблокированы одиннадцать человек.\n\nПо такому сценарию в административном здании \"СахалинНИПИ нефти и газа\" сегодня, 5 ноября, прошли тренировочные пожарно-тактические учения.\n\nЧП | САХАЛИН · <a href=\"https://astv.ru/news/society/2026-11-05-175-evakuirovannyh-v-yuzhno-sahalinske-proshli-krupnye-pozharnye-ucheniya\">ASTV</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh_chp",
-        "final_category": "sakh_chp",
-        "event_type": "major_emergency",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.8",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh_chp",
-          "corrected_category": "sakh_chp",
-          "group": "local",
-          "event_type": "major_emergency",
-          "subtype": "major_emergency",
-          "seriousness": 91,
-          "threshold": 70,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "175 эвакуированных: в Южно-Сахалинске прошли крупные пожарные учения",
-          "title_corrected": "175 эвакуированных: в Южно-Сахалинске прошли крупные пожарные учения",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 553,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": []
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-11-10T20:59:08+00:00"
-      }
-    },
-    {
-      "time_sakhalin": "2026-11-05T18:21:17+11:00",
-      "source": "SakhalinMedia.ru",
-      "category": "🇷🇺 Россия / экономика",
-      "category_key": "ru_eco",
-      "title": "Семь из десяти клиентов ВТБ Мои Инвестиции с ИИС – из регионов",
-      "url": "https://sakhalinmedia.ru/news/2670850/",
-      "image_url": "https://sakhalinmedia.ru/f/big/6485/6484304.jpg?33f13cacd3391911ca6beac98ef1d52e",
-      "image_hash": "ab5a3ab5de029ebe8252a42e5618cca60f1e8997",
-      "topic_cluster": "ru_eco:десяти_клиентов_инвестиции_регионов_sakhalinmedia",
-      "published_at": "2026-11-05T06:00:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "ru_eco",
-        "corrected_category": "ru_eco",
-        "group": "ru_eco",
-        "event_type": "macro_economy",
-        "subtype": "macro_economy",
-        "seriousness": 91,
-        "threshold": 80,
-        "selection_utility": 153.0,
-        "slot": 1,
-        "risks": [],
-        "title_original": "Семь из десяти клиентов ВТБ Мои Инвестиции с ИИС – из регионов",
-        "title_corrected": "Семь из десяти клиентов ВТБ Мои Инвестиции с ИИС – из регионов",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "Почти 70% владельцев индивидуальных инвестиционных счетов в ВТБ Мои Инвестиции живут за пределами Москвы, Петербурга и Подмосковья. Средний возраст клиента с ИИС — около 45 лет. Таким портрет инвестора получился по итогам девяти месяцев 2026 года, сообщает пресс-служба ВТБ. \"География показывает, что долгосрочные инвестиции давно вышли за пределы крупнейших городов — семь из десяти наших клиентов с ИИС обслуживаются в регионах. Активнее всего ИИС открывают клиенты в возрасте 40-60 лет: за девять месяцев их стало почти на 28 тысяч больше. Это поколение уже думает о будущей пенсии, и пятилетний минимальный срок ИИС третьего типа совпадает с привычным для него горизонтом накоплений\", — отметил руководитель департамента брокерского обслуживания ВТБ Андрей Яцков. Число владельцев ИИС выросло во всех регионах присутствия брокера. В первую десятку по числу клиентов с ИИС вошли три сибирских региона: Новосибирская область на четвертом месте, Иркутская — на девятом, Кемеровская — на десятом. Быстрее всего рос Севастополь: там число владельцев ИИС за девять месяцев увеличилось на 20%. ИИС выбирают в основном зрелые инвесторы: 64% клиентов — 40 лет и старше, каждый пятый — старше 60. С начала года число владельцев счетов в возрасте 40–60 лет выросло на 4,8%. ИИС — долгосрочный продукт, и его чаще открывают люди, у которых уже есть сбережения и финансовые цели на несколько лет вперед. Среди владельцев ИИС 44% — женщины. Средний возраст инвесторов-женщин — 46,6 лет, а инвесторов-мужчин — 44,5 лет. А среди клиентов старше 60 лет женщин уже больше половины — 57,5%.",
-      "title_original": null,
-      "footer": "РОССИЯ | ЭКОНОМИКА",
-      "published_row": {
-        "reject": false,
-        "title_ru": "Семь из десяти клиентов ВТБ Мои Инвестиции с ИИС – из регионов",
-        "body": [
-          "Почти 70% владельцев индивидуальных инвестиционных счетов в ВТБ Мои Инвестиции живут за пределами Москвы, Петербурга и Подмосковья.",
-          "Таким портрет инвестора получился по итогам девяти месяцев 2026 года, сообщает пресс-служба ВТБ."
-        ],
-        "footer": "РОССИЯ | ЭКОНОМИКА",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": [],
-          "reclassified_from": "sakh",
-          "reclassified_to": "ru_eco"
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_eco",
-          "corrected_category": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "subtype": "macro_economy",
-          "seriousness": 91,
-          "threshold": 80,
-          "selection_utility": 153.0,
-          "slot": 1,
-          "risks": [],
-          "title_original": "Семь из десяти клиентов ВТБ Мои Инвестиции с ИИС – из регионов",
-          "title_corrected": "Семь из десяти клиентов ВТБ Мои Инвестиции с ИИС – из регионов",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "ru_eco",
-          "final_category": "ru_eco",
-          "event_type": "macro_economy",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.8",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "ru_eco",
-            "corrected_category": "ru_eco",
-            "group": "ru_eco",
-            "event_type": "macro_economy",
-            "subtype": "macro_economy",
-            "seriousness": 89,
-            "threshold": 80,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "Семь из десяти клиентов ВТБ Мои Инвестиции с ИИС – из регионов",
-            "title_corrected": "Семь из десяти клиентов ВТБ Мои Инвестиции с ИИС – из регионов",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "🇷🇺 Россия / экономика\n\n<b>Семь из десяти клиентов ВТБ Мои Инвестиции с ИИС – из регионов</b>\n\nПочти 70% владельцев индивидуальных инвестиционных счетов в ВТБ Мои Инвестиции живут за пределами Москвы, Петербурга и Подмосковья.\n\nТаким портрет инвестора получился по итогам девяти месяцев 2026 года, сообщает пресс-служба ВТБ.\n\nРОССИЯ | ЭКОНОМИКА · <a href=\"https://sakhalinmedia.ru/news/2670850/\">SakhalinMedia.ru</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "ru_eco",
-        "final_category": "ru_eco",
-        "event_type": "macro_economy",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.8",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "ru_eco",
-          "corrected_category": "ru_eco",
-          "group": "ru_eco",
-          "event_type": "macro_economy",
-          "subtype": "macro_economy",
-          "seriousness": 89,
-          "threshold": 80,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Семь из десяти клиентов ВТБ Мои Инвестиции с ИИС – из регионов",
-          "title_corrected": "Семь из десяти клиентов ВТБ Мои Инвестиции с ИИС – из регионов",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 554,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": [],
-        "reclassified_from": "sakh",
-        "reclassified_to": "ru_eco"
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-11-11T00:35:38+00:00"
-      }
-    },
     {
       "time_sakhalin": "2026-11-05T18:23:14+11:00",
       "source": "SakhalinMedia.ru",
@@ -11870,7 +11516,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:12+00:00"
+        "checked_at": "2026-11-21T23:05:43+00:00"
       }
     },
     {
@@ -12057,7 +11703,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:13+00:00"
+        "checked_at": "2026-11-21T23:05:44+00:00"
       }
     },
     {
@@ -12244,7 +11890,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:13+00:00"
+        "checked_at": "2026-11-21T23:05:44+00:00"
       }
     },
     {
@@ -12433,7 +12079,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:13+00:00"
+        "checked_at": "2026-11-21T23:05:44+00:00"
       }
     },
     {
@@ -12611,7 +12257,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:13+00:00"
+        "checked_at": "2026-11-21T23:05:44+00:00"
       }
     },
     {
@@ -12789,7 +12435,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:13+00:00"
+        "checked_at": "2026-11-21T23:05:45+00:00"
       }
     },
     {
@@ -12971,7 +12617,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:14+00:00"
+        "checked_at": "2026-11-21T23:05:45+00:00"
       }
     },
     {
@@ -13153,7 +12799,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:14+00:00"
+        "checked_at": "2026-11-21T23:05:45+00:00"
       }
     },
     {
@@ -13339,7 +12985,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:14+00:00"
+        "checked_at": "2026-11-21T23:05:45+00:00"
       }
     },
     {
@@ -13521,7 +13167,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:14+00:00"
+        "checked_at": "2026-11-21T23:05:45+00:00"
       }
     },
     {
@@ -13708,7 +13354,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:14+00:00"
+        "checked_at": "2026-11-21T23:05:45+00:00"
       }
     },
     {
@@ -13898,7 +13544,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:14+00:00"
+        "checked_at": "2026-11-21T23:05:46+00:00"
       }
     },
     {
@@ -14087,7 +13733,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:14+00:00"
+        "checked_at": "2026-11-21T23:05:46+00:00"
       }
     },
     {
@@ -14274,7 +13920,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:15+00:00"
+        "checked_at": "2026-11-21T23:05:46+00:00"
       }
     },
     {
@@ -14456,7 +14102,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:15+00:00"
+        "checked_at": "2026-11-21T23:05:46+00:00"
       }
     },
     {
@@ -14638,7 +14284,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:15+00:00"
+        "checked_at": "2026-11-21T23:05:46+00:00"
       }
     },
     {
@@ -14816,7 +14462,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:15+00:00"
+        "checked_at": "2026-11-21T23:05:47+00:00"
       }
     },
     {
@@ -15003,7 +14649,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:16+00:00"
+        "checked_at": "2026-11-21T23:05:47+00:00"
       }
     },
     {
@@ -15373,7 +15019,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:16+00:00"
+        "checked_at": "2026-11-21T23:05:47+00:00"
       }
     },
     {
@@ -15562,7 +15208,361 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-21T21:09:16+00:00"
+        "checked_at": "2026-11-21T23:05:47+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-11-22T10:08:33+11:00",
+      "source": "Sakh.online",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "Сахалинские сыщики раскрыли убийство спустя 25 лет — нашли топор в реке",
+      "url": "https://sakh.online/news/24/2026-11-22/topor-v-reke-pomog-raskryt-ubiystvo-25-letney-davnosti-na-sahaline-532208",
+      "image_url": "https://sakh.online/attachments/403c9ff6b5a64d2fba24a1e711d55e3f2b38f8a5/store/crop/0/28/587/331/800/0/0/0/1a4acaf28fe2493ac799b34c9fe4bafc238dd69b4253b5e6d4a903ea5691/1a4acaf28fe2493ac799b34c9fe4bafc238dd69b4253b5e6d4a903ea5691.webp",
+      "image_hash": "f05bcc07cfa47f951de67e5b77dcadfe39802898",
+      "topic_cluster": "sakh_chp:сахалинские_сыщики_раскрыли_убийство_спустя_нашли",
+      "published_at": "2026-11-21T13:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "sakh_chp",
+        "corrected_category": "sakh_chp",
+        "group": "local",
+        "event_type": "violent_crime",
+        "subtype": "violent_crime",
+        "seriousness": 100,
+        "threshold": 70,
+        "selection_utility": 162.0,
+        "slot": 1,
+        "risks": [],
+        "title_original": "Сахалинские сыщики раскрыли убийство спустя 25 лет — нашли топор в реке",
+        "title_corrected": "Сахалинские сыщики раскрыли убийство спустя 25 лет — нашли топор в реке",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_title": "Сахалинские сыщики раскрыли убийство спустя 25 лет — нашли топор в реке",
+      "source_text_excerpt": "Полицейские Сахалинской области раскрыли убийство 33-летней женщины, совершенное в 2001 году. Тело нашли в Сусуе, а спустя 25 лет оперативники установили подозреваемых и обнаружили топор — орудие преступления. Полицейские Сахалинской области вместе со следователями и криминалистами раскрыли убийство 33-летней женщины, совершенное в октябре 2001 года. Тело погибшей тогда нашли в русле реки Сусуя с признаками насильственной смерти, но установить причастных к преступлению не удалось. Спустя 25 лет фигурантов все-таки нашли. Подробности сообщили в пресс-службе УМВД России по Сахалинской области. Сотрудники уголовного розыска вместе со следователями и криминалистами отработали широкий круг лиц, изучили материалы дела, архивные данные и результаты экспертиз. Большая аналитическая работа позволила спустя годы установить свидетелей и выйти на след фигурантов. Ими оказались 49-летние жители Сахалинской и Амурской областей. Оперативники выехали в командировку в Амурскую область вместе со следователями. Там при силовой поддержке Росгвардии задержали одного из подозреваемых, а позже этапировали в Южно-Сахалинск. Выяснилось, что в сентябре 2001 года фигуранты убили незнакомую им женщину, чтобы скрыть ранее совершенное в отношении нее преступление. Тело погибшей и орудие убийства они выбросили в реку.",
+      "title_original": null,
+      "footer": "ЧП | САХАЛИН",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Сахалинские сыщики раскрыли убийство спустя 25 лет — нашли топор в реке",
+        "body": [
+          "Полицейские Сахалинской области раскрыли убийство 33-летней женщины, совершенное в 2001 году.",
+          "Тело нашли в Сусуе, а спустя 25 лет оперативники установили подозреваемых и обнаружили топор — орудие преступления."
+        ],
+        "footer": "ЧП | САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "violent_crime",
+          "subtype": "violent_crime",
+          "seriousness": 100,
+          "threshold": 70,
+          "selection_utility": 162.0,
+          "slot": 1,
+          "risks": [],
+          "title_original": "Сахалинские сыщики раскрыли убийство спустя 25 лет — нашли топор в реке",
+          "title_corrected": "Сахалинские сыщики раскрыли убийство спустя 25 лет — нашли топор в реке",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "sakh_chp",
+          "final_category": "sakh_chp",
+          "event_type": "violent_crime",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.8",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "sakh_chp",
+            "corrected_category": "sakh_chp",
+            "group": "local",
+            "event_type": "violent_crime",
+            "subtype": "violent_crime",
+            "seriousness": 97,
+            "threshold": 70,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Сахалинские сыщики раскрыли убийство спустя 25 лет — нашли топор в реке",
+            "title_corrected": "Сахалинские сыщики раскрыли убийство спустя 25 лет — нашли топор в реке",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "📍 Сахалин\n\n<b>Сахалинские сыщики раскрыли убийство спустя 25 лет — нашли топор в реке</b>\n\nПолицейские Сахалинской области раскрыли убийство 33-летней женщины, совершенное в 2001 году.\n\nТело нашли в Сусуе, а спустя 25 лет оперативники установили подозреваемых и обнаружили топор — орудие преступления.\n\nЧП | САХАЛИН · <a href=\"https://sakh.online/news/24/2026-11-22/topor-v-reke-pomog-raskryt-ubiystvo-25-letney-davnosti-na-sahaline-532208\">Sakh.online</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "violent_crime",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.8",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "violent_crime",
+          "subtype": "violent_crime",
+          "seriousness": 97,
+          "threshold": 70,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Сахалинские сыщики раскрыли убийство спустя 25 лет — нашли топор в реке",
+          "title_corrected": "Сахалинские сыщики раскрыли убийство спустя 25 лет — нашли топор в реке",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 656,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": []
+      }
+    },
+    {
+      "time_sakhalin": "2026-11-22T10:08:58+11:00",
+      "source": "Exploit (@exploitex)",
+      "category": "💻 IT / технологии",
+      "category_key": "it",
+      "title": "Китайцы придумали способ избежать бана в Claude — достаточно лишь... притвориться индийцем",
+      "url": "https://t.me/exploitex/38053",
+      "image_url": "https://cdn4.telesco.pe/file/NUde_YlVE1FuGn9_Z30T0vcbNBUSdydb0xHI6yXyXJVTX_WLVCmi0d94vGbIbi-SSk2b6Zvr_7mHzbg6eeOVEGzUUdHbikysjKAsjTHJpzmuwLUKylJ50q-2w1T4IH-2oyldLy9hhLYCf0Bncc9FUcSunqVKqI2B03KCG7qqsRl4_XpxIeguxX0dZrLBr642LfCZT4eJbZDOVUQqMY0hosnLQMJ20SRrk5j4GCLyG81Q1ydjoCMl_GcEc5u-ZRGp_8d-LtrUbJmoGN7vTOASVzPEe0bTO6QSqYklsyQQj08LEmVD59vPgCKCw2IVhBD3XJz1W_wkTq1TmpMyjazIKA.jpg",
+      "image_hash": "32a5e767482ca7070e3da2d95b85e062ab4047cc",
+      "topic_cluster": "it:китайцы_придумали_способ_избежать_claude_достаточно",
+      "published_at": "2026-11-21T21:35:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "it",
+        "corrected_category": "it",
+        "group": "it",
+        "event_type": "major_it",
+        "subtype": "major_it",
+        "seriousness": 80,
+        "threshold": 78,
+        "selection_utility": -230.0,
+        "slot": "backup",
+        "risks": [
+          "near_threshold"
+        ],
+        "title_original": "Китайцы придумали способ избежать бана в Claude — достаточно лишь... притвориться индийцем .",
+        "title_corrected": "Китайцы придумали способ избежать бана в Claude — достаточно лишь... притвориться индийцем ",
+        "title_corrections": [],
+        "title_changed": true,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_title": "Китайцы придумали способ избежать бана в Claude — достаточно лишь... притвориться индийцем ",
+      "source_text_excerpt": "Китайцы придумали способ избежать бана в Claude — достаточно лишь... притвориться индийцем . Селлеры аккаунтов просто закидывают фотку в китайский генератор картинок (например, Qwen Image) и просят изменить данные. По неизвестным причинам, жители Индии у Anthropic в почёте, поэтому ИИ не так строго проверяет их документы. Метод не гарантированный, но если вдруг прилетит проверка — стоит попробовать. Дело Мактрахера живёт.",
+      "title_original": "Китайцы придумали способ избежать бана в Claude — достаточно лишь... притвориться индийцем .",
+      "footer": "IT | ТЕХНОЛОГИИ",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Китайцы придумали способ избежать бана в Claude — достаточно лишь... притвориться индийцем",
+        "body": [
+          "Селлеры аккаунтов просто закидывают фотку в китайский генератор картинок (например, Qwen Image) и просят изменить данные.",
+          "По неизвестным причинам, жители Индии у Anthropic в почёте, поэтому ИИ не так строго проверяет их документы."
+        ],
+        "footer": "IT | ТЕХНОЛОГИИ",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": []
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "it",
+          "corrected_category": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "subtype": "major_it",
+          "seriousness": 80,
+          "threshold": 78,
+          "selection_utility": -230.0,
+          "slot": "backup",
+          "risks": [
+            "near_threshold"
+          ],
+          "title_original": "Китайцы придумали способ избежать бана в Claude — достаточно лишь... притвориться индийцем .",
+          "title_corrected": "Китайцы придумали способ избежать бана в Claude — достаточно лишь... притвориться индийцем ",
+          "title_corrections": [],
+          "title_changed": true,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "it",
+          "final_category": "it",
+          "event_type": "major_it",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.8",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "it",
+            "corrected_category": "it",
+            "group": "it",
+            "event_type": "major_it",
+            "subtype": "major_it",
+            "seriousness": 80,
+            "threshold": 78,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [
+              "near_threshold"
+            ],
+            "title_original": "Китайцы придумали способ избежать бана в Claude — достаточно лишь... притвориться индийцем",
+            "title_corrected": "Китайцы придумали способ избежать бана в Claude — достаточно лишь... притвориться индийцем",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "💻 IT / технологии\n\n<b>Китайцы придумали способ избежать бана в Claude — достаточно лишь... притвориться индийцем</b>\n\nСеллеры аккаунтов просто закидывают фотку в китайский генератор картинок (например, Qwen Image) и просят изменить данные.\n\nПо неизвестным причинам, жители Индии у Anthropic в почёте, поэтому ИИ не так строго проверяет их документы.\n\nIT | ТЕХНОЛОГИИ · <a href=\"https://t.me/exploitex/38053\">Exploit (@exploitex)</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "it",
+        "final_category": "it",
+        "event_type": "major_it",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.8",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "it",
+          "corrected_category": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "subtype": "major_it",
+          "seriousness": 80,
+          "threshold": 78,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [
+            "near_threshold"
+          ],
+          "title_original": "Китайцы придумали способ избежать бана в Claude — достаточно лишь... притвориться индийцем",
+          "title_corrected": "Китайцы придумали способ избежать бана в Claude — достаточно лишь... притвориться индийцем",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 657,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": []
       }
     }
   ],
@@ -15791,11 +15791,11 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-11-22T08:09:08+11:00",
+    "started_sakhalin": "2026-11-22T10:05:39+11:00",
     "status": "ok",
-    "candidates": 4,
-    "published": 0,
-    "local_candidates": 0,
+    "candidates": 7,
+    "published": 2,
+    "local_candidates": 2,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -15815,8 +15815,8 @@
         {
           "source": "ASTV HTML",
           "status": "ok",
-          "entries": 21,
-          "recent": 14
+          "entries": 22,
+          "recent": 15
         },
         {
           "source": "Sakh.online HTML",
@@ -15826,23 +15826,23 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-11-22T08:12:06+11:00",
+    "finished_sakhalin": "2026-11-22T10:09:06+11:00",
     "stats": {
       "rss_seen": 160,
-      "old_skip": 76,
+      "old_skip": 78,
       "google_skip": 2,
       "duplicate_skip": 4,
       "low_info_skip": 16,
-      "category_skip": 31,
+      "category_skip": 29,
       "no_image_skip": 0,
-      "bad_image_skip": 10,
+      "bad_image_skip": 11,
       "logo_image_skip": 17,
       "text_card_image_skip": 2,
-      "candidates": 16,
+      "candidates": 18,
       "rewrite_retry": 4,
-      "editorial_skip": 4,
+      "editorial_skip": 3,
       "telegram_fail": 0,
-      "published": 0,
+      "published": 2,
       "telegram_source_attempt": 4,
       "telegram_source_fail": 0,
       "telegram_source_seen": 71,
@@ -15852,11 +15852,11 @@
       "ai_api_fail": 4,
       "evidence_reject": 0,
       "validation_reject": 0,
-      "extractive_fallback": 0,
-      "extractive_first": 0,
-      "editorial_prechecked": 62,
-      "editorial_gate_checked": 4,
-      "editorial_gate_pass": 0,
+      "extractive_fallback": 2,
+      "extractive_first": 2,
+      "editorial_prechecked": 64,
+      "editorial_gate_checked": 5,
+      "editorial_gate_pass": 2,
       "editorial_gate_reject": 0,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 0,
@@ -15864,8 +15864,8 @@
       "editorial_title_reject": 0,
       "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 7,
-      "editorial_offtopic_reject": 36,
+      "editorial_reclassified": 5,
+      "editorial_offtopic_reject": 37,
       "openrouter_empty_content": 0,
       "openrouter_model_fallback": 0,
       "openrouter_attempts": 15,
@@ -15874,12 +15874,12 @@
       "openrouter_success": 0,
       "openrouter_circuit_open": 0,
       "editorial_grounded_translation_fallback": 0,
-      "media_required_skip": 10,
+      "media_required_skip": 9,
       "media_generic_skip": 0,
-      "media_ready_candidates": 16,
+      "media_ready_candidates": 18,
       "photo_retry": 0,
-      "photo_publish": 0,
-      "photo_upload_original": 0,
+      "photo_publish": 2,
+      "photo_upload_original": 2,
       "photo_upload_reencoded": 0,
       "photo_upload_plain_caption": 0,
       "photo_remote_url": 0,
@@ -15890,14 +15890,14 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 16,
-      "director_approved": 4,
-      "director_rejected": 12,
+      "director_seen": 18,
+      "director_approved": 7,
+      "director_rejected": 11,
       "director_reclassified": 0,
-      "director_title_corrected": 1,
+      "director_title_corrected": 2,
       "director_ai_calls": 1,
       "director_ai_fail": 1,
-      "director_final_checked": 0,
+      "director_final_checked": 2,
       "director_final_autocorrected": 0,
       "director_final_reject": 0,
       "director_pending_retired": 0,
@@ -15906,7 +15906,7 @@
       "post_audit_anomalies": 0,
       "post_audit_corrected": 0,
       "post_audit_deleted": 0,
-      "tass_world_scanned": 40,
+      "tass_world_scanned": 65,
       "tass_world_screened": 4,
       "tass_world_candidates": 2
     },
@@ -16034,25 +16034,25 @@
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
       },
-      "candidate_count": 16,
-      "approved_count": 4,
-      "rejected_count": 12,
+      "candidate_count": 18,
+      "approved_count": 7,
+      "rejected_count": 11,
       "rejected_by_reason": {
-        "ordinary_weather_not_release_worthy": 2,
         "importance_below_threshold": 8,
+        "ordinary_weather_not_release_worthy": 1,
         "unsafe_or_malformed_headline": 2
       },
-      "ai_review_requested": 1,
+      "ai_review_requested": 2,
       "ai_review_received": 0,
       "selected_groups": [
-        "it",
+        "local",
         "it"
       ],
-      "projected_distribution_error": 18.0,
+      "projected_distribution_error": 16.0,
       "projected_counts": {
         "world": 4,
-        "it": 8,
-        "local": 4,
+        "it": 7,
+        "local": 5,
         "ru_safety": 1,
         "ru_eco": 3
       },
@@ -16060,6 +16060,15 @@
       "selected_preview": [
         {
           "slot": 1,
+          "title": "Сахалинские сыщики раскрыли убийство спустя 25 лет — нашли топор в реке",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "event_type": "violent_crime",
+          "seriousness": 100,
+          "utility": 162.0
+        },
+        {
+          "slot": 2,
           "title": "Anthropic | The Guardian",
           "category_key": "it",
           "group": "it",
@@ -16068,7 +16077,16 @@
           "utility": -194.0
         },
         {
-          "slot": 2,
+          "slot": "backup",
+          "title": "Отопление отключат в Южно-Сахалинске 22 ноября до 17:00",
+          "category_key": "sakh",
+          "group": "local",
+          "event_type": "public_service_disruption",
+          "seriousness": 89,
+          "utility": 133.0
+        },
+        {
+          "slot": "backup",
           "title": "Black Friday 2026: Can ChatGPT and other AI tools find you the best bargains",
           "category_key": "it",
           "group": "it",
@@ -16087,12 +16105,21 @@
         },
         {
           "slot": "backup",
+          "title": "Китайцы придумали способ избежать бана в Claude — достаточно лишь... притвориться индийцем",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 80,
+          "utility": -230.0
+        },
+        {
+          "slot": "backup",
           "title": "Anthropic may have solved major maths problem Reimann hypothesis",
           "category_key": "it",
           "group": "it",
           "event_type": "major_it",
           "seriousness": 85,
-          "utility": -250.0
+          "utility": -232.0
         }
       ],
       "rolling_balance_after": {
@@ -16114,12 +16141,12 @@
           "it": 5.0
         },
         "counts": {
-          "local": 4,
+          "local": 5,
           "ru_pol": 0,
           "ru_eco": 3,
           "ru_safety": 1,
           "world": 4,
-          "it": 8
+          "it": 7
         },
         "scaled_targets": {
           "local": 6.0,
@@ -16130,25 +16157,23 @@
           "it": 1.0
         },
         "deficits": {
-          "local": 2.0,
+          "local": 1.0,
           "ru_pol": 4.0,
           "ru_eco": 1.0,
           "ru_safety": 2.0,
           "world": -2.0,
-          "it": -7.0
+          "it": -6.0
         },
-        "distribution_error": 18.0,
+        "distribution_error": 16.0,
         "subtype_counts": {
-          "major_it": 8,
           "geopolitical_event": 3,
+          "major_it": 7,
           "major_emergency": 2,
-          "violent_crime": 3,
+          "violent_crime": 4,
           "macro_economy": 3,
           "public_service_disruption": 1
         },
         "sequence": [
-          "it",
-          "it",
           "world",
           "it",
           "local",
@@ -16166,11 +16191,11 @@
           "local",
           "it",
           "it",
+          "it",
+          "local",
           "it"
         ],
         "category_sequence": [
-          "it",
-          "it",
           "world_ru",
           "it",
           "sakh_chp",
@@ -16188,11 +16213,11 @@
           "sakh",
           "it",
           "it",
+          "it",
+          "sakh_chp",
           "it"
         ],
         "source_sequence": [
-          "bbc technology",
-          "bbc technology",
           "bbc world",
           "bbc technology",
           "sakh.online",
@@ -16210,7 +16235,9 @@
           "sakh.online",
           "bbc technology",
           "guardian technology",
-          "bbc technology"
+          "bbc technology",
+          "sakh.online",
+          "exploit exploitex"
         ],
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
@@ -16218,7 +16245,7 @@
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-11-21T21:09:16+00:00",
+      "checked_at": "2026-11-21T23:05:47+00:00",
       "checked": 20,
       "passed": 20,
       "anomalies": [],
@@ -16239,11 +16266,11 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 16,
-      "missing_media_rejected": 10,
+      "ready_candidates": 18,
+      "missing_media_rejected": 9,
       "generic_media_rejected": 0,
       "photo_retries": 0,
-      "photo_published": 0,
+      "photo_published": 2,
       "deferred_this_run": 0,
       "pending_queue_size": 0,
       "pending_ready": 0,
@@ -16253,16 +16280,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 62,
-      "checked": 4,
-      "passed": 0,
+      "prechecked": 64,
+      "checked": 5,
+      "passed": 2,
       "rejected": 0,
-      "reclassified": 7,
-      "offtopic_reject": 36,
+      "reclassified": 5,
+      "offtopic_reject": 37,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
-      "audited_urls": 0
+      "audited_urls": 2
     }
   },
   "pending_media_delivery": [],
@@ -16307,12 +16334,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 4,
+      "local": 5,
       "ru_pol": 0,
       "ru_eco": 3,
       "ru_safety": 1,
       "world": 4,
-      "it": 8
+      "it": 7
     },
     "scaled_targets": {
       "local": 6.0,
@@ -16323,25 +16350,23 @@
       "it": 1.0
     },
     "deficits": {
-      "local": 2.0,
+      "local": 1.0,
       "ru_pol": 4.0,
       "ru_eco": 1.0,
       "ru_safety": 2.0,
       "world": -2.0,
-      "it": -7.0
+      "it": -6.0
     },
-    "distribution_error": 18.0,
+    "distribution_error": 16.0,
     "subtype_counts": {
-      "major_it": 8,
       "geopolitical_event": 3,
+      "major_it": 7,
       "major_emergency": 2,
-      "violent_crime": 3,
+      "violent_crime": 4,
       "macro_economy": 3,
       "public_service_disruption": 1
     },
     "sequence": [
-      "it",
-      "it",
       "world",
       "it",
       "local",
@@ -16359,11 +16384,11 @@
       "local",
       "it",
       "it",
+      "it",
+      "local",
       "it"
     ],
     "category_sequence": [
-      "it",
-      "it",
       "world_ru",
       "it",
       "sakh_chp",
@@ -16381,11 +16406,11 @@
       "sakh",
       "it",
       "it",
+      "it",
+      "sakh_chp",
       "it"
     ],
     "source_sequence": [
-      "bbc technology",
-      "bbc technology",
       "bbc world",
       "bbc technology",
       "sakh.online",
@@ -16403,7 +16428,9 @@
       "sakh.online",
       "bbc technology",
       "guardian technology",
-      "bbc technology"
+      "bbc technology",
+      "sakh.online",
+      "exploit exploitex"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -22281,7 +22308,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-21T21:09:16+00:00",
+    "checked_at": "2026-11-21T23:05:47+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -23229,7 +23256,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-11-21T21:09:07+00:00",
+    "checked_at_utc": "2026-11-21T23:05:38+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -23252,18 +23279,18 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-11-21T21:12:06+00:00",
+    "checked_at_utc": "2026-11-21T23:09:06+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
-    "status": "blocked",
-    "reason": "generation_provider_unavailable",
-    "checked_at_utc": "2026-11-21T21:12:06+00:00",
+    "status": "ok",
+    "reason": null,
+    "checked_at_utc": "2026-11-21T23:09:06+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 0,
-    "director_approved": 4,
+    "published": 2,
+    "director_approved": 7,
     "ai_calls": 4,
     "ai_api_fail": 4,
     "ai_budget_exhausted": 1,
@@ -23272,16 +23299,16 @@
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-11-21T21:12:06+00:00",
+    "checked_at_utc": "2026-11-21T23:09:06+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-11-22T08:12:06+11:00",
-      "candidates": 4,
+      "finished_sakhalin": "2026-11-22T10:09:06+11:00",
+      "candidates": 7,
       "queued_for_delivery": 0
     },
     "generation": {
-      "status": "blocked",
-      "reason": "generation_provider_unavailable"
+      "status": "healthy",
+      "reason": null
     },
     "delivery": {
       "status": "healthy",
