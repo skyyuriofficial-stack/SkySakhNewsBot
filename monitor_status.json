@@ -1,59 +1,59 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-21T00:32:35+00:00",
-  "checked_at_sakhalin": "2026-11-21T11:32:32+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-21T00:40:12+00:00",
+  "checked_at_sakhalin": "2026-11-21T11:40:05+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-21T10:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-21T08:32:14+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-11-21T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "evening",
-        "at_utc": "2026-11-20T09:22:44+00:00",
-        "at_sakhalin": "2026-11-20T20:22:44+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-21T08:32:14+11:00",
-    "age_hours": 3.01,
-    "published": 1
+    "finished_sakhalin": "2026-11-21T11:39:34+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-20T21:32:14+00:00",
+    "checked_at_utc": "2026-11-21T00:39:34+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 13,
-    "ai_calls": 4,
-    "ai_api_fail": 4,
-    "ai_budget_exhausted": 1,
+    "published": 2,
+    "director_approved": 12,
+    "ai_calls": 2,
+    "ai_api_fail": 0,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-11-21",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-11-21T00:35:24+00:00",
+        "published_at_sakhalin": "2026-11-21T11:35:24+11:00",
+        "telegram_message_id": 644,
+        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
+        "evidence_count": 15,
+        "evidence_hash": "30e143eedd5d9ae559398546fb380899ed6c7f8de266945742131e5a6dff4459",
+        "source_ids": [
+          4,
+          1,
+          3,
+          7,
+          8,
+          2,
+          5,
+          6
+        ]
+      }
     },
     "evening": {
       "due": false,
@@ -62,27 +62,15 @@
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "evening",
-      "at_utc": "2026-11-20T09:22:44+00:00",
-      "at_sakhalin": "2026-11-20T20:22:44+11:00"
+      "mode": "morning",
+      "at_utc": "2026-11-21T00:35:24+00:00",
+      "at_sakhalin": "2026-11-21T11:35:24+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-11-21T08:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "evening",
-          "at_utc": "2026-11-20T09:22:44+00:00",
-          "at_sakhalin": "2026-11-20T20:22:44+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-21T00:32:34+00:00",
+    "checked_at": "2026-11-21T00:40:10+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -95,32 +83,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 619,
-      "title": "Молодая женщина умерла на Сахалине после зверского избиения",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 620,
-      "title": "Бизнес может потерять более 500 млн рублей выручки в день из-за кибератаки",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 621,
       "title": "Сахалинец приревновал сожительницу и избил до смерти: возбуждено дело",
@@ -354,6 +316,32 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 645,
+      "title": "Дания обвинила Россию в подготовке убийства американско-украинского рэпера",
+      "category_key": "world_ru",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "world_ru",
+      "title_issues": []
+    },
+    {
+      "message_id": 646,
+      "title": "Anthropic завершила первый день публичных торгов с оценкой $1,3 трлн после крупнейшего в истории IPO",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -375,11 +363,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 7,
+      "local": 6,
       "ru_pol": 0,
       "ru_eco": 4,
       "ru_safety": 1,
-      "world": 3,
+      "world": 4,
       "it": 5
     },
     "scaled_targets": {
@@ -391,25 +379,22 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -1.0,
+      "local": 0.0,
       "ru_pol": 4.0,
       "ru_eco": 0.0,
       "ru_safety": 2.0,
-      "world": -1.0,
+      "world": -2.0,
       "it": -4.0
     },
     "distribution_error": 12.0,
     "subtype_counts": {
-      "fatal_incident": 1,
-      "major_it": 5,
-      "violent_crime": 2,
+      "violent_crime": 3,
       "macro_economy": 5,
       "major_emergency": 4,
-      "geopolitical_event": 3
+      "geopolitical_event": 3,
+      "major_it": 5
     },
     "sequence": [
-      "local",
-      "it",
       "local",
       "local",
       "local",
@@ -427,11 +412,11 @@
       "ru_eco",
       "world",
       "ru_eco",
-      "ru_eco"
+      "ru_eco",
+      "world",
+      "it"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "it",
       "sakh_chp",
       "sakh",
       "sakh_chp",
@@ -449,11 +434,11 @@
       "ru_eco",
       "geo",
       "ru_eco",
-      "ru_eco"
+      "ru_eco",
+      "world_ru",
+      "it"
     ],
     "source_sequence": [
-      "astv",
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "astv",
       "sakh.online",
@@ -471,14 +456,16 @@
       "rbc news rbc news",
       "sakh.online",
       "sakhalinmedia.ru",
-      "astv"
+      "astv",
+      "bbc world",
+      "guardian technology"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-21T00:32:30+00:00",
+    "checked_at_utc": "2026-11-21T00:40:03+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -511,11 +498,11 @@
       "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
-        "local": 7,
+        "local": 6,
         "ru_pol": 0,
         "ru_eco": 4,
         "ru_safety": 1,
-        "world": 3,
+        "world": 4,
         "it": 5
       },
       "targets": {
@@ -527,11 +514,11 @@
         "it": 1
       },
       "deficits": {
-        "local": -1.0,
+        "local": 0.0,
         "ru_pol": 4.0,
         "ru_eco": 0.0,
         "ru_safety": 2.0,
-        "world": -1.0,
+        "world": -2.0,
         "it": -4.0
       }
     }
