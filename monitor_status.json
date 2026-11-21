@@ -1,16 +1,23 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-21T11:40:04+00:00",
-  "checked_at_sakhalin": "2026-11-21T22:39:59+11:00",
-  "status": "degraded",
+  "checked_at_utc": "2026-11-21T15:38:01+00:00",
+  "checked_at_sakhalin": "2026-11-22T02:37:57+11:00",
+  "status": "error",
   "mutations_enabled": true,
-  "issues": [],
+  "issues": [
+    {
+      "type": "publisher_slot_missed",
+      "slot_sakhalin": "2026-11-21T22:00+11:00",
+      "grace_minutes": 45,
+      "last_finished_sakhalin": "2026-11-21T19:38:32+11:00"
+    }
+  ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-21T19:38:32+11:00",
-    "age_hours": 3.03,
+    "age_hours": 6.99,
     "published": 2
   },
   "last_production_attempt": {
@@ -30,53 +37,17 @@
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-11-21",
+    "day_sakhalin": "2026-11-22",
     "status": "healthy",
     "morning": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-11-21T00:35:24+00:00",
-        "published_at_sakhalin": "2026-11-21T11:35:24+11:00",
-        "telegram_message_id": 644,
-        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
-        "evidence_count": 15,
-        "evidence_hash": "30e143eedd5d9ae559398546fb380899ed6c7f8de266945742131e5a6dff4459",
-        "source_ids": [
-          4,
-          1,
-          3,
-          7,
-          8,
-          2,
-          5,
-          6
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "evening": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-11-21T09:39:27+00:00",
-        "published_at_sakhalin": "2026-11-21T20:39:27+11:00",
-        "telegram_message_id": 653,
-        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
-        "evidence_count": 15,
-        "evidence_hash": "0915110ef6924636a5254b84d7f30429ae469a25cc13c1df1fc09a80660832f5",
-        "source_ids": [
-          4,
-          1,
-          3,
-          7,
-          8,
-          2,
-          5,
-          6
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "last_attempt": {
       "status": "ok",
@@ -88,7 +59,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-21T11:40:02+00:00",
+    "checked_at": "2026-11-21T15:38:00+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -484,7 +455,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-21T11:39:56+00:00",
+    "checked_at_utc": "2026-11-21T15:37:55+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
