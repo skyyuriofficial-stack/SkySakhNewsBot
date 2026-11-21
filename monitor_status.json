@@ -1,41 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-21T07:42:19+00:00",
-  "checked_at_sakhalin": "2026-11-21T18:42:15+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-21T07:50:45+00:00",
+  "checked_at_sakhalin": "2026-11-21T18:50:41+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 4.79,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-21T16:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-21T13:54:57+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-21T13:54:57+11:00",
-    "age_hours": 4.79,
+    "finished_sakhalin": "2026-11-21T18:50:06+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-21T02:54:57+00:00",
+    "checked_at_utc": "2026-11-21T07:50:06+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 12,
-    "ai_calls": 3,
-    "ai_api_fail": 2,
+    "director_approved": 11,
+    "ai_calls": 4,
+    "ai_api_fail": 3,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -82,7 +70,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-21T07:42:17+00:00",
+    "checked_at": "2026-11-21T07:50:43+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -95,32 +83,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 623,
-      "title": "Прокуратура добилась в суде ремонта аварийной стены в Холмске",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
-    {
-      "message_id": 625,
-      "title": "Россияне вложили более 66 млрд рублей в инвестиционные продукты со страховой защитой",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 627,
       "title": "Трамп обменялся рукопожатием с Путиным и Си перед историческими переговорами в Китае",
@@ -354,6 +316,32 @@
       "review_reason": "approved",
       "corrected_category": "geo",
       "title_issues": []
+    },
+    {
+      "message_id": 649,
+      "title": "В Южно-Сахалинске из-за ремонта ветхих сетей отключат воду в сотнях домов",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
+    },
+    {
+      "message_id": 650,
+      "title": "Anthropic стала одной из самых дорогих публичных компаний мира после первого в своем роде IPO",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -377,10 +365,10 @@
     "counts": {
       "local": 5,
       "ru_pol": 0,
-      "ru_eco": 4,
+      "ru_eco": 3,
       "ru_safety": 1,
       "world": 5,
-      "it": 5
+      "it": 6
     },
     "scaled_targets": {
       "local": 6.0,
@@ -393,22 +381,21 @@
     "deficits": {
       "local": 1.0,
       "ru_pol": 4.0,
-      "ru_eco": 0.0,
+      "ru_eco": 1.0,
       "ru_safety": 2.0,
       "world": -3.0,
-      "it": -4.0
+      "it": -5.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 16.0,
     "subtype_counts": {
-      "major_emergency": 4,
-      "macro_economy": 4,
       "geopolitical_event": 4,
-      "major_it": 5,
-      "violent_crime": 3
+      "major_emergency": 3,
+      "major_it": 6,
+      "violent_crime": 3,
+      "macro_economy": 3,
+      "public_service_disruption": 1
     },
     "sequence": [
-      "local",
-      "ru_eco",
       "world",
       "local",
       "it",
@@ -426,11 +413,11 @@
       "world",
       "it",
       "local",
-      "world"
+      "world",
+      "local",
+      "it"
     ],
     "category_sequence": [
-      "sakh_chp",
-      "ru_eco",
       "world_ru",
       "sakh_chp",
       "it",
@@ -448,11 +435,11 @@
       "world_ru",
       "it",
       "sakh_chp",
-      "geo"
+      "geo",
+      "sakh",
+      "it"
     ],
     "source_sequence": [
-      "sakh.online",
-      "sakhalinmedia.ru",
       "bbc world",
       "astv",
       "bbc technology",
@@ -470,14 +457,16 @@
       "bbc world",
       "guardian technology",
       "sakh.online",
-      "tass world tass world"
+      "tass world tass world",
+      "sakh.online",
+      "bbc technology"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-21T07:42:13+00:00",
+    "checked_at_utc": "2026-11-21T07:50:38+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -507,15 +496,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 14.0,
+      "distribution_error": 16.0,
       "limit": 8.0,
       "counts": {
         "local": 5,
         "ru_pol": 0,
-        "ru_eco": 4,
+        "ru_eco": 3,
         "ru_safety": 1,
         "world": 5,
-        "it": 5
+        "it": 6
       },
       "targets": {
         "local": 6,
@@ -528,10 +517,10 @@
       "deficits": {
         "local": 1.0,
         "ru_pol": 4.0,
-        "ru_eco": 0.0,
+        "ru_eco": 1.0,
         "ru_safety": 2.0,
         "world": -3.0,
-        "it": -4.0
+        "it": -5.0
       }
     }
   ]
