@@ -1,29 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-22T03:07:22+00:00",
-  "checked_at_sakhalin": "2026-11-22T14:07:16+11:00",
+  "checked_at_utc": "2026-11-22T07:09:44+00:00",
+  "checked_at_sakhalin": "2026-11-22T18:09:37+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-22T14:06:47+11:00",
+    "finished_sakhalin": "2026-11-22T18:09:08+11:00",
     "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-22T03:06:47+00:00",
+    "checked_at_utc": "2026-11-22T07:09:08+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 6,
-    "ai_calls": 2,
-    "ai_api_fail": 2,
+    "director_approved": 7,
+    "ai_calls": 0,
+    "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -70,7 +70,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-22T03:07:20+00:00",
+    "checked_at": "2026-11-22T07:09:42+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -83,32 +83,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 632,
-      "title": "Simon Jack: Сможет ли рекордное IPO Anthropic не дать лопнуть пузырю ИИ",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
-    {
-      "message_id": 633,
-      "title": "В МЧС России на Сахалине составили топ-5 самых страшных пожаров 2026 года",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 635,
       "title": "Anthropic провела крупнейшее IPO в истории — компания привлекла $81,3 млрд и обошла даже SpaceX Илона Маска. Общий объём сделки составил $107,3 млрд",
@@ -342,6 +316,32 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 660,
+      "title": "Отопление отключат в Южно-Сахалинске 22 ноября до 17:00",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
+    },
+    {
+      "message_id": 661,
+      "title": "Госдума приняла во втором чтении проект федерального бюджета на 2027–2029 годы",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -365,10 +365,10 @@
     "counts": {
       "local": 5,
       "ru_pol": 0,
-      "ru_eco": 4,
+      "ru_eco": 5,
       "ru_safety": 1,
       "world": 3,
-      "it": 7
+      "it": 6
     },
     "scaled_targets": {
       "local": 6.0,
@@ -381,23 +381,21 @@
     "deficits": {
       "local": 1.0,
       "ru_pol": 4.0,
-      "ru_eco": 0.0,
+      "ru_eco": -1.0,
       "ru_safety": 2.0,
       "world": -1.0,
-      "it": -6.0
+      "it": -5.0
     },
     "distribution_error": 14.0,
     "subtype_counts": {
-      "major_it": 7,
-      "major_emergency": 2,
+      "major_it": 6,
       "violent_crime": 4,
-      "macro_economy": 4,
+      "major_emergency": 1,
+      "macro_economy": 5,
       "geopolitical_event": 2,
-      "public_service_disruption": 1
+      "public_service_disruption": 2
     },
     "sequence": [
-      "it",
-      "local",
       "it",
       "ru_safety",
       "local",
@@ -415,11 +413,11 @@
       "it",
       "local",
       "it",
+      "ru_eco",
+      "local",
       "ru_eco"
     ],
     "category_sequence": [
-      "it",
-      "sakh_chp",
       "it",
       "ru_incident",
       "sakh_chp",
@@ -437,11 +435,11 @@
       "it",
       "sakh_chp",
       "it",
+      "ru_eco",
+      "sakh",
       "ru_eco"
     ],
     "source_sequence": [
-      "bbc technology",
-      "sakh.online",
       "techmedia techmedia",
       "astv",
       "sakhalinmedia.ru",
@@ -459,6 +457,8 @@
       "bbc technology",
       "sakh.online",
       "exploit exploitex",
+      "sakhalinmedia.ru",
+      "sakh.online",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -466,7 +466,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-22T03:07:13+00:00",
+    "checked_at_utc": "2026-11-22T07:09:35+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -501,10 +501,10 @@
       "counts": {
         "local": 5,
         "ru_pol": 0,
-        "ru_eco": 4,
+        "ru_eco": 5,
         "ru_safety": 1,
         "world": 3,
-        "it": 7
+        "it": 6
       },
       "targets": {
         "local": 6,
@@ -517,10 +517,10 @@
       "deficits": {
         "local": 1.0,
         "ru_pol": 4.0,
-        "ru_eco": 0.0,
+        "ru_eco": -1.0,
         "ru_safety": 2.0,
         "world": -1.0,
-        "it": -6.0
+        "it": -5.0
       }
     }
   ]
