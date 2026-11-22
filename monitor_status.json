@@ -1,35 +1,28 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-22T09:42:02+00:00",
-  "checked_at_sakhalin": "2026-11-22T20:41:58+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-22T09:45:43+00:00",
+  "checked_at_sakhalin": "2026-11-22T20:45:39+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-22T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-22T18:09:08+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-22T18:09:08+11:00",
-    "age_hours": 2.55,
+    "finished_sakhalin": "2026-11-22T20:45:04+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-22T07:09:08+00:00",
+    "checked_at_utc": "2026-11-22T09:45:04+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
     "director_approved": 7,
-    "ai_calls": 0,
+    "ai_calls": 1,
     "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
@@ -95,7 +88,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-22T09:42:01+00:00",
+    "checked_at": "2026-11-22T09:45:42+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -108,32 +101,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 635,
-      "title": "Anthropic провела крупнейшее IPO в истории — компания привлекла $81,3 млрд и обошла даже SpaceX Илона Маска. Общий объём сделки составил $107,3 млрд",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
-    {
-      "message_id": 636,
-      "title": "Врача обвинили в убийстве уже мёртвой пациентки",
-      "category_key": "ru_incident",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_incident",
-      "title_issues": []
-    },
     {
       "message_id": 638,
       "title": "Тело пенсионерки с термическими ожогами обнаружено при тушении пожара в Южно-Сахалинске",
@@ -367,6 +334,32 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 663,
+      "title": "Без света 23 ноября: Ново-Александровск, СНТ и психиатрическая больница",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
+    },
+    {
+      "message_id": 664,
+      "title": "Тарифы на связь могут вырасти на 15–20%: Минцифры допустило ускорение роста цен",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -388,12 +381,12 @@
       "it": 5.0
     },
     "counts": {
-      "local": 5,
+      "local": 6,
       "ru_pol": 0,
-      "ru_eco": 5,
-      "ru_safety": 1,
+      "ru_eco": 6,
+      "ru_safety": 0,
       "world": 3,
-      "it": 6
+      "it": 5
     },
     "scaled_targets": {
       "local": 6.0,
@@ -404,25 +397,23 @@
       "it": 1.0
     },
     "deficits": {
-      "local": 1.0,
+      "local": 0.0,
       "ru_pol": 4.0,
-      "ru_eco": -1.0,
-      "ru_safety": 2.0,
+      "ru_eco": -2.0,
+      "ru_safety": 3.0,
       "world": -1.0,
-      "it": -5.0
+      "it": -4.0
     },
     "distribution_error": 14.0,
     "subtype_counts": {
-      "major_it": 6,
-      "violent_crime": 4,
       "major_emergency": 1,
-      "macro_economy": 5,
+      "macro_economy": 6,
       "geopolitical_event": 2,
-      "public_service_disruption": 2
+      "violent_crime": 3,
+      "major_it": 5,
+      "public_service_disruption": 3
     },
     "sequence": [
-      "it",
-      "ru_safety",
       "local",
       "ru_eco",
       "world",
@@ -438,13 +429,13 @@
       "it",
       "local",
       "it",
+      "ru_eco",
+      "local",
       "ru_eco",
       "local",
       "ru_eco"
     ],
     "category_sequence": [
-      "it",
-      "ru_incident",
       "sakh_chp",
       "ru_eco",
       "geo",
@@ -462,11 +453,11 @@
       "it",
       "ru_eco",
       "sakh",
+      "ru_eco",
+      "sakh",
       "ru_eco"
     ],
     "source_sequence": [
-      "techmedia techmedia",
-      "astv",
       "sakhalinmedia.ru",
       "rbc news rbc news",
       "sakh.online",
@@ -484,6 +475,8 @@
       "exploit exploitex",
       "sakhalinmedia.ru",
       "sakh.online",
+      "sakhalinmedia.ru",
+      "sakh.online",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -491,7 +484,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-22T09:41:56+00:00",
+    "checked_at_utc": "2026-11-22T09:45:37+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -524,12 +517,12 @@
       "distribution_error": 14.0,
       "limit": 8.0,
       "counts": {
-        "local": 5,
+        "local": 6,
         "ru_pol": 0,
-        "ru_eco": 5,
-        "ru_safety": 1,
+        "ru_eco": 6,
+        "ru_safety": 0,
         "world": 3,
-        "it": 6
+        "it": 5
       },
       "targets": {
         "local": 6,
@@ -540,12 +533,12 @@
         "it": 1
       },
       "deficits": {
-        "local": 1.0,
+        "local": 0.0,
         "ru_pol": 4.0,
-        "ru_eco": -1.0,
-        "ru_safety": 2.0,
+        "ru_eco": -2.0,
+        "ru_safety": 3.0,
         "world": -1.0,
-        "it": -5.0
+        "it": -4.0
       }
     }
   ]
