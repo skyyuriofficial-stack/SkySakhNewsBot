@@ -519,7 +519,8 @@
     "https://sakh.online/news/18/2026-11-22/novo-aleksandrovsk-i-neskolko-snt-v-yuzhno-sahalinske-ostanutsya-bez-sveta-23-noyabrya-532223",
     "https://sakhalinmedia.ru/news/2689588/",
     "https://astv.ru/news/society/2026-11-22-napadenie-medvedya-na-cheloveka-v-naselennom-punkte-mozhet-poluchit-status-chs",
-    "https://www.theguardian.com/technology/anthropic"
+    "https://www.theguardian.com/technology/anthropic",
+    "https://sakhalinmedia.ru/news/2689988/"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -1042,191 +1043,11 @@
     "dcabf51845a86c064f10f7918b5436249181d7b2",
     "07c289c2b389c25456877047d3af995cf2b3f857",
     "9f71580691f76519713f13373c24a2431ce255e7",
-    "2667ed9789c284e5e714a50915dd908035288d94"
+    "2667ed9789c284e5e714a50915dd908035288d94",
+    "dc5fcf7988a2809874a7d43d0d7099b3889f41ae"
   ],
-  "last_run_sakhalin": "2026-11-23T08:18:17+11:00",
+  "last_run_sakhalin": "2026-11-23T11:17:10+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-11-07T20:22:07+11:00",
-      "source": "TechMedia (@techmedia)",
-      "category": "💻 IT / технологии",
-      "category_key": "it",
-      "title": "Агент ФБР украл крипты на (!) 2,5 миллиона долларов , а потом попросил ChatGPT помочь ему сбежать",
-      "url": "https://t.me/techmedia/24093",
-      "image_url": "https://cdn4.telesco.pe/file/SR_XWLm3k2uwxkDKfLCYZSTEVxH1yYiavt852tNWIvmvlSSUmOPHh2lkS6oUD43llfs7Mw6BCoGNQTVfuTxqu3u_oDWMHJ0OqJNjKvel7tVlyhStDlA1MbFA5c9MZZK1rsIdfi9dQlHG24m6VH2ROsyBCFkDm5lAqYLwF_obl6DueffOfrO_20EXLko3BfL8ZRmFlu-2un8m6kukWhf5IYbZBb89pfaU7JeD4bpKgBeNHy_ZB4UiWkShcwMODn4g-8rcGKfIgFg_ZwGhFQ37wTnvlOonSQkD0JTy9zthdF1bN5EW0kaTEAH5X6My3ybNNd6sgwbSvjy5fA2V6PO8AA.jpg",
-      "image_hash": "275b22a72be429e30ab7d6c0b702314a37535a78",
-      "topic_cluster": "it:агент_украл_крипты_миллиона_долларов_потом",
-      "published_at": "2026-11-07T06:57:16+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "it",
-        "corrected_category": "it",
-        "group": "it",
-        "event_type": "major_it",
-        "subtype": "major_it",
-        "seriousness": 83,
-        "threshold": 78,
-        "selection_utility": -24.0,
-        "slot": 2,
-        "risks": [],
-        "title_original": "Агент ФБР украл крипты на (!) 2,5 миллиона долларов , а потом попросил ChatGPT помочь ему сбежать.",
-        "title_corrected": "Агент ФБР украл крипты на (!) 2,5 миллиона долларов , а потом попросил ChatGPT помочь ему сбежать",
-        "title_corrections": [],
-        "title_changed": true,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "Агент ФБР украл крипты на (!) 2,5 миллиона долларов , а потом попросил ChatGPT помочь ему сбежать. Для этого он использовал криптокошельки, к которым имело доступ ФБР во время расследования. За полтора года он провел около 100 переводов , а затем заметал следы. В какой-то момент ChatGPT посоветовал ему вложиться в виноградники и убежать в Португалию, но случился нюанс: агенту стало стыдно, поэтому он… просто во всем признался. Теперь криптогению грозит до 20 лет тюрьмы.",
-      "title_original": "Агент ФБР украл крипты на (!) 2,5 миллиона долларов , а потом попросил ChatGPT помочь ему сбежать.",
-      "footer": "IT | ТЕХНОЛОГИИ",
-      "published_row": {
-        "reject": false,
-        "title_ru": "Агент ФБР украл крипты на (!) 2,5 миллиона долларов , а потом попросил ChatGPT помочь ему сбежать",
-        "body": [
-          "Для этого он использовал криптокошельки, к которым имело доступ ФБР во время расследования.",
-          "За полтора года он провел около 100 переводов , а затем заметал следы."
-        ],
-        "footer": "IT | ТЕХНОЛОГИИ",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "it",
-          "corrected_category": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "subtype": "major_it",
-          "seriousness": 83,
-          "threshold": 78,
-          "selection_utility": -24.0,
-          "slot": 2,
-          "risks": [],
-          "title_original": "Агент ФБР украл крипты на (!) 2,5 миллиона долларов , а потом попросил ChatGPT помочь ему сбежать.",
-          "title_corrected": "Агент ФБР украл крипты на (!) 2,5 миллиона долларов , а потом попросил ChatGPT помочь ему сбежать",
-          "title_corrections": [],
-          "title_changed": true,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "it",
-          "final_category": "it",
-          "event_type": "major_it",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.8",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "it",
-            "corrected_category": "it",
-            "group": "it",
-            "event_type": "major_it",
-            "subtype": "major_it",
-            "seriousness": 82,
-            "threshold": 78,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [
-              "near_threshold"
-            ],
-            "title_original": "Агент ФБР украл крипты на (!) 2,5 миллиона долларов , а потом попросил ChatGPT помочь ему сбежать",
-            "title_corrected": "Агент ФБР украл крипты на (!) 2,5 миллиона долларов , а потом попросил ChatGPT помочь ему сбежать",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "💻 IT / технологии\n\n<b>Агент ФБР украл крипты на (!) 2,5 миллиона долларов , а потом попросил ChatGPT помочь ему сбежать</b>\n\nДля этого он использовал криптокошельки, к которым имело доступ ФБР во время расследования.\n\nЗа полтора года он провел около 100 переводов , а затем заметал следы.\n\nIT | ТЕХНОЛОГИИ · <a href=\"https://t.me/techmedia/24093\">TechMedia (@techmedia)</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "it",
-        "final_category": "it",
-        "event_type": "major_it",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.8",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "it",
-          "corrected_category": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "subtype": "major_it",
-          "seriousness": 82,
-          "threshold": 78,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [
-            "near_threshold"
-          ],
-          "title_original": "Агент ФБР украл крипты на (!) 2,5 миллиона долларов , а потом попросил ChatGPT помочь ему сбежать",
-          "title_corrected": "Агент ФБР украл крипты на (!) 2,5 миллиона долларов , а потом попросил ChatGPT помочь ему сбежать",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 565,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": []
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-11-12T23:47:24+00:00"
-      }
-    },
     {
       "time_sakhalin": "2026-11-07T23:14:25+11:00",
       "source": "SakhalinMedia.ru",
@@ -11751,7 +11572,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:12+00:00"
+        "checked_at": "2026-11-23T00:13:06+00:00"
       }
     },
     {
@@ -11938,7 +11759,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:12+00:00"
+        "checked_at": "2026-11-23T00:13:06+00:00"
       }
     },
     {
@@ -12128,7 +11949,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:12+00:00"
+        "checked_at": "2026-11-23T00:13:06+00:00"
       }
     },
     {
@@ -12317,7 +12138,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:12+00:00"
+        "checked_at": "2026-11-23T00:13:06+00:00"
       }
     },
     {
@@ -12504,7 +12325,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:13+00:00"
+        "checked_at": "2026-11-23T00:13:06+00:00"
       }
     },
     {
@@ -12686,7 +12507,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:13+00:00"
+        "checked_at": "2026-11-23T00:13:07+00:00"
       }
     },
     {
@@ -12868,7 +12689,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:13+00:00"
+        "checked_at": "2026-11-23T00:13:07+00:00"
       }
     },
     {
@@ -13046,7 +12867,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:13+00:00"
+        "checked_at": "2026-11-23T00:13:07+00:00"
       }
     },
     {
@@ -13233,7 +13054,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:13+00:00"
+        "checked_at": "2026-11-23T00:13:07+00:00"
       }
     },
     {
@@ -13603,7 +13424,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:14+00:00"
+        "checked_at": "2026-11-23T00:13:08+00:00"
       }
     },
     {
@@ -13792,7 +13613,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:14+00:00"
+        "checked_at": "2026-11-23T00:13:08+00:00"
       }
     },
     {
@@ -13970,7 +13791,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:14+00:00"
+        "checked_at": "2026-11-23T00:13:08+00:00"
       }
     },
     {
@@ -14156,7 +13977,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:14+00:00"
+        "checked_at": "2026-11-23T00:13:08+00:00"
       }
     },
     {
@@ -14523,7 +14344,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:14+00:00"
+        "checked_at": "2026-11-23T00:13:08+00:00"
       }
     },
     {
@@ -14701,7 +14522,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:14+00:00"
+        "checked_at": "2026-11-23T00:13:09+00:00"
       }
     },
     {
@@ -14883,7 +14704,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:14+00:00"
+        "checked_at": "2026-11-23T00:13:09+00:00"
       }
     },
     {
@@ -15061,7 +14882,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:15+00:00"
+        "checked_at": "2026-11-23T00:13:09+00:00"
       }
     },
     {
@@ -15243,7 +15064,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:15+00:00"
+        "checked_at": "2026-11-23T00:13:09+00:00"
       }
     },
     {
@@ -15425,7 +15246,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-22T21:14:15+00:00"
+        "checked_at": "2026-11-23T00:13:09+00:00"
       }
     },
     {
@@ -15610,6 +15431,188 @@
         "issues": [
           "independent_ai_unavailable:grounded_translation"
         ]
+      },
+      "post_audit": {
+        "version": "post-audit-v1.1",
+        "approved": true,
+        "checked_at": "2026-11-23T00:13:10+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-11-23T11:15:31+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "📍 Сахалин",
+      "category_key": "sakh_chp",
+      "title": "Заколол ножом: поронайца подозревают в убийстве женщины после ссоры",
+      "url": "https://sakhalinmedia.ru/news/2689988/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6520/6519135.jpg.webp?v=1795385537",
+      "image_hash": "e10be0b16b5b6c9f436c42c5d821e83f0da08a62",
+      "topic_cluster": "sakh_chp:заколол_ножом_поронайца_подозревают_убийстве_женщины",
+      "published_at": "2026-11-22T22:14:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "sakh_chp",
+        "corrected_category": "sakh_chp",
+        "group": "local",
+        "event_type": "violent_crime",
+        "subtype": "violent_crime",
+        "seriousness": 98,
+        "threshold": 70,
+        "selection_utility": 132.0,
+        "slot": 1,
+        "risks": [],
+        "title_original": "Заколол ножом: поронайца подозревают в убийстве женщины после ссоры",
+        "title_corrected": "Заколол ножом: поронайца подозревают в убийстве женщины после ссоры",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_title": "Заколол ножом: поронайца подозревают в убийстве женщины после ссоры",
+      "source_text_excerpt": "Сахалинца подозревают в убийстве женщины. Поронайский межрайонный следственный отдел СУ СК России по Сахалинской области возбудил уголовное дело в отношении 28-летнего местного жителя по ч. 1 ст. 105 УК РФ, сообщает пресс-служба ведомства. Возбуждено дело. По версии следствия, днем 21 ноября между обвиняемым и его 49-летней знакомой в одном из дворе по улице Победы произошел конфликт. Ссора произошла через окно. Фигурант взял разводной ключ и нож, пришел к женщине домой, ударил ключом по голове и не менее семи раз пырнул ножом в различные части тела. От полученных телесных повреждений женщина скончалась на месте происшествия. Фигурант задержан, по уголовному делу проводятся следственные действия, направленные на сбор и закрепление доказательств. Решается вопрос об избрании в отношении него меры пресечения.",
+      "title_original": null,
+      "footer": "ЧП | САХАЛИН",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Заколол ножом: поронайца подозревают в убийстве женщины после ссоры",
+        "body": [
+          "Поронайский межрайонный следственный отдел СУ СК России по Сахалинской области возбудил уголовное дело в отношении 28-летнего местного жителя по ч. 1 ст. 105 УК РФ, сообщает пресс-служба ведомства.",
+          "По версии следствия, днем 21 ноября между обвиняемым и его 49-летней знакомой в одном из дворе по улице Победы произошел конфликт."
+        ],
+        "footer": "ЧП | САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh",
+          "reclassified_to": "sakh_chp"
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "violent_crime",
+          "subtype": "violent_crime",
+          "seriousness": 98,
+          "threshold": 70,
+          "selection_utility": 132.0,
+          "slot": 1,
+          "risks": [],
+          "title_original": "Заколол ножом: поронайца подозревают в убийстве женщины после ссоры",
+          "title_corrected": "Заколол ножом: поронайца подозревают в убийстве женщины после ссоры",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "sakh_chp",
+          "final_category": "sakh_chp",
+          "event_type": "violent_crime",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.8",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "sakh_chp",
+            "corrected_category": "sakh_chp",
+            "group": "local",
+            "event_type": "violent_crime",
+            "subtype": "violent_crime",
+            "seriousness": 98,
+            "threshold": 70,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Заколол ножом: поронайца подозревают в убийстве женщины после ссоры",
+            "title_corrected": "Заколол ножом: поронайца подозревают в убийстве женщины после ссоры",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "📍 Сахалин\n\n<b>Заколол ножом: поронайца подозревают в убийстве женщины после ссоры</b>\n\nПоронайский межрайонный следственный отдел СУ СК России по Сахалинской области возбудил уголовное дело в отношении 28-летнего местного жителя по ч. 1 ст. 105 УК РФ, сообщает пресс-служба ведомства.\n\nПо версии следствия, днем 21 ноября между обвиняемым и его 49-летней знакомой в одном из дворе по улице Победы произошел конфликт.\n\nЧП | САХАЛИН · <a href=\"https://sakhalinmedia.ru/news/2689988/\">SakhalinMedia.ru</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh_chp",
+        "final_category": "sakh_chp",
+        "event_type": "violent_crime",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.8",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh_chp",
+          "corrected_category": "sakh_chp",
+          "group": "local",
+          "event_type": "violent_crime",
+          "subtype": "violent_crime",
+          "seriousness": 98,
+          "threshold": 70,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Заколол ножом: поронайца подозревают в убийстве женщины после ссоры",
+          "title_corrected": "Заколол ножом: поронайца подозревают в убийстве женщины после ссоры",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 668,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh",
+        "reclassified_to": "sakh_chp"
       }
     }
   ],
@@ -15838,11 +15841,11 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-11-23T08:14:07+11:00",
+    "started_sakhalin": "2026-11-23T11:13:01+11:00",
     "status": "ok",
-    "candidates": 3,
+    "candidates": 7,
     "published": 1,
-    "local_candidates": 0,
+    "local_candidates": 4,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -15851,7 +15854,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 7
+          "recent": 12
         },
         {
           "source": "SakhalinMedia",
@@ -15869,61 +15872,61 @@
           "source": "Sakh.online HTML",
           "status": "ok",
           "entries": 20,
-          "recent": 14
+          "recent": 20
         }
       ]
     },
-    "finished_sakhalin": "2026-11-23T08:18:17+11:00",
+    "finished_sakhalin": "2026-11-23T11:17:10+11:00",
     "stats": {
       "rss_seen": 157,
-      "old_skip": 73,
-      "google_skip": 7,
-      "duplicate_skip": 5,
-      "low_info_skip": 17,
-      "category_skip": 25,
+      "old_skip": 69,
+      "google_skip": 11,
+      "duplicate_skip": 2,
+      "low_info_skip": 11,
+      "category_skip": 32,
       "no_image_skip": 0,
-      "bad_image_skip": 10,
-      "logo_image_skip": 16,
-      "text_card_image_skip": 3,
-      "candidates": 13,
-      "rewrite_retry": 3,
+      "bad_image_skip": 11,
+      "logo_image_skip": 19,
+      "text_card_image_skip": 2,
+      "candidates": 21,
+      "rewrite_retry": 2,
       "editorial_skip": 2,
       "telegram_fail": 0,
       "published": 1,
       "telegram_source_attempt": 4,
       "telegram_source_fail": 0,
       "telegram_source_seen": 72,
-      "telegram_source_candidates": 17,
-      "ai_calls": 4,
-      "ai_budget_exhausted": 1,
-      "ai_api_fail": 3,
+      "telegram_source_candidates": 20,
+      "ai_calls": 3,
+      "ai_budget_exhausted": 0,
+      "ai_api_fail": 2,
       "evidence_reject": 0,
       "validation_reject": 0,
-      "extractive_fallback": 0,
-      "extractive_first": 0,
-      "editorial_prechecked": 49,
-      "editorial_gate_checked": 3,
+      "extractive_fallback": 1,
+      "extractive_first": 1,
+      "editorial_prechecked": 58,
+      "editorial_gate_checked": 4,
       "editorial_gate_pass": 1,
-      "editorial_gate_reject": 1,
+      "editorial_gate_reject": 3,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 0,
       "editorial_gate_ai_fail": 0,
-      "editorial_title_reject": 1,
-      "editorial_category_reject": 1,
+      "editorial_title_reject": 3,
+      "editorial_category_reject": 2,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 4,
-      "editorial_offtopic_reject": 27,
-      "openrouter_empty_content": 9,
+      "editorial_reclassified": 10,
+      "editorial_offtopic_reject": 29,
+      "openrouter_empty_content": 6,
       "openrouter_model_fallback": 0,
-      "openrouter_attempts": 10,
-      "openrouter_retries": 6,
+      "openrouter_attempts": 7,
+      "openrouter_retries": 4,
       "openrouter_invalid_json": 0,
       "openrouter_success": 1,
       "openrouter_circuit_open": 0,
-      "editorial_grounded_translation_fallback": 1,
-      "media_required_skip": 8,
+      "editorial_grounded_translation_fallback": 0,
+      "media_required_skip": 7,
       "media_generic_skip": 0,
-      "media_ready_candidates": 13,
+      "media_ready_candidates": 21,
       "photo_retry": 0,
       "photo_publish": 1,
       "photo_upload_original": 1,
@@ -15937,11 +15940,11 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 13,
-      "director_approved": 3,
-      "director_rejected": 10,
+      "director_seen": 21,
+      "director_approved": 7,
+      "director_rejected": 14,
       "director_reclassified": 0,
-      "director_title_corrected": 0,
+      "director_title_corrected": 1,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
       "director_final_checked": 1,
@@ -15953,8 +15956,8 @@
       "post_audit_anomalies": 0,
       "post_audit_corrected": 0,
       "post_audit_deleted": 0,
-      "tass_world_scanned": 84,
-      "tass_world_screened": 3,
+      "tass_world_scanned": 77,
+      "tass_world_screened": 4,
       "tass_world_candidates": 1
     },
     "news_director": {
@@ -15962,176 +15965,6 @@
       "policy_version": "policy-v2.8",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
-        "window": 20,
-        "targets": {
-          "local": 6,
-          "ru_pol": 4,
-          "ru_eco": 4,
-          "ru_safety": 3,
-          "world": 2,
-          "it": 1
-        },
-        "target_percent": {
-          "local": 30.0,
-          "ru_pol": 20.0,
-          "ru_eco": 20.0,
-          "ru_safety": 15.0,
-          "world": 10.0,
-          "it": 5.0
-        },
-        "counts": {
-          "local": 5,
-          "ru_pol": 0,
-          "ru_eco": 6,
-          "ru_safety": 1,
-          "world": 3,
-          "it": 5
-        },
-        "scaled_targets": {
-          "local": 6.0,
-          "ru_pol": 4.0,
-          "ru_eco": 4.0,
-          "ru_safety": 3.0,
-          "world": 2.0,
-          "it": 1.0
-        },
-        "deficits": {
-          "local": 1.0,
-          "ru_pol": 4.0,
-          "ru_eco": -2.0,
-          "ru_safety": 2.0,
-          "world": -1.0,
-          "it": -4.0
-        },
-        "distribution_error": 14.0,
-        "subtype_counts": {
-          "macro_economy": 6,
-          "geopolitical_event": 2,
-          "violent_crime": 4,
-          "major_it": 5,
-          "public_service_disruption": 3
-        },
-        "sequence": [
-          "ru_eco",
-          "world",
-          "ru_eco",
-          "ru_eco",
-          "world",
-          "it",
-          "local",
-          "world",
-          "local",
-          "it",
-          "it",
-          "it",
-          "local",
-          "it",
-          "ru_eco",
-          "local",
-          "ru_eco",
-          "local",
-          "ru_eco",
-          "ru_safety"
-        ],
-        "category_sequence": [
-          "ru_eco",
-          "geo",
-          "ru_eco",
-          "ru_eco",
-          "world_ru",
-          "it",
-          "sakh_chp",
-          "geo",
-          "sakh",
-          "it",
-          "it",
-          "it",
-          "sakh_chp",
-          "it",
-          "ru_eco",
-          "sakh",
-          "ru_eco",
-          "sakh",
-          "ru_eco",
-          "ru_incident"
-        ],
-        "source_sequence": [
-          "rbc news rbc news",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "astv",
-          "bbc world",
-          "guardian technology",
-          "sakh.online",
-          "tass world tass world",
-          "sakh.online",
-          "bbc technology",
-          "guardian technology",
-          "bbc technology",
-          "sakh.online",
-          "exploit exploitex",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "astv"
-        ],
-        "retrospective_anomalies": [],
-        "valid_posts_counted": 20
-      },
-      "candidate_count": 13,
-      "approved_count": 3,
-      "rejected_count": 10,
-      "rejected_by_reason": {
-        "importance_below_threshold": 8,
-        "ordinary_weather_not_release_worthy": 2
-      },
-      "ai_review_requested": 0,
-      "ai_review_received": 0,
-      "selected_groups": [
-        "world",
-        "it"
-      ],
-      "projected_distribution_error": 14.0,
-      "projected_counts": {
-        "ru_eco": 5,
-        "world": 3,
-        "it": 6,
-        "local": 5,
-        "ru_safety": 1
-      },
-      "projected_length": 20,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "Explosion on Russian ship at Libya port caused by suspected drone attack, officials say",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "military_security",
-          "seriousness": 94,
-          "utility": 54.0
-        },
-        {
-          "slot": 2,
-          "title": "Anthropic | The Guardian",
-          "category_key": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "seriousness": 88,
-          "utility": -72.0
-        },
-        {
-          "slot": "backup",
-          "title": "Russian ship hit in Benghazi by suspected Ukrainian drone attack, say Libyan officials",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "military_security",
-          "seriousness": 94,
-          "utility": 24.0
-        }
-      ],
-      "rolling_balance_after": {
         "window": 20,
         "targets": {
           "local": 6,
@@ -16249,11 +16082,219 @@
         ],
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
+      },
+      "candidate_count": 21,
+      "approved_count": 7,
+      "rejected_count": 14,
+      "rejected_by_reason": {
+        "routine_traffic_statistics": 2,
+        "importance_below_threshold": 10,
+        "minor_or_routine_crime": 1,
+        "ordinary_weather_not_release_worthy": 1
+      },
+      "ai_review_requested": 0,
+      "ai_review_received": 0,
+      "selected_groups": [
+        "local",
+        "world"
+      ],
+      "projected_distribution_error": 12.0,
+      "projected_counts": {
+        "ru_eco": 4,
+        "world": 3,
+        "it": 6,
+        "local": 6,
+        "ru_safety": 1
+      },
+      "projected_length": 20,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "Заколол ножом: поронайца подозревают в убийстве женщины после ссоры",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "event_type": "violent_crime",
+          "seriousness": 98,
+          "utility": 132.0
+        },
+        {
+          "slot": 2,
+          "title": "Russian warship sinks in Benghazi after suspected Ukrainian drone attack",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "military_security",
+          "seriousness": 97,
+          "utility": 57.0
+        },
+        {
+          "slot": "backup",
+          "title": "Сахалинский депутат рассказал, какие законы приняли в Госдуме за неделю",
+          "category_key": "sakh",
+          "group": "local",
+          "event_type": "political_decision",
+          "seriousness": 95,
+          "utility": 105.0
+        },
+        {
+          "slot": "backup",
+          "title": "Краеведческий музей в Корсакове при поддержке ВТБ создаст новую экспозицию о культуре айнов",
+          "category_key": "sakh",
+          "group": "local",
+          "event_type": "macro_economy",
+          "seriousness": 89,
+          "utility": 99.0
+        },
+        {
+          "slot": "backup",
+          "title": "Ссора через окно закончилась убийством в Поронайске — подозреваемый задержан",
+          "category_key": "sakh_chp",
+          "group": "local",
+          "event_type": "violent_crime",
+          "seriousness": 98,
+          "utility": 94.0
+        },
+        {
+          "slot": "backup",
+          "title": "Экс-глава фракции Социал-демократической партии в Бундестаге Рольф Мютцених заявил, что европейские страны упустили момент для продвижения своих интересов в переговорах по урегулир",
+          "category_key": "geo",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "seriousness": 88,
+          "utility": 30.0
+        },
+        {
+          "slot": "backup",
+          "title": "Explosion on Russian ship at Libya port caused by suspected drone attack, officials say",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "military_security",
+          "seriousness": 94,
+          "utility": 22.0
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 20,
+        "targets": {
+          "local": 6,
+          "ru_pol": 4,
+          "ru_eco": 4,
+          "ru_safety": 3,
+          "world": 2,
+          "it": 1
+        },
+        "target_percent": {
+          "local": 30.0,
+          "ru_pol": 20.0,
+          "ru_eco": 20.0,
+          "ru_safety": 15.0,
+          "world": 10.0,
+          "it": 5.0
+        },
+        "counts": {
+          "local": 6,
+          "ru_pol": 0,
+          "ru_eco": 5,
+          "ru_safety": 1,
+          "world": 2,
+          "it": 6
+        },
+        "scaled_targets": {
+          "local": 6.0,
+          "ru_pol": 4.0,
+          "ru_eco": 4.0,
+          "ru_safety": 3.0,
+          "world": 2.0,
+          "it": 1.0
+        },
+        "deficits": {
+          "local": 0.0,
+          "ru_pol": 4.0,
+          "ru_eco": -1.0,
+          "ru_safety": 2.0,
+          "world": 0.0,
+          "it": -5.0
+        },
+        "distribution_error": 12.0,
+        "subtype_counts": {
+          "macro_economy": 5,
+          "violent_crime": 5,
+          "major_it": 6,
+          "geopolitical_event": 1,
+          "public_service_disruption": 3
+        },
+        "sequence": [
+          "ru_eco",
+          "ru_eco",
+          "world",
+          "it",
+          "local",
+          "world",
+          "local",
+          "it",
+          "it",
+          "it",
+          "local",
+          "it",
+          "ru_eco",
+          "local",
+          "ru_eco",
+          "local",
+          "ru_eco",
+          "ru_safety",
+          "it",
+          "local"
+        ],
+        "category_sequence": [
+          "ru_eco",
+          "ru_eco",
+          "world_ru",
+          "it",
+          "sakh_chp",
+          "geo",
+          "sakh",
+          "it",
+          "it",
+          "it",
+          "sakh_chp",
+          "it",
+          "ru_eco",
+          "sakh",
+          "ru_eco",
+          "sakh",
+          "ru_eco",
+          "ru_incident",
+          "it",
+          "sakh_chp"
+        ],
+        "source_sequence": [
+          "sakhalinmedia.ru",
+          "astv",
+          "bbc world",
+          "guardian technology",
+          "sakh.online",
+          "tass world tass world",
+          "sakh.online",
+          "bbc technology",
+          "guardian technology",
+          "bbc technology",
+          "sakh.online",
+          "exploit exploitex",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "astv",
+          "guardian technology",
+          "sakhalinmedia.ru"
+        ],
+        "retrospective_anomalies": [],
+        "valid_posts_counted": 20
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-11-22T21:14:15+00:00",
+      "checked_at": "2026-11-23T00:13:10+00:00",
       "checked": 20,
       "passed": 20,
       "anomalies": [],
@@ -16274,8 +16315,8 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 13,
-      "missing_media_rejected": 8,
+      "ready_candidates": 21,
+      "missing_media_rejected": 7,
       "generic_media_rejected": 0,
       "photo_retries": 0,
       "photo_published": 1,
@@ -16288,16 +16329,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 49,
-      "checked": 3,
+      "prechecked": 58,
+      "checked": 4,
       "passed": 1,
-      "rejected": 1,
-      "reclassified": 4,
-      "offtopic_reject": 27,
+      "rejected": 3,
+      "reclassified": 10,
+      "offtopic_reject": 29,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
-      "audited_urls": 2
+      "audited_urls": 4
     }
   },
   "pending_media_delivery": [],
@@ -16342,11 +16383,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 5,
+      "local": 6,
       "ru_pol": 0,
       "ru_eco": 5,
       "ru_safety": 1,
-      "world": 3,
+      "world": 2,
       "it": 6
     },
     "scaled_targets": {
@@ -16358,23 +16399,22 @@
       "it": 1.0
     },
     "deficits": {
-      "local": 1.0,
+      "local": 0.0,
       "ru_pol": 4.0,
       "ru_eco": -1.0,
       "ru_safety": 2.0,
-      "world": -1.0,
+      "world": 0.0,
       "it": -5.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
-      "geopolitical_event": 2,
       "macro_economy": 5,
-      "violent_crime": 4,
+      "violent_crime": 5,
       "major_it": 6,
+      "geopolitical_event": 1,
       "public_service_disruption": 3
     },
     "sequence": [
-      "world",
       "ru_eco",
       "ru_eco",
       "world",
@@ -16393,10 +16433,10 @@
       "local",
       "ru_eco",
       "ru_safety",
-      "it"
+      "it",
+      "local"
     ],
     "category_sequence": [
-      "geo",
       "ru_eco",
       "ru_eco",
       "world_ru",
@@ -16415,10 +16455,10 @@
       "sakh",
       "ru_eco",
       "ru_incident",
-      "it"
+      "it",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakhalinmedia.ru",
       "astv",
       "bbc world",
@@ -16437,7 +16477,8 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "astv",
-      "guardian technology"
+      "guardian technology",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -22315,7 +22356,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-22T21:14:15+00:00",
+    "checked_at": "2026-11-23T00:13:10+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -23263,7 +23304,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-11-22T21:14:06+00:00",
+    "checked_at_utc": "2026-11-23T00:13:01+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -23286,31 +23327,31 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-11-22T21:18:17+00:00",
+    "checked_at_utc": "2026-11-23T00:17:10+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-22T21:18:17+00:00",
+    "checked_at_utc": "2026-11-23T00:17:10+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 3,
-    "ai_calls": 4,
-    "ai_api_fail": 3,
-    "ai_budget_exhausted": 1,
+    "director_approved": 7,
+    "ai_calls": 3,
+    "ai_api_fail": 2,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-11-22T21:18:17+00:00",
+    "checked_at_utc": "2026-11-23T00:17:10+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-11-23T08:18:17+11:00",
-      "candidates": 3,
+      "finished_sakhalin": "2026-11-23T11:17:10+11:00",
+      "candidates": 7,
       "queued_for_delivery": 0
     },
     "generation": {
