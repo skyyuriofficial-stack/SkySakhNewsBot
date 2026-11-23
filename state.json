@@ -522,7 +522,9 @@
     "https://www.theguardian.com/technology/anthropic",
     "https://sakhalinmedia.ru/news/2689988/",
     "https://www.bbc.co.uk/news/articles/cqdr15l32d3go?at_medium=RSS&at_campaign=rss",
-    "https://sakh.online/news/18/2026-11-23/byudzhet-razvitiya-v-yuzhno-sahalinske-obsudili-finansovye-prioritety-na-blizhayshie-tri-goda-532324"
+    "https://sakh.online/news/18/2026-11-23/byudzhet-razvitiya-v-yuzhno-sahalinske-obsudili-finansovye-prioritety-na-blizhayshie-tri-goda-532324",
+    "https://sakh.online/news/18/2026-11-23/napadenie-medvedya-ili-volka-na-lyudey-mogut-priznat-chrezvychaynoy-situatsiey-532326",
+    "https://sakhalinmedia.ru/news/2690635/"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -1048,372 +1050,12 @@
     "2667ed9789c284e5e714a50915dd908035288d94",
     "dc5fcf7988a2809874a7d43d0d7099b3889f41ae",
     "f2c4e18c7b2bbfd875fcb2523ddb5406cb9f97d2",
-    "19780ffbdd7c69059b72aa364ea5ca8fd0bf53b1"
+    "19780ffbdd7c69059b72aa364ea5ca8fd0bf53b1",
+    "05529dd1942994ca96bef68ee6ff4170ac00c698",
+    "731379729bfd31f2b175c7dd853cd7c18f4485b6"
   ],
-  "last_run_sakhalin": "2026-11-23T19:23:57+11:00",
+  "last_run_sakhalin": "2026-11-24T07:08:24+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-11-08T10:39:45+11:00",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh",
-      "title": "В селе Холмского района ввели режим ЧС из-за метели",
-      "url": "https://sakhalinmedia.ru/news/2674921/",
-      "image_url": "https://sakhalinmedia.ru/f/big/6492/6491560.jpeg?6050cfd45ad5216d08f846e4f891e3dc",
-      "image_hash": "da582b69c1f2759ef7afabf856ad2104ac97945a",
-      "topic_cluster": "sakh:холмского_района_ввели_режим_метели_sakhalinmedia",
-      "published_at": "2026-11-07T22:43:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "sakh",
-        "corrected_category": "sakh",
-        "group": "local",
-        "event_type": "political_decision",
-        "subtype": "political_decision",
-        "seriousness": 93,
-        "threshold": 70,
-        "selection_utility": -36.0,
-        "slot": "backup",
-        "risks": [],
-        "title_original": "В селе Холмского района ввели режим ЧС из-за метели",
-        "title_corrected": "В селе Холмского района ввели режим ЧС из-за метели",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "В администрации Холмского района состоялось заседание комиссии по чрезвычайным ситуациям, на котором обсудили текущую обстановку и меры по устранению последствий непогоды. В селе Чехов частично нарушено электроснабжение, а с 7 ноября с 21.00 введен режим ЧС, отмечает в своих соцсетях мэр Холмского городского округа Дмитрий Любчинов. В селе Чехов частично нарушено электроснабжение (ФОТО) Все дорожные службы переведены в режим повышенной готовности. Аварийные бригады ЮЗБСР продолжают восстановительные работы на электросетях. Заседание КЧС Холмского городского округа. Фото: Соцсети мэра Холмского муниципального округа Дмитрия Любчинова Заседание КЧС Холмского городского округа. Фото: Соцсети мэра Холмского муниципального округа Дмитрия Любчинова",
-      "title_original": null,
-      "footer": "САХАЛИН",
-      "published_row": {
-        "reject": false,
-        "title_ru": "В селе Холмского района ввели режим ЧС из-за метели",
-        "body": [
-          "В администрации Холмского района состоялось заседание комиссии по чрезвычайным ситуациям, на котором обсудили текущую обстановку и меры по устранению последствий непогоды.",
-          "В селе Чехов частично нарушено электроснабжение, а с 7 ноября с 21.00 введен режим ЧС, отмечает в своих соцсетях мэр Холмского городского округа Дмитрий Любчинов."
-        ],
-        "footer": "САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh",
-          "corrected_category": "sakh",
-          "group": "local",
-          "event_type": "political_decision",
-          "subtype": "political_decision",
-          "seriousness": 93,
-          "threshold": 70,
-          "selection_utility": -36.0,
-          "slot": "backup",
-          "risks": [],
-          "title_original": "В селе Холмского района ввели режим ЧС из-за метели",
-          "title_corrected": "В селе Холмского района ввели режим ЧС из-за метели",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "sakh",
-          "final_category": "sakh",
-          "event_type": "political_decision",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.8",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "sakh",
-            "corrected_category": "sakh",
-            "group": "local",
-            "event_type": "political_decision",
-            "subtype": "political_decision",
-            "seriousness": 88,
-            "threshold": 70,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "В селе Холмского района ввели режим ЧС из-за метели",
-            "title_corrected": "В селе Холмского района ввели режим ЧС из-за метели",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "📍 Сахалин\n\n<b>В селе Холмского района ввели режим ЧС из-за метели</b>\n\nВ администрации Холмского района состоялось заседание комиссии по чрезвычайным ситуациям, на котором обсудили текущую обстановку и меры по устранению последствий непогоды.\n\nВ селе Чехов частично нарушено электроснабжение, а с 7 ноября с 21.00 введен режим ЧС, отмечает в своих соцсетях мэр Холмского городского округа Дмитрий Любчинов.\n\nСАХАЛИН · <a href=\"https://sakhalinmedia.ru/news/2674921/\">SakhalinMedia.ru</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh",
-        "final_category": "sakh",
-        "event_type": "political_decision",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.8",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh",
-          "corrected_category": "sakh",
-          "group": "local",
-          "event_type": "political_decision",
-          "subtype": "political_decision",
-          "seriousness": 88,
-          "threshold": 70,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "В селе Холмского района ввели режим ЧС из-за метели",
-          "title_corrected": "В селе Холмского района ввели режим ЧС из-за метели",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 568,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": []
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-11-13T09:28:49+00:00"
-      }
-    },
-    {
-      "time_sakhalin": "2026-11-09T10:07:32+11:00",
-      "source": "Exploit (@exploitex)",
-      "category": "💻 IT / технологии",
-      "category_key": "it",
-      "title": "Память ChatGPT может собрать о вас цифровое досье — предупреждает МВД РФ",
-      "url": "https://t.me/exploitex/37721",
-      "image_url": "https://cdn4.telesco.pe/file/jS3t1iBot6iH2Jhk6eVIk81Afac9fUWSNL5vMW6cNLUn5RpZVvt25Cn4VRP1pqHRWrLWDQUGVZKGnVSRkqvoXhmiiTT8EFpwIjnx0d3fsObMwG0cRo5HJx2ya7pnDOmq2NW9OA12NdYW9HRs9c-fOaeAV1NJqdtIbnT_dyvYyOHE9chQeWKblKd-0V-abCrI9oGr3goP0nhoA6_eN_TTguRIaxI5ioJ2AdTEcUzr1p5cGlVtWIvTIrRd2dbOPLsrD1AqVRB9KqlMwU3ZiOZYzzr_SWbZhLZRpkjhJFXW0XPr9JbyB4YIER372glv3PYWvkP1zKKUvy-bNVimDxmDyg.jpg",
-      "image_hash": "d57032207bf5fa01f229afdcb52cc395d67ab11b",
-      "topic_cluster": "it:память_chatgpt_может_собрать_цифровое_досье",
-      "published_at": "2026-11-08T14:24:49+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "it",
-        "corrected_category": "it",
-        "group": "it",
-        "event_type": "major_it",
-        "subtype": "major_it",
-        "seriousness": 80,
-        "threshold": 78,
-        "selection_utility": -42.0,
-        "slot": "backup",
-        "risks": [
-          "near_threshold"
-        ],
-        "title_original": "Память ChatGPT может собрать о вас цифровое досье — предупреждает МВД РФ .",
-        "title_corrected": "Память ChatGPT может собрать о вас цифровое досье — предупреждает МВД РФ ",
-        "title_corrections": [],
-        "title_changed": true,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "Память ChatGPT может собрать о вас цифровое досье — предупреждает МВД РФ . Управление по борьбе с киберпреступностью объяснило: ИИ-сервисы запоминают всё, что вы им пишете. Из этих накопленных данных можно собрать полный профиль человека. Как защититься: — Контролировать настройки памяти у ИИ-сервисов; — Не загружать в чат конфиденциальную информацию; — Обезличивать запросы: не писать реальные имена, адреса и другие идентифицирующие данные; — Обсуждать личные вопросы во временных чатах. Запоминаем.",
-      "title_original": "Память ChatGPT может собрать о вас цифровое досье — предупреждает МВД РФ .",
-      "footer": "IT | ТЕХНОЛОГИИ",
-      "published_row": {
-        "reject": false,
-        "title_ru": "Память ChatGPT может собрать о вас цифровое досье — предупреждает МВД РФ",
-        "body": [
-          "Управление по борьбе с киберпреступностью объяснило: ИИ-сервисы запоминают всё, что вы им пишете.",
-          "Из этих накопленных данных можно собрать полный профиль человека."
-        ],
-        "footer": "IT | ТЕХНОЛОГИИ",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "it",
-          "corrected_category": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "subtype": "major_it",
-          "seriousness": 80,
-          "threshold": 78,
-          "selection_utility": -42.0,
-          "slot": "backup",
-          "risks": [
-            "near_threshold"
-          ],
-          "title_original": "Память ChatGPT может собрать о вас цифровое досье — предупреждает МВД РФ .",
-          "title_corrected": "Память ChatGPT может собрать о вас цифровое досье — предупреждает МВД РФ ",
-          "title_corrections": [],
-          "title_changed": true,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "it",
-          "final_category": "it",
-          "event_type": "major_it",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.8",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "it",
-            "corrected_category": "it",
-            "group": "it",
-            "event_type": "major_it",
-            "subtype": "major_it",
-            "seriousness": 80,
-            "threshold": 78,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [
-              "near_threshold"
-            ],
-            "title_original": "Память ChatGPT может собрать о вас цифровое досье — предупреждает МВД РФ",
-            "title_corrected": "Память ChatGPT может собрать о вас цифровое досье — предупреждает МВД РФ",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "💻 IT / технологии\n\n<b>Память ChatGPT может собрать о вас цифровое досье — предупреждает МВД РФ</b>\n\nУправление по борьбе с киберпреступностью объяснило: ИИ-сервисы запоминают всё, что вы им пишете.\n\nИз этих накопленных данных можно собрать полный профиль человека.\n\nIT | ТЕХНОЛОГИИ · <a href=\"https://t.me/exploitex/37721\">Exploit (@exploitex)</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "it",
-        "final_category": "it",
-        "event_type": "major_it",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.8",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "it",
-          "corrected_category": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "subtype": "major_it",
-          "seriousness": 80,
-          "threshold": 78,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [
-            "near_threshold"
-          ],
-          "title_original": "Память ChatGPT может собрать о вас цифровое досье — предупреждает МВД РФ",
-          "title_corrected": "Память ChatGPT может собрать о вас цифровое досье — предупреждает МВД РФ",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 570,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": []
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-11-13T15:48:30+00:00"
-      }
-    },
     {
       "time_sakhalin": "2026-11-09T14:00:28+11:00",
       "source": "Sakh.online",
@@ -11779,7 +11421,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:48+00:00"
+        "checked_at": "2026-11-23T20:05:05+00:00"
       }
     },
     {
@@ -11966,7 +11608,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:48+00:00"
+        "checked_at": "2026-11-23T20:05:05+00:00"
       }
     },
     {
@@ -12148,7 +11790,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:48+00:00"
+        "checked_at": "2026-11-23T20:05:05+00:00"
       }
     },
     {
@@ -12330,7 +11972,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:48+00:00"
+        "checked_at": "2026-11-23T20:05:05+00:00"
       }
     },
     {
@@ -12508,7 +12150,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:48+00:00"
+        "checked_at": "2026-11-23T20:05:05+00:00"
       }
     },
     {
@@ -12695,7 +12337,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:49+00:00"
+        "checked_at": "2026-11-23T20:05:06+00:00"
       }
     },
     {
@@ -13065,7 +12707,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:49+00:00"
+        "checked_at": "2026-11-23T20:05:06+00:00"
       }
     },
     {
@@ -13254,7 +12896,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:49+00:00"
+        "checked_at": "2026-11-23T20:05:06+00:00"
       }
     },
     {
@@ -13432,7 +13074,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:49+00:00"
+        "checked_at": "2026-11-23T20:05:06+00:00"
       }
     },
     {
@@ -13618,7 +13260,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:49+00:00"
+        "checked_at": "2026-11-23T20:05:07+00:00"
       }
     },
     {
@@ -13985,7 +13627,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:49+00:00"
+        "checked_at": "2026-11-23T20:05:07+00:00"
       }
     },
     {
@@ -14163,7 +13805,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:49+00:00"
+        "checked_at": "2026-11-23T20:05:07+00:00"
       }
     },
     {
@@ -14345,7 +13987,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:49+00:00"
+        "checked_at": "2026-11-23T20:05:07+00:00"
       }
     },
     {
@@ -14523,7 +14165,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:49+00:00"
+        "checked_at": "2026-11-23T20:05:07+00:00"
       }
     },
     {
@@ -14705,7 +14347,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:50+00:00"
+        "checked_at": "2026-11-23T20:05:07+00:00"
       }
     },
     {
@@ -14887,7 +14529,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:50+00:00"
+        "checked_at": "2026-11-23T20:05:08+00:00"
       }
     },
     {
@@ -15076,7 +14718,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:50+00:00"
+        "checked_at": "2026-11-23T20:05:08+00:00"
       }
     },
     {
@@ -15258,7 +14900,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:50+00:00"
+        "checked_at": "2026-11-23T20:05:08+00:00"
       }
     },
     {
@@ -15445,7 +15087,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:50+00:00"
+        "checked_at": "2026-11-23T20:05:08+00:00"
       }
     },
     {
@@ -15627,7 +15269,365 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T08:24:50+00:00"
+        "checked_at": "2026-11-23T20:05:08+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-11-24T07:08:06+11:00",
+      "source": "Sakh.online",
+      "category": "🇷🇺 Россия / происшествия",
+      "category_key": "ru_incident",
+      "title": "Нападение медведя или волка на людей могут признать чрезвычайной ситуацией",
+      "url": "https://sakh.online/news/18/2026-11-23/napadenie-medvedya-ili-volka-na-lyudey-mogut-priznat-chrezvychaynoy-situatsiey-532326",
+      "image_url": "https://sakh.online/attachments/ed81b23299f812c5dd4c09696510a7f085065658/store/crop/0/0/800/451/800/0/0/0/ad06e2968690887c17bb778334b9f59d2476b94ea7b39f6fa72460208401/ad06e2968690887c17bb778334b9f59d2476b94ea7b39f6fa72460208401.webp",
+      "image_hash": "d15383db43c084802641dc1a024f72d2e725c850",
+      "topic_cluster": "ru_incident:нападение_медведя_волка_людей_могут_признать",
+      "published_at": "2026-11-22T13:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "ru_incident",
+        "corrected_category": "ru_incident",
+        "group": "ru_safety",
+        "event_type": "violent_crime",
+        "subtype": "violent_crime",
+        "seriousness": 100,
+        "threshold": 76,
+        "selection_utility": 155.0,
+        "slot": 1,
+        "risks": [],
+        "title_original": "Нападение медведя или волка на людей могут признать чрезвычайной ситуацией",
+        "title_corrected": "Нападение медведя или волка на людей могут признать чрезвычайной ситуацией",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_title": "Нападение медведя или волка на людей могут признать чрезвычайной ситуацией",
+      "source_text_excerpt": "Документ впервые предусматривает отдельные основания для признания ЧС после нападения медведя или волка на людей в границах населенного пункта. Для этого достаточно одного из трех последствий: гибели хотя бы одного человека, травм пяти и более человек или нарушения условий жизни 50 и более жителей. К последнему критерию могут относиться вынужденная эвакуация, блокировка отдельных кварталов и отмена массовых мероприятий. Присвоение происшествию статуса чрезвычайной ситуации запускает предусмотренные государством механизмы реагирования. В частности, профильные службы должны организовать сбор и обмен информацией, а власти — при необходимости выделить бюджетные средства и привлечь силы гражданской обороны.",
+      "title_original": null,
+      "footer": "РОССИЯ | ПРОИСШЕСТВИЯ",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Нападение медведя или волка на людей могут признать чрезвычайной ситуацией",
+        "body": [
+          "Документ впервые предусматривает отдельные основания для признания ЧС после нападения медведя или волка на людей в границах населенного пункта.",
+          "Для этого достаточно одного из трех последствий: гибели хотя бы одного человека, травм пяти и более человек или нарушения условий жизни 50 и более жителей."
+        ],
+        "footer": "РОССИЯ | ПРОИСШЕСТВИЯ",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh_chp",
+          "reclassified_to": "ru_incident"
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_incident",
+          "corrected_category": "ru_incident",
+          "group": "ru_safety",
+          "event_type": "violent_crime",
+          "subtype": "violent_crime",
+          "seriousness": 100,
+          "threshold": 76,
+          "selection_utility": 155.0,
+          "slot": 1,
+          "risks": [],
+          "title_original": "Нападение медведя или волка на людей могут признать чрезвычайной ситуацией",
+          "title_corrected": "Нападение медведя или волка на людей могут признать чрезвычайной ситуацией",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "ru_incident",
+          "final_category": "ru_incident",
+          "event_type": "violent_crime",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.8",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "ru_incident",
+            "corrected_category": "ru_incident",
+            "group": "ru_safety",
+            "event_type": "violent_crime",
+            "subtype": "violent_crime",
+            "seriousness": 100,
+            "threshold": 76,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Нападение медведя или волка на людей могут признать чрезвычайной ситуацией",
+            "title_corrected": "Нападение медведя или волка на людей могут признать чрезвычайной ситуацией",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "🇷🇺 Россия / происшествия\n\n<b>Нападение медведя или волка на людей могут признать чрезвычайной ситуацией</b>\n\nДокумент впервые предусматривает отдельные основания для признания ЧС после нападения медведя или волка на людей в границах населенного пункта.\n\nДля этого достаточно одного из трех последствий: гибели хотя бы одного человека, травм пяти и более человек или нарушения условий жизни 50 и более жителей.\n\nРОССИЯ | ПРОИСШЕСТВИЯ · <a href=\"https://sakh.online/news/18/2026-11-23/napadenie-medvedya-ili-volka-na-lyudey-mogut-priznat-chrezvychaynoy-situatsiey-532326\">Sakh.online</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_incident",
+        "final_category": "ru_incident",
+        "event_type": "violent_crime",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.8",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_incident",
+          "corrected_category": "ru_incident",
+          "group": "ru_safety",
+          "event_type": "violent_crime",
+          "subtype": "violent_crime",
+          "seriousness": 100,
+          "threshold": 76,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Нападение медведя или волка на людей могут признать чрезвычайной ситуацией",
+          "title_corrected": "Нападение медведя или волка на людей могут признать чрезвычайной ситуацией",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 672,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh_chp",
+        "reclassified_to": "ru_incident"
+      }
+    },
+    {
+      "time_sakhalin": "2026-11-24T07:08:16+11:00",
+      "source": "SakhalinMedia.ru",
+      "category": "🇷🇺 Россия / экономика",
+      "category_key": "ru_eco",
+      "title": "Ключевая ставка останется на прежнем уровне до середины 2027 года - эксперт",
+      "url": "https://sakhalinmedia.ru/news/2690635/",
+      "image_url": "https://sakhalinmedia.ru/f/big/6521/6520407.jpg.webp?v=1795419737",
+      "image_hash": "f4ec7ec9303d6099c8a876b5af3f23c0675c0512",
+      "topic_cluster": "ru_eco:ключевая_ставка_останется_прежнем_уровне_середины",
+      "published_at": "2026-11-23T08:30:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "ru_eco",
+        "corrected_category": "ru_eco",
+        "group": "ru_eco",
+        "event_type": "macro_economy",
+        "subtype": "macro_economy",
+        "seriousness": 86,
+        "threshold": 80,
+        "selection_utility": 120.0,
+        "slot": 2,
+        "risks": [],
+        "title_original": "Ключевая ставка останется на прежнем уровне до середины 2027 года - эксперт",
+        "title_corrected": "Ключевая ставка останется на прежнем уровне до середины 2027 года - эксперт",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_title": "Ключевая ставка останется на прежнем уровне до середины 2027 года - эксперт",
+      "source_text_excerpt": "Банк России, скорее всего, не снизит ключевую ставку раньше середины 2027 года. Об этом в интервью РИА Новости (18+) сообщил бывший министр финансов, экономист Михаил Задорнов. По его словам, регулятор уже исчерпал шаги по смягчению денежно-кредитной политики на ближайшее время. По мнению экономиста Михаила Задорнова, ЦБ предпримет дальнейшие шаги только после снижения инфляции Совет директоров Банка России в октябре принял решение сохранить ключевую ставку на уровне 14% годовых и допустил, что она останется неизменной и по итогам декабрьского заседания. По прогнозу ЦБ, годовая инфляция в 2026 году сложится в диапазоне 7,1-7,5%. Как отметил Задорнов, эффективная ставка, то есть ставка за вычетом инфляции, составит при этом меньше 7%. То есть, по своим метрикам ЦБ уже прошел путь снижения ключевой ставки, и дальнейшие шаги могут быть сделаны только тогда, когда мы увидим реальное снижение инфляции. Очевидно, что ни в декабре, ни в январе по ряду причин этого не случится, — добавил он. Эксперт отметил, что рассчитывать на снижение ставки в ближайшие месяцы не стоит, и финансовый рынок это понимает. \"Мы видим это по стоимости денег на рынке, ориентиром которой служит доходность пяти-десятилетних ОФЗ — она сейчас составляет 16-16,5%. Рынок уже закладывает стоимость денег выше ключевой ставки, причем достаточно заметно\", — объяснил он.",
+      "title_original": null,
+      "footer": "РОССИЯ | ЭКОНОМИКА",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Ключевая ставка останется на прежнем уровне до середины 2027 года - эксперт",
+        "body": [
+          "Банк России, скорее всего, не снизит ключевую ставку раньше середины 2027 года.",
+          "Об этом в интервью РИА Новости (18+) сообщил бывший министр финансов, экономист Михаил Задорнов."
+        ],
+        "footer": "РОССИЯ | ЭКОНОМИКА",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh",
+          "reclassified_to": "ru_eco"
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 86,
+          "threshold": 80,
+          "selection_utility": 120.0,
+          "slot": 2,
+          "risks": [],
+          "title_original": "Ключевая ставка останется на прежнем уровне до середины 2027 года - эксперт",
+          "title_corrected": "Ключевая ставка останется на прежнем уровне до середины 2027 года - эксперт",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "ru_eco",
+          "final_category": "ru_eco",
+          "event_type": "macro_economy",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.8",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "ru_eco",
+            "corrected_category": "ru_eco",
+            "group": "ru_eco",
+            "event_type": "macro_economy",
+            "subtype": "macro_economy",
+            "seriousness": 84,
+            "threshold": 80,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [
+              "near_threshold"
+            ],
+            "title_original": "Ключевая ставка останется на прежнем уровне до середины 2027 года - эксперт",
+            "title_corrected": "Ключевая ставка останется на прежнем уровне до середины 2027 года - эксперт",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "🇷🇺 Россия / экономика\n\n<b>Ключевая ставка останется на прежнем уровне до середины 2027 года - эксперт</b>\n\nБанк России, скорее всего, не снизит ключевую ставку раньше середины 2027 года.\n\nОб этом в интервью РИА Новости (18+) сообщил бывший министр финансов, экономист Михаил Задорнов.\n\nРОССИЯ | ЭКОНОМИКА · <a href=\"https://sakhalinmedia.ru/news/2690635/\">SakhalinMedia.ru</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "ru_eco",
+        "final_category": "ru_eco",
+        "event_type": "macro_economy",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.8",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "ru_eco",
+          "corrected_category": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 84,
+          "threshold": 80,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [
+            "near_threshold"
+          ],
+          "title_original": "Ключевая ставка останется на прежнем уровне до середины 2027 года - эксперт",
+          "title_corrected": "Ключевая ставка останется на прежнем уровне до середины 2027 года - эксперт",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 673,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh",
+        "reclassified_to": "ru_eco"
       }
     }
   ],
@@ -15856,11 +15856,11 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-11-23T19:19:41+11:00",
+    "started_sakhalin": "2026-11-24T07:04:59+11:00",
     "status": "ok",
-    "candidates": 6,
+    "candidates": 9,
     "published": 2,
-    "local_candidates": 3,
+    "local_candidates": 0,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -15891,57 +15891,57 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-11-23T19:23:57+11:00",
+    "finished_sakhalin": "2026-11-24T07:08:24+11:00",
     "stats": {
-      "rss_seen": 139,
-      "old_skip": 65,
-      "google_skip": 0,
-      "duplicate_skip": 1,
-      "low_info_skip": 14,
-      "category_skip": 33,
+      "rss_seen": 154,
+      "old_skip": 54,
+      "google_skip": 15,
+      "duplicate_skip": 3,
+      "low_info_skip": 15,
+      "category_skip": 28,
       "no_image_skip": 0,
-      "bad_image_skip": 9,
-      "logo_image_skip": 25,
+      "bad_image_skip": 15,
+      "logo_image_skip": 22,
       "text_card_image_skip": 2,
-      "candidates": 30,
-      "rewrite_retry": 2,
-      "editorial_skip": 1,
+      "candidates": 25,
+      "rewrite_retry": 0,
+      "editorial_skip": 0,
       "telegram_fail": 0,
       "published": 2,
       "telegram_source_attempt": 4,
       "telegram_source_fail": 0,
-      "telegram_source_seen": 72,
-      "telegram_source_candidates": 24,
-      "ai_calls": 4,
+      "telegram_source_seen": 64,
+      "telegram_source_candidates": 32,
+      "ai_calls": 0,
       "ai_budget_exhausted": 0,
-      "ai_api_fail": 2,
+      "ai_api_fail": 0,
       "evidence_reject": 0,
       "validation_reject": 0,
-      "extractive_fallback": 1,
-      "extractive_first": 1,
-      "editorial_prechecked": 64,
-      "editorial_gate_checked": 3,
+      "extractive_fallback": 2,
+      "extractive_first": 2,
+      "editorial_prechecked": 74,
+      "editorial_gate_checked": 2,
       "editorial_gate_pass": 2,
-      "editorial_gate_reject": 1,
+      "editorial_gate_reject": 0,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 0,
       "editorial_gate_ai_fail": 0,
       "editorial_title_reject": 0,
       "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 13,
-      "editorial_offtopic_reject": 28,
-      "openrouter_empty_content": 7,
-      "openrouter_model_fallback": 1,
-      "openrouter_attempts": 9,
-      "openrouter_retries": 5,
+      "editorial_reclassified": 12,
+      "editorial_offtopic_reject": 33,
+      "openrouter_empty_content": 0,
+      "openrouter_model_fallback": 0,
+      "openrouter_attempts": 1,
+      "openrouter_retries": 0,
       "openrouter_invalid_json": 0,
-      "openrouter_success": 2,
+      "openrouter_success": 1,
       "openrouter_circuit_open": 0,
-      "editorial_grounded_translation_fallback": 1,
-      "media_required_skip": 6,
+      "editorial_grounded_translation_fallback": 0,
+      "media_required_skip": 16,
       "media_generic_skip": 0,
-      "media_ready_candidates": 30,
+      "media_ready_candidates": 25,
       "photo_retry": 0,
       "photo_publish": 2,
       "photo_upload_original": 2,
@@ -15955,12 +15955,12 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 30,
-      "director_approved": 6,
-      "director_rejected": 24,
+      "director_seen": 25,
+      "director_approved": 9,
+      "director_rejected": 16,
       "director_reclassified": 0,
       "director_title_corrected": 0,
-      "director_ai_calls": 0,
+      "director_ai_calls": 1,
       "director_ai_fail": 0,
       "director_final_checked": 2,
       "director_final_autocorrected": 0,
@@ -15971,216 +15971,15 @@
       "post_audit_anomalies": 0,
       "post_audit_corrected": 0,
       "post_audit_deleted": 0,
-      "tass_world_scanned": 84,
-      "tass_world_screened": 2,
-      "tass_world_candidates": 2
+      "tass_world_scanned": 83,
+      "tass_world_screened": 3,
+      "tass_world_candidates": 1
     },
     "news_director": {
       "version": "director-v2.4",
       "policy_version": "policy-v2.8",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
-        "window": 20,
-        "targets": {
-          "local": 6,
-          "ru_pol": 4,
-          "ru_eco": 4,
-          "ru_safety": 3,
-          "world": 2,
-          "it": 1
-        },
-        "target_percent": {
-          "local": 30.0,
-          "ru_pol": 20.0,
-          "ru_eco": 20.0,
-          "ru_safety": 15.0,
-          "world": 10.0,
-          "it": 5.0
-        },
-        "counts": {
-          "local": 6,
-          "ru_pol": 0,
-          "ru_eco": 5,
-          "ru_safety": 1,
-          "world": 2,
-          "it": 6
-        },
-        "scaled_targets": {
-          "local": 6.0,
-          "ru_pol": 4.0,
-          "ru_eco": 4.0,
-          "ru_safety": 3.0,
-          "world": 2.0,
-          "it": 1.0
-        },
-        "deficits": {
-          "local": 0.0,
-          "ru_pol": 4.0,
-          "ru_eco": -1.0,
-          "ru_safety": 2.0,
-          "world": 0.0,
-          "it": -5.0
-        },
-        "distribution_error": 12.0,
-        "subtype_counts": {
-          "macro_economy": 5,
-          "violent_crime": 5,
-          "major_it": 6,
-          "geopolitical_event": 1,
-          "public_service_disruption": 3
-        },
-        "sequence": [
-          "ru_eco",
-          "ru_eco",
-          "world",
-          "it",
-          "local",
-          "world",
-          "local",
-          "it",
-          "it",
-          "it",
-          "local",
-          "it",
-          "ru_eco",
-          "local",
-          "ru_eco",
-          "local",
-          "ru_eco",
-          "ru_safety",
-          "it",
-          "local"
-        ],
-        "category_sequence": [
-          "ru_eco",
-          "ru_eco",
-          "world_ru",
-          "it",
-          "sakh_chp",
-          "geo",
-          "sakh",
-          "it",
-          "it",
-          "it",
-          "sakh_chp",
-          "it",
-          "ru_eco",
-          "sakh",
-          "ru_eco",
-          "sakh",
-          "ru_eco",
-          "ru_incident",
-          "it",
-          "sakh_chp"
-        ],
-        "source_sequence": [
-          "sakhalinmedia.ru",
-          "astv",
-          "bbc world",
-          "guardian technology",
-          "sakh.online",
-          "tass world tass world",
-          "sakh.online",
-          "bbc technology",
-          "guardian technology",
-          "bbc technology",
-          "sakh.online",
-          "exploit exploitex",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "astv",
-          "guardian technology",
-          "sakhalinmedia.ru"
-        ],
-        "retrospective_anomalies": [],
-        "valid_posts_counted": 20
-      },
-      "candidate_count": 30,
-      "approved_count": 6,
-      "rejected_count": 24,
-      "rejected_by_reason": {
-        "minor_or_routine_crime": 1,
-        "importance_below_threshold": 17,
-        "ordinary_weather_not_release_worthy": 2,
-        "local_mix_saturated_low_priority": 2,
-        "low_scale_incident_not_release_worthy": 1,
-        "routine_traffic_statistics": 1
-      },
-      "ai_review_requested": 0,
-      "ai_review_received": 0,
-      "selected_groups": [
-        "world",
-        "local"
-      ],
-      "projected_distribution_error": 14.0,
-      "projected_counts": {
-        "world": 3,
-        "it": 6,
-        "local": 7,
-        "ru_eco": 3,
-        "ru_safety": 1
-      },
-      "projected_length": 20,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "Boy, 7, pulled alive from rubble hours after Russian strike on Ukraine, rescuers say",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "fatal_incident",
-          "seriousness": 100,
-          "utility": 100.0
-        },
-        {
-          "slot": 2,
-          "title": "Землетрясение магнитудой 4,5 произошло у Северо-Курильска 23 ноября",
-          "category_key": "sakh_quake",
-          "group": "local",
-          "event_type": "earthquake",
-          "seriousness": 100,
-          "utility": 91.0
-        },
-        {
-          "slot": "backup",
-          "title": "Russian warship sinks in Benghazi after suspected Ukrainian drone attack",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "military_security",
-          "seriousness": 97,
-          "utility": 81.0
-        },
-        {
-          "slot": "backup",
-          "title": "Бюджет развития: в Южно-Сахалинске обсудили финансовые приоритеты на ближайшие три года",
-          "category_key": "sakh",
-          "group": "local",
-          "event_type": "macro_economy",
-          "seriousness": 86,
-          "utility": 70.0
-        },
-        {
-          "slot": "backup",
-          "title": "Explosion on Russian ship at Libya port caused by suspected drone attack, officials say",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "military_security",
-          "seriousness": 94,
-          "utility": 60.0
-        },
-        {
-          "slot": "backup",
-          "title": "Приоритет - социальная сфера: в Южно-Сахалинске обсудили проект бюджета на 2027 год",
-          "category_key": "sakh",
-          "group": "local",
-          "event_type": "macro_economy",
-          "seriousness": 86,
-          "utility": 45.0
-        }
-      ],
-      "rolling_balance_after": {
         "window": 20,
         "targets": {
           "local": 6,
@@ -16299,11 +16098,238 @@
         ],
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
+      },
+      "candidate_count": 25,
+      "approved_count": 9,
+      "rejected_count": 16,
+      "rejected_by_reason": {
+        "importance_below_threshold": 12,
+        "routine_traffic_statistics": 1,
+        "ordinary_weather_not_release_worthy": 1,
+        "independent_editor_veto": 2
+      },
+      "ai_review_requested": 2,
+      "ai_review_received": 2,
+      "selected_groups": [
+        "ru_safety",
+        "ru_eco"
+      ],
+      "projected_distribution_error": 10.0,
+      "projected_counts": {
+        "local": 7,
+        "world": 2,
+        "it": 5,
+        "ru_eco": 4,
+        "ru_safety": 2
+      },
+      "projected_length": 20,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "Нападение медведя или волка на людей могут признать чрезвычайной ситуацией",
+          "category_key": "ru_incident",
+          "group": "ru_safety",
+          "event_type": "violent_crime",
+          "seriousness": 100,
+          "utility": 155.0
+        },
+        {
+          "slot": 2,
+          "title": "Ключевая ставка останется на прежнем уровне до середины 2027 года - эксперт",
+          "category_key": "ru_eco",
+          "group": "ru_eco",
+          "event_type": "macro_economy",
+          "seriousness": 86,
+          "utility": 120.0
+        },
+        {
+          "slot": "backup",
+          "title": "Russian warship sinks in Benghazi after suspected Ukrainian drone attack",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "military_security",
+          "seriousness": 97,
+          "utility": 57.0
+        },
+        {
+          "slot": "backup",
+          "title": "ТАСС: украинский офицер умер от инфаркта при виде дрона ВС РФ",
+          "category_key": "geo",
+          "group": "world",
+          "event_type": "military_security",
+          "seriousness": 94,
+          "utility": 54.0
+        },
+        {
+          "slot": "backup",
+          "title": "Russian warship hit by Ukrainian drones in Libya, Zelensky says",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "military_security",
+          "seriousness": 94,
+          "utility": 54.0
+        },
+        {
+          "slot": "backup",
+          "title": "EU sanctions package intended to ‘keep pressure’ on Russia and ‘strike harder’ at its ability to fund Ukraine war – as it happened",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "seriousness": 91,
+          "utility": 51.0
+        },
+        {
+          "slot": "backup",
+          "title": "Nvidia’s humiliated board should resign out of embarrassment | Nils Pratley",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 85,
+          "utility": -115.0
+        },
+        {
+          "slot": "backup",
+          "title": "Jensen Huang reinstated as Nvidia CEO after Trump intervenes",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 85,
+          "utility": -115.0
+        },
+        {
+          "slot": "backup",
+          "title": "Антиплагиат перестал определять нейросетевые тексты, выяснили студенты",
+          "category_key": "it",
+          "group": "it",
+          "event_type": "major_it",
+          "seriousness": 85,
+          "utility": -115.0
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 20,
+        "targets": {
+          "local": 6,
+          "ru_pol": 4,
+          "ru_eco": 4,
+          "ru_safety": 3,
+          "world": 2,
+          "it": 1
+        },
+        "target_percent": {
+          "local": 30.0,
+          "ru_pol": 20.0,
+          "ru_eco": 20.0,
+          "ru_safety": 15.0,
+          "world": 10.0,
+          "it": 5.0
+        },
+        "counts": {
+          "local": 7,
+          "ru_pol": 0,
+          "ru_eco": 4,
+          "ru_safety": 2,
+          "world": 2,
+          "it": 5
+        },
+        "scaled_targets": {
+          "local": 6.0,
+          "ru_pol": 4.0,
+          "ru_eco": 4.0,
+          "ru_safety": 3.0,
+          "world": 2.0,
+          "it": 1.0
+        },
+        "deficits": {
+          "local": -1.0,
+          "ru_pol": 4.0,
+          "ru_eco": 0.0,
+          "ru_safety": 1.0,
+          "world": 0.0,
+          "it": -4.0
+        },
+        "distribution_error": 10.0,
+        "subtype_counts": {
+          "violent_crime": 5,
+          "geopolitical_event": 1,
+          "public_service_disruption": 3,
+          "major_it": 5,
+          "macro_economy": 5,
+          "fatal_incident": 1
+        },
+        "sequence": [
+          "local",
+          "world",
+          "local",
+          "it",
+          "it",
+          "it",
+          "local",
+          "it",
+          "ru_eco",
+          "local",
+          "ru_eco",
+          "local",
+          "ru_eco",
+          "ru_safety",
+          "it",
+          "local",
+          "world",
+          "local",
+          "ru_safety",
+          "ru_eco"
+        ],
+        "category_sequence": [
+          "sakh_chp",
+          "geo",
+          "sakh",
+          "it",
+          "it",
+          "it",
+          "sakh_chp",
+          "it",
+          "ru_eco",
+          "sakh",
+          "ru_eco",
+          "sakh",
+          "ru_eco",
+          "ru_incident",
+          "it",
+          "sakh_chp",
+          "world_ru",
+          "sakh",
+          "ru_incident",
+          "ru_eco"
+        ],
+        "source_sequence": [
+          "sakh.online",
+          "tass world tass world",
+          "sakh.online",
+          "bbc technology",
+          "guardian technology",
+          "bbc technology",
+          "sakh.online",
+          "exploit exploitex",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "astv",
+          "guardian technology",
+          "sakhalinmedia.ru",
+          "bbc world",
+          "sakh.online",
+          "sakh.online",
+          "sakhalinmedia.ru"
+        ],
+        "retrospective_anomalies": [],
+        "valid_posts_counted": 20
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-11-23T08:19:49+00:00",
+      "checked_at": "2026-11-23T20:05:08+00:00",
       "checked": 20,
       "passed": 20,
       "anomalies": [],
@@ -16324,8 +16350,8 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 30,
-      "missing_media_rejected": 6,
+      "ready_candidates": 25,
+      "missing_media_rejected": 16,
       "generic_media_rejected": 0,
       "photo_retries": 0,
       "photo_published": 2,
@@ -16338,30 +16364,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 64,
-      "checked": 3,
+      "prechecked": 74,
+      "checked": 2,
       "passed": 2,
-      "rejected": 1,
-      "reclassified": 13,
-      "offtopic_reject": 28,
+      "rejected": 0,
+      "reclassified": 12,
+      "offtopic_reject": 33,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
-      "audited_urls": 3
-    },
-    "independent_post_publication_monitor": {
-      "version": "post-audit-v1.1",
-      "checked_at": "2026-11-23T08:24:50+00:00",
-      "checked": 20,
-      "passed": 20,
-      "anomalies": [],
-      "corrected": [],
-      "deleted": [],
-      "failed_actions": [],
-      "unresolved": 0,
-      "unresolved_items": [],
-      "mutations_enabled": true,
-      "legacy_posts_mutated": false
+      "audited_urls": 2
     }
   },
   "pending_media_delivery": [],
@@ -16408,10 +16420,10 @@
     "counts": {
       "local": 7,
       "ru_pol": 0,
-      "ru_eco": 3,
-      "ru_safety": 1,
-      "world": 3,
-      "it": 6
+      "ru_eco": 4,
+      "ru_safety": 2,
+      "world": 2,
+      "it": 5
     },
     "scaled_targets": {
       "local": 6.0,
@@ -16424,23 +16436,21 @@
     "deficits": {
       "local": -1.0,
       "ru_pol": 4.0,
-      "ru_eco": 1.0,
-      "ru_safety": 2.0,
-      "world": -1.0,
-      "it": -5.0
+      "ru_eco": 0.0,
+      "ru_safety": 1.0,
+      "world": 0.0,
+      "it": -4.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 10.0,
     "subtype_counts": {
       "violent_crime": 5,
-      "major_it": 6,
       "geopolitical_event": 1,
       "public_service_disruption": 3,
-      "macro_economy": 4,
+      "major_it": 5,
+      "macro_economy": 5,
       "fatal_incident": 1
     },
     "sequence": [
-      "world",
-      "it",
       "local",
       "world",
       "local",
@@ -16458,11 +16468,11 @@
       "it",
       "local",
       "world",
-      "local"
+      "local",
+      "ru_safety",
+      "ru_eco"
     ],
     "category_sequence": [
-      "world_ru",
-      "it",
       "sakh_chp",
       "geo",
       "sakh",
@@ -16480,11 +16490,11 @@
       "it",
       "sakh_chp",
       "world_ru",
-      "sakh"
+      "sakh",
+      "ru_incident",
+      "ru_eco"
     ],
     "source_sequence": [
-      "bbc world",
-      "guardian technology",
       "sakh.online",
       "tass world tass world",
       "sakh.online",
@@ -16502,7 +16512,9 @@
       "guardian technology",
       "sakhalinmedia.ru",
       "bbc world",
-      "sakh.online"
+      "sakh.online",
+      "sakh.online",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -22380,7 +22392,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-23T08:24:50+00:00",
+    "checked_at": "2026-11-23T20:05:08+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -23328,7 +23340,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-11-23T08:19:41+00:00",
+    "checked_at_utc": "2026-11-23T20:04:59+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -23351,31 +23363,31 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-11-23T08:23:57+00:00",
+    "checked_at_utc": "2026-11-23T20:08:24+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-23T08:23:57+00:00",
+    "checked_at_utc": "2026-11-23T20:08:24+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 6,
-    "ai_calls": 4,
-    "ai_api_fail": 2,
+    "director_approved": 9,
+    "ai_calls": 0,
+    "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-11-23T08:23:57+00:00",
+    "checked_at_utc": "2026-11-23T20:08:24+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-11-23T19:23:57+11:00",
-      "candidates": 6,
+      "finished_sakhalin": "2026-11-24T07:08:24+11:00",
+      "candidates": 9,
       "queued_for_delivery": 0
     },
     "generation": {
