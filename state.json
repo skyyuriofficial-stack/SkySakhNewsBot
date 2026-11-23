@@ -520,7 +520,9 @@
     "https://sakhalinmedia.ru/news/2689588/",
     "https://astv.ru/news/society/2026-11-22-napadenie-medvedya-na-cheloveka-v-naselennom-punkte-mozhet-poluchit-status-chs",
     "https://www.theguardian.com/technology/anthropic",
-    "https://sakhalinmedia.ru/news/2689988/"
+    "https://sakhalinmedia.ru/news/2689988/",
+    "https://www.bbc.co.uk/news/articles/cqdr15l32d3go?at_medium=RSS&at_campaign=rss",
+    "https://sakh.online/news/18/2026-11-23/byudzhet-razvitiya-v-yuzhno-sahalinske-obsudili-finansovye-prioritety-na-blizhayshie-tri-goda-532324"
   ],
   "published_title_hashes": [
     "21a88722913b65f109ff323df10d29555d715a68",
@@ -1044,373 +1046,12 @@
     "07c289c2b389c25456877047d3af995cf2b3f857",
     "9f71580691f76519713f13373c24a2431ce255e7",
     "2667ed9789c284e5e714a50915dd908035288d94",
-    "dc5fcf7988a2809874a7d43d0d7099b3889f41ae"
+    "dc5fcf7988a2809874a7d43d0d7099b3889f41ae",
+    "f2c4e18c7b2bbfd875fcb2523ddb5406cb9f97d2",
+    "19780ffbdd7c69059b72aa364ea5ca8fd0bf53b1"
   ],
-  "last_run_sakhalin": "2026-11-23T11:17:10+11:00",
+  "last_run_sakhalin": "2026-11-23T19:23:57+11:00",
   "last_posts": [
-    {
-      "time_sakhalin": "2026-11-07T23:14:25+11:00",
-      "source": "SakhalinMedia.ru",
-      "category": "📍 Сахалин",
-      "category_key": "sakh",
-      "title": "Метели и ураганный ветер продолжатся на Сахалине и Курилах 8 ноября",
-      "url": "https://sakhalinmedia.ru/news/2674606/",
-      "image_url": "https://sakhalinmedia.ru/f/266x136/6491/6490940.jpg?e359c6c150635e0a4032d2f0ccf851d2",
-      "image_hash": "9022c22966786b940604e959beb2bc729a1bafd2",
-      "topic_cluster": "sakh:метели_ураганный_ветер_продолжатся_сахалине_курилах",
-      "published_at": "2026-11-07T03:15:00+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "sakh",
-        "corrected_category": "sakh",
-        "group": "local",
-        "event_type": "severe_weather",
-        "subtype": "severe_weather",
-        "seriousness": 88,
-        "threshold": 70,
-        "selection_utility": -29.0,
-        "slot": 2,
-        "risks": [],
-        "title_original": "Метели и ураганный ветер продолжатся на Сахалине и Курилах 8 ноября",
-        "title_corrected": "Метели и ураганный ветер продолжатся на Сахалине и Курилах 8 ноября",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "Циклон с обильными осадками и сильным ветром сохранит свое влияние на погоду Сахалинской области завтра, 8 ноября. По данным ФГБУ Сахалинское УГМС, ночью 8 ноября на Курилах прогнозируют ураганный ветер, а на Сахалине метели. Опасные погодные явления прогнозируют в двух районах Курил Так, завтра в Южно-Курильском и Курильском районах ожидается ветер 25-30 м/с, порывы 33-35 м/с (УРАГАН). В северных и южных районах Сахалина прогнозируется снег, местами сильный, ветер на побережьях в северных районах 20-25 м/с, метель. В южных районах ветер на побережьях 25-30 м/с, метель Под действие опасных метеорологических явлений попадают два муниципальных образования: Под действие неблагоприятных метеорологических явлений попадут шесть муниципальных образований: Во время прохождения циклона возможно возникновение аварийных ситуаций на ЛЭП, ухудшение транспортного сообщения из-за сложной обстановкой на дорогах. Возрастает риск увеличения количества дорожно-транспортных происшествий, происшествий на водоемах. Порывы ветра и осадки могут привести к падению деревьев и обрушению слабо укрепленных конструкций.",
-      "title_original": null,
-      "footer": "САХАЛИН",
-      "published_row": {
-        "reject": false,
-        "title_ru": "Метели и ураганный ветер продолжатся на Сахалине и Курилах 8 ноября",
-        "body": [
-          "Циклон с обильными осадками и сильным ветром сохранит свое влияние на погоду Сахалинской области завтра, 8 ноября.",
-          "Опасные погодные явления прогнозируют в двух районах Курил Так, завтра в Южно-Курильском и Курильском районах ожидается ветер 25-30 м/с, порывы 33-35 м/с (УРАГАН)."
-        ],
-        "footer": "САХАЛИН",
-        "editorial_mode": "extractive_fallback",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 100,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+extractive",
-          "issues": []
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh",
-          "corrected_category": "sakh",
-          "group": "local",
-          "event_type": "severe_weather",
-          "subtype": "severe_weather",
-          "seriousness": 88,
-          "threshold": 70,
-          "selection_utility": -29.0,
-          "slot": 2,
-          "risks": [],
-          "title_original": "Метели и ураганный ветер продолжатся на Сахалине и Курилах 8 ноября",
-          "title_corrected": "Метели и ураганный ветер продолжатся на Сахалине и Курилах 8 ноября",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "sakh",
-          "final_category": "sakh",
-          "event_type": "severe_weather",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": true,
-          "foreign_evidence_ok": false,
-          "issues": [],
-          "policy_version": "policy-v2.8",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "sakh",
-            "corrected_category": "sakh",
-            "group": "local",
-            "event_type": "severe_weather",
-            "subtype": "severe_weather",
-            "seriousness": 88,
-            "threshold": 70,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "Метели и ураганный ветер продолжатся на Сахалине и Курилах 8 ноября",
-            "title_corrected": "Метели и ураганный ветер продолжатся на Сахалине и Курилах 8 ноября",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "📍 Сахалин\n\n<b>Метели и ураганный ветер продолжатся на Сахалине и Курилах 8 ноября</b>\n\nЦиклон с обильными осадками и сильным ветром сохранит свое влияние на погоду Сахалинской области завтра, 8 ноября.\n\nОпасные погодные явления прогнозируют в двух районах Курил Так, завтра в Южно-Курильском и Курильском районах ожидается ветер 25-30 м/с, порывы 33-35 м/с (УРАГАН).\n\nСАХАЛИН · <a href=\"https://sakhalinmedia.ru/news/2674606/\">SakhalinMedia.ru</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "sakh",
-        "final_category": "sakh",
-        "event_type": "severe_weather",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": true,
-        "foreign_evidence_ok": false,
-        "issues": [],
-        "policy_version": "policy-v2.8",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "sakh",
-          "corrected_category": "sakh",
-          "group": "local",
-          "event_type": "severe_weather",
-          "subtype": "severe_weather",
-          "seriousness": 88,
-          "threshold": 70,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Метели и ураганный ветер продолжатся на Сахалине и Курилах 8 ноября",
-          "title_corrected": "Метели и ураганный ветер продолжатся на Сахалине и Курилах 8 ноября",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 566,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 100,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+extractive",
-        "issues": []
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-11-13T04:23:51+00:00"
-      }
-    },
-    {
-      "time_sakhalin": "2026-11-08T10:39:36+11:00",
-      "source": "Guardian Technology",
-      "category": "💻 IT / технологии",
-      "category_key": "it",
-      "title": "Активисты разгромили строящийся数据中心 Microsoft в Амстердаме",
-      "url": "https://www.theguardian.com/world/2026/nov/06/activists-break-into-building-site-of-microsoft-datacentre-in-amsterdam",
-      "image_url": "https://i.guim.co.uk/img/media/414d7d67ea2545c80811d6232dffc8abf84afb3f/188_0_1702_1362/master/1702.jpg?width=465&dpr=1&s=none&crop=none",
-      "image_hash": "5ecbe1ae4d0896d04599bd65f0834acb9369991f",
-      "topic_cluster": "it:activists_break_building_microsoft_datacentre_amsterdam",
-      "published_at": "2026-11-06T18:51:37+00:00",
-      "with_image": true,
-      "publish_method": "sendPhoto/upload_original_html",
-      "grounded_evidence": true,
-      "news_director": {
-        "version": "director-v2.4",
-        "approved": true,
-        "reason": "approved",
-        "original_category": "it",
-        "corrected_category": "it",
-        "group": "it",
-        "event_type": "major_it",
-        "subtype": "major_it",
-        "seriousness": 86,
-        "threshold": 78,
-        "selection_utility": 4.0,
-        "slot": 2,
-        "risks": [],
-        "title_original": "Activists break into building site of Microsoft datacentre in Amsterdam",
-        "title_corrected": "Activists break into building site of Microsoft datacentre in Amsterdam",
-        "title_corrections": [],
-        "title_changed": false,
-        "ai_review": null,
-        "final_title_checked": true,
-        "final_category_checked": true,
-        "final_autocorrection": null
-      },
-      "source_text_excerpt": "Separate actions also take place outside fence and across Europe in backlash against impact of AI boom Separate actions also take place outside fence and across Europe in backlash against impact of AI boom Activists have stormed the site of a Microsoft datacentre being built in Amsterdam, as the backlash to the social and environmental harms of the AI boom spreads across Europe. Protesters from Geef Tegengas, a Dutch direct action group, clashed with police while breaking into a construction site at Westpoort, Amsterdam, where some members climbed a crane, lit flares and tied helium balloons to equipment. Continue reading... Prefer the Guardian on Google Activists have stormed the site of a Microsoft datacentre being built in Amsterdam, as the backlash to the social and environmental harms of the AI boom spreads across Europe. The action comes amid Europe-wide resistance to the rapid expansion of energy-hungry AI, with more than 100 groups involved in a two-day series of protests to demand moratoria on the construction of new datacentres. View image in fullscreen Geef Tegengas activists attach a ‘Genocide’ banner to scaffolding at the Microsoft site. Photograph: Storm Groenendijk/Zuma Press Wire/Shutterstock The break-in at the Dutch site, where protesters hung banners objecting to Microsoft’s services to the Israeli military and US Immigration and Customs Enforcement (ICE) , was separate from the pan-European “Stop Dirty Data Centres” campaign, which targeted the same site but whose affiliated members stayed outside the perimeter fence.",
-      "title_original": null,
-      "footer": "IT | ТЕХНОЛОГИИ",
-      "published_row": {
-        "reject": false,
-        "title_ru": "Активисты разгромили строящийся数据中心 Microsoft в Амстердаме",
-        "title_evidence": "stormed the site of a Microsoft datacentre being built in Amsterdam",
-        "body": [
-          "Активисты из голландской группы Geef Tegengas прорвались на строящийся участок вWestpoре Амстердаме.",
-          "Протестующие залезли на crane, зажгли факелы и привязали helium balloons к оборудованию."
-        ],
-        "body_evidence": [
-          "stormed the site of a Microsoft datacentre being built in Amsterdam",
-          "clashed with police while breaking into a construction site at Westpoort, Amsterdam, where some members climbed a crane, lit flares and tied helium balloons to equipment"
-        ],
-        "footer": "IT | ТЕХНОЛОГIES",
-        "category": "💻 IT / технологии",
-        "editorial_gate": {
-          "approved": true,
-          "title_matches_source": 90,
-          "category_matches_story": 100,
-          "facts_supported": true,
-          "meaning_changed": false,
-          "mode": "deterministic+grounded_translation",
-          "issues": [
-            "independent_ai_unavailable:grounded_translation"
-          ]
-        },
-        "news_director": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "it",
-          "corrected_category": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "subtype": "major_it",
-          "seriousness": 86,
-          "threshold": 78,
-          "selection_utility": 4.0,
-          "slot": 2,
-          "risks": [],
-          "title_original": "Activists break into building site of Microsoft datacentre in Amsterdam",
-          "title_corrected": "Activists break into building site of Microsoft datacentre in Amsterdam",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null,
-          "final_title_checked": true,
-          "final_category_checked": true,
-          "final_autocorrection": null
-        },
-        "publication_contract": {
-          "approved": true,
-          "expected_category": "it",
-          "final_category": "it",
-          "event_type": "major_it",
-          "title_score": 100,
-          "title_precision": 100,
-          "title_coverage": 100,
-          "source_is_russian": false,
-          "foreign_evidence_ok": true,
-          "issues": [],
-          "policy_version": "policy-v2.8",
-          "hardening_version": "editorial-hardening-v1.7",
-          "source_warnings": [],
-          "director_review": {
-            "version": "director-v2.4",
-            "approved": true,
-            "reason": "approved",
-            "original_category": "it",
-            "corrected_category": "it",
-            "group": "it",
-            "event_type": "major_it",
-            "subtype": "major_it",
-            "seriousness": 85,
-            "threshold": 78,
-            "selection_utility": null,
-            "slot": null,
-            "risks": [],
-            "title_original": "Активисты разгромили строящийся数据中心 Microsoft в Амстердаме",
-            "title_corrected": "Активисты разгромили строящийся数据中心 Microsoft в Амстердаме",
-            "title_corrections": [],
-            "title_changed": false,
-            "ai_review": null
-          }
-        }
-      },
-      "published_caption": "💻 IT / технологии\n\n<b>Активисты разгромили строящийся数据中心 Microsoft в Амстердаме</b>\n\nАктивисты из голландской группы Geef Tegengas прорвались на строящийся участок вWestpoре Амстердаме.\n\nПротестующие залезли на crane, зажгли факелы и привязали helium balloons к оборудованию.\n\nIT | ТЕХНОЛОГИИ · <a href=\"https://www.theguardian.com/world/2026/nov/06/activists-break-into-building-site-of-microsoft-datacentre-in-amsterdam\">Guardian Technology</a>",
-      "publication_contract": {
-        "approved": true,
-        "expected_category": "it",
-        "final_category": "it",
-        "event_type": "major_it",
-        "title_score": 100,
-        "title_precision": 100,
-        "title_coverage": 100,
-        "source_is_russian": false,
-        "foreign_evidence_ok": true,
-        "issues": [],
-        "policy_version": "policy-v2.8",
-        "hardening_version": "editorial-hardening-v1.7",
-        "source_warnings": [],
-        "director_review": {
-          "version": "director-v2.4",
-          "approved": true,
-          "reason": "approved",
-          "original_category": "it",
-          "corrected_category": "it",
-          "group": "it",
-          "event_type": "major_it",
-          "subtype": "major_it",
-          "seriousness": 85,
-          "threshold": 78,
-          "selection_utility": null,
-          "slot": null,
-          "risks": [],
-          "title_original": "Активисты разгромили строящийся数据中心 Microsoft в Амстердаме",
-          "title_corrected": "Активисты разгромили строящийся数据中心 Microsoft в Амстердаме",
-          "title_corrections": [],
-          "title_changed": false,
-          "ai_review": null
-        }
-      },
-      "publisher_version": "stable-v12.1",
-      "telegram_message_id": 567,
-      "telegram_chat_id": -1003918486965,
-      "media_required": true,
-      "media_type": "photo",
-      "media_origin": "source_article_or_feed",
-      "media_delivery_mode": "upload_original_html",
-      "media_delivery_recovered": false,
-      "media_delivery_attempts": 1,
-      "editorial_gate": {
-        "approved": true,
-        "title_matches_source": 90,
-        "category_matches_story": 100,
-        "facts_supported": true,
-        "meaning_changed": false,
-        "mode": "deterministic+grounded_translation",
-        "issues": [
-          "independent_ai_unavailable:grounded_translation"
-        ]
-      },
-      "post_audit": {
-        "version": "post-audit-v1.1",
-        "approved": true,
-        "checked_at": "2026-11-13T04:23:52+00:00"
-      }
-    },
     {
       "time_sakhalin": "2026-11-08T10:39:45+11:00",
       "source": "SakhalinMedia.ru",
@@ -11759,7 +11400,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:52+00:00"
+        "checked_at": "2026-11-23T08:19:47+00:00"
       }
     },
     {
@@ -11949,7 +11590,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:52+00:00"
+        "checked_at": "2026-11-23T08:19:47+00:00"
       }
     },
     {
@@ -12138,7 +11779,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:52+00:00"
+        "checked_at": "2026-11-23T08:19:47+00:00"
       }
     },
     {
@@ -12325,7 +11966,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:52+00:00"
+        "checked_at": "2026-11-23T08:19:47+00:00"
       }
     },
     {
@@ -12507,7 +12148,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:52+00:00"
+        "checked_at": "2026-11-23T08:19:47+00:00"
       }
     },
     {
@@ -12689,7 +12330,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:53+00:00"
+        "checked_at": "2026-11-23T08:19:47+00:00"
       }
     },
     {
@@ -12867,7 +12508,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:53+00:00"
+        "checked_at": "2026-11-23T08:19:47+00:00"
       }
     },
     {
@@ -13054,7 +12695,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:53+00:00"
+        "checked_at": "2026-11-23T08:19:48+00:00"
       }
     },
     {
@@ -13424,7 +13065,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:53+00:00"
+        "checked_at": "2026-11-23T08:19:48+00:00"
       }
     },
     {
@@ -13613,7 +13254,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:53+00:00"
+        "checked_at": "2026-11-23T08:19:48+00:00"
       }
     },
     {
@@ -13791,7 +13432,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:53+00:00"
+        "checked_at": "2026-11-23T08:19:48+00:00"
       }
     },
     {
@@ -13977,7 +13618,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:53+00:00"
+        "checked_at": "2026-11-23T08:19:48+00:00"
       }
     },
     {
@@ -14344,7 +13985,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:53+00:00"
+        "checked_at": "2026-11-23T08:19:49+00:00"
       }
     },
     {
@@ -14522,7 +14163,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:53+00:00"
+        "checked_at": "2026-11-23T08:19:49+00:00"
       }
     },
     {
@@ -14704,7 +14345,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:54+00:00"
+        "checked_at": "2026-11-23T08:19:49+00:00"
       }
     },
     {
@@ -14882,7 +14523,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:54+00:00"
+        "checked_at": "2026-11-23T08:19:49+00:00"
       }
     },
     {
@@ -15064,7 +14705,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:54+00:00"
+        "checked_at": "2026-11-23T08:19:49+00:00"
       }
     },
     {
@@ -15246,7 +14887,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:54+00:00"
+        "checked_at": "2026-11-23T08:19:49+00:00"
       }
     },
     {
@@ -15435,7 +15076,7 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:54+00:00"
+        "checked_at": "2026-11-23T08:19:49+00:00"
       }
     },
     {
@@ -15617,7 +15258,366 @@
       "post_audit": {
         "version": "post-audit-v1.1",
         "approved": true,
-        "checked_at": "2026-11-23T00:46:54+00:00"
+        "checked_at": "2026-11-23T08:19:49+00:00"
+      }
+    },
+    {
+      "time_sakhalin": "2026-11-23T19:23:02+11:00",
+      "source": "BBC World",
+      "category": "🌍 Мир о России",
+      "category_key": "world_ru",
+      "title": "Семилетнего мальчика спасли из-под завалов после удара по Украине",
+      "url": "https://www.bbc.co.uk/news/articles/cqdr15l32d3go?at_medium=RSS&at_campaign=rss",
+      "image_url": "https://ichef.bbci.co.uk/ace/standard/624/cpsprodpb/cce0/live/b754c730-e6bd-11f1-a023-d502158f79f8.jpg",
+      "image_hash": "bdea39d3231133a6a6d4d49f7f2852e353d55e97",
+      "topic_cluster": "world_ru:pulled_alive_rubble_hours_after_russian",
+      "published_at": "2026-11-23T05:33:17+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "world_ru",
+        "corrected_category": "world_ru",
+        "group": "world",
+        "event_type": "fatal_incident",
+        "subtype": "fatal_incident",
+        "seriousness": 100,
+        "threshold": 78,
+        "selection_utility": 100.0,
+        "slot": 1,
+        "risks": [],
+        "title_original": "Boy, 7, pulled alive from rubble hours after Russian strike on Ukraine, rescuers say",
+        "title_corrected": "Boy, 7, pulled alive from rubble hours after Russian strike on Ukraine, rescuers say",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_title": "Boy, 7, pulled alive from rubble hours after Russian strike on Ukraine, rescuers say",
+      "source_text_excerpt": "Eleven people are dead in the attack on Dymer, with rescue efforts ongoing to find those still missing from the residential building. BBC Homepage Skip to content Accessibility Help Your account Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds More menu More menu Search BBC Home News Sport Earth Reel Worklife Travel Culture Future Music TV Weather Sounds Close menu BBC News Menu Home Climate World US & Canada UK Business Tech Science Entertainment & Arts Health More In Pictures BBC Verify Newsbeat World Africa Asia Australia Europe Latin America Middle East Boy, 7, pulled alive from rubble hours after Russian strike on Ukraine, rescuers say Figure caption, 'Danger seems greater all the time': Ukrainians search for missing after Russian strikes hit Kyiv A seven-year-old boy has been rescued from the rubble of a residential building in Dymer, in the Kyiv region, after 14 hours. Overnight Russian strikes on the village killed 11 people, Ukrainian officials have said. The attack occurred in the early hours of Sunday. A 79-year-old woman was also rescued alive from the collapsed building, Kyiv's regional head Tymur Tkachenko said. A strike on a private home in Bila Tserkva killed one more person and set the building ablaze, he added.",
+      "title_original": null,
+      "footer": "МИР О РОССИИ",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Семилетнего мальчика спасли из-под завалов после удара по Украине",
+        "title_evidence": "Boy, 7, pulled alive from rubble hours after Russian strike on Ukraine, rescuers say",
+        "body": [
+          "Семилетний мальчик был спасён из-под завалов жилого дома в Дымере Киевской области спустя 14 часов. Ночные российские удары по селу убили 11 человек, сообщили украинские официальные лица; атака произошла ранним утром в воскресенье.",
+          "По словам главы Киевской области Тимура Ткаченко, из разрушенного здания также живой была спасена 79-летняя женщина. Он добавил, что удар по частному дому в Белой Церкви убил ещё одного человека и привёл к возгоранию здания."
+        ],
+        "body_evidence": [
+          "A seven-year-old boy has been rescued from the rubble of a residential building in Dymer, in the Kyiv region, after 14 hours. Overnight Russian strikes on the village killed 11 people, Ukrainian officials have said.",
+          "A 79-year-old woman was also rescued alive from the collapsed building, Kyiv's regional head Tymur Tkachenko said. A strike on a private home in Bila Tserkva killed one more person and set the building ablaze, he added."
+        ],
+        "footer": "МИР О РОССИИ",
+        "category": "🌍 Мир о России",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 90,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+grounded_translation",
+          "issues": [
+            "independent_ai_unavailable:grounded_translation"
+          ]
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "world_ru",
+          "corrected_category": "world_ru",
+          "group": "world",
+          "event_type": "fatal_incident",
+          "subtype": "fatal_incident",
+          "seriousness": 100,
+          "threshold": 78,
+          "selection_utility": 100.0,
+          "slot": 1,
+          "risks": [],
+          "title_original": "Boy, 7, pulled alive from rubble hours after Russian strike on Ukraine, rescuers say",
+          "title_corrected": "Boy, 7, pulled alive from rubble hours after Russian strike on Ukraine, rescuers say",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "world_ru",
+          "final_category": "world_ru",
+          "event_type": "geopolitical_event",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": false,
+          "foreign_evidence_ok": true,
+          "issues": [],
+          "policy_version": "policy-v2.8",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "world_ru",
+            "corrected_category": "world_ru",
+            "group": "world",
+            "event_type": "geopolitical_event",
+            "subtype": "geopolitical_event",
+            "seriousness": 90,
+            "threshold": 78,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Семилетнего мальчика спасли из-под завалов после удара по Украине",
+            "title_corrected": "Семилетнего мальчика спасли из-под завалов после удара по Украине",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "🌍 Мир о России\n\n<b>Семилетнего мальчика спасли из-под завалов после удара по Украине</b>\n\nСемилетний мальчик был спасён из-под завалов жилого дома в Дымере Киевской области спустя 14 часов. Ночные российские удары по селу убили 11 человек, сообщили украинские официальные лица; атака произошла ранним утром в воскресенье.\n\nПо словам главы Киевской области Тимура Ткаченко, из разрушенного здания также живой была спасена 79-летняя женщина. Он добавил, что удар по частному дому в Белой Церкви убил ещё одного человека и привёл к возгоранию здания.\n\nМИР О РОССИИ · <a href=\"https://www.bbc.co.uk/news/articles/cqdr15l32d3go?at_medium=RSS&amp;at_campaign=rss\">BBC World</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "world_ru",
+        "final_category": "world_ru",
+        "event_type": "geopolitical_event",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": false,
+        "foreign_evidence_ok": true,
+        "issues": [],
+        "policy_version": "policy-v2.8",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "world_ru",
+          "corrected_category": "world_ru",
+          "group": "world",
+          "event_type": "geopolitical_event",
+          "subtype": "geopolitical_event",
+          "seriousness": 90,
+          "threshold": 78,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Семилетнего мальчика спасли из-под завалов после удара по Украине",
+          "title_corrected": "Семилетнего мальчика спасли из-под завалов после удара по Украине",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 669,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 90,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+grounded_translation",
+        "issues": [
+          "independent_ai_unavailable:grounded_translation"
+        ]
+      }
+    },
+    {
+      "time_sakhalin": "2026-11-23T19:23:49+11:00",
+      "source": "Sakh.online",
+      "category": "📍 Сахалин",
+      "category_key": "sakh",
+      "title": "Бюджет развития: в Южно-Сахалинске обсудили финансовые приоритеты на ближайшие три года",
+      "url": "https://sakh.online/news/18/2026-11-23/byudzhet-razvitiya-v-yuzhno-sahalinske-obsudili-finansovye-prioritety-na-blizhayshie-tri-goda-532324",
+      "image_url": "https://sakh.online/attachments/35beaad8fb61254be7c6240b6f9f20b007e6795b/store/crop/0/0/800/451/800/0/0/0/f95270acff51da1ab4310d4552cfc49e295c0427b85104605d682ccea9c9/f95270acff51da1ab4310d4552cfc49e295c0427b85104605d682ccea9c9.webp",
+      "image_hash": "fc0af6c89c21976c4ae70a7bc4638587a4cc2bdf",
+      "topic_cluster": "sakh:бюджет_развития_сахалинске_обсудили_финансовые_приоритеты",
+      "published_at": "2026-11-22T13:00:00+00:00",
+      "with_image": true,
+      "publish_method": "sendPhoto/upload_original_html",
+      "grounded_evidence": true,
+      "news_director": {
+        "version": "director-v2.4",
+        "approved": true,
+        "reason": "approved",
+        "original_category": "sakh",
+        "corrected_category": "sakh",
+        "group": "local",
+        "event_type": "macro_economy",
+        "subtype": "macro_economy",
+        "seriousness": 86,
+        "threshold": 70,
+        "selection_utility": 70.0,
+        "slot": "backup",
+        "risks": [],
+        "title_original": "Бюджет развития: в Южно-Сахалинске обсудили финансовые приоритеты на ближайшие три года",
+        "title_corrected": "Бюджет развития: в Южно-Сахалинске обсудили финансовые приоритеты на ближайшие три года",
+        "title_corrections": [],
+        "title_changed": false,
+        "ai_review": null,
+        "final_title_checked": true,
+        "final_category_checked": true,
+        "final_autocorrection": null
+      },
+      "source_title": "Бюджет развития: в Южно-Сахалинске обсудили финансовые приоритеты на ближайшие три года",
+      "source_text_excerpt": "Более подробно с параметрами проекта бюджета участников слушаний ознакомила директор департамента финансов Юлия Квасникова. Общий объем бюджета на 2027 год запланирован на уровне 38 млрд рублей. При этом доходы будут полностью соответствовать расходам — бюджет сформирован без дефицита. При поддержке губернатора Валерия Лимаренко и правительства Сахалинской области Южно-Сахалинск продолжает последовательное развитие. В числе приоритетов работы мэра Сергея Надсадина и администрации города — строительство социальных объектов, благоустройство общественных пространств и создание комфортных условий для жизни горожан. Эти направления нашли отражение и в проекте бюджета на предстоящие три года. Главным приоритетом остается социальная сфера. На нее планируется направить почти 22 млрд рублей — около 57% всех расходов городского бюджета. Еще 9,4 млрд рублей предусмотрено на производственную сферу и жилищно-коммунальное хозяйство. Особое внимание будет уделено образованию, текущему содержанию и ремонту дорог, благоустройству городских территорий. Кроме того, в следующем году сохранятся более 65 мер социальной поддержки для различных категорий граждан.",
+      "title_original": null,
+      "footer": "САХАЛИН",
+      "published_row": {
+        "reject": false,
+        "title_ru": "Бюджет развития: в Южно-Сахалинске обсудили финансовые приоритеты на ближайшие три года",
+        "body": [
+          "Более подробно с параметрами проекта бюджета участников слушаний ознакомила директор департамента финансов Юлия Квасникова.",
+          "Общий объем бюджета на 2027 год запланирован на уровне 38 млрд рублей."
+        ],
+        "footer": "САХАЛИН",
+        "editorial_mode": "extractive_fallback",
+        "editorial_gate": {
+          "approved": true,
+          "title_matches_source": 100,
+          "category_matches_story": 100,
+          "facts_supported": true,
+          "meaning_changed": false,
+          "mode": "deterministic+extractive",
+          "issues": [],
+          "reclassified_from": "sakh_chp",
+          "reclassified_to": "sakh"
+        },
+        "news_director": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh",
+          "corrected_category": "sakh",
+          "group": "local",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 86,
+          "threshold": 70,
+          "selection_utility": 70.0,
+          "slot": "backup",
+          "risks": [],
+          "title_original": "Бюджет развития: в Южно-Сахалинске обсудили финансовые приоритеты на ближайшие три года",
+          "title_corrected": "Бюджет развития: в Южно-Сахалинске обсудили финансовые приоритеты на ближайшие три года",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null,
+          "final_title_checked": true,
+          "final_category_checked": true,
+          "final_autocorrection": null
+        },
+        "publication_contract": {
+          "approved": true,
+          "expected_category": "sakh",
+          "final_category": "sakh",
+          "event_type": "macro_economy",
+          "title_score": 100,
+          "title_precision": 100,
+          "title_coverage": 100,
+          "source_is_russian": true,
+          "foreign_evidence_ok": false,
+          "issues": [],
+          "policy_version": "policy-v2.8",
+          "hardening_version": "editorial-hardening-v1.7",
+          "source_warnings": [],
+          "director_review": {
+            "version": "director-v2.4",
+            "approved": true,
+            "reason": "approved",
+            "original_category": "sakh",
+            "corrected_category": "sakh",
+            "group": "local",
+            "event_type": "macro_economy",
+            "subtype": "macro_economy",
+            "seriousness": 84,
+            "threshold": 70,
+            "selection_utility": null,
+            "slot": null,
+            "risks": [],
+            "title_original": "Бюджет развития: в Южно-Сахалинске обсудили финансовые приоритеты на ближайшие три года",
+            "title_corrected": "Бюджет развития: в Южно-Сахалинске обсудили финансовые приоритеты на ближайшие три года",
+            "title_corrections": [],
+            "title_changed": false,
+            "ai_review": null
+          }
+        }
+      },
+      "published_caption": "📍 Сахалин\n\n<b>Бюджет развития: в Южно-Сахалинске обсудили финансовые приоритеты на ближайшие три года</b>\n\nБолее подробно с параметрами проекта бюджета участников слушаний ознакомила директор департамента финансов Юлия Квасникова.\n\nОбщий объем бюджета на 2027 год запланирован на уровне 38 млрд рублей.\n\nСАХАЛИН · <a href=\"https://sakh.online/news/18/2026-11-23/byudzhet-razvitiya-v-yuzhno-sahalinske-obsudili-finansovye-prioritety-na-blizhayshie-tri-goda-532324\">Sakh.online</a>",
+      "publication_contract": {
+        "approved": true,
+        "expected_category": "sakh",
+        "final_category": "sakh",
+        "event_type": "macro_economy",
+        "title_score": 100,
+        "title_precision": 100,
+        "title_coverage": 100,
+        "source_is_russian": true,
+        "foreign_evidence_ok": false,
+        "issues": [],
+        "policy_version": "policy-v2.8",
+        "hardening_version": "editorial-hardening-v1.7",
+        "source_warnings": [],
+        "director_review": {
+          "version": "director-v2.4",
+          "approved": true,
+          "reason": "approved",
+          "original_category": "sakh",
+          "corrected_category": "sakh",
+          "group": "local",
+          "event_type": "macro_economy",
+          "subtype": "macro_economy",
+          "seriousness": 84,
+          "threshold": 70,
+          "selection_utility": null,
+          "slot": null,
+          "risks": [],
+          "title_original": "Бюджет развития: в Южно-Сахалинске обсудили финансовые приоритеты на ближайшие три года",
+          "title_corrected": "Бюджет развития: в Южно-Сахалинске обсудили финансовые приоритеты на ближайшие три года",
+          "title_corrections": [],
+          "title_changed": false,
+          "ai_review": null
+        }
+      },
+      "publisher_version": "stable-v12.1",
+      "telegram_message_id": 670,
+      "telegram_chat_id": -1003918486965,
+      "media_required": true,
+      "media_type": "photo",
+      "media_origin": "source_article_or_feed",
+      "media_delivery_mode": "upload_original_html",
+      "media_delivery_recovered": false,
+      "media_delivery_attempts": 1,
+      "editorial_gate": {
+        "approved": true,
+        "title_matches_source": 100,
+        "category_matches_story": 100,
+        "facts_supported": true,
+        "meaning_changed": false,
+        "mode": "deterministic+extractive",
+        "issues": [],
+        "reclassified_from": "sakh_chp",
+        "reclassified_to": "sakh"
       }
     }
   ],
@@ -15846,11 +15846,11 @@
   },
   "last_run": {
     "version": "stable-v12.1",
-    "started_sakhalin": "2026-11-23T11:13:01+11:00",
+    "started_sakhalin": "2026-11-23T19:19:41+11:00",
     "status": "ok",
-    "candidates": 7,
-    "published": 1,
-    "local_candidates": 4,
+    "candidates": 6,
+    "published": 2,
+    "local_candidates": 3,
     "local_stream": {
       "status": "healthy",
       "ok_sources": 4,
@@ -15859,7 +15859,7 @@
           "source": "Sakhalin Google",
           "status": "ok",
           "entries": 20,
-          "recent": 12
+          "recent": 17
         },
         {
           "source": "SakhalinMedia",
@@ -15871,7 +15871,7 @@
           "source": "ASTV HTML",
           "status": "ok",
           "entries": 22,
-          "recent": 14
+          "recent": 15
         },
         {
           "source": "Sakh.online HTML",
@@ -15881,60 +15881,60 @@
         }
       ]
     },
-    "finished_sakhalin": "2026-11-23T11:17:10+11:00",
+    "finished_sakhalin": "2026-11-23T19:23:57+11:00",
     "stats": {
-      "rss_seen": 157,
-      "old_skip": 69,
-      "google_skip": 11,
-      "duplicate_skip": 2,
-      "low_info_skip": 11,
-      "category_skip": 32,
+      "rss_seen": 139,
+      "old_skip": 65,
+      "google_skip": 0,
+      "duplicate_skip": 1,
+      "low_info_skip": 14,
+      "category_skip": 33,
       "no_image_skip": 0,
-      "bad_image_skip": 11,
-      "logo_image_skip": 19,
+      "bad_image_skip": 9,
+      "logo_image_skip": 25,
       "text_card_image_skip": 2,
-      "candidates": 21,
+      "candidates": 30,
       "rewrite_retry": 2,
-      "editorial_skip": 2,
+      "editorial_skip": 1,
       "telegram_fail": 0,
-      "published": 1,
+      "published": 2,
       "telegram_source_attempt": 4,
       "telegram_source_fail": 0,
       "telegram_source_seen": 72,
-      "telegram_source_candidates": 20,
-      "ai_calls": 3,
+      "telegram_source_candidates": 24,
+      "ai_calls": 4,
       "ai_budget_exhausted": 0,
       "ai_api_fail": 2,
       "evidence_reject": 0,
       "validation_reject": 0,
       "extractive_fallback": 1,
       "extractive_first": 1,
-      "editorial_prechecked": 58,
-      "editorial_gate_checked": 4,
-      "editorial_gate_pass": 1,
-      "editorial_gate_reject": 3,
+      "editorial_prechecked": 64,
+      "editorial_gate_checked": 3,
+      "editorial_gate_pass": 2,
+      "editorial_gate_reject": 1,
       "editorial_gate_fallback": 0,
       "editorial_gate_ai_calls": 0,
       "editorial_gate_ai_fail": 0,
-      "editorial_title_reject": 3,
-      "editorial_category_reject": 2,
+      "editorial_title_reject": 0,
+      "editorial_category_reject": 0,
       "editorial_meaning_reject": 0,
-      "editorial_reclassified": 10,
-      "editorial_offtopic_reject": 29,
-      "openrouter_empty_content": 6,
-      "openrouter_model_fallback": 0,
-      "openrouter_attempts": 7,
-      "openrouter_retries": 4,
+      "editorial_reclassified": 13,
+      "editorial_offtopic_reject": 28,
+      "openrouter_empty_content": 7,
+      "openrouter_model_fallback": 1,
+      "openrouter_attempts": 9,
+      "openrouter_retries": 5,
       "openrouter_invalid_json": 0,
-      "openrouter_success": 1,
+      "openrouter_success": 2,
       "openrouter_circuit_open": 0,
-      "editorial_grounded_translation_fallback": 0,
-      "media_required_skip": 7,
+      "editorial_grounded_translation_fallback": 1,
+      "media_required_skip": 6,
       "media_generic_skip": 0,
-      "media_ready_candidates": 21,
+      "media_ready_candidates": 30,
       "photo_retry": 0,
-      "photo_publish": 1,
-      "photo_upload_original": 1,
+      "photo_publish": 2,
+      "photo_upload_original": 2,
       "photo_upload_reencoded": 0,
       "photo_upload_plain_caption": 0,
       "photo_remote_url": 0,
@@ -15945,14 +15945,14 @@
       "media_queue_recovered": 0,
       "media_queue_expired": 0,
       "text_publish_blocked": 0,
-      "director_seen": 21,
-      "director_approved": 7,
-      "director_rejected": 14,
+      "director_seen": 30,
+      "director_approved": 6,
+      "director_rejected": 24,
       "director_reclassified": 0,
-      "director_title_corrected": 1,
+      "director_title_corrected": 0,
       "director_ai_calls": 0,
       "director_ai_fail": 0,
-      "director_final_checked": 1,
+      "director_final_checked": 2,
       "director_final_autocorrected": 0,
       "director_final_reject": 0,
       "director_pending_retired": 0,
@@ -15961,223 +15961,15 @@
       "post_audit_anomalies": 0,
       "post_audit_corrected": 0,
       "post_audit_deleted": 0,
-      "tass_world_scanned": 77,
-      "tass_world_screened": 4,
-      "tass_world_candidates": 1
+      "tass_world_scanned": 84,
+      "tass_world_screened": 2,
+      "tass_world_candidates": 2
     },
     "news_director": {
       "version": "director-v2.4",
       "policy_version": "policy-v2.8",
       "mix_policy": "rolling_20_target_optimizer",
       "rolling_balance_before": {
-        "window": 20,
-        "targets": {
-          "local": 6,
-          "ru_pol": 4,
-          "ru_eco": 4,
-          "ru_safety": 3,
-          "world": 2,
-          "it": 1
-        },
-        "target_percent": {
-          "local": 30.0,
-          "ru_pol": 20.0,
-          "ru_eco": 20.0,
-          "ru_safety": 15.0,
-          "world": 10.0,
-          "it": 5.0
-        },
-        "counts": {
-          "local": 5,
-          "ru_pol": 0,
-          "ru_eco": 5,
-          "ru_safety": 1,
-          "world": 3,
-          "it": 6
-        },
-        "scaled_targets": {
-          "local": 6.0,
-          "ru_pol": 4.0,
-          "ru_eco": 4.0,
-          "ru_safety": 3.0,
-          "world": 2.0,
-          "it": 1.0
-        },
-        "deficits": {
-          "local": 1.0,
-          "ru_pol": 4.0,
-          "ru_eco": -1.0,
-          "ru_safety": 2.0,
-          "world": -1.0,
-          "it": -5.0
-        },
-        "distribution_error": 14.0,
-        "subtype_counts": {
-          "geopolitical_event": 2,
-          "macro_economy": 5,
-          "violent_crime": 4,
-          "major_it": 6,
-          "public_service_disruption": 3
-        },
-        "sequence": [
-          "world",
-          "ru_eco",
-          "ru_eco",
-          "world",
-          "it",
-          "local",
-          "world",
-          "local",
-          "it",
-          "it",
-          "it",
-          "local",
-          "it",
-          "ru_eco",
-          "local",
-          "ru_eco",
-          "local",
-          "ru_eco",
-          "ru_safety",
-          "it"
-        ],
-        "category_sequence": [
-          "geo",
-          "ru_eco",
-          "ru_eco",
-          "world_ru",
-          "it",
-          "sakh_chp",
-          "geo",
-          "sakh",
-          "it",
-          "it",
-          "it",
-          "sakh_chp",
-          "it",
-          "ru_eco",
-          "sakh",
-          "ru_eco",
-          "sakh",
-          "ru_eco",
-          "ru_incident",
-          "it"
-        ],
-        "source_sequence": [
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "astv",
-          "bbc world",
-          "guardian technology",
-          "sakh.online",
-          "tass world tass world",
-          "sakh.online",
-          "bbc technology",
-          "guardian technology",
-          "bbc technology",
-          "sakh.online",
-          "exploit exploitex",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "sakh.online",
-          "sakhalinmedia.ru",
-          "astv",
-          "guardian technology"
-        ],
-        "retrospective_anomalies": [],
-        "valid_posts_counted": 20
-      },
-      "candidate_count": 21,
-      "approved_count": 7,
-      "rejected_count": 14,
-      "rejected_by_reason": {
-        "routine_traffic_statistics": 2,
-        "importance_below_threshold": 10,
-        "minor_or_routine_crime": 1,
-        "ordinary_weather_not_release_worthy": 1
-      },
-      "ai_review_requested": 0,
-      "ai_review_received": 0,
-      "selected_groups": [
-        "local",
-        "world"
-      ],
-      "projected_distribution_error": 12.0,
-      "projected_counts": {
-        "ru_eco": 4,
-        "world": 3,
-        "it": 6,
-        "local": 6,
-        "ru_safety": 1
-      },
-      "projected_length": 20,
-      "selected_preview": [
-        {
-          "slot": 1,
-          "title": "Заколол ножом: поронайца подозревают в убийстве женщины после ссоры",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "event_type": "violent_crime",
-          "seriousness": 98,
-          "utility": 132.0
-        },
-        {
-          "slot": 2,
-          "title": "Russian warship sinks in Benghazi after suspected Ukrainian drone attack",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "military_security",
-          "seriousness": 97,
-          "utility": 57.0
-        },
-        {
-          "slot": "backup",
-          "title": "Сахалинский депутат рассказал, какие законы приняли в Госдуме за неделю",
-          "category_key": "sakh",
-          "group": "local",
-          "event_type": "political_decision",
-          "seriousness": 95,
-          "utility": 105.0
-        },
-        {
-          "slot": "backup",
-          "title": "Краеведческий музей в Корсакове при поддержке ВТБ создаст новую экспозицию о культуре айнов",
-          "category_key": "sakh",
-          "group": "local",
-          "event_type": "macro_economy",
-          "seriousness": 89,
-          "utility": 99.0
-        },
-        {
-          "slot": "backup",
-          "title": "Ссора через окно закончилась убийством в Поронайске — подозреваемый задержан",
-          "category_key": "sakh_chp",
-          "group": "local",
-          "event_type": "violent_crime",
-          "seriousness": 98,
-          "utility": 94.0
-        },
-        {
-          "slot": "backup",
-          "title": "Экс-глава фракции Социал-демократической партии в Бундестаге Рольф Мютцених заявил, что европейские страны упустили момент для продвижения своих интересов в переговорах по урегулир",
-          "category_key": "geo",
-          "group": "world",
-          "event_type": "geopolitical_event",
-          "seriousness": 88,
-          "utility": 30.0
-        },
-        {
-          "slot": "backup",
-          "title": "Explosion on Russian ship at Libya port caused by suspected drone attack, officials say",
-          "category_key": "world_ru",
-          "group": "world",
-          "event_type": "military_security",
-          "seriousness": 94,
-          "utility": 22.0
-        }
-      ],
-      "rolling_balance_after": {
         "window": 20,
         "targets": {
           "local": 6,
@@ -16295,11 +16087,213 @@
         ],
         "retrospective_anomalies": [],
         "valid_posts_counted": 20
+      },
+      "candidate_count": 30,
+      "approved_count": 6,
+      "rejected_count": 24,
+      "rejected_by_reason": {
+        "minor_or_routine_crime": 1,
+        "importance_below_threshold": 17,
+        "ordinary_weather_not_release_worthy": 2,
+        "local_mix_saturated_low_priority": 2,
+        "low_scale_incident_not_release_worthy": 1,
+        "routine_traffic_statistics": 1
+      },
+      "ai_review_requested": 0,
+      "ai_review_received": 0,
+      "selected_groups": [
+        "world",
+        "local"
+      ],
+      "projected_distribution_error": 14.0,
+      "projected_counts": {
+        "world": 3,
+        "it": 6,
+        "local": 7,
+        "ru_eco": 3,
+        "ru_safety": 1
+      },
+      "projected_length": 20,
+      "selected_preview": [
+        {
+          "slot": 1,
+          "title": "Boy, 7, pulled alive from rubble hours after Russian strike on Ukraine, rescuers say",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "fatal_incident",
+          "seriousness": 100,
+          "utility": 100.0
+        },
+        {
+          "slot": 2,
+          "title": "Землетрясение магнитудой 4,5 произошло у Северо-Курильска 23 ноября",
+          "category_key": "sakh_quake",
+          "group": "local",
+          "event_type": "earthquake",
+          "seriousness": 100,
+          "utility": 91.0
+        },
+        {
+          "slot": "backup",
+          "title": "Russian warship sinks in Benghazi after suspected Ukrainian drone attack",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "military_security",
+          "seriousness": 97,
+          "utility": 81.0
+        },
+        {
+          "slot": "backup",
+          "title": "Бюджет развития: в Южно-Сахалинске обсудили финансовые приоритеты на ближайшие три года",
+          "category_key": "sakh",
+          "group": "local",
+          "event_type": "macro_economy",
+          "seriousness": 86,
+          "utility": 70.0
+        },
+        {
+          "slot": "backup",
+          "title": "Explosion on Russian ship at Libya port caused by suspected drone attack, officials say",
+          "category_key": "world_ru",
+          "group": "world",
+          "event_type": "military_security",
+          "seriousness": 94,
+          "utility": 60.0
+        },
+        {
+          "slot": "backup",
+          "title": "Приоритет - социальная сфера: в Южно-Сахалинске обсудили проект бюджета на 2027 год",
+          "category_key": "sakh",
+          "group": "local",
+          "event_type": "macro_economy",
+          "seriousness": 86,
+          "utility": 45.0
+        }
+      ],
+      "rolling_balance_after": {
+        "window": 20,
+        "targets": {
+          "local": 6,
+          "ru_pol": 4,
+          "ru_eco": 4,
+          "ru_safety": 3,
+          "world": 2,
+          "it": 1
+        },
+        "target_percent": {
+          "local": 30.0,
+          "ru_pol": 20.0,
+          "ru_eco": 20.0,
+          "ru_safety": 15.0,
+          "world": 10.0,
+          "it": 5.0
+        },
+        "counts": {
+          "local": 7,
+          "ru_pol": 0,
+          "ru_eco": 3,
+          "ru_safety": 1,
+          "world": 3,
+          "it": 6
+        },
+        "scaled_targets": {
+          "local": 6.0,
+          "ru_pol": 4.0,
+          "ru_eco": 4.0,
+          "ru_safety": 3.0,
+          "world": 2.0,
+          "it": 1.0
+        },
+        "deficits": {
+          "local": -1.0,
+          "ru_pol": 4.0,
+          "ru_eco": 1.0,
+          "ru_safety": 2.0,
+          "world": -1.0,
+          "it": -5.0
+        },
+        "distribution_error": 14.0,
+        "subtype_counts": {
+          "violent_crime": 5,
+          "major_it": 6,
+          "geopolitical_event": 1,
+          "public_service_disruption": 3,
+          "macro_economy": 4,
+          "fatal_incident": 1
+        },
+        "sequence": [
+          "world",
+          "it",
+          "local",
+          "world",
+          "local",
+          "it",
+          "it",
+          "it",
+          "local",
+          "it",
+          "ru_eco",
+          "local",
+          "ru_eco",
+          "local",
+          "ru_eco",
+          "ru_safety",
+          "it",
+          "local",
+          "world",
+          "local"
+        ],
+        "category_sequence": [
+          "world_ru",
+          "it",
+          "sakh_chp",
+          "geo",
+          "sakh",
+          "it",
+          "it",
+          "it",
+          "sakh_chp",
+          "it",
+          "ru_eco",
+          "sakh",
+          "ru_eco",
+          "sakh",
+          "ru_eco",
+          "ru_incident",
+          "it",
+          "sakh_chp",
+          "world_ru",
+          "sakh"
+        ],
+        "source_sequence": [
+          "bbc world",
+          "guardian technology",
+          "sakh.online",
+          "tass world tass world",
+          "sakh.online",
+          "bbc technology",
+          "guardian technology",
+          "bbc technology",
+          "sakh.online",
+          "exploit exploitex",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "sakh.online",
+          "sakhalinmedia.ru",
+          "astv",
+          "guardian technology",
+          "sakhalinmedia.ru",
+          "bbc world",
+          "sakh.online"
+        ],
+        "retrospective_anomalies": [],
+        "valid_posts_counted": 20
       }
     },
     "post_publication_audit": {
       "version": "post-audit-v1.1",
-      "checked_at": "2026-11-23T00:13:10+00:00",
+      "checked_at": "2026-11-23T08:19:49+00:00",
       "checked": 20,
       "passed": 20,
       "anomalies": [],
@@ -16320,11 +16314,11 @@
       "implemented_publish_mode": "source_photo",
       "text_only_allowed": false,
       "delivery_failure_policy": "retry_transports_then_persistent_queue",
-      "ready_candidates": 21,
-      "missing_media_rejected": 7,
+      "ready_candidates": 30,
+      "missing_media_rejected": 6,
       "generic_media_rejected": 0,
       "photo_retries": 0,
-      "photo_published": 1,
+      "photo_published": 2,
       "deferred_this_run": 0,
       "pending_queue_size": 0,
       "pending_ready": 0,
@@ -16334,30 +16328,16 @@
       "text_publication_blocked": 0
     },
     "editorial_gate": {
-      "prechecked": 58,
-      "checked": 4,
-      "passed": 1,
-      "rejected": 3,
-      "reclassified": 10,
-      "offtopic_reject": 29,
+      "prechecked": 64,
+      "checked": 3,
+      "passed": 2,
+      "rejected": 1,
+      "reclassified": 13,
+      "offtopic_reject": 28,
       "fallback": 0,
       "ai_calls": 0,
       "ai_fail": 0,
-      "audited_urls": 4
-    },
-    "independent_post_publication_monitor": {
-      "version": "post-audit-v1.1",
-      "checked_at": "2026-11-23T00:46:54+00:00",
-      "checked": 20,
-      "passed": 20,
-      "anomalies": [],
-      "corrected": [],
-      "deleted": [],
-      "failed_actions": [],
-      "unresolved": 0,
-      "unresolved_items": [],
-      "mutations_enabled": true,
-      "legacy_posts_mutated": false
+      "audited_urls": 3
     }
   },
   "pending_media_delivery": [],
@@ -16402,11 +16382,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 6,
+      "local": 7,
       "ru_pol": 0,
-      "ru_eco": 5,
+      "ru_eco": 3,
       "ru_safety": 1,
-      "world": 2,
+      "world": 3,
       "it": 6
     },
     "scaled_targets": {
@@ -16418,24 +16398,23 @@
       "it": 1.0
     },
     "deficits": {
-      "local": 0.0,
+      "local": -1.0,
       "ru_pol": 4.0,
-      "ru_eco": -1.0,
+      "ru_eco": 1.0,
       "ru_safety": 2.0,
-      "world": 0.0,
+      "world": -1.0,
       "it": -5.0
     },
-    "distribution_error": 12.0,
+    "distribution_error": 14.0,
     "subtype_counts": {
-      "macro_economy": 5,
       "violent_crime": 5,
       "major_it": 6,
       "geopolitical_event": 1,
-      "public_service_disruption": 3
+      "public_service_disruption": 3,
+      "macro_economy": 4,
+      "fatal_incident": 1
     },
     "sequence": [
-      "ru_eco",
-      "ru_eco",
       "world",
       "it",
       "local",
@@ -16453,11 +16432,11 @@
       "ru_eco",
       "ru_safety",
       "it",
+      "local",
+      "world",
       "local"
     ],
     "category_sequence": [
-      "ru_eco",
-      "ru_eco",
       "world_ru",
       "it",
       "sakh_chp",
@@ -16475,11 +16454,11 @@
       "ru_eco",
       "ru_incident",
       "it",
-      "sakh_chp"
+      "sakh_chp",
+      "world_ru",
+      "sakh"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
-      "astv",
       "bbc world",
       "guardian technology",
       "sakh.online",
@@ -16497,7 +16476,9 @@
       "sakhalinmedia.ru",
       "astv",
       "guardian technology",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "bbc world",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
@@ -22375,7 +22356,7 @@
   },
   "post_publication_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-23T00:46:54+00:00",
+    "checked_at": "2026-11-23T08:19:49+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -23323,7 +23304,7 @@
     "failed": []
   },
   "telegram_health": {
-    "checked_at_utc": "2026-11-23T00:13:01+00:00",
+    "checked_at_utc": "2026-11-23T08:19:41+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -23346,19 +23327,19 @@
     "repaired": 0,
     "insufficient_source_retired": 0,
     "time_sensitive_retired": 0,
-    "checked_at_utc": "2026-11-23T00:17:10+00:00",
+    "checked_at_utc": "2026-11-23T08:23:57+00:00",
     "version": "pending-hardening-v1.1"
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-23T00:17:10+00:00",
+    "checked_at_utc": "2026-11-23T08:23:57+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 7,
-    "ai_calls": 3,
+    "published": 2,
+    "director_approved": 6,
+    "ai_calls": 4,
     "ai_api_fail": 2,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
@@ -23366,11 +23347,11 @@
   },
   "service_planes": {
     "version": "split-plane-v1",
-    "checked_at_utc": "2026-11-23T00:17:10+00:00",
+    "checked_at_utc": "2026-11-23T08:23:57+00:00",
     "editorial": {
       "status": "healthy",
-      "finished_sakhalin": "2026-11-23T11:17:10+11:00",
-      "candidates": 7,
+      "finished_sakhalin": "2026-11-23T19:23:57+11:00",
+      "candidates": 6,
       "queued_for_delivery": 0
     },
     "generation": {
