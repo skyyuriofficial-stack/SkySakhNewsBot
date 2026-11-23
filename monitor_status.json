@@ -1,16 +1,28 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-23T11:20:52+00:00",
-  "checked_at_sakhalin": "2026-11-23T22:20:48+11:00",
-  "status": "degraded",
+  "checked_at_utc": "2026-11-23T20:04:27+00:00",
+  "checked_at_sakhalin": "2026-11-24T07:04:23+11:00",
+  "status": "error",
   "mutations_enabled": true,
-  "issues": [],
+  "issues": [
+    {
+      "type": "publisher_stale",
+      "age_hours": 11.68,
+      "limit_hours": 10.5
+    },
+    {
+      "type": "publisher_slot_missed",
+      "slot_sakhalin": "2026-11-23T22:00+11:00",
+      "grace_minutes": 45,
+      "last_finished_sakhalin": "2026-11-23T19:23:57+11:00"
+    }
+  ],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-23T19:23:57+11:00",
-    "age_hours": 2.95,
+    "age_hours": 11.68,
     "published": 2
   },
   "last_production_attempt": {
@@ -30,53 +42,17 @@
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-11-23",
+    "day_sakhalin": "2026-11-24",
     "status": "healthy",
     "morning": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-11-23T00:15:21+00:00",
-        "published_at_sakhalin": "2026-11-23T11:15:21+11:00",
-        "telegram_message_id": 667,
-        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
-        "evidence_count": 15,
-        "evidence_hash": "5aaf2bd13879316afdc814efc8424cfb0e96704fe5082853d10e7c72e6c53df5",
-        "source_ids": [
-          4,
-          1,
-          3,
-          7,
-          8,
-          2,
-          5,
-          6
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "evening": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-11-23T08:59:07+00:00",
-        "published_at_sakhalin": "2026-11-23T19:59:07+11:00",
-        "telegram_message_id": 671,
-        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
-        "evidence_count": 15,
-        "evidence_hash": "c4f7a04164f32b08cbae1053d8555e005e9dd72d8e3ddf34acde0ad34972f736",
-        "source_ids": [
-          4,
-          1,
-          3,
-          7,
-          8,
-          2,
-          5,
-          6
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "last_attempt": {
       "status": "ok",
@@ -88,7 +64,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-23T11:20:50+00:00",
+    "checked_at": "2026-11-23T20:04:26+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -484,7 +460,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-23T11:20:46+00:00",
+    "checked_at_utc": "2026-11-23T20:04:21+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
