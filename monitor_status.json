@@ -1,59 +1,59 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-23T00:12:39+00:00",
-  "checked_at_sakhalin": "2026-11-23T11:12:35+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-23T00:17:43+00:00",
+  "checked_at_sakhalin": "2026-11-23T11:17:37+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-23T10:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-23T08:18:17+11:00"
-    },
-    {
-      "type": "mobilization_digest_missing",
-      "slot": "morning",
-      "expected_by_sakhalin": "2026-11-23T08:45:00+11:00",
-      "last_attempt": {
-        "status": "ok",
-        "mode": "evening",
-        "at_utc": "2026-11-22T09:41:29+00:00",
-        "at_sakhalin": "2026-11-22T20:41:29+11:00"
-      }
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-23T08:18:17+11:00",
-    "age_hours": 2.91,
+    "finished_sakhalin": "2026-11-23T11:17:10+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-22T21:18:17+00:00",
+    "checked_at_utc": "2026-11-23T00:17:10+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 3,
-    "ai_calls": 4,
-    "ai_api_fail": 3,
-    "ai_budget_exhausted": 1,
+    "director_approved": 7,
+    "ai_calls": 3,
+    "ai_api_fail": 2,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
     "day_sakhalin": "2026-11-23",
-    "status": "error",
+    "status": "healthy",
     "morning": {
       "due": true,
-      "published": false,
-      "record": {}
+      "published": true,
+      "record": {
+        "status": "ok",
+        "published_at_utc": "2026-11-23T00:15:21+00:00",
+        "published_at_sakhalin": "2026-11-23T11:15:21+11:00",
+        "telegram_message_id": 667,
+        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
+        "evidence_count": 15,
+        "evidence_hash": "5aaf2bd13879316afdc814efc8424cfb0e96704fe5082853d10e7c72e6c53df5",
+        "source_ids": [
+          4,
+          1,
+          3,
+          7,
+          8,
+          2,
+          5,
+          6
+        ]
+      }
     },
     "evening": {
       "due": false,
@@ -62,27 +62,15 @@
     },
     "last_attempt": {
       "status": "ok",
-      "mode": "evening",
-      "at_utc": "2026-11-22T09:41:29+00:00",
-      "at_sakhalin": "2026-11-22T20:41:29+11:00"
+      "mode": "morning",
+      "at_utc": "2026-11-23T00:15:21+00:00",
+      "at_sakhalin": "2026-11-23T11:15:21+11:00"
     },
-    "missing": [
-      {
-        "type": "mobilization_digest_missing",
-        "slot": "morning",
-        "expected_by_sakhalin": "2026-11-23T08:45:00+11:00",
-        "last_attempt": {
-          "status": "ok",
-          "mode": "evening",
-          "at_utc": "2026-11-22T09:41:29+00:00",
-          "at_sakhalin": "2026-11-22T20:41:29+11:00"
-        }
-      }
-    ]
+    "missing": []
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-23T00:12:37+00:00",
+    "checked_at": "2026-11-23T00:17:41+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -95,19 +83,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 640,
-      "title": "Саммит в Шэньчжэне: Путин о компромиссах по Украине и новой главе в дипломатии",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "geo",
-      "title_issues": []
-    },
     {
       "message_id": 642,
       "title": "Шесть дальневосточных городов примут новогодние ели от ВТБ",
@@ -354,6 +329,19 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 668,
+      "title": "Заколол ножом: поронайца подозревают в убийстве женщины после ссоры",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -375,11 +363,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 5,
+      "local": 6,
       "ru_pol": 0,
       "ru_eco": 5,
       "ru_safety": 1,
-      "world": 3,
+      "world": 2,
       "it": 6
     },
     "scaled_targets": {
@@ -391,23 +379,22 @@
       "it": 1.0
     },
     "deficits": {
-      "local": 1.0,
+      "local": 0.0,
       "ru_pol": 4.0,
       "ru_eco": -1.0,
       "ru_safety": 2.0,
-      "world": -1.0,
+      "world": 0.0,
       "it": -5.0
     },
-    "distribution_error": 14.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
-      "geopolitical_event": 2,
       "macro_economy": 5,
-      "violent_crime": 4,
+      "violent_crime": 5,
       "major_it": 6,
+      "geopolitical_event": 1,
       "public_service_disruption": 3
     },
     "sequence": [
-      "world",
       "ru_eco",
       "ru_eco",
       "world",
@@ -426,10 +413,10 @@
       "local",
       "ru_eco",
       "ru_safety",
-      "it"
+      "it",
+      "local"
     ],
     "category_sequence": [
-      "geo",
       "ru_eco",
       "ru_eco",
       "world_ru",
@@ -448,10 +435,10 @@
       "sakh",
       "ru_eco",
       "ru_incident",
-      "it"
+      "it",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakhalinmedia.ru",
       "astv",
       "bbc world",
@@ -470,14 +457,15 @@
       "sakh.online",
       "sakhalinmedia.ru",
       "astv",
-      "guardian technology"
+      "guardian technology",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-23T00:12:33+00:00",
+    "checked_at_utc": "2026-11-23T00:17:35+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -507,14 +495,14 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 14.0,
+      "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
-        "local": 5,
+        "local": 6,
         "ru_pol": 0,
         "ru_eco": 5,
         "ru_safety": 1,
-        "world": 3,
+        "world": 2,
         "it": 6
       },
       "targets": {
@@ -526,11 +514,11 @@
         "it": 1
       },
       "deficits": {
-        "local": 1.0,
+        "local": 0.0,
         "ru_pol": 4.0,
         "ru_eco": -1.0,
         "ru_safety": 2.0,
-        "world": -1.0,
+        "world": 0.0,
         "it": -5.0
       }
     }
