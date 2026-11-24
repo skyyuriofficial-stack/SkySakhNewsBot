@@ -1,30 +1,30 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-23T22:56:03+00:00",
-  "checked_at_sakhalin": "2026-11-24T09:55:59+11:00",
+  "checked_at_utc": "2026-11-24T05:00:49+00:00",
+  "checked_at_sakhalin": "2026-11-24T16:00:43+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-24T07:08:24+11:00",
-    "age_hours": 2.79,
-    "published": 2
+    "finished_sakhalin": "2026-11-24T16:00:16+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-23T20:08:24+00:00",
+    "checked_at_utc": "2026-11-24T05:00:16+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
-    "director_approved": 9,
-    "ai_calls": 0,
-    "ai_api_fail": 0,
-    "ai_budget_exhausted": 0,
+    "published": 1,
+    "director_approved": 10,
+    "ai_calls": 4,
+    "ai_api_fail": 2,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
@@ -70,7 +70,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-23T22:56:02+00:00",
+    "checked_at": "2026-11-24T05:00:47+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -83,19 +83,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 647,
-      "title": "Спустя 25 лет: следователи раскрыли убийство женщины, найденной в реке Сусуя",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 648,
       "title": "США должны прямо заявить о желании заключить мирную сделку с Ираном для начала переговоров об открытии Ормуза, заявил Арагчи в интервью газете Iran",
@@ -342,6 +329,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 675,
+      "title": "Поступление налогов в бюджет России выросло на 10–11%",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -363,9 +363,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 7,
+      "local": 6,
       "ru_pol": 0,
-      "ru_eco": 4,
+      "ru_eco": 5,
       "ru_safety": 2,
       "world": 2,
       "it": 5
@@ -379,24 +379,23 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -1.0,
+      "local": 0.0,
       "ru_pol": 4.0,
-      "ru_eco": 0.0,
+      "ru_eco": -1.0,
       "ru_safety": 1.0,
       "world": 0.0,
       "it": -4.0
     },
     "distribution_error": 10.0,
     "subtype_counts": {
-      "violent_crime": 5,
       "geopolitical_event": 1,
       "public_service_disruption": 3,
       "major_it": 5,
-      "macro_economy": 5,
+      "violent_crime": 4,
+      "macro_economy": 6,
       "fatal_incident": 1
     },
     "sequence": [
-      "local",
       "world",
       "local",
       "it",
@@ -415,10 +414,10 @@
       "world",
       "local",
       "ru_safety",
+      "ru_eco",
       "ru_eco"
     ],
     "category_sequence": [
-      "sakh_chp",
       "geo",
       "sakh",
       "it",
@@ -437,10 +436,10 @@
       "world_ru",
       "sakh",
       "ru_incident",
+      "ru_eco",
       "ru_eco"
     ],
     "source_sequence": [
-      "sakh.online",
       "tass world tass world",
       "sakh.online",
       "bbc technology",
@@ -459,6 +458,7 @@
       "bbc world",
       "sakh.online",
       "sakh.online",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -466,7 +466,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-23T22:55:57+00:00",
+    "checked_at_utc": "2026-11-24T05:00:41+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -499,9 +499,9 @@
       "distribution_error": 10.0,
       "limit": 8.0,
       "counts": {
-        "local": 7,
+        "local": 6,
         "ru_pol": 0,
-        "ru_eco": 4,
+        "ru_eco": 5,
         "ru_safety": 2,
         "world": 2,
         "it": 5
@@ -515,9 +515,9 @@
         "it": 1
       },
       "deficits": {
-        "local": -1.0,
+        "local": 0.0,
         "ru_pol": 4.0,
-        "ru_eco": 0.0,
+        "ru_eco": -1.0,
         "ru_safety": 1.0,
         "world": 0.0,
         "it": -4.0
