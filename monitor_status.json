@@ -1,42 +1,30 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-24T12:24:13+00:00",
-  "checked_at_sakhalin": "2026-11-24T23:24:08+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-24T12:30:27+00:00",
+  "checked_at_sakhalin": "2026-11-24T23:30:23+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 7.4,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-24T22:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-24T16:00:16+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-24T16:00:16+11:00",
-    "age_hours": 7.4,
-    "published": 1
+    "finished_sakhalin": "2026-11-24T23:29:56+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-24T05:00:16+00:00",
+    "checked_at_utc": "2026-11-24T12:29:56+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 10,
-    "ai_calls": 4,
-    "ai_api_fail": 2,
-    "ai_budget_exhausted": 1,
+    "published": 2,
+    "director_approved": 9,
+    "ai_calls": 2,
+    "ai_api_fail": 0,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
   },
@@ -100,7 +88,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-24T12:24:11+00:00",
+    "checked_at": "2026-11-24T12:30:26+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -113,32 +101,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 648,
-      "title": "США должны прямо заявить о желании заключить мирную сделку с Ираном для начала переговоров об открытии Ормуза, заявил Арагчи в интервью газете Iran",
-      "category_key": "geo",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "geo",
-      "title_issues": []
-    },
-    {
-      "message_id": 649,
-      "title": "В Южно-Сахалинске из-за ремонта ветхих сетей отключат воду в сотнях домов",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 650,
       "title": "Anthropic стала одной из самых дорогих публичных компаний мира после первого в своем роде IPO",
@@ -372,6 +334,32 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 677,
+      "title": "Госдума приняла закон, который устанавливает минимальный размер оплаты труда (МРОТ) с 1 января 2027 года на уровне 28 935 руб. в месяц. Это на 6,8% больше, чем в текущем году, когд",
+      "category_key": "ru_pol",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_pol",
+      "title_issues": []
+    },
+    {
+      "message_id": 678,
+      "title": "На Итурупе открыли современный торговый центр и флагманский супермаркет «Столичный»",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -394,10 +382,10 @@
     },
     "counts": {
       "local": 6,
-      "ru_pol": 0,
+      "ru_pol": 1,
       "ru_eco": 5,
       "ru_safety": 2,
-      "world": 2,
+      "world": 1,
       "it": 5
     },
     "scaled_targets": {
@@ -410,24 +398,23 @@
     },
     "deficits": {
       "local": 0.0,
-      "ru_pol": 4.0,
+      "ru_pol": 3.0,
       "ru_eco": -1.0,
       "ru_safety": 1.0,
-      "world": 0.0,
+      "world": 1.0,
       "it": -4.0
     },
     "distribution_error": 10.0,
     "subtype_counts": {
-      "geopolitical_event": 1,
-      "public_service_disruption": 3,
       "major_it": 5,
       "violent_crime": 4,
       "macro_economy": 6,
-      "fatal_incident": 1
+      "public_service_disruption": 2,
+      "fatal_incident": 1,
+      "political_decision": 1,
+      "major_infrastructure": 1
     },
     "sequence": [
-      "world",
-      "local",
       "it",
       "it",
       "it",
@@ -445,11 +432,11 @@
       "local",
       "ru_safety",
       "ru_eco",
-      "ru_eco"
+      "ru_eco",
+      "ru_pol",
+      "local"
     ],
     "category_sequence": [
-      "geo",
-      "sakh",
       "it",
       "it",
       "it",
@@ -467,11 +454,11 @@
       "sakh",
       "ru_incident",
       "ru_eco",
-      "ru_eco"
+      "ru_eco",
+      "ru_pol",
+      "sakh"
     ],
     "source_sequence": [
-      "tass world tass world",
-      "sakh.online",
       "bbc technology",
       "guardian technology",
       "bbc technology",
@@ -489,14 +476,16 @@
       "sakh.online",
       "sakh.online",
       "sakhalinmedia.ru",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "rbc news rbc news",
+      "sakh.online"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-24T12:24:07+00:00",
+    "checked_at_utc": "2026-11-24T12:30:20+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -530,10 +519,10 @@
       "limit": 8.0,
       "counts": {
         "local": 6,
-        "ru_pol": 0,
+        "ru_pol": 1,
         "ru_eco": 5,
         "ru_safety": 2,
-        "world": 2,
+        "world": 1,
         "it": 5
       },
       "targets": {
@@ -546,10 +535,10 @@
       },
       "deficits": {
         "local": 0.0,
-        "ru_pol": 4.0,
+        "ru_pol": 3.0,
         "ru_eco": -1.0,
         "ru_safety": 1.0,
-        "world": 0.0,
+        "world": 1.0,
         "it": -4.0
       }
     }
