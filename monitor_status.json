@@ -1,36 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-25T03:08:33+00:00",
-  "checked_at_sakhalin": "2026-11-25T14:08:29+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-25T03:16:35+00:00",
+  "checked_at_sakhalin": "2026-11-25T14:16:31+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-25T13:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-25T12:33:53+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-25T12:33:53+11:00",
-    "age_hours": 1.58,
+    "finished_sakhalin": "2026-11-25T14:15:56+11:00",
+    "age_hours": 0.01,
     "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-25T01:33:53+00:00",
+    "checked_at_utc": "2026-11-25T03:15:56+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 2,
-    "director_approved": 13,
+    "director_approved": 11,
     "ai_calls": 4,
-    "ai_api_fail": 3,
+    "ai_api_fail": 0,
     "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -77,7 +70,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-25T03:08:31+00:00",
+    "checked_at": "2026-11-25T03:16:34+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -90,32 +83,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 652,
-      "title": "Историческое IPO Anthropic: главные итоги и что дальше для AI-индустрии",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
-    {
-      "message_id": 654,
-      "title": "Распродажа технологических акций тянет рынки вниз на фоне падения бумаг Anthropic",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
     {
       "message_id": 656,
       "title": "Сахалинские сыщики раскрыли убийство спустя 25 лет — нашли топор в реке",
@@ -349,6 +316,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 682,
+      "title": "Генсек НАТО пообещал защиту от космической угрозы после сообщений о российском ядерном спутнике",
+      "category_key": "world_ru",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "world_ru",
+      "title_issues": []
+    },
+    {
+      "message_id": 683,
+      "title": "Google запустит персональный телеканал с ИИ-фильмами, в которых ты будешь главным героем — компания подала патент на технологию My Channel",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -374,8 +367,8 @@
       "ru_pol": 1,
       "ru_eco": 5,
       "ru_safety": 2,
-      "world": 1,
-      "it": 4
+      "world": 2,
+      "it": 3
     },
     "scaled_targets": {
       "local": 6.0,
@@ -390,22 +383,21 @@
       "ru_pol": 3.0,
       "ru_eco": -1.0,
       "ru_safety": 1.0,
-      "world": 1.0,
-      "it": -3.0
+      "world": 0.0,
+      "it": -2.0
     },
-    "distribution_error": 10.0,
+    "distribution_error": 8.0,
     "subtype_counts": {
-      "major_it": 4,
       "violent_crime": 4,
+      "major_it": 3,
       "macro_economy": 6,
       "public_service_disruption": 2,
       "fatal_incident": 1,
       "political_decision": 2,
-      "major_infrastructure": 1
+      "major_infrastructure": 1,
+      "geopolitical_event": 1
     },
     "sequence": [
-      "it",
-      "it",
       "local",
       "it",
       "ru_eco",
@@ -423,11 +415,11 @@
       "ru_eco",
       "ru_pol",
       "local",
-      "local"
+      "local",
+      "world",
+      "it"
     ],
     "category_sequence": [
-      "it",
-      "it",
       "sakh_chp",
       "it",
       "ru_eco",
@@ -445,11 +437,11 @@
       "ru_eco",
       "ru_pol",
       "sakh",
-      "sakh"
+      "sakh",
+      "world_ru",
+      "it"
     ],
     "source_sequence": [
-      "guardian technology",
-      "bbc technology",
       "sakh.online",
       "exploit exploitex",
       "sakhalinmedia.ru",
@@ -467,14 +459,16 @@
       "sakhalinmedia.ru",
       "rbc news rbc news",
       "sakh.online",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "bbc world",
+      "exploit exploitex"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-25T03:08:27+00:00",
+    "checked_at_utc": "2026-11-25T03:16:29+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -504,15 +498,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 10.0,
+      "distribution_error": 8.0,
       "limit": 8.0,
       "counts": {
         "local": 7,
         "ru_pol": 1,
         "ru_eco": 5,
         "ru_safety": 2,
-        "world": 1,
-        "it": 4
+        "world": 2,
+        "it": 3
       },
       "targets": {
         "local": 6,
@@ -527,8 +521,8 @@
         "ru_pol": 3.0,
         "ru_eco": -1.0,
         "ru_safety": 1.0,
-        "world": 1.0,
-        "it": -3.0
+        "world": 0.0,
+        "it": -2.0
       }
     }
   ]
