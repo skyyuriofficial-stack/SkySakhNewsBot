@@ -1,30 +1,30 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-26T11:29:30+00:00",
-  "checked_at_sakhalin": "2026-11-26T22:29:24+11:00",
+  "checked_at_utc": "2026-11-26T11:39:29+00:00",
+  "checked_at_sakhalin": "2026-11-26T22:39:23+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-26T21:50:37+11:00",
-    "age_hours": 0.65,
-    "published": 2
+    "finished_sakhalin": "2026-11-26T22:38:51+11:00",
+    "age_hours": 0.01,
+    "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-26T10:50:37+00:00",
+    "checked_at_utc": "2026-11-26T11:38:51+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 2,
-    "director_approved": 8,
-    "ai_calls": 2,
-    "ai_api_fail": 0,
-    "ai_budget_exhausted": 0,
+    "published": 1,
+    "director_approved": 7,
+    "ai_calls": 4,
+    "ai_api_fail": 2,
+    "ai_budget_exhausted": 1,
     "telegram_fail": 0,
     "publication_contract_blocked": 1
   },
@@ -88,7 +88,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-26T11:29:28+00:00",
+    "checked_at": "2026-11-26T11:39:27+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -101,19 +101,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 663,
-      "title": "Без света 23 ноября: Ново-Александровск, СНТ и психиатрическая больница",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 664,
       "title": "Тарифы на связь могут вырасти на 15–20%: Минцифры допустило ускорение роста цен",
@@ -360,6 +347,19 @@
       "review_reason": "approved",
       "corrected_category": "geo",
       "title_issues": []
+    },
+    {
+      "message_id": 692,
+      "title": "Средняя зарплата на Сахалине достигла 158 тысяч рублей, а безработица снизилась до рекордного уровня",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -406,8 +406,7 @@
     },
     "distribution_error": 8.0,
     "subtype_counts": {
-      "public_service_disruption": 1,
-      "macro_economy": 4,
+      "macro_economy": 5,
       "violent_crime": 3,
       "major_it": 3,
       "fatal_incident": 1,
@@ -417,7 +416,6 @@
       "major_emergency": 1
     },
     "sequence": [
-      "local",
       "ru_eco",
       "ru_safety",
       "it",
@@ -436,10 +434,10 @@
       "world",
       "local",
       "ru_pol",
-      "world"
+      "world",
+      "local"
     ],
     "category_sequence": [
-      "sakh",
       "ru_eco",
       "ru_incident",
       "it",
@@ -458,10 +456,10 @@
       "geo",
       "sakh_chp",
       "ru_pol",
-      "geo"
+      "geo",
+      "sakh"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakhalinmedia.ru",
       "astv",
       "guardian technology",
@@ -480,14 +478,15 @@
       "exploit exploitex",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
-      "tass"
+      "tass",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-26T11:29:22+00:00",
+    "checked_at_utc": "2026-11-26T11:39:20+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
