@@ -1,8 +1,8 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-26T11:39:29+00:00",
-  "checked_at_sakhalin": "2026-11-26T22:39:23+11:00",
+  "checked_at_utc": "2026-11-26T15:00:23+00:00",
+  "checked_at_sakhalin": "2026-11-27T02:00:16+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
@@ -10,7 +10,7 @@
     "version": "stable-v12.1",
     "status": "ok",
     "finished_sakhalin": "2026-11-26T22:38:51+11:00",
-    "age_hours": 0.01,
+    "age_hours": 3.36,
     "published": 1
   },
   "last_production_attempt": {
@@ -30,53 +30,17 @@
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
-    "day_sakhalin": "2026-11-26",
+    "day_sakhalin": "2026-11-27",
     "status": "healthy",
     "morning": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-11-25T22:27:53+00:00",
-        "published_at_sakhalin": "2026-11-26T09:27:53+11:00",
-        "telegram_message_id": 686,
-        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
-        "evidence_count": 10,
-        "evidence_hash": "97580aaa3fd8830cd93233d2463b474b8090b1d2687a36c8d2cdbd0cdbcef556",
-        "source_ids": [
-          4,
-          1,
-          3,
-          7,
-          8,
-          2,
-          5,
-          6
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "evening": {
-      "due": true,
-      "published": true,
-      "record": {
-        "status": "ok",
-        "published_at_utc": "2026-11-26T10:46:09+00:00",
-        "published_at_sakhalin": "2026-11-26T21:46:09+11:00",
-        "telegram_message_id": 689,
-        "headline": "Юридический статус и повестки: что подтверждено, а что нет",
-        "evidence_count": 10,
-        "evidence_hash": "389699ec2bf808f8d0c91fad7157561e64efadbaa1d21714cd8547ab5ea04428",
-        "source_ids": [
-          4,
-          1,
-          3,
-          7,
-          8,
-          2,
-          5,
-          6
-        ]
-      }
+      "due": false,
+      "published": false,
+      "record": {}
     },
     "last_attempt": {
       "status": "ok",
@@ -88,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-26T11:39:27+00:00",
+    "checked_at": "2026-11-26T15:00:21+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -486,7 +450,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-26T11:39:20+00:00",
+    "checked_at_utc": "2026-11-26T15:00:14+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
