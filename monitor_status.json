@@ -1,42 +1,30 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-26T10:46:33+00:00",
-  "checked_at_sakhalin": "2026-11-26T21:46:29+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-26T10:51:11+00:00",
+  "checked_at_sakhalin": "2026-11-26T21:51:06+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 8.1,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-26T19:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-26T13:40:44+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-26T13:40:44+11:00",
-    "age_hours": 8.1,
-    "published": 1
+    "finished_sakhalin": "2026-11-26T21:50:37+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-26T02:40:44+00:00",
+    "checked_at_utc": "2026-11-26T10:50:37+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 9,
-    "ai_calls": 4,
-    "ai_api_fail": 3,
-    "ai_budget_exhausted": 1,
+    "published": 2,
+    "director_approved": 8,
+    "ai_calls": 2,
+    "ai_api_fail": 0,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 1
   },
@@ -100,7 +88,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-26T10:46:32+00:00",
+    "checked_at": "2026-11-26T10:51:10+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -113,32 +101,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 660,
-      "title": "Отопление отключат в Южно-Сахалинске 22 ноября до 17:00",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
-    {
-      "message_id": 661,
-      "title": "Госдума приняла во втором чтении проект федерального бюджета на 2027–2029 годы",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 663,
       "title": "Без света 23 ноября: Ново-Александровск, СНТ и психиатрическая больница",
@@ -372,6 +334,32 @@
       "review_reason": "approved",
       "corrected_category": "sakh_chp",
       "title_issues": []
+    },
+    {
+      "message_id": 690,
+      "title": "Авито объявил итоги премии Мебель года 2026",
+      "category_key": "ru_pol",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_pol",
+      "title_issues": []
+    },
+    {
+      "message_id": 691,
+      "title": "Путин — историческая личность, Зеленский — контрпродуктивен. Зять Трампа после переговоров",
+      "category_key": "geo",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "geo",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -393,11 +381,11 @@
       "it": 5.0
     },
     "counts": {
-      "local": 7,
-      "ru_pol": 1,
-      "ru_eco": 4,
+      "local": 6,
+      "ru_pol": 2,
+      "ru_eco": 3,
       "ru_safety": 2,
-      "world": 3,
+      "world": 4,
       "it": 3
     },
     "scaled_targets": {
@@ -409,28 +397,26 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -1.0,
-      "ru_pol": 3.0,
-      "ru_eco": 0.0,
+      "local": 0.0,
+      "ru_pol": 2.0,
+      "ru_eco": 1.0,
       "ru_safety": 1.0,
-      "world": -1.0,
+      "world": -2.0,
       "it": -2.0
     },
     "distribution_error": 8.0,
     "subtype_counts": {
-      "public_service_disruption": 2,
-      "macro_economy": 5,
+      "public_service_disruption": 1,
+      "macro_economy": 4,
       "violent_crime": 3,
       "major_it": 3,
       "fatal_incident": 1,
-      "political_decision": 2,
+      "political_decision": 3,
       "major_infrastructure": 1,
-      "geopolitical_event": 2,
+      "geopolitical_event": 3,
       "major_emergency": 1
     },
     "sequence": [
-      "local",
-      "ru_eco",
       "local",
       "ru_eco",
       "ru_safety",
@@ -448,11 +434,11 @@
       "it",
       "it",
       "world",
-      "local"
+      "local",
+      "ru_pol",
+      "world"
     ],
     "category_sequence": [
-      "sakh",
-      "ru_eco",
       "sakh",
       "ru_eco",
       "ru_incident",
@@ -470,11 +456,11 @@
       "it",
       "it",
       "geo",
-      "sakh_chp"
+      "sakh_chp",
+      "ru_pol",
+      "geo"
     ],
     "source_sequence": [
-      "sakh.online",
-      "sakhalinmedia.ru",
       "sakh.online",
       "sakhalinmedia.ru",
       "astv",
@@ -492,14 +478,16 @@
       "exploit exploitex",
       "guardian technology",
       "exploit exploitex",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
+      "tass"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-26T10:46:27+00:00",
+    "checked_at_utc": "2026-11-26T10:51:04+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -532,11 +520,11 @@
       "distribution_error": 8.0,
       "limit": 8.0,
       "counts": {
-        "local": 7,
-        "ru_pol": 1,
-        "ru_eco": 4,
+        "local": 6,
+        "ru_pol": 2,
+        "ru_eco": 3,
         "ru_safety": 2,
-        "world": 3,
+        "world": 4,
         "it": 3
       },
       "targets": {
@@ -548,11 +536,11 @@
         "it": 1
       },
       "deficits": {
-        "local": -1.0,
-        "ru_pol": 3.0,
-        "ru_eco": 0.0,
+        "local": 0.0,
+        "ru_pol": 2.0,
+        "ru_eco": 1.0,
         "ru_safety": 1.0,
-        "world": -1.0,
+        "world": -2.0,
         "it": -2.0
       }
     }
