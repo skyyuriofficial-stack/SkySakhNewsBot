@@ -1,32 +1,32 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-26T20:27:01+00:00",
-  "checked_at_sakhalin": "2026-11-27T07:26:55+11:00",
+  "checked_at_utc": "2026-11-26T20:33:16+00:00",
+  "checked_at_sakhalin": "2026-11-27T07:33:12+11:00",
   "status": "degraded",
   "mutations_enabled": true,
   "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-26T22:38:51+11:00",
-    "age_hours": 8.8,
+    "finished_sakhalin": "2026-11-27T07:32:36+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-26T11:38:51+00:00",
+    "checked_at_utc": "2026-11-26T20:32:36+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
-    "director_approved": 7,
-    "ai_calls": 4,
-    "ai_api_fail": 2,
-    "ai_budget_exhausted": 1,
+    "director_approved": 2,
+    "ai_calls": 1,
+    "ai_api_fail": 0,
+    "ai_budget_exhausted": 0,
     "telegram_fail": 0,
-    "publication_contract_blocked": 1
+    "publication_contract_blocked": 0
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -52,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-26T20:26:59+00:00",
+    "checked_at": "2026-11-26T20:33:15+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -65,19 +65,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 664,
-      "title": "Тарифы на связь могут вырасти на 15–20%: Минцифры допустило ускорение роста цен",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 665,
       "title": "Нападение медведя на человека в населённом пункте может получить статус ЧС",
@@ -324,6 +311,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 693,
+      "title": "Средства сахалинских предпринимателей в ВТБ выросли на 60%",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -345,9 +345,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 6,
+      "local": 7,
       "ru_pol": 2,
-      "ru_eco": 3,
+      "ru_eco": 2,
       "ru_safety": 2,
       "world": 4,
       "it": 3
@@ -361,26 +361,25 @@
       "it": 1.0
     },
     "deficits": {
-      "local": 0.0,
+      "local": -1.0,
       "ru_pol": 2.0,
-      "ru_eco": 1.0,
+      "ru_eco": 2.0,
       "ru_safety": 1.0,
       "world": -2.0,
       "it": -2.0
     },
-    "distribution_error": 8.0,
+    "distribution_error": 10.0,
     "subtype_counts": {
-      "macro_economy": 5,
       "violent_crime": 3,
       "major_it": 3,
       "fatal_incident": 1,
+      "macro_economy": 5,
       "political_decision": 3,
       "major_infrastructure": 1,
       "geopolitical_event": 3,
       "major_emergency": 1
     },
     "sequence": [
-      "ru_eco",
       "ru_safety",
       "it",
       "local",
@@ -399,10 +398,10 @@
       "local",
       "ru_pol",
       "world",
+      "local",
       "local"
     ],
     "category_sequence": [
-      "ru_eco",
       "ru_incident",
       "it",
       "sakh_chp",
@@ -421,10 +420,10 @@
       "sakh_chp",
       "ru_pol",
       "geo",
+      "sakh",
       "sakh"
     ],
     "source_sequence": [
-      "sakhalinmedia.ru",
       "astv",
       "guardian technology",
       "sakhalinmedia.ru",
@@ -443,14 +442,15 @@
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "tass",
-      "astv"
+      "astv",
+      "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-26T20:26:52+00:00",
+    "checked_at_utc": "2026-11-26T20:33:10+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -480,12 +480,12 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 8.0,
+      "distribution_error": 10.0,
       "limit": 8.0,
       "counts": {
-        "local": 6,
+        "local": 7,
         "ru_pol": 2,
-        "ru_eco": 3,
+        "ru_eco": 2,
         "ru_safety": 2,
         "world": 4,
         "it": 3
@@ -499,9 +499,9 @@
         "it": 1
       },
       "deficits": {
-        "local": 0.0,
+        "local": -1.0,
         "ru_pol": 2.0,
-        "ru_eco": 1.0,
+        "ru_eco": 2.0,
         "ru_safety": 1.0,
         "world": -2.0,
         "it": -2.0
