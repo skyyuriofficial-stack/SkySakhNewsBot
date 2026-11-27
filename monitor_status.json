@@ -1,39 +1,32 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-27T03:02:01+00:00",
-  "checked_at_sakhalin": "2026-11-27T14:01:55+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-27T03:06:04+00:00",
+  "checked_at_sakhalin": "2026-11-27T14:06:00+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-27T13:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-27T11:50:15+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-27T11:50:15+11:00",
-    "age_hours": 2.2,
-    "published": 1
+    "finished_sakhalin": "2026-11-27T14:05:31+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-27T00:50:15+00:00",
+    "checked_at_utc": "2026-11-27T03:05:31+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 2,
-    "ai_calls": 2,
-    "ai_api_fail": 1,
+    "published": 2,
+    "director_approved": 4,
+    "ai_calls": 0,
+    "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
-    "publication_contract_blocked": 0
+    "publication_contract_blocked": 1
   },
   "mobilization_digest": {
     "version": "mobilization-digest-v1.3",
@@ -77,7 +70,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-27T03:01:59+00:00",
+    "checked_at": "2026-11-27T03:06:03+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -90,32 +83,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 666,
-      "title": "Математик Anthropic: Claude помог доказать гипотезу Римана",
-      "category_key": "it",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "it",
-      "title_issues": []
-    },
-    {
-      "message_id": 668,
-      "title": "Заколол ножом: поронайца подозревают в убийстве женщины после ссоры",
-      "category_key": "sakh_chp",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh_chp",
-      "title_issues": []
-    },
     {
       "message_id": 669,
       "title": "Семилетнего мальчика спасли из-под завалов после удара по Украине",
@@ -349,6 +316,32 @@
       "review_reason": "approved",
       "corrected_category": "it",
       "title_issues": []
+    },
+    {
+      "message_id": 696,
+      "title": "Госдума ввела особый правовой режим для модернизации портовых объектов",
+      "category_key": "ru_pol",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_pol",
+      "title_issues": []
+    },
+    {
+      "message_id": 697,
+      "title": "Сильные дожди обрушатся на пять районов Сахалина",
+      "category_key": "sakh_chp",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh_chp",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -371,11 +364,11 @@
     },
     "counts": {
       "local": 7,
-      "ru_pol": 2,
+      "ru_pol": 3,
       "ru_eco": 2,
       "ru_safety": 1,
       "world": 4,
-      "it": 4
+      "it": 3
     },
     "scaled_targets": {
       "local": 6.0,
@@ -387,26 +380,24 @@
     },
     "deficits": {
       "local": -1.0,
-      "ru_pol": 2.0,
+      "ru_pol": 1.0,
       "ru_eco": 2.0,
       "ru_safety": 2.0,
       "world": -2.0,
-      "it": -3.0
+      "it": -2.0
     },
-    "distribution_error": 12.0,
+    "distribution_error": 10.0,
     "subtype_counts": {
-      "major_it": 4,
-      "violent_crime": 2,
       "fatal_incident": 1,
       "macro_economy": 5,
-      "political_decision": 3,
+      "violent_crime": 1,
+      "political_decision": 4,
       "major_infrastructure": 1,
       "geopolitical_event": 3,
-      "major_emergency": 1
+      "major_it": 3,
+      "major_emergency": 2
     },
     "sequence": [
-      "it",
-      "local",
       "world",
       "local",
       "ru_safety",
@@ -424,11 +415,11 @@
       "world",
       "local",
       "local",
-      "it"
+      "it",
+      "ru_pol",
+      "local"
     ],
     "category_sequence": [
-      "it",
-      "sakh_chp",
       "world_ru",
       "sakh",
       "ru_incident",
@@ -446,11 +437,11 @@
       "geo",
       "sakh",
       "sakh",
-      "it"
+      "it",
+      "ru_pol",
+      "sakh_chp"
     ],
     "source_sequence": [
-      "guardian technology",
-      "sakhalinmedia.ru",
       "bbc world",
       "sakh.online",
       "sakh.online",
@@ -468,14 +459,16 @@
       "tass",
       "astv",
       "sakhalinmedia.ru",
-      "bbc technology"
+      "bbc technology",
+      "sakh.online",
+      "astv"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-27T03:01:52+00:00",
+    "checked_at_utc": "2026-11-27T03:05:57+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -505,15 +498,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 12.0,
+      "distribution_error": 10.0,
       "limit": 8.0,
       "counts": {
         "local": 7,
-        "ru_pol": 2,
+        "ru_pol": 3,
         "ru_eco": 2,
         "ru_safety": 1,
         "world": 4,
-        "it": 4
+        "it": 3
       },
       "targets": {
         "local": 6,
@@ -525,11 +518,11 @@
       },
       "deficits": {
         "local": -1.0,
-        "ru_pol": 2.0,
+        "ru_pol": 1.0,
         "ru_eco": 2.0,
         "ru_safety": 2.0,
         "world": -2.0,
-        "it": -3.0
+        "it": -2.0
       }
     }
   ]
