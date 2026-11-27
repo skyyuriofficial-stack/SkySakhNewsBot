@@ -1,40 +1,28 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-27T21:11:27+00:00",
-  "checked_at_sakhalin": "2026-11-28T08:11:21+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-27T21:15:32+00:00",
+  "checked_at_sakhalin": "2026-11-28T08:15:27+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_stale",
-      "age_hours": 8.98,
-      "limit_hours": 4.5
-    },
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-28T07:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-27T23:12:40+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-27T23:12:40+11:00",
-    "age_hours": 8.98,
-    "published": 1
+    "finished_sakhalin": "2026-11-28T08:15:01+11:00",
+    "age_hours": 0.01,
+    "published": 2
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-27T12:12:40+00:00",
+    "checked_at_utc": "2026-11-27T21:15:01+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
-    "published": 1,
-    "director_approved": 3,
-    "ai_calls": 1,
+    "published": 2,
+    "director_approved": 4,
+    "ai_calls": 0,
     "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
@@ -64,7 +52,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-27T21:11:25+00:00",
+    "checked_at": "2026-11-27T21:15:30+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -77,32 +65,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 672,
-      "title": "Нападение медведя или волка на людей могут признать чрезвычайной ситуацией",
-      "category_key": "ru_incident",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_incident",
-      "title_issues": []
-    },
-    {
-      "message_id": 673,
-      "title": "Ключевая ставка останется на прежнем уровне до середины 2027 года - эксперт",
-      "category_key": "ru_eco",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_eco",
-      "title_issues": []
-    },
     {
       "message_id": 675,
       "title": "Поступление налогов в бюджет России выросло на 10–11%",
@@ -336,6 +298,32 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 701,
+      "title": "Сахалинская область стала лидером ДФО по налоговой нагрузке",
+      "category_key": "sakh",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "sakh",
+      "title_issues": []
+    },
+    {
+      "message_id": 702,
+      "title": "ВТБ: почти треть платежей россиян проходит без использования банковской карты",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -357,10 +345,10 @@
       "it": 5.0
     },
     "counts": {
-      "local": 6,
+      "local": 7,
       "ru_pol": 3,
       "ru_eco": 4,
-      "ru_safety": 1,
+      "ru_safety": 0,
       "world": 3,
       "it": 3
     },
@@ -373,17 +361,16 @@
       "it": 1.0
     },
     "deficits": {
-      "local": 0.0,
+      "local": -1.0,
       "ru_pol": 1.0,
       "ru_eco": 0.0,
-      "ru_safety": 2.0,
+      "ru_safety": 3.0,
       "world": -1.0,
       "it": -2.0
     },
-    "distribution_error": 6.0,
+    "distribution_error": 8.0,
     "subtype_counts": {
-      "violent_crime": 1,
-      "macro_economy": 6,
+      "macro_economy": 7,
       "political_decision": 4,
       "major_infrastructure": 1,
       "geopolitical_event": 3,
@@ -391,8 +378,6 @@
       "major_emergency": 2
     },
     "sequence": [
-      "ru_safety",
-      "ru_eco",
       "ru_eco",
       "ru_pol",
       "local",
@@ -410,11 +395,11 @@
       "ru_pol",
       "local",
       "ru_eco",
+      "ru_eco",
+      "local",
       "ru_eco"
     ],
     "category_sequence": [
-      "ru_incident",
-      "ru_eco",
       "ru_eco",
       "ru_pol",
       "sakh",
@@ -432,11 +417,11 @@
       "ru_pol",
       "sakh_chp",
       "ru_eco",
+      "ru_eco",
+      "sakh",
       "ru_eco"
     ],
     "source_sequence": [
-      "sakh.online",
-      "sakhalinmedia.ru",
       "sakhalinmedia.ru",
       "rbc news rbc news",
       "sakh.online",
@@ -454,6 +439,8 @@
       "sakh.online",
       "astv",
       "sakhalinmedia.ru",
+      "sakhalinmedia.ru",
+      "sakh.online",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -461,7 +448,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-27T21:11:18+00:00",
+    "checked_at_utc": "2026-11-27T21:15:24+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -488,5 +475,35 @@
   "delivery_outbox_repaired": false,
   "hardening_actions": [],
   "hardening_failed_actions": [],
-  "warnings": []
+  "warnings": [
+    {
+      "type": "thematic_mix_drift",
+      "distribution_error": 8.0,
+      "limit": 8.0,
+      "counts": {
+        "local": 7,
+        "ru_pol": 3,
+        "ru_eco": 4,
+        "ru_safety": 0,
+        "world": 3,
+        "it": 3
+      },
+      "targets": {
+        "local": 6,
+        "ru_pol": 4,
+        "ru_eco": 4,
+        "ru_safety": 3,
+        "world": 2,
+        "it": 1
+      },
+      "deficits": {
+        "local": -1.0,
+        "ru_pol": 1.0,
+        "ru_eco": 0.0,
+        "ru_safety": 3.0,
+        "world": -1.0,
+        "it": -2.0
+      }
+    }
+  ]
 }
