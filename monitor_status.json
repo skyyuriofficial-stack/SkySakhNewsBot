@@ -1,36 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-27T12:08:31+00:00",
-  "checked_at_sakhalin": "2026-11-27T23:08:26+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-27T12:13:07+00:00",
+  "checked_at_sakhalin": "2026-11-27T23:13:04+11:00",
+  "status": "healthy",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-27T22:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-27T19:15:50+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-27T19:15:50+11:00",
-    "age_hours": 3.88,
+    "finished_sakhalin": "2026-11-27T23:12:40+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-27T08:15:50+00:00",
+    "checked_at_utc": "2026-11-27T12:12:40+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
     "director_approved": 3,
-    "ai_calls": 2,
-    "ai_api_fail": 2,
+    "ai_calls": 1,
+    "ai_api_fail": 0,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -95,7 +88,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-27T12:08:29+00:00",
+    "checked_at": "2026-11-27T12:13:06+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -108,19 +101,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 670,
-      "title": "Бюджет развития: в Южно-Сахалинске обсудили финансовые приоритеты на ближайшие три года",
-      "category_key": "sakh",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "sakh",
-      "title_issues": []
-    },
     {
       "message_id": 672,
       "title": "Нападение медведя или волка на людей могут признать чрезвычайной ситуацией",
@@ -367,6 +347,19 @@
       "review_reason": "approved",
       "corrected_category": "ru_eco",
       "title_issues": []
+    },
+    {
+      "message_id": 700,
+      "title": "Опрос ВТБ: к нейросетям с финансовыми вопросами обращались 65% респондентов",
+      "category_key": "ru_eco",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "ru_eco",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -388,9 +381,9 @@
       "it": 5.0
     },
     "counts": {
-      "local": 7,
+      "local": 6,
       "ru_pol": 3,
-      "ru_eco": 3,
+      "ru_eco": 4,
       "ru_safety": 1,
       "world": 3,
       "it": 3
@@ -404,17 +397,17 @@
       "it": 1.0
     },
     "deficits": {
-      "local": -1.0,
+      "local": 0.0,
       "ru_pol": 1.0,
-      "ru_eco": 1.0,
+      "ru_eco": 0.0,
       "ru_safety": 2.0,
       "world": -1.0,
       "it": -2.0
     },
-    "distribution_error": 8.0,
+    "distribution_error": 6.0,
     "subtype_counts": {
-      "macro_economy": 6,
       "violent_crime": 1,
+      "macro_economy": 6,
       "political_decision": 4,
       "major_infrastructure": 1,
       "geopolitical_event": 3,
@@ -422,7 +415,6 @@
       "major_emergency": 2
     },
     "sequence": [
-      "local",
       "ru_safety",
       "ru_eco",
       "ru_eco",
@@ -441,10 +433,10 @@
       "it",
       "ru_pol",
       "local",
+      "ru_eco",
       "ru_eco"
     ],
     "category_sequence": [
-      "sakh",
       "ru_incident",
       "ru_eco",
       "ru_eco",
@@ -463,10 +455,10 @@
       "it",
       "ru_pol",
       "sakh_chp",
+      "ru_eco",
       "ru_eco"
     ],
     "source_sequence": [
-      "sakh.online",
       "sakh.online",
       "sakhalinmedia.ru",
       "sakhalinmedia.ru",
@@ -485,6 +477,7 @@
       "bbc technology",
       "sakh.online",
       "astv",
+      "sakhalinmedia.ru",
       "sakhalinmedia.ru"
     ],
     "retrospective_anomalies": [],
@@ -492,7 +485,7 @@
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-27T12:08:24+00:00",
+    "checked_at_utc": "2026-11-27T12:13:01+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -519,35 +512,5 @@
   "delivery_outbox_repaired": false,
   "hardening_actions": [],
   "hardening_failed_actions": [],
-  "warnings": [
-    {
-      "type": "thematic_mix_drift",
-      "distribution_error": 8.0,
-      "limit": 8.0,
-      "counts": {
-        "local": 7,
-        "ru_pol": 3,
-        "ru_eco": 3,
-        "ru_safety": 1,
-        "world": 3,
-        "it": 3
-      },
-      "targets": {
-        "local": 6,
-        "ru_pol": 4,
-        "ru_eco": 4,
-        "ru_safety": 3,
-        "world": 2,
-        "it": 1
-      },
-      "deficits": {
-        "local": -1.0,
-        "ru_pol": 1.0,
-        "ru_eco": 1.0,
-        "ru_safety": 2.0,
-        "world": -1.0,
-        "it": -2.0
-      }
-    }
-  ]
+  "warnings": []
 }
