@@ -1,36 +1,29 @@
 {
   "version": "editorial-monitor-v2",
   "publisher_version": "stable-v12.1",
-  "checked_at_utc": "2026-11-27T00:45:32+00:00",
-  "checked_at_sakhalin": "2026-11-27T11:45:28+11:00",
-  "status": "error",
+  "checked_at_utc": "2026-11-27T00:50:41+00:00",
+  "checked_at_sakhalin": "2026-11-27T11:50:38+11:00",
+  "status": "degraded",
   "mutations_enabled": true,
-  "issues": [
-    {
-      "type": "publisher_slot_missed",
-      "slot_sakhalin": "2026-11-27T10:00+11:00",
-      "grace_minutes": 45,
-      "last_finished_sakhalin": "2026-11-27T07:32:36+11:00"
-    }
-  ],
+  "issues": [],
   "last_run": {
     "version": "stable-v12.1",
     "status": "ok",
-    "finished_sakhalin": "2026-11-27T07:32:36+11:00",
-    "age_hours": 4.22,
+    "finished_sakhalin": "2026-11-27T11:50:15+11:00",
+    "age_hours": 0.01,
     "published": 1
   },
   "last_production_attempt": {
     "status": "ok",
     "reason": null,
-    "checked_at_utc": "2026-11-26T20:32:36+00:00",
+    "checked_at_utc": "2026-11-27T00:50:15+00:00",
     "publisher_version": "stable-v12.1",
     "queue_preserved": 0,
     "editorial_run_status": "ok",
     "published": 1,
     "director_approved": 2,
-    "ai_calls": 1,
-    "ai_api_fail": 0,
+    "ai_calls": 2,
+    "ai_api_fail": 1,
     "ai_budget_exhausted": 0,
     "telegram_fail": 0,
     "publication_contract_blocked": 0
@@ -77,7 +70,7 @@
   },
   "post_audit": {
     "version": "post-audit-v1.1",
-    "checked_at": "2026-11-27T00:45:30+00:00",
+    "checked_at": "2026-11-27T00:50:40+00:00",
     "checked": 20,
     "passed": 20,
     "anomalies": [],
@@ -90,19 +83,6 @@
     "legacy_posts_mutated": false
   },
   "recent_active_posts": [
-    {
-      "message_id": 665,
-      "title": "Нападение медведя на человека в населённом пункте может получить статус ЧС",
-      "category_key": "ru_incident",
-      "publisher_version": "stable-v12.1",
-      "category_ok": true,
-      "title_ok": true,
-      "media_ok": true,
-      "contract_ok": true,
-      "review_reason": "approved",
-      "corrected_category": "ru_incident",
-      "title_issues": []
-    },
     {
       "message_id": 666,
       "title": "Математик Anthropic: Claude помог доказать гипотезу Римана",
@@ -349,6 +329,19 @@
       "review_reason": "approved",
       "corrected_category": "sakh",
       "title_issues": []
+    },
+    {
+      "message_id": 695,
+      "title": "Дженсен Хуан: как скандал вокруг Nvidia обнажил риски крупной ставки Азии на ИИ",
+      "category_key": "it",
+      "publisher_version": "stable-v12.1",
+      "category_ok": true,
+      "title_ok": true,
+      "media_ok": true,
+      "contract_ok": true,
+      "review_reason": "approved",
+      "corrected_category": "it",
+      "title_issues": []
     }
   ],
   "balance": {
@@ -373,9 +366,9 @@
       "local": 7,
       "ru_pol": 2,
       "ru_eco": 2,
-      "ru_safety": 2,
+      "ru_safety": 1,
       "world": 4,
-      "it": 3
+      "it": 4
     },
     "scaled_targets": {
       "local": 6.0,
@@ -389,14 +382,14 @@
       "local": -1.0,
       "ru_pol": 2.0,
       "ru_eco": 2.0,
-      "ru_safety": 1.0,
+      "ru_safety": 2.0,
       "world": -2.0,
-      "it": -2.0
+      "it": -3.0
     },
-    "distribution_error": 10.0,
+    "distribution_error": 12.0,
     "subtype_counts": {
-      "violent_crime": 3,
-      "major_it": 3,
+      "major_it": 4,
+      "violent_crime": 2,
       "fatal_incident": 1,
       "macro_economy": 5,
       "political_decision": 3,
@@ -405,7 +398,6 @@
       "major_emergency": 1
     },
     "sequence": [
-      "ru_safety",
       "it",
       "local",
       "world",
@@ -424,10 +416,10 @@
       "ru_pol",
       "world",
       "local",
-      "local"
+      "local",
+      "it"
     ],
     "category_sequence": [
-      "ru_incident",
       "it",
       "sakh_chp",
       "world_ru",
@@ -446,10 +438,10 @@
       "ru_pol",
       "geo",
       "sakh",
-      "sakh"
+      "sakh",
+      "it"
     ],
     "source_sequence": [
-      "astv",
       "guardian technology",
       "sakhalinmedia.ru",
       "bbc world",
@@ -468,14 +460,15 @@
       "sakhalinmedia.ru",
       "tass",
       "astv",
-      "sakhalinmedia.ru"
+      "sakhalinmedia.ru",
+      "bbc technology"
     ],
     "retrospective_anomalies": [],
     "valid_posts_counted": 20
   },
   "legacy_or_derivative_warnings": [],
   "telegram_health": {
-    "checked_at_utc": "2026-11-27T00:45:26+00:00",
+    "checked_at_utc": "2026-11-27T00:50:36+00:00",
     "status": "healthy",
     "auth_ok": true,
     "chat_ok": true,
@@ -505,15 +498,15 @@
   "warnings": [
     {
       "type": "thematic_mix_drift",
-      "distribution_error": 10.0,
+      "distribution_error": 12.0,
       "limit": 8.0,
       "counts": {
         "local": 7,
         "ru_pol": 2,
         "ru_eco": 2,
-        "ru_safety": 2,
+        "ru_safety": 1,
         "world": 4,
-        "it": 3
+        "it": 4
       },
       "targets": {
         "local": 6,
@@ -527,9 +520,9 @@
         "local": -1.0,
         "ru_pol": 2.0,
         "ru_eco": 2.0,
-        "ru_safety": 1.0,
+        "ru_safety": 2.0,
         "world": -2.0,
-        "it": -2.0
+        "it": -3.0
       }
     }
   ]
